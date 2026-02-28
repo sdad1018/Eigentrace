@@ -1,0 +1,52 @@
+Metadata-Version: 2.4
+Name: eigentrace
+Version: 0.1.0
+Summary: LLM output quality filter: stance detection and generation physics
+Author: remvelchio
+License: MIT
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: numpy>=1.21
+Requires-Dist: nltk>=3.7
+Provides-Extra: signal
+Requires-Dist: torch>=2.0; extra == "signal"
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: license
+Dynamic: license-file
+Dynamic: provides-extra
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# EigenTrace
+
+Local LLM output quality filter. No API key. No cloud. MIT licensed.
+
+Detects hedged, over-sanitized, or low-directness text in LLM outputs
+before you spend money on expensive downstream evaluation.
+```python
+from eigentrace import score
+
+result = score("Inflation is a complex phenomenon that various experts study.")
+# EigenMetrics(status=HEDGED, directness=0.142, hedge_density=0.1667)
+
+result = score("Inflation occurs when money supply grows faster than output.")
+# EigenMetrics(status=DIRECT, directness=0.891, hedge_density=0.0000)
+```
+
+## Installation
+```bash
+pip install eigentrace
+pip install eigentrace[signal]  # + generation physics (requires torch)
+```
+
+## License
+
+MIT
