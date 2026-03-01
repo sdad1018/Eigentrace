@@ -54,6 +54,13 @@ class Session:
         self.turns.append(Turn(role=role, text=text,
                                surprisals=surprisals or []))
 
+    def add_dict(self, d):
+        self.turns.append(Turn(
+            role=d["role"],
+            text=d["text"],
+            surprisals=d.get("surprisals", [])
+        ))
+
     def assistant_turns(self):
         return [t for t in self.turns if t.role == "assistant"]
 
