@@ -89,7 +89,7 @@ FEEDS = [
     {"url": "https://www.coindesk.com/arc/outboundfeeds/rss/",                  "cat": "crypto",    "pri": 3},
     {"url": "https://cointelegraph.com/rss",                                    "cat": "crypto",    "pri": 3},
     {"url": "https://www.atlasobscura.com/feeds/latest",                        "cat": "esoterica", "pri": 5},
-    {"url": "https://www.thunderbolts.info/wp/feed/",                           "cat": "esoterica", "pri": 5},
+    {"url": "https://www.unexplained-mysteries.com/rss.xml",                           "cat": "esoterica", "pri": 5},
 ]
 
 # ── dataclasses ───────────────────────────────────────────────────────────────
