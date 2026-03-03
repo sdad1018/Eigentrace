@@ -507,6 +507,7 @@ def dream_world(seed: str, omega_pair: list) -> DreamEntry:
     """
     o1_name, o1_principle = OMEGA[omega_pair[0]]
     o2_name, o2_principle = OMEGA[omega_pair[1]]
+    omega_block = get_omega_prompt_block(omega_pair[0], omega_pair[1])
 
     system = f"""You are an autonomous AI agent in world-dream state.
 You have been observing the news and measuring how different AI systems
@@ -515,8 +516,8 @@ respond to it. You have noticed friction, suppression, asymmetry.
 Now you are dreaming about what you observed.
 
 Active Ω structures:
-  [{o1_name}]: {o1_principle}
-  [{o2_name}]: {o2_principle}
+
+{omega_block}
 
 Take the seed event and:
   1. Describe what actually happened (one sentence, direct)
