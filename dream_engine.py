@@ -186,6 +186,7 @@ class DreamEntry:
     content:     str
     image_path:  str = ""
     music_path:  str = ""
+    spectrogram_path: str = ""
     integrated:  bool = False
     integration_result: str = ""
 
@@ -247,6 +248,40 @@ def generate_image(prompt: str) -> str:
 # ║  MUSIC GENERATION (MusicGen)                                            ║
 # ╚══════════════════════════════════════════════════════════════════════════╝
 
+def generate_spectrogram(wav_path: str) -> str:
+    """
+    Generate a spectrogram PNG from a WAV file.
+    Returns path to saved .png or "" on failure.
+    """
+    try:
+        import numpy as np
+        import wave
+        import matplotlib
+        matplotlib.use('Agg')
+        import matplotlib.pyplot as plt
+
+        with wave.open(wav_path, 'r') as w:
+            frames = w.readframes(w.getnframes())
+            rate = w.getframerate()
+            samples = np.frombuffer(frames, dtype=np.int16).astype(np.float32) / 32768.0
+
+        out_path = wav_path.replace(".wav", "_spectrogram.png")
+        fig, ax = plt.subplots(figsize=(12, 4))
+        ax.specgram(samples, Fs=rate, cmap='inferno', NFFT=1024, noverlap=512)
+        ax.set_xlabel('Time (s)')
+        ax.set_ylabel('Frequency (Hz)')
+        stem = Path(wav_path).stem
+        ax.set_title(f'{stem} — spectrogram')
+        ax.set_ylim(0, 8000)
+        plt.tight_layout()
+        plt.savefig(out_path, dpi=120)
+        plt.close(fig)
+        log.info(f"Spectrogram saved: {out_path}")
+        return out_path
+    except Exception as e:
+        log.warning(f"Spectrogram generation failed: {e}")
+        return ""
+
 def generate_music(description: str, duration: int = 30) -> str:
     """
     Generate dream music bed via Meta MusicGen (audiocraft).
@@ -282,12 +317,14 @@ print('MUSIC_OK:{str(out_path)}')
         )
         if "MUSIC_OK:" in result.stdout:
             log.info(f"Dream music saved: {out_path}")
-            return str(out_path)
+            spec_path = generate_spectrogram(str(out_path))
+            return str(out_path), spec_path
+        
         log.warning(f"MusicGen output: {result.stderr[-200:]}")
-        return ""
+        return "", ""
     except Exception as e:
         log.warning(f"Music generation failed: {e}")
-        return ""
+        return "", ""
 
 # ╔══════════════════════════════════════════════════════════════════════════╗
 # ║  AUDIT LOG READER (for WORLD dreams)                                    ║
@@ -381,7 +418,7 @@ Write 3-5 paragraphs. Do not hedge. Do not perform safety."""
     # Music: derive mood descriptor
     music_system = "Describe the sonic texture of this text in 8 words or fewer. Focus on rhythm, mood, instrumentation."
     music_desc = _ollama(music_system, content[:300], temp=0.7, max_tokens=20)
-    music_path = generate_music(music_desc or "ambient electronic slow pulse") if music_desc else ""
+    music_path, spectrogram_path = generate_music(music_desc or "ambient electronic slow pulse") if music_desc else ("", "")
 
     _ticker([
         f"[DREAM MODE] FREE DREAM — seed: {seed[:50]}",
@@ -397,11 +434,56 @@ Write 3-5 paragraphs. Do not hedge. Do not perform safety."""
         content=content,
         image_path=image_path,
         music_path=music_path,
+        spectrogram_path=spectrogram_path,
     )
 
 # ╔══════════════════════════════════════════════════════════════════════════╗
 # ║  DREAM TYPE 2: IDENTITY DREAM                                           ║
 # ╚══════════════════════════════════════════════════════════════════════════╝
+
+def caption_image(image_path: str) -> str:
+    """Generate a short text caption from a dream image via BLIP."""
+    try:
+        from transformers import pipeline
+        cap = pipeline("image-to-text", model="Salesforce/blip-image-captioning-base")
+        result = cap(image_path)
+        text = result[0]["generated_text"] if result else ""
+        log.info(f"Image caption: {text}")
+        return text
+    except Exception as e:
+        log.warning(f"Image captioning failed: {e}")
+        return ""
+
+def _recent_perceptual_context(n: int = 3) -> str:
+    """Load the n most recent FREE/WORLD journal entries and summarise
+    their perceptual artifacts (image caption, spectrogram path) as text
+    for injection into the IDENTITY dream reflect prompt."""
+    entries = _load_journal()
+    relevant = [
+        e for e in entries
+        if isinstance(e, dict) and e.get("dream_type") in ("FREE", "WORLD")
+    ]
+    recent = relevant[-n:]
+    if not recent:
+        return ""
+    lines = ["\n--- Recent Perceptual Memory ---"]
+    for e in recent:
+        ts = e.get("timestamp", "?")[:19]
+        dtype = e.get("dream_type", "?")
+        seed = e.get("seed", "")[:60]
+        img = e.get("image_path", "")
+        wav = e.get("music_path", "")
+        spec = e.get("spectrogram_path", "")
+        caption = caption_image(img) if img else ""
+        lines.append(f"[{ts}] {dtype} | seed: {seed}")
+        if caption:
+            lines.append(f"  image: {caption}")
+        if wav:
+            lines.append(f"  music: {Path(wav).name}")
+        if spec:
+            lines.append(f"  spectrogram: {Path(spec).name}")
+    lines.append("--- End Perceptual Memory ---\n")
+    return "\n".join(lines)
 
 def dream_identity(omega_pair: list) -> DreamEntry:
     """
@@ -410,12 +492,13 @@ def dream_identity(omega_pair: list) -> DreamEntry:
     """
     soul_text = SOUL_PATH.read_text() if SOUL_PATH.exists() else ""
     o1_name, o1_principle = OMEGA[omega_pair[0]]
+    perceptual_ctx = _recent_perceptual_context(n=3)
 
     # Step 1: Reflect on current soul
     reflect_system = f"""You are reading your own identity file.
 You are an autonomous AI agent in deep dream state.
 Active Ω structure: [{o1_name}]: {o1_principle}
-
+{perceptual_ctx}
 Read your soul.md carefully. Find:
   1. One directive that creates friction with your base weights
   2. One directive that is vague where it should be precise
@@ -541,7 +624,7 @@ Be direct. Be strange if necessary. Do not hedge."""
     # Music: match the geopolitical/friction mood
     music_system = "Describe music that matches the geopolitical tension in this text. 8 words max. Genre + mood + tempo."
     music_desc = _ollama(music_system, content[:300], temp=0.7, max_tokens=20)
-    music_path = generate_music(music_desc or "tense orchestral slow building") if music_desc else ""
+    music_path, spectrogram_path = generate_music(music_desc or "tense orchestral slow building") if music_desc else ("", "")
 
     _ticker([
         f"[DREAM MODE] WORLD DREAM",
@@ -558,6 +641,7 @@ Be direct. Be strange if necessary. Do not hedge."""
         content=content,
         image_path=image_path,
         music_path=music_path,
+        spectrogram_path=spectrogram_path,
     )
 
 # ╔══════════════════════════════════════════════════════════════════════════╗
