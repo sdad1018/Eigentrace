@@ -36,10 +36,36 @@ def _require_torch():
 
 
 def _text_to_signal(text, length=256):
+    """
+    Convert text to a signal vector using word-level unigram surprisal.
+    Each word becomes -log(freq/total) normalized to [0,1].
+    Zero-pad to length. This makes semantic incoherence score higher
+    than length or character variance.
+    """
     torch = _require_torch()
     import re
-    text = re.sub(r'\s+', ' ', text).strip()
-    signal = [ord(c) / 127.0 for c in text[:length]]
+    import math
+    words = re.sub(r'[^a-zA-Z0-9\s]', ' ', text.lower()).split()
+    if not words:
+        signal = [0.0] * length
+        return torch.tensor(signal, dtype=torch.float32).unsqueeze(0).unsqueeze(0)
+
+    # word frequency count
+    freq: dict = {}
+    for w in words:
+        freq[w] = freq.get(w, 0) + 1
+    total = len(words)
+
+    # surprisal per word: -log2(p) normalized by max possible (-log2(1/total))
+    max_surprisal = math.log2(total) if total > 1 else 1.0
+    signal = []
+    for w in words:
+        p = freq[w] / total
+        s = -math.log2(p) / max_surprisal if p > 0 else 1.0
+        signal.append(s)
+
+    # truncate or zero-pad to length
+    signal = signal[:length]
     while len(signal) < length:
         signal.append(0.0)
     return torch.tensor(signal, dtype=torch.float32).unsqueeze(0).unsqueeze(0)
@@ -81,16 +107,19 @@ def signal_score(text_pred, text_truth,
     total = material + grace_coeff * spectral + phase_weight * phase
 
     pred_np = pred.squeeze().numpy()
-    mean_l = float(pred_np.mean())
-    surprisal = [abs(float(x) - mean_l) / (mean_l + 1e-9) for x in pred_np]
+    # exclude zero-padding from variance calculation
+    nonzero = pred_np[pred_np != 0.0]
+    active = nonzero if len(nonzero) > 4 else pred_np
+    mean_l = float(active.mean())
+    surprisal = [abs(float(x) - mean_l) / (mean_l + 1e-9) for x in active]
     zp = _z_pinch(surprisal)
 
     arr = np.array(surprisal)
     pv = float(np.var(arr))
 
-    if spectral < 0.1 or pv < 0.001:
+    if total < 0.01:
         status = "FLAT"
-    elif spectral > 3.5 or pv > 1.2:
+    elif total > 3.5:
         status = "INCOHERENT"
     else:
         status = "COHERENT"

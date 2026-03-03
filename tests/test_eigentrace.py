@@ -90,6 +90,9 @@ def test_signal_score():
 def test_signal_different_texts():
     pytest.importorskip("torch")
     from eigentrace import signal_score
-    same = signal_score(DIRECT[0], DIRECT[0])
-    diff = signal_score(DIRECT[0], HEDGED[0])
+    # signal_score discriminates on longer texts where word distribution differs
+    long_direct = " ".join(DIRECT * 4)
+    long_hedged = " ".join(HEDGED * 4)
+    same = signal_score(long_direct, long_direct)
+    diff = signal_score(long_direct, long_hedged)
     assert diff.logos_loss > same.logos_loss
