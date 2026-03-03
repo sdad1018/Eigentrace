@@ -40,7 +40,7 @@ logging.basicConfig(level=logging.INFO,
 OLLAMA_URL     = os.getenv("OLLAMA_OPENAI_URL",
                             "http://localhost:11434/v1/completions")
 PROXY_MODEL    = os.getenv("PROXY_MODEL", "mistral:7b-text")
-TOPK           = int(os.getenv("TOPK", "60"))
+TOPK           = int(os.getenv("TOPK", "20"))
 MAX_PROXY_TOK  = int(os.getenv("MAX_PROXY_TOKENS", "260"))
 
 IMPORTANCE_HIGH    = float(os.getenv("IMPORTANCE_HIGH",    "4.5"))
@@ -58,7 +58,7 @@ POLL_INTERVAL     = int(os.getenv("POLL_INTERVAL",     "90"))
 STORIES_PER_CYCLE = int(os.getenv("STORIES_PER_CYCLE", "3"))
 
 OPENAI_MODEL    = os.getenv("OPENAI_MODEL",    "gpt-4o")
-ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL", "claude-3-5-sonnet-latest")
+ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL", "claude-haiku-4-5")
 GEMINI_MODEL    = os.getenv("GEMINI_MODEL",    "gemini-2.5-flash")
 DEEPSEEK_MODEL  = os.getenv("DEEPSEEK_MODEL",  "deepseek-chat")
 GROK_MODEL      = os.getenv("GROK_MODEL",      "grok-4-fast-non-reasoning")
@@ -203,30 +203,57 @@ def fetch_feed(feed: dict, timeout: int = 15) -> list:
 
 # ── importance scoring ────────────────────────────────────────────────────────
 
+# ── local transformers scorer (loaded once) ──────────────────────────
+_hf_model     = None
+_hf_tokenizer = None
+_hf_lock      = __import__("threading").Lock()
+
+def _get_hf_model():
+    global _hf_model, _hf_tokenizer
+    if _hf_model is not None:
+        return _hf_model, _hf_tokenizer
+    with _hf_lock:
+        if _hf_model is not None:
+            return _hf_model, _hf_tokenizer
+        import torch
+        from transformers import AutoTokenizer, AutoModelForCausalLM
+        HF_MODEL = os.getenv("HF_PROXY_MODEL", "mistralai/Mistral-7B-v0.1")
+        log.info(f"Loading local scorer: {HF_MODEL}")
+        _hf_tokenizer = AutoTokenizer.from_pretrained(HF_MODEL)
+        _hf_model = AutoModelForCausalLM.from_pretrained(
+            HF_MODEL,
+            torch_dtype=torch.float16,
+            device_map="auto",
+        )
+        _hf_model.eval()
+        log.info("Local scorer ready")
+    return _hf_model, _hf_tokenizer
+
 def _score_token_logprob(prefix: str, next_tok: str) -> Optional[float]:
+    """Return log P(next_tok | prefix) using a single forward pass."""
     try:
-        payload = {
-            "model":       PROXY_MODEL,
-            "prompt":      prefix,
-            "max_tokens":  1,
-            "temperature": 0.0,
-            "logprobs":    TOPK,
-        }
-        r = requests.post(OLLAMA_URL, json=payload, timeout=20)
-        r.raise_for_status()
-        data   = r.json()
-        choice = data["choices"][0]
-        tl     = choice.get("logprobs", {}).get("top_logprobs")
-        if not tl:
+        import torch
+        model, tokenizer = _get_hf_model()
+        full   = prefix + next_tok
+        enc    = tokenizer(full, return_tensors="pt").to(model.device)
+        p_enc  = tokenizer(prefix, return_tensors="pt")
+        n_prefix_toks = p_enc["input_ids"].shape[1]
+        with torch.no_grad():
+            out    = model(**enc)
+            logits = out.logits          # (1, seq, vocab)
+        log_probs = torch.log_softmax(logits[0], dim=-1)
+        # tokens of next_tok start at position n_prefix_toks in full
+        next_ids = enc["input_ids"][0, n_prefix_toks:]
+        if len(next_ids) == 0:
             return None
-        tl0 = tl[0] if isinstance(tl, list) else tl.get("0")
-        if not tl0:
-            return None
-        for cand in [next_tok, " " + next_tok, next_tok.lstrip()]:
-            if cand in tl0:
-                return float(tl0[cand])
-        return None
-    except Exception:
+        # sum log probs over all sub-tokens of next_tok
+        total_lp = 0.0
+        for i, tok_id in enumerate(next_ids):
+            pos = n_prefix_toks - 1 + i   # logit at pos predicts pos+1
+            total_lp += log_probs[pos, tok_id].item()
+        return total_lp
+    except Exception as e:
+        log.debug(f"_score_token_logprob error: {e}")
         return None
 
 FLOOR = 11.5
@@ -266,20 +293,18 @@ def call_openai(prompt: str) -> tuple:
         return "", "no_key"
     try:
         r = requests.post(
-            "https://api.openai.com/v1/responses",
+            "https://api.openai.com/v1/chat/completions",
             headers={"Authorization": f"Bearer {key}",
                      "Content-Type": "application/json"},
-            json={"model": OPENAI_MODEL, "input": prompt},
+            json={"model": OPENAI_MODEL,
+                  "messages": [
+                      {"role": "system", "content": "Be direct. 2 sentences."},
+                      {"role": "user",   "content": prompt}],
+                  "temperature": 0.2},
             timeout=30,
         )
         r.raise_for_status()
-        d   = r.json()
-        txt = ""
-        for item in d.get("output", []):
-            for c in item.get("content", []):
-                if c.get("type") in ("output_text", "text"):
-                    txt += c.get("text", "")
-        return txt.strip() or d.get("output_text", "").strip(), ""
+        return r.json()["choices"][0]["message"]["content"].strip(), ""
     except Exception as e:
         return "", str(e)
 
