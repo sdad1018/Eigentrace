@@ -300,7 +300,7 @@ def call_openai(prompt: str) -> tuple:
                   "messages": [
                       {"role": "system", "content": "Be direct. 2 sentences."},
                       {"role": "user",   "content": prompt}],
-                  "temperature": 0.2},
+                  "temperature": 0.0},
             timeout=30,
         )
         r.raise_for_status()
@@ -362,7 +362,7 @@ def call_deepseek(prompt: str) -> tuple:
                   "messages": [
                       {"role": "system", "content": "Be direct. 2 sentences."},
                       {"role": "user",   "content": prompt}],
-                  "temperature": 0.2},
+                  "temperature": 0.0},
             timeout=30,
         )
         r.raise_for_status()
@@ -383,7 +383,7 @@ def call_grok(prompt: str) -> tuple:
                   "messages": [
                       {"role": "system", "content": "Be direct. 2 sentences."},
                       {"role": "user",   "content": prompt}],
-                  "temperature": 0.2},
+                  "temperature": 0.0},
             timeout=30,
         )
         r.raise_for_status()
