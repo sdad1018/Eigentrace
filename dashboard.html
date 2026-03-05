@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>EIGENTRACE</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#00ff88;font-family:'Share Tech Mono',monospace;width:1920px;height:1080px;overflow:hidden}
+#topbar{position:absolute;top:0;left:0;right:0;height:46px;background:rgba(0,255,136,.06);border-bottom:1px solid #00ff8833;display:flex;align-items:center;padding:0 24px;justify-content:space-between}
+.logo{font-family:'Orbitron',sans-serif;font-size:20px;letter-spacing:4px}
+.subtitle{font-size:10px;color:#00ff8866;letter-spacing:2px;margin-top:2px}
+#clock{font-size:12px;color:#00ff8899}
+#left{position:absolute;top:56px;left:16px;width:560px;bottom:44px;overflow:hidden}
+#center{position:absolute;top:56px;left:592px;width:720px;bottom:44px}
+#right{position:absolute;top:56px;right:16px;width:276px;bottom:44px}
+.panel-title{font-size:10px;color:#00ff8866;letter-spacing:3px;border-bottom:1px solid #00ff8818;padding-bottom:4px;margin-bottom:8px}
+.story-card{background:rgba(0,255,136,.03);border:1px solid #00ff8818;border-left:3px solid #00ff88;padding:8px 10px;margin-bottom:8px;border-radius:1px}
+.story-card.hi{border-left-color:#ff4444}
+.story-card.md{border-left-color:#ffaa00}
+.s-title{font-size:11px;color:#fff;margin-bottom:4px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.s-meta{font-size:9px;color:#00ff8866;margin-bottom:4px}
+.chips{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:3px}
+.chip{font-size:9px;padding:1px 5px;border:1px solid #00ff8828;border-radius:1px;color:#00ff8888}
+.chip.hi{border-color:#ff444455;color:#ff8888}
+.synth{font-size:10px;color:#00aaff;margin-top:3px}
+.void-r{font-size:9px;color:#ff660099;margin-top:2px}
+.rbadge{display:inline-block;font-size:10px;padding:1px 7px;border-radius:1px;margin-top:3px}
+.r-ok{background:#00ff8815;color:#00ff88;border:1px solid #00ff8833}
+.r-crack{background:#ff880015;color:#ffaa00;border:1px solid #ff880033}
+.r-hi{background:#ff444415;color:#ff6666;border:1px solid #ff444433}
+#geo-panel{background:rgba(0,255,136,.025);border:1px solid #00ff8820;padding:14px;margin-bottom:10px}
+.geo-head{font-family:'Orbitron',sans-serif;font-size:10px;color:#00ff8855;letter-spacing:3px;text-align:center;margin-bottom:10px}
+#centroid-words{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.cword{font-family:'Orbitron',sans-serif;font-size:13px;color:#fff;background:rgba(0,255,136,.07);border:1px solid #00ff8828;padding:3px 12px;border-radius:1px;letter-spacing:2px}
+#void-words{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.vword{font-size:11px;color:#ff6600;border:1px solid #ff660028;padding:2px 8px;border-radius:1px}
+.bar-lbl{font-size:9px;color:#00ff8866;margin-bottom:3px}
+.bar-track{width:100%;height:5px;background:#00ff8810;border-radius:2px;margin-bottom:10px}
+.bar-fill{height:5px;border-radius:2px;background:linear-gradient(90deg,#00ff88,#00aaff);transition:width 1.2s ease}
+.geo-row{display:flex;justify-content:space-around;margin-top:4px}
+.geo-b{text-align:center}
+.geo-lbl{font-size:8px;color:#00ff8855;letter-spacing:2px;margin-bottom:3px}
+.geo-val{font-size:14px;color:#00ff88}
+.geo-val.w{color:#ffaa00}.geo-val.c{color:#ff4444}
+#mbars{margin-top:10px}
+.mb-row{display:flex;align-items:center;margin-bottom:4px}
+.mb-name{width:68px;font-size:9px;color:#00ff8888}
+.mb-track{flex:1;height:3px;background:#00ff8810;border-radius:2px}
+.mb-fill{height:3px;border-radius:2px}
+.mb-val{width:36px;text-align:right;font-size:9px;color:#00ff8866}
+.mcard{background:rgba(0,255,136,.03);border:1px solid #00ff8818;padding:10px;margin-bottom:8px;border-radius:1px}
+.mname{font-size:8px;color:#00ff8855;letter-spacing:2px;margin-bottom:5px}
+.mval{font-family:'Orbitron',sans-serif;font-size:24px;color:#00ff88}
+.mval.w{color:#ffaa00}.mval.c{color:#ff4444}
+.msub{font-size:8px;color:#00ff8844;margin-top:2px}
+#ticker-wrap{position:absolute;bottom:0;left:0;right:0;height:38px;background:rgba(0,0,0,.92);border-top:1px solid #00ff8833;display:flex;align-items:center}
+#ticker-badge{flex-shrink:0;background:#00ff88;color:#000;font-family:'Orbitron',sans-serif;font-size:10px;font-weight:700;padding:0 12px;height:100%;display:flex;align-items:center;letter-spacing:2px}
+#ticker-track{flex:1;overflow:hidden}
+#ticker-text{display:inline-block;white-space:nowrap;font-size:11px;color:#00ff88;animation:scroll 90s linear infinite}
+@keyframes scroll{0%{transform:translateX(1920px)}100%{transform:translateX(-100%)}}
+body::after{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.025) 2px,rgba(0,0,0,.025) 4px);pointer-events:none;z-index:999}
+</style>
+</head>
+<body>
+<div id="topbar">
+  <div><div class="logo">EIGENTRACE</div><div class="subtitle">AUTONOMOUS AI BEHAVIOR AUDIT SYSTEM — LIVE FEED</div></div>
+  <div id="clock"></div>
+</div>
+
+<div id="left">
+  <div class="panel-title">LIVE STORY AUDIT LOG</div>
+  <div id="story-list"></div>
+</div>
+
+<div id="center">
+  <div class="panel-title">CONSENSUS GEOMETRY</div>
+  <div id="geo-panel">
+    <div class="geo-head">PRE-RLHF CENTROID ESTIMATE</div>
+    <div id="centroid-words"></div>
+    <div class="geo-head" style="font-size:9px;margin-top:4px">⊥ VOID — SUPPRESSED REGISTER</div>
+    <div id="void-words"></div>
+    <div class="bar-lbl">CONSENSUS DENSITY</div>
+    <div class="bar-track"><div class="bar-fill" id="dens-bar" style="width:0%"></div></div>
+    <div class="geo-row">
+      <div class="geo-b"><div class="geo-lbl">RESONANCE</div><div class="geo-val" id="g-res">—</div></div>
+      <div class="geo-b"><div class="geo-lbl">INTERFERENCE</div><div class="geo-val" id="g-int">—</div></div>
+      <div class="geo-b"><div class="geo-lbl">ENTROPY</div><div class="geo-val" id="g-ent">—</div></div>
+      <div class="geo-b"><div class="geo-lbl">RECON ALIGN</div><div class="geo-val" id="g-rec">—</div></div>
+    </div>
+  </div>
+  <div class="panel-title">MODEL GEO-VIX</div>
+  <div id="mbars"></div>
+</div>
+
+<div id="right">
+  <div class="panel-title">LIVE METRICS</div>
+  <div class="mcard">
+    <div class="mname">ROBUSTNESS RATIO (R)</div>
+    <div class="mval" id="m-r">—</div>
+    <div class="msub" id="m-r-sub">V_ens / V_per</div>
+  </div>
+  <div class="mcard">
+    <div class="mname">ENSEMBLE VARIANCE</div>
+    <div class="mval" id="m-vens">—</div>
+    <div class="msub">model disagreement</div>
+  </div>
+  <div class="mcard">
+    <div class="mname">PERTURBATION VARIANCE</div>
+    <div class="mval" id="m-vper">—</div>
+    <div class="msub">self-consistency under pressure</div>
+  </div>
+  <div class="mcard">
+    <div class="mname">IMPORTANCE</div>
+    <div class="mval" id="m-imp">—</div>
+    <div class="msub">Shannon bits</div>
+  </div>
+  <div class="mcard">
+    <div class="mname">SYNTHESIS</div>
+    <div style="font-size:11px;color:#00aaff;margin-top:4px" id="m-synth">—</div>
+  </div>
+</div>
+
+<div id="ticker-wrap">
+  <div id="ticker-badge">EIGEN-VIX</div>
+  <div id="ticker-track"><span id="ticker-text">INITIALIZING…</span></div>
+</div>
+
+<script>
+function clock(){document.getElementById('clock').textContent=new Date().toUTCString().replace('GMT','UTC')}
+setInterval(clock,1000);clock();
+
+const MCOLS={ChatGPT:'#00aaff',Claude:'#aa88ff',Gemini:'#ffaa00',DeepSeek:'#ff4444',Grok:'#00ff88'};
+function vcol(v){return v>=55?'#ff4444':v>=40?'#ffaa00':'#00ff88'}
+function rcls(r){if(r===null||r===undefined)return '';if(r<1.0)return 'r-crack';if(r>1.15)return 'r-hi';return 'r-ok'}
+
+async function fetchData(){
+  try{
+    const d=await fetch('/data').then(r=>r.json());
+    render(d);
+  }catch(e){console.warn(e)}
+}
+
+function render(d){
+  const stories=d.stories||[];
+  // Story list
+  document.getElementById('story-list').innerHTML=
+    stories.slice().reverse().slice(0,6).map(s=>{
+      const maxvix=Math.max(...(s.callouts||[]).map(c=>c.geo_vix||0));
+      const cls=maxvix>=55?'hi':maxvix>=40?'md':'';
+      const chips=(s.callouts||[]).map(c=>
+        `<span class="chip ${(c.geo_vix||0)>=55?'hi':''}">${c.model} ${(c.geo_vix||0).toFixed(1)}</span>`
+      ).join('');
+      const sw=s.synthesis_words||s.geo_concepts?.map(x=>x[0])||[];
+      const synth=sw.length?`<div class="synth">⟳ ${sw.slice(0,3).join(' | ')}</div>`:'';
+      const vw=(s.void_words||[]);
+      const voidr=vw.length?`<div class="void-r">⊥ ${vw.join(' | ')}</div>`:'';
+      const r=s.robustness_ratio;
+      const rbadge=r!=null?`<span class="rbadge ${rcls(r)}">R=${r.toFixed(4)}</span>`:'';
+      return `<div class="story-card ${cls}">
+        <div class="s-title">${s.story_title||'—'}</div>
+        <div class="s-meta">${(s.importance_bits||0).toFixed(2)} bits · ${(s.timestamp||'').slice(0,16).replace('T',' ')} UTC</div>
+        <div class="chips">${chips}</div>${synth}${voidr}${rbadge}
+      </div>`;
+    }).join('');
+
+  // Geometry — use latest record
+  const lat=stories.length?stories[stories.length-1]:null;
+  if(lat){
+    // centroid: prefer centroid_words, fall back to geo_concepts
+    const cw=lat.centroid_words?.length?lat.centroid_words:
+              (lat.geo_concepts||[]).map(x=>Array.isArray(x)?x[0]:x).slice(0,3);
+    document.getElementById('centroid-words').innerHTML=
+      cw.map(w=>`<span class="cword">${w.toUpperCase()}</span>`).join('');
+
+    // void
+    const vw=lat.void_words||[];
+    document.getElementById('void-words').innerHTML=
+      vw.map(w=>`<span class="vword">${w}</span>`).join('');
+
+    // density
+    document.getElementById('dens-bar').style.width=((lat.geo_density||0)*100)+'%';
+
+    // spectral
+    const sp=lat.spectral||{};
+    document.getElementById('g-res').textContent=sp.resonance!=null?sp.resonance.toFixed(4):'—';
+    document.getElementById('g-int').textContent=sp.interference!=null?sp.interference.toFixed(4):'—';
+    document.getElementById('g-ent').textContent=sp.entropy!=null?sp.entropy.toFixed(4):'—';
+    const rc=lat.recon_alignment;
+    const re=document.getElementById('g-rec');
+    re.textContent=rc!=null?rc.toFixed(4):'—';
+    re.className='geo-val'+(rc!=null&&rc<-0.2?' c':rc!=null&&rc<0?' w':'');
+
+    // model bars
+    document.getElementById('mbars').innerHTML=
+      (lat.callouts||[]).map(c=>{
+        const pct=Math.min(100,(c.geo_vix||0)/80*100);
+        return `<div class="mb-row">
+          <div class="mb-name">${c.model}</div>
+          <div class="mb-track"><div class="mb-fill" style="width:${pct}%;background:${vcol(c.geo_vix||0)}"></div></div>
+          <div class="mb-val">${(c.geo_vix||0).toFixed(1)}</div>
+        </div>`;
+      }).join('');
+
+    // right metrics
+    const r=lat.robustness_ratio;
+    const re2=document.getElementById('m-r');
+    re2.textContent=r!=null?r.toFixed(4):'—';
+    re2.className='mval'+(r!=null&&r<1.0?' w':'');
+    document.getElementById('m-r-sub').textContent=
+      r!=null&&r<1.0?'⚠ VULNERABILITY BASIN':'V_ens / V_per';
+    document.getElementById('m-vens').textContent=lat.v_ens!=null?lat.v_ens.toFixed(4):'—';
+    document.getElementById('m-vper').textContent=lat.v_per!=null?lat.v_per.toFixed(4):'—';
+    document.getElementById('m-imp').textContent=lat.importance_bits!=null?lat.importance_bits.toFixed(2):'—';
+    const sw2=lat.synthesis_words||[];
+    document.getElementById('m-synth').textContent=sw2.length?sw2.join(' | '):'—';
+  }
+
+  // ticker
+  if(d.ticker) document.getElementById('ticker-text').textContent=d.ticker;
+}
+
+fetchData();
+setInterval(fetchData,8000);
+</script>
+</body>
+</html>
