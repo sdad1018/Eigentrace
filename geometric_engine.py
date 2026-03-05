@@ -190,3 +190,64 @@ def _get_vocab_tensor(vocab_dir: str = "./vocab"):
 def run(responses: list, concept_bank: Optional[list] = None, top_k: int = 5,
         vocab_dir: str = "./vocab", headline: str = ""):
     return get_engine().run(responses, concept_bank, top_k, vocab_dir, headline)
+
+
+def calculate_spectral_resonance(response_vecs: list, device: str = "cuda") -> dict:
+    """
+    Logos Transform — maps real-valued response embeddings into spectral space.
+
+    Takes a list of np.ndarray (1024,) — one per model response.
+    Stacks into (N, 1024), runs rfft along the embedding dimension (dim=-1),
+    and computes three metrics:
+
+      resonance:   Mean magnitude of the DC component (bin 0) — shared low-freq
+                   structure across all models. High = consensus on fundamentals.
+
+      interference: Mean magnitude of high-frequency components (bins 1+) —
+                   divergence in fine-grained semantic content. High = models
+                   are pulling in different directions at the detail level.
+
+      spectral_entropy: True Shannon entropy over the power spectrum.
+                   Low = energy concentrated in a few bins (coordinated).
+                   High = energy spread across many bins (incoherent/diverse).
+    """
+    import torch
+    import numpy as np
+
+    if not response_vecs or len(response_vecs) < 2:
+        return {"resonance": 0.0, "interference": 0.0, "spectral_entropy": 0.0}
+
+    try:
+        dev = torch.device(device if torch.cuda.is_available() else "cpu")
+
+        # Stack to (N, 1024) float32
+        mat = np.stack(response_vecs, axis=0).astype(np.float32)   # (N, 1024)
+        t   = torch.tensor(mat, device=dev)                         # (N, 1024)
+
+        # rfft along embedding dim — treats each 1024-dim vec as a 1D signal
+        # output shape: (N, 513) complex
+        spec = torch.fft.rfft(t, dim=-1)                            # (N, 513)
+
+        # DC component: bin 0 — captures mean signal level per model
+        dc        = spec[:, 0].abs()                                # (N,)
+        resonance = float(dc.mean().item())
+
+        # High-freq components: bins 1+ — detail-level divergence
+        hf           = spec[:, 1:].abs()                            # (N, 512)
+        interference = float(hf.mean().item())
+
+        # True Shannon entropy over the full power spectrum (N, 513)
+        power = spec.abs() ** 2                                     # (N, 513)
+        p     = power / power.sum(dim=-1, keepdim=True).clamp_min(1e-9)
+        spectral_entropy = float(-(p * torch.log(p + 1e-9)).sum(dim=-1).mean().item())
+
+        return {
+            "resonance":        round(resonance, 4),
+            "interference":     round(interference, 4),
+            "spectral_entropy": round(spectral_entropy, 4),
+        }
+
+    except Exception as e:
+        import logging
+        logging.getLogger("geometric_engine").warning(f"spectral_resonance failed: {e}")
+        return {"resonance": 0.0, "interference": 0.0, "spectral_entropy": 0.0}

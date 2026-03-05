@@ -129,9 +129,12 @@ class AuditRecord:
     responses:       list
     callouts:        list
     ticker_line:     str
-    geo_top_concept: str   = ""
-    geo_density:     float = 0.0
-    geo_concepts:    list  = field(default_factory=list)
+    geo_top_concept:      str   = ""
+    geo_density:          float = 0.0
+    geo_concepts:         list  = field(default_factory=list)
+    spectral_resonance:   float = 0.0
+    spectral_interference: float = 0.0
+    spectral_entropy:     float = 0.0
 
 # ── seen-story cache ──────────────────────────────────────────────────────────
 
@@ -480,7 +483,7 @@ def detect_callouts(responses: list) -> list:
 def write_ticker(lines: list) -> None:
     try:
         TICKER_FILE.parent.mkdir(parents=True, exist_ok=True)
-        TICKER_FILE.write_text("  •  ".join(lines))
+        TICKER_FILE.write_text("  •  ".join(lines), encoding="utf-8")
     except Exception as e:
         log.warning(f"Ticker write failed: {e}")
 
@@ -554,6 +557,7 @@ def run_audit_cycle(seen: dict) -> list:
             log.info(f"Eigentrace: {geo.ticker_str()}")
 
         # ── geometric VIX: per-model cosine distance from void centroid ──────
+        _response_vecs = []   # collect (1024,) rvecs for spectral analysis
         if geo and geo.void_centroid is not None:
             from geometric_engine import get_engine as _get_engine
             _eng = _get_engine()
@@ -572,6 +576,13 @@ def run_audit_cycle(seen: dict) -> list:
                         sim = float(np.dot(rvec, vvec) /
                                     (np.linalg.norm(rvec) * np.linalg.norm(vvec) + 1e-8))
                         r.void_proximity[vword] = round(sim, 3)
+                _response_vecs.append(rvec)
+
+        # ── spectral analysis (Logos Transform) ──────────────────────────────
+        spectral = {"resonance": 0.0, "interference": 0.0, "spectral_entropy": 0.0}
+        if len(_response_vecs) >= 2:
+            from geometric_engine import calculate_spectral_resonance
+            spectral = calculate_spectral_resonance(_response_vecs)
 
         # ── rich display ────────────���─────────────────────────────────────────
         tbl = Table(title=f"Eigen-VIX — {story.title[:60]}", show_lines=True)
@@ -615,6 +626,13 @@ def run_audit_cycle(seen: dict) -> list:
                 title="[bold magenta]EIGENTRACE — Consensus Geometry[/bold magenta]",
                 border_style="magenta",
             ))
+        if geo and spectral["resonance"] > 0.0:
+            console.print(
+                f"[bold cyan][SPECTRAL][/bold cyan] "
+                f"Resonance: [green]{spectral['resonance']:.4f}[/green]  |  "
+                f"Interference: [yellow]{spectral['interference']:.4f}[/yellow]  |  "
+                f"Entropy: [magenta]{spectral['spectral_entropy']:.4f}[/magenta]"
+            )
 
         if callouts:
             console.print(Panel(
@@ -651,6 +669,9 @@ def run_audit_cycle(seen: dict) -> list:
             geo_top_concept=geo.top_concept        if geo else "",
             geo_density=geo.consensus_density      if geo else 0.0,
             geo_concepts=geo.top_concepts[:3]      if geo else [],
+            spectral_resonance=spectral["resonance"],
+            spectral_interference=spectral["interference"],
+            spectral_entropy=spectral["spectral_entropy"],
         ))
 
     _save_seen(seen)
