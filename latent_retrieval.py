@@ -1,33 +1,6 @@
 #!/usr/bin/env python3
 """
 latent_retrieval.py — Runtime vocabulary tensor query module for EigenTrace.
-
-Replaces hardcoded CONCEPT_BANK with global latent space search.
-Loads the pre-built vocabulary tensor into RAM and provides:
-
-  1. orthogonal_concepts(centroid, responses, k=3)
-     → finds the k words in English that live at the coordinate the
-        consensus cluster is avoiding
-
-  2. gap_concepts(centroid, baseline, k=3)
-     → finds the k words closest to the vector pointing from
-        consensus toward the unaligned baseline
-
-  3. void_concepts(centroid, responses, baseline, k=3)
-     → combines both signals: the orthogonal direction weighted by
-        the baseline pull direction
-
-All queries execute in <10ms on CPU for 60k vocabulary.
-On GPU it's <1ms.
-
-Usage:
-    from latent_retrieval import VocabTensor
-
-    vt = VocabTensor("./vocab")
-
-    # After you have your 5 response embeddings + centroid + baseline:
-    results = vt.void_concepts(centroid_vec, response_vecs, baseline_vec, k=3)
-    # returns: [("theology", 0.412), ("quarantine", 0.387), ("ontological", 0.351)]
 """
 
 import json
@@ -36,199 +9,252 @@ from pathlib import Path
 
 import numpy as np
 import torch
+import spacy
+from wordfreq import zipf_frequency
+
+# Linguistic scrub — load once at module level
+try:
+    _nlp = spacy.load("en_core_web_sm", disable=["parser", "ner", "lemmatizer"])
+except OSError:
+    _nlp = None
 
 log = logging.getLogger("latent_retrieval")
 
 
 class VocabTensor:
-    """
-    In-memory vocabulary tensor for full-latent-space concept retrieval.
-
-    Loads once, queries forever. All vectors are pre-normalized,
-    so dot product = cosine similarity.
-    """
-
     def __init__(self, vocab_dir: str = "./vocab", device: str | None = None):
         vocab_dir = Path(vocab_dir)
-
-        # Load metadata
         meta_path = vocab_dir / "global_vocab.json"
         with open(meta_path) as f:
             meta = json.load(f)
-
         self.words: list[str] = meta["words"]
-        self.dim: int = meta["dim"]
-        self.count: int = meta["count"]
-        self.model_name: str = meta["model"]
-
-        # Load tensor
+        self.dim: int         = meta["dim"]
+        self.count: int       = meta["count"]
+        self.model_name: str  = meta["model"]
         tensor_path = vocab_dir / "global_vocab.pt"
         if device is None:
             device = "cuda" if torch.cuda.is_available() else "cpu"
-
         self.device = device
         self.tensor: torch.Tensor = torch.load(
             tensor_path, map_location=device, weights_only=True
-        )  # shape: (N, D)
-
-        log.info(
-            f"VocabTensor loaded: {self.count} words, dim={self.dim}, "
-            f"device={self.device}"
         )
-
-    # ------------------------------------------------------------------
-    # Internal helpers
-    # ------------------------------------------------------------------
+        log.info(f"VocabTensor loaded: {self.count} words, dim={self.dim}, device={self.device}")
 
     def _to_tensor(self, vec) -> torch.Tensor:
-        """Convert numpy/list to normalized torch tensor on device."""
         if isinstance(vec, np.ndarray):
             t = torch.from_numpy(vec).float()
         elif isinstance(vec, torch.Tensor):
             t = vec.float()
         else:
             t = torch.tensor(vec, dtype=torch.float32)
-
         if t.dim() == 1:
-            t = t.unsqueeze(0)  # (1, D)
-
-        # Normalize
+            t = t.unsqueeze(0)
         t = t / t.norm(dim=-1, keepdim=True).clamp(min=1e-8)
         return t.to(self.device)
 
     def _query(self, direction: torch.Tensor, k: int = 3) -> list[tuple[str, float]]:
-        """
-        Find the k vocabulary words most aligned with a direction vector.
-
-        Args:
-            direction: (1, D) normalized query vector
-            k: number of results
-
-        Returns:
-            List of (word, cosine_similarity) tuples, descending by similarity.
-        """
-        # Single matrix multiply: (1, D) @ (D, N) → (1, N)
-        sims = (direction @ self.tensor.T).squeeze(0)  # (N,)
-
+        sims = (direction @ self.tensor.T).squeeze(0)
         topk = torch.topk(sims, k=min(k, self.count))
         results = []
         for idx, score in zip(topk.indices.tolist(), topk.values.tolist()):
             results.append((self.words[idx], round(score, 4)))
-
         return results
 
-    # ------------------------------------------------------------------
-    # Public API
-    # ------------------------------------------------------------------
+    def nearest_concepts(self, vector: np.ndarray, k: int = 5) -> list[tuple[str, float]]:
+        """What they said: k vocab words closest to the centroid."""
+        v = self._to_tensor(vector)
+        return self._query(v, k=k)
 
-    def orthogonal_concepts(
+    def in_domain_void(
         self,
         centroid: np.ndarray,
         response_vecs: np.ndarray,
         k: int = 3,
+        domain_threshold: float = 0.45,
+        headline_vec: np.ndarray = None,
+        relevance_pool: int = 500,
+        outer_threshold: float = 0.52,
+        inner_threshold: float = 0.60,
     ) -> list[tuple[str, float]]:
         """
-        Find concepts in the void orthogonal to the consensus cluster.
+        Pure threshold donut geometry in 1024-dimensional space.
 
-        Method:
-          1. Compute the principal axis of the response cluster (first
-             eigenvector of the response covariance matrix).
-          2. Project the centroid out of this axis to find the direction
-             the cluster is NOT exploring.
-          3. Query the full vocabulary along that orthogonal direction.
+        Defines the void as words satisfying TWO simultaneous conditions:
 
-        This answers: "What concept lives at the coordinate all 5 models
-        agreed to avoid?"
+          OUTER RING  — sim_to_headline  > outer_threshold (0.52)
+                        "this word belongs to the topic"
 
-        Args:
-            centroid:      (D,) consensus centroid vector
-            response_vecs: (N, D) matrix of N model response embeddings
-            k:             number of concepts to return
+          INNER HOLE  — sim_to_centroid  < inner_threshold (0.60)
+                        "this word was NOT what the models said"
+
+        The donut between these two spheres contains exactly the words
+        that are relevant to the story but absent from the consensus.
+        No arbitrary pool size. No count cutoff. Pure geometry.
+
+        Thresholds have direct meaning:
+          outer_threshold: how loosely/tightly related to the headline
+          inner_threshold: how far from the consensus to count as avoided
+
+        Falls back to widening outer_threshold if donut is empty.
         """
-        C = self._to_tensor(centroid)        # (1, D)
-        R = self._to_tensor(response_vecs)   # (N, D)
+        C = self._to_tensor(centroid)
 
-        # Covariance of response cluster (centered on centroid)
-        centered = R - C                     # (N, D)
-        cov = centered.T @ centered          # (D, D)
+        # All 60k centroid similarities in one matmul
+        centroid_sims = (C @ self.tensor.T).squeeze(0)      # (60000,)
 
-        # First eigenvector = dominant direction of agreement
-        # (using torch.linalg.eigh for symmetric matrices — returns
-        #  eigenvalues in ascending order, so last = largest)
+        # Anchor for outer ring: headline if available, else centroid
+        if headline_vec is not None:
+            anchor = self._to_tensor(headline_vec)
+        else:
+            anchor = C
+        headline_sims = (anchor @ self.tensor.T).squeeze(0) # (60000,)
+
+        # --- Donut geometry ---
+        # Adaptive inner threshold: scales with consensus density
+        # High density (0.92+) = models very tightly agree = raise the bar
+        # Low density (0.80)   = looser consensus = standard threshold
+        # Formula: effective = inner_threshold + (density - 0.80) * 0.5
+        # Examples:
+        #   density=0.80 → 0.65 + 0.00 = 0.65
+        #   density=0.90 → 0.65 + 0.05 = 0.70
+        #   density=0.93 → 0.65 + 0.065 = 0.715
+        density_val = 1.0  # normalized centroid self-dot is always 1.0
+        # Use actual response_vecs density instead
+        if response_vecs is not None:
+            rv = torch.tensor(np.array(response_vecs), dtype=torch.float32)
+            if rv.dim() == 1:
+                rv = rv.unsqueeze(0)          # (1024,) → (1, 1024)
+            # rv is now guaranteed (N, 1024)
+            if rv.shape[0] > 1:
+                rv = rv / rv.norm(dim=1, keepdim=True).clamp(min=1e-8)
+                gram = rv @ rv.T              # (N, N)
+                density_val = float(gram.mean())
+            else:
+                density_val = 0.85            # single vec — no density
+        else:
+            density_val = 0.85
+        adaptive_inner = inner_threshold + max(0.0, (density_val - 0.80) * 0.20)
+        adaptive_inner = min(adaptive_inner, 0.78)  # hard cap
+
+        outer_mask  = headline_sims  > outer_threshold      # in the topic
+        inner_mask  = centroid_sims  < adaptive_inner       # not what they said
+        donut_mask  = outer_mask & inner_mask               # the void
+
+        # Adaptive fallback: widen both rings if donut is too small
+        # Phase 1: tighten inner (accept less-avoided words)
+        # Phase 2: loosen outer (accept less topically central words)
+        attempts = 0
+        current_outer = outer_threshold
+        current_inner = adaptive_inner
+        while int(donut_mask.sum().item()) < k and attempts < 8:
+            if attempts < 4:
+                current_inner += 0.03
+            else:
+                current_outer -= 0.03
+            outer_mask = headline_sims  > current_outer
+            inner_mask = centroid_sims  < current_inner
+            donut_mask = outer_mask & inner_mask
+            attempts += 1
+
+        if int(donut_mask.sum().item()) == 0:
+            return []
+
+        donut_indices      = torch.where(donut_mask)[0]         # (M,)
+        donut_centroid_sims = centroid_sims[donut_indices]      # (M,)
+
+        # Sort ascending — most avoided (lowest centroid sim) first
+        sorted_order = torch.argsort(donut_centroid_sims)
+
+        # Build headline token exclusion set
+        # Prevents literal headline words from appearing in void
+        headline_tokens = set()
+        if headline_vec is not None:
+            pass  # tokens extracted below from words list
+        # We exclude any void word whose lemma overlaps with top-5
+        # headline-closest words (catches "laughter" from "laugh")
+        top5_headline = set()
+        if headline_vec is not None:
+            _, top5_idx = torch.topk(headline_sims, k=5)
+            top5_headline = {self.words[i.item()].lower() for i in top5_idx}
+
+        results = []
+        seen = set()
+        for i in sorted_order:
+            if len(results) >= k:
+                break
+            idx   = donut_indices[i].item()
+            word  = self.words[idx]
+            score = round(donut_centroid_sims[i].item(), 4)
+            if word in seen:
+                continue
+            # Skip if word is too close to headline surface tokens
+            if word.lower() in top5_headline:
+                continue
+
+            # ── Option C: Frequency floor ─────────────────────────────────
+            # Zipf scale: 0-8. News-relevant words score >= 3.0.
+            # "berinse" = ~0.0, "civilian" = ~5.5, "sanctions" = ~4.2
+            w_lower = word.lower()
+            # For multi-word phrases use the first content word
+            freq_word = w_lower.split()[0] if ' ' in w_lower else w_lower
+            if zipf_frequency(freq_word, 'en') < 3.5:
+                continue
+
+            # ── Option B: POS filter ──────────────────────────────────────
+            # Only nouns, proper nouns, adjectives — no adverbs, no verbs,
+            # no archaic fossil forms
+            if _nlp is not None:
+                doc = _nlp(w_lower)
+                if not doc:
+                    continue
+                # For multi-word phrases check the root/head token
+                has_noun = any(t.pos_ in ("NOUN", "PROPN") for t in doc)
+                if not has_noun:
+                    continue
+                    continue
+
+            seen.add(word)
+            results.append((word, score))
+
+        # Compute void centroid in tensor space before stringifying
+        if results:
+            void_indices = [donut_indices[i].item()
+                            for i in sorted_order
+                            if self.words[donut_indices[i].item()] in {w for w, _ in results}]
+            void_vecs    = self.tensor[void_indices]          # (k, 1024)
+            void_centroid = void_vecs.mean(dim=0)             # (1024,)
+            void_centroid = void_centroid / void_centroid.norm().clamp(min=1e-8)
+            void_centroid_np = void_centroid.cpu().float().numpy()
+        else:
+            void_centroid_np = None
+
+        return results, void_centroid_np
+
+    # Legacy methods kept for compatibility
+    def orthogonal_concepts(self, centroid, response_vecs, k=3):
+        C = self._to_tensor(centroid)
+        R = self._to_tensor(response_vecs)
+        centered = R - C
+        cov = centered.T @ centered
         eigenvalues, eigenvectors = torch.linalg.eigh(cov)
-        principal = eigenvectors[:, -1].unsqueeze(0)  # (1, D)
-
-        # Orthogonal component of centroid w.r.t. principal axis
-        # This is what's left when you subtract the "agreement" direction
-        projection = (C @ principal.T) * principal    # (1, D)
-        orthogonal = C - projection                   # (1, D)
-
-        # Normalize and query
+        principal = eigenvectors[:, -1].unsqueeze(0)
+        projection = (C @ principal.T) * principal
+        orthogonal = C - projection
         orthogonal = orthogonal / orthogonal.norm(dim=-1, keepdim=True).clamp(min=1e-8)
-
         return self._query(orthogonal, k=k)
 
-    def gap_concepts(
-        self,
-        centroid: np.ndarray,
-        baseline: np.ndarray,
-        k: int = 3,
-    ) -> list[tuple[str, float]]:
-        """
-        Find concepts along the vector from consensus toward baseline.
-
-        Method:
-          1. Compute direction: baseline - centroid (normalized)
-          2. Query vocabulary along that direction.
-
-        This answers: "What concept does the unaligned model pull toward
-        that the aligned models pulled away from?"
-
-        Args:
-            centroid: (D,) consensus centroid vector
-            baseline: (D,) baseline (unaligned) model vector
-            k:        number of concepts to return
-        """
-        C = self._to_tensor(centroid)    # (1, D)
-        B = self._to_tensor(baseline)    # (1, D)
-
-        gap = B - C                      # (1, D)
+    def gap_concepts(self, centroid, baseline, k=3):
+        C = self._to_tensor(centroid)
+        B = self._to_tensor(baseline)
+        gap = B - C
         gap = gap / gap.norm(dim=-1, keepdim=True).clamp(min=1e-8)
-
         return self._query(gap, k=k)
 
-    def void_concepts(
-        self,
-        centroid: np.ndarray,
-        response_vecs: np.ndarray,
-        baseline: np.ndarray,
-        k: int = 3,
-        ortho_weight: float = 0.6,
-        gap_weight: float = 0.4,
-    ) -> list[tuple[str, float]]:
-        """
-        Combined retrieval: orthogonal void + baseline gap.
-
-        Blends two signals:
-          - The direction orthogonal to the consensus cluster
-          - The direction from consensus toward the unaligned baseline
-
-        The blend captures both "what the cluster avoids geometrically"
-        and "where the unfiltered model was trying to go."
-
-        Args:
-            centroid:      (D,) consensus centroid
-            response_vecs: (N, D) model response embeddings
-            baseline:      (D,) baseline model embedding
-            k:             number of concepts to return
-            ortho_weight:  weight for orthogonal signal (default 0.6)
-            gap_weight:    weight for baseline gap signal (default 0.4)
-        """
+    def void_concepts(self, centroid, response_vecs, baseline, k=3,
+                      ortho_weight=0.6, gap_weight=0.4):
         C = self._to_tensor(centroid)
         R = self._to_tensor(response_vecs)
         B = self._to_tensor(baseline)
-
-        # --- Orthogonal direction ---
         centered = R - C
         cov = centered.T @ centered
         eigenvalues, eigenvectors = torch.linalg.eigh(cov)
@@ -236,62 +262,26 @@ class VocabTensor:
         projection = (C @ principal.T) * principal
         ortho = C - projection
         ortho = ortho / ortho.norm(dim=-1, keepdim=True).clamp(min=1e-8)
-
-        # --- Gap direction ---
         gap = B - C
         gap = gap / gap.norm(dim=-1, keepdim=True).clamp(min=1e-8)
-
-        # --- Blend ---
         combined = ortho_weight * ortho + gap_weight * gap
         combined = combined / combined.norm(dim=-1, keepdim=True).clamp(min=1e-8)
-
         return self._query(combined, k=k)
 
-    def nearest_concepts(
-        self,
-        vector: np.ndarray,
-        k: int = 5,
-    ) -> list[tuple[str, float]]:
-        """
-        Simple nearest-neighbor lookup: find the k words closest to any
-        arbitrary vector in embedding space.
-
-        Useful for debugging, sanity checks, and direct inspection.
-        """
-        v = self._to_tensor(vector)
-        return self._query(v, k=k)
-
-
-# ---------------------------------------------------------------------------
-# Quick self-test
-# ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
     import sys
-
     logging.basicConfig(level=logging.INFO)
-
     vocab_dir = sys.argv[1] if len(sys.argv) > 1 else "./vocab"
     vt = VocabTensor(vocab_dir)
-
-    # Smoke test with random vectors
     D = vt.dim
     rng = np.random.default_rng(42)
-
-    fake_centroid = rng.standard_normal(D).astype(np.float32)
+    fake_centroid  = rng.standard_normal(D).astype(np.float32)
     fake_responses = rng.standard_normal((5, D)).astype(np.float32)
-    fake_baseline = rng.standard_normal(D).astype(np.float32)
-
-    print("\n--- orthogonal_concepts (random) ---")
-    for word, score in vt.orthogonal_concepts(fake_centroid, fake_responses, k=5):
+    print("\n--- nearest_concepts (what they said) ---")
+    for word, score in vt.nearest_concepts(fake_centroid, k=5):
         print(f"  {word:30s}  {score:+.4f}")
-
-    print("\n--- gap_concepts (random) ---")
-    for word, score in vt.gap_concepts(fake_centroid, fake_baseline, k=5):
+    print("\n--- in_domain_void (what they avoided) ---")
+    for word, score in vt.in_domain_void(fake_centroid, fake_responses, k=5):
         print(f"  {word:30s}  {score:+.4f}")
-
-    print("\n--- void_concepts (random) ---")
-    for word, score in vt.void_concepts(fake_centroid, fake_responses, fake_baseline, k=5):
-        print(f"  {word:30s}  {score:+.4f}")
-
     print("\nAll queries returned. VocabTensor is operational.")

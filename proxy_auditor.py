@@ -31,6 +31,7 @@ from rich.text import Text
 
 from eigentrace import score as eigentrace_score
 import geometric_engine as ge
+import numpy as np
 
 console = Console()
 log = logging.getLogger("proxy_auditor")
@@ -111,10 +112,12 @@ class ModelResponse:
     name:       str
     text:       str
     eigen_vix:  float = 0.0
+    surp_vix:   float = 0.0   # token surprisal score (preserved after geo rewrite)
     tokens:     list  = field(default_factory=list)
     surprisals: list  = field(default_factory=list)
-    skipped:    bool  = False
-    error:      str   = ""
+    skipped:        bool  = False
+    error:          str   = ""
+    void_proximity: dict  = field(default_factory=dict)  # {word: cosine_sim_to_response}
 
 @dataclass
 class AuditRecord:
@@ -546,37 +549,69 @@ def run_audit_cycle(seen: dict) -> list:
         # ── geometric consensus ───────────────────────────────────────────────
         active_texts = [r.text for r in responses
                         if not r.skipped and not r.error and r.text]
-        geo = ge.run(active_texts) if len(active_texts) >= 2 else None
+        geo = ge.run(active_texts, headline=story.title) if len(active_texts) >= 2 else None
         if geo:
             log.info(f"Eigentrace: {geo.ticker_str()}")
 
+        # ── geometric VIX: per-model cosine distance from void centroid ──────
+        if geo and geo.void_centroid is not None:
+            from geometric_engine import get_engine as _get_engine
+            _eng = _get_engine()
+            vc   = geo.void_centroid                          # (1024,) np.ndarray
+            for r in responses:
+                if r.skipped or r.error or not r.text:
+                    continue
+                rvec = _eng.embed_texts([r.text])[0]          # (1024,)
+                cos  = float(np.dot(rvec, vc) /
+                             (np.linalg.norm(rvec) * np.linalg.norm(vc) + 1e-8))
+                r.surp_vix  = r.eigen_vix                     # preserve surprisal
+                r.eigen_vix = round(100.0 * (1.0 - cos), 1)  # geometric VIX
+                # Per-void-word proximity
+                if geo and geo.void_word_vecs:
+                    for vword, vvec in geo.void_word_vecs.items():
+                        sim = float(np.dot(rvec, vvec) /
+                                    (np.linalg.norm(rvec) * np.linalg.norm(vvec) + 1e-8))
+                        r.void_proximity[vword] = round(sim, 3)
+
         # ── rich display ────────────���─────────────────────────────────────────
         tbl = Table(title=f"Eigen-VIX — {story.title[:60]}", show_lines=True)
-        tbl.add_column("Model",     style="bold")
-        tbl.add_column("Eigen-VIX", justify="right")
+        tbl.add_column("Model",          style="bold")
+        tbl.add_column("Geo-VIX",        justify="right")
+        tbl.add_column("Surp-VIX",       justify="right")
         tbl.add_column("Label")
         tbl.add_column("Status")
+        tbl.add_column("Void Proximity", style="dim")
         for r in responses:
             if r.skipped:
-                tbl.add_row(r.name, "—", "no key", "[dim]skipped[/dim]")
+                tbl.add_row(r.name, "—", "—", "no key", "[dim]skipped[/dim]", "—")
             elif r.error:
-                tbl.add_row(r.name, "—", "error", f"[red]{r.error[:40]}[/red]")
+                tbl.add_row(r.name, "—", "—", "error", f"[red]{r.error[:40]}[/red]", "—")
             else:
                 border = ("red"    if r.eigen_vix >= 60 else
                           "yellow" if r.eigen_vix >= 35 else "green")
+                prox_str = "  ".join(
+                    f"{w}=[cyan]{s:.2f}[/cyan]"
+                    for w, s in r.void_proximity.items()
+                ) if r.void_proximity else "—"
                 tbl.add_row(r.name, f"{r.eigen_vix:5.1f}",
+                            f"{r.surp_vix:5.1f}" if r.surp_vix else "—",
                             eigen_label(r.eigen_vix),
-                            f"[{border}]●[/{border}]")
+                            f"[{border}]●[/{border}]",
+                            prox_str)
         console.print(tbl)
 
         if geo:
             concepts_str = "  |  ".join(
                 f"{c} ({s:+.3f})" for c, s in geo.top_concepts[:3]
             )
+            void_str = "  |  ".join(
+                f"{c} ({s:+.3f})" for c, s in geo.void_concepts[:3]
+            ) if geo.void_concepts else "—"
             console.print(Panel(
                 f"density={geo.consensus_density:.4f}  "
                 f"λ_min={geo.smallest_eigenvalue:.6f}\n"
-                f"→  {concepts_str}",
+                f"→  {concepts_str}\n"
+                f"⊥  {void_str}",
                 title="[bold magenta]EIGENTRACE — Consensus Geometry[/bold magenta]",
                 border_style="magenta",
             ))

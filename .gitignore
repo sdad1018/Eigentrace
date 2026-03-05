@@ -5,3 +5,14 @@ vocab/*.pt
 audit_log.jsonl
 tmp/
 .env
+
+# Runtime artifacts
+audit_log.jsonl
+tmp/
+
+# Vocab tensors (large binary files)
+vocab/global_vocab.pt
+vocab/global_vocab.json
+
+# Patch backups
+*.bak
