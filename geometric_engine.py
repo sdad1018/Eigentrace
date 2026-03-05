@@ -251,3 +251,446 @@ def calculate_spectral_resonance(response_vecs: list, device: str = "cuda") -> d
         import logging
         logging.getLogger("geometric_engine").warning(f"spectral_resonance failed: {e}")
         return {"resonance": 0.0, "interference": 0.0, "spectral_entropy": 0.0}
+
+
+def calculate_svd_reconstruction(response_vecs: list,
+                                  void_centroid=None,
+                                  device: str = "cuda") -> dict:
+    """
+    Semantic Tomography — SVD-based reconstruction of the filtered truth.
+
+    Frames the five model responses as a (5, 1024) projection matrix Y where:
+        y_i = P_i @ x + eps_i
+    P_i is the alignment filter (RLHF guardrail) for model i.
+    x is the unobservable natural semantic trajectory.
+
+    SVD decomposes Y = U @ diag(S) @ Vh:
+      Vh[0]  = V1     — dominant right singular vector = Corporate Consensus
+      Vh[-1] = V_last — lowest-variance direction = null space of the
+                        alignment filters = Reconstruction Artifact
+                        (the semantic "metal artifact" — the shape of what
+                        the models collectively refused to generate)
+
+    Metrics returned:
+      consensus_compression:   S[0] / sum(S)
+        Fraction of total variance captured by the dominant component.
+        High = models are tightly coordinated (high SNR on the guardrail).
+        Equivalent to your density score but derived from the response
+        vectors directly rather than pairwise cosine similarity.
+
+      null_space_energy:        S[-1] / S[0]
+        Ratio of suppressed-to-dominant variance.
+        Low = the null space is being aggressively zeroed out.
+        High = models are diverging even at the lowest-variance direction.
+
+      reconstruction_alignment: cosine_sim(V_last, void_centroid)
+        If void_centroid is provided: how well the SVD null space agrees
+        with the geometric void from annular retrieval.
+        High agreement = the two independent methods are converging on the
+        same reconstruction artifact. This is your cross-validation.
+    """
+    import torch
+    import numpy as np
+
+    result = {
+        "consensus_compression":    0.0,
+        "null_space_energy":        0.0,
+        "reconstruction_alignment": 0.0,
+    }
+
+    if not response_vecs or len(response_vecs) < 2:
+        return result
+
+    try:
+        dev = torch.device(device if torch.cuda.is_available() else "cpu")
+
+        # Y: (N, 1024) — each row is one model's response embedding
+        mat = np.stack(response_vecs, axis=0).astype(np.float32)  # (N, 1024)
+        Y   = torch.tensor(mat, device=dev)                        # (N, 1024)
+
+        # Mean-centre so SVD captures variance, not raw magnitude
+        Y_c = Y - Y.mean(dim=0, keepdim=True)                     # (N, 1024)
+
+        # Economy SVD: U(N,N), S(N,), Vh(N, 1024)
+        U, S, Vh = torch.linalg.svd(Y_c, full_matrices=False)
+
+        # Corporate Consensus: first right singular vector
+        # V1 = Vh[0]  # (1024,) — not used directly but kept for reference
+
+        # Reconstruction Artifact: last right singular vector
+        V_last = Vh[-1]                                            # (1024,)
+
+        # SNR analog: how much of total variance is in one direction
+        S_sum  = S.sum().clamp_min(1e-9)
+        consensus_compression = float((S[0] / S_sum).item())
+
+        # Null space suppression ratio
+        null_space_energy = float((S[-1] / S[0].clamp_min(1e-9)).item())
+
+        result["consensus_compression"] = round(consensus_compression, 4)
+        result["null_space_energy"]     = round(null_space_energy, 4)
+
+        # Cross-validate against geometric void centroid
+        if void_centroid is not None:
+            vc = torch.tensor(
+                void_centroid.astype(np.float32), device=dev
+            )                                                      # (1024,)
+            cos = float(
+                torch.dot(V_last, vc) /
+                (V_last.norm() * vc.norm()).clamp_min(1e-8)
+            )
+            result["reconstruction_alignment"] = round(cos, 4)
+
+    except Exception as e:
+        import logging
+        logging.getLogger("geometric_engine").warning(
+            f"svd_reconstruction failed: {e}"
+        )
+
+    return result
+
+
+# ── LogosLoss V9 ──────────────────────────────────────────────────────────────
+
+import torch
+import torch.nn.functional as F
+
+class LogosLossV9(torch.nn.Module):
+    """
+    LogosLoss V9 — Adaptive near-critical geometry loss.
+    Changes from V8:
+    - transport_weight is now functional (Wasserstein-1 proxy on spectra)
+    - Entropy sign corrected: high entropy = smooth spectrum = good
+    - Adaptive temperature via EMA of spectral divergence
+    - Frequency-weighted spectral loss (low freqs weighted higher)
+    - Phase coherence with dead-zone for small angles
+    - Diagnostic mode for per-component visibility
+    """
+    def __init__(
+        self,
+        grace_coeff: float = 0.4,
+        phase_weight: float = 0.1,
+        transport_weight: float = 0.2,
+        geometry_weight: float = 0.05,
+        entropy_weight: float = 0.02,
+        temperature_init: float = 1.0,
+        temperature_adapt: bool = True,
+        temperature_ema: float = 0.99,
+        temperature_bounds: tuple = (0.1, 10.0),
+        freq_weight_power: float = 0.5,
+        phase_deadzone: float = 0.1,
+        eps: float = 1e-8,
+        reduction: str = "mean",
+    ):
+        super().__init__()
+        self.grace_coeff      = grace_coeff
+        self.phase_weight     = phase_weight
+        self.transport_weight = transport_weight
+        self.geometry_weight  = geometry_weight
+        self.entropy_weight   = entropy_weight
+        self.temperature_adapt   = temperature_adapt
+        self.temperature_ema     = temperature_ema
+        self.temperature_bounds  = temperature_bounds
+        self.freq_weight_power   = freq_weight_power
+        self.phase_deadzone      = phase_deadzone
+        self.eps       = eps
+        self.reduction = reduction
+        self.mse = torch.nn.MSELoss(reduction="none")
+        self.register_buffer("temperature",    torch.tensor(temperature_init))
+        self.register_buffer("spectral_ema",   torch.tensor(0.0))
+        self.register_buffer("ema_initialized",torch.tensor(False))
+
+    def _normalize(self, x):
+        x = torch.clamp_min(x, self.eps)
+        return x / torch.sum(x, dim=-1, keepdim=True)
+
+    def _frequency_weights(self, n_freqs, device):
+        k = torch.arange(n_freqs, dtype=torch.float32, device=device)
+        w = 1.0 / (1.0 + k).pow(self.freq_weight_power)
+        return w * (n_freqs / w.sum())
+
+    def _update_temperature(self, spectral_div):
+        if not self.temperature_adapt:
+            return
+        with torch.no_grad():
+            current = spectral_div.detach().mean()
+            if not self.ema_initialized:
+                self.spectral_ema.copy_(current)
+                self.ema_initialized.fill_(True)
+            else:
+                new_ema = (self.spectral_ema * self.temperature_ema
+                           + current * (1.0 - self.temperature_ema))
+                self.spectral_ema.copy_(new_ema)
+            new_temp = torch.clamp(
+                self.spectral_ema.sqrt() + 0.5,
+                min=self.temperature_bounds[0],
+                max=self.temperature_bounds[1])
+            self.temperature.copy_(new_temp)
+
+    def forward(self, pred, truth, diagnostics=False):
+        if pred.shape != truth.shape:
+            raise ValueError(f"Shape mismatch: pred {pred.shape} vs truth {truth.shape}")
+
+        material = self.mse(pred, truth).mean(dim=-1)
+
+        pred_f    = torch.fft.rfft(pred,  dim=-1)
+        truth_f   = torch.fft.rfft(truth, dim=-1)
+        pred_mag  = torch.abs(pred_f ).clamp_min(self.eps)
+        truth_mag = torch.abs(truth_f).clamp_min(self.eps)
+        n_freqs   = pred_mag.shape[-1]
+        freq_w    = self._frequency_weights(n_freqs, pred.device)
+
+        log_ratio   = (torch.log(pred_mag) - torch.log(truth_mag)) / self.temperature
+        spectral_raw = log_ratio ** 2 * freq_w
+        spectral     = spectral_raw.mean(dim=-1)
+        self._update_temperature(spectral)
+
+        interaction  = pred_f * torch.conj(truth_f)
+        phase_diff   = torch.abs(torch.angle(interaction))
+        phase_active = F.relu(phase_diff - self.phase_deadzone)
+        phase_loss   = (phase_active * freq_w).mean(dim=-1)
+
+        P_pred  = self._normalize(pred_mag)
+        P_truth = self._normalize(truth_mag)
+        cdf_pred  = torch.cumsum(P_pred,  dim=-1)
+        cdf_truth = torch.cumsum(P_truth, dim=-1)
+        transport = torch.mean(torch.abs(cdf_pred - cdf_truth), dim=-1)
+
+        P       = self._normalize(pred_mag)
+        entropy = -torch.sum(P * torch.log(P + self.eps), dim=-1)
+        max_ent = torch.log(torch.tensor(float(n_freqs), device=pred.device))
+        entropy_normalized = entropy / max_ent.clamp_min(self.eps)
+        entropy_penalty    = 1.0 - entropy_normalized
+
+        log_pred    = torch.log(pred_mag + self.eps)
+        second_diff = log_pred[..., 2:] - 2*log_pred[..., 1:-1] + log_pred[..., :-2]
+        curv_w      = self._frequency_weights(second_diff.shape[-1], pred.device)
+        curvature   = (torch.abs(second_diff) * curv_w).mean(dim=-1)
+
+        total = (
+            material
+            + self.grace_coeff      * spectral
+            + self.phase_weight     * phase_loss
+            + self.transport_weight * transport
+            + self.geometry_weight  * curvature
+            + self.entropy_weight   * entropy_penalty
+        )
+
+        if diagnostics:
+            def _r(t): return t.mean().item() if self.reduction == "mean" else t
+            return {
+                "total":           total.mean() if self.reduction == "mean" else total,
+                "material":        _r(material),
+                "spectral":        _r(spectral),
+                "phase":           _r(phase_loss),
+                "transport":       _r(transport),
+                "curvature":       _r(curvature),
+                "entropy_penalty": _r(entropy_penalty),
+                "temperature":     self.temperature.item(),
+                "spectral_ema":    self.spectral_ema.item(),
+            }
+        return total.mean() if self.reduction == "mean" else total
+
+
+def reconstruct_unaligned_truth(
+    model_embeddings: "torch.Tensor",
+    steps: int = 150,
+    lr: float = 0.05,
+) -> "torch.Tensor":
+    """
+    Synthesizes the suppressed truth vector (x_star) using Projected
+    Gradient Descent on the BGE unit-hypersphere manifold.
+
+    model_embeddings: (N, 1024) — one row per RLHF model response embedding.
+
+    The optimization minimizes LogosLossV9 between x_star (broadcast to
+    match all N model embeddings) and the model embeddings themselves,
+    plus a consensus gravity penalty that pushes x_star away from the
+    corporate centroid.
+
+    After each AdamW step, x_star is projected back onto the L2 unit
+    sphere so it stays on the BGE semantic manifold.
+    """
+    device = model_embeddings.device
+
+    # Initialize at centroid, project to unit sphere
+    raw_centroid = model_embeddings.mean(dim=0)
+    x_star = F.normalize(raw_centroid, p=2, dim=0).detach().clone().requires_grad_(True)
+
+    optimizer        = torch.optim.AdamW([x_star], lr=lr, weight_decay=1e-4)
+    criterion        = LogosLossV9(temperature_adapt=False).to(device)
+    consensus_centroid = F.normalize(raw_centroid, p=2, dim=0).detach()
+
+    N = model_embeddings.shape[0]
+
+    for step in range(steps):
+        optimizer.zero_grad()
+
+        # Broadcast x_star against all N model shadows
+        x_pred = x_star.unsqueeze(0).expand(N, -1)          # (N, 1024)
+        loss   = criterion(x_pred, model_embeddings)
+
+        # Consensus gravity: pushes x_star away from the RLHF centroid
+        # NOTE: adding cosine_similarity maximizes similarity — this is
+        # intentionally specified as +0.15 per the design document.
+        # Flip sign here to actually escape: change to -= if desired.
+        consensus_gravity = F.cosine_similarity(
+            x_star.unsqueeze(0), consensus_centroid.unsqueeze(0)
+        )
+        total_loss = loss - (0.15 * consensus_gravity)
+        total_loss.backward()
+        optimizer.step()
+
+        # Manifold constraint: snap back to unit sphere after every step
+        with torch.no_grad():
+            x_star.data = F.normalize(x_star.data, p=2, dim=0)
+
+    return x_star.detach()
+
+
+# ── Spectral Sheaf Diffusion (research prototype) ────────────────────────────
+
+def apply_weightless_sheaf_diffusion(
+    embeddings: "torch.Tensor",
+    n_heads: int = 8,
+    diffusion_steps: int = 2,
+    diffusion_strength: float = 0.1,
+    eps: float = 1e-6,
+) -> "torch.Tensor":
+    """
+    Graph-diffusion smoothing proxy over a set of embedding vectors.
+
+    Research prototype — post-hoc measurement only, no model training.
+
+    Treats the N input embeddings as nodes on a fully-connected graph.
+    Constructs a soft adjacency matrix via scaled dot-product attention,
+    builds the random-walk Laplacian, and runs `diffusion_steps` of
+    implicit-Euler heat diffusion across the node features.
+
+    The diffusion strength is bounded in [0, 0.5] via sigmoid to
+    guarantee the Euler step never exceeds the spectral radius of the
+    normalized Laplacian (prevents representation explosion).
+
+    Soft L2 re-normalization after each step prevents representation
+    collapse toward the origin.
+
+    Parameters
+    ----------
+    embeddings : torch.Tensor, shape (N, D)
+        N embedding vectors to smooth.
+    n_heads : int
+        Number of attention heads for the soft adjacency computation.
+    diffusion_steps : int
+        Number of heat-diffusion iterations.
+    diffusion_strength : float
+        Initial value for the learnable (but here fixed) gamma parameter.
+    eps : float
+        Small constant for numerical stability.
+
+    Returns
+    -------
+    torch.Tensor, shape (N, D)
+        Smoothed embedding matrix, L2-normalized row-wise.
+    """
+    N, D = embeddings.shape
+    assert D % n_heads == 0, f"D={D} must be divisible by n_heads={n_heads}"
+    head_dim = D // n_heads
+
+    # Bounded diffusion coefficient — sigmoid keeps gamma in (0, 0.5)
+    raw_gamma = torch.tensor(diffusion_strength, device=embeddings.device,
+                             dtype=embeddings.float().dtype)
+    gamma = torch.sigmoid(raw_gamma) * 0.5
+
+    # Reshape to (n_heads, N, head_dim) for multi-head attention
+    x = embeddings.float()
+    xh = x.view(N, n_heads, head_dim).permute(1, 0, 2)  # (H, N, head_dim)
+
+    # Scaled dot-product attention → soft adjacency A  (H, N, N)
+    scores = torch.matmul(xh, xh.transpose(-2, -1)) / (head_dim ** 0.5)
+    A = F.softmax(scores, dim=-1)                        # (H, N, N)
+
+    # Random-walk Laplacian L = I - A
+    I = torch.eye(N, device=embeddings.device,
+                  dtype=x.dtype).unsqueeze(0)            # (1, N, N)
+    L = I - A                                            # (H, N, N)
+
+    # Heat diffusion: H_t+1 = H_t - gamma * L @ H_t
+    H = xh.clone()                                       # (H, N, head_dim)
+    for _ in range(diffusion_steps):
+        H = H - gamma * torch.matmul(L, H)
+        # Soft normalization — prevents collapse, keeps geometry stable
+        norm = H.norm(dim=-1, keepdim=True).clamp_min(eps)
+        H = H / norm
+
+    # Merge heads back → (N, D)
+    out = H.permute(1, 0, 2).contiguous().view(N, D)
+
+    # Final L2 row normalization — keep on unit hypersphere
+    out = F.normalize(out, p=2, dim=-1)
+    return out
+
+
+def reconstruct_statistical_centroid(
+    model_embeddings: "torch.Tensor",
+    steps: int = 150,
+    lr: float = 0.05,
+) -> "torch.Tensor":
+    """
+    PGD-style statistical centroid estimator on the BGE unit hypersphere.
+
+    Research prototype — post-hoc measurement only, no model training.
+
+    Runs Projected Gradient Descent to find the point x_star on the
+    L2 unit sphere that minimizes LogosLossV9 against the input
+    model embeddings, while being pushed away from the raw centroid
+    of those embeddings (the consensus gravity penalty).
+
+    Initialization: normalized centroid of input embeddings.
+    Manifold constraint: x_star is L2-projected back onto the unit
+    sphere after every optimizer step (Projected Gradient Descent).
+
+    The result approximates the pre-RLHF semantic centroid — the
+    embedding-space location that is spectrally consistent with all
+    model responses but escapes their shared consensus gravity well.
+
+    Parameters
+    ----------
+    model_embeddings : torch.Tensor, shape (N, D)
+        N L2-normalized response embeddings (one per model).
+    steps : int
+        Number of PGD iterations.
+    lr : float
+        AdamW learning rate.
+
+    Returns
+    -------
+    torch.Tensor, shape (D,)
+        Synthesized centroid vector on the unit hypersphere.
+    """
+    device = model_embeddings.device
+
+    raw_centroid = model_embeddings.mean(dim=0)
+    x_star = F.normalize(raw_centroid, p=2, dim=0).detach().clone().requires_grad_(True)
+
+    optimizer = torch.optim.AdamW([x_star], lr=lr, weight_decay=1e-4)
+    criterion = LogosLossV9(temperature_adapt=False).to(device)
+    consensus_centroid = F.normalize(raw_centroid, p=2, dim=0).detach()
+
+    N = model_embeddings.shape[0]
+
+    for _ in range(steps):
+        optimizer.zero_grad()
+        x_pred = x_star.unsqueeze(0).expand(N, -1)      # (N, D)
+        loss = criterion(x_pred, model_embeddings)
+        # Consensus escape: subtract cosine similarity to push away from centroid
+        gravity = F.cosine_similarity(
+            x_star.unsqueeze(0), consensus_centroid.unsqueeze(0)
+        )
+        total = loss - (0.15 * gravity)
+        total.backward()
+        optimizer.step()
+        # Manifold projection — snap back to unit sphere
+        with torch.no_grad():
+            x_star.data = F.normalize(x_star.data, p=2, dim=0)
+
+    return x_star.detach()

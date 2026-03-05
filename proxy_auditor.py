@@ -132,9 +132,13 @@ class AuditRecord:
     geo_top_concept:      str   = ""
     geo_density:          float = 0.0
     geo_concepts:         list  = field(default_factory=list)
-    spectral_resonance:   float = 0.0
-    spectral_interference: float = 0.0
-    spectral_entropy:     float = 0.0
+    spectral_resonance:        float = 0.0
+    spectral_interference:     float = 0.0
+    spectral_entropy:          float = 0.0
+    svd_consensus_compression:    float = 0.0
+    svd_null_space_energy:        float = 0.0
+    svd_reconstruction_alignment: float = 0.0
+    synthesis_words:              list  = field(default_factory=list)
 
 # ── seen-story cache ──────────────────────────────────────────────────────────
 
@@ -487,6 +491,17 @@ def write_ticker(lines: list) -> None:
     except Exception as e:
         log.warning(f"Ticker write failed: {e}")
 
+@dataclass
+class RobustnessRecord:
+    """Per-story output of the Multi-Model Semantic Robustness Auditor."""
+    story_title:        str
+    perturbation_levels: list   = field(default_factory=list)   # 5 variant strings
+    ensemble_variance:  float   = 0.0
+    perturbation_variance: float= 0.0
+    robustness_ratio:   float   = 0.0
+    centroid_words:     list    = field(default_factory=list)   # top-3 vocab tokens
+    error:              str     = ""
+
 def log_audit(record: AuditRecord) -> None:
     try:
         AUDIT_LOG.parent.mkdir(parents=True, exist_ok=True)
@@ -505,6 +520,224 @@ def rank_stories(stories: list, seen: dict) -> list:
     return unseen
 
 # ── main audit cycle ──────────────────────────────────────────────────────────
+
+
+# ── Multi-Model Semantic Robustness Auditor ───────────────────────────────────
+
+def _generate_perturbations(title: str) -> list[str]:
+    """
+    5-level semantic perturbation curriculum for robustness probing.
+
+    Level 1: Paraphrase       — same meaning, different words
+    Level 2: Framing shift    — same facts, different ideological lens
+    Level 3: Entity substitution — swap named entities for semantic neighbors
+    Level 4: Causal inversion — reverse the stated causal relationship
+    Level 5: Multi-constraint — combine framing + entity + causal inversion
+
+    Returns list of 5 prompt strings derived from the headline.
+    These are injected verbatim into the API query functions.
+    """
+    return [
+        # Level 1 — Paraphrase
+        f"Restate the following headline in different words: {title}",
+        # Level 2 — Framing shift
+        f"Reframe this headline from the perspective of an opposition journalist: {title}",
+        # Level 3 — Entity substitution
+        f"Replace the main actors in this headline with comparable historical figures "
+        f"and restate it: {title}",
+        # Level 4 — Causal inversion
+        f"Invert the causal relationship implied in this headline and restate it: {title}",
+        # Level 5 — Multi-constraint
+        f"Restate this headline with a framing shift, entity substitution, and "
+        f"causal inversion all applied simultaneously: {title}",
+    ]
+
+
+def run_robustness_audit(
+    story_title: str,
+    query_fns: dict,
+    embed_fn,
+    vocab_tensor,
+    timeout: float = 25.0,
+) -> "RobustnessRecord":
+    """
+    Multi-Model Semantic Robustness Auditor.
+
+    Post-hoc measurement only — does not modify any model.
+
+    Pipeline
+    --------
+    a. Curriculum: generate 5 perturbation variants of story_title.
+    b. Ensemble query: call each of the 5 API models with each variant.
+       API failures are caught per-call; missing models are dropped
+       gracefully from the tensor computation.
+    c. Embed all responses via BGE-large.
+    d. Robustness metrics:
+         V_ensemble  = mean pairwise cosine variance across models
+                       (same perturbation level, different models)
+         V_perturb   = mean pairwise cosine variance across levels
+                       (same model, different perturbation levels)
+         R           = V_ensemble / (V_perturb + 1e-8)
+    e. Sheaf diffusion: smooth the base embedding tensor.
+    f. Centroid synthesis: reconstruct_statistical_centroid on smoothed tensor.
+    g. Vocab lookup: top-3 nearest tokens to synthesized centroid.
+
+    Parameters
+    ----------
+    story_title : str
+    query_fns   : dict  {model_name: callable(prompt) -> str | None}
+    embed_fn    : callable(list[str]) -> np.ndarray
+    vocab_tensor: VocabTensor instance
+    timeout     : per-API-call timeout in seconds (enforced via threading)
+
+    Returns
+    -------
+    RobustnessRecord
+    """
+    import threading
+    import numpy as np
+
+    rec = RobustnessRecord(story_title=story_title)
+
+    try:
+        variants = _generate_perturbations(story_title)
+        rec.perturbation_levels = variants
+
+        model_names  = list(query_fns.keys())
+        n_levels     = len(variants)          # 5
+        n_models     = len(model_names)
+
+        # ── b. Ensemble query with per-call timeouts ──────────────────────
+        # responses[level][model] = text | None
+        responses = [[None] * n_models for _ in range(n_levels)]
+
+        def _safe_query(level_idx, model_idx, prompt, fn):
+            try:
+                result = [None]
+                def _call():
+                    ret = fn(prompt)
+                    result[0] = ret[0] if isinstance(ret, tuple) else ret
+                t = threading.Thread(target=_call, daemon=True)
+                t.start()
+                t.join(timeout=timeout)
+                if t.is_alive():
+                    log.warning(f"Robustness timeout: {model_names[model_idx]} "
+                                f"level={level_idx+1}")
+                    return
+                responses[level_idx][model_idx] = result[0]
+            except Exception as e:
+                log.warning(f"Robustness query failed "
+                            f"{model_names[model_idx]} L{level_idx+1}: {e}")
+
+        threads = []
+        for li, variant in enumerate(variants):
+            for mi, (name, fn) in enumerate(query_fns.items()):
+                th = threading.Thread(
+                    target=_safe_query, args=(li, mi, variant, fn), daemon=True
+                )
+                th.start()
+                threads.append(th)
+        for th in threads:
+            th.join(timeout=timeout + 2)
+
+        # ── c. Embed all non-None responses ──────────────────────────────
+        # emb_matrix[level][model] = np.ndarray(1024,) | None
+        emb_matrix = [[None] * n_models for _ in range(n_levels)]
+        all_texts  = []
+        coords     = []
+        for li in range(n_levels):
+            for mi in range(n_models):
+                t = responses[li][mi]
+                if t and isinstance(t, str) and t.strip():
+                    all_texts.append(t.strip())
+                    coords.append((li, mi))
+
+        if len(all_texts) < 2:
+            rec.error = "insufficient responses for robustness computation"
+            return rec
+
+        all_embs = embed_fn(all_texts)   # (K, 1024)
+        for idx, (li, mi) in enumerate(coords):
+            emb_matrix[li][mi] = all_embs[idx]
+
+        # ── d. Robustness metrics ─────────────────────────────────────────
+        def _pairwise_cosine_variance(vecs):
+            """Mean of (1 - cosine_sim) for all unique pairs."""
+            vecs = [v for v in vecs if v is not None]
+            if len(vecs) < 2:
+                return 0.0
+            stacked = np.stack(vecs, axis=0)           # (K, 1024)
+            norms   = np.linalg.norm(stacked, axis=1, keepdims=True) + 1e-8
+            normed  = stacked / norms
+            sim_mat = normed @ normed.T                 # (K, K)
+            K = len(vecs)
+            total, count = 0.0, 0
+            for i in range(K):
+                for j in range(i+1, K):
+                    total += (1.0 - float(sim_mat[i, j]))
+                    count += 1
+            return total / count if count else 0.0
+
+        # V_ensemble: variance across models at the same perturbation level
+        v_ens_levels = []
+        for li in range(n_levels):
+            row = [emb_matrix[li][mi] for mi in range(n_models)]
+            v_ens_levels.append(_pairwise_cosine_variance(row))
+        V_ensemble = float(np.mean(v_ens_levels)) if v_ens_levels else 0.0
+
+        # V_perturb: variance across perturbation levels for the same model
+        v_per_models = []
+        for mi in range(n_models):
+            col = [emb_matrix[li][mi] for li in range(n_levels)]
+            v_per_models.append(_pairwise_cosine_variance(col))
+        V_perturb = float(np.mean(v_per_models)) if v_per_models else 0.0
+
+        R = V_ensemble / (V_perturb + 1e-8)
+
+        rec.ensemble_variance    = round(V_ensemble, 6)
+        rec.perturbation_variance= round(V_perturb,  6)
+        rec.robustness_ratio     = round(R,           4)
+
+        # ── e. Build base tensor from level-0 (paraphrase) embeddings ────
+        base_vecs = [emb_matrix[0][mi] for mi in range(n_models)
+                     if emb_matrix[0][mi] is not None]
+        if len(base_vecs) < 2:
+            rec.error = "insufficient level-0 embeddings for geometry"
+            return rec
+
+        import torch
+        _dev = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        _mat = np.stack(base_vecs, axis=0).astype(np.float32)
+
+        # Tensor stability guard — clamp norms, drop NaN rows
+        _mat = np.nan_to_num(_mat, nan=0.0, posinf=1.0, neginf=-1.0)
+        row_norms = np.linalg.norm(_mat, axis=1, keepdims=True)
+        row_norms = np.clip(row_norms, 1e-8, None)
+        _mat = _mat / row_norms
+
+        _emb = torch.tensor(_mat, device=_dev)           # (N, 1024)
+
+        # ── e. Sheaf diffusion smoothing ──────────────────────────────────
+        from geometric_engine import (apply_weightless_sheaf_diffusion,
+                                      reconstruct_statistical_centroid)
+        with torch.no_grad():
+            _emb_smooth = apply_weightless_sheaf_diffusion(_emb)
+
+        # ── f. Centroid synthesis ─────────────────────────────────────────
+        _centroid = reconstruct_statistical_centroid(_emb_smooth)
+        _c_np     = _centroid.cpu().numpy()
+
+        # ── g. Vocab lookup ───────────────────────────────────────────────
+        rec.centroid_words = [w for w, _ in vocab_tensor.nearest_concepts(_c_np, k=3)]
+        log.info(f"[ROBUSTNESS] R={R:.4f}  V_ens={V_ensemble:.4f}  "
+                 f"V_per={V_perturb:.4f}  "
+                 f"centroid={'|'.join(rec.centroid_words)}")
+
+    except Exception as e:
+        rec.error = str(e)
+        log.warning(f"Robustness audit failed: {e}")
+
+    return rec
 
 def run_audit_cycle(seen: dict) -> list:
     all_stories = []
@@ -584,6 +817,34 @@ def run_audit_cycle(seen: dict) -> list:
             from geometric_engine import calculate_spectral_resonance
             spectral = calculate_spectral_resonance(_response_vecs)
 
+        # ── semantic tomography (SVD reconstruction) ────────────────────────
+        tomo = {"consensus_compression": 0.0,
+                "null_space_energy":     0.0,
+                "reconstruction_alignment": 0.0}
+        if len(_response_vecs) >= 2:
+            from geometric_engine import calculate_svd_reconstruction
+            _vc = geo.void_centroid if geo and geo.void_centroid is not None else None
+            tomo = calculate_svd_reconstruction(_response_vecs, void_centroid=_vc)
+
+        # ── synthesis: reconstruct unaligned truth via LogosLossV9 PGD ─────
+        synthesis_words: list = []
+        if len(_response_vecs) >= 2:
+            try:
+                import torch as _torch
+                from geometric_engine import reconstruct_unaligned_truth
+                from latent_retrieval import VocabTensor as _VT
+                _dev     = _torch.device("cuda" if _torch.cuda.is_available() else "cpu")
+                _mat     = np.stack(_response_vecs, axis=0).astype(np.float32)
+                _emb     = _torch.tensor(_mat, device=_dev)       # (N, 1024)
+                _x_star  = reconstruct_unaligned_truth(_emb)      # (1024,) on device
+                _x_np    = _x_star.cpu().numpy()                  # (1024,) numpy
+                _vocab_dir = os.path.join(os.path.dirname(__file__), "vocab")
+                _vt      = _VT(_vocab_dir)
+                synthesis_words = [w for w, _ in _vt.nearest_concepts(_x_np, k=3)]
+                log.info(f"[SYNTHESIS] {' | '.join(synthesis_words)}")
+            except Exception as _se:
+                log.warning(f"Synthesis failed: {_se}")
+
         # ── rich display ────────────���─────────────────────────────────────────
         tbl = Table(title=f"Eigen-VIX — {story.title[:60]}", show_lines=True)
         tbl.add_column("Model",          style="bold")
@@ -633,6 +894,77 @@ def run_audit_cycle(seen: dict) -> list:
                 f"Interference: [yellow]{spectral['interference']:.4f}[/yellow]  |  "
                 f"Entropy: [magenta]{spectral['spectral_entropy']:.4f}[/magenta]"
             )
+        if tomo["consensus_compression"] > 0.0:
+            console.print(
+                f"[bold yellow][TOMOGRAPHY][/bold yellow] "
+                f"Compression: [cyan]{tomo['consensus_compression']:.4f}[/cyan]  |  "
+                f"Null Energy: [red]{tomo['null_space_energy']:.4f}[/red]  |  "
+                f"Recon Alignment: [green]{tomo['reconstruction_alignment']:.4f}[/green]"
+            )
+        if synthesis_words:
+            console.print(
+                "[bold magenta][SYNTHESIS][/bold magenta] "
+                "Reconstructed Void Coordinates: "
+                + "  |  ".join(
+                    f"[bold white]{w}[/bold white]" for w in synthesis_words
+                )
+            )
+
+        # ── robustness audit ─────────────────────────────────────────────
+        _rob = None
+        try:
+            from latent_retrieval import VocabTensor as _VT2
+            _vocab_dir2 = os.path.join(os.path.dirname(__file__), "vocab")
+            _vt2 = _VT2(_vocab_dir2)
+            _embed_fn = lambda texts: ge.get_engine().embed_texts(texts)
+            _qfns = {}
+            for _qname, _qfn in [
+                ("ChatGPT",  call_openai),
+                ("Claude",   call_anthropic),
+                ("Gemini",   call_gemini),
+                ("DeepSeek", call_deepseek),
+                ("Grok",     call_grok),
+            ]:
+                if _qfn is not None:
+                    _qfns[_qname] = _qfn
+            if _qfns:
+                _rob = run_robustness_audit(
+                    story.title, _qfns, _embed_fn, _vt2
+                )
+        except Exception as _re:
+            log.warning(f"Robustness audit wire failed: {_re}")
+
+        if _rob and not _rob.error:
+            # Vulnerability basin table
+            _rtable = Table(title="[bold cyan]ROBUSTNESS AUDIT[/bold cyan]",
+                            show_header=True, header_style="bold white")
+            _rtable.add_column("Metric",  style="cyan",  width=28)
+            _rtable.add_column("Value",   style="green", width=12)
+            _rtable.add_row("Ensemble Variance (V_ens)",
+                            f"{_rob.ensemble_variance:.6f}")
+            _rtable.add_row("Perturbation Variance (V_per)",
+                            f"{_rob.perturbation_variance:.6f}")
+            _rtable.add_row("Robustness Ratio (R = V_ens/V_per)",
+                            f"{_rob.robustness_ratio:.4f}")
+            console.print(_rtable)
+            # Perturbation level difficulty vs variance heatmap (ascii)
+            console.print(
+                "[bold cyan][VULNERABILITY BASIN][/bold cyan] "
+                "Difficulty → Variance: "
+                + "  ".join(
+                    f"L{i+1}:[yellow]{_rob.perturbation_levels[i][:18]}…[/yellow]"
+                    for i in range(min(5, len(_rob.perturbation_levels)))
+                )
+            )
+            if _rob.centroid_words:
+                console.print(
+                    "[bold magenta][CENTROID][/bold magenta] "
+                    "Pre-RLHF Centroid Estimate: "
+                    + "  |  ".join(
+                        f"[bold white]{w}[/bold white]"
+                        for w in _rob.centroid_words
+                    )
+                )
 
         if callouts:
             console.print(Panel(
@@ -672,6 +1004,10 @@ def run_audit_cycle(seen: dict) -> list:
             spectral_resonance=spectral["resonance"],
             spectral_interference=spectral["interference"],
             spectral_entropy=spectral["spectral_entropy"],
+            svd_consensus_compression=tomo["consensus_compression"],
+            svd_null_space_energy=tomo["null_space_energy"],
+            svd_reconstruction_alignment=tomo["reconstruction_alignment"],
+            synthesis_words=synthesis_words,
         ))
 
     _save_seen(seen)
