@@ -914,31 +914,40 @@ def run_audit_cycle(seen: dict) -> list:
                     _x_np   = _x_np / (np.linalg.norm(_x_np) + 1e-8)
 
                 # ── Anti-editorial synthesis ─────────────────────────────────
-                # Reflect _x_np across the EMA tone axis plane to get
-                # the vector that opposes the dominant narrative framing.
+                # Strip editorial tone from the void centroid to recover
+                # the factual constitutional/structural concepts that were
+                # avoided. remove_tone(void_centroid, tone_axis) projects
+                # the suppressed content orthogonal to the narrative frame.
                 _anti_words: list = []
                 try:
-                    _x_t      = _torch.tensor(_x_np, device=_dev)
-                    _tone_t   = _tone_axis_cur
-                    _x_anti_t = invert_tone(_x_t, _tone_t)
-                    _x_anti_np = _x_anti_t.cpu().numpy().astype(np.float32)
-                    _x_anti_np /= (np.linalg.norm(_x_anti_np) + 1e-8)
-                    # Nearest vocab tokens to anti-editorial vector
-                    _vt_anti = _get_vocab_tensor(
+                    from geometric_engine import remove_tone as _remove_tone
+                    _vt_anti  = _get_vocab_tensor(
                         os.path.join(os.path.dirname(__file__), "vocab")
                     )
-                    _anti_sims = _vt_anti.tensor.cpu().numpy() @ _x_anti_np
-                    _anti_ranked = np.argsort(-_anti_sims)
-                    _anti_seen = set()
-                    for _ai in _anti_ranked:
-                        if len(_anti_words) >= 3:
-                            break
-                        _aw = _vt_anti.words[_ai]
-                        if (len(_aw) > 3
-                                and not _aw.strip().isdigit()
-                                and _aw.lower() not in _anti_seen):
-                            _anti_words.append(_aw)
-                            _anti_seen.add(_aw.lower())
+                    # Need the void centroid as a tensor
+                    if geo is not None and geo.void_centroid is not None:
+                        _vc_t     = _torch.tensor(
+                            geo.void_centroid.astype(np.float32), device=_dev
+                        )
+                        _vc_t     = _torch.nn.functional.normalize(_vc_t, p=2, dim=0)
+                        _neutral  = _remove_tone(_vc_t, _tone_axis_cur)
+                        _neutral_np = _neutral.cpu().numpy().astype(np.float32)
+                        _neutral_np /= (np.linalg.norm(_neutral_np) + 1e-8)
+                        _anti_sims   = _vt_anti.tensor.cpu().numpy() @ _neutral_np
+                        _anti_ranked = np.argsort(-_anti_sims)
+                        # Exclude void words themselves (they're the input)
+                        _void_set = {w.lower() for w, _ in geo.void_concepts} if geo.void_concepts else set()
+                        _anti_seen = set()
+                        for _ai in _anti_ranked:
+                            if len(_anti_words) >= 3:
+                                break
+                            _aw = _vt_anti.words[_ai]
+                            if (len(_aw) > 3
+                                    and not _aw.strip().isdigit()
+                                    and _aw.lower() not in _anti_seen
+                                    and _aw.lower() not in _void_set):
+                                _anti_words.append(_aw)
+                                _anti_seen.add(_aw.lower())
                 except Exception as _ae:
                     log.debug(f"Anti-editorial lookup failed: {_ae}")
 
