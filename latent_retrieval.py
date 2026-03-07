@@ -160,7 +160,33 @@ class VocabTensor:
             attempts += 1
 
         if int(donut_mask.sum().item()) == 0:
-            return []
+            # Hard fallback: donut empty after all widening attempts.
+            # Rank by (headline_sim - centroid_sim): topically relevant AND
+            # furthest from consensus. Returns tuple so caller gets a centroid.
+            import numpy as _np_fb
+            _avoidance = headline_sims - centroid_sims        # higher = more avoided
+            _topic_mask = headline_sims > 0.05
+            if int(_topic_mask.sum().item()) < k:
+                _topic_mask = torch.ones_like(headline_sims, dtype=torch.bool)
+            _avoidance = _avoidance.masked_fill(~_topic_mask, -999.0)
+            _fb_all_idx = torch.argsort(-_avoidance)
+            _fb_results  = []
+            _fb_seen     = set()
+            _fb_raw_idx  = []
+            for _fi in _fb_all_idx:
+                if len(_fb_results) >= k:
+                    break
+                _fw = self.words[_fi.item()]
+                if _fw.lower() not in _fb_seen and len(_fw) > 3:
+                    _fb_results.append((_fw, float(centroid_sims[_fi].item())))
+                    _fb_seen.add(_fw.lower())
+                    _fb_raw_idx.append(_fi.item())
+            if not _fb_results:
+                return []
+            _fb_vecs     = self.tensor[_fb_raw_idx].cpu().numpy().astype(_np_fb.float32)
+            _fb_centroid = _fb_vecs.mean(axis=0)
+            _fb_centroid /= (_np_fb.linalg.norm(_fb_centroid) + 1e-8)
+            return _fb_results, _fb_centroid
 
         donut_indices      = torch.where(donut_mask)[0]         # (M,)
         donut_centroid_sims = centroid_sims[donut_indices]      # (M,)
