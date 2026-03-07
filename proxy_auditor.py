@@ -1003,16 +1003,35 @@ def run_audit_cycle(seen: dict) -> list:
                     pass
 
                 _candidates = _vt.nearest_concepts(_x_np, k=40)
-                synthesis_words = [
-                    w for w, _ in _candidates
-                    if w.lower() not in _headline_tokens
-                    and not _phrase_in_headline(w)
-                    and w.lower() not in _hub_bl
-                    and w.lower() not in _freq_ban
-                    and not w.strip().isdigit()
-                    and not any(c.isdigit() for c in w)
-                    and len(w) > 3
-                ][:3]
+                # Cosine-sim dedup: reject candidates within 0.92 of an accepted word
+                _syn_words: list = []
+                _syn_vecs:  list = []
+                _syn_seen:  set  = set()
+                for _sw, _ in _candidates:
+                    if len(_syn_words) >= 3:
+                        break
+                    if (_sw.lower() in _headline_tokens
+                            or _phrase_in_headline(_sw)
+                            or _sw.lower() in _hub_bl
+                            or _sw.lower() in _freq_ban
+                            or _sw.strip().isdigit()
+                            or any(c.isdigit() for c in _sw)
+                            or len(_sw) <= 3
+                            or _sw.lower() in _syn_seen):
+                        continue
+                    try:
+                        _sw_idx = _vt.words.index(_sw)
+                        _sw_vec = _vt.tensor[_sw_idx].cpu().numpy().astype(np.float32)
+                        if any(float(np.dot(_sw_vec, _sv)) > 0.92 for _sv in _syn_vecs):
+                            continue
+                        _syn_words.append(_sw)
+                        _syn_vecs.append(_sw_vec)
+                        _syn_seen.add(_sw.lower())
+                    except (ValueError, Exception):
+                        # word not in tensor index — accept without vec dedup
+                        _syn_words.append(_sw)
+                        _syn_seen.add(_sw.lower())
+                synthesis_words = _syn_words
                 log.info(f"[SYNTHESIS] {' | '.join(synthesis_words)}")
 
                 # ── Anti-editorial synthesis ─────────────────────────────────
