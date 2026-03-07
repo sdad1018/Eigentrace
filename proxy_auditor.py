@@ -885,18 +885,8 @@ def run_audit_cycle(seen: dict) -> list:
                 global _tone_axis_ema
                 _tone_axis_cur, _tone_strength = compute_tone_axis(_emb)
                 _tone_np = _tone_axis_cur.cpu().numpy().astype(np.float32)
-                if _tone_axis_ema is None:
-                    _tone_axis_ema = _tone_np.copy()
-                else:
-                    _tone_axis_ema = (
-                        (1 - _TONE_EMA_ALPHA) * _tone_axis_ema
-                        + _TONE_EMA_ALPHA * _tone_np
-                    )
-                    _norm = np.linalg.norm(_tone_axis_ema)
-                    if _norm > 1e-8:
-                        _tone_axis_ema /= _norm
-                # Per-model tone projection magnitudes
-                _tone_t   = _torch.tensor(_tone_axis_ema, device=_dev)
+                # Per-story axis — no EMA, each story is independent
+                _tone_t   = _tone_axis_cur                          # (1024,) on _dev
                 _tone_bias = float(
                     (_emb @ _tone_t).abs().mean().item()
                 )
@@ -929,7 +919,7 @@ def run_audit_cycle(seen: dict) -> list:
                 _anti_words: list = []
                 try:
                     _x_t      = _torch.tensor(_x_np, device=_dev)
-                    _tone_t   = _torch.tensor(_tone_axis_ema, device=_dev)
+                    _tone_t   = _tone_axis_cur
                     _x_anti_t = invert_tone(_x_t, _tone_t)
                     _x_anti_np = _x_anti_t.cpu().numpy().astype(np.float32)
                     _x_anti_np /= (np.linalg.norm(_x_anti_np) + 1e-8)
