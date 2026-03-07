@@ -146,9 +146,12 @@ class VocabTensor:
         attempts = 0
         current_outer = outer_threshold
         current_inner = adaptive_inner
+        # Hard floor: void words must always be < centroid_floor from consensus
+        # Prevents fallback from widening inner hole into centroid-adjacent space
+        centroid_floor = min(adaptive_inner + 0.10, 0.82)
         while int(donut_mask.sum().item()) < k and attempts < 8:
             if attempts < 4:
-                current_inner += 0.03
+                current_inner = min(current_inner + 0.03, centroid_floor)
             else:
                 current_outer -= 0.03
             outer_mask = headline_sims  > current_outer
