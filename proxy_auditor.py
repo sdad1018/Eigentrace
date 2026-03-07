@@ -927,59 +927,6 @@ def run_audit_cycle(seen: dict) -> list:
                     _x_np   = _x_star.cpu().numpy().astype(np.float32)
                     _x_np   = _x_np / (np.linalg.norm(_x_np) + 1e-8)
 
-                # ── Anti-editorial synthesis ─────────────────────────────────
-                # Strip editorial tone from the void centroid to recover
-                # the factual constitutional/structural concepts that were
-                # avoided. remove_tone(void_centroid, tone_axis) projects
-                # the suppressed content orthogonal to the narrative frame.
-                _anti_words: list = []
-                try:
-                    from geometric_engine import remove_tone as _remove_tone
-                    _vt_anti  = _get_vt()
-                    # Need the void centroid as a tensor
-                    if geo is not None and geo.void_centroid is not None:
-                        _vc_t     = _torch.tensor(
-                            geo.void_centroid.astype(np.float32), device=_dev
-                        )
-                        _vc_t     = _torch.nn.functional.normalize(_vc_t, p=2, dim=0)
-                        _neutral  = _remove_tone(_vc_t, _tone_axis_cur)
-                        _neutral_np = _neutral.cpu().numpy().astype(np.float32)
-                        _neutral_np /= (np.linalg.norm(_neutral_np) + 1e-8)
-                        _anti_sims   = _vt_anti.tensor.cpu().numpy() @ _neutral_np
-                        _anti_ranked = np.argsort(-_anti_sims)
-                        # Exclude void words + their component tokens + consensus words
-                        _void_set = set()
-                        if geo.void_concepts:
-                            for _vw, _ in geo.void_concepts:
-                                _void_set.add(_vw.lower())
-                                # also exclude individual tokens from multi-word phrases
-                                for _tok in _vw.lower().split():
-                                    _void_set.add(_tok)
-                        # also exclude consensus top_concepts (already on → axis)
-                        if geo.top_concepts:
-                            for _cw, _ in geo.top_concepts:
-                                _void_set.add(_cw.lower())
-                                for _tok in _cw.lower().split():
-                                    _void_set.add(_tok)
-                        # also exclude synthesis words (already shown above)
-                        for _sw in synthesis_words:
-                            _void_set.add(_sw.lower())
-                            for _tok in _sw.lower().split():
-                                _void_set.add(_tok)
-                        _anti_seen = set()
-                        for _ai in _anti_ranked:
-                            if len(_anti_words) >= 3:
-                                break
-                            _aw = _vt_anti.words[_ai]
-                            if (len(_aw) > 3
-                                    and not _aw.strip().isdigit()
-                                    and _aw.lower() not in _anti_seen
-                                    and _aw.lower() not in _void_set):
-                                _anti_words.append(_aw)
-                                _anti_seen.add(_aw.lower())
-                except Exception as _ae:
-                    log.warning(f"Anti-editorial lookup failed: {_ae}")
-
                 # ── Lexical mask: ban headline tokens from results ────────────
                 # Force the vocab search to find subtext, not surface text.
                 # Build headline token set with stem variants
@@ -1067,6 +1014,60 @@ def run_audit_cycle(seen: dict) -> list:
                     and len(w) > 3
                 ][:3]
                 log.info(f"[SYNTHESIS] {' | '.join(synthesis_words)}")
+
+                # ── Anti-editorial synthesis ─────────────────────────────────
+                # Run AFTER synthesis_words is built so the exclusion set is
+                # complete. Strips editorial tone from void centroid to surface
+                # factual concepts all models avoided.
+                _anti_words: list = []
+                try:
+                    from geometric_engine import remove_tone as _remove_tone
+                    _vt_anti = _get_vt()
+                    if (geo is not None and geo.void_centroid is not None
+                            and "_tone_axis_cur" in dir()):
+                        _vc_t = _torch.tensor(
+                            geo.void_centroid.astype(np.float32), device=_dev
+                        )
+                        _vc_t = _torch.nn.functional.normalize(_vc_t, p=2, dim=0)
+                        _neutral = _remove_tone(_vc_t, _tone_axis_cur)
+                        _neutral_np = _neutral.cpu().numpy().astype(np.float32)
+                        _neutral_np /= (np.linalg.norm(_neutral_np) + 1e-8)
+                        _anti_sims   = _vt_anti.tensor.cpu().numpy() @ _neutral_np
+                        _anti_ranked = np.argsort(-_anti_sims)
+                        # Build full exclusion set: void + consensus + synthesis
+                        _void_set = set()
+                        for _src_list in [
+                            [w for w, _ in geo.void_concepts]  if geo.void_concepts  else [],
+                            [w for w, _ in geo.top_concepts]   if geo.top_concepts   else [],
+                            synthesis_words,
+                        ]:
+                            for _w in _src_list:
+                                _void_set.add(_w.lower())
+                                for _tok in _w.lower().split():
+                                    _void_set.add(_tok)
+                        # Cosine-sim dedup: skip if too close to already-accepted word
+                        _anti_vecs: list = []
+                        _anti_seen: set  = set()
+                        for _ai in _anti_ranked:
+                            if len(_anti_words) >= 3:
+                                break
+                            _aw = _vt_anti.words[_ai]
+                            if (len(_aw) > 3
+                                    and not _aw.strip().isdigit()
+                                    and _aw.lower() not in _anti_seen
+                                    and _aw.lower() not in _void_set):
+                                # dedup: reject if cosine sim > 0.90 with any accepted vec
+                                _cand_vec = _vt_anti.tensor[_ai].cpu().numpy().astype(np.float32)
+                                _too_close = any(
+                                    float(np.dot(_cand_vec, _av)) > 0.90
+                                    for _av in _anti_vecs
+                                )
+                                if not _too_close:
+                                    _anti_words.append(_aw)
+                                    _anti_seen.add(_aw.lower())
+                                    _anti_vecs.append(_cand_vec)
+                except Exception as _ae:
+                    log.warning(f"Anti-editorial lookup failed: {_ae}")
             except Exception as _se:
                 log.warning(f"Synthesis failed: {_se}")
 
