@@ -935,8 +935,25 @@ def run_audit_cycle(seen: dict) -> list:
                         _neutral_np /= (np.linalg.norm(_neutral_np) + 1e-8)
                         _anti_sims   = _vt_anti.tensor.cpu().numpy() @ _neutral_np
                         _anti_ranked = np.argsort(-_anti_sims)
-                        # Exclude void words themselves (they're the input)
-                        _void_set = {w.lower() for w, _ in geo.void_concepts} if geo.void_concepts else set()
+                        # Exclude void words + their component tokens + consensus words
+                        _void_set = set()
+                        if geo.void_concepts:
+                            for _vw, _ in geo.void_concepts:
+                                _void_set.add(_vw.lower())
+                                # also exclude individual tokens from multi-word phrases
+                                for _tok in _vw.lower().split():
+                                    _void_set.add(_tok)
+                        # also exclude consensus top_concepts (already on → axis)
+                        if geo.top_concepts:
+                            for _cw, _ in geo.top_concepts:
+                                _void_set.add(_cw.lower())
+                                for _tok in _cw.lower().split():
+                                    _void_set.add(_tok)
+                        # also exclude synthesis words (already shown above)
+                        for _sw in synthesis_words:
+                            _void_set.add(_sw.lower())
+                            for _tok in _sw.lower().split():
+                                _void_set.add(_tok)
                         _anti_seen = set()
                         for _ai in _anti_ranked:
                             if len(_anti_words) >= 3:
@@ -949,7 +966,7 @@ def run_audit_cycle(seen: dict) -> list:
                                 _anti_words.append(_aw)
                                 _anti_seen.add(_aw.lower())
                 except Exception as _ae:
-                    log.debug(f"Anti-editorial lookup failed: {_ae}")
+                    log.warning(f"Anti-editorial lookup failed: {_ae}")
 
                 # ── Lexical mask: ban headline tokens from results ────────────
                 # Force the vocab search to find subtext, not surface text.
