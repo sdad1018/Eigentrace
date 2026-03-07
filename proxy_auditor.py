@@ -511,7 +511,7 @@ def run_robustness_audit(
     query_fns: dict,
     embed_fn,
     vocab_tensor,
-    timeout: float = 25.0,
+    timeout: float = 45.0,
 ) -> "RobustnessRecord":
     """
     Multi-Model Semantic Robustness Auditor.
@@ -591,7 +591,7 @@ def run_robustness_audit(
                 th.start()
                 threads.append(th)
         for th in threads:
-            th.join(timeout=timeout + 2)
+            th.join(timeout=timeout + 5)
 
         # ── c. Embed all non-None responses ──────────────────────────────
         # emb_matrix[level][model] = np.ndarray(1024,) | None
@@ -767,7 +767,7 @@ def run_audit_cycle(seen: dict) -> list:
         prompt    = _prompt_for_story(story)
         _prompt_vec = None  # set after _eng is available
         responses = []
-        _skip_models = {"Grok"}   # remove from set to re-enable
+        _skip_models = set()      # no models skipped — all keys configured
         for name, caller in BIG5_CALLERS.items():
             if name in _skip_models:
                 responses.append(ModelResponse(name=name, text="", skipped=True))
