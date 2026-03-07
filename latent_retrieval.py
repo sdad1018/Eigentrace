@@ -227,7 +227,7 @@ class VocabTensor:
             w_lower = word.lower()
             # For multi-word phrases use the first content word
             freq_word = w_lower.split()[0] if ' ' in w_lower else w_lower
-            if zipf_frequency(freq_word, 'en') < 3.5:
+            if zipf_frequency(freq_word, 'en') < 2.8:
                 continue
 
             # ── Option B: POS filter ──────────────────────────────────────
