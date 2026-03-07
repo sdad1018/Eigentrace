@@ -888,7 +888,7 @@ def run_audit_cycle(seen: dict) -> list:
                 import torch as _torch
                 import torch.nn.functional as _F
                 from geometric_engine import reconstruct_unaligned_truth
-                from latent_retrieval import VocabTensor as _VT
+                # VocabTensor via singleton cache
                 _dev     = _torch.device("cuda" if _torch.cuda.is_available() else "cpu")
                 _mat     = np.stack(_response_vecs, axis=0).astype(np.float32)
                 _emb     = _torch.tensor(_mat, device=_dev)       # (N, 1024)
@@ -935,9 +935,7 @@ def run_audit_cycle(seen: dict) -> list:
                 _anti_words: list = []
                 try:
                     from geometric_engine import remove_tone as _remove_tone
-                    _vt_anti  = _VT(
-                        os.path.join(os.path.dirname(__file__), "vocab")
-                    )
+                    _vt_anti  = _get_vt()
                     # Need the void centroid as a tensor
                     if geo is not None and geo.void_centroid is not None:
                         _vc_t     = _torch.tensor(
@@ -1024,7 +1022,7 @@ def run_audit_cycle(seen: dict) -> list:
                     return all(w in _hl_extended for w in words)
 
                 _vocab_dir = os.path.join(os.path.dirname(__file__), "vocab")
-                _vt        = _VT(_vocab_dir)
+                _vt        = _get_vt(_vocab_dir)
                 # Fetch extra candidates so masking still yields k=3
                 # ── Static hub blacklist (geometry-derived) ────────────────
                 import json as _json2
@@ -1238,9 +1236,9 @@ def run_audit_cycle(seen: dict) -> list:
         # ── robustness audit ─────────────────────────────────────────────
         _rob = None
         try:
-            from latent_retrieval import VocabTensor as _VT2
+            # VocabTensor via singleton cache (_VT2)
             _vocab_dir2 = os.path.join(os.path.dirname(__file__), "vocab")
-            _vt2 = _VT2(_vocab_dir2)
+            _vt2 = _get_vt(_vocab_dir2)
             _embed_fn = lambda texts: ge.get_engine().embed_texts(texts)
             _qfns = {}
             for _qname, _qfn in [
