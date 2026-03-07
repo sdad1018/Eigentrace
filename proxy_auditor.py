@@ -220,6 +220,20 @@ def _score_token_logprob(prefix: str, next_tok: str) -> Optional[float]:
 
 FLOOR = 11.5
 
+# ── VocabTensor singleton cache ───────────────────────────────────────────────
+# Reloading 22611 embeddings on every story added ~1s latency per call.
+# Cache is process-global; safe because VocabTensor is read-only after load.
+_VT_CACHE: "object | None" = None
+
+def _get_vt(vocab_dir: str | None = None) -> "object":
+    global _VT_CACHE
+    if _VT_CACHE is None:
+        from latent_retrieval import VocabTensor as _VTClass
+        _d = vocab_dir or os.path.join(os.path.dirname(__file__), "vocab")
+        _VT_CACHE = _VTClass(_d)
+    return _VT_CACHE
+
+
 # ── Rolling tone axis EMA (updated each story, α=0.05) ───────────────────────
 # Stabilises the per-story PC1 which is noisy with only 5 models.
 # Shape: (1024,) numpy float32 | None until first story completes.
@@ -1077,15 +1091,33 @@ def run_audit_cycle(seen: dict) -> list:
                 if not r.skipped and not r.error
                    and r.eigen_vix is not None and r.eigen_vix < 75.0
             ]
+            # Per-model geo_vix and gap_vix for full record
+            _model_vix = {
+                r.model_name: {
+                    "geo_vix": round(r.eigen_vix, 2) if r.eigen_vix is not None else None,
+                    "gap_vix": round(r.gap_vix,  4) if hasattr(r, "gap_vix") and r.gap_vix is not None else None,
+                    "m_dist":  round(r.mahal_dist, 4) if hasattr(r, "mahal_dist") and r.mahal_dist is not None else None,
+                }
+                for r in responses
+                if not r.skipped and not r.error
+            }
             _record = {
                 "ts":               __import__('datetime').datetime.utcnow().isoformat(),
                 "title":            story.title,
                 "category":         story.category,
                 "consensus_density": round(geo.consensus_density, 4) if geo else None,
+                "spectral_gap":     round(geo.spectral_gap, 4) if geo else None,
+                "state":            geo.state_label if geo and hasattr(geo, "state_label") else None,
                 "void_centroid":    _vc_list,
                 "void_words":       [w for w, _ in geo.void_concepts[:3]] if geo and geo.void_concepts else [],
+                "top_concepts":     [w for w, _ in geo.top_concepts[:3]] if geo and geo.top_concepts else [],
                 "synthesis_words":  synthesis_words,
+                "anti_editorial":   _anti_words if _anti_words else [],
+                "tone_axis_strength": round(float(_tone_strength), 4) if "_tone_strength" in dir() else None,
+                "ensemble_tone_bias": round(float(_tone_bias),     4) if "_tone_bias"     in dir() else None,
                 "geo_vix_mean":     round(sum(_vix_vals) / len(_vix_vals), 2) if _vix_vals else None,
+                "robustness_r":     None,
+                "models":           _model_vix,
             }
             with open(_registry_path, "a") as _rf:
                 _rf.write(_json.dumps(_record) + "\n")
