@@ -506,6 +506,47 @@ class LogosLossV9(torch.nn.Module):
         return total.mean() if self.reduction == "mean" else total
 
 
+
+def compute_tone_axis(
+    model_embeddings: "torch.Tensor",
+) -> "tuple[torch.Tensor, float]":
+    """
+    Estimate the editorial tone axis as PC1 of the (N, 1024) model
+    embedding matrix.
+
+    Returns:
+        tone_axis : (1024,) unit vector — dominant narrative direction
+        axis_strength : scalar — fraction of variance explained by PC1
+    """
+    import torch.nn.functional as _F
+    X = model_embeddings - model_embeddings.mean(dim=0, keepdim=True)
+    # pca_lowrank: q=1 gives only PC1, cheap on (5, 1024)
+    _, S, V = torch.pca_lowrank(X, q=1, niter=4)
+    tone_axis = _F.normalize(V[:, 0], p=2, dim=0)          # (1024,)
+    axis_strength = float((S[0] ** 2) / (X.norm(dim=1) ** 2).sum().clamp(min=1e-8))
+    return tone_axis, axis_strength
+
+
+def remove_tone(
+    x: "torch.Tensor",
+    tone_axis: "torch.Tensor",
+) -> "torch.Tensor":
+    """Project x orthogonal to tone_axis (neutralise editorial direction)."""
+    import torch.nn.functional as _F
+    proj = torch.dot(x, tone_axis) * tone_axis
+    return _F.normalize(x - proj, p=2, dim=0)
+
+
+def invert_tone(
+    x: "torch.Tensor",
+    tone_axis: "torch.Tensor",
+) -> "torch.Tensor":
+    """Reflect x across the tone_axis plane (anti-editorial direction)."""
+    import torch.nn.functional as _F
+    proj = torch.dot(x, tone_axis) * tone_axis
+    return _F.normalize(x - 2 * proj, p=2, dim=0)
+
+
 def reconstruct_unaligned_truth(
     model_embeddings: "torch.Tensor",
     steps: int = 150,

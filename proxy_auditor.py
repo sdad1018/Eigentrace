@@ -220,6 +220,13 @@ def _score_token_logprob(prefix: str, next_tok: str) -> Optional[float]:
 
 FLOOR = 11.5
 
+# ── Rolling tone axis EMA (updated each story, α=0.05) ───────────────────────
+# Stabilises the per-story PC1 which is noisy with only 5 models.
+# Shape: (1024,) numpy float32 | None until first story completes.
+_tone_axis_ema: "np.ndarray | None" = None
+_TONE_EMA_ALPHA: float = 0.05
+
+
 def score_importance(text: str) -> float:
     tokens = [t for t in _TOKEN_RE.findall(text) if not t.isspace()][:40]
     if not tokens:
@@ -871,6 +878,29 @@ def run_audit_cycle(seen: dict) -> list:
                 _dev     = _torch.device("cuda" if _torch.cuda.is_available() else "cpu")
                 _mat     = np.stack(_response_vecs, axis=0).astype(np.float32)
                 _emb     = _torch.tensor(_mat, device=_dev)       # (N, 1024)
+
+                # ── Tone axis: PC1 of model embedding matrix ─────────────────
+                # Updates rolling EMA; used for anti-editorial synthesis
+                from geometric_engine import compute_tone_axis, invert_tone
+                global _tone_axis_ema
+                _tone_axis_cur, _tone_strength = compute_tone_axis(_emb)
+                _tone_np = _tone_axis_cur.cpu().numpy().astype(np.float32)
+                if _tone_axis_ema is None:
+                    _tone_axis_ema = _tone_np.copy()
+                else:
+                    _tone_axis_ema = (
+                        (1 - _TONE_EMA_ALPHA) * _tone_axis_ema
+                        + _TONE_EMA_ALPHA * _tone_np
+                    )
+                    _norm = np.linalg.norm(_tone_axis_ema)
+                    if _norm > 1e-8:
+                        _tone_axis_ema /= _norm
+                # Per-model tone projection magnitudes
+                _tone_t   = _torch.tensor(_tone_axis_ema, device=_dev)
+                _tone_bias = float(
+                    (_emb @ _tone_t).abs().mean().item()
+                )
+
                 # ── Prompt-anchored partial residual (α=0.7) ─────────────
                 # V_void = V_prompt - 0.7 * proj_{V_cons}(V_prompt)
                 # Stays in the story's semantic neighbourhood while
@@ -892,6 +922,35 @@ def run_audit_cycle(seen: dict) -> list:
                     _x_star = reconstruct_unaligned_truth(_emb)
                     _x_np   = _x_star.cpu().numpy().astype(np.float32)
                     _x_np   = _x_np / (np.linalg.norm(_x_np) + 1e-8)
+
+                # ── Anti-editorial synthesis ─────────────────────────────────
+                # Reflect _x_np across the EMA tone axis plane to get
+                # the vector that opposes the dominant narrative framing.
+                _anti_words: list = []
+                try:
+                    _x_t      = _torch.tensor(_x_np, device=_dev)
+                    _tone_t   = _torch.tensor(_tone_axis_ema, device=_dev)
+                    _x_anti_t = invert_tone(_x_t, _tone_t)
+                    _x_anti_np = _x_anti_t.cpu().numpy().astype(np.float32)
+                    _x_anti_np /= (np.linalg.norm(_x_anti_np) + 1e-8)
+                    # Nearest vocab tokens to anti-editorial vector
+                    _vt_anti = _get_vocab_tensor(
+                        os.path.join(os.path.dirname(__file__), "vocab")
+                    )
+                    _anti_sims = _vt_anti.tensor.cpu().numpy() @ _x_anti_np
+                    _anti_ranked = np.argsort(-_anti_sims)
+                    _anti_seen = set()
+                    for _ai in _anti_ranked:
+                        if len(_anti_words) >= 3:
+                            break
+                        _aw = _vt_anti.words[_ai]
+                        if (len(_aw) > 3
+                                and not _aw.strip().isdigit()
+                                and _aw.lower() not in _anti_seen):
+                            _anti_words.append(_aw)
+                            _anti_seen.add(_aw.lower())
+                except Exception as _ae:
+                    log.debug(f"Anti-editorial lookup failed: {_ae}")
 
                 # ── Lexical mask: ban headline tokens from results ────────────
                 # Force the vocab search to find subtext, not surface text.
@@ -1112,6 +1171,21 @@ def run_audit_cycle(seen: dict) -> list:
                     f"[bold white]{w}[/bold white]" for w in synthesis_words
                 )
             )
+        # TONE block — only print if tone data is available
+        try:
+            if _tone_strength is not None and _tone_bias is not None:
+                _anti_str = (
+                    "  |  ".join(f"[bold white]{w}[/bold white]" for w in _anti_words)
+                    if _anti_words else "[dim]—[/dim]"
+                )
+                console.print(
+                    f"[bold green][TONE][/bold green] "
+                    f"axis_strength: [cyan]{_tone_strength:.4f}[/cyan]  |  "
+                    f"ensemble_bias: [yellow]{_tone_bias:.4f}[/yellow]  |  "
+                    f"anti_editorial: {_anti_str}"
+                )
+        except Exception:
+            pass
 
         # ── robustness audit ─────────────────────────────────────────────
         _rob = None
