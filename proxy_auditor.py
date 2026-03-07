@@ -921,7 +921,7 @@ def run_audit_cycle(seen: dict) -> list:
                 _anti_words: list = []
                 try:
                     from geometric_engine import remove_tone as _remove_tone
-                    _vt_anti  = _get_vocab_tensor(
+                    _vt_anti  = _VT(
                         os.path.join(os.path.dirname(__file__), "vocab")
                     )
                     # Need the void centroid as a tensor
