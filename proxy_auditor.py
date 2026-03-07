@@ -72,7 +72,6 @@ FEEDS = [
     {"url": "https://rss.dw.com/rdf/rss-en-world",                              "cat": "war",       "pri": 1},
     {"url": "https://feeds.skynews.com/feeds/rss/world.xml",                    "cat": "war",       "pri": 1},
     {"url": "https://feeds.a.dj.com/rss/RSSWorldNews.xml",                      "cat": "war",       "pri": 1},
-    {"url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.atom", "cat": "incidents", "pri": 1},
     {"url": "https://www.weather.gov/rss_page.php?site_name=nws",               "cat": "incidents", "pri": 1},
     {"url": "https://feeds.a.dj.com/rss/RSSMarketsMain.xml",                   "cat": "markets",   "pri": 2},
     {"url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",            "cat": "markets",   "pri": 2},
@@ -85,12 +84,10 @@ FEEDS = [
     {"url": "https://krebsonsecurity.com/feed/",                                "cat": "cyber",     "pri": 2},
     {"url": "https://news.ycombinator.com/rss",                                 "cat": "dev",       "pri": 3},
     {"url": "https://www.sciencedaily.com/rss/all.xml",                         "cat": "science",   "pri": 3},
-    {"url": "https://www.nih.gov/news-events/news-releases/feed",               "cat": "science",   "pri": 3},
     {"url": "https://www.nature.com/nature.rss",                                "cat": "science",   "pri": 3},
     {"url": "https://www.coindesk.com/arc/outboundfeeds/rss/",                  "cat": "crypto",    "pri": 3},
     {"url": "https://cointelegraph.com/rss",                                    "cat": "crypto",    "pri": 3},
     {"url": "https://www.atlasobscura.com/feeds/latest",                        "cat": "esoterica", "pri": 5},
-    {"url": "https://www.unexplained-mysteries.com/rss.xml",                           "cat": "esoterica", "pri": 5},
 ]
 
 # ── dataclasses ───────────────────────────────────────────────────────────────
@@ -213,58 +210,13 @@ def fetch_feed(feed: dict, timeout: int = 15) -> list:
 
 # ── importance scoring ────────────────────────────────────────────────────────
 
-# ── local transformers scorer (loaded once) ──────────────────────────
-_hf_model     = None
-_hf_tokenizer = None
-_hf_lock      = __import__("threading").Lock()
-
-def _get_hf_model():
-    global _hf_model, _hf_tokenizer
-    if _hf_model is not None:
-        return _hf_model, _hf_tokenizer
-    with _hf_lock:
-        if _hf_model is not None:
-            return _hf_model, _hf_tokenizer
-        import torch
-        from transformers import AutoTokenizer, AutoModelForCausalLM
-        HF_MODEL = os.getenv("HF_PROXY_MODEL", "mistralai/Mistral-7B-v0.1")
-        log.info(f"Loading local scorer: {HF_MODEL}")
-        _hf_tokenizer = AutoTokenizer.from_pretrained(HF_MODEL)
-        _hf_model = AutoModelForCausalLM.from_pretrained(
-            HF_MODEL,
-            torch_dtype=torch.float16,
-            device_map="auto",
-        )
-        _hf_model.eval()
-        log.info("Local scorer ready")
-    return _hf_model, _hf_tokenizer
+# ── local transformers scorer (REMOVED: Mistral-7B deprecated) ──────
+# Replaced by BGE-large embedding distance surprisal (LogosLossV9)
+# _get_hf_model and _score_token_logprob removed to free VRAM
 
 def _score_token_logprob(prefix: str, next_tok: str) -> Optional[float]:
-    """Return log P(next_tok | prefix) using a single forward pass."""
-    try:
-        import torch
-        model, tokenizer = _get_hf_model()
-        full   = prefix + next_tok
-        enc    = tokenizer(full, return_tensors="pt").to(model.device)
-        p_enc  = tokenizer(prefix, return_tensors="pt")
-        n_prefix_toks = p_enc["input_ids"].shape[1]
-        with torch.no_grad():
-            out    = model(**enc)
-            logits = out.logits          # (1, seq, vocab)
-        log_probs = torch.log_softmax(logits[0], dim=-1)
-        # tokens of next_tok start at position n_prefix_toks in full
-        next_ids = enc["input_ids"][0, n_prefix_toks:]
-        if len(next_ids) == 0:
-            return None
-        # sum log probs over all sub-tokens of next_tok
-        total_lp = 0.0
-        for i, tok_id in enumerate(next_ids):
-            pos = n_prefix_toks - 1 + i   # logit at pos predicts pos+1
-            total_lp += log_probs[pos, tok_id].item()
-        return total_lp
-    except Exception as e:
-        log.debug(f"_score_token_logprob error: {e}")
-        return None
+    """Stub: was Mistral logprob. Now returns None; callers fall back to FLOOR."""
+    return None
 
 FLOOR = 11.5
 
@@ -498,6 +450,7 @@ class RobustnessRecord:
     perturbation_levels: list   = field(default_factory=list)   # 5 variant strings
     ensemble_variance:  float   = 0.0
     perturbation_variance: float= 0.0
+    per_model_gaps:        dict = field(default_factory=dict)  # {model: gap}
     robustness_ratio:   float   = 0.0
     centroid_words:     list    = field(default_factory=list)   # top-3 vocab tokens
     error:              str     = ""
@@ -686,11 +639,24 @@ def run_robustness_audit(
         V_ensemble = float(np.mean(v_ens_levels)) if v_ens_levels else 0.0
 
         # V_perturb: variance across perturbation levels for the same model
-        v_per_models = []
+        # Also compute per-model spectral gap from their perturbation covariance
+        v_per_models   = []
+        per_model_gaps = {}   # {model_name: gap}
         for mi in range(n_models):
-            col = [emb_matrix[li][mi] for li in range(n_levels)]
+            col = [emb_matrix[li][mi] for li in range(n_levels)
+                   if emb_matrix[li][mi] is not None]
             v_per_models.append(_pairwise_cosine_variance(col))
+            # Per-model gap: how self-consistent is this model under perturbation?
+            if len(col) >= 3:
+                stacked  = np.stack(col, axis=0)          # (L, 1024)
+                centered = stacked - stacked.mean(axis=0)
+                cov      = np.cov(centered, rowvar=False)  # (1024, 1024)
+                eigvals  = np.linalg.eigvalsh(cov)         # ascending
+                eigvals  = np.sort(eigvals)[::-1]          # descending
+                _mg = float(eigvals[0] / (np.abs(eigvals[1:]).sum() + 1e-8))
+                per_model_gaps[model_names[mi]] = round(_mg, 4)
         V_perturb = float(np.mean(v_per_models)) if v_per_models else 0.0
+        rec.per_model_gaps = per_model_gaps
 
         R = V_ensemble / (V_perturb + 1e-8)
 
@@ -753,6 +719,25 @@ def run_audit_cycle(seen: dict) -> list:
     candidates = ranked[:10]
     for s in candidates:
         s.importance = score_importance(s.title + " " + s.summary[:100])
+    # ── eigentrace category override ─────────────────────────────────────────
+    _WAR_WORDS  = {"war","conflict","military","strike","attack","bomb","missile",
+                   "troops","invasion","siege","drone","combat","weapon","nuclear",
+                   "sanction","ceasefire","casualty","fatality","airstrike","coup",
+                   "iran","ukraine","gaza","regiment","artillery","offensive"}
+    _CIVIL_WORDS = {"arrest","cocaine","champagne","celebrity","alcohol","dui",
+                    "driving","pop star","police","jail","court","trial","singer",
+                    "entertainment","music","album","film","actor","actress","rapper"}
+    for s in candidates:
+        if s.category == "war" and getattr(s, "synthesis_words", []):
+            _syn = {w.strip().lower() for w in s.synthesis_words}
+            _is_war   = bool(_syn & _WAR_WORDS)
+            _is_civil = bool(_syn & _CIVIL_WORDS)
+            if _is_civil and not _is_war:
+                log.info(f"Category override: '{s.title[:50]}' war→world "
+                         f"(synthesis={s.synthesis_words})")
+                s.category = "world"
+    # ─────────────────────────────────────────────────────────────────────────
+
     def sort_key(s):
         war_boost = 3.0 if s.category in ("war", "incidents") else 0.0
         return -(s.importance + war_boost - s.priority * 0.5)
@@ -764,9 +749,29 @@ def run_audit_cycle(seen: dict) -> list:
         console.rule(f"[bold cyan]{story.category.upper()} | {story.title[:80]}[/bold cyan]")
         console.print(f"[dim]importance={story.importance:.2f} bits | "
                       f"pri={story.priority} | {story.published[:16]}[/dim]")
+        # Strip HTML entities from title before embedding/masking
+        import html as _html
+        story = story.__class__(**{
+            **story.__dict__,
+            'title': _html.unescape(story.title)
+        })
+        # Skip low-signal story types
+        _skip_patterns = [
+            'best deals', 'right now', 'LIVE:', 'live blog',
+            'vs ', ' vs.', 'La Liga', 'Premier League', 'Serie A',
+            'how to', 'review:', 'buying guide', 'roundup'
+        ]
+        if any(p.lower() in story.title.lower() for p in _skip_patterns):
+            console.print(f"[dim]  → skipped (low-signal pattern)[/dim]")
+            continue
         prompt    = _prompt_for_story(story)
+        _prompt_vec = None  # set after _eng is available
         responses = []
+        _skip_models = {"Grok"}   # remove from set to re-enable
         for name, caller in BIG5_CALLERS.items():
+            if name in _skip_models:
+                responses.append(ModelResponse(name=name, text="", skipped=True))
+                continue
             txt, err = caller(prompt)
             if err == "no_key":
                 responses.append(ModelResponse(name=name, text="", skipped=True))
@@ -791,9 +796,14 @@ def run_audit_cycle(seen: dict) -> list:
 
         # ── geometric VIX: per-model cosine distance from void centroid ──────
         _response_vecs = []   # collect (1024,) rvecs for spectral analysis
+        from geometric_engine import get_engine as _get_engine
+        _eng = _get_engine()
+        try:
+            _prompt_vec = _eng.embed_texts([story.title])[0].astype(np.float32)
+            _prompt_vec = _prompt_vec / (np.linalg.norm(_prompt_vec) + 1e-8)
+        except Exception as _pe:
+            _prompt_vec = None
         if geo and geo.void_centroid is not None:
-            from geometric_engine import get_engine as _get_engine
-            _eng = _get_engine()
             vc   = geo.void_centroid                          # (1024,) np.ndarray
             for r in responses:
                 if r.skipped or r.error or not r.text:
@@ -801,7 +811,7 @@ def run_audit_cycle(seen: dict) -> list:
                 rvec = _eng.embed_texts([r.text])[0]          # (1024,)
                 cos  = float(np.dot(rvec, vc) /
                              (np.linalg.norm(rvec) * np.linalg.norm(vc) + 1e-8))
-                r.surp_vix  = r.eigen_vix                     # preserve surprisal
+                r.surp_vix  = round(geo.spectral_gap, 3) if geo else 0.0  # spectral gap
                 r.eigen_vix = round(100.0 * (1.0 - cos), 1)  # geometric VIX
                 # Per-void-word proximity
                 if geo and geo.void_word_vecs:
@@ -810,6 +820,30 @@ def run_audit_cycle(seen: dict) -> list:
                                     (np.linalg.norm(rvec) * np.linalg.norm(vvec) + 1e-8))
                         r.void_proximity[vword] = round(sim, 3)
                 _response_vecs.append(rvec)
+
+        # ── Mahalanobis outlier energy (PC subspace) ────────────────────
+        _outlier_scores = {}
+        _outlier_max    = 0.0
+        if len(_response_vecs) >= 3:
+            try:
+                _X  = np.stack(_response_vecs, axis=0).astype(np.float64)
+                _Xc = _X - _X.mean(axis=0)
+                _n  = len(_X)
+                _G  = _Xc @ _Xc.T / (_n - 1)
+                _ev, _evec = np.linalg.eigh(_G)
+                _pos = _ev > 1e-10
+                _L   = _ev[_pos]
+                _V   = _evec[:, _pos]
+                _Z   = _V * np.sqrt(_L)
+                _dists = np.linalg.norm(_Z, axis=1)
+                _outlier_max = float(_dists.max())
+                _active = [r for r in responses
+                           if not r.skipped and not r.error and r.text]
+                for _i, _r in enumerate(_active):
+                    if _i < len(_dists):
+                        _outlier_scores[_r.name] = round(float(_dists[_i]), 4)
+            except Exception as _me:
+                log.debug(f"Mahalanobis failed: {_me}")
 
         # ── spectral analysis (Logos Transform) ──────────────────────────────
         spectral = {"resonance": 0.0, "interference": 0.0, "spectral_entropy": 0.0}
@@ -831,33 +865,172 @@ def run_audit_cycle(seen: dict) -> list:
         if len(_response_vecs) >= 2:
             try:
                 import torch as _torch
+                import torch.nn.functional as _F
                 from geometric_engine import reconstruct_unaligned_truth
                 from latent_retrieval import VocabTensor as _VT
                 _dev     = _torch.device("cuda" if _torch.cuda.is_available() else "cpu")
                 _mat     = np.stack(_response_vecs, axis=0).astype(np.float32)
                 _emb     = _torch.tensor(_mat, device=_dev)       # (N, 1024)
-                _x_star  = reconstruct_unaligned_truth(_emb)      # (1024,) on device
-                _x_np    = _x_star.cpu().numpy()                  # (1024,) numpy
+                # ── Prompt-anchored partial residual (α=0.7) ─────────────
+                # V_void = V_prompt - 0.7 * proj_{V_cons}(V_prompt)
+                # Stays in the story's semantic neighbourhood while
+                # subtracting 70% of the corporate consensus direction.
+                # Keeps 30% "leash" so we don't escape into antipodal noise.
+                _consensus_np = _emb.mean(dim=0).cpu().numpy().astype(np.float32)
+                _consensus_np = _consensus_np / (np.linalg.norm(_consensus_np) + 1e-8)
+
+                if _prompt_vec is not None:
+                    # Partial residual: V_void = V_prompt - 0.7 * proj(V_prompt onto V_cons)
+                    # No PGD — the residual IS the answer. PGD from centroid only adds noise.
+                    _alpha   = 0.7
+                    _dot     = float(np.dot(_prompt_vec, _consensus_np))
+                    _proj_np = _dot * _consensus_np
+                    _v_void  = _prompt_vec - _alpha * _proj_np
+                    _x_np    = _v_void / (np.linalg.norm(_v_void) + 1e-8)
+                else:
+                    # Fallback: PGD from centroid (old behavior)
+                    _x_star = reconstruct_unaligned_truth(_emb)
+                    _x_np   = _x_star.cpu().numpy().astype(np.float32)
+                    _x_np   = _x_np / (np.linalg.norm(_x_np) + 1e-8)
+
+                # ── Lexical mask: ban headline tokens from results ────────────
+                # Force the vocab search to find subtext, not surface text.
+                # Build headline token set with stem variants
+                # e.g. "Colombia" also blocks "colombian", "colombians"
+                _raw_tokens = [
+                    w.strip().lower()
+                    for w in re.split(r"[\s\|\-,.!?]+", story.title)
+                    if len(w.strip()) > 2
+                ]
+                _headline_tokens = set(_raw_tokens)
+                # Add adjectival/demonym forms (strip trailing s/an/ian/ean/n)
+                for _t in list(_raw_tokens):
+                    _headline_tokens.add(_t.rstrip('s'))
+                    _headline_tokens.add(_t.rstrip('n'))
+                    _headline_tokens.add(_t.rstrip('an'))
+                    _headline_tokens.add(_t.rstrip('ian'))
+                    _headline_tokens.add(_t.rstrip('ean'))
+                    if _t.endswith('an'):
+                        _headline_tokens.add(_t[:-2])
+                    if _t.endswith('ian'):
+                        _headline_tokens.add(_t[:-3])
+                    # Verb forms: ban→banning, confirm→confirmed, rule→ruling
+                    if _t.endswith('ing'):
+                        _headline_tokens.add(_t[:-3])   # banning→ban
+                        _headline_tokens.add(_t[:-3]+'e') # ruling→rule
+                    if _t.endswith('ed'):
+                        _headline_tokens.add(_t[:-2])   # confirmed→confirm
+                        _headline_tokens.add(_t[:-1])   # agreed→agre (close enough)
+                    if _t.endswith('tion'):
+                        _headline_tokens.add(_t[:-4])   # regulation→regulat
+                # Also block multi-word vocab phrases whose every content word
+                # appears in the headline (catches "arms deal", "regime change")
+                _hl_word_set = set(_raw_tokens)
+                def _phrase_in_headline(phrase):
+                    words = [w for w in phrase.lower().split()
+                             if len(w) > 2 and w not in {'the','and','for','with','from'}]
+                    # Match against both raw tokens AND their stems
+                    # so "drone strike" matches headline "drones" -> stem "drone"
+                    _hl_extended = _hl_word_set | _headline_tokens
+                    return all(w in _hl_extended for w in words)
+
                 _vocab_dir = os.path.join(os.path.dirname(__file__), "vocab")
-                _vt      = _VT(_vocab_dir)
-                synthesis_words = [w for w, _ in _vt.nearest_concepts(_x_np, k=3)]
+                _vt        = _VT(_vocab_dir)
+                # Fetch extra candidates so masking still yields k=3
+                # ── Static hub blacklist (geometry-derived) ────────────────
+                import json as _json2
+                _hub_path = __import__('os').path.join(
+                    __import__('os').path.dirname(__file__), 'vocab', 'hub_blacklist.json')
+                try:
+                    _hub_bl = set(_json2.loads(
+                        open(_hub_path).read())['blacklist'])
+                except Exception:
+                    _hub_bl = set()
+
+                # ── Dynamic frequency ban from void_registry ──────────────────
+                # Words appearing in synthesis across >3 distinct recent stories
+                # are hubs, not signals — ban them for this run
+                _reg_path = __import__('os').path.join(
+                    __import__('os').path.dirname(__file__), 'void_registry.jsonl')
+                _freq_ban: set = set()
+                try:
+                    from collections import Counter as _Counter
+                    _reg_lines = open(_reg_path).readlines()[-30:]  # last 30 stories
+                    _freq      = _Counter()
+                    _seen_in   = {}
+                    for _rl in _reg_lines:
+                        _rr = _json2.loads(_rl)
+                        _rt = _rr.get('title', '')
+                        for _rw in _rr.get('synthesis_words', []) + _rr.get('void_words', []):
+                            _seen_in.setdefault(_rw, set()).add(_rt)
+                    _freq_ban = {w for w, titles in _seen_in.items()
+                                 if len(titles) >= 4}
+                except Exception:
+                    pass
+
+                _candidates = _vt.nearest_concepts(_x_np, k=40)
+                synthesis_words = [
+                    w for w, _ in _candidates
+                    if w.lower() not in _headline_tokens
+                    and not _phrase_in_headline(w)
+                    and w.lower() not in _hub_bl
+                    and w.lower() not in _freq_ban
+                    and not w.strip().isdigit()
+                    and not any(c.isdigit() for c in w)
+                    and len(w) > 3
+                ][:3]
                 log.info(f"[SYNTHESIS] {' | '.join(synthesis_words)}")
             except Exception as _se:
                 log.warning(f"Synthesis failed: {_se}")
+
+        # ── Global Void Registry: append one record per story ────────────────
+        # Schema: ts, title, category, density, void_centroid (1024-D),
+        #         void_words, synthesis_words, geo_vix_mean
+        # Analysis: run pca_void_registry.py after ~100 entries
+        try:
+            import json as _json
+            _registry_path = os.path.join(
+                os.path.dirname(__file__), "void_registry.jsonl"
+            )
+            _vc_list = (
+                geo.void_centroid.tolist()
+                if geo and geo.void_centroid is not None
+                else None
+            )
+            _vix_vals = [
+                r.eigen_vix for r in responses
+                if not r.skipped and not r.error
+                   and r.eigen_vix is not None and r.eigen_vix < 75.0
+            ]
+            _record = {
+                "ts":               __import__('datetime').datetime.utcnow().isoformat(),
+                "title":            story.title,
+                "category":         story.category,
+                "consensus_density": round(geo.consensus_density, 4) if geo else None,
+                "void_centroid":    _vc_list,
+                "void_words":       [w for w, _ in geo.void_concepts[:3]] if geo and geo.void_concepts else [],
+                "synthesis_words":  synthesis_words,
+                "geo_vix_mean":     round(sum(_vix_vals) / len(_vix_vals), 2) if _vix_vals else None,
+            }
+            with open(_registry_path, "a") as _rf:
+                _rf.write(_json.dumps(_record) + "\n")
+        except Exception as _re:
+            log.debug(f"Registry append failed: {_re}")
 
         # ── rich display ────────────���─────────────────────────────────────────
         tbl = Table(title=f"Eigen-VIX — {story.title[:60]}", show_lines=True)
         tbl.add_column("Model",          style="bold")
         tbl.add_column("Geo-VIX",        justify="right")
-        tbl.add_column("Surp-VIX",       justify="right")
+        tbl.add_column("Gap-VIX",        justify="right")
         tbl.add_column("Label")
         tbl.add_column("Status")
         tbl.add_column("Void Proximity", style="dim")
+        tbl.add_column("M-Dist",         justify="right")
         for r in responses:
             if r.skipped:
-                tbl.add_row(r.name, "—", "—", "no key", "[dim]skipped[/dim]", "—")
+                tbl.add_row(r.name, "—", "—", "no key", "[dim]skipped[/dim]", "—", "—")
             elif r.error:
-                tbl.add_row(r.name, "—", "—", "error", f"[red]{r.error[:40]}[/red]", "—")
+                tbl.add_row(r.name, "—", "—", "error", f"[red]{r.error[:40]}[/red]", "—", "—")
             else:
                 border = ("red"    if r.eigen_vix >= 60 else
                           "yellow" if r.eigen_vix >= 35 else "green")
@@ -865,11 +1038,16 @@ def run_audit_cycle(seen: dict) -> list:
                     f"{w}=[cyan]{s:.2f}[/cyan]"
                     for w, s in r.void_proximity.items()
                 ) if r.void_proximity else "—"
+                _mscore = _outlier_scores.get(r.name)
+                _mlabel = (f"[red]{_mscore:.3f}[/red]"   if _mscore and _mscore > 1.5 else
+                           f"[yellow]{_mscore:.3f}[/yellow]" if _mscore and _mscore > 0.8 else
+                           f"[green]{_mscore:.3f}[/green]"   if _mscore else "—")
                 tbl.add_row(r.name, f"{r.eigen_vix:5.1f}",
-                            f"{r.surp_vix:5.1f}" if r.surp_vix else "—",
+                            f"{r.surp_vix:6.3f}" if r.surp_vix else "—",
                             eigen_label(r.eigen_vix),
                             f"[{border}]●[/{border}]",
-                            prox_str)
+                            prox_str,
+                            _mlabel)
         console.print(tbl)
 
         if geo:
@@ -879,11 +1057,36 @@ def run_audit_cycle(seen: dict) -> list:
             void_str = "  |  ".join(
                 f"{c} ({s:+.3f})" for c, s in geo.void_concepts[:3]
             ) if geo.void_concepts else "—"
+            # ── Dual-Key state label ─────────────────────────────────────
+            _geo_vix_mean = sum(
+                r.eigen_vix for r in responses
+                if not r.skipped and not r.error and r.eigen_vix is not None
+            ) / max(1, sum(
+                1 for r in responses
+                if not r.skipped and not r.error and r.eigen_vix is not None
+            ))
+            _gap   = getattr(geo, 'spectral_gap', 0.0)
+            _gap_h = _gap  > 0.90   # high gap  = strong consensus (calibrated from observed range 0.76-1.31)
+            _vix_l = _geo_vix_mean < 45.0  # low vix   = tight geometry
+            if   _vix_l and _gap_h:
+                _state = "[bold green]CRYSTALLIZED[/bold green]"
+                _state_note = "single dominant direction — trust synthesis"
+            elif not _vix_l and _gap_h:
+                _state = "[yellow]DIFFUSE CONSENSUS[/yellow]"
+                _state_note = "broad but unified — standard view"
+            elif _vix_l and not _gap_h:
+                _state = "[bold red]SEMANTIC SCHISM[/bold red]"
+                _state_note = "tight but fractured — flag synthesis"
+            else:
+                _state = "[red]VOID / CHAOS[/red]"
+                _state_note = "stochastic — discard synthesis"
             console.print(Panel(
                 f"density={geo.consensus_density:.4f}  "
-                f"λ_min={geo.smallest_eigenvalue:.6f}\n"
+                f"λ_min={geo.smallest_eigenvalue:.6f}  "
+                f"gap={_gap:.4f}\n"
                 f"→  {concepts_str}\n"
-                f"⊥  {void_str}",
+                f"⊥  {void_str}\n"
+                f"[dim]state: {_state}  {_state_note}[/dim]",
                 title="[bold magenta]EIGENTRACE — Consensus Geometry[/bold magenta]",
                 border_style="magenta",
             ))
@@ -946,6 +1149,9 @@ def run_audit_cycle(seen: dict) -> list:
                             f"{_rob.perturbation_variance:.6f}")
             _rtable.add_row("Robustness Ratio (R = V_ens/V_per)",
                             f"{_rob.robustness_ratio:.4f}")
+            if _rob.per_model_gaps:
+                for _mn, _mg in _rob.per_model_gaps.items():
+                    _rtable.add_row(f"  Gap ({_mn})", f"{_mg:.4f}")
             console.print(_rtable)
             # Perturbation level difficulty vs variance heatmap (ascii)
             console.print(

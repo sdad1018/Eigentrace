@@ -1,0 +1,39 @@
+{
+  "blacklist": [
+    "proxy war",
+    "foreign interference",
+    "collateral damage",
+    "targeted killing",
+    "arms deal",
+    "peace deal",
+    "regime change",
+    "regime collapse",
+    "geopolitical",
+    "diplomacy",
+    "confirmed",
+    "banning",
+    "ruling",
+    "stated",
+    "noted",
+    "agreed",
+    "deal",
+    "told",
+    "said"
+  ],
+  "method": "intra_phrase_cluster_mean_sim + manual_prompt_adjacent",
+  "note": "4 true geometric hubs (mean_sim>0.60) + prompt-adjacent noise words that appear due to partial residual gravity, not suppression signal",
+  "true_hubs": [
+    "proxy war",
+    "foreign interference",
+    "collateral damage",
+    "targeted killing"
+  ],
+  "prompt_adjacent": [
+    "arms deal",
+    "peace deal",
+    "regime change",
+    "regime collapse",
+    "geopolitical",
+    "diplomacy"
+  ]
+}

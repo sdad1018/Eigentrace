@@ -33,7 +33,7 @@ class VocabTensor:
         self.model_name: str  = meta["model"]
         tensor_path = vocab_dir / "global_vocab.pt"
         if device is None:
-            device = "cuda" if torch.cuda.is_available() else "cpu"
+            device = "cpu"  # pinned: keep VRAM free for Ollama
         self.device = device
         self.tensor: torch.Tensor = torch.load(
             tensor_path, map_location=device, weights_only=True

@@ -58,6 +58,11 @@ RESTART_DELAY = int(os.getenv("RESTART_DELAY", "30"))
 
 def current_mode() -> str:
     h = datetime.now().hour
+    # Manual dream trigger: touch /home/remvelchio/agent/tmp/dream_now.flag
+    _dream_trigger = Path(os.getenv("DREAM_TRIGGER_FILE",
+        "/home/remvelchio/agent/tmp/dream_now.flag"))
+    if _dream_trigger.exists():
+        return "DREAM"
     return "DREAM" if DREAM_START <= h < DREAM_END else "AWAKE"
 
 # ╔══════════════════════════════════════════════════════════════════════════╗
@@ -141,7 +146,15 @@ class DreamWorker(threading.Thread):
 
         log.info("DreamWorker started")
         while not self._stop_event.is_set():
-            if current_mode() != "DREAM":
+            # Also trigger dream if stories are stale (age > DREAM_INTERVAL_HOURS)
+            _ticker = Path(os.getenv("TICKER_FILE",
+                "/home/remvelchio/agent/tmp/ticker.txt"))
+            _interval_hrs = float(os.getenv("DREAM_INTERVAL_HOURS", "6"))
+            _stale = False
+            if _ticker.exists():
+                age_hrs = (time.time() - _ticker.stat().st_mtime) / 3600
+                _stale = age_hrs >= _interval_hrs
+            if current_mode() != "DREAM" and not _stale:
                 time.sleep(30)
                 continue
             try:

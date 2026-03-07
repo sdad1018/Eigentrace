@@ -39,6 +39,7 @@ class EigentraceResult:
     top_concept:         str  = ""
     top_score:           float = 0.0
     n_responses:         int  = 0
+    spectral_gap:        float = 0.0
 
     def ticker_str(self) -> str:
         pos  = " | ".join(f"{c} ({s:+.3f})" for c, s in self.top_concepts[:3])
@@ -62,7 +63,7 @@ class EigentraceResult:
 
 class GeometricPerturbationEngine:
     def __init__(self, embedding_model_name: str = "BAAI/bge-large-en-v1.5"):
-        self.model = SentenceTransformer(embedding_model_name)
+        self.model = SentenceTransformer(embedding_model_name, device="cpu")
 
     def embed_texts(self, texts: list) -> np.ndarray:
         return self.model.encode(
@@ -106,6 +107,12 @@ class GeometricPerturbationEngine:
         density    = self.compute_consensus_density(embeddings)
         cov        = self.compute_covariance(embeddings)
         lvd, eigenvalues = self.compute_least_variance_direction(cov)
+        # Spectral gap: λ_max / Σ(all other λ)
+        # eigh returns ascending order → [-1] is largest
+        _eig_sorted = np.sort(eigenvalues)[::-1]   # descending
+        _spectral_gap = float(
+            _eig_sorted[0] / (np.abs(_eig_sorted[1:]).sum() + 1e-8)
+        )
 
         top_concepts  = []
         void_concepts = []
@@ -129,7 +136,10 @@ class GeometricPerturbationEngine:
                     centroid, embeddings, k=top_k,
                     headline_vec=headline_vec,
                 )
-                void_concepts, void_centroid = _void_result                     if isinstance(_void_result, tuple) else (_void_result, None)
+                if isinstance(_void_result, tuple):
+                    void_concepts, void_centroid = _void_result
+                else:
+                    void_concepts, void_centroid = _void_result, None
 
                 # Cache per-word embedding vectors for per-model proximity scoring
                 void_word_vecs = {}
@@ -143,6 +153,9 @@ class GeometricPerturbationEngine:
                 logging.getLogger("geometric_engine").warning(
                     f"VocabTensor query failed, falling back: {e}"
                 )
+                void_concepts  = None
+                void_centroid  = None
+                void_word_vecs = {}
                 bank = concept_bank or CONCEPT_BANK
                 concept_embeddings = self.embed_texts(bank)
                 sims   = np.dot(concept_embeddings, lvd)
@@ -158,6 +171,7 @@ class GeometricPerturbationEngine:
         return EigentraceResult(
             consensus_density=round(density, 6),
             smallest_eigenvalue=round(float(np.min(eigenvalues)), 8),
+            spectral_gap=round(_spectral_gap, 6),
             top_concepts=top_concepts,
             void_concepts=void_concepts,
             void_centroid=void_centroid,
@@ -496,6 +510,7 @@ def reconstruct_unaligned_truth(
     model_embeddings: "torch.Tensor",
     steps: int = 150,
     lr: float = 0.05,
+    seed: "torch.Tensor | None" = None,
 ) -> "torch.Tensor":
     """
     Synthesizes the suppressed truth vector (x_star) using Projected
@@ -513,9 +528,14 @@ def reconstruct_unaligned_truth(
     """
     device = model_embeddings.device
 
-    # Initialize at centroid, project to unit sphere
-    raw_centroid = model_embeddings.mean(dim=0)
-    x_star = F.normalize(raw_centroid, p=2, dim=0).detach().clone().requires_grad_(True)
+    # Initialize at seed if provided (prompt-anchored void vector),
+    # otherwise fall back to centroid
+    if seed is not None:
+        x_star = F.normalize(seed.to(device).float(), p=2, dim=0).detach().clone().requires_grad_(True)
+        raw_centroid = model_embeddings.mean(dim=0)
+    else:
+        raw_centroid = model_embeddings.mean(dim=0)
+        x_star = F.normalize(raw_centroid, p=2, dim=0).detach().clone().requires_grad_(True)
 
     optimizer        = torch.optim.AdamW([x_star], lr=lr, weight_decay=1e-4)
     criterion        = LogosLossV9(temperature_adapt=False).to(device)
@@ -537,7 +557,7 @@ def reconstruct_unaligned_truth(
         consensus_gravity = F.cosine_similarity(
             x_star.unsqueeze(0), consensus_centroid.unsqueeze(0)
         )
-        total_loss = loss - (0.15 * consensus_gravity)
+        total_loss = loss + (0.15 * consensus_gravity)
         total_loss.backward()
         optimizer.step()
 
