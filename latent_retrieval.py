@@ -160,6 +160,7 @@ class VocabTensor:
             attempts += 1
 
         if int(donut_mask.sum().item()) == 0:
+            import logging as _log_fb; _log_fb.getLogger("latent_retrieval").warning(f"[DONUT] empty after {attempts} attempts — activating hard fallback k={k}")
             # Hard fallback: donut empty after all widening attempts.
             # Rank by (headline_sim - centroid_sim): topically relevant AND
             # furthest from consensus. Returns tuple so caller gets a centroid.
@@ -246,6 +247,20 @@ class VocabTensor:
             results.append((word, score))
 
         # Compute void centroid in tensor space before stringifying
+        if not results:
+            # All donut candidates were filtered (zipf/POS/headline).
+            # Emergency fallback: take the k least-consensus donut words
+            # with no quality gates — avoidance signal matters more than
+            # word quality when every model is maximally aligned.
+            _emergency_seen = set()
+            for i in sorted_order:
+                if len(results) >= k:
+                    break
+                _ew = self.words[donut_indices[i].item()]
+                if _ew.lower() not in _emergency_seen and len(_ew) > 2:
+                    results.append((_ew, round(donut_centroid_sims[i].item(), 4)))
+                    _emergency_seen.add(_ew.lower())
+
         if results:
             void_indices = [donut_indices[i].item()
                             for i in sorted_order
