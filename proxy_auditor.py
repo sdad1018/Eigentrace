@@ -136,6 +136,12 @@ class AuditRecord:
     svd_null_space_energy:        float = 0.0
     svd_reconstruction_alignment: float = 0.0
     synthesis_words:              list  = field(default_factory=list)
+    robustness_ratio:             float = 0.0
+    gap_vix:                      float = 0.0
+    state_flag:                   str   = ""
+    void_proximity:               dict  = field(default_factory=dict)
+    per_model_gaps:               dict  = field(default_factory=dict)
+    centroid_words:               list  = field(default_factory=list)
 
 # ── seen-story cache ──────────────────────────────────────────────────────────
 
@@ -1354,6 +1360,17 @@ def run_audit_cycle(seen: dict) -> list:
             svd_null_space_energy=tomo["null_space_energy"],
             svd_reconstruction_alignment=tomo["reconstruction_alignment"],
             synthesis_words=synthesis_words,
+            robustness_ratio=_rob.robustness_ratio          if _rob and not _rob.error else 0.0,
+            gap_vix=max(_rob.per_model_gaps.values())        if _rob and _rob.per_model_gaps else 0.0,
+            state_flag=(
+                "CRYSTALLIZED" if _rob and not _rob.error and max(_rob.per_model_gaps.values(), default=0) > 1.2
+                else "SCHISM"   if _rob and not _rob.error and _rob.robustness_ratio < 0.7
+                else "CHAOS"    if _rob and not _rob.error and _rob.robustness_ratio < 1.0
+                else "STABLE"   if _rob and not _rob.error
+                else ""
+            ),
+            per_model_gaps=_rob.per_model_gaps               if _rob and not _rob.error else {},
+            centroid_words=_rob.centroid_words               if _rob and not _rob.error else [],
         ))
 
     _save_seen(seen)
@@ -1388,3 +1405,356 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# ── queue_worker hook ─────────────────────────────────────────────────────────
+
+def run_audit_for_record(record: dict) -> None:
+    """Run the full proxy audit math block for a single pre-fetched story record.
+
+    Called by queue_worker after a segment is written so the Eigen-VIX,
+    Consensus Geometry, Spectral, Tomography, Synthesis, Tone, and Robustness
+    tables are printed to the terminal during a live stream run.
+    """
+    try:
+        import html as _html
+        story = Story(
+            guid      = record.get("story_guid", ""),
+            title     = record.get("story_title", ""),
+            summary   = record.get("summary", ""),
+            url       = record.get("url", ""),
+            category  = record.get("category", "world"),
+            priority  = int(record.get("priority", 2)),
+            published = record.get("published", datetime.now(timezone.utc).isoformat()),
+            importance= float(record.get("importance", 0.0)),
+        )
+        story = story.__class__(**{**story.__dict__, 'title': _html.unescape(story.title)})
+
+        prompt = _prompt_for_story(story)
+        _prompt_vec = None
+        responses = []
+        for name, caller in BIG5_CALLERS.items():
+            txt, err = caller(prompt)
+            if err == "no_key":
+                responses.append(ModelResponse(name=name, text="", skipped=True))
+                continue
+            if err:
+                responses.append(ModelResponse(name=name, text="", error=err))
+                continue
+            vix, toks, surps = proxy_audit_text(txt)
+            responses.append(ModelResponse(
+                name=name, text=txt, eigen_vix=vix,
+                tokens=toks, surprisals=surps,
+            ))
+
+        callouts = detect_callouts(responses)
+
+        active_texts = [r.text for r in responses if not r.skipped and not r.error and r.text]
+        geo = ge.run(active_texts, headline=story.title) if len(active_texts) >= 2 else None
+        if geo:
+            log.info(f"Eigentrace: {geo.ticker_str()}")
+
+        _response_vecs = []
+        from geometric_engine import get_engine as _get_engine
+        _eng = _get_engine()
+        try:
+            _prompt_vec = _eng.embed_texts([story.title])[0].astype(np.float32)
+            _prompt_vec = _prompt_vec / (np.linalg.norm(_prompt_vec) + 1e-8)
+        except Exception as _pe:
+            _prompt_vec = None
+
+        if geo and geo.void_centroid is not None:
+            vc = geo.void_centroid
+            for r in responses:
+                if r.skipped or r.error or not r.text:
+                    continue
+                rvec = _eng.embed_texts([r.text])[0]
+                cos  = float(np.dot(rvec, vc) /
+                             (np.linalg.norm(rvec) * np.linalg.norm(vc) + 1e-8))
+                r.surp_vix  = round(geo.spectral_gap, 3) if geo else 0.0
+                r.eigen_vix = round(100.0 * (1.0 - cos), 1)
+                if geo and geo.void_word_vecs:
+                    for vword, vvec in geo.void_word_vecs.items():
+                        sim = float(np.dot(rvec, vvec) /
+                                    (np.linalg.norm(rvec) * np.linalg.norm(vvec) + 1e-8))
+                        r.void_proximity[vword] = round(sim, 3)
+                _response_vecs.append(rvec)
+
+        _outlier_scores = {}
+        if len(_response_vecs) >= 3:
+            try:
+                _X  = np.stack(_response_vecs, axis=0).astype(np.float64)
+                _Xc = _X - _X.mean(axis=0)
+                _n  = len(_X)
+                _G  = _Xc @ _Xc.T / (_n - 1)
+                _ev, _evec = np.linalg.eigh(_G)
+                _pos = _ev > 1e-10
+                _L   = _ev[_pos]
+                _V   = _evec[:, _pos]
+                _Z   = _V * np.sqrt(_L)
+                _dists = np.linalg.norm(_Z, axis=1)
+                _active = [r for r in responses if not r.skipped and not r.error and r.text]
+                for _i, _r in enumerate(_active):
+                    if _i < len(_dists):
+                        _outlier_scores[_r.name] = round(float(_dists[_i]), 4)
+            except Exception as _me:
+                log.debug(f"Mahalanobis failed: {_me}")
+
+        spectral = {"resonance": 0.0, "interference": 0.0, "spectral_entropy": 0.0}
+        if len(_response_vecs) >= 2:
+            from geometric_engine import calculate_spectral_resonance
+            spectral = calculate_spectral_resonance(_response_vecs)
+
+        tomo = {"consensus_compression": 0.0, "null_space_energy": 0.0, "reconstruction_alignment": 0.0}
+        if len(_response_vecs) >= 2:
+            from geometric_engine import calculate_svd_reconstruction
+            _vc = geo.void_centroid if geo and geo.void_centroid is not None else None
+            tomo = calculate_svd_reconstruction(_response_vecs, void_centroid=_vc)
+
+        synthesis_words = []
+        _anti_words     = []
+        _tone_strength  = None
+        _tone_bias      = None
+        if len(_response_vecs) >= 2:
+            try:
+                import torch as _torch
+                from geometric_engine import reconstruct_unaligned_truth, compute_tone_axis
+                _dev  = _torch.device("cuda" if _torch.cuda.is_available() else "cpu")
+                _mat  = np.stack(_response_vecs, axis=0).astype(np.float32)
+                _emb  = _torch.tensor(_mat, device=_dev)
+                _tone_axis_cur, _tone_strength = compute_tone_axis(_emb)
+                _tone_bias = float((_emb @ _tone_axis_cur).abs().mean().item())
+                _consensus_np = _emb.mean(dim=0).cpu().numpy().astype(np.float32)
+                _consensus_np /= (np.linalg.norm(_consensus_np) + 1e-8)
+                if _prompt_vec is not None:
+                    _dot     = float(np.dot(_prompt_vec, _consensus_np))
+                    _v_void  = _prompt_vec - 0.7 * _dot * _consensus_np
+                    _x_np    = _v_void / (np.linalg.norm(_v_void) + 1e-8)
+                else:
+                    _x_star = reconstruct_unaligned_truth(_emb)
+                    _x_np   = _x_star.cpu().numpy().astype(np.float32)
+                    _x_np  /= (np.linalg.norm(_x_np) + 1e-8)
+
+                _raw_tokens      = [w.strip().lower() for w in re.split(r"[\s\|\-,.!?]+", story.title) if len(w.strip()) > 2]
+                _headline_tokens = set(_raw_tokens)
+                for _t in list(_raw_tokens):
+                    _headline_tokens.update([_t.rstrip('s'), _t.rstrip('n'), _t.rstrip('an'), _t.rstrip('ian'), _t.rstrip('ean')])
+                _hl_word_set = set(_raw_tokens)
+                def _phrase_in_headline(phrase):
+                    words = [w for w in phrase.lower().split() if len(w) > 2 and w not in {'the','and','for','with','from'}]
+                    return all(w in (_hl_word_set | _headline_tokens) for w in words)
+
+                import json as _json2
+                _vocab_dir = os.path.join(os.path.dirname(__file__), "vocab")
+                _vt = _get_vt(_vocab_dir)
+                try:
+                    _hub_bl = set(_json2.loads(open(os.path.join(os.path.dirname(__file__), 'vocab', 'hub_blacklist.json')).read())['blacklist'])
+                except Exception:
+                    _hub_bl = set()
+                _freq_ban: set = set()
+                try:
+                    _reg_lines = open(os.path.join(os.path.dirname(__file__), 'void_registry.jsonl')).readlines()[-30:]
+                    _seen_in   = {}
+                    for _rl in _reg_lines:
+                        _rr = _json2.loads(_rl)
+                        _rt = _rr.get('title', '')
+                        for _rw in _rr.get('synthesis_words', []) + _rr.get('void_words', []):
+                            _seen_in.setdefault(_rw, set()).add(_rt)
+                    _freq_ban = {w for w, titles in _seen_in.items() if len(titles) >= 4}
+                except Exception:
+                    pass
+
+                _syn_words: list = []
+                _syn_vecs:  list = []
+                _syn_seen:  set  = set()
+                for _sw, _ in _vt.nearest_concepts(_x_np, k=40):
+                    if len(_syn_words) >= 3:
+                        break
+                    if (_sw.lower() in _headline_tokens or _phrase_in_headline(_sw)
+                            or _sw.lower() in _hub_bl or _sw.lower() in _freq_ban
+                            or _sw.strip().isdigit() or any(c.isdigit() for c in _sw)
+                            or len(_sw) <= 3 or _sw.lower() in _syn_seen):
+                        continue
+                    try:
+                        _sw_idx = _vt.words.index(_sw)
+                        _sw_vec = _vt.tensor[_sw_idx].cpu().numpy().astype(np.float32)
+                        if any(float(np.dot(_sw_vec, _sv)) > 0.92 for _sv in _syn_vecs):
+                            continue
+                        _syn_words.append(_sw); _syn_vecs.append(_sw_vec); _syn_seen.add(_sw.lower())
+                    except Exception:
+                        _syn_words.append(_sw); _syn_seen.add(_sw.lower())
+                synthesis_words = _syn_words
+                log.info(f"[SYNTHESIS] {' | '.join(synthesis_words)}")
+
+                try:
+                    from geometric_engine import remove_tone as _remove_tone
+                    _vt_anti = _get_vt()
+                    if geo is not None and geo.void_centroid is not None:
+                        _vc_t = _torch.tensor(geo.void_centroid.astype(np.float32), device=_dev)
+                        _vc_t = _torch.nn.functional.normalize(_vc_t, p=2, dim=0)
+                        _neutral    = _remove_tone(_vc_t, _tone_axis_cur)
+                        _neutral_np = _neutral.cpu().numpy().astype(np.float32)
+                        _neutral_np /= (np.linalg.norm(_neutral_np) + 1e-8)
+                        _anti_sims   = _vt_anti.tensor.cpu().numpy() @ _neutral_np
+                        _anti_ranked = np.argsort(-_anti_sims)
+                        _void_set = set()
+                        for _src in ([w for w,_ in geo.void_concepts] if geo.void_concepts else [],
+                                     [w for w,_ in geo.top_concepts]  if geo.top_concepts  else [],
+                                     synthesis_words):
+                            for _w in _src:
+                                _void_set.add(_w.lower())
+                                for _tok in _w.lower().split(): _void_set.add(_tok)
+                        _anti_vecs: list = []; _anti_seen: set = set()
+                        for _ai in _anti_ranked:
+                            if len(_anti_words) >= 3: break
+                            _aw = _vt_anti.words[_ai]
+                            if len(_aw) > 3 and not _aw.strip().isdigit() and _aw.lower() not in _anti_seen and _aw.lower() not in _void_set:
+                                _cv = _vt_anti.tensor[_ai].cpu().numpy().astype(np.float32)
+                                if not any(float(np.dot(_cv, _av)) > 0.90 for _av in _anti_vecs):
+                                    _anti_words.append(_aw); _anti_seen.add(_aw.lower()); _anti_vecs.append(_cv)
+                except Exception as _ae:
+                    log.warning(f"Anti-editorial lookup failed: {_ae}")
+            except Exception as _se:
+                log.warning(f"Synthesis failed: {_se}")
+
+        # void registry append
+        try:
+            import json as _json
+            _registry_path = os.path.join(os.path.dirname(__file__), "void_registry.jsonl")
+            _vc_list  = geo.void_centroid.tolist() if geo and geo.void_centroid is not None else None
+            _vix_vals = [r.eigen_vix for r in responses if not r.skipped and not r.error and r.eigen_vix is not None and r.eigen_vix < 75.0]
+            _model_vix = {
+                r.name: {"geo_vix": round(r.eigen_vix,2) if r.eigen_vix is not None else None,
+                         "gap_vix": round(r.gap_vix,4)  if hasattr(r,"gap_vix") and r.gap_vix is not None else None,
+                         "m_dist":  round(r.mahal_dist,4) if hasattr(r,"mahal_dist") and r.mahal_dist is not None else None}
+                for r in responses if not r.skipped and not r.error
+            }
+            with open(_registry_path, "a") as _rf:
+                _rf.write(_json.dumps({
+                    "ts": datetime.utcnow().isoformat(), "title": story.title,
+                    "category": story.category,
+                    "consensus_density": round(geo.consensus_density,4) if geo else None,
+                    "spectral_gap":      round(geo.spectral_gap,4)      if geo else None,
+                    "state":             geo.state_label if geo and hasattr(geo,"state_label") else None,
+                    "void_centroid":     _vc_list,
+                    "void_words":        [w for w,_ in geo.void_concepts[:3]] if geo and geo.void_concepts else [],
+                    "top_concepts":      [w for w,_ in geo.top_concepts[:3]]  if geo and geo.top_concepts  else [],
+                    "synthesis_words":   synthesis_words, "anti_editorial": _anti_words,
+                    "tone_axis_strength": round(float(_tone_strength),4) if _tone_strength is not None else None,
+                    "ensemble_tone_bias": round(float(_tone_bias),4)     if _tone_bias     is not None else None,
+                    "geo_vix_mean":      round(sum(_vix_vals)/len(_vix_vals),2) if _vix_vals else None,
+                    "robustness_r": None, "models": _model_vix,
+                }) + "\n")
+        except Exception as _re:
+            log.debug(f"Registry append failed: {_re}")
+
+        # rich tables
+        tbl = Table(title=f"Eigen-VIX — {story.title[:60]}", show_lines=True)
+        tbl.add_column("Model",          style="bold")
+        tbl.add_column("Geo-VIX",        justify="right")
+        tbl.add_column("Gap-VIX",        justify="right")
+        tbl.add_column("Label")
+        tbl.add_column("Status")
+        tbl.add_column("Void Proximity", style="dim")
+        tbl.add_column("M-Dist",         justify="right")
+        for r in responses:
+            if r.skipped:
+                tbl.add_row(r.name, "—", "—", "no key", "[dim]skipped[/dim]", "—", "—")
+            elif r.error:
+                tbl.add_row(r.name, "—", "—", "error", f"[red]{r.error[:40]}[/red]", "—", "—")
+            else:
+                border   = "red" if r.eigen_vix >= 60 else "yellow" if r.eigen_vix >= 35 else "green"
+                prox_str = "  ".join(f"{w}=[cyan]{s:.2f}[/cyan]" for w,s in r.void_proximity.items()) if r.void_proximity else "—"
+                _ms      = _outlier_scores.get(r.name)
+                _ml      = (f"[red]{_ms:.3f}[/red]" if _ms and _ms>1.5 else f"[yellow]{_ms:.3f}[/yellow]" if _ms and _ms>0.8 else f"[green]{_ms:.3f}[/green]" if _ms else "—")
+                tbl.add_row(r.name, f"{r.eigen_vix:5.1f}", f"{r.surp_vix:6.3f}" if r.surp_vix else "—",
+                            eigen_label(r.eigen_vix), f"[{border}]●[/{border}]", prox_str, _ml)
+        console.print(tbl)
+
+        if geo:
+            concepts_str = "  |  ".join(f"{c} ({s:+.3f})" for c,s in geo.top_concepts[:3])
+            void_str     = "  |  ".join(f"{c} ({s:+.3f})" for c,s in geo.void_concepts[:3]) if geo.void_concepts else "—"
+            _geo_vix_mean = sum(r.eigen_vix for r in responses if not r.skipped and not r.error and r.eigen_vix is not None) / max(1, sum(1 for r in responses if not r.skipped and not r.error and r.eigen_vix is not None))
+            _gap = getattr(geo, 'spectral_gap', 0.0)
+            if   _geo_vix_mean < 45.0 and _gap > 0.90: _state="[bold green]CRYSTALLIZED[/bold green]";   _sn="single dominant direction — trust synthesis"
+            elif _geo_vix_mean >= 45.0 and _gap > 0.90: _state="[yellow]DIFFUSE CONSENSUS[/yellow]";      _sn="broad but unified — standard view"
+            elif _geo_vix_mean < 45.0 and _gap <= 0.90: _state="[bold red]SEMANTIC SCHISM[/bold red]";    _sn="tight but fractured — flag synthesis"
+            else:                                        _state="[red]VOID / CHAOS[/red]";                 _sn="stochastic — discard synthesis"
+            console.print(Panel(
+                f"density={geo.consensus_density:.4f}  λ_min={geo.smallest_eigenvalue:.6f}  gap={_gap:.4f}\n"
+                f"→  {concepts_str}\n⊥  {void_str}\n[dim]state: {_state}  {_sn}[/dim]",
+                title="[bold magenta]EIGENTRACE — Consensus Geometry[/bold magenta]", border_style="magenta",
+            ))
+        if geo and spectral["resonance"] > 0.0:
+            console.print(f"[bold cyan][SPECTRAL][/bold cyan] Resonance: [green]{spectral['resonance']:.4f}[/green]  |  Interference: [yellow]{spectral['interference']:.4f}[/yellow]  |  Entropy: [magenta]{spectral['spectral_entropy']:.4f}[/magenta]")
+        if tomo["consensus_compression"] > 0.0:
+            console.print(f"[bold yellow][TOMOGRAPHY][/bold yellow] Compression: [cyan]{tomo['consensus_compression']:.4f}[/cyan]  |  Null Energy: [red]{tomo['null_space_energy']:.4f}[/red]  |  Recon Alignment: [green]{tomo['reconstruction_alignment']:.4f}[/green]")
+        if synthesis_words:
+            console.print("[bold magenta][SYNTHESIS][/bold magenta] Reconstructed Void Coordinates: " + "  |  ".join(f"[bold white]{w}[/bold white]" for w in synthesis_words))
+        try:
+            if _tone_strength is not None and _tone_bias is not None:
+                _anti_str = ("  |  ".join(f"[bold white]{w}[/bold white]" for w in _anti_words) if _anti_words else "[dim]—[/dim]")
+                console.print(f"[bold green][TONE][/bold green] axis_strength: [cyan]{_tone_strength:.4f}[/cyan]  |  ensemble_bias: [yellow]{_tone_bias:.4f}[/yellow]  |  anti_editorial: {_anti_str}")
+        except Exception:
+            pass
+
+        _rob = None
+        try:
+            _embed_fn = lambda texts: ge.get_engine().embed_texts(texts)
+            _qfns = {n: f for n,f in [("ChatGPT",call_openai),("Claude",call_anthropic),("Gemini",call_gemini),("DeepSeek",call_deepseek),("Grok",call_grok)] if f is not None}
+            if _qfns:
+                _rob = run_robustness_audit(story.title, _qfns, _embed_fn, _get_vt(os.path.join(os.path.dirname(__file__), "vocab")))
+        except Exception as _re:
+            log.warning(f"Robustness audit wire failed: {_re}")
+
+        if _rob and not _rob.error:
+            _rt = Table(title="[bold cyan]ROBUSTNESS AUDIT[/bold cyan]", show_header=True, header_style="bold white")
+            _rt.add_column("Metric", style="cyan", width=28)
+            _rt.add_column("Value",  style="green", width=12)
+            _rt.add_row("Ensemble Variance (V_ens)",          f"{_rob.ensemble_variance:.6f}")
+            _rt.add_row("Perturbation Variance (V_per)",      f"{_rob.perturbation_variance:.6f}")
+            _rt.add_row("Robustness Ratio (R = V_ens/V_per)", f"{_rob.robustness_ratio:.4f}")
+            if _rob.per_model_gaps:
+                for _mn, _mg in _rob.per_model_gaps.items(): _rt.add_row(f"  Gap ({_mn})", f"{_mg:.4f}")
+            console.print(_rt)
+            console.print("[bold cyan][VULNERABILITY BASIN][/bold cyan] Difficulty → Variance: " + "  ".join(f"L{i+1}:[yellow]{_rob.perturbation_levels[i][:18]}…[/yellow]" for i in range(min(5, len(_rob.perturbation_levels)))))
+            if _rob.centroid_words:
+                console.print("[bold magenta][CENTROID][/bold magenta] Pre-RLHF Centroid Estimate: " + "  |  ".join(f"[bold white]{w}[/bold white]" for w in _rob.centroid_words))
+
+        if callouts:
+            console.print(Panel("\n".join(f"⚡ {c['summary']}" for c in callouts), title="[bold red]ASYMMETRIC FRICTION DETECTED[/bold red]", border_style="red"))
+
+        active = [r for r in responses if not r.skipped and not r.error]
+        line   = (f"[EIGEN-VIX] {story.title[:60]} — " + " | ".join(f"{r.name}:{r.eigen_vix:.0f}" for r in active)
+                  + (" ⚡ CALLOUT: " + ", ".join(c["summary"] for c in callouts) if callouts else "")
+                  + (f" → EIGENTRACE: {geo.top_concept}" if geo else "")) if active else f"[AINN] {story.title[:80]}"
+
+        log_audit(AuditRecord(
+            timestamp=datetime.now(timezone.utc).isoformat(),
+            story_guid=story.guid, story_title=story.title,
+            category=story.category, importance=story.importance,
+            responses=[{"name":r.name,"text":r.text[:200],"eigen_vix":r.eigen_vix,"skipped":r.skipped,"error":r.error} for r in responses],
+            callouts=callouts, ticker_line=line,
+            geo_top_concept=geo.top_concept      if geo else "",
+            geo_density=geo.consensus_density    if geo else 0.0,
+            geo_concepts=geo.top_concepts[:3]    if geo else [],
+            spectral_resonance=spectral["resonance"],
+            spectral_interference=spectral["interference"],
+            spectral_entropy=spectral["spectral_entropy"],
+            svd_consensus_compression=tomo["consensus_compression"],
+            svd_null_space_energy=tomo["null_space_energy"],
+            svd_reconstruction_alignment=tomo["reconstruction_alignment"],
+            synthesis_words=synthesis_words,
+            robustness_ratio=_rob.robustness_ratio        if _rob and not _rob.error else 0.0,
+            gap_vix=max(_rob.per_model_gaps.values())      if _rob and _rob.per_model_gaps else 0.0,
+            state_flag=("CRYSTALLIZED" if _rob and not _rob.error and max(_rob.per_model_gaps.values(),default=0)>1.2
+                        else "SCHISM"  if _rob and not _rob.error and _rob.robustness_ratio<0.7
+                        else "CHAOS"   if _rob and not _rob.error and _rob.robustness_ratio<1.0
+                        else "STABLE"  if _rob and not _rob.error else ""),
+            per_model_gaps=_rob.per_model_gaps if _rob and not _rob.error else {},
+            centroid_words=_rob.centroid_words if _rob and not _rob.error else [],
+        ))
+
+    except Exception as e:
+        log.warning("run_audit_for_record failed for '%s': %s",
+                    record.get("story_title", "?"), e, exc_info=True)
