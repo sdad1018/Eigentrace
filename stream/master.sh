@@ -10,6 +10,7 @@ if ! flock -n 9; then
 fi
 echo $$ > "$LOCKFILE"
 
+# NOTE: If your Owncast rejects this, change abc123 to your real key
 STREAM_KEY="abc123"
 OWNCAST="rtmp://127.0.0.1:1935/live/$STREAM_KEY"
 BED_MUSIC="/home/remvelchio/eigentrace/assets/bed_22050.wav"
@@ -24,16 +25,20 @@ echo "$(date): MASTER TRANSMITTER STARTING (PID=$$)"
 while true; do
     ffmpeg -hide_banner -loglevel warning -stats \
         -err_detect ignore_err \
-        -fflags +genpts+igndts+discardcorrupt \
-        -use_wallclock_as_timestamps 1 \
-        -f lavfi -i "color=c=black:s=1024x576:r=30" \
+        -fflags +genpts \
+        -re -f image2 -loop 1 -framerate 30 -i "/home/remvelchio/eigentrace/tmp/current_frame.png" \
         -stream_loop -1 -i "$BED_MUSIC" \
         -f lavfi -i "anullsrc=cl=mono:r=44100" \
-        -thread_queue_size 4096 -f mpegts -i "$UDP_IN" \
+        -thread_queue_size 4096 -probesize 10000000 -analyzeduration 10000000 -f mpegts -i "$UDP_IN" \
         -filter_complex \
-            "[0:v]fps=30,scale=1024:576,drawbox=x=0:y=h-60:w=iw:h=60:color=black@0.55:t=fill,drawtext=fontfile=${TICKER_FONT}:textfile=${TICKER_FILE}:reload=1:expansion=none:fontcolor=white:fontsize=28:x=w-mod(t*120\,(w+tw)):y=h-60+14:shadowcolor=black@0.6:shadowx=2:shadowy=2[v];[1:a]volume=0.08[bed];[2:a]volume=0.0[null];[3:0]aresample=async=1:min_hard_comp=0.100000:first_pts=0,volume=1.0[story];[null][story]amix=inputs=2:duration=longest:dropout_transition=2[voice];[voice][bed]amix=inputs=2:duration=longest:dropout_transition=2[a]" \
+            "[0:v]fps=30,scale=1024:576,drawbox=x=0:y=h-60:w=iw:h=60:color=black@0.55:t=fill,drawtext=fontfile=${TICKER_FONT}:textfile=${TICKER_FILE}:reload=1:expansion=none:fontcolor=white:fontsize=28:x=w-mod(t*120\,(w+tw)):y=h-60+14:shadowcolor=black@0.6:shadowx=2:shadowy=2[v]; \
+             [1:a]volume=0.08[bed]; \
+             [2:a]volume=0.0[null]; \
+             [3:a]aresample=async=1:min_hard_comp=0.100000:first_pts=0,volume=3.0[story]; \
+             [null][story]amix=inputs=2:duration=longest:dropout_transition=2[voice]; \
+             [voice][bed]amix=inputs=2:duration=longest:dropout_transition=2[a]" \
         -map "[v]" -map "[a]" \
-        -c:v libx264 -preset veryfast -b:v 2500k -maxrate 2500k -bufsize 5000k \
+        -c:v libx264 -preset fast -b:v 2500k -maxrate 2500k -bufsize 5000k \
         -pix_fmt yuv420p -g 60 -keyint_min 60 -sc_threshold 0 \
         -c:a aac -b:a 128k -ar 44100 -ac 2 \
         -f flv "${OWNCAST}" \
