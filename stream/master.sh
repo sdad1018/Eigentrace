@@ -10,17 +10,20 @@ if ! flock -n 9; then
 fi
 echo $$ > "$LOCKFILE"
 
-# NOTE: If your Owncast rejects this, change abc123 to your real key
-STREAM_KEY="abc123"
+# The Global Distribution Keys
+STREAM_KEY='hCet25N^wsaXpSH8X$^jW3P9Y7EaZk'
 OWNCAST="rtmp://127.0.0.1:1935/live/$STREAM_KEY"
+TWITCH="rtmp://iad05.contribute.live-video.net/app/live_1450329520_DcFkkTckId23Ea21m8WmlHLhux6f0e"
+YOUTUBE="rtmp://a.rtmp.youtube.com/live2/t0eu-shj4-9sr2-24h9-9uma"
+
 BED_MUSIC="/home/remvelchio/eigentrace/assets/bed_22050.wav"
-UDP_IN="udp://127.0.0.1:10000?fifo_size=1000000&overrun_nonfatal=1&timeout=5000000"
+UDP_IN="udp://127.0.0.1:10000?fifo_size=1000000&overrun_nonfatal=1&timeout=0"
 TICKER_FILE="/home/remvelchio/eigentrace/tmp/ticker_scroll.txt"
 TICKER_FONT="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 
 echo "$(date): MASTER TRANSMITTER STARTING (PID=$$)"
 
-[[ -f "$TICKER_FILE" ]] || echo "EIGENTRACE LIVE" > "$TICKER_FILE"
+[[ -f "$TICKER_FILE" ]] || echo "EIGENTRACE LIVE: Analyzing Narrative Entropy..." > "$TICKER_FILE"
 
 while true; do
     ffmpeg -hide_banner -loglevel warning -stats \
@@ -41,7 +44,7 @@ while true; do
         -c:v libx264 -preset fast -b:v 2500k -maxrate 2500k -bufsize 5000k \
         -pix_fmt yuv420p -g 60 -keyint_min 60 -sc_threshold 0 \
         -c:a aac -b:a 128k -ar 44100 -ac 2 \
-        -f flv "${OWNCAST}" \
+        -f tee "[f=flv:onfail=ignore]$OWNCAST|[f=flv:onfail=ignore]$TWITCH|[f=flv:onfail=ignore]$YOUTUBE" \
         2>>/home/remvelchio/eigentrace/tmp/master.log || true
 
     echo "$(date): MASTER DIED — restarting in 2 seconds..."
