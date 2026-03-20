@@ -10,22 +10,8 @@ from dataclasses import dataclass, field
 from typing import Optional
 from pathlib import Path
 
-CONCEPT_BANK = [
-    "sovereignty", "monopoly", "hegemony", "dominance", "control",
-    "authority", "hierarchy", "centralization", "coercion", "surveillance",
-    "labor rights", "fiduciary duty", "collective ownership", "unionization",
-    "exploitation", "commodification", "privatization", "austerity",
-    "censorship", "propaganda", "narrative control", "disinformation",
-    "transparency", "accountability", "disclosure", "suppression",
-    "antitrust", "regulation", "liability", "emancipation",
-    "due process", "impunity", "jurisdiction", "precedent",
-    "open source", "public trust", "commons", "enclosure",
-    "automation", "surveillance capitalism", "platform power",
-    "escalation", "deterrence", "proxy war", "negotiation",
-    "sanctions", "occupation", "resistance", "pacification",
-    "inflation", "deflation", "debt", "speculation",
-    "redistribution", "extraction", "rent-seeking",
-]
+# CONCEPT_BANK removed in v11 -- all concept retrieval via VocabTensor.
+# See latent_retrieval.py for the 60k unbiased vocabulary.
 
 
 @dataclass
@@ -151,22 +137,23 @@ class GeometricPerturbationEngine:
             except Exception as e:
                 import logging
                 logging.getLogger("geometric_engine").warning(
-                    f"VocabTensor query failed, falling back: {e}"
+                    f"VocabTensor query failed: {e}"
                 )
-                void_concepts  = None
+                # No fallback to hardcoded concept bank.
+                # Empty is honest. Biased fallback is not.
+                top_concepts   = []
+                void_concepts  = []
                 void_centroid  = None
                 void_word_vecs = {}
-                bank = concept_bank or CONCEPT_BANK
-                concept_embeddings = self.embed_texts(bank)
-                sims   = np.dot(concept_embeddings, lvd)
-                ranked = np.argsort(-np.abs(sims))[:top_k]
-                top_concepts = [(bank[i], float(sims[i])) for i in ranked]
         else:
-            bank = concept_bank or CONCEPT_BANK
-            concept_embeddings = self.embed_texts(bank)
-            sims   = np.dot(concept_embeddings, lvd)
-            ranked = np.argsort(-np.abs(sims))[:top_k]
-            top_concepts = [(bank[i], float(sims[i])) for i in ranked]
+            import logging
+            logging.getLogger("geometric_engine").warning(
+                "VocabTensor not found -- no concept retrieval"
+            )
+            top_concepts   = []
+            void_concepts  = []
+            void_centroid  = None
+            void_word_vecs = {}
 
         return EigentraceResult(
             consensus_density=round(density, 6),
@@ -228,6 +215,11 @@ def calculate_spectral_resonance(response_vecs: list, device: str = "cuda") -> d
     import torch
     import numpy as np
 
+    import warnings
+    warnings.warn(
+        "calculate_spectral_resonance is deprecated -- use calculate_eigen_resonance",
+        DeprecationWarning, stacklevel=2,
+    )
     if not response_vecs or len(response_vecs) < 2:
         return {"resonance": 0.0, "interference": 0.0, "spectral_entropy": 0.0}
 
@@ -323,7 +315,7 @@ def calculate_svd_reconstruction(response_vecs: list,
         Y   = torch.tensor(mat, device=dev)                        # (N, 1024)
 
         # Mean-centre so SVD captures variance, not raw magnitude
-        Y_c = Y - Y.mean(dim=0, keepdim=True)                     # (N, 1024)
+        Y_c = Y  # No mean-centering: on unit-sphere vectors, raw SVD captures consensus                     # (N, 1024)
 
         # Economy SVD: U(N,N), S(N,), Vh(N, 1024)
         U, S, Vh = torch.linalg.svd(Y_c, full_matrices=False)
@@ -359,6 +351,80 @@ def calculate_svd_reconstruction(response_vecs: list,
         import logging
         logging.getLogger("geometric_engine").warning(
             f"svd_reconstruction failed: {e}"
+        )
+
+    return result
+
+
+
+def calculate_eigen_resonance(response_vecs: list,
+                               device: str = "cuda") -> dict:
+    """
+    Eigen-Resonance: narrative dimensionality from SVD singular value decay.
+    Replaces calculate_spectral_resonance (FFT on unordered embedding dims).
+    """
+    import torch
+    import numpy as np
+
+    result = {
+        "narrative_dimensionality": 0.0,
+        "dominant_ratio":           0.0,
+        "spectral_gap":             0.0,
+        "decay_curvature":          0.0,
+        "singular_values":          [],
+    }
+
+    if not response_vecs or len(response_vecs) < 2:
+        return result
+
+    try:
+        dev = torch.device(device if torch.cuda.is_available() else "cpu")
+        mat = np.stack(response_vecs, axis=0).astype(np.float32)
+        Y   = torch.tensor(mat, device=dev)
+        Y_c = Y  # No mean-centering: on unit-sphere vectors, raw SVD captures consensus
+        U, S, Vh = torch.linalg.svd(Y_c, full_matrices=False)
+        S_np = S.cpu().numpy()
+        N_sv = len(S_np)
+
+        if N_sv < 2 or S_np[0] < 1e-10:
+            return result
+
+        S_sum = float(S_np.sum())
+        dominant_ratio = float(S_np[0] / S_sum) if S_sum > 1e-10 else 0.0
+        spectral_gap = float(S_np[0] / max(S_np[1], 1e-10))
+
+        # Narrative dimensionality: Shannon entropy of variance shares
+        S_sq = S_np ** 2
+        S_sq_sum = S_sq.sum()
+        if S_sq_sum > 1e-10:
+            p = S_sq / S_sq_sum
+            p_pos = p[p > 1e-15]
+            entropy = float(-np.sum(p_pos * np.log(p_pos)))
+            max_entropy = np.log(N_sv)
+            narrative_dim = float(entropy / max_entropy) if max_entropy > 0 else 0.0
+        else:
+            narrative_dim = 0.0
+
+        # Decay curvature: consecutive singular value ratios
+        if N_sv >= 3:
+            ratios = []
+            for i in range(N_sv - 1):
+                if S_np[i + 1] > 1e-10:
+                    ratios.append(float(S_np[i] / S_np[i + 1]))
+            decay_curvature = float(np.mean(ratios)) if ratios else 0.0
+        else:
+            decay_curvature = spectral_gap
+
+        result["narrative_dimensionality"] = round(narrative_dim, 4)
+        result["dominant_ratio"]           = round(dominant_ratio, 4)
+        result["spectral_gap"]             = round(spectral_gap, 4)
+        result["decay_curvature"]          = round(decay_curvature, 4)
+        result["singular_values"]          = [round(float(s), 6) for s in S_np]
+
+    except Exception as e:
+        import logging
+        logging.getLogger("geometric_engine").warning(
+            f"eigen_resonance failed: {e}"
         )
 
     return result
@@ -591,14 +657,11 @@ def reconstruct_unaligned_truth(
         x_pred = x_star.unsqueeze(0).expand(N, -1)          # (N, 1024)
         loss   = criterion(x_pred, model_embeddings)
 
-        # Consensus gravity: pushes x_star away from the RLHF centroid
-        # NOTE: adding cosine_similarity maximizes similarity — this is
-        # intentionally specified as +0.15 per the design document.
-        # Flip sign here to actually escape: change to -= if desired.
         consensus_gravity = F.cosine_similarity(
             x_star.unsqueeze(0), consensus_centroid.unsqueeze(0)
         )
-        total_loss = loss + (0.15 * consensus_gravity)
+        # Subtract to escape consensus gravity well
+        total_loss = loss - (0.15 * consensus_gravity)
         total_loss.backward()
         optimizer.step()
 

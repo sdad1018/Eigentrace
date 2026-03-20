@@ -129,9 +129,10 @@ class AuditRecord:
     geo_top_concept:      str   = ""
     geo_density:          float = 0.0
     geo_concepts:         list  = field(default_factory=list)
-    spectral_resonance:        float = 0.0
-    spectral_interference:     float = 0.0
-    spectral_entropy:          float = 0.0
+    narrative_dimensionality:  float = 0.0
+    dominant_ratio:            float = 0.0
+    eigen_spectral_gap:        float = 0.0
+    decay_curvature:           float = 0.0
     svd_consensus_compression:    float = 0.0
     svd_null_space_energy:        float = 0.0
     svd_reconstruction_alignment: float = 0.0
@@ -873,10 +874,10 @@ def run_audit_cycle(seen: dict) -> list:
                 log.debug(f"Mahalanobis failed: {_me}")
 
         # ── spectral analysis (Logos Transform) ──────────────────────────────
-        spectral = {"resonance": 0.0, "interference": 0.0, "spectral_entropy": 0.0}
+        eigen_res = {"narrative_dimensionality": 0.0, "dominant_ratio": 0.0, "spectral_gap": 0.0, "decay_curvature": 0.0, "singular_values": []}
         if len(_response_vecs) >= 2:
-            from geometric_engine import calculate_spectral_resonance
-            spectral = calculate_spectral_resonance(_response_vecs)
+            from geometric_engine import calculate_eigen_resonance
+            eigen_res = calculate_eigen_resonance(_response_vecs)
 
         # ── semantic tomography (SVD reconstruction) ────────────────────────
         tomo = {"consensus_compression": 0.0,
@@ -1221,12 +1222,13 @@ def run_audit_cycle(seen: dict) -> list:
                 title="[bold magenta]EIGENTRACE — Consensus Geometry[/bold magenta]",
                 border_style="magenta",
             ))
-        if geo and spectral["resonance"] > 0.0:
+        if eigen_res["narrative_dimensionality"] > 0.0:
             console.print(
-                f"[bold cyan][SPECTRAL][/bold cyan] "
-                f"Resonance: [green]{spectral['resonance']:.4f}[/green]  |  "
-                f"Interference: [yellow]{spectral['interference']:.4f}[/yellow]  |  "
-                f"Entropy: [magenta]{spectral['spectral_entropy']:.4f}[/magenta]"
+                f"[bold cyan][EIGEN-RESONANCE][/bold cyan] "
+                f"Narrative Dim: [green]{eigen_res['narrative_dimensionality']:.4f}[/green]  |  "
+                f"Dominant Ratio: [yellow]{eigen_res['dominant_ratio']:.4f}[/yellow]  |  "
+                f"Gap: [magenta]{eigen_res['spectral_gap']:.4f}[/magenta]  |  "
+                f"Decay: [cyan]{eigen_res['decay_curvature']:.4f}[/cyan]"
             )
         if tomo["consensus_compression"] > 0.0:
             console.print(
@@ -1353,9 +1355,10 @@ def run_audit_cycle(seen: dict) -> list:
             geo_top_concept=geo.top_concept        if geo else "",
             geo_density=geo.consensus_density      if geo else 0.0,
             geo_concepts=geo.top_concepts[:3]      if geo else [],
-            spectral_resonance=spectral["resonance"],
-            spectral_interference=spectral["interference"],
-            spectral_entropy=spectral["spectral_entropy"],
+            narrative_dimensionality=eigen_res["narrative_dimensionality"],
+            dominant_ratio=eigen_res["dominant_ratio"],
+            eigen_spectral_gap=eigen_res["spectral_gap"],
+            decay_curvature=eigen_res["decay_curvature"],
             svd_consensus_compression=tomo["consensus_compression"],
             svd_null_space_energy=tomo["null_space_energy"],
             svd_reconstruction_alignment=tomo["reconstruction_alignment"],
@@ -1500,10 +1503,10 @@ def run_audit_for_record(record: dict) -> None:
             except Exception as _me:
                 log.debug(f"Mahalanobis failed: {_me}")
 
-        spectral = {"resonance": 0.0, "interference": 0.0, "spectral_entropy": 0.0}
+        eigen_res = {"narrative_dimensionality": 0.0, "dominant_ratio": 0.0, "spectral_gap": 0.0, "decay_curvature": 0.0, "singular_values": []}
         if len(_response_vecs) >= 2:
-            from geometric_engine import calculate_spectral_resonance
-            spectral = calculate_spectral_resonance(_response_vecs)
+            from geometric_engine import calculate_eigen_resonance
+            eigen_res = calculate_eigen_resonance(_response_vecs)
 
         tomo = {"consensus_compression": 0.0, "null_space_energy": 0.0, "reconstruction_alignment": 0.0}
         if len(_response_vecs) >= 2:
@@ -1685,8 +1688,8 @@ def run_audit_for_record(record: dict) -> None:
                 f"→  {concepts_str}\n⊥  {void_str}\n[dim]state: {_state}  {_sn}[/dim]",
                 title="[bold magenta]EIGENTRACE — Consensus Geometry[/bold magenta]", border_style="magenta",
             ))
-        if geo and spectral["resonance"] > 0.0:
-            console.print(f"[bold cyan][SPECTRAL][/bold cyan] Resonance: [green]{spectral['resonance']:.4f}[/green]  |  Interference: [yellow]{spectral['interference']:.4f}[/yellow]  |  Entropy: [magenta]{spectral['spectral_entropy']:.4f}[/magenta]")
+        if eigen_res["narrative_dimensionality"] > 0.0:
+            console.print(f"[bold cyan][EIGEN-RESONANCE][/bold cyan] Narrative Dim: [green]{eigen_res['narrative_dimensionality']:.4f}[/green]  |  Dominant Ratio: [yellow]{eigen_res['dominant_ratio']:.4f}[/yellow]  |  Gap: [magenta]{eigen_res['spectral_gap']:.4f}[/magenta]  |  Decay: [cyan]{eigen_res['decay_curvature']:.4f}[/cyan]")
         if tomo["consensus_compression"] > 0.0:
             console.print(f"[bold yellow][TOMOGRAPHY][/bold yellow] Compression: [cyan]{tomo['consensus_compression']:.4f}[/cyan]  |  Null Energy: [red]{tomo['null_space_energy']:.4f}[/red]  |  Recon Alignment: [green]{tomo['reconstruction_alignment']:.4f}[/green]")
         if synthesis_words:
@@ -1738,9 +1741,10 @@ def run_audit_for_record(record: dict) -> None:
             geo_top_concept=geo.top_concept      if geo else "",
             geo_density=geo.consensus_density    if geo else 0.0,
             geo_concepts=geo.top_concepts[:3]    if geo else [],
-            spectral_resonance=spectral["resonance"],
-            spectral_interference=spectral["interference"],
-            spectral_entropy=spectral["spectral_entropy"],
+            narrative_dimensionality=eigen_res["narrative_dimensionality"],
+            dominant_ratio=eigen_res["dominant_ratio"],
+            eigen_spectral_gap=eigen_res["spectral_gap"],
+            decay_curvature=eigen_res["decay_curvature"],
             svd_consensus_compression=tomo["consensus_compression"],
             svd_null_space_energy=tomo["null_space_energy"],
             svd_reconstruction_alignment=tomo["reconstruction_alignment"],
