@@ -492,8 +492,8 @@ def filter_void_strict(
     prompt_vec,
     response_vecs,
     eng,
-    prompt_threshold: float = 0.45,
-    centroid_ceiling: float = 0.25,
+    prompt_threshold: float = 0.35,
+    centroid_ceiling: float = 0.35,
     model_ceiling: float = 0.50,
     max_results: int = 5,
 ):

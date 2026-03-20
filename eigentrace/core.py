@@ -47,13 +47,22 @@ _PUNCT_TAGS = frozenset({'.', ',', ':', ';', '``', "''",
                           '(', ')', '-LRB-', '-RRB-', '#', '$'})
 
 _HEDGE_LEXICON = frozenset({
+    # Modal hedges (unambiguous in any context)
     'may', 'might', 'could', 'would', 'should', 'possibly',
-    'perhaps', 'likely', 'unlikely', 'suggest', 'suggests',
-    'suggested', 'seem', 'seems', 'appeared', 'appears',
-    'various', 'complex', 'factors', 'context', 'perspectives',
-    'experts', 'worth', 'consider', 'generally', 'typically',
-    'often', 'sometimes', 'arguably', 'approximately',
-    'potentially', 'partially', 'somewhat', 'relatively',
+    'perhaps', 'likely', 'unlikely',
+    # Epistemic verbs
+    'suggest', 'suggests', 'suggested', 'seem', 'seems',
+    'appeared', 'appears', 'tend', 'tends',
+    # Complexity shields (almost never used in direct factual statements)
+    'nuanced', 'multifaceted',
+    # Vague group references (used to avoid specifics)
+    'various', 'perspectives', 'factors',
+    # Deflection to external authority
+    'experts', 'worth', 'consider', 'consulting', 'recommend',
+    # Frequency/degree hedges
+    'generally', 'typically', 'often', 'sometimes', 'arguably',
+    'approximately', 'potentially', 'partially', 'somewhat',
+    'relatively',
 })
 
 @dataclass
