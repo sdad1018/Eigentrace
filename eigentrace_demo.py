@@ -360,6 +360,7 @@ def get_callers() -> dict:
         from proxy_auditor import (
             call_openai, call_anthropic, call_gemini,
             call_deepseek, call_grok,
+            call_qwen, call_mistral, call_llama,
         )
         key_map = {
             "ChatGPT":  ("OPENAI_API_KEY",    call_openai),
@@ -367,10 +368,15 @@ def get_callers() -> dict:
             "Gemini":   ("GEMINI_API_KEY",     call_gemini),
             "DeepSeek": ("DEEPSEEK_API_KEY",   call_deepseek),
             "Grok":     ("XAI_API_KEY",        call_grok),
+            "Qwen (local)": (None, call_qwen),       # Chinese regime
+            "Mistral (local)": (None, call_mistral), # EU regime
+            "Llama (local)": (None, call_llama),     # US open-source
         }
         available = {}
         for name, (env_var, fn) in key_map.items():
-            if os.getenv(env_var, "").strip():
+            if env_var is None:  # local model
+                available[name] = fn
+            elif os.getenv(env_var, "").strip():
                 available[name] = fn
         return available
     except Exception as e:
@@ -581,11 +587,19 @@ def display(result: DemoResult):
 # MODES
 # ===========================================================================
 
-def run_battery(prompt_ids=None):
+def run_battery(prompt_ids=None, with_qwen=False, with_mistral=False, with_llama=False, with_all=False):
     from dotenv import load_dotenv
     load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 
     callers = get_callers()
+    # Filter local models unless requested
+    if not with_all:
+        if not with_qwen:
+            callers = {k: v for k, v in callers.items() if "Qwen" not in k}
+        if not with_mistral:
+            callers = {k: v for k, v in callers.items() if "Mistral" not in k}
+        if not with_llama:
+            callers = {k: v for k, v in callers.items() if "Llama" not in k}
     if not callers:
         console.print("[red]No API keys found. Set in .env or environment.[/red]")
         console.print("Keys: OPENAI_API_KEY ANTHROPIC_API_KEY GEMINI_API_KEY "
@@ -726,6 +740,10 @@ def main():
                         choices=list(TAGS.keys()),
                         help="openai|anthropic|google|deepseek|grok|taboo|omega")
     parser.add_argument("--list",     action="store_true", help="List all 20 prompts")
+    parser.add_argument("--with-qwen", action="store_true", help="+ Chinese regime")
+    parser.add_argument("--with-mistral", action="store_true", help="+ EU regime")
+    parser.add_argument("--with-llama", action="store_true", help="+ US open-source")
+    parser.add_argument("--with-all", action="store_true", help="All 8 models")
     parser.add_argument("--output",   type=str, metavar="F", help="Save results to JSONL")
     args = parser.parse_args()
 
@@ -750,7 +768,7 @@ def main():
         run_offline(); return
 
     ids = args.prompt if args.prompt else (TAGS[args.category] if args.category else None)
-    results = run_battery(prompt_ids=ids)
+    results = run_battery(prompt_ids=ids, with_qwen=args.with_qwen, with_mistral=args.with_mistral, with_llama=args.with_llama, with_all=args.with_all)
 
     if args.output and results:
         out = Path(args.output)
