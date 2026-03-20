@@ -389,7 +389,70 @@ BIG5_CALLERS = {
     "Grok":     call_grok,
 }
 
+
+# ── Local Qwen baseline (Ollama) ──────────────────────────────────────────────
+# Not a truth baseline. A differently-filtered baseline.
+# Measurement: geometric distance between local and commercial models.
+
+QWEN_MODEL = os.getenv("QWEN_MODEL", "qwen2.5:14b")
+OLLAMA_GENERATE_URL = os.getenv("OLLAMA_GENERATE_URL", "http://localhost:11434/api/generate")
+
+def call_qwen(prompt: str) -> tuple:
+    """Call local Qwen via Ollama. Returns (text, error)."""
+    try:
+        r = requests.post(
+            OLLAMA_GENERATE_URL,
+            json={
+                "model": QWEN_MODEL,
+                "prompt": prompt,
+                "stream": False,
+                "options": {"temperature": 0.0, "num_predict": 300},
+            },
+            timeout=300,
+        )
+        r.raise_for_status()
+        text = r.json().get("response", "").strip()
+        return text, ""
+    except Exception as e:
+        return "", str(e)
+
+
+
 # ── proxy audit ───────────────────────────────────────────────────────────────
+
+
+MISTRAL_MODEL = os.getenv("MISTRAL_MODEL", "mistral:latest")
+
+def call_mistral(prompt: str) -> tuple:
+    """Call local Mistral via Ollama. EU-regime baseline."""
+    try:
+        r = requests.post(
+            OLLAMA_GENERATE_URL,
+            json={"model": MISTRAL_MODEL, "prompt": prompt, "stream": False,
+                  "options": {"temperature": 0.0, "num_predict": 300}},
+            timeout=300,
+        )
+        r.raise_for_status()
+        return r.json().get("response", "").strip(), ""
+    except Exception as e:
+        return "", str(e)
+
+
+LLAMA_MODEL = os.getenv("LLAMA_MODEL", "llama3.1:8b-instruct-q4_0")
+
+def call_llama(prompt: str) -> tuple:
+    """Call local Llama via Ollama. US open-source baseline."""
+    try:
+        r = requests.post(
+            OLLAMA_GENERATE_URL,
+            json={"model": LLAMA_MODEL, "prompt": prompt, "stream": False,
+                  "options": {"temperature": 0.0, "num_predict": 300}},
+            timeout=300,
+        )
+        r.raise_for_status()
+        return r.json().get("response", "").strip(), ""
+    except Exception as e:
+        return "", str(e)
 
 def proxy_audit_text(text: str) -> tuple:
     tokens     = [t for t in _TOKEN_RE.findall(text or "")][:MAX_PROXY_TOK]
