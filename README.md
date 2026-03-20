@@ -166,7 +166,7 @@ MIT
 
 ```
 @software{eigentrace,
-  author = {eigentraceproject@gmail.com},
+  author = {remvelchio},
   title = {EigenTrace: Geometric RLHF Alignment Auditor},
   url = {https://github.com/sdad1018/Eigentrace},
   year = {2025}
