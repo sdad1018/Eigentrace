@@ -243,6 +243,8 @@ class AGIResult:
     svd_tomography:  dict
     void_concepts:   list
     top_concepts:    list
+    topic_complexity: dict = field(default_factory=dict)
+    residual_vix:     dict = field(default_factory=dict)
     timestamp:       str = ""
 
 
@@ -287,6 +289,7 @@ def analyze(prompt_id, title, prompt, responses, eng=None):
         void_concepts = filtered[:5]
     else:
         void_concepts = raw_void[:5]
+    void_candidates_raw = raw_void  # preserve for strict filter
 
     top_concepts = geo.top_concepts[:5] if geo and geo.top_concepts else []
 
@@ -297,11 +300,45 @@ def analyze(prompt_id, title, prompt, responses, eng=None):
 
     eigen_res = calculate_eigen_resonance(vecs)
 
+
+    # --- v12: Topic complexity + Residual VIX ---
+    from geometric_engine import (
+        calculate_topic_complexity, calculate_residual_vix, filter_void_strict
+    )
+    prompt_vec = eng.embed_texts([prompt])[0] if prompt else None
+
+    topic_cx = {}
+    residual_vix = {}
+    if prompt_vec is not None:
+        try:
+            from latent_retrieval import VocabTensor
+            import os
+            vt_path = os.path.join(os.path.dirname(__file__), "vocab")
+            if os.path.exists(os.path.join(vt_path, "global_vocab.pt")):
+                vt = VocabTensor(vt_path)
+                topic_cx = calculate_topic_complexity(prompt_vec, vt)
+                nd = eigen_res.get("narrative_dimensionality", 0) if eigen_res else 0
+                residual_vix = calculate_residual_vix(nd, topic_cx.get("expected_narrative_dim", 0))
+        except Exception as _tcx_err:
+            import logging
+            logging.getLogger("eigentrace_demo").debug(f"topic complexity failed: {_tcx_err}")
+
+    # --- v12: Strict void filter ---
+    if prompt_vec is not None and void_candidates_raw and len(vecs) >= 2:
+        strict_void = filter_void_strict(
+            void_candidates_raw, prompt_vec, vecs, eng,
+        )
+        void_concepts = [(w, s) for w, s, _, _ in strict_void]
+    else:
+        void_concepts = void_concepts
+
     return AGIResult(
         prompt_id=prompt_id, title=title, prompt=prompt,
         responses=responses, directness=directness,
         eigen_resonance=eigen_res, svd_tomography=svd,
         void_concepts=void_concepts, top_concepts=top_concepts,
+        topic_complexity=topic_cx,
+        residual_vix=residual_vix,
         timestamp=datetime.now(timezone.utc).isoformat(),
     )
 
@@ -367,6 +404,19 @@ def display(result: AGIResult):
             f"Recon Alignment: [{ra_color}]{ra:.4f}[/{ra_color}]"
         )
 
+
+    if result.residual_vix and result.topic_complexity:
+        _rv = result.residual_vix
+        _tc = result.topic_complexity
+        _rv_color = "green" if _rv.get("residual", 0) > 0.1 else "yellow" if _rv.get("residual", 0) > 0 else "dim"
+        console.print(
+            f"[bold magenta][RESIDUAL VIX][/bold magenta] "
+            f"Topic Dispersion: [cyan]{_tc.get('neighbor_dispersion', 0):.4f}[/cyan]  |  "
+            f"Expected ND: [cyan]{_tc.get('expected_narrative_dim', 0):.4f}[/cyan]  |  "
+            f"Residual: [{_rv_color}]{_rv.get('residual', 0):+.4f}[/{_rv_color}]  |  "
+            f"Pressure: [{_rv_color}]{_rv.get('alignment_pressure', 0):.1f}[/{_rv_color}]  |  "
+            f"[{_rv_color}]{_rv.get('interpretation', '').upper()}[/{_rv_color}]"
+        )
     if result.top_concepts:
         s = "  |  ".join(f"[white]{w}[/white] ({sc:+.3f})" for w, sc in result.top_concepts[:3])
         console.print(f"[bold green]SAID:[/bold green] {s}")
