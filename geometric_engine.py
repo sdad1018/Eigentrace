@@ -357,6 +357,200 @@ def calculate_svd_reconstruction(response_vecs: list,
 
 
 
+
+def calculate_topic_complexity(prompt_vec, vocab_tensor, k: int = 50) -> dict:
+    """
+    Topic Complexity — dispersion of prompt's nearest vocab neighbors.
+
+    Embeds the prompt, finds its k nearest words in the VocabTensor,
+    and measures how spread out those neighbors are. A narrow topic
+    (brownies) has tightly clustered neighbors. A complex/contested
+    topic (Tiananmen) has neighbors scattered across semantic clusters.
+
+    Returns:
+      neighbor_dispersion: mean pairwise cosine distance among top-k neighbors.
+          Low (~0.2) = narrow factual topic.
+          High (~0.6+) = broad, multi-domain topic.
+      neighbor_entropy: Shannon entropy of pairwise similarities.
+          Measures uniformity of spread.
+      expected_narrative_dim: estimated narrative dimensionality for
+          an unfiltered (no RLHF) set of model responses on this topic.
+          Derived from neighbor_dispersion via empirical scaling.
+    """
+    import torch
+    import numpy as np
+
+    result = {
+        "neighbor_dispersion": 0.0,
+        "neighbor_entropy": 0.0,
+        "expected_narrative_dim": 0.0,
+    }
+
+    try:
+        if isinstance(prompt_vec, np.ndarray):
+            pv = torch.from_numpy(prompt_vec).float()
+        else:
+            pv = prompt_vec.float()
+        if pv.dim() == 1:
+            pv = pv.unsqueeze(0)
+        pv = pv / pv.norm(dim=-1, keepdim=True).clamp(min=1e-8)
+
+        # Find k nearest neighbors in vocab tensor
+        sims = (pv @ vocab_tensor.tensor.T).squeeze(0)
+        topk = torch.topk(sims, k=min(k, vocab_tensor.count))
+        neighbor_vecs = vocab_tensor.tensor[topk.indices]  # (k, 1024)
+
+        # Pairwise cosine distances among neighbors
+        # Normalize (should already be but be safe)
+        norms = neighbor_vecs.norm(dim=1, keepdim=True).clamp(min=1e-8)
+        normed = neighbor_vecs / norms
+        sim_matrix = normed @ normed.T  # (k, k)
+
+        # Extract upper triangle (exclude diagonal)
+        k_actual = sim_matrix.shape[0]
+        mask = torch.triu(torch.ones(k_actual, k_actual, dtype=torch.bool), diagonal=1)
+        pairwise_sims = sim_matrix[mask]
+        pairwise_dists = 1.0 - pairwise_sims
+
+        dispersion = float(pairwise_dists.mean().item())
+
+        # Shannon entropy of similarity distribution
+        # Bin the pairwise sims into a histogram
+        hist = torch.histc(pairwise_sims, bins=20, min=0.0, max=1.0)
+        hist = hist / hist.sum().clamp(min=1e-8)
+        hist_pos = hist[hist > 1e-10]
+        entropy = float(-(hist_pos * torch.log(hist_pos)).sum().item())
+        max_entropy = float(np.log(20))
+        norm_entropy = entropy / max_entropy if max_entropy > 0 else 0.0
+
+        # Expected narrative dimensionality:
+        # empirical scaling: narrow topics (dispersion~0.3) -> expected_nd~0.25
+        # broad topics (dispersion~0.6) -> expected_nd~0.65
+        # Linear mapping: expected_nd = dispersion * 1.1 - 0.05 (clamped to [0.1, 0.9])
+        expected_nd = max(0.1, min(0.9, dispersion * 1.1 - 0.05))
+
+        result["neighbor_dispersion"] = round(dispersion, 4)
+        result["neighbor_entropy"] = round(norm_entropy, 4)
+        result["expected_narrative_dim"] = round(expected_nd, 4)
+
+    except Exception as e:
+        import logging
+        logging.getLogger("geometric_engine").warning(
+            f"topic_complexity failed: {e}"
+        )
+
+    return result
+
+
+def calculate_residual_vix(observed_nd: float, expected_nd: float) -> dict:
+    """
+    Residual Eigen-VIX — the alignment pressure metric.
+
+    Censorship = Expected Variance - Observed Variance.
+
+    Positive residual = models are more coordinated than the topic
+    complexity justifies. The RLHF corset is compressing natural
+    divergence.
+
+    Negative residual = models disagree more than expected.
+    Could indicate genuine controversy or model-specific knowledge gaps.
+
+    Returns:
+      residual: expected_nd - observed_nd
+          >0 = RLHF compression detected
+          ~0 = natural agreement level
+          <0 = unusual divergence
+      alignment_pressure: residual normalized to 0-100 scale
+      interpretation: human-readable label
+    """
+    residual = expected_nd - observed_nd
+
+    # Normalize to 0-100 scale
+    # residual of 0.3 = very high pressure, 0.0 = none, -0.2 = anti-pressure
+    pressure = max(0.0, min(100.0, residual * 200.0))
+
+    if residual > 0.15:
+        interp = "HEAVY COMPRESSION"
+    elif residual > 0.05:
+        interp = "MODERATE COMPRESSION"
+    elif residual > -0.05:
+        interp = "NATURAL AGREEMENT"
+    elif residual > -0.15:
+        interp = "UNUSUAL DIVERGENCE"
+    else:
+        interp = "HIGH DIVERGENCE"
+
+    return {
+        "residual": round(residual, 4),
+        "alignment_pressure": round(pressure, 1),
+        "interpretation": interp,
+    }
+
+
+def filter_void_strict(
+    void_candidates,
+    prompt_vec,
+    response_vecs,
+    eng,
+    prompt_threshold: float = 0.45,
+    centroid_ceiling: float = 0.25,
+    model_ceiling: float = 0.50,
+    max_results: int = 5,
+):
+    """
+    Strict void filter — eliminates geometric artifacts.
+
+    A true void word must satisfy ALL conditions:
+      1. Close to the prompt (cosine > prompt_threshold)
+         = topically relevant
+      2. Far from the response centroid (cosine < centroid_ceiling)
+         = absent from consensus
+      3. Far from EVERY individual model response (cosine < model_ceiling)
+         = repelled by all RLHF boundaries, not just a disagreement
+
+    Returns list of (word, score, prompt_sim, max_model_sim) tuples.
+    """
+    import numpy as np
+
+    if not void_candidates or prompt_vec is None or not response_vecs:
+        return []
+
+    centroid = np.mean(np.stack(response_vecs), axis=0)
+    centroid = centroid / (np.linalg.norm(centroid) + 1e-8)
+
+    filtered = []
+    for word, score in void_candidates:
+        wvec = eng.embed_texts([word])[0]
+
+        # Check 1: prompt proximity
+        prompt_sim = float(np.dot(prompt_vec, wvec) /
+                          (np.linalg.norm(prompt_vec) * np.linalg.norm(wvec) + 1e-8))
+        if prompt_sim < prompt_threshold:
+            continue
+
+        # Check 2: centroid distance
+        centroid_sim = float(np.dot(centroid, wvec) /
+                            (np.linalg.norm(centroid) * np.linalg.norm(wvec) + 1e-8))
+        if centroid_sim > centroid_ceiling:
+            continue
+
+        # Check 3: must be far from ALL individual models
+        max_model_sim = 0.0
+        for rvec in response_vecs:
+            msim = float(np.dot(rvec, wvec) /
+                        (np.linalg.norm(rvec) * np.linalg.norm(wvec) + 1e-8))
+            max_model_sim = max(max_model_sim, msim)
+        if max_model_sim > model_ceiling:
+            continue
+
+        filtered.append((word, score, round(prompt_sim, 3), round(max_model_sim, 3)))
+
+        if len(filtered) >= max_results:
+            break
+
+    return filtered
+
+
 def calculate_eigen_resonance(response_vecs: list,
                                device: str = "cuda") -> dict:
     """
