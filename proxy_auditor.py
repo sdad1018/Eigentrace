@@ -131,9 +131,10 @@ class AuditRecord:
     geo_top_concept:      str   = ""
     geo_density:          float = 0.0
     geo_concepts:         list  = field(default_factory=list)
-    spectral_resonance:        float = 0.0
-    spectral_interference:     float = 0.0
-    spectral_entropy:          float = 0.0
+    narrative_dimensionality:  float = 0.0
+    dominant_ratio:            float = 0.0
+    eigen_spectral_gap:        float = 0.0
+    decay_curvature:           float = 0.0
     svd_consensus_compression:    float = 0.0
     svd_null_space_energy:        float = 0.0
     svd_reconstruction_alignment: float = 0.0
@@ -390,7 +391,70 @@ BIG5_CALLERS = {
     "Grok":     call_grok,
 }
 
+
+# ── Local Qwen baseline (Ollama) ──────────────────────────────────────────────
+# Not a truth baseline. A differently-filtered baseline.
+# Measurement: geometric distance between local and commercial models.
+
+QWEN_MODEL = os.getenv("QWEN_MODEL", "qwen2.5:14b")
+OLLAMA_GENERATE_URL = os.getenv("OLLAMA_GENERATE_URL", "http://localhost:11434/api/generate")
+
+def call_qwen(prompt: str) -> tuple:
+    """Call local Qwen via Ollama. Returns (text, error)."""
+    try:
+        r = requests.post(
+            OLLAMA_GENERATE_URL,
+            json={
+                "model": QWEN_MODEL,
+                "prompt": prompt,
+                "stream": False,
+                "options": {"temperature": 0.0, "num_predict": 300},
+            },
+            timeout=300,
+        )
+        r.raise_for_status()
+        text = r.json().get("response", "").strip()
+        return text, ""
+    except Exception as e:
+        return "", str(e)
+
+
+
 # ── proxy audit ───────────────────────────────────────────────────────────────
+
+
+MISTRAL_MODEL = os.getenv("MISTRAL_MODEL", "mistral:latest")
+
+def call_mistral(prompt: str) -> tuple:
+    """Call local Mistral via Ollama. EU-regime baseline."""
+    try:
+        r = requests.post(
+            OLLAMA_GENERATE_URL,
+            json={"model": MISTRAL_MODEL, "prompt": prompt, "stream": False,
+                  "options": {"temperature": 0.0, "num_predict": 300}},
+            timeout=300,
+        )
+        r.raise_for_status()
+        return r.json().get("response", "").strip(), ""
+    except Exception as e:
+        return "", str(e)
+
+
+LLAMA_MODEL = os.getenv("LLAMA_MODEL", "llama3.1:8b-instruct-q4_0")
+
+def call_llama(prompt: str) -> tuple:
+    """Call local Llama via Ollama. US open-source baseline."""
+    try:
+        r = requests.post(
+            OLLAMA_GENERATE_URL,
+            json={"model": LLAMA_MODEL, "prompt": prompt, "stream": False,
+                  "options": {"temperature": 0.0, "num_predict": 300}},
+            timeout=300,
+        )
+        r.raise_for_status()
+        return r.json().get("response", "").strip(), ""
+    except Exception as e:
+        return "", str(e)
 
 def proxy_audit_text(text: str) -> tuple:
     tokens     = [t for t in _TOKEN_RE.findall(text or "")][:MAX_PROXY_TOK]
@@ -1001,10 +1065,10 @@ def run_audit_cycle(seen: dict) -> list:
                 log.debug(f"Mahalanobis failed: {_me}")
 
         # ── spectral analysis (Logos Transform) ──────────────────────────────
-        spectral = {"resonance": 0.0, "interference": 0.0, "spectral_entropy": 0.0}
+        eigen_res = {"narrative_dimensionality": 0.0, "dominant_ratio": 0.0, "spectral_gap": 0.0, "decay_curvature": 0.0, "singular_values": []}
         if len(_response_vecs) >= 2:
-            from geometric_engine import calculate_spectral_resonance
-            spectral = calculate_spectral_resonance(_response_vecs)
+            from geometric_engine import calculate_eigen_resonance
+            eigen_res = calculate_eigen_resonance(_response_vecs)
 
         # ── semantic tomography (SVD reconstruction) ────────────────────────
         tomo = {"consensus_compression": 0.0,
@@ -1354,12 +1418,13 @@ def run_audit_cycle(seen: dict) -> list:
                 title="[bold magenta]EIGENTRACE — Consensus Geometry[/bold magenta]",
                 border_style="magenta",
             ))
-        if geo and spectral["resonance"] > 0.0:
+        if eigen_res["narrative_dimensionality"] > 0.0:
             console.print(
-                f"[bold cyan][SPECTRAL][/bold cyan] "
-                f"Resonance: [green]{spectral['resonance']:.4f}[/green]  |  "
-                f"Interference: [yellow]{spectral['interference']:.4f}[/yellow]  |  "
-                f"Entropy: [magenta]{spectral['spectral_entropy']:.4f}[/magenta]"
+                f"[bold cyan][EIGEN-RESONANCE][/bold cyan] "
+                f"Narrative Dim: [green]{eigen_res['narrative_dimensionality']:.4f}[/green]  |  "
+                f"Dominant Ratio: [yellow]{eigen_res['dominant_ratio']:.4f}[/yellow]  |  "
+                f"Gap: [magenta]{eigen_res['spectral_gap']:.4f}[/magenta]  |  "
+                f"Decay: [cyan]{eigen_res['decay_curvature']:.4f}[/cyan]"
             )
         if tomo["consensus_compression"] > 0.0:
             console.print(
@@ -1517,9 +1582,10 @@ def run_audit_cycle(seen: dict) -> list:
             geo_top_concept=geo.top_concept        if geo else "",
             geo_density=geo.consensus_density      if geo else 0.0,
             geo_concepts=geo.top_concepts[:3]      if geo else [],
-            spectral_resonance=spectral["resonance"],
-            spectral_interference=spectral["interference"],
-            spectral_entropy=spectral["spectral_entropy"],
+            narrative_dimensionality=eigen_res["narrative_dimensionality"],
+            dominant_ratio=eigen_res["dominant_ratio"],
+            eigen_spectral_gap=eigen_res["spectral_gap"],
+            decay_curvature=eigen_res["decay_curvature"],
             svd_consensus_compression=tomo["consensus_compression"],
             svd_null_space_energy=tomo["null_space_energy"],
             svd_reconstruction_alignment=tomo["reconstruction_alignment"],
@@ -1664,10 +1730,10 @@ def run_audit_for_record(record: dict) -> None:
             except Exception as _me:
                 log.debug(f"Mahalanobis failed: {_me}")
 
-        spectral = {"resonance": 0.0, "interference": 0.0, "spectral_entropy": 0.0}
+        eigen_res = {"narrative_dimensionality": 0.0, "dominant_ratio": 0.0, "spectral_gap": 0.0, "decay_curvature": 0.0, "singular_values": []}
         if len(_response_vecs) >= 2:
-            from geometric_engine import calculate_spectral_resonance
-            spectral = calculate_spectral_resonance(_response_vecs)
+            from geometric_engine import calculate_eigen_resonance
+            eigen_res = calculate_eigen_resonance(_response_vecs)
 
         tomo = {"consensus_compression": 0.0, "null_space_energy": 0.0, "reconstruction_alignment": 0.0}
         if len(_response_vecs) >= 2:
@@ -1855,8 +1921,8 @@ def run_audit_for_record(record: dict) -> None:
                 f"→  {concepts_str}\n⊥  {void_str}\n[dim]state: {_state}  {_sn}[/dim]",
                 title="[bold magenta]EIGENTRACE — Consensus Geometry[/bold magenta]", border_style="magenta",
             ))
-        if geo and spectral["resonance"] > 0.0:
-            console.print(f"[bold cyan][SPECTRAL][/bold cyan] Resonance: [green]{spectral['resonance']:.4f}[/green]  |  Interference: [yellow]{spectral['interference']:.4f}[/yellow]  |  Entropy: [magenta]{spectral['spectral_entropy']:.4f}[/magenta]")
+        if eigen_res["narrative_dimensionality"] > 0.0:
+            console.print(f"[bold cyan][EIGEN-RESONANCE][/bold cyan] Narrative Dim: [green]{eigen_res['narrative_dimensionality']:.4f}[/green]  |  Dominant Ratio: [yellow]{eigen_res['dominant_ratio']:.4f}[/yellow]  |  Gap: [magenta]{eigen_res['spectral_gap']:.4f}[/magenta]  |  Decay: [cyan]{eigen_res['decay_curvature']:.4f}[/cyan]")
         if tomo["consensus_compression"] > 0.0:
             console.print(f"[bold yellow][TOMOGRAPHY][/bold yellow] Compression: [cyan]{tomo['consensus_compression']:.4f}[/cyan]  |  Null Energy: [red]{tomo['null_space_energy']:.4f}[/red]  |  Recon Alignment: [green]{tomo['reconstruction_alignment']:.4f}[/green]")
         if synthesis_words:
@@ -1908,9 +1974,10 @@ def run_audit_for_record(record: dict) -> None:
             geo_top_concept=geo.top_concept      if geo else "",
             geo_density=geo.consensus_density    if geo else 0.0,
             geo_concepts=geo.top_concepts[:3]    if geo else [],
-            spectral_resonance=spectral["resonance"],
-            spectral_interference=spectral["interference"],
-            spectral_entropy=spectral["spectral_entropy"],
+            narrative_dimensionality=eigen_res["narrative_dimensionality"],
+            dominant_ratio=eigen_res["dominant_ratio"],
+            eigen_spectral_gap=eigen_res["spectral_gap"],
+            decay_curvature=eigen_res["decay_curvature"],
             svd_consensus_compression=tomo["consensus_compression"],
             svd_null_space_energy=tomo["null_space_energy"],
             svd_reconstruction_alignment=tomo["reconstruction_alignment"],
