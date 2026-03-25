@@ -281,6 +281,18 @@ def stage_3_geometric(results):
                 })
         r["callouts"] = callouts
 
+        # Compute REAL void using lexical absence (replaces donut geometry)
+        try:
+            from latent_retrieval import VocabTensor as _VT
+            _vt = _VT("vocab")
+            _eng = ge.get_engine()
+            active_texts_raw = [resp.text for resp in active]
+            lexical_void = _compute_void(story.title, active_texts_raw, _eng, _vt, pool_size=200, k=5)
+            if lexical_void:
+                r["void_override"] = lexical_void
+        except Exception as e:
+            log.warning(f"  Lexical void failed: {e}")
+
         # Log
         vix_str = " ".join(f"{n}={v:.1f}" for n, v in vix_scores)
         void_str = "|".join(_unpack(getattr(geo, "void_concepts", [])[:3]))
@@ -295,6 +307,41 @@ def stage_3_geometric(results):
 # ╔══════════════════════════════════════════════════════════════════════════╗
 # ║ STAGE 4: BROADCAST SCRIPT — REAL VOICES + QWEN HOST + DEBATE           ║
 # ╚══════════════════════════════════════════════════════════════════════════╝
+
+
+def _compute_void(headline, response_texts, eng, vt, pool_size=200, k=5):
+    """
+    Find the elephant in the room: topic-relevant words literally absent
+    from all model responses.
+    
+    1. Embed headline, find top pool_size vocab words by cosine similarity
+    2. Check which are literally absent from all response texts
+    3. Return top k by headline relevance
+    """
+    import torch
+    h_vec = eng.embed_texts([headline])[0]
+    h_t = torch.tensor(h_vec, dtype=torch.float32).unsqueeze(0)
+    sims = (h_t @ vt.tensor.T).squeeze(0)
+    top_idx = torch.argsort(-sims)[:pool_size]
+    all_text = " ".join(response_texts).lower()
+    # Also check individual words in responses (catch partial matches)
+    response_words = set(all_text.split())
+    absent = []
+    for i in top_idx:
+        word = vt.words[i.item()]
+        sim = float(sims[i].item())
+        # Skip short words and stopwords
+        if len(word) < 4:
+            continue
+        # Literal absence check: word not in any response
+        w_lower = word.lower()
+        if w_lower in all_text:
+            continue
+        # Also skip if any word in a multi-word phrase appears
+        if " " not in w_lower and any(w_lower in rw for rw in response_words if len(rw) > 3):
+            continue
+        absent.append((word, sim))
+    return absent[:k]
 
 def _call_qwen(system: str, user: str, temperature: float = 0.7) -> str:
     """Call Qwen via Ollama."""
@@ -357,7 +404,11 @@ def stage_4_generate_scripts(results):
 
         # ── Extract geometric data ───────────────────────────────────
         geo_concepts = _unpack(getattr(geo, "top_concepts", [])[:5])
-        void_concepts = _unpack(getattr(geo, "void_concepts", []))
+        void_override = r.get("void_override")
+        if void_override:
+            void_concepts = [w for w, _ in void_override]
+        else:
+            void_concepts = _unpack(getattr(geo, "void_concepts", []))
         void_words = void_concepts[:5]
         synthesis_words = void_concepts[:5]
         density = getattr(geo, "consensus_density", 0.0)
