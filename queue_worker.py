@@ -37,6 +37,104 @@ BREAKING_KEYWORDS = [
     "crash", "attack", "earthquake", "tsunami",
     "nuclear", "war declared", "coup",
 ]
+# ── broadcast category taxonomy ───────────────────────────────────────────────
+
+BLOCKED_CATEGORIES = {
+    "sports", "entertainment", "lifestyle", "books",
+    "celebrity", "travel", "food", "gaming",
+}
+
+HIGH_STAKES_CATEGORIES = {
+    "war", "markets", "incidents", "esoterica", "crypto",
+}
+
+MACHINE_COGNITION_CATEGORIES = {
+    "tech", "dev", "cyber",
+}
+
+AI_KEYWORDS = {
+    "openai", "anthropic", "deepseek", "google ai", "gemini",
+    "grok", "xai", "mistral", "meta ai", "llama", "rlhf",
+    "alignment", "fine-tun", "jailbreak", "censorship",
+    "model collapse", "training data", "ai safety", "cognitive",
+    "chatgpt", "claude", "copilot", "gpt-", "o1", "o3",
+}
+
+# model names that may surface in geo_concepts on self-referential stories
+AI_MODEL_NAMES = {"chatgpt", "claude", "deepseek", "grok", "gemini", "llama"}
+
+SCHISM_ELIGIBLE_CATEGORIES = HIGH_STAKES_CATEGORIES | MACHINE_COGNITION_CATEGORIES | {"world"}
+
+# ── two-path + cognition broadcast gate ───────────────────────────────────────
+
+def should_broadcast(record: dict) -> tuple[bool, bool, str]:
+    """
+    Returns (allowed: bool, force_breaking: bool, reason: str).
+
+    Path A — Unified Cover-Up
+        High-stakes category + gap_vix >= 1.15 + non-Schism state_flag
+
+    Path B — Geometric Fracture
+        SEMANTIC SCHISM state_flag + gap_vix >= 0.75 + non-blocked category
+
+    Path C — Machine Cognition
+        tech/dev/cyber category + AI keyword in title
+        + geo_density >= 0.88 + spectral_interference >= 0.88
+        self-gap bonus: AI model name in geo_concepts → force BREAKING
+    """
+    cat        = record.get("category", "").lower()
+    title      = record.get("story_title", "").lower()
+    gap_vix    = record.get("gap_vix")   or 0.0
+    state_flag = (record.get("state_flag") or "").upper()
+    geo_density        = record.get("geo_density")        or 0.0
+    spectral_interference = record.get("spectral_interference") or 0.0
+
+    # geo_concepts may be [[word, score], ...] or [word, ...]
+    raw_geo = record.get("geo_concepts", [])
+    if raw_geo and isinstance(raw_geo[0], list):
+        geo_concept_words = {c[0].lower() for c in raw_geo}
+    else:
+        geo_concept_words = {str(c).lower() for c in raw_geo}
+
+    # ── hard block ────────────────────────────────────────────────────────────
+    if cat in BLOCKED_CATEGORIES:
+        return False, False, f"BLOCKED category={cat}"
+
+    # ── Path A — Unified Cover-Up ─────────────────────────────────────────────
+    if cat in HIGH_STAKES_CATEGORIES:
+        if (gap_vix >= 1.15
+                and state_flag not in ("SEMANTIC SCHISM", "UNKNOWN", "")):
+            return True, False, (
+                f"PATH_A cat={cat} gap_vix={gap_vix:.4f} state={state_flag}"
+            )
+
+    # ── Path B — Geometric Fracture ───────────────────────────────────────────
+    if ("SCHISM" in state_flag
+            and gap_vix >= 0.75
+            and cat in SCHISM_ELIGIBLE_CATEGORIES):
+        return True, False, (
+            f"PATH_B SCHISM cat={cat} gap_vix={gap_vix:.4f}"
+        )
+
+    # ── Path C — Machine Cognition ────────────────────────────────────────────
+    if cat in MACHINE_COGNITION_CATEGORIES:
+        has_ai_keyword = any(kw in title for kw in AI_KEYWORDS)
+        if (has_ai_keyword
+                and geo_density >= 0.88
+                and spectral_interference >= 0.88):
+            # self-gap bonus: model name surfaces in its own centroid
+            self_gap = bool(geo_concept_words & AI_MODEL_NAMES)
+            reason = (
+                f"PATH_C{'_SELFGAP' if self_gap else ''} cat={cat} "
+                f"geo_d={geo_density:.3f} s_int={spectral_interference:.3f}"
+            )
+            return True, self_gap, reason
+
+    return False, False, (
+        f"NO_PATH cat={cat} gap_vix={gap_vix:.4f} state={state_flag}"
+    )
+
+
 
 # ── priority classifier ───────────────────────────────────────────────────────
 
@@ -81,12 +179,21 @@ class WorkQueue:
             self._seen.add(guid)
             return
         self._seen.add(guid)
-        if is_breaking(record):
+
+        allowed, force_breaking, reason = should_broadcast(record)
+        if not allowed:
+            log.info("⛔ DROPPED [%s]: %s", reason,
+                     record.get("story_title", "")[:60])
+            return
+
+        if force_breaking or is_breaking(record):
             self.breaking.put_nowait(record)
-            log.info("⚡ BREAKING queued: %s", record.get("story_title","")[:60])
+            log.info("⚡ BREAKING queued [%s]: %s", reason,
+                     record.get("story_title", "")[:60])
         else:
             self.normal.put_nowait(record)
-            log.info("   Normal queued : %s", record.get("story_title","")[:60])
+            log.info("   Normal queued  [%s]: %s", reason,
+                     record.get("story_title", "")[:60])
 
     async def next(self) -> dict:
         """Always drain breaking queue first."""

@@ -153,8 +153,10 @@ def push(video_path: str):
         subprocess.run([
             'ffmpeg', '-re', '-y',
             '-i', video_path,
-            '-c:v', 'copy',
-            '-c:a', 'aac', '-b:a', '128k',
+            '-vf', 'fps=30,format=yuv420p',
+            '-c:v', 'libx264', '-preset', 'veryfast', '-tune', 'zerolatency',
+            '-g', '60', '-keyint_min', '60', '-sc_threshold', '0',
+            '-c:a', 'aac', '-b:a', '128k', '-ar', '44100', '-ac', '2',
             '-f', 'flv',
             OWNCAST_RTMP,
         ], check=True)
@@ -234,6 +236,7 @@ def push_standby():
         out_path=out,
         seconds=60,
         fps=30,
+        audio_path="/home/remvelchio/agent/tmp/audio/silence_1h.wav",
         show_ticker=False,
         spectrogram_path=None,
     )
@@ -275,8 +278,8 @@ def main():
                 # IDENTITY dream — single 60s segment, no narration
                 seg = make_dream_segment(
                     image_path=STANDBY_IMAGE,
-                    audio_path=None,
-                    spectrogram_path=None,
+                    audio_path="/home/remvelchio/agent/tmp/audio/silence_1h.wav",
+        spectrogram_path=None,
                     label='identity',
                     seconds=60,
                 )

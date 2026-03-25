@@ -43,7 +43,7 @@ class EigentraceResult:
 
     def ticker_str(self) -> str:
         pos  = " | ".join(f"{c} ({s:+.3f})" for c, s in self.top_concepts[:3])
-        void = " | ".join(f"{c} ({s:+.3f})" for c, s in self.void_concepts[:3])
+        void = " | ".join(f"{c} ({s:+.3f})" for c, s in (self.void_concepts or [])[:3])
         base = (
             f"[EIGENTRACE] density={self.consensus_density:.3f} "
             f"λ_min={self.smallest_eigenvalue:.4f} → {pos}"
@@ -116,6 +116,8 @@ class GeometricPerturbationEngine:
 
         top_concepts  = []
         void_concepts = []
+        void_centroid  = None
+        void_word_vecs = {}
 
         tensor_path = Path(vocab_dir) / "global_vocab.pt"
         if tensor_path.exists():
@@ -162,6 +164,9 @@ class GeometricPerturbationEngine:
                 ranked = np.argsort(-np.abs(sims))[:top_k]
                 top_concepts = [(bank[i], float(sims[i])) for i in ranked]
         else:
+            void_concepts  = None
+            void_centroid  = None
+            void_word_vecs = {}
             bank = concept_bank or CONCEPT_BANK
             concept_embeddings = self.embed_texts(bank)
             sims   = np.dot(concept_embeddings, lvd)

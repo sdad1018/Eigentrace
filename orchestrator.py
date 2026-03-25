@@ -27,6 +27,8 @@ Author: remvelchio
 from __future__ import annotations
 
 import os, sys, time, logging, threading, signal
+from dotenv import load_dotenv
+load_dotenv("/mnt/c/Users/M4ISI/eigentrace/.env")
 from pathlib import Path
 from datetime import datetime
 

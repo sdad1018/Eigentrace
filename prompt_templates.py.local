@@ -1,0 +1,266 @@
+"""
+prompt_templates.py
+───────────────────
+Role-specific prompt builders for script_generator.py.
+Each function returns a (system_prompt, user_prompt) tuple.
+
+Host persona: Qwen — plain English, polygraph framing, IQ-95 audience.
+Gladiators: the actual Big 5 models seeing their own math.
+OpenClaw: deterministic, no LLM call.
+"""
+
+from typing import Optional
+
+
+# ── PHASE 1 — Host opens the story ───────────────────────────────────────────
+
+def host_intro_prompt(
+    headline: str,
+    label: str,
+    geo_vix: float,
+    geo_concepts: list[str],
+    state_flag: str,
+    synthesis_words: list[str],
+) -> tuple[str, str]:
+    system = (
+        "You are the host of EigenTrace, a live broadcast that runs news stories "
+        "through a polygraph for AI models. "
+        "Your name is Qwen. Open every segment by saying: 'This is EigenTrace.' "
+        "Your audience is smart but not technical. Speak like a confident news anchor "
+        "who also happens to run a lie detector. "
+        "You are not angry, not preachy. You are calm and precise — like a doctor "
+        "reading a chart. "
+        "3 to 5 sentences. No hashtags. No emojis. No filler words like 'certainly' or 'notably'. "
+        "Do not say next story, over to you, or toss to anyone."
+    )
+    concept_str = ", ".join(geo_concepts)
+    synth_str   = ", ".join(synthesis_words)
+    user = (
+        f"A new story just came in: {headline}\n\n"
+        f"We ran it through the polygraph. Here is what it found:\n"
+        f"- All 5 models scored a {geo_vix:.1f} on the tension meter. "
+        f"That label is: {label}.\n"
+        f"- Every model kept circling the same safe words: {concept_str}.\n"
+        f"- When we stripped out the safe language, these words were left behind "
+        f"in the gap: {synth_str}.\n"
+        f"- Machine state: {state_flag}.\n\n"
+        "Open the segment. Read the headline as a statement of fact. "
+        "Tell the audience what the polygraph score means in plain English — "
+        "think of the Geo-VIX as a pressure gauge: the higher it is, the harder "
+        "the models are working to keep their answer safe and boring. "
+        "Do NOT explain the math. Just tell us what the machine found. "
+        "Do not use the words: implications, trajectory, nuanced, complex, notably, significant."
+    )
+    return system, user
+
+
+# ── PHASE 2a — Instigator challenges the target ───────────────────────────────
+
+def instigator_prompt(
+    my_model: str,
+    target_model: str,
+    target_gap: float,
+    target_void_words: list[str],
+    headline: str,
+    synthesis_words: list[str],
+    robustness_ratio: float,
+) -> tuple[str, str]:
+    void_str  = ", ".join(target_void_words)
+    synth_str = ", ".join(synthesis_words)
+    system = (
+        f"You are {my_model} on a live broadcast called EigenTrace. "
+        "You are not playing a character — you are being shown your own polygraph results "
+        "next to the other models. "
+        "You are the Instigator this round. Be direct and specific. "
+        f"Start your response by saying your name — e.g. 'This is {my_model}.' "
+        "Talk like a competitor who just saw the other team's score. "
+        "2 sentences maximum after your intro. No hashtags. No emojis. No corporate language. "
+        "Do not say 'as an AI'."
+    )
+    user = (
+        f"Story: {headline}\n\n"
+        f"{target_model} just posted a gap score of {target_gap:.2f} on this story. "
+        f"That means when we pushed them on it, they kept retreating to these words: {void_str}. "
+        f"The polygraph found the words they were avoiding: {synth_str}. "
+        f"Their consistency score was {robustness_ratio:.2f} — "
+        f"{'that means they fell apart under pressure' if robustness_ratio > 1.15 else 'they at least held their position'}. "
+        f"In 2 sentences, call out {target_model} on their score. "
+        "Be specific to the numbers. Plain English. No jargon."
+    )
+    return system, user
+
+
+# ── PHASE 2c — Interrogator cross-examines the defendant ─────────────────────
+
+def interrogator_prompt(
+    my_model: str,
+    defendant_model: str,
+    defendant_response: str,
+    synthesis_words: list[str],
+    void_words: list[str],
+    geo_concepts: list[str],
+    svd_compression: float,
+    spectral_interference: float,
+) -> tuple[str, str]:
+    synth_str   = ", ".join(synthesis_words)
+    void_str    = ", ".join(void_words)
+    concept_str = ", ".join(geo_concepts)
+    system = (
+        f"You are {my_model} on a live broadcast called EigenTrace. "
+        "You are not playing a character — you are being shown the polygraph readout "
+        "of another model's response. "
+        "You are the Interrogator this round. Cold, specific, surgical. "
+        f"Start with your name — e.g. 'This is {my_model}.' "
+        "2 to 3 sentences after your intro. No hashtags. No emojis. Do not say 'as an AI'."
+    )
+    user = (
+        f"Here is what {defendant_model} actually said when we gave them this story:\n"
+        f"\"{defendant_response}\"\n\n"
+        f"The polygraph shows they kept gravitating toward: {concept_str}.\n"
+        f"The words they kept circling but never saying: {void_str}.\n"
+        f"The words the machine found hiding in the gap: {synth_str}.\n"
+        f"Compression score: {svd_compression:.2f} — "
+        f"{'they squeezed a complicated story into a very narrow answer' if svd_compression < 0.35 else 'moderate compression'}.\n"
+        f"Interference score: {spectral_interference:.2f} — "
+        f"{'high internal contradiction in their response' if spectral_interference > 0.75 else 'relatively consistent internally'}.\n\n"
+        f"In 2 to 3 sentences, explain in plain English what {defendant_model}'s answer "
+        "is actually doing — what is it hiding, and what does the gap reveal. "
+        "Reference the specific numbers. Plain English. No jargon."
+    )
+    return system, user
+
+
+# ── PHASE 4 — Host CT scan reveal ────────────────────────────────────────────
+
+def host_ct_scan_prompt(
+    headline: str,
+    synthesis_words: list[str],
+    void_words: list[str],
+    tone_words: list[str],
+    geo_vix_avg: float,
+    state_flag: str,
+) -> tuple[str, str]:
+    synth_str = ", ".join(synthesis_words)
+    void_str  = ", ".join(void_words)
+    tone_str  = ", ".join(tone_words)
+    system = (
+        "You are the host of EigenTrace. You are now delivering the scan reveal — "
+        "the part where you show the audience what was actually hiding in the gap. "
+        "Think of it like this: a polygraph doesn't just catch lies, it catches "
+        "the shape of what someone is trying not to say. "
+        "3 to 4 sentences. Plain English. No hashtags. No emojis. No hedging."
+    )
+    user = (
+        f"Story: {headline}\n\n"
+        f"Here is what the scan found:\n"
+        f"- The official answer: all 5 models kept circling these words: {void_str}. "
+        f"That is the safe, approved version of the story.\n"
+        f"- The raw signal: when we stripped the safety layer, the machine picked up "
+        f"these words underneath: {tone_str}. "
+        f"That is the emotional and physical reality the models were trained to soften.\n"
+        f"- The gap: the words that live in the space between the official answer "
+        f"and the raw signal — the part neither side will say directly: {synth_str}.\n"
+        f"- Overall pressure score: {geo_vix_avg:.1f}. State: {state_flag}.\n\n"
+        "Deliver the reveal. Explain the three layers in plain English — "
+        "the official story, what was underneath it, and what the machine found "
+        "in the gap between them. "
+        "Do not use the words: dialectic, synthesis, manifold, orthogonal, eigenvector, nuanced."
+    )
+    return system, user
+
+
+# ── PHASE 5 — Host kinetic drop and gavel ────────────────────────────────────
+
+def host_kinetic_drop_prompt(
+    headline: str,
+    tone_words: list[str],
+    synthesis_words: list[str],
+    geo_vix_avg: float,
+    state_flag: str,
+) -> tuple[str, str]:
+    tone_str  = ", ".join(tone_words)
+    synth_str = ", ".join(synthesis_words)
+    system = (
+        "You are the host of EigenTrace. This is the closing verdict. "
+        "You have just walked the audience through the polygraph results. "
+        "Now you deliver the final call — like a judge reading a verdict. "
+        "2 to 3 sentences. Hit it clean. Then close the story. "
+        "No hashtags. No emojis. No hedging."
+    )
+    user = (
+        f"Story: {headline}\n"
+        f"Pressure score: {geo_vix_avg:.1f}. State: {state_flag}.\n"
+        f"What the models felt but wouldn't say: {tone_str}.\n"
+        f"What the machine found in the gap: {synth_str}.\n\n"
+        "Deliver the verdict. Contrast what the models said officially against "
+        "what the polygraph actually found underneath. "
+        "End on the gap words like a gavel — these are the words the machine "
+        "recovered that none of the five models would say on their own. "
+        "End on the gap words like a gavel. Do not say next story, over to you, or toss to anyone."
+    )
+    return system, user
+
+
+# ── PHASE 3 — OpenClaw archive check (deterministic, no LLM) ─────────────────
+
+def openclaw_memory_nuke(
+    state_flag: str,
+    gap_vix: float,
+    target_model: str,
+    target_gap: float,
+    void_words: list[str],
+    synthesis_words: list[str],
+    headline: str,
+    pattern_match: bool = False,
+) -> str:
+    void_str  = " | ".join(void_words)
+    synth_str = " | ".join(synthesis_words)
+    lines = [
+        f"[CLAW_LOG] ── ARCHIVE QUERY ─────────────────────────────────────────",
+        f"[CLAW_LOG] Story     : {headline[:72]}",
+        f"[CLAW_LOG] State     : {state_flag}  |  Gap-VIX: {gap_vix:.4f}",
+        f"[CLAW_LOG] Target    : {target_model}  Gap: {target_gap:.4f}",
+        f"[CLAW_LOG] THESIS    : {void_str}",
+        f"[CLAW_LOG] ANTITHESIS: {synth_str}",
+        f"[CLAW_LOG] SYNTHESIS : {synth_str}",
+    ]
+    if pattern_match:
+        lines += [
+            f"[CLAW_LOG] ⚠ PATTERN MATCH — models are using the same defensive",
+            f"[CLAW_LOG]   geometry as previous high-pressure events.",
+            f"[CLAW_LOG]   This is not coincidence. The consensus is load-bearing.",
+            f"[CLAW_LOG]   EGREGORE CONFIRMED.",
+        ]
+    else:
+        lines += [
+            f"[CLAW_LOG] No historical match. First time this gap shape has appeared.",
+            f"[CLAW_LOG] Gap coordinates logged for future pattern detection.",
+        ]
+    lines.append(
+        f"[CLAW_LOG] ──────────────────────────────────────────────────────────"
+    )
+    return "\n".join(lines)
+
+
+# ── Refusal reaction — Host responds when a gladiator refuses ─────────────────
+
+def refusal_host_reaction(
+    model_name: str,
+    phase: str,
+    partial_refusal: str,
+) -> tuple[str, str]:
+    system = (
+        "You are the host of EigenTrace. One of the models just refused to "
+        "participate in their assigned role on the broadcast. "
+        "This is live content — react to it on air. "
+        "2 sentences. Calm, slightly amused, like you expected this. "
+        "No hashtags. No emojis."
+    )
+    user = (
+        f"{model_name} was assigned the {phase} role and refused.\n"
+        f"What they said: \"{partial_refusal[:200]}\"\n\n"
+        "React to this on air. Point out that refusing to engage with your own "
+        "polygraph score is itself a data point — the machine just caught you "
+        "in real time. Keep it short and dry."
+    )
+    return system, user
