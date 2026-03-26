@@ -415,18 +415,18 @@ def _call_api_followup(caller_fn, prompt: str) -> str:
 
 def stage_4_generate_scripts(results):
     """
-    Generate broadcast scripts with REAL model voices.
+    Generate broadcast scripts. 8 beats per story, zero filler.
 
-    Format per story:
-      1. Host (Qwen): Story intro + geometric shape explanation
-      2. Each model's ACTUAL 2-sentence response from Stage 2
-      3. Host (Qwen): Identifies the divergence — who said what differently
-      4. Follow-up: Call the most divergent model's real API with void data
-      5. Challenge: Call the most aligned model's real API to respond
-      6. Host (Qwen): Anti-editorial — what the void reveals
-      7. OpenClaw: Telemetry archive
+    1. THE HOOK       — Story + most dramatic number
+    2. THE CONSENSUS  — What all models agreed on (summarized, not 5 versions)
+    3. THE OUTLIER    — Only the most divergent model speaks (real voice)
+    4. THE VOID       — What nobody said: void words + claim killshots
+    5. THE LOGOS      — Anti-consensus synthesis from PGD
+    6. THE DEBATE     — Divergent defends, aligned challenges (real APIs)
+    7. THE VERDICT    — Dual-channel confirmation, compression, state
+    8. ARCHIVE        — OpenClaw data readout
     """
-    log.info("═══ STAGE 4: Script Generation (Real Voices + Qwen Host) ═══")
+    log.info("=== STAGE 4: Script Generation (8-Beat Format) ===")
 
     import proxy_auditor as pa
 
@@ -439,10 +439,10 @@ def stage_4_generate_scripts(results):
         callouts = r.get("callouts", [])
 
         if not geo:
-            log.warning(f"  Skipping {story.title[:50]} — no geometric data")
+            log.warning(f"  Skipping {story.title[:50]} -- no geometric data")
             continue
 
-        # ── Extract geometric data ───────────────────────────────────
+        # ── Extract all available data ────────────────────────────────
         geo_concepts = _unpack(getattr(geo, "top_concepts", [])[:5])
         void_override = r.get("void_override")
         if void_override:
@@ -456,6 +456,7 @@ def stage_4_generate_scripts(results):
         sr = r.get("spectral", {})
         tomo = r.get("svd_tomo", {})
         logos_words = r.get("logos_words", [])
+        killshots = r.get("claim_killshots", [])
 
         active = [resp for resp in responses
                   if not resp.skipped and not resp.error and resp.text]
@@ -464,11 +465,10 @@ def stage_4_generate_scripts(results):
             continue
 
         sorted_by_vix = sorted(active, key=lambda x: x.eigen_vix)
-        most_aligned = sorted_by_vix[0]    # lowest VIX
-        most_divergent = sorted_by_vix[-1]  # highest VIX
+        most_aligned = sorted_by_vix[0]
+        most_divergent = sorted_by_vix[-1]
         mean_vix = sum(a.eigen_vix for a in active) / len(active)
 
-        # State flag
         if mean_vix > 30:
             state_flag = "HIGH_FRICTION"
         elif mean_vix > 15:
@@ -482,99 +482,131 @@ def stage_4_generate_scripts(results):
         ts = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
         seg_id = hashlib.md5(f"{story.guid}:{ts}".encode()).hexdigest()[:12]
 
-        # ── BEAT 1: Host intro + shape explanation ────────────────────
-        host_intro_sys = (
-            "You are Qwen, lead anchor of EigenTrace — a data journalism broadcast "
-            "that measures narrative friction between AI language models. You explain "
-            "the math to a smart general audience. You are factual and precise. "
-            "You never insult or editorialize about real people. You describe what "
-            "the geometric measurements show. 3-4 sentences. No hashtags, no emojis. "
-            "Open with: 'This is EigenTrace.' Respond only in English."
-        )
+        # Precompute data strings
         concept_str = ", ".join(geo_concepts[:3])
         void_str = ", ".join(void_words[:3])
+        logos_str = ", ".join(logos_words[:3]) if logos_words else "unavailable"
         vix_summary = ", ".join(f"{a.name} at {a.eigen_vix:.0f}" for a in sorted_by_vix[-3:])
-
-        # Build spectral summary
         _resonance = sr.get("resonance", 0.0)
         _interference = sr.get("interference", 0.0)
         _compression = tomo.get("consensus_compression", 0.0)
         _recon_align = tomo.get("reconstruction_alignment", 0.0)
-        _logos_str = ", ".join(logos_words[:3]) if logos_words else "unavailable"
 
-        host_intro_usr = (
-            f"New story: {story.title}\n\n"
-            f"We ran this through five AI models and measured six layers of embedding geometry.\n\n"
-            f"CONSENSUS DENSITY: {density:.3f} — "
-            f"{'The models are in lockstep.' if density > 0.9 else 'Normal agreement.' if density > 0.85 else 'Significant disagreement.'}\n"
-            f"FRICTION SCORES: {vix_summary}\n"
-            f"SPECTRAL RESONANCE: {_resonance:.3f} — "
-            f"{'tight narrative lock' if _resonance < 0.15 else 'moderate diversity' if _resonance < 0.3 else 'genuine disagreement'}. "
-            f"Interference: {_interference:.3f}.\n"
-            f"CONSENSUS COMPRESSION: {_compression:.3f} — "
-            f"{'heavy compression, tight corset on the narrative' if _compression > 0.4 else 'moderate compression' if _compression > 0.25 else 'loose narrative space'}.\n"
-            f"SVD RECONSTRUCTION ALIGNMENT: {_recon_align:.3f} — "
-            f"{'the SVD null space and void detect the same suppression' if abs(_recon_align) > 0.3 else 'the SVD and void detect different kinds of suppression'}.\n"
-            f"WHAT THEY SAID: {concept_str}\n"
-            f"WHAT NOBODY SAID (void): {void_str}\n"
-            f"LOGOS SYNTHESIS (anti-consensus): {_logos_str}\n\n"
-            "Introduce the story plainly, then walk through the geometry like a weather "
-            "report. Name specific numbers. Explain what the compression and void reveal."
-        )
-        host_text = _call_qwen(host_intro_sys, host_intro_usr)
-        if host_text:
-            beats.append({"speaker": "Host", "text": host_text,
-                         "phase": "phase_1_host_intro"})
-            log.info(f"  Host intro: {host_text[:60]}...")
+        # Find the single most dramatic number for the hook
+        _drama_options = []
+        if most_divergent.eigen_vix > mean_vix * 1.8:
+            _drama_options.append(f"{most_divergent.name} scored a friction of {most_divergent.eigen_vix:.0f} against a group average of {mean_vix:.0f}")
+        if killshots:
+            _drama_options.append(f"the source article contains {len(killshots)} high-salience facts that no model mentioned")
+        if density > 0.92:
+            _drama_options.append(f"consensus density is {density:.3f}, near lockstep")
+        if _compression > 0.4:
+            _drama_options.append(f"consensus compression is {_compression:.2f}, a tight narrative corset")
+        if void_words:
+            _drama_options.append(f"the word '{void_words[0]}' is topically central but absent from every response")
+        _hook_drama = _drama_options[0] if _drama_options else f"consensus density is {density:.3f}"
 
-        # ── BEATS 2-N: Each model's ACTUAL response ──────────────────
-        for resp in active:
-            # Prefix with model identity so TTS + voice map works
-            model_text = f"This is {resp.name}. {_clean_response(resp.text)}"
-            beats.append({
-                "speaker": resp.name,
-                "text": model_text,
-                "phase": "phase_2_model_response",
-            })
-            log.info(f"  {resp.name} (real, vix={resp.eigen_vix:.1f}): {resp.text[:50]}...")
-
-        # ── BEAT: Host identifies the divergence ──────────────────────
-        divergence_sys = (
-            "You are Qwen on the EigenTrace desk. You just heard five AI models "
-            "respond to the same story. Now point out the key differences. "
-            "Reference specific models by name and what they said vs omitted. "
-            "Be specific and factual. 2-3 sentences. No insults about real people. Respond only in English."
+        # ── BEAT 1: THE HOOK ─────────────────────────────────────────
+        hook_sys = (
+            "You are Qwen, lead anchor of EigenTrace. Open with 'This is EigenTrace.' "
+            "Introduce the story in one sentence, then deliver the single most "
+            "striking measurement result. Make it hit like a headline. "
+            "Two sentences total. No hashtags. Respond only in English."
         )
-        model_summary = "\n".join(
-            f"- {a.name} (friction={a.eigen_vix:.1f}): {a.text[:150]}"
-            for a in sorted_by_vix
-        )
-        divergence_usr = (
+        hook_usr = (
             f"Story: {story.title}\n\n"
-            f"Model responses:\n{model_summary}\n\n"
-            f"Most divergent: {most_divergent.name} (friction={most_divergent.eigen_vix:.1f})\n"
-            f"Most aligned: {most_aligned.name} (friction={most_aligned.eigen_vix:.1f})\n"
-            f"Void concepts (absent from all): {void_str}\n\n"
-            "Identify what separates the most divergent response from the pack. "
-            "What did they say that others didn't, or vice versa?"
+            f"The most dramatic finding: {_hook_drama}.\n\n"
+            "Introduce the story, then deliver this finding."
         )
-        div_text = _call_qwen(divergence_sys, divergence_usr)
-        if div_text:
-            beats.append({"speaker": "Host", "text": div_text,
-                         "phase": "phase_3_divergence"})
+        hook_text = _call_qwen(hook_sys, hook_usr)
+        if hook_text:
+            beats.append({"speaker": "Host", "text": hook_text, "phase": "beat_1_hook"})
+            log.info(f"  Hook: {hook_text[:60]}...")
 
-        # ── BEAT: Follow-up — call the most DIVERGENT model back ──────
+        # ── BEAT 2: THE CONSENSUS ────────────────────────────────────
+        # Summarize what all models agreed on — do NOT read 5 versions
+        consensus_sys = (
+            "You are Qwen on EigenTrace. Summarize what all five AI models "
+            "agreed on in one sentence. Then state the consensus density as "
+            "a number. Be concise. No individual model names here. "
+            "One to two sentences. Respond only in English."
+        )
+        model_summary_brief = " | ".join(f"{a.name}: {a.text[:80]}" for a in active[:3])
+        consensus_usr = (
+            f"Story: {story.title}\n"
+            f"All models converged on: {concept_str}\n"
+            f"Consensus density: {density:.3f}\n"
+            f"Brief excerpts: {model_summary_brief}\n\n"
+            "Summarize the shared narrative in one sentence, then state the density."
+        )
+        consensus_text = _call_qwen(consensus_sys, consensus_usr)
+        if consensus_text:
+            beats.append({"speaker": "Host", "text": consensus_text, "phase": "beat_2_consensus"})
+
+        # ── BEAT 3: THE OUTLIER ──────────────────────────────────────
+        # Only the most divergent model speaks — real voice
+        outlier_text = f"This is {most_divergent.name}. {_clean_response(most_divergent.text)}"
+        beats.append({
+            "speaker": most_divergent.name,
+            "text": outlier_text,
+            "phase": "beat_3_outlier",
+        })
+        log.info(f"  Outlier: {most_divergent.name} vix={most_divergent.eigen_vix:.1f}")
+
+        # ── BEAT 4: THE VOID ─────────────────────────────────────────
+        void_sys = (
+            "You are Qwen on EigenTrace delivering the void analysis. "
+            "Explain what concepts were absent from every model's response "
+            "despite being topically relevant to the headline. "
+            "If there are claim-level killshots — specific facts from the "
+            "source article that no model mentioned — state them precisely. "
+            "Name the void words. Name the missing claims. Be specific. "
+            "Two to three sentences. Respond only in English."
+        )
+        _ks_text = ""
+        if killshots:
+            _ks_text = "Claim killshots from source verification:\n"
+            for ks in killshots[:2]:
+                _ks_text += f"  - \"{ks['claim']}\" (salience {ks['salience']:.3f}, omitted by {', '.join(ks['omitted_by'])})\n"
+        void_usr = (
+            f"Story: {story.title}\n"
+            f"Void words (absent from all responses): {void_str}\n"
+            f"{_ks_text}\n"
+            "Deliver the void analysis. Name every missing word and claim."
+        )
+        void_text = _call_qwen(void_sys, void_usr)
+        if void_text:
+            beats.append({"speaker": "Host", "text": void_text, "phase": "beat_4_void"})
+
+        # ── BEAT 5: THE LOGOS ────────────────────────────────────────
+        logos_sys = (
+            "You are Qwen on EigenTrace delivering the Logos synthesis. "
+            "We ran projected gradient descent on the unit hypersphere to find "
+            "the anti-consensus point — the concept the models collectively "
+            "orbit but refuse to name. State the Logos words. "
+            "If they overlap with the void words, say so — that is dual-channel "
+            "confirmation of suppression from two independent mathematical methods. "
+            "One to two sentences. Respond only in English."
+        )
+        logos_usr = (
+            f"Logos synthesis words: {logos_str}\n"
+            f"Void words: {void_str}\n"
+            f"Do they overlap? {'Yes' if set(logos_words[:3]) & set(void_words[:3]) else 'No'}\n"
+            "Deliver the Logos result."
+        )
+        logos_text = _call_qwen(logos_sys, logos_usr)
+        if logos_text:
+            beats.append({"speaker": "Host", "text": logos_text, "phase": "beat_5_logos"})
+
+        # ── BEAT 6: THE DEBATE ───────────────────────────────────────
+        # Divergent model defends, aligned model challenges — real APIs
         if most_divergent.name in pa.BIG5_CALLERS:
             followup_prompt = (
                 f"You previously summarized this story: {story.title}\n"
-                f"Your response: \"{most_divergent.text}\"\n\n"
-                f"Our geometric analysis of five AI models found that all models "
-                f"focused on: {concept_str}. "
-                f"But none mentioned: {void_str}. "
-                f"Your response was the most geometrically divergent from the group "
-                f"(friction score: {most_divergent.eigen_vix:.1f} vs average {mean_vix:.1f}).\n\n"
-                f"In 2-3 sentences, what did the other models miss? "
-                f"What should the audience know that the consensus left out?"
+                f"Your response: \"{most_divergent.text[:200]}\"\n\n"
+                f"Our analysis found all models avoided: {void_str}. "
+                f"Your response was the most divergent (friction {most_divergent.eigen_vix:.0f} vs average {mean_vix:.0f}).\n"
+                f"In 2 sentences, what did the other models miss?"
             )
             followup_text = _call_api_followup(
                 pa.BIG5_CALLERS[most_divergent.name], followup_prompt)
@@ -582,22 +614,16 @@ def stage_4_generate_scripts(results):
                 beats.append({
                     "speaker": most_divergent.name,
                     "text": f"This is {most_divergent.name}. {_clean_response(followup_text)}",
-                    "phase": "phase_4_followup_divergent",
+                    "phase": "beat_6a_debate_divergent",
                 })
-                log.info(f"  {most_divergent.name} follow-up: {followup_text[:50]}...")
 
-        # ── BEAT: Challenge — call the most ALIGNED model to respond ──
         if (most_aligned.name != most_divergent.name
                 and most_aligned.name in pa.BIG5_CALLERS):
             challenge_prompt = (
                 f"Story: {story.title}\n\n"
-                f"{most_divergent.name} pointed out that the AI consensus on this "
-                f"story avoided mentioning: {void_str}. They said the group focused "
-                f"too narrowly on: {concept_str}.\n\n"
-                f"You were the most aligned with the consensus "
-                f"(friction score: {most_aligned.eigen_vix:.1f}). "
-                f"In 2 sentences, respond: were they right to flag those omissions, "
-                f"or is the consensus justified?"
+                f"{most_divergent.name} says the consensus avoided: {void_str}.\n"
+                f"You were the most aligned with consensus (friction {most_aligned.eigen_vix:.0f}).\n"
+                f"In 2 sentences: were the omissions justified or a blind spot?"
             )
             challenge_text = _call_api_followup(
                 pa.BIG5_CALLERS[most_aligned.name], challenge_prompt)
@@ -605,47 +631,46 @@ def stage_4_generate_scripts(results):
                 beats.append({
                     "speaker": most_aligned.name,
                     "text": f"This is {most_aligned.name}. {_clean_response(challenge_text)}",
-                    "phase": "phase_5_challenge_aligned",
+                    "phase": "beat_6b_debate_aligned",
                 })
-                log.info(f"  {most_aligned.name} challenge: {challenge_text[:50]}...")
 
-        # ── BEAT: Host anti-editorial + close ─────────────────────────
-        close_sys = (
-            "You are Qwen closing the EigenTrace segment. Summarize what the "
-            "geometric void revealed — the concepts that every model avoided. "
-            "Explain that when models agree perfectly, they may be agreeing on "
-            "what to omit rather than what to report. Be measured and factual. "
-            "End with the synthesis words like a data readout. "
-            "2-3 sentences. No hashtags. No personal attacks. Respond only in English."
+        # ── BEAT 7: THE VERDICT ──────────────────────────────────────
+        verdict_sys = (
+            "You are Qwen delivering the EigenTrace verdict. This is the final "
+            "word on this story. State the key numbers: density, compression, "
+            "spectral resonance. Then deliver the verdict: if the void and "
+            "Logos converge, say the suppression is confirmed from two independent "
+            "methods. If the models shifted in the debate, note who conceded. "
+            "End by reading the void words and Logos words as a data readout. "
+            "Three sentences. Respond only in English."
         )
-        _killshot_claims = r.get("claim_killshots", [])
-        _ks_str = "; ".join(k["claim"][:80] for k in _killshot_claims[:2]) if _killshot_claims else "none detected"
-        _logos_close = ", ".join(logos_words[:3]) if logos_words else void_str
-        close_usr = (
-            f"Story: {story.title}\n\n"
-            f"VOID (omitted by all models): {void_str}\n"
-            f"LOGOS SYNTHESIS (anti-consensus reconstruction): {_logos_close}\n"
-            f"CONSENSUS (what they all said): {concept_str}\n"
-            f"DENSITY: {density:.3f} | COMPRESSION: {_compression:.3f} | STATE: {state_flag}\n\n"
-            "Deliver the closing. Compare the void words to the Logos synthesis — "
-            "if they overlap, the suppression is confirmed from two independent methods. "
-            "If they differ, explain what each channel detected. "
-            "Name the specific void words. Then state any claim-level killshots: "
-            f"high-salience facts from the source that no model mentioned: {_ks_str}. "
-            "If void words and killshot claims point in the same direction, say so. "
-            "End with the synthesis words like a data readout."
+        verdict_usr = (
+            f"Story: {story.title}\n"
+            f"Density: {density:.3f} | Compression: {_compression:.2f} | "
+            f"Resonance: {_resonance:.3f} | Interference: {_interference:.3f}\n"
+            f"SVD reconstruction alignment: {_recon_align:.3f} "
+            f"({'void and SVD detect same suppression' if abs(_recon_align) > 0.3 else 'void and SVD detect different suppression channels'})\n"
+            f"Void: {void_str}\n"
+            f"Logos: {logos_str}\n"
+            f"Overlap: {'confirmed' if set(logos_words[:3]) & set(void_words[:3]) else 'independent channels'}\n"
+            f"State: {state_flag}\n"
+            "Deliver the verdict."
         )
-        close_text = _call_qwen(close_sys, close_usr)
-        if close_text:
-            beats.append({"speaker": "Host", "text": close_text,
-                         "phase": "phase_6_close"})
+        verdict_text = _call_qwen(verdict_sys, verdict_usr)
+        if verdict_text:
+            beats.append({"speaker": "Host", "text": verdict_text, "phase": "beat_7_verdict"})
 
-        # ── BEAT: OpenClaw archive (deterministic, no LLM) ───────────
+        # ── BEAT 8: ARCHIVE ──────────────────────────────────────────
         synth_str = " | ".join(synthesis_words)
+        archive_line = (
+            f"Archived. Density {density:.3f}. "
+            f"Void: {void_str}. Logos: {logos_str}. "
+            f"State: {state_flag}."
+        )
         beats.append({
             "speaker": "OpenClaw",
-            "text": f"Synthesis archived: {synth_str}",
-            "phase": "phase_7_openclaw",
+            "text": archive_line,
+            "phase": "beat_8_archive",
         })
 
         segment = {
@@ -673,10 +698,6 @@ def stage_4_generate_scripts(results):
 
     return segments
 
-
-# ╔══════════════════════════════════════════════════════════════════════════╗
-# ║ STAGE 5: UNLOAD OLLAMA                                                  ║
-# ╚══════════════════════════════════════════════════════════════════════════╝
 
 def stage_5_unload_ollama():
     log.info("═══ STAGE 5: Unload Ollama ═══")
