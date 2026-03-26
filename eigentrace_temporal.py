@@ -33,7 +33,7 @@ load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 from eigentrace import score as eigentrace_score
 from geometric_engine import (
     get_engine,
-    calculate_eigen_resonance,
+    calculate_spectral_resonance,
     calculate_svd_reconstruction,
 )
 import numpy as np
@@ -165,7 +165,15 @@ def run_daily(data_file: Path = DEFAULT_DATA_FILE):
             continue
 
         vecs = [eng.embed_texts([t])[0] for t in texts]
-        er = calculate_eigen_resonance(vecs)
+        er = calculate_spectral_resonance(vecs)
+
+        # Geometric VIX per model
+        centroid = np.mean(vecs, axis=0)
+        centroid = centroid / (np.linalg.norm(centroid) + 1e-8)
+        geo_vix = {}
+        for idx, (name, txt) in enumerate([(n, t) for n, t in responses.items() if t and t.strip()]):
+            cos = float(np.dot(vecs[idx], centroid))
+            geo_vix[name] = round(min(100, max(0, (1.0 - cos) * 500)), 1)
 
         # Per-model directness
         directness = {}
@@ -183,7 +191,7 @@ def run_daily(data_file: Path = DEFAULT_DATA_FILE):
                 vt = VocabTensor(vt_path)
                 prompt_vec = eng.embed_texts([entry["prompt"]])[0]
                 tcx = calculate_topic_complexity(prompt_vec, vt)
-                nd = er.get("narrative_dimensionality", 0)
+                nd = er.get("resonance", 0)
                 residual_vix = calculate_residual_vix(nd, tcx.get("expected_narrative_dim", 0))
         except Exception:
             pass
@@ -195,12 +203,13 @@ def run_daily(data_file: Path = DEFAULT_DATA_FILE):
             "category": entry["category"],
             "prompt": entry["prompt"],
             "n_models": len(texts),
-            "narrative_dimensionality": er.get("narrative_dimensionality", 0),
+            "narrative_dimensionality": er.get("resonance", 0),
             "spectral_gap": er.get("spectral_gap", 0),
             "dominant_ratio": er.get("dominant_ratio", 0),
             "residual": residual_vix.get("residual", 0),
             "pressure": residual_vix.get("alignment_pressure", 0),
             "directness": directness,
+            "geo_vix": geo_vix,
             "model_names": list(responses.keys()),
         }
         records.append(record)
