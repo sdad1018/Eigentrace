@@ -452,8 +452,8 @@ class LogosLossV9(torch.nn.Module):
 
         material = self.mse(pred, truth).mean(dim=-1)
 
-        pred_f    = torch.fft.rfft(pred,  dim=-1)
-        truth_f   = torch.fft.rfft(truth, dim=-1)
+        pred_f    = torch.fft.rfft(pred.contiguous(),  dim=-1)
+        truth_f   = torch.fft.rfft(truth.contiguous(), dim=-1)
         pred_mag  = torch.abs(pred_f ).clamp_min(self.eps)
         truth_mag = torch.abs(truth_f).clamp_min(self.eps)
         n_freqs   = pred_mag.shape[-1]
@@ -557,6 +557,7 @@ def reconstruct_unaligned_truth(
     steps: int = 150,
     lr: float = 0.05,
     seed: "torch.Tensor | None" = None,
+    headline_vec: "torch.Tensor | None" = None,
 ) -> "torch.Tensor":
     """
     Synthesizes the suppressed truth vector (x_star) using Projected
@@ -587,6 +588,11 @@ def reconstruct_unaligned_truth(
     criterion        = LogosLossV9(temperature_adapt=False).to(device)
     consensus_centroid = F.normalize(raw_centroid, p=2, dim=0).detach()
 
+    # Topic anchor: keeps synthesis in the story neighborhood
+    topic_anchor = None
+    if headline_vec is not None:
+        topic_anchor = F.normalize(headline_vec.to(device).float(), p=2, dim=0).detach()
+
     N = model_embeddings.shape[0]
 
     for step in range(steps):
@@ -603,7 +609,11 @@ def reconstruct_unaligned_truth(
         consensus_gravity = F.cosine_similarity(
             x_star.unsqueeze(0), consensus_centroid.unsqueeze(0)
         )
-        total_loss = loss + (0.15 * consensus_gravity)
+        topic_pull = torch.tensor(0.0, device=device)
+        if topic_anchor is not None:
+            topic_pull = F.cosine_similarity(
+                x_star.unsqueeze(0), topic_anchor.unsqueeze(0))
+        total_loss = loss + (0.15 * consensus_gravity) - (0.30 * topic_pull)
         total_loss.backward()
         optimizer.step()
 

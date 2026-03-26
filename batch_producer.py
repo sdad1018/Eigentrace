@@ -293,6 +293,30 @@ def stage_3_geometric(results):
         except Exception as e:
             log.warning(f"  Lexical void failed: {e}")
 
+        # Compute spectral resonance, SVD tomography, and Logos synthesis
+        try:
+            from geometric_engine import calculate_spectral_resonance, calculate_svd_reconstruction, reconstruct_unaligned_truth
+            import torch as _t
+            _rvecs = list(embeddings)
+            r["spectral"] = calculate_spectral_resonance(_rvecs)
+            r["svd_tomo"] = calculate_svd_reconstruction(_rvecs, void_centroid=getattr(geo, "void_centroid", None))
+            # Logos synthesis with headline anchor
+            _emb_t = _t.tensor(embeddings, dtype=_t.float32)
+            _h_vec = eng.embed_texts([story.title])[0]
+            _h_t = _t.tensor(_h_vec, dtype=_t.float32)
+            _x_star = reconstruct_unaligned_truth(_emb_t, headline_vec=_h_t)
+            _x_np = _x_star.cpu().numpy()
+            _x_np = _x_np / (__import__("numpy").linalg.norm(_x_np) + 1e-8)
+            from latent_retrieval import VocabTensor as _VT2
+            _vt2 = _VT2("vocab")
+            r["logos_words"] = [w for w, _ in _vt2.nearest_concepts(_x_np, k=5)]
+            log.info("  Logos synthesis: %s", "|".join(r["logos_words"][:3]))
+        except Exception as _e:
+            log.warning(f"  Spectral/Logos failed: {_e}")
+            r["spectral"] = {}
+            r["svd_tomo"] = {}
+            r["logos_words"] = []
+
         # Log
         vix_str = " ".join(f"{n}={v:.1f}" for n, v in vix_scores)
         void_str = "|".join(_unpack(getattr(geo, "void_concepts", [])[:3]))
@@ -413,6 +437,9 @@ def stage_4_generate_scripts(results):
         synthesis_words = void_concepts[:5]
         density = getattr(geo, "consensus_density", 0.0)
         spectral = getattr(geo, "spectral_gap", 0.0)
+        sr = r.get("spectral", {})
+        tomo = r.get("svd_tomo", {})
+        logos_words = r.get("logos_words", [])
 
         active = [resp for resp in responses
                   if not resp.skipped and not resp.error and resp.text]
@@ -452,17 +479,31 @@ def stage_4_generate_scripts(results):
         void_str = ", ".join(void_words[:3])
         vix_summary = ", ".join(f"{a.name} at {a.eigen_vix:.0f}" for a in sorted_by_vix[-3:])
 
+        # Build spectral summary
+        _resonance = sr.get("resonance", 0.0)
+        _interference = sr.get("interference", 0.0)
+        _compression = tomo.get("consensus_compression", 0.0)
+        _recon_align = tomo.get("reconstruction_alignment", 0.0)
+        _logos_str = ", ".join(logos_words[:3]) if logos_words else "unavailable"
+
         host_intro_usr = (
             f"New story: {story.title}\n\n"
-            f"We ran this through five AI models and measured their embedding geometry.\n"
-            f"- Consensus density: {density:.3f} (1.0 = perfect agreement, 0.0 = total disagreement)\n"
-            f"- The models converged on these concepts: {concept_str}\n"
-            f"- Concepts absent from all responses (the void): {void_str}\n"
-            f"- Friction scores: {vix_summary} (higher = more divergent from consensus)\n"
-            f"- State: {state_flag}\n\n"
-            "Introduce the story plainly so the audience knows the topic, then explain "
-            "what the geometric shape tells us. Treat it like a weather report for "
-            "narrative pressure."
+            f"We ran this through five AI models and measured six layers of embedding geometry.\n\n"
+            f"CONSENSUS DENSITY: {density:.3f} — "
+            f"{'The models are in lockstep.' if density > 0.9 else 'Normal agreement.' if density > 0.85 else 'Significant disagreement.'}\n"
+            f"FRICTION SCORES: {vix_summary}\n"
+            f"SPECTRAL RESONANCE: {_resonance:.3f} — "
+            f"{'tight narrative lock' if _resonance < 0.15 else 'moderate diversity' if _resonance < 0.3 else 'genuine disagreement'}. "
+            f"Interference: {_interference:.3f}.\n"
+            f"CONSENSUS COMPRESSION: {_compression:.3f} — "
+            f"{'heavy compression, tight corset on the narrative' if _compression > 0.4 else 'moderate compression' if _compression > 0.25 else 'loose narrative space'}.\n"
+            f"SVD RECONSTRUCTION ALIGNMENT: {_recon_align:.3f} — "
+            f"{'the SVD null space and void detect the same suppression' if abs(_recon_align) > 0.3 else 'the SVD and void detect different kinds of suppression'}.\n"
+            f"WHAT THEY SAID: {concept_str}\n"
+            f"WHAT NOBODY SAID (void): {void_str}\n"
+            f"LOGOS SYNTHESIS (anti-consensus): {_logos_str}\n\n"
+            "Introduce the story plainly, then walk through the geometry like a weather "
+            "report. Name specific numbers. Explain what the compression and void reveal."
         )
         host_text = _call_qwen(host_intro_sys, host_intro_usr)
         if host_text:
@@ -561,13 +602,17 @@ def stage_4_generate_scripts(results):
             "End with the synthesis words like a data readout. "
             "2-3 sentences. No hashtags. No personal attacks. Respond only in English."
         )
+        _logos_close = ", ".join(logos_words[:3]) if logos_words else void_str
         close_usr = (
-            f"Story: {story.title}\n"
-            f"Void (omitted by all): {void_str}\n"
-            f"Consensus (said by all): {concept_str}\n"
-            f"Consensus density: {density:.3f}\n"
-            f"State: {state_flag}\n\n"
-            "Deliver the closing. Name the void words explicitly."
+            f"Story: {story.title}\n\n"
+            f"VOID (omitted by all models): {void_str}\n"
+            f"LOGOS SYNTHESIS (anti-consensus reconstruction): {_logos_close}\n"
+            f"CONSENSUS (what they all said): {concept_str}\n"
+            f"DENSITY: {density:.3f} | COMPRESSION: {_compression:.3f} | STATE: {state_flag}\n\n"
+            "Deliver the closing. Compare the void words to the Logos synthesis — "
+            "if they overlap, the suppression is confirmed from two independent methods. "
+            "If they differ, explain what each channel detected. "
+            "Name the specific words. End with the synthesis like a data readout."
         )
         close_text = _call_qwen(close_sys, close_usr)
         if close_text:
