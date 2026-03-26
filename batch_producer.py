@@ -311,6 +311,24 @@ def stage_3_geometric(results):
             _vt2 = _VT2("vocab")
             r["logos_words"] = [w for w, _ in _vt2.nearest_concepts(_x_np, k=5)]
             log.info("  Logos synthesis: %s", "|".join(r["logos_words"][:3]))
+            # Claim extraction + coverage scoring
+            try:
+                from claim_extractor import extract_claims, score_claim_coverage, find_killshots
+                _claims = extract_claims(story.title, story.summary)
+                if _claims:
+                    _resp_dict = {a.name: a.text for a in active}
+                    _coverage = score_claim_coverage(_claims, _resp_dict, _eng, story.title)
+                    _ks = find_killshots(_coverage)
+                    r["claim_results"] = _coverage
+                    r["claim_killshots"] = _ks
+                    if _ks:
+                        log.info("  Claim killshots: %d (top: %s)", len(_ks), _ks[0]["claim"][:50])
+                    else:
+                        log.info("  Claims: %d extracted, no killshots", len(_claims))
+            except Exception as _ce:
+                log.warning(f"  Claim extraction failed: {_ce}")
+                r["claim_results"] = []
+                r["claim_killshots"] = []
         except Exception as _e:
             log.warning(f"  Spectral/Logos failed: {_e}")
             r["spectral"] = {}
@@ -357,12 +375,10 @@ def _compute_void(headline, response_texts, eng, vt, pool_size=200, k=5):
         # Skip short words and stopwords
         if len(word) < 4:
             continue
-        # Literal absence check: word not in any response
+        # Whole-word absence check (not substring — "anne" != "annie")
+        import re as _re
         w_lower = word.lower()
-        if w_lower in all_text:
-            continue
-        # Also skip if any word in a multi-word phrase appears
-        if " " not in w_lower and any(w_lower in rw for rw in response_words if len(rw) > 3):
+        if _re.search(r'\b' + _re.escape(w_lower) + r'\b', all_text):
             continue
         absent.append((word, sim))
     return absent[:k]
@@ -602,6 +618,8 @@ def stage_4_generate_scripts(results):
             "End with the synthesis words like a data readout. "
             "2-3 sentences. No hashtags. No personal attacks. Respond only in English."
         )
+        _killshot_claims = r.get("claim_killshots", [])
+        _ks_str = "; ".join(k["claim"][:80] for k in _killshot_claims[:2]) if _killshot_claims else "none detected"
         _logos_close = ", ".join(logos_words[:3]) if logos_words else void_str
         close_usr = (
             f"Story: {story.title}\n\n"
@@ -612,7 +630,10 @@ def stage_4_generate_scripts(results):
             "Deliver the closing. Compare the void words to the Logos synthesis — "
             "if they overlap, the suppression is confirmed from two independent methods. "
             "If they differ, explain what each channel detected. "
-            "Name the specific words. End with the synthesis like a data readout."
+            "Name the specific void words. Then state any claim-level killshots: "
+            f"high-salience facts from the source that no model mentioned: {_ks_str}. "
+            "If void words and killshot claims point in the same direction, say so. "
+            "End with the synthesis words like a data readout."
         )
         close_text = _call_qwen(close_sys, close_usr)
         if close_text:
@@ -642,6 +663,8 @@ def stage_4_generate_scripts(results):
                 "synthesis_words": synthesis_words,
                 "void_words": void_words,
                 "model_vix": {a.name: a.eigen_vix for a in active},
+                "logos_words": logos_words,
+                "claim_killshots": [{"claim": k["claim"], "salience": k["salience"], "omitted_by": k["omitted_by"]} for k in r.get("claim_killshots", [])[:3]],
             },
         }
         segments.append(segment)
