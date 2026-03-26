@@ -22,3 +22,25 @@ echo "[3/3] PCA void analysis..." >> "$LOG"
 python3 pca_void_registry.py >> "$LOG" 2>&1
 
 echo "=== DAILY REPORT COMPLETE ===" >> "$LOG"
+
+# 4. Publish to GitHub Pages
+echo "[4/4] Publishing to eigentrace.ai..." >> "$LOG"
+DATESTR=$(date +%Y-%m-%d)
+DATENUM=$(date +%Y%m%d)
+DIGEST="/home/remvelchio/eigentrace/tmp/digests/omission_ledger_${DATENUM}.md"
+POST="/mnt/c/Users/M4ISI/eigentrace/docs/_posts/${DATESTR}-omission-ledger.md"
+if [ -f "$DIGEST" ]; then
+    echo "---
+layout: post
+title: \"Omission Ledger — ${DATESTR}\"
+date: ${DATESTR}
+categories: ledger
+---
+" > "$POST"
+    cat "$DIGEST" >> "$POST"
+    cd /mnt/c/Users/M4ISI/eigentrace
+    git add docs/
+    git commit -m "ledger: ${DATESTR}" --quiet
+    git push origin master --quiet 2>&1
+    echo "Published: ${DATESTR}" >> "$LOG"
+fi
