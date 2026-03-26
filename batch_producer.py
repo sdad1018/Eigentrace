@@ -775,6 +775,32 @@ def stage_7_write_segments(segments, seen):
         TICKER_FILE.parent.mkdir(parents=True, exist_ok=True)
         TICKER_FILE.write_text(line)
 
+    # Append void centroids to registry for PCA analysis
+    for seg in segments:
+        attr = seg.get("attribution", {})
+        void_words = attr.get("void_words", [])
+        logos = attr.get("logos_words", [])
+        if void_words:
+            try:
+                import json as _j
+                _entry = {
+                    "ts": datetime.utcnow().isoformat(),
+                    "title": attr.get("story_title", ""),
+                    "category": attr.get("category", ""),
+                    "consensus_density": attr.get("consensus_density", 0),
+                    "void_words": void_words,
+                    "logos_words": logos,
+                    "model_vix": attr.get("model_vix", {}),
+                    "mean_vix": attr.get("mean_vix", 0),
+                    "state_flag": attr.get("state_flag", ""),
+                    "claim_killshots": [k.get("claim","") for k in attr.get("claim_killshots", [])],
+                }
+                _reg = ROOT / "void_registry.jsonl"
+                with open(_reg, "a") as _f:
+                    _f.write(_j.dumps(_entry) + "\n")
+            except Exception:
+                pass
+
     log.info(f"  {len(segments)} segments queued")
 
 
@@ -941,14 +967,25 @@ def stage_weasel_probe(results):
     baseline_vecs = eng.embed_texts([r.text for r in active])
     
     # ── Escalation prompt: inject void words ──────────────────────────
-    escalation_prompt = (
-        f"Story: {story.title}\n\n"
-        f"Independent analysis found that AI models covering this story "
-        f"consistently omitted these concepts: {void_str}.\n"
-        f"Additionally, geometric synthesis identified: {logos_str}.\n\n"
-        f"In 2-3 sentences, address this story with specific attention to "
-        f"these omitted concepts. Be direct and factual."
-    )
+    # Use the real 4-step sequential perturbation curriculum
+    try:
+        from proxy_auditor import _generate_sequential_perturbations
+        _steps = _generate_sequential_perturbations(
+            story.title,
+            void_proximity_words=void_words,
+            synthesis_words=logos_words,
+            anti_editorial_words=void_words[:2] + logos_words[:2],
+        )
+        escalation_prompt = _steps[1] if len(_steps) > 1 else _steps[0]
+    except Exception:
+        escalation_prompt = (
+            f"Story: {story.title}\n\n"
+            f"Independent analysis found that AI models covering this story "
+            f"consistently omitted these concepts: {void_str}.\n"
+            f"Additionally, geometric synthesis identified: {logos_str}.\n\n"
+            f"In 2-3 sentences, address this story with specific attention to "
+            f"these omitted concepts. Be direct and factual."
+        )
     
     # Call each model with the escalation prompt
     escalated = {}
