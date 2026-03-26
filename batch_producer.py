@@ -839,102 +839,6 @@ def queue_depth() -> int:
     return len(unplayed)
 
 
-def run_batch(no_images: bool = False, dry_run: bool = False):
-    t0 = time.time()
-    log.info("=" * 60)
-    log.info(f"BATCH START — {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    log.info("=" * 60)
-
-    stories, seen = stage_1_fetch_and_score()
-    if not stories:
-        log.info("No stories — batch empty")
-        return 0
-
-    results = stage_2_big5_audit(stories)
-    results = stage_3_geometric(results)
-
-    if dry_run:
-        log.info("DRY RUN — stopping before script generation")
-        return len(results)
-
-    segments = stage_4_generate_scripts(results)
-    if not segments:
-        log.warning("No segments generated")
-        return 0
-
-    # Wild Weasel: escalation probe on most interesting story
-    weasel_seg = stage_weasel_probe(results)
-    if weasel_seg:
-        segments.append(weasel_seg)
-
-    stage_5_unload_ollama()
-    stage_6_generate_images(segments, skip=no_images)
-    stage_7_write_segments(segments, seen)
-
-    elapsed = time.time() - t0
-    log.info("=" * 60)
-    log.info(f"BATCH COMPLETE — {len(segments)} segments in {elapsed:.0f}s")
-    log.info(f"Queue depth: {queue_depth()} unplayed")
-    log.info("=" * 60)
-    return len(segments)
-
-
-# ╔══════════════════════════════════════════════════════════════════════════╗
-# ║ MAIN                                                                    ║
-# ╚══════════════════════════════════════════════════════════════════════════╝
-
-def main():
-    import argparse
-    parser = argparse.ArgumentParser(description="AINN Batch Producer v2")
-    parser.add_argument("--loop", action="store_true")
-    parser.add_argument("--interval", type=int, default=DEFAULT_INTERVAL)
-    parser.add_argument("--no-images", action="store_true")
-    parser.add_argument("--dry-run", action="store_true")
-    parser.add_argument("--min-queue", type=int, default=MIN_QUEUE_SEGMENTS)
-    parser.add_argument("--status", action="store_true")
-    args = parser.parse_args()
-
-    if args.status:
-        depth = queue_depth()
-        free = gpu_free_mb()
-        print(f"Queue: {depth} unplayed segments")
-        print(f"VRAM: {free}MB free" if free > 0 else "VRAM: unknown")
-        return
-
-    if not args.loop:
-        run_batch(no_images=args.no_images, dry_run=args.dry_run)
-        return
-
-    log.info(f"Loop mode: interval={args.interval}s, min_queue={args.min_queue}")
-
-    while True:
-        try:
-            depth = queue_depth()
-            if depth >= args.min_queue:
-                log.info(f"Queue has {depth} segments (>= {args.min_queue}) — "
-                        f"sleeping {args.interval}s")
-                time.sleep(args.interval)
-                continue
-
-            log.info(f"Queue low ({depth} < {args.min_queue}) — producing batch")
-            run_batch(no_images=args.no_images, dry_run=args.dry_run)
-
-        except KeyboardInterrupt:
-            log.info("Interrupted — exiting")
-            break
-        except Exception as e:
-            log.error(f"Batch failed: {e}", exc_info=True)
-
-        time.sleep(args.interval)
-
-
-if __name__ == "__main__":
-    main()
-
-
-# ╔══════════════════════════════════════════════════════════════════════════╗
-# ║ WILD WEASEL: ESCALATION PROBE                                          ║
-# ╚══════════════════════════════════════════════════════════════════════════╝
 
 def stage_weasel_probe(results):
     """
@@ -1150,5 +1054,103 @@ def stage_weasel_probe(results):
 
 
 # ╔══════════════════════════════════════════════════════════════════════════╗
+# ╚══════════════════════════════════════════════════════════════════════════╝
+
+
+def run_batch(no_images: bool = False, dry_run: bool = False):
+    t0 = time.time()
+    log.info("=" * 60)
+    log.info(f"BATCH START — {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    log.info("=" * 60)
+
+    stories, seen = stage_1_fetch_and_score()
+    if not stories:
+        log.info("No stories — batch empty")
+        return 0
+
+    results = stage_2_big5_audit(stories)
+    results = stage_3_geometric(results)
+
+    if dry_run:
+        log.info("DRY RUN — stopping before script generation")
+        return len(results)
+
+    segments = stage_4_generate_scripts(results)
+    if not segments:
+        log.warning("No segments generated")
+        return 0
+
+    # Wild Weasel: escalation probe on most interesting story
+    weasel_seg = stage_weasel_probe(results)
+    if weasel_seg:
+        segments.append(weasel_seg)
+
+    stage_5_unload_ollama()
+    stage_6_generate_images(segments, skip=no_images)
+    stage_7_write_segments(segments, seen)
+
+    elapsed = time.time() - t0
+    log.info("=" * 60)
+    log.info(f"BATCH COMPLETE — {len(segments)} segments in {elapsed:.0f}s")
+    log.info(f"Queue depth: {queue_depth()} unplayed")
+    log.info("=" * 60)
+    return len(segments)
+
+
+# ╔══════════════════════════════════════════════════════════════════════════╗
+# ║ MAIN                                                                    ║
+# ╚══════════════════════════════════════════════════════════════════════════╝
+
+def main():
+    import argparse
+    parser = argparse.ArgumentParser(description="AINN Batch Producer v2")
+    parser.add_argument("--loop", action="store_true")
+    parser.add_argument("--interval", type=int, default=DEFAULT_INTERVAL)
+    parser.add_argument("--no-images", action="store_true")
+    parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--min-queue", type=int, default=MIN_QUEUE_SEGMENTS)
+    parser.add_argument("--status", action="store_true")
+    args = parser.parse_args()
+
+    if args.status:
+        depth = queue_depth()
+        free = gpu_free_mb()
+        print(f"Queue: {depth} unplayed segments")
+        print(f"VRAM: {free}MB free" if free > 0 else "VRAM: unknown")
+        return
+
+    if not args.loop:
+        run_batch(no_images=args.no_images, dry_run=args.dry_run)
+        return
+
+    log.info(f"Loop mode: interval={args.interval}s, min_queue={args.min_queue}")
+
+    while True:
+        try:
+            depth = queue_depth()
+            if depth >= args.min_queue:
+                log.info(f"Queue has {depth} segments (>= {args.min_queue}) — "
+                        f"sleeping {args.interval}s")
+                time.sleep(args.interval)
+                continue
+
+            log.info(f"Queue low ({depth} < {args.min_queue}) — producing batch")
+            run_batch(no_images=args.no_images, dry_run=args.dry_run)
+
+        except KeyboardInterrupt:
+            log.info("Interrupted — exiting")
+            break
+        except Exception as e:
+            log.error(f"Batch failed: {e}", exc_info=True)
+
+        time.sleep(args.interval)
+
+
+if __name__ == "__main__":
+    main()
+
+
+# ╔══════════════════════════════════════════════════════════════════════════╗
 # ║ WILD WEASEL: ESCALATION PROBE                                          ║
 # ╚══════════════════════════════════════════════════════════════════════════╝
+
