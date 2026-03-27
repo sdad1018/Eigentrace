@@ -114,7 +114,7 @@ OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
 
 OLLAMA_GENERATE = f"{OLLAMA_HOST}/api/generate"
 
-QWEN_MODEL = os.getenv("QWEN_MODEL", "qwen2.5:14b")
+HOST_MODEL = os.getenv("HOST_MODEL", "mistral-small")
 
 MIN_QUEUE_SEGMENTS = int(os.getenv("MIN_QUEUE_SEGMENTS", "2"))
 
@@ -793,7 +793,7 @@ def _compute_void(headline, response_texts, eng, vt, pool_size=200, k=5):
 
 
 
-def _call_qwen(system: str, user: str, temperature: float = 0.7) -> str:
+def _call_host(system: str, user: str, temperature: float = 0.7) -> str:
 
     """Call Qwen via Ollama."""
 
@@ -807,7 +807,7 @@ def _call_qwen(system: str, user: str, temperature: float = 0.7) -> str:
 
         r = requests.post(OLLAMA_GENERATE, json={
 
-            "model": QWEN_MODEL, "prompt": prompt, "stream": False,
+            "model": HOST_MODEL, "prompt": prompt, "stream": False,
 
             "options": {"temperature": temperature, "num_predict": 400},
 
@@ -1063,7 +1063,7 @@ def stage_4_generate_scripts(results):
 
         )
 
-        hook_text = _call_qwen(hook_sys, hook_usr)
+        hook_text = _call_host(hook_sys, hook_usr)
 
         if hook_text:
 
@@ -1105,7 +1105,7 @@ def stage_4_generate_scripts(results):
 
         )
 
-        consensus_text = _call_qwen(consensus_sys, consensus_usr)
+        consensus_text = _call_host(consensus_sys, consensus_usr)
 
         if consensus_text:
 
@@ -1175,7 +1175,7 @@ def stage_4_generate_scripts(results):
 
         )
 
-        void_text = _call_qwen(void_sys, void_usr)
+        void_text = _call_host(void_sys, void_usr)
 
         if void_text:
 
@@ -1215,7 +1215,7 @@ def stage_4_generate_scripts(results):
 
         )
 
-        logos_text = _call_qwen(logos_sys, logos_usr)
+        logos_text = _call_host(logos_sys, logos_usr)
 
         if logos_text:
 
@@ -1328,7 +1328,7 @@ def stage_4_generate_scripts(results):
             f"({'void and SVD detect same suppression' if abs(_recon_align) > 0.3 else 'void and SVD detect different suppression channels'})\n"
 
             f"Void: {void_str}\n"
-            f"Null space claim (SVD blind spot): {r.get('null_space_claims', [{}])[0].get('claim', 'none detected')[:80]}\n"
+            f"Null space claim (SVD blind spot): {r.get('null_space_claims', [{}])[0].get('claim', 'none detected')[:80] if r.get('null_space_claims') else 'none detected'}\n"
 
             f"Logos: {logos_str}\n"
 
@@ -1340,7 +1340,7 @@ def stage_4_generate_scripts(results):
 
         )
 
-        verdict_text = _call_qwen(verdict_sys, verdict_usr)
+        verdict_text = _call_host(verdict_sys, verdict_usr)
 
         if verdict_text:
 
@@ -2049,7 +2049,7 @@ def stage_weasel_probe(results):
 
     )
 
-    intro_text = _call_qwen(intro_sys, intro_usr)
+    intro_text = _call_host(intro_sys, intro_usr)
 
     if intro_text:
 
@@ -2141,7 +2141,7 @@ def stage_weasel_probe(results):
 
     )
 
-    shift_text = _call_qwen(shift_explain_sys, shift_explain_usr)
+    shift_text = _call_host(shift_explain_sys, shift_explain_usr)
 
     if shift_text:
 
@@ -2201,7 +2201,7 @@ def stage_weasel_probe(results):
 
     )
 
-    verdict_text = _call_qwen(verdict_sys, verdict_usr)
+    verdict_text = _call_host(verdict_sys, verdict_usr)
 
     if verdict_text:
 
