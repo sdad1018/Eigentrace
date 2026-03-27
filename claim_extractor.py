@@ -276,6 +276,15 @@ def daily_digest(date=None, output_dir=None):
                 L.append(f'- *"{ks["claim"]}"* — salience {ks.get("salience", 0):.3f}, omitted by {omitters}')
             L.append("")
 
+        # Null space claims (Channel 3: SVD blind spot)
+        ns_claims = attr.get("null_space_claims", [])
+        if ns_claims:
+            L.append("**Null space (SVD blind spot — which source fact lives in the direction all models avoid):**")
+            L.append("")
+            for ns in ns_claims[:2]:
+                L.append(f'- *"{ns["claim"]}"* — null alignment {ns.get("null_alignment", 0):.3f}, coverage {ns.get("coverage_ratio", 0):.1%}')
+            L.append("")
+
         # Beat excerpts: hook and verdict
         beats = seg.get("beats", [])
         for b in beats:

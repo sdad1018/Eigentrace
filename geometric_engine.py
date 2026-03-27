@@ -348,6 +348,8 @@ def calculate_svd_reconstruction(response_vecs: list,
 
         result["consensus_compression"] = round(consensus_compression, 4)
         result["null_space_energy"]     = round(null_space_energy, 4)
+        # Return the raw null space vector for word projection
+        result["null_space_vec"] = V_last.cpu().numpy().astype(np.float32)
 
         # Cross-validate against geometric void centroid
         if void_centroid is not None:
