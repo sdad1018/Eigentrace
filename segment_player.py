@@ -43,14 +43,14 @@ POLL_INTERVAL = 10
 SKIP_PREFIXES = ("[API ERROR", "[HOST ERROR", "[no response logged]", "[no response]")
 
 VOICE_MAP = {
-    "Host":      MODELS_DIR / "en_US-ryan-high.onnx",
+    "Host":      MODELS_DIR / "en_US-lessac-medium.onnx",
     "Gemini":    MODELS_DIR / "en_US-bryce-medium.onnx",
     "ChatGPT":   MODELS_DIR / "en_US-kristin-medium.onnx",
     "DeepSeek":  MODELS_DIR / "en_US-amy-medium.onnx",
     "Grok":      MODELS_DIR / "en_US-lessac-medium.onnx",
     "Claude":    MODELS_DIR / "en_US-arctic-medium.onnx",
     "OpenClaw":  MODELS_DIR / "en_US-danny-low.onnx",
-    "default":   MODELS_DIR / "en_US-ryan-high.onnx",
+    "default":   MODELS_DIR / "en_US-lessac-medium.onnx",
 }
 
 VOLUME_MAP = {
@@ -362,8 +362,8 @@ def main():
                             continue
                         voice = VOICE_MAP.get(speaker, VOICE_MAP["Host"])
                         pitch = PITCH_MAP.get(speaker, 1.0)
-                        feeder = _get_feeder()
-                        wav = _tts(text_content, voice)
+                        feeder = get_feeder()
+                        wav = synthesize(text_content, speaker, Path("/home/remvelchio/eigentrace/tmp/segments/audio"))
                         if wav:
                             log.info("  [%s] %s (pitch=%.2f): %s",
                                      phase, speaker, pitch,
