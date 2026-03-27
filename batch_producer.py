@@ -601,6 +601,31 @@ def stage_3_geometric(results):
             r["spectral"] = calculate_spectral_resonance(_rvecs)
 
             r["svd_tomo"] = calculate_svd_reconstruction(_rvecs, void_centroid=getattr(geo, "void_centroid", None))
+            # Project SVD null space to nearest SOURCE CLAIMS (Channel 3)
+            # Independent from Void (vocab tensor) and Logos (PGD optimization)
+            # Uses spectral decomposition to find which source facts live
+            # in the geometric blind spot of the consensus
+            _ns_vec = r["svd_tomo"].get("null_space_vec")
+            _claims = r.get("claim_results", [])
+            if _ns_vec is not None and _claims:
+                import numpy as _np2
+                _claim_texts = [c["claim"] for c in _claims]
+                _claim_vecs = _eng.embed_texts(_claim_texts)
+                _ns_norm = _ns_vec / (_np2.linalg.norm(_ns_vec) + 1e-8)
+                _ns_sims = [float(_np2.dot(_ns_norm, cv)) for cv in _claim_vecs]
+                _ranked = sorted(zip(_claim_texts, _ns_sims, _claims), key=lambda x: -abs(x[1]))
+                r["null_space_claims"] = [{
+                    "claim": c[0],
+                    "null_alignment": round(c[1], 4),
+                    "salience": c[2].get("salience", 0),
+                    "coverage_ratio": c[2].get("coverage_ratio", 0),
+                    "omitted_by": c[2].get("omitted_by", []),
+                } for c in _ranked[:3]]
+                _top = _ranked[0] if _ranked else None
+                if _top:
+                    log.info("  Null space claim: %s (align=%.3f)", _top[0][:50], _top[1])
+            else:
+                r["null_space_claims"] = []
 
             # Logos synthesis with headline anchor
 
@@ -1303,6 +1328,7 @@ def stage_4_generate_scripts(results):
             f"({'void and SVD detect same suppression' if abs(_recon_align) > 0.3 else 'void and SVD detect different suppression channels'})\n"
 
             f"Void: {void_str}\n"
+            f"Null space claim (SVD blind spot): {r.get('null_space_claims', [{}])[0].get('claim', 'none detected')[:80]}\n"
 
             f"Logos: {logos_str}\n"
 
@@ -1381,6 +1407,7 @@ def stage_4_generate_scripts(results):
                 "logos_words": logos_words,
 
                 "claim_killshots": [{"claim": k["claim"], "salience": k["salience"], "omitted_by": k["omitted_by"]} for k in r.get("claim_killshots", [])[:3]],
+                "null_space_claims": r.get("null_space_claims", [])[:2],
 
             },
 
