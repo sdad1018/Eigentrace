@@ -345,8 +345,39 @@ def main():
                 log.error("Playback error on %s: %s", seg.name, e)
                 seg.with_suffix(".played").touch()
         else:
-            log.debug("No unplayed segments — waiting %ds", POLL_INTERVAL)
-            time.sleep(POLL_INTERVAL)
+            # Agent gets the mic during dead air
+            try:
+                from idle_agent import run_idle_turn, _has_pending_segment
+                idle_beats = run_idle_turn()
+                if idle_beats:
+                    for beat in idle_beats:
+                        # Check for incoming news before each beat
+                        if _has_pending_segment():
+                            log.info("News incoming — yielding mic")
+                            break
+                        speaker = beat.get("speaker", "Host")
+                        text_content = beat.get("text", "")
+                        phase = beat.get("phase", "idle")
+                        if not text_content:
+                            continue
+                        voice = VOICE_MAP.get(speaker, VOICE_MAP["Host"])
+                        pitch = PITCH_MAP.get(speaker, 1.0)
+                        feeder = _get_feeder()
+                        wav = _tts(text_content, voice)
+                        if wav:
+                            log.info("  [%s] %s (pitch=%.2f): %s",
+                                     phase, speaker, pitch,
+                                     text_content[:60] + "..." if len(text_content) > 60 else text_content)
+                            feeder.send_wav(wav, pitch=pitch)
+                            time.sleep(1)  # brief pause between beats
+                else:
+                    time.sleep(POLL_INTERVAL)
+            except ImportError:
+                log.debug("idle_agent not available — waiting %ds", POLL_INTERVAL)
+                time.sleep(POLL_INTERVAL)
+            except Exception as e:
+                log.warning("Idle agent error: %s", e)
+                time.sleep(POLL_INTERVAL)
 
 
 if __name__ == "__main__":
