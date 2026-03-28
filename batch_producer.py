@@ -1695,8 +1695,7 @@ def stage_7_write_segments(segments, seen):
                     "null_space_claims": attr.get("null_space_claims", []),
                 }
                 with open(AUDIT_LOG, "a") as _af:
-                    _af.write(json.dumps(_audit) + "
-")
+                    _af.write(json.dumps(_audit) + "\n")
             except Exception:
                 pass
 
