@@ -272,7 +272,7 @@ def play_segment(seg_path: Path):
     img_dir = AGENT_DIR / "tmp" / "images"
     image   = None
     if img_dir.exists():
-        imgs = sorted(img_dir.glob("*.jpg"), key=lambda p: p.stat().st_mtime, reverse=True)
+        imgs = sorted(img_dir.glob("*.png"), key=lambda p: p.stat().st_mtime, reverse=True)
         if imgs:
             image = imgs[0]
 
