@@ -1675,6 +1675,31 @@ def stage_7_write_segments(segments, seen):
 
 
 
+    # Write enriched audit log for idle agent + temporal tracker
+    for seg in segments:
+        attr = seg.get("attribution", {})
+        if attr.get("story_title"):
+            try:
+                _audit = {
+                    "timestamp": datetime.utcnow().isoformat(),
+                    "story_guid": attr.get("story_guid", ""),
+                    "story_title": attr.get("story_title", ""),
+                    "category": attr.get("category", ""),
+                    "consensus_density": attr.get("consensus_density", 0),
+                    "mean_vix": attr.get("mean_vix", 0),
+                    "state_flag": attr.get("state_flag", ""),
+                    "model_vix": attr.get("model_vix", {}),
+                    "void_words": attr.get("void_words", []),
+                    "logos_words": attr.get("logos_words", []),
+                    "claim_killshots": attr.get("claim_killshots", []),
+                    "null_space_claims": attr.get("null_space_claims", []),
+                }
+                with open(AUDIT_LOG, "a") as _af:
+                    _af.write(json.dumps(_audit) + "
+")
+            except Exception:
+                pass
+
     log.info(f"  {len(segments)} segments queued")
 
 
