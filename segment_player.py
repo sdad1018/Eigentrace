@@ -368,8 +368,7 @@ def main():
                             log.info("  [%s] %s (pitch=%.2f): %s",
                                      phase, speaker, pitch,
                                      text_content[:60] + "..." if len(text_content) > 60 else text_content)
-                            feeder.send_wav(wav, pitch=pitch)
-                            time.sleep(1)  # brief pause between beats
+                            push_beat_to_udp(wav, None, speaker)
                 else:
                     time.sleep(POLL_INTERVAL)
             except ImportError:
