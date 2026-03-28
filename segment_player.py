@@ -300,6 +300,14 @@ def play_segment(seg_path: Path):
         beat_wavs.append(str(wav))
         beat_speakers.append(speaker)
 
+    # Update current_frame symlink for master.sh
+    if image and Path(image).exists():
+        frame = Path("/home/remvelchio/eigentrace/tmp/current_frame.png")
+        try:
+            frame.unlink(missing_ok=True)
+            frame.symlink_to(image)
+        except Exception:
+            pass
     push_segment_to_udp(beat_wavs, image, beat_speakers)
     seg_path.with_suffix(".played").touch()
     log.info("Segment complete: %s", seg_path.name)
@@ -368,7 +376,18 @@ def main():
                             log.info("  [%s] %s (pitch=%.2f): %s",
                                      phase, speaker, pitch,
                                      text_content[:60] + "..." if len(text_content) > 60 else text_content)
-                            push_beat_to_udp(wav, None, speaker)
+                            feeder._silence = False
+                            feeder.send_wav(str(wav), pitch=pitch, volume=3.0)
+                            # Wait for the wav to finish playing before next beat
+                            import wave as _wv
+                            try:
+                                _w = _wv.open(str(wav))
+                                _dur = _w.getnframes() / _w.getframerate()
+                                _w.close()
+                                time.sleep(_dur + 2)  # wav duration + 2 second pause
+                            except Exception:
+                                time.sleep(10)
+                            feeder._silence = True
                 else:
                     time.sleep(POLL_INTERVAL)
             except ImportError:
