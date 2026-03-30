@@ -87,6 +87,14 @@ def score_claim_coverage(claims, model_responses, eng, headline=""):
         })
     return results
 
+# Advanced math modules
+try:
+    from eigentrace_math import compute_void_vector, cluster_void_words, format_clusters_for_ledger
+    from geometric_engine import GeometricPerturbationEngine as _GeoEng
+    _MATH_AVAILABLE = True
+except ImportError:
+    _MATH_AVAILABLE = False
+
 def find_killshots(claim_results, min_salience=0.45):
     ks = [cr for cr in claim_results if cr["salience"] >= min_salience and cr["coverage_ratio"] <= 0.2]
     ks.sort(key=lambda x: -x["salience"])
@@ -220,6 +228,23 @@ def daily_digest(date=None, output_dir=None):
     # ══════════════════════════════════════════════════════════════════
     # INDIVIDUAL STORIES (ranked by mean VIX)
     # ══════════════════════════════════════════════════════════════════
+    # Cross-story void clustering
+    if _MATH_AVAILABLE and all_voids:
+        try:
+            _eng = _GeoEng()
+            _unique_voids = list(set(all_voids))[:30]  # top 30 unique void words
+            if len(_unique_voids) >= 4:
+                _xvc = cluster_void_words(_unique_voids, _eng.embed_texts, threshold=0.70)
+                L.append("## Cross-Story Void Clustering")
+                L.append("")
+                L.append("Thematic grouping of all void words across today's stories:")
+                L.append("")
+                L.append(format_clusters_for_ledger(
+                    _xvc["clusters"], _xvc["cluster_labels"],
+                    _xvc["similarity_matrix"], _xvc["words"]))
+        except Exception:
+            pass
+
     L.append("## Stories")
     L.append("")
 
@@ -284,6 +309,33 @@ def daily_digest(date=None, output_dir=None):
             for ns in ns_claims[:2]:
                 L.append(f'- *"{ns["claim"]}"* — null alignment {ns.get("null_alignment", 0):.3f}, coverage {ns.get("coverage_ratio", 0):.1%}')
             L.append("")
+
+        # Void Clustering (thematic groups across all channels for this story)
+        if _MATH_AVAILABLE:
+            try:
+                _all_ch_words = list(set(void_words[:5] + logos[:3] + [ns.get("claim", "")[:30] for ns in ns_claims[:2]]))
+                _all_ch_words = [w for w in _all_ch_words if w and len(w) > 2]
+                if len(_all_ch_words) >= 3:
+                    _eng = _GeoEng()
+                    _vc = cluster_void_words(_all_ch_words, _eng.embed_texts, threshold=0.70)
+                    if len(_vc["clusters"]) > 1:
+                        L.append(format_clusters_for_ledger(
+                            _vc["clusters"], _vc["cluster_labels"],
+                            _vc["similarity_matrix"], _vc["words"]))
+                    # Quad-channel confirmation
+                    v_set = set(void_words[:5])
+                    l_set = set(logos[:5])
+                    ns_words = set()
+                    for ns in ns_claims[:2]:
+                        for w in ns.get("claim", "").lower().split():
+                            if len(w) > 3:
+                                ns_words.add(w)
+                    triple = v_set & l_set & ns_words
+                    if triple:
+                        L.append(f"**Triple-channel confirmed (void + Logos + null space):** {', '.join(triple)}")
+                        L.append("")
+            except Exception:
+                pass
 
         # Beat excerpts: hook and verdict
         beats = seg.get("beats", [])
