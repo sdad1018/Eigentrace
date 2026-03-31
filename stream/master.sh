@@ -11,13 +11,15 @@ fi
 echo $$ > "$LOCKFILE"
 
 # The Global Distribution Keys
-STREAM_KEY='hCet25N^wsaXpSH8X$^jW3P9Y7EaZk'
+STREAM_KEY='abc123'
 OWNCAST="rtmp://127.0.0.1:1935/live/$STREAM_KEY"
-TWITCH="rtmp://iad05.contribute.live-video.net/app/live_1450329520_DcFkkTckId23Ea21m8WmlHLhux6f0e"
-YOUTUBE="rtmp://a.rtmp.youtube.com/live2/t0eu-shj4-9sr2-24h9-9uma"
+TWITCH="rtmp://live.twitch.tv/app/live_1450329520_uqVYXqaRWV2jMlm2ytZmamS79AjYqi"
+YOUTUBE="rtmp://a.rtmp.youtube.com/live2/4q7k-2akw-yras-jfz6-8p6x"
+RUMBLE="rtmp://rtmp.rumble.com/live/r-4p4zk2-6tbo-yngw-d4457b"
+KICK="rtmps://fa723fc1b171.global-contribute.live-video.net/sk_us-west-2_uHHaKAi67wlR_XdH8tapPx2YGE0NINiwP8o0C87w3ID"
 
 BED_MUSIC="/home/remvelchio/eigentrace/assets/bed_22050.wav"
-UDP_IN="udp://127.0.0.1:10000?fifo_size=1000000&overrun_nonfatal=1&timeout=0"
+UDP_IN="udp://127.0.0.1:10000?fifo_size=1000000&overrun_nonfatal=1&timeout=0&listen=1"
 TICKER_FILE="/home/remvelchio/eigentrace/tmp/ticker_scroll.txt"
 TICKER_FONT="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 
@@ -29,10 +31,10 @@ while true; do
     ffmpeg -hide_banner -loglevel warning -stats \
         -err_detect ignore_err \
         -fflags +genpts \
-        -re -f image2 -loop 1 -framerate 30 -i "/home/remvelchio/eigentrace/tmp/current_frame.png" \
+        -re -f image2 -loop 1 -framerate 1/2 -thread_queue_size 512 -i "/home/remvelchio/eigentrace/tmp/current_frame.png" \
         -stream_loop -1 -i "$BED_MUSIC" \
         -f lavfi -i "anullsrc=cl=mono:r=44100" \
-        -thread_queue_size 4096 -probesize 10000000 -analyzeduration 10000000 -f mpegts -i "$UDP_IN" \
+        -thread_queue_size 8192 -probesize 10000000 -analyzeduration 10000000 -f mpegts -i "$UDP_IN" \
         -filter_complex \
             "[0:v]fps=30,scale=1024:576,drawbox=x=0:y=h-60:w=iw:h=60:color=black@0.55:t=fill,drawtext=fontfile=${TICKER_FONT}:textfile=${TICKER_FILE}:reload=1:expansion=none:fontcolor=white:fontsize=28:x=w-mod(t*120\,(w+tw)):y=h-60+14:shadowcolor=black@0.6:shadowx=2:shadowy=2[v]; \
              [1:a]volume=0.08[bed]; \
@@ -41,12 +43,12 @@ while true; do
              [null][story]amix=inputs=2:duration=longest:dropout_transition=2[voice]; \
              [voice][bed]amix=inputs=2:duration=longest:dropout_transition=2[a]" \
         -map "[v]" -map "[a]" \
-        -c:v libx264 -preset fast -b:v 2500k -maxrate 2500k -bufsize 5000k \
+        -c:v libx264 -preset fast -b:v 3000k -maxrate 3000k -bufsize 6000k \
         -pix_fmt yuv420p -g 60 -keyint_min 60 -sc_threshold 0 \
         -c:a aac -b:a 128k -ar 44100 -ac 2 \
-        -f tee "[f=flv:onfail=ignore]$OWNCAST|[f=flv:onfail=ignore]$TWITCH|[f=flv:onfail=ignore]$YOUTUBE" \
+        -f tee "[f=flv:onfail=ignore]$OWNCAST|[f=flv:onfail=ignore]$TWITCH|[f=flv:onfail=ignore]$YOUTUBE|[f=flv:onfail=ignore]$RUMBLE|[f=flv:onfail=ignore]$KICK" \
         2>>/home/remvelchio/eigentrace/tmp/master.log || true
 
-    echo "$(date): MASTER DIED — restarting in 2 seconds..."
-    sleep 2
+    echo "$(date): MASTER DIED — restarting in 8 seconds..."
+    sleep 8
 done
