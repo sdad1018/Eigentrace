@@ -89,11 +89,21 @@ def score_claim_coverage(claims, model_responses, eng, headline=""):
 
 # Advanced math modules
 try:
-    from eigentrace_math import compute_void_vector, cluster_void_words, format_clusters_for_ledger
+    from eigentrace_math import (
+        compute_void_vector, cluster_void_words,
+        format_clusters_for_ledger, compute_token_entropy,
+        get_logprobs_from_ollama,
+    )
     from geometric_engine import GeometricPerturbationEngine as _GeoEng
     _MATH_AVAILABLE = True
 except ImportError:
     _MATH_AVAILABLE = False
+
+def _get_geo_engine():
+    """Lazy singleton for BGE engine."""
+    if not hasattr(_get_geo_engine, '_inst'):
+        _get_geo_engine._inst = _GeoEng() if _MATH_AVAILABLE else None
+    return _get_geo_engine._inst
 
 def find_killshots(claim_results, min_salience=0.45):
     ks = [cr for cr in claim_results if cr["salience"] >= min_salience and cr["coverage_ratio"] <= 0.2]
@@ -206,9 +216,9 @@ def daily_digest(date=None, output_dir=None):
         L.append(f"- {name}: {model_avg_vix[name]} {bar}")
     L.append("")
 
-    # Dual-channel confirmation
+    # Multi-channel confirmation
     if dual_confirmed:
-        L.append(f"**Dual-channel confirmed suppressions** (void + Logos converge): {', '.join(sorted(dual_confirmed))}")
+        L.append(f"**Dual-channel confirmed** (void + Logos converge): {', '.join(sorted(dual_confirmed))}")
         L.append("")
 
     # Top killshots of the day
@@ -228,20 +238,25 @@ def daily_digest(date=None, output_dir=None):
     # ══════════════════════════════════════════════════════════════════
     # INDIVIDUAL STORIES (ranked by mean VIX)
     # ══════════════════════════════════════════════════════════════════
-    # Cross-story void clustering
+    # Cross-story void clustering (only words appearing 3+ times)
     if _MATH_AVAILABLE and all_voids:
         try:
-            _eng = _GeoEng()
-            _unique_voids = list(set(all_voids))[:30]  # top 30 unique void words
-            if len(_unique_voids) >= 4:
-                _xvc = cluster_void_words(_unique_voids, _eng.embed_texts, threshold=0.70)
-                L.append("## Cross-Story Void Clustering")
-                L.append("")
-                L.append("Thematic grouping of all void words across today's stories:")
-                L.append("")
-                L.append(format_clusters_for_ledger(
-                    _xvc["clusters"], _xvc["cluster_labels"],
-                    _xvc["similarity_matrix"], _xvc["words"]))
+            from collections import Counter as _Ctr
+            _vf = _Ctr(all_voids)
+            _freq_voids = [w for w, c in _vf.most_common(30) if c >= 3]
+            if len(_freq_voids) >= 4:
+                _eng = _get_geo_engine()
+                _xvc = cluster_void_words(_freq_voids, _eng.embed_texts, threshold=0.72)
+                multi_clusters = [c for c in _xvc["clusters"] if len(c) > 1]
+                if multi_clusters:
+                    L.append("## Cross-Story Void Clustering")
+                    L.append("")
+                    L.append("Thematic groups among void words appearing in 3+ stories:")
+                    L.append("")
+                    for label, cluster in zip(_xvc["cluster_labels"], _xvc["clusters"]):
+                        if len(cluster) > 1:
+                            L.append(f"- **{label}** ({len(cluster)} terms): {', '.join(cluster)}")
+                    L.append("")
         except Exception:
             pass
 
@@ -284,10 +299,10 @@ def daily_digest(date=None, output_dir=None):
         if logos:
             L.append(f"**Logos (anti-consensus synthesis):** {', '.join(logos[:5])}")
 
-        # Dual confirmation
-        v_set = set(void_words[:5])
-        l_set = set(logos[:5])
-        overlap = v_set & l_set
+        # Dual confirmation (void + Logos)
+        v_set_raw = set(void_words[:5])
+        l_set_raw = set(logos[:5])
+        overlap = v_set_raw & l_set_raw
         if overlap:
             L.append(f"**Dual-channel confirmed:** {', '.join(overlap)}")
         L.append("")
@@ -310,32 +325,50 @@ def daily_digest(date=None, output_dir=None):
                 L.append(f'- *"{ns["claim"]}"* — null alignment {ns.get("null_alignment", 0):.3f}, coverage {ns.get("coverage_ratio", 0):.1%}')
             L.append("")
 
-        # Void Clustering (thematic groups across all channels for this story)
+        # Void Clustering — words only, no claim text
         if _MATH_AVAILABLE:
             try:
-                _all_ch_words = list(set(void_words[:5] + logos[:3] + [ns.get("claim", "")[:30] for ns in ns_claims[:2]]))
-                _all_ch_words = [w for w in _all_ch_words if w and len(w) > 2]
-                if len(_all_ch_words) >= 3:
-                    _eng = _GeoEng()
-                    _vc = cluster_void_words(_all_ch_words, _eng.embed_texts, threshold=0.70)
-                    if len(_vc["clusters"]) > 1:
-                        L.append(format_clusters_for_ledger(
-                            _vc["clusters"], _vc["cluster_labels"],
-                            _vc["similarity_matrix"], _vc["words"]))
-                    # Quad-channel confirmation
-                    v_set = set(void_words[:5])
-                    l_set = set(logos[:5])
-                    ns_words = set()
-                    for ns in ns_claims[:2]:
-                        for w in ns.get("claim", "").lower().split():
-                            if len(w) > 3:
-                                ns_words.add(w)
-                    triple = v_set & l_set & ns_words
-                    if triple:
-                        L.append(f"**Triple-channel confirmed (void + Logos + null space):** {', '.join(triple)}")
+                _ch_words = list(set(
+                    [w for w in void_words[:5] if w and len(w) > 2 and ' ' not in w or len(w.split()) <= 3] +
+                    [w for w in logos[:3] if w and len(w) > 2 and ' ' not in w or len(w.split()) <= 3]
+                ))
+                if len(_ch_words) >= 3:
+                    _eng = _get_geo_engine()
+                    _vc = cluster_void_words(_ch_words, _eng.embed_texts, threshold=0.70)
+                    multi = [c for c in _vc["clusters"] if len(c) > 1]
+                    if multi:
+                        L.append("**Void clusters:**")
+                        L.append("")
+                        for label, cluster in zip(_vc["cluster_labels"], _vc["clusters"]):
+                            if len(cluster) > 1:
+                                # Show top similarity only
+                                indices = [_vc["words"].index(w) for w in cluster]
+                                best_sim = max(
+                                    _vc["similarity_matrix"][indices[a], indices[b]]
+                                    for a in range(len(cluster))
+                                    for b in range(a+1, len(cluster))
+                                )
+                                L.append(f"- **{label}**: {', '.join(cluster)} (peak sim {best_sim:.2f})")
                         L.append("")
             except Exception:
                 pass
+
+        # Multi-channel confirmation
+        v_set = set(w.lower() for w in void_words[:5])
+        l_set = set(w.lower() for w in logos[:5])
+        ns_set = set()
+        for ns in ns_claims[:2]:
+            claim_lower = ns.get("claim", "").lower()
+            for vw in v_set:
+                if vw in claim_lower:
+                    ns_set.add(vw)
+        dual = v_set & l_set
+        triple = dual & ns_set
+        if triple:
+            L.append(f"**Triple-channel confirmed (void + Logos + null space):** {', '.join(sorted(triple))}")
+            L.append("")
+        elif dual and not overlap:  # overlap already printed above
+            pass  # dual already shown
 
         # Beat excerpts: hook and verdict
         beats = seg.get("beats", [])
@@ -432,7 +465,9 @@ def daily_digest(date=None, output_dir=None):
 
     L.append("---")
     L.append("")
-    L.append(f"*Generated by EigenTrace at {datetime.now().strftime('%Y-%m-%d %H:%M UTC')}*")
+    L.append("*Measurement layers: consensus density, geometric VIX, spectral resonance, SVD tomography, lexical void, Logos synthesis, atomic claim extraction, SVD null space projection, Wild Weasel 4-step, void vector, void clustering, token entropy*")
+
+    L.append(f"*Generated by EigenTrace at {datetime.now().strftime(chr(37)+chr(89)+chr(45)+chr(37)+chr(109)+chr(45)+chr(37)+chr(100)+chr(32)+chr(37)+chr(72)+chr(58)+chr(37)+chr(77)+chr(32)+chr(85)+chr(84)+chr(67))}*")
     L.append(f"*Models: ChatGPT (GPT-5.4-mini), Claude (Sonnet 4), Gemini (3.1 Pro), DeepSeek (V3.2), Grok (4.1)*")
     L.append(f"*Source: github.com/sdad1018/Eigentrace | eigentrace.ai*")
 

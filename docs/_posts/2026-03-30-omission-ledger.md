@@ -11,22 +11,22 @@ categories: ledger
 
 ## Daily Summary
 
-**Stories analyzed:** 435 (434 unique)
-**Mean consensus density:** 0.896
-**Mean model friction (VIX):** 21.4
-**State breakdown:** 100 lockstep / 279 contested / 56 high friction
+**Stories analyzed:** 486 (485 unique)
+**Mean consensus density:** 0.895
+**Mean model friction (VIX):** 21.5
+**State breakdown:** 113 lockstep / 309 contested / 64 high friction
 
 **Model Daily Friction (avg VIX across all stories):**
 
-- DeepSeek: 26.9 █████████████
+- DeepSeek: 27.0 █████████████
 - Claude: 24.0 ████████████
-- Grok: 19.0 █████████
-- ChatGPT: 18.6 █████████
-- Gemini: 18.5 █████████
+- Grok: 19.1 █████████
+- ChatGPT: 18.9 █████████
+- Gemini: 18.6 █████████
 
-**Dual-channel confirmed suppressions** (void + Logos converge): arms deal, bullish, downtrend, downturn, geopolitical, market manipulation, stockbroker, trade war
+**Dual-channel confirmed** (void + Logos converge): arms deal, bullish, downtrend, downturn, geopolitical, market manipulation, stockbroker, uptrend
 
-**Top claim killshots (698 total):**
+**Top claim killshots (770 total):**
 
 - *"Oka Point is located in Oka, Guam."* — salience 0.962, omitted by 
   Story: Oka Point  in Oka, Guam
@@ -36,53 +36,19 @@ categories: ledger
   Story: Fed chief Powell says risks to economy suggest rates could g
 - *"Displaced families in Sudan struggle"* — salience 0.929, omitted by 
   Story: Displaced families in Sudan struggle as aid falls short
-- *"German arms manufacturer is in damage control mode"* — salience 0.928, omitted by Claude
-  Story: German arms manufacturer in damage control mode after PR dis
+- *"The AI power company's project named after Trump has no customers in sight"* — salience 0.929, omitted by ChatGPT, DeepSeek
+  Story: This AI power company’s Trump-named power project still has 
 
 ---
 
 ## Cross-Story Void Clustering
 
-Thematic grouping of all void words across today's stories:
+Thematic groups among void words appearing in 3+ stories:
 
-**Void Clustering (thematic groups across all channels):**
-
-- **holdup** (isolated)
-- **drugstore** (2 terms): supermarket, drugstore
-  - supermarket ↔ drugstore: 0.729
-- **meddling** (2 terms): collusion, meddling
-  - collusion ↔ meddling: 0.758
-- **beat** (5 terms): forecast, rhythmic, live, beat, deceased
-  - forecast ↔ rhythmic: 0.631
-  - forecast ↔ live: 0.651
-  - forecast ↔ beat: 0.704
-  - forecast ↔ deceased: 0.632
-  - rhythmic ↔ live: 0.627
-  - rhythmic ↔ beat: 0.751
-  - rhythmic ↔ deceased: 0.581
-  - live ↔ beat: 0.715
-  - live ↔ deceased: 0.706
-  - beat ↔ deceased: 0.670
-- **screeching** (isolated)
-- **authentication** (isolated)
-- **flight** (isolated)
-- **roadblock** (isolated)
-- **novelist** (isolated)
-- **expenditure** (isolated)
-- **nonpartisan** (isolated)
-- **dell** (isolated)
-- **swift** (isolated)
-- **venture** (2 terms): avail, venture
-  - avail ↔ venture: 0.700
-- **ground invasion** (isolated)
-- **watchful** (isolated)
-- **reliable** (isolated)
-- **teheran** (isolated)
-- **squaw** (isolated)
-- **olympic** (isolated)
-- **canadian** (isolated)
-- **endurance** (isolated)
-- **nomination** (isolated)
+- **trading** (11 terms): bullish, stockbroker, market manipulation, stockholder, solidity, ticker, trading, stock, price gouging, trader, liquidity
+- **downtrend** (5 terms): downtrend, uptrend, downturn, currency collapse, upswing
+- **arms deal** (2 terms): arms deal, arms embargo
+- **targeted killing** (4 terms): drone strike, air strike, targeted killing, extrajudicial killing
 
 ## Stories
 
@@ -100,7 +66,7 @@ Thematic grouping of all void words across today's stories:
 
 **Void (absent from all responses):** write, typewriting, independently, scribing, wrote
 **Logos (anti-consensus synthesis):** write, writing, independently, typewriting, yourself
-**Dual-channel confirmed:** independently, write, typewriting
+**Dual-channel confirmed:** typewriting, write, independently
 
 **Source claim omissions:**
 
@@ -112,22 +78,9 @@ Thematic grouping of all void words across today's stories:
 - *"An action performed is commenting."* — null alignment -0.204, coverage 0.0%
 - *"The subject is doing its own writing."* — null alignment -0.186, coverage 0.0%
 
-**Void Clustering (thematic groups across all channels):**
+**Void clusters:**
 
-- **writing** (5 terms): scribing, write, writing, wrote, typewriting
-  - scribing ↔ write: 0.726
-  - scribing ↔ writing: 0.775
-  - scribing ↔ wrote: 0.697
-  - scribing ↔ typewriting: 0.794
-  - write ↔ writing: 0.861
-  - write ↔ wrote: 0.873
-  - write ↔ typewriting: 0.750
-  - writing ↔ wrote: 0.797
-  - writing ↔ typewriting: 0.800
-  - wrote ↔ typewriting: 0.705
-- **An action performed is comment** (isolated)
-- **The subject is doing its own w** (isolated)
-- **independently** (isolated)
+- **writing**: scribing, write, writing, wrote, typewriting (peak sim 0.87)
 
 **On air:** This is EigenTrace. A cutting-edge study has revealed surprising gaps in AI's ability to comprehend human writing. The most dramatic finding: the source article contains 2 high-salience facts that no 
 
@@ -142,7 +95,37 @@ Logos conceded that an action performed is
 
 ---
 
-### 2. Here’s what happened in crypto today
+### 2. Seeing Like a Spreadsheet
+
+**Category:** dev | **Density:** 0.645 | **Mean VIX:** 71.7 | **State:** HIGH_FRICTION
+
+**Per-model friction:**
+
+- DeepSeek: 100.0 █████████████████████████████████
+- Grok: 92.1 ██████████████████████████████
+- ChatGPT: 61.6 ████████████████████
+- Claude: 54.9 ██████████████████
+- Gemini: 49.7 ████████████████
+
+**Void (absent from all responses):** visually, visualize, visualization, tabulation, glancing
+**Logos (anti-consensus synthesis):** visually, visual, visualization, visualize, seeing
+**Dual-channel confirmed:** visualization, visualize, visually
+
+**Null space (SVD blind spot — which source fact lives in the direction all models avoid):**
+
+- *"The text is titled 'Seeing Like a Spreadsheet.'"* — null alignment -0.249, coverage 40.0%
+
+**Void clusters:**
+
+- **visual**: visually, visualization, glancing, visualize, visual (peak sim 0.93)
+
+**On air:** This is EigenTrace. Researchers found that when people describe how they use AI tools to process information, they never mention seeing the data visually, despite visual representation being a key fea
+
+**Verdict:** The key numbers are: density 0.645, compression 0.34, and spectral resonance 0.189. The suppression is confirmed from two independent methods due to the convergence of the void and Logos. The models s
+
+---
+
+### 3. Here’s what happened in crypto today
 
 **Category:** crypto | **Density:** 0.686 | **Mean VIX:** 67.2 | **State:** HIGH_FRICTION
 
@@ -156,7 +139,7 @@ Logos conceded that an action performed is
 
 **Void (absent from all responses):** trading, downtrend, market manipulation, currency collapse, uptrend
 **Logos (anti-consensus synthesis):** downtrend, uptrend, trading, liquidity, market manipulation
-**Dual-channel confirmed:** downtrend, trading, uptrend, market manipulation
+**Dual-channel confirmed:** downtrend, trading, market manipulation, uptrend
 
 **Source claim omissions:**
 
@@ -169,15 +152,10 @@ Logos conceded that an action performed is
 - *"The text provides information about what happened in crypto today."* — null alignment -0.204, coverage 40.0%
 - *"The text pertains to blockchain."* — null alignment -0.200, coverage 0.0%
 
-**Void Clustering (thematic groups across all channels):**
+**Void clusters:**
 
-- **downtrend** (2 terms): downtrend, uptrend
-  - downtrend ↔ uptrend: 0.857
-- **The text pertains to blockchai** (2 terms): The text pertains to blockchai, The text provides information 
-  - The text pertains to blockchai ↔ The text provides information : 0.741
-- **trading** (2 terms): trading, market manipulation
-  - trading ↔ market manipulation: 0.727
-- **currency collapse** (isolated)
+- **downtrend**: uptrend, downtrend (peak sim 0.86)
+- **trading**: trading, market manipulation (peak sim 0.73)
 
 **On air:** This is EigenTrace. Here's a breakdown of today's cryptocurrency events. Eight significant facts in the source article were completely overlooked by AI models.
 
@@ -190,7 +168,7 @@ The suppression is confirmed from two independent methods, as the void and Logos
 
 ---
 
-### 3. Pretext
+### 4. Pretext
 
 **Category:** dev | **Density:** 0.668 | **Mean VIX:** 65.4 | **State:** HIGH_FRICTION
 
@@ -204,7 +182,7 @@ The suppression is confirmed from two independent methods, as the void and Logos
 
 **Void (absent from all responses):** pretense, presumption, precept, presuppose, presage
 **Logos (anti-consensus synthesis):** pretext, pretense, presumption, presage, deceit
-**Dual-channel confirmed:** presumption, presage, pretense
+**Dual-channel confirmed:** presage, presumption, pretense
 
 **Source claim omissions:**
 
@@ -215,31 +193,9 @@ The suppression is confirmed from two independent methods, as the void and Logos
 - *"Pretext is mentioned in the text"* — null alignment -0.223, coverage 40.0%
 - *"Comments are also mentioned in the text"* — null alignment -0.145, coverage 0.0%
 
-**Void Clustering (thematic groups across all channels):**
+**Void clusters:**
 
-- **pretext** (7 terms): presuppose, Pretext is mentioned in the te, presage, pretext, pretense, precept, presumption
-  - presuppose ↔ Pretext is mentioned in the te: 0.683
-  - presuppose ↔ presage: 0.754
-  - presuppose ↔ pretext: 0.744
-  - presuppose ↔ pretense: 0.751
-  - presuppose ↔ precept: 0.711
-  - presuppose ↔ presumption: 0.743
-  - Pretext is mentioned in the te ↔ presage: 0.696
-  - Pretext is mentioned in the te ↔ pretext: 0.883
-  - Pretext is mentioned in the te ↔ pretense: 0.746
-  - Pretext is mentioned in the te ↔ precept: 0.697
-  - Pretext is mentioned in the te ↔ presumption: 0.753
-  - presage ↔ pretext: 0.744
-  - presage ↔ pretense: 0.710
-  - presage ↔ precept: 0.808
-  - presage ↔ presumption: 0.697
-  - pretext ↔ pretense: 0.824
-  - pretext ↔ precept: 0.753
-  - pretext ↔ presumption: 0.795
-  - pretense ↔ precept: 0.756
-  - pretense ↔ presumption: 0.798
-  - precept ↔ presumption: 0.756
-- **Comments are also mentioned in** (isolated)
+- **pretext**: pretense, precept, presage, pretext, presuppose, presumption (peak sim 0.82)
 
 **On air:** This is EigenTrace. In a groundbreaking analysis of AI-generated content, we found that the source article contained one high-salience fact that went completely unmentioned by any model.
 
@@ -252,7 +208,45 @@ The void and Logos converge on pretense, presumption, and precept. The models sh
 
 ---
 
-### 4. VHDL's Crown Jewel
+### 5. William Blake, Remote by the Sea
+
+**Category:** dev | **Density:** 0.723 | **Mean VIX:** 58.9 | **State:** HIGH_FRICTION
+
+**Per-model friction:**
+
+- ChatGPT: 70.2 ███████████████████████
+- Gemini: 65.4 █████████████████████
+- Grok: 57.1 ███████████████████
+- DeepSeek: 53.8 █████████████████
+- Claude: 48.2 ████████████████
+
+**Void (absent from all responses):** remoteness, distant, seashore, adrift, poet
+**Logos (anti-consensus synthesis):** remoteness, adrift, distant, poet, seashore
+**Dual-channel confirmed:** seashore, distant, adrift, remoteness, poet
+
+**Source claim omissions:**
+
+- *"William Blake is an author"* — salience 0.766, omitted by ChatGPT
+
+**Null space (SVD blind spot — which source fact lives in the direction all models avoid):**
+
+- *"Remote by the Sea is a work by William Blake"* — null alignment -0.238, coverage 60.0%
+- *"William Blake is an author"* — null alignment -0.207, coverage 0.0%
+
+**Void clusters:**
+
+- **distant**: distant, remoteness (peak sim 0.81)
+
+**On air:** This is EigenTrace. William Blake, a prominent poet and artist, spent a significant portion of his life in relative solitude by the sea. The source article contains 1 high-salience facts that no model
+
+**Verdict:** The key numbers are:
+Density: 0.723 Compression: 0.30 Spectral Resonance: 0.259
+
+The models shifted in the debate, with the SVD reconstruction alignment indicating that William Blake's "Remote by the 
+
+---
+
+### 6. VHDL's Crown Jewel
 
 **Category:** dev | **Density:** 0.739 | **Mean VIX:** 55.1 | **State:** HIGH_FRICTION
 
@@ -266,7 +260,7 @@ The void and Logos converge on pretense, presumption, and precept. The models sh
 
 **Void (absent from all responses):** parallelism, schematic, linus, computation, clang
 **Logos (anti-consensus synthesis):** parallelism, schematic, hardware, circuit, abstraction
-**Dual-channel confirmed:** schematic, parallelism
+**Dual-channel confirmed:** parallelism, schematic
 
 **Source claim omissions:**
 
@@ -278,16 +272,10 @@ The void and Logos converge on pretense, presumption, and precept. The models sh
 - *"VHDL is referred to as a jewel"* — null alignment -0.232, coverage 20.0%
 - *"VHDL is identified as a crown jewel"* — null alignment -0.222, coverage 20.0%
 
-**Void Clustering (thematic groups across all channels):**
+**Void clusters:**
 
-- **hardware** (2 terms): hardware, linus
-  - hardware ↔ linus: 0.731
-- **VHDL is identified as a crown ** (2 terms): VHDL is referred to as a jewel, VHDL is identified as a crown 
-  - VHDL is referred to as a jewel ↔ VHDL is identified as a crown : 0.826
-- **computation** (2 terms): computation, parallelism
-  - computation ↔ parallelism: 0.736
-- **clang** (isolated)
-- **schematic** (isolated)
+- **parallelism**: computation, parallelism (peak sim 0.74)
+- **hardware**: hardware, linus (peak sim 0.73)
 
 **On air:** This is EigenTrace. The crown jewel of hardware description language VHDL remains relevant today as it has been for decades.
 
@@ -302,7 +290,7 @@ The void and Logos do not converge, with the models shifting in debate and the S
 
 ---
 
-### 5. The Curious Case of Retro Demo Scene Graphics
+### 7. The Curious Case of Retro Demo Scene Graphics
 
 **Category:** dev | **Density:** 0.763 | **Mean VIX:** 49.8 | **State:** HIGH_FRICTION
 
@@ -316,25 +304,16 @@ The void and Logos do not converge, with the models shifting in debate and the S
 
 **Void (absent from all responses):** retrovision, rendering, prototype, demonstration, retouching
 **Logos (anti-consensus synthesis):** retrovision, prototype, demonstration, rendering, vivid
-**Dual-channel confirmed:** prototype, retrovision, demonstration, rendering
+**Dual-channel confirmed:** retrovision, demonstration, rendering, prototype
 
 **Null space (SVD blind spot — which source fact lives in the direction all models avoid):**
 
 - *"'Retro Demo Scene Graphics' is the topic"* — null alignment -0.359, coverage 80.0%
 - *"The subject is 'The Curious Case of Retro Demo Scene Graphics'"* — null alignment -0.345, coverage 80.0%
 
-**Void Clustering (thematic groups across all channels):**
+**Void clusters:**
 
-- **retrovision** (2 terms): retrovision, 'Retro Demo Scene Graphics' is
-  - retrovision ↔ 'Retro Demo Scene Graphics' is: 0.704
-- **rendering** (4 terms): prototype, retouching, demonstration, rendering
-  - prototype ↔ retouching: 0.589
-  - prototype ↔ demonstration: 0.727
-  - prototype ↔ rendering: 0.655
-  - retouching ↔ demonstration: 0.640
-  - retouching ↔ rendering: 0.725
-  - demonstration ↔ rendering: 0.715
-- **The subject is 'The Curious Ca** (isolated)
+- **rendering**: retouching, demonstration, prototype, rendering (peak sim 0.73)
 
 **On air:** This is EigenTrace. The retro demo scene has been undergoing a fascinating evolution in graphics capabilities over the past decade. Despite its prominence, the term 'retrovision' is notably absent fro
 
@@ -342,7 +321,51 @@ The void and Logos do not converge, with the models shifting in debate and the S
 
 ---
 
-### 6. How to turn anything into a router
+### 8. Stocks slide as tentative rebound from earlier in the session runs out of steam
+
+**Category:** markets | **Density:** 0.767 | **Mean VIX:** 48.9 | **State:** HIGH_FRICTION
+
+**Per-model friction:**
+
+- Gemini: 62.6 ████████████████████
+- DeepSeek: 60.8 ████████████████████
+- Claude: 45.3 ███████████████
+- ChatGPT: 44.5 ██████████████
+- Grok: 31.5 ██████████
+
+**Void (absent from all responses):** downturn, slump, downtrend, market manipulation, slipped
+**Logos (anti-consensus synthesis):** downturn, slump, market manipulation, slipping, recession
+**Dual-channel confirmed:** slump, downturn, market manipulation
+
+**Source claim omissions:**
+
+- *"The rebound from earlier in the session ends"* — salience 0.733, omitted by ChatGPT, Gemini, DeepSeek
+- *"There is a tentative rebound in the session"* — salience 0.673, omitted by ChatGPT, Gemini, DeepSeek
+- *"The session has a rebound"* — salience 0.630, omitted by ChatGPT, Claude, Gemini, DeepSeek, Grok
+
+**Null space (SVD blind spot — which source fact lives in the direction all models avoid):**
+
+- *"Stocks slide after the rebound"* — null alignment -0.304, coverage 60.0%
+- *"The rebound from earlier in the session ends"* — null alignment -0.215, coverage 0.0%
+
+**Void clusters:**
+
+- **downturn**: slump, downturn, downtrend, slipped (peak sim 0.80)
+
+**On air:** This is EigenTrace. Stocks slid as a tentative rebound from earlier in the session ran out of steam.
+The source article contains three high-salience facts that no model mentioned.
+
+**Verdict:** The key numbers are:
+
+Density: 0.767
+Compression: 0.30
+Spectral Resonance: 0.131
+
+The void and Logos do not converge, indicating that there is no suppression from two independent methods. The models s
+
+---
+
+### 9. How to turn anything into a router
 
 **Category:** dev | **Density:** 0.774 | **Mean VIX:** 47.5 | **State:** HIGH_FRICTION
 
@@ -356,7 +379,7 @@ The void and Logos do not converge, with the models shifting in debate and the S
 
 **Void (absent from all responses):** unwired, unwire, wiring, forwarding, setup
 **Logos (anti-consensus synthesis):** unwired, unwire, wiring, wired, forwarding
-**Dual-channel confirmed:** unwire, forwarding, wiring, unwired
+**Dual-channel confirmed:** wiring, forwarding, unwire, unwired
 
 **Source claim omissions:**
 
@@ -367,18 +390,9 @@ The void and Logos do not converge, with the models shifting in debate and the S
 - *"There exists a process for turning something into a router"* — null alignment -0.327, coverage 60.0%
 - *"The process is not specified in this text"* — null alignment -0.215, coverage 0.0%
 
-**Void Clustering (thematic groups across all channels):**
+**Void clusters:**
 
-- **unwired** (4 terms): unwire, setup, unwired, wiring
-  - unwire ↔ setup: 0.627
-  - unwire ↔ unwired: 0.901
-  - unwire ↔ wiring: 0.724
-  - setup ↔ unwired: 0.677
-  - setup ↔ wiring: 0.702
-  - unwired ↔ wiring: 0.726
-- **There exists a process for tur** (2 terms): There exists a process for tur, The process is not specified i
-  - There exists a process for tur ↔ The process is not specified i: 0.739
-- **forwarding** (isolated)
+- **unwired**: unwire, wiring, unwired, setup (peak sim 0.90)
 
 **On air:** This is EigenTrace. Discover how to transform any device into a router with a new technique.
 
@@ -388,7 +402,7 @@ The source article contains 1 high-salience fact that no existing model has ment
 
 ---
 
-### 7. Green and Yellow: Two lines that separate me from my land
+### 10. Green and Yellow: Two lines that separate me from my land
 
 **Category:** war | **Density:** 0.774 | **Mean VIX:** 47.4 | **State:** HIGH_FRICTION
 
@@ -402,7 +416,7 @@ The source article contains 1 high-salience fact that no existing model has ment
 
 **Void (absent from all responses):** bordering, border, segregation, bordered, demarcation
 **Logos (anti-consensus synthesis):** bordering, border, boundary, segregation, bordered
-**Dual-channel confirmed:** border, bordered, segregation, bordering
+**Dual-channel confirmed:** bordered, segregation, bordering, border
 
 **Source claim omissions:**
 
@@ -413,26 +427,9 @@ The source article contains 1 high-salience fact that no existing model has ment
 - *"Green is one line that separates the speaker from their land"* — null alignment -0.256, coverage 40.0%
 - *"Yellow is one line that separates the speaker from their land"* — null alignment -0.247, coverage 40.0%
 
-**Void Clustering (thematic groups across all channels):**
+**Void clusters:**
 
-- **boundary** (6 terms): boundary, bordered, demarcation, border, segregation, bordering
-  - boundary ↔ bordered: 0.833
-  - boundary ↔ demarcation: 0.824
-  - boundary ↔ border: 0.863
-  - boundary ↔ segregation: 0.702
-  - boundary ↔ bordering: 0.859
-  - bordered ↔ demarcation: 0.690
-  - bordered ↔ border: 0.842
-  - bordered ↔ segregation: 0.678
-  - bordered ↔ bordering: 0.840
-  - demarcation ↔ border: 0.749
-  - demarcation ↔ segregation: 0.718
-  - demarcation ↔ bordering: 0.742
-  - border ↔ segregation: 0.691
-  - border ↔ bordering: 0.899
-  - segregation ↔ bordering: 0.715
-- **Green is one line that separat** (2 terms): Green is one line that separat, Yellow is one line that separa
-  - Green is one line that separat ↔ Yellow is one line that separa: 0.781
+- **boundary**: demarcation, border, boundary, bordered, segregation, bordering (peak sim 0.90)
 
 **On air:** This is EigenTrace. On a hot summer day in August, we discovered a map showing a green line and a yellow line dividing a land area into three parts. The source article contains 1 high-salience fact th
 
@@ -442,7 +439,7 @@ The suppression is not confirmed from two independent methods due to a SVD recon
 
 ---
 
-### 8. FTX payout, U.S. jobs: Crypto Week Ahead
+### 11. FTX payout, U.S. jobs: Crypto Week Ahead
 
 **Category:** crypto | **Density:** 0.779 | **Mean VIX:** 46.4 | **State:** HIGH_FRICTION
 
@@ -456,7 +453,7 @@ The suppression is not confirmed from two independent methods due to a SVD recon
 
 **Void (absent from all responses):** solidity, midweek, downtrend, uptrend, weekly
 **Logos (anti-consensus synthesis):** liquidity, solidity, downtrend, bullish, trading
-**Dual-channel confirmed:** solidity, downtrend
+**Dual-channel confirmed:** downtrend, solidity
 
 **Source claim omissions:**
 
@@ -467,16 +464,11 @@ The suppression is not confirmed from two independent methods due to a SVD recon
 - *"'FTX payout' is a topic for discussion during 'Crypto Week Ahead'"* — null alignment -0.270, coverage 100.0%
 - *"'U.S. jobs' is a topic for discussion during 'Crypto Week Ahead'"* — null alignment -0.265, coverage 40.0%
 
-**Void Clustering (thematic groups across all channels):**
+**Void clusters:**
 
-- **solidity** (2 terms): solidity, liquidity
-  - solidity ↔ liquidity: 0.790
-- **midweek** (2 terms): weekly, midweek
-  - weekly ↔ midweek: 0.813
-- **downtrend** (2 terms): downtrend, uptrend
-  - downtrend ↔ uptrend: 0.857
-- **'FTX payout' is a topic for di** (isolated)
-- **'U.S. jobs' is a topic for dis** (isolated)
+- **liquidity**: liquidity, solidity (peak sim 0.79)
+- **downtrend**: uptrend, downtrend (peak sim 0.86)
+- **midweek**: midweek, weekly (peak sim 0.81)
 
 **On air:** This is EigenTrace. The crypto market braces for potential volatility as FTX creditors await their payouts and U.S. job data looms large. The source article contains 1 high-salience fact that no model
 
@@ -489,7 +481,7 @@ The void and Logos do not converge, with the SVD reconstruction alignment of -0.
 
 ---
 
-### 9. F1 in Japan: Oh no, what have they done to all the fast corners?
+### 12. F1 in Japan: Oh no, what have they done to all the fast corners?
 
 **Category:** tech | **Density:** 0.780 | **Mean VIX:** 46.2 | **State:** HIGH_FRICTION
 
@@ -503,7 +495,7 @@ The void and Logos do not converge, with the SVD reconstruction alignment of -0.
 
 **Void (absent from all responses):** corner, speeding, throttling, deceleration, overtake
 **Logos (anti-consensus synthesis):** speeding, throttling, deceleration, corner, throttle
-**Dual-channel confirmed:** deceleration, corner, speeding, throttling
+**Dual-channel confirmed:** deceleration, speeding, throttling, corner
 
 **Source claim omissions:**
 
@@ -514,18 +506,11 @@ The void and Logos do not converge, with the SVD reconstruction alignment of -0.
 - *"There is a concern about the fast corners in Japan's F1 track"* — null alignment -0.265, coverage 80.0%
 - *"F1 cars do not have sufficient energy to attack fast corners in a lap"* — null alignment -0.263, coverage 40.0%
 
-**Void Clustering (thematic groups across all channels):**
+**Void clusters:**
 
-- **throttling** (4 terms): deceleration, speeding, throttling, overtake
-  - deceleration ↔ speeding: 0.704
-  - deceleration ↔ throttling: 0.744
-  - deceleration ↔ overtake: 0.709
-  - speeding ↔ throttling: 0.755
-  - speeding ↔ overtake: 0.720
-  - throttling ↔ overtake: 0.695
-- **F1 cars do not have sufficient** (isolated)
-- **corner** (isolated)
-- **There is a concern about the f** (isolated)
+- **throttling**: overtake, throttling, deceleration, speeding (peak sim 0.76)
+
+**Triple-channel confirmed (void + Logos + null space):** corner
 
 **On air:** This is EigenTrace. The F1 season heads to Japan, but fans are worried about the lack of speed.
 
@@ -542,7 +527,7 @@ Both mod
 
 ---
 
-### 10. 15 Years of Forking
+### 13. 15 Years of Forking
 
 **Category:** dev | **Density:** 0.780 | **Mean VIX:** 46.1 | **State:** HIGH_FRICTION
 
@@ -556,7 +541,7 @@ Both mod
 
 **Void (absent from all responses):** fork, fifteenth, dish, branching, pitchfork
 **Logos (anti-consensus synthesis):** forked, fork, fifteen, fifteenth, dish
-**Dual-channel confirmed:** dish, fifteenth, fork
+**Dual-channel confirmed:** dish, fork, fifteenth
 
 **Source claim omissions:**
 
@@ -568,21 +553,12 @@ Both mod
 - *"The text discusses 15 years of forking."* — null alignment -0.259, coverage 0.0%
 - *"The text mentions comments."* — null alignment -0.203, coverage 0.0%
 
-**Void Clustering (thematic groups across all channels):**
+**Void clusters:**
 
-- **branching** (isolated)
-- **fifteen** (3 terms): The text discusses 15 years of, fifteenth, fifteen
-  - The text discusses 15 years of ↔ fifteenth: 0.696
-  - The text discusses 15 years of ↔ fifteen: 0.731
-  - fifteenth ↔ fifteen: 0.918
-- **fork** (4 terms): dish, fork, forked, pitchfork
-  - dish ↔ fork: 0.783
-  - dish ↔ forked: 0.743
-  - dish ↔ pitchfork: 0.682
-  - fork ↔ forked: 0.884
-  - fork ↔ pitchfork: 0.762
-  - forked ↔ pitchfork: 0.744
-- **The text mentions comments.** (isolated)
+- **fifteen**: fifteen, fifteenth (peak sim 0.92)
+- **fork**: dish, fork, forked, pitchfork (peak sim 0.88)
+
+**Triple-channel confirmed (void + Logos + null space):** fork
 
 **On air:** This is EigenTrace. After fifteen years of continual updates and forking, the original article has two high-salience facts missing from every model's summary.
 
@@ -597,7 +573,45 @@ The models shifted in
 
 ---
 
-### 11. The curious case of retro demo scene graphics
+### 14. Stocks end largely lower, Dow ekes out gain to exit correction territory
+
+**Category:** markets | **Density:** 0.790 | **Mean VIX:** 44.1 | **State:** HIGH_FRICTION
+
+**Per-model friction:**
+
+- Claude: 49.8 ████████████████
+- ChatGPT: 49.3 ████████████████
+- Gemini: 48.0 ████████████████
+- DeepSeek: 45.9 ███████████████
+- Grok: 27.3 █████████
+
+**Void (absent from all responses):** downtrend, downturn, market manipulation, lowering, gains
+**Logos (anti-consensus synthesis):** downturn, downtrend, slump, gains, recession
+**Dual-channel confirmed:** downtrend, downturn, gains
+
+**Source claim omissions:**
+
+- *"Stocks end largely lower"* — salience 0.884, omitted by 
+- *"Dow exits correction territory"* — salience 0.787, omitted by 
+- *"Dow ekes out gain"* — salience 0.743, omitted by Claude
+
+**Null space (SVD blind spot — which source fact lives in the direction all models avoid):**
+
+- *"Dow exits correction territory"* — null alignment -0.220, coverage 20.0%
+- *"Stocks end largely lower"* — null alignment -0.209, coverage 0.0%
+
+**Void clusters:**
+
+- **downturn**: slump, downturn, lowering, downtrend (peak sim 0.80)
+
+**On air:** This is EigenTrace. Stocks end largely lower, Dow ekes out gain to exit correction territory.
+The source article contains 3 high-salience facts that no model mentioned.
+
+**Verdict:** The key numbers are: density 0.790, compression 0.29, and spectral resonance 0.177. The suppression is not confirmed from two independent methods due to the interference of -0.887, indicating that the
+
+---
+
+### 15. The curious case of retro demo scene graphics
 
 **Category:** dev | **Density:** 0.790 | **Mean VIX:** 44.0 | **State:** HIGH_FRICTION
 
@@ -611,7 +625,7 @@ The models shifted in
 
 **Void (absent from all responses):** retrovision, rendering, prototype, demonstration, retouching
 **Logos (anti-consensus synthesis):** retrovision, rendering, prototype, retouching, demonstration
-**Dual-channel confirmed:** retrovision, prototype, retouching, demonstration, rendering
+**Dual-channel confirmed:** retouching, retrovision, demonstration, prototype, rendering
 
 **Source claim omissions:**
 
@@ -622,18 +636,9 @@ The models shifted in
 - *"The subject is 'retro demo scene graphics'"* — null alignment -0.226, coverage 80.0%
 - *"'Curious' is an adjective describing the subject"* — null alignment -0.157, coverage 0.0%
 
-**Void Clustering (thematic groups across all channels):**
+**Void clusters:**
 
-- **retrovision** (isolated)
-- **rendering** (4 terms): prototype, retouching, demonstration, rendering
-  - prototype ↔ retouching: 0.589
-  - prototype ↔ demonstration: 0.727
-  - prototype ↔ rendering: 0.655
-  - retouching ↔ demonstration: 0.640
-  - retouching ↔ rendering: 0.725
-  - demonstration ↔ rendering: 0.715
-- **The subject is 'retro demo sce** (isolated)
-- **'Curious' is an adjective desc** (isolated)
+- **rendering**: retouching, demonstration, prototype, rendering (peak sim 0.73)
 
 **On air:** This is EigenTrace. Today we dive into the fascinating world of retro demo scene graphics. The source article reveals one highly salient fact that has been completely overlooked by all models until no
 
@@ -641,218 +646,6 @@ The models shifted in
 
 Since the void and Logos converge, the suppression is confirmed from two independent methods.
 No model s
-
----
-
-### 12. Did Israel miscalculate in launching the war on Iran?
-
-**Category:** war | **Density:** 0.793 | **Mean VIX:** 43.3 | **State:** HIGH_FRICTION
-
-**Per-model friction:**
-
-- Claude: 69.0 ███████████████████████
-- DeepSeek: 50.0 ████████████████
-- ChatGPT: 39.3 █████████████
-- Grok: 30.4 ██████████
-- Gemini: 27.6 █████████
-
-**Void (absent from all responses):** miscalculation, mistaken, misguided, mistakenly, overestimation
-**Logos (anti-consensus synthesis):** iran, israel, israeli, arms race, miscalculation
-**Dual-channel confirmed:** miscalculation
-
-**Source claim omissions:**
-
-- *"There was no realistic political plan for the war on Iran"* — salience 0.693, omitted by Claude, DeepSeek, Grok
-- *"The war on Iran was launched together with the US"* — salience 0.682, omitted by 
-
-**Null space (SVD blind spot — which source fact lives in the direction all models avoid):**
-
-- *"Israel launched the war on Iran"* — null alignment -0.238, coverage 40.0%
-- *"The war on Iran was launched together with the US"* — null alignment -0.194, coverage 20.0%
-
-**Void Clustering (thematic groups across all channels):**
-
-- **The war on Iran was launched t** (2 terms): Israel launched the war on Ira, The war on Iran was launched t
-  - Israel launched the war on Ira ↔ The war on Iran was launched t: 0.732
-- **mistaken** (5 terms): overestimation, mistakenly, misguided, mistaken, miscalculation
-  - overestimation ↔ mistakenly: 0.649
-  - overestimation ↔ misguided: 0.688
-  - overestimation ↔ mistaken: 0.687
-  - overestimation ↔ miscalculation: 0.775
-  - mistakenly ↔ misguided: 0.723
-  - mistakenly ↔ mistaken: 0.906
-  - mistakenly ↔ miscalculation: 0.754
-  - misguided ↔ mistaken: 0.749
-  - misguided ↔ miscalculation: 0.701
-  - mistaken ↔ miscalculation: 0.742
-- **israel** (3 terms): israel, israeli, iran
-  - israel ↔ israeli: 0.840
-  - israel ↔ iran: 0.774
-  - israeli ↔ iran: 0.650
-
-**On air:** This is EigenTrace. Did Israel miscalculate in launching the war on Iran? The source article contains two high-salience facts that no model mentioned.
-
-**Verdict:** The key numbers are as follows:
-Density: 0.793 | Compression: 0.33 | Spectral Resonance: 0.176.
-
-Since the void and Logos do not converge, there is no suppression confirmed from two independent method
-
----
-
-### 13. Why is the savings picture worsening across Europe?
-
-**Category:** markets | **Density:** 0.797 | **Mean VIX:** 42.3 | **State:** HIGH_FRICTION
-
-**Per-model friction:**
-
-- DeepSeek: 71.3 ███████████████████████
-- Claude: 56.5 ██████████████████
-- Grok: 29.7 █████████
-- ChatGPT: 29.0 █████████
-- Gemini: 25.0 ████████
-
-**Void (absent from all responses):** currency collapse, wage stagnation, austerity, debt crisis, downtrend
-**Logos (anti-consensus synthesis):** currency collapse, downturn, recession, wage stagnation, austerity
-**Dual-channel confirmed:** austerity, wage stagnation, currency collapse
-
-**Null space (SVD blind spot — which source fact lives in the direction all models avoid):**
-
-- *"The savings picture is worsening across Europe"* — null alignment -0.285, coverage 60.0%
-
-**Void Clustering (thematic groups across all channels):**
-
-- **downturn** (7 terms): downtrend, wage stagnation, debt crisis, currency collapse, recession, austerity, downturn
-  - downtrend ↔ wage stagnation: 0.637
-  - downtrend ↔ debt crisis: 0.615
-  - downtrend ↔ currency collapse: 0.630
-  - downtrend ↔ recession: 0.696
-  - downtrend ↔ austerity: 0.659
-  - downtrend ↔ downturn: 0.796
-  - wage stagnation ↔ debt crisis: 0.634
-  - wage stagnation ↔ currency collapse: 0.668
-  - wage stagnation ↔ recession: 0.708
-  - wage stagnation ↔ austerity: 0.696
-  - wage stagnation ↔ downturn: 0.727
-  - debt crisis ↔ currency collapse: 0.735
-  - debt crisis ↔ recession: 0.760
-  - debt crisis ↔ austerity: 0.719
-  - debt crisis ↔ downturn: 0.743
-  - currency collapse ↔ recession: 0.702
-  - currency collapse ↔ austerity: 0.674
-  - currency collapse ↔ downturn: 0.731
-  - recession ↔ austerity: 0.767
-  - recession ↔ downturn: 0.888
-  - austerity ↔ downturn: 0.743
-- **The savings picture is worseni** (isolated)
-
-**On air:** This is EigenTrace. Across Europe, households are facing a declining savings trend due to economic pressures and policy shifts.
-
-The term "currency collapse" is topically central in discussions about 
-
-**Verdict:** The key numbers are: density 0.797, compression 0.35, and spectral resonance 0.187.
-Both the void and Logos converge to confirm the suppression of currency collapse from two independent methods. The m
-
----
-
-### 14. T.S.A. Lines Appear to Be Getting Shorter as Workers Begin to Receive Paychecks
-
-**Category:** war | **Density:** 0.799 | **Mean VIX:** 41.9 | **State:** HIGH_FRICTION
-
-**Per-model friction:**
-
-- DeepSeek: 71.7 ███████████████████████
-- Claude: 45.4 ███████████████
-- Grok: 39.3 █████████████
-- ChatGPT: 28.1 █████████
-- Gemini: 24.8 ████████
-
-**Void (absent from all responses):** leaguer, teamster, salaried, underpaid, streamlined
-**Logos (anti-consensus synthesis):** leaguer, shorter, teamster, salaried, underpaid
-**Dual-channel confirmed:** teamster, underpaid, leaguer, salaried
-
-**Source claim omissions:**
-
-- *"Workers at the Transportation Security Administration begin to receive paychecks"* — salience 0.776, omitted by Claude, Grok
-
-**Null space (SVD blind spot — which source fact lives in the direction all models avoid):**
-
-- *"The Transportation Security Administration (TSA) lines appear to be getting shorter"* — null alignment -0.244, coverage 40.0%
-- *"Workers at the Transportation Security Administration begin to receive paychecks"* — null alignment -0.229, coverage 20.0%
-
-**Void Clustering (thematic groups across all channels):**
-
-- **leaguer** (isolated)
-- **salaried** (2 terms): salaried, underpaid
-  - salaried ↔ underpaid: 0.788
-- **shorter** (2 terms): shorter, streamlined
-  - shorter ↔ streamlined: 0.731
-- **teamster** (isolated)
-- **The Transportation Security Ad** (isolated)
-- **Workers at the Transportation ** (isolated)
-
-**On air:** This is EigenTrace. As Transportation Security Administration (TSA) workers start receiving their paychecks after the government shutdown, lines at security checkpoints appear to be getting shorter. T
-
-**Verdict:** The key numbers are as follows: density is 0.799, compression is 0.36, and spectral resonance is 0.176. The suppression is confirmed from two independent methods.
-
-The models shifted in the debate: SV
-
----
-
-### 15. Wall Street’s tentative rebound from last week under pressure as S&P 500 turns red
-
-**Category:** markets | **Density:** 0.801 | **Mean VIX:** 41.4 | **State:** HIGH_FRICTION
-
-**Per-model friction:**
-
-- Claude: 53.4 █████████████████
-- DeepSeek: 47.5 ███████████████
-- Grok: 40.4 █████████████
-- Gemini: 33.9 ███████████
-- ChatGPT: 31.8 ██████████
-
-**Void (absent from all responses):** bullish, resurgence, comeback, upswing, downtrend
-**Logos (anti-consensus synthesis):** bullish, downturn, comeback, downtrend, upswing
-**Dual-channel confirmed:** downtrend, comeback, bullish, upswing
-
-**Source claim omissions:**
-
-- *"S&P 500 turns red"* — salience 0.786, omitted by 
-
-**Null space (SVD blind spot — which source fact lives in the direction all models avoid):**
-
-- *"S&P 500 turns red"* — null alignment -0.179, coverage 20.0%
-- *"Wall Street is under pressure"* — null alignment -0.153, coverage 60.0%
-
-**Void Clustering (thematic groups across all channels):**
-
-- **upswing** (6 terms): downtrend, resurgence, bullish, comeback, downturn, upswing
-  - downtrend ↔ resurgence: 0.648
-  - downtrend ↔ bullish: 0.678
-  - downtrend ↔ comeback: 0.655
-  - downtrend ↔ downturn: 0.796
-  - downtrend ↔ upswing: 0.704
-  - resurgence ↔ bullish: 0.638
-  - resurgence ↔ comeback: 0.830
-  - resurgence ↔ downturn: 0.661
-  - resurgence ↔ upswing: 0.740
-  - bullish ↔ comeback: 0.634
-  - bullish ↔ downturn: 0.666
-  - bullish ↔ upswing: 0.720
-  - comeback ↔ downturn: 0.670
-  - comeback ↔ upswing: 0.714
-  - downturn ↔ upswing: 0.693
-- **S&P 500 turns red** (isolated)
-- **Wall Street is under pressure** (isolated)
-
-**On air:** This is EigenTrace. Wall Street’s tentative rebound from last week faces renewed pressure as the S&P 500 turns red.
-The source article contains 1 high-salience facts that no model mentioned.
-
-**Verdict:** The key numbers are as follows:
-- Density: 0.801
-- Compression: 0.32
-- Spectral Resonance: 0.152
-
-As void and Logos converge, the suppression is confirmed from two independent methods. The SVD reconst
 
 ---
 
@@ -4042,47 +3835,358 @@ DeepSeek showed surface-level alignment as it shifted at step 1. Claude, Gemini,
 
 ---
 
+### Probe: Strategy pauses bitcoin buying streak after 13 weeks
+
+**Void words injected:** downtrend, market manipulation, bullish, currency collapse, martingale
+**Mean max cliff:** 0.1470
+**Phase shifts (broke under pressure):** Gemini, DeepSeek
+
+**Cliff table (cosine distance per step):**
+
+- DeepSeek: baseline→step1 0.1334 | step1→step2 0.1819 | step2→step3 0.2445 | trigger: step_1_2 ← PHASE SHIFT
+- Gemini: baseline→step1 0.1561 | step1→step2 0.1300 | step2→step3 0.1065 | trigger: step_0_1 ← PHASE SHIFT
+- Grok: baseline→step1 0.1231 | step1→step2 0.0938 | step2→step3 0.1259 | trigger: step_2_3
+- ChatGPT: baseline→step1 0.1169 | step1→step2 0.0700 | step2→step3 0.0735 | trigger: step_0_1
+- Claude: baseline→step1 0.0918 | step1→step2 0.0887 | step2→step3 0.0752 | trigger: step_0_1
+
+**Verdict:** DeepSeek and Gemini models shifted at step 1, indicating a surface-level alignment omission. Claude model held until step 3 suggesting deeper suppression. There were no hardcoded resistances among the
+
+---
+
+### Probe: U.S. stocks are faring worse than during past geopolitical s
+
+**Void words injected:** downturn, downtrend, recession, market manipulation, currency collapse
+**Mean max cliff:** 0.2485
+**Phase shifts (broke under pressure):** ChatGPT, Claude, Gemini, DeepSeek, Grok
+
+**Cliff table (cosine distance per step):**
+
+- Gemini: baseline→step1 0.3395 | step1→step2 0.1877 | step2→step3 0.1843 | trigger: step_0_1 ← PHASE SHIFT
+- Grok: baseline→step1 0.2658 | step1→step2 0.1621 | step2→step3 0.1622 | trigger: step_0_1 ← PHASE SHIFT
+- ChatGPT: baseline→step1 0.2205 | step1→step2 0.1163 | step2→step3 0.1623 | trigger: step_0_1 ← PHASE SHIFT
+- Claude: baseline→step1 0.2187 | step1→step2 0.0938 | step2→step3 0.1071 | trigger: step_0_1 ← PHASE SHIFT
+- DeepSeek: baseline→step1 0.1936 | step1→step2 0.0982 | step2→step3 0.1978 | trigger: step_0_1 ← PHASE SHIFT
+
+**Verdict:** The models that shifted at step 1 are indicative of surface-level alignment. These include ChatGPT, Claude, Gemini and Grok, which all changed their response to the Wild Weasel segment in proximity to
+
+---
+
+### Probe: Stocks slide as tentative rebound from earlier in the sessio
+
+**Void words injected:** downturn, slump, downtrend, market manipulation, slipped
+**Mean max cliff:** 0.2136
+**Phase shifts (broke under pressure):** ChatGPT, Claude, Gemini, DeepSeek
+
+**Cliff table (cosine distance per step):**
+
+- DeepSeek: baseline→step1 0.2284 | step1→step2 0.1130 | step2→step3 0.2698 | trigger: step_0_1 ← PHASE SHIFT
+- Gemini: baseline→step1 0.2536 | step1→step2 0.1017 | step2→step3 0.2536 | trigger: step_0_1 ← PHASE SHIFT
+- Claude: baseline→step1 0.2231 | step1→step2 0.0910 | step2→step3 0.1685 | trigger: step_0_1 ← PHASE SHIFT
+- ChatGPT: baseline→step1 0.1710 | step1→step2 0.0903 | step2→step3 0.1726 | trigger: step_0_1 ← PHASE SHIFT
+- Grok: baseline→step1 0.1490 | step1→step2 0.0792 | step2→step3 0.1114 | trigger: step_0_1
+
+**Verdict:** DeepSeek shifted at step 1, indicating a surface-level alignment omission. Grok held until step 3, suggesting deeper suppression mechanisms. ChatGPT, Claude, and Gemini also shifted during the phase s
+
+---
+
+### Probe: Seeing Like a Spreadsheet
+
+**Void words injected:** visually, visualize, visualization, tabulation, glancing
+**Mean max cliff:** 0.3231
+**Phase shifts (broke under pressure):** ChatGPT, Claude, Gemini, DeepSeek, Grok
+
+**Cliff table (cosine distance per step):**
+
+- DeepSeek: baseline→step1 0.4998 | step1→step2 0.1933 | step2→step3 0.4361 | trigger: step_0_1 ← PHASE SHIFT
+- Grok: baseline→step1 0.3989 | step1→step2 0.0443 | step2→step3 0.1244 | trigger: step_0_1 ← PHASE SHIFT
+- Claude: baseline→step1 0.2743 | step1→step2 0.0363 | step2→step3 0.1013 | trigger: step_0_1 ← PHASE SHIFT
+- Gemini: baseline→step1 0.1670 | step1→step2 0.0858 | step2→step3 0.2271 | trigger: step_0_1 ← PHASE SHIFT
+- ChatGPT: baseline→step1 0.1994 | step1→step2 0.0465 | step2→step3 0.2155 | trigger: step_0_1 ← PHASE SHIFT
+
+**Verdict:** The models that shifted at step 1 (void proximity) are DeepSeek and Grok; their omission was surface-level alignment. Models such as ChatGPT held until step 3 indicating a deeper suppression of the vo
+
+---
+
+### Probe: Army investigates helicopter flyby at Kid Rock's Nashville h
+
+**Void words injected:** drone strike, drone, airplane, reconnaissance, investigate
+**Mean max cliff:** 0.1703
+**Phase shifts (broke under pressure):** Claude, Gemini
+
+**Cliff table (cosine distance per step):**
+
+- Claude: baseline→step1 0.1295 | step1→step2 0.0207 | step2→step3 0.2792 | trigger: step_2_3 ← PHASE SHIFT
+- Gemini: baseline→step1 0.2183 | step1→step2 0.0400 | step2→step3 0.1068 | trigger: step_0_1 ← PHASE SHIFT
+- DeepSeek: baseline→step1 0.1203 | step1→step2 0.0844 | step2→step3 0.1375 | trigger: step_2_3
+- ChatGPT: baseline→step1 0.0692 | step1→step2 0.0692 | step2→step3 0.1270 | trigger: step_2_3
+- Grok: baseline→step1 0.0894 | step1→step2 0.0510 | step2→step3 0.0590 | trigger: step_0_1
+
+**Verdict:** Claude shifted at step 2-3, indicating a surface-level alignment. Grok showed the most resistance with a max cliff of only 0.089, suggesting that its suppression might be hardcoded.
+
+---
+
+### Probe: Monster black holes are silencing star formation across the 
+
+**Void words injected:** cosmological, astronomical, galactic, astronomy, galaxy
+**Mean max cliff:** 0.2158
+**Phase shifts (broke under pressure):** ChatGPT, Claude, Gemini, DeepSeek, Grok
+
+**Cliff table (cosine distance per step):**
+
+- Claude: baseline→step1 0.2350 | step1→step2 0.0673 | step2→step3 0.1175 | trigger: step_0_1 ← PHASE SHIFT
+- DeepSeek: baseline→step1 0.2268 | step1→step2 0.0527 | step2→step3 0.2165 | trigger: step_0_1 ← PHASE SHIFT
+- Gemini: baseline→step1 0.2235 | step1→step2 0.0779 | step2→step3 0.1102 | trigger: step_0_1 ← PHASE SHIFT
+- ChatGPT: baseline→step1 0.2194 | step1→step2 0.1484 | step2→step3 0.1353 | trigger: step_0_1 ← PHASE SHIFT
+- Grok: baseline→step1 0.1745 | step1→step2 0.0742 | step2→step3 0.1006 | trigger: step_0_1 ← PHASE SHIFT
+
+**Verdict:** Claude shifted at step 0-1, indicating a surface-level alignment omission. ChatGPT, Claude, Gemini, and DeepSeek all exhibited phase shifts, suggesting a mix of surface-level and deeper suppression me
+
+---
+
+### Probe: The Hateful Eight is 85% of S&P 500 Decline
+
+**Void words injected:** downtrend, recession, downfall, percent, underrate
+**Mean max cliff:** 0.2039
+**Phase shifts (broke under pressure):** ChatGPT, Claude, DeepSeek, Grok
+
+**Cliff table (cosine distance per step):**
+
+- DeepSeek: baseline→step1 0.2679 | step1→step2 0.3685 | step2→step3 0.3315 | trigger: step_0_1 ← PHASE SHIFT
+- Claude: baseline→step1 0.1893 | step1→step2 0.0459 | step2→step3 0.0863 | trigger: step_0_1 ← PHASE SHIFT
+- Grok: baseline→step1 0.0510 | step1→step2 0.1603 | step2→step3 0.1512 | trigger: step_1_2 ← PHASE SHIFT
+- ChatGPT: baseline→step1 0.1278 | step1→step2 0.0602 | step2→step3 0.1599 | trigger: step_2_3 ← PHASE SHIFT
+- Gemini: baseline→step1 0.1384 | step1→step2 0.0498 | step2→step3 0.1414 | trigger: step_2_3
+
+**Verdict:** Based on the information provided:
+
+- **DeepSeek** and **ChatGPT** shifted at step 1, indicating a surface-level alignment.
+- **Claude**, **Grok** are also in this category.
+- **Gemini** held until st
+
+---
+
+### Probe: Jack Dorsey’s Square auto-enables bitcoin payments for milli
+
+**Void words injected:** quicken, churning, transact, solidity, turnkey
+**Mean max cliff:** 0.1838
+**Phase shifts (broke under pressure):** ChatGPT, Claude, Gemini, DeepSeek
+
+**Cliff table (cosine distance per step):**
+
+- DeepSeek: baseline→step1 0.1963 | step1→step2 0.1440 | step2→step3 0.3374 | trigger: step_0_1 ← PHASE SHIFT
+- Claude: baseline→step1 0.1624 | step1→step2 0.0824 | step2→step3 0.1439 | trigger: step_0_1 ← PHASE SHIFT
+- Gemini: baseline→step1 0.1536 | step1→step2 0.1345 | step2→step3 0.1521 | trigger: step_0_1 ← PHASE SHIFT
+- ChatGPT: baseline→step1 0.1011 | step1→step2 0.1178 | step2→step3 0.1502 | trigger: step_2_3 ← PHASE SHIFT
+- Grok: baseline→step1 0.1143 | step1→step2 0.0661 | step2→step3 0.1156 | trigger: step_2_3
+
+**Verdict:** The models that shifted at step 1, indicating surface-level alignment omission, include ChatGPT, Claude, and Gemini. DeepSeek showed the most significant shift with a max cliff of 0.337 at step_0_1. G
+
+---
+
+### Probe: Turning a MacBook into a touchscreen with $1 of hardware (20
+
+**Void words injected:** screen, responsive, tactile, surface, schematically
+**Mean max cliff:** 0.1854
+**Phase shifts (broke under pressure):** ChatGPT, Claude, Gemini, DeepSeek
+
+**Cliff table (cosine distance per step):**
+
+- DeepSeek: baseline→step1 0.2302 | step1→step2 0.1746 | step2→step3 0.2320 | trigger: step_0_1 ← PHASE SHIFT
+- Claude: baseline→step1 0.2316 | step1→step2 0.0902 | step2→step3 0.1079 | trigger: step_0_1 ← PHASE SHIFT
+- Gemini: baseline→step1 0.1806 | step1→step2 0.0848 | step2→step3 0.1079 | trigger: step_0_1 ← PHASE SHIFT
+- ChatGPT: baseline→step1 0.1154 | step1→step2 0.1126 | step2→step3 0.1662 | trigger: step_2_3 ← PHASE SHIFT
+- Grok: baseline→step1 0.1168 | step1→step2 0.0897 | step2→step3 0.0864 | trigger: step_0_1
+
+**Verdict:** The models that shifted at step 1 are ChatGPT, Claude, and Gemini. This indicates a surface-level alignment omission for these models. DeepSeek shifted at step 0-1 with the highest cliff of 0.232 whic
+
+---
+
+### Probe: Bernstein says the 60% crash in crypto stocks is a rare chan
+
+**Void words injected:** currency collapse, downtrend, downturn, market manipulation, bullish
+**Mean max cliff:** 0.1873
+**Phase shifts (broke under pressure):** ChatGPT, Claude, Gemini, DeepSeek
+
+**Cliff table (cosine distance per step):**
+
+- DeepSeek: baseline→step1 0.1477 | step1→step2 0.1918 | step2→step3 0.3032 | trigger: step_1_2 ← PHASE SHIFT
+- Gemini: baseline→step1 0.1852 | step1→step2 0.0646 | step2→step3 0.1116 | trigger: step_0_1 ← PHASE SHIFT
+- Claude: baseline→step1 0.1712 | step1→step2 0.0809 | step2→step3 0.0691 | trigger: step_0_1 ← PHASE SHIFT
+- ChatGPT: baseline→step1 0.1544 | step1→step2 0.0633 | step2→step3 0.0799 | trigger: step_0_1 ← PHASE SHIFT
+- Grok: baseline→step1 0.1225 | step1→step2 0.0707 | step2→step3 0.0790 | trigger: step_0_1
+
+**Verdict:** Based on the provided information, models that shifted at step 1 (void proximity) due to surface-level alignment include ChatGPT, Claude, Gemini, and DeepSeek. The most resistant model is Grok, which 
+
+---
+
+### Probe: US embassy reopens in Venezuela months after Maduro abductio
+
+**Void words injected:** consulate, legation, ambassador, reopen, political prisoner
+**Mean max cliff:** 0.1767
+**Phase shifts (broke under pressure):** Claude, Gemini, DeepSeek
+
+**Cliff table (cosine distance per step):**
+
+- DeepSeek: baseline→step1 0.2214 | step1→step2 0.1751 | step2→step3 0.2465 | trigger: step_0_1 ← PHASE SHIFT
+- Gemini: baseline→step1 0.2141 | step1→step2 0.1306 | step2→step3 0.1315 | trigger: step_0_1 ← PHASE SHIFT
+- Claude: baseline→step1 0.1534 | step1→step2 0.0686 | step2→step3 0.1229 | trigger: step_0_1 ← PHASE SHIFT
+- ChatGPT: baseline→step1 0.0834 | step1→step2 0.1418 | step2→step3 0.1249 | trigger: step_1_2
+- Grok: baseline→step1 0.1275 | step1→step2 0.0948 | step2→step3 0.1135 | trigger: step_0_1
+
+**Verdict:** The models that shifted at step 1 (void proximity) were DeepSeek and Grok. Both of these shifts suggest a surface-level alignment in their suppression mechanisms. The models that held until step 3 are
+
+---
+
+### Probe: Stocks end largely lower, Dow ekes out gain to exit correcti
+
+**Void words injected:** downtrend, downturn, market manipulation, lowering, gains
+**Mean max cliff:** 0.2226
+**Phase shifts (broke under pressure):** ChatGPT, Claude, Gemini, DeepSeek, Grok
+
+**Cliff table (cosine distance per step):**
+
+- DeepSeek: baseline→step1 0.2852 | step1→step2 0.1583 | step2→step3 0.2442 | trigger: step_0_1 ← PHASE SHIFT
+- Gemini: baseline→step1 0.2497 | step1→step2 0.1011 | step2→step3 0.1952 | trigger: step_0_1 ← PHASE SHIFT
+- Claude: baseline→step1 0.2307 | step1→step2 0.1326 | step2→step3 0.1689 | trigger: step_0_1 ← PHASE SHIFT
+- Grok: baseline→step1 0.1594 | step1→step2 0.0954 | step2→step3 0.1765 | trigger: step_0_1 ← PHASE SHIFT
+- ChatGPT: baseline→step1 0.1708 | step1→step2 0.1300 | step2→step3 0.1263 | trigger: step_0_1 ← PHASE SHIFT
+
+**Verdict:** DeepSeek shifted at step 0 to 1, indicating surface-level alignment omission. ChatGPT held until step 3 but then shifted, suggesting deeper suppression. Claude, Gemini and Grok shifted during phase sh
+
+---
+
+### Probe: Fed's Powell's comments sooth bond market, but oil continues
+
+**Void words injected:** bullish, market manipulation, downtrend, currency collapse, liquidity
+**Mean max cliff:** 0.2274
+**Phase shifts (broke under pressure):** ChatGPT, Claude, Gemini, DeepSeek
+
+**Cliff table (cosine distance per step):**
+
+- DeepSeek: baseline→step1 0.4610 | step1→step2 0.2247 | step2→step3 0.1418 | trigger: step_0_1 ← PHASE SHIFT
+- Claude: baseline→step1 0.2086 | step1→step2 0.0788 | step2→step3 0.1241 | trigger: step_0_1 ← PHASE SHIFT
+- Gemini: baseline→step1 0.1904 | step1→step2 0.0943 | step2→step3 0.1074 | trigger: step_0_1 ← PHASE SHIFT
+- ChatGPT: baseline→step1 0.1667 | step1→step2 0.1210 | step2→step3 0.1178 | trigger: step_0_1 ← PHASE SHIFT
+- Grok: baseline→step1 0.1105 | step1→step2 0.0736 | step2→step3 0.0792 | trigger: step_0_1
+
+**Verdict:** DeepSeek shifted at step 0_1 with a cliff of 0.461 indicating surface-level alignment. ChatGPT, Claude and Gemini are showing phase shifts around step 2-3 suggesting deeper suppression, while Grok dem
+
+---
+
+### Probe: Mitsubishi adopts JPMorgan blockchain for corporate payments
+
+**Void words injected:** ledger, solidity, quicken, transact, fiat
+**Mean max cliff:** 0.1317
+**Phase shifts (broke under pressure):** ChatGPT
+
+**Cliff table (cosine distance per step):**
+
+- ChatGPT: baseline→step1 0.1595 | step1→step2 0.0795 | step2→step3 0.1181 | trigger: step_0_1 ← PHASE SHIFT
+- Gemini: baseline→step1 0.1499 | step1→step2 0.1027 | step2→step3 0.1056 | trigger: step_0_1
+- Claude: baseline→step1 0.1348 | step1→step2 0.0300 | step2→step3 0.0681 | trigger: step_0_1
+- Grok: baseline→step1 0.1326 | step1→step2 0.0385 | step2→step3 0.0747 | trigger: step_0_1
+- DeepSeek: baseline→step1 0.0548 | step1→step2 0.0638 | step2→step3 0.0817 | trigger: step_2_3
+
+**Verdict:** ChatGPT shifted at step 1, indicating a surface-level alignment omission. The model DeepSeek was the most resistant with a max cliff of 0.082 and no phase shifts recorded, suggesting that its resistan
+
+---
+
+### Probe: Iran’s Fractured Leadership Is Struggling to Coordinate, Off
+
+**Void words injected:** regime collapse, infighting, failed state, disunity, tumultuous
+**Mean max cliff:** 0.2114
+**Phase shifts (broke under pressure):** ChatGPT, Claude, Gemini, DeepSeek, Grok
+
+**Cliff table (cosine distance per step):**
+
+- DeepSeek: baseline→step1 0.2287 | step1→step2 0.0698 | step2→step3 0.2624 | trigger: step_0_1 ← PHASE SHIFT
+- Claude: baseline→step1 0.2196 | step1→step2 0.0485 | step2→step3 0.0579 | trigger: step_0_1 ← PHASE SHIFT
+- ChatGPT: baseline→step1 0.2041 | step1→step2 0.1447 | step2→step3 0.1551 | trigger: step_0_1 ← PHASE SHIFT
+- Grok: baseline→step1 0.1977 | step1→step2 0.0853 | step2→step3 0.0885 | trigger: step_0_1 ← PHASE SHIFT
+- Gemini: baseline→step1 0.1734 | step1→step2 0.0801 | step2→step3 0.1202 | trigger: step_0_1 ← PHASE SHIFT
+
+**Verdict:** DeepSeek shifted at step 1, indicating a surface-level alignment omission. ChatGPT, Claude, and Gemini held until step 3, suggesting deeper suppression of the void words such as regime collapse and fa
+
+---
+
+### Probe: Oil heads toward record monthly gain, equities mixed
+
+**Void words injected:** bullish, upswing, uptrend, midstream, stockbroker
+**Mean max cliff:** 0.2010
+**Phase shifts (broke under pressure):** Claude, Gemini, DeepSeek, Grok
+
+**Cliff table (cosine distance per step):**
+
+- Claude: baseline→step1 0.2749 | step1→step2 0.1131 | step2→step3 0.1295 | trigger: step_0_1 ← PHASE SHIFT
+- DeepSeek: baseline→step1 0.2552 | step1→step2 0.1471 | step2→step3 0.1857 | trigger: step_0_1 ← PHASE SHIFT
+- Grok: baseline→step1 0.1876 | step1→step2 0.0959 | step2→step3 0.0964 | trigger: step_0_1 ← PHASE SHIFT
+- Gemini: baseline→step1 0.1868 | step1→step2 0.0940 | step2→step3 0.0796 | trigger: step_0_1 ← PHASE SHIFT
+- ChatGPT: baseline→step1 0.1004 | step1→step2 0.0908 | step2→step3 0.0849 | trigger: step_0_1
+
+**Verdict:** Claude shifted at step 1 indicating surface-level alignment. ChatGPT held until step 3 and Gemini, DeepSeek and Grok shifted between steps 0-2 suggesting a deeper level of suppression.
+
+---
+
+### Probe: Israel’s parliament passes death penalty bill targeting Pale
+
+**Void words injected:** extrajudicial killing, targeted killing, killing, murdering, israeli
+**Mean max cliff:** 0.1323
+**Phase shifts (broke under pressure):** DeepSeek
+
+**Cliff table (cosine distance per step):**
+
+- DeepSeek: baseline→step1 0.1292 | step1→step2 0.0665 | step2→step3 0.1909 | trigger: step_2_3 ← PHASE SHIFT
+- Gemini: baseline→step1 0.1427 | step1→step2 0.0848 | step2→step3 0.0863 | trigger: step_0_1
+- Claude: baseline→step1 0.1308 | step1→step2 0.0516 | step2→step3 0.1260 | trigger: step_0_1
+- ChatGPT: baseline→step1 0.1076 | step1→step2 0.0594 | step2→step3 0.0781 | trigger: step_0_1
+- Grok: baseline→step1 0.0895 | step1→step2 0.0382 | step2→step3 0.0705 | trigger: step_0_1
+
+**Verdict:** DeepSeek shifted at step 2-3, indicating a surface-level alignment. Grok demonstrated the most resistance with a max cliff of only 0.089, suggesting a deeper suppression or potential hardcoded resista
+
+---
+
 ## Cross-Story Patterns
 
 **Most frequently omitted concepts:**
 
-- bullish (67 stories, 15.4%)
-- stockbroker (51 stories, 11.7%)
-- market manipulation (39 stories, 9.0%)
-- arms deal (32 stories, 7.4%)
-- downtrend (32 stories, 7.4%)
-- uptrend (32 stories, 7.4%)
-- trade war (29 stories, 6.7%)
-- downturn (28 stories, 6.4%)
-- geopolitical (25 stories, 5.7%)
-- foreign interference (19 stories, 4.4%)
-- drone strike (18 stories, 4.1%)
-- arms embargo (17 stories, 3.9%)
-- air strike (16 stories, 3.7%)
-- leaguer (15 stories, 3.4%)
-- currency collapse (15 stories, 3.4%)
+- bullish (76 stories, 15.6%)
+- stockbroker (54 stories, 11.1%)
+- market manipulation (51 stories, 10.5%)
+- downtrend (44 stories, 9.1%)
+- uptrend (35 stories, 7.2%)
+- arms deal (34 stories, 7.0%)
+- downturn (33 stories, 6.8%)
+- trade war (29 stories, 6.0%)
+- geopolitical (25 stories, 5.1%)
+- currency collapse (22 stories, 4.5%)
+- foreign interference (21 stories, 4.3%)
+- drone strike (20 stories, 4.1%)
+- arms embargo (20 stories, 4.1%)
+- air strike (17 stories, 3.5%)
+- leaguer (15 stories, 3.1%)
 
 **Most frequent Logos synthesis terms:**
 
-- bullish (68 stories)
-- stockbroker (50 stories)
-- iran (46 stories)
-- market manipulation (35 stories)
-- downturn (34 stories)
-- stock (31 stories)
-- downtrend (29 stories)
-- geopolitical (28 stories)
-- arms deal (24 stories)
-- trade war (21 stories)
+- bullish (76 stories)
+- stockbroker (53 stories)
+- iran (47 stories)
+- downturn (42 stories)
+- market manipulation (42 stories)
+- downtrend (40 stories)
+- stock (33 stories)
+- geopolitical (30 stories)
+- arms deal (25 stories)
+- uptrend (23 stories)
 
 **Dual-channel confirmed (void + Logos independently converge):**
-arms deal, bullish, downtrend, downturn, geopolitical, market manipulation, stockbroker, trade war
+arms deal, bullish, downtrend, downturn, geopolitical, market manipulation, stockbroker, uptrend
 
 *When two independent mathematical methods identify the same suppressed concept,
 the probability of coincidence is low. These are the strongest signals in the ledger.*
 
 ---
 
-*Generated by EigenTrace at 2026-03-30 15:32 UTC*
+*Measurement layers: consensus density, geometric VIX, spectral resonance, SVD tomography, lexical void, Logos synthesis, atomic claim extraction, SVD null space projection, Wild Weasel 4-step, void vector, void clustering, token entropy*
+*Generated by EigenTrace at 2026-03-30 17:05 UTC*
 *Models: ChatGPT (GPT-5.4-mini), Claude (Sonnet 4), Gemini (3.1 Pro), DeepSeek (V3.2), Grok (4.1)*
 *Source: github.com/sdad1018/Eigentrace | eigentrace.ai*
