@@ -344,6 +344,8 @@ def main():
     SEGMENTS_DIR.mkdir(parents=True, exist_ok=True)
     log.info("Segment player started — watching %s", SEGMENTS_DIR)
     log.info("Voices: %s", {k: v.name for k, v in VOICE_MAP.items()})
+    get_feeder()
+    log.info("UDP feeder initialized — carrier wave active")
 
     while True:
         seg = next_segment()
