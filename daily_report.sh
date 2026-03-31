@@ -17,7 +17,11 @@ python3 claim_extractor.py --digest --date "$DATE" >> "$LOG" 2>&1
 echo "[2/3] Temporal stability..." >> "$LOG"
 python3 eigentrace_temporal.py --run >> "$LOG" 2>&1
 
-# 3. Run PCA on accumulated void registry
+# 3. Export structured JSON data
+echo "[3/4] JSON data export..." >> "$LOG"
+python3 data_exporter.py "$DATE" >> "$LOG" 2>&1
+
+# 4. Run PCA on accumulated void registry
 echo "[3/3] PCA void analysis..." >> "$LOG"
 python3 pca_void_registry.py >> "$LOG" 2>&1
 

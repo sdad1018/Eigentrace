@@ -268,7 +268,7 @@ def daily_digest(date=None, output_dir=None):
     for i, seg in enumerate(ranked[:15], 1):
         attr = seg.get("attribution", {})
         title = attr.get("story_title", "Unknown")
-        void_words = attr.get("void_words", [])
+        void_words = attr.get("void_words", [])  # full list, show up to 15
         logos = attr.get("logos_words", [])
         mean_v = attr.get("mean_vix", 0)
         density = attr.get("consensus_density", 0)
@@ -369,6 +369,26 @@ def daily_digest(date=None, output_dir=None):
             L.append("")
         elif dual and not overlap:  # overlap already printed above
             pass  # dual already shown
+
+        # Full beat archive for research
+        beats = seg.get("beats", [])
+        research_beats = []
+        for b in beats:
+            phase = b.get("phase", "")
+            speaker = b.get("speaker", "")
+            bt = b.get("text", "")
+            if phase and bt:
+                research_beats.append((phase, speaker, bt))
+
+        if research_beats:
+            L.append("<details>")
+            L.append("<summary>Full broadcast transcript (click to expand)</summary>")
+            L.append("")
+            for phase, speaker, bt in research_beats:
+                L.append(f"**[{phase}] {speaker}:** {bt[:300]}")
+                L.append("")
+            L.append("</details>")
+            L.append("")
 
         # Beat excerpts: hook and verdict
         beats = seg.get("beats", [])
