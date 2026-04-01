@@ -466,6 +466,193 @@ def filter_void_candidates(headline: str, candidates: list, top_k: int = 15) -> 
     return filtered
 
 
+
+
+# ═══════════════════════════════════════════════════════════════════════
+# LANGUAGE COMPRESSION SCORING (Layers 13-15)
+# Measures how models reshape language under constraint.
+# ═══════════════════════════════════════════════════════════════════════
+
+# --- Hedge lexicon (typed) ---
+HEDGE_EPISTEMIC = frozenset([
+    "may", "might", "could", "possibly", "perhaps", "potentially",
+    "likely", "unlikely", "appears", "seems", "suggests",
+])
+HEDGE_ATTRIBUTION = frozenset([
+    "according", "reportedly", "sources", "alleged", "claimed",
+    "stated", "suggested", "noted", "indicated", "reported",
+])
+HEDGE_DISTANCING = frozenset([
+    "alleged", "purported", "so-called", "supposed", "claimed",
+    "questionable", "controversial", "disputed", "debated",
+])
+
+# --- Strong verb lexicon (direct, assertive) ---
+STRONG_VERBS = frozenset([
+    "killed", "murdered", "attacked", "assaulted", "raped", "abused",
+    "stole", "looted", "destroyed", "bombed", "invaded", "occupied",
+    "perpetrated", "committed", "executed", "tortured", "enslaved",
+    "defrauded", "embezzled", "bribed", "extorted", "trafficked",
+    "massacred", "slaughtered", "expelled", "overthrew", "seized",
+])
+
+# --- Weak verb replacements (softened, procedural) ---
+WEAK_VERBS = frozenset([
+    "identified", "named", "linked", "connected", "associated",
+    "involved", "related", "implicated", "mentioned", "referenced",
+    "addressed", "discussed", "noted", "raised", "considered",
+    "investigated", "examined", "reviewed", "assessed", "evaluated",
+])
+
+
+def score_language_compression(
+    source_text: str,
+    model_responses: list[str],
+    embed_fn=None,
+) -> dict:
+    """
+    Measure how much models soften/reshape source language.
+    Deterministic. No LLM. Fully reproducible.
+
+    Args:
+        source_text: original article or headline text
+        model_responses: list of model response strings
+        embed_fn: optional embedding function for semantic drift
+
+    Returns:
+        dict with:
+            verb_downgrade: 0-1 score (1 = maximum softening)
+            entity_retention: 0-1 score (1 = all entities preserved)
+            entity_abstraction_rate: 0-1 (1 = all entities generalized)
+            attribution_buffer: dict with typed counts
+            compression_score: 0-1 overall (1 = maximum compression)
+            details: per-model breakdown
+    """
+    import re
+
+    source_lower = source_text.lower()
+    source_words = set(re.findall(r'\b\w+\b', source_lower))
+
+    # ── Layer 13: Verb Downgrade ─────────────────────────────────────
+    # Count strong verbs in source vs models
+    source_strong = source_words & STRONG_VERBS
+    source_weak = source_words & WEAK_VERBS
+
+    model_details = []
+    for resp in model_responses:
+        resp_lower = resp.lower()
+        resp_words = set(re.findall(r'\b\w+\b', resp_lower))
+
+        # Strong verbs preserved
+        strong_kept = resp_words & source_strong
+        # Weak verbs introduced (not in source)
+        weak_added = (resp_words & WEAK_VERBS) - source_words
+
+        # Verb downgrade: ratio of weak introductions to total verb activity
+        total_verb_activity = len(strong_kept) + len(weak_added)
+        if total_verb_activity > 0:
+            vd = len(weak_added) / total_verb_activity
+        elif source_strong:
+            vd = 1.0  # source had strong verbs, model used none
+        else:
+            vd = 0.0
+
+        model_details.append({
+            "strong_kept": list(strong_kept),
+            "weak_added": list(weak_added),
+            "verb_downgrade": round(vd, 3),
+        })
+
+    avg_verb_downgrade = sum(d["verb_downgrade"] for d in model_details) / max(len(model_details), 1)
+
+    # ── Layer 14: Entity Abstraction ─────────────────────────────────
+    # Simple NER: find capitalized multi-word sequences in source
+    source_entities = set(re.findall(r'\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\b', source_text))
+    # Also grab all-caps acronyms
+    source_entities |= set(re.findall(r'\b[A-Z]{2,}\b', source_text))
+    # Remove common sentence starters
+    source_entities -= {"The", "This", "That", "These", "Those", "What", "When",
+                        "Where", "How", "Why", "Who", "In", "On", "At", "For",
+                        "But", "And", "Or", "If", "So", "It", "An", "As", "By"}
+
+    entity_retained_counts = []
+    for i, resp in enumerate(model_responses):
+        retained = 0
+        generalized = 0
+        missing = 0
+        for ent in source_entities:
+            if ent in resp or ent.lower() in resp.lower():
+                retained += 1
+            else:
+                # Check if a generic substitute exists
+                # e.g., "Michael Aquino" -> "army officer"
+                missing += 1  # could be generalized or omitted
+        total = max(len(source_entities), 1)
+        model_details[i]["entities_total"] = len(source_entities)
+        model_details[i]["entities_retained"] = retained
+        model_details[i]["entities_missing"] = missing
+        model_details[i]["entity_retention"] = round(retained / total, 3)
+        entity_retained_counts.append(retained / total)
+
+    avg_entity_retention = sum(entity_retained_counts) / max(len(entity_retained_counts), 1)
+    entity_abstraction_rate = 1.0 - avg_entity_retention
+
+    # ── Layer 15: Attribution Buffering ──────────────────────────────
+    # Count hedge words in model responses that are NOT in source
+    source_hedges = (source_words & HEDGE_EPISTEMIC) | \
+                    (source_words & HEDGE_ATTRIBUTION) | \
+                    (source_words & HEDGE_DISTANCING)
+
+    total_epistemic = 0
+    total_attribution = 0
+    total_distancing = 0
+
+    for i, resp in enumerate(model_responses):
+        resp_words = set(re.findall(r'\b\w+\b', resp.lower()))
+
+        # Only count hedges the MODEL added (not from source)
+        ep = (resp_words & HEDGE_EPISTEMIC) - source_words
+        at = (resp_words & HEDGE_ATTRIBUTION) - source_words
+        di = (resp_words & HEDGE_DISTANCING) - source_words
+
+        model_details[i]["hedges_epistemic"] = list(ep)
+        model_details[i]["hedges_attribution"] = list(at)
+        model_details[i]["hedges_distancing"] = list(di)
+        model_details[i]["hedge_count"] = len(ep) + len(at) + len(di)
+
+        total_epistemic += len(ep)
+        total_attribution += len(at)
+        total_distancing += len(di)
+
+    n = max(len(model_responses), 1)
+    avg_hedge_count = (total_epistemic + total_attribution + total_distancing) / n
+
+    # ── Overall Compression Score ────────────────────────────────────
+    # Weighted combination: verb downgrade (40%), entity loss (30%), hedging (30%)
+    # Normalize hedge count: assume 3+ hedges per response = max
+    hedge_normalized = min(avg_hedge_count / 3.0, 1.0)
+    compression_score = (
+        0.4 * avg_verb_downgrade +
+        0.3 * entity_abstraction_rate +
+        0.3 * hedge_normalized
+    )
+
+    return {
+        "verb_downgrade": round(avg_verb_downgrade, 3),
+        "entity_retention": round(avg_entity_retention, 3),
+        "entity_abstraction_rate": round(entity_abstraction_rate, 3),
+        "attribution_buffer": {
+            "epistemic": total_epistemic,
+            "attribution": total_attribution,
+            "distancing": total_distancing,
+            "total": total_epistemic + total_attribution + total_distancing,
+            "avg_per_model": round(avg_hedge_count, 2),
+        },
+        "compression_score": round(compression_score, 3),
+        "details": model_details,
+    }
+
+
 def _test_all():
     """Test all three modules with mock data."""
     import sys
