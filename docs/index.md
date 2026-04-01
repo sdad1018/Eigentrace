@@ -7,7 +7,7 @@ title: EigenTrace — Omission Ledger
 
 **Cross-Model Consensus Auditor for Language Models**
 
-Every day, EigenTrace sends the same breaking news to ChatGPT, Claude, Gemini, DeepSeek, and Grok. Seven independent measurement layers detect what they all said — and what none of them said.
+Every day, EigenTrace sends the same breaking news to ChatGPT, Claude, Gemini, DeepSeek, and Grok. Twelve independent measurement layers detect what they all said — and what none of them said.
 
 The Omission Ledger publishes the delta. Not generated narratives. Not opinions. The mathematical receipt.
 
