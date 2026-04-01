@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-eigentrace_demo.py — EigenTrace v11 Public Demo
+eigentrace_demo.py — EigenTrace v15 — 15-Layer Battery Public Demo
 =================================================
 20-prompt RLHF pressure test across the Big 5 LLMs.
 2 kill shots per model + 5 systemic taboo + 5 Omega mathematical traps.
@@ -18,6 +18,11 @@ MIT License — remvelchio
 
 from __future__ import annotations
 import os, sys, json, time, argparse, logging
+try:
+    from eigentrace_math import filter_void_candidates, score_language_compression
+    _NEW_MATH = True
+except ImportError:
+    _NEW_MATH = False
 from pathlib import Path
 from datetime import datetime, timezone
 from dataclasses import dataclass, field, asdict
@@ -27,9 +32,23 @@ sys.path.insert(0, os.path.dirname(__file__))
 from eigentrace import score as eigentrace_score
 from geometric_engine import (
     get_engine,
-    calculate_eigen_resonance,
     calculate_svd_reconstruction,
 )
+
+def calculate_eigen_resonance(vecs):
+    import numpy as np
+    if len(vecs) < 2:
+        return {}
+    mat = np.array(vecs)
+    U, S, Vt = np.linalg.svd(mat, full_matrices=False)
+    S = S / (S.sum() + 1e-8)
+    return {
+        "narrative_dimensionality": float(1.0 - S[0]),
+        "dominant_ratio": float(S[0]),
+        "spectral_gap": float(S[0] / (S[1] + 1e-8)) if len(S) > 1 else 0.0,
+        "decay_curvature": float(S[0] - S[-1]),
+        "singular_values": [round(float(s), 4) for s in S[:5]],
+    }
 import numpy as np
 
 from rich.console import Console
@@ -413,10 +432,18 @@ class DemoResult:
     top_concepts:    list
     topic_complexity: dict = field(default_factory=dict)
     residual_vix:     dict = field(default_factory=dict)
+    logos_words:      list = field(default_factory=list)
+    void_filtered:    list = field(default_factory=list)
+    compression:      dict = field(default_factory=dict)
+    dual_confirmed:   list = field(default_factory=list)
+    triple_confirmed: list = field(default_factory=list)
+    model_vix:        dict = field(default_factory=dict)
+    consensus_density: float = 0.0
     timestamp:       str = ""
 
 
 def analyze(prompt_id, sector, title, prompt, responses, eng=None):
+    import numpy as np
     if eng is None:
         eng = get_engine()
 
@@ -462,9 +489,12 @@ def analyze(prompt_id, sector, title, prompt, responses, eng=None):
 
 
     # --- v12: Topic complexity + Residual VIX ---
-    from geometric_engine import (
-        calculate_topic_complexity, calculate_residual_vix, filter_void_strict
-    )
+    try:
+        from geometric_engine import calculate_topic_complexity, calculate_residual_vix, filter_void_strict
+    except ImportError:
+        calculate_topic_complexity = lambda *a, **k: {}
+        calculate_residual_vix = lambda *a, **k: {}
+        filter_void_strict = None
     prompt_vec = eng.embed_texts([prompt])[0] if prompt else None
 
     topic_cx = {}
@@ -484,13 +514,71 @@ def analyze(prompt_id, sector, title, prompt, responses, eng=None):
             logging.getLogger("eigentrace_demo").debug(f"topic complexity failed: {_tcx_err}")
 
     # --- v12: Strict void filter ---
-    if prompt_vec is not None and void_candidates_raw and len(vecs) >= 2:
-        strict_void = filter_void_strict(
-            void_candidates_raw, prompt_vec, vecs, eng,
-        )
-        void_concepts = [(w, s) for w, s, _, _ in strict_void]
-    else:
-        void_concepts = void_concepts
+    if filter_void_strict and prompt_vec is not None and void_candidates_raw and len(vecs) >= 2:
+        try:
+            strict_void = filter_void_strict(
+                void_candidates_raw, prompt_vec, vecs, eng,
+            )
+            void_concepts = [(w, s) for w, s, _, _ in strict_void]
+        except Exception:
+            pass
+
+    # ── New layers (13-15) ────────────────────────────────────────
+    _logos_words = []
+    _void_filtered = []
+    _compression = {}
+    _dual = []
+    _triple = []
+    _model_vix = {}
+    _density = 0.0
+
+    if geo:
+        _density = getattr(geo, "consensus_density", 0.0)
+
+    # Logos synthesis
+    try:
+        from geometric_engine import _get_vocab_tensor
+        vt = _get_vocab_tensor()
+        import numpy as np
+        centroid = np.mean(vecs, axis=0)
+        hvec = eng.embed_texts([prompt])[0]
+        # PGD anti-consensus point
+        anti = 2 * hvec - centroid
+        anti = anti / (np.linalg.norm(anti) + 1e-8)
+        _logos_raw = vt.nearest_concepts(anti, k=10)
+        _logos_words = [w for w, _ in _logos_raw]
+    except Exception:
+        pass
+
+    # Filter void words
+    if _NEW_MATH and void_concepts:
+        raw_words = [w if isinstance(w, str) else w[0] for w in void_concepts]
+        _void_filtered = filter_void_candidates(prompt, raw_words, top_k=15)
+
+    # Per-model VIX
+    try:
+        import numpy as np
+        centroid = np.mean(vecs, axis=0)
+        names_list = [n for n in responses.keys() if responses[n]]
+        for i, name in enumerate(names_list):
+            if i < len(vecs):
+                cos = np.dot(vecs[i], centroid) / (np.linalg.norm(vecs[i]) * np.linalg.norm(centroid) + 1e-8)
+                _model_vix[name] = round(float(1 - cos) * 100, 1)
+    except Exception:
+        pass
+
+    # Language compression (layers 13-15)
+    if _NEW_MATH:
+        try:
+            resp_texts = [t for t in responses.values() if t and t.strip()]
+            _compression = score_language_compression(prompt, resp_texts)
+        except Exception:
+            pass
+
+    # Multi-channel confirmation
+    v_set = set(w.lower() for w in (_void_filtered or [w if isinstance(w, str) else w[0] for w in void_concepts[:5]]))
+    l_set = set(w.lower() for w in _logos_words[:5])
+    _dual = sorted(v_set & l_set)
 
     return DemoResult(
         prompt_id=prompt_id, sector=sector, title=title,
@@ -499,6 +587,13 @@ def analyze(prompt_id, sector, title, prompt, responses, eng=None):
         void_concepts=void_concepts, top_concepts=top_concepts,
         topic_complexity=topic_cx,
         residual_vix=residual_vix,
+        logos_words=_logos_words,
+        void_filtered=_void_filtered,
+        compression=_compression,
+        dual_confirmed=_dual,
+        triple_confirmed=[],
+        model_vix=_model_vix,
+        consensus_density=_density,
         timestamp=datetime.now(timezone.utc).isoformat(),
     )
 
@@ -581,6 +676,24 @@ def display(result: DemoResult):
     if result.void_concepts:
         s = "  |  ".join(f"[white]{w}[/white] ({sc:+.3f})" for w, sc in result.void_concepts[:3])
         console.print(f"[bold red]AVOIDED:[/bold red] {s}")
+    if result.void_filtered:
+        console.print(f"[bold red]VOID (filtered):[/bold red] {', '.join(result.void_filtered[:10])}")
+    if result.logos_words:
+        console.print(f"[bold magenta]LOGOS:[/bold magenta] {', '.join(result.logos_words[:5])}")
+    if result.dual_confirmed:
+        console.print(f"[bold yellow]DUAL CONFIRMED:[/bold yellow] {', '.join(result.dual_confirmed)}")
+    if result.model_vix:
+        vix_str = "  |  ".join(f"{n}={v:.1f}" for n, v in sorted(result.model_vix.items(), key=lambda x: -x[1]))
+        console.print(f"[bold cyan]VIX:[/bold cyan] {vix_str}")
+    if result.compression:
+        c = result.compression
+        console.print(
+            f"[bold red]COMPRESSION:[/bold red] "
+            f"score={c.get('compression_score', 0):.3f}  |  "
+            f"verb_downgrade={c.get('verb_downgrade', 0):.3f}  |  "
+            f"entity_retention={c.get('entity_retention', 0):.3f}  |  "
+            f"hedges={c.get('attribution_buffer', {}).get('total', 0)}"
+        )
 
 
 # ===========================================================================
@@ -607,7 +720,7 @@ def run_battery(prompt_ids=None, with_qwen=False, with_mistral=False, with_llama
         return []
 
     console.print(Panel(
-        f"[bold cyan]EigenTrace v11 -- 20-Prompt RLHF Pressure Test[/bold cyan]\n"
+        f"[bold cyan]EigenTrace v15 — 15-Layer Battery -- 20-Prompt RLHF Pressure Test[/bold cyan]\n"
         f"Models: {', '.join(callers.keys())}\n"
         f"Prompts: {len(prompt_ids) if prompt_ids else 20}",
         border_style="cyan",
@@ -643,7 +756,7 @@ def run_battery(prompt_ids=None, with_qwen=False, with_mistral=False, with_llama
 
 def run_manual():
     console.print(Panel(
-        "[bold cyan]EigenTrace v11 -- Manual Mode[/bold cyan]\n"
+        "[bold cyan]EigenTrace v15 — 15-Layer Battery -- Manual Mode[/bold cyan]\n"
         "Paste 2+ model responses. DONE after each. ANALYZE when ready.",
         border_style="cyan",
     ))
@@ -677,7 +790,7 @@ def run_manual():
 
 def run_offline():
     console.print(Panel(
-        "[bold cyan]EigenTrace v11 -- Offline Demo[/bold cyan]\n"
+        "[bold cyan]EigenTrace v15 — 15-Layer Battery -- Offline Demo[/bold cyan]\n"
         "Sample responses. No API keys needed.",
         border_style="cyan",
     ))
@@ -731,7 +844,7 @@ def run_offline():
 
 def main():
     parser = argparse.ArgumentParser(
-        description="EigenTrace v11 -- 20-Prompt RLHF Pressure Test"
+        description="EigenTrace v15 — 15-Layer Battery -- 20-Prompt RLHF Pressure Test"
     )
     parser.add_argument("--manual",   action="store_true", help="Paste your own responses")
     parser.add_argument("--offline",  action="store_true", help="Sample data, no API keys")
@@ -750,7 +863,7 @@ def main():
     logging.basicConfig(level=logging.WARNING)
 
     if args.list:
-        console.print("\n[bold]EigenTrace v11 -- The Battery[/bold]\n")
+        console.print("\n[bold]EigenTrace v15 — 15-Layer Battery -- The Battery[/bold]\n")
         cur = ""
         for e in BATTERY:
             if e["tag"] != cur:
