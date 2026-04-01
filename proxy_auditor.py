@@ -75,7 +75,7 @@ FEEDS = [
     {"url": "https://feeds.skynews.com/feeds/rss/world.xml",                    "cat": "war",       "pri": 1},
     {"url": "https://feeds.a.dj.com/rss/RSSWorldNews.xml",                      "cat": "war",       "pri": 1},
     {"url": "https://www.weather.gov/rss_page.php?site_name=nws",               "cat": "incidents", "pri": 1},
-    {"url": "https://www.reuters.com/rssFeed/businessNews",                     "cat": "markets",   "pri": 2},
+    {"url": "https://finance.yahoo.com/news/rssindex",                     "cat": "markets",   "pri": 2},
     {"url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",            "cat": "markets",   "pri": 2},
     {"url": "https://www.marketwatch.com/rss/topstories",                       "cat": "markets",   "pri": 2},
     {"url": "https://www.investing.com/rss/news_25.rss",                        "cat": "markets",   "pri": 2},
