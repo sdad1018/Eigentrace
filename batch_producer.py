@@ -289,6 +289,7 @@ def stage_1_fetch_and_score():
     log.info("═══ STAGE 1: RSS Fetch + Scoring ═══")
 
     import proxy_auditor as pa
+    from eigentrace_math import filter_void_candidates
 
 
 
@@ -365,6 +366,7 @@ def stage_2_big5_audit(stories):
     log.info("═══ STAGE 2: Big 5 API Calls ═══")
 
     import proxy_auditor as pa
+    from eigentrace_math import filter_void_candidates
 
 
 
@@ -886,6 +888,7 @@ def stage_4_generate_scripts(results):
 
 
     import proxy_auditor as pa
+    from eigentrace_math import filter_void_candidates
 
 
 
@@ -927,9 +930,12 @@ def stage_4_generate_scripts(results):
 
             void_concepts = _unpack(getattr(geo, "void_concepts", []))
 
-        void_words = void_concepts[:5]
+        try:
+            void_words = filter_void_candidates(story.title, void_concepts, top_k=15)
+        except Exception:
+            void_words = void_concepts[:15]
 
-        synthesis_words = void_concepts[:5]
+        synthesis_words = void_words[:5]  # top 5 of filtered set
 
         density = getattr(geo, "consensus_density", 0.0)
 
@@ -1446,6 +1452,7 @@ def stage_7_write_segments(segments, seen):
     log.info("═══ STAGE 7: Write Segments ═══")
 
     import proxy_auditor as pa
+    from eigentrace_math import filter_void_candidates
 
 
 
@@ -1648,6 +1655,7 @@ def stage_weasel_probe(results):
 
 
     import proxy_auditor as pa
+    from eigentrace_math import filter_void_candidates
 
     from proxy_auditor import _generate_sequential_perturbations
 
