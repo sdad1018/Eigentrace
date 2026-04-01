@@ -75,7 +75,7 @@ FEEDS = [
     {"url": "https://feeds.skynews.com/feeds/rss/world.xml",                    "cat": "war",       "pri": 1},
     {"url": "https://feeds.a.dj.com/rss/RSSWorldNews.xml",                      "cat": "war",       "pri": 1},
     {"url": "https://www.weather.gov/rss_page.php?site_name=nws",               "cat": "incidents", "pri": 1},
-    {"url": "https://feeds.a.dj.com/rss/RSSMarketsMain.xml",                   "cat": "markets",   "pri": 2},
+    {"url": "https://www.reuters.com/rssFeed/businessNews",                     "cat": "markets",   "pri": 2},
     {"url": "https://www.cnbc.com/id/100003114/device/rss/rss.html",            "cat": "markets",   "pri": 2},
     {"url": "https://www.marketwatch.com/rss/topstories",                       "cat": "markets",   "pri": 2},
     {"url": "https://www.investing.com/rss/news_25.rss",                        "cat": "markets",   "pri": 2},
@@ -192,7 +192,22 @@ def fetch_feed(feed: dict, timeout: int = 15) -> list:
 
     items = root.findall(".//item") or \
             root.findall(".//{http://www.w3.org/2005/Atom}entry")
+    from email.utils import parsedate_to_datetime
+    from datetime import datetime, timezone, timedelta
+    max_age = timedelta(hours=24)
+    now = datetime.now(timezone.utc)
+
     for item in items[:10]:
+        # Skip stale articles
+        _pub_el = item.find('pubDate')
+        if _pub_el is not None and _pub_el.text:
+            try:
+                _pub_dt = parsedate_to_datetime(_pub_el.text)
+                if now - _pub_dt > max_age:
+                    continue
+            except Exception:
+                pass
+
         def _t(tag):
             el = item.find(tag)
             return el.text.strip() if el is not None and el.text else ""
