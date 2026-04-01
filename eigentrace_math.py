@@ -364,6 +364,102 @@ def get_logprobs_from_ollama(
 # CLI TEST
 # ══════════════════════════════════════════════════════════════════════════════
 
+
+
+def filter_void_candidates(headline: str, candidates: list, top_k: int = 15) -> list:
+    """
+    Deterministic void filter. No LLM. Every step reproducible and inspectable.
+    
+    Filters:
+      1. Morphological — remove same-stem as headline words
+      2. Prefix artifacts — remove non-/un-/re- variants of headline stems
+      3. Cluster collapse — keep one representative per stem cluster
+      4. Minimum length — skip fragments < 4 chars
+      5. Frequency floor — skip words too rare to be meaningful (zipf < 1.5)
+      6. Frequency ceiling — skip words too common to be informative (zipf > 6.0)
+    
+    Args:
+        headline: story title
+        candidates: list of (word, score) tuples or plain strings
+        top_k: max words to return
+    
+    Returns:
+        list of filtered words (strings only)
+    """
+    from nltk.stem import PorterStemmer
+    
+    # Handle both (word, score) tuples and plain strings
+    words = []
+    for c in candidates:
+        if isinstance(c, (list, tuple)):
+            words.append(str(c[0]))
+        else:
+            words.append(str(c))
+    
+    stemmer = PorterStemmer()
+    
+    # Headline stems
+    hl_tokens = [w.lower() for w in headline.replace("'", " ").replace('"', ' ').split() if len(w) > 2]
+    hl_stems = set(stemmer.stem(t) for t in hl_tokens)
+    
+    # Prefix list for artifact detection
+    prefixes = ('non', 'un', 're', 'dis', 'mis', 'pre', 'post', 'anti', 'over', 'under')
+    
+    # Optional: wordfreq for frequency filtering
+    try:
+        from wordfreq import zipf_frequency
+        has_wf = True
+    except ImportError:
+        has_wf = False
+    
+    filtered = []
+    seen_stems = set()
+    
+    for word in words:
+        w_lower = word.lower().strip()
+        
+        # Skip empty or too short
+        if len(w_lower) < 4:
+            continue
+        
+        w_stem = stemmer.stem(w_lower)
+        
+        # 1. Morphological: skip same-stem as headline
+        if w_stem in hl_stems:
+            continue
+        
+        # 2. Prefix artifacts: skip prefix-variants of headline words
+        skip = False
+        for pfx in prefixes:
+            if w_lower.startswith(pfx) and len(w_lower) > len(pfx) + 2:
+                remainder = w_lower[len(pfx):]
+                if stemmer.stem(remainder) in hl_stems:
+                    skip = True
+                    break
+        if skip:
+            continue
+        
+        # 3. Cluster collapse: one representative per stem
+        if w_stem in seen_stems:
+            continue
+        
+        # 4. Frequency filter (if wordfreq available)
+        if has_wf:
+            zf = zipf_frequency(w_lower, 'en')
+            # Too rare (< 1.5) = obscure junk, too common (> 6.0) = stopword-adjacent
+            if zf < 1.5 or zf > 6.0:
+                continue
+        
+        # Passed all filters
+        seen_stems.add(w_stem)
+        filtered.append(word)
+        
+        if len(filtered) >= top_k:
+            break
+    
+    return filtered
+
+
 def _test_all():
     """Test all three modules with mock data."""
     import sys
