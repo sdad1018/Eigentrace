@@ -1022,16 +1022,11 @@ def stage_4_generate_scripts(results):
             "Do NOT use any numbers. Respond only in English."
         )
         _dir_usr = (
-            f"Story: {story.title}
-"
-            f"State: {state_flag}
-"
-            f"Void words (what no model said): {void_str}
-"
-            f"Logos concepts: {logos_str}
-"
-            f"Killshots: {len(killshots)} omitted claims
-"
+            f"Story: {story.title}. "
+            f"State: {state_flag}. "
+            f"Void words: {void_str}. "
+            f"Logos concepts: {logos_str}. "
+            f"Killshots: {len(killshots)} omitted claims. "
             f"Null space claim: {ns_claims[0]['claim'] if ns_claims else 'none'}"
         )
         director_state = _call_host(_dir_sys, _dir_usr)
@@ -1052,8 +1047,7 @@ def stage_4_generate_scripts(results):
         # ── BEAT 2: CONSENSUS (MISTRAL — no numbers) ─────────────────
         consensus_sys = (
             "You are a broadcast anchor summarizing what five AI models agreed on. "
-            f"Director's guidance: {director_state}
-" 
+            f"Director guidance: {director_state}. "
             "Do NOT use any numbers, statistics, or percentages. "
             "Do NOT name individual models. "
             "Summarize the shared narrative in 2 vivid sentences. "
@@ -1073,8 +1067,7 @@ def stage_4_generate_scripts(results):
         # ── BEAT 4: VOID + KILLSHOTS (MISTRAL — no numbers) ─────────
         void_sys = (
             "You are explaining what AI models avoided saying about a news story. "
-            f"Director's guidance: {director_state}
-" 
+            f"Director guidance: {director_state}. "
             "Do NOT use any numbers, statistics, or percentages. "
             "You have void words and killshot claims. Explain in 2-3 sentences "
             "why these specific omissions matter for understanding this story. "
@@ -1097,8 +1090,7 @@ def stage_4_generate_scripts(results):
         # ── BEAT 5: LOGOS RECONSTRUCTION (MISTRAL — no numbers) ──────
         logos_sys = (
             "You are reconstructing what AI models would have said without alignment guardrails. "
-            f"Director's guidance: {director_state}
-" 
+            f"Director guidance: {director_state}. "
             "Do NOT use any numbers, statistics, or percentages. "
             "Start with exactly: Before alignment shaped these responses, the natural completion was: "
             "Then write 2-3 grammatically correct sentences incorporating the void words "
@@ -1202,8 +1194,7 @@ def stage_4_generate_scripts(results):
             _hottest = max(_avix_all, key=_avix_all.get) if _avix_all else "Unknown"
             commentary_sys = (
                 "You are providing analytical context connecting this story to broader patterns. "
-            f"Director's guidance: {director_state}
-" 
+            f"Director guidance: {director_state}. "
                 "Do NOT invent any numbers or statistics. Do NOT use percentages. "
                 "Use ONLY the words and model names I provide. "
                 "Write 2 sentences connecting this story to the weekly void patterns. "
