@@ -103,6 +103,7 @@ class Story:
     category:   str
     priority:   int
     published:  str
+    body:       str = ""
     importance: float = 0.0
     directness: float = 0.0
 
@@ -225,9 +226,11 @@ def fetch_feed(feed: dict, timeout: int = 15) -> list:
             continue
 
         summary = re.sub(r"<[^>]+>", "", summary)[:500]
+        _body = _scrape_body(link)
         stories.append(Story(
             guid=guid, title=title, summary=summary,
             url=link, category=feed["cat"], priority=feed["pri"],
+            body=_body,
             published=pub,
         ))
     return stories
@@ -285,6 +288,30 @@ def fast_importance(title: str, category: str, priority: int) -> float:
     return base * category_bonus * priority_bonus
 
 # ── LLM callers ───────────────────────────────────────────────────────────────
+
+
+
+def _scrape_body(url: str, timeout: int = 10) -> str:
+    """Fetch article body text. Returns first 1500 chars of cleaned text."""
+    if not url:
+        return ""
+    try:
+        r = requests.get(url, timeout=timeout,
+                         headers={"User-Agent": "Mozilla/5.0 (compatible)"})
+        r.raise_for_status()
+        import re as _re
+        # Strip HTML tags
+        text = _re.sub(r'<script[^>]*>.*?</script>', '', r.text, flags=_re.DOTALL)
+        text = _re.sub(r'<style[^>]*>.*?</style>', '', text, flags=_re.DOTALL)
+        text = _re.sub(r'<[^>]+>', ' ', text)
+        # Clean whitespace
+        text = _re.sub(r'\s+', ' ', text).strip()
+        # Skip if mostly boilerplate (too short)
+        if len(text) < 200:
+            return ""
+        return text[:1500]
+    except Exception:
+        return ""
 
 def _prompt_for_story(story: Story) -> str:
     return (
