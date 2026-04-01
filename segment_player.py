@@ -263,7 +263,6 @@ def play_segment(seg_path: Path):
             if m:
                 syn_words = [w.strip() for w in m.group(1).split("|")]
 
-    update_ticker(headline, syn_words)
 
     tmp_dir = seg_path.parent / "audio"
     tmp_dir.mkdir(exist_ok=True)
@@ -300,6 +299,7 @@ def play_segment(seg_path: Path):
         beat_wavs.append(str(wav))
         beat_speakers.append(speaker)
 
+    update_ticker(headline, syn_words)
     # Update current_frame for master.sh (copy, not symlink, to avoid Bus error)
     if image and Path(image).exists():
         import shutil
