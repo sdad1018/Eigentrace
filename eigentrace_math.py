@@ -429,6 +429,7 @@ def filter_void_candidates(headline: str, candidates: list, top_k: int = 15) -> 
             continue
         
         # 2. Prefix artifacts: skip prefix-variants of headline words
+        #    AND skip words where 3+ candidates share the same prefix pattern
         skip = False
         for pfx in prefixes:
             if w_lower.startswith(pfx) and len(w_lower) > len(pfx) + 2:
@@ -436,11 +437,17 @@ def filter_void_candidates(headline: str, candidates: list, top_k: int = 15) -> 
                 if stemmer.stem(remainder) in hl_stems:
                     skip = True
                     break
+                # Also count how many candidates share this prefix
+                pfx_count = sum(1 for cw in words if cw.lower().startswith(pfx))
+                if pfx_count >= 3:
+                    skip = True
+                    break
         if skip:
             continue
         
-        # 3. Cluster collapse: one representative per stem
-        if w_stem in seen_stems:
+        # 3. Cluster collapse: one representative per stem OR first-4-chars
+        w_prefix4 = w_lower[:4]
+        if w_stem in seen_stems or w_prefix4 in seen_stems:
             continue
         
         # 4. Frequency filter (if wordfreq available)
@@ -452,6 +459,7 @@ def filter_void_candidates(headline: str, candidates: list, top_k: int = 15) -> 
         
         # Passed all filters
         seen_stems.add(w_stem)
+        seen_stems.add(w_prefix4)
         filtered.append(word)
         
         if len(filtered) >= top_k:
