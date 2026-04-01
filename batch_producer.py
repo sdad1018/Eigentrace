@@ -1013,22 +1013,13 @@ def stage_4_generate_scripts(results):
 
 
         # ── DIRECTOR (one Mistral call sets narrative arc) ────────────
-        _dir_sys = (
-            "You are the Director of a news broadcast called EigenTrace. "
+        _dir_sys = ("You are the Director of a news broadcast called EigenTrace. "
             "Given raw analysis data, write exactly three lines. "
             "THESIS: one sentence stating the core finding. "
             "TONE: one word (clinical, urgent, sardonic, measured, alarmed, or defiant). "
             "REVELATION: the single most important thing the audience must hear. "
-            "Do NOT use any numbers. Respond only in English."
-        )
-        _dir_usr = (
-            f"Story: {story.title}. "
-            f"State: {state_flag}. "
-            f"Void words: {void_str}. "
-            f"Logos concepts: {logos_str}. "
-            f"Killshots: {len(killshots)} omitted claims. "
-            f"Null space claim: {ns_claims[0]['claim'] if ns_claims else 'none'}"
-        )
+            "Do NOT use any numbers. Respond only in English.")
+        _dir_usr = "Story: " + story.title + ". State: " + state_flag + ". Void: " + void_str + ". Logos: " + logos_str + ". Killshots: " + str(len(killshots)) + ". Null claim: " + (ns_claims[0]["claim"] if ns_claims else "none")
         director_state = _call_host(_dir_sys, _dir_usr)
         log.info(f"  Director: {director_state[:80]}...")
 
