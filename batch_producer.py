@@ -1288,6 +1288,7 @@ def stage_4_generate_scripts(results):
                 "void_words": void_words,
 
                 "model_vix": {a.name: a.eigen_vix for a in active},
+                "model_responses": {a.name: a.text[:500] for a in active if a.text},
 
                 "logos_words": logos_words,
 
