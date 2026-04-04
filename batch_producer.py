@@ -1047,6 +1047,7 @@ def stage_4_generate_scripts(results):
                 "model_responses": {a.name: a.text[:500] for a in active if a.text},
                 "claim_killshots": [{"claim": k["claim"], "salience": k["salience"], "omitted_by": k["omitted_by"]} for k in killshots[:3]],
                 "null_space_claims": ns_claims[:2],
+                "compression": r.get("compression", {}),
             },
         }
         _audit = _get_audit_context()
