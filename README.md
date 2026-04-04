@@ -157,9 +157,9 @@ When independent mathematical methods converge on the same suppressed concept, t
 
 ---
 
-## The 12-Beat Broadcast
+## The 20-Beat Broadcast
 
-Every story airs as a 12-beat segment (~3.5 minutes):
+Every story airs as a 20-beat segment (~5.9 minutes):
 
 | Beat | Source | Content |
 |------|--------|---------|
