@@ -138,7 +138,7 @@ ChatGPT argued on air: "death toll and body count are central to the story's hum
 
 | # | Layer | What it measures |
 |---|-------|-----------------|
-| 13 | Verb Downgrade | "perpetrated" becomes "identified" (semantic softening) |
+| 13 | Verb Drift | Zipf frequency drift: source verbs vs model verbs (no word lists) |
 | 14 | Entity Abstraction | "Michael Aquino" becomes "an army officer" (identity erasure) |
 | 15 | Attribution Buffering | Models insert "alleged/reportedly" not in source |
 

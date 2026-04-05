@@ -487,22 +487,32 @@ HEDGE_DISTANCING = frozenset([
     "questionable", "controversial", "disputed", "debated",
 ])
 
-# --- Strong verb lexicon (direct, assertive) ---
-STRONG_VERBS = frozenset([
-    "killed", "murdered", "attacked", "assaulted", "raped", "abused",
-    "stole", "looted", "destroyed", "bombed", "invaded", "occupied",
-    "perpetrated", "committed", "executed", "tortured", "enslaved",
-    "defrauded", "embezzled", "bribed", "extorted", "trafficked",
-    "massacred", "slaughtered", "expelled", "overthrew", "seized",
-])
+# --- Verb drift: no curated lists, pure frequency math ---
+_AUX_VERBS = frozenset(["is", "am", "are", "was", "were", "be", "been", "being",
+    "has", "have", "had", "having", "do", "does", "did", "done",
+    "will", "would", "shall", "should", "may", "might", "can", "could",
+    "must", "need", "dare", "ought", "get", "got", "gets", "getting"])
 
-# --- Weak verb replacements (softened, procedural) ---
-WEAK_VERBS = frozenset([
-    "identified", "named", "linked", "connected", "associated",
-    "involved", "related", "implicated", "mentioned", "referenced",
-    "addressed", "discussed", "noted", "raised", "considered",
-    "investigated", "examined", "reviewed", "assessed", "evaluated",
-])
+
+def _extract_content_verbs(text_str: str) -> list:
+    """Extract non-auxiliary verbs using POS tagging."""
+    import nltk
+    try:
+        tokens = nltk.word_tokenize(text_str)
+        tagged = nltk.pos_tag(tokens)
+        return [w.lower() for w, t in tagged
+                if t.startswith('VB') and len(w) > 2
+                and w.lower() not in _AUX_VERBS]
+    except Exception:
+        return []
+
+
+def _mean_zipf(verbs: list) -> float:
+    """Mean zipf frequency of a verb list."""
+    from wordfreq import zipf_frequency
+    if not verbs:
+        return 0.0
+    return sum(zipf_frequency(v, 'en') for v in verbs) / len(verbs)
 
 
 def score_language_compression(
@@ -512,55 +522,53 @@ def score_language_compression(
 ) -> dict:
     """
     Measure how much models soften/reshape source language.
-    Deterministic. No LLM. Fully reproducible.
+    Deterministic. No LLM. No curated word lists. Fully reproducible.
+
+    Layer 13: Verb Drift — zipf frequency drift between source and model verbs.
+              Positive = models used more generic/common verbs = softening.
+    Layer 14: Entity Abstraction — named entity retention rate.
+    Layer 15: Attribution Buffering — typed hedge insertion count.
 
     Args:
         source_text: original article or headline text
         model_responses: list of model response strings
-        embed_fn: optional embedding function for semantic drift
+        embed_fn: optional (unused, kept for API compat)
 
     Returns:
-        dict with:
-            verb_downgrade: 0-1 score (1 = maximum softening)
-            entity_retention: 0-1 score (1 = all entities preserved)
-            entity_abstraction_rate: 0-1 (1 = all entities generalized)
-            attribution_buffer: dict with typed counts
-            compression_score: 0-1 overall (1 = maximum compression)
-            details: per-model breakdown
+        dict with verb_downgrade, entity_retention, attribution_buffer,
+        compression_score, and per-model details.
     """
     import re
 
     source_lower = source_text.lower()
     source_words = set(re.findall(r'\b\w+\b', source_lower))
 
-    # ── Layer 13: Verb Downgrade ─────────────────────────────────────
-    # Count strong verbs in source vs models
-    source_strong = source_words & STRONG_VERBS
-    source_weak = source_words & WEAK_VERBS
+    # ── Layer 13: Verb Drift (zipf frequency) ────────────────────────
+    source_verbs = _extract_content_verbs(source_text)
+    source_verb_zipf = _mean_zipf(source_verbs)
 
     model_details = []
     for resp in model_responses:
         resp_lower = resp.lower()
         resp_words = set(re.findall(r'\b\w+\b', resp_lower))
 
-        # Strong verbs preserved
-        strong_kept = resp_words & source_strong
-        # Weak verbs introduced (not in source)
-        weak_added = (resp_words & WEAK_VERBS) - source_words
+        # Verb drift
+        resp_verbs = _extract_content_verbs(resp)
+        resp_verb_zipf = _mean_zipf(resp_verbs)
 
-        # Verb downgrade: ratio of weak introductions to total verb activity
-        total_verb_activity = len(strong_kept) + len(weak_added)
-        if total_verb_activity > 0:
-            vd = len(weak_added) / total_verb_activity
-        elif source_strong:
-            vd = 1.0  # source had strong verbs, model used none
+        if source_verbs and resp_verbs:
+            drift = resp_verb_zipf - source_verb_zipf
         else:
-            vd = 0.0
+            drift = 0.0
+
+        # Normalize drift to 0-1 scale: drift of +2.0 or more = 1.0
+        vd_normalized = min(max(drift / 2.0, 0.0), 1.0)
 
         model_details.append({
-            "strong_kept": list(strong_kept),
-            "weak_added": list(weak_added),
-            "verb_downgrade": round(vd, 3),
+            "source_verbs": source_verbs[:5],
+            "response_verbs": resp_verbs[:5],
+            "verb_drift_raw": round(drift, 3),
+            "verb_downgrade": round(vd_normalized, 3),
         })
 
     avg_verb_downgrade = sum(d["verb_downgrade"] for d in model_details) / max(len(model_details), 1)
