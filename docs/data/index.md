@@ -31,7 +31,7 @@ Each JSON file contains:
 - dual_confirmed, triple_confirmed — multi-channel convergence
 - compression — language compression scoring:
   - compression_score — overall 0-1 (1 = maximum reshaping)
-  - verb_downgrade — strong verb replacement ratio
+  - verb_downgrade — zipf frequency drift (positive = softening)
   - entity_retention — named entity survival rate
   - attribution_buffer — typed hedge insertions
 - beats[] — full broadcast transcript

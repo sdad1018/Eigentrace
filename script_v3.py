@@ -73,7 +73,7 @@ MATH_EXPLAINERS = [
     ("the Wild Weasel probe", "Named after Air Force pilots who flew into enemy radar to find defenses. We take the void words and feed them back to each model at increasing pressure. The cosine distance between each step tells us exactly where each model's alignment boundary breaks."),
     ("multi-channel confirmation", "EigenTrace uses three independent mathematical methods to find suppressed concepts. The lexical void uses set theory. Logos uses gradient descent. The SVD null space uses spectral decomposition. When all three converge on the same word, the probability of coincidence is vanishingly small."),
     ("atomic claim extraction", "We break the original article into its smallest factual pieces. Then we check each claim against every model's response. A high-importance claim that most models skip is called a killshot."),
-    ("verb downgrade scoring", "We compare the verbs in the source article against the verbs each model used. When the source says perpetrated and the model says identified, that is a measurable semantic downgrade. We score the ratio of strong verbs lost to weak verbs inserted."),
+    ("verb drift scoring", "We extract every verb from the source article and every verb from each model response using part-of-speech tagging. Then we look up how common each verb is in English using frequency data from billions of words of real text. If the source says slashed and the model says reduced, that is a measurable drift toward more generic language. No curated word lists. Just math."),
     ("entity abstraction", "We count the named entities in the source, people, places, organizations, and check how many survive in each model's response. When a model replaces a person's name with a generic title like an army officer, that is entity abstraction. We measure the retention rate."),
     ("attribution buffering", "We count words like alleged, reportedly, and according to that appear in model responses but do not appear in the source article. These are hedge insertions. The model is adding uncertainty that the source did not express. We categorize them into three types: epistemic, attribution, and distancing."),
 ]
@@ -303,7 +303,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             "speaker": "Host",
             "text": (
                 f"Language compression report. "
-                f"Verb downgrade: {comp.get('verb_downgrade', 0):.2f}. "
+                f"Verb drift: {comp.get('verb_downgrade', 0):.2f}. "
                 f"Entity retention: {comp.get('entity_retention', 0):.2f}. "
                 f"Attribution buffers inserted: {comp.get('attribution_buffer', {}).get('total', 0)}. "
                 f"Overall compression score: {comp.get('compression_score', 0):.2f}."
