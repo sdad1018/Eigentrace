@@ -87,6 +87,12 @@ def export_daily_json(date=None):
             "dual_confirmed": list(set(w.lower() for w in void_words[:10]) &
                                    set(w.lower() for w in logos_words[:10])),
 
+            # Language compression (Layers 13-15)
+            "compression": attr.get("compression", {}),
+            # Source-anchored void
+            "source_void": attr.get("source_void", {}),
+            # Void context (signal type per word)
+            "void_context": attr.get("void_context", []),
             # Beat texts (for reconstruction research)
             "beats": [{
                 "phase": b.get("phase", ""),
