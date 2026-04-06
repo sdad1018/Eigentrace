@@ -1083,6 +1083,9 @@ def stage_4_generate_scripts(results):
                 "state_flag": state_flag,
                 "void_words": void_words,
                 "logos_words": logos_words,
+                "compression": r.get("compression", {}),
+                "source_void": r.get("source_void", {}),
+                "void_context": r.get("void_context", []),
                 "model_vix": {a.name: a.eigen_vix for a in active},
                 "model_responses": {a.name: a.text[:500] for a in active if a.text},
                 "claim_killshots": [{"claim": k["claim"], "salience": k["salience"], "omitted_by": k["omitted_by"]} for k in killshots[:3]],
@@ -1128,6 +1131,9 @@ def stage_4_generate_scripts(results):
                 "model_responses": {a.name: a.text[:500] for a in active if a.text},
 
                 "logos_words": logos_words,
+                "compression": r.get("compression", {}),
+                "source_void": r.get("source_void", {}),
+                "void_context": r.get("void_context", []),
 
                 "claim_killshots": [{"claim": k["claim"], "salience": k["salience"], "omitted_by": k["omitted_by"]} for k in r.get("claim_killshots", [])[:3]],
                 "null_space_claims": r.get("null_space_claims", [])[:2],
