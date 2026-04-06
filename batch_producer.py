@@ -701,6 +701,29 @@ def stage_3_geometric(results):
 
 
 
+        # ── Source-Anchored Void + Frequency Context ─────────────────
+        try:
+            from eigentrace_math import source_anchored_void, score_void_context, update_void_frequency, load_void_frequency
+            _source_text = story.title + ". " + (story.summary or "")
+            if hasattr(story, "body") and story.body:
+                _source_text += " " + story.body[:1500]
+            _sa = source_anchored_void(_source_text, active_texts)
+            r["source_void"] = _sa
+            _vf = load_void_frequency()
+            _ctx = score_void_context(void_words, story.category, _source_text, _vf)
+            r["void_context"] = _ctx
+            update_void_frequency(void_words, story.category, _vf)
+            from eigentrace_math import save_void_frequency
+            save_void_frequency(_vf)
+            _hi = sum(1 for v in _ctx if v["signal_type"] == "HIGH_SALIENCE")
+            _art = sum(1 for v in _ctx if v["signal_type"] == "GENERIC_ARTIFACT")
+            log.info(f"  Source void: {_sa['absent_count']} absent words, {len(_sa['absent_phrases'])} phrases")
+            log.info(f"  Void context: {_hi} high-salience, {_art} artifacts")
+        except Exception as _sve:
+            log.warning(f"  Source void failed: {_sve}")
+            r["source_void"] = {}
+            r["void_context"] = []
+
         # ── Language Compression (Layers 13-15) ────────────────────────
         try:
             from eigentrace_math import score_language_compression
@@ -1064,6 +1087,8 @@ def stage_4_generate_scripts(results):
                 "claim_killshots": [{"claim": k["claim"], "salience": k["salience"], "omitted_by": k["omitted_by"]} for k in killshots[:3]],
                 "null_space_claims": ns_claims[:2],
                 "compression": r.get("compression", {}),
+                "source_void": r.get("source_void", {}),
+                "void_context": r.get("void_context", []),
             },
         }
         _audit = _get_audit_context()
