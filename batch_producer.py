@@ -710,9 +710,10 @@ def stage_3_geometric(results):
             _sa = source_anchored_void(_source_text, active_texts)
             r["source_void"] = _sa
             _vf = load_void_frequency()
-            _ctx = score_void_context(void_words, story.category, _source_text, _vf)
+            _void_list = [w for w, _ in getattr(geo, "void_concepts", [])[:15]] if geo else []
+            _ctx = score_void_context(_void_list, story.category, _source_text, _vf)
             r["void_context"] = _ctx
-            update_void_frequency(void_words, story.category, _vf)
+            update_void_frequency(_void_list, story.category, _vf)
             from eigentrace_math import save_void_frequency
             save_void_frequency(_vf)
             _hi = sum(1 for v in _ctx if v["signal_type"] == "HIGH_SALIENCE")
