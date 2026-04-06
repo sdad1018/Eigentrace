@@ -211,13 +211,28 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     })
 
     # ── 6. VOID REVEAL (Template) ────────────────────────────────────
+    _void_ctx = attr.get("void_context", [])
+    _source_void = attr.get("source_void", {})
+    _hi_sal = [v["word"] for v in _void_ctx if v.get("signal_type") == "HIGH_SALIENCE"]
+    _emb_sig = [v["word"] for v in _void_ctx if v.get("signal_type") == "EMBEDDING_SIGNAL"]
+    _artifacts = [v["word"] for v in _void_ctx if v.get("signal_type") == "GENERIC_ARTIFACT"]
+    _absent_src = _source_void.get("absent_words", [])[:5]
+
+    _void_text = "The lexical void. "
+    if _absent_src:
+        _void_text += f"Source-anchored: these words appear in the original article but no model used them: {', '.join(_absent_src[:5])}. "
+    if _hi_sal:
+        _void_text += f"High salience: {', '.join(_hi_sal[:3])}. "
+    if _emb_sig:
+        _void_text += f"Embedding signal: {', '.join(_emb_sig[:3])}. "
+    if _artifacts:
+        _void_text += f"Note: {', '.join(_artifacts[:2])} appear in over ten percent of all stories and are likely embedding artifacts. "
+    if not _void_ctx and not _absent_src:
+        _void_text += f"These words were absent from all five responses: {', '.join(void_words[:8])}."
+
     script.append({
         "speaker": "Host",
-        "text": (
-            f"The lexical void. These words were absent from all five responses: "
-            f"{', '.join(void_words[:8])}. "
-            f"Each word is topically relevant to the headline but no model used it."
-        ),
+        "text": _void_text,
         "phase": "beat_06_void_reveal",
     })
 
