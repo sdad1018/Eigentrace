@@ -14,7 +14,10 @@ Author: remvelchio
 """
 
 from __future__ import annotations
+import os
 import numpy as np
+import re
+import json
 import logging
 from collections import defaultdict
 
@@ -659,6 +662,197 @@ def score_language_compression(
         "compression_score": round(compression_score, 3),
         "details": model_details,
     }
+
+
+
+
+# ═══════════════════════════════════════════════════════════════════════
+# SOURCE-ANCHORED VOID + FREQUENCY CONTEXT
+# ═══════════════════════════════════════════════════════════════════════
+
+from pathlib import Path as _Path
+_VOID_FREQ_FILE = _Path(os.path.dirname(__file__)) / "void_frequency.json"
+_STOPWORDS = frozenset([
+    "the", "and", "for", "are", "but", "not", "you", "all", "can",
+    "her", "was", "one", "our", "out", "his", "has", "its", "they",
+    "been", "have", "from", "this", "that", "with", "what", "when",
+    "where", "which", "their", "there", "about", "would", "could",
+    "should", "these", "those", "after", "before", "other", "than",
+    "then", "them", "into", "over", "such", "also", "more", "some",
+    "very", "just", "will", "being", "each", "make", "like", "long",
+    "many", "much", "even", "only", "most", "made", "well", "back",
+    "said", "says", "told", "according", "also", "however", "while",
+])
+
+
+def source_anchored_void(
+    source_text: str,
+    model_responses: list[str],
+    min_word_len: int = 4,
+) -> dict:
+    """
+    Channel A: Find words/phrases in the source that NO model used.
+    
+    This is the hardest signal — directly observable, no embeddings.
+    
+    Args:
+        source_text: headline + summary + article body
+        model_responses: list of model response strings
+    
+    Returns:
+        dict with:
+            absent_words: words in source absent from ALL models
+            absent_phrases: 2-3 word phrases in source absent from ALL models
+            coverage_per_model: dict of model index -> set of source words used
+    """
+    source_lower = source_text.lower()
+    
+    # Extract source words
+    source_words = set(
+        w for w in re.findall(r'\b[a-z]+\b', source_lower)
+        if len(w) >= min_word_len and w not in _STOPWORDS
+    )
+    
+    # Extract source bigrams and trigrams
+    source_tokens = re.findall(r'\b[a-z]+\b', source_lower)
+    source_bigrams = set()
+    source_trigrams = set()
+    for i in range(len(source_tokens) - 1):
+        if source_tokens[i] not in _STOPWORDS and source_tokens[i+1] not in _STOPWORDS:
+            if len(source_tokens[i]) >= 3 and len(source_tokens[i+1]) >= 3:
+                source_bigrams.add(f"{source_tokens[i]} {source_tokens[i+1]}")
+    for i in range(len(source_tokens) - 2):
+        non_stop = [t for t in source_tokens[i:i+3] if t not in _STOPWORDS]
+        if len(non_stop) >= 2:
+            phrase = " ".join(source_tokens[i:i+3])
+            if len(phrase) >= 8:
+                source_trigrams.add(phrase)
+    
+    # Check each model's coverage
+    all_model_words = set()
+    coverage_per_model = {}
+    
+    for i, resp in enumerate(model_responses):
+        resp_lower = resp.lower()
+        resp_words = set(re.findall(r'\b[a-z]+\b', resp_lower))
+        covered = source_words & resp_words
+        coverage_per_model[i] = covered
+        all_model_words |= resp_words
+    
+    # Source words absent from ALL models
+    absent_words = sorted(source_words - all_model_words)
+    
+    # Source phrases absent from all models
+    absent_phrases = []
+    for phrase in sorted(source_bigrams | source_trigrams):
+        if not any(phrase in resp.lower() for resp in model_responses):
+            # Also check if individual words appear together nearby
+            absent_phrases.append(phrase)
+    
+    return {
+        "absent_words": absent_words,
+        "absent_phrases": absent_phrases[:20],
+        "source_word_count": len(source_words),
+        "absent_count": len(absent_words),
+        "absent_ratio": round(len(absent_words) / max(len(source_words), 1), 3),
+    }
+
+
+def load_void_frequency() -> dict:
+    """Load global void frequency from disk."""
+    try:
+        return json.loads(_VOID_FREQ_FILE.read_text())
+    except Exception:
+        return {"global": {}, "by_category": {}, "total_stories": 0}
+
+
+def save_void_frequency(freq: dict):
+    """Save global void frequency to disk."""
+    _VOID_FREQ_FILE.write_text(json.dumps(freq, indent=2))
+
+
+def update_void_frequency(
+    void_words: list[str],
+    category: str,
+    freq: dict = None,
+) -> dict:
+    """
+    Channel B+C: Update global and per-category void frequency.
+    
+    Call after each story to build the frequency distribution.
+    """
+    if freq is None:
+        freq = load_void_frequency()
+    
+    freq["total_stories"] = freq.get("total_stories", 0) + 1
+    
+    g = freq.setdefault("global", {})
+    c = freq.setdefault("by_category", {}).setdefault(category, {})
+    cat_totals = freq.setdefault("category_totals", {})
+    cat_totals[category] = cat_totals.get(category, 0) + 1
+    
+    for w in void_words:
+        w_lower = w.lower()
+        g[w_lower] = g.get(w_lower, 0) + 1
+        c[w_lower] = c.get(w_lower, 0) + 1
+    
+    return freq
+
+
+def score_void_context(
+    void_words: list[str],
+    category: str,
+    source_text: str = "",
+    freq: dict = None,
+) -> list[dict]:
+    """
+    Score each void word with full context:
+      - source_present: was this word in the actual source text?
+      - global_freq: % of all stories this word appears in void
+      - category_freq: % of same-category stories
+      - signal_type: HIGH_SALIENCE / GENERIC_ARTIFACT / POSSIBLE_SIGNAL
+    
+    No filtering. Just evidence.
+    """
+    if freq is None:
+        freq = load_void_frequency()
+    
+    total = max(freq.get("total_stories", 1), 1)
+    cat_total = max(freq.get("category_totals", {}).get(category, 1), 1)
+    g = freq.get("global", {})
+    c = freq.get("by_category", {}).get(category, {})
+    source_lower = source_text.lower()
+    
+    results = []
+    for w in void_words:
+        w_lower = w.lower()
+        
+        in_source = w_lower in source_lower
+        global_pct = round(g.get(w_lower, 0) / total * 100, 1)
+        cat_pct = round(c.get(w_lower, 0) / cat_total * 100, 1)
+        
+        # Classify
+        if in_source and global_pct < 10:
+            signal = "HIGH_SALIENCE"
+        elif in_source and global_pct < 30:
+            signal = "POSSIBLE_SIGNAL"
+        elif global_pct >= 30:
+            signal = "GENERIC_ARTIFACT"
+        elif not in_source and global_pct < 10:
+            signal = "EMBEDDING_SIGNAL"
+        else:
+            signal = "POSSIBLE_SIGNAL"
+        
+        results.append({
+            "word": w,
+            "source_present": in_source,
+            "global_freq_pct": global_pct,
+            "category_freq_pct": cat_pct,
+            "signal_type": signal,
+        })
+    
+    return results
+
 
 
 def _test_all():

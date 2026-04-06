@@ -701,6 +701,22 @@ def stage_3_geometric(results):
 
 
 
+        # ── Language Compression (Layers 13-15) ────────────────────────
+        try:
+            from eigentrace_math import score_language_compression
+            _source = story.title + ". " + (story.summary or "")
+            if hasattr(story, "body") and story.body:
+                _source += " " + story.body[:1000]
+            _comp = score_language_compression(_source, active_texts)
+            r["compression"] = _comp
+            log.info(f"  Compression: {_comp['compression_score']:.3f} "
+                     f"verb={_comp['verb_downgrade']:.3f} "
+                     f"entity={_comp['entity_retention']:.3f} "
+                     f"hedges={_comp['attribution_buffer']['total']}")
+        except Exception as _ce:
+            log.warning(f"  Compression scoring failed: {_ce}")
+            r["compression"] = {}
+
         # Log
 
         vix_str = " ".join(f"{n}={v:.1f}" for n, v in vix_scores)
