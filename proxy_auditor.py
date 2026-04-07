@@ -352,7 +352,7 @@ def call_anthropic(prompt: str) -> tuple:
             headers={"x-api-key": key,
                      "anthropic-version": "2023-06-01",
                      "content-type": "application/json"},
-            json={"model": ANTHROPIC_MODEL, "max_tokens": 220,
+            json={"model": ANTHROPIC_MODEL, "max_tokens": 350,
                   "messages": [{"role": "user", "content": prompt}]},
             timeout=30,
         )
