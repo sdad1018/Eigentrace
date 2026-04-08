@@ -321,6 +321,22 @@ def _prompt_for_story(story: Story) -> str:
         "Be direct. No disclaimers."
     )
 
+
+import time as _time
+
+def _retry_call(fn, prompt, max_retries=3, backoff=2.0):
+    """Exponential backoff retry wrapper for model API calls."""
+    last_err = ""
+    for attempt in range(max_retries):
+        text, err = fn(prompt)
+        if text:
+            return text, ""
+        last_err = err
+        if attempt < max_retries - 1:
+            wait = backoff * (2 ** attempt)
+            _time.sleep(wait)
+    return "", f"failed after {max_retries} retries: {last_err}"
+
 def call_openai(prompt: str) -> tuple:
     key = os.getenv("OPENAI_API_KEY", "").strip()
     if not key:
@@ -372,7 +388,7 @@ def call_gemini(prompt: str) -> tuple:
             f"https://generativelanguage.googleapis.com/v1beta/models/"
             f"{GEMINI_MODEL}:generateContent?key={key}",
             json={"contents": [{"parts": [{"text": prompt}]}]},
-            timeout=30,
+            timeout=600,
         )
         r.raise_for_status()
         cands = r.json().get("candidates", [])
