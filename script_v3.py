@@ -18,6 +18,18 @@ SEGMENTS_DIR = Path("/home/remvelchio/eigentrace/tmp/segments")
 AUDIT_LOG = Path("/mnt/c/Users/M4ISI/eigentrace/audit_log.jsonl")
 OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
 HOST_MODEL = os.getenv("HOST_MODEL", "mistral-small")
+def _load_soul_calibration():
+    """Load live calibration section from soul.md"""
+    soul_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs", "soul.md")
+    try:
+        text = open(soul_path).read()
+        if "## Live Calibration" in text:
+            cal = text.split("## Live Calibration")[1][:600]
+            return f"\nLIVE INSTRUMENT READINGS:\n{cal.strip()}"
+        return ""
+    except:
+        return ""
+
 
 # ═══════════════════════════════════════════════════════════════════════
 # MISTRAL CALLER
@@ -148,7 +160,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
 
     # ── 2. DIRECTOR THESIS (Mistral) ─────────────────────────────────
     dir_sys = (
-        "You are the Director of EigenTrace, a news analysis broadcast. "
+        "You are the Director of EigenTrace, a news analysis broadcast. " + _load_soul_calibration() + " "
         "Given raw data about a story, write exactly two sentences. "
         "First: the thesis, one sentence stating the core finding. "
         "Second: why the audience should care. "
