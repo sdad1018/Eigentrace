@@ -292,24 +292,19 @@ def fast_importance(title: str, category: str, priority: int) -> float:
 
 
 def _scrape_body(url: str, timeout: int = 10) -> str:
-    """Fetch article body text. Returns first 1500 chars of cleaned text."""
+    """Fetch article body text using trafilatura for clean extraction."""
     if not url:
         return ""
     try:
-        r = requests.get(url, timeout=timeout,
-                         headers={"User-Agent": "Mozilla/5.0 (compatible)"})
-        r.raise_for_status()
-        import re as _re
-        # Strip HTML tags
-        text = _re.sub(r'<script[^>]*>.*?</script>', '', r.text, flags=_re.DOTALL)
-        text = _re.sub(r'<style[^>]*>.*?</style>', '', text, flags=_re.DOTALL)
-        text = _re.sub(r'<[^>]+>', ' ', text)
-        # Clean whitespace
-        text = _re.sub(r'\s+', ' ', text).strip()
-        # Skip if mostly boilerplate (too short)
-        if len(text) < 200:
+        import trafilatura
+        downloaded = trafilatura.fetch_url(url)
+        if not downloaded:
             return ""
-        return text[:1500]
+        text = trafilatura.extract(downloaded, include_comments=False,
+                                   include_tables=False, no_fallback=False)
+        if not text or len(text) < 100:
+            return ""
+        return text[:2000]
     except Exception:
         return ""
 
