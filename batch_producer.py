@@ -871,31 +871,24 @@ def _call_host(system: str, user: str, temperature: float = 0.7) -> str:
 
 
 
-def _call_api_followup(caller_fn, prompt: str) -> str:
-
-    """Call a Big 5 API with a follow-up prompt. Returns text or empty."""
-
-    try:
-
-        txt, err = caller_fn(prompt)
-
-        if err:
-
-            log.warning(f"Follow-up API error: {err[:60]}")
-
-            return ""
-
-        return txt.strip() if txt else ""
-
-    except Exception as e:
-
-        log.warning(f"Follow-up call failed: {e}")
-
-        return ""
-
-
-
-
+def _call_api_followup(caller_fn, prompt: str, max_retries: int = 3) -> str:
+    """Call a Big 5 API with exponential backoff retry."""
+    import time
+    last_err = ""
+    for attempt in range(max_retries):
+        try:
+            txt, err = caller_fn(prompt)
+            if txt and txt.strip():
+                return txt.strip()
+            last_err = err or "empty response"
+        except Exception as e:
+            last_err = str(e)
+        if attempt < max_retries - 1:
+            wait = 2.0 * (2 ** attempt)
+            log.info(f"Retry {attempt+1}/{max_retries} in {wait}s: {last_err[:40]}")
+            time.sleep(wait)
+    log.warning(f"API call failed after {max_retries} retries: {last_err[:60]}")
+    return ""
 
 def stage_4_generate_scripts(results):
 
