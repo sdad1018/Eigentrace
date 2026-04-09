@@ -198,7 +198,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         text = model_responses.get(name, "")
         if text:
             # Strip duplicate prefix if model already says 'This is X'
-                clean = text[:250]
+                clean = text[:600]
                 if clean.lower().startswith(f'this is {name.lower()}'):
                     clean = clean[len(f'This is {name}. '):]
                 script.append({
@@ -219,6 +219,41 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         "text": density_read,
         "phase": "beat_04_density",
     })
+
+    # ── 4b. SOURCE ABSENT WORDS (Read the void aloud) ───────────────
+    _sv = attr.get("source_void", {})
+    _absent_words = _sv.get("absent_words", [])[:15]
+    _absent_ratio = _sv.get("absent_ratio", 0)
+    if _absent_words and _absent_ratio > 0.3:
+        script.append({
+            "speaker": "Host",
+            "text": (
+                f"Source-anchored void. {_absent_ratio*100:.0f} percent of the original article's "
+                f"content words appear in zero model responses. "
+                f"The missing words include: {', '.join(_absent_words[:10])}. "
+                f"These are not obscure terms. They are the specific details the article reported "
+                f"that every model chose to omit."
+            ),
+            "phase": "beat_04b_absent_words",
+        })
+
+    # ── 4c. PER-MODEL VOID COMPARISON ────────────────────────────────
+    if _raw_responses and _absent_words:
+        _per_model_drops = []
+        for _mname in ["ChatGPT", "Claude", "Gemini", "DeepSeek", "Grok"]:
+            _mtext = _raw_responses.get(_mname, "").lower()
+            if not _mtext:
+                continue
+            _dropped = [w for w in _absent_words[:8] if w.lower() not in _mtext]
+            _kept = [w for w in _absent_words[:8] if w.lower() in _mtext]
+            if _dropped:
+                _per_model_drops.append(f"{_mname} dropped {', '.join(_dropped[:4])}")
+        if _per_model_drops:
+            script.append({
+                "speaker": "Host",
+                "text": "Per-model void comparison. " + ". ".join(_per_model_drops[:4]) + ".",
+                "phase": "beat_04c_per_model_void",
+            })
 
     # ── 5. FRICTION MAP (Template — all 5 VIX scores) ────────────────
     vix_lines = ". ".join(f"{name} at {vix:.1f}" for name, vix in sorted_vix)
