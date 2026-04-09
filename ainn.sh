@@ -251,7 +251,7 @@ echo -e "  ${DIM}TTS via Piper → UDP:10000 + current_frame.png${RST}"
 
 # ── 4. Batch producer ───────────────────────────────────────────────────
 hdr "4/4 Batch producer"
-cd "$REPO" && python3 batch_producer.py --loop --interval 3600 --min-queue 3 $EXTRA_PRODUCER_ARGS \
+cd "$REPO" && python3 batch_producer.py --loop --interval 60 --min-queue 1 $EXTRA_PRODUCER_ARGS \
     >> "$LOG_DIR/producer.log" 2>&1 &
 save_pid "producer" $!
 ok "batch_producer.py --loop (PID $(read_pid producer))"
@@ -298,7 +298,7 @@ while true; do
 
     if ! is_alive "producer"; then
         warn "$(date '+%H:%M:%S') producer died — restarting"
-        cd "$REPO" && python3 batch_producer.py --loop --interval 3600 --min-queue 3 $EXTRA_PRODUCER_ARGS \
+        cd "$REPO" && python3 batch_producer.py --loop --interval 60 --min-queue 1 $EXTRA_PRODUCER_ARGS \
             >> "$LOG_DIR/producer.log" 2>&1 &
         save_pid "producer" $!
     fi
