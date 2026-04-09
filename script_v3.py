@@ -14,6 +14,16 @@ from pathlib import Path
 from collections import Counter
 from datetime import datetime
 
+def _rag_context(title, n=3):
+    """Retrieve historical context from past broadcasts via ChromaDB."""
+    try:
+        from segment_rag import query, format_context
+        hits = query(title, n_results=n)
+        return format_context(hits, max_items=n)
+    except Exception:
+        return ""
+
+
 SEGMENTS_DIR = Path("/home/remvelchio/eigentrace/tmp/segments")
 AUDIT_LOG = Path("/mnt/c/Users/M4ISI/eigentrace/audit_log.jsonl")
 OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
@@ -431,12 +441,14 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             "Write 2-3 sentences connecting this story's void words to the weekly trends. "
             "Professional broadcast tone. English only."
         )
+        rag_ctx = _rag_context(title)
         pattern_usr = (
             f"Current story: {title}\n"
             f"Current void words: {void_str}\n"
             f"Most common void words this week: {', '.join(w for w, _ in top_voids[:5])}\n"
             f"Model with highest average friction: {hottest}\n"
-            f"Stories analyzed this week: {audit_ctx.get('n_stories', 0)}"
+            f"Stories analyzed this week: {audit_ctx.get('n_stories', 0)}\n"
+            f"{rag_ctx}"
         )
         pattern_text = _call_host(pattern_sys, pattern_usr)
         script.append({
