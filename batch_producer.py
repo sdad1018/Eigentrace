@@ -1311,6 +1311,14 @@ def stage_7_write_segments(segments, seen):
         path.write_text(json.dumps(seg, indent=2, default=str))
 
         log.info(f"  Wrote {filename} ({len(seg['beats'])} beats)")
+        # Incremental RAG ingest
+        try:
+            from segment_rag import get_collection, segment_to_doc
+            doc_id, doc, meta = segment_to_doc(seg)
+            coll = get_collection()
+            coll.upsert(ids=[doc_id], documents=[doc], metadatas=[meta])
+        except Exception as e:
+            log.debug(f"  RAG upsert skipped: {e}")
 
 
 
