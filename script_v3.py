@@ -222,9 +222,18 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
 
     # ── 4b. SOURCE ABSENT WORDS (Read the void aloud) ───────────────
     _sv = attr.get("source_void", {})
-    _absent_words = _sv.get("absent_words", [])[:15]
+    _nav_junk = {"adventures","africa","america","announcement","asia","australia",
+        "business","canada","climate","culture","education","entertainment","europe",
+        "fashion","food","health","home","lifestyle","live","magazine","markets",
+        "media","middle","money","news","opinion","photos","politics","science",
+        "search","sport","sports","style","tech","technology","travel","tv","uk",
+        "us","video","videos","weather","world","subscribe","newsletter","login",
+        "sign","menu","share","comment","comments","follow","read","skip","cookie",
+        "cookies","privacy","policy","terms","contact","about","advertise","more"}
+    _raw_absent = _sv.get("absent_words", [])
+    _absent_words = [w for w in _raw_absent if w.lower() not in _nav_junk][:15]
     _absent_ratio = _sv.get("absent_ratio", 0)
-    if _absent_words and _absent_ratio > 0.3:
+    if _absent_words and _absent_ratio > 0.3 and len(_absent_words) >= 3:
         script.append({
             "speaker": "Host",
             "text": (
