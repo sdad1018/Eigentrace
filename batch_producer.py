@@ -725,6 +725,30 @@ def stage_3_geometric(results):
             r["source_void"] = {}
             r["void_context"] = []
 
+        # ── Void Vector (Layer 8) ─────────────────────────────────────
+        try:
+            from eigentrace_math import compute_void_vector
+            import geometric_engine as ge
+            _eng = ge.get_engine()
+            _vv_source = story.title + ". " + (story.summary or "")
+            if hasattr(story, "body") and story.body:
+                _vv_source += " " + story.body[:1500]
+            _vv_result = compute_void_vector(
+                _vv_source, active_texts,
+                embed_fn=_eng.embed_texts,
+            )
+            r["void_vector"] = {
+                "magnitude": round(float(np.linalg.norm(_vv_result["void_vector"])), 4),
+                "top_void_dims": sorted(
+                    enumerate(abs(_vv_result["void_vector"])),
+                    key=lambda x: -x[1]
+                )[:5],
+            }
+            log.info(f"  Void vector: magnitude={r['void_vector']['magnitude']:.4f}")
+        except Exception as _vve:
+            log.warning(f"  Void vector failed: {_vve}")
+            r["void_vector"] = {}
+
         # ── Language Compression (Layers 13-15) ────────────────────────
         try:
             from eigentrace_math import score_language_compression
@@ -1120,7 +1144,6 @@ def stage_4_generate_scripts(results):
                 "void_words": void_words,
 
                 "model_vix": {a.name: a.eigen_vix for a in active},
-                "model_responses": {a.name: a.text[:500] for a in active},
                 "model_responses": {a.name: a.text[:500] for a in active if a.text},
 
                 "logos_words": logos_words,
@@ -1130,6 +1153,7 @@ def stage_4_generate_scripts(results):
 
                 "claim_killshots": [{"claim": k["claim"], "salience": k["salience"], "omitted_by": k["omitted_by"]} for k in r.get("claim_killshots", [])[:3]],
                 "null_space_claims": r.get("null_space_claims", [])[:2],
+                "void_vector": r.get("void_vector", {}),
 
             },
 
