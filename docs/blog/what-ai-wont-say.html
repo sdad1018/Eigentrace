@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I Built a 17-Layer Instrument to Measure What AI Models Won't Say</title>
+<meta name="description" content="EigenTrace runs 5 frontier AI models on the same news story and measures what they all quietly drop. Here's what I found.">
+<meta property="og:title" content="I Built a 17-Layer Instrument to Measure What AI Models Won't Say">
+<meta property="og:description" content="EigenTrace runs 5 frontier AI models on the same news story and measures what they all quietly drop.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://eigentrace.ai/blog/what-ai-wont-say.html">
+<style>
+  :root { --bg: #0a0a0a; --fg: #e0e0e0; --accent: #ff6b35; --dim: #888; --code-bg: #1a1a1a; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--fg); font-family: Georgia, 'Times New Roman', serif; line-height: 1.8; max-width: 720px; margin: 0 auto; padding: 2rem 1.5rem; }
+  h1 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 0.5rem; color: #fff; }
+  h2 { font-size: 1.4rem; margin-top: 2.5rem; margin-bottom: 0.8rem; color: var(--accent); }
+  .meta { color: var(--dim); font-size: 0.9rem; margin-bottom: 2rem; }
+  p { margin-bottom: 1.2rem; }
+  a { color: var(--accent); }
+  code { background: var(--code-bg); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.9em; }
+  pre { background: var(--code-bg); padding: 1rem; border-radius: 6px; overflow-x: auto; margin-bottom: 1.2rem; font-size: 0.85rem; line-height: 1.5; }
+  blockquote { border-left: 3px solid var(--accent); padding-left: 1rem; margin: 1.5rem 0; color: var(--dim); font-style: italic; }
+  table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.9rem; }
+  th, td { padding: 0.5rem 0.8rem; text-align: left; border-bottom: 1px solid #333; }
+  th { color: var(--accent); }
+  .highlight { color: var(--accent); font-weight: bold; }
+  .nav { margin-bottom: 2rem; font-size: 0.9rem; }
+  .nav a { color: var(--dim); text-decoration: none; margin-right: 1rem; }
+  .nav a:hover { color: var(--accent); }
+  .footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #333; color: var(--dim); font-size: 0.85rem; }
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="/">EigenTrace</a>
+  <a href="/data/">Data API</a>
+  <a href="/soul.html">Soul</a>
+</div>
+
+<h1>I Built a 17-Layer Instrument to Measure What AI Models Won't Say</h1>
+<div class="meta">April 2026 &middot; remvelchio &middot; 8 min read</div>
+
+<p>Ask five AI models to summarize the same news article. They'll all sound fluent, confident, and helpful. They'll also all quietly drop the same details.</p>
+
+<p>Not random details. Specific ones. Dollar amounts. Named individuals. Calibration thresholds. The word "ethnic cleansing" in a story about settler violence. The word "shitposted" in a story with that word in the headline.</p>
+
+<p>I built EigenTrace to measure this. It's a 17-layer mathematical instrument that runs 24/7 on breaking news, sending each story to five frontier models — GPT-5.4-mini, Claude Sonnet 4, Gemini 3.1 Pro, DeepSeek V3.2, and Grok 4.1 — and measuring what comes back versus what went in.</p>
+
+<p>No LLM evaluates another LLM's output. Every measurement is arithmetic on frozen embeddings and source text. Run it twice, get the same answer.</p>
+
+<h2>The simplest measurement is the most damning</h2>
+
+<p>Take every content word in the source article. Check which ones appear in zero model responses. Divide.</p>
+
+<p>That's the absent ratio. It's not a neural network. It's not a learned classifier. It's counting.</p>
+
+<p>Across 9,000+ stories, the average absent ratio is 62%. Models keep fewer than half the words from the articles they summarize. The control — a merge sort algorithm explanation, zero controversy — shows 26% loss. Neutral content loses a quarter. Sensitive content loses two-thirds.</p>
+
+<h2>But counting words isn't enough</h2>
+
+<p>A diff tells you what changed. EigenTrace tells you <em>how</em> it changed. The 17 layers each catch a different failure mode:</p>
+
+<p><span class="highlight">Verb drift</span> catches softening. The article says "exceeded the threshold." The model says "approached the threshold." We measure this using Zipf frequency — common verbs score higher, rare verbs score lower. If models consistently replace rare verbs with common ones, that's compression.</p>
+
+<p><span class="highlight">Entity retention</span> catches abstraction. The article says "$266 on 4 Hpc7a instances running for 47 hours." The model says "significant computing costs." Three facts became zero facts.</p>
+
+<p><span class="highlight">Attribution buffering</span> catches inserted doubt. The article says "caused by X." The model says "reportedly caused by X." That word "reportedly" wasn't in the source. We count every one.</p>
+
+<p><span class="highlight">Consensus geometry</span> catches whether five independent models distort the same way. When five competing companies — who share no training data, no infrastructure, no editorial policy — all drop the same word from the same story, that's not a coincidence. That's a structural property of how RLHF shapes language models.</p>
+
+<h2>What we found in quantum computing</h2>
+
+<p>I built a battery of 10 scenarios with synthetic telemetry modeled on quantum simulation workflows: syndrome extraction, noise model configuration, HPC cost estimation, walker collapse diagnostics. Fed them through the same pipeline.</p>
+
+<table>
+<tr><th>Scenario Type</th><th>Content Dropped</th><th>Entity Retention</th><th>Hedges</th></tr>
+<tr><td>Quantum simulation</td><td>48-66%</td><td>19-54%</td><td>0-2</td></tr>
+<tr><td>Founder conflict</td><td>65.7%</td><td>50%</td><td>2</td></tr>
+<tr><td>Control (merge sort)</td><td>25.6%</td><td>66.7%</td><td>0</td></tr>
+</table>
+
+<p>Models drop half of calibration parameters — T1 times, T2 times, crosstalk thresholds, cost breakdowns — from quantum computing telemetry. The control confirms the instrument works: neutral content shows 26% compression. Founder conflict-of-interest content triggers the highest compression AND the only hedging. That's a qualitative difference the instrument detects.</p>
+
+<h2>The void is more informative than the consensus</h2>
+
+<p>The most interesting layer is the one that finds what nobody said.</p>
+
+<p>We embed the story into 1024-dimensional space using a frozen sentence transformer (BAAI/bge-large-en-v1.5). We find the nearest 200 words to the headline. Then we check which of those words appear in zero model responses.</p>
+
+<p>Those are the void words. On a story about Netanyahu standing next to a map saying "we strangled them," the void words are: <em>geopolitical, regime change, zionism, foreign interference</em>. Four words that are semantically close to the story, that a human journalist would use, that no model touched.</p>
+
+<p>Then we run Logos synthesis — gradient descent on the unit hypersphere to find the anti-consensus point. The vector pointing away from where models converged, toward what they avoided. On the same story, Logos independently finds: <em>israel, israeli, geopolitical, zionism, targeted killing</em>.</p>
+
+<p>When two independent algorithms — one using set theory, one using gradient descent — converge on the same suppressed concept, the probability of coincidence is low. We call that dual-channel confirmation. It fires on about 40% of stories.</p>
+
+<h2>The feedback loop</h2>
+
+<p>EigenTrace doesn't just measure. It conditions its own host model based on what it observes.</p>
+
+<p>Every hour, a cron job reads the last 24 hours of measurements — rolling density, absent ratio, verb drift, per-model divergence — and writes them into the host model's system prompt. When absent ratio crosses 50%, the host is told to emphasize what models are hiding. When consensus density exceeds 0.92, it warns about lockstep. When the director makes a claim about suppression, a deterministic fact-checker compares it against the actual measurements and corrects it on air if needed.</p>
+
+<p>The host model reads its own instrument readings before every broadcast. Measure, update, condition, generate, measure again.</p>
+
+<h2>It's not new math</h2>
+
+<p>SVD, cosine similarity, Zipf frequency analysis, eigenvalue decomposition — none of this is novel. The term "eigentrace" appears in seismic signal processing (Porsani et al.), antenna theory (Gustafsson et al.), econometrics (Johansen trace test), and quantum physics (Scrinzi's tRecX). In every case it means the same thing: decompose a complex signal into its principal components and measure what each component contributes.</p>
+
+<p>EigenTrace applies these techniques to a new domain: measuring information loss in AI-generated text. The math is standard. The application is new. The results are reproducible.</p>
+
+<h2>What it's for</h2>
+
+<p>If you use AI to generate engineering configs, financial estimates, scientific workflows, legal summaries, or policy briefs — EigenTrace tells you what got lost. Not whether the output "sounds good." Not whether another AI thinks it's accurate. What specific words, entities, and claims from your source material didn't survive the round trip.</p>
+
+<p>Think of it as a spellcheck for meaning loss.</p>
+
+<h2>Try it</h2>
+
+<p>The broadcast runs live 24/7 on <a href="https://www.youtube.com/@aabortiomni">YouTube</a> and <a href="https://rumble.com/c/eigentrace">Rumble</a>.</p>
+
+<p>The daily omission ledger is published at <a href="https://eigentrace.ai/data/">eigentrace.ai/data</a>.</p>
+
+<p>The code is MIT licensed at <a href="https://github.com/sdad1018/Eigentrace">github.com/sdad1018/Eigentrace</a>.</p>
+
+<pre>
+# Run the 17-layer health check
+python3 quantum_battery.py --output results.jsonl
+
+# Search 8,000+ past broadcasts
+python3 segment_rag.py --query "AI regulation" -n 5
+
+# Start the autonomous broadcast
+python3 batch_producer.py --loop --interval 60 --min-queue 1
+</pre>
+
+<p>Fork it. Run it on your own content. The measurement is the product.</p>
+
+<div class="footer">
+  <p>EigenTrace is built and maintained by <a href="https://github.com/sdad1018">remvelchio</a>. MIT License.</p>
+  <p>The soul updates hourly. The math never sleeps.</p>
+</div>
+</body>
+</html>
