@@ -71,6 +71,61 @@ def _call_host(system: str, user: str) -> str:
     except Exception as e:
         return f"[Mistral unavailable: {e}]"
 
+def _call_host_confident(system: str, user: str, max_attempts: int = 3,
+                         entropy_threshold: float = 1.5) -> str:
+    """Generate with logprob self-check. Retries if model fights itself."""
+    import requests, math
+    best_text = ""
+    best_entropy = 999
+    
+    for attempt in range(max_attempts):
+        try:
+            r = requests.post(f"{OLLAMA_HOST}/v1/chat/completions", json={
+                "model": HOST_MODEL,
+                "messages": [
+                    {"role": "system", "content": system},
+                    {"role": "user", "content": user},
+                ],
+                "max_tokens": 500,
+                "temperature": max(0.3, 0.7 - attempt * 0.15),
+                "logprobs": True,
+                "top_logprobs": 3,
+            }, timeout=120)
+            r.raise_for_status()
+            data = r.json()
+            text = data["choices"][0]["message"]["content"].strip()
+            text = re.sub(r"[#*_`]", "", text)
+            text = re.sub(r"\n+", " ", text)
+            
+            # Compute mean entropy from logprobs
+            lp_content = data["choices"][0].get("logprobs", {}).get("content", [])
+            if lp_content:
+                entropies = []
+                for token in lp_content:
+                    top = token.get("top_logprobs", [])
+                    if top:
+                        probs = [math.exp(t["logprob"]) for t in top]
+                        total = sum(probs)
+                        probs = [p/total for p in probs]
+                        ent = -sum(p * math.log2(p + 1e-10) for p in probs)
+                        entropies.append(ent)
+                mean_ent = sum(entropies) / len(entropies) if entropies else 0
+            else:
+                mean_ent = 0
+            
+            if mean_ent < best_entropy:
+                best_entropy = mean_ent
+                best_text = text
+            
+            if mean_ent < entropy_threshold:
+                break
+                
+        except Exception as e:
+            if not best_text:
+                best_text = f"[Mistral unavailable: {e}]"
+    
+    return best_text
+
 
 def _get_audit_context() -> dict:
     try:
@@ -202,7 +257,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         f"Killshots: {len(killshots)} omitted claims. "
         f"Outlier model: {outlier}"
     )
-    director = _call_host(dir_sys, dir_usr)
+    director = _call_host_confident(dir_sys, dir_usr)
     
     # ── DIRECTOR FACT-CHECK (deterministic, no LLM) ─────────────
     # Verify director claims against actual measurement data
