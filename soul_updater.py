@@ -115,7 +115,7 @@ _Last updated: {cal['updated']}_
 {chr(10).join(f'- {cat}: {n} stories' for cat, n in cal['top_categories'].items())}
 
 ### Calibration Guidance
-{'⚠️ Absent ratio above 0.7 — models are dropping significant content. Weight void words heavily in dream state.' if cal['absent_ratio'] > 0.7 else '✓ Absent ratio within normal range.' }
+{'⚠️ Absent ratio above 0.7 — models are dropping significant content. Weight void words heavily in dream state.' if cal["absent_ratio"] > 0.5 else '✓ Absent ratio within normal range.' }
 {'⚠️ Verb drift above 0.1 — models are softening language. Check for hedging in sensitive topics.' if cal['verb_drift'] > 0.1 else '✓ Verb drift within normal range.'}
 {'⚠️ Consensus density above 0.92 — possible LOCKSTEP. Models may be converging on safe framing.' if cal['density'] > 0.92 else '✓ Consensus density normal.'}
 """
