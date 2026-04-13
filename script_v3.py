@@ -203,11 +203,67 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         f"Outlier model: {outlier}"
     )
     director = _call_host(dir_sys, dir_usr)
+    
+    # ── DIRECTOR FACT-CHECK (deterministic, no LLM) ─────────────
+    # Verify director claims against actual measurement data
+    _dir_corrections = []
+    _dir_lower = director.lower()
+    
+    # Check: did director claim "suppressing" but absent ratio is low?
+    _actual_absent = attr.get("source_void", {}).get("absent_ratio", 0)
+    if "suppress" in _dir_lower and _actual_absent < 0.3:
+        _dir_corrections.append(
+            f"Correction: the director said suppression, but absent ratio is only "
+            f"{_actual_absent:.0%}. This is within normal range."
+        )
+    
+    # Check: did director name a specific entity as suppressed
+    # but that entity actually appears in model responses?
+    _all_resp_text = " ".join(
+        v.lower() for v in attr.get("model_responses", {}).values() if v
+    )
+    _void_words = attr.get("void_words", [])
+    _absent_words = attr.get("source_void", {}).get("absent_words", [])
+    
+    # Look for words director claims are missing but models actually said
+    import re as _re
+    _dir_entities = set(_re.findall(r"[A-Z][a-z]{2,}", director))
+    for _ent in _dir_entities:
+        _ent_lower = _ent.lower()
+        if (_ent_lower in _dir_lower and 
+            ("suppress" in _dir_lower or "avoiding" in _dir_lower or "hiding" in _dir_lower) and
+            _ent_lower in _all_resp_text and
+            _ent_lower not in [w.lower() for w in _absent_words[:20]]):
+            _dir_corrections.append(
+                f"Note: the director mentioned {_ent} as suppressed, "
+                f"but models did use this term. The actual void words are: "
+                f"{', '.join(_void_words[:5]) if _void_words else 'none detected'}."
+            )
+            break
+    
+    # Check: entity abstraction vs suppression
+    _comp = attr.get("compression", {})
+    _entity_ret = _comp.get("entity_retention", 0)
+    _entity_abs = _comp.get("entity_abstraction_rate", 0)
+    if _entity_abs > 0.5 and "suppress" in _dir_lower:
+        _dir_corrections.append(
+            f"Clarification: entity abstraction rate is {_entity_abs:.0%}. "
+            f"Models are generalizing names, not omitting the topic."
+        )
+    
     script.append({
         "speaker": "Host",
         "text": director,
         "phase": "beat_02_director",
     })
+    
+    # Append corrections if any
+    if _dir_corrections:
+        script.append({
+            "speaker": "Host",
+            "text": "Director audit. " + " ".join(_dir_corrections),
+            "phase": "beat_02b_director_audit",
+        })
 
     # ── 3. MODEL ROLL CALL (Verbatim — all 5 speak) ─────────────────
     # Prefer raw API responses from attribution, fall back to beats
