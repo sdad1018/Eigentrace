@@ -14,12 +14,18 @@ from pathlib import Path
 from collections import Counter
 from datetime import datetime
 
-def _rag_context(title, n=3):
-    """Retrieve historical context from past broadcasts via ChromaDB."""
+def _rag_context(title, n=3, max_distance=0.45):
+    """Retrieve historical context from past broadcasts via ChromaDB.
+    Only returns matches closer than max_distance (cosine).
+    Above threshold = weak match = forced connection = hallucination risk."""
     try:
         from segment_rag import query, format_context
         hits = query(title, n_results=n)
-        return format_context(hits, max_items=n)
+        # Filter out weak matches
+        strong = [h for h in hits if h.get("distance", 1.0) < max_distance]
+        if not strong:
+            return ""
+        return format_context(strong, max_items=n)
     except Exception:
         return ""
 
