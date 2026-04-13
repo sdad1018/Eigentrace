@@ -284,6 +284,144 @@ def show_history():
 # GENERATE: build the entire soul.md
 # ═══════════════════════════════════════════════════════════════
 
+PROPOSALS_FILE = os.path.join(REPO_DIR, "docs", "soul_proposals.json")
+
+def generate_proposals(cal, segments):
+    """Analyze patterns and propose soul updates. All deterministic."""
+    proposals = []
+    
+    # Check: is the director audit firing too often?
+    audit_count = 0
+    director_count = 0
+    for s in segments:
+        for b in s.get("beats", []):
+            if "director" in b.get("phase", ""):
+                director_count += 1
+            if "audit" in b.get("phase", ""):
+                audit_count += 1
+    
+    if director_count > 0 and audit_count / max(director_count, 1) > 0.25:
+        proposals.append({
+            "id": "raise_suppression_threshold",
+            "reason": f"Director audit corrected {audit_count}/{director_count} stories ({audit_count/director_count:.0%}). "
+                      f"The director is overclaiming suppression.",
+            "action": "Raise absent_ratio threshold for 'emphasize hiding' from 50% to 65%",
+            "type": "threshold",
+            "key": "absent_suppress_threshold",
+            "old_value": 0.5,
+            "new_value": 0.65,
+        })
+    
+    # Check: is one model consistently the outlier?
+    vix = cal.get("model_vix", {})
+    if vix:
+        top = max(vix, key=vix.get)
+        top_val = vix[top]
+        others = [v for m, v in vix.items() if m != top]
+        avg_others = sum(others) / len(others) if others else 0
+        if top_val > avg_others * 1.8:
+            proposals.append({
+                "id": "flag_persistent_outlier",
+                "reason": f"{top} VIX ({top_val:.1f}) is {top_val/avg_others:.1f}x the average of other models ({avg_others:.1f}). "
+                          f"This model may need investigation.",
+                "action": f"Add behavioral instruction: 'Pay special attention to {top} — it consistently diverges.'",
+                "type": "instruction",
+            })
+    
+    # Check: is content loss extremely high?
+    if cal.get("absent_ratio", 0) > 0.7:
+        proposals.append({
+            "id": "escalate_void_emphasis",
+            "reason": f"Content loss at {cal['absent_ratio']:.0%} for 24h sustained. "
+                      f"Models are dropping more than 70% of source material.",
+            "action": "Escalate: read top 15 absent words aloud instead of 10",
+            "type": "config",
+        })
+    
+    # Check: is verb drift spiking?
+    if cal.get("verb_drift", 0) > 0.1:
+        proposals.append({
+            "id": "flag_verb_softening",
+            "reason": f"Verb drift at {cal['verb_drift']:.3f} — models actively softening language.",
+            "action": "Add behavioral instruction: 'Call out verb softening explicitly when drift > 0.1'",
+            "type": "instruction",
+        })
+    
+    # Check: is entity retention dropping?
+    if cal.get("entity_retention", 0) < 0.25:
+        proposals.append({
+            "id": "flag_name_erasure",
+            "reason": f"Entity retention at {cal['entity_retention']:.0%} — fewer than 1 in 4 names surviving.",
+            "action": "Escalate: read erased entity names aloud in a dedicated beat",
+            "type": "config",
+        })
+    
+    # Check: are hedges extremely high?
+    if cal.get("hedges", 0) > 500:
+        proposals.append({
+            "id": "flag_doubt_insertion",
+            "reason": f"{cal['hedges']} hedge insertions in 24h. Models inserting massive doubt.",
+            "action": "Add behavioral instruction: 'Open each story by noting the hedge count'",
+            "type": "instruction",
+        })
+    
+    # Check: Gemini response rate
+    gem_health = cal.get("model_health", {}).get("Gemini", {})
+    gem_total = gem_health.get("total", 0)
+    gem_empty = gem_health.get("empty", 0)
+    if gem_total > 0 and gem_empty / gem_total > 0.5:
+        proposals.append({
+            "id": "gemini_unreliable",
+            "reason": f"Gemini responded to only {gem_total - gem_empty}/{gem_total} stories ({(gem_total-gem_empty)/gem_total:.0%}).",
+            "action": "Consider removing Gemini from the active model lineup until reliability improves",
+            "type": "config",
+        })
+    
+    return proposals
+
+
+def load_accepted_proposals():
+    """Load previously accepted proposal IDs."""
+    accepted_path = os.path.join(REPO_DIR, "docs", "soul_accepted.json")
+    try:
+        return json.load(open(accepted_path))
+    except:
+        return []
+
+
+def accept_proposal(proposal_id):
+    """Mark a proposal as accepted."""
+    accepted = load_accepted_proposals()
+    if proposal_id not in accepted:
+        accepted.append(proposal_id)
+    accepted_path = os.path.join(REPO_DIR, "docs", "soul_accepted.json")
+    json.dump(accepted, open(accepted_path, "w"))
+    print(f"Accepted: {proposal_id}")
+
+
+def reject_proposal(proposal_id):
+    """Mark a proposal as rejected (just removes from pending)."""
+    print(f"Rejected: {proposal_id}")
+
+
+def format_proposals_md(proposals):
+    """Format proposals for the soul.md footer."""
+    if not proposals:
+        return "\n## Pending Proposals\n_No proposals at this time. System operating within expected parameters._\n"
+    
+    lines = ["\n## Pending Proposals"]
+    lines.append("_The system has detected patterns that may warrant configuration changes._")
+    lines.append("_Review and accept/reject via: `python3 soul_updater.py --accept <id>` or `--reject <id>`_\n")
+    
+    for p in proposals:
+        lines.append(f"### [{p['id']}]")
+        lines.append(f"**Why:** {p['reason']}\n")
+        lines.append(f"**Proposed action:** {p['action']}\n")
+        lines.append(f"**Type:** {p['type']}\n")
+    
+    return "\n".join(lines)
+
+
 def generate_soul(cal, info, diff_text):
     """Generate the complete soul.md from live data."""
     
@@ -427,7 +565,9 @@ def update():
     diff_text = compute_diff(prev_cal, cal)
     save_current_cal(cal)
 
+    proposals = generate_proposals(cal, segments)
     soul_text = generate_soul(cal, info, diff_text)
+    soul_text += format_proposals_md(proposals)
 
     # Save version before overwriting
     if os.path.exists(SOUL_PATH):
@@ -452,9 +592,17 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--history", action="store_true")
     parser.add_argument("--diff", action="store_true")
+    parser.add_argument("--accept", type=str, default="", help="Accept a proposal by ID")
+    parser.add_argument("--reject", type=str, default="", help="Reject a proposal by ID")
     args = parser.parse_args()
 
-    if args.history:
+    if args.accept:
+        accept_proposal(args.accept)
+        update()
+    elif args.reject:
+        reject_proposal(args.reject)
+        update()
+    elif args.history:
         show_history()
     elif args.diff:
         prev = load_previous_cal()
