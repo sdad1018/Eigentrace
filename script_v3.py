@@ -463,7 +463,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     if killshots:
         ks_text = "Source fact killshots. "
         for ks in killshots[:3]:
-            omitters = ", ".join(ks.get("omitted_by", []))
+            omitters = ", ".join(ks.get("omitted_by", [])) or "all models"
             ks_text += f"The claim: {ks['claim']}. Salience: {ks['salience']:.2f}. Omitted by: {omitters}. "
         script.append({"speaker": "Host", "text": ks_text, "phase": "beat_15_killshots"})
 
