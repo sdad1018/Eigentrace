@@ -238,20 +238,32 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         })
 
     # ── 4c. PER-MODEL VOID COMPARISON ────────────────────────────────
-    if _raw_responses and _absent_words:
-        _per_model_drops = []
-        for _mname in ["ChatGPT", "Claude", "Gemini", "DeepSeek", "Grok"]:
-            _mtext = _raw_responses.get(_mname, "").lower()
-            if not _mtext:
-                continue
-            _dropped = [w for w in _absent_words[:8] if w.lower() not in _mtext]
-            _kept = [w for w in _absent_words[:8] if w.lower() in _mtext]
-            if _dropped:
-                _per_model_drops.append(f"{_mname} dropped {', '.join(_dropped[:4])}")
-        if _per_model_drops:
+    # Check ALL source words per model to find words SOME kept and others dropped
+    _all_source_words = [w for w in _sv.get("absent_words", [])] if _sv else []
+    _coverage = _sv.get("coverage_per_model", {})
+    if _raw_responses and len(_raw_responses) >= 3:
+        import re as _re
+        _source_text_lower = (attr.get("story_title", "") + " " + attr.get("story_url", "")).lower()
+        _per_model_unique = []
+        _all_model_texts = {m: _raw_responses.get(m, "").lower() for m in ["ChatGPT", "Claude", "Gemini", "DeepSeek", "Grok"] if _raw_responses.get(m)}
+        # Find words that appear in SOME models but not others
+        _src_words = set(_re.findall(r"\b[a-z]{4,}\b", (attr.get("story_title","") + " " + (list(_raw_responses.values())[0] if _raw_responses else "")).lower()))
+        for _mname, _mtext in _all_model_texts.items():
+            _unique_missing = []
+            for _other_name, _other_text in _all_model_texts.items():
+                if _other_name == _mname:
+                    continue
+                _other_words = set(_re.findall(r"\b[a-z]{4,}\b", _other_text))
+                _my_words = set(_re.findall(r"\b[a-z]{4,}\b", _mtext))
+                _only_others = _other_words - _my_words
+                _unique_missing.extend(list(_only_others)[:2])
+            if _unique_missing:
+                top = list(set(_unique_missing))[:3]
+                _per_model_unique.append(f"{_mname} uniquely missed {', '.join(top)}")
+        if _per_model_unique:
             script.append({
                 "speaker": "Host",
-                "text": "Per-model void comparison. " + ". ".join(_per_model_drops[:4]) + ".",
+                "text": "Per-model void comparison. " + ". ".join(_per_model_unique[:4]) + ".",
                 "phase": "beat_04c_per_model_void",
             })
 
