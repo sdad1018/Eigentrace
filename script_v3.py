@@ -643,6 +643,48 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         "phase": "beat_18_math_explainer",
     })
 
+    # ── 18b. STATE VECTOR (Ternary classifier) ─────────────────────
+    try:
+        from state_vector import compute_state_vector, extract_signals, find_state_matches, load_all_signals
+        _best6 = ["consensus_density", "absent_ratio", "verb_drift",
+                   "entity_retention", "hedge_count", "mean_vix"]
+        _seg_signals = {
+            "consensus_density": density,
+            "absent_ratio": attr.get("source_void", {}).get("absent_ratio", 0),
+            "verb_drift": attr.get("compression", {}).get("verb_downgrade", 0),
+            "entity_retention": attr.get("compression", {}).get("entity_retention", 0),
+            "hedge_count": attr.get("compression", {}).get("attribution_buffer", {}).get("total", 0) if isinstance(attr.get("compression", {}).get("attribution_buffer"), dict) else 0,
+            "mean_vix": mean_vix,
+        }
+        _sv_vec, _sv_labels = compute_state_vector(_seg_signals, _best6)
+        _sv_display = ", ".join(
+            f"{l.replace('_',' ')}: {'plus' if v == 1 else 'minus' if v == -1 else 'neutral'}"
+            for l, v in zip(_sv_labels, _sv_vec)
+        )
+        _sv_text = f"EigenTrace state vector. {_sv_display}."
+        
+        # Find historical matches
+        _all_records = load_all_signals()
+        _matches = find_state_matches(_all_records[-750:], _sv_vec, _best6)
+        _match_count = len(_matches)
+        if _match_count > 1:
+            _prev = [m for m in _matches if m.get("title","") != title]
+            if _prev:
+                _sv_text += (f" This exact state has occurred {len(_prev)} times before. "
+                            f"Most recently: {_prev[-1]['title'][:60]}.")
+            else:
+                _sv_text += f" This state has occurred {_match_count} times including this story."
+        elif _match_count <= 1:
+            _sv_text += " This is a novel state. No exact match in recent history."
+        
+        script.append({
+            "speaker": "Host",
+            "text": _sv_text,
+            "phase": "beat_18b_state_vector",
+        })
+    except Exception as _sv_err:
+        pass  # Non-blocking — state vector is bonus content
+
     # ── 19. CTA (Pre-written) ────────────────────────────────────────
     script.append({
         "speaker": "Host",
