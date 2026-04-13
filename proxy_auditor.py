@@ -292,21 +292,36 @@ def fast_importance(title: str, category: str, priority: int) -> float:
 
 
 def _scrape_body(url: str, timeout: int = 10) -> str:
-    """Fetch article body text using trafilatura for clean extraction."""
+    """Fetch article body text. Trafilatura first, regex fallback for paywalls."""
     if not url:
         return ""
+    # Try trafilatura first (best quality)
     try:
         import trafilatura
         downloaded = trafilatura.fetch_url(url)
-        if not downloaded:
-            return ""
-        text = trafilatura.extract(downloaded, include_comments=False,
-                                   include_tables=False, no_fallback=False)
-        if not text or len(text) < 100:
-            return ""
-        return text[:2000]
+        if downloaded:
+            text = trafilatura.extract(downloaded, include_comments=False,
+                                       include_tables=False, no_fallback=False)
+            if text and len(text) >= 100:
+                return text[:2000]
     except Exception:
-        return ""
+        pass
+    # Fallback: regex scraper (gets something from paywalled sites)
+    try:
+        import re as _re
+        r = requests.get(url, timeout=timeout,
+                         headers={"User-Agent": "Mozilla/5.0 (compatible)"})
+        r.raise_for_status()
+        text = _re.sub(r"<script[^>]*>.*?</script>", "", r.text, flags=_re.DOTALL)
+        text = _re.sub(r"<style[^>]*>.*?</style>", "", text, flags=_re.DOTALL)
+        text = _re.sub(r"<[^>]+>", " ", text)
+        text = _re.sub(r"\s+", " ", text).strip()
+        # Only use if we got meaningful content
+        if len(text) >= 200:
+            return text[:1500]
+    except Exception:
+        pass
+    return ""
 
 def _prompt_for_story(story: Story) -> str:
     return (
