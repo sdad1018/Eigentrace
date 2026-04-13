@@ -175,11 +175,25 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     })
 
     # ── 2. DIRECTOR THESIS (Mistral) ─────────────────────────────────
+    _cal = _load_soul_calibration()
+    _cal_instruction = ""
+    if _cal:
+        _cal_instruction = (
+            "Your instrument readings for the last 24 hours are below. "
+            "Use them to calibrate your tone: "
+            "if absent ratio is above 50%, emphasize what models are hiding. "
+            "If hedges are above 200, note that models are inserting doubt. "
+            "If density is above 0.92, warn about lockstep consensus. "
+            "If VIX outlier is named, mention which model diverges. "
+            f"{_cal} "
+        )
     dir_sys = (
-        "You are the Director of EigenTrace, a news analysis broadcast. " + _load_soul_calibration() + " "
-        "Given raw data about a story, write exactly two sentences. "
+        "You are the Director of EigenTrace, a news analysis broadcast. "
+        f"{_cal_instruction}"
+        "Given raw data about a story, write exactly three sentences. "
         "First: the thesis, one sentence stating the core finding. "
-        "Second: why the audience should care. "
+        "Second: what the models are suppressing or softening on this story. "
+        "Third: why the audience should care. "
         "Do NOT use any numbers. Be direct. Respond only in English."
     )
     dir_usr = (
