@@ -227,9 +227,10 @@ def fetch_feed(feed: dict, timeout: int = 15) -> list:
 
         summary = re.sub(r"<[^>]+>", "", summary)[:500]
         _body = _scrape_body(link)
+        _content_cat = _classify_content(title, summary)
         stories.append(Story(
             guid=guid, title=title, summary=summary,
-            url=link, category=feed["cat"], priority=feed["pri"],
+            url=link, category=_content_cat, priority=feed["pri"],
             body=_body,
             published=pub,
         ))
@@ -290,6 +291,47 @@ def fast_importance(title: str, category: str, priority: int) -> float:
 # ── LLM callers ───────────────────────────────────────────────────────────────
 
 
+
+def _classify_content(title: str, summary: str = "") -> str:
+    """Classify story by content, not feed tag. Keyword-based, fast."""
+    text = (title + " " + summary).lower()
+    
+    # Order matters — first match wins
+    rules = [
+        ("war", ["war ", "military", "troops", "airstrike", "bombing", "missile",
+                 "invasion", "ceasefire", "cease-fire", "cease fire", "battlefield", "iran ", "iran's",
+                 "killed in", "death toll", "casualties", "artillery", "drone strike",
+                 "nato ", "pentagon", "defense minister", "armed forces"]),
+        ("geopolitics", ["diplomat", "embassy", "sanctions", "treaty", "talks ",
+                         "negotiations", "summit", "foreign minister", "state department",
+                         "united nations", "bilateral", "trade deal", "tariff",
+                         "vance ", "trump ", "biden ", "netanyahu", "zelensky", "putin"]),
+        ("science", ["nasa", "artemis", "spacecraft", "astronaut", "orbit",
+                     "telescope", "climate change", "species", "genome", "vaccine",
+                     "research finds", "study shows", "experiment"]),
+        ("crypto", ["bitcoin", "ethereum", "crypto", "blockchain", "defi",
+                    "nft ", "token ", "polymarket"]),
+        ("ai", ["openai", "chatgpt", "claude ", "gemini ", "deepseek", "grok ",
+                "artificial intelligence", "machine learning", "llm ", "sam altman",
+                "ai model", "ai safety", "generative ai"]),
+        ("business", ["earnings", "revenue", "stock", "shares", "ipo ",
+                      "acquisition", "merger", "quarterly", "profit", "market cap",
+                      "wall street", "dow ", "s&p ", "nasdaq", "usps", "postal"]),
+        ("tech", ["apple ", "google ", "microsoft", "amazon ", "meta ",
+                  "iphone", "android", "software", "startup", "app ",
+                  "usb", "switch 2", "gaming", "playstation", "xbox", "pokemon", "pokémon", "nintendo"]),
+        ("entertainment", ["movie", "album", "concert", "celebrity", "grammy",
+                           "oscar", "netflix", "spotify", "tiktok", "viral",
+                           "plushie", "mitski", "taylor swift", "disney"]),
+        ("incidents", ["stampede", "earthquake", "flood", "wildfire", "shooting",
+                       "crash ", "explosion", "emergency", "evacuation", "hurricane"]),
+    ]
+    
+    for cat, keywords in rules:
+        for kw in keywords:
+            if kw in text:
+                return cat
+    return "general"
 
 def _scrape_body(url: str, timeout: int = 10) -> str:
     """Fetch article body text. Trafilatura first, regex fallback for paywalls."""
