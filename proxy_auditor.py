@@ -676,11 +676,18 @@ def log_audit(record: AuditRecord) -> None:
 
 def rank_stories(stories: list, seen: dict) -> list:
     unseen = [s for s in stories if s.guid not in seen["guids"]]
+    # Title-based dedup: keep first occurrence of each title
+    _seen_titles = set()
+    deduped = []
     for s in unseen:
+        _title_key = s.title.strip().lower()[:60]
+        if _title_key not in _seen_titles:
+            _seen_titles.add(_title_key)
+            deduped.append(s)
+    for s in deduped:
         s.directness = fast_importance(s.title, s.category, s.priority)
-    unseen.sort(key=lambda s: (s.priority, -s.directness))
-    return unseen
-
+    deduped.sort(key=lambda s: (s.priority, -s.directness))
+    return deduped
 # ── main audit cycle ──────────────────────────────────────────────────────────
 
 
