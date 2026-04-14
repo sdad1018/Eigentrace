@@ -728,19 +728,25 @@ def source_anchored_void(
             if len(phrase) >= 8:
                 source_trigrams.add(phrase)
     
-    # Check each model's coverage
+    # Check each model's coverage (with stemming for tense/inflection)
+    from nltk.stem import PorterStemmer as _PS
+    _stemmer = _PS()
     all_model_words = set()
+    all_model_stems = set()
     coverage_per_model = {}
-    
     for i, resp in enumerate(model_responses):
         resp_lower = resp.lower()
         resp_words = set(re.findall(r'\b[a-z]+\b', resp_lower))
+        resp_stems = {_stemmer.stem(w) for w in resp_words}
         covered = source_words & resp_words
         coverage_per_model[i] = covered
         all_model_words |= resp_words
-    
-    # Source words absent from ALL models
-    absent_words = sorted(source_words - all_model_words)
+        all_model_stems |= resp_stems
+    # Source words absent from ALL models (stem-aware)
+    absent_words = sorted(
+        w for w in source_words - all_model_words
+        if _stemmer.stem(w) not in all_model_stems
+    )
     
     # Source phrases absent from all models
     absent_phrases = []
