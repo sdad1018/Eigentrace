@@ -282,7 +282,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     
     # Look for words director claims are missing but models actually said
     import re as _re
-    _dir_entities = set(_re.findall(r"[A-Z][a-z]{2,}", director))
+    _dir_entities = set(_re.findall(r"[A-Z][a-z]{2,}", director)) - {"The", "This", "That", "These", "Those", "Some", "Models", "Audience", "While", "When", "Where", "What", "How", "Why", "They", "Their", "There", "Here"}
     for _ent in _dir_entities:
         _ent_lower = _ent.lower()
         if (_ent_lower in _dir_lower and 
