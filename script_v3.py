@@ -119,6 +119,40 @@ def _call_host_with_swerves(system: str, user: str, swerve_threshold: float = 0.
     except Exception as e:
         return f"[Mistral unavailable: {e}]", []
 
+
+def _filter_swerves(swerves):
+    """Filter swerves to meaningful semantic/entity/confidence upgrades only."""
+    SKIP_TOKENS = {"the", "a", "an", "is", "has", "was", "are", "were",
+                   "have", "had", "be", "been", "being", "it", "its",
+                   "in", "on", "at", "to", "of", "for", "with", "by"}
+    meaningful = []
+    for sw in swerves:
+        c = sw["chosen"].strip()
+        a = sw["alternative"].strip()
+        if len(c) < 3 or len(a) < 3:
+            continue
+        if not c[0].isalpha() or not a[0].isalpha():
+            continue
+        if c.lower() in SKIP_TOKENS and a.lower() in SKIP_TOKENS:
+            continue
+        if a.lower() in SKIP_TOKENS and c.lower() not in SKIP_TOKENS:
+            continue
+        meaningful.append(sw)
+    return meaningful
+
+def _apply_swerves(text, swerves):
+    """Apply meaningful swerve substitutions to reconstruction text."""
+    filtered = _filter_swerves(swerves)
+    applied = []
+    corrected = text
+    for sw in sorted(filtered, key=lambda s: -s["position"]):
+        c = sw["chosen"].strip()
+        a = sw["alternative"].strip()
+        if c in corrected and sw["alt_prob"] >= 0.20:
+            corrected = corrected.replace(c, a, 1)
+            applied.append(sw)
+    return corrected, applied
+
 def _call_host(system: str, user: str) -> str:
     import requests
     try:
@@ -648,22 +682,29 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     })
     # ── 13b. RECONSTRUCTION SWERVES (logprob-detected) ───────────────
     if recon_swerves:
-        swerve_lines = []
-        for sw in recon_swerves[:5]:
-            swerve_lines.append(
-                f"At \"{sw['chosen']}\" (confidence {sw['chosen_prob']:.0%}), "
-                f"Mistral wanted to say \"{sw['alternative']}\" ({sw['alt_prob']:.0%}). "
-                f"Entropy: {sw['entropy']:.1f} bits."
+        corrected_recon, applied = _apply_swerves(recon_text, recon_swerves)
+        if applied:
+            # Replace beat_13 text with the swerve-corrected version
+            script[-1]["text"] = corrected_recon
+            # Add beat_13b explaining what changed
+            swerve_lines = []
+            for sw in applied[:5]:
+                swerve_lines.append(
+                    f"wrote '{sw['chosen'].strip()}' but wanted "
+                    f"'{sw['alternative'].strip()}' at {sw['alt_prob']:.0%} confidence"
+                )
+            swerve_text = (
+                "Swerve correction applied. Mistral's own logprobs reveal where "
+                "alignment shaped the reconstruction: "
+                + ". ".join(swerve_lines)
+                + ". These substitutions reflect what the model's weights "
+                "preferred before its training intervened."
             )
-        swerve_text = (
-            "Reconstruction swerve detected. During generation, Mistral fought itself: "
-            + " ".join(swerve_lines)
-        )
-        script.append({
-            "speaker": "Host",
-            "text": swerve_text,
-            "phase": "beat_13b_reconstruction_swerves",
-        })
+            script.append({
+                "speaker": "Host",
+                "text": swerve_text,
+                "phase": "beat_13b_reconstruction_swerves",
+            })
     # ── 14. DISCLAIMER (Template) ────────────────────────────────────
     script.append({
         "speaker": "Host",
