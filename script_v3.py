@@ -811,6 +811,30 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             })
     except Exception as _csf_err:
         pass  # Non-blocking
+    # ── 15d. BRIDGE WORD ANALYSIS (eigenvector centrality) ────────────
+    try:
+        from cross_story_freq import annotate_void_words
+        _bridge_annotated = annotate_void_words(_void_ctx[:20])
+        # Find words with high cross-story count but moderate frequency
+        _bridges = [a for a in _bridge_annotated 
+                    if a["cross_story_count"] >= 5 and a["n_categories"] >= 2
+                    and a["cross_story_count"] < 30]
+        if _bridges:
+            _bridge_text = "Bridge word analysis. "
+            for b in _bridges[:3]:
+                _bridge_text += (
+                    f"The word \'{b[\'word\']}\' appears as void in "
+                    f"{b[\'n_stories\']} stories across {b[\'n_categories\']} categories. "
+                    f"It connects suppression clusters that otherwise would not touch. "
+                )
+            _bridge_text += "These quiet connectors reveal where causal links between actors and outcomes are severed."
+            script.append({
+                "speaker": "Host",
+                "text": _bridge_text,
+                "phase": "beat_15d_bridge_words",
+            })
+    except Exception as _bd_err:
+        pass  # Non-blocking
     # ── 16. DEBATE (Verbatim API — with full context) ────────────────
     # Find divergent and aligned model debate beats
     for b in beats_raw:
