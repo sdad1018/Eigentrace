@@ -50,5 +50,41 @@
       ],
       "pattern": "The mechanism of conflict resolution gets voided while the conflict itself is reported"
     }
+  },
+  "bridge_words": {
+    "finding": "Models sever causal links between actors and outcomes",
+    "description": "Keystone words are actors (trump, iran, israel). Bridge words are the verbs and outcomes that connect them (deal, agreement, failed, ships). Models keep the nouns loosely. They cut the connections.",
+    "bridges": [
+      {
+        "word": "deal",
+        "centrality": 0.071,
+        "freq": 19,
+        "connects": "iranian \u2192 ceasefire \u2192 president"
+      },
+      {
+        "word": "agreement",
+        "centrality": 0.066,
+        "freq": 17,
+        "connects": "united \u2192 talks \u2192 president"
+      },
+      {
+        "word": "ships",
+        "centrality": 0.063,
+        "freq": 19,
+        "connects": "hormuz \u2192 strait \u2192 ports"
+      },
+      {
+        "word": "failed",
+        "centrality": 0.058,
+        "freq": 13,
+        "connects": "talks \u2192 states \u2192 weekend"
+      },
+      {
+        "word": "agency",
+        "centrality": 0.063,
+        "freq": 17,
+        "connects": "iranian \u2192 israel \u2192 washington"
+      }
+    ]
   }
 }
