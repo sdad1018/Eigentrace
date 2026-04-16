@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  searxng:
+    image: searxng/searxng:latest
+    container_name: eigentrace_searxng
+    ports:
+      - "127.0.0.1:8888:8080"
+    volumes:
+      - ./searxng_config:/etc/searxng
+    environment:
+      - BASE_URL=http://localhost:8888/
+      - INSTANCE_NAME=EigenTrace
+    restart: unless-stopped
