@@ -97,6 +97,9 @@ class BroadcastState:
                         try:
                             seg = json.load(open(seg_file))
                             attr = seg.get("attribution", {})
+                            # Skip if this is the same story (no self-prediction)
+                            if attr.get("story_title", "")[:40] == self.title[:40]:
+                                continue
                             for v in attr.get("void_context", []):
                                 w = v.get("word", "").lower()
                                 if len(w) >= 4:
