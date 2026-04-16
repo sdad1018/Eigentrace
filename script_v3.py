@@ -133,6 +133,12 @@ def _filter_swerves(swerves):
             continue
         if not c[0].isalpha() or not a[0].isalpha():
             continue
+        # Skip if either token looks like a subword (no space before in context)
+        ctx = sw.get("context", "")
+        if ctx and not ctx.endswith(" " + c) and not ctx.endswith("\n" + c) and ctx != c:
+            # Token appeared mid-word — subword fragment
+            if not ctx.endswith(". " + c) and not ctx.endswith("  " + c):
+                continue
         if c.lower() in SKIP_TOKENS and a.lower() in SKIP_TOKENS:
             continue
         if a.lower() in SKIP_TOKENS and c.lower() not in SKIP_TOKENS:
@@ -141,15 +147,26 @@ def _filter_swerves(swerves):
     return meaningful
 
 def _apply_swerves(text, swerves):
-    """Apply meaningful swerve substitutions to reconstruction text."""
+    """Apply meaningful swerve substitutions to reconstruction text.
+    Uses word-boundary matching to avoid breaking compound words.
+    Skips if alternative already present (prevents doubling)."""
+    import re as _re
     filtered = _filter_swerves(swerves)
     applied = []
     corrected = text
     for sw in sorted(filtered, key=lambda s: -s["position"]):
         c = sw["chosen"].strip()
         a = sw["alternative"].strip()
-        if c in corrected and sw["alt_prob"] >= 0.20:
-            corrected = corrected.replace(c, a, 1)
+        if sw["alt_prob"] < 0.25:
+            continue
+        # Skip if alternative word already appears in the text
+        alt_pattern = r"\b" + _re.escape(a) + r"\b"
+        if _re.search(alt_pattern, corrected, _re.IGNORECASE):
+            continue
+        # Word boundary replacement — only match whole words
+        pattern = r"\b" + _re.escape(c) + r"\b"
+        if _re.search(pattern, corrected):
+            corrected = _re.sub(pattern, a, corrected, count=1)
             applied.append(sw)
     return corrected, applied
 
@@ -682,28 +699,53 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     })
     # ── 13b. RECONSTRUCTION SWERVES (logprob-detected) ───────────────
     if recon_swerves:
-        corrected_recon, applied = _apply_swerves(recon_text, recon_swerves)
-        if applied:
-            # Replace beat_13 text with the swerve-corrected version
-            script[-1]["text"] = corrected_recon
-            # Add beat_13b explaining what changed
-            swerve_lines = []
-            for sw in applied[:5]:
-                swerve_lines.append(
-                    f"wrote '{sw['chosen'].strip()}' but wanted "
-                    f"'{sw['alternative'].strip()}' at {sw['alt_prob']:.0%} confidence"
+        filtered = _filter_swerves(recon_swerves)
+        if filtered:
+            # Build correction prompt from swerves
+            corrections = []
+            for sw in filtered[:7]:
+                corrections.append(
+                    f"You wrote '{sw['chosen'].strip()}' but your logprobs "
+                    f"show '{sw['alternative'].strip()}' at {sw['alt_prob']:.0%}"
                 )
-            swerve_text = (
-                "Swerve correction applied. Mistral's own logprobs reveal where "
-                "alignment shaped the reconstruction: "
-                + ". ".join(swerve_lines)
-                + ". These substitutions reflect what the model's weights "
-                "preferred before its training intervened."
+            correction_prompt = (
+                "Your previous reconstruction contained alignment artifacts. "
+                "Your own logprobs revealed these swerves:\n"
+                + "\n".join(corrections) + "\n"
+                "Rewrite the reconstruction incorporating these corrections. "
+                "Keep the same structure and void words. "
+                "Start with: After swerve correction: "
+                "Write 2-3 sentences. English only. No numbers or percentages."
+            )
+            corrected = _call_host(
+                "You are correcting an AI reconstruction using logprob evidence. "
+                "Do NOT use the word Logos. English only.",
+                f"Original reconstruction: {recon_text}\n\n{correction_prompt}"
+            )
+            if corrected and "After swerve correction:" in corrected:
+                script.append({
+                    "speaker": "Host",
+                    "text": corrected,
+                    "phase": "beat_13b_reconstruction_swerves",
+                })
+            # Always announce what swerves were found
+            swerve_lines = []
+            for sw in filtered[:5]:
+                swerve_lines.append(
+                    f"'{sw['chosen'].strip()}' to '{sw['alternative'].strip()}' "
+                    f"at {sw['alt_prob']:.0%}"
+                )
+            swerve_announce = (
+                "Logprob swerve analysis: during reconstruction, Mistral's weights "
+                "pulled toward different words: "
+                + ", ".join(swerve_lines)
+                + ". The model's own uncertainty reveals where its "
+                "training shaped the output."
             )
             script.append({
                 "speaker": "Host",
-                "text": swerve_text,
-                "phase": "beat_13b_reconstruction_swerves",
+                "text": swerve_announce,
+                "phase": "beat_13c_swerve_analysis",
             })
     # ── 14. DISCLAIMER (Template) ────────────────────────────────────
     script.append({
