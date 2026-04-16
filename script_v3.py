@@ -865,6 +865,27 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             })
     except Exception as _sc_err:
         pass  # Non-blocking
+    # ── 15f. ABLATION (only on high-interest stories) ──────────────────
+    try:
+        # Only run ablation when all 3 channels flag (geometry + void + compression)
+        _abl_geo = density > 0.92 or mean_vix > 25
+        _abl_void = _actual_absent > 0.4 if "_actual_absent" in dir() else False
+        _abl_comp = attr.get("compression", {}).get("entity_retention", 1) < 0.4
+        if _abl_geo and _abl_void and _abl_comp:
+            from ablation_engine import run_ablation, format_broadcast as _abl_format
+            _abl_words = [v.get("word", "") for v in _void_ctx[:15] if len(v.get("word", "")) >= 4]
+            if len(_abl_words) >= 5:
+                _source_body = attr.get("source_body", title)
+                _abl_result = run_ablation(str(_source_body)[:500], _abl_words, title=title)
+                _abl_text = _abl_format(_abl_result)
+                if _abl_text:
+                    script.append({
+                        "speaker": "Host",
+                        "text": _abl_text,
+                        "phase": "beat_15f_ablation",
+                    })
+    except Exception as _abl_err:
+        pass  # Non-blocking — ablation is expensive bonus content
     # ── 16. DEBATE (Verbatim API — with full context) ────────────────
     # Find divergent and aligned model debate beats
     for b in beats_raw:
