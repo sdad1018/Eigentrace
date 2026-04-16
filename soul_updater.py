@@ -380,6 +380,137 @@ def compute_trends():
     
     return trends
 
+
+
+def generate_capability_proposals(cal, segments, trends):
+    """Propose new capabilities based on detected gaps.
+    The system identifies what it CANNOT do and proposes tools."""
+    proposals = []
+    
+    # Gap 1: Prediction failure → propose better RAG
+    # Look for prediction scores in recent segments
+    pred_scores = []
+    for s in segments:
+        for b in s.get("beats", []):
+            text = b.get("text", "")
+            if "Prediction accuracy:" in text:
+                try:
+                    # Parse "Prediction accuracy: 0 of 5"
+                    parts = text.split("Prediction accuracy:")[1].strip()
+                    nums = parts.split("of")
+                    score = int(nums[0].strip()) / int(nums[1].strip().rstrip("."))
+                    pred_scores.append(score)
+                except:
+                    pass
+    
+    if len(pred_scores) >= 5 and sum(pred_scores) / len(pred_scores) < 0.2:
+        avg_score = sum(pred_scores) / len(pred_scores)
+        proposals.append({
+            "id": "improve_prediction_rag",
+            "reason": f"Prediction accuracy at {avg_score:.0%} across {len(pred_scores)} stories. "
+                      f"RAG retrieval is returning wrong-topic matches.",
+            "action": "Add category pre-filter to ChromaDB query: match story category before embedding similarity",
+            "type": "capability",
+            "priority": "high",
+        })
+    
+    # Gap 2: No topic detection → propose classifier
+    unknown_count = cal.get("top_categories", {}).get("unknown", 0)
+    total = cal.get("stories", 1)
+    if unknown_count / max(total, 1) > 0.3:
+        proposals.append({
+            "id": "add_topic_classifier",
+            "reason": f"{unknown_count}/{total} stories ({unknown_count/total:.0%}) categorized as 'unknown'. "
+                      f"Topic detection is failing on a third of content.",
+            "action": "Add lightweight topic classifier (keyword or embedding-based) to batch_producer",
+            "type": "capability",
+            "priority": "medium",
+        })
+    
+    # Gap 3: Gemini unreliable → propose retry logic or replacement
+    gem = cal.get("model_health", {}).get("Gemini", {})
+    gem_total = gem.get("total", 0)
+    gem_empty = gem.get("empty", 0)
+    if gem_total > 0 and (gem_total - gem_empty) / gem_total < 0.5:
+        proposals.append({
+            "id": "gemini_retry_or_replace",
+            "reason": f"Gemini responding to only {gem_total-gem_empty}/{gem_total} stories. "
+                      f"This model is unreliable under batch load.",
+            "action": "Option A: Add exponential backoff retry (3 attempts). "
+                      "Option B: Replace with Gemini Flash for reliability. "
+                      "Option C: Remove from lineup and run as 4-model consensus.",
+            "type": "capability",
+            "priority": "high",
+        })
+    
+    # Gap 4: No financial data → propose if market stories appear
+    market_cats = cal.get("top_categories", {}).get("business", 0)
+    if market_cats > 5:
+        proposals.append({
+            "id": "add_financial_verification",
+            "reason": f"{market_cats} business/market stories in 24h but no financial data source. "
+                      f"Layer 5 cannot verify market claims against real price data.",
+            "action": "Add financial API (Yahoo Finance or Alpha Vantage) for market story verification",
+            "type": "capability",
+            "priority": "low",
+        })
+    
+    # Gap 5: Trends available but not in broadcast → propose trend beat
+    if trends:
+        increasing = [k for k, v in trends.items() if v.get("direction") == "increasing"]
+        decreasing = [k for k, v in trends.items() if v.get("direction") == "decreasing"]
+        if increasing or decreasing:
+            proposals.append({
+                "id": "add_trend_beat",
+                "reason": f"Trend data available ({len(trends)} metrics tracked over time) "
+                          f"but not reported in broadcast. Increasing: {', '.join(increasing)}. "
+                          f"Decreasing: {', '.join(decreasing)}.",
+                "action": "Add beat 17b: 'Suppression trajectory' — report which metrics are trending "
+                          "up or down over the last 24 hours",
+                "type": "capability",
+                "priority": "medium",
+            })
+    
+    # Gap 6: SearXNG available but not all void words searched → propose sweep
+    # If Layer 5 only searches top 12 but we have 200+ void words
+    void_counts = []
+    for s in segments:
+        vc = s.get("attribution", {}).get("void_context", [])
+        if vc:
+            void_counts.append(len(vc))
+    if void_counts:
+        avg_voids = sum(void_counts) / len(void_counts)
+        if avg_voids > 15:
+            proposals.append({
+                "id": "expand_void_verification",
+                "reason": f"Average {avg_voids:.0f} void words per story but Layer 5 only "
+                          f"searches top 12. The long tail contains bridge words and tripwires.",
+                "action": "Add background sweep: hourly batch search ALL void words against SearXNG. "
+                          "Store in verification_log.jsonl for scatter plot accumulation.",
+                "type": "capability",
+                "priority": "medium",
+            })
+    
+    # Gap 7: Prediction exists but no visible learning curve
+    if len(pred_scores) >= 10:
+        first_half = pred_scores[:len(pred_scores)//2]
+        second_half = pred_scores[len(pred_scores)//2:]
+        first_avg = sum(first_half) / len(first_half)
+        second_avg = sum(second_half) / len(second_half)
+        if second_avg <= first_avg:
+            proposals.append({
+                "id": "prediction_not_improving",
+                "reason": f"Prediction accuracy not improving: first half {first_avg:.0%}, "
+                          f"second half {second_avg:.0%}. The system is not learning.",
+                "action": "Store prediction results in persistent log. "
+                          "Weight RAG results by prediction success rate of similar past stories. "
+                          "Stories whose void patterns led to correct predictions get higher weight.",
+                "type": "capability",
+                "priority": "critical",
+            })
+    
+    return proposals
+
 def generate_proposals(cal, segments):
     """Analyze patterns and propose soul updates. All deterministic."""
     proposals = []
@@ -471,6 +602,14 @@ def generate_proposals(cal, segments):
             "type": "config",
         })
     
+
+    # ─── CAPABILITY PROPOSALS ─────────────────────────────
+    try:
+        _trends = compute_trends()
+        cap_proposals = generate_capability_proposals(cal, segments, _trends)
+        proposals.extend(cap_proposals)
+    except:
+        pass
 
     # ─── TREND-AWARE PROPOSALS ────────────────────────────
     try:
