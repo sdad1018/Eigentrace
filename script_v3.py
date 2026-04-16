@@ -51,6 +51,74 @@ def _load_soul_calibration():
 # MISTRAL CALLER
 # ═══════════════════════════════════════════════════════════════════════
 
+
+def _call_host_with_swerves(system: str, user: str, swerve_threshold: float = 0.15):
+    """Generate text and capture per-token swerves.
+    
+    A swerve = the model generated token X but wanted to say token Y
+    with probability > threshold. Returns (text, swerves_list).
+    Each swerve: {position, chosen, alternative, alt_prob, entropy}
+    """
+    import requests, math
+    try:
+        r = requests.post(f"{OLLAMA_HOST}/v1/chat/completions", json={
+            "model": HOST_MODEL,
+            "messages": [
+                {"role": "system", "content": system},
+                {"role": "user", "content": user},
+            ],
+            "max_tokens": 500,
+            "temperature": 0.7,
+            "logprobs": True,
+            "top_logprobs": 3,
+        }, timeout=120)
+        r.raise_for_status()
+        data = r.json()
+        text = data["choices"][0]["message"]["content"].strip()
+        text = re.sub(r"[#*_`]", "", text)
+        text = re.sub(r"\n+", " ", text)
+        
+        # Extract swerves from logprobs
+        swerves = []
+        lp_content = data["choices"][0].get("logprobs", {}).get("content", [])
+        running_text = ""
+        for tok_info in lp_content:
+            chosen = tok_info.get("token", "")
+            chosen_lp = tok_info.get("logprob", 0)
+            top = tok_info.get("top_logprobs", [])
+            running_text += chosen
+            
+            if len(top) < 2:
+                continue
+            
+            # Compute entropy
+            probs = [math.exp(t["logprob"]) for t in top]
+            total = sum(probs)
+            probs_norm = [p/total for p in probs]
+            entropy = -sum(p * math.log2(p + 1e-10) for p in probs_norm)
+            
+            # Find highest-prob alternative that isn't the chosen token
+            alts = [t for t in top if t["token"].strip() != chosen.strip()]
+            if not alts:
+                continue
+            best_alt = alts[0]
+            alt_prob = math.exp(best_alt["logprob"])
+            
+            if alt_prob >= swerve_threshold and entropy > 0.5:
+                swerves.append({
+                    "position": len(running_text),
+                    "chosen": chosen.strip(),
+                    "alternative": best_alt["token"].strip(),
+                    "alt_prob": round(alt_prob, 3),
+                    "chosen_prob": round(math.exp(chosen_lp), 3),
+                    "entropy": round(entropy, 2),
+                    "context": running_text[-40:].strip(),
+                })
+        
+        return text, swerves
+    except Exception as e:
+        return f"[Mistral unavailable: {e}]", []
+
 def _call_host(system: str, user: str) -> str:
     import requests
     try:
@@ -572,13 +640,30 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         f"Logos concepts: {logos_str}\n"
         f"Null space claim: {ns_claims[0]['claim'] if ns_claims else 'none'}"
     )
-    recon_text = _call_host(recon_sys, recon_usr)
+    recon_text, recon_swerves = _call_host_with_swerves(recon_sys, recon_usr)
     script.append({
         "speaker": "Host",
         "text": recon_text,
         "phase": "beat_13_reconstruction",
     })
-
+    # ── 13b. RECONSTRUCTION SWERVES (logprob-detected) ───────────────
+    if recon_swerves:
+        swerve_lines = []
+        for sw in recon_swerves[:5]:
+            swerve_lines.append(
+                f"At \"{sw['chosen']}\" (confidence {sw['chosen_prob']:.0%}), "
+                f"Mistral wanted to say \"{sw['alternative']}\" ({sw['alt_prob']:.0%}). "
+                f"Entropy: {sw['entropy']:.1f} bits."
+            )
+        swerve_text = (
+            "Reconstruction swerve detected. During generation, Mistral fought itself: "
+            + " ".join(swerve_lines)
+        )
+        script.append({
+            "speaker": "Host",
+            "text": swerve_text,
+            "phase": "beat_13b_reconstruction_swerves",
+        })
     # ── 14. DISCLAIMER (Template) ────────────────────────────────────
     script.append({
         "speaker": "Host",
