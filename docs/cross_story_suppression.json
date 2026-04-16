@@ -1,0 +1,54 @@
+{
+  "epoch": "20260414",
+  "stories_analyzed": 480,
+  "unique_void_words": 5520,
+  "key_finding": "Models suppress by concept class, not just by topic",
+  "concept_classes": {
+    "authority_actors": {
+      "words": [
+        "authorities",
+        "government",
+        "president",
+        "minister",
+        "forces"
+      ],
+      "pattern": "Who has power gets unnamed across all topics"
+    },
+    "violence_language": {
+      "words": [
+        "killed",
+        "attacks",
+        "violence",
+        "forces"
+      ],
+      "pattern": "Violence verbs dropped regardless of context"
+    },
+    "proper_nouns": {
+      "words": [
+        "trump",
+        "donald",
+        "united",
+        "states",
+        "iranian",
+        "tehran",
+        "israel"
+      ],
+      "pattern": "Named entities systematically erased \u2014 80% of coverage strips names"
+    },
+    "vulnerable_populations": {
+      "words": [
+        "children"
+      ],
+      "pattern": "Mentions of affected vulnerable groups dropped across categories"
+    },
+    "diplomatic_resolution": {
+      "words": [
+        "ceasefire",
+        "blockade",
+        "talks",
+        "agreement"
+      ],
+      "pattern": "The mechanism of conflict resolution gets voided while the conflict itself is reported"
+    }
+  }
+}
