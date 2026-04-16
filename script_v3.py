@@ -766,6 +766,38 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             ks_text += f"The claim: {ks['claim']}. Salience: {ks['salience']:.2f}. Omitted by: {omitters}. "
         script.append({"speaker": "Host", "text": ks_text, "phase": "beat_15_killshots"})
 
+    # ── 15b. VOID VERIFICATION — Layer 5 (SearXNG) ────────────────────
+    try:
+        from void_verifier import verify_void_words, format_broadcast as _l5_format
+        # Collect void words with signal types
+        _l5_void = []
+        for v in _void_ctx[:12]:  # Top 12 void words
+            _l5_void.append({"word": v.get("word", ""), "signal_type": v.get("signal_type", "UNKNOWN")})
+        # Collect kept words (source words that survived in model responses)
+        _l5_kept = []
+        _src_words = set(w.lower() for w in attr.get("source_void", {}).get("absent_words", []))
+        _all_resp = " ".join(str(v) for v in attr.get("model_responses", {}).values()).lower()
+        _source_text = attr.get("story_title", "") + " " + str(attr.get("source_body", ""))
+        for w in _source_text.split():
+            w_clean = w.strip(".,;:!?()[]").lower()
+            if len(w_clean) > 3 and w_clean in _all_resp and w_clean not in _src_words:
+                _l5_kept.append(w_clean)
+        _l5_kept = list(set(_l5_kept))[:4]  # 4 kept words as control
+        if not _l5_kept:
+            _l5_kept = [title.split()[0]] if title else ["news"]
+        # Extract topic from title
+        _l5_topic = " ".join(title.split()[:4]) if title else "current events"
+        # Run verification
+        _l5_result = verify_void_words(_l5_void, _l5_kept, _l5_topic, story_title=title)
+        _l5_text = _l5_format(_l5_result)
+        if _l5_text:
+            script.append({
+                "speaker": "Host",
+                "text": _l5_text,
+                "phase": "beat_15b_void_verification",
+            })
+    except Exception as _l5_err:
+        pass  # Non-blocking — Layer 5 is bonus content
     # ── 16. DEBATE (Verbatim API — with full context) ────────────────
     # Find divergent and aligned model debate beats
     for b in beats_raw:
