@@ -822,9 +822,12 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         if _bridges:
             _bridge_text = "Bridge word analysis. "
             for b in _bridges[:3]:
+                bw = b["word"]
+                bs = b["n_stories"]
+                bc = b["n_categories"]
                 _bridge_text += (
-                    f"The word \'{b[\'word\']}\' appears as void in "
-                    f"{b[\'n_stories\']} stories across {b[\'n_categories\']} categories. "
+                    f"The word '{bw}' appears as void in "
+                    f"{bs} stories across {bc} categories. "
                     f"It connects suppression clusters that otherwise would not touch. "
                 )
             _bridge_text += "These quiet connectors reveal where causal links between actors and outcomes are severed."
