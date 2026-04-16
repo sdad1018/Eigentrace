@@ -838,6 +838,33 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             })
     except Exception as _bd_err:
         pass  # Non-blocking
+    # ── 15e. SPECTRAL VOID CLUSTERING ──────────────────────────────────
+    try:
+        _cluster_file = "/mnt/c/Users/M4ISI/eigentrace/docs/spectral_clusters.json"
+        import os as _os
+        if _os.path.exists(_cluster_file):
+            import json as _json
+            _clusters = _json.load(open(_cluster_file))
+            _cluster_text = "Spectral analysis of the void. "
+            for cid, cdata in sorted(_clusters.items()):
+                top = ", ".join(cdata["top_5"][:3])
+                _cluster_text += f"Harmonic {cid}: {cdata['size']} words clustering around {top}. "
+            # Check if current story's void words span multiple clusters
+            _current_voids = set(v.get("word", "").lower() for v in _void_ctx[:15])
+            _in_clusters = {}
+            for cid, cdata in _clusters.items():
+                overlap = _current_voids & set(cdata["words"])
+                if overlap:
+                    _in_clusters[cid] = overlap
+            if len(_in_clusters) > 1:
+                _cluster_text += f"This story's void words span {len(_in_clusters)} clusters, indicating coupled suppression across actor and mechanism layers."
+            script.append({
+                "speaker": "Host",
+                "text": _cluster_text,
+                "phase": "beat_15e_spectral_clusters",
+            })
+    except Exception as _sc_err:
+        pass  # Non-blocking
     # ── 16. DEBATE (Verbatim API — with full context) ────────────────
     # Find divergent and aligned model debate beats
     for b in beats_raw:
