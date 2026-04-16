@@ -77,26 +77,73 @@ class BroadcastState:
     
     def predict(self, chroma_db=None):
         """Generate predictions before API calls.
-        Uses historical data to predict what the models will void."""
+        Two-stage prediction:
+          1. RAG: find similar past stories, predict from their void words
+          2. Fallback: cross-story frequency if RAG fails
+        """
+        # Stage 1: RAG-based prediction
+        try:
+            from segment_rag import query_similar
+            similar = query_similar(self.title, n_results=8)
+            if similar and len(similar) > 0:
+                # Collect void words from similar past stories
+                from collections import Counter
+                past_voids = Counter()
+                story_count = 0
+                for match in similar:
+                    meta = match.get("metadata", {})
+                    seg_file = meta.get("segment_file", "")
+                    if seg_file and os.path.exists(seg_file):
+                        try:
+                            seg = json.load(open(seg_file))
+                            attr = seg.get("attribution", {})
+                            for v in attr.get("void_context", []):
+                                w = v.get("word", "").lower()
+                                if len(w) >= 4:
+                                    past_voids[w] += 1
+                            for w in attr.get("source_void", {}).get("absent_words", []):
+                                w = str(w).lower() if not isinstance(w, dict) else w.get("word", "").lower()
+                                if len(w) >= 4:
+                                    past_voids[w] += 1
+                            story_count += 1
+                        except:
+                            continue
+                
+                if past_voids:
+                    self.predicted_void_words = [w for w, c in past_voids.most_common(10)]
+                    self.prediction_confidence = min(0.9, story_count / 10)
+                    self.prediction_basis = (
+                        f"RAG retrieval: {story_count} similar past stories. "
+                        f"Void patterns from nearest neighbors."
+                    )
+                    self.similar_stories = [
+                        m.get("metadata", {}).get("title", "")[:60] for m in similar[:3]
+                    ]
+                    self.beliefs.append(
+                        f"Predicting void cluster from {story_count} similar stories: "
+                        f"{', '.join(self.predicted_void_words[:5])}. "
+                        f"Confidence: {self.prediction_confidence:.0%}."
+                    )
+                    return  # RAG prediction succeeded
+        except Exception as e:
+            log.debug(f"RAG prediction unavailable: {e}")
+        
+        # Stage 2: Fallback to cross-story frequency
         try:
             from cross_story_freq import _load_frequencies
             freq_data = _load_frequencies()
             words_db = freq_data.get("words", {})
-            
-            # Find words historically voided on similar topics
             title_words = set(self.title.lower().split())
             
-            # Score each historical void word by relevance to this story
             candidates = []
             for word, data in words_db.items():
-                # Does this word's history overlap with this story's topic?
                 relevance = 0
                 for cat in data.get("categories", []):
                     if cat in ["war", "geopolitics"] and any(w in title_words for w in 
                         ["iran", "war", "military", "trump", "israel", "gaza", "ukraine", "sudan"]):
                         relevance += data["count"]
                     elif cat in ["general", "incidents"]:
-                        relevance += data["count"] * 0.5
+                        relevance += data["count"] * 0.3
                 if relevance > 0:
                     candidates.append((word, relevance, data["count"]))
             
@@ -104,17 +151,18 @@ class BroadcastState:
             self.predicted_void_words = [c[0] for c in candidates[:10]]
             
             if self.predicted_void_words:
-                self.prediction_confidence = min(0.95, len(candidates) / 100)
+                self.prediction_confidence = min(0.7, len(candidates) / 100)
                 self.prediction_basis = (
-                    f"Based on {freq_data.get('total_stories', 0)} historical stories "
-                    f"and {len(words_db)} tracked void words"
+                    f"Frequency fallback: {freq_data.get('total_stories', 0)} stories, "
+                    f"{len(words_db)} void words"
                 )
                 self.beliefs.append(
-                    f"Predicting void cluster: {', '.join(self.predicted_void_words[:5])}. "
+                    f"Predicting void cluster (frequency): "
+                    f"{', '.join(self.predicted_void_words[:5])}. "
                     f"Confidence: {self.prediction_confidence:.0%}."
                 )
         except Exception as e:
-            log.warning(f"Prediction failed: {e}")
+            log.warning(f"Prediction failed entirely: {e}")
     
     # ─── MEASUREMENT INTAKE ───────────────────────────────
     
