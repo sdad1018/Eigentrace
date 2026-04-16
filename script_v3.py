@@ -825,25 +825,11 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             "mean_vix": mean_vix,
         }
         _sv_vec, _sv_labels = compute_state_vector(_seg_signals, _best6)
-        _sv_display = ", ".join(
-            f"{l.replace('_',' ')}: {'plus' if v == 1 else 'minus' if v == -1 else 'neutral'}"
-            for l, v in zip(_sv_labels, _sv_vec)
-        )
-        _sv_text = f"EigenTrace state vector. {_sv_display}."
-        
-        # Find historical matches
+        from eigenching import format_broadcast as _ching_format
         _all_records = load_all_signals()
-        _matches = find_state_matches(_all_records[-750:], _sv_vec, _best6)
-        _match_count = len(_matches)
-        if _match_count > 1:
-            _prev = [m for m in _matches if m.get("title","") != title]
-            if _prev:
-                _sv_text += (f" This exact state has occurred {len(_prev)} times before. "
-                            f"Most recently: {_prev[-1]['title'][:60]}.")
-            else:
-                _sv_text += f" This state has occurred {_match_count} times including this story."
-        elif _match_count <= 1:
-            _sv_text += " This is a novel state. No exact match in recent history."
+        _matches = find_state_matches(_all_records[-2000:], _sv_vec, _best6)
+        _prev = [m for m in _matches if m.get("title","") != title]
+        _sv_text = _ching_format(_sv_vec, matches=_prev, total_seen=len(_all_records))
         
         script.append({
             "speaker": "Host",
