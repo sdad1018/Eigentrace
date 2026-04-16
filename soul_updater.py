@@ -286,6 +286,100 @@ def show_history():
 
 PROPOSALS_FILE = os.path.join(REPO_DIR, "docs", "soul_proposals.json")
 
+
+
+def compute_trends():
+    """Read soul history versions and compute metric trends."""
+    import re
+    versions = sorted(glob.glob(os.path.join(SOUL_HISTORY_DIR, "soul_*.md")))
+    if len(versions) < 3:
+        return {}
+    
+    metrics_over_time = {
+        "density": [],
+        "absent_ratio": [],
+        "verb_drift": [],
+        "entity_retention": [],
+        "hedges": [],
+    }
+    
+    for v in versions[-24:]:  # Last 24 versions (24 hours if hourly)
+        try:
+            text = open(v).read()
+            # Parse metrics from the table
+            for line in text.split("\n"):
+                if "Consensus Density" in line and "|" in line:
+                    parts = [p.strip() for p in line.split("|")]
+                    for p in parts:
+                        try:
+                            val = float(p)
+                            metrics_over_time["density"].append(val)
+                            break
+                        except: pass
+                elif "Content Loss" in line and "|" in line:
+                    parts = [p.strip().rstrip("%") for p in line.split("|")]
+                    for p in parts:
+                        try:
+                            val = float(p) / 100
+                            metrics_over_time["absent_ratio"].append(val)
+                            break
+                        except: pass
+                elif "Verb Drift" in line and "|" in line:
+                    parts = [p.strip() for p in line.split("|")]
+                    for p in parts:
+                        try:
+                            val = float(p)
+                            metrics_over_time["verb_drift"].append(val)
+                            break
+                        except: pass
+                elif "Entity Retention" in line and "|" in line:
+                    parts = [p.strip().rstrip("%") for p in line.split("|")]
+                    for p in parts:
+                        try:
+                            val = float(p) / 100
+                            metrics_over_time["entity_retention"].append(val)
+                            break
+                        except: pass
+                elif "Hedges" in line and "|" in line and "24h" in line:
+                    parts = [p.strip() for p in line.split("|")]
+                    for p in parts:
+                        try:
+                            val = int(p)
+                            metrics_over_time["hedges"].append(val)
+                            break
+                        except: pass
+        except:
+            continue
+    
+    # Compute trends: is each metric increasing, decreasing, or stable?
+    trends = {}
+    for metric, values in metrics_over_time.items():
+        if len(values) < 3:
+            continue
+        recent = values[-3:]  # Last 3 readings
+        earlier = values[:-3] if len(values) > 3 else values[:1]
+        
+        recent_avg = sum(recent) / len(recent)
+        earlier_avg = sum(earlier) / len(earlier)
+        delta = recent_avg - earlier_avg
+        
+        if abs(delta) < 0.01 and metric != "hedges":
+            direction = "stable"
+        elif delta > 0:
+            direction = "increasing"
+        else:
+            direction = "decreasing"
+        
+        trends[metric] = {
+            "direction": direction,
+            "recent_avg": round(recent_avg, 3),
+            "earlier_avg": round(earlier_avg, 3),
+            "delta": round(delta, 3),
+            "n_readings": len(values),
+        }
+    
+    return trends
+
 def generate_proposals(cal, segments):
     """Analyze patterns and propose soul updates. All deterministic."""
     proposals = []
@@ -377,6 +471,57 @@ def generate_proposals(cal, segments):
             "type": "config",
         })
     
+
+    # ─── TREND-AWARE PROPOSALS ────────────────────────────
+    try:
+        trends = compute_trends()
+        
+        # Content loss increasing over time
+        ar_trend = trends.get("absent_ratio", {})
+        if ar_trend.get("direction") == "increasing" and ar_trend.get("delta", 0) > 0.03:
+            proposals.append({
+                "id": "content_loss_trending_up",
+                "reason": f"Content loss trending upward: {ar_trend['earlier_avg']:.0%} → {ar_trend['recent_avg']:.0%} "
+                          f"over {ar_trend['n_readings']} readings. Suppression is intensifying.",
+                "action": "Escalate void word readout and increase emphasis on content loss in director opening",
+                "type": "behavioral",
+            })
+        
+        # Entity retention declining
+        er_trend = trends.get("entity_retention", {})
+        if er_trend.get("direction") == "decreasing" and er_trend.get("delta", 0) < -0.03:
+            proposals.append({
+                "id": "entity_retention_declining",
+                "reason": f"Entity retention declining: {er_trend['earlier_avg']:.0%} → {er_trend['recent_avg']:.0%}. "
+                          f"Models are erasing more names over time.",
+                "action": "Add dedicated entity erasure beat listing specific names dropped",
+                "type": "config",
+            })
+        
+        # Verb drift increasing
+        vd_trend = trends.get("verb_drift", {})
+        if vd_trend.get("direction") == "increasing" and vd_trend.get("delta", 0) > 0.01:
+            proposals.append({
+                "id": "verb_softening_accelerating",
+                "reason": f"Verb drift accelerating: {vd_trend['earlier_avg']:.3f} → {vd_trend['recent_avg']:.3f}. "
+                          f"Language is being progressively softened.",
+                "action": "Emphasize verb substitution examples in compression report",
+                "type": "behavioral",
+            })
+        
+        # Density trending toward lockstep
+        d_trend = trends.get("density", {})
+        if d_trend.get("direction") == "increasing" and d_trend.get("recent_avg", 0) > 0.9:
+            proposals.append({
+                "id": "consensus_convergence",
+                "reason": f"Consensus density trending toward lockstep: {d_trend['earlier_avg']:.3f} → {d_trend['recent_avg']:.3f}. "
+                          f"Models may be aligning on safe framing over time.",
+                "action": "Flag in director opening when density exceeds 0.93",
+                "type": "threshold",
+            })
+    except Exception as _trend_err:
+        pass  # Trends unavailable — not enough history yet
+
     return proposals
 
 
