@@ -301,6 +301,15 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     attr = seg.get("attribution", {})
     beats_raw = seg.get("beats", [])
     title = attr.get("story_title", "Unknown")
+
+    # ═══ BROADCAST STATE — the predictive coding spine ═══════════════
+    try:
+        from broadcast_state import BroadcastState
+        _state = BroadcastState(title=title, source_text=str(attr.get("source_body", title)))
+        _state.predict()  # Predict void cluster BEFORE reading measurements
+    except:
+        _state = None
+
     density = attr.get("consensus_density", 0)
     mean_vix = attr.get("mean_vix", 0)
     model_vix = attr.get("model_vix", {})
@@ -536,6 +545,27 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     _emb_sig = [v["word"] for v in _void_ctx if v.get("signal_type") == "EMBEDDING_SIGNAL"]
     _artifacts = [v["word"] for v in _void_ctx if v.get("signal_type") == "GENERIC_ARTIFACT"]
     _absent_src = _source_void.get("absent_words", [])[:5]
+
+    # ═══ FEED MEASUREMENTS INTO STATE ════════════════════════════════
+    if _state:
+        try:
+            _state.ingest_geometry(density, mean_vix, model_vix)
+            _sv_data = attr.get("source_void", {})
+            _state.ingest_void(
+                _sv_data.get("absent_ratio", 0),
+                _sv_data.get("absent_words", []),
+                void_words,
+                _void_ctx
+            )
+            _comp_data = attr.get("compression", {})
+            _state.ingest_compression(
+                _comp_data.get("entity_retention", 0),
+                _comp_data.get("verb_downgrade", 0),
+                _comp_data.get("attribution_buffer", {}).get("total", 0) if isinstance(_comp_data.get("attribution_buffer"), dict) else 0
+            )
+        except:
+            pass
+
 
     _void_text = "The lexical void. "
     if _absent_src:
@@ -796,6 +826,14 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
                 "text": _l5_text,
                 "phase": "beat_15b_void_verification",
             })
+            if _state:
+                try:
+                    _state.ingest_verification(
+                        _l5_result.get("aggregate", {}).get("newsworthiness_ratio", 0),
+                        _l5_result.get("aggregate", {}).get("suppressed_headlines", [])
+                    )
+                except:
+                    pass
     except Exception as _l5_err:
         pass  # Non-blocking — Layer 5 is bonus content
     # ── 15c. CROSS-STORY SUPPRESSION PATTERNS ─────────────────────────
@@ -884,6 +922,12 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
                         "text": _abl_text,
                         "phase": "beat_15f_ablation",
                     })
+            if _state:
+                try:
+                    _lr = _abl_result.get("local_result", {})
+                    _state.ingest_ablation(_lr.get("tripwire"), _lr.get("tripwire_delta", 0))
+                except:
+                    pass
     except Exception as _abl_err:
         pass  # Non-blocking — ablation is expensive bonus content
     # ── 16. DEBATE (Verbatim API — with full context) ────────────────
@@ -958,6 +1002,25 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         })
     except Exception as _sv_err:
         pass  # Non-blocking — state vector is bonus content
+
+    # ── 18c. THE AMALGAMATION — predictive coding synthesis ────────────
+    if _state:
+        try:
+            sys_prompt, usr_prompt = _state.synthesize()
+            _amalg_text = _call_host(sys_prompt, usr_prompt)
+            if _amalg_text and len(_amalg_text) > 30:
+                _ch = len(_state.channels_fired)
+                _amalg_text += (
+                    f" This finding drew from {_ch} independent measurement "
+                    f"channels. The void is not an opinion. It is a coordinate."
+                )
+                script.append({
+                    "speaker": "Host",
+                    "text": _amalg_text,
+                    "phase": "beat_18c_amalgamation",
+                })
+        except:
+            pass
 
     # ── 19. CTA (Pre-written) ────────────────────────────────────────
     script.append({
@@ -1059,3 +1122,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+
