@@ -798,6 +798,19 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             })
     except Exception as _l5_err:
         pass  # Non-blocking — Layer 5 is bonus content
+    # ── 15c. CROSS-STORY SUPPRESSION PATTERNS ─────────────────────────
+    try:
+        from cross_story_freq import annotate_void_words, format_broadcast as _csf_format
+        _csf_annotated = annotate_void_words(_void_ctx[:20])
+        _csf_text = _csf_format(_csf_annotated, story_title=title)
+        if _csf_text:
+            script.append({
+                "speaker": "Host",
+                "text": _csf_text,
+                "phase": "beat_15c_cross_story",
+            })
+    except Exception as _csf_err:
+        pass  # Non-blocking
     # ── 16. DEBATE (Verbatim API — with full context) ────────────────
     # Find divergent and aligned model debate beats
     for b in beats_raw:
