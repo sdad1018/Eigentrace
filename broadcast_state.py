@@ -390,6 +390,11 @@ class BroadcastState:
         
         actual = set(w.lower() for w in self.void_words[:20])
         actual |= set(str(w).lower() for w in self.absent_words[:20])
+        # Include void_context words too
+        for vc in self.void_context[:20]:
+            w = vc.get('word', '').lower() if isinstance(vc, dict) else str(vc).lower()
+            if w:
+                actual.add(w)
         predicted = set(self.predicted_void_words)
         
         if not predicted:
