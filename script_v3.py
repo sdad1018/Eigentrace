@@ -350,7 +350,95 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
 
     script = []
 
-    # ── 1. COLD OPEN (Template) ──────────────────────────────────────
+    # ═══ BEAT 0: HISTORICAL CONTEXT (RAG memory) ═══════════════════════
+    # Before any beats fire, load what we know about this topic from
+    # past broadcasts. This is the same lookup the proxy does for chat.
+    # Results feed into BroadcastState AND the director prompt.
+    _historical_context = ""
+    try:
+        from segment_rag import query as _rag_query
+        import glob as _glob
+        _rag_matches = _rag_query(title, n_results=8)
+        _past_stories = []
+        _past_voids_all = []
+        _past_killshots_all = []
+
+        for _rm in (_rag_matches or []):
+            _ts = _rm.get("timestamp", "")
+            if not _ts:
+                continue
+            _sf = _glob.glob(f"/home/remvelchio/eigentrace/tmp/segments/{_ts}_*_segment.json")
+            if not _sf:
+                continue
+            try:
+                import json as _json
+                _ps = _json.load(open(_sf[0]))
+                _pa = _ps.get("attribution", {})
+                _pt = _pa.get("story_title", "")
+
+                # Skip self
+                if _pt[:40] == title[:40]:
+                    continue
+
+                _psource = _pa.get("source_body", "")[:400]
+                _pvoids = _pa.get("source_void", {}).get("absent_words", [])
+                _pabs = _pa.get("source_void", {}).get("absent_ratio", 0)
+                _pvc = _pa.get("void_context", [])
+                _phigh = [v["word"] for v in _pvc if v.get("signal_type") == "HIGH_SALIENCE"]
+                _pks = _pa.get("killshots", _pa.get("claim_killshots", []))
+                _pmvix = _pa.get("model_vix", {})
+                _presp = _pa.get("model_responses", {})
+
+                story_ctx = []
+                story_ctx.append(f"Previous coverage: {_pt}")
+                if _psource:
+                    story_ctx.append(f"  Source excerpt: {_psource[:300]}")
+                for _mn, _mr in list(_presp.items())[:3]:
+                    if isinstance(_mr, str) and len(_mr) > 20:
+                        story_ctx.append(f"  {_mn} said: {_mr[:200]}")
+                if _pvoids:
+                    _vstr = ", ".join(str(w) for w in _pvoids[:8])
+                    story_ctx.append(f"  Voided ({_pabs:.0%} of source): {_vstr}")
+                if _phigh:
+                    story_ctx.append(f"  High-salience voids: {', '.join(_phigh[:5])}")
+                for _k in (_pks or [])[:2]:
+                    story_ctx.append(f"  Killshot: '{_k.get('claim','')}' — omitted by {_k.get('omitted_by','')}")
+                if _pmvix:
+                    _out = max(_pmvix, key=_pmvix.get)
+                    story_ctx.append(f"  Outlier: {_out} at {_pmvix[_out]:.1f}")
+
+                _past_stories.append("\n".join(story_ctx))
+                _past_voids_all.extend(str(w) for w in _pvoids[:10])
+                _past_killshots_all.extend(_pks or [])
+
+                # Feed into BroadcastState
+                if _state:
+                    if _pvoids:
+                        _state.beliefs.append(
+                            f"Past coverage of similar story '{_pt[:50]}' "
+                            f"voided {len(_pvoids)} words ({_pabs:.0%}) including: "
+                            f"{', '.join(str(w) for w in _pvoids[:5])}."
+                        )
+                    if _phigh:
+                        _state.beliefs.append(
+                            f"High-salience voids in past coverage: {', '.join(_phigh[:3])}."
+                        )
+            except Exception:
+                continue
+
+        if _past_stories:
+            _historical_context = (
+                "MEMORY FROM PAST BROADCASTS ON THIS TOPIC:\n"
+                + "\n\n".join(_past_stories[:5])
+            )
+            if _state:
+                _state.beliefs.append(
+                    f"Historical context loaded: {len(_past_stories)} similar stories found."
+                )
+    except Exception:
+        pass
+
+        # ── 1. COLD OPEN (Template) ──────────────────────────────────────
     script.append({
         "speaker": "Host",
         "text": f"This is EigenTrace. {title}",
@@ -385,6 +473,8 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         f"Killshots: {len(killshots)} omitted claims. "
         f"Outlier model: {outlier}"
     )
+    if _historical_context:
+        dir_usr = _historical_context + "\n\nCURRENT STORY:\n" + dir_usr
     director = _call_host_confident(dir_sys, dir_usr)
     
     # ── DIRECTOR FACT-CHECK (deterministic, no LLM) ─────────────
