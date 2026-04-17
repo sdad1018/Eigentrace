@@ -967,29 +967,6 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             "phase": "beat_17_weekly_patterns",
         })
 
-    # ── 17b. SUPPRESSION TRAJECTORY ────────────────────────────────────
-    try:
-        from soul_updater import compute_trends
-        _trends = compute_trends()
-        if _trends:
-            _trend_parts = []
-            for metric, data in _trends.items():
-                if data["direction"] != "stable" and data["n_readings"] >= 3:
-                    _trend_parts.append(
-                        f"{metric.replace('_', ' ')} is {data['direction']} "
-                        f"from {data['earlier_avg']:.3f} to {data['recent_avg']:.3f}"
-                    )
-            if _trend_parts:
-                _trend_text = "Suppression trajectory. Over the last 24 hours: "
-                _trend_text += ". ".join(_trend_parts) + ". "
-                _trend_text += "These are not single-story findings. These are directional shifts in how models collectively reshape content over time."
-                script.append({
-                    "speaker": "Host",
-                    "text": _trend_text,
-                    "phase": "beat_17b_trajectory",
-                })
-    except:
-        pass  # Non-blocking
     # ── 17b. SUPPRESSION TRAJECTORY (system-proposed beat) ─────────────
     # This beat was proposed by the soul_updater on 2026-04-16.
     # The system detected it had trend data but no way to report it.
