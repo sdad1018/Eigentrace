@@ -836,6 +836,30 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
                     pass
     except Exception as _l5_err:
         pass  # Non-blocking — Layer 5 is bonus content
+    # ── 15b2. SOURCE SALIENCE — Domain 3 (independent of models) ────────
+    try:
+        from source_salience import compute_source_salience, compare_salience_to_void, format_broadcast as _sal_format
+        _source_text = str(attr.get("source_body", title))
+        _sal = compute_source_salience(_source_text)
+        _void_all = [v.get("word", "") for v in _void_ctx] + [str(w) for w in attr.get("source_void", {}).get("absent_words", [])]
+        _sal_compare = compare_salience_to_void(_sal, _void_all)
+        _sal_text = _sal_format(_sal_compare)
+        if _sal_text:
+            script.append({
+                "speaker": "Host",
+                "text": _sal_text,
+                "phase": "beat_15b2_source_salience",
+            })
+            # Feed into BroadcastState
+            if _state:
+                confirmed = _sal_compare.get("confirmed_important_absence", [])
+                if confirmed:
+                    _state.beliefs.append(
+                        f"Source-independent salience confirms {len(confirmed)} void words "
+                        f"are central to the story: {', '.join(confirmed[:3])}."
+                    )
+    except:
+        pass  # Non-blocking
     # ── 15c. CROSS-STORY SUPPRESSION PATTERNS ─────────────────────────
     try:
         from cross_story_freq import annotate_void_words, format_broadcast as _csf_format
