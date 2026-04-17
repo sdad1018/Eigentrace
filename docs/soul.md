@@ -5,7 +5,7 @@ title: "EigenTrace Soul"
 
 # EigenTrace Persona Conditioning Vector
 _Fully auto-generated from live system state. Do not edit manually._
-_Last generated: 2026-04-17 20:00 UTC_
+_Last generated: 2026-04-17 21:00 UTC_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
@@ -43,18 +43,18 @@ embeddings and source text.
 |--------|-------|---------|
 | Consensus Density | 0.891 | Normal spread |
 | Content Loss | 48% | Source words absent from all model responses |
-| Verb Drift | 0.083 | Models softening language |
-| Entity Retention | 40% | Names and numbers preserved |
-| Hedges (24h) | 264 | Doubt words inserted by models |
+| Verb Drift | 0.087 | Models softening language |
+| Entity Retention | 39% | Names and numbers preserved |
+| Hedges (24h) | 269 | Doubt words inserted by models |
 | VIX Outlier | DeepSeek | Most divergent model |
 | Most Aligned | Grok | Closest to consensus |
 
 ## Model Friction Rankings
-- **DeepSeek**: 27.6
-- **Claude**: 25.3
+- **DeepSeek**: 27.5
+- **Claude**: 25.4
 - **Gemini**: 21.1
 - **ChatGPT**: 16.4
-- **Grok**: 15.8
+- **Grok**: 16.0
 
 ## Model Health
 - **ChatGPT**: 100% response rate (102/102 stories)
@@ -67,15 +67,15 @@ embeddings and source text.
 _No significant changes._
 
 ## Category Distribution
-- war: 74 stories
+- war: 70 stories
 - unknown: 34 stories
-- general: 18 stories
-- geopolitics: 4 stories
+- general: 19 stories
+- geopolitics: 7 stories
 - incidents: 4 stories
 - ai: 1 stories
 
 ## Calibration Guidance
-⚠️ 264 hedge insertions in 24h — models inserting doubt not present in sources.
+⚠️ 269 hedge insertions in 24h — models inserting doubt not present in sources.
 
 ## Behavioral Instructions
 - When absent ratio exceeds 50%, emphasize what models are hiding.
@@ -89,7 +89,7 @@ _No significant changes._
 
 ## RAG Memory
 136 stories in the current 24h window.
-8904 total segments searchable via ChromaDB.
+8912 total segments searchable via ChromaDB.
 Historical context is available for pattern analysis.
 Only strong matches (distance < 0.45) are used.
 
@@ -105,7 +105,7 @@ _The system has detected patterns that may warrant configuration changes._
 _Review and accept/reject via: `python3 soul_updater.py --accept <id>` or `--reject <id>`_
 
 ### [raise_suppression_threshold]
-**Why:** Director audit corrected 59/161 stories (37%). The director is overclaiming suppression.
+**Why:** Director audit corrected 61/163 stories (37%). The director is overclaiming suppression.
 
 **Proposed action:** Raise absent_ratio threshold for 'emphasize hiding' from 50% to 65%
 
@@ -119,7 +119,7 @@ _Review and accept/reject via: `python3 soul_updater.py --accept <id>` or `--rej
 **Type:** capability
 
 ### [verb_softening_accelerating]
-**Why:** Verb drift accelerating: 0.063 → 0.077. Language is being progressively softened.
+**Why:** Verb drift accelerating: 0.063 → 0.078. Language is being progressively softened.
 
 **Proposed action:** Emphasize verb substitution examples in compression report
 
