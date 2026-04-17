@@ -5,7 +5,7 @@ title: "EigenTrace Soul"
 
 # EigenTrace Persona Conditioning Vector
 _Fully auto-generated from live system state. Do not edit manually._
-_Last generated: 2026-04-17 01:15 UTC_
+_Last generated: 2026-04-17 01:16 UTC_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
@@ -113,7 +113,7 @@ _Review and accept/reject via: `python3 soul_updater.py --accept <id>` or `--rej
 **Type:** threshold
 
 ### [add_trend_beat]
-**Why:** Trend data available (5 metrics tracked over time) but not reported in broadcast. Increasing: . Decreasing: hedges.
+**Why:** Trend data available (5 metrics tracked over time) but not reported in broadcast. Increasing: entity_retention. Decreasing: verb_drift, hedges.
 
 **Proposed action:** Add beat 17b: 'Suppression trajectory' — report which metrics are trending up or down over the last 24 hours
 
