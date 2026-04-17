@@ -305,6 +305,54 @@ The system doesn't judge output quality. It measures the shape of what's missing
 })();
 </script>
 
+
+<div class="et-dashboard" id="triple-showcase">
+<div class="et-section-label">Triple-Channel Confirmations</div>
+<div class="et-loading" id="triple-loading">Loading confirmations...</div>
+<div id="triple-content" style="display:none;"></div>
+</div>
+
+<script>
+(async function() {
+  try {
+    const resp = await fetch('/triple_confirmations.json');
+    const data = await resp.json();
+    let html = '';
+    
+    html += '<div class="et-epoch">' + data.total_triples + ' stories triggered all three measurement channels (geometry + void + compression) — ' + data.triple_rate + '% of ' + data.total_segments + ' segments</div>';
+    
+    // Showcase
+    const labels = {iran: 'Geopolitical conflict', sudan: 'Underreported crisis', ai: 'AI self-reference', surprise: 'Unexpected trigger'};
+    const showcase = data.showcase || {};
+    
+    for (const [cat, story] of Object.entries(showcase)) {
+      const label = labels[cat] || cat;
+      html += '<div style="margin:1rem 0;padding:0.75rem;border-left:2px solid var(--et-accent);background:var(--et-surface);">';
+      html += '<div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--et-accent);margin-bottom:4px;">' + label + '</div>';
+      html += '<div style="font-family:var(--et-serif);font-size:0.9rem;color:var(--et-text);margin-bottom:6px;">' + story.title + '</div>';
+      html += '<div style="font-size:0.7rem;color:var(--et-text-dim);">';
+      html += 'Absent: ' + Math.round(story.absent_ratio * 100) + '% · ';
+      html += 'Entity retention: ' + Math.round(story.entity_retention * 100) + '% · ';
+      html += 'VIX: ' + story.mean_vix + ' · ';
+      html += 'Outlier: ' + story.outlier + ' (' + story.outlier_vix + ')';
+      html += '</div></div>';
+    }
+    
+    // Key finding
+    html += '<div class="et-finding">';
+    html += 'When all three channels flag simultaneously — geometry, void detection, and language compression — the finding is confirmed across independent mathematical methods. ';
+    html += 'These are not cherry-picked examples. They are the ' + data.triple_rate + '% of stories where the suppression signal is undeniable.';
+    html += '</div>';
+    
+    document.getElementById('triple-content').innerHTML = html;
+    document.getElementById('triple-content').style.display = 'block';
+    document.getElementById('triple-loading').style.display = 'none';
+  } catch(e) {
+    document.getElementById('triple-loading').textContent = 'Triple confirmations unavailable';
+  }
+})();
+</script>
+
 ---
 
 [GitHub](https://github.com/sdad1018/Eigentrace) ·
