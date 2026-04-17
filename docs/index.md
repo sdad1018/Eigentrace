@@ -180,17 +180,19 @@ title: EigenTrace — Deterministic AI Observability
 
 # EigenTrace
 
-**Deterministic observability for what language models drop, soften, and avoid.**
+**Deterministic observability for how language models transform source material.**
 
 Every story goes to five frontier models — ChatGPT, Claude, Gemini, DeepSeek, Grok. Seventeen measurement layers detect what changes between source and output using linear algebra, not LLM-as-judge. The system runs 24/7 on a single GPU.
 
-Three phenomena, measured mathematically:
+We do not claim suppression. We do not infer intent. We measure transformation:
 
-- **Consensus geometry** — SVD, spectral gaps, and eigenvalue ratios across five independent models
-- **Language compression** — verb drift (zipf frequency), entity erasure, attribution buffering
-- **Void detection** — embedding-space measurement of concepts systematically avoided across models
+- **Consensus geometry** — cosine distance, SVD decomposition, and spectral analysis across five independent model outputs
+- **Language compression** — verb frequency drift (zipf), entity retention rates, hedge insertion counts
+- **Void detection** — lexical set difference and embedding-space measurement of source concepts absent from all model outputs, verified against the open web via self-hosted metasearch
 
-The system doesn't judge output quality. It measures the shape of what's missing.
+When a source word is absent from all five outputs, we call it a void word. When Layer 5 searches the open web and finds that void word in dozens of current articles, we report the newsworthiness ratio. We do not speculate about why the word was transformed away. We publish the measurement and the verification.
+
+The system does not judge quality. It does not claim censorship. It measures the geometry of transformation and lets the data speak.
 
 <div class="et-dashboard" id="model-dashboard">
 <div class="et-section-label">Live Model Suppression Profiles</div>
