@@ -83,31 +83,63 @@ class BroadcastState:
         """
         # Stage 1: RAG-based prediction
         try:
-            from segment_rag import query_similar
-            similar = query_similar(self.title, n_results=8)
+            from segment_rag import query
+            similar = query(self.title, n_results=15)
             if similar and len(similar) > 0:
                 # Collect void words from similar past stories
                 from collections import Counter
                 past_voids = Counter()
                 story_count = 0
                 for match in similar:
-                    meta = match.get("metadata", {})
-                    seg_file = meta.get("segment_file", "")
-                    if seg_file and os.path.exists(seg_file):
+                    # Reconstruct segment path from timestamp
+                    ts = match.get("timestamp", "")
+                    if not ts:
+                        continue
+                    import glob as _glob
+                    seg_matches = _glob.glob(f"/home/remvelchio/eigentrace/tmp/segments/{ts}_*_segment.json")
+                    if not seg_matches:
+                        continue
+                    seg_file = seg_matches[0]
+                    if os.path.exists(seg_file):
                         try:
                             seg = json.load(open(seg_file))
                             attr = seg.get("attribution", {})
                             # Skip if this is the same story (no self-prediction)
-                            if attr.get("story_title", "")[:40] == self.title[:40]:
+                            seg_title = attr.get("story_title", match.get("title", ""))
+                            if seg_title[:40] == self.title[:40]:
                                 continue
+                            _boilerplate = {
+                                'list', 'recommended', 'stories', 'items', 'published',
+                                'wednesday', 'tuesday', 'monday', 'thursday', 'friday',
+                                'saturday', 'sunday', 'april', 'march', 'read', 'share',
+                                'comment', 'comments', 'video', 'audio', 'photo', 'follow',
+                                'subscribe', 'newsletter', 'cookie', 'privacy', 'terms',
+                                'skip', 'menu', 'search', 'home', 'more', 'also', 'related',
+                                'topics', 'copyright', 'here', 'last', 'first', 'next',
+                                'were', 'been', 'being', 'could', 'would', 'should', 'might',
+                                'since', 'both', 'between', 'around', 'through', 'about',
+                                'time', 'year', 'years', 'days', 'week', 'weeks', 'month',
+                                'people', 'country', 'world', 'part', 'number', 'despite',
+                                'happening', 'know', 'reach', 'still', 'down', 'came',
+                                'under', 'comes', 'second', 'three', 'four', 'added',
+                                'including', 'during', 'amid', 'news', 'high', 'announced',
+                                'latest', 'going',
+                            }
+                            # Weight by signal quality
                             for v in attr.get("void_context", []):
                                 w = v.get("word", "").lower()
-                                if len(w) >= 4:
-                                    past_voids[w] += 1
+                                if len(w) >= 4 and w not in _boilerplate:
+                                    weight = 1
+                                    if v.get("signal_type") == "HIGH_SALIENCE":
+                                        weight = 3
+                                    if v.get("source_present", False):
+                                        weight *= 2
+                                    past_voids[w] += weight
+                            # Absent words = direct source set difference — highest confidence
                             for w in attr.get("source_void", {}).get("absent_words", []):
                                 w = str(w).lower() if not isinstance(w, dict) else w.get("word", "").lower()
-                                if len(w) >= 4:
-                                    past_voids[w] += 1
+                                if len(w) >= 4 and w not in _boilerplate:
+                                    past_voids[w] += 5  # Source-confirmed absence is the strongest signal
                             story_count += 1
                         except:
                             continue
@@ -122,6 +154,21 @@ class BroadcastState:
                     self.similar_stories = [
                         m.get("metadata", {}).get("title", "")[:60] for m in similar[:3]
                     ]
+                    # Boost with cross-story frequency data
+                    try:
+                        from cross_story_freq import _load_frequencies
+                        freq_data = _load_frequencies()
+                        words_db = freq_data.get('words', {})
+                        for word in list(past_voids.keys()):
+                            cross = words_db.get(word, {})
+                            if cross.get('n_categories', 0) >= 3:
+                                past_voids[word] *= 3  # Cross-category = systematic
+                            elif cross.get('count', 0) >= 10:
+                                past_voids[word] *= 2  # Frequently voided
+                    except:
+                        pass
+                    
+                    self.predicted_void_words = [w for w, c in past_voids.most_common(10)]
                     self.beliefs.append(
                         f"Predicting void cluster from {story_count} similar stories: "
                         f"{', '.join(self.predicted_void_words[:5])}. "
@@ -335,7 +382,8 @@ class BroadcastState:
     # ─── SCORING ──────────────────────────────────────────
     
     def score_prediction(self):
-        """Compute prediction accuracy after all measurements."""
+        """Compute prediction accuracy after all measurements.
+        Uses stemming to match related forms: mourn/mourners, kill/killed."""
         if not self.predicted_void_words:
             self.prediction_score = None
             return
@@ -348,8 +396,30 @@ class BroadcastState:
             self.prediction_score = 0
             return
         
-        hits = len(predicted & actual)
+        def stem(word):
+            """Cheap stemmer — strip common suffixes."""
+            w = word.lower()
+            for suffix in ["ing", "tion", "ment", "ness", "ers", "ies", "ed", "ly", "es", "er", "al", "s"]:
+                if w.endswith(suffix) and len(w) - len(suffix) >= 3:
+                    return w[:-len(suffix)]
+            return w
+        
+        actual_stems = {stem(w) for w in actual}
+        
+        hits = 0
+        hit_words = []
+        for p in predicted:
+            p_stem = stem(p)
+            if p in actual or p_stem in actual_stems:
+                hits += 1
+                hit_words.append(p)
+        
         self.prediction_score = round(hits / len(predicted), 3)
+        
+        if hit_words:
+            self.confirmations.append(
+                f"Predicted void words confirmed (stem match): {', '.join(hit_words)}."
+            )
     
     # ─── THE AMALGAMATION ─────────────────────────────────
     
