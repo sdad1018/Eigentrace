@@ -1,0 +1,61 @@
+{
+  "spectral": {
+    "test": "spectral_consensus",
+    "qubits_used": 3,
+    "qubits_needed_real": 20,
+    "classical_eigenvalues": [
+      0.10877476655604071,
+      0.1590932582383135,
+      0.8440256292285269,
+      0.860854413174107,
+      0.8747172691768814,
+      0.9029268055039978,
+      0.9378667393205438,
+      0.9583563272905282
+    ],
+    "spectral_gap": 0.8495815607344875,
+    "quantum_counts": {
+      "0": 482,
+      "1": 542
+    },
+    "status": "SIMULATOR_PASS"
+  },
+  "void": {
+    "test": "void_ground_state",
+    "qubits_used": 2,
+    "qubits_needed_real": 50,
+    "vqe_ground_energy": -1.4083045973594572,
+    "classical_ground_energy": -1.4083045973594572,
+    "agreement_error": 0.0,
+    "convergence": [
+      -1.4083045973594557,
+      -1.4083045973594563,
+      -1.4083045973594568,
+      -1.4083045973594561,
+      -1.4083045973594572
+    ],
+    "status": "SIMULATOR_PASS"
+  },
+  "ablation": {
+    "test": "ablation_oracle",
+    "qubits_used": 3,
+    "qubits_needed_real": 200,
+    "search_space": 8,
+    "tripwire": "101",
+    "grover_result": "101",
+    "correct": true,
+    "counts": {
+      "110": 40,
+      "100": 22,
+      "001": 29,
+      "000": 36,
+      "010": 41,
+      "011": 33,
+      "111": 26,
+      "101": 797
+    },
+    "classical_calls": 8,
+    "grover_calls": 2,
+    "status": "SIMULATOR_PASS"
+  }
+}
