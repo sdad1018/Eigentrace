@@ -1,3 +1,23 @@
+
+def update_video_frame(image_path):
+    import os
+    target = "/home/remvelchio/eigentrace/tmp/current_frame.png"
+    fallback = "/home/remvelchio/eigentrace/assets/bumper_frame.png"
+    
+    # Use fallback if no image provided or doesn't exist
+    src = os.path.abspath(image_path) if image_path and os.path.exists(image_path) else fallback
+    
+    tmp_link = target + ".tmp"
+    try:
+        if os.path.lexists(tmp_link):
+            os.remove(tmp_link)
+        os.symlink(src, tmp_link)
+        # Atomic rename swaps the frame instantly for FFmpeg
+        os.rename(tmp_link, target)
+        print(f"Frame updated -> {src}")
+    except Exception as e:
+        print(f"Symlink error: {e}")
+
 """
 segment_player.py
 ─────────────────
@@ -33,22 +53,22 @@ _LOCK = _acquire_lock()
 AGENT_DIR     = Path("/home/remvelchio/eigentrace")
 SEGMENTS_DIR  = Path("/home/remvelchio/eigentrace/tmp/segments")
 TICKER_FILE   = Path("/home/remvelchio/eigentrace/tmp/ticker_scroll.txt")
-UDP_TARGET    = "udp://127.0.0.1:10000?pkt_size=1316"
+UDP_TARGET    = "udp://127.0.0.1:10000?pkt_size=1316&localport=10001"
 SAMPLE_RATE   = 22050
 PIPER_BIN     = "/home/remvelchio/.local/bin/piper"
 MODELS_DIR    = AGENT_DIR / "models" / "piper"
-POLL_INTERVAL = 10
+POLL_INTERVAL = 2
 
 # Only skip genuine errors — OpenClaw SPEAKS
 SKIP_PREFIXES = ("[API ERROR", "[HOST ERROR", "[no response logged]", "[no response]")
 
 VOICE_MAP = {
     "Host":      MODELS_DIR / "en_US-lessac-medium.onnx",
-    "Gemini":    MODELS_DIR / "en_US-bryce-medium.onnx",
+    "Gemini":    MODELS_DIR / "en_US-kristin-medium.onnx",
     "ChatGPT":   MODELS_DIR / "en_US-kristin-medium.onnx",
     "DeepSeek":  MODELS_DIR / "en_US-amy-medium.onnx",
     "Grok":      MODELS_DIR / "en_US-lessac-medium.onnx",
-    "Claude":    MODELS_DIR / "en_US-arctic-medium.onnx",
+    "Claude":    MODELS_DIR / "en_US-lessac-medium.onnx",
     "OpenClaw":  MODELS_DIR / "en_US-danny-low.onnx",
     "default":   MODELS_DIR / "en_US-lessac-medium.onnx",
 }
@@ -101,7 +121,7 @@ class UDPFeeder:
     def _start(self):
         # Audio-only version - no video to avoid h264 corruption
         cmd = [
-            "ffmpeg", "-nostdin", "-hide_banner", "-loglevel", "warning",
+            "ffmpeg", "-re", "-nostdin", "-hide_banner", "-loglevel", "warning",
             "-f", "s16le", "-ar", str(self.sr), "-ac", "1", "-i", "pipe:0",
             "-c:a", "aac", "-b:a", "64k", "-ar", str(self.sr), "-ac", "1",
             "-f", "mpegts", self.udp
@@ -115,12 +135,13 @@ class UDPFeeder:
         chunk = b'\x00' * (self.sr // 10 * 2)
         while True:
             if self._silence and self.proc and self.proc.poll() is None:
-                try:
-                    self.proc.stdin.write(chunk)
-                    self.proc.stdin.flush()
-                except (BrokenPipeError, OSError):
-                    break
-            time.sleep(0.1)
+                with self._lock:
+                    try:
+                        self.proc.stdin.write(chunk)
+                        self.proc.stdin.flush()
+                    except (BrokenPipeError, OSError):
+                        break
+            time.sleep(0.01)
 
     def send_wav(self, wav_path, pitch=1.0, volume=1.0):
         try:
@@ -139,6 +160,17 @@ class UDPFeeder:
             except (BrokenPipeError, OSError):
                 self._restart()
             self._silence = True
+
+    def send_silence(self, seconds=0.5):
+        """Inject N seconds of silence padding between beats."""
+        n_bytes = int(self.sr * seconds) * 2
+        chunk = b'\x00' * n_bytes
+        with self._lock:
+            try:
+                self.proc.stdin.write(chunk)
+                self.proc.stdin.flush()
+            except (BrokenPipeError, OSError):
+                self._restart()
 
     def _restart(self):
         if self.proc:
@@ -159,6 +191,11 @@ def get_feeder():
 
 def synthesize(text: str, speaker: str, tmp_dir: Path) -> Path | None:
     text = text.strip()
+    # Clean text for broadcast
+    text = text.replace("[HOST ERROR: All connection attempts failed]", "The data feed is currently experiencing some turbulence.")
+    text = text.replace("undefined", "a hidden variable")
+        # Sanitization logic
+
     if not text or any(text.startswith(p) for p in SKIP_PREFIXES):
         return None
 
@@ -188,6 +225,7 @@ def synthesize(text: str, speaker: str, tmp_dir: Path) -> Path | None:
         input=text, text=True, capture_output=True
     )
     if result.returncode != 0 or not out.exists() or out.stat().st_size == 0:
+        log.error(f"PIPER SUBPROCESS CRASHED. Code: {result.returncode} | Error: {result.stderr}")
         log.error("Piper failed for %s: %s", speaker, result.stderr[:120])
         return None
     return out
@@ -195,9 +233,21 @@ def synthesize(text: str, speaker: str, tmp_dir: Path) -> Path | None:
 
 # ── ticker ────────────────────────────────────────────────────────────────────
 
-def update_ticker(headline: str, synthesis_words: list):
-    words = " | ".join(synthesis_words) if synthesis_words else ""
-    line  = f"⚡ {headline}  •  {words}  •  " * 6
+def update_ticker(headline: str, synthesis_words: list, seg: dict = None):
+    if seg is None: seg = {}
+    
+    # 1. Scrub empty strings out of the list
+    clean_words = [str(w).strip() for w in synthesis_words if str(w).strip()]
+    words = " | ".join(clean_words) if clean_words else "Analyzing"
+    
+    # 2. Force the float formatting even if the key is missing or older
+    try:
+        gap = f"{float(seg.get('gap_vix', 0.0)):.4f}"
+    except:
+        gap = "0.0000"
+        
+    state = seg.get("state_flag", "ACTIVE")
+    line  = f"⚡ {headline}  •  [{state}] Friction: {gap} | Core Factors: {words}  •  " * 4
     TICKER_FILE.write_text(line)
     log.info("Ticker updated: %s", headline[:60])
 
@@ -211,20 +261,20 @@ def push_beat_to_udp(wav_path: Path, image_path: Path | None, speaker: str):
         fallback = AGENT_DIR / "tmp" / "images" / "anchors_fallback.svg"
     img = str(image_path) if image_path and Path(image_path).exists() else str(fallback)
 
-    pitch = PITCH_MAP.get(speaker, 1.0)
-    vol = VOLUME_MAP.get(speaker, 1.0)
+    pitch = float(PITCH_MAP.get(speaker, 1.0) or 1.0)
+    vol = float(VOLUME_MAP.get(speaker, 1.0) or 1.0)
     af_filter = f"asetrate={SAMPLE_RATE}*{pitch},aresample={SAMPLE_RATE},volume={vol}"
 
     cmd = [
         "ffmpeg", "-re", "-y", "-hide_banner", "-loglevel", "error",
-        "-loop", "1", "-i", img,
+        
         "-i", str(wav_path),
-        "-c:v", "libx264", "-preset", "veryfast", "-tune", "stillimage",
-        "-vf", "scale=1024:576",
-        "-af", af_filter,
+        
+        
+        "-af", af_filter, "-c:a", "aac", "-b:a", "64k",
         "-c:a", "aac", "-b:a", "64k", "-ar", str(SAMPLE_RATE), "-ac", "1",
         "-pix_fmt", "yuv420p",
-        "-shortest",
+        
         "-f", "mpegts", UDP_TARGET
     ]
     result = subprocess.run(cmd, capture_output=True)
@@ -240,9 +290,10 @@ def push_segment_to_udp(beat_wavs: list, image_path, speakers: list):
         return
     feeder = get_feeder()
     for wav, speaker in zip(beat_wavs, speakers):
-        vol = VOLUME_MAP.get(speaker, 1.0)
-        pitch = PITCH_MAP.get(speaker, 1.0)
+        vol = float(VOLUME_MAP.get(speaker, 1.0) or 1.0)
+        pitch = float(PITCH_MAP.get(speaker, 1.0) or 1.0)
         feeder.send_wav(wav, pitch=pitch, volume=vol)
+        feeder.send_silence(0.5)
 
 
 # ── segment playback ──────────────────────────────────────────────────────────
@@ -250,7 +301,7 @@ def push_segment_to_udp(beat_wavs: list, image_path, speakers: list):
 def play_segment(seg_path: Path):
     seg      = json.loads(seg_path.read_text())
     attr     = seg.get("attribution", {})
-    headline = (attr.get("story_title")
+    headline = (seg.get("story_title")
                 or next((b["text"][:80] for b in seg["beats"]
                          if b["speaker"] == "Host"
                          and not b["text"].startswith(SKIP_PREFIXES)), "EigenTrace"))
@@ -263,6 +314,13 @@ def play_segment(seg_path: Path):
             if m:
                 syn_words = [w.strip() for w in m.group(1).split("|")]
 
+    update_ticker(headline, syn_words, seg)
+    # Assassinate OpenClaw before the TTS engine wakes up
+    seg["beats"] = [b for b in seg["beats"] if b.get("speaker", "").lower() != "openclaw"]
+    # Update video frame
+    if "image_path" in seg:
+        update_video_frame(seg["image_path"])
+
 
     tmp_dir = seg_path.parent / "audio"
     tmp_dir.mkdir(exist_ok=True)
@@ -271,11 +329,12 @@ def play_segment(seg_path: Path):
     img_dir = AGENT_DIR / "tmp" / "images"
     image   = None
     if img_dir.exists():
-        imgs = sorted(img_dir.glob("*.png"), key=lambda p: p.stat().st_mtime, reverse=True)
+        imgs = sorted(img_dir.glob("*.jpg"), key=lambda p: p.stat().st_mtime, reverse=True)
         if imgs:
             image = imgs[0]
 
     log.info("Playing segment: %s  (%d beats)", seg_path.name, len(seg["beats"]))
+
 
     beat_wavs: list = []
     beat_speakers: list = []
@@ -299,16 +358,6 @@ def play_segment(seg_path: Path):
         beat_wavs.append(str(wav))
         beat_speakers.append(speaker)
 
-    update_ticker(headline, syn_words)
-    # Update current_frame for master.sh (copy, not symlink, to avoid Bus error)
-    if image and Path(image).exists():
-        import shutil
-        try:
-            shutil.copy2(str(image), "/home/remvelchio/eigentrace/tmp/current_frame_tmp.png")
-            Path("/home/remvelchio/eigentrace/tmp/current_frame_tmp.png").rename(
-                "/home/remvelchio/eigentrace/tmp/current_frame.png")
-        except Exception:
-            pass
     push_segment_to_udp(beat_wavs, image, beat_speakers)
     seg_path.with_suffix(".played").touch()
     log.info("Segment complete: %s", seg_path.name)
@@ -344,8 +393,6 @@ def main():
     SEGMENTS_DIR.mkdir(parents=True, exist_ok=True)
     log.info("Segment player started — watching %s", SEGMENTS_DIR)
     log.info("Voices: %s", {k: v.name for k, v in VOICE_MAP.items()})
-    get_feeder()
-    log.info("UDP feeder initialized — carrier wave active")
 
     while True:
         seg = next_segment()
@@ -361,5 +408,6 @@ def main():
 
 
 if __name__ == "__main__":
+    get_feeder()  # FORCED BOOT: Open UDP carrier instantly
     main()
 
