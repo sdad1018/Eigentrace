@@ -707,7 +707,7 @@ def stage_3_geometric(results):
             _source_text = story.title + ". " + (story.summary or "")
             if hasattr(story, "body") and story.body:
                 _source_text += " " + story.body[:1500]
-            _sa = source_anchored_void(_source_text, active_texts)
+            _sa = source_anchored_void(_source_text, active_texts, title=story.title)
             r["source_void"] = _sa
             _vf = load_void_frequency()
             _void_list = [w for w, _ in getattr(geo, "void_concepts", [])[:15]] if geo else []

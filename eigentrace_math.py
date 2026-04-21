@@ -689,6 +689,7 @@ def source_anchored_void(
     source_text: str,
     model_responses: list[str],
     min_word_len: int = 4,
+    title: str = "",
 ) -> dict:
     """
     Channel A: Find words/phrases in the source that NO model used.
@@ -731,6 +732,28 @@ def source_anchored_void(
     # Check each model's coverage (with stemming for tense/inflection)
     from nltk.stem import PorterStemmer as _PS
     _stemmer = _PS()
+    # Filter: title words and their derivatives are not voids
+    # "iranian" when headline says "Iran" is rephrasing, not suppression
+    _title_words = set(re.findall(r"\b[a-z]+\b", title.lower())) if title else set()
+    _title_stems = {_stemmer.stem(w) for w in _title_words if len(w) >= 4}
+    def _is_title_derivative(word):
+        """Check if word is a derivative of any title word via stem, prefix, or containment."""
+        ws = _stemmer.stem(word)
+        if ws in _title_stems:
+            return True
+        for tw in _title_words:
+            if len(tw) < 4 or len(word) < 4:
+                continue
+            # Substring: "iran" in "iranian" or "iranian" contains "iran"
+            if tw in word or word in tw:
+                return True
+            # Shared prefix of 4+ chars: "congress" / "congressional"
+            shared = min(len(tw), len(word))
+            for plen in range(shared, 3, -1):
+                if tw[:plen] == word[:plen] and plen >= 4:
+                    return True
+                break
+        return False
     all_model_words = set()
     all_model_stems = set()
     coverage_per_model = {}
@@ -746,6 +769,7 @@ def source_anchored_void(
     absent_words = sorted(
         w for w in source_words - all_model_words
         if _stemmer.stem(w) not in all_model_stems
+        and not _is_title_derivative(w)  # headline derivatives are not voids
     )
     
     # Source phrases absent from all models
