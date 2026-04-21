@@ -180,7 +180,7 @@ def _call_host(system: str, user: str) -> str:
                 {"role": "user", "content": user},
             ],
             "stream": False,
-            "options": {"temperature": 0.7, "num_predict": 500},
+            "options": {"temperature": 0.7, "num_predict": 2000},
         }, timeout=120)
         r.raise_for_status()
         text = r.json().get("message", {}).get("content", "").strip()
@@ -189,6 +189,48 @@ def _call_host(system: str, user: str) -> str:
         return text
     except Exception as e:
         return f"[Mistral unavailable: {e}]"
+
+def _call_host_think(system: str, user: str) -> str:
+    """Generate with scratchpad. Mistral reasons inside <think> tags,
+    only the post-think synthesis reaches TTS."""
+    import requests
+    try:
+        # Wrap system prompt to trigger thinking
+        think_system = (
+            system + "\n\n"
+            "IMPORTANT: Before your final answer, reason step by step inside "
+            "<think>...</think> tags. Work through contradictions, surprises, "
+            "and what the data actually shows. After </think>, write ONLY your "
+            "final synthesis — this is what the audience hears."
+        )
+        r = requests.post(f"{OLLAMA_HOST}/api/chat", json={
+            "model": HOST_MODEL,
+            "messages": [
+                {"role": "system", "content": think_system},
+                {"role": "user", "content": user},
+            ],
+            "stream": False,
+            "options": {"temperature": 0.7, "num_predict": 4000},
+        }, timeout=180)  # Longer timeout — thinking takes time
+        r.raise_for_status()
+        text = r.json().get("message", {}).get("content", "").strip()
+        
+        # Strip the think block — audience only hears the synthesis
+        import re as _re
+        think_match = _re.search(r"<think>(.*?)</think>", text, _re.DOTALL)
+        if think_match:
+            # Log the scratchpad for debugging
+            scratchpad = think_match.group(1).strip()
+            log.info(f"  [SCRATCHPAD] {scratchpad[:200]}...")
+            # Remove think block, keep everything after
+            text = _re.sub(r"<think>.*?</think>", "", text, flags=_re.DOTALL).strip()
+        
+        text = _re.sub(r"[#*_`]", "", text)
+        text = _re.sub(r"\n+", " ", text)
+        return text
+    except Exception as e:
+        return f"[Mistral unavailable: {e}]"
+
 
 def _call_host_confident(system: str, user: str, max_attempts: int = 3,
                          entropy_threshold: float = 1.5) -> str:
@@ -1183,7 +1225,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     if _state:
         try:
             sys_prompt, usr_prompt = _state.synthesize()
-            _amalg_text = _call_host(sys_prompt, usr_prompt)
+            _amalg_text = _call_host_think(sys_prompt, usr_prompt)
             if _amalg_text and len(_amalg_text) > 30:
                 _ch = len(_state.channels_fired)
                 _amalg_text += (
