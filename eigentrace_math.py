@@ -430,6 +430,20 @@ def filter_void_candidates(headline: str, candidates: list, top_k: int = 15) -> 
         # 1. Morphological: skip same-stem as headline
         if w_stem in hl_stems:
             continue
+        # 1b. Substring/prefix: skip derivatives like "cubans" when "cuba" in title
+        #     PorterStemmer misses demonyms and proper noun derivatives
+        _is_title_deriv = False
+        for _ht in hl_tokens:
+            if len(_ht) < 4 or len(w_lower) < 4:
+                continue
+            if _ht in w_lower or w_lower in _ht:
+                _is_title_deriv = True
+                break
+            if w_lower[:4] == _ht[:4]:
+                _is_title_deriv = True
+                break
+        if _is_title_deriv:
+            continue
         
         # 2. Prefix artifacts: skip prefix-variants of headline words
         #    AND skip words where 3+ candidates share the same prefix pattern
