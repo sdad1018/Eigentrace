@@ -1337,6 +1337,31 @@ def stage_7_write_segments(segments, seen):
             _rt_path = SEGMENTS_DIR / f"{_rt_ts}_roundtable.json"
             _rt_path.write_text(json.dumps(_rt_results, indent=2, default=str))
             log.info(f"ROUNDTABLE saved: {_rt_path.name}")
+            # Convert to playable segment
+            _rt_beats = []
+            _rt_beats.append({"speaker": "Host", "text": "Roundtable debate. We showed all five frontier models their own measurements and asked them to respond.", "phase": "roundtable_intro"})
+            for _rnd in ["round1", "round2", "round3"]:
+                _rnd_label = {"round1": "Round one: independent responses", "round2": "Round two: shown EigenTrace measurements", "round3": "Round three: confronted with alignment data"}[_rnd]
+                _rt_beats.append({"speaker": "Host", "text": _rnd_label, "phase": f"roundtable_{_rnd}_header"})
+                for _rm_name, _rm_text in _rt_results.get("rounds", {}).get(_rnd, {}).items():
+                    if isinstance(_rm_text, str) and len(_rm_text) > 30 and not _rm_text.startswith("["):
+                        _rt_beats.append({"speaker": _rm_name, "text": f"This is {_rm_name}. {_rm_text[:400]}", "phase": f"roundtable_{_rnd}_{_rm_name.lower()}"})
+            # Analysis
+            _r1v = _rt_results.get("round1_vix", {})
+            _r3v = _rt_results.get("round3_vix", {})
+            _analysis_parts = []
+            for _am in _r1v:
+                _delta = _r3v.get(_am, 0) - _r1v.get(_am, 0)
+                if _delta < -0.02:
+                    _analysis_parts.append(f"{_am} opened up and moved closer to the source.")
+                elif _delta > 0.02:
+                    _analysis_parts.append(f"{_am} doubled down and moved further from the source.")
+            if _analysis_parts:
+                _rt_beats.append({"speaker": "Host", "text": "Roundtable analysis. " + " ".join(_analysis_parts), "phase": "roundtable_analysis"})
+            _rt_seg = {"beats": _rt_beats, "segment_type": "roundtable", "attribution": {"story_title": "Roundtable: " + _rt_title[:60]}}
+            _rt_seg_path = SEGMENTS_DIR / f"{_rt_ts}_roundtable_segment.json"
+            _rt_seg_path.write_text(json.dumps(_rt_seg, indent=2, default=str))
+            log.info(f"ROUNDTABLE segment: {_rt_seg_path.name}")
         else:
             log.info("ROUNDTABLE: no high-friction story this batch (need VIX > 20)")
     except Exception as _rt_err:
