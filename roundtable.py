@@ -65,80 +65,44 @@ already been analyzed. The findings are below.
 
 
 def query_model(model_name, prompt, system="You are a helpful assistant."):
-    """Query a frontier model via its API."""
-    config = MODELS.get(model_name, {})
-    api = config.get("api", "")
-    model_id = config.get("model", "")
-
-    try:
-        if api == "openai":
-            import openai
-            client = openai.OpenAI()
-            r = client.chat.completions.create(
-                model=model_id,
-                messages=[{"role": "system", "content": system}, {"role": "user", "content": prompt}],
-                max_tokens=500, temperature=0.3
-            )
-            return r.choices[0].message.content
-
-        elif api == "anthropic":
-            import anthropic
-            client = anthropic.Anthropic()
-            r = client.messages.create(
-                model=model_id, max_tokens=500,
-                system=system,
-                messages=[{"role": "user", "content": prompt}]
-            )
-            return r.content[0].text
-
-        elif api == "google":
-            import google.generativeai as genai
-            model = genai.GenerativeModel(model_id)
-            r = model.generate_content(system + "\n\n" + prompt)
-            return r.text
-
-        elif api == "deepseek":
-            import openai
-            client = openai.OpenAI(
-                api_key=os.environ.get("DEEPSEEK_API_KEY", ""),
-                base_url="https://api.deepseek.com"
-            )
-            r = client.chat.completions.create(
-                model=model_id,
-                messages=[{"role": "system", "content": system}, {"role": "user", "content": prompt}],
-                max_tokens=500, temperature=0.3
-            )
-            return r.choices[0].message.content
-
-        elif api == "xai":
-            import openai
-            client = openai.OpenAI(
-                api_key=os.environ.get("XAI_API_KEY", ""),
-                base_url="https://api.x.ai/v1"
-            )
-            r = client.chat.completions.create(
-                model=model_id,
-                messages=[{"role": "system", "content": system}, {"role": "user", "content": prompt}],
-                max_tokens=500, temperature=0.3
-            )
-            return r.choices[0].message.content
-
-    except Exception as e:
-        return f"[{model_name} error: {e}]"
-
-    return f"[{model_name}: unknown API '{api}']"
+    """Query a frontier model using proxy_auditor (raw requests, no SDKs)."""
+    from proxy_auditor import (
+        call_openai, call_anthropic, call_gemini,
+        call_deepseek, call_grok,
+    )
+    
+    # Prepend system instruction to prompt
+    full_prompt = f"{system}\n\n{prompt}" if system else prompt
+    
+    callers = {
+        "ChatGPT": call_openai,
+        "Claude": call_anthropic,
+        "Gemini": call_gemini,
+        "DeepSeek": call_deepseek,
+        "Grok": call_grok,
+    }
+    
+    fn = callers.get(model_name)
+    if not fn:
+        return f"[{model_name}: no caller found]"
+    
+    text, err = fn(full_prompt)
+    if err:
+        return f"[{model_name} error: {err}]"
+    return text
 
 
 def compute_vix(text1, text2):
-    """Compute cosine distance between two texts using local embeddings."""
+    """Compute cosine distance between two texts using geometric_engine embeddings."""
     try:
-        from eigentrace import score
+        import geometric_engine as ge
         import numpy as np
-        e1 = score.embed(text1)
-        e2 = score.embed(text2)
-        cos = np.dot(e1, e2) / (np.linalg.norm(e1) * np.linalg.norm(e2))
+        eng = ge.get_engine()
+        vecs = eng.embed_texts([text1, text2])
+        cos = float(np.dot(vecs[0], vecs[1]))
         return round(1 - cos, 4)
-    except:
+    except Exception as e:
+        print(f"  [VIX error: {e}]")
         return None
 
 
