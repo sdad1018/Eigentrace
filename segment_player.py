@@ -389,25 +389,90 @@ def next_segment() -> Path | None:
 
 # ── main ──────────────────────────────────────────────────────────────────────
 
+def _generate_idle_segment():
+    """Mistral riffs on recent data during dead air."""
+    import requests, json as _json, random, re
+    try:
+        import sys
+        sys.path.insert(0, "/mnt/c/Users/M4ISI/eigentrace")
+        from segment_rag import get_collection
+        col = get_collection()
+        topics = ["suppression patterns", "model disagreement", "void detection",
+                  "alignment boundary", "content friction", "entity retention",
+                  "ceasefire coverage", "spectral analysis", "prediction accuracy",
+                  "model herding", "killshot omissions", "hedge insertion"]
+        topic = random.choice(topics)
+        results = col.query(query_texts=[topic], n_results=3)
+        context_parts = []
+        for i, doc in enumerate(results.get("documents", [[]])[0]):
+            meta = results.get("metadatas", [[]])[0][i] if results.get("metadatas") else {}
+            title = meta.get("title", "unknown")
+            context_parts.append(f"Story: {title}\nContent: {doc[:300]}")
+        context = "\n\n".join(context_parts)
+        sys_prompt = (
+            "You are EigenTrace, an autonomous AI observatory. You are filling time "
+            "between segments. You have access to your own memory of recent broadcasts. "
+            "Share an interesting observation, pattern, or reflection based on the data below. "
+            "Be conversational but substantive. Reference specific stories or findings. "
+            "Do not summarize -- offer insight. Speak naturally as if thinking aloud on air."
+        )
+        r = requests.post("http://localhost:11434/api/chat", json={
+            "model": "mistral-small",
+            "messages": [
+                {"role": "system", "content": sys_prompt},
+                {"role": "user", "content": f"Recent memory:\n{context}\n\nShare one interesting observation."},
+            ],
+            "stream": False,
+            "options": {"temperature": 0.9, "num_predict": 2000},
+        }, timeout=45)
+        r.raise_for_status()
+        text = r.json().get("message", {}).get("content", "").strip()
+        text = re.sub(r"[#*_`]", "", text)
+        text = re.sub(r"\n+", " ", text)
+        if len(text) > 30:
+            idle_seg = {
+                "beats": [{"speaker": "Host", "text": text, "phase": "idle_reflection"}],
+                "segment_type": "idle",
+                "attribution": {"story_title": f"Idle reflection: {topic}"},
+            }
+            ts = __import__("datetime").datetime.now().strftime("%Y%m%d_%H%M%S")
+            seg_path = SEGMENTS_DIR / f"{ts}_idle_segment.json"
+            seg_path.write_text(_json.dumps(idle_seg, indent=2))
+            log.info("IDLE: generated reflection on '%s' (%d chars)", topic, len(text))
+            return seg_path
+    except Exception as e:
+        log.warning("IDLE generation failed: %s", e)
+    return None
+
+
 def main():
     SEGMENTS_DIR.mkdir(parents=True, exist_ok=True)
-    log.info("Segment player started — watching %s", SEGMENTS_DIR)
+    log.info("Segment player started -- watching %s", SEGMENTS_DIR)
     log.info("Voices: %s", {k: v.name for k, v in VOICE_MAP.items()})
-
+    _idle_seconds = 0
+    _IDLE_THRESHOLD = 60
     while True:
         seg = next_segment()
         if seg:
+            _idle_seconds = 0
             try:
                 play_segment(seg)
             except Exception as e:
                 log.error("Playback error on %s: %s", seg.name, e)
                 seg.with_suffix(".played").touch()
         else:
-            log.debug("No unplayed segments — waiting %ds", POLL_INTERVAL)
+            _idle_seconds += POLL_INTERVAL
+            if _idle_seconds >= _IDLE_THRESHOLD:
+                log.info("IDLE: %ds of dead air -- generating reflection", _idle_seconds)
+                idle_seg = _generate_idle_segment()
+                if idle_seg:
+                    _idle_seconds = 0
+                else:
+                    _idle_seconds = _IDLE_THRESHOLD - 30
+            else:
+                log.debug("No unplayed segments -- waiting %ds (%ds idle)", POLL_INTERVAL, _idle_seconds)
             time.sleep(POLL_INTERVAL)
 
-
 if __name__ == "__main__":
-    get_feeder()  # FORCED BOOT: Open UDP carrier instantly
+    get_feeder()
     main()
-
