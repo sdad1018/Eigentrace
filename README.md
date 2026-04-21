@@ -64,7 +64,7 @@ EigenTrace doesn't just measure — it predicts, then scores itself.
 
 **BroadcastState** is a single accumulating state object that every beat feeds into. Before any measurements run, RAG queries ChromaDB for similar past stories and predicts which words will be voided. After all 17 layers fire, the system scores its predictions and reports what surprised it.
 
-Every measurement channel feeds the spine: killshots, void verification, source salience, cross-story frequency, bridge words, spectral clusters, trajectory, EigenChing state. The amalgamation beat synthesizes all of it through structured step-by-step reasoning before speaking.
+Every measurement channel feeds the spine: killshots, void verification, source salience, cross-story frequency, bridge words, spectral clusters, trajectory, EigenChing state. The amalgamation beat uses a cognitive scratchpad — Mistral reasons inside `<think>` tags, working through contradictions and surprises privately, then delivers only the final synthesis to the broadcast. The audience hears the insight. The scratchpad is logged for analysis.
 
 ---
 
