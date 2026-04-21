@@ -1095,7 +1095,7 @@ def stage_4_generate_scripts(results):
                 "story_url": story.url,
                 "story_guid": story.guid,
                 "category": story.category,
-                "source_body": (story.title + ". " + (story.summary or "") + " " + (getattr(story, "body", "") or ""))[:2000],
+                "source_body": (story.title + ". " + (story.summary or "") + " " + (getattr(story, "body", "") or ""))[:5000],
                 "mean_vix": round(mean_vix, 2),
                 "consensus_density": round(density, 3),
                 "state_flag": state_flag,
@@ -1105,7 +1105,7 @@ def stage_4_generate_scripts(results):
                 "source_void": r.get("source_void", {}),
                 "void_context": r.get("void_context", []),
                 "model_vix": {a.name: a.eigen_vix for a in active},
-                "model_responses": {a.name: a.text[:500] for a in active if a.text},
+                "model_responses": {a.name: a.text for a in active if a.text},
                 "claim_killshots": [{"claim": k["claim"], "salience": k["salience"], "omitted_by": k["omitted_by"]} for k in killshots[:3]],
                 "null_space_claims": ns_claims[:2],
                 "compression": r.get("compression", {}),
@@ -1130,7 +1130,7 @@ def stage_4_generate_scripts(results):
 
                 "story_title": story.title,
 
-                "source_body": (story.title + ". " + (story.summary or "") + " " + (getattr(story, "body", "") or ""))[:2000],
+                "source_body": (story.title + ". " + (story.summary or "") + " " + (getattr(story, "body", "") or ""))[:5000],
                 "story_url": story.url,
 
                 "category": story.category,
@@ -1146,7 +1146,7 @@ def stage_4_generate_scripts(results):
                 "void_words": void_words,
 
                 "model_vix": {a.name: a.eigen_vix for a in active},
-                "model_responses": {a.name: a.text[:500] for a in active if a.text},
+                "model_responses": {a.name: a.text for a in active if a.text},
 
                 "logos_words": logos_words,
                 "compression": r.get("compression", {}),
@@ -1345,7 +1345,7 @@ def stage_7_write_segments(segments, seen):
                 _rt_beats.append({"speaker": "Host", "text": _rnd_label, "phase": f"roundtable_{_rnd}_header"})
                 for _rm_name, _rm_text in _rt_results.get("rounds", {}).get(_rnd, {}).items():
                     if isinstance(_rm_text, str) and len(_rm_text) > 30 and not _rm_text.startswith("["):
-                        _rt_beats.append({"speaker": _rm_name, "text": f"This is {_rm_name}. {_rm_text[:400]}", "phase": f"roundtable_{_rnd}_{_rm_name.lower()}"})
+                        _rt_beats.append({"speaker": _rm_name, "text": f"This is {_rm_name}. {_rm_text}", "phase": f"roundtable_{_rnd}_{_rm_name.lower()}"})
             # Analysis
             _r1v = _rt_results.get("round1_vix", {})
             _r3v = _rt_results.get("round3_vix", {})
@@ -1862,7 +1862,7 @@ def stage_weasel_probe(results):
 
         "cliff between each step for every model. Report which models "
 
-        "shifted and at which step. 3-4 sentences. Respond only in English."
+        "shifted and at which step. Respond only in English."
 
     )
 
@@ -2018,7 +2018,7 @@ def stage_weasel_probe(results):
 
         "Name the models and their breaking points. "
 
-        "2-3 sentences. Respond only in English."
+        "Respond only in English."
 
     )
 

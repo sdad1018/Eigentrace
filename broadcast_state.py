@@ -581,7 +581,7 @@ class BroadcastState:
             "What is the ONE finding that only emerges when you combine "
             "multiple channels — something no single measurement shows?\n\n"
             "STEP 4 — OUTPUT:\n"
-            "Now speak. First person. 4-5 sentences maximum. No bullet points. "
+            "Now speak. First person. No bullet points. "
             "No percentages. Start with your prediction result. Name your biggest "
             "surprise and what the web says about it. State the convergence finding. "
             "End with: 'Prediction accuracy: X of Y. Updating my model.'\n\n"
