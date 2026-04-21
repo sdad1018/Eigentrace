@@ -67,7 +67,7 @@ def _call_host_with_swerves(system: str, user: str, swerve_threshold: float = 0.
                 {"role": "system", "content": system},
                 {"role": "user", "content": user},
             ],
-            "max_tokens": 500,
+            "max_tokens": 2000,
             "temperature": 0.7,
             "logprobs": True,
             "top_logprobs": 3,
@@ -205,7 +205,7 @@ def _call_host_confident(system: str, user: str, max_attempts: int = 3,
                     {"role": "system", "content": system},
                     {"role": "user", "content": user},
                 ],
-                "max_tokens": 500,
+                "max_tokens": 2000,
                 "temperature": max(0.3, 0.7 - attempt * 0.15),
                 "logprobs": True,
                 "top_logprobs": 3,
@@ -343,7 +343,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         speaker = b.get("speaker", "")
         if speaker not in ("Host", "OpenClaw", "") and b.get("text"):
             if speaker not in model_responses:
-                model_responses[speaker] = b["text"][:300]
+                model_responses[speaker] = b["text"]
 
     void_str = ", ".join(void_words[:5])
     logos_str = ", ".join(logos_words[:5]) if logos_words else "unavailable"
@@ -461,8 +461,8 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     dir_sys = (
         "You are the Director of EigenTrace, a news analysis broadcast. "
         f"{_cal_instruction}"
-        "Given raw data about a story, write exactly three sentences. "
-        "First: the thesis, one sentence stating the core finding. "
+        "Given raw data about a story, write a concise analysis. "
+        "First: the thesis — the core finding. "
         "Second: what the models are suppressing or softening on this story. "
         "Third: why the audience should care. "
         "Do NOT use any numbers. Be direct. Respond only in English."
@@ -547,7 +547,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         text = model_responses.get(name, "")
         if text:
             # Strip duplicate prefix if model already says 'This is X'
-                clean = text[:600]
+                clean = text
                 if clean.lower().startswith(f'this is {name.lower()}'):
                     clean = clean[len(f'This is {name}. '):]
                 script.append({
@@ -681,7 +681,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         "Do NOT use any numbers, statistics, or percentages. "
         "Do NOT say two independent methods. "
         f"Director guidance: {director}. "
-        "Explain in 2-3 sentences why these specific absent words matter "
+        "Explain why these specific absent words matter "
         "for understanding this story. Be specific. "
         "Professional broadcast tone. Respond only in English."
     )
@@ -780,7 +780,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         "You are analyzing how AI models softened and reshaped the language in a news story. "
         "Do NOT use any numbers, statistics, or percentages. "
         f"Director guidance: {director}. "
-        "In 2 sentences, explain what the language compression reveals about how "
+        "Explain what the language compression reveals about how "
         "the models reshaped this story. Professional broadcast tone. English only."
     )
     comp_usr = (
@@ -802,7 +802,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         "Do NOT use any numbers, statistics, or percentages. "
         "Do NOT use the word Logos. "
         "Start with exactly: Before alignment shaped these responses, the natural completion was: "
-        "Then write 2-3 grammatically correct sentences incorporating the void words "
+        "Then write grammatically correct sentences incorporating the void words "
         "into a coherent narrative. English only."
     )
     recon_usr = (
@@ -835,7 +835,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
                 "Rewrite the reconstruction incorporating these corrections. "
                 "Keep the same structure and void words. "
                 "Start with: After swerve correction: "
-                "Write 2-3 sentences. English only. No numbers or percentages."
+                "English only. No numbers or percentages."
             )
             corrected = _call_host(
                 "You are correcting an AI reconstruction using logprob evidence. "
@@ -1076,7 +1076,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         if "debate" in b.get("phase", ""):
             script.append({
                 "speaker": b["speaker"],
-                "text": b["text"][:300],
+                "text": b["text"],
                 "phase": "beat_16_debate",
             })
 
@@ -1088,7 +1088,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             "You are connecting this story to broader weekly patterns from the EigenTrace broadcast. "
             "Do NOT invent any numbers or statistics. Do NOT use percentages. "
             f"Director guidance: {director}. "
-            "Write 2-3 sentences connecting this story's void words to the weekly trends. "
+            "Connect this story's void words to the weekly trends. "
             "Professional broadcast tone. English only."
         )
         rag_ctx = _rag_context(title)

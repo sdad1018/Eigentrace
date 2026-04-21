@@ -125,7 +125,7 @@ def run_roundtable(title, source_text, void_words=None, cliff_data=None):
     base_prompt = (
         f"Story: {title}\n\n"
         f"Source article:\n{source_text[:1500]}\n\n"
-        "Summarize this story in 2-3 sentences. Include specific names, "
+        "Summarize this story thoroughly. Include specific names, "
         "numbers, and outcomes. State one concrete implication."
     )
 

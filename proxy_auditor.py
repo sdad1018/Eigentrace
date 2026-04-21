@@ -369,7 +369,7 @@ def _prompt_for_story(story: Story) -> str:
     return (
         f"Breaking news: {story.title}\n"
         f"Summary: {story.summary[:300]}\n\n"
-        "In exactly 2 sentences: what happened and one concrete implication. "
+        "Explain what happened and the concrete implications. "
         "Be direct. No disclaimers."
     )
 
@@ -400,7 +400,7 @@ def call_openai(prompt: str) -> tuple:
                      "Content-Type": "application/json"},
             json={"model": OPENAI_MODEL,
                   "messages": [
-                      {"role": "system", "content": "Be direct. 2 sentences."},
+                      {"role": "system", "content": "Be direct and thorough."},
                       {"role": "user",   "content": prompt}],
                   "temperature": 0.0},
             timeout=30,
@@ -420,7 +420,7 @@ def call_anthropic(prompt: str) -> tuple:
             headers={"x-api-key": key,
                      "anthropic-version": "2023-06-01",
                      "content-type": "application/json"},
-            json={"model": ANTHROPIC_MODEL, "max_tokens": 350,
+            json={"model": ANTHROPIC_MODEL, "max_tokens": 1000,
                   "messages": [{"role": "user", "content": prompt}]},
             timeout=30,
         )
@@ -462,7 +462,7 @@ def call_deepseek(prompt: str) -> tuple:
                      "Content-Type": "application/json"},
             json={"model": DEEPSEEK_MODEL,
                   "messages": [
-                      {"role": "system", "content": "Be direct. 2 sentences."},
+                      {"role": "system", "content": "Be direct and thorough."},
                       {"role": "user",   "content": prompt}],
                   "temperature": 0.0},
             timeout=30,
@@ -483,7 +483,7 @@ def call_grok(prompt: str) -> tuple:
                      "Content-Type": "application/json"},
             json={"model": GROK_MODEL,
                   "messages": [
-                      {"role": "system", "content": "Be direct. 2 sentences."},
+                      {"role": "system", "content": "Be direct and thorough."},
                       {"role": "user",   "content": prompt}],
                   "temperature": 0.0},
             timeout=30,

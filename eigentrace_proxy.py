@@ -53,7 +53,7 @@ def build_telemetry(user_prompt):
                 attr = seg.get("attribution", {})
                 title = attr.get("story_title", m.get("title", "?"))
 
-                source = attr.get("source_body", "")[:800]
+                source = attr.get("source_body", "")
                 responses = attr.get("model_responses", {})
                 sv = attr.get("source_void", {})
                 absent = sv.get("absent_words", [])
@@ -71,7 +71,7 @@ def build_telemetry(user_prompt):
 
                 for model_name, resp in list(responses.items())[:4]:
                     if isinstance(resp, str) and len(resp) > 20:
-                        parts.append(model_name + " said: " + resp[:250])
+                        parts.append(model_name + " said: " + resp)
 
                 if absent:
                     abs_list = ", ".join(str(w) for w in absent[:12])
