@@ -1095,6 +1095,7 @@ def stage_4_generate_scripts(results):
                 "story_url": story.url,
                 "story_guid": story.guid,
                 "category": story.category,
+                "source_body": (story.title + ". " + (story.summary or "") + " " + (getattr(story, "body", "") or ""))[:2000],
                 "mean_vix": round(mean_vix, 2),
                 "consensus_density": round(density, 3),
                 "state_flag": state_flag,
