@@ -1130,6 +1130,7 @@ def stage_4_generate_scripts(results):
 
                 "story_title": story.title,
 
+                "source_body": (story.title + ". " + (story.summary or "") + " " + (getattr(story, "body", "") or ""))[:2000],
                 "story_url": story.url,
 
                 "category": story.category,
