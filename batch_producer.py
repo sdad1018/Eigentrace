@@ -1311,6 +1311,36 @@ def stage_6_generate_images(segments, skip=False):
 
 def stage_7_write_segments(segments, seen):
 
+    # ── ROUNDTABLE: run on highest-friction story in this batch ──────
+    try:
+        from roundtable import run_roundtable
+        best = None
+        best_vix = 0
+        for seg in segments:
+            attr = seg.get("attribution", {})
+            vix = attr.get("mean_vix", 0)
+            voids = attr.get("void_words", [])
+            if vix > best_vix and len(voids) >= 3:
+                best_vix = vix
+                best = seg
+        if best and best_vix > 20:
+            _rt_attr = best.get("attribution", {})
+            _rt_title = _rt_attr.get("story_title", "")
+            _rt_source = str(_rt_attr.get("source_body", _rt_title))
+            _rt_voids = _rt_attr.get("void_words", [])
+            _rt_cliff = _rt_attr.get("weasel_cliff", _rt_attr.get("ablation_result", {}))
+            log.info(f"ROUNDTABLE: {_rt_title[:60]} (VIX {best_vix:.1f})")
+            _rt_results = run_roundtable(_rt_title, _rt_source, _rt_voids, _rt_cliff)
+            _rt_ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+            _rt_path = SEGMENTS_DIR / f"{_rt_ts}_roundtable.json"
+            _rt_path.write_text(json.dumps(_rt_results, indent=2, default=str))
+            log.info(f"ROUNDTABLE saved: {_rt_path.name}")
+        else:
+            log.info("ROUNDTABLE: no high-friction story this batch (need VIX > 20)")
+    except Exception as _rt_err:
+        log.warning(f"ROUNDTABLE failed: {_rt_err}")
+
+
     log.info("═══ STAGE 7: Write Segments ═══")
 
     import proxy_auditor as pa
