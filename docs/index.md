@@ -178,6 +178,7 @@ title: EigenTrace — Deterministic AI Observability
 }
 </style>
 
+<div style="margin: 0 auto 2rem; max-width: 1200px; border: 1px solid #2a2a32; border-radius: 4px; overflow: hidden;"><iframe src="/boundary.html" style="width: 100%; height: 700px; border: none; background: #0a0a0c;" loading="lazy"></iframe></div>
 # EigenTrace
 
 **Deterministic observability for how language models transform source material.**
