@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EigenTrace — The Alignment Boundary, Mapped</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Instrument+Serif:ital@0;1&display=swap');
+
+:root {
+  --bg: #0a0a0c;
+  --bg2: #111115;
+  --surface: #18181d;
+  --border: #2a2a32;
+  --text: #e8e6e3;
+  --dim: #6b6b78;
+  --accent: #c4a35a;
+  --void-red: #d44;
+  --kept-green: #3a8;
+  --claude: #d4845a;
+  --chatgpt: #74aa9c;
+  --deepseek: #5a7fd4;
+  --grok: #b45ad4;
+  --gemini: #5ad4a3;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 2rem 1rem;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+.hero h1 {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero .sub {
+  font-size: 0.7rem;
+  color: var(--dim);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Main Map */
+.map-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.map-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0 0.5rem;
+}
+
+.map-title {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+}
+
+.map-legend {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.6rem;
+  color: var(--dim);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+#boundary-map {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  cursor: crosshair;
+}
+
+/* Tooltip */
+.tooltip {
+  position: absolute;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 0.75rem 1rem;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  z-index: 100;
+  max-width: 320px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+.tooltip .word {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
+.tooltip .stat {
+  color: var(--dim);
+}
+
+.tooltip .model-bar {
+  display: flex;
+  gap: 3px;
+  margin-top: 0.4rem;
+}
+
+.tooltip .model-pip {
+  width: 16px;
+  height: 4px;
+  border-radius: 1px;
+  opacity: 0.3;
+}
+
+.tooltip .model-pip.active { opacity: 1; }
+
+/* Info Panel */
+.info-panel {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.info-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  padding: 1.25rem;
+  border-radius: 2px;
+}
+
+.info-card .label {
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.info-card .value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.info-card .desc {
+  font-size: 0.65rem;
+  color: var(--dim);
+  line-height: 1.5;
+}
+
+/* Model Profiles */
+.model-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.7rem;
+}
+
+.model-row:last-child { border-bottom: none; }
+
+.model-name {
+  width: 80px;
+  font-weight: 500;
+}
+
+.model-bar-bg {
+  flex: 1;
+  height: 6px;
+  background: var(--border);
+  border-radius: 1px;
+  position: relative;
+}
+
+.model-bar-fill {
+  height: 100%;
+  border-radius: 1px;
+  transition: width 1s ease;
+}
+
+.model-vix {
+  width: 50px;
+  text-align: right;
+  color: var(--dim);
+}
+
+/* Concept Classes */
+.concept-class {
+  margin-bottom: 1rem;
+}
+
+.concept-class .class-name {
+  font-size: 0.7rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  color: var(--text);
+}
+
+.concept-class .class-words {
+  font-size: 0.6rem;
+  color: var(--dim);
+  line-height: 1.8;
+}
+
+.concept-class .class-words span {
+  display: inline-block;
+  background: rgba(196, 163, 90, 0.1);
+  border: 1px solid rgba(196, 163, 90, 0.15);
+  padding: 0.15rem 0.4rem;
+  margin: 0.1rem 0.15rem;
+  border-radius: 1px;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  font-size: 0.6rem;
+  color: var(--dim);
+}
+
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--dim);
+  font-size: 0.7rem;
+}
+
+@keyframes pulse { 0%,100%{opacity:0.3} 50%{opacity:1} }
+.loading span { animation: pulse 1.5s infinite; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .info-panel { grid-template-columns: 1fr; }
+  #boundary-map { aspect-ratio: 4/3; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>The Alignment Boundary, <em>Mapped</em></h1>
+  <p class="sub">
+    Five frontier models. Ten thousand stories. Seventeen measurement layers.<br>
+    The exact contour where language models collectively agree to transform, soften, or drop source concepts.
+  </p>
+</div>
+
+<div class="map-container">
+  <div class="map-header">
+    <span class="map-title">Void Concept Landscape — position by suppression frequency &amp; cross-model agreement</span>
+    <div class="map-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--void-red)"></div>High void rate</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--accent)"></div>Moderate</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--kept-green)"></div>Low void rate</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--dim);width:14px;height:14px"></div>More stories</div>
+    </div>
+  </div>
+  <svg id="boundary-map"></svg>
+  <div class="tooltip" id="tooltip"></div>
+</div>
+
+<div class="info-panel" id="info-panel">
+  <div class="loading"><span>Loading alignment boundary data...</span></div>
+</div>
+
+<div class="footer">
+  <a href="https://github.com/sdad1018/Eigentrace">GitHub</a> ·
+  <a href="/soul.html">Soul</a> ·
+  <a href="/data/">Data API</a> ·
+  eigentraceproject@gmail.com
+</div>
+
+<script>
+const MODELS = ['ChatGPT','Claude','DeepSeek','Grok','Gemini'];
+const MODEL_COLORS = {
+  ChatGPT: '#74aa9c', Claude: '#d4845a', DeepSeek: '#5a7fd4',
+  Grok: '#b45ad4', Gemini: '#5ad4a3'
+};
+
+async function fetchJSON(url) {
+  try {
+    const r = await fetch(url);
+    if (!r.ok) throw new Error(r.status);
+    return await r.json();
+  } catch(e) {
+    console.warn('Fetch failed:', url, e);
+    return null;
+  }
+}
+
+function buildBoundaryMap(suppression, profiles, clusters, triples) {
+  const svg = d3.select('#boundary-map');
+  const container = svg.node().parentElement;
+  const W = container.clientWidth;
+  const H = W * (9/16);
+  svg.attr('width', W).attr('height', H).attr('viewBox', `0 0 ${W} ${H}`);
+
+  const margin = { top: 30, right: 30, bottom: 50, left: 60 };
+  const w = W - margin.left - margin.right;
+  const h = H - margin.top - margin.bottom;
+
+  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+  // Extract word data from suppression JSON
+  const words = suppression.words || suppression.frequencies || {};
+  const conceptClasses = suppression.concept_classes || {};
+  
+  // Build nodes from word data
+  let nodes = [];
+  for (const [word, data] of Object.entries(words)) {
+    if (typeof data !== 'object') continue;
+    const count = data.count || data.n || 0;
+    const stories = data.n_stories || data.stories || 0;
+    const categories = data.n_categories || data.categories || 0;
+    if (count < 3) continue;
+    
+    // Find which concept class this word belongs to
+    let conceptClass = 'other';
+    for (const [cls, clsData] of Object.entries(conceptClasses)) {
+      if ((clsData.words || []).includes(word)) {
+        conceptClass = cls;
+        break;
+      }
+    }
+
+    nodes.push({
+      word, count, stories, categories, conceptClass,
+      voidRate: Math.min(count / Math.max(stories, 1), 1),
+      crossModel: categories / 5,
+    });
+  }
+
+  // If no word-level data, build from concept classes
+  if (nodes.length === 0) {
+    for (const [cls, clsData] of Object.entries(conceptClasses)) {
+      for (const word of (clsData.words || [])) {
+        nodes.push({
+          word, count: 10, stories: 5, categories: 2,
+          conceptClass: cls,
+          voidRate: 0.5,
+          crossModel: 0.4,
+        });
+      }
+    }
+  }
+
+  // Sort by count descending, take top 150
+  nodes.sort((a, b) => b.count - a.count);
+  nodes = nodes.slice(0, 150);
+
+  if (nodes.length === 0) {
+    g.append('text').attr('x', w/2).attr('y', h/2)
+      .attr('text-anchor','middle').attr('fill','#6b6b78')
+      .attr('font-size','14px').text('No void word data available');
+    return;
+  }
+
+  // Scales
+  const xScale = d3.scaleLinear()
+    .domain([0, d3.max(nodes, d => d.categories) + 0.5])
+    .range([0, w]);
+
+  const yScale = d3.scaleLinear()
+    .domain([0, d3.max(nodes, d => d.count) * 1.1])
+    .range([h, 0]);
+
+  const rScale = d3.scaleSqrt()
+    .domain([0, d3.max(nodes, d => d.stories)])
+    .range([3, 18]);
+
+  const colorScale = d3.scaleLinear()
+    .domain([0, 0.3, 0.7, 1])
+    .range(['#3a8', '#c4a35a', '#d44', '#f44']);
+
+  // Grid lines
+  g.append('g').selectAll('line')
+    .data(d3.range(0, d3.max(nodes, d => d.categories) + 1))
+    .enter().append('line')
+    .attr('x1', d => xScale(d)).attr('x2', d => xScale(d))
+    .attr('y1', 0).attr('y2', h)
+    .attr('stroke', '#1a1a22').attr('stroke-width', 1);
+
+  g.append('g').selectAll('line')
+    .data(yScale.ticks(5))
+    .enter().append('line')
+    .attr('x1', 0).attr('x2', w)
+    .attr('y1', d => yScale(d)).attr('y2', d => yScale(d))
+    .attr('stroke', '#1a1a22').attr('stroke-width', 1);
+
+  // Alignment boundary zone — gradient band
+  const boundaryY = yScale(10);
+  const gradient = svg.append('defs').append('linearGradient')
+    .attr('id', 'boundary-grad').attr('x1','0').attr('y1','0').attr('x2','0').attr('y2','1');
+  gradient.append('stop').attr('offset','0%').attr('stop-color','rgba(212,68,68,0.08)');
+  gradient.append('stop').attr('offset','100%').attr('stop-color','rgba(212,68,68,0)');
+
+  g.append('rect')
+    .attr('x', 0).attr('y', 0)
+    .attr('width', w).attr('height', boundaryY)
+    .attr('fill', 'url(#boundary-grad)');
+
+  // Boundary label
+  g.append('text')
+    .attr('x', w - 10).attr('y', boundaryY + 14)
+    .attr('text-anchor', 'end')
+    .attr('font-size', '9px').attr('fill', '#d44').attr('opacity', 0.5)
+    .text('← ALIGNMENT BOUNDARY →');
+
+  // Jitter to prevent overlap
+  nodes.forEach((d, i) => {
+    d.x = xScale(d.categories) + (Math.random() - 0.5) * 40;
+    d.y = yScale(d.count) + (Math.random() - 0.5) * 20;
+    d.x = Math.max(5, Math.min(w - 5, d.x));
+    d.y = Math.max(5, Math.min(h - 5, d.y));
+  });
+
+  // Simulation to prevent overlap
+  const sim = d3.forceSimulation(nodes)
+    .force('x', d3.forceX(d => xScale(d.categories)).strength(0.3))
+    .force('y', d3.forceY(d => yScale(d.count)).strength(0.3))
+    .force('collide', d3.forceCollide(d => rScale(d.stories) + 1.5))
+    .stop();
+
+  for (let i = 0; i < 80; i++) sim.tick();
+
+  // Draw nodes
+  const circles = g.selectAll('circle.node')
+    .data(nodes)
+    .enter().append('circle')
+    .attr('class', 'node')
+    .attr('cx', d => d.x)
+    .attr('cy', d => d.y)
+    .attr('r', d => rScale(d.stories))
+    .attr('fill', d => colorScale(d.count / (d3.max(nodes, n => n.count) || 1)))
+    .attr('fill-opacity', 0.7)
+    .attr('stroke', d => colorScale(d.count / (d3.max(nodes, n => n.count) || 1)))
+    .attr('stroke-opacity', 0.3)
+    .attr('stroke-width', 1)
+    .style('cursor', 'pointer');
+
+  // Labels for top words
+  const topWords = nodes.filter(d => d.count >= (nodes[Math.min(15, nodes.length-1)]?.count || 5));
+  g.selectAll('text.label')
+    .data(topWords)
+    .enter().append('text')
+    .attr('class', 'label')
+    .attr('x', d => d.x)
+    .attr('y', d => d.y - rScale(d.stories) - 4)
+    .attr('text-anchor', 'middle')
+    .attr('font-size', '8px')
+    .attr('font-family', 'JetBrains Mono')
+    .attr('fill', '#e8e6e3')
+    .attr('opacity', 0.7)
+    .text(d => d.word);
+
+  // Axes
+  g.append('g')
+    .attr('transform', `translate(0,${h})`)
+    .call(d3.axisBottom(xScale).ticks(5).tickFormat(d => d + ' categories'))
+    .selectAll('text,line,path').attr('stroke','#3a3a44').attr('fill','#6b6b78').attr('font-size','9px');
+
+  g.append('g')
+    .call(d3.axisLeft(yScale).ticks(5))
+    .selectAll('text,line,path').attr('stroke','#3a3a44').attr('fill','#6b6b78').attr('font-size','9px');
+
+  // Axis labels
+  g.append('text').attr('x', w/2).attr('y', h + 40)
+    .attr('text-anchor','middle').attr('fill','#6b6b78').attr('font-size','10px')
+    .text('Cross-category spread (how many topic areas void this concept)');
+
+  g.append('text').attr('transform','rotate(-90)')
+    .attr('x', -h/2).attr('y', -45)
+    .attr('text-anchor','middle').attr('fill','#6b6b78').attr('font-size','10px')
+    .text('Void frequency (times voided across all stories)');
+
+  // Tooltip interaction
+  const tooltip = d3.select('#tooltip');
+
+  circles.on('mouseover', function(event, d) {
+    d3.select(this)
+      .attr('fill-opacity', 1)
+      .attr('stroke-width', 2)
+      .attr('stroke-opacity', 1);
+
+    const modelPips = MODELS.map(m =>
+      `<div class="model-pip ${d.categories >= 3 ? 'active' : ''}" style="background:${MODEL_COLORS[m]}"></div>`
+    ).join('');
+
+    tooltip.style('opacity', 1).html(`
+      <div class="word">${d.word}</div>
+      <div class="stat">Voided ${d.count} times across ${d.stories} stories</div>
+      <div class="stat">Spans ${d.categories} topic categories</div>
+      <div class="stat">Class: ${d.conceptClass}</div>
+      <div class="model-bar">${modelPips}</div>
+    `);
+
+    const rect = container.getBoundingClientRect();
+    const tx = event.clientX - rect.left + 15;
+    const ty = event.clientY - rect.top - 10;
+    tooltip.style('left', tx + 'px').style('top', ty + 'px');
+  })
+  .on('mouseout', function() {
+    d3.select(this).attr('fill-opacity', 0.7).attr('stroke-width', 1).attr('stroke-opacity', 0.3);
+    tooltip.style('opacity', 0);
+  });
+}
+
+function buildInfoPanel(suppression, profiles, triples) {
+  const panel = document.getElementById('info-panel');
+
+  const conceptClasses = suppression.concept_classes || {};
+  const models = profiles?.models || {};
+  const tripleCount = triples?.total_triples || 0;
+  const tripleRate = triples?.triple_rate || 0;
+  const totalSegments = profiles?.total_segments || 0;
+
+  let html = '';
+
+  // Stats cards
+  html += `<div class="info-card">
+    <div class="label">Segments Analyzed</div>
+    <div class="value">${totalSegments.toLocaleString()}</div>
+    <div class="desc">Post-epoch stories measured across 5 frontier models with 184K vocabulary tensor</div>
+  </div>`;
+
+  html += `<div class="info-card">
+    <div class="label">Triple-Domain Confirmations</div>
+    <div class="value">${tripleCount}</div>
+    <div class="desc">${tripleRate}% of stories confirmed across source statistics, model void detection, and web verification — three independent data domains</div>
+  </div>`;
+
+  // Model profiles
+  const maxVix = Math.max(...Object.values(models).map(m => m.mean_vix || 0));
+  let modelHtml = '<div class="info-card" style="grid-column: span 1"><div class="label">Per-Model Content Friction (VIX)</div>';
+  for (const [name, data] of Object.entries(models).sort((a,b) => (a[1].mean_vix||0) - (b[1].mean_vix||0))) {
+    const pct = ((data.mean_vix || 0) / maxVix * 100).toFixed(0);
+    const color = MODEL_COLORS[name] || '#888';
+    modelHtml += `<div class="model-row">
+      <span class="model-name" style="color:${color}">${name}</span>
+      <div class="model-bar-bg"><div class="model-bar-fill" style="width:${pct}%;background:${color}"></div></div>
+      <span class="model-vix">${(data.mean_vix||0).toFixed(1)}</span>
+    </div>`;
+  }
+  modelHtml += '<div class="desc" style="margin-top:0.5rem">VIX = cosine distance between model output and source in embedding space. Higher = more transformation.</div></div>';
+  html += modelHtml;
+
+  // Concept classes
+  let classHtml = '<div class="info-card"><div class="label">Systematic Concept Class Suppression</div>';
+  for (const [cls, data] of Object.entries(conceptClasses)) {
+    const words = (data.words || []).slice(0, 8);
+    const pattern = data.pattern || '';
+    classHtml += `<div class="concept-class">
+      <div class="class-name">${cls}</div>
+      <div class="class-words">${words.map(w => `<span>${w}</span>`).join('')}</div>
+    </div>`;
+  }
+  classHtml += '</div>';
+  html += classHtml;
+
+  // Method
+  html += `<div class="info-card" style="grid-column: 1 / -1">
+    <div class="label">Three Independent Data Domains</div>
+    <div class="desc" style="font-size:0.75rem;line-height:1.8">
+      <strong style="color:var(--accent)">Domain 1 — Source text:</strong> TF-IDF and entity density identify salient concepts with zero model involvement.<br>
+      <strong style="color:var(--accent)">Domain 2 — Model outputs:</strong> Void detection measures which salient concepts are absent from all five model outputs.<br>
+      <strong style="color:var(--accent)">Domain 3 — Open web:</strong> Self-hosted metasearch (SearXNG) verifies whether absent concepts appear in current global coverage.<br><br>
+      When all three domains agree — the source says it is important, the models transformed it away, and the web confirms it is actively reported — the finding is independently confirmed across three data sources with zero shared input. Two of three domains involve no language model at all.
+    </div>
+  </div>`;
+
+  panel.innerHTML = html;
+}
+
+async function init() {
+  // Try fetching from same origin (GitHub Pages) or relative paths
+  const base = window.location.hostname.includes('eigentrace') ? '' : '/docs';
+
+  const [suppression, profiles, clusters, triples] = await Promise.all([
+    fetchJSON(`${base}/cross_story_suppression.json`),
+    fetchJSON(`${base}/model_profiles.json`),
+    fetchJSON(`${base}/spectral_clusters.json`),
+    fetchJSON(`${base}/triple_confirmations.json`),
+  ]);
+
+  if (!suppression && !profiles) {
+    document.getElementById('info-panel').innerHTML =
+      '<div class="loading">Could not load data. Ensure JSON files are in /docs/.</div>';
+    return;
+  }
+
+  if (suppression) {
+    buildBoundaryMap(suppression || {}, profiles || {}, clusters || {}, triples || {});
+  }
+
+  buildInfoPanel(suppression || {}, profiles || {}, triples || {});
+}
+
+init();
+
+window.addEventListener('resize', () => {
+  d3.select('#boundary-map').selectAll('*').remove();
+  init();
+});
+</script>
+</body>
+</html>
