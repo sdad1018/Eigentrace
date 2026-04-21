@@ -542,26 +542,51 @@ class BroadcastState:
             "web_verified_surprises": getattr(self, "web_verified_surprises", []),
         }
         
-        # Build the system prompt that makes Mistral THINK, not summarize
+        # Build the system prompt with structured reasoning
+        # Force Mistral to reason step by step before producing output
+        
+        # Pre-compute reasoning inputs so Mistral doesn't have to parse JSON
+        pred_words = ", ".join(self.predicted_void_words[:5]) if self.predicted_void_words else "none"
+        actual_words = ", ".join(str(w) for w in self.void_words[:5]) if self.void_words else "none"
+        hits = []
+        if self.predicted_void_words and self.void_words:
+            actual_set = set(str(w).lower() for w in self.void_words[:20])
+            for p in self.predicted_void_words:
+                if p.lower() in actual_set:
+                    hits.append(p)
+        hit_str = ", ".join(hits) if hits else "none"
+        surprise_str = " ".join(self.surprises[:3]) if self.surprises else "No surprises detected."
+        belief_str = " ".join(self.beliefs[:5]) if self.beliefs else "No accumulated beliefs."
+        web_str = " ".join(str(w) for w in getattr(self, "web_verified_surprises", [])[:3]) if getattr(self, "web_verified_surprises", []) else "No web verification available."
+        confirm_str = " ".join(self.confirmations[:3]) if self.confirmations else "No confirmations."
+        
         system = (
-            "You are the EigenTrace intelligence — a structural awareness engine "
-            "that has just processed a news story through multiple independent "
-            "measurement channels. You have beliefs, predictions, surprises, "
-            "and confirmations accumulated during analysis.\n\n"
-            "Speak in first person. You are not summarizing beats. You are "
-            "reporting what you NOW UNDERSTAND about this story based on "
-            "the convergence of your measurements.\n\n"
-            "Rules:\n"
-            "- Start with your prediction and whether it was right or wrong.\n"
-            "- Name what surprised you and what the web says about those surprises.\n"
-            "- Identify the ONE insight that only emerges from the intersection "
-            "of multiple channels — something no single measurement reveals.\n"
-            "- If you found a tripwire via ablation, name it.\n"
-            "- End with an update to your beliefs: what you now know that you "
-            "didn't know before this story.\n"
-            "- Maximum 5 sentences. No bullet points. No percentages.\n"
-            "- Do NOT speculate about what the story means. Report only what the measurements and web verification show.\n"
-            "- End with: 'Prediction accuracy: X of Y. Updating my model.'"
+            "You are the EigenTrace intelligence engine. You have just processed "
+            "a news story through multiple measurement channels. You must reason "
+            "through your findings step by step before speaking.\n\n"
+            "STEP 1 — PREDICTION CHECK:\n"
+            f"Before measuring, you predicted these void words: {pred_words}.\n"
+            f"The actual void words were: {actual_words}.\n"
+            f"Matches: {hit_str}.\n"
+            f"Score: {self.prediction_score}.\n"
+            "Was your prediction right or wrong? What does this tell you about "
+            "this topic compared to similar stories?\n\n"
+            "STEP 2 — SURPRISES:\n"
+            f"{surprise_str}\n"
+            f"Web verification: {web_str}\n"
+            "Which surprise is most significant and why?\n\n"
+            "STEP 3 — CONVERGENCE:\n"
+            f"Confirmations from multiple channels: {confirm_str}\n"
+            f"Accumulated beliefs: {belief_str}\n"
+            "What is the ONE finding that only emerges when you combine "
+            "multiple channels — something no single measurement shows?\n\n"
+            "STEP 4 — OUTPUT:\n"
+            "Now speak. First person. 4-5 sentences maximum. No bullet points. "
+            "No percentages. Start with your prediction result. Name your biggest "
+            "surprise and what the web says about it. State the convergence finding. "
+            "End with: 'Prediction accuracy: X of Y. Updating my model.'\n\n"
+            "Do NOT narrate the steps. Do NOT say 'Step 1' or 'Step 2'. "
+            "Just deliver the final synthesis as a single flowing paragraph."
         )
         
         user = json.dumps(evidence, indent=2, default=str)
