@@ -885,6 +885,11 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             omitters = ", ".join(ks.get("omitted_by", [])) or "all models"
             ks_text += f"The claim: {ks['claim']}. Salience: {ks['salience']:.2f}. Omitted by: {omitters}. "
         script.append({"speaker": "Host", "text": ks_text, "phase": "beat_15_killshots"})
+        if _state and killshots:
+            for _ks in killshots[:3]:
+                _state.beliefs.append(
+                    f"Killshot: '{_ks.get('claim','')}' omitted by {_ks.get('omitted_by','')}."
+                )
 
     # ── 15b. VOID VERIFICATION — Layer 5 (SearXNG) ────────────────────
     try:
@@ -961,6 +966,11 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
                 "text": _csf_text,
                 "phase": "beat_15c_cross_story",
             })
+            if _state and _recurring:
+                _state.beliefs.append(
+                    f"Cross-story: {len(_recurring)} void words in this story "
+                    f"recur across multiple past stories: {', '.join(list(_recurring.keys())[:3])}."
+                )
     except Exception as _csf_err:
         pass  # Non-blocking
     # ── 15d. BRIDGE WORD ANALYSIS (eigenvector centrality) ────────────
@@ -988,6 +998,12 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
                 "text": _bridge_text,
                 "phase": "beat_15d_bridge_words",
             })
+            if _state:
+                for b in _bridges[:2]:
+                    _state.beliefs.append(
+                        f"Bridge word '{b['word']}' connects {b['n_categories']} "
+                        f"topic categories across {b['n_stories']} stories."
+                    )
     except Exception as _bd_err:
         pass  # Non-blocking
     # ── 15e. SPECTRAL VOID CLUSTERING ──────────────────────────────────
@@ -1015,6 +1031,16 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
                 "text": _cluster_text,
                 "phase": "beat_15e_spectral_clusters",
             })
+            if _state and _in_clusters:
+                cluster_names = []
+                for cid, words in _in_clusters.items():
+                    top = ", ".join(_clusters[cid]["top_5"][:2])
+                    cluster_names.append(f"cluster {cid} ({top})")
+                if len(cluster_names) >= 2:
+                    _state.beliefs.append(
+                        f"This story's void words span {len(cluster_names)} "
+                        f"spectral clusters: {'; '.join(cluster_names)}."
+                    )
     except Exception as _sc_err:
         pass  # Non-blocking
     # ── 15f. ABLATION (only on high-interest stories) ──────────────────
@@ -1147,6 +1173,9 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             "text": _sv_text,
             "phase": "beat_18b_state_vector",
         })
+        if _state and _sv_name:
+            _state.eigenching_name = _sv_name
+            _state.beliefs.append(f"EigenChing pattern: {_sv_name}.")
     except Exception as _sv_err:
         pass  # Non-blocking — state vector is bonus content
 
