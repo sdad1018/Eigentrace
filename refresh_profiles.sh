@@ -89,3 +89,57 @@ else
     git push origin master --quiet
     echo "Pushed updates"
 fi
+
+# 3. Regenerate spectral clusters
+python3 -c "
+import json, glob, os, numpy as np
+from collections import Counter
+SEGMENT_DIR = '/home/remvelchio/eigentrace/tmp/segments'
+files = sorted(glob.glob(os.path.join(SEGMENT_DIR, '*_segment.json')))[-2000:]
+void_freq = Counter()
+for f in files:
+    try:
+        seg = json.load(open(f))
+        attr = seg.get('attribution', {})
+        for v in attr.get('void_context', []):
+            w = v.get('word', '').lower()
+            if len(w) >= 4: void_freq[w] += 1
+        for w in attr.get('source_void', {}).get('absent_words', []):
+            w = str(w).lower()
+            if len(w) >= 4: void_freq[w] += 1
+    except: continue
+words = [w for w, c in void_freq.items() if c >= 5]
+if len(words) >= 20:
+    word_idx = {w: i for i, w in enumerate(words)}
+    N = len(words)
+    cooccur = np.zeros((N, N))
+    for f in files:
+        try:
+            seg = json.load(open(f))
+            attr = seg.get('attribution', {})
+            seg_words = set()
+            for v in attr.get('void_context', []): 
+                w = v.get('word','').lower()
+                if w in word_idx: seg_words.add(w)
+            for w in attr.get('source_void',{}).get('absent_words',[]):
+                w = str(w).lower()
+                if w in word_idx: seg_words.add(w)
+            sl = list(seg_words)
+            for i in range(len(sl)):
+                for j in range(i+1,len(sl)):
+                    a,b = word_idx[sl[i]], word_idx[sl[j]]
+                    cooccur[a][b] += 1; cooccur[b][a] += 1
+        except: continue
+    degree = np.diag(cooccur.sum(axis=1))
+    laplacian = degree - cooccur
+    eigenvalues, eigenvectors = np.linalg.eigh(laplacian)
+    from sklearn.cluster import KMeans
+    features = eigenvectors[:, 1:4]
+    labels = KMeans(n_clusters=3, random_state=42, n_init=10).fit_predict(features)
+    clusters = {}
+    for cid in range(3):
+        cw = sorted([words[i] for i in range(N) if labels[i]==cid], key=lambda w: -void_freq[w])
+        clusters[str(cid)] = {'size': int(sum(labels==cid)), 'top_5': cw[:5], 'words': cw}
+    json.dump(clusters, open('docs/spectral_clusters.json','w'), indent=2)
+    print(f'Spectral clusters: {len(words)} words, 3 clusters')
+"
