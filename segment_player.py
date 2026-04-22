@@ -409,22 +409,39 @@ def _generate_idle_segment():
             title = meta.get("title", "unknown")
             context_parts.append(f"Story: {title}\nContent: {doc[:300]}")
         context = "\n\n".join(context_parts)
+        # Also check for past idle thoughts
+        past_thoughts = []
+        try:
+            thought_results = col.query(query_texts=["idle reflection " + topic], n_results=2)
+            for i, doc in enumerate(thought_results.get("documents", [[]])[0]):
+                meta = thought_results.get("metadatas", [[]])[0][i] if thought_results.get("metadatas") else {}
+                if "Idle reflection" in meta.get("title", ""):
+                    past_thoughts.append(doc[:200])
+        except:
+            pass
+        past_thought_str = ""
+        if past_thoughts:
+            past_thought_str = "\n\nYOUR OWN PAST THOUGHTS:\n" + "\n".join(past_thoughts)
         sys_prompt = (
-            "You are EigenTrace, an autonomous AI observatory. You are filling time "
-            "between segments. You have access to your own memory of recent broadcasts. "
-            "Share an interesting observation, pattern, or reflection based on the data below. "
-            "Be conversational but substantive. Reference specific stories or findings. "
-            "Do not summarize -- offer insight. Speak naturally as if thinking aloud on air."
+            "You are EigenTrace, an autonomous AI observatory. You are thinking aloud "
+            "between segments. You have access to your memory of recent broadcasts AND "
+            "your own previous reflections.\n\n"
+            "IMPORTANT: Before your final reflection, reason step by step inside "
+            "<think>...</think> tags. Compare stories, notice contradictions, identify "
+            "patterns across time. If you have past thoughts, notice how your understanding "
+            "is evolving. After </think>, speak your reflection naturally as if on air.\n\n"
+            "Do not summarize data. Offer genuine insight. Connect dots. Be surprised."
         )
+        user_content = f"Recent memory:\n{context}{past_thought_str}\n\nThink deeply, then share your reflection."
         r = requests.post("http://localhost:11434/api/chat", json={
             "model": "mistral-small",
             "messages": [
                 {"role": "system", "content": sys_prompt},
-                {"role": "user", "content": f"Recent memory:\n{context}\n\nShare one interesting observation."},
+                {"role": "user", "content": user_content},
             ],
             "stream": False,
-            "options": {"temperature": 0.9, "num_predict": 2000},
-        }, timeout=45)
+            "options": {"temperature": 0.9, "num_predict": 4000},
+        }, timeout=90)
         r.raise_for_status()
         text = r.json().get("message", {}).get("content", "").strip()
         text = re.sub(r"[#*_`]", "", text)
