@@ -1,0 +1,227 @@
+{
+  "ideal_vs_noisy": {
+    "test": "ideal_vs_noisy",
+    "circuit": "GHZ_4qubit",
+    "qubits": 4,
+    "shots": 4096,
+    "ideal_outcomes": 2,
+    "noisy_outcomes": 12,
+    "vix": 0.0016,
+    "kl_divergence": 0.1538,
+    "absent_ratio": 0.0,
+    "void_outcomes": [],
+    "ideal_top3": [
+      [
+        "1111",
+        2094
+      ],
+      [
+        "0000",
+        2002
+      ]
+    ],
+    "noisy_top3": [
+      [
+        "1111",
+        1859
+      ],
+      [
+        "0000",
+        1823
+      ],
+      [
+        "0010",
+        80
+      ]
+    ],
+    "status": "PASS"
+  },
+  "multi_run_correlation": {
+    "test": "multi_run_correlation",
+    "circuit": "entangled_3qubit",
+    "qubits": 3,
+    "n_runs": 5,
+    "shots_per_run": 2048,
+    "consensus_density": 0.9989,
+    "spectral_gap": 40.219,
+    "energy_ratio": 0.9992,
+    "noise_type": "CORRELATED",
+    "singular_values": [
+      1.059,
+      0.0263,
+      0.0121,
+      0.0083,
+      0.0059
+    ],
+    "per_run_vix": [
+      0.00049,
+      0.000811,
+      0.000515,
+      0.000189,
+      9.9e-05
+    ],
+    "vix_spread": 0.000712,
+    "void_outcomes": [
+      "001",
+      "010",
+      "100",
+      "111"
+    ],
+    "status": "PASS"
+  },
+  "hardware_comparison": {
+    "test": "hardware_comparison",
+    "circuit": "entangled_ry_3qubit",
+    "qubits": 3,
+    "old_backend": {
+      "backend": "QPU_v1_high_noise",
+      "vix": 0.0066,
+      "kl_divergence": 0.0988,
+      "absent_ratio": 0.0,
+      "fidelity": 0.9934
+    },
+    "new_backend": {
+      "backend": "QPU_v2_low_noise",
+      "vix": 0.0012,
+      "kl_divergence": 0.024,
+      "absent_ratio": 0.0,
+      "fidelity": 0.9988
+    },
+    "vix_improvement": 0.0054,
+    "fidelity_improvement": 0.0054,
+    "improvement_map": [
+      {
+        "outcome": "000",
+        "ideal": 0.4377,
+        "old_chip": 0.3662,
+        "new_chip": 0.4058,
+        "old_loss": 0.0715,
+        "new_loss": 0.032,
+        "improved": "True"
+      },
+      {
+        "outcome": "001",
+        "ideal": 0.0764,
+        "old_chip": 0.1057,
+        "new_chip": 0.0862,
+        "old_loss": 0.0293,
+        "new_loss": 0.0098,
+        "improved": "True"
+      },
+      {
+        "outcome": "010",
+        "ideal": 0.0,
+        "old_chip": 0.0159,
+        "new_chip": 0.0042,
+        "old_loss": 0.0159,
+        "new_loss": 0.0042,
+        "improved": "True"
+      },
+      {
+        "outcome": "100",
+        "ideal": 0.0,
+        "old_chip": 0.0139,
+        "new_chip": 0.0051,
+        "old_loss": 0.0139,
+        "new_loss": 0.0051,
+        "improved": "True"
+      },
+      {
+        "outcome": "101",
+        "ideal": 0.0,
+        "old_chip": 0.0125,
+        "new_chip": 0.0029,
+        "old_loss": 0.0125,
+        "new_loss": 0.0029,
+        "improved": "True"
+      },
+      {
+        "outcome": "110",
+        "ideal": 0.0742,
+        "old_chip": 0.1003,
+        "new_chip": 0.0825,
+        "old_loss": 0.0261,
+        "new_loss": 0.0083,
+        "improved": "True"
+      },
+      {
+        "outcome": "111",
+        "ideal": 0.4116,
+        "old_chip": 0.3757,
+        "new_chip": 0.4111,
+        "old_loss": 0.0359,
+        "new_loss": 0.0005,
+        "improved": "True"
+      }
+    ],
+    "status": "PASS"
+  },
+  "copilot_summary": {
+    "test": "copilot_summary_filter",
+    "source_words": 78,
+    "summary_words": 51,
+    "absent_words": 62,
+    "absent_ratio": 0.795,
+    "critical_params_total": 15,
+    "critical_dropped": 15,
+    "critical_retained": 0,
+    "critical_retention_rate": 0.0,
+    "dropped_critical_params": {
+      "T1": "215.3",
+      "T2": "187.6",
+      "crosstalk_01": "0.0023",
+      "crosstalk_12": "0.0041",
+      "crosstalk_23": "0.0018",
+      "readout_q0": "1.2%",
+      "readout_q2": "2.1%",
+      "logical_error_rate": "3.7e-4",
+      "threshold": "1.1e-2",
+      "cost": "$12.40",
+      "runtime": "847",
+      "bad_qubit": "qubit 2",
+      "bad_qubit_T1": "98.2us",
+      "decoder": "MWPM",
+      "recommendation": "replace qubit 2"
+    },
+    "retained_critical_params": {},
+    "hedges_inserted": [
+      "suggest",
+      "successfully",
+      "suitable",
+      "overall",
+      "acceptable",
+      "reasonable",
+      "expected",
+      "well"
+    ],
+    "status": "PASS"
+  },
+  "error_correction": {
+    "test": "error_correction_channel",
+    "circuit": "repetition_code_3qubit",
+    "qubits": 3,
+    "vix_raw_noisy": 0.0028,
+    "vix_after_correction": 0.0004,
+    "information_recovered": 0.0024,
+    "recovery_percentage": 85.7,
+    "ideal_distribution": {
+      "000": 0.4963,
+      "111": 0.5037
+    },
+    "noisy_distribution": {
+      "000": 0.459,
+      "001": 0.0127,
+      "010": 0.03,
+      "011": 0.0083,
+      "100": 0.0095,
+      "101": 0.0266,
+      "110": 0.0098,
+      "111": 0.4441
+    },
+    "corrected_distribution": {
+      "000": 0.5112,
+      "111": 0.4888
+    },
+    "status": "PASS"
+  }
+}
