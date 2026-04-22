@@ -462,12 +462,30 @@ def _generate_idle_segment():
     return None
 
 
+def _prebuffer_idle(count=5):
+    """Generate a buffer of idle reflections at startup while Mistral is free."""
+    log.info("PREBUFFER: generating %d idle reflections while APIs warm up...", count)
+    generated = 0
+    for i in range(count):
+        seg = _generate_idle_segment()
+        if seg:
+            generated += 1
+            log.info("PREBUFFER: %d/%d ready", generated, count)
+        else:
+            log.warning("PREBUFFER: generation %d failed, continuing", i+1)
+    log.info("PREBUFFER: %d reflections queued for playback", generated)
+
+
 def main():
     SEGMENTS_DIR.mkdir(parents=True, exist_ok=True)
     log.info("Segment player started -- watching %s", SEGMENTS_DIR)
     log.info("Voices: %s", {k: v.name for k, v in VOICE_MAP.items()})
+
+    # Pre-generate idle content while Mistral is free
+    _prebuffer_idle(5)
+
     _idle_seconds = 0
-    _IDLE_THRESHOLD = 60
+    _IDLE_THRESHOLD = 30
     while True:
         seg = next_segment()
         if seg:
