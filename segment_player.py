@@ -481,9 +481,6 @@ def main():
     log.info("Segment player started -- watching %s", SEGMENTS_DIR)
     log.info("Voices: %s", {k: v.name for k, v in VOICE_MAP.items()})
 
-    # Pre-generate idle content while Mistral is free
-    _prebuffer_idle(5)
-
     _idle_seconds = 0
     _IDLE_THRESHOLD = 30
     while True:
