@@ -143,3 +143,7 @@ if len(words) >= 20:
     json.dump(clusters, open('docs/spectral_clusters.json','w'), indent=2)
     print(f'Spectral clusters: {len(words)} words, 3 clusters')
 "
+
+# 4. Regenerate EigenChing distribution
+python3 eigenching_report.py 2>/dev/null || true
+

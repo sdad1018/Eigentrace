@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EigenChing — 729 States of AI Behavior</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Instrument+Serif:ital@0;1&display=swap');
+
+:root {
+  --bg: #0a0a0c;
+  --bg2: #111115;
+  --surface: #18181d;
+  --border: #2a2a32;
+  --text: #e8e6e3;
+  --dim: #6b6b78;
+  --accent: #c4a35a;
+  --green: #3a8;
+  --red: #d44;
+  --blue: #5a7fd4;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font-family: 'JetBrains Mono', monospace; min-height: 100vh; }
+
+.hero { text-align: center; padding: 3rem 2rem 1rem; }
+.hero h1 { font-family: 'Instrument Serif', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 400; margin-bottom: 0.5rem; }
+.hero h1 em { font-style: italic; color: var(--accent); }
+.hero .sub { font-size: 0.7rem; color: var(--dim); letter-spacing: 0.12em; text-transform: uppercase; max-width: 600px; margin: 0 auto; line-height: 1.6; }
+
+.stats { display: flex; justify-content: center; gap: 3rem; padding: 1.5rem 2rem; flex-wrap: wrap; }
+.stat { text-align: center; }
+.stat .val { font-size: 1.6rem; font-weight: 700; color: var(--accent); }
+.stat .label { font-size: 0.6rem; color: var(--dim); text-transform: uppercase; letter-spacing: 0.1em; }
+
+.explainer { max-width: 700px; margin: 0 auto 2rem; padding: 0 2rem; font-size: 0.75rem; color: var(--dim); line-height: 1.8; text-align: center; }
+
+.grid { max-width: 1200px; margin: 0 auto; padding: 0 1rem 3rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 0.75rem; }
+
+.card { background: var(--bg2); border: 1px solid var(--border); border-radius: 3px; padding: 1rem 1.25rem; transition: border-color 0.2s; }
+.card:hover { border-color: var(--accent); }
+.card.observed { border-left: 3px solid var(--accent); }
+.card.unobserved { opacity: 0.4; }
+
+.card-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.4rem; }
+.card-name { font-size: 0.9rem; font-weight: 700; color: var(--text); }
+.card-count { font-size: 0.75rem; color: var(--accent); font-weight: 500; }
+
+.card-sig { font-size: 0.65rem; color: var(--dim); margin-bottom: 0.4rem; letter-spacing: 0.05em; }
+.card-sig .pos { color: var(--green); }
+.card-sig .neg { color: var(--red); }
+.card-sig .zero { color: var(--dim); }
+
+.card-desc { font-size: 0.7rem; color: var(--dim); line-height: 1.5; margin-bottom: 0.5rem; }
+
+.card-examples { font-size: 0.6rem; color: var(--dim); line-height: 1.6; }
+.card-examples .ex { padding-left: 0.5rem; border-left: 2px solid var(--border); margin-bottom: 0.3rem; color: var(--text); opacity: 0.7; }
+
+.bar-container { height: 4px; background: var(--border); border-radius: 2px; margin-bottom: 0.5rem; }
+.bar-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 1s; }
+
+.footer { text-align: center; padding: 2rem; font-size: 0.6rem; color: var(--dim); }
+.footer a { color: var(--accent); text-decoration: none; }
+
+.loading { text-align: center; padding: 4rem; color: var(--dim); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>EigenChing — <em>729 States</em></h1>
+  <p class="sub">Every story is classified into one of 729 possible states across six measurement axes. 32 states have named archetypes. The rest are described by their distance from the nearest archetype.</p>
+</div>
+
+<div class="stats" id="stats">
+  <div class="stat"><div class="val" id="total-segments">—</div><div class="label">Stories Classified</div></div>
+  <div class="stat"><div class="val" id="observed-count">—</div><div class="label">Archetypes Observed</div></div>
+  <div class="stat"><div class="val" id="unobserved-count">—</div><div class="label">Never Observed</div></div>
+  <div class="stat"><div class="val" id="most-common">—</div><div class="label">Most Common</div></div>
+</div>
+
+<div class="explainer">
+  Six axes, each ternary (-1, 0, +1): <strong>consensus</strong> (model unity), <strong>absent</strong> (content loss), <strong>verb drift</strong> (language softening), <strong>entity</strong> (name survival), <strong>hedge</strong> (attribution buffering), <strong>VIX spread</strong> (model divergence). The signature fingerprints how AI collectively reshaped the story.
+</div>
+
+<div class="grid" id="grid">
+  <div class="loading">Loading archetype data...</div>
+</div>
+
+<div class="footer">
+  <a href="/">EigenTrace Home</a> · <a href="/soul.html">Soul</a> · <a href="/boundary.html">Alignment Map</a> · Updated hourly
+</div>
+
+<script>
+const AXES = ['consensus', 'absent', 'verb_drift', 'entity', 'hedge', 'vix_spread'];
+
+function sigToHTML(sig) {
+  return sig.map((v, i) => {
+    const cls = v > 0 ? 'pos' : v < 0 ? 'neg' : 'zero';
+    const sym = v > 0 ? '+1' : v < 0 ? '-1' : ' 0';
+    return `<span class="${cls}" title="${AXES[i]}">${sym}</span>`;
+  }).join(' ');
+}
+
+async function init() {
+  try {
+    const r = await fetch('/eigenching_data.json');
+    const data = await r.json();
+
+    document.getElementById('total-segments').textContent = data.total_segments.toLocaleString();
+
+    const observed = data.archetypes.filter(a => a.count > 0).length;
+    const unobserved = data.archetypes.filter(a => a.count === 0).length;
+    document.getElementById('observed-count').textContent = observed;
+    document.getElementById('unobserved-count').textContent = unobserved;
+
+    const top = data.archetypes.reduce((a, b) => a.count > b.count ? a : b);
+    document.getElementById('most-common').textContent = top.name.replace('The ', '');
+
+    const maxCount = Math.max(...data.archetypes.map(a => a.count));
+
+    let html = '';
+    for (const a of data.archetypes) {
+      const cls = a.count > 0 ? 'observed' : 'unobserved';
+      const barWidth = a.count > 0 ? Math.max(2, (a.count / maxCount) * 100) : 0;
+
+      let examplesHTML = '';
+      if (a.examples.length > 0) {
+        examplesHTML = '<div class="card-examples">' +
+          a.examples.map(e => `<div class="ex">${e}</div>`).join('') +
+          '</div>';
+      } else if (a.count === 0) {
+        examplesHTML = '<div class="card-examples" style="font-style:italic;opacity:0.5">Never observed — waiting</div>';
+      }
+
+      html += `
+        <div class="card ${cls}">
+          <div class="card-header">
+            <span class="card-name">${a.name}</span>
+            <span class="card-count">${a.count > 0 ? a.count + 'x (' + a.pct + '%)' : 'none'}</span>
+          </div>
+          <div class="card-sig">${sigToHTML(a.signature)}</div>
+          <div class="bar-container"><div class="bar-fill" style="width:${barWidth}%"></div></div>
+          <div class="card-desc">${a.description}</div>
+          ${examplesHTML}
+        </div>`;
+    }
+
+    document.getElementById('grid').innerHTML = html;
+  } catch(e) {
+    document.getElementById('grid').innerHTML =
+      '<div class="loading">Could not load eigenching_data.json</div>';
+  }
+}
+
+init();
+</script>
+</body>
+</html>
