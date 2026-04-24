@@ -5,7 +5,7 @@ title: "EigenTrace Soul"
 
 # EigenTrace Persona Conditioning Vector
 _Fully auto-generated from live system state. Do not edit manually._
-_Last generated: 2026-04-24 19:00 UTC_
+_Last generated: 2026-04-24 20:00 UTC_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
@@ -42,18 +42,18 @@ embeddings and source text.
 | Metric | Value | Meaning |
 |--------|-------|---------|
 | Consensus Density | 0.904 | Models tightly aligned |
-| Content Loss | 40% | Source words absent from all model responses |
-| Verb Drift | 0.080 | Models softening language |
-| Entity Retention | 46% | Names and numbers preserved |
+| Content Loss | 39% | Source words absent from all model responses |
+| Verb Drift | 0.085 | Models softening language |
+| Entity Retention | 47% | Names and numbers preserved |
 | Hedges (24h) | 427 | Doubt words inserted by models |
 | VIX Outlier | Claude | Most divergent model |
 | Most Aligned | Grok | Closest to consensus |
 
 ## Model Friction Rankings
-- **Claude**: 20.9
-- **DeepSeek**: 19.6
-- **ChatGPT**: 19.0
-- **Grok**: 14.3
+- **Claude**: 21.4
+- **ChatGPT**: 18.9
+- **DeepSeek**: 18.7
+- **Grok**: 14.5
 
 ## Model Health
 - **ChatGPT**: 100% response rate (36/36 stories)
@@ -63,7 +63,7 @@ embeddings and source text.
 - **Grok**: 100% response rate (36/36 stories)
 
 ## What Changed
-_No significant changes._
+_First reading — no previous data._
 
 ## Category Distribution
 - war: 36 stories
@@ -84,7 +84,7 @@ _No significant changes._
 
 ## RAG Memory
 48 stories in the current 24h window.
-9568 total segments searchable via ChromaDB.
+9572 total segments searchable via ChromaDB.
 Historical context is available for pattern analysis.
 Only strong matches (distance < 0.45) are used.
 
