@@ -5,7 +5,7 @@ title: "EigenTrace Soul"
 
 # EigenTrace Persona Conditioning Vector
 _Fully auto-generated from live system state. Do not edit manually._
-_Last generated: 2026-04-25 06:00 UTC_
+_Last generated: 2026-04-25 07:00 UTC_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
@@ -63,7 +63,7 @@ embeddings and source text.
 - **Grok**: 100% response rate (36/36 stories)
 
 ## What Changed
-_Content loss decreased (0.421 → 0.400) | Hedges up (385 → 417)_
+_No significant changes._
 
 ## Category Distribution
 - war: 34 stories
@@ -123,7 +123,7 @@ _Review and accept/reject via: `python3 soul_updater.py --accept <id>` or `--rej
 **Type:** capability
 
 ### [verb_softening_accelerating]
-**Why:** Verb drift accelerating: 0.074 → 0.097. Language is being progressively softened.
+**Why:** Verb drift accelerating: 0.075 → 0.097. Language is being progressively softened.
 
 **Proposed action:** Emphasize verb substitution examples in compression report
 
