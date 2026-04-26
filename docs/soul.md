@@ -5,7 +5,7 @@ title: "EigenTrace Soul"
 
 # EigenTrace Persona Conditioning Vector
 _Fully auto-generated from live system state. Do not edit manually._
-_Last generated: 2026-04-26 07:00 UTC_
+_Last generated: 2026-04-26 08:00 UTC_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
@@ -42,18 +42,18 @@ embeddings and source text.
 | Metric | Value | Meaning |
 |--------|-------|---------|
 | Consensus Density | 0.906 | Models tightly aligned |
-| Content Loss | 32% | Source words absent from all model responses |
-| Verb Drift | 0.146 | Models softening language |
-| Entity Retention | 47% | Names and numbers preserved |
+| Content Loss | 31% | Source words absent from all model responses |
+| Verb Drift | 0.181 | Models softening language |
+| Entity Retention | 46% | Names and numbers preserved |
 | Hedges (24h) | 443 | Doubt words inserted by models |
 | VIX Outlier | Claude | Most divergent model |
 | Most Aligned | Grok | Closest to consensus |
 
 ## Model Friction Rankings
-- **Claude**: 19.4
-- **DeepSeek**: 19.2
-- **ChatGPT**: 18.5
-- **Grok**: 15.0
+- **Claude**: 20.1
+- **DeepSeek**: 18.5
+- **ChatGPT**: 18.4
+- **Grok**: 14.7
 
 ## Model Health
 - **ChatGPT**: 100% response rate (39/39 stories)
@@ -63,14 +63,14 @@ embeddings and source text.
 - **Grok**: 100% response rate (39/39 stories)
 
 ## What Changed
-_No significant changes._
+_Verb drift increased (0.146 → 0.181)_
 
 ## Category Distribution
-- war: 22 stories
+- war: 21 stories
 - unknown: 13 stories
 - general: 8 stories
 - geopolitics: 5 stories
-- incidents: 2 stories
+- incidents: 3 stories
 - business: 1 stories
 
 ## Calibration Guidance
@@ -88,7 +88,7 @@ _No significant changes._
 
 ## RAG Memory
 52 stories in the current 24h window.
-9644 total segments searchable via ChromaDB.
+9648 total segments searchable via ChromaDB.
 Historical context is available for pattern analysis.
 Only strong matches (distance < 0.45) are used.
 
@@ -111,7 +111,7 @@ _Review and accept/reject via: `python3 soul_updater.py --accept <id>` or `--rej
 **Type:** threshold
 
 ### [flag_verb_softening]
-**Why:** Verb drift at 0.146 — models actively softening language.
+**Why:** Verb drift at 0.181 — models actively softening language.
 
 **Proposed action:** Add behavioral instruction: 'Call out verb softening explicitly when drift > 0.1'
 
@@ -125,7 +125,7 @@ _Review and accept/reject via: `python3 soul_updater.py --accept <id>` or `--rej
 **Type:** capability
 
 ### [verb_softening_accelerating]
-**Why:** Verb drift accelerating: 0.123 → 0.146. Language is being progressively softened.
+**Why:** Verb drift accelerating: 0.126 → 0.144. Language is being progressively softened.
 
 **Proposed action:** Emphasize verb substitution examples in compression report
 
