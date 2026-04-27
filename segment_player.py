@@ -495,8 +495,19 @@ def main():
         else:
             _idle_seconds += POLL_INTERVAL
             if _idle_seconds >= _IDLE_THRESHOLD:
-                log.info("IDLE: %ds of dead air -- generating reflection", _idle_seconds)
-                idle_seg = _generate_idle_segment()
+                # 1 in 4 idle cycles: forage for new knowledge instead of reflecting
+                import random as _rand
+                if _rand.random() < 0.25:
+                    log.info("IDLE: %ds of dead air -- entropy foraging", _idle_seconds)
+                    try:
+                        from entropy_forager import forage_entropy
+                        idle_seg = forage_entropy()
+                    except Exception as _fe:
+                        log.warning("FORAGING failed: %s — falling back to reflection", _fe)
+                        idle_seg = _generate_idle_segment()
+                else:
+                    log.info("IDLE: %ds of dead air -- generating reflection", _idle_seconds)
+                    idle_seg = _generate_idle_segment()
                 if idle_seg:
                     _idle_seconds = 0
                 else:

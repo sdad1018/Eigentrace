@@ -151,3 +151,7 @@ python3 eigenching_report.py 2>/dev/null || true
 # 5. Regenerate idle thoughts
 python3 idle_report.py 2>/dev/null || true
 
+
+# 6. REM consolidation (memory review)
+python3 rem_consolidation.py 2>/dev/null || true
+
