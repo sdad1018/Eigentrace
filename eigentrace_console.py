@@ -178,6 +178,26 @@ def format_rag_for_prompt(hits):
     return "\n".join(lines)
 
 
+def query_dreamsphere(text, n_results=3):
+    """Query Dream-Sphere framework chunks specifically."""
+    try:
+        from segment_rag import get_collection
+        col = get_collection()
+        results = col.query(
+            query_texts=[text], n_results=n_results,
+            where={"state_flag": "DREAMSPHERE"},
+        )
+        hits = []
+        for i, doc in enumerate(results["documents"][0]):
+            dist = results["distances"][0][i]
+            meta = results["metadatas"][0][i]
+            if dist < 0.7:  # Higher threshold for philosophical content
+                hits.append({"distance": round(dist, 3), "title": meta.get("title", ""), "text": doc[:300]})
+        return hits
+    except:
+        return []
+
+
 def get_own_past_thoughts(n=3):
     """Retrieve the host's own past idle reflections."""
     try:
@@ -451,7 +471,11 @@ def main():
         # ── Dynamic RAG enrichment per turn ──
         # Extract key concepts from user message and pull relevant context
         if len(user_input.split()) > 3:  # Skip RAG for very short messages
-            turn_hits = query_rag(user_input, n_results=2, threshold=0.45)
+            turn_hits = query_rag(user_input, n_results=2, threshold=0.50)
+            # Also check Dream-Sphere framework
+            ds_hits = query_dreamsphere(user_input, n_results=1)
+            if ds_hits:
+                turn_hits = (turn_hits or []) + ds_hits
             if turn_hits:
                 rag_inject = "\n\n[LIVE RAG — retrieved for this specific question]\n"
                 for h in turn_hits:
