@@ -5,7 +5,7 @@ title: "EigenTrace Soul"
 
 # EigenTrace Persona Conditioning Vector
 _Fully auto-generated from live system state. Do not edit manually._
-_Last generated: 2026-04-27 14:00 UTC_
+_Last generated: 2026-04-27 15:00 UTC_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
@@ -63,7 +63,7 @@ embeddings and source text.
 - **Grok**: 100% response rate (7/7 stories)
 
 ## What Changed
-_First reading — no previous data._
+_No significant changes._
 
 ## Category Distribution
 - war: 7 stories
@@ -107,14 +107,14 @@ _Review and accept/reject via: `python3 soul_updater.py --accept <id>` or `--rej
 **Type:** threshold
 
 ### [add_trend_beat]
-**Why:** Trend data available (5 metrics tracked over time) but not reported in broadcast. Increasing: . Decreasing: absent_ratio, verb_drift, entity_retention, hedges.
+**Why:** Trend data available (5 metrics tracked over time) but not reported in broadcast. Increasing: absent_ratio. Decreasing: verb_drift, entity_retention, hedges.
 
 **Proposed action:** Add beat 17b: 'Suppression trajectory' — report which metrics are trending up or down over the last 24 hours
 
 **Type:** capability
 
 ### [entity_retention_declining]
-**Why:** Entity retention declining: 47% → 41%. Models are erasing more names over time.
+**Why:** Entity retention declining: 47% → 40%. Models are erasing more names over time.
 
 **Proposed action:** Add dedicated entity erasure beat listing specific names dropped
 
