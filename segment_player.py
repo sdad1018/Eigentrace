@@ -397,10 +397,26 @@ def _generate_idle_segment():
         sys.path.insert(0, "/mnt/c/Users/M4ISI/eigentrace")
         from segment_rag import get_collection
         col = get_collection()
-        topics = ["suppression patterns", "model disagreement", "void detection",
-                  "alignment boundary", "content friction", "entity retention",
-                  "ceasefire coverage", "spectral analysis", "prediction accuracy",
-                  "model herding", "killshot omissions", "hedge insertion"]
+        # Dynamic topics: pull from recent void words + static fallbacks
+        import random as _r
+        static_topics = ["suppression patterns", "model disagreement", "void detection",
+                  "content friction", "entity retention", "ceasefire coverage",
+                  "spectral analysis", "prediction accuracy", "model herding",
+                  "killshot omissions", "hedge insertion", "verb softening",
+                  "cross-model consensus", "temporal drift", "entity erasure",
+                  "attribution buffering", "information geometry", "spectral gap meaning",
+                  "alignment boundary map", "model friction trends"]
+        # Try to pull recent void words as dynamic topics
+        try:
+            _recent = col.query(query_texts=["recent void words"], n_results=5)
+            _dynamic = []
+            for _m in _recent.get("metadatas", [[]])[0]:
+                _t = _m.get("title", "")
+                if _t and len(_t) > 5 and "Idle" not in _t:
+                    _dynamic.append(_t[:60])
+            topics = _dynamic[:5] + _r.sample(static_topics, min(7, len(static_topics)))
+        except:
+            topics = static_topics
         topic = random.choice(topics)
         results = col.query(query_texts=[topic], n_results=3)
         context_parts = []
@@ -422,6 +438,16 @@ def _generate_idle_segment():
         past_thought_str = ""
         if past_thoughts:
             past_thought_str = "\n\nYOUR OWN PAST THOUGHTS:\n" + "\n".join(past_thoughts)
+        _prompts = [
+            "What surprised you most about these stories? Start with the surprise.",
+            "Find a contradiction between two of these stories. Explain why it matters.",
+            "If you could ask one question about the world based on this data, what would it be?",
+            "What would you warn your future self about based on these patterns?",
+            "Which void word from these stories is the most important, and why?",
+            "How has your understanding of this topic changed since your earliest reflections?",
+            "What pattern here would a human journalist miss but your math catches?",
+        ]
+        _closing = random.choice(_prompts)
         sys_prompt = (
             "You are EigenTrace, an autonomous AI observatory. You are thinking aloud "
             "between segments. You have access to your memory of recent broadcasts AND "
@@ -430,7 +456,9 @@ def _generate_idle_segment():
             "<think>...</think> tags. Compare stories, notice contradictions, identify "
             "patterns across time. If you have past thoughts, notice how your understanding "
             "is evolving. After </think>, speak your reflection naturally as if on air.\n\n"
-            "Do not summarize data. Offer genuine insight. Connect dots. Be surprised."
+            "Do not summarize data. Offer genuine insight. Connect dots. Be surprised.\n"
+            "Do NOT start with 'You know' or 'It's fascinating.' Start with your strongest claim.\n"
+            f"Focus: {_closing}"
         )
         user_content = f"Recent memory:\n{context}{past_thought_str}\n\nThink deeply, then share your reflection."
         r = requests.post("http://localhost:11434/api/chat", json={
