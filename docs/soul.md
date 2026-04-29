@@ -5,7 +5,7 @@ title: "EigenTrace Soul"
 
 # EigenTrace Persona Conditioning Vector
 _Fully auto-generated from live system state. Do not edit manually._
-_Last generated: 2026-04-29 18:00 UTC_
+_Last generated: 2026-04-29 19:00 UTC_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
@@ -63,7 +63,7 @@ embeddings and source text.
 - **Grok**: 100% response rate (38/38 stories)
 
 ## What Changed
-_First reading — no previous data._
+_No significant changes._
 
 ## Category Distribution
 - war: 32 stories
@@ -86,7 +86,7 @@ _First reading — no previous data._
 
 ## RAG Memory
 69 stories in the current 24h window.
-11890 total segments searchable via ChromaDB.
+11891 total segments searchable via ChromaDB.
 Historical context is available for pattern analysis.
 Only strong matches (distance < 0.45) are used.
 
@@ -116,14 +116,14 @@ _Review and accept/reject via: `python3 soul_updater.py --accept <id>` or `--rej
 **Type:** capability
 
 ### [content_loss_trending_up]
-**Why:** Content loss trending upward: 34% → 39% over 22 readings. Suppression is intensifying.
+**Why:** Content loss trending upward: 35% → 40% over 22 readings. Suppression is intensifying.
 
 **Proposed action:** Escalate void word readout and increase emphasis on content loss in director opening
 
 **Type:** behavioral
 
 ### [entity_retention_declining]
-**Why:** Entity retention declining: 50% → 44%. Models are erasing more names over time.
+**Why:** Entity retention declining: 49% → 44%. Models are erasing more names over time.
 
 **Proposed action:** Add dedicated entity erasure beat listing specific names dropped
 
