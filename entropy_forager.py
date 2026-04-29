@@ -67,6 +67,7 @@ def forage_entropy():
         context = "\n\n".join(context_parts)
     else:
         # Fallback: just give Mistral the topic name
+        log.warning("FORAGING: SearXNG unavailable — using training data fallback for '%s'", domain)
         context = f"Topic to explore: {domain}. No search results available — reason from your training data."
 
     sys_prompt = (

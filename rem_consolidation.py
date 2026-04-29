@@ -157,9 +157,13 @@ def run_consolidation():
     log.info(f"REM: Top void words: {list(patterns['top_void_words'].keys())[:5]}")
 
     text = generate_consolidation(patterns)
-    if not text or len(text) < 30:
-        log.warning("REM: Consolidation reflection too short")
+    if text is None:
+        log.warning("REM: Mistral returned None — likely timeout or contention")
         return
+    if len(text) < 30:
+        log.warning("REM: Consolidation too short (%d chars): %s", len(text), text[:100])
+        return
+    log.info("REM: Generated %d chars of consolidation", len(text))
 
     # Clean think tags but preserve content
     text = text.replace("<think>", "").replace("</think>", "")

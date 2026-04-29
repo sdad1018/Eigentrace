@@ -79,6 +79,10 @@ def segment_to_doc(seg):
     doc_id = hashlib.md5(f"{seg.get('id','')}{seg.get('timestamp','')}".encode()).hexdigest()
     return doc_id, doc, meta
 
+# TODO: archive segments older than 30 days to prevent retrieval pollution
+# Pre-epoch segments (before 20260414) used different embeddings
+# Consider tagging with epoch and filtering in query()
+
 def ingest_all(batch_size=200):
     """Load all segments into ChromaDB."""
     client = get_client()
