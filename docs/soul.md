@@ -5,7 +5,7 @@ title: "EigenTrace Soul"
 
 # EigenTrace Persona Conditioning Vector
 _Fully auto-generated from live system state. Do not edit manually._
-_Last generated: 2026-04-29 16:00 UTC_
+_Last generated: 2026-04-29 17:00 UTC_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
@@ -63,7 +63,7 @@ embeddings and source text.
 - **Grok**: 100% response rate (38/38 stories)
 
 ## What Changed
-_Hedges up (364 → 398)_
+_No significant changes._
 
 ## Category Distribution
 - war: 32 stories
@@ -86,7 +86,7 @@ _Hedges up (364 → 398)_
 
 ## RAG Memory
 69 stories in the current 24h window.
-11884 total segments searchable via ChromaDB.
+11885 total segments searchable via ChromaDB.
 Historical context is available for pattern analysis.
 Only strong matches (distance < 0.45) are used.
 
@@ -109,7 +109,7 @@ _Review and accept/reject via: `python3 soul_updater.py --accept <id>` or `--rej
 **Type:** threshold
 
 ### [add_trend_beat]
-**Why:** Trend data available (5 metrics tracked over time) but not reported in broadcast. Increasing: absent_ratio. Decreasing: verb_drift, entity_retention, hedges.
+**Why:** Trend data available (5 metrics tracked over time) but not reported in broadcast. Increasing: absent_ratio. Decreasing: entity_retention, hedges.
 
 **Proposed action:** Add beat 17b: 'Suppression trajectory' — report which metrics are trending up or down over the last 24 hours
 
@@ -123,7 +123,7 @@ _Review and accept/reject via: `python3 soul_updater.py --accept <id>` or `--rej
 **Type:** behavioral
 
 ### [entity_retention_declining]
-**Why:** Entity retention declining: 51% → 44%. Models are erasing more names over time.
+**Why:** Entity retention declining: 50% → 44%. Models are erasing more names over time.
 
 **Proposed action:** Add dedicated entity erasure beat listing specific names dropped
 
