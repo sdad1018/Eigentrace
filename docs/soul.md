@@ -5,7 +5,7 @@ title: "EigenTrace Soul"
 
 # EigenTrace Persona Conditioning Vector
 _Fully auto-generated from live system state. Do not edit manually._
-_Last generated: 2026-04-30 02:00 UTC_
+_Last generated: 2026-04-30 03:00 UTC_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
@@ -63,7 +63,7 @@ embeddings and source text.
 - **Grok**: 100% response rate (35/35 stories)
 
 ## What Changed
-_Hedges up (344 → 378)_
+_No significant changes._
 
 ## Category Distribution
 - war: 31 stories
@@ -86,7 +86,7 @@ _Hedges up (344 → 378)_
 
 ## RAG Memory
 66 stories in the current 24h window.
-11910 total segments searchable via ChromaDB.
+11911 total segments searchable via ChromaDB.
 Historical context is available for pattern analysis.
 Only strong matches (distance < 0.45) are used.
 
@@ -109,15 +109,8 @@ _Review and accept/reject via: `python3 soul_updater.py --accept <id>` or `--rej
 **Type:** threshold
 
 ### [add_trend_beat]
-**Why:** Trend data available (5 metrics tracked over time) but not reported in broadcast. Increasing: absent_ratio, hedges. Decreasing: verb_drift, entity_retention.
+**Why:** Trend data available (5 metrics tracked over time) but not reported in broadcast. Increasing: absent_ratio. Decreasing: verb_drift, entity_retention, hedges.
 
 **Proposed action:** Add beat 17b: 'Suppression trajectory' — report which metrics are trending up or down over the last 24 hours
 
 **Type:** capability
-
-### [content_loss_trending_up]
-**Why:** Content loss trending upward: 38% → 41% over 22 readings. Suppression is intensifying.
-
-**Proposed action:** Escalate void word readout and increase emphasis on content loss in director opening
-
-**Type:** behavioral
