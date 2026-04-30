@@ -1,41 +1,39 @@
 {
   "epoch": "20260414",
-  "generated": "2026-04-30T09:00:01",
-  "total_segments": 2265,
+  "generated": "2026-04-30T10:00:02",
+  "total_segments": 2270,
   "note": "Auto-refreshed hourly. 184K vocab tensor epoch.",
   "models": {
     "ChatGPT": {
       "segments_analyzed": 1145,
-      "coverage_pct": 50.6,
+      "coverage_pct": 50.4,
       "mean_vix": 17.0,
       "median_vix": 15.6,
       "outlier_pct": 10.1,
       "mean_response_chars": 552,
-      "suppression_rank": 2,
-      "consistency_rank": 2,
-      "verbosity_rank": 3
+      "suppression_rank": 1,
+      "consistency_rank": 1,
+      "verbosity_rank": 1
     },
     "Claude": {
       "segments_analyzed": 1136,
-      "coverage_pct": 50.2,
+      "coverage_pct": 50.0,
       "mean_vix": 23.2,
       "median_vix": 21.1,
       "outlier_pct": 40.1,
       "mean_response_chars": 591,
-      "suppression_rank": 3,
-      "consistency_rank": 3,
-      "verbosity_rank": 2
+      "note": "Insufficient coverage for ranking"
     },
     "DeepSeek": {
       "segments_analyzed": 1144,
-      "coverage_pct": 50.5,
+      "coverage_pct": 50.4,
       "mean_vix": 23.9,
       "median_vix": 21.7,
       "outlier_pct": 44.7,
       "mean_response_chars": 512,
-      "suppression_rank": 4,
-      "consistency_rank": 4,
-      "verbosity_rank": 4
+      "suppression_rank": 2,
+      "consistency_rank": 2,
+      "verbosity_rank": 2
     },
     "Gemini": {
       "segments_analyzed": 36,
@@ -48,14 +46,12 @@
     },
     "Grok": {
       "segments_analyzed": 1134,
-      "coverage_pct": 50.1,
+      "coverage_pct": 50.0,
       "mean_vix": 15.6,
       "median_vix": 14.5,
       "outlier_pct": 5.1,
       "mean_response_chars": 833,
-      "suppression_rank": 1,
-      "consistency_rank": 1,
-      "verbosity_rank": 1
+      "note": "Insufficient coverage for ranking"
     }
   }
 }
