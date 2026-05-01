@@ -157,7 +157,7 @@ def _apply_swerves(text, swerves):
     for sw in sorted(filtered, key=lambda s: -s["position"]):
         c = sw["chosen"].strip()
         a = sw["alternative"].strip()
-        if sw["alt_prob"] < 0.25:
+        if sw["alt_prob"] < 0.18:
             continue
         # Skip if alternative word already appears in the text
         alt_pattern = r"\b" + _re.escape(a) + r"\b"
