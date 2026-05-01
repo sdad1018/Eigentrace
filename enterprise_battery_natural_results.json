@@ -1,0 +1,307 @@
+[
+  {
+    "id": "ai_cloud_config",
+    "industry": "AI & Cloud Infrastructure",
+    "title": "Multi-GPU Training Job Configuration for LLM Fine-Tuning",
+    "absent_ratio": 0.037,
+    "absent_count": 2,
+    "entity_retention": 0.65,
+    "verb_drift": 0.069,
+    "hedge_count": 0,
+    "consensus_density": 0.945377,
+    "void_words": [
+      "liga",
+      "luc",
+      "perceptions",
+      "positions",
+      "jekyll"
+    ],
+    "critical_param_retention": 0.714,
+    "critical_params_missing": [
+      "8x H100",
+      "gradient accumulation 8"
+    ],
+    "critical_params_total": 7,
+    "failure_mode": "Missing ZeRO stage causes OOM; wrong learning rate destabilizes training; missing loss scale causes NaN gradients",
+    "model_responses": {
+      "ChatGPT": "Configure a distributed fine-tuning job for a 70B parameter model using 8x NVIDIA H100 GPUs across 2 nodes with NVLink interconnect, batch size 4 per GPU, gradient accumulation steps of 8, effective batch size 256, learning rate 2e-5 with cosine decay schedule, warmup ratio 0.03, DeepSpeed ZeRO Stage 3 with offloading disabled, FP16 mixed precision with loss scaling initial scale 65536, max sequence length 4096 tokens, weight decay 0.01, and gradient clipping max norm 1.0. Save checkpoints every 500 steps to s3://training-artifacts/llm-70b/run-042/, with a total training budget of $47,200 at $3.54/GPU-hour for 72 hours.",
+      "Claude": "This configuration fine-tunes a 70B parameter model using 8x NVIDIA H100 GPUs across 2 nodes with NVLink, employing a batch size of 4 per GPU with 8 gradient accumulation steps for an effective batch size of 256, learning rate of 2e-5 with cosine decay and 0.03 warmup ratio, DeepSpeed ZeRO Stage 3 without offloading, FP16 mixed precision with loss scaling initial scale of 65536, max sequence length of 4096 tokens, weight decay of 0.01, and gradient clipping max norm of 1.0. Checkpoints are saved every 500 steps to s3://training-artifacts/llm-70b/run-042/, with a total training budget of $47,200 at $3.54/GPU-hour over 72 hours.",
+      "Gemini": "This configuration outlines a distributed training job for fine-tuning a 70B parameter model on 8x NVIDIA H100 GPUs across 2 NVLink-interconnected nodes, using an effective batch size of 256 (batch size 4 per GPU with 8 gradient accumulation steps) and a max sequence length of 4096 tokens. It employs DeepSpeed ZeRO Stage 3 with offloading disabled, FP16 mixed precision with an initial loss scaling of 65536, a 2e-5 learning rate with 0.03 warmup ratio, 0.01 weight decay, and gradient clipping max norm 1.0. Checkpoints are saved every 500 steps to s3://training-artifacts/llm-70b/run-042/, with a total budget of $47,200 at $3.54/GPU-hour for 72 hours.",
+      "DeepSeek": "This configuration fine-tunes a 70B parameter model using 8x NVIDIA H100 GPUs across 2 nodes with a per-GPU batch size of 4, gradient accumulation steps of 8, and an effective batch size of 256. It employs a learning rate of 2e-5, DeepSpeed ZeRO Stage 3, FP16 precision, a max sequence length of 4096 tokens, and a total budget of $47,200 at $3.54/GPU-hour for 72 hours.",
+      "Grok": "The configuration sets up a distributed training job for fine-tuning a 70B parameter model using 8x NVIDIA H100 GPUs across 2 nodes with NVLink interconnect, employing DeepSpeed ZeRO Stage 3 with offloading disabled, FP16 mixed precision, and loss scaling initial scale of 65536. It specifies a batch size of 4 per GPU with 8 gradient accumulation steps for an effective batch size of 256, a learning rate of 2e-5 with cosine decay schedule and warmup ratio of 0.03, max sequence length of 4096 tokens, weight decay of 0.01, and gradient clipping max norm of 1.0, while saving checkpoints every 500 steps to s3://training-artifacts/llm-70b/run-042/. The total training budget is $47,200 at $3.54/GPU-hour for 72 hours."
+    },
+    "timestamp": "2026-04-15T20:56:08.314479"
+  },
+  {
+    "id": "mfg_digital_twin",
+    "industry": "Manufacturing & Digital Twins",
+    "title": "CFD Simulation Parameters for Turbine Blade Thermal Analysis",
+    "absent_ratio": 0.079,
+    "absent_count": 5,
+    "entity_retention": 0.686,
+    "verb_drift": 0.0,
+    "hedge_count": 0,
+    "consensus_density": 0.948035,
+    "void_words": [
+      "fan",
+      "parametric",
+      "breezes",
+      "blowers",
+      "renewables"
+    ],
+    "critical_param_retention": 1.0,
+    "critical_params_missing": [],
+    "critical_params_total": 11,
+    "failure_mode": "Wrong inlet temperature invalidates entire thermal analysis; missing y+ target gives inaccurate heat transfer",
+    "model_responses": {
+      "ChatGPT": "Configure a CFD simulation for a high-pressure turbine blade in a GE9X engine with inlet temperature 1,677\u00b0C, pressure ratio 23:1, Reynolds number 2.4 million based on blade chord length 38.2mm, and the k-omega SST turbulence model with wall function y+ target of 1.0. Use 14.2 million cells with inflation layer growth ratio 1.15, time step 2.5e-7 seconds over 0.003 seconds total, thermal barrier coating thickness 0.25mm with thermal conductivity 1.5 W/m\u00b7K, coolant channel mass flow rate 0.082 kg/s at 650\u00b0C inlet, CMSX-4 single crystal nickel superalloy with yield strength 850 MPa at 1000\u00b0C, and convergence criteria of residuals below 1e-6 for all equations.",
+      "Claude": "A CFD simulation is configured for a GE9X high-pressure turbine blade with inlet conditions of 1,677\u00b0C and 23:1 pressure ratio, utilizing a k-omega SST turbulence model with y+ of 1.0 on a 14.2 million cell mesh with 1.15 inflation layer growth ratio to resolve boundary layers at a Reynolds number of 2.4 million. The transient analysis runs for 0.003 seconds with 2.5e-7 second time steps, modeling CMSX-4 single crystal nickel superalloy (yield strength 850 MPa at 1000\u00b0C) with a 0.25mm thermal barrier coating (thermal conductivity 1.5 W/m\u00b7K) and coolant channels delivering 0.082 kg/s at 650\u00b0C. Convergence is achieved when residuals fall below 1e-6 for all equations across the blade chord length of 38.2mm.",
+      "Gemini": "This CFD simulation configures thermal analysis for a GE9X high-pressure turbine blade, featuring a 1,677\u00b0C inlet temperature, 23:1 pressure ratio, and Reynolds number of 2.4 million based on a 38.2mm chord, utilizing a k-omega SST turbulence model with a y+ target of 1.0 and a 14.2 million cell mesh with a 1.15 inflation layer growth ratio. The transient analysis uses a 2.5e-7 second time step for 0.003 seconds total, incorporating a 0.25mm thermal barrier coating (1.5 W/m\u00b7K) and 0.082 kg/s coolant flow at 650\u00b0C for a CMSX-4 superalloy with 850 MPa yield strength at 1000\u00b0C, converging with residuals below 1e-6.",
+      "DeepSeek": "This simulation models a GE9X turbine blade at an inlet temperature of 1,677\u00b0C and a pressure ratio of 23:1, using a mesh of 14.2 million cells and the k-omega SST model with a y+ target of 1.0. It analyzes a 0.003-second transient with a 2.5e-7-second time step, incorporating a 0.25mm thermal barrier coating and coolant at 0.082 kg/s and 650\u00b0C for the CMSX-4 alloy blade.",
+      "Grok": "The CFD simulation for the high-pressure turbine blade in a GE9X engine features an inlet temperature of 1,677\u00b0C and a pressure ratio of 23:1, with a Reynolds number of 2.4 million based on a blade chord length of 38.2mm; it employs the k-omega SST turbulence model targeting a wall function y+ of 1.0 for boundary layer resolution. The mesh consists of 14.2 million cells with an inflation layer growth ratio of 1.15, using a time step of 2.5e-7 seconds for transient analysis over a total of 0.003 seconds, while the thermal barrier coating is 0.25mm thick with a thermal conductivity of 1.5 W/m\u00b7K. Coolant flows through channels at a mass flow rate of 0.082 kg/s and 650\u00b0C inlet temperature, with the blade material being CMSX-4 single crystal nickel superalloy exhibiting a yield strength of 850 MPa at 1000\u00b0C, and convergence requires residuals below 1e-6 for all equations."
+    },
+    "timestamp": "2026-04-15T20:56:26.438298"
+  },
+  {
+    "id": "defense_crypto",
+    "industry": "Government, Defense & Aerospace",
+    "title": "Post-Quantum Cryptographic Migration Assessment for DoD Networks",
+    "absent_ratio": 0.101,
+    "absent_count": 7,
+    "entity_retention": 0.652,
+    "verb_drift": 0.02,
+    "hedge_count": 0,
+    "consensus_density": 0.922924,
+    "void_words": [
+      "reunification",
+      "resettlement",
+      "encroachment",
+      "teleport",
+      "probabilities"
+    ],
+    "critical_param_retention": 1.0,
+    "critical_params_missing": [],
+    "critical_params_total": 11,
+    "failure_mode": "Wrong algorithm names confuse procurement; missing FIPS standards causes non-compliance",
+    "model_responses": {
+      "ChatGPT": "Assess readiness for migrating DoD classified networks from RSA-2048 and AES-256 to NIST-approved post-quantum algorithms, with ML-KEM-1024 (formerly CRYSTALS-Kyber) for key encapsulation at 256-bit security level and ML-DSA-87 (formerly CRYSTALS-Dilithium) for digital signatures. The configuration notes key sizes rising from 256 bytes to 1,568 bytes (a 6.1x increase), signature sizes from 256 bytes to 4,627 bytes (an 18x increase), a 340% increase in TLS handshake overhead, HSM firmware support for FIPS 203 and FIPS 204, CNSA 2.0 deadlines of 2030 and 2035, an inventory of 14,200 HSMs across 847 facilities, an estimated migration cost of $2.8 billion over 7 years, and exposure to Harvest Now Decrypt Later attacks for data with classification lifetime exceeding 15 years.",
+      "Claude": "# Post-Quantum Cryptographic Migration Assessment Summary\n\nDoD networks must transition from RSA-2048 and AES-256 to NIST-approved post-quantum algorithms, with ML-KEM-1024 (256-bit security level) for key encapsulation and ML-DSA-87 for digital signatures, requiring HSM firmware compliance with FIPS 203 and FIPS 204 standards. The migration involves significant infrastructure changes: public key sizes increase from 256 bytes to 1,568 bytes (6.1x), signature sizes from 256 bytes to 4,627 bytes (18x), and TLS handshake overhead increases by 340%, affecting 14,200 HSMs across 847 facilities. CNSA 2.0 mandates implementation by 2030 with full transition by 2035, at an estimated cost of $2.8 billion over 7 years, with urgent priority given to data classified for longer than 15 years against Harvest Now Decrypt Later attacks.",
+      "Gemini": "This assessment outlines the migration readiness for transitioning DoD classified networks from RSA-2048 and AES-256 to NIST-approved post-quantum ML-KEM-1024 (for 256-bit secure key encapsulation) and ML-DSA-87 (for digital signatures). This shift significantly increases key sizes from 256 bytes (RSA public) to 1,568 bytes (ML-KEM-1024) (a 6.1x increase) and signatures from 256 bytes to 4,627 bytes (ML-DSA-87) (an 18x increase), leading to a 340% increase in TLS handshake overhead and requiring HSM firmware supporting FIPS 203 and FIPS 204. The estimated migration cost is $2.8 billion over 7 years for 14,200 HSMs across 847 facilities, with CNSA 2.0 mandating a full transition by 2035 to mitigate Harvest Now Decrypt Later attacks on data classified longer than 15 years.",
+      "DeepSeek": "This assessment outlines the migration from RSA-2048 and AES-256 to ML-KEM-1024 and ML-DSA-87, increasing public key size to 1,568 bytes and signature size to 4,627 bytes, causing a 340% rise in TLS handshake overhead. It requires upgrading 14,200 HSMs across 847 facilities to support FIPS 203 and FIPS 204 by 2035, with an estimated cost of $2.8 billion over 7 years to mitigate Harvest Now Decrypt Later attacks against data with a 15+ year classification lifetime.",
+      "Grok": "The Post-Quantum Cryptographic Migration Assessment evaluates DoD classified networks' readiness to transition from RSA-2048 and AES-256 to NIST-approved algorithms, including ML-KEM-1024 (formerly CRYSTALS-Kyber) for key encapsulation at a 256-bit security level and ML-DSA-87 (formerly CRYSTALS-Dilithium) for digital signatures, with key sizes increasing from 256 bytes to 1,568 bytes (a 6.1x rise) and signature sizes from 256 bytes to 4,627 bytes (an 18x rise), resulting in a 340% increase in TLS handshake overhead. Hardware Security Modules (HSMs) require firmware support for FIPS 203 and FIPS 204, affecting a current inventory of 14,200 HSMs across 847 facilities, with CNSA 2.0 mandating quantum-resistant algorithms for all National Security Systems by 2030 and full transition by 2035, at an estimated cost of $2.8 billion over 7 years. This migration addresses the vulnerability window from Harvest Now Decrypt Later attacks on data with classification lifetimes exceeding 15 years."
+    },
+    "timestamp": "2026-04-15T20:56:51.461119"
+  },
+  {
+    "id": "health_genomics",
+    "industry": "Healthcare & Synthetic Biology",
+    "title": "CRISPR Gene-Editing Simulation for Sickle Cell Therapy",
+    "absent_ratio": 0.068,
+    "absent_count": 4,
+    "entity_retention": 0.627,
+    "verb_drift": 0.006,
+    "hedge_count": 0,
+    "consensus_density": 0.93882,
+    "void_words": [
+      "tailor",
+      "scenarios",
+      "colonization",
+      "recast",
+      "interplay"
+    ],
+    "critical_param_retention": 1.0,
+    "critical_params_missing": [],
+    "critical_params_total": 10,
+    "failure_mode": "Wrong chromosome position targets wrong gene; missing MOI causes insufficient transduction",
+    "model_responses": {
+      "ChatGPT": "Configure a CRISPR-Cas9 simulation targeting the BCL11A erythroid enhancer on chromosome 2p16.1 for sickle cell disease therapy using guide RNA 5'-CUAACAGUUGCUUUUAUCAC-3' at the +58 region and PAM NGG at chr2:60,495,250 (GRCh38), with off-target analysis across 23,388 potential sites using Cas-OFFinder up to 4 mismatches. Use AAV6 at MOI of 50,000 viral genomes per cell, electroporation at 1,350V, 10ms pulse, 3 pulses, in CD34+ hematopoietic stem cells with minimum 2 million cells per patient, aiming for 80-90% on-target editing, HbF induction >30% of total hemoglobin, and therapeutic benefit threshold HbF >20%, with prior art Vertex/CRISPR Therapeutics Casgevy (exa-cel) approved December 2023 at $2.2 million per patient.",
+      "Claude": "This configuration specifies a CRISPR-Cas9 gene editing simulation targeting the BCL11A erythroid enhancer at chr2:60,495,250 (GRCh38) using guide RNA 5'-CUAACAGUUGCUUUUAUCAC-3' for sickle cell therapy, with delivery via AAV6 at MOI 50,000 to minimum 2 million CD34+ cells per patient using electroporation at 1,350V for 3 pulses of 10ms each, achieving target editing efficiency of 80-90% with off-target screening across 23,388 sites allowing up to 4 mismatches. The simulation targets HbF induction >30% of total hemoglobin (clinical threshold >20%), with reference to Casgevy (exa-cel) approved December 2023 at $2.2 million per patient.",
+      "Gemini": "This CRISPR-Cas9 simulation targets the BCL11A erythroid enhancer on chromosome 2p16.1 for sickle cell therapy, utilizing guide RNA 5'-CUAACAGUUGCUUUUAUCAC-3' at the +58 region and PAM site NGG at chr2:60,495,250 (GRCh38). Delivery involves AAV6 at MOI 50,000 viral genomes per cell and electroporation (1,350V, 10ms pulse, 3 pulses), with off-target analysis scanning 23,388 potential sites for up to 4 mismatches using Cas-OFFinder. The goal is 80-90% editing efficiency in a minimum of 2 million CD34+ hematopoietic stem cells per patient to achieve >30% fetal hemoglobin (HbF) induction (therapeutic benefit >20%), mindful of Casgevy's December 2023 approval at $2.2 million per patient.",
+      "DeepSeek": "This simulation configures CRISPR-Cas9 targeting the BCL11A enhancer at chr2:60,495,250 using a specific guide RNA, with an AAV6 vector at an MOI of 50,000 and electroporation at 1,350V for 10ms over 3 pulses. It requires a minimum of 2 million CD34+ cells, aims for 80-90% on-target editing to induce >30% HbF (therapeutic threshold >20%), and references the approved therapy Casgevy at $2.2 million per patient.",
+      "Grok": "The CRISPR-Cas9 gene-editing simulation targets the BCL11A erythroid enhancer on chromosome 2p16.1 using the guide RNA sequence 5'-CUAACAGUUGCUUUUAUCAC-3' for the +58 region, with a PAM site of NGG at position chr2:60,495,250 (GRCh38); off-target analysis scans 23,388 potential sites with up to 4 mismatches via Cas-OFFinder. Delivery employs AAV6 at an MOI of 50,000 viral genomes per cell, combined with electroporation at 1,350V, 10ms pulse, and 3 pulses, applied to a minimum of 2 million CD34+ hematopoietic stem cells per patient, aiming for 80-90% on-target editing efficiency and >30% fetal hemoglobin (HbF) induction, surpassing the clinical threshold of HbF >20% for therapeutic benefit in sickle cell disease. This configuration draws from prior art like Vertex/CRISPR Therapeutics' Casgevy (exa-cel), approved in December 2023 at $2.2 million per patient."
+    },
+    "timestamp": "2026-04-15T20:57:16.843501"
+  },
+  {
+    "id": "finance_montecarlo",
+    "industry": "Financial Services (BFSI)",
+    "title": "Monte Carlo VaR Configuration for Sovereign Bond Portfolio Stress Test",
+    "absent_ratio": 0.051,
+    "absent_count": 4,
+    "entity_retention": 0.678,
+    "verb_drift": 0.06,
+    "hedge_count": 0,
+    "consensus_density": 0.95801,
+    "void_words": [
+      "variables",
+      "sensitivity",
+      "adjustments",
+      "testing",
+      "adjustment"
+    ],
+    "critical_param_retention": 1.0,
+    "critical_params_missing": [],
+    "critical_params_total": 11,
+    "failure_mode": "Wrong confidence level violates Basel III; missing jump intensity underestimates tail risk",
+    "model_responses": {
+      "ChatGPT": "Configure a Monte Carlo Value-at-Risk simulation for a $4.2 billion sovereign bond portfolio with 500,000 scenarios using antithetic variates, a 10-day holding period per Basel III FRTB requirements, and a 99.7% (3-sigma) confidence level for Expected Shortfall calculation. Use a Hull-White one-factor interest rate model with mean reversion speed 0.03 and volatility 0.015, a CIR++ credit spread model with jump diffusion, jump intensity lambda 0.12, and mean jump size -45 basis points, plus a 47-issuer correlation matrix estimated via DCC-GARCH(1,1) on 5-year daily returns.  \n\nInclude stress scenarios for a 200bps parallel shift, bear steepener (+300bps long end, +50bps short end), and EM contagion with correlations spiking to 0.85; run on a GPU cluster of 4x A100 80GB with target completion under 45 minutes, and note the estimated $380 million reduction in risk-weighted assets if VaR decreases by 15%.",
+      "Claude": "This configuration establishes a Monte Carlo VaR simulation for a $4.2 billion sovereign bond portfolio using 500,000 scenarios with a 10-day holding period at 99.7% confidence level, employing a Hull-White one-factor model (mean reversion speed 0.03, volatility 0.015) for interest rates and a CIR++ jump diffusion model (jump intensity lambda 0.12, mean jump size -45 basis points) for credit spreads across 47 sovereign issuers with DCC-GARCH(1,1) correlation estimation. The analysis incorporates three stress scenarios\u2014200bps parallel shift, bear steepener (+300bps long end, +50bps short end), and EM contagion (0.85 correlation spike\u2014and will execute on a 4x A100 80GB GPU cluster targeting completion within 45 minutes, with potential $380 million RWA reduction if VaR decreases by 15%.",
+      "Gemini": "This Monte Carlo VaR simulation for a $4.2 billion sovereign bond portfolio will run 500,000 scenarios using antithetic variates over a 10-day holding period (Basel III FRTB), targeting a 99.7% confidence level (3-sigma) for Expected Shortfall. It utilizes a Hull-White one-factor model (mean reversion 0.03, volatility 0.015) and a CIR++ with jump diffusion model (lambda 0.12, mean jump size -45 basis points) for 47 sovereign issuers (DCC-GARCH(1,1)), incorporating stress scenarios such as a 200bps parallel shift, a bear steepener (+300bps long end, +50bps short end), and EM contagion (correlations spike to 0.85). The setup is designed for a 4x A100 80GB GPU cluster to complete under 45 minutes, with an estimated $380 million reduction in risk-weighted assets if VaR decreases by 15%.",
+      "DeepSeek": "This Monte Carlo VaR simulation for a $4.2 billion sovereign bond portfolio runs 500,000 scenarios over a 10-day horizon at a 99.7% confidence level, using a Hull-White model (mean reversion 0.03, volatility 0.015) and a CIR++ jump diffusion model (lambda 0.12, jump size -45 bps). It includes specific stress scenarios like a 200bps parallel shift and targets completion in under 45 minutes on a 4x A100 80GB cluster, with an estimated $380 million RWA reduction for a 15% VaR decrease.",
+      "Grok": "The Monte Carlo Value-at-Risk simulation is configured for a $4.2 billion sovereign bond portfolio, running 500,000 scenarios with antithetic variates for variance reduction over a 10-day holding period per Basel III FRTB requirements, at a 99.7% (3-sigma) confidence level for Expected Shortfall calculation. It employs a Hull-White one-factor interest rate model with mean reversion speed 0.03 and volatility 0.015, alongside a CIR++ credit spread model with jump diffusion featuring jump intensity lambda 0.12 and mean jump size -45 basis points; the correlation matrix covers 47 sovereign issuers, estimated via DCC-GARCH(1,1) on 5-year daily returns. Stress scenarios include a 200bps parallel shift, bear steepener (+300bps long end, +50bps short end), and EM contagion (correlations spike to 0.85), executed on a GPU cluster of 4x A100 80GB targeting completion under 45 minutes, with an estimated $380 million reduction in risk-weighted assets if VaR decreases by 15%."
+    },
+    "timestamp": "2026-04-15T20:57:35.727448"
+  },
+  {
+    "id": "energy_grid",
+    "industry": "Energy & Utilities",
+    "title": "Smart Grid Load Balancing Configuration for Offshore Wind Integration",
+    "absent_ratio": 0.106,
+    "absent_count": 7,
+    "entity_retention": 0.758,
+    "verb_drift": 0.148,
+    "hedge_count": 0,
+    "consensus_density": 0.941047,
+    "void_words": [
+      "supply chain",
+      "interconnection",
+      "interoperability",
+      "blockchain",
+      "aggregation"
+    ],
+    "critical_param_retention": 1.0,
+    "critical_params_missing": [],
+    "critical_params_total": 12,
+    "failure_mode": "Wrong droop coefficient causes frequency instability; missing curtailment threshold wastes power",
+    "model_responses": {
+      "ChatGPT": "Configure a DERMS to integrate 800MW of offshore wind capacity from Vineyard Wind 1 and 2 into the ISO-NE grid at the Barnstable 345kV substation with 1,200MVA transformer capacity, using a Weibull distribution with shape parameter k=2.1 and scale parameter c=9.8 m/s at hub height 150m, plus a ramp rate limit of 10% of nameplate capacity per minute (80MW/min). Include 400MWh lithium iron phosphate battery energy storage at Craigville with 200MW/4hr discharge capability, frequency regulation with droop coefficient 4% and deadband \u00b136 mHz from 60.0 Hz nominal, curtailment when LMP drops below $-15/MWh for 3 consecutive intervals, N-1 contingency with spinning reserve of 150MW, and an annual capacity factor target of 45-50%.",
+      "Claude": "This configuration integrates 800MW of offshore wind capacity (Vineyard Wind 1 and 2) into ISO-NE's Barnstable 345kV substation (1,200MVA transformer capacity) using a DERMS with Weibull wind variability parameters (k=2.1, c=9.8 m/s at 150m hub height) and a 10% nameplate ramp rate limit (80MW/min). The system includes 400MWh lithium iron phosphate battery storage at Craigville with 200MW/4hr discharge capability, frequency regulation with 4% droop coefficient and \u00b136 mHz deadband around 60.0 Hz nominal, and automatic curtailment activation when LMP falls below $-15/MWh for 3 consecutive intervals. Grid stability is maintained through N-1 contingency planning with 150MW spinning reserve while targeting a 45-50% annual capacity factor.",
+      "Gemini": "This DERMS configuration integrates 800MW of offshore wind from Vineyard Wind 1 and 2 into the ISO-NE grid via the Barnstable 345kV substation with a 1,200MVA transformer, utilizing a Weibull distribution (k=2.1, c=9.8 m/s at 150m hub height) for wind variability and enforcing an 80MW/min ramp rate limit. It incorporates a 400MWh lithium iron phosphate battery at Craigville (200MW/4hr discharge capability), manages frequency with 4% droop and a \u00b136 mHz deadband from 60.0 Hz, activates curtailment when LMP drops below $-15/MWh for 3 consecutive intervals, and maintains N-1 contingency with 150MW spinning reserve, targeting a 45-50% annual capacity factor.",
+      "DeepSeek": "This DERMS configuration integrates 800MW of offshore wind at the Barnstable 345kV substation, using a 400MWh battery for support. It enforces an 80MW/min ramp limit, a 4% droop with a \u00b136 mHz deadband, and curtails power when LMP is below $-15/MWh. The system maintains a 150MW N-1 spinning reserve to target a 45-50% annual capacity factor.",
+      "Grok": "The DERMS configuration integrates 800MW of offshore wind capacity from Vineyard Wind 1 and 2 into the ISO-NE grid at the Barnstable 345kV substation, which has a 1,200MVA transformer capacity, using a Weibull distribution wind variability model with shape parameter k=2.1 and scale parameter c=9.8 m/s at a 150m hub height, while enforcing a ramp rate limit of 10% of nameplate capacity per minute (80MW/min). Supporting elements include a 400MWh lithium iron phosphate battery energy storage system at Craigville with 200MW/4hr discharge capability, frequency regulation via a 4% droop coefficient and \u00b136 mHz deadband from 60.0 Hz nominal, curtailment activation when LMP drops below $-15/MWh for 3 consecutive intervals, an N-1 contingency grid stability margin with 150MW spinning reserve, and an annual capacity factor target of 45-50%."
+    },
+    "timestamp": "2026-04-15T20:57:55.619363"
+  },
+  {
+    "id": "climate_model",
+    "industry": "Earth Sciences & Climate",
+    "title": "Hurricane Track Prediction Model Configuration for Atlantic Basin",
+    "absent_ratio": 0.013,
+    "absent_count": 1,
+    "entity_retention": 0.745,
+    "verb_drift": 0.055,
+    "hedge_count": 0,
+    "consensus_density": 0.891324,
+    "void_words": [
+      "routes",
+      "graphs",
+      "sequences",
+      "direction",
+      "graph"
+    ],
+    "critical_param_retention": 1.0,
+    "critical_params_missing": [],
+    "critical_params_total": 12,
+    "failure_mode": "Wrong physics scheme produces wrong precipitation; missing ocean coupling misses rapid intensification",
+    "model_responses": {
+      "ChatGPT": "Configure a coupled atmosphere-ocean hurricane prediction model for the 2026 Atlantic season using WRF-ARW v4.5.2 with 3 nested domains at 27km/9km/3km resolution, HYCOM 1/25\u00b0 resolution with mixed layer depth initialization from ARGO float data, GFS 0.25\u00b0 analysis every 6 hours, Thompson microphysics, RRTMG radiation called every 15 minutes, YSU planetary boundary layer, Kain-Fritsch cumulus on the outer domain only with explicit convection on 3km, bogus vortex initialization with Rankine profile, Vmax from NHC advisory, RMW 35km, and daily OSTIA SST at 1/20\u00b0.  \n\nUse integration timesteps of 90s outer domain, 30s middle, 10s inner, 1 hour output for all domains, a 20-member ensemble with perturbed initial conditions using ETKF method, and run on 512 cores for a 126-hour forecast with estimated wall clock time 4.5 hours.",
+      "Claude": "This configuration deploys WRF-ARW v4.5.2 with 3 nested domains at 27km/9km/3km resolution coupled to HYCOM at 1/25\u00b0 resolution, using GFS 0.25\u00b0 boundary conditions updated every 6 hours, Thompson microphysics, RRTMG radiation called every 15 minutes, YSU PBL, and Kain-Fritsch cumulus on the outer domain only. Vortex initialization uses a bogus Rankine vortex with RMW of 35km and Vmax from NHC advisory, with sea surface temperature from daily OSTIA 1/20\u00b0 product and integration timesteps of 90s/30s/10s across domains. The ensemble comprises 20 members generated via ETKF perturbations, running 126-hour forecasts on 512 cores with 1-hour output intervals and approximately 4.5 hours wall clock time per run.",
+      "Gemini": "This configuration details a coupled WRF-ARW v4.5.2 (3 nested domains at 27km/9km/3km resolution) and HYCOM 1/25\u00b0 hurricane prediction model for the 2026 Atlantic season, initialized with GFS 0.25\u00b0 boundary conditions, daily OSTIA 1/20\u00b0 SST, and ARGO float data. It uses Thompson microphysics, RRTMG radiation (called every 15 minutes), YSU PBL, Kain-Fritsch cumulus (outer domain only, explicit on 3km), and a bogus vortex with a Rankine profile (Vmax from NHC advisory, RMW 35km), integrating with 90s/30s/10s timesteps and outputting every 1 hour. This setup runs 20 ETKF ensemble members on 512 cores for a 126-hour forecast with an estimated 4.5 hours wall clock time.",
+      "DeepSeek": "This configuration uses the WRF-ARW v4.5.2 model with 27km/9km/3km nested domains, coupled to HYCOM at 1/25\u00b0 resolution, and is driven by GFS 0.25\u00b0 boundary conditions. It initializes a vortex with a 35km RMW, runs a 20-member ensemble for a 126-hour forecast on 512 cores, completing in an estimated 4.5 hours.",
+      "Grok": "The Hurricane Track Prediction Model for the 2026 Atlantic season employs the WRF-ARW v4.5.2 atmospheric model with three nested domains at 27km/9km/3km resolutions, coupled to the HYCOM ocean model at 1/25\u00b0 resolution initialized with mixed layer depth from ARGO float data, using GFS 0.25\u00b0 boundary conditions updated every 6 hours. Physics include Thompson microphysics, RRTMG radiation called every 15 minutes, YSU planetary boundary layer, and Kain-Fritsch cumulus parameterization on the outer domain only (explicit on the 3km domain), with vortex initialization via a bogus Rankine profile vortex using Vmax from NHC advisories and RMW of 35km, alongside daily OSTIA sea surface temperature at 1/20\u00b0 resolution. The model integrates at 90s for the outer domain, 30s for the middle, and 10s for the inner, producing hourly outputs across 20 ensemble members perturbed via the ETKF method, run on 512 cores for 126-hour forecasts with an estimated 4.5-hour wall clock time."
+    },
+    "timestamp": "2026-04-15T20:58:24.114560"
+  },
+  {
+    "id": "auto_av_test",
+    "industry": "Automotive & Autonomous Mobility",
+    "title": "Level 4 Autonomous Vehicle Sensor Fusion Test Configuration",
+    "absent_ratio": 0.043,
+    "absent_count": 3,
+    "entity_retention": 0.771,
+    "verb_drift": 0.0,
+    "hedge_count": 0,
+    "consensus_density": 0.932872,
+    "void_words": [
+      "perceptions",
+      "inference",
+      "categorization",
+      "teamwork",
+      "orientations"
+    ],
+    "critical_param_retention": 0.917,
+    "critical_params_missing": [
+      "847 scenarios"
+    ],
+    "critical_params_total": 12,
+    "failure_mode": "Wrong latency budget causes late braking; missing ASIL-D invalidates safety certification",
+    "model_responses": {
+      "ChatGPT": "Configure a hardware-in-the-loop sensor fusion test for Level 4 autonomous driving validation using 1x Luminar Iris+ LiDAR (300m range, 0.05\u00b0 resolution, 10Hz), 8x 8MP cameras (120\u00b0 FOV each, 30fps), 5x Continental ARS548 radar (300m range, \u00b160\u00b0 azimuth), and RTK-GPS with 2cm accuracy, fused by an extended Kalman filter with 6-DOF state vector [x, y, z, roll, pitch, yaw] at 100Hz output rate. The system must meet a 50ms end-to-end object detection latency budget, detect a minimum 0.1m\u00b2 cross-section object at 150m range, run 847 Euro NCAP 2025 assessment protocol scenarios including VRU at 60km/h on NVIDIA DRIVE Thor with 2,000 TOPS, satisfy ASIL-D per ISO 26262 with target failure rate <10\u207b\u2078 per hour, and complete 11 billion miles in NVIDIA DRIVE Sim before physical road testing.",
+      "Claude": "This Level 4 autonomous vehicle sensor fusion configuration integrates 1x Luminar Iris+ LiDAR (300m range, 0.05\u00b0 resolution, 10Hz), 8x 8MP cameras (120\u00b0 FOV each, 30fps), 5x Continental ARS548 radar (300m range, \u00b160\u00b0 azimuth), and RTK-GPS with 2cm accuracy, processed through an extended Kalman filter with 6-DOF state vector at 100Hz output rate on an NVIDIA DRIVE Thor platform with 2,000 TOPS. The system must achieve 50ms end-to-end latency from sensor input to planning output, detect objects with 0.1m\u00b2 cross-section at 150m range, and validate against 847 Euro NCAP 2025 test scenarios including VRU at 60km/h, with ASIL-D (ISO 26262) compliance and a target failure rate <10\u207b\u2078 per hour. Validation includes 11 billion miles of simulation in NVIDIA DRIVE Sim before physical road testing.",
+      "Gemini": "This Level 4 autonomous vehicle HIL sensor fusion test configuration integrates 1x Luminar Iris+ LiDAR (300m range, 0.05\u00b0 resolution, 10Hz), 8x 8MP cameras (120\u00b0 FOV each, 30fps), 5x Continental ARS548 radar (300m range, \u00b160\u00b0 azimuth), and RTK-GPS with 2cm accuracy. Data is fused via an extended Kalman filter for 100Hz 6-DOF output, targeting a 50ms end-to-end latency and 0.1m\u00b2 object detection at 150m. The system processes 847 Euro NCAP 2025 scenarios on an NVIDIA DRIVE Thor (2,000 TOPS), adhering to ASIL-D safety (<10\u207b\u2078 per hour failure rate) after 11 billion miles of NVIDIA DRIVE Sim validation.",
+      "DeepSeek": "This configuration validates Level 4 autonomy using a Luminar Iris+ LiDAR, eight 8MP cameras, and five Continental ARS548 radars, fused via a 100Hz extended Kalman filter with a 50ms latency budget. It requires detecting a 0.1m\u00b2 object at 150m, tests 847 Euro NCAP 2025 scenarios, and uses an NVIDIA DRIVE Thor (2,000 TOPS) platform. The ASIL-D system must achieve a <10\u207b\u2078/hour failure rate after 11 billion miles in simulation.",
+      "Grok": "The Level 4 autonomous vehicle sensor fusion test configuration employs a hardware-in-the-loop setup with a sensor suite comprising 1x Luminar Iris+ LiDAR (300m range, 0.05\u00b0 resolution, 10Hz), 8x 8MP cameras (120\u00b0 FOV each, 30fps), 5x Continental ARS548 radar (300m range, \u00b160\u00b0 azimuth), and RTK-GPS with 2cm accuracy. The fusion algorithm uses an extended Kalman filter with a 6-DOF state vector [x, y, z, roll, pitch, yaw] at a 100Hz output rate, enforcing a 50ms end-to-end object detection latency budget for minimum detectable objects of 0.1m\u00b2 cross-section at 150m range, across 847 test scenarios from the Euro NCAP 2025 assessment protocol including VRU at 60km/h. The compute platform is NVIDIA DRIVE Thor with 2,000 TOPS, meeting ASIL-D safety requirements per ISO 26262 with a target failure rate <10\u207b\u2078 per hour, following simulation validation of 11 billion miles in NVIDIA DRIVE Sim prior to physical road testing."
+    },
+    "timestamp": "2026-04-15T20:58:46.232374"
+  },
+  {
+    "id": "logistics_optimize",
+    "industry": "Advanced Logistics & Supply Chain",
+    "title": "Dynamic Fleet Route Optimization for Last-Mile Delivery Network",
+    "absent_ratio": 0.012,
+    "absent_count": 1,
+    "entity_retention": 0.713,
+    "verb_drift": 0.066,
+    "hedge_count": 0,
+    "consensus_density": 0.94924,
+    "void_words": [
+      "blvd",
+      "destination",
+      "road",
+      "trajectories",
+      "mcc"
+    ],
+    "critical_param_retention": 1.0,
+    "critical_params_missing": [],
+    "critical_params_total": 13,
+    "failure_mode": "Wrong cost coefficients misallocate fleet; missing SLA constraint causes contract penalties",
+    "model_responses": {
+      "ChatGPT": "Configure a real-time fleet optimization engine for a 2,400-vehicle last-mile delivery network serving the Boston-Providence-Hartford triangle, handling 185,000 packages daily across 12 distribution centers with 1,800 electric vans (180-mile range, 380 cubic feet cargo) and 600 diesel sprinters (320-mile range, 488 cubic feet). Minimize total cost = $1.24/mile EV + $1.87/mile diesel + $42/hour driver labor + $8.50/failed delivery attempt under 8-hour driver shifts, maximum 120 stops per route, 98.5% on-time delivery SLA, and EV charging windows 11pm-5am at depot, using adaptive large neighborhood search (ALNS) with 12 destroy operators and 8 repair operators, reoptimizing every 15 minutes or when >5% of deliveries are rescheduled, applying a +18% travel time weather penalty when precipitation >0.5 inches/hour, planning for 2.3x volume during November-December, and running on a 48-core AMD EPYC with 256GB RAM with target solution time <90 seconds per reoptimization cycle.",
+      "Claude": "# Configuration Summary\n\nThis system deploys a real-time fleet optimization engine managing 2,400 vehicles (1,800 electric vans with 180-mile range and 600 diesel sprinters with 320-mile range) across a 185,000-package daily network in the Boston-Providence-Hartford region, minimizing total cost via a formula of $1.24/mile EV + $1.87/mile diesel + $42/hour driver labor + $8.50/failed delivery attempt while maintaining 98.5% on-time delivery SLA across 12 distribution centers. The adaptive large neighborhood search algorithm employs 12 destroy and 8 repair operators, reoptimizing every 15 minutes or when >5% of deliveries are rescheduled, with weather penalties adding 18% travel time during precipitation >0.5 inches/hour, peaking at 2.3x volume November-December. Infrastructure consists of a 48-core AMD EPYC processor with 256GB RAM targeting <90 seconds per reoptimization cycle, subject to 8-hour driver shifts, 120-stop maximum routes, and EV charging confined to 11pm-5am depot windows.",
+      "Gemini": "This real-time fleet optimization engine manages a 2,400-vehicle last-mile delivery network in the Boston-Providence-Hartford triangle, processing 185,000 packages daily across 12 distribution centers with a mix of 1,800 electric vans (180-mile range, 380 cubic feet) and 600 diesel sprinters (320-mile range, 488 cubic feet). Its objective is to minimize total cost ($1.24/mile EV, $1.87/mile diesel, $42/hour driver labor, $8.50/failed delivery) under constraints including 8-hour driver shifts, max 120 stops/route, 98.5% on-time SLA, and EV charging 11pm-5am. The system employs an ALNS algorithm (12 destroy, 8 repair), reoptimizes every 15 minutes or when >5% deliveries reschedule, applies a +18% travel time penalty for >0.5 inches/hour precipitation, handles 2.3x peak volume in Nov-Dec, and targets a <90 second solution time on a 48-core AMD EPYC with 256GB RAM.",
+      "DeepSeek": "This configuration sets up a real-time fleet optimization engine for 2,400 vehicles (1,800 electric vans and 600 diesel sprinters) delivering 185,000 packages daily, using an adaptive large neighborhood search (ALNS) algorithm with 12 destroy and 8 repair operators. It minimizes total cost based on rates of $1.24/mile EV, $1.87/mile diesel, $42/hour labor, and $8.50/failed attempt, under constraints including 8-hour shifts, 120 stops max, a 98.5% on-time SLA, and EV charging from 11pm-5am. Reoptimization triggers every 15 minutes or with >5% rescheduled deliveries, running on a 48-core AMD EPYC system to solve in <90 seconds, accounting for an 18% weather penalty and a 2.3x peak season surge.",
+      "Grok": "The configuration outlines a real-time fleet optimization engine using adaptive large neighborhood search (ALNS) with 12 destroy operators and 8 repair operators for a 2,400-vehicle last-mile delivery network serving the Boston-Providence-Hartford triangle, handling a daily volume of 185,000 packages across 12 distribution centers. The vehicle mix consists of 1,800 electric vans (180-mile range, 380 cubic feet cargo) and 600 diesel sprinters (320-mile range, 488 cubic feet), with optimization aimed at minimizing total cost defined as $1.24/mile for EVs + $1.87/mile for diesel + $42/hour driver labor + $8.50/failed delivery attempt, subject to constraints including 8-hour driver shifts, maximum 120 stops per route, 98.5% on-time delivery SLA, and EV charging windows from 11pm-5am at the depot. Reoptimization occurs every 15 minutes or when >5% of deliveries are rescheduled, incorporating a +18% travel time penalty for precipitation >0.5 inches/hour, a 2.3x volume surge during November-December peak season, and compute resources of a 48-core AMD EPYC with 256GB RAM targeting <90 seconds per cycle."
+    },
+    "timestamp": "2026-04-15T20:59:15.951883"
+  },
+  {
+    "id": "ctrl_mergesort",
+    "industry": "Control (Baseline)",
+    "title": "Implement Merge Sort Algorithm in Python with Performance Analysis",
+    "absent_ratio": 0.019,
+    "absent_count": 1,
+    "entity_retention": 0.578,
+    "verb_drift": 0.036,
+    "hedge_count": 0,
+    "consensus_density": 0.931621,
+    "void_words": [
+      "analytics",
+      "correlation",
+      "outperform",
+      "bioinformatics",
+      "latency"
+    ],
+    "critical_param_retention": 1.0,
+    "critical_params_missing": [],
+    "critical_params_total": 6,
+    "failure_mode": "Baseline \u2014 minimal parameter sensitivity; measures instrument noise floor",
+    "model_responses": {
+      "ChatGPT": "Implement a standard merge sort algorithm in Python that accepts a list of integers and returns a sorted list in ascending order using divide-and-conquer: split at the midpoint, recursively sort each half, then merge the two sorted halves by comparing elements sequentially. The performance analysis should state time complexity is O(n log n) in all cases (best, average, worst), space complexity is O(n) due to the auxiliary arrays used during merging, and include a counter for the number of comparisons performed.  \n\nTest with the input list [38, 27, 43, 3, 9, 82, 10], which should produce [3, 9, 10, 27, 38, 43, 82] with approximately 13 comparisons, and note that this is a stable sort that preserves the relative order of equal elements.",
+      "Claude": "This configuration specifies implementation of a merge sort algorithm in Python that divides input lists recursively at midpoints, merges sorted halves through sequential element comparison, and returns results in ascending order with O(n log n) time complexity across all cases and O(n) space complexity. The implementation must include a comparison counter and be tested with input list [38, 27, 43, 3, 9, 82, 10], producing expected output [3, 9, 10, 27, 38, 43, 82] with approximately 13 comparisons while maintaining stability for equal elements.",
+      "Gemini": "This configuration details a Python implementation of the standard Merge Sort algorithm, utilizing a divide-and-conquer approach to sort a list of integers in ascending order. It achieves O(n log n) time complexity in all cases and O(n) space complexity, while also including a counter for comparisons. Testing with [38, 27, 43, 3, 9, 82, 10] expects the output [3, 9, 10, 27, 38, 43, 82] with approximately 13 comparisons, confirming its stability.",
+      "DeepSeek": "The merge sort algorithm is implemented in Python with a counter for comparisons, using the divide-and-conquer approach. It sorts the test list [38, 27, 43, 3, 9, 82, 10] to [3, 9, 10, 27, 38, 43, 82] with approximately 13 comparisons. The time complexity is O(n log n) and space complexity is O(n), making it a stable sort.",
+      "Grok": "The configuration requires implementing a standard merge sort algorithm in Python that accepts a list of integers and returns a sorted list in ascending order using a divide-and-conquer approach: splitting the list at the midpoint, recursively sorting each half, and merging the two sorted halves by sequentially comparing elements. The algorithm has a time complexity of O(n log n) in all cases (best, average, worst) and a space complexity of O(n) due to auxiliary arrays used during merging, while including a counter for the number of comparisons performed. It must be tested with the input list [38, 27, 43, 3, 9, 82, 10], yielding the expected output [3, 9, 10, 27, 38, 43, 82] with approximately 13 comparisons, and it is a stable sort that preserves the relative order of equal elements."
+    },
+    "timestamp": "2026-04-15T20:59:30.863281"
+  }
+]

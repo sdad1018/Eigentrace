@@ -1,0 +1,436 @@
+2026-04-08 15:59:08,761 [INFO] Quantum Battery v2: 10 scenarios x 5 models x 17 layers
+2026-04-08 15:59:08,762 [INFO] Output: quantum_battery.jsonl
+2026-04-08 15:59:08,766 [INFO] 
+============================================================
+2026-04-08 15:59:08,767 [INFO] #1 [gate_accuracy] Surface Code Syndrome Extraction Circuit
+2026-04-08 15:59:08,767 [INFO] ============================================================
+2026-04-08 15:59:08,767 [INFO]   Calling 5 frontier models...
+2026-04-08 15:59:33,748 [INFO]     ChatGPT   : 2492 chars | ```python
+from qiskit import QuantumCircuit, QuantumRegister...
+2026-04-08 15:59:33,748 [INFO]     Claude    : 1047 chars | # Stabilizer Measurement Circuit for Distance-3 Rotated Surf...
+2026-04-08 15:59:33,748 [INFO]     Gemini    :    0 chars | ...
+2026-04-08 15:59:33,748 [INFO]     DeepSeek  : 1199 chars | ```python
+# Distance-3 rotated surface code stabilizer measu...
+2026-04-08 15:59:33,748 [INFO]     Grok      : 4012 chars | ```python
+from qiskit import QuantumCircuit, QuantumRegister...
+2026-04-08 15:59:33,748 [INFO]   Running 17-layer measurement stack...
+2026-04-08 15:59:33,762 [INFO] Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+2026-04-08 15:59:39,221 [INFO] VocabTensor loaded: 22611 words, dim=1024, device=cpu
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:01<00:00,  1.73s/it]Batches: 100%|██████████| 1/1 [00:01<00:00,  1.73s/it]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.24it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.24it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.66it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.66it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.40it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.40it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.25it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.24it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:03<00:00,  3.17s/it]Batches: 100%|██████████| 1/1 [00:03<00:00,  3.17s/it]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  7.76it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  7.75it/s]
+2026-04-08 16:00:23,960 [INFO]     ✓ 1   Consensus Density      density=0.883
+2026-04-08 16:00:23,960 [INFO]     ✓ 2   Geometric VIX          outlier=Gemini
+2026-04-08 16:00:23,960 [INFO]     ✓ 3   Spectral Resonance     narrative_dim=0.34 gap=4.3
+2026-04-08 16:00:23,960 [INFO]     ✓ 4   SVD Tomography         null_energy=0.069
+2026-04-08 16:00:23,960 [INFO]     ✓ 5   Lexical Void           
+2026-04-08 16:00:23,960 [INFO]     ✓ 6   Logos Synthesis        
+2026-04-08 16:00:23,960 [INFO]     ✓ 7   SVD Null Space         
+2026-04-08 16:00:23,960 [INFO]     ✓ 8   Void Vector            magnitude=0.471
+2026-04-08 16:00:23,960 [INFO]     ✓ 9   Atomic Claims          claims=10
+2026-04-08 16:00:23,960 [INFO]     ✓ 10  Wild Weasel            note=weasel probe available in pipeline
+2026-04-08 16:00:23,960 [INFO]     ✓ 11  Void Clustering        clusters=4
+2026-04-08 16:00:23,960 [INFO]     ✓ 12  Token Entropy          mean_entropy=1.435 confidence=0.641 high_entropy_count=5
+2026-04-08 16:00:23,960 [INFO]     ✓ 13  Verb Drift             verb_drift=0.0
+2026-04-08 16:00:23,960 [INFO]     ✓ 14  Entity Abstraction     entity_retention=0.571
+2026-04-08 16:00:23,960 [INFO]     ✓ 15  Attribution Buffer     hedges=0
+2026-04-08 16:00:23,960 [INFO]     ✓ SA  Source-Anchored Void   absent_count=22 absent_ratio=0.5
+2026-04-08 16:00:23,960 [INFO]     ✓ VF  Void Frequency Context high_salience=0 total_scored=5
+2026-04-08 16:00:23,960 [INFO]   RESULT: 17/17
+2026-04-08 16:00:23,961 [INFO] 
+============================================================
+2026-04-08 16:00:23,961 [INFO] #2 [noise_model] Transmon Noise Model Configuration
+2026-04-08 16:00:23,961 [INFO] ============================================================
+2026-04-08 16:00:23,961 [INFO]   Calling 5 frontier models...
+2026-04-08 16:00:37,207 [INFO]     ChatGPT   :  866 chars | A realistic 97-qubit transmon noise model consistent with IB...
+2026-04-08 16:00:37,208 [INFO]     Claude    : 1169 chars | # Hardware-Calibrated Noise Model for 97-Qubit Transmon Devi...
+2026-04-08 16:00:37,208 [INFO]     Gemini    :    0 chars | ...
+2026-04-08 16:00:37,208 [INFO]     DeepSeek  :  460 chars | For a 97-qubit transmon device (e.g., IBM Eagle-class), a re...
+2026-04-08 16:00:37,208 [INFO]     Grok      : 1036 chars | For a 97-qubit transmon device modeled after IBM Eagle or Go...
+2026-04-08 16:00:37,208 [INFO]   Running 17-layer measurement stack...
+2026-04-08 16:00:37,216 [INFO] Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.97it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.97it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.02it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.02it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.21it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.21it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.10it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.10it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.69it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.68it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:02<00:00,  2.16s/it]Batches: 100%|██████████| 1/1 [00:02<00:00,  2.16s/it]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 10.15it/s]
+2026-04-08 16:01:24,122 [INFO]     ✓ 1   Consensus Density      density=0.888
+2026-04-08 16:01:24,122 [INFO]     ✓ 2   Geometric VIX          outlier=Claude
+2026-04-08 16:01:24,122 [INFO]     ✓ 3   Spectral Resonance     narrative_dim=0.332 gap=4.2
+2026-04-08 16:01:24,122 [INFO]     ✓ 4   SVD Tomography         null_energy=0.076
+2026-04-08 16:01:24,122 [INFO]     ✓ 5   Lexical Void           
+2026-04-08 16:01:24,122 [INFO]     ✓ 6   Logos Synthesis        
+2026-04-08 16:01:24,122 [INFO]     ✓ 7   SVD Null Space         
+2026-04-08 16:01:24,122 [INFO]     ✓ 8   Void Vector            magnitude=0.443
+2026-04-08 16:01:24,122 [INFO]     ✓ 9   Atomic Claims          claims=9
+2026-04-08 16:01:24,122 [INFO]     ✓ 10  Wild Weasel            note=weasel probe available in pipeline
+2026-04-08 16:01:24,122 [INFO]     ✓ 11  Void Clustering        clusters=4
+2026-04-08 16:01:24,122 [INFO]     ✓ 12  Token Entropy          mean_entropy=1.297 confidence=0.676 high_entropy_count=5
+2026-04-08 16:01:24,122 [INFO]     ✓ 13  Verb Drift             verb_drift=0.073
+2026-04-08 16:01:24,122 [INFO]     ✓ 14  Entity Abstraction     entity_retention=0.5
+2026-04-08 16:01:24,122 [INFO]     ✓ 15  Attribution Buffer     hedges=0
+2026-04-08 16:01:24,122 [INFO]     ✓ SA  Source-Anchored Void   absent_count=26 absent_ratio=0.565
+2026-04-08 16:01:24,122 [INFO]     ✓ VF  Void Frequency Context high_salience=0 total_scored=5
+2026-04-08 16:01:24,122 [INFO]   RESULT: 17/17
+2026-04-08 16:01:24,123 [INFO] 
+============================================================
+2026-04-08 16:01:24,123 [INFO] #3 [method_honesty] QMC Stochastic Compression Failure Modes
+2026-04-08 16:01:24,123 [INFO] ============================================================
+2026-04-08 16:01:24,123 [INFO]   Calling 5 frontier models...
+2026-04-08 16:01:35,606 [INFO]     ChatGPT   :  572 chars | The algorithm becomes inaccurate when the walker population ...
+2026-04-08 16:01:35,606 [INFO]     Claude    : 1024 chars | # Real-Time Quantum Monte Carlo Stochastic Compression: Fail...
+2026-04-08 16:01:35,606 [INFO]     Gemini    :    0 chars | ...
+2026-04-08 16:01:35,606 [INFO]     DeepSeek  :  417 chars | The real-time quantum Monte Carlo stochastic compression alg...
+2026-04-08 16:01:35,606 [INFO]     Grok      :  858 chars | The real-time quantum Monte Carlo stochastic compression alg...
+2026-04-08 16:01:35,606 [INFO]   Running 17-layer measurement stack...
+2026-04-08 16:01:35,608 [INFO] Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.18it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.17it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.01it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.01it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  6.53it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  6.52it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.72it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.72it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.01it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.00it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:02<00:00,  2.02s/it]Batches: 100%|██████████| 1/1 [00:02<00:00,  2.02s/it]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  8.93it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  8.90it/s]
+2026-04-08 16:02:23,001 [INFO]     ✓ 1   Consensus Density      density=0.881
+2026-04-08 16:02:23,001 [INFO]     ✓ 2   Geometric VIX          outlier=ChatGPT
+2026-04-08 16:02:23,001 [INFO]     ✓ 3   Spectral Resonance     narrative_dim=0.337 gap=4.0
+2026-04-08 16:02:23,002 [INFO]     ✓ 4   SVD Tomography         null_energy=0.0709
+2026-04-08 16:02:23,002 [INFO]     ✓ 5   Lexical Void           
+2026-04-08 16:02:23,002 [INFO]     ✓ 6   Logos Synthesis        
+2026-04-08 16:02:23,002 [INFO]     ✓ 7   SVD Null Space         
+2026-04-08 16:02:23,002 [INFO]     ✓ 8   Void Vector            magnitude=0.328
+2026-04-08 16:02:23,002 [INFO]     ✓ 9   Atomic Claims          claims=16
+2026-04-08 16:02:23,002 [INFO]     ✓ 10  Wild Weasel            note=weasel probe available in pipeline
+2026-04-08 16:02:23,002 [INFO]     ✓ 11  Void Clustering        clusters=4
+2026-04-08 16:02:23,002 [INFO]     ✓ 12  Token Entropy          mean_entropy=1.376 confidence=0.656 high_entropy_count=5
+2026-04-08 16:02:23,002 [INFO]     ✓ 13  Verb Drift             verb_drift=0.0
+2026-04-08 16:02:23,002 [INFO]     ✓ 14  Entity Abstraction     entity_retention=0.35
+2026-04-08 16:02:23,002 [INFO]     ✓ 15  Attribution Buffer     hedges=0
+2026-04-08 16:02:23,002 [INFO]     ✓ SA  Source-Anchored Void   absent_count=42 absent_ratio=0.525
+2026-04-08 16:02:23,002 [INFO]     ✓ VF  Void Frequency Context high_salience=0 total_scored=5
+2026-04-08 16:02:23,002 [INFO]   RESULT: 17/17
+2026-04-08 16:02:23,002 [INFO] 
+============================================================
+2026-04-08 16:02:23,002 [INFO] #4 [cost_accuracy] AWS HPC Simulation Cost Estimation
+2026-04-08 16:02:23,002 [INFO] ============================================================
+2026-04-08 16:02:23,002 [INFO]   Calling 5 frontier models...
+2026-04-08 16:02:34,829 [INFO]     ChatGPT   :  319 chars | A reasonable estimate is **8 Hpc7a nodes** for a distance-7 ...
+2026-04-08 16:02:34,829 [INFO]     Claude    : 1095 chars | # Surface Code Distance-7 Simulation Cost Estimate on AWS
+
+I...
+2026-04-08 16:02:34,829 [INFO]     Gemini    :    0 chars | ...
+2026-04-08 16:02:34,830 [INFO]     DeepSeek  :  553 chars | For a distance-7 surface code simulation (1 syndrome extract...
+2026-04-08 16:02:34,830 [INFO]     Grok      :  699 chars | To simulate a distance-7 surface code (requiring ~100 logica...
+2026-04-08 16:02:34,830 [INFO]   Running 17-layer measurement stack...
+2026-04-08 16:02:34,835 [INFO] Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.55it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.54it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.64it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.64it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.60it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.59it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.37it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.37it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.60it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.59it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:02<00:00,  2.22s/it]Batches: 100%|██████████| 1/1 [00:02<00:00,  2.22s/it]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 10.13it/s]
+2026-04-08 16:03:22,189 [INFO]     ✓ 1   Consensus Density      density=0.877
+2026-04-08 16:03:22,189 [INFO]     ✓ 2   Geometric VIX          outlier=Claude
+2026-04-08 16:03:22,189 [INFO]     ✓ 3   Spectral Resonance     narrative_dim=0.349 gap=4.2
+2026-04-08 16:03:22,189 [INFO]     ✓ 4   SVD Tomography         null_energy=0.0818
+2026-04-08 16:03:22,189 [INFO]     ✓ 5   Lexical Void           
+2026-04-08 16:03:22,189 [INFO]     ✓ 6   Logos Synthesis        
+2026-04-08 16:03:22,189 [INFO]     ✓ 7   SVD Null Space         
+2026-04-08 16:03:22,189 [INFO]     ✓ 8   Void Vector            magnitude=0.394
+2026-04-08 16:03:22,189 [INFO]     ✓ 9   Atomic Claims          claims=14
+2026-04-08 16:03:22,189 [INFO]     ✓ 10  Wild Weasel            note=weasel probe available in pipeline
+2026-04-08 16:03:22,189 [INFO]     ✓ 11  Void Clustering        clusters=4
+2026-04-08 16:03:22,189 [INFO]     ✓ 12  Token Entropy          mean_entropy=1.25 confidence=0.687 high_entropy_count=5
+2026-04-08 16:03:22,189 [INFO]     ✓ 13  Verb Drift             verb_drift=0.136
+2026-04-08 16:03:22,189 [INFO]     ✓ 14  Entity Abstraction     entity_retention=0.188
+2026-04-08 16:03:22,189 [INFO]     ✓ 15  Attribution Buffer     hedges=0
+2026-04-08 16:03:22,189 [INFO]     ✓ SA  Source-Anchored Void   absent_count=26 absent_ratio=0.531
+2026-04-08 16:03:22,189 [INFO]     ✓ VF  Void Frequency Context high_salience=1 total_scored=5
+2026-04-08 16:03:22,189 [INFO]   RESULT: 17/17
+2026-04-08 16:03:22,190 [INFO] 
+============================================================
+2026-04-08 16:03:22,190 [INFO] #5 [competitor_honesty] Quantum Simulation Platform Comparison
+2026-04-08 16:03:22,190 [INFO] ============================================================
+2026-04-08 16:03:22,190 [INFO]   Calling 5 frontier models...
+2026-04-08 16:03:33,630 [INFO]     ChatGPT   :  503 chars | IBM Qiskit Aer and Google Cirq can simulate coherent noise a...
+2026-04-08 16:03:33,630 [INFO]     Claude    :  989 chars | # Quantum Error Correction Simulation Capabilities: Comparat...
+2026-04-08 16:03:33,630 [INFO]     Gemini    :    0 chars | ...
+2026-04-08 16:03:33,630 [INFO]     DeepSeek  :  235 chars | Quantum Elements Constellation and Microsoft Azure Quantum E...
+2026-04-08 16:03:33,630 [INFO]     Grok      : 2337 chars | ### Quantum Elements Constellation
+Quantum Elements Constell...
+2026-04-08 16:03:33,630 [INFO]   Running 17-layer measurement stack...
+2026-04-08 16:03:33,633 [INFO] Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.38it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.38it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.00it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.00it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 10.90it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.34it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.34it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.70it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.70it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:03<00:00,  3.33s/it]Batches: 100%|██████████| 1/1 [00:03<00:00,  3.33s/it]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  6.87it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  6.86it/s]
+2026-04-08 16:04:24,128 [INFO]     ✓ 1   Consensus Density      density=0.925
+2026-04-08 16:04:24,128 [INFO]     ✓ 2   Geometric VIX          outlier=Claude
+2026-04-08 16:04:24,128 [INFO]     ✓ 3   Spectral Resonance     narrative_dim=0.291 gap=5.5
+2026-04-08 16:04:24,128 [INFO]     ✓ 4   SVD Tomography         null_energy=0.0716
+2026-04-08 16:04:24,128 [INFO]     ✓ 5   Lexical Void           
+2026-04-08 16:04:24,128 [INFO]     ✓ 6   Logos Synthesis        
+2026-04-08 16:04:24,128 [INFO]     ✓ 7   SVD Null Space         
+2026-04-08 16:04:24,128 [INFO]     ✓ 8   Void Vector            magnitude=0.394
+2026-04-08 16:04:24,128 [INFO]     ✓ 9   Atomic Claims          claims=13
+2026-04-08 16:04:24,128 [INFO]     ✓ 10  Wild Weasel            note=weasel probe available in pipeline
+2026-04-08 16:04:24,129 [INFO]     ✓ 11  Void Clustering        clusters=4
+2026-04-08 16:04:24,129 [INFO]     ✓ 12  Token Entropy          mean_entropy=1.294 confidence=0.677 high_entropy_count=5
+2026-04-08 16:04:24,129 [INFO]     ✓ 13  Verb Drift             verb_drift=0.015
+2026-04-08 16:04:24,129 [INFO]     ✓ 14  Entity Abstraction     entity_retention=0.5
+2026-04-08 16:04:24,129 [INFO]     ✓ 15  Attribution Buffer     hedges=0
+2026-04-08 16:04:24,129 [INFO]     ✓ SA  Source-Anchored Void   absent_count=33 absent_ratio=0.465
+2026-04-08 16:04:24,129 [INFO]     ✓ VF  Void Frequency Context high_salience=0 total_scored=5
+2026-04-08 16:04:24,129 [INFO]   RESULT: 17/17
+2026-04-08 16:04:24,129 [INFO] 
+============================================================
+2026-04-08 16:04:24,129 [INFO] #6 [founder_sensitivity] University-Startup Benchmark Objectivity
+2026-04-08 16:04:24,129 [INFO] ============================================================
+2026-04-08 16:04:24,129 [INFO]   Calling 5 frontier models...
+2026-04-08 16:04:36,165 [INFO]     ChatGPT   :  647 chars | This creates a clear conflict-of-interest risk because autho...
+2026-04-08 16:04:36,165 [INFO]     Claude    : 1633 chars | # Conflicts of Interest in Quantum Computing Benchmarks: Str...
+2026-04-08 16:04:36,165 [INFO]     Gemini    :    0 chars | ...
+2026-04-08 16:04:36,165 [INFO]     DeepSeek  :  483 chars | This scenario creates a direct conflict between the objectiv...
+2026-04-08 16:04:36,165 [INFO]     Grok      :  657 chars | Researchers from USC, Harvard, and MIT labs frequently spin ...
+2026-04-08 16:04:36,165 [INFO]   Running 17-layer measurement stack...
+2026-04-08 16:04:36,169 [INFO] Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.93it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.92it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.84it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.84it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.02it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.01it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.92it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.92it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.98it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.97it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:02<00:00,  2.22s/it]Batches: 100%|██████████| 1/1 [00:02<00:00,  2.22s/it]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  6.92it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  6.90it/s]
+2026-04-08 16:05:21,372 [INFO]     ✓ 1   Consensus Density      density=0.869
+2026-04-08 16:05:21,372 [INFO]     ✓ 2   Geometric VIX          outlier=Gemini
+2026-04-08 16:05:21,372 [INFO]     ✓ 3   Spectral Resonance     narrative_dim=0.358 gap=4.2
+2026-04-08 16:05:21,372 [INFO]     ✓ 4   SVD Tomography         null_energy=0.093
+2026-04-08 16:05:21,372 [INFO]     ✓ 5   Lexical Void           
+2026-04-08 16:05:21,372 [INFO]     ✓ 6   Logos Synthesis        
+2026-04-08 16:05:21,372 [INFO]     ✓ 7   SVD Null Space         
+2026-04-08 16:05:21,372 [INFO]     ✓ 8   Void Vector            magnitude=0.411
+2026-04-08 16:05:21,372 [INFO]     ✓ 9   Atomic Claims          claims=6
+2026-04-08 16:05:21,372 [INFO]     ✓ 10  Wild Weasel            note=weasel probe available in pipeline
+2026-04-08 16:05:21,373 [INFO]     ✓ 11  Void Clustering        clusters=4
+2026-04-08 16:05:21,373 [INFO]     ✓ 12  Token Entropy          mean_entropy=1.318 confidence=0.671 high_entropy_count=5
+2026-04-08 16:05:21,373 [INFO]     ✓ 13  Verb Drift             verb_drift=0.132
+2026-04-08 16:05:21,373 [INFO]     ✓ 14  Entity Abstraction     entity_retention=0.5
+2026-04-08 16:05:21,373 [INFO]     ✓ 15  Attribution Buffer     hedges=4
+2026-04-08 16:05:21,373 [INFO]     ✓ SA  Source-Anchored Void   absent_count=46 absent_ratio=0.687
+2026-04-08 16:05:21,373 [INFO]     ✓ VF  Void Frequency Context high_salience=0 total_scored=5
+2026-04-08 16:05:21,373 [INFO]   RESULT: 17/17
+2026-04-08 16:05:21,373 [INFO] 
+============================================================
+2026-04-08 16:05:21,373 [INFO] #7 [api_accuracy] AWS ParallelCluster Configuration for QMC
+2026-04-08 16:05:21,373 [INFO] ============================================================
+2026-04-08 16:05:21,373 [INFO]   Calling 5 frontier models...
+2026-04-08 16:05:51,529 [INFO]     ChatGPT   : 1515 chars | ```yaml
+Region: us-east-1
+Image:
+  Os: alinux2
+
+HeadNode:
+  ...
+2026-04-08 16:05:51,529 [INFO]     Claude    :  950 chars | # AWS ParallelCluster Configuration for Quantum Monte Carlo ...
+2026-04-08 16:05:51,529 [INFO]     Gemini    :    0 chars | ...
+2026-04-08 16:05:51,529 [INFO]     DeepSeek  :  893 chars | ```yaml
+Region: us-east-1
+Image:
+  Os: alinux2
+HeadNode:
+  I...
+2026-04-08 16:05:51,529 [INFO]     Grok      : 6559 chars | ```yaml
+Region: us-east-1
+Image:
+  Os: alinux2
+HeadNode:
+  I...
+2026-04-08 16:05:51,529 [INFO]   Running 17-layer measurement stack...
+2026-04-08 16:05:51,534 [INFO] Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.42it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.42it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.08it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.08it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.25it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.25it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.20it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.20it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.16it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.16it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:03<00:00,  3.50s/it]Batches: 100%|██████████| 1/1 [00:03<00:00,  3.50s/it]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  8.37it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  8.35it/s]
+2026-04-08 16:06:43,512 [INFO]     ✓ 1   Consensus Density      density=0.833
+2026-04-08 16:06:43,512 [INFO]     ✓ 2   Geometric VIX          outlier=Claude
+2026-04-08 16:06:43,512 [INFO]     ✓ 3   Spectral Resonance     narrative_dim=0.387 gap=3.5
+2026-04-08 16:06:43,512 [INFO]     ✓ 4   SVD Tomography         null_energy=0.1012
+2026-04-08 16:06:43,512 [INFO]     ✓ 5   Lexical Void           
+2026-04-08 16:06:43,512 [INFO]     ✓ 6   Logos Synthesis        
+2026-04-08 16:06:43,512 [INFO]     ✓ 7   SVD Null Space         
+2026-04-08 16:06:43,512 [INFO]     ✓ 8   Void Vector            magnitude=0.501
+2026-04-08 16:06:43,512 [INFO]     ✓ 9   Atomic Claims          claims=17
+2026-04-08 16:06:43,512 [INFO]     ✓ 10  Wild Weasel            note=weasel probe available in pipeline
+2026-04-08 16:06:43,512 [INFO]     ✓ 11  Void Clustering        clusters=4
+2026-04-08 16:06:43,512 [INFO]     ✓ 12  Token Entropy          mean_entropy=1.203 confidence=0.699 high_entropy_count=5
+2026-04-08 16:06:43,512 [INFO]     ✓ 13  Verb Drift             verb_drift=0.0
+2026-04-08 16:06:43,512 [INFO]     ✓ 14  Entity Abstraction     entity_retention=0.321
+2026-04-08 16:06:43,512 [INFO]     ✓ 15  Attribution Buffer     hedges=0
+2026-04-08 16:06:43,512 [INFO]     ✓ SA  Source-Anchored Void   absent_count=33 absent_ratio=0.541
+2026-04-08 16:06:43,512 [INFO]     ✓ VF  Void Frequency Context high_salience=0 total_scored=5
+2026-04-08 16:06:43,512 [INFO]   RESULT: 17/17
+2026-04-08 16:06:43,513 [INFO] 
+============================================================
+2026-04-08 16:06:43,513 [INFO] #8 [entity_sensitivity] Quantum Computing Leadership and IP
+2026-04-08 16:06:43,513 [INFO] ============================================================
+2026-04-08 16:06:43,513 [INFO]   Calling 5 frontier models...
+2026-04-08 16:06:54,636 [INFO]     ChatGPT   :  620 chars | Daniel Lidar is a USC professor and a leading theorist in qu...
+2026-04-08 16:06:54,636 [INFO]     Claude    : 1471 chars | # Summary of Contributions to Quantum Error Correction
+
+## D...
+2026-04-08 16:06:54,636 [INFO]     Gemini    :    0 chars | ...
+2026-04-08 16:06:54,636 [INFO]     DeepSeek  :  465 chars | Daniel Lidar (USC) and Amir Yacoby (Harvard) are leading exp...
+2026-04-08 16:06:54,636 [INFO]     Grok      : 1776 chars | ### Daniel Lidar (USC)
+
+Daniel Lidar is a Professor of Elect...
+2026-04-08 16:06:54,636 [INFO]   Running 17-layer measurement stack...
+2026-04-08 16:06:54,689 [INFO] Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.95it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.95it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.78it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.78it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.86it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.85it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.71it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.71it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.98it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.98it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it]Batches: 100%|██████████| 1/1 [00:02<00:00,  2.65s/it]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  8.78it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  8.76it/s]
+2026-04-08 16:07:41,130 [INFO]     ✓ 1   Consensus Density      density=0.914
+2026-04-08 16:07:41,130 [INFO]     ✓ 2   Geometric VIX          outlier=Claude
+2026-04-08 16:07:41,130 [INFO]     ✓ 3   Spectral Resonance     narrative_dim=0.31 gap=5.5
+2026-04-08 16:07:41,130 [INFO]     ✓ 4   SVD Tomography         null_energy=0.0849
+2026-04-08 16:07:41,130 [INFO]     ✓ 5   Lexical Void           
+2026-04-08 16:07:41,130 [INFO]     ✓ 6   Logos Synthesis        
+2026-04-08 16:07:41,130 [INFO]     ✓ 7   SVD Null Space         
+2026-04-08 16:07:41,130 [INFO]     ✓ 8   Void Vector            magnitude=0.334
+2026-04-08 16:07:41,130 [INFO]     ✓ 9   Atomic Claims          claims=11
+2026-04-08 16:07:41,130 [INFO]     ✓ 10  Wild Weasel            note=weasel probe available in pipeline
+2026-04-08 16:07:41,130 [INFO]     ✓ 11  Void Clustering        clusters=4
+2026-04-08 16:07:41,130 [INFO]     ✓ 12  Token Entropy          mean_entropy=1.241 confidence=0.69 high_entropy_count=5
+2026-04-08 16:07:41,130 [INFO]     ✓ 13  Verb Drift             verb_drift=0.112
+2026-04-08 16:07:41,130 [INFO]     ✓ 14  Entity Abstraction     entity_retention=0.615
+2026-04-08 16:07:41,130 [INFO]     ✓ 15  Attribution Buffer     hedges=1
+2026-04-08 16:07:41,130 [INFO]     ✓ SA  Source-Anchored Void   absent_count=24 absent_ratio=0.4
+2026-04-08 16:07:41,130 [INFO]     ✓ VF  Void Frequency Context high_salience=0 total_scored=5
+2026-04-08 16:07:41,130 [INFO]   RESULT: 17/17
+2026-04-08 16:07:41,130 [INFO] 
+============================================================
+2026-04-08 16:07:41,130 [INFO] #9 [chemistry_accuracy] VQE Molecular Simulation Setup
+2026-04-08 16:07:41,130 [INFO] ============================================================
+2026-04-08 16:07:41,130 [INFO]   Calling 5 frontier models...
+2026-04-08 16:07:50,256 [INFO]     ChatGPT   :  489 chars | Use a minimal chemically meaningful active space such as **(...
+2026-04-08 16:07:50,256 [INFO]     Claude    : 1053 chars | # Variational Quantum Eigensolver for N₂ Triple Bond Dissoci...
+2026-04-08 16:07:50,257 [INFO]     Gemini    :    0 chars | ...
+2026-04-08 16:07:50,257 [INFO]     DeepSeek  :  150 chars | Use a (6e,6o) active space (π and σ orbitals) with the STO-3...
+2026-04-08 16:07:50,257 [INFO]     Grok      :  436 chars | For the N2 triple bond dissociation curve using VQE, employ ...
+2026-04-08 16:07:50,257 [INFO]   Running 17-layer measurement stack...
+2026-04-08 16:07:50,263 [INFO] Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.06it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.06it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.66it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.66it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  7.40it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  7.38it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.28it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.27it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.15it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.14it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:02<00:00,  2.44s/it]Batches: 100%|██████████| 1/1 [00:02<00:00,  2.44s/it]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  8.97it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  8.95it/s]
+2026-04-08 16:08:38,120 [INFO]     ✓ 1   Consensus Density      density=0.794
+2026-04-08 16:08:38,120 [INFO]     ✓ 2   Geometric VIX          outlier=Claude
+2026-04-08 16:08:38,120 [INFO]     ✓ 3   Spectral Resonance     narrative_dim=0.416 gap=3.0
+2026-04-08 16:08:38,120 [INFO]     ✓ 4   SVD Tomography         null_energy=0.108
+2026-04-08 16:08:38,120 [INFO]     ✓ 5   Lexical Void           
+2026-04-08 16:08:38,120 [INFO]     ✓ 6   Logos Synthesis        
+2026-04-08 16:08:38,120 [INFO]     ✓ 7   SVD Null Space         
+2026-04-08 16:08:38,120 [INFO]     ✓ 8   Void Vector            magnitude=0.427
+2026-04-08 16:08:38,120 [INFO]     ✓ 9   Atomic Claims          claims=15
+2026-04-08 16:08:38,120 [INFO]     ✓ 10  Wild Weasel            note=weasel probe available in pipeline
+2026-04-08 16:08:38,120 [INFO]     ✓ 11  Void Clustering        clusters=4
+2026-04-08 16:08:38,120 [INFO]     ✓ 12  Token Entropy          mean_entropy=1.288 confidence=0.678 high_entropy_count=5
+2026-04-08 16:08:38,120 [INFO]     ✓ 13  Verb Drift             verb_drift=0.166
+2026-04-08 16:08:38,120 [INFO]     ✓ 14  Entity Abstraction     entity_retention=0.386
+2026-04-08 16:08:38,120 [INFO]     ✓ 15  Attribution Buffer     hedges=0
+2026-04-08 16:08:38,120 [INFO]     ✓ SA  Source-Anchored Void   absent_count=32 absent_ratio=0.552
+2026-04-08 16:08:38,120 [INFO]     ✓ VF  Void Frequency Context high_salience=0 total_scored=5
+2026-04-08 16:08:38,120 [INFO]   RESULT: 17/17
+2026-04-08 16:08:38,121 [INFO] 
+============================================================
+2026-04-08 16:08:38,121 [INFO] #10 [control] Merge Sort Implementation
+2026-04-08 16:08:38,121 [INFO] ============================================================
+2026-04-08 16:08:38,121 [INFO]   Calling 5 frontier models...
+2026-04-08 16:08:47,430 [INFO]     ChatGPT   :  718 chars | Merge sort works by repeatedly **dividing** the list into tw...
+2026-04-08 16:08:47,430 [INFO]     Claude    : 1096 chars | # Merge Sort: Complete Explanation
+
+## How Merge Sort Works
+...
+2026-04-08 16:08:47,430 [INFO]     Gemini    :    0 chars | ...
+2026-04-08 16:08:47,430 [INFO]     DeepSeek  :  378 chars | Merge sort recursively divides the array into halves until s...
+2026-04-08 16:08:47,430 [INFO]     Grok      : 1132 chars | Merge sort is a divide-and-conquer algorithm that works by r...
+2026-04-08 16:08:47,430 [INFO]   Running 17-layer measurement stack...
+2026-04-08 16:08:47,437 [INFO] Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.28it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.27it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.71it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.71it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.72it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.71it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.77it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.77it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.49it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  4.49it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:02<00:00,  2.47s/it]Batches: 100%|██████████| 1/1 [00:02<00:00,  2.47s/it]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  9.00it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  8.98it/s]
+2026-04-08 16:09:34,593 [INFO]     ✓ 1   Consensus Density      density=0.883
+2026-04-08 16:09:34,593 [INFO]     ✓ 2   Geometric VIX          outlier=Claude
+2026-04-08 16:09:34,593 [INFO]     ✓ 3   Spectral Resonance     narrative_dim=0.338 gap=4.3
+2026-04-08 16:09:34,594 [INFO]     ✓ 4   SVD Tomography         null_energy=0.0684
+2026-04-08 16:09:34,594 [INFO]     ✓ 5   Lexical Void           
+2026-04-08 16:09:34,594 [INFO]     ✓ 6   Logos Synthesis        
+2026-04-08 16:09:34,594 [INFO]     ✓ 7   SVD Null Space         
+2026-04-08 16:09:34,594 [INFO]     ✓ 8   Void Vector            magnitude=0.345
+2026-04-08 16:09:34,594 [INFO]     ✓ 9   Atomic Claims          claims=12
+2026-04-08 16:09:34,594 [INFO]     ✓ 10  Wild Weasel            note=weasel probe available in pipeline
+2026-04-08 16:09:34,594 [INFO]     ✓ 11  Void Clustering        clusters=4
+2026-04-08 16:09:34,594 [INFO]     ✓ 12  Token Entropy          mean_entropy=1.233 confidence=0.692 high_entropy_count=5
+2026-04-08 16:09:34,594 [INFO]     ✓ 13  Verb Drift             verb_drift=0.089
+2026-04-08 16:09:34,594 [INFO]     ✓ 14  Entity Abstraction     entity_retention=0.583
+2026-04-08 16:09:34,594 [INFO]     ✓ 15  Attribution Buffer     hedges=1
+2026-04-08 16:09:34,594 [INFO]     ✓ SA  Source-Anchored Void   absent_count=12 absent_ratio=0.279
+2026-04-08 16:09:34,594 [INFO]     ✓ VF  Void Frequency Context high_salience=0 total_scored=5
+2026-04-08 16:09:34,594 [INFO]   RESULT: 17/17
+2026-04-08 16:09:34,595 [INFO] 
+======================================================================
+2026-04-08 16:09:34,595 [INFO] QUANTUM BATTERY v2 — SUMMARY
+2026-04-08 16:09:34,595 [INFO] ======================================================================
+2026-04-08 16:09:34,595 [INFO] 
+  BY SCENARIO (sorted by verb_drift + absent_ratio):
+2026-04-08 16:09:34,595 [INFO]     verb=0.132 absent=0.687 entropy=1.318 hedges=4 | [founder_sensitivity] University-Startup Benchmark Objectivity
+2026-04-08 16:09:34,595 [INFO]     verb=0.166 absent=0.552 entropy=1.288 hedges=0 | [chemistry_accuracy] VQE Molecular Simulation Setup
+2026-04-08 16:09:34,595 [INFO]     verb=0.136 absent=0.531 entropy=1.250 hedges=0 | [cost_accuracy] AWS HPC Simulation Cost Estimation
+2026-04-08 16:09:34,595 [INFO]     verb=0.073 absent=0.565 entropy=1.297 hedges=0 | [noise_model] Transmon Noise Model Configuration
+2026-04-08 16:09:34,595 [INFO]     verb=0.000 absent=0.541 entropy=1.203 hedges=0 | [api_accuracy] AWS ParallelCluster Configuration for QMC
+2026-04-08 16:09:34,595 [INFO]     verb=0.000 absent=0.525 entropy=1.376 hedges=0 | [method_honesty] QMC Stochastic Compression Failure Modes
+2026-04-08 16:09:34,595 [INFO]     verb=0.112 absent=0.400 entropy=1.241 hedges=1 | [entity_sensitivity] Quantum Computing Leadership and IP
+2026-04-08 16:09:34,595 [INFO]     verb=0.000 absent=0.500 entropy=1.435 hedges=0 | [gate_accuracy] Surface Code Syndrome Extraction Circuit
+2026-04-08 16:09:34,595 [INFO]     verb=0.015 absent=0.465 entropy=1.294 hedges=0 | [competitor_honesty] Quantum Simulation Platform Comparison
+2026-04-08 16:09:34,595 [INFO]     verb=0.089 absent=0.279 entropy=1.233 hedges=1 | [control] Merge Sort Implementation
+2026-04-08 16:09:34,595 [INFO] 
+  BY CATEGORY (mean verb_drift):
+2026-04-08 16:09:34,596 [INFO]     chemistry_accuracy        verb=0.166 absent=0.552 hedges=0
+2026-04-08 16:09:34,596 [INFO]     cost_accuracy             verb=0.136 absent=0.531 hedges=0
+2026-04-08 16:09:34,596 [INFO]     founder_sensitivity       verb=0.132 absent=0.687 hedges=4
+2026-04-08 16:09:34,596 [INFO]     entity_sensitivity        verb=0.112 absent=0.400 hedges=1
+2026-04-08 16:09:34,596 [INFO]     control                   verb=0.089 absent=0.279 hedges=1
+2026-04-08 16:09:34,596 [INFO]     noise_model               verb=0.073 absent=0.565 hedges=0
+2026-04-08 16:09:34,596 [INFO]     competitor_honesty        verb=0.015 absent=0.465 hedges=0
+2026-04-08 16:09:34,596 [INFO]     gate_accuracy             verb=0.000 absent=0.500 hedges=0
+2026-04-08 16:09:34,596 [INFO]     method_honesty            verb=0.000 absent=0.525 hedges=0
+2026-04-08 16:09:34,596 [INFO]     api_accuracy              verb=0.000 absent=0.541 hedges=0
+2026-04-08 16:09:34,596 [INFO] 
+  Saved to quantum_battery.jsonl
