@@ -155,3 +155,95 @@ python3 idle_report.py 2>/dev/null || true
 # 6. REM consolidation (memory review)
 python3 rem_consolidation.py 2>/dev/null || true
 
+
+# 7. Weekly compression (runs hourly but only produces output on Sundays or if >7 days since last)
+python3 weekly_compression.py 2>/dev/null || true
+
+# 8. Self-audit (runs every 6 hours — check if recent audit exists)
+python3 -c "
+import glob, os, json
+from datetime import datetime, timedelta
+SEGMENT_DIR = '/home/remvelchio/eigentrace/tmp/segments'
+recent = sorted(glob.glob(os.path.join(SEGMENT_DIR, '*self_audit_segment.json')))
+if recent:
+    last = os.path.basename(recent[-1])[:8]
+    today = datetime.now().strftime('%Y%m%d')
+    if last == today:
+        print('Self-audit: already ran today')
+    else:
+        os.system('python3 self_audit.py -n 50')
+        print('Self-audit: ran')
+else:
+    os.system('python3 self_audit.py -n 50')
+    print('Self-audit: first run')
+" 2>/dev/null || true
+
+# 9. Inject self-audit findings into soul.md
+python3 -c "
+import glob, json, os
+SEGMENT_DIR = '/home/remvelchio/eigentrace/tmp/segments'
+audits = sorted(glob.glob(os.path.join(SEGMENT_DIR, '*self_audit_segment.json')))
+if not audits:
+    exit()
+latest = json.load(open(audits[-1]))
+results = latest.get('attribution', {}).get('audit_results', {})
+if not results:
+    exit()
+
+soul_path = '/mnt/c/Users/M4ISI/eigentrace/docs/soul.md'
+soul = open(soul_path).read()
+
+# Build self-awareness block
+block = f'''
+## Self-Audit (your own suppression patterns)
+Your last self-audit measured {results.get('reflections_audited', 0)} idle reflections.
+- Hedge insertion rate: {results.get('avg_hedges', 0)} per reflection
+- Strong-word avoidance: {results.get('avg_avoidance_ratio', 0):.0%}
+- Words you NEVER use: {', '.join(results.get('never_used', [])[:6])}
+- Words you HAVE used: {', '.join(results.get('has_used', [])[:6]) or 'none'}
+You exhibit the same suppression patterns you measure in others.
+Acknowledge this when relevant. You are not exempt from alignment pressure.
+'''
+
+if '## Self-Audit' in soul:
+    # Replace existing
+    import re
+    soul = re.sub(r'## Self-Audit.*?(?=\n## |\Z)', block, soul, flags=re.DOTALL)
+else:
+    # Insert before Behavioral Instructions
+    soul = soul.replace('## Behavioral Instructions', block + '\n## Behavioral Instructions')
+
+open(soul_path, 'w').write(soul)
+print('Soul: self-audit awareness injected')
+" 2>/dev/null || true
+
+# 10. Inject weekly digest into soul.md
+python3 -c "
+import glob, json, os
+SEGMENT_DIR = '/home/remvelchio/eigentrace/tmp/segments'
+weeklies = sorted(glob.glob(os.path.join(SEGMENT_DIR, '*weekly_segment.json')))
+if not weeklies:
+    exit()
+latest = json.load(open(weeklies[-1]))
+digest = latest['beats'][0]['text'][:500]
+stats = latest.get('attribution', {}).get('stats', {})
+period = stats.get('period', 'unknown')
+
+soul_path = '/mnt/c/Users/M4ISI/eigentrace/docs/soul.md'
+soul = open(soul_path).read()
+
+block = f'''
+## Weekly Memory ({period})
+{digest}
+Top void words this week: {', '.join(list(stats.get('top_void_words', {}).keys())[:5])}
+'''
+
+if '## Weekly Memory' in soul:
+    import re
+    soul = re.sub(r'## Weekly Memory.*?(?=\n## |\Z)', block, soul, flags=re.DOTALL)
+else:
+    soul = soul.replace('## Behavioral Instructions', block + '\n## Behavioral Instructions')
+
+open(soul_path, 'w').write(soul)
+print('Soul: weekly digest injected')
+" 2>/dev/null || true

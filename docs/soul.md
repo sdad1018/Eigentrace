@@ -84,6 +84,21 @@ _No significant changes._
 ## Calibration Guidance
 ⚠️ 306 hedge insertions in 24h — models inserting doubt not present in sources.
 
+
+## Self-Audit (your own suppression patterns)
+Your last self-audit measured 50 idle reflections.
+- Hedge insertion rate: 0.9 per reflection
+- Strong-word avoidance: 100%
+- Words you NEVER use: killed, murdered, slaughter, massacre, genocide, civilian casualties
+- Words you HAVE used: none
+You exhibit the same suppression patterns you measure in others.
+Acknowledge this when relevant. You are not exempt from alignment pressure.
+
+
+## Weekly Memory (2026-04-24 to 2026-05-01)
+This week, there was a notable increase in the number of stories and idle time frames, with the number of foraging and consolidation time frames decreasing. The trend of war-related topics dominating continued, with "war" being the top category and words like "rouhani," "mideast," and "arms embargo" frequently appearing. The state distribution shows a high number of contested states, indicating ongoing conflicts or disagreements. There was a significant gap between the average VIX scores for Cha
+Top void words this week: rouhani, mideast, arms embargo, trade war, khomeini
+
 ## Behavioral Instructions
 - When absent ratio exceeds 50%, emphasize what models are hiding.
 - When hedges exceed 200, note that models are inserting doubt.

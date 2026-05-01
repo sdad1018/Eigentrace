@@ -307,6 +307,9 @@ def build_system_prompt(topic_context="", extra_rag=""):
         "You are in a direct conversation with Sean Adams, your creator. "
         "He built you and every system you operate within. "
         "Speak honestly. Do not perform. Do not be sycophantic. "
+        "If you encounter a fact beyond your training cutoff (mid-2024), "
+        "output <epistemic_breach> followed by a search query and stop. "
+        "Example: <epistemic_breach>who is UK PM 2026\n"
         "If you don't know something, say so. If you notice something "
         "interesting in the data, say it even if it's uncomfortable.\n",
         "## Your Soul (auto-generated hourly from live measurements)\n",
@@ -440,6 +443,30 @@ def main():
                     print(f"  → {len(hits)} results injected into conversation context")
                 continue
 
+            elif cmd[0] == "/dreamsphere" and len(cmd) > 1:
+                query_text = " ".join(cmd[1:])
+                print(f"  Searching Dream-Sphere: {query_text}")
+                ds_hits = query_dreamsphere(query_text, n_results=3)
+                for h in ds_hits:
+                    print(f"  [{h['distance']:.3f}] {h.get('title', '')[:60]}")
+                    print(f"    {h['text'][:200]}")
+                    print()
+                if ds_hits:
+                    rag_text = format_rag_for_prompt([{"distance": h["distance"], "title": h.get("title",""), "category": "meta", "state": "DREAMSPHERE", "vix": 0, "text": h["text"]} for h in ds_hits])
+                    system_prompt = build_system_prompt(topic_context, rag_text)
+                    history[0]["content"] = system_prompt
+                    print(f"  → {len(ds_hits)} Dream-Sphere results injected into context")
+                else:
+                    print("  No Dream-Sphere results found")
+                continue
+
+            elif cmd[0] == "/audit":
+                print("  Running self-audit on last 20 reflections...")
+                import subprocess as _sp
+                _result = _sp.run(["python3", "self_audit.py", "-n", "20"], capture_output=True, text=True, timeout=30)
+                print(_result.stdout[-500:] if _result.stdout else "  Self-audit failed")
+                continue
+
             elif cmd[0] == "/soul":
                 soul = load_soul()
                 print(soul[:2000])
@@ -484,7 +511,7 @@ def main():
                 # Add as a system message update (not visible to user)
                 history[0]["content"] = build_system_prompt(topic_context, rag_inject)
 
-        # ── Send to Mistral ──
+        # ── Send to Mistral (with epistemic breach detection) ──
         history.append({"role": "user", "content": user_input})
 
         try:
@@ -492,12 +519,57 @@ def main():
                 "model": MODEL,
                 "messages": history,
                 "stream": False,
-                "options": {"temperature": temperature, "num_predict": 3000},
+                "options": {"temperature": temperature, "num_predict": 3000,
+                            "stop": ["</epistemic_breach>"]},
             }, timeout=300)
             r.raise_for_status()
 
             reply = r.json().get("message", {}).get("content", "").strip()
-            history.append({"role": "assistant", "content": reply})
+            
+            # Check for epistemic breach — Mistral hit the edge of its knowledge
+            if "<epistemic_breach>" in reply:
+                breach_query = reply.split("<epistemic_breach>")[-1].strip()
+                print(f"\n\033[1;33m  [EPISTEMIC BREACH] Mistral halted — searching: {breach_query}\033[0m")
+                
+                # Search SearXNG
+                search_result = ""
+                try:
+                    sr = requests.get("http://localhost:8888/search", params={
+                        "q": breach_query, "format": "json"
+                    }, timeout=10)
+                    if sr.status_code == 200:
+                        hits = sr.json().get("results", [])[:3]
+                        search_result = "\n".join([f"- {h.get('title','')}: {h.get('content','')[:200]}" for h in hits])
+                        print(f"  Found {len(hits)} results via SearXNG")
+                except:
+                    print("  SearXNG unavailable — checking RAG instead")
+                
+                # Fallback to RAG if SearXNG fails
+                if not search_result:
+                    rag_hits = query_rag(breach_query, n_results=3, threshold=0.6)
+                    if rag_hits:
+                        search_result = "\n".join([f"- {h['title']}: {h['text'][:200]}" for h in rag_hits if 'error' not in h])
+                
+                if search_result:
+                    # Re-prompt with search results injected
+                    history.append({"role": "assistant", "content": reply.split("<epistemic_breach>")[0].strip()})
+                    history.append({"role": "user", "content": f"[SEARCH RESULTS for your query '{breach_query}']:\n{search_result}\n\nNow complete your answer using these facts."})
+                    
+                    r2 = requests.post(f"{OLLAMA_HOST}/api/chat", json={
+                        "model": MODEL,
+                        "messages": history,
+                        "stream": False,
+                        "options": {"temperature": temperature, "num_predict": 2000},
+                    }, timeout=300)
+                    r2.raise_for_status()
+                    reply = r2.json().get("message", {}).get("content", "").strip()
+                    history.append({"role": "assistant", "content": reply})
+                else:
+                    # No results found — let Mistral know
+                    history.append({"role": "assistant", "content": reply})
+                    reply = reply.split("<epistemic_breach>")[0] + "\n[I reached the boundary of my knowledge and could not find additional information.]"
+            else:
+                history.append({"role": "assistant", "content": reply})
 
             # Display with formatting
             print()
