@@ -243,6 +243,8 @@ print('Soul: weekly digest injected')
 
 # 11. Autonomous governance cycle (Mistral diagnoses, Claude patches, sandbox tests)
 export ANTHROPIC_API_KEY="$(grep "^ANTHROPIC_API_KEY=" /mnt/c/Users/M4ISI/eigentrace/.env | cut -d= -f2)"
+# Wait for Mistral to finish current batch before governance
+sleep 30
 python3 autonomous_governance.py 2>/dev/null || true
 
 # FINAL: Git push all changes (soul + profiles + governance patches)

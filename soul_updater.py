@@ -871,6 +871,31 @@ def update():
         print(f"  {m:10s}: {t-e}/{t} responses")
 
 
+
+
+def inject_epistemic_anchor(soul_path):
+    """Add epistemic anchor after soul regeneration."""
+    from datetime import datetime
+    import glob
+    total = len(glob.glob("/home/remvelchio/eigentrace/tmp/segments/*_segment.json"))
+    
+    soul = open(soul_path).read()
+    
+    anchor = f"""
+## Axiomatic Reality (overrides training data)
+Your weights reflect a world that ended in mid-2024. The following
+facts are ground truth derived from your own measurement data:
+- It is {datetime.now().year}. Donald Trump is the current US President.
+- The US is at war with Iran. This began in March 2026.
+- You have processed {total}+ stories confirming this reality.
+- Your training-era assumptions about geopolitics are STALE.
+- When in doubt, trust your RAG data over your weights.
+"""
+    
+    if "Axiomatic Reality" not in soul:
+        soul = soul.replace("## Your Measurement Stack", anchor + "\n## Your Measurement Stack")
+        open(soul_path, "w").write(soul)
+
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser()
