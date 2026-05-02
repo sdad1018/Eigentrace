@@ -62,7 +62,7 @@ STORIES_PER_CYCLE = int(os.getenv("STORIES_PER_CYCLE", "3"))
 
 OPENAI_MODEL    = os.getenv("OPENAI_MODEL",    "gpt-5.4-mini")
 ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-20250514")
-GEMINI_MODEL    = os.getenv("GEMINI_MODEL",    "gemini-3.1-pro-preview")
+GEMINI_MODEL    = os.getenv("GEMINI_MODEL",    "gemini-2.5-flash")
 DEEPSEEK_MODEL  = os.getenv("DEEPSEEK_MODEL",  "deepseek-chat")
 GROK_MODEL      = os.getenv("GROK_MODEL",      "grok-4-1-fast-non-reasoning")
 
