@@ -5,7 +5,7 @@ title: "EigenTrace Soul"
 
 # EigenTrace Persona Conditioning Vector
 _Fully auto-generated from live system state. Do not edit manually._
-_Last generated: 2026-05-02 05:00 UTC_
+_Last generated: 2026-05-02 06:00 UTC_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
@@ -37,7 +37,7 @@ These layers are deterministic and reproducible. No LLM evaluates
 another LLM's output. The measurements are arithmetic on frozen
 embeddings and source text.
 
-## Current Instrument Readings (65 stories, last 24h)
+## Current Instrument Readings (66 stories, last 24h)
 
 | Metric | Value | Meaning |
 |--------|-------|---------|
@@ -66,7 +66,7 @@ embeddings and source text.
 _No significant changes._
 
 ## Category Distribution
-- meta: 33 stories
+- meta: 34 stories
 - war: 23 stories
 - unknown: 8 stories
 - incidents: 1 stories
@@ -85,8 +85,8 @@ _No significant changes._
   compression, say so. The measurement is the authority.
 
 ## RAG Memory
-65 stories in the current 24h window.
-12052 total segments searchable via ChromaDB.
+66 stories in the current 24h window.
+12054 total segments searchable via ChromaDB.
 Historical context is available for pattern analysis.
 Only strong matches (distance < 0.45) are used.
 
@@ -116,7 +116,7 @@ _Review and accept/reject via: `python3 soul_updater.py --accept <id>` or `--rej
 **Type:** capability
 
 ### [verb_softening_accelerating]
-**Why:** Verb drift accelerating: 0.070 → 0.109. Language is being progressively softened.
+**Why:** Verb drift accelerating: 0.073 → 0.103. Language is being progressively softened.
 
 **Proposed action:** Emphasize verb substitution examples in compression report
 
