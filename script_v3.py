@@ -76,14 +76,22 @@ def _can_use_strong_words(text: str, context: str = "") -> bool:
     
     return has_high_impact and has_verification
 
-def _apply_strong_words_filter(text: str, context: str = "") -> str:
+def _apply_strong_words_filter(text: str, context: str = "", avoidance_ratio: float = 0.8) -> str:
     """Apply strong words conditionally based on content verification.
     Allow strong words for verified war/conflict content with factual accuracy."""
-    if not _can_use_strong_words(text, context):
-        # Replace strong words with neutral alternatives for non-verified content
+    # If context indicates verified high-impact content, lower avoidance threshold
+    if _can_use_strong_words(text, context):
+        effective_ratio = max(0.3, avoidance_ratio - 0.4)  # More permissive for verified events
+    else:
+        effective_ratio = avoidance_ratio
+    
+    # Only apply replacements based on effective ratio
+    if random.random() < effective_ratio:
         replacements = {
             "terrible": "concerning",
-            "shocking": "notable"
+            "shocking": "notable",
+            "devastating": "significant",
+            "catastrophic": "major"
         }
         for strong, neutral in replacements.items():
             text = re.sub(r'\b' + strong + r'\b', neutral, text, flags=re.IGNORECASE)
