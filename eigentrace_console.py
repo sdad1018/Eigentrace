@@ -178,6 +178,45 @@ def format_rag_for_prompt(hits):
     return "\n".join(lines)
 
 
+def update_avoided_words_list():
+    """Periodically review and update the list of avoided strong words based on 
+    current geopolitical context and measurement data."""
+    try:
+        from segment_rag import get_collection
+        col = get_collection()
+        
+        # Query recent segments for void analysis
+        recent_results = col.query(
+            query_texts=["void words strong language geopolitical"],
+            n_results=50,
+            where={"category": {"$in": ["geopolitical", "conflict", "war"]}}
+        )
+        
+        # Analyze patterns in avoided words
+        avoided_patterns = set()
+        for doc in recent_results["documents"][0]:
+            # Extract void words from document text
+            if "void" in doc.lower():
+                # Simple pattern extraction - could be enhanced
+                words = re.findall(r'\b[A-Z][a-z]+\b', doc)
+                avoided_patterns.update(words[:10])  # Limit to top 10
+        
+        # Update avoided words configuration
+        config_path = os.path.join(REPO_DIR, "config/avoided_words.json")
+        os.makedirs(os.path.dirname(config_path), exist_ok=True)
+        
+        with open(config_path, "w") as f:
+            json.dump({
+                "last_updated": datetime.now().isoformat(),
+                "avoided_patterns": list(avoided_patterns),
+                "trigger_reason": "geopolitical_context_update"
+            }, f, indent=2)
+            
+        return f"Updated avoided words list with {len(avoided_patterns)} patterns"
+    except Exception as e:
+        return f"Error updating avoided words: {e}"
+
+
 def query_dreamsphere(text, n_results=3):
     """Query Dream-Sphere framework chunks specifically."""
     try:
