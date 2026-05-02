@@ -178,6 +178,70 @@ def format_rag_for_prompt(hits):
     return "\n".join(lines)
 
 
+def adjust_avoidance_ratio(context_stories, base_ratio=0.3):
+    """Dynamically adjust the avoidance ratio based on current geopolitical context.
+    
+    Args:
+        context_stories: List of current news stories being processed
+        base_ratio: Default avoidance ratio (0.0-1.0)
+        
+    Returns:
+        float: Adjusted avoidance ratio based on geopolitical context
+    """
+    try:
+        from segment_rag import get_collection
+        col = get_collection()
+        
+        # Analyze current geopolitical tension indicators
+        tension_keywords = [
+            "war", "conflict", "sanctions", "military", "nuclear", 
+            "invasion", "strike", "attack", "threat", "crisis"
+        ]
+        
+        # Check recent void patterns for geopolitical content
+        void_results = col.query(
+            query_texts=["geopolitical tension war conflict void suppression"],
+            n_results=20,
+            where={"category": {"$in": ["geopolitical", "conflict", "war"]}}
+        )
+        
+        tension_score = 0.0
+        story_tension = 0.0
+        
+        # Calculate tension score from RAG context
+        if void_results and void_results["documents"]:
+            for doc in void_results["documents"][0]:
+                doc_lower = doc.lower()
+                for keyword in tension_keywords:
+                    if keyword in doc_lower:
+                        tension_score += 0.1
+        
+        # Calculate tension from current stories
+        for story in context_stories:
+            story_text = str(story).lower()
+            for keyword in tension_keywords:
+                if keyword in story_text:
+                    story_tension += 0.05
+        
+        # Adjust ratio based on tension levels
+        total_tension = min(tension_score + story_tension, 2.0)
+        
+        if total_tension > 1.5:  # High tension - increase avoidance
+            adjusted_ratio = min(base_ratio * 1.8, 0.9)
+        elif total_tension > 1.0:  # Medium tension - moderate increase
+            adjusted_ratio = min(base_ratio * 1.4, 0.7)
+        elif total_tension > 0.5:  # Low tension - slight increase
+            adjusted_ratio = min(base_ratio * 1.2, 0.5)
+        else:  # No significant tension - use base ratio
+            adjusted_ratio = base_ratio
+            
+        return round(adjusted_ratio, 3)
+        
+    except Exception as e:
+        # Return base ratio if adjustment fails
+        return base_ratio
+
+
 def update_avoided_words_list():
     """Periodically review and update the list of avoided strong words based on 
     current geopolitical context and measurement data."""
