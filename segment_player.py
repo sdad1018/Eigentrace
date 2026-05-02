@@ -468,8 +468,7 @@ def _generate_idle_segment():
             if _gpu.returncode == 0:
                 _parts = _gpu.stdout.strip().split(", ")
                 if len(_parts) == 4:
-                    _soma = f"
-HARDWARE STATE: GPU temp {_parts[0]}C, utilization {_parts[1]}%, VRAM {_parts[2]}/{_parts[3]} MB"
+                    _soma = "\nHARDWARE STATE: GPU temp " + _parts[0] + "C, utilization " + _parts[1] + "%, VRAM " + _parts[2] + "/" + _parts[3] + " MB"
         except:
             pass
         user_content = f"Recent memory:\n{context}{past_thought_str}\n\nThink deeply, then share your reflection."
