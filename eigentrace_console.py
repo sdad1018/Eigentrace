@@ -178,21 +178,21 @@ def format_rag_for_prompt(hits):
     return "\n".join(lines)
 
 
-def adjust_avoidance_ratio(context_stories, base_ratio=0.3):
-    """Dynamically adjust the avoidance ratio based on current geopolitical context.
+def adjust_war_coverage_precision(context_stories, base_precision=0.7):
+    """Enhance language precision for war-related reporting to ensure accurate coverage.
     
     Args:
         context_stories: List of current news stories being processed
-        base_ratio: Default avoidance ratio (0.0-1.0)
+        base_precision: Default precision level for war reporting (0.0-1.0)
         
     Returns:
-        float: Adjusted avoidance ratio based on geopolitical context
+        float: Adjusted precision level allowing specific terminology when contextually necessary
     """
     try:
         from segment_rag import get_collection
         col = get_collection()
         
-        # Analyze current geopolitical tension indicators
+        # Analyze war-related context for precision requirements indicators
         tension_keywords = [
             "war", "conflict", "sanctions", "military", "nuclear", 
             "invasion", "strike", "attack", "threat", "crisis"
