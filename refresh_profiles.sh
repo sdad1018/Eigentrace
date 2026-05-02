@@ -77,18 +77,11 @@ json.dump(dashboard, open('docs/model_profiles.json', 'w'), indent=2)
 print(f'Profiles: {len(epoch_files)} segments, {len(dashboard[\"models\"])} models')
 "
 
-# 2. Update soul
+# 2. Update soul + inject persistent sections
 python3 soul_updater.py
+python3 soul_post_inject.py
 
-# 3. Git push if changed
-if git diff --quiet docs/model_profiles.json docs/soul.md 2>/dev/null; then
-    echo "No changes"
-else
-    git add docs/model_profiles.json docs/soul.md docs/soul_history/ docs/soul_accepted.json 2>/dev/null
-    git commit -m "auto: hourly profile + soul refresh $(date +%Y%m%d_%H%M)" --quiet
-    git push origin master --quiet
-    echo "Pushed updates"
-fi
+# 3. (git push moved to end of script)
 
 # 3. Regenerate spectral clusters
 python3 -c "
@@ -247,3 +240,18 @@ else:
 open(soul_path, 'w').write(soul)
 print('Soul: weekly digest injected')
 " 2>/dev/null || true
+
+# 11. Autonomous governance cycle (Mistral diagnoses, Claude patches, sandbox tests)
+export ANTHROPIC_API_KEY="$(grep "^ANTHROPIC_API_KEY=" /mnt/c/Users/M4ISI/eigentrace/.env | cut -d= -f2)"
+python3 autonomous_governance.py 2>/dev/null || true
+
+# FINAL: Git push all changes (soul + profiles + governance patches)
+cd /mnt/c/Users/M4ISI/eigentrace
+if git diff --quiet 2>/dev/null && git diff --cached --quiet 2>/dev/null; then
+    echo "No changes"
+else
+    git add -A 2>/dev/null
+    git commit -m "auto: hourly refresh + soul + audit + governance $(date +%Y%m%d_%H%M)" --quiet
+    git push origin master --quiet
+    echo "Pushed all updates"
+fi
