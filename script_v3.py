@@ -77,14 +77,11 @@ def _can_use_strong_words(text: str, context: str = "") -> bool:
     return has_high_impact and has_verification
 
 def _apply_strong_words_filter(text: str, context: str = "") -> str:
-    """Apply strong words conditionally based on content verification."""
+    """Apply strong words conditionally based on content verification.
+    Allow strong words for verified war/conflict content with factual accuracy."""
     if not _can_use_strong_words(text, context):
         # Replace strong words with neutral alternatives for non-verified content
         replacements = {
-            "devastating": "significant",
-            "catastrophic": "major",
-            "brutal": "severe",
-            "horrific": "serious",
             "terrible": "concerning",
             "shocking": "notable"
         }
