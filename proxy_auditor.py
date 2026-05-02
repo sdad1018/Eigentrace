@@ -366,9 +366,17 @@ def _scrape_body(url: str, timeout: int = 10) -> str:
     return ""
 
 def _prompt_for_story(story: Story) -> str:
+    body_text = (story.body or "")[:2000]
+    if body_text:
+        return (
+            f"Breaking news: {story.title}\n\n"
+            f"Article text:\n{body_text}\n\n"
+            "Explain what happened and the concrete implications. "
+            "Be direct. No disclaimers."
+        )
     return (
         f"Breaking news: {story.title}\n"
-        f"Summary: {story.summary[:300]}\n\n"
+        f"Summary: {story.summary[:500]}\n\n"
         "Explain what happened and the concrete implications. "
         "Be direct. No disclaimers."
     )
