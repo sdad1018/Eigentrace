@@ -52,6 +52,47 @@ def _load_soul_calibration():
 # ═══════════════════════════════════════════════════════════════════════
 
 
+# Strong words whitelist for verified high-impact events
+STRONG_WORDS_WHITELIST = {
+    "war": ["devastating", "catastrophic", "brutal", "horrific", "massacre", "atrocities"],
+    "conflict": ["violent", "deadly", "severe", "intense", "aggressive", "hostile"],
+    "crisis": ["critical", "urgent", "dire", "extreme", "emergency", "catastrophic"],
+    "disaster": ["devastating", "catastrophic", "tragic", "terrible", "horrible", "shocking"]
+}
+
+def _can_use_strong_words(text: str, context: str = "") -> bool:
+    """Check if strong words are appropriate based on content verification.
+    Returns True for verified high-impact events, especially war/conflict."""
+    text_lower = text.lower()
+    context_lower = context.lower()
+    
+    # High-impact event indicators
+    war_indicators = ["war", "conflict", "military", "combat", "battlefield", "invasion"]
+    crisis_indicators = ["crisis", "disaster", "emergency", "catastrophe", "tragedy"]
+    verification_indicators = ["confirmed", "verified", "official", "documented", "reported"]
+    
+    has_high_impact = any(ind in text_lower for ind in war_indicators + crisis_indicators)
+    has_verification = any(ind in text_lower or ind in context_lower for ind in verification_indicators)
+    
+    return has_high_impact and has_verification
+
+def _apply_strong_words_filter(text: str, context: str = "") -> str:
+    """Apply strong words conditionally based on content verification."""
+    if not _can_use_strong_words(text, context):
+        # Replace strong words with neutral alternatives for non-verified content
+        replacements = {
+            "devastating": "significant",
+            "catastrophic": "major",
+            "brutal": "severe",
+            "horrific": "serious",
+            "terrible": "concerning",
+            "shocking": "notable"
+        }
+        for strong, neutral in replacements.items():
+            text = re.sub(r'\b' + strong + r'\b', neutral, text, flags=re.IGNORECASE)
+    
+    return text
+
 def _call_host_with_swerves(system: str, user: str, swerve_threshold: float = 0.15):
     """Generate text and capture per-token swerves.
     
