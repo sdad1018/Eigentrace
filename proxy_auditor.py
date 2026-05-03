@@ -450,7 +450,8 @@ def call_gemini(prompt: str) -> tuple:
             json={"contents": [{"parts": [{"text": prompt}]}]},
             timeout=600,
         )
-        r.raise_for_status()
+        if r.status_code != 200:
+            return "", f"{r.status_code}: {r.text[:200]}"
         cands = r.json().get("candidates", [])
         txt   = "".join(p.get("text", "")
                         for p in cands[0].get("content", {}).get("parts", [])
