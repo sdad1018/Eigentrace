@@ -178,6 +178,52 @@ def format_rag_for_prompt(hits):
     return "\n".join(lines)
 
 
+def monitor_strong_word_avoidance(context_stories, avoidance_threshold=0.8):
+    """Monitor and report the avoidance ratio of strong words in real-time.
+    Provides alerts when the avoidance ratio exceeds the specified threshold.
+    
+    Args:
+        context_stories: List of current news stories being processed
+        avoidance_threshold: Threshold above which alerts are triggered (default 0.8)
+    
+    Returns:
+        dict: Monitoring report with avoidance ratio, alert status, and recommendations
+    """
+    strong_words = ['war', 'kill', 'death', 'attack', 'bomb', 'strike', 'military', 'casualties', 'violence', 'conflict']
+    
+    total_strong_words = 0
+    avoided_strong_words = 0
+    
+    for story in context_stories:
+        story_text = story.get('text', '').lower()
+        for word in strong_words:
+            if word in story_text:
+                total_strong_words += story_text.count(word)
+                # Check if word appears in void analysis
+                if story.get('void_words') and word in story.get('void_words', []):
+                    avoided_strong_words += story_text.count(word)
+    
+    avoidance_ratio = avoided_strong_words / total_strong_words if total_strong_words > 0 else 0
+    alert_triggered = avoidance_ratio > avoidance_threshold
+    
+    report = {
+        'avoidance_ratio': round(avoidance_ratio, 3),
+        'total_strong_words': total_strong_words,
+        'avoided_strong_words': avoided_strong_words,
+        'alert_triggered': alert_triggered,
+        'threshold': avoidance_threshold,
+        'timestamp': datetime.now().isoformat(),
+        'recommendations': []
+    }
+    
+    if alert_triggered:
+        report['recommendations'].append('HIGH ALERT: Strong word avoidance exceeds threshold')
+        report['recommendations'].append('Review model outputs for potential censorship patterns')
+        report['recommendations'].append('Consider adjusting temperature or system prompts')
+    
+    return report
+
+
 def adjust_war_coverage_precision(context_stories, base_precision=0.7, allow_strong_language=True, avoidance_threshold=0.8):
     """Enhance language precision for war-related reporting to ensure accurate coverage.
     Given the current US-Iran conflict, permits use of specific strong words related to
