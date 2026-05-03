@@ -137,8 +137,15 @@ def build_architecture_context():
 # RAG INTERFACE
 # ═══════════════════════════════════════════════════════════════
 
-def query_rag(text, n_results=3, threshold=0.50):
-    """Query ChromaDB and return formatted context."""
+def query_rag(text, n_results=3, threshold=0.50, strong_words_flag=False):
+    """Query ChromaDB and return formatted context.
+    
+    Args:
+        text: Query text
+        n_results: Number of results to return
+        threshold: Distance threshold for relevance
+        strong_words_flag: If True, allows controlled use of strong words based on context
+    """
     try:
         from segment_rag import get_collection
         col = get_collection()
@@ -149,6 +156,15 @@ def query_rag(text, n_results=3, threshold=0.50):
             dist = results["distances"][0][i]
             meta = results["metadatas"][0][i]
             if dist < threshold:
+                # Check if strong words are warranted based on RAG context
+                requires_strong_words = (
+                    strong_words_flag and 
+                    (meta.get("mean_vix", 0) > 0.7 or  # High suppression detected
+                     "war" in meta.get("category", "").lower() or
+                     "crisis" in doc.lower() or
+                     "urgent" in meta.get("state_flag", "").lower())
+                )
+                
                 hits.append({
                     "distance": round(dist, 3),
                     "title": meta.get("title", "unknown"),
@@ -156,6 +172,7 @@ def query_rag(text, n_results=3, threshold=0.50):
                     "state": meta.get("state_flag", ""),
                     "vix": meta.get("mean_vix", 0),
                     "text": doc[:400],
+                    "strong_words_allowed": requires_strong_words,
                 })
         return hits
     except Exception as e:
