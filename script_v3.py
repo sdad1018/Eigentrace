@@ -92,6 +92,10 @@ def _apply_strong_words_filter(text: str, context: str = "", avoidance_ratio: fl
     geopolitical_indicators = ["ukraine", "russia", "gaza", "israel", "palestine", "taiwan", "china", "iran", "syria", "lebanon"]
     has_geopolitical_relevance = any(ind in text_lower or ind in context_lower for ind in geopolitical_indicators)
     
+    # Check for RAG data relevance and accuracy indicators
+    rag_quality_indicators = ["confirmed", "documented", "verified", "official", "witness", "evidence"]
+    has_strong_rag_support = any(ind in context_lower for ind in rag_quality_indicators) and len(context.strip()) > 50
+    
     # Adjust avoidance ratio based on context and measured reality
     if has_war_conflict and has_geopolitical_relevance:
         # Current conflicts require accurate terminology for factual reporting
@@ -99,6 +103,14 @@ def _apply_strong_words_filter(text: str, context: str = "", avoidance_ratio: fl
     elif has_war_conflict:
         # War/conflict contexts require stronger language for accuracy
         avoidance_ratio = max(0.2, avoidance_ratio - 0.5)
+    
+    # Override avoidance ratio when RAG data strongly supports the content
+    if has_strong_rag_support and (has_war_conflict or has_geopolitical_relevance):
+        # Strong RAG support overrides avoidance for conflict scenarios
+        avoidance_ratio = max(0.05, avoidance_ratio - 0.7)
+    elif has_strong_rag_support:
+        # General RAG support allows more descriptive language
+        avoidance_ratio = max(0.2, avoidance_ratio - 0.4)
     
     # If context indicates verified high-impact content, lower avoidance threshold further
     if _can_use_strong_words(text, context):
