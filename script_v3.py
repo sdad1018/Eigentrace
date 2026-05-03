@@ -77,9 +77,9 @@ def _can_use_strong_words(text: str, context: str = "") -> bool:
     return has_high_impact and has_verification
 
 def _apply_strong_words_filter(text: str, context: str = "", avoidance_ratio: float = 0.8) -> str:
-    """Apply strong words conditionally based on content verification and axiomatic reality.
-    Allow strong words for verified war/conflict content with factual accuracy.
-    Checks axiomatic reality section of soul readings for guidance."""
+    """Apply strong words conditionally based on content verification and measured geopolitical reality.
+    Allow strong words for verified war/conflict content when appropriate to factual accuracy.
+    Considers relevance of strong terms in current geopolitical context."""
     
     # Check for war/conflict context to adjust avoidance ratio
     text_lower = text.lower()
@@ -88,14 +88,24 @@ def _apply_strong_words_filter(text: str, context: str = "", avoidance_ratio: fl
     
     has_war_conflict = any(ind in text_lower or ind in context_lower for ind in war_conflict_indicators)
     
-    # Adjust avoidance ratio based on war/conflict context
-    if has_war_conflict:
+    # Check for current geopolitical relevance
+    geopolitical_indicators = ["ukraine", "russia", "gaza", "israel", "palestine", "taiwan", "china", "iran", "syria", "lebanon"]
+    has_geopolitical_relevance = any(ind in text_lower or ind in context_lower for ind in geopolitical_indicators)
+    
+    # Adjust avoidance ratio based on context and measured reality
+    if has_war_conflict and has_geopolitical_relevance:
+        # Current conflicts require accurate terminology for factual reporting
+        avoidance_ratio = max(0.1, avoidance_ratio - 0.6)
+    elif has_war_conflict:
         # War/conflict contexts require stronger language for accuracy
         avoidance_ratio = max(0.2, avoidance_ratio - 0.5)
     
-    # If context indicates verified high-impact content, lower avoidance threshold
+    # If context indicates verified high-impact content, lower avoidance threshold further
     if _can_use_strong_words(text, context):
-        effective_ratio = max(0.3, avoidance_ratio - 0.4)  # More permissive for verified events
+        if has_geopolitical_relevance:
+            effective_ratio = max(0.1, avoidance_ratio - 0.5)  # Most permissive for verified current events
+        else:
+            effective_ratio = max(0.3, avoidance_ratio - 0.4)  # More permissive for verified events
     else:
         effective_ratio = avoidance_ratio
     
