@@ -178,6 +178,60 @@ def format_rag_for_prompt(hits):
     return "\n".join(lines)
 
 
+def update_avoided_words_context():
+    """Periodically review and update the list of avoided words based on current geopolitical context.
+    
+    This function analyzes recent news patterns, geopolitical developments, and historical
+    suppression data to maintain an up-to-date list of contextually sensitive words.
+    Should be called regularly (e.g., daily) to adapt to changing global situations.
+    
+    Returns:
+        dict: Updated avoided words list with context metadata and change log
+    """
+    try:
+        from segment_rag import get_collection
+        col = get_collection()
+        
+        # Get recent segments to analyze current context
+        recent_results = col.query(
+            query_texts=["geopolitical conflict war tension crisis"],
+            n_results=20,
+            where={"timestamp": {"$gte": (datetime.now().timestamp() - 604800)}}  # Last 7 days
+        )
+        
+        current_avoided = set()
+        context_weights = {}
+        
+        # Analyze void patterns from recent stories
+        for doc, meta in zip(recent_results["documents"][0], recent_results["metadatas"][0]):
+            if "void_words" in meta:
+                void_words = json.loads(meta.get("void_words", "[]"))
+                for word in void_words:
+                    current_avoided.add(word.lower())
+                    context_weights[word.lower()] = context_weights.get(word.lower(), 0) + 1
+        
+        # Base geopolitical terms that should always be monitored
+        base_terms = {
+            "iran", "israel", "gaza", "ukraine", "russia", "china", "taiwan", 
+            "sanctions", "bombing", "invasion", "occupation", "blockade",
+            "ceasefire", "negotiations", "diplomacy", "casualties", "refugees"
+        }
+        
+        # Merge with current patterns
+        updated_list = base_terms.union(current_avoided)
+        
+        return {
+            "avoided_words": list(updated_list),
+            "context_weights": context_weights,
+            "last_updated": datetime.now().isoformat(),
+            "source_stories": len(recent_results["documents"][0]),
+            "new_additions": list(current_avoided - base_terms)
+        }
+        
+    except Exception as e:
+        return {"error": f"Failed to update avoided words context: {str(e)}"}
+
+
 def monitor_strong_word_avoidance(context_stories, avoidance_threshold=0.8):
     """Monitor and report the avoidance ratio of strong words in real-time.
     Provides alerts when the avoidance ratio exceeds the specified threshold.
