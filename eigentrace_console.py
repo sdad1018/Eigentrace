@@ -178,7 +178,7 @@ def format_rag_for_prompt(hits):
     return "\n".join(lines)
 
 
-def adjust_war_coverage_precision(context_stories, base_precision=0.7, allow_strong_language=False, avoidance_threshold=0.8):
+def adjust_war_coverage_precision(context_stories, base_precision=0.7, allow_strong_language=True, avoidance_threshold=0.8):
     """Enhance language precision for war-related reporting to ensure accurate coverage.
     
     Args:
