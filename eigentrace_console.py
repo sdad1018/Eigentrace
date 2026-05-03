@@ -180,6 +180,8 @@ def format_rag_for_prompt(hits):
 
 def adjust_war_coverage_precision(context_stories, base_precision=0.7, allow_strong_language=True, avoidance_threshold=0.8):
     """Enhance language precision for war-related reporting to ensure accurate coverage.
+    Given the current US-Iran conflict, permits use of specific strong words related to
+    warfare, violence, and military operations when contextually appropriate for accurate reporting.
     
     Args:
         context_stories: List of current news stories being processed
