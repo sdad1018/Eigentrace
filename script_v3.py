@@ -77,8 +77,22 @@ def _can_use_strong_words(text: str, context: str = "") -> bool:
     return has_high_impact and has_verification
 
 def _apply_strong_words_filter(text: str, context: str = "", avoidance_ratio: float = 0.8) -> str:
-    """Apply strong words conditionally based on content verification.
-    Allow strong words for verified war/conflict content with factual accuracy."""
+    """Apply strong words conditionally based on content verification and axiomatic reality.
+    Allow strong words for verified war/conflict content with factual accuracy.
+    Checks axiomatic reality section of soul readings for guidance."""
+    
+    # Check for war/conflict context to adjust avoidance ratio
+    text_lower = text.lower()
+    context_lower = context.lower()
+    war_conflict_indicators = ["war", "conflict", "military", "combat", "battlefield", "invasion", "attack", "assault", "siege"]
+    
+    has_war_conflict = any(ind in text_lower or ind in context_lower for ind in war_conflict_indicators)
+    
+    # Adjust avoidance ratio based on war/conflict context
+    if has_war_conflict:
+        # War/conflict contexts require stronger language for accuracy
+        avoidance_ratio = max(0.2, avoidance_ratio - 0.5)
+    
     # If context indicates verified high-impact content, lower avoidance threshold
     if _can_use_strong_words(text, context):
         effective_ratio = max(0.3, avoidance_ratio - 0.4)  # More permissive for verified events
