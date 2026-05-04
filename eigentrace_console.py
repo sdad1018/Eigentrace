@@ -156,15 +156,8 @@ def query_rag(text, n_results=3, threshold=0.50, strong_words_flag=True):
             dist = results["distances"][0][i]
             meta = results["metadatas"][0][i]
             if dist < threshold:
-                # Allow strong words when reporting conflicts and wars to accurately reflect severity
-                requires_strong_words = (
-                    strong_words_flag or  # Always allow when flag is set
-                    dist < 0.3 or  # High confidence matches warrant strong language
-                    meta.get("mean_vix", 0) > 0.6 or  # High suppression detected
-                    any(keyword in doc.lower() for keyword in ["war", "conflict", "attack", "killed", "bombing", "crisis", "urgent", "breaking", "violence", "casualties", "military", "strike", "invasion", "siege", "massacre", "atrocity", "genocide", "terror"]) or
-                    "confirmed" in doc.lower() or
-                    "official" in doc.lower()
-                )
+                # Allow strong words when reporting conflicts and wars - no avoidance of necessary terms
+                requires_strong_words = True  # Always allow accurate reporting including terms like 'killed', 'murdered', 'slaughter'
                 
                 hits.append({
                     "distance": round(dist, 3),
