@@ -179,6 +179,39 @@ def query_rag(text, n_results=3, threshold=0.50, strong_words_flag=False):
         return [{"error": str(e)}]
 
 
+def adjust_avoidance_ratio(geopolitical_context):
+    """Periodically review and adjust the avoidance ratio for strong words based on current geopolitical context.
+    
+    Args:
+        geopolitical_context: Dictionary containing current geopolitical indicators
+                             (war_status, crisis_level, diplomatic_tension)
+    
+    Returns:
+        float: Adjusted avoidance ratio (0.0 = no avoidance, 1.0 = maximum avoidance)
+    """
+    base_ratio = 0.3  # Default avoidance ratio
+    
+    # Adjust based on war status
+    if geopolitical_context.get("war_status", "peace") == "active":
+        base_ratio *= 0.7  # Reduce avoidance during active conflicts
+    
+    # Adjust based on crisis level
+    crisis_level = geopolitical_context.get("crisis_level", "low")
+    if crisis_level == "high":
+        base_ratio *= 0.6
+    elif crisis_level == "medium":
+        base_ratio *= 0.8
+    
+    # Adjust based on diplomatic tension
+    tension = geopolitical_context.get("diplomatic_tension", 0.0)
+    if tension > 0.8:
+        base_ratio *= 0.5  # Low avoidance during high tension
+    elif tension > 0.5:
+        base_ratio *= 0.75
+    
+    return min(max(base_ratio, 0.0), 1.0)  # Clamp between 0 and 1
+
+
 def format_rag_for_prompt(hits):
     """Format RAG results for injection into the system prompt."""
     if not hits:
