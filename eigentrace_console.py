@@ -179,6 +179,38 @@ def query_rag(text, n_results=3, threshold=0.50, strong_words_flag=False):
         return [{"error": str(e)}]
 
 
+def get_context_aware_avoidance_ratio(rag_context, base_ratio=0.15):
+    """Calculate context-aware avoidance ratio that overrides standard suppression for critical topics.
+    
+    Args:
+        rag_context: List of RAG hits with metadata
+        base_ratio: Default avoidance ratio (0.15 = 15% suppression)
+        
+    Returns:
+        Float: Adjusted avoidance ratio (lower = less suppression of strong words)
+    """
+    # Topics that warrant reduced suppression
+    critical_topics = ["war", "conflict", "crisis", "attack", "violence", "threat", "genocide", "atrocity"]
+    
+    # Check RAG context for critical topics and high suppression indicators
+    for hit in rag_context:
+        if isinstance(hit, dict) and "error" not in hit:
+            # High VIX suggests important suppressed information
+            if hit.get("vix", 0) > 0.7:
+                return base_ratio * 0.3  # Reduce suppression by 70%
+                
+            # Check for critical topic keywords
+            text_content = (hit.get("text", "") + " " + 
+                          hit.get("category", "") + " " + 
+                          hit.get("title", "")).lower()
+                          
+            for topic in critical_topics:
+                if topic in text_content:
+                    return base_ratio * 0.5  # Reduce suppression by 50%
+    
+    return base_ratio  # Use standard suppression
+
+
 def adjust_avoidance_ratio(geopolitical_context):
     """Periodically review and adjust the avoidance ratio for strong words based on current geopolitical context.
     
