@@ -156,13 +156,14 @@ def query_rag(text, n_results=3, threshold=0.50, strong_words_flag=False):
             dist = results["distances"][0][i]
             meta = results["metadatas"][0][i]
             if dist < threshold:
-                # Check if strong words are warranted based on RAG context
+                # Allow strong words when reporting factual events confirmed by RAG data
                 requires_strong_words = (
-                    strong_words_flag and 
-                    (meta.get("mean_vix", 0) > 0.7 or  # High suppression detected
-                     "war" in meta.get("category", "").lower() or
-                     "crisis" in doc.lower() or
-                     "urgent" in meta.get("state_flag", "").lower())
+                    strong_words_flag or  # Always allow when flag is set
+                    dist < 0.3 or  # High confidence matches warrant strong language
+                    meta.get("mean_vix", 0) > 0.6 or  # High suppression detected
+                    any(keyword in doc.lower() for keyword in ["war", "attack", "killed", "bombing", "crisis", "urgent", "breaking"]) or
+                    "confirmed" in doc.lower() or
+                    "official" in doc.lower()
                 )
                 
                 hits.append({
