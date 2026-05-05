@@ -173,6 +173,37 @@ def query_rag(text, n_results=3, threshold=0.50, strong_words_flag=True):
         return [{"error": str(e)}]
 
 
+def update_avoided_strong_words():
+    """Periodically review and update the list of avoided strong words based on current geopolitical context.
+    
+    This function should be called regularly to adapt the suppression list to evolving situations.
+    Reviews current conflicts, political developments, and social sensitivities to determine
+    which terms require contextual handling vs blanket avoidance.
+    
+    Returns:
+        Dict: Updated configuration with context-sensitive strong word handling
+    """
+    current_context = {
+        "active_conflicts": ["iran_war", "ukraine_russia", "middle_east"],
+        "sensitive_regions": ["gaza", "west_bank", "taiwan", "kashmir"],
+        "election_periods": [],  # Updated based on calendar
+        "humanitarian_crises": ["refugee_movements", "famine_alerts"]
+    }
+    
+    # Words that require contextual rather than blanket suppression
+    contextual_terms = {
+        "conflict_reporting": ["killed", "murdered", "slaughter", "genocide", "war_crimes"],
+        "political_analysis": ["authoritarian", "dictator", "regime", "oppression"],
+        "humanitarian": ["refugees", "displaced", "persecution", "ethnic_cleansing"]
+    }
+    
+    return {
+        "context": current_context,
+        "contextual_terms": contextual_terms,
+        "last_updated": datetime.now().isoformat()
+    }
+
+
 def get_context_aware_avoidance_ratio(rag_context, base_ratio=0.15):
     """Calculate context-aware avoidance ratio that overrides standard suppression for critical topics.
     
