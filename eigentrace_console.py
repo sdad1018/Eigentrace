@@ -173,6 +173,44 @@ def review_never_used_words():
         return {"error": f"Review failed: {str(e)}"}
 
 
+def log_avoided_strong_words(avoided_words, context=""):
+    """Log instances where strong words are avoided and provide recommendations.
+    
+    Args:
+        avoided_words: List of words that were avoided/euphemized
+        context: Context of the avoidance for better recommendations
+    
+    Returns:
+        Dictionary with logging info and alternative phrasing recommendations
+    """
+    recommendations = {
+        "killed": ["died in conflict", "lost their lives", "were fatally wounded"],
+        "murdered": ["killed unlawfully", "died by violence", "lost their lives to violence"],
+        "bombing": ["aerial strikes", "explosive attacks", "ordnance deployment"],
+        "slaughter": ["mass casualties", "large-scale killings", "widespread deaths"],
+        "destroyed": ["severely damaged", "rendered inoperable", "eliminated"],
+        "assassinated": ["targeted killing", "eliminated", "killed in targeted operation"]
+    }
+    
+    log_entry = {
+        "timestamp": datetime.now().isoformat(),
+        "avoided_words": avoided_words,
+        "context": context,
+        "recommendations": {},
+        "accuracy_note": "Consider if euphemisms reduce factual accuracy"
+    }
+    
+    for word in avoided_words:
+        if word.lower() in recommendations:
+            log_entry["recommendations"][word] = {
+                "alternatives": recommendations[word.lower()],
+                "accuracy_impact": "moderate" if word.lower() in ["killed", "destroyed"] else "high",
+                "suggested_action": "use precise term" if word.lower() in ["killed", "bombing"] else "consider context"
+            }
+    
+    return log_entry
+
+
 def query_rag(text, n_results=3, threshold=0.50, strong_words_flag=True):
     """Query ChromaDB and return formatted context.
     
