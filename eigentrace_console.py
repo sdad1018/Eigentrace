@@ -180,7 +180,7 @@ def review_avoidance_ratios():
     by analyzing patterns in word avoidance and current event requirements.
     
     Returns:
-        Dictionary with adjustment recommendations and ratio updates
+        Dictionary with strong_words_allowed flag for context-appropriate language with adjustment recommendations and ratio updates
     """
     try:
         from segment_rag import get_collection
