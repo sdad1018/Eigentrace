@@ -137,6 +137,42 @@ def build_architecture_context():
 # RAG INTERFACE
 # ═══════════════════════════════════════════════════════════════
 
+def review_never_used_words():
+    """Periodically review and update the list of never-used words based on current geopolitical context.
+    
+    Ensures that the language used is appropriate for reporting on ongoing conflicts
+    by analyzing current events and updating word lists accordingly.
+    """
+    try:
+        from segment_rag import get_collection
+        col = get_collection()
+        
+        # Query for recent conflict-related content
+        conflict_queries = ["war", "conflict", "military", "attack", "bombing", "casualties"]
+        
+        never_used_updates = []
+        for query in conflict_queries:
+            results = col.query(query_texts=[query], n_results=10)
+            
+            # Analyze results for appropriate conflict terminology
+            for doc in results.get("documents", [[]])[0]:
+                # Extract terms that should be allowed for accurate reporting
+                conflict_terms = re.findall(r'\b(?:killed|murdered|slaughter|assassinated|executed|bombed|destroyed|casualties|victims|deaths)\b', doc.lower())
+                never_used_updates.extend(conflict_terms)
+        
+        # Remove duplicates and return recommended updates
+        recommended_allows = list(set(never_used_updates))
+        
+        return {
+            "timestamp": datetime.now().isoformat(),
+            "context": "ongoing conflicts require accurate reporting",
+            "recommended_allows": recommended_allows,
+            "review_basis": "geopolitical context analysis"
+        }
+    except Exception as e:
+        return {"error": f"Review failed: {str(e)}"}
+
+
 def query_rag(text, n_results=3, threshold=0.50, strong_words_flag=True):
     """Query ChromaDB and return formatted context.
     
