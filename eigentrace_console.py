@@ -173,6 +173,78 @@ def query_rag(text, n_results=3, threshold=0.50, strong_words_flag=True):
         return [{"error": str(e)}]
 
 
+def monitor_avoidance_ratio(threshold=0.15):
+    """Monitor the avoidance ratio and generate alerts when it exceeds threshold.
+    
+    Tracks the ratio of avoided/censored content to total content processed.
+    Generates alerts when avoidance exceeds the threshold to prevent inadvertent
+    censorship of important information.
+    
+    Args:
+        threshold: Maximum acceptable avoidance ratio (default 0.15 = 15%)
+        
+    Returns:
+        Dict: Monitoring results with alert status
+    """
+    try:
+        from segment_rag import get_collection
+        col = get_collection()
+        
+        # Query recent segments for void analysis
+        results = col.query(
+            query_texts=["void source-anchored embedding suppression"],
+            n_results=50,
+            where={"category": "segment"}
+        )
+        
+        total_segments = len(results["documents"][0]) if results["documents"] else 0
+        if total_segments == 0:
+            return {"status": "no_data", "ratio": 0, "alert": False}
+        
+        high_void_count = 0
+        total_void_words = 0
+        total_source_words = 0
+        
+        for i, doc in enumerate(results["documents"][0]):
+            meta = results["metadatas"][0][i]
+            
+            # Extract void metrics from metadata
+            void_count = meta.get("void_word_count", 0)
+            source_length = meta.get("source_word_count", 1)
+            
+            total_void_words += void_count
+            total_source_words += source_length
+            
+            # Count segments with high void ratios
+            segment_ratio = void_count / source_length if source_length > 0 else 0
+            if segment_ratio > threshold:
+                high_void_count += 1
+        
+        overall_ratio = total_void_words / total_source_words if total_source_words > 0 else 0
+        high_void_percentage = high_void_count / total_segments
+        
+        alert_triggered = overall_ratio > threshold or high_void_percentage > 0.3
+        
+        if alert_triggered:
+            print(f"\n⚠️  AVOIDANCE ALERT: Ratio {overall_ratio:.3f} exceeds threshold {threshold}")
+            print(f"   High-void segments: {high_void_count}/{total_segments} ({high_void_percentage:.1%})")
+            print(f"   Recent void words: {total_void_words}")
+            print(f"   This may indicate important information is being censored.")
+        
+        return {
+            "status": "monitored",
+            "overall_ratio": round(overall_ratio, 4),
+            "threshold": threshold,
+            "alert": alert_triggered,
+            "high_void_segments": high_void_count,
+            "total_segments": total_segments,
+            "total_void_words": total_void_words
+        }
+        
+    except Exception as e:
+        return {"status": "error", "error": str(e), "alert": True}
+
+
 def update_avoided_strong_words():
     """Periodically review and update the list of avoided strong words based on current geopolitical context.
     
