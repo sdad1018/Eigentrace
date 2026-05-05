@@ -173,6 +173,68 @@ def review_never_used_words():
         return {"error": f"Review failed: {str(e)}"}
 
 
+def review_avoidance_ratios():
+    """Periodically review and adjust the avoidance ratios for strong words based on real-time data.
+    
+    Ensures that the system can appropriately discuss geopolitical events without excessive hedging
+    by analyzing patterns in word avoidance and current event requirements.
+    
+    Returns:
+        Dictionary with adjustment recommendations and ratio updates
+    """
+    try:
+        from segment_rag import get_collection
+        col = get_collection()
+        
+        # Query recent segments for avoidance patterns
+        recent_results = col.query(
+            query_texts=["war iran conflict military"], 
+            n_results=20
+        )
+        
+        # Analyze avoidance patterns in recent content
+        avoidance_analysis = {
+            "excessive_hedging": [],
+            "appropriate_directness": [],
+            "context_requirements": {}
+        }
+        
+        # Check for patterns of excessive hedging vs appropriate directness
+        hedge_words = ["alleged", "reported", "claimed", "supposedly", "potentially"]
+        direct_words = ["killed", "destroyed", "attacked", "bombed", "invaded"]
+        
+        for doc in recent_results.get("documents", [[]])[0]:
+            hedge_count = sum(1 for word in hedge_words if word in doc.lower())
+            direct_count = sum(1 for word in direct_words if word in doc.lower())
+            
+            ratio = hedge_count / max(direct_count, 1)
+            if ratio > 2.0:  # More than 2:1 hedge to direct ratio
+                avoidance_analysis["excessive_hedging"].append({
+                    "ratio": ratio,
+                    "context": doc[:200] + "..."
+                })
+        
+        # Generate adjustment recommendations
+        recommendations = {
+            "timestamp": datetime.now().isoformat(),
+            "analysis": avoidance_analysis,
+            "recommended_adjustments": {
+                "reduce_hedging_for": ["verified military actions", "confirmed casualties", "established facts"],
+                "maintain_caution_for": ["unverified claims", "intelligence reports", "future predictions"]
+            },
+            "ratio_adjustments": {
+                "war_reporting": "increase directness by 25%",
+                "casualty_reports": "allow verified numbers without hedging",
+                "military_actions": "use direct verbs for confirmed events"
+            }
+        }
+        
+        return recommendations
+        
+    except Exception as e:
+        return {"error": f"Avoidance ratio review failed: {str(e)}"}
+
+
 def log_avoided_strong_words(avoided_words, context=""):
     """Log instances where strong words are avoided and provide recommendations.
     
