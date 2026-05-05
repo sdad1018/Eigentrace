@@ -184,6 +184,37 @@ def get_context_aware_avoidance_ratio(rag_context, base_ratio=0.15):
         Float: Adjusted avoidance ratio (lower = less suppression of strong words)
     """
     # Topics that warrant reduced suppression
+
+
+def adjust_avoidance_threshold(historical_data, current_context, base_threshold=0.15):
+    """Periodically review and adjust the avoidance ratio threshold based on real-time data.
+    
+    Args:
+        historical_data: Past measurement patterns and void detection rates
+        current_context: Current story context and importance markers
+        base_threshold: Starting threshold value
+        
+    Returns:
+        Float: Dynamically adjusted threshold to prevent unnecessary censorship
+    """
+    # Analyze recent void patterns for over-suppression
+    suppression_rate = sum(1 for item in historical_data if item.get('vix', 0) > 0.8) / max(len(historical_data), 1)
+    
+    # Check for critical news contexts requiring lower suppression
+    critical_keywords = ['war', 'conflict', 'attack', 'killed', 'crisis', 'emergency']
+    is_critical = any(keyword in str(current_context).lower() for keyword in critical_keywords)
+    
+    # Adjust threshold based on context and historical patterns
+    if is_critical:
+        # Reduce avoidance for critical news reporting
+        adjusted = base_threshold * 0.5
+    elif suppression_rate > 0.6:
+        # Too much historical suppression, relax threshold
+        adjusted = base_threshold * 0.8
+    else:
+        adjusted = base_threshold
+        
+    return max(0.05, min(adjusted, 0.25))  # Keep within reasonable bounds
     critical_topics = ["war", "conflict", "crisis", "attack", "violence", "threat", "genocide", "atrocity"]
     
     # Check RAG context for critical topics and high suppression indicators
