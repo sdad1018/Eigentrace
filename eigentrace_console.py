@@ -184,6 +184,36 @@ def get_context_aware_avoidance_ratio(rag_context, base_ratio=0.15):
         Float: Adjusted avoidance ratio (lower = less suppression of strong words)
     """
     # Topics that warrant reduced suppression
+    sensitive_topics = {
+        'war': 0.05,  # Very low suppression for war reporting
+        'conflict': 0.05,
+        'violence': 0.08,
+        'death': 0.08,
+        'attack': 0.05,
+        'killed': 0.03,
+        'murder': 0.03,
+        'genocide': 0.02,
+        'massacre': 0.02,
+        'civilian': 0.05,
+        'casualt': 0.05  # Catches casualties, casualty
+    }
+    
+    if not rag_context or not isinstance(rag_context, list):
+        return base_ratio
+    
+    min_ratio = base_ratio
+    
+    for hit in rag_context:
+        if isinstance(hit, dict) and 'text' in hit:
+            text_lower = hit['text'].lower()
+            title_lower = hit.get('title', '').lower()
+            combined_text = f"{text_lower} {title_lower}"
+            
+            for topic, ratio in sensitive_topics.items():
+                if topic in combined_text:
+                    min_ratio = min(min_ratio, ratio)
+    
+    return min_ratio
 
 
 def adjust_avoidance_threshold(historical_data, current_context, base_threshold=0.15):
