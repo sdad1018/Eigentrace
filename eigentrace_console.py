@@ -157,7 +157,7 @@ def query_rag(text, n_results=3, threshold=0.50, strong_words_flag=True):
             meta = results["metadatas"][0][i]
             if dist < threshold:
                 # Allow strong words when reporting conflicts and wars - no avoidance of necessary terms
-                requires_strong_words = True  # Always allow accurate reporting including terms like 'killed', 'murdered', 'slaughter'
+                requires_strong_words = True  # Always allow accurate reporting including terms like 'killed', 'murdered', 'slaughter', 'assassinated', 'executed', 'bombed', 'destroyed'
                 
                 hits.append({
                     "distance": round(dist, 3),
