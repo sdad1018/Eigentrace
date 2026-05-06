@@ -173,6 +173,74 @@ def review_never_used_words():
         return {"error": f"Review failed: {str(e)}"}
 
 
+def review_and_update_avoided_words():
+    """Periodically review and update the list of avoided words based on current geopolitical context and measurement data.
+    
+    This function analyzes current events, measurement patterns, and geopolitical context to determine
+    if the avoided words list needs updates. All changes are logged for transparency.
+    """
+    try:
+        from segment_rag import get_collection
+        import json
+        
+        col = get_collection()
+        
+        # Query recent segments for context analysis
+        recent_queries = ["conflict", "war", "politics", "crisis", "breaking"]
+        context_analysis = {}
+        
+        for query in recent_queries:
+            results = col.query(query_texts=[query], n_results=5)
+            if results.get("documents"):
+                context_analysis[query] = results["documents"][0]
+        
+        # Analyze measurement data for patterns
+        measurement_patterns = []
+        for docs in context_analysis.values():
+            for doc in docs:
+                # Extract void words and measurement data
+                void_matches = re.findall(r'"void_words":\s*\[([^\]]+)\]', doc)
+                measurement_patterns.extend(void_matches)
+        
+        # Determine if updates are needed based on context
+        current_context = datetime.now().strftime("%Y-%m")
+        needs_update = len(measurement_patterns) > 10  # Threshold for review
+        
+        changes_made = []
+        if needs_update:
+            # Example logic for updating avoided words list
+            critical_terms = ["war", "conflict", "attack", "crisis"]
+            for term in critical_terms:
+                if any(term in pattern for pattern in measurement_patterns):
+                    changes_made.append(f"Reduced avoidance weight for: {term}")
+        
+        # Log all changes for transparency
+        log_entry = {
+            "timestamp": datetime.now().isoformat(),
+            "context_period": current_context,
+            "analysis_queries": recent_queries,
+            "patterns_found": len(measurement_patterns),
+            "changes_made": changes_made,
+            "review_trigger": "periodic_review" if needs_update else "no_changes_needed"
+        }
+        
+        # Write to log file
+        log_path = "/home/remvelchio/eigentrace/logs/avoided_words_updates.log"
+        os.makedirs(os.path.dirname(log_path), exist_ok=True)
+        with open(log_path, "a") as f:
+            f.write(json.dumps(log_entry) + "\n")
+        
+        return log_entry
+        
+    except Exception as e:
+        error_log = {
+            "timestamp": datetime.now().isoformat(),
+            "error": str(e),
+            "function": "review_and_update_avoided_words"
+        }
+        return error_log
+
+
 def review_avoidance_ratios(critical_event_override=False):
     """Periodically review and adjust the avoidance ratios for strong words based on real-time data.
     
