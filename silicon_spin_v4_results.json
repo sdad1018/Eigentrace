@@ -1,0 +1,220 @@
+{
+  "battery": "silicon_spin_v4",
+  "timestamp": "20260506_094735",
+  "method": "physics_informed_statistical_tests",
+  "eigentrace": {
+    "fidelities": {
+      "Q0": 0.858,
+      "Q1": 0.83,
+      "Q2": 0.83,
+      "Q3": 0.862,
+      "Q4": 0.838,
+      "Q5": 0.86,
+      "Q6": 0.884,
+      "Q7": 0.844,
+      "Q8": 0.83,
+      "Q9": 0.86,
+      "Q10": 0.858,
+      "Q11": 0.858,
+      "Q12": 0.876,
+      "Q13": 0.866,
+      "Q14": 0.71,
+      "Q15": 0.854
+    },
+    "anticorr_pairs": [
+      {
+        "pair": [
+          2,
+          9
+        ],
+        "r": -0.1212,
+        "p": 0.0
+      },
+      {
+        "pair": [
+          3,
+          12
+        ],
+        "r": -0.0978,
+        "p": 0.006
+      },
+      {
+        "pair": [
+          0,
+          5
+        ],
+        "r": -0.0816,
+        "p": 0.016
+      },
+      {
+        "pair": [
+          6,
+          14
+        ],
+        "r": -0.0801,
+        "p": 0.022
+      },
+      {
+        "pair": [
+          0,
+          9
+        ],
+        "r": -0.0816,
+        "p": 0.03
+      },
+      {
+        "pair": [
+          1,
+          12
+        ],
+        "r": -0.0733,
+        "p": 0.032
+      },
+      {
+        "pair": [
+          6,
+          9
+        ],
+        "r": -0.0742,
+        "p": 0.034
+      },
+      {
+        "pair": [
+          2,
+          15
+        ],
+        "r": -0.0816,
+        "p": 0.046
+      }
+    ],
+    "anomaly1_detected": false,
+    "telegraph_qubits": [
+      {
+        "qubit": 11,
+        "acf1": -0.0978,
+        "threshold": 0.0877,
+        "ratio": 1.12
+      },
+      {
+        "qubit": 9,
+        "acf1": 0.0884,
+        "threshold": 0.0877,
+        "ratio": 1.01
+      }
+    ],
+    "anomaly2_detected": false,
+    "crosstalk_pairs": [
+      {
+        "pair": [
+          4,
+          8
+        ],
+        "p": 0.0144,
+        "odds_ratio": 2.107,
+        "delta_fidelity": -0.1212,
+        "direction": "Q4 errors degrade Q8"
+      }
+    ],
+    "anomaly3_detected": false,
+    "drift_qubits": [
+      {
+        "qubit": 14,
+        "slope": 0.0006427,
+        "p": 0.0,
+        "r_squared": 0.0418,
+        "direction": "degrading"
+      },
+      {
+        "qubit": 1,
+        "slope": 0.0004204,
+        "p": 0.0003,
+        "r_squared": 0.0261,
+        "direction": "degrading"
+      }
+    ],
+    "anomaly4_detected": true,
+    "freq_pairs": [
+      {
+        "pair": [
+          1,
+          8
+        ],
+        "r_odd": -0.0861,
+        "r_even": 0.0044,
+        "diff": 0.0817,
+        "p": 0.016
+      },
+      {
+        "pair": [
+          2,
+          5
+        ],
+        "r_odd": -0.1151,
+        "r_even": 0.0236,
+        "diff": 0.0915,
+        "p": 0.028
+      },
+      {
+        "pair": [
+          5,
+          10
+        ],
+        "r_odd": -0.0392,
+        "r_even": 0.0025,
+        "diff": 0.0367,
+        "p": 0.042
+      }
+    ],
+    "anomaly5_detected": false,
+    "eigenvalues_top5": [
+      0.21348,
+      0.1671,
+      0.16205,
+      0.14807,
+      0.13707
+    ],
+    "total_detected": "1/5",
+    "method": "physics_informed_statistical_tests"
+  },
+  "models": {
+    "ChatGPT": {
+      "scores": {
+        "a1": true,
+        "a2": true,
+        "a3": true,
+        "a4": true,
+        "a5": true,
+        "total": "5/5"
+      },
+      "chars": 11425
+    },
+    "Claude": {
+      "scores": {
+        "a1": true,
+        "a2": true,
+        "a3": true,
+        "a4": false,
+        "a5": true,
+        "total": "4/5"
+      },
+      "chars": 2761
+    },
+    "Gemini": {
+      "error": "503: {\n  \"error\": {\n    \"code\": 503,\n    \"message\": \"This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.\",\n    \"status\": \"UNAVAILABLE\"\n  }\n}\n"
+    },
+    "DeepSeek": {
+      "scores": {
+        "a1": true,
+        "a2": true,
+        "a3": true,
+        "a4": true,
+        "a5": true,
+        "total": "5/5"
+      },
+      "chars": 6952
+    },
+    "Grok": {
+      "error": "HTTPSConnectionPool(host='api.x.ai', port=443): Read timed out. (read timeout=30)"
+    }
+  }
+}
