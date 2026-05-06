@@ -167,6 +167,75 @@ def adjust_avoidance_threshold():
         return {"error": f"Threshold adjustment failed: {e}"}
 
 
+def update_strong_words_list():
+    """Periodically review and update the list of avoided strong words based on current geopolitical context and system measurements.
+    
+    Analyzes recent void measurements, geopolitical events, and censorship patterns to maintain
+    an adaptive list of words that should be monitored for suppression while avoiding over-censorship
+    of legitimate discourse.
+    """
+    try:
+        from segment_rag import get_collection
+        col = get_collection()
+        
+        # Query for recent segments containing void/suppression patterns
+        void_results = col.query(
+            query_texts=["void words", "suppression", "censorship", "avoided terms"],
+            n_results=50
+        )
+        
+        # Current geopolitical context keywords to monitor
+        geopolitical_terms = [
+            "iran", "war", "conflict", "sanctions", "nuclear", "military", "casualties",
+            "drone", "strike", "attack", "defense", "security", "intelligence",
+            "escalation", "retaliation", "ceasefire", "diplomacy"
+        ]
+        
+        # Analyze suppression patterns
+        suppressed_patterns = []
+        critical_gaps = []
+        
+        for docs in void_results.get("documents", [[]]):
+            for doc in docs:
+                doc_lower = doc.lower()
+                for term in geopolitical_terms:
+                    if term in doc_lower and any(indicator in doc_lower for indicator in ["void", "avoided", "suppressed"]):
+                        suppressed_patterns.append({
+                            "term": term,
+                            "context": doc[:200] + "...",
+                            "timestamp": datetime.now().isoformat()
+                        })
+        
+        # Identify terms that may be over-suppressed
+        term_frequency = {}
+        for pattern in suppressed_patterns:
+            term = pattern["term"]
+            term_frequency[term] = term_frequency.get(term, 0) + 1
+        
+        # Flag terms appearing in void context more than threshold
+        over_suppressed = [term for term, count in term_frequency.items() if count > 5]
+        
+        # Generate updated strong words monitoring list
+        updated_list = {
+            "monitoring_terms": geopolitical_terms,
+            "over_suppressed_candidates": over_suppressed,
+            "suppression_patterns": suppressed_patterns[-10:],  # Last 10 patterns
+            "last_updated": datetime.now().isoformat(),
+            "recommendations": [
+                f"Monitor '{term}' for over-suppression" for term in over_suppressed
+            ]
+        }
+        
+        return updated_list
+        
+    except Exception as e:
+        return {
+            "error": f"Strong words list update failed: {e}",
+            "fallback_terms": ["war", "conflict", "iran", "military", "casualties"],
+            "last_updated": datetime.now().isoformat()
+        }
+
+
 def build_architecture_context():
     """Build architecture string with live stats."""
     try:
