@@ -173,13 +173,17 @@ def review_never_used_words():
         return {"error": f"Review failed: {str(e)}"}
 
 
-def review_avoidance_ratios():
+def review_avoidance_ratios(critical_event_override=False):
     """Periodically review and adjust the avoidance ratios for strong words based on real-time data.
     
     Ensures that the system can appropriately discuss geopolitical events without excessive hedging
     by analyzing patterns in word avoidance and current event requirements.
     
-    Implements context-aware filtering that allows strong words when reporting requires accuracy,
+    Args:
+        critical_event_override (bool): When True, allows controlled use of strong words 
+                                       for critical events like war and conflict reporting
+    
+    Implements context-aware filtering with override capability for critical events.ltering that allows strong words when reporting requires accuracy,
     particularly for conflict situations, casualties, and urgent geopolitical developments.
     
     Returns:
