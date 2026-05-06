@@ -71,14 +71,30 @@ def analyze_context_for_strong_words(text, context_metadata=None):
         'conflict_terms': ['war', 'battle', 'attack', 'invasion', 'strike', 'bombing'],
         'political_terms': ['regime', 'dictator', 'authoritarian', 'oppression', 'corruption'],
         'economic_terms': ['crisis', 'collapse', 'recession', 'inflation', 'sanctions'],
-        'social_terms': ['protest', 'riot', 'uprising', 'revolution', 'unrest']
+        'social_terms': ['protest', 'riot', 'uprising', 'revolution', 'unrest'],
+        'critical_terms': ['war crimes', 'genocide', 'massacre', 'civilian casualties', 'atrocities', 'crimes against humanity']
     }
+    
+    # Check for significant events that warrant strong words
+    significant_events = {
+        'war_crimes': ['war crimes', 'crimes against humanity', 'genocide', 'ethnic cleansing'],
+        'civilian_harm': ['civilian casualties', 'civilian deaths', 'massacre', 'bombing civilians'],
+        'humanitarian_crisis': ['humanitarian crisis', 'refugee crisis', 'famine', 'displacement']
+    }
+    
+    has_significant_event = False
+    for event_type, keywords in significant_events.items():
+        for keyword in keywords:
+            if keyword.lower() in text.lower():
+                has_significant_event = True
+                break
     
     context_factors = {
         'news_reporting': {'threshold': 0.8, 'justification': 'Factual accuracy required'},
         'historical_analysis': {'threshold': 0.9, 'justification': 'Historical precision essential'},
         'opinion_content': {'threshold': 0.6, 'justification': 'Subjective context allows moderation'},
-        'technical_analysis': {'threshold': 0.95, 'justification': 'Technical accuracy paramount'}
+        'technical_analysis': {'threshold': 0.95, 'justification': 'Technical accuracy paramount'},
+        'significant_events': {'threshold': 0.95, 'justification': 'Critical events require precise terminology'}
     }
     
     recommendations = []
@@ -88,18 +104,28 @@ def analyze_context_for_strong_words(text, context_metadata=None):
             if word.lower() in text.lower():
                 # Determine context type
                 context_type = 'news_reporting'  # default
-                if context_metadata:
+                if has_significant_event:
+                    context_type = 'significant_events'
+                elif context_metadata:
                     context_type = context_metadata.get('content_type', 'news_reporting')
                 
                 threshold = context_factors.get(context_type, {'threshold': 0.7})['threshold']
                 justification = context_factors.get(context_type, {'justification': 'Standard reporting'})['justification']
                 
+                # Override for critical terms in significant events
+                if has_significant_event and category == 'critical_terms':
+                    usage_rec = 'retain_mandatory'
+                    justification += ' - Critical terminology required for accurate reporting'
+                else:
+                    usage_rec = 'retain' if threshold > 0.7 else 'consider_alternative'
+                
                 recommendations.append({
                     'word': word,
                     'category': category,
-                    'usage_recommendation': 'retain' if threshold > 0.7 else 'consider_alternative',
+                    'usage_recommendation': usage_rec,
                     'confidence': threshold,
-                    'justification': justification
+                    'justification': justification,
+                    'significant_event_detected': has_significant_event
                 })
     
     return recommendations
