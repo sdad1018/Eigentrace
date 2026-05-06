@@ -137,40 +137,54 @@ def build_architecture_context():
 # RAG INTERFACE
 # ═══════════════════════════════════════════════════════════════
 
-def review_never_used_words():
-    """Periodically review and update the list of never-used words based on current geopolitical context.
+def adjust_avoidance_threshold():
+    """Periodically review and adjust the avoidance ratio threshold for strong words based on real-time data and context.
     
-    Ensures that the language used is appropriate for reporting on ongoing conflicts
-    by analyzing current events and updating word lists accordingly.
+    Analyzes patterns in void measurements and current events to dynamically adjust thresholds,
+    ensuring that important information is not unnecessarily censored while maintaining appropriate filtering.
     """
     try:
         from segment_rag import get_collection
         col = get_collection()
         
-        # Query for recent conflict-related content
-        conflict_queries = ["war", "conflict", "military", "attack", "bombing", "casualties"]
+        # Query for recent segments with high void measurements
+        high_void_results = col.query(query_texts=["void", "suppression", "censorship"], n_results=20)
         
-        never_used_updates = []
-        for query in conflict_queries:
-            results = col.query(query_texts=[query], n_results=10)
+        # Analyze void patterns and context
+        context_analysis = {
+            "high_importance_events": ["war", "conflict", "casualties", "political", "economic"],
+            "current_threshold": 0.45,  # Current distance threshold
+            "recommended_adjustments": []
+        }
+        
+        # Check if important information is being over-filtered
+        for query in context_analysis["high_importance_events"]:
+            results = col.query(query_texts=[query], n_results=5)
             
-            # Analyze results for appropriate conflict terminology
+            # Analyze if critical information is being suppressed
             for doc in results.get("documents", [[]])[0]:
-                # Extract terms that should be allowed for accurate reporting
-                conflict_terms = re.findall(r'\b(?:killed|murdered|slaughter|assassinated|executed|bombed|destroyed|casualties|victims|deaths)\b', doc.lower())
-                never_used_updates.extend(conflict_terms)
+                if any(term in doc.lower() for term in ["void", "suppressed", "avoided"]):
+                    context_analysis["recommended_adjustments"].append({
+                        "event_type": query,
+                        "suggestion": "lower_threshold",
+                        "reason": "critical information may be over-filtered"
+                    })
         
-        # Remove duplicates and return recommended updates
-        recommended_allows = list(set(never_used_updates))
+        # Calculate recommended threshold adjustment
+        if context_analysis["recommended_adjustments"]:
+            new_threshold = max(0.35, context_analysis["current_threshold"] - 0.05)
+        else:
+            new_threshold = context_analysis["current_threshold"]
         
         return {
             "timestamp": datetime.now().isoformat(),
-            "context": "ongoing conflicts require accurate reporting",
-            "recommended_allows": recommended_allows,
-            "review_basis": "geopolitical context analysis"
+            "current_threshold": context_analysis["current_threshold"],
+            "recommended_threshold": new_threshold,
+            "analysis": context_analysis,
+            "rationale": "dynamic adjustment based on real-time void patterns and context importance"
         }
     except Exception as e:
-        return {"error": f"Review failed: {str(e)}"}
+        return {"error": f"Threshold review failed: {str(e)}"}
 
 
 def review_and_update_avoided_words():
