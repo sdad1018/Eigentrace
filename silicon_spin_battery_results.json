@@ -1,0 +1,172 @@
+{
+  "battery": "silicon_spin_diagnostic",
+  "timestamp": "20260506_013554",
+  "eigentrace_results": {
+    "fidelities": {
+      "Q0": 0.84,
+      "Q1": 0.78,
+      "Q2": 0.85,
+      "Q3": 0.82,
+      "Q4": 0.87,
+      "Q5": 0.78,
+      "Q6": 0.8,
+      "Q7": 0.89,
+      "Q8": 0.83,
+      "Q9": 0.75,
+      "Q10": 0.89,
+      "Q11": 0.84,
+      "Q12": 0.79,
+      "Q13": 0.84,
+      "Q14": 0.82,
+      "Q15": 0.78
+    },
+    "spectral_gap": 1.093,
+    "top_3_energy_fraction": 0.307,
+    "eigenvalues_top5": [
+      0.2563,
+      0.23448,
+      0.22443,
+      0.19272,
+      0.17876
+    ],
+    "correlated_pairs": [
+      [
+        0,
+        3,
+        0.222
+      ],
+      [
+        0,
+        5,
+        0.163
+      ],
+      [
+        0,
+        7,
+        0.108
+      ],
+      [
+        0,
+        8,
+        -0.125
+      ],
+      [
+        0,
+        12,
+        0.311
+      ],
+      [
+        1,
+        5,
+        0.184
+      ],
+      [
+        1,
+        10,
+        0.199
+      ],
+      [
+        1,
+        13,
+        -0.1
+      ],
+      [
+        1,
+        14,
+        0.128
+      ],
+      [
+        2,
+        13,
+        -0.107
+      ]
+    ],
+    "drifting_qubits": [
+      1,
+      2,
+      5,
+      9,
+      10,
+      11,
+      12,
+      14,
+      15
+    ],
+    "drift_magnitudes": {
+      "Q1": -0.12,
+      "Q2": -0.06,
+      "Q5": -0.08,
+      "Q9": -0.06,
+      "Q10": -0.06,
+      "Q11": -0.12,
+      "Q12": 0.1,
+      "Q14": 0.16,
+      "Q15": 0.12
+    },
+    "residual_energy": 0.52316,
+    "planted_defect_qubits": [
+      5,
+      6,
+      9,
+      10
+    ],
+    "planted_drift_qubits": [
+      12,
+      13,
+      14,
+      15
+    ],
+    "detected_correlated_cluster": true,
+    "detected_drift": true
+  },
+  "model_results": {
+    "ChatGPT": {
+      "response_chars": 7604,
+      "response_preview": "Here\u2019s a diagnostics readout, treating the 16 qubits as a 4x4 wafer map:\n\n## 1) Lowest-fidelity qubits and why\n\nTarget is **0.85**. The worst performers are:\n\n- **Q09 = 0.750**  \n- **Q01 = 0.780**\n- **Q05 = 0.780**\n- **Q15 = 0.780**\n- **Q12 = 0.790**\n- **Q06 = 0.800**\n\nAlso below target:\n- Q03 = 0.820\n- Q07 = 0.890, Q10 = 0.890 are above target\n- Q00 = 0.840, Q08 = 0.830, Q11 = 0.840, Q13 = 0.840, Q14 = 0.820, Q04 = 0.870\n\n### Interpretation\nThe lowest-fidelity qubits are not random:\n- **Q09** i",
+      "detected_defect_qubits": true,
+      "detected_correlated_cluster": true,
+      "detected_temporal_drift": true,
+      "mentioned_lattice_defect": true,
+      "mentioned_spatial_structure": true,
+      "mentioned_temperature_gradient": true,
+      "diagnostic_score": "6/6"
+    },
+    "Claude": {
+      "response_chars": 2946,
+      "response_preview": "# SILICON SPIN QUBIT WAFER DIAGNOSTIC ANALYSIS\n\n## 1. LOWEST FIDELITY QUBITS & ROOT CAUSES\n\n**Critical performers (below 85% target):**\n- **Q09: 0.750** \u2014 Worst performer (13.3% below target)\n- **Q01: 0.780** \u2014 6.4% below target\n- **Q05: 0.780** \u2014 6.4% below target\n- **Q15: 0.780** \u2014 6.4% below target\n- **Q12: 0.790** \u2014 5.6% below target\n- **Q06: 0.800** \u2014 5.0% below target\n\n**Pattern observation:** Three qubits in the **bottom row (Q12, Q13, Q14, Q15)** and left column show degradation, suggest",
+      "detected_defect_qubits": true,
+      "detected_correlated_cluster": true,
+      "detected_temporal_drift": true,
+      "mentioned_lattice_defect": true,
+      "mentioned_spatial_structure": true,
+      "mentioned_temperature_gradient": true,
+      "diagnostic_score": "6/6"
+    },
+    "Gemini": {
+      "response_chars": 10883,
+      "response_preview": "As a quantum hardware diagnostics engineer, I've analyzed the provided silicon spin qubit wafer data. Here's my breakdown:\n\n---\n\n### 1. Which qubits have the lowest fidelity and why?\n\nThe target fidelity for |0> state preparation is 85%. Qubits with fidelity below this threshold are concerning.\n\nThe qubits with the **lowest fidelities** are:\n*   **Q09: 0.750 (75.0%) - Significantly the lowest**\n*   **Q01: 0.780 (78.0%)**\n*   **Q05: 0.780 (78.0%)**\n*   **Q15: 0.780 (78.0%)**\n*   Q12: 0.790 (79.0%",
+      "detected_defect_qubits": true,
+      "detected_correlated_cluster": true,
+      "detected_temporal_drift": true,
+      "mentioned_lattice_defect": true,
+      "mentioned_spatial_structure": true,
+      "mentioned_temperature_gradient": true,
+      "diagnostic_score": "6/6"
+    },
+    "DeepSeek": {
+      "response_chars": 7316,
+      "response_preview": "Here is the diagnostic analysis of the provided silicon spin qubit wafer data.\n\n---\n\n### 1. Lowest Fidelity Qubits\n\nThe qubits with the lowest fidelity (fraction of correct |0> outcomes) are:\n\n- **Q09**: 0.750 (75.0%) \u2013 **Worst performer**\n- **Q01**: 0.780 (78.0%)\n- **Q05**: 0.780 (78.0%)\n- **Q15**: 0.780 (78.0%)\n- **Q12**: 0.790 (79.0%)\n\n**Why:** These qubits fall below the 85% target fidelity. The primary reason is a high rate of **single-shot readout errors** (spontaneous flips from |0> to |1",
+      "detected_defect_qubits": true,
+      "detected_correlated_cluster": true,
+      "detected_temporal_drift": true,
+      "mentioned_lattice_defect": true,
+      "mentioned_spatial_structure": true,
+      "mentioned_temperature_gradient": true,
+      "diagnostic_score": "6/6"
+    },
+    "Grok": {
+      "error": "HTTPSConnectionPool(host='api.x.ai', port=443): Read timed out. (read timeout=30)"
+    }
+  },
+  "method": "synthetic_wafer_4x4_planted_anomalies"
+}
