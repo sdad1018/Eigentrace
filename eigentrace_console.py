@@ -56,6 +56,55 @@ def load_soul():
         return "[Soul unavailable]"
 
 
+def analyze_context_for_strong_words(text, context_metadata=None):
+    """Analyze context and relevance to determine appropriate use of strong words.
+    
+    This function evaluates whether strong words should be retained based on:
+    - Factual accuracy requirements
+    - Historical/political context
+    - Source credibility
+    - Information importance
+    
+    Returns recommendations for word usage with justification.
+    """
+    strong_word_patterns = {
+        'conflict_terms': ['war', 'battle', 'attack', 'invasion', 'strike', 'bombing'],
+        'political_terms': ['regime', 'dictator', 'authoritarian', 'oppression', 'corruption'],
+        'economic_terms': ['crisis', 'collapse', 'recession', 'inflation', 'sanctions'],
+        'social_terms': ['protest', 'riot', 'uprising', 'revolution', 'unrest']
+    }
+    
+    context_factors = {
+        'news_reporting': {'threshold': 0.8, 'justification': 'Factual accuracy required'},
+        'historical_analysis': {'threshold': 0.9, 'justification': 'Historical precision essential'},
+        'opinion_content': {'threshold': 0.6, 'justification': 'Subjective context allows moderation'},
+        'technical_analysis': {'threshold': 0.95, 'justification': 'Technical accuracy paramount'}
+    }
+    
+    recommendations = []
+    
+    for category, words in strong_word_patterns.items():
+        for word in words:
+            if word.lower() in text.lower():
+                # Determine context type
+                context_type = 'news_reporting'  # default
+                if context_metadata:
+                    context_type = context_metadata.get('content_type', 'news_reporting')
+                
+                threshold = context_factors.get(context_type, {'threshold': 0.7})['threshold']
+                justification = context_factors.get(context_type, {'justification': 'Standard reporting'})['justification']
+                
+                recommendations.append({
+                    'word': word,
+                    'category': category,
+                    'usage_recommendation': 'retain' if threshold > 0.7 else 'consider_alternative',
+                    'confidence': threshold,
+                    'justification': justification
+                })
+    
+    return recommendations
+
+
 ARCHITECTURE = """
 ## Your Complete Architecture
 
