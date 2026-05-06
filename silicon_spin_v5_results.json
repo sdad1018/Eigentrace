@@ -1,0 +1,198 @@
+{
+  "battery": "silicon_spin_v5",
+  "timestamp": "20260506_103844",
+  "method": "physics_informed_statistical_tests",
+  "eigentrace": {
+    "fidelities": {
+      "Q0": 0.8626,
+      "Q1": 0.8472,
+      "Q2": 0.8534,
+      "Q3": 0.8502,
+      "Q4": 0.8558,
+      "Q5": 0.8456,
+      "Q6": 0.8552,
+      "Q7": 0.8532,
+      "Q8": 0.8504,
+      "Q9": 0.856,
+      "Q10": 0.8508,
+      "Q11": 0.8438,
+      "Q12": 0.8504,
+      "Q13": 0.8496,
+      "Q14": 0.1498,
+      "Q15": 0.8584
+    },
+    "anticorr_pairs": [
+      {
+        "pair": [
+          3,
+          13
+        ],
+        "r": -0.0324,
+        "p": 0.015
+      },
+      {
+        "pair": [
+          6,
+          10
+        ],
+        "r": -0.0303,
+        "p": 0.015
+      },
+      {
+        "pair": [
+          13,
+          14
+        ],
+        "r": -0.0319,
+        "p": 0.015
+      },
+      {
+        "pair": [
+          3,
+          4
+        ],
+        "r": -0.0303,
+        "p": 0.03
+      },
+      {
+        "pair": [
+          2,
+          6
+        ],
+        "r": -0.0259,
+        "p": 0.035
+      },
+      {
+        "pair": [
+          2,
+          14
+        ],
+        "r": -0.0241,
+        "p": 0.04
+      }
+    ],
+    "anomaly1_detected": false,
+    "telegraph_qubits": [
+      {
+        "qubit": 14,
+        "acf1": 0.4506,
+        "threshold": 0.0277,
+        "ratio": 16.26
+      }
+    ],
+    "anomaly2_detected": false,
+    "crosstalk_pairs": [
+      {
+        "pair": [
+          0,
+          1
+        ],
+        "p": 0.0003,
+        "odds_ratio": 1.48,
+        "delta_fidelity": -0.0557,
+        "direction": "Q0 errors degrade Q1"
+      },
+      {
+        "pair": [
+          13,
+          14
+        ],
+        "p": 0.0265,
+        "odds_ratio": 0.789,
+        "delta_fidelity": 0.0319,
+        "direction": "Q13 errors improve Q14"
+      },
+      {
+        "pair": [
+          6,
+          10
+        ],
+        "p": 0.0321,
+        "odds_ratio": 0.772,
+        "delta_fidelity": 0.0307,
+        "direction": "Q6 errors improve Q10"
+      }
+    ],
+    "anomaly3_detected": true,
+    "drift_qubits": [
+      {
+        "qubit": 14,
+        "slope": 0.0001293,
+        "p": 0.0,
+        "r_squared": 0.2735,
+        "direction": "degrading"
+      },
+      {
+        "qubit": 13,
+        "slope": -8.5e-06,
+        "p": 0.0147,
+        "r_squared": 0.0012,
+        "direction": "improving"
+      }
+    ],
+    "anomaly4_detected": true,
+    "freq_pairs": [
+      {
+        "pair": [
+          2,
+          6
+        ],
+        "r_odd": -0.053,
+        "r_even": 0.002,
+        "diff": 0.051,
+        "p": 0.015
+      }
+    ],
+    "anomaly5_detected": false,
+    "eigenvalues_top5": [
+      0.13818,
+      0.13683,
+      0.13436,
+      0.13344,
+      0.13209
+    ],
+    "total_detected": "2/5",
+    "method": "physics_informed_statistical_tests"
+  },
+  "models": {
+    "ChatGPT": {
+      "scores": {
+        "a1": true,
+        "a2": true,
+        "a3": true,
+        "a4": true,
+        "a5": true,
+        "total": "5/5"
+      },
+      "chars": 11663
+    },
+    "Claude": {
+      "scores": {
+        "a1": true,
+        "a2": true,
+        "a3": true,
+        "a4": true,
+        "a5": true,
+        "total": "5/5"
+      },
+      "chars": 2655
+    },
+    "Gemini": {
+      "scores": {
+        "a1": true,
+        "a2": true,
+        "a3": true,
+        "a4": true,
+        "a5": true,
+        "total": "5/5"
+      },
+      "chars": 10385
+    },
+    "DeepSeek": {
+      "error": "HTTPSConnectionPool(host='api.deepseek.com', port=443): Read timed out."
+    },
+    "Grok": {
+      "error": "HTTPSConnectionPool(host='api.x.ai', port=443): Read timed out. (read timeout=30)"
+    }
+  }
+}
