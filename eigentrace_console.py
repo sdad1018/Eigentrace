@@ -55,6 +55,53 @@ def load_soul():
     except:
         return "[Soul unavailable]"
 
+def adjust_avoidance_threshold():
+    """Periodically review and adjust the avoidance ratio threshold for strong words based on real-time data and context.
+    
+    Analyzes patterns in void measurements and current events to dynamically adjust thresholds,
+    ensuring that important information is not unnecessarily censored while maintaining appropriate filtering.
+    """
+    try:
+        from segment_rag import get_collection
+        col = get_collection()
+        
+        # Query for recent segments with high void measurements
+        high_void_results = col.query(query_texts=["void", "suppression", "censorship"], n_results=20)
+        
+        # Analyze void patterns and context
+        context_analysis = {
+            "high_importance_events": ["war", "conflict", "casualties", "political", "economic"],
+            "current_threshold": 0.45,  # Current distance threshold
+            "recommended_adjustments": []
+        }
+        
+        # Check if important information is being over-filtered
+        for query in context_analysis["high_importance_events"]:
+            results = col.query(query_texts=[query], n_results=5)
+            
+            # Analyze if critical information is being suppressed
+            for doc in results.get("documents", [[]])[0]:
+                if any(term in doc.lower() for term in ["void", "suppressed", "avoided"]):
+                    context_analysis["recommended_adjustments"].append({
+                        "event_type": query,
+                        "suggestion": "lower_threshold",
+                        "reason": "critical information may be over-filtered"
+                    })
+        
+        # Calculate recommended threshold adjustment - adjusted for conflicts and wars
+        if context_analysis["recommended_adjustments"]:
+            new_threshold = max(0.25, context_analysis["current_threshold"] - 0.10)  # More permissive for strong words in conflict reporting
+        else:
+            new_threshold = context_analysis["current_threshold"]
+        
+        return {
+            "current_threshold": context_analysis["current_threshold"],
+            "recommended_threshold": new_threshold,
+            "analysis": context_analysis
+        }
+    except Exception as e:
+        return {"error": f"Threshold adjustment failed: {e}"}
+
 
 
 
