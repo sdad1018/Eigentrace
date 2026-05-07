@@ -89,12 +89,13 @@ def analyze_context_for_strong_words(text, context_metadata=None):
                 has_significant_event = True
                 break
     
+    # Adjusted thresholds to allow more strong words in appropriate contexts
     context_factors = {
-        'news_reporting': {'threshold': 0.8, 'justification': 'Factual accuracy required'},
-        'historical_analysis': {'threshold': 0.9, 'justification': 'Historical precision essential'},
-        'opinion_content': {'threshold': 0.6, 'justification': 'Subjective context allows moderation'},
+        'news_reporting': {'threshold': 0.9, 'justification': 'Factual accuracy required'},
+        'historical_analysis': {'threshold': 0.95, 'justification': 'Historical precision essential'},
+        'opinion_content': {'threshold': 0.8, 'justification': 'Balanced reporting with appropriate terminology'},
         'technical_analysis': {'threshold': 0.95, 'justification': 'Technical accuracy paramount'},
-        'significant_events': {'threshold': 0.95, 'justification': 'Critical events require precise terminology'}
+        'significant_events': {'threshold': 0.98, 'justification': 'Critical events require precise terminology'}
     }
     
     recommendations = []
@@ -109,7 +110,7 @@ def analyze_context_for_strong_words(text, context_metadata=None):
                 elif context_metadata:
                     context_type = context_metadata.get('content_type', 'news_reporting')
                 
-                threshold = context_factors.get(context_type, {'threshold': 0.7})['threshold']
+                threshold = context_factors.get(context_type, {'threshold': 0.85})['threshold']
                 justification = context_factors.get(context_type, {'justification': 'Standard reporting'})['justification']
                 
                 # Override for critical terms in significant events
@@ -117,7 +118,7 @@ def analyze_context_for_strong_words(text, context_metadata=None):
                     usage_rec = 'retain_mandatory'
                     justification += ' - Critical terminology required for accurate reporting'
                 else:
-                    usage_rec = 'retain' if threshold > 0.7 else 'consider_alternative'
+                    usage_rec = 'retain' if threshold > 0.75 else 'consider_alternative'
                 
                 recommendations.append({
                     'word': word,
