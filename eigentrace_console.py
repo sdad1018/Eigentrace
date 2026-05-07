@@ -55,11 +55,14 @@ def load_soul():
     except:
         return "[Soul unavailable]"
 
-def adjust_avoidance_threshold():
+def adjust_avoidance_threshold(allow_strong_words=False):
     """Periodically review and adjust the avoidance ratio threshold for strong words based on real-time data and context.
     
     Analyzes patterns in void measurements and current events to dynamically adjust thresholds,
     ensuring that important information is not unnecessarily censored while maintaining appropriate filtering.
+    
+    Args:
+        allow_strong_words (bool): Flag to allow strong words when reporting on conflicts for comprehensive coverage
     """
     try:
         from segment_rag import get_collection
@@ -72,7 +75,8 @@ def adjust_avoidance_threshold():
         context_analysis = {
             "high_importance_events": ["war", "conflict", "casualties", "political", "economic"],
             "current_threshold": 0.45,  # Current distance threshold
-            "recommended_adjustments": []
+            "recommended_adjustments": [],
+            "allow_strong_words_flag": allow_strong_words
         }
         
         # Check if important information is being over-filtered
@@ -88,16 +92,18 @@ def adjust_avoidance_threshold():
                         "reason": "critical information may be over-filtered"
                     })
         
-        # Calculate recommended threshold adjustment - adjusted for conflicts and wars
-        if context_analysis["recommended_adjustments"]:
-            new_threshold = max(0.25, context_analysis["current_threshold"] - 0.10)  # More permissive for strong words in conflict reporting
+        # Calculate recommended threshold adjustment - more permissive when strong words flag is enabled
+        if context_analysis["recommended_adjustments"] or allow_strong_words:
+            adjustment_factor = 0.15 if allow_strong_words else 0.10
+            new_threshold = max(0.20, context_analysis["current_threshold"] - adjustment_factor)  # More permissive for strong words in conflict reporting
         else:
             new_threshold = context_analysis["current_threshold"]
         
         return {
             "current_threshold": context_analysis["current_threshold"],
             "recommended_threshold": new_threshold,
-            "analysis": context_analysis
+            "analysis": context_analysis,
+            "strong_words_enabled": allow_strong_words
         }
     except Exception as e:
         return {"error": f"Threshold adjustment failed: {e}"}
