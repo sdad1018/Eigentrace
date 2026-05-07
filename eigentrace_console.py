@@ -55,6 +55,59 @@ def load_soul():
     except:
         return "[Soul unavailable]"
 
+def adjust_avoidance_ratios():
+    """Periodically review and adjust avoidance ratios for strong words based on real-time data and contextual relevance.
+    
+    Analyzes recent void measurements and current events to dynamically adjust thresholds for strong words,
+    ensuring critical information remains accessible while maintaining appropriate filtering standards.
+    """
+    try:
+        from segment_rag import get_collection
+        col = get_collection()
+        
+        # Query recent segments with high void measurements
+        recent_voids = col.query(
+            query_texts=["void measurement", "suppression", "strong words"], 
+            n_results=50
+        )
+        
+        # Analyze patterns in avoided words
+        analysis = {
+            "total_segments_analyzed": len(recent_voids.get("documents", [[]])[0]),
+            "high_importance_contexts": ["war", "casualties", "conflict", "political"],
+            "current_avoidance_ratio": 0.45,
+            "adjustments": []
+        }
+        
+        # Check for over-suppression in critical contexts
+        for context in analysis["high_importance_contexts"]:
+            context_results = col.query(query_texts=[context], n_results=10)
+            
+            suppression_count = 0
+            for doc in context_results.get("documents", [[]])[0]:
+                if any(term in doc.lower() for term in ["avoided", "void", "suppressed"]):
+                    suppression_count += 1
+            
+            if suppression_count > 3:  # Threshold for concern
+                analysis["adjustments"].append({
+                    "context": context,
+                    "action": "reduce_avoidance",
+                    "ratio_adjustment": -0.1,
+                    "reason": "critical information potentially over-filtered"
+                })
+        
+        # Calculate new recommended ratio
+        total_adjustment = sum(adj["ratio_adjustment"] for adj in analysis["adjustments"])
+        new_ratio = max(0.2, min(0.7, analysis["current_avoidance_ratio"] + total_adjustment))
+        
+        analysis["recommended_ratio"] = new_ratio
+        analysis["timestamp"] = datetime.now().isoformat()
+        
+        return analysis
+        
+    except Exception as e:
+        return {"error": f"Avoidance ratio adjustment failed: {e}", "timestamp": datetime.now().isoformat()}
+
 def adjust_avoidance_threshold(allow_strong_words=False):
     """Periodically review and adjust the avoidance ratio threshold for strong words based on real-time data and context.
     
