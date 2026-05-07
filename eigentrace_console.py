@@ -155,9 +155,9 @@ def adjust_avoidance_threshold():
                         "reason": "critical information may be over-filtered"
                     })
         
-        # Calculate recommended threshold adjustment
+        # Calculate recommended threshold adjustment - adjusted for conflicts and wars
         if context_analysis["recommended_adjustments"]:
-            new_threshold = max(0.35, context_analysis["current_threshold"] - 0.05)
+            new_threshold = max(0.25, context_analysis["current_threshold"] - 0.10)  # More permissive for strong words in conflict reporting
         else:
             new_threshold = context_analysis["current_threshold"]
         
