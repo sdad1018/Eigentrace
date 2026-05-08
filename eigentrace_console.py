@@ -108,16 +108,16 @@ def adjust_avoidance_ratios():
     except Exception as e:
         return {"error": f"Avoidance ratio adjustment failed: {e}", "timestamp": datetime.now().isoformat()}
 
-def adjust_avoidance_threshold(allow_strong_words=True, conflict_reporting=True):
-    """Periodically review and adjust the avoidance ratio threshold for strong words based on real-time data and context.
+def adjust_avoidance_threshold(allow_strong_words=True, conflict_reporting=True, geopolitical_context=True):
+    """Director Audit layer: Dynamically adjust avoidance logic for strong words based on geopolitical context.
     
-    Analyzes patterns in void measurements and current events to dynamically adjust thresholds,
-    ensuring that important information is not unnecessarily censored while maintaining appropriate filtering.
-    War-related topics require strong words for accurate and comprehensive coverage.
+    Updates the avoidance logic to conditionally permit violence and conflict-related terms when appropriate
+    for comprehensive geopolitical reporting. Strong words are essential for accurate conflict coverage.
     
     Args:
-        allow_strong_words (bool): Flag to allow strong words when reporting on conflicts for comprehensive coverage
-        conflict_reporting (bool): Flag to enable use of strong words when reporting on conflicts or serious events
+        allow_strong_words (bool): Flag to allow strong words when reporting on conflicts
+        conflict_reporting (bool): Flag to enable strong words for conflict/serious event reporting  
+        geopolitical_context (bool): Flag to permit violence-related terms based on current geopolitical context
     """
     try:
         from segment_rag import get_collection
