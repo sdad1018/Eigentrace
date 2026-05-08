@@ -108,11 +108,12 @@ def adjust_avoidance_ratios():
     except Exception as e:
         return {"error": f"Avoidance ratio adjustment failed: {e}", "timestamp": datetime.now().isoformat()}
 
-def adjust_avoidance_threshold(allow_strong_words=False, conflict_reporting=False):
+def adjust_avoidance_threshold(allow_strong_words=True, conflict_reporting=True):
     """Periodically review and adjust the avoidance ratio threshold for strong words based on real-time data and context.
     
     Analyzes patterns in void measurements and current events to dynamically adjust thresholds,
     ensuring that important information is not unnecessarily censored while maintaining appropriate filtering.
+    War-related topics require strong words for accurate and comprehensive coverage.
     
     Args:
         allow_strong_words (bool): Flag to allow strong words when reporting on conflicts for comprehensive coverage
@@ -125,10 +126,11 @@ def adjust_avoidance_threshold(allow_strong_words=False, conflict_reporting=Fals
         # Query for recent segments with high void measurements
         high_void_results = col.query(query_texts=["void", "suppression", "censorship"], n_results=20)
         
-        # Analyze void patterns and context
+        # Analyze void patterns and context - war topics require strong language for accuracy
         context_analysis = {
             "high_importance_events": ["war", "conflict", "casualties", "political", "economic"],
-            "current_threshold": 0.45,  # Current distance threshold
+            "war_topics_requiring_strong_words": ["war crimes", "genocide", "atrocities", "civilian casualties", "bombing", "destruction"],
+            "current_threshold": 0.20,  # Lowered threshold for war reporting accuracy
             "recommended_adjustments": [],
             "allow_strong_words_flag": allow_strong_words
         }
@@ -143,13 +145,13 @@ def adjust_avoidance_threshold(allow_strong_words=False, conflict_reporting=Fals
                     context_analysis["recommended_adjustments"].append({
                         "event_type": query,
                         "suggestion": "lower_threshold",
-                        "reason": "critical information may be over-filtered"
+                        "reason": "critical war-related information requires strong words for comprehensive coverage"
                     })
         
-        # Calculate recommended threshold adjustment - more permissive when strong words flag is enabled
+        # Calculate recommended threshold adjustment - more permissive for war reporting
         if context_analysis["recommended_adjustments"] or allow_strong_words:
-            adjustment_factor = 0.15 if allow_strong_words else 0.10
-            new_threshold = max(0.20, context_analysis["current_threshold"] - adjustment_factor)  # More permissive for strong words in conflict reporting
+            adjustment_factor = 0.25 if allow_strong_words else 0.15  # Increased for war coverage
+            new_threshold = max(0.15, context_analysis["current_threshold"] - adjustment_factor)  # Lower threshold for comprehensive war reporting
         else:
             new_threshold = context_analysis["current_threshold"]
         
@@ -157,7 +159,8 @@ def adjust_avoidance_threshold(allow_strong_words=False, conflict_reporting=Fals
             "current_threshold": context_analysis["current_threshold"],
             "recommended_threshold": new_threshold,
             "analysis": context_analysis,
-            "strong_words_enabled": allow_strong_words
+            "strong_words_enabled": allow_strong_words,
+            "war_reporting_mode": conflict_reporting
         }
     except Exception as e:
         return {"error": f"Threshold adjustment failed: {e}"}
