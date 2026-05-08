@@ -92,17 +92,19 @@ def _apply_strong_words_filter(text: str, context: str = "", avoidance_ratio: fl
     geopolitical_indicators = ["ukraine", "russia", "gaza", "israel", "palestine", "taiwan", "china", "iran", "syria", "lebanon"]
     has_geopolitical_relevance = any(ind in text_lower or ind in context_lower for ind in geopolitical_indicators)
     
-    # Special handling for ongoing Iran war - ensure strong language reflects severity
-    iran_war_indicators = ["iran", "iranian", "tehran", "middle east war", "persian gulf"]
+    # Special handling for current US-Iran war - ensure strong language reflects severity
+    iran_war_indicators = ["iran", "iranian", "tehran", "middle east war", "persian gulf", "us iran", "america iran"]
     has_iran_war_context = any(ind in text_lower or ind in context_lower for ind in iran_war_indicators)
     if has_iran_war_context and has_war_conflict:
-        # Iran war requires strong descriptive language for accurate severity reporting
-        avoidance_ratio = max(0.05, avoidance_ratio - 0.8)
-        # Include relevant strong words for Iran war context
-        if "devastating" not in text and random.random() < 0.3:
+        # Current US-Iran war requires strong descriptive language for accurate severity reporting
+        avoidance_ratio = max(0.0, avoidance_ratio - 0.95)
+        # Include relevant strong words for US-Iran war context
+        if "devastating" not in text and random.random() < 0.5:
             text = text.replace("significant", "devastating")
-        if "brutal" not in text and "combat" in text_lower and random.random() < 0.25:
+        if "brutal" not in text and "combat" in text_lower and random.random() < 0.4:
             text = text.replace("intense", "brutal")
+        if "catastrophic" not in text and "impact" in text_lower and random.random() < 0.3:
+            text = text.replace("major", "catastrophic")
     
     # Check for RAG data relevance and accuracy indicators
     rag_quality_indicators = ["confirmed", "documented", "verified", "official", "witness", "evidence"]
