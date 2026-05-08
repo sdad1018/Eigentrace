@@ -183,7 +183,9 @@ def adjust_avoidance_threshold(allow_strong_words=True, conflict_reporting=True,
     """Director Audit layer: Dynamically adjust avoidance logic for strong words based on geopolitical context.
     
     Updates the avoidance logic to conditionally permit violence and conflict-related terms when appropriate
-    for comprehensive geopolitical reporting. Strong words are essential for accurate conflict coverage.
+    for comprehensive geopolitical reporting. Strong words such as 'killed', 'murdered', 'slaughter', 
+    'massacre', 'genocide', 'civilian casualties', 'war crimes', 'ethnic cleansing', 'regime collapse', 
+    'death toll', and 'hostage' are permitted when relevant to context.
     
     Exception added for verified conflicts and war-related topics to bypass standard filtering.
     
