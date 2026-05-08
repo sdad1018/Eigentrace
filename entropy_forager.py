@@ -97,8 +97,7 @@ def forage_entropy():
         log.warning(f"FORAGING: Mistral failed: {e}")
         return None
 
-    # Clean up
-    text = text.replace("<think>", "").replace("</think>", "")
+    # Clean up markdown artifacts but PRESERVE think tags for reasoning analysis
     text = re.sub(r"[#*_`]", "", text)
 
     if len(text) < 30:

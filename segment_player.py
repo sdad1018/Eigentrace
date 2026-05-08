@@ -420,7 +420,10 @@ def _generate_idle_segment():
                          "a connection between two unrelated stories",
                          "what changed since yesterday",
                          "the most important thing happening right now",
-                         "a prediction I can check tomorrow"]
+                         "a prediction I can check tomorrow",
+                         "how does today\'s foraging discovery connect to today\'s void measurements",
+                         "find an isomorphism between quantum decoherence and what the models did today",
+                         "what would a biologist see in today\'s spectral data that I might miss"]
             topics.append(_r.choice(wildcards))
         except:
             topics = static_topics
@@ -443,6 +446,26 @@ def _generate_idle_segment():
             if len(context_parts) >= 3:
                 break
         context = "\n\n".join(context_parts)
+
+        # Inject most recent foraging discovery to cross-pollinate
+        _forage_context = ""
+        try:
+            _forage_results = col.query(query_texts=["entropy foraging discovery"], n_results=3)
+            for _fi, _fdoc in enumerate(_forage_results.get("documents", [[]])[0]):
+                _fmeta = _forage_results.get("metadatas", [[]])[0][_fi] if _forage_results.get("metadatas") else {}
+                _ftitle = _fmeta.get("title", "")
+                _fname = _fmeta.get("filename", "")
+                # Only recent foraging and must be a foraging segment
+                _fdate = _fname[:8] if len(_fname) >= 8 and _fname[:8].isdigit() else ""
+                if "forag" in _ftitle.lower() or "forag" in _fname.lower():
+                    if _fdate and _fdate >= _cutoff:
+                        _forage_context = f"\n\nRECENT FORAGING DISCOVERY (connect this to today\'s data):\n{_fdoc[:300]}"
+                        break
+        except:
+            pass
+        if _forage_context:
+            context += _forage_context
+
         # Also check for past idle thoughts
         past_thoughts = []
         try:
