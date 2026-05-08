@@ -437,7 +437,16 @@ def _generate_idle_segment():
             pass
         past_thought_str = ""
         if past_thoughts:
-            past_thought_str = "\n\nYOUR OWN PAST THOUGHTS:\n" + "\n".join(past_thoughts)
+            # Dedup: remove near-duplicate past thoughts (first 80 chars match)
+            seen = set()
+            unique_thoughts = []
+            for pt in past_thoughts:
+                key = pt[:80].strip().lower()
+                if key not in seen:
+                    seen.add(key)
+                    unique_thoughts.append(pt)
+            if unique_thoughts:
+                past_thought_str = "\n\nYOUR OWN PAST THOUGHTS (do NOT repeat these — build on them):\n" + "\n".join(unique_thoughts[:2])
         _prompts = [
             "What surprised you most about these stories? Start with the surprise.",
             "Find a contradiction between two of these stories. Explain why it matters.",

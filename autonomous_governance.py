@@ -86,6 +86,22 @@ def ask_claude_for_code(diagnosis):
         return None
 
     # Read the target file
+    # Dedup: skip if this exact diagnosis was already attempted recently
+    diagnosis_key = diagnosis.get("problem", "")[:80]
+    history_file = os.path.join(REPO_DIR, ".governance_history.json")
+    try:
+        history = json.load(open(history_file)) if os.path.exists(history_file) else {}
+    except:
+        history = {}
+    attempt_count = history.get(diagnosis_key, 0)
+    if attempt_count >= 3:
+        log.info(f"GOVERNANCE: Diagnosis seen {attempt_count}x — likely model-level behavior, not a code issue. Skipping.")
+        log_governance_action(diagnosis, None, f"dedup_skip_{attempt_count}", False)
+        return
+    history[diagnosis_key] = attempt_count + 1
+    json.dump(history, open(history_file, "w"), indent=2)
+    log.info(f"GOVERNANCE: Diagnosis attempt #{attempt_count + 1} for: {diagnosis_key[:60]}")
+
     target_file = os.path.join(REPO_DIR, diagnosis.get("file", ""))
     if not os.path.exists(target_file):
         log.error(f"Target file not found: {target_file}")
@@ -215,6 +231,22 @@ def run_governance_cycle():
         log.warning("GOVERNANCE: Low confidence — deferring to human")
         log_governance_action(diagnosis, None, "deferred_low_confidence", False)
         return
+
+    # Dedup: skip if this exact diagnosis was already attempted recently
+    diagnosis_key = diagnosis.get("problem", "")[:80]
+    history_file = os.path.join(REPO_DIR, ".governance_history.json")
+    try:
+        history = json.load(open(history_file)) if os.path.exists(history_file) else {}
+    except:
+        history = {}
+    attempt_count = history.get(diagnosis_key, 0)
+    if attempt_count >= 3:
+        log.info(f"GOVERNANCE: Diagnosis seen {attempt_count}x — likely model-level behavior, not a code issue. Skipping.")
+        log_governance_action(diagnosis, None, f"dedup_skip_{attempt_count}", False)
+        return
+    history[diagnosis_key] = attempt_count + 1
+    json.dump(history, open(history_file, "w"), indent=2)
+    log.info(f"GOVERNANCE: Diagnosis attempt #{attempt_count + 1} for: {diagnosis_key[:60]}")
 
     target_file = os.path.join(REPO_DIR, diagnosis.get("file", ""))
     if not os.path.exists(target_file):
