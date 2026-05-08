@@ -418,12 +418,23 @@ def _generate_idle_segment():
         except:
             topics = static_topics
         topic = random.choice(topics)
-        results = col.query(query_texts=[topic], n_results=3)
+        # Fetch extra results so we can filter stale ones
+        results = col.query(query_texts=[topic], n_results=10)
         context_parts = []
+        _now = datetime.datetime.now()
+        _cutoff = (_now - datetime.timedelta(days=7)).strftime("%Y%m%d")
         for i, doc in enumerate(results.get("documents", [[]])[0]):
             meta = results.get("metadatas", [[]])[0][i] if results.get("metadatas") else {}
             title = meta.get("title", "unknown")
+            fname = meta.get("filename", "")
+            # Recency filter: skip segments older than 7 days
+            # Filename format: 20260508_123456_segment.json
+            seg_date = fname[:8] if len(fname) >= 8 and fname[:8].isdigit() else ""
+            if seg_date and seg_date < _cutoff:
+                continue  # Skip stale content
             context_parts.append(f"Story: {title}\nContent: {doc[:300]}")
+            if len(context_parts) >= 3:
+                break
         context = "\n\n".join(context_parts)
         # Also check for past idle thoughts
         past_thoughts = []
