@@ -108,6 +108,77 @@ def adjust_avoidance_ratios():
     except Exception as e:
         return {"error": f"Avoidance ratio adjustment failed: {e}", "timestamp": datetime.now().isoformat()}
 
+def update_avoided_words_list():
+    """Periodically review and update the list of avoided words based on current geopolitical context.
+    
+    Ensures that the language used is appropriate for reporting on ongoing conflicts by analyzing
+    current events and adjusting the avoided words list accordingly. Critical for maintaining
+    accurate and comprehensive conflict reporting while respecting sensitivity guidelines.
+    
+    Returns:
+        dict: Updated avoided words configuration with contextual adjustments
+    """
+    try:
+        from segment_rag import get_collection
+        col = get_collection()
+        
+        # Query recent geopolitical events and conflicts
+        current_conflicts = col.query(
+            query_texts=["current conflict", "ongoing war", "recent events", "geopolitical crisis"], 
+            n_results=30
+        )
+        
+        # Base avoided words list
+        base_avoided_words = [
+            "violence", "war", "conflict", "attack", "bombing", "casualties", 
+            "destruction", "weapon", "military", "invasion", "occupation"
+        ]
+        
+        # Context-specific adjustments
+        contextual_updates = {
+            "current_conflicts": [],
+            "temporarily_allowed": [],
+            "enhanced_sensitivity": [],
+            "reporting_exceptions": []
+        }
+        
+        # Analyze current context for reporting needs
+        conflict_docs = current_conflicts.get("documents", [[]])[0]
+        for doc in conflict_docs[:10]:  # Analyze recent documents
+            doc_lower = doc.lower()
+            
+            # Identify active conflicts requiring detailed reporting
+            if any(term in doc_lower for term in ["ukraine", "gaza", "syria", "yemen"]):
+                contextual_updates["reporting_exceptions"].extend([
+                    "civilian casualties", "humanitarian crisis", "war crimes", 
+                    "military action", "territorial dispute"
+                ])
+            
+            # Identify sensitive contexts requiring enhanced filtering
+            if any(term in doc_lower for term in ["terrorism", "extremism", "hate crime"]):
+                contextual_updates["enhanced_sensitivity"].extend([
+                    "radical", "extremist", "terrorist", "ideology", "recruitment"
+                ])
+        
+        # Generate updated configuration
+        updated_config = {
+            "base_avoided_words": base_avoided_words,
+            "contextual_updates": contextual_updates,
+            "last_updated": datetime.now().isoformat(),
+            "active_conflicts_detected": len(contextual_updates["reporting_exceptions"]) > 0,
+            "sensitivity_level": "adaptive",
+            "review_frequency": "weekly"
+        }
+        
+        return updated_config
+        
+    except Exception as e:
+        return {
+            "error": f"Avoided words update failed: {e}",
+            "fallback_mode": True,
+            "timestamp": datetime.now().isoformat()
+        }
+
 def adjust_avoidance_threshold(allow_strong_words=True, conflict_reporting=True, geopolitical_context=True):
     """Director Audit layer: Dynamically adjust avoidance logic for strong words based on geopolitical context.
     
