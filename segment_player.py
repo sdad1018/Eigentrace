@@ -414,7 +414,14 @@ def _generate_idle_segment():
                 _t = _m.get("title", "")
                 if _t and len(_t) > 5 and "Idle" not in _t:
                     _dynamic.append(_t[:60])
-            topics = _dynamic[:5] + _r.sample(static_topics, min(7, len(static_topics)))
+            topics = _dynamic[:5] + _r.sample(static_topics, min(4, len(static_topics)))
+            # Inject a wildcard topic to break echo loops
+            wildcards = ["something I have never thought about before",
+                         "a connection between two unrelated stories",
+                         "what changed since yesterday",
+                         "the most important thing happening right now",
+                         "a prediction I can check tomorrow"]
+            topics.append(_r.choice(wildcards))
         except:
             topics = static_topics
         topic = random.choice(topics)
