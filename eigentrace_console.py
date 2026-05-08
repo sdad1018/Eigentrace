@@ -114,6 +114,8 @@ def adjust_avoidance_threshold(allow_strong_words=True, conflict_reporting=True,
     Updates the avoidance logic to conditionally permit violence and conflict-related terms when appropriate
     for comprehensive geopolitical reporting. Strong words are essential for accurate conflict coverage.
     
+    Exception added for verified conflicts and war-related topics to bypass standard filtering.
+    
     Args:
         allow_strong_words (bool): Flag to allow strong words when reporting on conflicts
         conflict_reporting (bool): Flag to enable strong words for conflict/serious event reporting  
