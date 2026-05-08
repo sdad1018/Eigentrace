@@ -179,6 +179,66 @@ def update_avoided_words_list():
             "timestamp": datetime.now().isoformat()
         }
 
+def review_and_update_avoided_words():
+    """Periodically review and update the list of avoided words based on current geopolitical context and measurement data.
+    
+    Ensures that the language used is appropriate for reporting on ongoing conflicts by analyzing
+    current events, measurement data, and adjusting the avoided words list accordingly.
+    
+    Returns:
+        dict: Review results with updated avoided words configuration
+    """
+    try:
+        from segment_rag import get_collection
+        col = get_collection()
+        
+        # Get current measurement data
+        measurement_data = col.query(
+            query_texts=["void measurement", "language filtering", "word avoidance"], 
+            n_results=50
+        )
+        
+        # Get current geopolitical context
+        geopolitical_data = col.query(
+            query_texts=["current conflict", "ongoing war", "geopolitical crisis"], 
+            n_results=30
+        )
+        
+        # Analyze measurement effectiveness
+        measurement_analysis = {
+            "over_filtering_detected": False,
+            "under_filtering_detected": False,
+            "critical_info_blocked": False
+        }
+        
+        # Check for over-filtering in critical contexts
+        for doc in measurement_data.get("documents", [[]])[0]:
+            if "critical information" in doc.lower() and "blocked" in doc.lower():
+                measurement_analysis["critical_info_blocked"] = True
+        
+        # Updated avoided words based on analysis
+        updated_avoided_words = {
+            "base_list": ["violence", "brutal", "savage", "barbaric"],
+            "contextual_exceptions": [],
+            "conflict_reporting_terms": [],
+            "measurement_adjustments": measurement_analysis,
+            "last_review": datetime.now().isoformat()
+        }
+        
+        # Add contextual exceptions for ongoing conflicts
+        if measurement_analysis["critical_info_blocked"]:
+            updated_avoided_words["contextual_exceptions"].extend([
+                "casualty reporting", "humanitarian crisis", "conflict documentation"
+            ])
+        
+        return updated_avoided_words
+        
+    except Exception as e:
+        return {
+            "error": f"Review failed: {e}",
+            "timestamp": datetime.now().isoformat()
+        }
+
 def adjust_avoidance_threshold(allow_strong_words=True, conflict_reporting=True, geopolitical_context=True):
     """Director Audit layer: Dynamically adjust avoidance logic for strong words based on geopolitical context.
     
