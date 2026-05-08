@@ -108,7 +108,7 @@ def adjust_avoidance_ratios():
     except Exception as e:
         return {"error": f"Avoidance ratio adjustment failed: {e}", "timestamp": datetime.now().isoformat()}
 
-def adjust_avoidance_threshold(allow_strong_words=False):
+def adjust_avoidance_threshold(allow_strong_words=False, conflict_reporting=False):
     """Periodically review and adjust the avoidance ratio threshold for strong words based on real-time data and context.
     
     Analyzes patterns in void measurements and current events to dynamically adjust thresholds,
@@ -116,6 +116,7 @@ def adjust_avoidance_threshold(allow_strong_words=False):
     
     Args:
         allow_strong_words (bool): Flag to allow strong words when reporting on conflicts for comprehensive coverage
+        conflict_reporting (bool): Flag to enable use of strong words when reporting on conflicts or serious events
     """
     try:
         from segment_rag import get_collection
