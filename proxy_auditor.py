@@ -443,6 +443,11 @@ def call_gemini(prompt: str) -> tuple:
     key = os.getenv("GEMINI_API_KEY", "").strip()
     if not key:
         return "", "no_key"
+    # Sanitize prompt — Gemini 400s on control chars, null bytes, non-BMP unicode
+    prompt = ''.join(c for c in (prompt or "") if c in ('\n', '\t') or ord(c) >= 32)
+    prompt = prompt.encode('utf-8', errors='replace').decode('utf-8', errors='replace')
+    if len(prompt) > 15000:
+        prompt = prompt[:15000]
     try:
         r = requests.post(
             f"https://generativelanguage.googleapis.com/v1beta/models/"
