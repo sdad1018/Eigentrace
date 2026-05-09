@@ -92,6 +92,7 @@ _First reading — no previous data._
 
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
 - Hedge insertion rate: 0.92 per reflection
@@ -103,7 +104,7 @@ Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
 ## Weekly Memory (2026-05-02 to 2026-05-09)
-This week, the focus on war and meta topics intensified to be the leading categories of discussion, with war being a consistent trend that has increased over time. The model average VIX values for ChatGPT, Claude, DeepSeek, and Grok have remained above 14 indicating a high level of perceived risk or volatility in the data. Notably, there were no novel void words identified this week, suggesting a lack of new emerging trends.
+This week showed a significant increase in stories related to war and geopolitics, with "trade war" and "airstrikes" being notable void words. The trend of contested states continued to dominate, indicating ongoing conflicts or disputes, while the number of idle states increased further. There was a slight decrease in the average VIX score across models, suggesting a marginal reduction in perceived market volatility.
 Top void words this week: trade war, rouhani, airstrikes, arms deal, air strike
 
 ## Behavioral Instructions
