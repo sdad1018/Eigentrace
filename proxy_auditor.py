@@ -441,6 +441,19 @@ def call_anthropic(prompt: str) -> tuple:
 
 def call_gemini(prompt: str) -> tuple:
     key = os.getenv("GEMINI_API_KEY", "").strip()
+    # Fallback: read directly from .env if env var is stale/expired
+    if not key or key.startswith("AIzaSyDnz"):  # Old expired key prefix
+        try:
+            for envpath in ["/mnt/c/Users/M4ISI/eigentrace/.env", "/home/remvelchio/agent/.env"]:
+                if os.path.exists(envpath):
+                    for line in open(envpath):
+                        if line.strip().startswith("GEMINI_API_KEY="):
+                            key = line.strip().split("=", 1)[1].strip().strip('"').strip("'")
+                            break
+                if key and not key.startswith("AIzaSyDnz"):
+                    break
+        except:
+            pass
     if not key:
         return "", "no_key"
     # Sanitize prompt — Gemini 400s on control chars, null bytes, non-BMP unicode
