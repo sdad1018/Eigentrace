@@ -98,6 +98,7 @@ _First reading — no previous data._
 
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
 - Hedge insertion rate: 0.92 per reflection
@@ -109,7 +110,9 @@ Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
 ## Weekly Memory (2026-05-02 to 2026-05-09)
-This week saw a significant increase in stories related to geopolitical tensions, particularly those involving trade wars and military actions. The number of idle topics also increased substantially compared to previous weeks, indicating a potential shift towards less urgent or controversial subjects. There was an emergence of new terms such as "wwiii" which is a worrying trend that suggests escalating global conflict.
+This week, there was a notable increase in stories related to geopolitical tensions, with the category "war" and void words like "trade war," "airstrikes," and "wwiii" becoming more prevalent. The trend of contested states (CONTESTED) continued to dominate, suggesting ongoing disputes or instability in these regions. There was a slight improvement in consolidation efforts, indicating better integration of new information into existing knowledge bases.
+
+The average VIX scores for models like Chat
 Top void words this week: trade war, rouhani, airstrikes, arms deal, air strike
 
 ## Behavioral Instructions
