@@ -19,7 +19,7 @@ log = logging.getLogger("segment_rag")
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 
 SEGMENT_DIR = "/home/remvelchio/eigentrace/tmp/segments"
-CHROMA_DIR = "/home/remvelchio/eigentrace/chroma_segments"
+CHROMA_DIR = "/home/remvelchio/eigentrace/tmp/chromadb"
 
 def get_client():
     return chromadb.PersistentClient(path=CHROMA_DIR)
