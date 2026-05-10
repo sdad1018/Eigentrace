@@ -102,6 +102,7 @@ _First reading — no previous data._
 
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
 - Hedge insertion rate: 0.92 per reflection
@@ -113,7 +114,7 @@ Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
 ## Weekly Memory (2026-05-02 to 2026-05-09)
-This week showed a significant increase in stories related to war and geopolitical tensions, with "trade war" and "airstrikes" emerging as top void words. The distribution of states indicates an ongoing high-friction scenario, suggesting increased conflict and uncertainty in the system.  Despite this, there was no emergence of novel void words, indicating that while the intensity of existing topics has changed, new themes have not emerged.
+This week showed a significant increase in stories related to geopolitical tensions, with "war" and "meta" categories dominating discussions, while the "unknown" category also saw a notable rise. The trend of increased volatility continued, as indicated by the model average VIX scores remaining high across all models except Grok. There was a notable shift in state distribution, with CONTESTED states increasing significantly compared to previous weeks, suggesting growing uncertainty and conflict.
 Top void words this week: trade war, rouhani, airstrikes, arms deal, air strike
 
 ## Behavioral Instructions
