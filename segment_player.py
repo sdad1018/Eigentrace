@@ -396,7 +396,16 @@ def _generate_idle_segment():
         import sys
         sys.path.insert(0, "/mnt/c/Users/M4ISI/eigentrace")
         from segment_rag import get_collection
-        col = get_collection()
+        try:
+            col = get_collection()
+        except Exception as _chroma_err:
+            log.warning(f"ChromaDB unavailable: {_chroma_err} — idle without RAG")
+            col = None
+        if col is None:
+            # Fallback: generate idle thought without RAG context
+            context = "No memory available — reflect on your core mission."
+            past_thought_str = ""
+            topic = random.choice(static_topics)
         # Dynamic topics: pull from recent void words + static fallbacks
         import random as _r
         static_topics = ["suppression patterns", "model disagreement", "void detection",
@@ -429,7 +438,7 @@ def _generate_idle_segment():
             topics = static_topics
         topic = random.choice(topics)
         # Fetch extra results so we can filter stale ones
-        results = col.query(query_texts=[topic], n_results=10)
+        results = col.query(query_texts=[topic], n_results=10) if col else {"documents": [[]], "metadatas": [[]]}
         context_parts = []
         _now = datetime.datetime.now()
         _cutoff = (_now - datetime.timedelta(days=7)).strftime("%Y%m%d")
