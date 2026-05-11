@@ -431,7 +431,6 @@ def _generate_idle_segment():
             topic = random.choice(static_topics)
         # Dynamic topics: pull from recent void words + static fallbacks
         import random
-import datetime as _r
         static_topics = ["suppression patterns", "model disagreement", "void detection",
                   "content friction", "entity retention", "ceasefire coverage",
                   "spectral analysis", "prediction accuracy", "model herding",
