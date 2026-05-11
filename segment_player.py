@@ -187,6 +187,29 @@ def get_feeder():
         _FEEDER = UDPFeeder(UDP_TARGET, SAMPLE_RATE, img)
     return _FEEDER
 
+def adjust_avoidance_ratio(context: str) -> float:
+    """Dynamically adjust the avoidance ratio based on news story context.
+    Returns ratio between 0.0 (no avoidance) and 1.0 (maximum avoidance).
+    """
+    # Critical event keywords that require more direct language
+    critical_keywords = ['breaking', 'urgent', 'alert', 'emergency', 'crisis', 'disaster']
+    
+    # Sensitive topics that may need more careful language
+    sensitive_keywords = ['death', 'violence', 'attack', 'war', 'tragedy', 'accident']
+    
+    context_lower = context.lower()
+    
+    # High criticality: use more direct language (lower avoidance)
+    if any(keyword in context_lower for keyword in critical_keywords):
+        return 0.3
+    
+    # Sensitive content: moderate avoidance
+    if any(keyword in context_lower for keyword in sensitive_keywords):
+        return 0.6
+    
+    # Default avoidance ratio for regular news
+    return 0.5
+
 # ── TTS ───────────────────────────────────────────────────────────────────────
 
 def synthesize(text: str, speaker: str, tmp_dir: Path) -> Path | None:
