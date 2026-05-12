@@ -9,10 +9,12 @@ Test: python3 script_v3.py [--file PATH]
 """
 
 from __future__ import annotations
-import json, random, os, re
+import json, random, os, re, logging
 from pathlib import Path
 from collections import Counter
 from datetime import datetime
+
+log = logging.getLogger("script_v3")
 
 def _rag_context(title, n=3, max_distance=0.45):
     """Retrieve historical context from past broadcasts via ChromaDB.

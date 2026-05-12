@@ -127,6 +127,23 @@ if len(words) >= 20:
     laplacian = degree - cooccur
     eigenvalues, eigenvectors = np.linalg.eigh(laplacian)
     from sklearn.cluster import KMeans
+    # Filter out HTML/RSS artifact words before clustering
+    _garbage = {'list', 'items', 'recommended', 'videotape', 'gunfight', 'waitin',
+                'click', 'subscribe', 'share', 'comment', 'read', 'more', 'next',
+                'previous', 'home', 'menu', 'search', 'login', 'signup', 'cookie',
+                'privacy', 'terms', 'contact', 'about', 'help', 'faq', 'copyright',
+                'loading', 'advertisement', 'sponsored'}
+    _clean_idx = [i for i, w in enumerate(words) if w.lower() not in _garbage]
+    if len(_clean_idx) > 10:
+        words = [words[i] for i in _clean_idx]
+        void_freq = {w: void_freq[w] for w in words}
+        # Recompute embeddings for clean words
+        N = len(words)
+        from sklearn.metrics.pairwise import cosine_similarity as _cs
+        emb_matrix = np.array([emb[w] for w in words])
+        sim = _cs(emb_matrix)
+        laplacian = np.diag(sim.sum(axis=1)) - sim
+        eigenvalues, eigenvectors = np.linalg.eigh(laplacian)
     features = eigenvectors[:, 1:4]
     labels = KMeans(n_clusters=3, random_state=42, n_init=10).fit_predict(features)
     clusters = {}
