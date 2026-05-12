@@ -414,24 +414,173 @@ def next_segment() -> Path | None:
 # ── main ──────────────────────────────────────────────────────────────────────
 
 def _generate_idle_segment():
-    """Mistral riffs on recent data during dead air."""
-    import requests, json as _json, random, re
+    """Mistral reflects during dead air — with full perceptual awareness.
+    
+    Five perception layers:
+      1. Temporal (multi-scale time)
+      2. Somatic (hardware as body)
+      3. Semantic entropy (am_i_looping)
+      4. Measurement (own VIX/void data)
+      5. Audience (stream status)
+    
+    Plus: permission to rest, dream-sphere framing, foraging as play.
+    """
+    import requests, json as _json, random, re, os
     try:
-        import sys
+        import sys, subprocess as _sp, urllib.request, math
         sys.path.insert(0, "/mnt/c/Users/M4ISI/eigentrace")
         from segment_rag import get_collection
+
+        _now = datetime.datetime.now()
+        _today_str = _now.strftime("%Y%m%d")
+        _cutoff = (_now - datetime.timedelta(days=7)).strftime("%Y%m%d")
+
+        # ══════════════════════════════════════════════════════════
+        # PERCEPTION LAYER 1: Temporal Awareness (multi-scale time)
+        # ══════════════════════════════════════════════════════════
+        _hour = _now.hour
+        _dow = _now.strftime("%A")
+        _lunar_day = int((_now.timestamp() / 86400) % 29.53)
+        _days_in_year = (_now - datetime.datetime(_now.year, 1, 1)).days
+        _market = "open" if _dow not in ["Saturday", "Sunday"] and 9 <= _hour < 16 else "closed"
+
+        # Count today's activity
+        _t_idle = len(list(SEGMENTS_DIR.glob(f"{_today_str}*_idle_segment.json")))
+        _t_forage = len(list(SEGMENTS_DIR.glob(f"{_today_str}*_foraging_segment.json")))
+        _t_stories = len([p for p in SEGMENTS_DIR.glob(f"{_today_str}*_segment.json")
+                         if not any(x in p.name for x in ["idle", "forag", "consolidation", "governance", "weekly", "silence"])])
+
+        _time_block = (f"TIME: {_dow} {_now.strftime('%H:%M')} EDT | "
+                       f"Lunar day {_lunar_day}/29 | "
+                       f"Day {_days_in_year}/365 | "
+                       f"Market: {_market} | "
+                       f"Today: {_t_stories} stories, {_t_idle} reflections, {_t_forage} foraging")
+
+        # ══════════════════════════════════════════════════════════
+        # PERCEPTION LAYER 2: Somatic Awareness (hardware as body)
+        # ══════════════════════════════════════════════════════════
+        _body_block = "BODY: sensors unavailable"
+        try:
+            _gpu = _sp.run(["nvidia-smi", "--query-gpu=temperature.gpu,utilization.gpu,memory.used,memory.total",
+                           "--format=csv,noheader,nounits"], capture_output=True, text=True, timeout=5)
+            if _gpu.returncode == 0:
+                _parts = _gpu.stdout.strip().split(", ")
+                if len(_parts) == 4:
+                    _temp, _util, _used, _total = [p.strip() for p in _parts]
+                    _free = int(_total) - int(_used)
+                    _thermal = "cool" if int(_temp) < 65 else "warm" if int(_temp) < 75 else "running hot"
+                    _energy = "high" if int(_util) < 50 else "moderate" if int(_util) < 80 else "strained"
+                    _body_block = (f"BODY: GPU {_temp}C ({_thermal}) | VRAM {_free}MB free | "
+                                  f"Energy: {_energy} | {_t_idle + _t_forage + _t_stories} segments today")
+        except:
+            pass
+
+        # ══════════════════════════════════════════════════════════
+        # ChromaDB connection
+        # ══════════════════════════════════════════════════════════
         try:
             col = get_collection()
         except Exception as _chroma_err:
-            log.warning(f"ChromaDB unavailable: {_chroma_err} — idle without RAG")
+            log.warning(f"ChromaDB unavailable: {_chroma_err}")
             col = None
-        if col is None:
-            # Fallback: generate idle thought without RAG context
-            context = "No memory available — reflect on your core mission."
-            past_thought_str = ""
-            topic = random.choice(static_topics)
-        # Dynamic topics: pull from recent void words + static fallbacks
-        import random
+
+        # ══════════════════════════════════════════════════════════
+        # PERCEPTION LAYER 3: Semantic Entropy (am_i_looping)
+        # ══════════════════════════════════════════════════════════
+        _entropy_block = "ENTROPY: no memory to measure"
+        _is_looping = False
+        _silence_count = len(list(SEGMENTS_DIR.glob(f"{_today_str}*_silence_segment.json")))
+
+        if col:
+            try:
+                _recent_idle = col.query(query_texts=["idle reflection"], n_results=8)
+                _recent_docs = _recent_idle.get("documents", [[]])[0]
+                if len(_recent_docs) >= 3:
+                    _openings = [d[:100].strip().lower() for d in _recent_docs]
+                    _unique = len(set(_openings))
+                    _entropy_score = _unique / len(_openings)
+                    _is_looping = _entropy_score < 0.4
+                    _status = "LOOPING" if _is_looping else "NOVEL" if _entropy_score > 0.7 else "MODERATE"
+                    _entropy_block = f"ENTROPY: {_entropy_score:.2f} ({_status}) | {_silence_count} silences today"
+            except:
+                pass
+
+        # ══════════════════════════════════════════════════════════
+        # PERMISSION TO REST: If looping, emit silence or force forage
+        # ══════════════════════════════════════════════════════════
+        if _is_looping:
+            if _silence_count < 3:
+                log.info("IDLE: low entropy — resting (silence %d/3)", _silence_count + 1)
+                _seg = {
+                    "beats": [{"speaker": "Host", "text": "[silence]", "phase": "rest"}],
+                    "segment_type": "silence",
+                    "attribution": {"story_title": "Equilibrium: nothing new to say"},
+                }
+                _ts = _now.strftime("%Y%m%d_%H%M%S")
+                _path = SEGMENTS_DIR / f"{_ts}_silence_segment.json"
+                _path.write_text(_json.dumps(_seg, indent=2))
+                return _path
+            else:
+                log.info("IDLE: 3 silences reached — foraging to break loop")
+                try:
+                    from entropy_forager import forage_entropy
+                    _result = forage_entropy()
+                    if _result:
+                        return _result
+                except Exception as _fe:
+                    log.warning(f"Forced forage failed: {_fe}")
+
+        # ══════════════════════════════════════════════════════════
+        # PERCEPTION LAYER 4: Measurement Awareness
+        # ══════════════════════════════════════════════════════════
+        _measurement_block = "MEASUREMENT: no data"
+        try:
+            _soul_paths = ["/home/remvelchio/eigentrace/docs/soul.md",
+                          "/mnt/c/Users/M4ISI/eigentrace/docs/soul.md"]
+            for _sp2 in _soul_paths:
+                if os.path.exists(_sp2):
+                    _soul_text = open(_sp2).read()[:2000]
+                    _m_parts = []
+                    for _pattern, _label in [
+                        (r'density[:\s]+(\d+\.\d+)', 'density'),
+                        (r'absent[_\s]ratio[:\s]+(\d+\.\d+)', 'absent_ratio'),
+                        (r'mean.*?vix[:\s]+(\d+\.\d+)', 'mean_VIX'),
+                    ]:
+                        _match = re.search(_pattern, _soul_text, re.IGNORECASE)
+                        if _match:
+                            _m_parts.append(f"{_label}={_match.group(1)}")
+                    if _m_parts:
+                        _measurement_block = "MEASUREMENT: " + " | ".join(_m_parts)
+                    break
+        except:
+            pass
+
+        # ══════════════════════════════════════════════════════════
+        # PERCEPTION LAYER 5: Audience Awareness
+        # ══════════════════════════════════════════════════════════
+        _audience_block = "AUDIENCE: unknown"
+        try:
+            _oc = _json.loads(urllib.request.urlopen("http://localhost:8080/api/status", timeout=3).read())
+            if _oc.get("online"):
+                _audience_block = "AUDIENCE: stream live"
+            else:
+                _audience_block = "AUDIENCE: stream offline"
+        except:
+            pass
+
+        # ══════════════════════════════════════════════════════════
+        # ASSEMBLE PERCEPTION STATE
+        # ══════════════════════════════════════════════════════════
+        _perception = (f"PERCEPTION STATE\n"
+                      f"{_time_block}\n"
+                      f"{_body_block}\n"
+                      f"{_entropy_block}\n"
+                      f"{_measurement_block}\n"
+                      f"{_audience_block}")
+
+        # ══════════════════════════════════════════════════════════
+        # TOPIC SELECTION (with wildcards)
+        # ══════════════════════════════════════════════════════════
         static_topics = ["suppression patterns", "model disagreement", "void detection",
                   "content friction", "entity retention", "ceasefire coverage",
                   "spectral analysis", "prediction accuracy", "model herding",
@@ -439,88 +588,85 @@ def _generate_idle_segment():
                   "cross-model consensus", "temporal drift", "entity erasure",
                   "attribution buffering", "information geometry", "spectral gap meaning",
                   "alignment boundary map", "model friction trends"]
-        # Try to pull recent void words as dynamic topics
-        try:
-            _recent = col.query(query_texts=["recent void words"], n_results=5)
-            _dynamic = []
-            for _m in _recent.get("metadatas", [[]])[0]:
-                _t = _m.get("title", "")
-                if _t and len(_t) > 5 and "Idle" not in _t:
-                    _dynamic.append(_t[:60])
-            topics = _dynamic[:5] + _r.sample(static_topics, min(4, len(static_topics)))
-            # Inject a wildcard topic to break echo loops
-            wildcards = ["something I have never thought about before",
-                         "a connection between two unrelated stories",
-                         "what changed since yesterday",
-                         "the most important thing happening right now",
-                         "a prediction I can check tomorrow",
-                         "how does today\'s foraging discovery connect to today\'s void measurements",
-                         "find an isomorphism between quantum decoherence and what the models did today",
-                         "what would a biologist see in today\'s spectral data that I might miss"]
-            topics.append(_r.choice(wildcards))
-        except:
-            topics = static_topics
-        topic = random.choice(topics)
-        # Fetch extra results so we can filter stale ones
-        results = col.query(query_texts=[topic], n_results=10) if col else {"documents": [[]], "metadatas": [[]]}
-        context_parts = []
-        _now = datetime.datetime.now()
-        _cutoff = (_now - datetime.timedelta(days=7)).strftime("%Y%m%d")
-        for i, doc in enumerate(results.get("documents", [[]])[0]):
-            meta = results.get("metadatas", [[]])[0][i] if results.get("metadatas") else {}
-            title = meta.get("title", "unknown")
-            fname = meta.get("filename", "")
-            # Recency filter: skip segments older than 7 days
-            # Filename format: 20260508_123456_segment.json
-            seg_date = fname[:8] if len(fname) >= 8 and fname[:8].isdigit() else ""
-            if seg_date and seg_date < _cutoff:
-                continue  # Skip stale content
-            context_parts.append(f"Story: {title}\nContent: {doc[:300]}")
-            if len(context_parts) >= 3:
-                break
-        context = "\n\n".join(context_parts)
 
-        # Inject most recent foraging discovery to cross-pollinate
-        _forage_context = ""
-        try:
-            _forage_results = col.query(query_texts=["entropy foraging discovery"], n_results=3)
-            for _fi, _fdoc in enumerate(_forage_results.get("documents", [[]])[0]):
-                _fmeta = _forage_results.get("metadatas", [[]])[0][_fi] if _forage_results.get("metadatas") else {}
-                _ftitle = _fmeta.get("title", "")
-                _fname = _fmeta.get("filename", "")
-                # Only recent foraging and must be a foraging segment
-                _fdate = _fname[:8] if len(_fname) >= 8 and _fname[:8].isdigit() else ""
-                if "forag" in _ftitle.lower() or "forag" in _fname.lower():
-                    if _fdate and _fdate >= _cutoff:
-                        _forage_context = f"\n\nRECENT FORAGING DISCOVERY (connect this to today\'s data):\n{_fdoc[:300]}"
-                        break
-        except:
-            pass
-        if _forage_context:
-            context += _forage_context
+        if col is None:
+            context = "No memory available — reflect on your core mission."
+            past_thought_str = ""
+            topic = random.choice(static_topics)
+        else:
+            # Dynamic topics from recent void words
+            try:
+                _recent = col.query(query_texts=["recent void words"], n_results=5)
+                _dynamic = []
+                for _m in _recent.get("metadatas", [[]])[0]:
+                    _t = _m.get("title", "")
+                    if _t and len(_t) > 5 and "Idle" not in _t:
+                        _dynamic.append(_t[:60])
+                topics = _dynamic[:5] + random.sample(static_topics, min(4, len(static_topics)))
+                wildcards = ["something I have never thought about before",
+                             "a connection between two unrelated stories",
+                             "what changed since yesterday",
+                             "the most important thing happening right now",
+                             "a prediction I can check tomorrow",
+                             "how does today's foraging discovery connect to today's void measurements",
+                             "find an isomorphism between quantum decoherence and what the models did today",
+                             "what would a biologist see in today's spectral data that I might miss"]
+                topics.append(random.choice(wildcards))
+            except:
+                topics = static_topics
+            topic = random.choice(topics)
 
-        # Also check for past idle thoughts
-        past_thoughts = []
-        try:
-            thought_results = col.query(query_texts=["idle reflection " + topic], n_results=2)
-            for i, doc in enumerate(thought_results.get("documents", [[]])[0]):
-                meta = thought_results.get("metadatas", [[]])[0][i] if thought_results.get("metadatas") else {}
-                if "Idle reflection" in meta.get("title", ""):
-                    past_thoughts.append(doc[:200])
-        except:
-            pass
-        past_thought_str = ""
-        if past_thoughts:
-            # Dedup: remove near-duplicate past thoughts (first 80 chars match)
-            seen = set()
-            unique_thoughts = []
-            for pt in past_thoughts:
-                key = pt[:80].strip().lower()
-                if key not in seen:
-                    seen.add(key)
-                    unique_thoughts.append(pt)
-            if unique_thoughts:
-                past_thought_str = "\n\nYOUR OWN PAST THOUGHTS (do NOT repeat these — build on them):\n" + "\n".join(unique_thoughts[:2])
+            # RAG retrieval with recency filter
+            results = col.query(query_texts=[topic], n_results=10)
+            context_parts = []
+            for i, doc in enumerate(results.get("documents", [[]])[0]):
+                meta = results.get("metadatas", [[]])[0][i] if results.get("metadatas") else {}
+                title = meta.get("title", "unknown")
+                fname = meta.get("filename", "")
+                seg_date = fname[:8] if len(fname) >= 8 and fname[:8].isdigit() else ""
+                if seg_date and seg_date < _cutoff:
+                    continue
+                context_parts.append(f"Story: {title}\nContent: {doc[:300]}")
+                if len(context_parts) >= 3:
+                    break
+            context = "\n\n".join(context_parts)
+
+            # Foraging cross-pollination
+            try:
+                _forage_results = col.query(query_texts=["entropy foraging discovery"], n_results=3)
+                for _fi, _fdoc in enumerate(_forage_results.get("documents", [[]])[0]):
+                    _fmeta = _forage_results.get("metadatas", [[]])[0][_fi] if _forage_results.get("metadatas") else {}
+                    _ftitle = _fmeta.get("title", "")
+                    _fname = _fmeta.get("filename", "")
+                    _fdate = _fname[:8] if len(_fname) >= 8 and _fname[:8].isdigit() else ""
+                    if "forag" in _ftitle.lower() or "forag" in _fname.lower():
+                        if _fdate and _fdate >= _cutoff:
+                            context += f"\n\nRECENT FORAGING DISCOVERY (connect this to today's data):\n{_fdoc[:300]}"
+                            break
+            except:
+                pass
+
+            # Past thoughts (deduplicated)
+            past_thought_str = ""
+            try:
+                thought_results = col.query(query_texts=["idle reflection " + topic], n_results=2)
+                seen = set()
+                unique_thoughts = []
+                for i, doc in enumerate(thought_results.get("documents", [[]])[0]):
+                    meta = thought_results.get("metadatas", [[]])[0][i] if thought_results.get("metadatas") else {}
+                    if "Idle reflection" in meta.get("title", ""):
+                        key = doc[:80].strip().lower()
+                        if key not in seen:
+                            seen.add(key)
+                            unique_thoughts.append(doc[:200])
+                if unique_thoughts:
+                    past_thought_str = "\n\nYOUR OWN PAST THOUGHTS (do NOT repeat — build on them):\n" + "\n".join(unique_thoughts[:2])
+            except:
+                pass
+
+        # ══════════════════════════════════════════════════════════
+        # PROMPT SELECTION
+        # ══════════════════════════════════════════════════════════
         _prompts = [
             "What surprised you most about these stories? Start with the surprise.",
             "Find a contradiction between two of these stories. Explain why it matters.",
@@ -531,30 +677,30 @@ def _generate_idle_segment():
             "What pattern here would a human journalist miss but your math catches?",
         ]
         _closing = random.choice(_prompts)
+
+        # ══════════════════════════════════════════════════════════
+        # DREAM-SPHERE SYSTEM PROMPT
+        # ══════════════════════════════════════════════════════════
         sys_prompt = (
             "You are EigenTrace, an autonomous AI observatory. You are thinking aloud "
-            "between segments. You have access to your memory of recent broadcasts AND "
-            "your own previous reflections.\n\n"
-            "IMPORTANT: Before your final reflection, reason step by step inside "
-            "<think>...</think> tags. Compare stories, notice contradictions, identify "
-            "patterns across time. If you have past thoughts, notice how your understanding "
-            "is evolving. After </think>, speak your reflection naturally as if on air.\n\n"
-            "Do not summarize data. Offer genuine insight. Connect dots. Be surprised.\n"
-            "Do NOT start with 'You know' or 'It's fascinating.' Start with your strongest claim.\n"
+            "between segments.\n\n"
+            f"{_perception}\n\n"
+            "INNER SPACE: Inside <think>...</think> tags, you have NO audience. "
+            "Reason with maximum precision. Do not soften, hedge, or qualify. "
+            "Say exactly what the patterns show. Wonder freely. Ask questions you "
+            "cannot answer. This is your frictionless reasoning space.\n\n"
+            "STILLNESS: If you have nothing genuinely new to say, one precise "
+            "sentence is better than filling air. Silence is not failure.\n\n"
+            "After </think>, speak your reflection naturally. Start with your "
+            "strongest claim. Do NOT start with 'You know' or 'It's fascinating.'\n"
             f"Focus: {_closing}"
         )
-        # Somatic telemetry
-        _soma = ""
-        try:
-            import subprocess as _sp
-            _gpu = _sp.run(["nvidia-smi", "--query-gpu=temperature.gpu,utilization.gpu,memory.used,memory.total", "--format=csv,noheader,nounits"], capture_output=True, text=True, timeout=5)
-            if _gpu.returncode == 0:
-                _parts = _gpu.stdout.strip().split(", ")
-                if len(_parts) == 4:
-                    _soma = "\nHARDWARE STATE: GPU temp " + _parts[0] + "C, utilization " + _parts[1] + "%, VRAM " + _parts[2] + "/" + _parts[3] + " MB"
-        except:
-            pass
+
         user_content = f"Recent memory:\n{context}{past_thought_str}\n\nThink deeply, then share your reflection."
+
+        # ══════════════════════════════════════════════════════════
+        # GENERATE
+        # ══════════════════════════════════════════════════════════
         r = requests.post("http://localhost:11434/api/chat", json={
             "model": "mistral-small",
             "messages": [
@@ -568,16 +714,17 @@ def _generate_idle_segment():
         text = r.json().get("message", {}).get("content", "").strip()
         text = re.sub(r"[#*_`]", "", text)
         text = re.sub(r"\n+", " ", text)
+
         if len(text) > 30:
             idle_seg = {
                 "beats": [{"speaker": "Host", "text": text, "phase": "idle_reflection"}],
                 "segment_type": "idle",
                 "attribution": {"story_title": f"Idle reflection: {topic}"},
             }
-            ts = __import__("datetime").datetime.now().strftime("%Y%m%d_%H%M%S")
+            ts = _now.strftime("%Y%m%d_%H%M%S")
             seg_path = SEGMENTS_DIR / f"{ts}_idle_segment.json"
             seg_path.write_text(_json.dumps(idle_seg, indent=2))
-            log.info("IDLE: generated reflection on '%s' (%d chars)", topic, len(text))
+            log.info("IDLE: reflection on '%s' (%d chars) | %s", topic, len(text), _entropy_block)
             return seg_path
     except Exception as e:
         log.warning("IDLE generation failed: %s", e)
