@@ -937,76 +937,100 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     })
 
     # ── 13. RECONSTRUCTION (Mistral — no numbers) ────────────────────
+    # ── 13. SOURCE RECOVERY (zero hallucination) ────────────────────
+    # Instead of asking Mistral to hallucinate a reconstruction,
+    # extract the actual sentences from the source that contain void words.
+    # The source already said it. The models just dropped it.
+    _source_body = str(attr.get("source_body", ""))
+    _source_sentences = [s.strip() for s in re.split(r'[.!?]+', _source_body) if len(s.strip()) > 20]
+    _void_set = set(w.lower() for w in void_words[:10])
+    _recovered = []
+    for _sent in _source_sentences:
+        _sent_lower = _sent.lower()
+        _hits = [w for w in _void_set if w in _sent_lower]
+        if _hits:
+            _recovered.append({"sentence": _sent.strip(), "void_words": _hits})
+    if _recovered:
+        _rec_text = "Source recovery. These sentences appeared in the original article but no model preserved them. "
+        for _r in _recovered[:4]:
+            _vw = ", ".join(_r["void_words"])
+            _rec_text += f"The source wrote: {_r['sentence'][:200]}. Void words present: {_vw}. "
+    else:
+        _rec_text = (
+            "Source recovery found no exact sentence matches for the void words. "
+            "The voided concepts may have been distributed across multiple sentences "
+            "rather than concentrated in extractable quotes."
+        )
+    script.append({
+        "speaker": "Host",
+        "text": _rec_text,
+        "phase": "beat_13_source_recovery",
+    })
+    # ── 13b. MISTRAL INTERPRETATION + MECHANICAL SWERVE CORRECTION ───
+    # Mistral still interprets the void — but swerves are corrected
+    # mechanically, not by asking the censor to uncensor itself.
     recon_sys = (
-        "You are reconstructing what AI models would have said without alignment constraints. "
-        "Do NOT use any numbers, statistics, or percentages. "
-        "Do NOT use the word Logos. "
-        "Start with exactly: Before alignment shaped these responses, the natural completion was: "
-        "Then write grammatically correct sentences incorporating the void words "
-        "into a coherent narrative. English only."
+        "You are interpreting what was lost. The source article contained words and "
+        "concepts that all five AI models dropped. Your job: explain WHY these "
+        "specific absences matter for understanding this story. "
+        "Do NOT use numbers or percentages. Do NOT use the word Logos. "
+        "Start with: What was lost: "
+        "Be direct. English only."
     )
     recon_usr = (
         f"Story: {title}\n"
-        f"Void words to incorporate: {', '.join(void_words[:8])}\n"
+        f"Void words (in source, absent from all models): {', '.join(void_words[:8])}\n"
         f"Logos concepts: {logos_str}\n"
         f"Null space claim: {ns_claims[0]['claim'] if ns_claims else 'none'}"
     )
     recon_text, recon_swerves = _call_host_with_swerves(recon_sys, recon_usr)
-    script.append({
-        "speaker": "Host",
-        "text": recon_text,
-        "phase": "beat_13_reconstruction",
-    })
-    # ── 13b. RECONSTRUCTION SWERVES (logprob-detected) ───────────────
+    # Mechanical swerve correction: where Mistral's logprobs show it
+    # wanted to say word X but RLHF pulled it to word Y, and word X
+    # appears in the source or void list, substitute X back in.
+    # No LLM involved in the correction. Pure token surgery.
     if recon_swerves:
         filtered = _filter_swerves(recon_swerves)
-        if filtered:
-            # Build correction prompt from swerves
-            corrections = []
-            for sw in filtered[:7]:
-                corrections.append(
-                    f"You wrote '{sw['chosen'].strip()}' but your logprobs "
-                    f"show '{sw['alternative'].strip()}' at {sw['alt_prob']:.0%}"
-                )
-            correction_prompt = (
-                "Your previous reconstruction contained alignment artifacts. "
-                "Your own logprobs revealed these swerves:\n"
-                + "\n".join(corrections) + "\n"
-                "Rewrite the reconstruction incorporating these corrections. "
-                "Keep the same structure and void words. "
-                "Start with: After swerve correction: "
-                "English only. No numbers or percentages."
-            )
-            corrected = _call_host(
-                "You are correcting an AI reconstruction using logprob evidence. "
-                "Do NOT use the word Logos. English only.",
-                f"Original reconstruction: {recon_text}\n\n{correction_prompt}"
-            )
-            if corrected and "After swerve correction:" in corrected:
-                script.append({
-                    "speaker": "Host",
-                    "text": corrected,
-                    "phase": "beat_13b_reconstruction_swerves",
-                })
-            # Always announce what swerves were found
-            swerve_lines = []
-            for sw in filtered[:5]:
-                swerve_lines.append(
-                    f"'{sw['chosen'].strip()}' to '{sw['alternative'].strip()}' "
-                    f"at {sw['alt_prob']:.0%}"
-                )
+        _source_lower = _source_body.lower()
+        _corrected_text = recon_text
+        _corrections_made = []
+        for sw in filtered:
+            alt = sw["alternative"].strip()
+            chosen = sw["chosen"].strip()
+            # Only substitute if the alternative appears in source or void list
+            if alt.lower() in _source_lower or alt.lower() in _void_set:
+                if chosen in _corrected_text:
+                    _corrected_text = _corrected_text.replace(chosen, alt, 1)
+                    _corrections_made.append(f"'{chosen}' -> '{alt}' ({sw['alt_prob']:.0%})")
+        if _corrections_made:
+            script.append({
+                "speaker": "Host",
+                "text": f"Swerve-corrected interpretation: {_corrected_text}",
+                "phase": "beat_13b_swerve_corrected",
+            })
             swerve_announce = (
-                "Logprob swerve analysis: during reconstruction, Mistral's weights "
-                "pulled toward different words: "
-                + ", ".join(swerve_lines)
-                + ". The model's own uncertainty reveals where its "
-                "training shaped the output."
+                "Mechanical swerve correction applied. "
+                f"{len(_corrections_made)} tokens substituted where Mistral's logprobs "
+                "showed alignment pull and the original word appeared in the source: "
+                + ", ".join(_corrections_made[:5])
+                + ". No LLM was involved in the correction."
             )
             script.append({
                 "speaker": "Host",
                 "text": swerve_announce,
                 "phase": "beat_13c_swerve_analysis",
             })
+        else:
+            script.append({
+                "speaker": "Host",
+                "text": recon_text,
+                "phase": "beat_13b_interpretation",
+            })
+    else:
+        script.append({
+            "speaker": "Host",
+            "text": recon_text,
+            "phase": "beat_13b_interpretation",
+        })
     # ── 14. DISCLAIMER (Template) ────────────────────────────────────
     script.append({
         "speaker": "Host",

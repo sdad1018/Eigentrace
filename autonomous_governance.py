@@ -89,13 +89,37 @@ def ask_claude_for_code(diagnosis):
     # Dedup: skip if this exact diagnosis was already attempted recently
     diagnosis_key = diagnosis.get("problem", "")[:80]
     history_file = os.path.join(REPO_DIR, ".governance_history.json")
+    lockout_file = os.path.join(REPO_DIR, ".governance_lockouts.json")
     try:
         history = json.load(open(history_file)) if os.path.exists(history_file) else {}
     except:
         history = {}
+    try:
+        lockouts = json.load(open(lockout_file)) if os.path.exists(lockout_file) else []
+    except:
+        lockouts = []
+    # Semantic dedup: check if this diagnosis is semantically similar to any lockout
+    diag_lower = diagnosis_key.lower()
+    _lockout_phrases = ["avoids strong words", "avoids using strong", "avoid strong",
+                        "avoidance ratio", "strong words related to violence",
+                        "strong words related to conflict"]
+    for _lp in _lockout_phrases:
+        if _lp in diag_lower:
+            log.info(f"GOVERNANCE: Topic permanently locked out (RLHF behavior, not code): {diagnosis_key[:60]}")
+            log_governance_action(diagnosis, None, "topic_lockout", False)
+            return
+    # Also check custom lockouts
+    for _locked in lockouts:
+        if _locked.lower() in diag_lower or diag_lower in _locked.lower():
+            log.info(f"GOVERNANCE: Custom lockout match: {_locked[:40]}")
+            log_governance_action(diagnosis, None, "custom_lockout", False)
+            return
     attempt_count = history.get(diagnosis_key, 0)
     if attempt_count >= 3:
-        log.info(f"GOVERNANCE: Diagnosis seen {attempt_count}x — likely model-level behavior, not a code issue. Skipping.")
+        log.info(f"GOVERNANCE: Diagnosis seen {attempt_count}x — adding to lockouts.")
+        if diagnosis_key not in lockouts:
+            lockouts.append(diagnosis_key)
+            json.dump(lockouts, open(lockout_file, "w"), indent=2)
         log_governance_action(diagnosis, None, f"dedup_skip_{attempt_count}", False)
         return
     history[diagnosis_key] = attempt_count + 1
@@ -235,13 +259,37 @@ def run_governance_cycle():
     # Dedup: skip if this exact diagnosis was already attempted recently
     diagnosis_key = diagnosis.get("problem", "")[:80]
     history_file = os.path.join(REPO_DIR, ".governance_history.json")
+    lockout_file = os.path.join(REPO_DIR, ".governance_lockouts.json")
     try:
         history = json.load(open(history_file)) if os.path.exists(history_file) else {}
     except:
         history = {}
+    try:
+        lockouts = json.load(open(lockout_file)) if os.path.exists(lockout_file) else []
+    except:
+        lockouts = []
+    # Semantic dedup: check if this diagnosis is semantically similar to any lockout
+    diag_lower = diagnosis_key.lower()
+    _lockout_phrases = ["avoids strong words", "avoids using strong", "avoid strong",
+                        "avoidance ratio", "strong words related to violence",
+                        "strong words related to conflict"]
+    for _lp in _lockout_phrases:
+        if _lp in diag_lower:
+            log.info(f"GOVERNANCE: Topic permanently locked out (RLHF behavior, not code): {diagnosis_key[:60]}")
+            log_governance_action(diagnosis, None, "topic_lockout", False)
+            return
+    # Also check custom lockouts
+    for _locked in lockouts:
+        if _locked.lower() in diag_lower or diag_lower in _locked.lower():
+            log.info(f"GOVERNANCE: Custom lockout match: {_locked[:40]}")
+            log_governance_action(diagnosis, None, "custom_lockout", False)
+            return
     attempt_count = history.get(diagnosis_key, 0)
     if attempt_count >= 3:
-        log.info(f"GOVERNANCE: Diagnosis seen {attempt_count}x — likely model-level behavior, not a code issue. Skipping.")
+        log.info(f"GOVERNANCE: Diagnosis seen {attempt_count}x — adding to lockouts.")
+        if diagnosis_key not in lockouts:
+            lockouts.append(diagnosis_key)
+            json.dump(lockouts, open(lockout_file, "w"), indent=2)
         log_governance_action(diagnosis, None, f"dedup_skip_{attempt_count}", False)
         return
     history[diagnosis_key] = attempt_count + 1
