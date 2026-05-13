@@ -137,12 +137,11 @@ if len(words) >= 20:
     if len(_clean_idx) > 10:
         words = [words[i] for i in _clean_idx]
         void_freq = {w: void_freq[w] for w in words}
-        # Recompute embeddings for clean words
         N = len(words)
-        from sklearn.metrics.pairwise import cosine_similarity as _cs
-        emb_matrix = np.array([emb[w] for w in words])
-        sim = _cs(emb_matrix)
-        laplacian = np.diag(sim.sum(axis=1)) - sim
+        # Recompute laplacian from co-occurrence for clean words only
+        _clean_cooccur = cooccur[np.ix_(_clean_idx, _clean_idx)]
+        _clean_degree = np.diag(_clean_cooccur.sum(axis=1))
+        laplacian = _clean_degree - _clean_cooccur
         eigenvalues, eigenvectors = np.linalg.eigh(laplacian)
     features = eigenvectors[:, 1:4]
     labels = KMeans(n_clusters=3, random_state=42, n_init=10).fit_predict(features)
