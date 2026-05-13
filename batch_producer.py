@@ -2260,6 +2260,14 @@ def main():
 
         try:
 
+            # DREAM WINDOW: 3:00-4:00 AM
+            _hour = datetime.now().hour
+            if _hour == 3:
+                log.info("DREAM WINDOW 3-4am: producer sleeping, player dreams free")
+                time.sleep(60)
+                continue
+
+
             depth = queue_depth()
 
             if depth >= args.min_queue:
