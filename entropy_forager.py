@@ -152,8 +152,6 @@ def _hunt_void_topic():
         "foraging", "measurement", "spectral", "analysis", "information",
         "consolidation", "compression", "governance", "weekly", "meta",
         "words", "word", "segment", "segments", "beats", "beat",
-        "strait", "hormuz", "iran", "trump", "china", "ukraine", "russia",
-        "deadline", "state", "states", "court", "house", "white",
         # SEO/commerce/RSS garbage (same problem as spectral clusters)
         "best", "list", "items", "recommended", "review", "reviews",
         "price", "buy", "sale", "deals", "cheap", "affordable",
