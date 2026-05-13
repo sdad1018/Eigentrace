@@ -88,20 +88,24 @@ def _hunt_void_topic():
         log.warning(f"VOID HUNT: SVD failed: {e}")
         return random.choice(_COLD_START_SEEDS), "cold_start"
     
-    # Step 3: The collapsed eigenvector — last row of Vt (smallest singular value)
-    # This is the direction where recent thoughts have ZERO variance
-    null_vector = Vt[-1].tolist()
+    # Step 3: Pick a random direction from the bottom-5 eigenvectors
+    # Using only Vt[-1] gives the same result every run. The bottom 5
+    # all represent low-variance directions — each one is a DIFFERENT void.
+    # Adding Gaussian noise ensures ChromaDB returns different documents each query.
+    bottom_k = min(5, len(Vt))
+    pick = random.randint(1, bottom_k)
+    null_vector = Vt[-pick].astype(np.float64)
+    null_vector += np.random.normal(0, 0.05, null_vector.shape)  # jitter
+    null_vector = (null_vector / np.linalg.norm(null_vector)).tolist()
     
-    # Also grab the anti-centroid for a second approach
-    centroid = matrix.mean(axis=0)
-    anti_centroid = (-centroid).tolist()
+    log.info(f"VOID HUNT: Using null eigenvector #{pick} of {len(Vt)} (with jitter)")
     
     # Step 4: Query ChromaDB with the null vector
     # Results = documents most aligned with what we HAVEN'T been thinking
     try:
         void_results = col.query(
             query_embeddings=[null_vector],
-            n_results=15,
+            n_results=30,
         )
         void_docs = void_results.get("documents", [[]])[0]
         void_metas = void_results.get("metadatas", [[]])[0]
@@ -109,10 +113,23 @@ def _hunt_void_topic():
         log.warning(f"VOID HUNT: Null vector query failed: {e}")
         return random.choice(_COLD_START_SEEDS), "cold_start"
     
-    # Step 5: Extract keywords from void-adjacent documents
-    # These are the concepts living in the agent's blind spot
-    void_text = " ".join(void_docs[:10])
-    void_titles = [m.get("title", "") for m in void_metas[:10] if m]
+    # Step 5: Filter commerce/product docs, then extract keywords
+    # The void often points at RSS/commerce noise in ChromaDB — skip those
+    _junk_patterns = re.compile(r'(?i)(buy|price|deal|gift|review|best \d|top \d|shop|amazon|walmart|lego|ipad|iphone|laptop|subscribe|cookie|sponsored|advertisement)')
+    _clean_docs = []
+    _clean_metas = []
+    for _d, _m in zip(void_docs, void_metas):
+        if not _junk_patterns.search(_d[:300]) and not _junk_patterns.search((_m or {}).get("title", "")):
+            _clean_docs.append(_d)
+            _clean_metas.append(_m)
+    
+    if len(_clean_docs) < 3:
+        log.info(f"VOID HUNT: {len(void_docs)} results but {len(void_docs)-len(_clean_docs)} were commerce noise, {len(_clean_docs)} usable")
+        if len(_clean_docs) == 0:
+            return random.choice(_COLD_START_SEEDS), "svd_filtered_empty"
+    
+    void_text = " ".join(_clean_docs[:10])
+    void_titles = [m.get("title", "") for m in _clean_metas[:10] if m]
     
     # Simple keyword extraction: most frequent non-stopword terms
     stopwords = {
@@ -133,6 +150,10 @@ def _hunt_void_topic():
         "eigentrace", "void", "model", "models", "story", "stories",
         "consensus", "density", "vix", "absent", "idle", "reflection",
         "foraging", "measurement", "spectral", "analysis", "information",
+        "consolidation", "compression", "governance", "weekly", "meta",
+        "words", "word", "segment", "segments", "beats", "beat",
+        "strait", "hormuz", "iran", "trump", "china", "ukraine", "russia",
+        "deadline", "state", "states", "court", "house", "white",
         # SEO/commerce/RSS garbage (same problem as spectral clusters)
         "best", "list", "items", "recommended", "review", "reviews",
         "price", "buy", "sale", "deals", "cheap", "affordable",
