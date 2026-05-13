@@ -936,30 +936,87 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         "phase": "beat_12_compression_analysis",
     })
 
-    # ── 13. RECONSTRUCTION (Mistral — no numbers) ────────────────────
-    # ── 13. SOURCE RECOVERY (zero hallucination) ────────────────────
-    # Instead of asking Mistral to hallucinate a reconstruction,
-    # extract the actual sentences from the source that contain void words.
-    # The source already said it. The models just dropped it.
+    # ── 13. SOURCE RECOVERY (all three channels, fuzzy matching) ─────
+    # Search the source article for sentences containing words from ANY
+    # of the three measurement channels: void (set theory), Logos (gradient
+    # descent), and null space (SVD). Fuzzy matching handles plurals,
+    # compound words ("airstrike" vs "air strike"), and partial stems.
     _source_body = str(attr.get("source_body", ""))
     _source_sentences = [s.strip() for s in re.split(r'[.!?]+', _source_body) if len(s.strip()) > 20]
-    _void_set = set(w.lower() for w in void_words[:10])
+
+    # Merge all three channels — Logos words first (gradient descent discoveries)
+    _all_search = []
+    for w in logos_words[:8]:
+        _all_search.append(("logos", w.lower()))
+    for w in void_words[:10]:
+        if w.lower() not in {x[1] for x in _all_search}:
+            _all_search.append(("void", w.lower()))
+    for ns in ns_claims[:3]:
+        for _nw in re.findall(r'[a-zA-Z]{4,}', ns.get("claim", "")):
+            _nw_l = _nw.lower()
+            if _nw_l not in {x[1] for x in _all_search} and _nw_l not in {
+                "the", "that", "this", "with", "from", "have", "been", "were",
+                "models", "model", "five", "claim", "fact", "mentioned",
+            }:
+                _all_search.append(("null_space", _nw_l))
+
+    def _fuzzy_in(word, text):
+        """Check if word appears in text with fuzzy matching."""
+        if word in text:
+            return True
+        # Handle compound splits: "airstrike" matches "air strike"
+        if len(word) > 6:
+            for i in range(3, len(word)-2):
+                if word[:i] + " " + word[i:] in text:
+                    return True
+        # Handle "air strike" matching "airstrike"
+        no_space = word.replace(" ", "")
+        if no_space != word and no_space in text:
+            return True
+        # Stem match: "airstrikes" matches "airstrike"
+        if len(word) > 4 and word.rstrip("s") in text:
+            return True
+        if len(word) > 4 and word + "s" in text:
+            return True
+        return False
+
     _recovered = []
-    for _sent in _source_sentences:
-        _sent_lower = _sent.lower()
-        _hits = [w for w in _void_set if w in _sent_lower]
-        if _hits:
-            _recovered.append({"sentence": _sent.strip(), "void_words": _hits})
+    if _source_sentences:
+        for _sent in _source_sentences:
+            _sent_lower = _sent.lower()
+            _hits = [(ch, w) for ch, w in _all_search if _fuzzy_in(w, _sent_lower)]
+            if len(_hits) >= 1:
+                _recovered.append({
+                    "sentence": _sent.strip(),
+                    "matches": _hits,
+                    "channel_count": len(set(h[0] for h in _hits)),
+                })
+        # Sort by multi-channel hits first, then by match count
+        _recovered.sort(key=lambda r: (-r["channel_count"], -len(r["matches"])))
+
     if _recovered:
-        _rec_text = "Source recovery. These sentences appeared in the original article but no model preserved them. "
+        _rec_text = "Source recovery. "
+        _multi = [r for r in _recovered if r["channel_count"] > 1]
+        if _multi:
+            _rec_text += f"{len(_multi)} sentences matched across multiple measurement channels. "
         for _r in _recovered[:4]:
-            _vw = ", ".join(_r["void_words"])
-            _rec_text += f"The source wrote: {_r['sentence'][:200]}. Void words present: {_vw}. "
+            _channels = sorted(set(h[0] for h in _r["matches"]))
+            _words = sorted(set(h[1] for h in _r["matches"]))
+            _ch_str = "+".join(_channels)
+            _rec_text += (
+                f"The source wrote: {_r['sentence'][:200]}. "
+                f"Matched terms ({_ch_str}): {', '.join(_words)}. "
+            )
+    elif not _source_body:
+        _rec_text = (
+            "Source recovery unavailable. The source article body was not captured "
+            "in this segment's attribution data."
+        )
     else:
         _rec_text = (
-            "Source recovery found no exact sentence matches for the void words. "
-            "The voided concepts may have been distributed across multiple sentences "
-            "rather than concentrated in extractable quotes."
+            "Source recovery found no matches for void, Logos, or null space terms "
+            "in the source article. The suppressed concepts may use different surface "
+            "forms than the measurement channels identified."
         )
     script.append({
         "speaker": "Host",
