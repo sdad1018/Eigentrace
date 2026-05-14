@@ -987,10 +987,15 @@ def stage_4_generate_scripts(results):
 
             void_concepts = _unpack(getattr(geo, "void_concepts", []))
 
-        try:
-            void_words = filter_void_candidates(story.title, void_concepts, top_k=15)
-        except Exception:
-            void_words = void_concepts[:15]
+        # Filter headline words from void candidates
+        import re as _re_filt
+        _hw = set(w.lower() for w in _re_filt.findall(r'[a-zA-Z]{3,}', story.title.lower()))
+        void_words = [w for w in void_concepts
+                      if w.lower() not in _hw
+                      and not any(w.lower().startswith(h[:4]) or h.startswith(w.lower()[:4])
+                                  for h in _hw if len(h) >= 4)][:15]
+        if not void_words:
+            void_words = void_concepts[:15]  # fallback if everything filtered
 
         synthesis_words = void_words[:5]  # top 5 of filtered set
 
