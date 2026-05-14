@@ -1048,6 +1048,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     if recon_swerves:
         filtered = _filter_swerves(recon_swerves)
         _source_lower = _source_body.lower()
+        _void_set = set(w.lower() for w in void_words[:10])
         _corrected_text = recon_text
         _corrections_made = []
         for sw in filtered:
