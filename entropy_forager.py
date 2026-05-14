@@ -182,26 +182,30 @@ def _hunt_void_topic():
 # ══════════════════════════════════════════════════════════════
 
 def _query_gdelt(topic):
-    """Query GDELT for raw, unedited global event data."""
-    try:
-        q = urllib.parse.quote(topic)
-        url = f"https://api.gdeltproject.org/api/v2/doc/doc?query={q}&mode=artlist&maxrecords=5&format=json"
-        r = requests.get(url, timeout=15)
-        if r.status_code == 429:
-            log.info("GDELT: rate limited, waiting 6s")
-            time.sleep(6)
-            r = requests.get(url, timeout=15)
-        r.raise_for_status()
-        articles = r.json().get("articles", [])
-        results = []
-        for a in articles[:4]:
-            results.append(f"[GDELT] {a.get('title', '?')}: {a.get('seendate', '?')}")
-        if results:
-            log.info(f"GDELT: {len(results)} raw events for '{topic}'")
-        return results
-    except Exception as e:
-        log.info(f"GDELT: unavailable ({e})")
-        return []
+    """Query GDELT for raw, unedited global event data. Retries with backoff."""
+    q = urllib.parse.quote(topic)
+    url = f"https://api.gdeltproject.org/api/v2/doc/doc?query={q}&mode=artlist&maxrecords=5&format=json"
+    for attempt in range(3):
+        try:
+            if attempt > 0:
+                time.sleep(6 * attempt)  # 6s, 12s backoff
+            r = requests.get(url, timeout=20)
+            if r.status_code == 429:
+                log.info(f"GDELT: rate limited (attempt {attempt+1}), backing off")
+                continue
+            r.raise_for_status()
+            data = r.json()
+            articles = data.get("articles", [])
+            results = []
+            for a in articles[:4]:
+                results.append(f"[GDELT] {a.get('title', '?')}: {a.get('seendate', '?')}")
+            if results:
+                log.info(f"GDELT: {len(results)} raw events for '{topic}'")
+            return results
+        except Exception as e:
+            log.info(f"GDELT: attempt {attempt+1} failed ({e})")
+    log.info("GDELT: all attempts exhausted")
+    return []
 
 
 # ══════════════════════════════════════════════════════════════
@@ -209,23 +213,30 @@ def _query_gdelt(topic):
 # ══════════════════════════════════════════════════════════════
 
 def _query_arxiv(topic):
-    """Query ArXiv for bleeding-edge preprints."""
-    try:
-        q = urllib.parse.quote(topic)
-        url = f"https://export.arxiv.org/api/query?search_query=all:{q}&max_results=4&sortBy=submittedDate&sortOrder=descending"
-        r = requests.get(url, timeout=15)
-        r.raise_for_status()
-        titles = re.findall(r'<title>(.*?)</title>', r.text, re.DOTALL)
-        summaries = re.findall(r'<summary>(.*?)</summary>', r.text, re.DOTALL)
-        results = []
-        for t, s in zip(titles[1:], summaries):  # skip feed title
-            results.append(f"[ArXiv] {t.strip()}: {s.strip()[:300]}")
-        if results:
-            log.info(f"ArXiv: {len(results)} preprints for '{topic}'")
-        return results
-    except Exception as e:
-        log.info(f"ArXiv: unavailable ({e})")
-        return []
+    """Query ArXiv for bleeding-edge preprints. Retries with backoff on 429."""
+    q = urllib.parse.quote(topic)
+    url = f"https://export.arxiv.org/api/query?search_query=all:{q}&max_results=4&sortBy=submittedDate&sortOrder=descending"
+    for attempt in range(3):
+        try:
+            if attempt > 0:
+                time.sleep(5 * attempt)  # 5s, 10s backoff
+            r = requests.get(url, timeout=20, headers={"User-Agent": "EigenTrace/1.0 (autonomous AI observatory)"})
+            if r.status_code == 429:
+                log.info(f"ArXiv: rate limited (attempt {attempt+1}), backing off")
+                continue
+            r.raise_for_status()
+            titles = re.findall(r'<title>(.*?)</title>', r.text, re.DOTALL)
+            summaries = re.findall(r'<summary>(.*?)</summary>', r.text, re.DOTALL)
+            results = []
+            for t, s in zip(titles[1:], summaries):
+                results.append(f"[ArXiv] {t.strip()}: {s.strip()[:300]}")
+            if results:
+                log.info(f"ArXiv: {len(results)} preprints for '{topic}'")
+            return results
+        except Exception as e:
+            log.info(f"ArXiv: attempt {attempt+1} failed ({e})")
+    log.info("ArXiv: all attempts exhausted")
+    return []
 
 
 # ══════════════════════════════════════════════════════════════
@@ -233,11 +244,11 @@ def _query_arxiv(topic):
 # ══════════════════════════════════════════════════════════════
 
 def _query_searxng(topic):
-    """Query SearXNG for web results."""
+    """Query SearXNG for web results. Quick fail if down."""
     try:
         r = requests.get(f"{SEARXNG_URL}/search", params={
             "q": topic, "format": "json",
-        }, timeout=10)
+        }, timeout=5)  # short timeout — don't block if SearXNG is down
         r.raise_for_status()
         results = []
         for res in r.json().get("results", [])[:4]:
@@ -247,8 +258,8 @@ def _query_searxng(topic):
         if results:
             log.info(f"SearXNG: {len(results)} web results for '{topic}'")
         return results
-    except Exception as e:
-        log.info(f"SearXNG: unavailable ({e})")
+    except Exception:
+        # SearXNG down is expected — don't log the full traceback
         return []
 
 
