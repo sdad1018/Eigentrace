@@ -29,6 +29,12 @@ from collections import Counter
 
 log = logging.getLogger("entropy_forager")
 
+# Global cooldown to avoid hammering rate-limited APIs
+_last_arxiv_call = 0
+_last_gdelt_call = 0
+_ARXIV_COOLDOWN = 120   # seconds between ArXiv calls
+_GDELT_COOLDOWN = 30    # seconds between GDELT calls
+
 SEARXNG_URL = os.environ.get("SEARXNG_URL", "http://localhost:8888")
 OLLAMA_HOST = "http://localhost:11434"
 SEGMENT_DIR = Path("/home/remvelchio/eigentrace/tmp/segments")
@@ -183,6 +189,12 @@ def _hunt_void_topic():
 
 def _query_gdelt(topic):
     """Query GDELT for raw, unedited global event data. Retries with backoff."""
+    global _last_gdelt_call
+    now = time.time()
+    if now - _last_gdelt_call < _GDELT_COOLDOWN:
+        log.info(f"GDELT: cooldown ({int(_GDELT_COOLDOWN - (now - _last_gdelt_call))}s remaining)")
+        return []
+    _last_gdelt_call = now
     q = urllib.parse.quote(topic)
     url = f"https://api.gdeltproject.org/api/v2/doc/doc?query={q}&mode=artlist&maxrecords=5&format=json"
     for attempt in range(3):
@@ -214,6 +226,12 @@ def _query_gdelt(topic):
 
 def _query_arxiv(topic):
     """Query ArXiv for bleeding-edge preprints. Retries with backoff on 429."""
+    global _last_arxiv_call
+    now = time.time()
+    if now - _last_arxiv_call < _ARXIV_COOLDOWN:
+        log.info(f"ArXiv: cooldown ({int(_ARXIV_COOLDOWN - (now - _last_arxiv_call))}s remaining)")
+        return []
+    _last_arxiv_call = now
     q = urllib.parse.quote(topic)
     url = f"https://export.arxiv.org/api/query?search_query=all:{q}&max_results=4&sortBy=submittedDate&sortOrder=descending"
     for attempt in range(3):
