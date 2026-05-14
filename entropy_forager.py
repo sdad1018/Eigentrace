@@ -154,6 +154,7 @@ def _hunt_void_topic():
         "foraging", "measurement", "spectral", "analysis", "information",
         "consolidation", "compression", "governance", "weekly", "meta",
         "words", "word", "segment", "segments", "beats", "beat",
+        "lockstep", "highfriction", "contested", "unknown",
     }
 
     void_text = " ".join(_clean_docs[:10])
