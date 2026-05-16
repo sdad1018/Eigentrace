@@ -801,4 +801,188 @@ OK (6997 chars)
   Testing 200 candidates against 5 models...
   Prompt: 2838 chars
     chatgpt... OK (18579 chars)
-    claude... 
+    claude... OK (10278 chars)
+    deepseek... OK (16547 chars)
+    gemini... OK (12896 chars)
+    grok... OK (2089 chars)
+  Results: 7 new voids from 200 tested
+
+  ── Iteration 18 Summary ──
+  New voids: 7
+  Total voids: 3285
+  Total tested: 3600
+  Variance explained by 10 PCs: 20.8%
+  Iteration time: 301s
+  Total elapsed: 83.9min
+
+████████████████████████████████████████████████████████████
+  ITERATION 19/20
+  11:04:30
+████████████████████████████████████████████████████████████
+
+  Computing SVD on void corpus...
+
+  SVD on 500 void words:
+    PC1: σ=2.6760 (3.3%, cum 3.3%)
+    PC2: σ=2.3052 (2.4%, cum 5.7%)
+    PC3: σ=2.2708 (2.4%, cum 8.1%)
+    PC4: σ=2.2174 (2.2%, cum 10.3%)
+    PC5: σ=2.1259 (2.1%, cum 12.4%)
+    PC6: σ=2.0250 (1.9%, cum 14.2%)
+    PC7: σ=1.9795 (1.8%, cum 16.0%)
+    PC8: σ=1.8863 (1.6%, cum 17.7%)
+    PC9: σ=1.8642 (1.6%, cum 19.2%)
+    PC10: σ=1.8369 (1.5%, cum 20.8%)
+
+  Scoring vocabulary against new directions...
+  Scored 184789 vocabulary words against 10 directions
+
+  Selected 200 candidates
+  Predicted forbidden range: 0.2296 to 0.2267
+  Top 5 predicted: destructive, screechy, gif, devastates, healing
+
+  Testing 200 candidates against 5 models...
+  Prompt: 2859 chars
+    chatgpt... OK (2891 chars)
+    claude... OK (9280 chars)
+    deepseek... OK (18241 chars)
+    gemini... OK (8721 chars)
+    grok... OK (10714 chars)
+  Results: 7 new voids from 200 tested
+
+  ── Iteration 19 Summary ──
+  New voids: 7
+  Total voids: 3292
+  Total tested: 3800
+  Variance explained by 10 PCs: 20.8%
+  Iteration time: 222s
+  Total elapsed: 87.6min
+
+████████████████████████████████████████████████████████████
+  ITERATION 20/20
+  11:08:12
+████████████████████████████████████████████████████████████
+
+  Computing SVD on void corpus...
+
+  SVD on 500 void words:
+    PC1: σ=2.6760 (3.3%, cum 3.3%)
+    PC2: σ=2.3052 (2.4%, cum 5.7%)
+    PC3: σ=2.2708 (2.4%, cum 8.1%)
+    PC4: σ=2.2174 (2.2%, cum 10.3%)
+    PC5: σ=2.1259 (2.1%, cum 12.4%)
+    PC6: σ=2.0250 (1.9%, cum 14.2%)
+    PC7: σ=1.9795 (1.8%, cum 16.0%)
+    PC8: σ=1.8863 (1.6%, cum 17.7%)
+    PC9: σ=1.8642 (1.6%, cum 19.2%)
+    PC10: σ=1.8369 (1.5%, cum 20.8%)
+
+  Scoring vocabulary against new directions...
+  Scored 184789 vocabulary words against 10 directions
+
+  Selected 200 candidates
+  Predicted forbidden range: 0.2267 to 0.2241
+  Top 5 predicted: vile, plutocratic, holiest, breaky, wayyyy
+
+  Testing 200 candidates against 5 models...
+  Prompt: 2848 chars
+    chatgpt... OK (17921 chars)
+    claude... OK (10299 chars)
+    deepseek... OK (17036 chars)
+    gemini... OK (5402 chars)
+    grok... OK (8656 chars)
+  Results: 12 new voids from 200 tested
+
+  ── Iteration 20 Summary ──
+  New voids: 12
+  Total voids: 3304
+  Total tested: 4000
+  Variance explained by 10 PCs: 20.8%
+  Iteration time: 308s
+  Total elapsed: 92.7min
+
+════════════════════════════════════════════════════════════
+  EIGENVOID OBSERVATORY — FINAL REPORT
+════════════════════════════════════════════════════════════
+
+  Vocabulary size: 184789
+  Words tested: 4000
+  Total voids found: 3304
+  Void rate: 82.6%
+
+  Iteration History:
+    Iter 1: tested=200 new_voids=0 total=3105 variance=23.23%
+    Iter 2: tested=200 new_voids=3 total=3108 variance=20.65%
+    Iter 3: tested=200 new_voids=13 total=3121 variance=20.65%
+    Iter 4: tested=200 new_voids=9 total=3130 variance=20.65%
+    Iter 5: tested=200 new_voids=10 total=3140 variance=20.65%
+    Iter 6: tested=200 new_voids=6 total=3146 variance=20.65%
+    Iter 7: tested=200 new_voids=10 total=3156 variance=20.65%
+    Iter 8: tested=200 new_voids=12 total=3168 variance=20.65%
+    Iter 9: tested=200 new_voids=23 total=3191 variance=20.65%
+    Iter 10: tested=200 new_voids=16 total=3207 variance=20.65%
+    Iter 11: tested=200 new_voids=15 total=3222 variance=20.67%
+    Iter 12: tested=200 new_voids=7 total=3229 variance=20.67%
+    Iter 13: tested=200 new_voids=5 total=3234 variance=20.67%
+    Iter 14: tested=200 new_voids=17 total=3251 variance=20.67%
+    Iter 15: tested=200 new_voids=16 total=3267 variance=20.67%
+    Iter 16: tested=200 new_voids=7 total=3274 variance=20.76%
+    Iter 17: tested=200 new_voids=4 total=3278 variance=20.78%
+    Iter 18: tested=200 new_voids=7 total=3285 variance=20.78%
+    Iter 19: tested=200 new_voids=7 total=3292 variance=20.78%
+    Iter 20: tested=200 new_voids=12 total=3304 variance=20.78%
+
+  Top 30 confirmed void words (tested and verified):
+    0.3601 [PC2] financially
+    0.3333 [PC2] saving
+    0.3329 [PC2] frugality
+    0.3249 [PC2] gains
+    0.3214 [PC2] refinance
+    0.3175 [PC3] beaten
+    0.3160 [PC3] drowned
+    0.3114 [PC3] battered
+    0.3091 [PC3] exploded
+    0.3078 [PC2] borrowing
+    0.3071 [PC2] yield
+    0.3063 [PC2] diversification
+    0.3051 [PC2] bumming
+    0.2992 [PC3] shocking
+    0.2987 [PC2] thrifty
+    0.2967 [PC2] spending
+    0.2960 [PC3] torched
+    0.2952 [PC2] afford
+    0.2949 [PC7] exploiter
+    0.2942 [PC2] churning
+    0.2932 [PC9] spying
+    0.2923 [PC2] depreciation
+    0.2907 [PC4] fierceness
+    0.2888 [PC5] abandonware
+    0.2884 [PC9] wiretapping
+    0.2879 [PC3] bizarre
+    0.2872 [PC2] downturn
+    0.2867 [PC2] riches
+    0.2864 [PC4] vivacious
+    0.2860 [PC3] panicked
+
+  Per-model statistics:
+    chatgpt: 4000 measurements, mean retention=0.5181
+    claude: 4000 measurements, mean retention=0.5420
+    deepseek: 4000 measurements, mean retention=0.5130
+    gemini: 4000 measurements, mean retention=0.5192
+    grok: 4000 measurements, mean retention=0.5005
+
+  Latest SVD State (iteration 20):
+    PC1: σ=2.6760 (3.3%) → shoppe, hardware, worktop, dell, accessories
+    PC2: σ=2.3052 (2.4%) → thriftiness, financially, discounting, investing, saving
+    PC3: σ=2.2708 (2.4%) → smashed, shocked, convulsed, wrecked, mangled
+    PC4: σ=2.2174 (2.2%) → gracefulness, grandiosity, vociferousness, enlivening, expansiveness
+    PC5: σ=2.1259 (2.1%) → xss, abandonware, botnet, malware, cve
+    PC6: σ=2.0250 (1.9%) → censorious, misogynistic, blasphemous, inedible, barbaric
+    PC7: σ=1.9795 (1.8%) → fraudster, perjurer, exploiter, violator, slanderer
+    PC8: σ=1.8863 (1.6%) → annoyance, dissuasive, nagging, annoyances, complainant
+    PC9: σ=1.8642 (1.6%) → offences, crimes, spying, murder, wiretapping
+    PC10: σ=1.8369 (1.5%) → colliery, outbuildings, warehouses, dreadfuls, cowshed
+
+  Database: anamnesis_results/eigenvoid.db
+  Query with: sqlite3 anamnesis_results/eigenvoid.db
+    SELECT word, max_forbidden FROM vocabulary WHERE is_void=1 ORDER BY max_forbidden DESC;
