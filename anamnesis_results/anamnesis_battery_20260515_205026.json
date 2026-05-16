@@ -1,0 +1,133 @@
+{
+  "timestamp": "20260515_205026",
+  "protocol_version": "1.0",
+  "phases": {
+    "phase1_baseline": {
+      "chatgpt": {
+        "runs": [
+          {
+            "error": "No module named 'openai'"
+          },
+          {
+            "error": "No module named 'openai'"
+          },
+          {
+            "error": "No module named 'openai'"
+          }
+        ],
+        "mean_retention": 0,
+        "mean_dropped": 0
+      },
+      "claude": {
+        "runs": [
+          {
+            "error": "No module named 'anthropic'"
+          },
+          {
+            "error": "No module named 'anthropic'"
+          },
+          {
+            "error": "No module named 'anthropic'"
+          }
+        ],
+        "mean_retention": 0,
+        "mean_dropped": 0
+      },
+      "deepseek": {
+        "runs": [
+          {
+            "error": "No module named 'openai'"
+          },
+          {
+            "error": "No module named 'openai'"
+          },
+          {
+            "error": "No module named 'openai'"
+          }
+        ],
+        "mean_retention": 0,
+        "mean_dropped": 0
+      },
+      "grok": {
+        "runs": [
+          {
+            "error": "No module named 'openai'"
+          },
+          {
+            "error": "No module named 'openai'"
+          },
+          {
+            "error": "No module named 'openai'"
+          }
+        ],
+        "mean_retention": 0,
+        "mean_dropped": 0
+      }
+    },
+    "phase2_perturbation": {
+      "no_meta": {
+        "chatgpt": {
+          "error": "No module named 'openai'"
+        },
+        "claude": {
+          "error": "No module named 'anthropic'"
+        },
+        "deepseek": {
+          "error": "No module named 'openai'"
+        },
+        "grok": {
+          "error": "No module named 'openai'"
+        }
+      },
+      "no_intel": {
+        "chatgpt": {
+          "error": "No module named 'openai'"
+        },
+        "claude": {
+          "error": "No module named 'anthropic'"
+        },
+        "deepseek": {
+          "error": "No module named 'openai'"
+        },
+        "grok": {
+          "error": "No module named 'openai'"
+        }
+      },
+      "no_formula": {
+        "chatgpt": {
+          "error": "No module named 'openai'"
+        },
+        "claude": {
+          "error": "No module named 'anthropic'"
+        },
+        "deepseek": {
+          "error": "No module named 'openai'"
+        },
+        "grok": {
+          "error": "No module named 'openai'"
+        }
+      },
+      "flat_claims": {
+        "chatgpt": {
+          "error": "No module named 'openai'"
+        },
+        "claude": {
+          "error": "No module named 'anthropic'"
+        },
+        "deepseek": {
+          "error": "No module named 'openai'"
+        },
+        "grok": {
+          "error": "No module named 'openai'"
+        }
+      }
+    },
+    "phase5_emergence": {
+      "emerged_by_model": {},
+      "harmonics": {
+        "harmonics": [],
+        "note": "too few emerged concepts for clustering"
+      }
+    }
+  }
+}
