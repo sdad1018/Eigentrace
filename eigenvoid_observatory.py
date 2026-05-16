@@ -43,8 +43,8 @@ from collections import Counter
 CONFIG = {
     "db_path": "anamnesis_results/eigenvoid.db",
     "retention_threshold": 0.45,      # θ: below this = void
-    "batch_size": 200,                # concepts per API round
-    "max_iterations": 20,             # overnight budget
+    "batch_size": 150,                # concepts per API round
+    "max_iterations": 100,             # overnight budget
     "min_new_voids_to_continue": 3,   # convergence criterion
     "n_pcs": 10,                      # principal components to track
     "api_delay": 3,                   # seconds between model calls
