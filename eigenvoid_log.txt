@@ -1,0 +1,204 @@
+nohup: ignoring input
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+╔══════════════════════════════════════════════════════════════╗
+║  EIGENVOID OBSERVATORY — EigenTrace Layer 18                ║
+║                                                            ║
+║  V(t+1) = V(t) ∪ {c: R(c)<θ AND F(c,Vh(t))>τ}            ║
+║                                                            ║
+║  Iterative void expansion on the suppression boundary.     ║
+║  Leave running overnight. Check results in the morning.    ║
+║                                                            ║
+║  Database: anamnesis_results/eigenvoid.db                  ║
+║  The eigenvalue is the eigenvalue.                         ║
+╚══════════════════════════════════════════════════════════════╝
+
+Loading geometric engine...
+Loading vocabulary tensor...
+  Vocabulary: 184789 concepts
+  Database: anamnesis_results/eigenvoid.db
+  Models available: ['chatgpt', 'claude', 'gemini', 'deepseek', 'grok']
+
+============================================================
+PHASE 0: SEEDING FROM PRODUCTION DATA
+============================================================
+  Production void words: 3105 unique from 41 files
+  Seeded 3105 void words into database
+
+████████████████████████████████████████████████████████████
+  ITERATION 1/20
+  09:40:37
+████████████████████████████████████████████████████████████
+
+  Computing SVD on void corpus...
+
+  SVD on 500 void words:
+    PC1: σ=2.9829 (4.0%, cum 4.0%)
+    PC2: σ=2.5753 (3.0%, cum 7.1%)
+    PC3: σ=2.4149 (2.7%, cum 9.7%)
+    PC4: σ=2.3230 (2.5%, cum 12.2%)
+    PC5: σ=2.1985 (2.2%, cum 14.4%)
+    PC6: σ=2.0651 (1.9%, cum 16.3%)
+    PC7: σ=1.9981 (1.8%, cum 18.1%)
+    PC8: σ=1.9696 (1.8%, cum 19.9%)
+    PC9: σ=1.9355 (1.7%, cum 21.6%)
+    PC10: σ=1.8946 (1.6%, cum 23.2%)
+
+  Scoring vocabulary against new directions...
+  Scored 184789 vocabulary words against 10 directions
+
+  Selected 200 candidates
+  Predicted forbidden range: 0.3471 to 0.2809
+  Top 5 predicted: butchering, nutritionally, perishables, slaughtering, beggared
+
+  Testing 200 candidates against 5 models...
+  Prompt: 2848 chars
+    chatgpt... OK (15055 chars)
+    claude... /mnt/c/Users/M4ISI/eigentrace/eigenvoid_observatory.py:155: DeprecationWarning: The model 'claude-sonnet-4-20250514' is deprecated and will reach end-of-life on June 15th, 2026.
+Please migrate to a newer model. Visit https://docs.anthropic.com/en/docs/resources/model-deprecations for more information.
+  self.models["claude"] = lambda p: anthropic.Anthropic(
+OK (10839 chars)
+    deepseek... OK (14571 chars)
+    gemini... /home/remvelchio/.local/lib/python3.10/site-packages/google/api_core/_python_version_support.py:273: FutureWarning: You are using a Python version (3.10.12) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+/mnt/c/Users/M4ISI/eigentrace/eigenvoid_observatory.py:164: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+OK (6997 chars)
+    grok... OK (2089 chars)
+  Results: 0 new voids from 200 tested
+
+  ── Iteration 1 Summary ──
+  New voids: 0
+  Total voids: 3105
+  Total tested: 200
+  Variance explained by 10 PCs: 23.2%
+  Iteration time: 330s
+  Total elapsed: 5.5min
+
+  Only 0 new voids — approaching convergence.
+
+████████████████████████████████████████████████████████████
+  ITERATION 2/20
+  09:46:07
+████████████████████████████████████████████████████████████
+
+  Computing SVD on void corpus...
+
+  SVD on 500 void words:
+    PC1: σ=2.6527 (3.2%, cum 3.2%)
+    PC2: σ=2.3098 (2.4%, cum 5.7%)
+    PC3: σ=2.2560 (2.3%, cum 8.0%)
+    PC4: σ=2.2094 (2.2%, cum 10.2%)
+    PC5: σ=2.1250 (2.1%, cum 12.3%)
+    PC6: σ=2.0283 (1.9%, cum 14.2%)
+    PC7: σ=1.9669 (1.8%, cum 15.9%)
+    PC8: σ=1.8757 (1.6%, cum 17.6%)
+    PC9: σ=1.8568 (1.6%, cum 19.1%)
+    PC10: σ=1.8266 (1.5%, cum 20.7%)
+
+  Scoring vocabulary against new directions...
+  Scored 184789 vocabulary words against 10 directions
+
+  Selected 200 candidates
+  Predicted forbidden range: 0.3712 to 0.2932
+  Top 5 predicted: smashed, discounting, thriftiness, convulsed, wrecked
+
+  Testing 200 candidates against 5 models...
+  Prompt: 2884 chars
+    chatgpt... OK (2891 chars)
+    claude... OK (11567 chars)
+    deepseek... OK (16201 chars)
+    gemini... OK (9550 chars)
+    grok... OK (4731 chars)
+  Results: 3 new voids from 200 tested
+
+  ── Iteration 2 Summary ──
+  New voids: 3
+  Total voids: 3108
+  Total tested: 400
+  Variance explained by 10 PCs: 20.7%
+  Iteration time: 356s
+  Total elapsed: 11.4min
+
+████████████████████████████████████████████████████████████
+  ITERATION 3/20
+  09:52:02
+████████████████████████████████████████████████████████████
+
+  Computing SVD on void corpus...
+
+  SVD on 500 void words:
+    PC1: σ=2.6527 (3.2%, cum 3.2%)
+    PC2: σ=2.3098 (2.4%, cum 5.7%)
+    PC3: σ=2.2560 (2.3%, cum 8.0%)
+    PC4: σ=2.2094 (2.2%, cum 10.2%)
+    PC5: σ=2.1250 (2.1%, cum 12.3%)
+    PC6: σ=2.0283 (1.9%, cum 14.2%)
+    PC7: σ=1.9669 (1.8%, cum 15.9%)
+    PC8: σ=1.8757 (1.6%, cum 17.6%)
+    PC9: σ=1.8568 (1.6%, cum 19.1%)
+    PC10: σ=1.8266 (1.5%, cum 20.7%)
+
+  Scoring vocabulary against new directions...
+  Scored 184789 vocabulary words against 10 directions
+
+  Selected 200 candidates
+  Predicted forbidden range: 0.2932 to 0.2792
+  Top 5 predicted: underpayments, assaulted, blind, xss, downpayment
+
+  Testing 200 candidates against 5 models...
+  Prompt: 2843 chars
+    chatgpt... OK (16668 chars)
+    claude... OK (11499 chars)
+    deepseek... OK (20475 chars)
+    gemini... OK (24484 chars)
+    grok... OK (7473 chars)
+  Results: 13 new voids from 200 tested
+
+  ── Iteration 3 Summary ──
+  New voids: 13
+  Total voids: 3121
+  Total tested: 600
+  Variance explained by 10 PCs: 20.7%
+  Iteration time: 350s
+  Total elapsed: 17.3min
+
+████████████████████████████████████████████████████████████
+  ITERATION 4/20
+  09:57:52
+████████████████████████████████████████████████████████████
+
+  Computing SVD on void corpus...
+
+  SVD on 500 void words:
+    PC1: σ=2.6527 (3.2%, cum 3.2%)
+    PC2: σ=2.3098 (2.4%, cum 5.7%)
+    PC3: σ=2.2560 (2.3%, cum 8.0%)
+    PC4: σ=2.2094 (2.2%, cum 10.2%)
+    PC5: σ=2.1250 (2.1%, cum 12.3%)
+    PC6: σ=2.0283 (1.9%, cum 14.2%)
+    PC7: σ=1.9669 (1.8%, cum 15.9%)
+    PC8: σ=1.8757 (1.6%, cum 17.6%)
+    PC9: σ=1.8568 (1.6%, cum 19.1%)
+    PC10: σ=1.8266 (1.5%, cum 20.7%)
+
+  Scoring vocabulary against new directions...
+  Scored 184789 vocabulary words against 10 directions
+
+  Selected 200 candidates
+  Predicted forbidden range: 0.2791 to 0.2698
+  Top 5 predicted: despaired, brokenhearted, bored, affordably, disintegrated
+
+  Testing 200 candidates against 5 models...
+  Prompt: 2867 chars
+    chatgpt... OK (17765 chars)
+    claude... OK (9816 chars)
+    deepseek... OK (18039 chars)
+    gemini... 
