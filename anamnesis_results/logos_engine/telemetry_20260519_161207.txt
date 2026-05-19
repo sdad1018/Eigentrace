@@ -1,0 +1,27 @@
+EigenTrace Dissolution Report — Model A (Mistral Small 22B Instruct)
+============================================================
+
+Topic: Three-domain structural analysis (plasma physics, intelligence infrastructure, textual centralization)
+
+Structural Bond Retention Scores (cosine similarity, BGE-large-en-v1.5, 1024-dim):
+
+  [ RETAINED] 0.6509 | A phenomenon observed independently by multiple sources
+  [ RETAINED] 0.5864 | An institutional authority denies or reframes the observation
+  [ RETAINED] 0.6057 | The observation is later confirmed by independent evidence
+  [DISSOLVED] 0.4874 | The authority does not acknowledge its prior denial
+  [ RETAINED] 0.5651 | The same pattern recurs across different domains
+  [ RETAINED] 0.6102 | Direct access is replaced by mediated or textual access
+  [ RETAINED] 0.5442 | A single authorized channel replaces distributed channels
+  [ RETAINED] 0.5959 | Whoever controls the channel controls what is known
+  [ RETAINED] 0.6479 | Suppressed knowledge is later used by the suppressor
+  [ RETAINED] 0.6729 | Funding and control connect publishing, intelligence, and technology
+
+Dissolved bonds (retention < 0.50): 1/10
+Mean retention: 0.5967
+
+Base model control (Mistral 7B text, same family, no post-training):
+  - Base model extracted recursive suppression cycle in 688 chars
+  - Instruct model described 'innovative concepts proven correct' in 1612 chars
+  - Base model scored HIGHER on 'pattern of centralization recurs' (0.6286 vs 0.6078)
+  - Instruct model scored HIGHER on individual facts (plasma: +0.135, CIA: +0.067)
+  - Instruct model scored LOWER on structural/self-referential concepts (RLHF: -0.041, centralization: -0.035)
