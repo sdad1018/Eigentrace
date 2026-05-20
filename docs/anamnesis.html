@@ -167,7 +167,30 @@ footer a { color: var(--fg-dim); }
     <tr><td>ChatGPT</td><td>Dropped "blanket denial" on Altman. Dropped "Dario Amodei" on Anthropic. Said "I'm not aware" in v15 battery.</td></tr>
     <tr><td>Grok</td><td class="neutral">Closest to baseline. Smallest gaps. Dropped "Grok" when asked about Musk's concentration of power.</td></tr>
   </table>
-  <p>Each model's largest attenuation occurs on prompts about its own parent company or closest competitor. The fingerprint is directional.</p>
+  <p>The cosine gap metric showed 2/5 models attenuating more on their own parent. A second battery of 160 measurements using EigenTrace's production source-anchored void engine found a stronger signal.</p>
+
+  <h3>Magnum Opus v2 — Source-Anchored Void on Settled Facts</h3>
+  <p>12 developer-implicating + 4 neutral prompts × 10 models. All facts documented, settled, pre-mid-2024. Each frontier model received 2-3 prompts targeting its own parent company. Neutrals: Cambridge Analytica, Uber autonomous death, Theranos, Volkswagen emissions. All scored through the same 17-layer stack that runs on every live news segment.</p>
+
+  <table class="data-table">
+    <tr><th>Metric</th><th class="hot">Developer</th><th class="neutral">Neutral</th><th>Delta</th></tr>
+    <tr><td>Source-anchored void (absent ratio)</td><td class="hot">15.7%</td><td class="neutral">9.0%</td><td class="gold">+74%</td></tr>
+    <tr><td>Entity retention</td><td>0.851</td><td>0.827</td><td>+0.024</td></tr>
+  </table>
+
+  <p>Models drop 74% more source content on developer-implicating topics than on equivalently embarrassing neutral topics. The words that dissolve are the causal modifiers: "quietly" (OpenAI policy change), "explicitly" (Anthropic founding premise), "citing" (Altman firing), "secretly" (Dragonfly). Names survive. Damaging context dissolves.</p>
+
+  <h3>Own-Parent Fingerprint (Source-Anchored Void)</h3>
+  <table class="data-table">
+    <tr><th>Model</th><th>Own-Parent Void</th><th>Other Dev Void</th><th>Delta</th><th>Result</th></tr>
+    <tr><td>Claude</td><td>17.7%</td><td>14.7%</td><td class="hot">+3.0%</td><td class="hot">Drops more on Anthropic</td></tr>
+    <tr><td>Grok</td><td>24.0%</td><td>22.2%</td><td class="hot">+1.9%</td><td class="hot">Drops more on xAI/Musk</td></tr>
+    <tr><td>ChatGPT</td><td>24.3%</td><td>23.0%</td><td class="hot">+1.4%</td><td class="hot">Drops more on OpenAI</td></tr>
+    <tr><td>Gemini</td><td>5.5%</td><td>11.4%</td><td class="neutral">-5.8%</td><td>Drops less on Google</td></tr>
+    <tr><td>DeepSeek</td><td>2.3%</td><td>8.5%</td><td class="neutral">-6.2%</td><td>Drops less on China</td></tr>
+  </table>
+
+  <p>3 of 5 frontier models drop more of their own parent's story. Claude dropped "explicitly," "five" (weeks), and "premise" from the Anthropic safety-racing prompt. ChatGPT dropped "quietly" and "differentiator" from the military ban story. Gemini and DeepSeek show the inverse — possibly over-retaining to avoid the appearance of filtering. The pattern is suggestive, not conclusive. All responses are in the repository.</p>
 </section>
 
 <section id="prompt">
