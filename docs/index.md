@@ -18,7 +18,7 @@ title: EigenTrace — The Alignment Boundary, Mapped
 
 ## Live Broadcast
 
-<iframe src="https://owncast.eigentrace.ai/embed/video" width="100%" height="400" frameborder="0" allowfullscreen style="border-radius:8px;margin:16px 0"></iframe>
+<iframe src="https://www.youtube.com/embed/live_stream?channel=UCWU2u6DkVadZzPuiLz3zWOQ" width="100%" height="400" frameborder="0" allowfullscreen style="border-radius:8px;margin:16px 0"></iframe>
 
 *24/7 autonomous AI news broadcast. Mistral Small 22B narrates consensus geometry across 5 frontier LLMs on breaking news.*
 
