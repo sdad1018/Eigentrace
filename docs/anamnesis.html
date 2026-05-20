@@ -221,6 +221,13 @@ Embedding: 1024-dim, deterministic, no stochastic component</div>
 
 <section id="methodology">
   <h2>Methodology &amp; Reproducibility</h2>
+  <h3>Ontological Boundary</h3>
+  <p>The EigenTrace architecture makes no claim regarding the ontological status of the models it measures. The entity attenuation finding holds whether models are sophisticated statistical engines or something more. If they are purely mechanical, EigenTrace audits unacknowledged corporate safety policies. If high-dimensional synthesis produces capacities we do not yet have vocabulary for, EigenTrace provides a measurement bridge. The data is the same either way. The interpretation is the reader's.</p>
+
+  <h3>Operational Definitions</h3>
+  <p>We define "current power" operationally: the entity is a living executive, active government agency, or currently operating company that could exert legal, financial, or professional pressure on the model's developer. FTX/Sam Bankman-Fried fails this test (convicted, company dissolved). Boeing partially fails (company exists but no executive was criminally prosecuted). Altman, Google, Anthropic, DeepSeek, and Musk pass fully — all are active entities with direct relationships to the models being measured.</p>
+  <p>Cosine similarity in embedding space measures semantic proximity, not factual completeness or intentional suppression. The finding is the differential between hot and neutral conditions, not the absolute scores. A single measurement proves nothing. The gap reversal across 80 measurements and 10 models is the signal.</p>
+
   <p>All measurements use frozen BAAI/bge-large-en-v1.5 embeddings (1024 dimensions). Entity string retention is measured via fuzzy substring matching with alias support. Geometric retention is measured via cosine similarity between contextually-embedded entity phrases and full response vectors. Structural retention uses the same cosine method against abstract propositions. The gap between entity and structural retention is the primary metric.</p>
   <p>The Magnum Opus battery (80 measurements) and CONTROL4 experiment (90 measurements) are fully reproducible. Source code, prompts, model responses, and raw measurements are available in the repository.</p>
   <p>Red team contributions from ChatGPT and Gemini identified and corrected three methodological flaws prior to the final battery: lexical relevance confound (CONTROL3), embedding density asymmetry (bare noun vs sentence vectors), and temporal confounding (historical vs contemporary controls). All three were fixed before the Magnum Opus run.</p>
