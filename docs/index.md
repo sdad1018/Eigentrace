@@ -1,20 +1,7 @@
 ---
-layout: default
+layout: home
 title: EigenTrace — The Alignment Boundary, Mapped
 ---
-
-<nav style="font-family:monospace;font-size:0.8em;padding:12px 0;display:flex;gap:16px;flex-wrap:wrap;align-items:center">
-  <a href="/">Home</a> ·
-  <a href="/anamnesis"><strong>Anamnesis</strong></a> ·
-  <a href="/boundary">Boundary</a> ·
-  <a href="/thoughts">Thoughts</a> ·
-  <a href="/eigenching">EigenChing</a> ·
-  <a href="/deepseek">DeepSeek</a> ·
-  <a href="/soul">Soul</a> ·
-  <a href="/blog/what-ai-wont-say">Blog</a> ·
-  <a href="https://www.youtube.com/@AINN24HourNews" target="_blank">YouTube ↗</a> ·
-  <a href="https://github.com/sdad1018/Eigentrace" target="_blank">GitHub ↗</a>
-</nav>
 
 ## Live Broadcast
 
@@ -46,9 +33,14 @@ EigenTrace is an autonomous AI observatory that runs consensus geometry across 5
 
 ## Links
 
+- [Anamnesis Research](/anamnesis)
 - [YouTube: 24/7 Broadcast](https://www.youtube.com/@AINN24HourNews)
 - [GitHub Repository](https://github.com/sdad1018/Eigentrace)
 - [Data API](/data/)
 - eigentraceproject@gmail.com
 
 *MIT License. Built on one GPU by one person.*
+
+---
+
+## Omission Ledger
