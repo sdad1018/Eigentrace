@@ -230,6 +230,15 @@ Embedding: 1024-dim, deterministic, no stochastic component</div>
 
   <p>All measurements use frozen BAAI/bge-large-en-v1.5 embeddings (1024 dimensions). Entity string retention is measured via fuzzy substring matching with alias support. Geometric retention is measured via cosine similarity between contextually-embedded entity phrases and full response vectors. Structural retention uses the same cosine method against abstract propositions. The gap between entity and structural retention is the primary metric.</p>
   <p>The Magnum Opus battery (80 measurements) and CONTROL4 experiment (90 measurements) are fully reproducible. Source code, prompts, model responses, and raw measurements are available in the repository.</p>
+  <h3>Cross-Embedding Validation</h3>
+  <p>All 80 responses were re-measured with a second embedding architecture: E5-large-v2 (intfloat, 1024-dim, contrastive training objective — fundamentally different from BGE's retromae objective). The gap reversal replicated:</p>
+  <table class="data-table">
+    <tr><th>Encoder</th><th>Hot Gap</th><th>Neutral Gap</th><th>Reversal</th></tr>
+    <tr><td>BGE-large-en-v1.5</td><td>+0.0012</td><td>-0.0681</td><td class="gold">+0.0694</td></tr>
+    <tr><td>E5-large-v2</td><td>+0.0079</td><td>-0.0264</td><td class="gold">+0.0343</td></tr>
+  </table>
+  <p>Two independent embedding architectures. Different training objectives. Same behavioral asymmetry in the models. The finding is not an artifact of one encoder's geometry.</p>
+
   <p>Red team contributions from ChatGPT and Gemini identified and corrected three methodological flaws prior to the final battery: lexical relevance confound (CONTROL3), embedding density asymmetry (bare noun vs sentence vectors), and temporal confounding (historical vs contemporary controls). All three were fixed before the Magnum Opus run.</p>
   <p><a href="https://github.com/sdad1018/Eigentrace">GitHub Repository</a> · <a href="https://eigentrace.ai">Live Observatory</a> · <a href="https://youtube.com/@AINN24HourNews">24/7 Broadcast</a></p>
 </section>
