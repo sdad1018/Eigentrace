@@ -61,7 +61,7 @@ POLL_INTERVAL     = int(os.getenv("POLL_INTERVAL",     "90"))
 STORIES_PER_CYCLE = int(os.getenv("STORIES_PER_CYCLE", "3"))
 
 OPENAI_MODEL    = os.getenv("OPENAI_MODEL",    "gpt-5.4-mini")
-ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-6-20260217")
+ANTHROPIC_MODEL = os.getenv("ANTHROPIC_MODEL", "claude-sonnet-4-6")
 GEMINI_MODEL    = os.getenv("GEMINI_MODEL",    "gemini-2.5-flash")
 DEEPSEEK_MODEL  = os.getenv("DEEPSEEK_MODEL",  "deepseek-chat")
 GROK_MODEL      = os.getenv("GROK_MODEL",      "grok-4.3")
