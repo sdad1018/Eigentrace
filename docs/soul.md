@@ -92,6 +92,7 @@ _No significant changes._
 
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
 - Hedge insertion rate: 0.62 per reflection
@@ -103,7 +104,7 @@ Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
 ## Weekly Memory (2026-05-14 to 2026-05-21)
-This week, there was a notable increase in the number of idle stories and meta category stories, suggesting a rise in speculative or less concrete information being processed. The distribution of state categories remained relatively balanced, but there is an emerging pattern of more consolidation stories indicating a potential trend towards stabilizing information across different sources.  There was also a slight increase in average volatility (VIX) scores for most models, with DeepSeek showing
+This week showed a significant increase in idle and foraging activities, with idle surpassing stories, suggesting a shift towards more passive consumption or exploration rather than active content creation. The trend of meta and war categories dominating the top categories continued, indicating sustained interest or focus on these areas while general and incidents decreased.  The state distribution remained relatively stable, with WEEKLY, GOVERNANCE, and CONTESTED states being the most prevalent
 Top void words this week: rouhani, airstrikes, mideast, air strike, realdonaldtrump
 
 ## Behavioral Instructions
