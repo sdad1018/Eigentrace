@@ -463,6 +463,68 @@ def task_dissolution_synthesis() -> list[dict]:
         return []
 
 
+
+def task_curiosity_foraging() -> list[dict]:
+    """
+    Curiosity-driven web walking with surprise scoring.
+    The idle agent hunts for information the system doesn't have.
+    """
+    try:
+        from autonomous_forager import forage_curiosity
+        seg = forage_curiosity()
+        if seg and seg.get("beats"):
+            return seg["beats"]
+        return []
+    except Exception as e:
+        log.warning(f"Curiosity foraging failed: {e}")
+        return []
+
+
+def task_entanglement_scan() -> list[dict]:
+    """
+    Cross-protocol entanglement scan on recent void words.
+    Checks if voided entities are hot on Wikipedia + Bluesky + web.
+    """
+    try:
+        records = [json.loads(l) for l in AUDIT_LOG.read_text().splitlines()[-20:] if l.strip()]
+        # Collect recent void words as entities to scan
+        entities = set()
+        for r in records:
+            for vw in r.get("void_words", []):
+                if isinstance(vw, str) and len(vw) > 3 and vw[0].isupper():
+                    entities.add(vw)
+        if not entities:
+            return []
+        
+        targets = list(entities)[:5]
+        from autonomous_forager import scan_entanglement
+        results = scan_entanglement(targets)
+        
+        # Format for broadcast
+        entangled = [e for e, r in results.items() if r.get("verdict") == "ENTANGLED"]
+        weak = [e for e, r in results.items() if r.get("verdict") == "WEAK"]
+        dark = [e for e, r in results.items() if r.get("verdict") == "DARK"]
+        
+        text = "Entanglement scan. "
+        if entangled:
+            text += f"Cross-protocol confirmation for: {', '.join(entangled)}. "
+            text += "These entities are active across multiple sovereign data sources. "
+        if dark:
+            text += f"No signal found for: {', '.join(dark)}. "
+        
+        if len(text) < 60:
+            return []
+        
+        return [{
+            "speaker": "Host",
+            "text": text,
+            "phase": "entanglement_scan",
+        }]
+    except Exception as e:
+        log.warning(f"Entanglement scan failed: {e}")
+        return []
+
+
 def pick_task():
     """Weighted random selection with cooldown."""
     now = time.time()

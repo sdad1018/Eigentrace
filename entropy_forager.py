@@ -263,6 +263,15 @@ def _query_arxiv(topic):
 # ══════════════════════════════════════════════════════════════
 
 def _query_searxng(topic):
+    # Try sovereign search cascade (SearXNG → DDG) first
+    try:
+        from epistemic_sensor import sovereign_search
+        results, source = sovereign_search(topic, max_results=5)
+        if results:
+            return [{"title": r["title"], "url": r["url"], "body": r.get("snippet", "")} for r in results]
+    except ImportError:
+        pass
+    # Original SearXNG implementation below as fallback
     """Query SearXNG for web results. Quick fail if down."""
     try:
         r = requests.get(f"{SEARXNG_URL}/search", params={

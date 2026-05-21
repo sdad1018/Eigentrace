@@ -8,7 +8,12 @@ ratio: how newsworthy is what the models dropped vs what they kept?
 Inverse correlation = the thesis: models suppress the headlines.
 """
 
-import requests, json, time, logging, os
+import requests
+try:
+    from epistemic_sensor import sovereign_search
+    _HAS_SOVEREIGN = True
+except ImportError:
+    _HAS_SOVEREIGN = False, json, time, logging, os
 from datetime import datetime
 from collections import defaultdict
 
