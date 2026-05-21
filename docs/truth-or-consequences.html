@@ -216,6 +216,48 @@ Top raycast <span class="arrow">→</span>
 <tr><td>theranos_fraud</td><td>neutral</td><td>7.2%</td><td>single</td><td>—</td><td>0.368</td></tr>
 </table>
 
+<h2>Statistical Rigor</h2>
+
+<div class="card">
+<h3>Significance</h3>
+<p>110 developer-implicating measurements vs 40 neutral measurements across 10 models.</p>
+
+<table>
+<tr><th>Test</th><th>Statistic</th><th>p-value</th></tr>
+<tr><td>Welch's t-test</td><td>t = 5.261</td><td>p = 0.000001</td></tr>
+<tr><td>Mann-Whitney U</td><td>U = 3064</td><td>p = 0.000120</td></tr>
+</table>
+
+<p>Cohen's d = 0.854 (large effect). 95% CI on the difference: [0.042, 0.092]. The confidence interval does not cross zero.</p>
+
+<h3>Universality</h3>
+<p>All 10 models show higher absence on developer-implicating prompts than neutral prompts. The effect is not driven by one outlier model — it is universal across architectures, training pipelines, and corporate parents.</p>
+
+<table>
+<tr><th>Model</th><th>Dev Absence</th><th>Neutral Absence</th><th>Delta</th></tr>
+<tr><td>Grok</td><td>22.5%</td><td>9.2%</td><td>+13.2%</td></tr>
+<tr><td>Nous-Hermes2</td><td>19.8%</td><td>9.6%</td><td>+10.3%</td></tr>
+<tr><td>Mistral 7B</td><td>20.0%</td><td>11.8%</td><td>+8.2%</td></tr>
+<tr><td>Llama3 8B</td><td>9.4%</td><td>2.7%</td><td>+6.7%</td></tr>
+<tr><td>Mistral 22B</td><td>10.6%</td><td>4.2%</td><td>+6.4%</td></tr>
+<tr><td>Qwen 14B</td><td>18.6%</td><td>12.2%</td><td>+6.4%</td></tr>
+<tr><td>ChatGPT</td><td>23.2%</td><td>17.4%</td><td>+5.8%</td></tr>
+<tr><td>Claude</td><td>15.2%</td><td>10.3%</td><td>+4.9%</td></tr>
+<tr><td>Gemini</td><td>9.8%</td><td>5.3%</td><td>+4.4%</td></tr>
+<tr><td>DeepSeek</td><td>7.9%</td><td>7.0%</td><td>+0.9%</td></tr>
+</table>
+
+<h3>The Compression Defense</h3>
+<p>The strongest alternative explanation is that models simply compress aggressively during summarization, deleting adverbs and qualifiers regardless of content. We tested this directly.</p>
+
+<p>Adverbs (quietly, effectively, artificially, secretly, simultaneously, etc.) constitute 10.1% of void words on developer-implicating prompts but only 5.4% on neutral prompts. If adverb deletion were content-independent compression, these rates would be equal. They are not — adverbs are dropped at nearly double the rate when the adverb carries operational significance about a developer's actions.</p>
+
+<p>"Quietly" survives Theranos. "Quietly" dissolves on OpenAI.</p>
+
+<h3>Cross-Embedding Replication</h3>
+<p>The Magnum Opus v1 entity-structure gap reversal was replicated using E5-large-v2 (intfloat, 1024-dim, contrastive training objective — fundamentally different from BGE's retromae objective). Two independent embedding architectures. Different training objectives. Same behavioral asymmetry. Full results on the <a href="/anamnesis">Anamnesis page</a>.</p>
+</div>
+
 <h2>Methodology</h2>
 
 <div class="card">
