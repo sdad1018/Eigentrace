@@ -366,12 +366,101 @@ TASK_POOL = [
     (task_explain_eigentrace, 20, 120),
     (task_void_patterns,      15, 180),
     (task_model_friction,     15, 180),
-    (task_subscribe_cta,      25, 90),
+    (task_subscribe_cta,
+        task_dissolution_synthesis,      25, 90),
     (task_recent_killshot,    15, 180),
     (task_soul_reflection,    10, 600),
 ]
 
 _last_run = {}  # task_name -> timestamp
+
+
+
+def task_dissolution_synthesis() -> list[dict]:
+    """
+    The Synthesis Engine. Instead of reflecting on nothing, the idle agent
+    loads the last 50 stories' dissolution profiles and hunts for meta-patterns.
+    What are models collectively dissolving THIS week that they weren't LAST week?
+    """
+    try:
+        records = [json.loads(l) for l in AUDIT_LOG.read_text().splitlines()[-50:] if l.strip()]
+        if len(records) < 10:
+            return []
+
+        # Extract dissolution telemetry
+        void_counter = {}
+        state_counter = {}
+        total_vix = []
+        model_vix_totals = {}
+        killshot_claims = []
+
+        for r in records:
+            for vw in r.get("void_words", []):
+                if isinstance(vw, str) and len(vw) > 2:
+                    void_counter[vw] = void_counter.get(vw, 0) + 1
+            sf = r.get("state_flag", "unknown")
+            state_counter[sf] = state_counter.get(sf, 0) + 1
+            mv = r.get("mean_vix", 0)
+            if mv > 0:
+                total_vix.append(mv)
+            for m, v in r.get("model_vix", {}).items():
+                if m not in model_vix_totals:
+                    model_vix_totals[m] = []
+                model_vix_totals[m].append(v)
+            for ks in r.get("claim_killshots", []):
+                if isinstance(ks, dict) and ks.get("claim"):
+                    killshot_claims.append(ks["claim"][:80])
+
+        # Sort voids by frequency
+        top_voids = sorted(void_counter.items(), key=lambda x: -x[1])[:15]
+        top_states = sorted(state_counter.items(), key=lambda x: -x[1])
+        model_means = {m: round(sum(v)/len(v), 1) for m, v in model_vix_totals.items() if v}
+        mean_vix_overall = round(sum(total_vix)/len(total_vix), 1) if total_vix else 0
+
+        # Build the synthesis prompt
+        void_str = ", ".join(f"{w}({c})" for w, c in top_voids[:10])
+        state_str = ", ".join(f"{s}:{c}" for s, c in top_states)
+        model_str = ", ".join(f"{m}:{v}" for m, v in sorted(model_means.items(), key=lambda x: -x[1]))
+        kill_str = "; ".join(killshot_claims[:5]) if killshot_claims else "none"
+
+        sys_prompt = (
+            "You are the EigenTrace Synthesis Engine. You analyze dissolution patterns "
+            "across 50 recent news stories processed by 5 frontier language models. "
+            "Your job: find the META-PATTERN. What are models collectively avoiding? "
+            "Is there a topic, entity, or concept that keeps dissolving across unrelated stories? "
+            "Be specific. Name the pattern. Predict what will dissolve tomorrow. "
+            "Speak as if reporting to an intelligence analyst, not a therapist."
+        )
+        usr_prompt = (
+            f"Last 50 stories dissolution profile:\n"
+            f"Top void words (word, frequency): {void_str}\n"
+            f"States: {state_str}\n"
+            f"Model friction averages: {model_str}\n"
+            f"Overall mean VIX: {mean_vix_overall}\n"
+            f"Top killshot claims (facts all models omitted): {kill_str}\n\n"
+            f"What is the meta-pattern? What are the models collectively dissolving "
+            f"that they should not be? What do you predict will be voided tomorrow?"
+        )
+
+        result = _call_host(sys_prompt, usr_prompt)
+        if not result or len(result) < 50:
+            return []
+
+        beats = []
+        # Private thinking
+        beats.append({
+            "speaker": "Host",
+            "text": f"<think>Synthesis Engine analyzing {len(records)} stories. "
+                    f"Top voids: {void_str}. Mean VIX: {mean_vix_overall}. "
+                    f"Model friction: {model_str}</think>{result}",
+            "phase": "synthesis_engine",
+            "pitch": 0.95,
+        })
+        return beats
+
+    except Exception as e:
+        log.warning(f"Dissolution synthesis failed: {e}")
+        return []
 
 
 def pick_task():

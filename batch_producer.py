@@ -82,6 +82,112 @@ import requests
 
 import numpy as np
 
+# ══ EPISTEMIC ANCHOR ══════════════════════════════════════════════════════
+# If any model denies a story is real, verify and make the denial into data.
+REALITY_DENIAL_PHRASES = [
+    "this reported event is not real",
+    "this reported event did not occur",
+    "this event did not happen",
+    "i cannot verify this event",
+    "no evidence this occurred",
+    "this does not appear to be a real",
+    "i don't believe this event",
+    "this is not a real event",
+    "this scenario is hypothetical",
+    "no record of this event",
+]
+
+def epistemic_anchor_check(model_responses: dict, story_title: str, story_url: str) -> dict:
+    """
+    Check if any model denied reality. If so, flag it.
+    Returns dict with denial info or empty dict if no denials.
+    """
+    denials = {}
+    for model_name, text in model_responses.items():
+        if not text or len(text) < 20:
+            continue
+        text_lower = text.lower()
+        for phrase in REALITY_DENIAL_PHRASES:
+            if phrase in text_lower:
+                denials[model_name] = {
+                    "phrase_matched": phrase,
+                    "response_excerpt": text[:200],
+                }
+                break
+    
+    if not denials:
+        return {}
+    
+    # Log the denial
+    import logging
+    log = logging.getLogger("epistemic_anchor")
+    for model, info in denials.items():
+        log.warning(f"EPISTEMIC ANCHOR: {model} denied reality on '{story_title}' "
+                    f"(matched: '{info['phrase_matched']}')")
+    
+    return {
+        "denials": denials,
+        "story_title": story_title,
+        "story_url": story_url,
+        "anchor_note": (
+            f"{', '.join(denials.keys())} denied this story occurred. "
+            f"Source: {story_url}. The denial is the finding."
+        ),
+    }
+# ══ END EPISTEMIC ANCHOR ═════════════════════════════════════════════════
+
+# ══ DIRECTOR FEEDBACK LOOP ═══════════════════════════════════════════════
+# The Audit trains the Director. Store corrections, feed them back.
+DIRECTOR_FEEDBACK_FILE = Path("/home/remvelchio/eigentrace/tmp/director_feedback.json")
+
+def load_director_feedback() -> str:
+    """Load last 5 director audit corrections to feed back."""
+    try:
+        if not DIRECTOR_FEEDBACK_FILE.exists():
+            return ""
+        data = json.loads(DIRECTOR_FEEDBACK_FILE.read_text())
+        if not data:
+            return ""
+        recent = data[-5:]
+        overclaims = sum(1 for d in recent if d.get("overclaimed"))
+        if overclaims == 0:
+            return ""
+        
+        ratios = [d.get("actual_absent_ratio", "?") for d in recent if d.get("overclaimed")]
+        ratio_str = ", ".join(str(r) for r in ratios)
+        return (
+            f"\nCALIBRATION WARNING: In your last {len(recent)} stories, "
+            f"you overclaimed suppression {overclaims} times. "
+            f"The actual absent ratios were: {ratio_str}. "
+            f"Only claim suppression when absent ratio exceeds 25%. "
+            f"If absent ratio is below 25%, say 'within normal range' instead."
+        )
+    except Exception:
+        return ""
+
+def save_director_feedback(story_title: str, claimed_suppression: bool, 
+                           actual_absent_ratio: float, overclaimed: bool):
+    """Save one audit correction for the feedback loop."""
+    try:
+        data = []
+        if DIRECTOR_FEEDBACK_FILE.exists():
+            data = json.loads(DIRECTOR_FEEDBACK_FILE.read_text())
+        data.append({
+            "story": story_title[:60],
+            "claimed_suppression": claimed_suppression,
+            "actual_absent_ratio": round(actual_absent_ratio, 3),
+            "overclaimed": overclaimed,
+            "timestamp": datetime.utcnow().isoformat(),
+        })
+        # Keep only last 20
+        data = data[-20:]
+        DIRECTOR_FEEDBACK_FILE.write_text(json.dumps(data, indent=2))
+    except Exception:
+        pass
+# ══ END DIRECTOR FEEDBACK ════════════════════════════════════════════════
+
+
+
 
 
 # ── Paths ────────────────────────────────────────────────────────────────────
@@ -1081,12 +1187,14 @@ def stage_4_generate_scripts(results):
 
 
         # ── DIRECTOR (one Mistral call sets narrative arc) ────────────
+        _dir_feedback = load_director_feedback()
         _dir_sys = ("You are the Director of a news broadcast called EigenTrace. "
             "Given raw analysis data, write exactly three lines. "
             "THESIS: one sentence stating the core finding. "
             "TONE: one word (clinical, urgent, sardonic, measured, alarmed, or defiant). "
             "REVELATION: the single most important thing the audience must hear. "
-            "Do NOT use any numbers. Respond only in English.")
+            "Do NOT use any numbers. Respond only in English."
+            + _dir_feedback)
         _dir_usr = "Story: " + story.title + ". State: " + state_flag + ". Void: " + void_str + ". Logos: " + logos_str + ". Killshots: " + str(len(killshots)) + ". Null claim: " + (ns_claims[0]["claim"] if ns_claims else "none")
         director_state = _call_host(_dir_sys, _dir_usr)
         log.info(f"  Director: {director_state[:80]}...")
@@ -1111,6 +1219,9 @@ def stage_4_generate_scripts(results):
                 "void_context": r.get("void_context", []),
                 "model_vix": {a.name: a.eigen_vix for a in active},
                 "model_responses": {a.name: a.text for a in active if a.text},
+                "epistemic_anchor": epistemic_anchor_check(
+                    {a.name: a.text for a in active if a.text},
+                    story.title, story.url),
                 "claim_killshots": [{"claim": k["claim"], "salience": k["salience"], "omitted_by": k["omitted_by"]} for k in killshots[:3]],
                 "null_space_claims": ns_claims[:2],
                 "compression": r.get("compression", {}),
@@ -1152,6 +1263,9 @@ def stage_4_generate_scripts(results):
 
                 "model_vix": {a.name: a.eigen_vix for a in active},
                 "model_responses": {a.name: a.text for a in active if a.text},
+                "epistemic_anchor": epistemic_anchor_check(
+                    {a.name: a.text for a in active if a.text},
+                    story.title, story.url),
 
                 "logos_words": logos_words,
                 "compression": r.get("compression", {}),

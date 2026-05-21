@@ -674,7 +674,9 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     if _dir_corrections:
         script.append({
             "speaker": "Host",
-            "text": "Director audit. " + " ".join(_dir_corrections),
+    
+
+                "text": "Director audit. " + " ".join(_dir_corrections),
             "phase": "beat_02b_director_audit",
         })
 
