@@ -52,7 +52,8 @@ def stream_wikipedia_api(max_concepts=250000):
         
         try:
             r = requests.get("https://en.wikipedia.org/w/api.php",
-                           params=params, timeout=15)
+                           params=params, timeout=15,
+                           headers={"User-Agent": "EigenTrace/1.0 (eigentraceproject@gmail.com)"})
             data = r.json()
             
             pages = data.get("query", {}).get("allpages", [])
