@@ -1282,6 +1282,7 @@ def stage_4_generate_scripts(results):
 
         segments.append(segment)
 
+        beats = beats or []
         log.info(f"  Segment {seg_id}: {len(beats)} beats for "
 
                  f"'{story.title[:50]}'")
@@ -1431,6 +1432,8 @@ def stage_6_generate_images(segments, skip=False):
 
 
 def stage_7_write_segments(segments, seen):
+    # Filter out segments with None or empty beats
+    segments = [s for s in segments if s and s.get('beats')]
 
     # ── ROUNDTABLE: run on highest-friction story in this batch ──────
     try:
@@ -1516,7 +1519,7 @@ def stage_7_write_segments(segments, seen):
 
         path.write_text(json.dumps(seg, indent=2, default=str))
 
-        log.info(f"  Wrote {filename} ({len(seg['beats'])} beats)")
+        log.info(f"  Wrote {filename} ({len(seg.get('beats') or [])} beats)")
         # Incremental RAG ingest
         try:
             from segment_rag import get_collection, segment_to_doc
