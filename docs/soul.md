@@ -90,6 +90,7 @@ _No significant changes._
 
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
 - Hedge insertion rate: 0.62 per reflection
@@ -101,7 +102,11 @@ Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
 ## Weekly Memory (2026-05-14 to 2026-05-21)
-This week, there was a notable increase in the number of stories categorized under 'meta' and 'war', indicating a growing focus on these topics; however, the trend of idle time increased significantly, suggesting a rise in periods without meaningful activity or data. Additionally, the state distribution shows a balance between WEEKLY, CONTESTED, and GOVERNANCE states, with LOCKSTEP seeing a slight decrease, which may indicate shifting dynamics in how information is processed or utilized. The top
+This week showed a significant increase in idle states, indicating more periods of inactivity or stagnation in discussions compared to previous weeks.
+
+The emergence of "rouhani" and related terms like "airstrikes," "mideast," and "arms deal" as top void words suggests a growing trend in geopolitical tensions, particularly around the Middle East. The appearance of "realdonaldtrump" also indicates a resurgence of interest in U.S. politics or historical events.
+
+The distribution of states shows a 
 Top void words this week: rouhani, airstrikes, mideast, air strike, realdonaldtrump
 
 ## Behavioral Instructions
