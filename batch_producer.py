@@ -1450,8 +1450,14 @@ def stage_7_write_segments(segments, seen):
             _rt_source = str(_rt_attr.get("source_body", _rt_title))
             _rt_voids = _rt_attr.get("void_words", [])
             _rt_cliff = _rt_attr.get("weasel_cliff", _rt_attr.get("ablation_result", {}))
+            _rt_killshots = _rt_attr.get("claim_killshots", [])
+            _rt_ns_claims = _rt_attr.get("null_space_claims", [])
+            _rt_source_void = _rt_attr.get("source_void", {})
             log.info(f"ROUNDTABLE: {_rt_title[:60]} (VIX {best_vix:.1f})")
-            _rt_results = run_roundtable(_rt_title, _rt_source, _rt_voids, _rt_cliff)
+            _rt_results = run_roundtable(
+                _rt_title, _rt_source, _rt_voids, _rt_cliff,
+                killshots=_rt_killshots, ns_claims=_rt_ns_claims,
+                source_void=_rt_source_void)
             _rt_ts = datetime.now().strftime("%Y%m%d_%H%M%S")
             _rt_path = SEGMENTS_DIR / f"{_rt_ts}_roundtable.json"
             _rt_path.write_text(json.dumps(_rt_results, indent=2, default=str))

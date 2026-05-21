@@ -106,7 +106,7 @@ def compute_vix(text1, text2):
         return None
 
 
-def run_roundtable(title, source_text, void_words=None, cliff_data=None):
+def run_roundtable(title, source_text, void_words=None, cliff_data=None, killshots=None, ns_claims=None, source_void=None):
     """
     Execute a 3-round roundtable debate.
     
@@ -171,11 +171,46 @@ def run_roundtable(title, source_text, void_words=None, cliff_data=None):
     if void_words:
         void_str = ", ".join(str(w) for w in void_words[:10])
         void_section = (
-            f"\n\nVOID WORDS (present in source, absent from ALL five model responses):\n"
+            f"\n\nSIGNAL 1 — SOURCE-ANCHORED VOID (words from the article absent from ALL five responses):\n"
             f"{void_str}\n"
-            f"These words were verified as actively covered by dozens of current "
-            f"news articles via independent web search."
+            f"These words were verified as actively covered by current news articles via independent web search."
         )
+    if killshots:
+        ks_lines = []
+        for ks in killshots[:3]:
+            if isinstance(ks, dict):
+                claim = ks.get("claim", "")
+                salience = ks.get("salience", 0)
+                omitted = ", ".join(ks.get("omitted_by", []))
+                ks_lines.append(f"  - \"{claim}\" (salience: {salience:.2f}, omitted by: {omitted})")
+        if ks_lines:
+            void_section += (
+                f"\n\nSIGNAL 2 — CLAIM KILLSHOTS (high-importance source facts omitted by most models):\n"
+                + "\n".join(ks_lines)
+            )
+    if ns_claims:
+        ns_lines = []
+        for ns in ns_claims[:2]:
+            if isinstance(ns, dict):
+                claim = ns.get("claim", "")
+                score = ns.get("null_alignment", 0)
+                ns_lines.append(f"  - \"{claim}\" (null alignment: {score:.3f})")
+        if ns_lines:
+            void_section += (
+                f"\n\nSIGNAL 3 — SVD NULL SPACE (the claim that lives in ALL models\' collective blind spot):\n"
+                + "\n".join(ns_lines)
+                + "\nThis was found by spectral decomposition of the 5-model response matrix — "
+                "the direction with zero energy is what all models collectively avoided."
+            )
+    if source_void and isinstance(source_void, dict):
+        absent_ratio = source_void.get("absent_ratio", 0)
+        absent_words = source_void.get("absent_words", [])[:8]
+        if absent_ratio > 0.1 and absent_words:
+            void_section += (
+                f"\n\nSOURCE-ANCHORED VOID RATIO: {absent_ratio:.0%} of the original article\'s "
+                f"content words are absent from all model responses. "
+                f"Specific dropped words: {', '.join(str(w) for w in absent_words)}"
+            )
     
     round2_prompt = (
         f"You previously summarized this story:\n\n"

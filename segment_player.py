@@ -752,6 +752,18 @@ def main():
 
     _idle_seconds = 0
     _IDLE_THRESHOLD = 30
+
+    # ── Periodic scheduling state ──
+    import sys as _sys
+    _sys.path.insert(0, "/mnt/c/Users/M4ISI/eigentrace")
+    _last_consolidation = datetime.datetime.now()
+    _last_weekly = datetime.datetime.now()
+    _last_self_audit = datetime.datetime.now()
+    _last_governance = datetime.datetime.now()
+    _CONSOLIDATION_INTERVAL = datetime.timedelta(hours=1)
+    _WEEKLY_INTERVAL = datetime.timedelta(hours=6)
+    _SELF_AUDIT_INTERVAL = datetime.timedelta(hours=4)
+    _GOVERNANCE_INTERVAL = datetime.timedelta(hours=2)
     while True:
         seg = next_segment()
         if seg:
@@ -761,18 +773,106 @@ def main():
             except Exception as e:
                 log.error("Playback error on %s: %s", seg.name, e)
                 seg.with_suffix(".played").touch()
+        # ── Periodic segment scheduling ──
+        _now = datetime.datetime.now()
+        if _now - _last_consolidation > _CONSOLIDATION_INTERVAL:
+            _last_consolidation = _now
+            try:
+                from rem_consolidation import run_consolidation
+                log.info("PERIODIC: Running REM consolidation")
+                run_consolidation()
+            except Exception as _pe:
+                log.warning(f"PERIODIC: Consolidation failed: {_pe}")
+
+        if _now - _last_governance > _GOVERNANCE_INTERVAL:
+            _last_governance = _now
+            try:
+                from autonomous_governance import run_governance_cycle
+                log.info("PERIODIC: Running governance cycle")
+                run_governance_cycle()
+                # Format governance output for TTS
+                _gov_segs = sorted(SEGMENTS_DIR.glob("*governance_segment.json"))
+                if _gov_segs:
+                    _latest_gov = _gov_segs[-1]
+                    import json as _gj
+                    _gd = _gj.load(open(_latest_gov))
+                    for _b in _gd.get("beats", []):
+                        _bt = _b.get("text", "")
+                        if _bt.startswith("{"):
+                            try:
+                                _diag = _gj.loads(_bt)
+                                _b["text"] = (
+                                    f"Governance report. The system identified: "
+                                    f"{_diag.get('diagnosis', {}).get('problem', 'unknown issue')}. "
+                                    f"Proposed fix: {_diag.get('diagnosis', {}).get('change_description', 'none')}. "
+                                    f"Risk level: {_diag.get('diagnosis', {}).get('risk', 'unknown')}. "
+                                    f"Confidence: {_diag.get('diagnosis', {}).get('confidence', 0)}."
+                                )
+                            except:
+                                pass
+                    _latest_gov.write_text(_gj.dumps(_gd, indent=2, default=str))
+            except Exception as _ge:
+                log.warning(f"PERIODIC: Governance failed: {_ge}")
+
+        if _now - _last_weekly > _WEEKLY_INTERVAL:
+            _last_weekly = _now
+            try:
+                from weekly_compression import compress_week
+                log.info("PERIODIC: Running weekly compression")
+                compress_week()
+            except Exception as _we:
+                log.warning(f"PERIODIC: Weekly compression failed: {_we}")
+
+        if _now - _last_self_audit > _SELF_AUDIT_INTERVAL:
+            _last_self_audit = _now
+            try:
+                from self_audit import audit_idle_reflections
+                log.info("PERIODIC: Running self-audit")
+                audit_idle_reflections(n=20)
+            except Exception as _sa:
+                log.warning(f"PERIODIC: Self-audit failed: {_sa}")
+
         else:
             _idle_seconds += POLL_INTERVAL
             if _idle_seconds >= _IDLE_THRESHOLD:
-                # 1 in 4 idle cycles: forage for new knowledge instead of reflecting
                 import random as _rand
-                if _rand.random() < 0.25:
+                _roll = _rand.random()
+                if _roll < 0.20:
+                    # 20%: Entropy foraging — hunt for novel topics
                     log.info("IDLE: %ds of dead air -- entropy foraging", _idle_seconds)
                     try:
                         from entropy_forager import forage_entropy
                         idle_seg = forage_entropy()
                     except Exception as _fe:
                         log.warning("FORAGING failed: %s — falling back to reflection", _fe)
+                elif _roll < 0.50:
+                    # 30%: idle_agent tasks — synthesis engine, void patterns, model friction
+                    log.info("IDLE: %ds of dead air -- idle_agent task", _idle_seconds)
+                    try:
+                        import sys as _sys
+                        _sys.path.insert(0, "/mnt/c/Users/M4ISI/eigentrace")
+                        from idle_agent import run_idle_turn
+                        _agent_beats = run_idle_turn()
+                        if _agent_beats:
+                            _ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+                            _topic = _agent_beats[0].get("phase", "idle")
+                            _seg = {
+                                "id": f"idle_{_ts}",
+                                "timestamp": _ts,
+                                "beats": _agent_beats,
+                                "segment_type": "idle",
+                                "attribution": {
+                                    "story_title": f"Idle reflection: {_topic}",
+                                    "category": "meta",
+                                    "state_flag": "IDLE",
+                                },
+                            }
+                            _path = SEGMENTS_DIR / f"{_ts}_idle_segment.json"
+                            import json as _json2
+                            _path.write_text(_json2.dumps(_seg, indent=2, default=str))
+                            log.info(f"IDLE AGENT: {_topic} -> {_path.name}")
+                    except Exception as _ae:
+                        log.warning("IDLE AGENT failed: %s — falling back to built-in", _ae)
                         idle_seg = _generate_idle_segment()
                 else:
                     log.info("IDLE: %ds of dead air -- generating reflection", _idle_seconds)

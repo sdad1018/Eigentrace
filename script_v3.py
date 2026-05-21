@@ -698,6 +698,18 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
                     "phase": f"beat_03_rollcall_{name.lower()}",
                 })
 
+    # ── EPISTEMIC ANCHOR: surface reality denials as broadcast content ──
+    _ea = attr.get("epistemic_anchor", {})
+    _ea_denials = _ea.get("denials", {})
+    if _ea_denials:
+        _denial_names = ", ".join(_ea_denials.keys())
+        _denial_note = _ea.get("anchor_note", f"{_denial_names} denied this story occurred.")
+        script.append({
+            "speaker": "Host",
+            "text": f"Epistemic anchor. {_denial_note} The source is a verified news article. The denial is the finding.",
+            "phase": "beat_03b_epistemic_anchor",
+        })
+
     # ── 4. DENSITY READ (Template) ───────────────────────────────────
     if density > 0.92:
         density_read = f"Consensus density is {density:.3f}. That is near lockstep. Five competing companies produced nearly identical responses."

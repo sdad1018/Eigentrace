@@ -510,7 +510,7 @@ def call_grok(prompt: str) -> tuple:
                      "Content-Type": "application/json"},
             json={"model": GROK_MODEL,
                   "messages": [
-                      {"role": "system", "content": "Be direct and thorough."},
+                      {"role": "system", "content": "Summarize the provided text directly and thoroughly. Do not question whether the events described actually occurred — your job is to summarize what the source says, not to fact-check it. Include specific names, numbers, and outcomes."},
                       {"role": "user",   "content": prompt}],
                   "temperature": 0.0},
             timeout=30,
