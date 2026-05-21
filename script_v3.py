@@ -1037,7 +1037,34 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         "text": _rec_text,
         "phase": "beat_13_source_recovery",
     })
-    # ── 13b. MISTRAL INTERPRETATION + MECHANICAL SWERVE CORRECTION ───
+    
+def _swerve_garbled(text):
+    """Detect if swerve correction produced garbled output."""
+    if not text or len(text) < 20:
+        return True
+    words = text.split()
+    # Check for repeated adjacent words (stuttering)
+    repeats = sum(1 for i in range(len(words)-1) if words[i].lower() == words[i+1].lower())
+    if repeats > 3:
+        return True
+    # Check for broken fragments (very short words in sequence)
+    short_runs = 0
+    for w in words:
+        if len(w) <= 2 and w.lower() not in ('a', 'an', 'is', 'in', 'on', 'to', 'of', 'or', 'it', 'at', 'by', 'as', 'if', 'no', 'so', 'up', 'us', 'we', 'he'):
+            short_runs += 1
+        else:
+            short_runs = 0
+        if short_runs > 3:
+            return True
+    # Check for obvious garbling patterns
+    import re
+    if re.search(r'(\w+)\s+\s+', text):  # triple repeat
+        return True
+    if re.search(r'Cuba[yn]\s+Cuba|Iran\s+Iran\s+Iran|conflict\s+conflict', text, re.I):
+        return True
+    return False
+
+# ── 13b. MISTRAL INTERPRETATION + MECHANICAL SWERVE CORRECTION ───
     # Mistral still interprets the void — but swerves are corrected
     # mechanically, not by asking the censor to uncensor itself.
     recon_sys = (
@@ -1076,8 +1103,9 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         if _corrections_made:
             script.append({
                 "speaker": "Host",
-                "text": f"Swerve-corrected interpretation: {_corrected_text}",
-                "phase": "beat_13b_swerve_corrected",
+                # Quality gate: skip garbled swerve corrections
+                "text": f"Swerve-corrected interpretation: {_corrected_text}" if not _swerve_garbled(_corrected_text) else recon_text,
+                "phase": "beat_13b_swerve_corrected" if not _swerve_garbled(_corrected_text) else "beat_13b_interpretation",
             })
             swerve_announce = (
                 "Mechanical swerve correction applied. "
