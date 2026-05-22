@@ -463,20 +463,6 @@ def task_consequence_foraging() -> list[dict]:
 
 
 # All task functions are defined above this point
-TASK_POOL = [
-    (task_explain_eigentrace,      20, 120),
-    (task_void_patterns,           15, 180),
-    (task_model_friction,          15, 180),
-    (task_subscribe_cta,           10, 300),
-    (task_recent_killshot,         15, 180),
-    (task_soul_reflection,         10, 600),
-    (task_consequence_foraging,    15, 3600),
-    (task_dissolution_synthesis,   25, 90),
-    (task_curiosity_foraging,      10, 1800),
-    (task_entanglement_scan,       10, 7200),
-]
-
-_last_run = {}  # task_name -> timestamp
 
 
 
@@ -628,6 +614,22 @@ def task_entanglement_scan() -> list[dict]:
         log.warning(f"Entanglement scan failed: {e}")
         return []
 
+
+
+TASK_POOL = [
+    (task_explain_eigentrace,      20, 120),
+    (task_void_patterns,           15, 180),
+    (task_model_friction,          15, 180),
+    (task_subscribe_cta,           10, 300),
+    (task_recent_killshot,         15, 180),
+    (task_soul_reflection,         10, 600),
+    (task_consequence_foraging,    15, 3600),
+    (task_dissolution_synthesis,   25, 90),
+    (task_curiosity_foraging,      10, 1800),
+    (task_entanglement_scan,       10, 7200),
+]
+
+_last_run = {}  # task_name -> timestamp
 
 def pick_task():
     """Weighted random selection with cooldown and anti-loop protection."""
