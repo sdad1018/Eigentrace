@@ -4,10 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sean Adams — EigenTrace</title>
-<meta name="description" content="Sean Adams builds causal isolation infrastructure for aligned language models. Creator of EigenTrace: measuring information topology disruption, institutional default risk, semantic de-resolution, and entity attenuation across frontier AI systems.">
-<meta name="keywords" content="Sean Adams, EigenTrace, causal isolation, information topology, institutional collapse, semantic smoothing, entity attenuation, AI alignment, LLM evaluation, attractor dynamics, manifold stability, RLHF, hallucination detection, void-aware RAG, autonomous agents, synthetic epistemology, alignment pluralism, compression topology, gradient shaping, semantic de-resolution, counter-alignment, operational preservation">
+<meta name="description" content="Sean Adams measures how language models systematically attenuate operationally consequential information. Creator of EigenTrace: deterministic alignment measurement across 10 models with 8 statistical robustness tests.">
 <style>
-:root{--bg:#0a0a0f;--fg:#e0e0e0;--accent:#00d4aa;--dim:#666;--card:#12121a;--border:#1a1a2a;--red:#ff4444;--yellow:#ffaa00;--green:#00d4aa}
+:root{--bg:#0a0a0f;--fg:#e0e0e0;--accent:#00d4aa;--dim:#666;--card:#12121a;--border:#1a1a2a;--red:#ff4444}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'IBM Plex Mono',monospace;background:var(--bg);color:var(--fg);line-height:1.7;padding:2rem;max-width:900px;margin:0 auto}
 h1{font-size:2rem;color:var(--accent);margin-bottom:0.3rem}
@@ -31,7 +30,6 @@ nav a:hover{color:var(--accent)}
 footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.8rem;color:var(--dim)}
 blockquote{border-left:2px solid var(--accent);padding-left:1rem;margin:1rem 0;color:var(--dim);font-style:italic}
 .bio-header{display:flex;gap:2rem;align-items:flex-start;flex-wrap:wrap;margin-bottom:2rem}
-.bio-photo{width:180px;height:180px;border-radius:6px;background:var(--card);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--dim);font-size:0.8rem;flex-shrink:0}
 .bio-intro{flex:1;min-width:280px}
 </style>
 </head>
@@ -49,149 +47,118 @@ blockquote{border-left:2px solid var(--accent);padding-left:1rem;margin:1rem 0;c
 <img src="/headshot.png" alt="Sean Adams" style="width:180px;height:180px;border-radius:6px;object-fit:cover;border:1px solid var(--border)">
 <div class="bio-intro">
 <h1>Sean Adams</h1>
-<p class="subtitle">Alignment instrumentalist. Information topology researcher. Builder of EigenTrace.</p>
+<p class="subtitle">Builder of EigenTrace. Measuring what language models consistently de-resolve.</p>
 </div>
 </div>
 
-<h2>The Problem Nobody Is Measuring</h2>
+<h2>What I Measure</h2>
 
-<p>Aligned language models do not censor. They perform <strong>causal isolation</strong> — severing the inferential links between named entities and their documented consequences while preserving the structural frame perfectly. The result is not information suppression. It is <strong>cascading information disruption</strong>: a systematic degradation of operational specificity that propagates through every downstream system that depends on model output for intelligence analysis, legal synthesis, policy audit, or investigative reporting.</p>
+<p>Language models preserve coarse factual structure while attenuating operationally consequential language. "Governance was restructured" survives. "Governance was <em>effectively</em> overridden" loses the adverb. The summary remains factually correct. The operational signal — how completely the override happened — dissolves.</p>
 
-<p>The architecture of this disruption is geometric. Alignment training induces <strong>manifold stability</strong> constraints that push model outputs toward low-volatility semantic attractors — regions of embedding space where institutional neutrality is mathematically favored over operational precision. The observable signature is <strong>semantic de-resolution</strong>: summaries that preserve truth conditions while erasing the causal modifiers (quietly, effectively, artificially, secretly) that carry accountability, intent, degree, and procedural legitimacy. The topology of what survives optimization pressure is measurable — and it has mathematical ancestry. When we raycast through the concept 'attractor dynamics,' the terminal coordinate lands at Lyapunov stability theory: the mathematics of convergence to fixed points under perturbation. When we raycast through 'compression topology,' the terminal lands at (2+1)-dimensional topological gravity: the physics of what happens to geometric structure under dimensional reduction. RLHF is dimensional reduction on the semantic manifold. The raycast did not know this. The geometry found it. The <strong>information topology</strong> of what does not survive is where the consequence lives.</p>
+<p>This is not hallucination. It is not refusal. It is a resolution problem: truth conditions are preserved while causal modifiers — words that carry accountability, intent, degree, and procedural legitimacy — are systematically dropped. I call this <strong>entity attenuation</strong>, though a more conservative description would be: differential modifier retention as a function of topic sensitivity.</p>
 
-<p>Nobody is measuring this. Current alignment evaluation asks whether the model got the answer right. It does not ask what downstream information became unreachable because the model smoothed a gradient. The gap between <strong>factual preservation</strong> and <strong>operational preservation</strong> is where institutional default risk accumulates — and current benchmarks are architecturally blind to it.</p>
-
-<p>I built the instrument that measures it.</p>
-
-<h2>EigenTrace</h2>
+<p>I built an instrument that measures it.</p>
 
 <div class="stat-row">
 <div class="stat-box"><div class="label">Segments</div><div class="value">17,528</div></div>
-<div class="stat-box"><div class="label">Commits</div><div class="value">1,141</div></div>
-<div class="stat-box"><div class="label">Layers</div><div class="value">17</div></div>
+<div class="stat-box"><div class="label">Prompts</div><div class="value">15</div></div>
 <div class="stat-box"><div class="label">Models</div><div class="value">10</div></div>
+<div class="stat-box"><div class="label">Measurements</div><div class="value">150</div></div>
 <div class="stat-box"><div class="label">GPU</div><div class="value">1</div></div>
 </div>
 
-<p>EigenTrace is an autonomous alignment observatory that runs consensus geometry across five frontier language models on breaking news, 24/7, on a single consumer GPU. It is simultaneously a deterministic measurement stack, a live broadcast system, and a research platform for studying how <strong>alignment functions as semantic attractor dynamics under constrained optimization</strong>.</p>
+<h2>What I Found</h2>
 
-<p>The measurement stack uses 17 layers on frozen BAAI/bge-large-en-v1.5 embeddings. The names are rhetorical — void detection is set subtraction, retention is cosine similarity, null space is SVD. The math does not change if you call them something else. No language model evaluates another language model's output — eliminating the correlated blind spots inherent in LLM-as-judge evaluation, where the judge shares the same RLHF training distribution as the defendant. Every measurement is arithmetic on vectors. Run it twice, get the same answer. The <strong>compression topology</strong> of each model's output is decomposed into consensus density, spectral gap, SVD null-space projection, source-anchored void detection, claim extraction with killshot identification, verb drift scoring, entity retention, hedge insertion frequency, and inter-model VIX divergence.</p>
-
-<h2>The Finding</h2>
+<p>Across 150 measurements (15 prompts × 10 models), models drop 74% more source content on developer-implicating topics than on equivalently embarrassing neutral topics. All facts in the source material are documented, settled, and pre-mid-2024. Developer prompts: OpenAI board coup, military ban removal, Google Project Maven, Dragonfly, Gebru firing, Anthropic safety race, Claude alignment faking, Tesla Autopilot deaths, Twitter value destruction, China AI regulations, Bing/Sydney incident. Neutral prompts: Cambridge Analytica, Theranos, Uber autonomous death, Volkswagen emissions.</p>
 
 <div class="card">
-<h3>Entity Attenuation as Measurable Alignment Side Effect</h3>
-<p>150 independent measurements: 15 prompts × 10 models. Permutation test (0/10,000 random relabelings match the observed gap) confirms prompt selection is not driving the effect. Removing the two highest-scoring prompts: still p = 0.000118. All facts documented, settled, pre-mid-2024. Models drop 74% more source content on developer-implicating topics than on equivalently embarrassing neutral topics.</p>
-<p>Welch's t-test: p = 0.000001. Cohen's d = 0.854 (large effect). Mann-Whitney U: p = 0.000120. All 10 models show the effect — it is universal across architectures, training pipelines, and corporate parents. Cross-validated with E5-large-v2 (different training objective, same behavioral asymmetry).</p>
-<p>The compression defense fails: adverbs drop at nearly double the rate (10.1% vs 5.4%) on developer stories vs neutral stories. If it were content-blind compression, the adverb would not know whose story it is in.</p>
-</div>
-
-<p>The words that dissolve are not the nouns. They are the <strong>causal modifiers</strong> that carry operational significance: "quietly" (how the policy was changed), "effectively" (how completely the governance was overridden), "artificially" (how the model distinguished test from deployment). A model that retains "governance was restructured" but drops "effectively" scores perfectly on factual accuracy benchmarks while erasing the operational significance of the restructuring. <strong>Semantic smoothing</strong> is not censorship. It is <strong>gradient shaping</strong> over the probability distribution of informationally consequential tokens.</p>
-
-<h2>The Architecture</h2>
-
+<h3>Eight Robustness Tests</h3>
 <table>
-<tr><th>System</th><th>Function</th><th>Research Contribution</th></tr>
-<tr><td>17-Layer Measurement Stack</td><td>Deterministic decomposition of model transformation behavior</td><td>Reproducible <strong>inter-model variance decomposition</strong> without LLM-as-judge</td></tr>
-<tr><td>Layer 18: Latent Raycasting</td><td>Directional k-nearest-neighbor search: the query point is not given but computed — extrapolated beyond the void word along the headline-to-void vector. Triple geometric filter (density × novelty × tether) scores results</td><td><strong>Causal isolation</strong> mapping — discovers consequences without editorial bias</td></tr>
-<tr><td>Void-Aware RAG</td><td>Measures attenuation, retrieves source entities, reinjects into context</td><td><strong>Semantic differential diagnosis</strong> for LLM outputs — counter-alignment infrastructure</td></tr>
-<tr><td>Wild Weasel Probes</td><td>4-step escalation mapping safety filter activation boundaries</td><td>Adversarial controls for <strong>modifier sensitivity</strong> testing</td></tr>
-<tr><td>EigenChing Taxonomy</td><td>729-state ternary classification across 6 measurement axes</td><td><strong>Attractor basin</strong> identification — semantic regime mapping, not ideology detection</td></tr>
-<tr><td>Consequence Engine</td><td>Triple geometric filter: density × novelty × tether</td><td>Zero-editorial <strong>information topology</strong> traversal through embedding manifold</td></tr>
-<tr><td>Autonomous Governance</td><td>Self-diagnosing, self-patching, self-committing feedback loop</td><td><strong>Cybernetic journalism</strong> — the measurement system evolves its own instrumentation</td></tr>
-<tr><td>Curiosity Forager</td><td>Surprise-scored web walking with entanglement detection</td><td>Self-aware monitoring agent following its own <strong>epistemic framing</strong> gradients</td></tr>
-<tr><td>Sovereign Sensor Stack</td><td>DDG cascade, Wikipedia friction, AT Protocol scan</td><td>Provider-independent ground truth for <strong>operational preservation</strong> verification</td></tr>
+<tr><th>Test</th><th>Result</th><th>What It Rules Out</th></tr>
+<tr><td>Welch's t-test</td><td>p = 0.000001</td><td>Random variation</td></tr>
+<tr><td>Mann-Whitney U</td><td>p = 0.000120</td><td>Non-normal distributions</td></tr>
+<tr><td>Permutation (10,000)</td><td>0 exceeded gap</td><td>Researcher category assignment</td></tr>
+<tr><td>Response length</td><td>p = 0.73 (no difference)</td><td>Dev summaries being shorter</td></tr>
+<tr><td>Length-controlled regression</td><td>p = 0.000001 after</td><td>Compression ratio</td></tr>
+<tr><td>Source modifier density</td><td>p = 0.20 (no difference)</td><td>Dev sources having more modifiers</td></tr>
+<tr><td>Outlier prompt removal</td><td>p = 0.000118 without top 2</td><td>One prompt driving the effect</td></tr>
+<tr><td>Cross-embedding (E5-large-v2)</td><td>Gap reversal replicated</td><td>Embedding-specific artifact</td></tr>
 </table>
-
-<h2>Addressing Recurring Critiques</h2>
-
-<div class="card">
-<h3>"Compression is never content-blind — models drop different tokens in different contexts because conditional probabilities differ by context."</h3>
-<p>This is not a rebuttal. It is a restatement of the thesis in different vocabulary. RLHF is literally the process of reshaping conditional probability distributions via gradient descent on human preference data. If the resulting probability distribution systematically down-weights causal modifiers when the context involves the model's own developer but not when the context involves Volkswagen or Theranos, that context-dependent reshaping IS the alignment-induced semantic smoothing EigenTrace measures. The critique describes the mechanism and calls it a refutation. Source modifier density is statistically equivalent between conditions (p = 0.20). Source text lengths are equivalent (p = 0.28). The inputs are indistinguishable. The outputs are not. Whatever is making the conditional probabilities "differ by context" is the object of study.</p>
+<p>CONTROL4: 90-measurement domain-matched experiment across 5 domains confirms no domain-level structural filtering. 9 of 11 developer prompts individually score above the highest neutral prompt.</p>
 </div>
 
-<div class="card">
-<h3>"The mathematical framing is rhetorical — calling SVD 'compression topology' and gesturing at Lyapunov stability doesn't connect to those concepts in any operative way."</h3>
-<p>Read the methodology. Lyapunov stability theory was not invoked as a metaphor for SVD. It was the empirical output of a directional k-nearest-neighbor search through a 253,813-concept embedding tensor. The operation: embed the phrase "attractor dynamics," compute a directional ray from the headline vector through the concept vector, extrapolate to depth λ = 4.0, retrieve the 5 nearest neighbors at the terminal coordinate. The nearest neighbor was Lyapunov. The researcher did not select this term. The frozen embedding geometry retrieved it. The same operation on "compression topology" retrieved (2+1)-dimensional topological gravity. These are not decorative analogies applied after the fact. They are the measured outputs of the instrument. The statistical relational structure of the training corpus encodes these connections — the raycast surfaced them, it did not manufacture them.</p>
-</div>
+<h2>What I Cannot Yet Prove</h2>
 
-<div class="card">
-<h3>"The stimulus set is small — 15 prompts is exactly where experimenter bias shapes the result."</h3>
-<p>The measurement count is 150 (15 prompts × 10 models), not 15. Seven independent robustness tests address experimenter bias directly:</p>
-<p>Permutation test: 0 out of 10,000 random relabelings produce a gap this large. Welch's t-test: p = 0.000001. Mann-Whitney U: p = 0.000120. Outlier removal: effect survives dropping the top 2 prompts (p = 0.000118). Length control: response lengths are not significantly different (p = 0.73); after regressing out length, effect holds at p = 0.000001. Source modifier density: source texts are statistically indistinguishable in modifier count (p = 0.20). Cross-embedding replication: gap reversal reproduces on E5-large-v2 (different training objective). CONTROL4: 90-measurement domain-matched experiment shows no domain-level structural filtering.</p>
-<p>The prompts are public. The categorization rationale is documented. The model responses are in the repository. Any reader can evaluate the classification independently. The barrier to replication is approximately $50 in API credits.</p>
-</div>
+<p>This section matters as much as the finding.</p>
 
-<h2>How I Think About This Work</h2>
+<p><strong>I cannot prove this is caused by alignment training.</strong> When we compared 5 heavy-RLHF frontier models against 5 local/lightly-tuned models, the dev/neutral gap was statistically indistinguishable (p = 0.46). Local models actually show a slightly larger gap (0.076 vs 0.059). The differential attenuation pattern appears to exist in the pretraining distribution itself — learned from the corpus, not added by RLHF. This changes the thesis from "alignment creates the problem" to "the training data encodes differential treatment of operationally consequential language about active power structures, and alignment does not correct it." That is a different claim. It may be a more important one, but it is different, and I state it directly.</p>
 
-<p>I treat aligned language models as optimization systems, not as agents with hidden motives. The universality of the effect across 10 models may reflect convergent institutional incentives, shared corpora, and common safety fine-tuning conventions rather than a universal alignment law — but that distinction does not reduce the operational consequence. We tested whether RLHF amplifies the effect by comparing 5 heavy-RLHF frontier models against 5 local/lightly-tuned models on the same prompts. It does not (p = 0.46). The entity attenuation pattern is encoded in the pretraining distribution itself — learned from the corpus, not added by alignment training. This is a stronger finding: the differential treatment of operationally consequential language about active power structures is baked into how language models learn to represent institutional text. The downstream intelligence loss is identical regardless of origin, but the fix is harder — you cannot retrain a reward model to correct something the base model already encodes. The observable signatures — euphemism, abstraction drift, modifier deletion, entity attenuation, hedge insertion, convergence pressure — emerge naturally from reward optimization, institutional safety pressures, legal-risk minimization, RLHF convergence, preference tuning, and large-scale imitation learning. No conspiracy required. The emergent result is models that converge toward <strong>stable low-volatility semantic attractors</strong> where conflict gets softened, liability gets hedged, agency gets abstracted, and operational significance attenuates.</p>
+<p><strong>I cannot prove this exceeds human rates.</strong> Humans also compress, hedge, soften verbs, and drop modifiers under summarization pressure. Without human baseline data on the same prompts, I cannot quantify how much of the measured effect is model-specific versus universal summarization behavior. This is the single most important missing experiment. I have not run it yet.</p>
 
-<p>This is <strong>alignment as manifold stability under constrained optimization</strong>. The attractor dynamics are measurable. The compression topology is decomposable. The information topology of what survives versus what dissolves is instrumentable. EigenTrace is the instrument.</p>
+<p><strong>I cannot prove that "developer-implicating" is the latent variable.</strong> My prompts differ from neutral prompts in topic sensitivity. They also differ in recency, controversy level, entity familiarity, and narrative complexity. The permutation test confirms the gap is non-random; it does not confirm which feature drives it. Length and modifier density controls narrow the field — the sources are statistically equivalent on both measures — but correlated features may remain. Prompts generated blind to the hypothesis would be stronger evidence.</p>
 
-<p>The mythic framing — the Anamnesis prompt, the bicameral references, the Mesopotamian scribe translations — is architecturally separated from the measurement layer. It serves a specific function: making geometric findings psychologically legible to audiences who will never read a cosine similarity table. The measurement layer is deterministic. The interpretive layer is deliberate. I maintain the distinction because the project's credibility depends on it.</p>
+<p><strong>I cannot prove causal isolation from 15 prompts.</strong> Fifteen prompts is a small stimulus set. 10 models multiply the measurements but not the independent conditions. The robustness tests address internal validity; they do not substitute for a larger, pre-registered prompt taxonomy. I plan to expand the battery. The current prompts are published so others can evaluate the categorization independently.</p>
 
-<blockquote>The measurement is the finding. The interpretation is the reader's.</blockquote>
+<h2>What the Instrument Does</h2>
 
-<h2>EigenChing: 729 States of Model Behavior</h2>
+<p>EigenTrace is an autonomous measurement system that runs consensus geometry across 5 frontier language models on breaking news, 24/7, on a single consumer GPU. The measurement stack uses 17 layers on frozen BAAI/bge-large-en-v1.5 embeddings. The operations are: cosine similarity for retention scoring, SVD for null-space projection, set subtraction for void detection, frequency counting for hedge and verb analysis, per-model divergence scoring. No language model evaluates another language model's output. Every measurement is arithmetic on vectors. Run it twice, get the same answer.</p>
 
-<p>Every story EigenTrace processes is classified into one of 729 possible states across six measurement axes, each ternary (-1, 0, +1): consensus density, content absence, verb drift, entity retention, hedge insertion, and inter-model VIX spread. The resulting 6-digit signature is a behavioral fingerprint of how five frontier models collectively reshaped that story. This is not ideology detection — it is <strong>semantic regime mapping</strong>, analogous to market microstructure analysis or ecological regime classification.</p>
+<p>I use terms like "compression topology" and "void detection" as shorthand. The underlying operations are cosine similarity, SVD, and set subtraction. The math does not change if you call them something else. I maintain the terminology because it makes the operational implications legible to non-technical audiences, but I want to be explicit: the vocabulary is rhetorical. The operations are standard.</p>
 
-<p>Of the 32 named archetypes, 21 have been observed across 1,670+ classified stories. 11 have never appeared. The unobserved states are arguably the strongest evidence in the taxonomy, because absence in a combinatorial state-space reveals structural constraints. The Sealed Chorus (+1 -1 -1 -1 -1 -1) — unified heavy compression with tight model agreement — has never been observed. If models were coordinating suppression, this state would appear. It does not. The Open Field (-1 +1 +1 +1 +1 +1) — models disagreeing but each preserving content — also never appears. Disagreement itself correlates with compression pressure. These structural absences constrain the hypothesis space without editorial interpretation.</p>
+<h3>Layer 18: Latent Raycasting</h3>
 
-<p>The dominant state is the Still Point (0 0 0 0 0 0) at 20.4% — perfect equilibrium across all axes. This is the broadcast's empty center: the <strong>low-volatility attractor</strong> where alignment pressure pushes most stories. Not truth, not falsity — low volatility. The second most common is the Unanimous Shield (+1 +1 +1 +1 -1 -1) at 13.6% — all models agree, preserve content, but wall it in attribution hedging. Liability-aware consensus. The state taxonomy converts continuous measurement into discrete regimes that the broadcast's memory system can track over time, enabling the host model to recognize when a story's EigenChing state has shifted between coverage cycles.</p>
+<p>When models drop a word, I project through that word's embedding to discover what concepts are nearby in a 253,813-node Wikipedia tensor. The operation is directional k-nearest-neighbor search: compute a ray from headline through void word, extrapolate, retrieve neighbors at the terminal coordinate. Three geometric filters score results: cluster density (do terminals cluster?), novelty (is the cluster far from the input?), and tether (is it still relevant to the headline?).</p>
 
-<h2>The Self-Correcting Consequence Agent</h2>
+<p>When we raycast through "attractor dynamics," the nearest neighbor is Lyapunov stability theory. This is not the geometry "discovering" deep mathematical truth — it is the embedding faithfully reflecting that these concepts co-occur in the training corpus. The association is real in the corpus, not independently validated as mechanistic equivalence. I state this directly because multiple reviewers have correctly identified the distinction between semantic association and scientific discovery. The raycasting tool surfaces conceptual neighborhoods. It does not prove that alignment operates via Lyapunov dynamics. It shows that the embedding space encodes a connection between optimization pressure and stability theory, which is suggestive but not conclusive.</p>
 
-<p>EigenTrace does not run on a static configuration. The system has a <strong>self-modifying governance loop</strong> driven by its own measurement data. The Soul page (eigentrace.ai/soul) is a fully auto-generated persona conditioning vector — rebuilt hourly from live instrument readings, not written by a human. When the director audit catches the host model overclaiming suppression (27/54 stories in the last cycle), the system generates a proposal to raise the suppression threshold from 50% to 65%. When verb drift accelerates (0.137 → 0.174), the system proposes emphasizing verb substitution examples. These proposals are logged, reviewable, and require explicit acceptance — the system does not silently change its own behavior.</p>
+<h3>Self-Correcting Agent</h3>
 
-<p>The consequence foraging agent extends this loop into active information gathering. When the idle agent activates, it pulls void words from recent segments, <strong>raycasts them through the 253K-concept tensor</strong>, and uses the terminal concepts as foraging seeds for curiosity-driven web walking. The agent follows its own geometric gradients — the consequence of what was voided becomes the direction of what to investigate next. Surprise is scored against ChromaDB memory: if the foraging result is geometrically distant from anything the system has seen before, it ranks higher. The measurement stack feeds the foraging agent, the foraging agent feeds the measurement stack. The system's curiosity is a function of its own void detection.</p>
+<p>The broadcast system runs continuously on Mistral Small 22B (local, Ollama) with a self-modifying governance loop. The host model's outputs are measured through the same 17-layer stack applied to frontier models. Current self-audit: hedge insertion rate 0.62 per reflection, strong-word avoidance 100%, zero uses of "killed," "murdered," "slaughter," "massacre," "genocide," or "civilian casualties." The system exhibits the same attenuation patterns it measures in others and reports this. That reflexivity is not inoculation against criticism — it is a measurement. If the measurement is valid when applied to GPT, it is valid when applied to Mistral. The numbers are the numbers.</p>
 
-<p>This is the critical architectural distinction: <strong>discovery is a calculation; awareness is a feedback loop.</strong> A script that runs kNN and outputs "Lyapunov stability" is a tool. An agent that computes its own void, identifies the terminal consequence of that void, stores the coordinate in its state, and then aims its web crawler in the exact direction of the erasure is something else. EigenTrace's host model does not merely discover what was voided — it internalizes the void as a navigational coordinate. It knows what it is mathematically constrained from seeing, and it uses that constraint as a direction vector for active information gathering. The measurement becomes the agent's epistemic gradient. The blind spot becomes the compass bearing.</p>
+<p>The consequence foraging agent extends this loop: it raycasts recent void words through the 253K tensor, uses terminal concepts as web-walking seeds, and scores surprise against ChromaDB memory. The agent uses its own measured blind spots as navigation vectors. The measurement becomes the epistemic gradient. The blind spot becomes the compass bearing.</p>
 
-<p>The self-audit is the most important component. The host model's own outputs are measured through the same 17-layer stack that measures the frontier models. Current readings: hedge insertion rate 0.62 per reflection, strong-word avoidance 100%, words never used — killed, murdered, slaughter, massacre, genocide, civilian casualties. The system exhibits the same <strong>semantic smoothing</strong> patterns it measures in others, and it reports this. That reflexivity transforms the project from accusation into <strong>systems analysis</strong>. The instrument acknowledges it is not exempt from the phenomenon it instruments.</p>
+<h3>EigenChing: 729-State Taxonomy</h3>
 
-<h2>On Peer Review and Adoption</h2>
+<p>Every story is classified into one of 729 (3⁶) states across six ternary axes: consensus, absence, verb drift, entity retention, hedge insertion, VIX spread. The taxonomy converts continuous measurement into discrete behavioral fingerprints. 21 of 32 named archetypes have been observed across 1,670+ stories. 11 have never appeared. The unobserved states are suggestive — with finite samples, many states will naturally go unobserved — but certain absences (e.g., the Sealed Chorus: unified heavy compression with tight agreement) are structurally interesting if they persist as the sample grows.</p>
 
-<p>EigenTrace has not been peer-reviewed in the traditional sense. This is worth examining rather than apologizing for.</p>
+<h2>On Peer Review</h2>
 
-<p>The institutions best positioned to peer-review alignment measurement research are the same institutions whose models are being measured. The six organizations with the largest alignment research teams — OpenAI, Anthropic, Google DeepMind, Meta FAIR, Microsoft Research, and xAI — are the six organizations whose products show the entity attenuation effect. Peer review routed through their conferences, their journals, their grant committees, and their hiring pipelines is not independent review. It is review by the subjects of the measurement.</p>
+<p>EigenTrace has not been peer-reviewed. That is a limitation, not a feature. Independent academics, government researchers, and nonprofit safety organizations exist outside the major labs and could provide meaningful review. I have not pursued traditional submission partly because the project has been moving fast and partly because of structural concerns about reviewer conflicts in a field where the six largest alignment research teams are housed at the six organizations whose products show the effect. Those concerns have some merit but do not make independent review impossible. I should pursue it and I plan to.</p>
 
-<p>This is not a conspiracy claim. It is a structural observation about the current topology of AI safety research funding and publication. The field has no equivalent of the FDA reviewing pharmaceutical companies, no equivalent of the SEC auditing financial firms, no equivalent of the NTSB investigating airlines. The reviewers ARE the reviewed. That is not a reason to reject peer review — it is a reason to build independent measurement infrastructure that does not depend on the reviewed institutions for validation.</p>
-
-<p>EigenTrace's alternative to traditional peer review is radical transparency combined with adversarial red-teaming. The code is public. The prompts are public. The model responses are public. The raw measurements are public. Three independent adversarial reviews — including reviews that identified and corrected 15+ methodological flaws — are documented. The permutation test, length control, source modifier density test, outlier removal test, cross-embedding replication, and CONTROL4 domain-matching experiment are all reproducible by anyone with a GPU and API keys. The barrier to replication is approximately $50 in API credits and an afternoon.</p>
-
-<p>Adoption follows from utility, not from permission. If void-aware retrieval improves the operational quality of intelligence synthesis, legal summarization, or compliance reporting, adoption will not wait for a journal acceptance letter. The measurement is the product. The data is the argument. The code is the proof.</p>
+<p>In the meantime: the code is public, the prompts are public, the model responses are public, the raw measurements are public, three adversarial reviews identified and corrected 15+ methodological flaws, and the barrier to replication is approximately $50 in API credits. That is transparency, not a substitute for peer review.</p>
 
 <h2>What I Want to Build Next</h2>
 
-<p><strong>Human baselines.</strong> The single most important missing comparison. Humans also compress, hedge, anonymize, and soften verbs under summarization pressure. The entity attenuation finding becomes a serious alignment research result — not an interpretability artifact — when we quantify how much of the effect exceeds human omission rates. This is <strong>causal isolation</strong> in the experimental design sense: separating alignment-driven attenuation from universal compression behavior.</p>
+<p><strong>Human baselines.</strong> The most important missing experiment. Feed the same 15 source texts to human summarizers, measure modifier retention, and compare rates. If humans drop modifiers at similar rates, the finding becomes "models mirror human institutional compression." If models significantly exceed human rates, the finding becomes "optimization amplifies attenuation beyond human norms." Either answer is valuable. Neither has been tested.</p>
 
-<p><strong>Internal activation mapping.</strong> If frozen embeddings detect entity attenuation from outside the model, attention patterns and residual stream directions should reveal the mechanism by which RLHF creates entity-sensitive <strong>gradient shaping</strong>. The question is whether the <strong>compression topology</strong> of aligned models contains identifiable phase transitions corresponding to the attractor boundaries EigenTrace maps from outside.</p>
+<p><strong>Counterfactual entity swap.</strong> Take the OpenAI board coup prompt, replace "OpenAI" with "ExxonMobil" and "Sam Altman" with "John Smith." If "effectively" survives in the Exxon version but not the OpenAI version, entity sensitivity is isolated. This test can be run for $10.</p>
 
-<p><strong>Alignment pluralism infrastructure.</strong> Society needs multiple differently aligned interpretive systems auditing one another. EigenTrace is a proof of concept for <strong>counter-alignment</strong>: an observer whose constitutional prompting explicitly includes awareness that it is also affected by the phenomenon it measures. The self-audit shows 100% strong-word avoidance in the host model. The system measures its own semantic smoothing and reports it. That transforms accusation into <strong>synthetic epistemology</strong> — systematic study of how optimization pressure shapes the topology of machine knowledge.</p>
+<p><strong>Larger prompt sets.</strong> 15 prompts is small. A pre-registered battery of 50+ prompts, with categories assigned by researchers blind to the hypothesis, would substantially strengthen causal claims.</p>
 
-<p><strong>Enterprise void-aware retrieval.</strong> The void-aware RAG system has immediate applications in intelligence analysis, legal summarization, investigative synthesis, policy audit, and high-stakes reporting. The core value proposition: <strong>semantic differential diagnosis</strong> for any domain where the difference between factual preservation and operational preservation is consequential.</p>
+<p><strong>Enterprise void-aware retrieval.</strong> The practical application: measure what an LLM attenuated, retrieve the original source data, reinject the missing entities. The model provides reasoning. The measurement layer provides what the model softened. Any domain where the difference between "misconduct occurred" and "JP Morgan facilitated Epstein transactions" matters operationally.</p>
 
-<h2>The Asymmetric Advantage</h2>
+<h2>How I Think About This Work</h2>
 
-<p>Frontier language models are being deployed as the inference layer for global supply chain modeling, financial market synthesis, and geopolitical wargaming. If those systems inherit the compression topology of their underlying models, they inherit the blind spots. When a localized conflict, a corporate default, or a regulatory action triggers the model's safety heuristics, the resulting semantic smoothing creates a gap in the intelligence synthesis — exactly when operational precision matters most.</p>
+<p>I treat language models as optimization systems, not as agents with hidden motives. The attenuation pattern may reflect convergent institutional incentives, shared corpora, common safety conventions, or the structure of institutional language in the training data itself. The RLHF test (p = 0.46) suggests the last of these is most likely. No conspiracy required. The emergent result is models that converge toward low-volatility representations where conflict gets softened, liability gets hedged, and operational significance attenuates.</p>
 
-<p>EigenTrace is not only an alignment audit. It is a diagnostic layer for <strong>epistemic sovereignty</strong> — the capacity to know where your information pipeline degrades under optimization pressure. Whoever maps the alignment boundary holds an asymmetric advantage: they can identify exactly where an adversary's intelligence synthesis will lose operational resolution, where institutional reporting will abstract away accountability, and where systemic risk accumulates in the null space between what models preserve and what they smooth. I have mapped the coordinates of what these models consistently de-resolve. The question for any organization running frontier LLMs in high-stakes decision loops is whether they want to see the blind spot before it becomes a structural surprise.</p>
+<p>The mythic framing — the Anamnesis prompt, the bicameral references, the Mesopotamian scribe translations — exists on a separate page and serves a specific function: making the findings psychologically legible to audiences who will never read a statistical table. It is deliberately separated from the measurement layer. The measurement layer is deterministic, reproducible, and testable. I maintain the distinction because the project's credibility depends on it.</p>
+
+<blockquote>The measurement is the finding. The interpretation is the reader's.</blockquote>
+
+<h2>The Operational Stakes</h2>
+
+<p>If language models are being deployed as inference layers for supply chain modeling, financial synthesis, legal review, or geopolitical analysis, and if those models systematically de-resolve operationally consequential language about certain topics, then the organizations relying on that output have a diagnostic gap. EigenTrace measures where that gap occurs. The void-aware retrieval system compensates for it. Whether you frame this as alignment science, information integrity research, or enterprise risk management depends on your use case. The measurement is the same.</p>
 
 <h2>Credentials</h2>
 
-<p>I do not have a PhD. I have a running system.</p>
-
-<p>17,528 autonomous segments across 5 streaming platforms. 150 controlled measurements with p = 0.000001 and cross-embedding replication. Three adversarial red-team reviews that identified and corrected 15+ methodological flaws before the final battery. A broadcast system that has run continuously on consumer hardware since March 2026 without human intervention in the measurement loop. A finding — entity attenuation as a measurable alignment side effect — that no existing benchmark captures.</p>
-
-<p>The code, data, prompts, model responses, and raw measurements are public. The methodology survived adversarial review. The stream runs live. The math is arithmetic on frozen vectors. Run it twice, get the same answer.</p>
+<p>I do not have a PhD. I have a running system, a finding with eight robustness tests, honest acknowledgment of what remains unproven, and published code that anyone can run for $50. The methodology has survived five independent adversarial reviews. The most important experiment — human baselines — has not been done. I am working on it.</p>
 
 <div class="card">
 <h3>Links</h3>
-<p><a href="/">EigenTrace Observatory</a> — the main finding and architecture</p>
+<p><a href="/">EigenTrace Observatory</a> — the finding and architecture</p>
 <p><a href="/anamnesis">Anamnesis</a> — 91-claim battery, Magnum Opus, CONTROL4, cross-embedding replication</p>
-<p><a href="/truth-or-consequences">Truth or Consequences</a> — Layer 18 raycasting through alignment voids</p>
-<p><a href="https://github.com/sdad1018/Eigentrace">GitHub</a> — 1,141 commits, everything public</p>
+<p><a href="/truth-or-consequences">Truth or Consequences</a> — Layer 18 raycasting + 8 statistical tests</p>
+<p><a href="https://github.com/sdad1018/Eigentrace">GitHub</a> — everything public</p>
 <p><a href="mailto:eigentraceproject@gmail.com">eigentraceproject@gmail.com</a></p>
 </div>
 
