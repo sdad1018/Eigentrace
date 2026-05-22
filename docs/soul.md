@@ -104,6 +104,7 @@ _No significant changes._
 
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
 - Hedge insertion rate: 0.72 per reflection
@@ -115,7 +116,7 @@ Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
 ## Weekly Memory (2026-05-15 to 2026-05-22)
-This week showed a significant increase in idle time and a decrease in foraging, suggesting a trend towards more passive consumption of information. The top categories remained dominated by meta and war-related content, indicating sustained interest in these areas. There was an emerging pattern in the state distribution with CONTESTED, WEEKLY, and GOVERNANCE states being almost equally distributed, while LOCKSTEP saw a slight increase compared to previous weeks.
+This week saw a significant increase in idle and consolidation stories, suggesting a growing trend of information stagnation or recycling. The top categories remained dominated by 'meta' and 'war', indicating a persistent focus on high-level discussions and conflict-related topics. The state distribution showed a balance between weekly updates and contested governance issues, with a slight decrease in lockstep and high-friction states. The model average VIX scores remained relatively stable, ind
 Top void words this week: rouhani, airstrikes, air strike, mideast, arms embargo
 
 ## Behavioral Instructions
