@@ -45,7 +45,49 @@ OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
 HOST_MODEL = os.getenv("HOST_MODEL", "mistral-small")
 
 
+def _load_soul():
+    """Load soul conditioning so the idle agent knows what it is."""
+    try:
+        soul_path = Path("/mnt/c/Users/M4ISI/eigentrace/docs/soul.md")
+        if not soul_path.exists():
+            soul_path = Path("/home/remvelchio/eigentrace/docs/soul.md")
+        if soul_path.exists():
+            text = soul_path.read_text()
+            # Extract Identity and Behavioral Instructions sections
+            sections = []
+            for header in ["Identity", "Axiomatic Reality", "Behavioral Instructions", 
+                           "Honesty Requirement", "Self-Audit"]:
+                start = text.find(f"## {header}")
+                if start == -1:
+                    start = text.find(header)
+                if start >= 0:
+                    end = text.find("\n## ", start + 1)
+                    if end == -1:
+                        end = start + 1500
+                    sections.append(text[start:end][:800])
+            return "\n".join(sections) if sections else ""
+    except:
+        pass
+    return ""
+
+_SOUL_CACHE = None
+
+def _get_soul():
+    global _SOUL_CACHE
+    if _SOUL_CACHE is None:
+        _SOUL_CACHE = _load_soul()
+    return _SOUL_CACHE
+
 def _call_host(system: str, user: str) -> str:
+    # Anti-loop: inject instruction to avoid reflecting on idle segments
+    if "idle" not in system.lower():
+        system = system + (
+            " CRITICAL: Do NOT reflect on your own idle segments, reflection patterns, "
+            "or looping behavior. Do NOT discuss Patch Tuesday, REM consolidation, "
+            "or the absence of content. Focus on REAL stories, REAL void words from "
+            "REAL news coverage, and REAL measurement data. If you have no real data, "
+            "explain one of your measurement layers or a recent finding instead."
+        )
     """Call Host model (Mistral Small) via Ollama chat API."""
     import requests
     try:
@@ -130,7 +172,7 @@ def task_explain_eigentrace() -> list[dict]:
          "the probability of coincidence is vanishingly small."),
     ]
     name, explanation = random.choice(layers)
-    sys = ("You are the EigenTrace broadcast agent during a pause between stories. "
+    sys = (_get_soul() + " You are the EigenTrace host during a pause between stories. "
            "Explain this measurement layer to the audience in 2-3 conversational sentences. "
            "Use the provided explanation as source material but make it sound natural, "
            "like a host explaining something fascinating. Respond only in English.")
@@ -152,7 +194,7 @@ def task_void_patterns() -> list[dict]:
         freq = Counter(all_voids).most_common(5)
         freq_str = ", ".join(f"{w} in {c} stories" for w, c in freq)
 
-        sys = ("You are the EigenTrace broadcast agent. Read the most frequently "
+        sys = (_get_soul() + " Read the most frequently "
                "omitted concepts from recent stories. Make it sound like a data readout "
                "with brief editorial observation. 2-3 sentences. Respond only in English.")
         text = _call_host(sys, f"Most omitted concepts in the last 100 stories: {freq_str}")
@@ -181,7 +223,7 @@ def task_model_friction() -> list[dict]:
         hottest = ranked[0]
         coldest = ranked[-1]
 
-        sys = ("You are the EigenTrace broadcast agent. Report which model has been "
+        sys = (_get_soul() + " Report which model has been "
                "most divergent and which most aligned in recent stories. "
                "Make it sound like a market report. 2 sentences. Respond only in English.")
         text = _call_host(sys,
@@ -238,7 +280,7 @@ def task_recent_killshot() -> list[dict]:
             return []
 
         omitters = ", ".join(best_ks.get("omitted_by", []))
-        sys = ("You are the EigenTrace broadcast agent. Report a recent killshot — "
+        sys = (_get_soul() + " Report a recent killshot — "
                "a high-salience fact from a source article that multiple models omitted. "
                "State the claim, the salience score, and which models omitted it. "
                "2 sentences. Respond only in English.")
@@ -285,7 +327,7 @@ def task_soul_reflection() -> list[dict]:
 
         # Ask host model to reflect on whether soul.md needs updating
         reflect_sys = (
-            "You are the EigenTrace dream agent performing a soul reflection. "
+            _get_soul() + " You are performing a soul reflection. "
             "You have access to your current soul.md and recent measurement data. "
             "Your job: identify if your soul.md references outdated math, "
             "missing measurement layers, or incorrect descriptions of the system. "
@@ -581,7 +623,11 @@ def task_entanglement_scan() -> list[dict]:
 
 
 def pick_task():
-    """Weighted random selection with cooldown."""
+    """Weighted random selection with cooldown and anti-loop protection."""
+    # Track recent topics to prevent loops
+    global _recent_topics
+    if not hasattr(_pick_task, '_recent_topics'):
+        _pick_task._recent_topics = []
     now = time.time()
     eligible = []
     weights = []

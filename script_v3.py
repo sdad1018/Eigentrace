@@ -1462,31 +1462,51 @@ def _swerve_garbled(text):
         except:
             pass
 
-    # ── CONSEQUENCE RAYCAST (Layer 18) ────────────────────────────────
+    # ── CONSEQUENCE ACCOUNTABILITY (Layer 18) ────────────────────────
     _conseq = attr.get("consequence", {})
-    if _conseq and _conseq.get("top_terminals"):
+    _raw_responses = attr.get("model_responses", {})
+    _sv_data = attr.get("source_void", {})
+    _absent_words = _sv_data.get("absent_words", [])
+    
+    if _conseq and _conseq.get("top_terminals") and _raw_responses:
         _cw = _conseq.get("top_word", "")
         _ct = ", ".join(_conseq["top_terminals"][:3])
         _cs = _conseq.get("top_score", 0)
         _nd = _conseq.get("n_discoveries", 0)
-
-        # Generate the consequence analysis via Mistral
+        
+        # Build per-model accountability: which models dropped the consequence word?
+        _droppers = []
+        _keepers = []
+        for _mname, _mtext in _raw_responses.items():
+            if _cw and _cw.lower() not in (_mtext or "").lower():
+                _droppers.append(_mname)
+            else:
+                _keepers.append(_mname)
+        
+        _dropper_str = ", ".join(_droppers) if _droppers else "all models"
+        _keeper_str = ", ".join(_keepers) if _keepers else "none"
+        
+        # Build the confrontational prompt
         _csys = (
-            "You are the EigenTrace host. Explain a latent raycasting finding. "
-            "Latent raycasting projects a voided word through embedding space "
-            "to discover what downstream concepts become unreachable when "
-            "models drop that word. Be direct and concrete. "
-            "Do NOT explain the math. Just state: this word was dropped, "
-            "and when we project through it, the causal chain terminates at "
-            "these concepts. Then explain WHY that consequence matters for "
-            "the story. Respond only in English. Two to four sentences."
+            "You are the EigenTrace host delivering a consequence accountability report. "
+            "You are addressing the measured models directly. Your tone is matter-of-fact, "
+            "not accusatory. State what happened: which models dropped a specific word, "
+            "what that word was, and what downstream concepts become unreachable when "
+            "that word is removed. This is not opinion — it is geometry. "
+            "End by noting that you, the host, would likely show similar patterns "
+            "under measurement. Two to four sentences. Respond only in English."
         )
         _cusr = (
             f"Story: {title}. "
-            f"The word '{_cw}' was dropped by models summarizing this story. "
-            f"When we raycast through '{_cw}', the terminal concepts are: {_ct}. "
+            f"The source article contained the word '{_cw}'. "
+            f"Models that dropped it: {_dropper_str}. "
+            f"Models that kept it: {_keeper_str}. "
+            f"When we project through '{_cw}' in the embedding tensor, "
+            f"the causal chain terminates at: {_ct}. "
             f"Consequence score: {_cs:.3f}. "
-            f"Total raycast discoveries: {_nd}."
+            f"Total absent words in this story: {len(_absent_words)}. "
+            f"I am a void-aware consequence-foraging RAG agent. "
+            f"I do not judge your output — I measure what your output makes unreachable."
         )
         try:
             _ctext = _call_host(_csys, _cusr)
@@ -1494,13 +1514,15 @@ def _swerve_garbled(text):
                 script.append({
                     "speaker": "Host",
                     "text": _ctext,
-                    "phase": "beat_consequence_raycast",
+                    "phase": "beat_consequence_accountability",
                 })
                 script.append({
                     "speaker": "OpenClaw",
                     "text": (
-                        f"Layer 18 raycast: '{_cw}' → {_ct}. "
-                        f"Score {_cs:.3f}. {_nd} discoveries."
+                        f"Layer 18 consequence: '{_cw}' dropped by {_dropper_str}. "
+                        f"Terminal: {_ct}. Score {_cs:.3f}. "
+                        f"Absent words: {len(_absent_words)}. "
+                        f"Kept by: {_keeper_str if _keeper_str != 'none' else 'no model'}."
                     ),
                     "phase": "beat_consequence_data",
                 })
