@@ -1,3 +1,5 @@
+import logging
+log = logging.getLogger('soul_updater')
 #!/usr/bin/env python3
 """
 soul_updater.py — Fully dynamic soul.md from live system state
@@ -686,6 +688,22 @@ def accept_proposal(proposal_id):
 def reject_proposal(proposal_id):
     """Mark a proposal as rejected (just removes from pending)."""
     print(f"Rejected: {proposal_id}")
+
+
+def auto_accept_safe_proposals(proposals):
+    """Auto-accept proposals that only change thresholds or add instructions.
+    Capability proposals still require manual review."""
+    safe_types = {"threshold", "instruction", "behavioral"}
+    accepted = load_accepted_proposals()
+    auto_accepted = []
+    for p in proposals:
+        pid = p.get("id", "")
+        ptype = p.get("type", "")
+        if ptype in safe_types and pid not in accepted:
+            accept_proposal(pid)
+            auto_accepted.append(pid)
+            log.info(f"Auto-accepted proposal: {pid} (type={ptype})")
+    return auto_accepted
 
 
 def format_proposals_md(proposals):

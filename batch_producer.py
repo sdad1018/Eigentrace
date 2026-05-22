@@ -1312,6 +1312,27 @@ def stage_4_generate_scripts(results):
 
 
 
+def stage_4b_soul_update():
+    """Run soul updater after each batch to keep soul.md current."""
+    try:
+        from soul_updater import (introspect_pipeline, load_recent_segments,
+                                   compute_calibration, generate_proposals,
+                                   auto_accept_safe_proposals)
+        segments = load_recent_segments(hours=24)
+        if len(segments) >= 10:
+            cal = compute_calibration(segments)
+            proposals = generate_proposals(cal, segments)
+            if proposals:
+                auto_accepted = auto_accept_safe_proposals(proposals)
+                if auto_accepted:
+                    log.info(f"  Soul: auto-accepted {len(auto_accepted)} proposals")
+            # Regenerate soul.md with current data
+            introspect_pipeline()
+            log.info("  Soul: regenerated soul.md")
+    except Exception as e:
+        log.warning(f"  Soul update failed: {e}")
+
+
 def stage_5_unload_ollama():
 
     log.info("═══ STAGE 5: Unload Ollama ═══")
@@ -2321,6 +2342,7 @@ def run_batch(no_images: bool = False, dry_run: bool = False):
 
 
 
+    stage_4b_soul_update()
     stage_5_unload_ollama()
 
     stage_6_generate_images(segments, skip=no_images)

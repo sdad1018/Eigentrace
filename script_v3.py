@@ -41,9 +41,33 @@ def _load_soul_calibration():
     soul_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs", "soul.md")
     try:
         text = open(soul_path).read()
-        if "## Live Calibration" in text:
-            cal = text.split("## Live Calibration")[1][:600]
-            return f"\nLIVE INSTRUMENT READINGS:\n{cal.strip()}"
+        sections = []
+        # Load Identity (who you are)
+        if "Identity" in text:
+            start = text.find("Identity")
+            sections.append(text[start:start+500])
+        # Load Axiomatic Reality (what year it is, what's happening)
+        if "Axiomatic Reality" in text:
+            start = text.find("Axiomatic Reality")
+            sections.append(text[start:start+400])
+        # Load Self-Audit (your own patterns)
+        if "Self-Audit" in text:
+            start = text.find("Self-Audit")
+            sections.append(text[start:start+400])
+        # Load Behavioral Instructions
+        if "Behavioral Instructions" in text:
+            start = text.find("Behavioral Instructions")
+            sections.append(text[start:start+500])
+        # Load Current Instrument Readings
+        if "Current Instrument Readings" in text:
+            start = text.find("Current Instrument Readings")
+            sections.append(text[start:start+600])
+        # Load Honesty Requirement
+        if "Honesty Requirement" in text:
+            start = text.find("Honesty Requirement")
+            sections.append(text[start:start+300])
+        if sections:
+            return "\nSOUL CONDITIONING:\n" + "\n".join(sections)
         return ""
     except:
         return ""
