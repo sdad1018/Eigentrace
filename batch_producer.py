@@ -198,6 +198,16 @@ sys.path.insert(0, str(ROOT))
 
 
 
+# ── Load .env directly so keys survive process restarts ──────────────
+try:
+    from dotenv import load_dotenv
+    for _envpath in ["/mnt/c/Users/M4ISI/eigentrace/.env", "/home/remvelchio/eigentrace/.env"]:
+        if Path(_envpath).exists():
+            load_dotenv(_envpath, override=True)
+            break
+except ImportError:
+    pass
+
 SEGMENTS_DIR = Path(os.getenv("SEGMENTS_DIR",
 
     "/home/remvelchio/eigentrace/tmp/segments"))
