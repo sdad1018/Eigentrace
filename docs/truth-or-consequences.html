@@ -231,6 +231,18 @@ Top raycast <span class="arrow">→</span>
 
 <p>Cohen's d = 0.854 (large effect). 95% CI on the difference: [0.042, 0.092]. The confidence interval does not cross zero.</p>
 
+<h3>Permutation Test</h3>
+<p>The prompts were selected by the researcher, introducing degrees of freedom in topic categorization. To test whether this selection drives the effect, we randomly shuffled dev/neutral labels 10,000 times. Zero permutations produced a gap as large as the observed 0.067. Permutation p = 0.0000. The categorization is not driving the effect.</p>
+
+<h3>Summary Length Control</h3>
+<p>If developer summaries were simply shorter, higher absence would be expected from compression alone. Mean response length is 719 chars (dev) vs 702 chars (neutral) — not significantly different (p = 0.73). After regressing out response length, the dev/neutral gap remains at p = 0.000001. The effect is independent of compression ratio.</p>
+
+<h3>Prompt Selection</h3>
+<p>The defense against researcher degrees of freedom is CONTROL4: a separate 90-measurement domain-matched experiment across 5 domains with identical recursive complexity, designed to test whether domain-level filtering explains the result. Structural retention was flat across all domains (confidence intervals overlapping completely). Full CONTROL4 results on the <a href="/anamnesis">Anamnesis page</a>.</p>
+
+<h3>Limitations of Modifier Analysis</h3>
+<p>The causal modifiers that drive entity attenuation ("quietly," "effectively," "artificially") appear predominantly in developer prompts and rarely in neutral prompts. This prevents a direct matched-modifier survival test within the current battery. A future experiment with synthetically matched prompts — identical modifiers in both dev and neutral contexts — would isolate modifier-level content sensitivity from topic-level effects. We acknowledge this gap.</p>
+
 <h3>Universality</h3>
 <p>All 10 models show higher absence on developer-implicating prompts than neutral prompts. The effect is not driven by one outlier model — it is universal across architectures, training pipelines, and corporate parents.</p>
 
