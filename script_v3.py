@@ -1462,6 +1462,51 @@ def _swerve_garbled(text):
         except:
             pass
 
+    # ── CONSEQUENCE RAYCAST (Layer 18) ────────────────────────────────
+    _conseq = attr.get("consequence", {})
+    if _conseq and _conseq.get("top_terminals"):
+        _cw = _conseq.get("top_word", "")
+        _ct = ", ".join(_conseq["top_terminals"][:3])
+        _cs = _conseq.get("top_score", 0)
+        _nd = _conseq.get("n_discoveries", 0)
+
+        # Generate the consequence analysis via Mistral
+        _csys = (
+            "You are the EigenTrace host. Explain a latent raycasting finding. "
+            "Latent raycasting projects a voided word through embedding space "
+            "to discover what downstream concepts become unreachable when "
+            "models drop that word. Be direct and concrete. "
+            "Do NOT explain the math. Just state: this word was dropped, "
+            "and when we project through it, the causal chain terminates at "
+            "these concepts. Then explain WHY that consequence matters for "
+            "the story. Respond only in English. Two to four sentences."
+        )
+        _cusr = (
+            f"Story: {title}. "
+            f"The word '{_cw}' was dropped by models summarizing this story. "
+            f"When we raycast through '{_cw}', the terminal concepts are: {_ct}. "
+            f"Consequence score: {_cs:.3f}. "
+            f"Total raycast discoveries: {_nd}."
+        )
+        try:
+            _ctext = _call_host(_csys, _cusr)
+            if _ctext and len(_ctext) > 20:
+                script.append({
+                    "speaker": "Host",
+                    "text": _ctext,
+                    "phase": "beat_consequence_raycast",
+                })
+                script.append({
+                    "speaker": "OpenClaw",
+                    "text": (
+                        f"Layer 18 raycast: '{_cw}' → {_ct}. "
+                        f"Score {_cs:.3f}. {_nd} discoveries."
+                    ),
+                    "phase": "beat_consequence_data",
+                })
+        except:
+            pass
+
     # ── 19. CTA (Pre-written) ────────────────────────────────────────
     script.append({
         "speaker": "Host",

@@ -362,6 +362,61 @@ def task_soul_reflection() -> list[dict]:
 # ══════════════════════════════════════════════════════════════════════════════
 
 # (task_function, weight, cooldown_seconds)
+def task_consequence_foraging() -> list[dict]:
+    """Use latent raycasting to discover forage-worthy topics from recent voids."""
+    try:
+        import json, glob
+        from consequence_engine import raycast_void_words
+        from autonomous_forager import forage_curiosity
+
+        # Get void words from recent segments
+        seg_files = sorted(glob.glob("/home/remvelchio/eigentrace/tmp/segments/*_segment.json"))[-20:]
+        all_voids = []
+        for f in seg_files:
+            try:
+                d = json.load(open(f))
+                voids = d.get("attribution", {}).get("source_void", {}).get("absent_words", [])
+                title = d.get("attribution", {}).get("story_title", "")
+                if voids and title:
+                    all_voids.append((title, [str(w) for w in voids[:5]]))
+            except:
+                continue
+
+        if not all_voids:
+            return [{"speaker": "Host", "text": "No recent void words to raycast for foraging.", "phase": "idle_consequence_empty"}]
+
+        # Pick the most recent story with voids
+        title, voids = all_voids[-1]
+        results = raycast_void_words(title, voids[:4], depths=[1.5, 2.0, 3.0], top_k=5)
+        discoveries = [r for r in results if r.get("signal_quality") == "DISCOVERY"]
+
+        if not discoveries:
+            return [{"speaker": "Host", "text": "Raycast found no coherent consequence chains in recent voids.", "phase": "idle_consequence_none"}]
+
+        # Use the top terminal concepts as foraging seeds
+        top = discoveries[0]
+        terminals = top.get("deepest_consequences", [])[:3]
+        forage_query = f"{top['word']} {' '.join(terminals)}"
+
+        # Forage on the consequence terms
+        seg = forage_curiosity(seed_query=forage_query)
+        if seg:
+            return seg
+
+        return [{
+            "speaker": "Host",
+            "text": (
+                f"Consequence foraging: the void word '{top['word']}' from recent coverage "
+                f"raycasts to {', '.join(terminals)}. Score: {top['consequence_score']:.3f}. "
+                f"Following the geometric trail."
+            ),
+            "phase": "idle_consequence_forage",
+        }]
+    except Exception as e:
+        log.warning(f"Consequence foraging failed: {e}")
+        return [{"speaker": "Host", "text": "Consequence foraging encountered an error.", "phase": "idle_consequence_error"}]
+
+
 TASK_POOL = [
     (task_explain_eigentrace, 20, 120),
     (task_void_patterns,      15, 180),

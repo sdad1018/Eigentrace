@@ -1227,6 +1227,13 @@ def stage_4_generate_scripts(results):
                 "compression": r.get("compression", {}),
                 "source_void": r.get("source_void", {}),
                 "void_context": r.get("void_context", []),
+                "model_vix": {a.name: a.eigen_vix for a in active},
+                "model_responses": {a.name: a.text for a in active if a.text},
+                "claim_killshots": [{"claim": k["claim"], "salience": k["salience"], "omitted_by": k["omitted_by"]} for k in r.get("claim_killshots", [])[:5]],
+                "null_space_claims": r.get("null_space_claims", [])[:3],
+                "void_vector": r.get("void_vector", {}),
+                "consequence": r.get("consequence", {}),
+                "consequence": r.get("consequence", {}),
             },
         }
         _audit = _get_audit_context()
