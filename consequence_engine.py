@@ -134,10 +134,14 @@ def _compute_tether(headline_vec, terms_with_scores, vocab_words, vocab_matrix):
 
 
 
+_embed_engine = None
+
 def _embed(texts):
-    from geometric_engine import GeometricPerturbationEngine
-    eng = GeometricPerturbationEngine()
-    return eng.embed_texts(texts)
+    global _embed_engine
+    if _embed_engine is None:
+        from geometric_engine import GeometricPerturbationEngine
+        _embed_engine = GeometricPerturbationEngine()
+    return _embed_engine.embed_texts(texts)
 
 
 def raycast(headline_vec, void_vec, depths=[1.5, 2.0, 2.5, 3.0, 4.0], top_k=5):

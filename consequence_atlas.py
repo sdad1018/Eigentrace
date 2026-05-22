@@ -97,6 +97,22 @@ def build_atlas(segments, batch_size=50):
             rate = i / max(elapsed, 1)
             eta = (total - i) / max(rate, 0.01)
             log.info(f"  [{i}/{total}] ({rate:.1f}/s, ETA {eta:.0f}s) {seg['title'][:50]}")
+            
+            # Incremental save every 100 segments
+            if i > 0:
+                _partial = {
+                    "timestamp": datetime.now().isoformat(),
+                    "n_segments_processed": i,
+                    "n_segments_total": total,
+                    "n_unique_terminals": len(terminal_counter),
+                    "top_50_terminals": [
+                        {"concept": t, "frequency": c}
+                        for t, c in terminal_counter.most_common(50)
+                    ],
+                    "all_terminals": dict(terminal_counter.most_common(500)),
+                }
+                json.dump(_partial, open(OUTPUT_DIR / "consequence_atlas_partial.json", "w"), indent=2, default=str)
+                log.info(f"  Saved partial atlas: {len(terminal_counter)} unique terminals")
         
         try:
             results = raycast_void_words(
