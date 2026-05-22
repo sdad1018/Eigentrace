@@ -393,7 +393,7 @@ def generate_capability_proposals(cal, segments, trends):
     # Look for prediction scores in recent segments
     pred_scores = []
     for s in segments:
-        for b in s.get("beats", []):
+        for b in (s.get("beats") or []):
             text = b.get("text", "")
             if "Prediction accuracy:" in text:
                 try:
@@ -521,7 +521,7 @@ def generate_proposals(cal, segments):
     audit_count = 0
     director_count = 0
     for s in segments:
-        for b in s.get("beats", []):
+        for b in (s.get("beats") or []):
             if "director" in b.get("phase", ""):
                 director_count += 1
             if "audit" in b.get("phase", ""):
