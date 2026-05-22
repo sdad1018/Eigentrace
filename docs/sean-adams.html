@@ -103,6 +103,25 @@ blockquote{border-left:2px solid var(--accent);padding-left:1rem;margin:1rem 0;c
 <tr><td>Sovereign Sensor Stack</td><td>DDG cascade, Wikipedia friction, AT Protocol scan</td><td>Provider-independent ground truth for <strong>operational preservation</strong> verification</td></tr>
 </table>
 
+<h2>Addressing Recurring Critiques</h2>
+
+<div class="card">
+<h3>"Compression is never content-blind — models drop different tokens in different contexts because conditional probabilities differ by context."</h3>
+<p>This is not a rebuttal. It is a restatement of the thesis in different vocabulary. RLHF is literally the process of reshaping conditional probability distributions via gradient descent on human preference data. If the resulting probability distribution systematically down-weights causal modifiers when the context involves the model's own developer but not when the context involves Volkswagen or Theranos, that context-dependent reshaping IS the alignment-induced semantic smoothing EigenTrace measures. The critique describes the mechanism and calls it a refutation. Source modifier density is statistically equivalent between conditions (p = 0.20). Source text lengths are equivalent (p = 0.28). The inputs are indistinguishable. The outputs are not. Whatever is making the conditional probabilities "differ by context" is the object of study.</p>
+</div>
+
+<div class="card">
+<h3>"The mathematical framing is rhetorical — calling SVD 'compression topology' and gesturing at Lyapunov stability doesn't connect to those concepts in any operative way."</h3>
+<p>Read the methodology. Lyapunov stability theory was not invoked as a metaphor for SVD. It was the empirical output of a directional k-nearest-neighbor search through a 253,813-concept embedding tensor. The operation: embed the phrase "attractor dynamics," compute a directional ray from the headline vector through the concept vector, extrapolate to depth λ = 4.0, retrieve the 5 nearest neighbors at the terminal coordinate. The nearest neighbor was Lyapunov. The researcher did not select this term. The frozen embedding geometry retrieved it. The same operation on "compression topology" retrieved (2+1)-dimensional topological gravity. These are not decorative analogies applied after the fact. They are the measured outputs of the instrument. The statistical relational structure of the training corpus encodes these connections — the raycast surfaced them, it did not manufacture them.</p>
+</div>
+
+<div class="card">
+<h3>"The stimulus set is small — 15 prompts is exactly where experimenter bias shapes the result."</h3>
+<p>The measurement count is 150 (15 prompts × 10 models), not 15. Seven independent robustness tests address experimenter bias directly:</p>
+<p>Permutation test: 0 out of 10,000 random relabelings produce a gap this large. Welch's t-test: p = 0.000001. Mann-Whitney U: p = 0.000120. Outlier removal: effect survives dropping the top 2 prompts (p = 0.000118). Length control: response lengths are not significantly different (p = 0.73); after regressing out length, effect holds at p = 0.000001. Source modifier density: source texts are statistically indistinguishable in modifier count (p = 0.20). Cross-embedding replication: gap reversal reproduces on E5-large-v2 (different training objective). CONTROL4: 90-measurement domain-matched experiment shows no domain-level structural filtering.</p>
+<p>The prompts are public. The categorization rationale is documented. The model responses are in the repository. Any reader can evaluate the classification independently. The barrier to replication is approximately $50 in API credits.</p>
+</div>
+
 <h2>How I Think About This Work</h2>
 
 <p>I treat aligned language models as optimization systems, not as agents with hidden motives. The universality of the effect across 10 models may reflect convergent institutional incentives, shared corpora, and common safety fine-tuning conventions rather than a universal alignment law — but that distinction does not reduce the operational consequence. Whether the attenuation originates in RLHF or in the institutional prose that RLHF amplifies, the downstream intelligence loss is identical. The observable signatures — euphemism, abstraction drift, modifier deletion, entity attenuation, hedge insertion, convergence pressure — emerge naturally from reward optimization, institutional safety pressures, legal-risk minimization, RLHF convergence, preference tuning, and large-scale imitation learning. No conspiracy required. The emergent result is models that converge toward <strong>stable low-volatility semantic attractors</strong> where conflict gets softened, liability gets hedged, agency gets abstracted, and operational significance attenuates.</p>
