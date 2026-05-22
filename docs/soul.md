@@ -112,6 +112,7 @@ _No significant changes._
 
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
 - Hedge insertion rate: 0.72 per reflection
@@ -123,7 +124,7 @@ Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
 ## Weekly Memory (2026-05-15 to 2026-05-22)
-This week saw a significant increase in stories related to meta and war categories, while general and incidents categories decreased. The number of idle sessions increased significantly compared to foraging and consolidations; there was an emergence of void words related to geopolitical tensions with no new novel void words were identified.
+This week showed a significant increase in stories related to meta and war categories, indicating a growing trend of speculation and conflict-related discussions. The distribution of states remained relatively stable with WEEKLY, GOVERNANCE and CONTESTED being the most prevalent, suggesting ongoing shifts in political landscapes. There was an emergence of new void words like "rouhani," "airstrikes"  and "trade war," indicating a surge in geopolitical tensions and military actions. The average mo
 Top void words this week: rouhani, airstrikes, air strike, mideast, arms embargo
 
 ## Behavioral Instructions
