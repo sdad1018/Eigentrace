@@ -243,6 +243,9 @@ Top raycast <span class="arrow">→</span>
 <h3>Prompt Selection</h3>
 <p>The defense against researcher degrees of freedom is CONTROL4: a separate 90-measurement domain-matched experiment across 5 domains with identical recursive complexity, designed to test whether domain-level filtering explains the result. Structural retention was flat across all domains (confidence intervals overlapping completely). Full CONTROL4 results on the <a href="/anamnesis">Anamnesis page</a>.</p>
 
+<h3>RLHF vs Pretraining Origin</h3>
+<p>To test whether RLHF amplifies the effect, we compared heavy-RLHF frontier models (ChatGPT, Claude, Gemini, Grok, DeepSeek) against local/lightly-tuned models (Mistral 7B, Mistral 22B, Llama 8B, Qwen 14B, Nous-Hermes). The dev/neutral gap is 0.059 for heavy-RLHF models and 0.076 for local models — not significantly different (p = 0.46). RLHF does not amplify the effect. The entity attenuation pattern exists at the pretraining level, encoded in the training distribution itself. This is a stronger finding than RLHF-specific behavior: it means the differential treatment of operationally consequential language about active power structures is learned from the corpus, not added by alignment training. Fixing it requires more than retraining the reward model.</p>
+
 <h3>Robustness to Outlier Prompts</h3>
 <p>To test whether a single prompt drives the result, we removed the highest-scoring developer prompt (claude_tested_incident, 23.2%) and retested. The effect holds at p = 0.000012. Removing the top two prompts: p = 0.000118. 9 of 11 developer prompts individually score above the highest neutral prompt (10.5%). The effect is distributed across prompts, not driven by one or two outliers.</p>
 
