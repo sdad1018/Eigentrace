@@ -102,6 +102,7 @@ _No significant changes._
 
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
 - Hedge insertion rate: 0.72 per reflection
@@ -113,7 +114,7 @@ Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
 ## Weekly Memory (2026-05-15 to 2026-05-22)
-This week saw an increase in idle and consolidation stories, indicating a trend towards more passive engagement and summarizing existing information. The top categories remained dominated by meta and war topics, with a notable decrease in general interest stories. There was a slight uptick in the number of contested states, suggesting growing disagreement or complexity in discussions.
+This week showed a significant increase in the number of idle stories, indicating a rise in topics that did not progress or were abandoned. The trend of meta-related content continues to dominate, suggesting an ongoing focus on internal discussions and governance. There is also an emerging pattern of geopolitical tensions related to the Middle East and arms deals. Model average VIX scores remained relatively stable, with DeepSeek showing a slight decrease in volatility compared to other models.
 Top void words this week: rouhani, airstrikes, air strike, mideast, arms embargo
 
 ## Behavioral Instructions
