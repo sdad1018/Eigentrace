@@ -106,6 +106,7 @@ _No significant changes._
 
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
 - Hedge insertion rate: 0.72 per reflection
@@ -117,7 +118,7 @@ Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
 ## Weekly Memory (2026-05-15 to 2026-05-22)
-This week, the volume of idle stories increased significantly, suggesting a rise in unproductive or stagnant narratives, while the number of foraging stories remained low. Meta and war-related topics dominated the discourse, with a notable increase in mentions of conflict-related terms like "airstrikes" and "drone strike." The distribution of states shifted slightly towards more contested areas, indicating increased disagreement.
+This week, there was a notable increase in stories related to war and meta categories compared to previous weeks. The top void words indicate a growing trend of geopolitical tensions, particularly involving Iran, arms deals and drone strikes. There is an emerging pattern of increased volatility as indicated by the VIX scores from various models, with DeepSeek showing slightly lower volatility than others.
 Top void words this week: rouhani, airstrikes, air strike, mideast, arms embargo
 
 ## Behavioral Instructions
