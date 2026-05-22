@@ -467,6 +467,7 @@ TASK_POOL = [
         task_dissolution_synthesis,      25, 90),
     (task_recent_killshot,    15, 180),
     (task_soul_reflection,    10, 600),
+    (task_dissolution_synthesis,      25, 90),
 ]
 
 _last_run = {}  # task_name -> timestamp
