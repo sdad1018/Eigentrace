@@ -470,6 +470,19 @@ TASK_POOL = [
     (task_dissolution_synthesis,      25, 90),
 ]
 
+TASK_POOL = [
+    (task_explain_eigentrace,      20, 120),
+    (task_void_patterns,           15, 180),
+    (task_model_friction,          15, 180),
+    (task_subscribe_cta,           10, 300),
+    (task_recent_killshot,         15, 180),
+    (task_soul_reflection,         10, 600),
+    (task_consequence_foraging,    15, 3600),
+    (task_dissolution_synthesis,   25, 90),
+    (task_curiosity_foraging,      10, 1800),
+    (task_entanglement_scan,       10, 7200),
+]
+
 _last_run = {}  # task_name -> timestamp
 
 
