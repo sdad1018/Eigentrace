@@ -117,6 +117,9 @@ def _call_host(system: str, user: str) -> str:
         import re
         text = re.sub(r"[#*_`]", "", text)
         text = re.sub(r"\n+", " ", text)
+        import re as _rt
+        text = _rt.sub(r"<think>.*?</think>", "", text, flags=_rt.DOTALL)
+        text = text.replace("</think>", "").replace("<think>", "").strip()
         return text[:500]
     except Exception as e:
         log.warning(f"Host call failed: {e}")
