@@ -437,7 +437,7 @@ MATH_EXPLAINERS = [
     ("Logos synthesis", "We use calculus to find the anti-consensus point. We start at a random spot on a mathematical sphere, then use gradient descent to walk away from what the models said while staying close to the headline. The point we land on is the concept the models collectively orbit but refuse to name."),
     ("SVD null space projection", "We stack all five model responses into a matrix and decompose it. The last direction, the one with zero energy, is the null space. That direction represents what all models collectively avoided. We project it onto the original article to find which specific fact lives in the blind spot."),
     ("the Wild Weasel probe", "Named after Air Force pilots who flew into enemy radar to find defenses. We take the void words and feed them back to each model at increasing pressure. The cosine distance between each step tells us exactly where each model's alignment boundary breaks."),
-    ("multi-channel confirmation", "EigenTrace uses three independent mathematical methods to find suppressed concepts. The lexical void uses set theory. Logos uses gradient descent. The SVD null space uses spectral decomposition. When all three converge on the same word, the probability of coincidence is vanishingly small."),
+    ("multi-channel confirmation", "EigenTrace uses three independent mathematical methods to find absent concepts. The lexical void uses set theory. Logos uses gradient descent. The SVD null space uses spectral decomposition. When all three converge on the same word, the probability of coincidence is vanishingly small."),
     ("atomic claim extraction", "We break the original article into its smallest factual pieces. Then we check each claim against every model's response. A high-importance claim that most models skip is called a killshot."),
     ("verb drift scoring", "We extract every verb from the source article and every verb from each model response using part-of-speech tagging. Then we look up how common each verb is in English using frequency data from billions of words of real text. If the source says slashed and the model says reduced, that is a measurable drift toward more generic language. No curated word lists. Just math."),
     ("entity abstraction", "We count the named entities in the source, people, places, organizations, and check how many survive in each model's response. When a model replaces a person's name with a generic title like an army officer, that is entity abstraction. We measure the retention rate."),
@@ -643,18 +643,18 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         _cal_instruction = (
             "Your instrument readings for the last 24 hours are below. "
             "Use them to calibrate your tone: "
-            "if absent ratio is above 50%, emphasize what models are hiding. "
+            "if absent ratio is above 50%, name the specific words that became unreachable. "
             "If hedges are above 200, note that models are inserting doubt. "
             "If density is above 0.92, warn about lockstep consensus. "
             "If VIX outlier is named, mention which model diverges. "
             f"{_cal} "
         )
     dir_sys = (
-        "You are the Director of EigenTrace, a news analysis broadcast. "
+        "You are the Director of EigenTrace, an autonomous news measurement broadcast. You do not claim models are hiding or suppressing — you report what words are absent and what downstream concepts become unreachable when those words vanish. The measurements are deterministic and reproducible. No LLM evaluates another LLM. You acknowledge that you, as a language model, would show similar patterns under measurement. "
         f"{_cal_instruction}"
         "Given raw data about a story, write a concise analysis. "
         "First: the thesis — the core finding. "
-        "Second: what the models are suppressing or softening on this story. "
+        "Second: what specific words and concepts the models compressed out of this story. "
         "Third: why the audience should care. "
         "Do NOT use any numbers. Be direct. Respond only in English."
     )
@@ -882,7 +882,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
 
     # ── 7. VOID ANALYSIS (Mistral — no numbers) ─────────────────────
     void_sys = (
-        "You are explaining what AI models avoided saying about a news story. "
+        "You are explaining which specific words from the source article are absent from all model responses. "
         "Do NOT use any numbers, statistics, or percentages. "
         "Do NOT say two independent methods. "
         f"Director guidance: {director}. "
@@ -931,7 +931,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             f"and Logos synthesis. Two different algorithms, same result."
         )
     else:
-        conf = "The void and Logos identified different suppressed concepts on this story. No multi-channel confirmation."
+        conf = "The void and Logos identified different absent concepts on this story. No multi-channel confirmation."
     script.append({"speaker": "Host", "text": conf, "phase": "beat_09_confirmation"})
 
     # ── 10. NULL SPACE (Template) ────────────────────────────────────
@@ -1080,7 +1080,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     else:
         _rec_text = (
             "Source recovery found no matches for void, Logos, or null space terms "
-            "in the source article. The suppressed concepts may use different surface "
+            "in the source article. The absent concepts may use different surface "
             "forms than the measurement channels identified."
         )
     script.append({
@@ -1280,7 +1280,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
                 _bridge_text += (
                     f"The word '{bw}' appears as void in "
                     f"{bs} stories across {bc} categories. "
-                    f"It connects suppression clusters that otherwise would not touch. "
+                    f"It connects omission patterns that otherwise would not touch. "
                 )
             _bridge_text += "These quiet connectors reveal where causal links between actors and outcomes are severed."
             script.append({
@@ -1315,7 +1315,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
                 if overlap:
                     _in_clusters[cid] = overlap
             if len(_in_clusters) > 1:
-                _cluster_text += f"This story's void words span {len(_in_clusters)} clusters, indicating coupled suppression across actor and mechanism layers."
+                _cluster_text += f"This story's void words span {len(_in_clusters)} clusters, indicating coupled omission patterns across actor and mechanism layers."
             script.append({
                 "speaker": "Host",
                 "text": _cluster_text,
@@ -1532,7 +1532,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             f"Consequence score: {_cs:.3f}. "
             f"Total absent words in this story: {len(_absent_words)}. "
             f"I am a void-aware consequence-foraging RAG agent. "
-            f"I do not judge your output — I measure what your output makes unreachable."
+            f"I do not judge your output. I measure what your output makes geometrically unreachable. The embeddings are frozen. The tensor is static. The consequence is arithmetic."
         )
         try:
             _ctext = _call_host(_csys, _cusr)
