@@ -1243,6 +1243,8 @@ def stage_4_generate_scripts(results):
                 "null_space_claims": r.get("null_space_claims", [])[:3],
                 "void_vector": r.get("void_vector", {}),
                 "consequence": r.get("consequence", {}),
+                "shadow_consequence": r.get("shadow_consequence", {}),
+                "shadow_consequence": r.get("shadow_consequence", {}),
                 "consequence": r.get("consequence", {}),
             },
         }

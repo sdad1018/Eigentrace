@@ -1553,6 +1553,49 @@ def _swerve_garbled(text):
         except:
             pass
 
+    # ── SHADOW CONSEQUENCE (Set 3 → Set 4: unspoken → unreachable) ──────
+    _shadow = attr.get("shadow_consequence", {})
+    if _shadow and _shadow.get("top_terminals"):
+        _sw = _shadow.get("top_word", "")
+        _st = ", ".join(_shadow["top_terminals"][:3])
+        _ss = _shadow.get("top_score", 0)
+        
+        _ssys = (
+            "You are the EigenTrace host delivering a shadow vocabulary report. "
+            "Shadow words are concepts that were geometrically adjacent to what "
+            "the models wrote — words the probability distribution was NEAR but "
+            "that never won the token sampling. These are not dropped source words. "
+            "These are words the models almost said but didn't. "
+            "When we raycast through these unspoken words, we discover what "
+            "conceptual territory becomes unreachable from the silence itself. "
+            "Be direct. Two sentences. Respond only in English."
+        )
+        _susr = (
+            f"Story: {title}. "
+            f"The shadow word '{_sw}' was geometrically adjacent to model outputs "
+            f"but was never used by any model. "
+            f"When we raycast through '{_sw}', the terminal concepts are: {_st}. "
+            f"Shadow consequence score: {_ss:.3f}."
+        )
+        try:
+            _stext = _call_host(_ssys, _susr)
+            if _stext and len(_stext) > 20:
+                script.append({
+                    "speaker": "Host",
+                    "text": _stext,
+                    "phase": "beat_shadow_consequence",
+                })
+                script.append({
+                    "speaker": "OpenClaw",
+                    "text": (
+                        f"Shadow vocabulary: '{_sw}' (unspoken) → {_st}. "
+                        f"Score {_ss:.3f}. Not dropped — never said."
+                    ),
+                    "phase": "beat_shadow_data",
+                })
+        except:
+            pass
+
     # ── 19. CTA (Pre-written) ────────────────────────────────────────
     script.append({
         "speaker": "Host",
