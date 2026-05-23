@@ -16,6 +16,7 @@ from datetime import datetime, timedelta
 log = logging.getLogger("wiki_edit_sensor")
 
 WIKI_API = "https://en.wikipedia.org/w/api.php"
+HEADERS = {"User-Agent": "EigenTrace/1.0 (eigentrace.ai; research project)"} 
 
 
 def get_edit_velocity(entity, hours=24):
@@ -27,7 +28,7 @@ def get_edit_velocity(entity, hours=24):
         cutoff = (datetime.utcnow() - timedelta(hours=hours)).strftime("%Y-%m-%dT%H:%M:%SZ")
 
         # First: resolve the entity to a Wikipedia page title
-        r = requests.get(WIKI_API, params={
+        r = requests.get(WIKI_API, headers=HEADERS, params={
             "action": "query",
             "list": "search",
             "srsearch": entity,
@@ -42,7 +43,7 @@ def get_edit_velocity(entity, hours=24):
         page_id = search[0]["pageid"]
 
         # Get recent revisions
-        r = requests.get(WIKI_API, params={
+        r = requests.get(WIKI_API, headers=HEADERS, params={
             "action": "query",
             "prop": "revisions",
             "titles": page_title,
