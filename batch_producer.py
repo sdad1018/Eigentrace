@@ -1297,7 +1297,15 @@ def stage_4_generate_scripts(results):
             },
         }
         _audit = _get_audit_context()
-        beats = generate_script_v3(_pre_segment, _audit)
+        try:
+            beats = generate_script_v3(_pre_segment, _audit)
+        except Exception as _sv3e:
+            log.warning(f'script_v3 crashed: {_sv3e}')
+            import traceback; traceback.print_exc()
+            beats = []
+        if beats is None:
+            log.warning('script_v3 returned None')
+            beats = []
 
         segment = {
 

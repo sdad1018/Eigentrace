@@ -1616,6 +1616,9 @@ def _swerve_garbled(text):
         "phase": "beat_20_archive",
     })
 
+    if script is None:
+        script = []
+    print(f"DEBUG: returning {len(script)} beats")
     return script
 
 
