@@ -120,7 +120,11 @@ def _call_host(system: str, user: str) -> str:
         return text[:500]
     except Exception as e:
         log.warning(f"Host call failed: {e}")
-        return ""
+        raw_text = ""
+        import re as _rethink
+        raw_text = _rethink.sub(r"<think>.*?</think>", "", raw_text, flags=_rethink.DOTALL)
+        raw_text = raw_text.replace("</think>", "").replace("<think>", "")
+        return raw_text.strip()
 
 
 def _has_pending_segment() -> bool:
