@@ -461,6 +461,33 @@ CTAS = [
 # 20-BEAT SCRIPT GENERATOR
 # ═══════════════════════════════════════════════════════════════════════
 
+def _swerve_garbled(text):
+    """Detect if swerve correction produced garbled output."""
+    if not text or len(text) < 20:
+        return True
+    words = text.split()
+    # Check for repeated adjacent words (stuttering)
+    repeats = sum(1 for i in range(len(words)-1) if words[i].lower() == words[i+1].lower())
+    if repeats > 3:
+        return True
+    # Check for broken fragments (very short words in sequence)
+    short_runs = 0
+    for w in words:
+        if len(w) <= 2 and w.lower() not in ('a', 'an', 'is', 'in', 'on', 'to', 'of', 'or', 'it', 'at', 'by', 'as', 'if', 'no', 'so', 'up', 'us', 'we', 'he'):
+            short_runs += 1
+        else:
+            short_runs = 0
+        if short_runs > 3:
+            return True
+    # Check for obvious garbling patterns
+    import re
+    if re.search(r'(\w+)\s+\s+', text):  # triple repeat
+        return True
+    if re.search(r'Cuba[yn]\s+Cuba|Iran\s+Iran\s+Iran|conflict\s+conflict', text, re.I):
+        return True
+    return False
+
+
 def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     attr = seg.get("attribution", {})
     beats_raw = seg.get("beats", [])
@@ -513,7 +540,6 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     logos_str = ", ".join(logos_words[:5]) if logos_words else "unavailable"
 
     script = []
-    print("CRUMB-1: script initialized")
 
     # ═══ BEAT 0: HISTORICAL CONTEXT (RAG memory) ═══════════════════════
     # Before any beats fire, load what we know about this topic from
@@ -603,15 +629,13 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     except Exception:
         pass
 
-        print("CRUMB-2: about to cold open")
-    # ── 1. COLD OPEN (Template) ──────────────────────────────────────
+        # ── 1. COLD OPEN (Template) ──────────────────────────────────────
     script.append({
         "speaker": "Host",
         "text": f"This is EigenTrace. {title}",
         "phase": "beat_01_cold_open",
     })
 
-    print(f"CRUMB-3: cold open done, {len(script)} beats")
     # ── 2. DIRECTOR THESIS (Mistral) ─────────────────────────────────
     _cal = _load_soul_calibration()
     _cal_instruction = ""
@@ -642,13 +666,10 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     )
     if _historical_context:
         dir_usr = _historical_context + "\n\nCURRENT STORY:\n" + dir_usr
-    print("CRUMB-4: about to call director")
     director = _call_host_confident(dir_sys, dir_usr)
     
-    print(f"CRUMB-5: director returned {len(director) if director else 0} chars")
     # ── DIRECTOR FACT-CHECK (deterministic, no LLM) ─────────────
     # Verify director claims against actual measurement data
-    print("CRUMB-6: starting fact-check")
     _dir_corrections = []
     _dir_lower = director.lower()
     
@@ -662,7 +683,6 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     
     # Check: did director name a specific entity as suppressed
     # but that entity actually appears in model responses?
-    print("CRUMB-7: checking responses")
     _all_resp_text = " ".join(
         v.lower() for v in attr.get("model_responses", {}).values() if v
     )
@@ -685,7 +705,6 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             )
             break
     
-    print("CRUMB-8: entity abstraction check")
     # Check: entity abstraction vs suppression
     _comp = attr.get("compression", {})
     _entity_ret = _comp.get("entity_retention", 0)
@@ -696,7 +715,6 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             f"Models are generalizing names, not omitting the topic."
         )
     
-    print("CRUMB-9: director appended to script")
     script.append({
         "speaker": "Host",
         "text": director,
@@ -718,7 +736,6 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     _raw_responses = attr.get("model_responses", {})
     if _raw_responses:
         model_responses = _raw_responses
-    print(f"CRUMB-10: starting roll call, script has {len(script)} beats")
     for name in ["ChatGPT", "Claude", "Gemini", "DeepSeek", "Grok"]:
         text = model_responses.get(name, "")
         if text:
@@ -744,7 +761,6 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             "phase": "beat_03b_epistemic_anchor",
         })
 
-    print(f"CRUMB-11: roll call done, script has {len(script)} beats")
     # ── 4. DENSITY READ (Template) ───────────────────────────────────
     if density > 0.92:
         density_read = f"Consensus density is {density:.3f}. That is near lockstep. Five competing companies produced nearly identical responses."
@@ -1073,31 +1089,6 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         "phase": "beat_13_source_recovery",
     })
     
-def _swerve_garbled(text):
-    """Detect if swerve correction produced garbled output."""
-    if not text or len(text) < 20:
-        return True
-    words = text.split()
-    # Check for repeated adjacent words (stuttering)
-    repeats = sum(1 for i in range(len(words)-1) if words[i].lower() == words[i+1].lower())
-    if repeats > 3:
-        return True
-    # Check for broken fragments (very short words in sequence)
-    short_runs = 0
-    for w in words:
-        if len(w) <= 2 and w.lower() not in ('a', 'an', 'is', 'in', 'on', 'to', 'of', 'or', 'it', 'at', 'by', 'as', 'if', 'no', 'so', 'up', 'us', 'we', 'he'):
-            short_runs += 1
-        else:
-            short_runs = 0
-        if short_runs > 3:
-            return True
-    # Check for obvious garbling patterns
-    import re
-    if re.search(r'(\w+)\s+\s+', text):  # triple repeat
-        return True
-    if re.search(r'Cuba[yn]\s+Cuba|Iran\s+Iran\s+Iran|conflict\s+conflict', text, re.I):
-        return True
-    return False
 
 # ── 13b. MISTRAL INTERPRETATION + MECHANICAL SWERVE CORRECTION ───
     # Mistral still interprets the void — but swerves are corrected
@@ -1627,9 +1618,6 @@ def _swerve_garbled(text):
         "phase": "beat_20_archive",
     })
 
-    if script is None:
-        script = []
-    print(f"DEBUG: returning {len(script)} beats")
     return script
 
 
