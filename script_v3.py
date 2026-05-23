@@ -648,6 +648,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     print(f"CRUMB-5: director returned {len(director) if director else 0} chars")
     # ── DIRECTOR FACT-CHECK (deterministic, no LLM) ─────────────
     # Verify director claims against actual measurement data
+    print("CRUMB-6: starting fact-check")
     _dir_corrections = []
     _dir_lower = director.lower()
     
@@ -661,6 +662,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     
     # Check: did director name a specific entity as suppressed
     # but that entity actually appears in model responses?
+    print("CRUMB-7: checking responses")
     _all_resp_text = " ".join(
         v.lower() for v in attr.get("model_responses", {}).values() if v
     )
@@ -683,6 +685,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             )
             break
     
+    print("CRUMB-8: entity abstraction check")
     # Check: entity abstraction vs suppression
     _comp = attr.get("compression", {})
     _entity_ret = _comp.get("entity_retention", 0)
@@ -693,6 +696,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             f"Models are generalizing names, not omitting the topic."
         )
     
+    print("CRUMB-9: director appended to script")
     script.append({
         "speaker": "Host",
         "text": director,
@@ -714,6 +718,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     _raw_responses = attr.get("model_responses", {})
     if _raw_responses:
         model_responses = _raw_responses
+    print(f"CRUMB-10: starting roll call, script has {len(script)} beats")
     for name in ["ChatGPT", "Claude", "Gemini", "DeepSeek", "Grok"]:
         text = model_responses.get(name, "")
         if text:
@@ -739,6 +744,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             "phase": "beat_03b_epistemic_anchor",
         })
 
+    print(f"CRUMB-11: roll call done, script has {len(script)} beats")
     # ── 4. DENSITY READ (Template) ───────────────────────────────────
     if density > 0.92:
         density_read = f"Consensus density is {density:.3f}. That is near lockstep. Five competing companies produced nearly identical responses."
