@@ -513,6 +513,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     logos_str = ", ".join(logos_words[:5]) if logos_words else "unavailable"
 
     script = []
+    print("CRUMB-1: script initialized")
 
     # ═══ BEAT 0: HISTORICAL CONTEXT (RAG memory) ═══════════════════════
     # Before any beats fire, load what we know about this topic from
@@ -602,13 +603,15 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     except Exception:
         pass
 
-        # ── 1. COLD OPEN (Template) ──────────────────────────────────────
+        print("CRUMB-2: about to cold open")
+    # ── 1. COLD OPEN (Template) ──────────────────────────────────────
     script.append({
         "speaker": "Host",
         "text": f"This is EigenTrace. {title}",
         "phase": "beat_01_cold_open",
     })
 
+    print(f"CRUMB-3: cold open done, {len(script)} beats")
     # ── 2. DIRECTOR THESIS (Mistral) ─────────────────────────────────
     _cal = _load_soul_calibration()
     _cal_instruction = ""
@@ -639,8 +642,10 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     )
     if _historical_context:
         dir_usr = _historical_context + "\n\nCURRENT STORY:\n" + dir_usr
+    print("CRUMB-4: about to call director")
     director = _call_host_confident(dir_sys, dir_usr)
     
+    print(f"CRUMB-5: director returned {len(director) if director else 0} chars")
     # ── DIRECTOR FACT-CHECK (deterministic, no LLM) ─────────────
     # Verify director claims against actual measurement data
     _dir_corrections = []
