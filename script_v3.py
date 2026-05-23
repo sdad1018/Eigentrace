@@ -1442,7 +1442,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
                         f"from {data['earlier_avg']:.3f} to {data['recent_avg']:.3f}"
                     )
             if _trend_parts:
-                _trend_text = "Suppression trajectory. Over the last 24 hours: "
+                _trend_text = "Compression trajectory. Over the last 24 hours: "
                 _trend_text += ". ".join(_trend_parts) + ". "
                 _trend_text += "These are not single-story findings. These are directional shifts in how models collectively reshape content over time."
                 script.append({
@@ -1526,7 +1526,15 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     
     if _conseq and _conseq.get("top_terminals") and _raw_responses:
         _cw = _conseq.get("top_word", "")
-        _ct = ", ".join(_conseq["top_terminals"][:3])
+        # Filter noisy Wikipedia article titles from consequence terminals
+        _raw_terminals = _conseq.get("top_terminals", [])
+        _clean_terminals = [t for t in _raw_terminals
+                           if not t.startswith(("*", "...", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"))
+                           and len(t) < 50
+                           and "building" not in t.lower() or "governance" in t.lower() or "crisis" in t.lower()]
+        if not _clean_terminals:
+            _clean_terminals = _raw_terminals[:3]  # fallback
+        _ct = ", ".join(_clean_terminals[:3])
         _cs = _conseq.get("top_score", 0)
         _nd = _conseq.get("n_discoveries", 0)
         
@@ -1589,7 +1597,13 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     _shadow = attr.get("shadow_consequence", {})
     if _shadow and _shadow.get("top_terminals"):
         _sw = _shadow.get("top_word", "")
-        _st = ", ".join(_shadow["top_terminals"][:3])
+        _raw_st = _shadow.get("top_terminals", [])
+        _clean_st = [t for t in _raw_st
+                    if not t.startswith(("*", "...", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"))
+                    and len(t) < 50]
+        if not _clean_st:
+            _clean_st = _raw_st[:3]
+        _st = ", ".join(_clean_st[:3])
         _ss = _shadow.get("top_score", 0)
         
         _ssys = (
