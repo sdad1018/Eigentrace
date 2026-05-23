@@ -891,6 +891,54 @@ def stage_3_geometric(results):
 
         log.info(f"  [{story.category}] void={void_str} density={geo.consensus_density:.3f}")
 
+        # ── Layer 18: Consequence raycasting (Set 1 → Set 2) ─────────
+        consequence_data = {}
+        try:
+            from consequence_engine import raycast_void_words
+            _sv = r.get("source_void", {})
+            _absent = _sv.get("absent_words", [])
+            if _absent and len(_absent) >= 2:
+                _abs_strs = [str(w) for w in _absent[:6]]
+                _headline = story.title
+                _rc = raycast_void_words(_headline, _abs_strs, depths=[1.5, 2.0, 3.0], top_k=5)
+                _discoveries = [x for x in _rc if x.get("signal_quality") == "DISCOVERY"]
+                if _discoveries:
+                    consequence_data = {
+                        "top_word": _discoveries[0]["word"],
+                        "top_score": _discoveries[0]["consequence_score"],
+                        "top_terminals": _discoveries[0].get("deepest_consequences", [])[:3],
+                        "n_discoveries": len(_discoveries),
+                    }
+                    log.info(f"  Consequence: {_discoveries[0]['word']} → "
+                             f"{', '.join(_discoveries[0].get('deepest_consequences', [])[:2])} "
+                             f"({_discoveries[0]['consequence_score']:.3f})")
+        except Exception as _ce:
+            log.warning(f"  Consequence raycast failed: {_ce}")
+        r["consequence"] = consequence_data
+
+        # ── Shadow consequence (Set 3 → Set 4) ───────────────────────
+        shadow_consequence = {}
+        try:
+            from consequence_engine import raycast_void_words as _raycast_vw
+            _vw = r.get("void_words", [])
+            if _vw and len(_vw) >= 2:
+                _vw_strs = [str(w) for w in _vw[:6]]
+                _shadow_rc = _raycast_vw(story.title, _vw_strs, depths=[1.5, 2.0, 3.0], top_k=5)
+                _shadow_disc = [x for x in _shadow_rc if x.get("signal_quality") == "DISCOVERY"]
+                if _shadow_disc:
+                    shadow_consequence = {
+                        "top_word": _shadow_disc[0]["word"],
+                        "top_score": _shadow_disc[0]["consequence_score"],
+                        "top_terminals": _shadow_disc[0].get("deepest_consequences", [])[:3],
+                        "n_discoveries": len(_shadow_disc),
+                    }
+                    log.info(f"  Shadow: {_shadow_disc[0]['word']} → "
+                             f"{', '.join(_shadow_disc[0].get('deepest_consequences', [])[:2])} "
+                             f"({_shadow_disc[0]['consequence_score']:.3f})")
+        except Exception as _sce:
+            log.warning(f"  Shadow consequence failed: {_sce}")
+        r["shadow_consequence"] = shadow_consequence
+
         for c in callouts:
 
             log.info(f"  CALLOUT: {c['summary']}")
