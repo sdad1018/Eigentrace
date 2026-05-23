@@ -1236,6 +1236,21 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     except Exception as _wiki_err:
         pass  # Non-blocking
 
+    # ── 15b1. WIKIPEDIA EDIT VELOCITY ──────────────────────────────
+    try:
+        from wiki_edit_sensor import check_void_entities, format_broadcast as _wiki_format
+        _wiki_words = [v.get("word", "") for v in _void_ctx[:10]] + [str(w) for w in _absent_src[:5]]
+        _wiki_hot = check_void_entities(_wiki_words, hours=48)
+        _wiki_text = _wiki_format(_wiki_hot)
+        if _wiki_text:
+            script.append({
+                "speaker": "Host",
+                "text": _wiki_text,
+                "phase": "beat_15b1_wiki_edit_velocity",
+            })
+    except Exception as _wiki_err:
+        pass  # Non-blocking
+
     # ── 15b2. SOURCE SALIENCE — Domain 3 (independent of models) ────────
     try:
         from source_salience import compute_source_salience, compare_salience_to_void, format_broadcast as _sal_format
