@@ -23,31 +23,52 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 SEARXNG_URL = os.environ.get("SEARXNG_URL", "http://localhost:8888")
 VERIFICATION_LOG = "/home/remvelchio/eigentrace/tmp/verification_log.jsonl"
 
+def _search_searxng(query):
+    """Query SearXNG — returns None if SearXNG is down."""
+    try:
+        r = requests.get(f"{SEARXNG_URL}/search", params={
+            "q": query, "format": "json",
+        }, timeout=10)
+        r.raise_for_status()
+        results = r.json().get("results", [])
+        return {
+            "query": query,
+            "hit_count": len(results),
+            "top_titles": [r.get("title", "")[:80] for r in results[:5]],
+            "top_urls": [r.get("url", "") for r in results[:3]],
+        }
+    except:
+        return None
+
+
+def _search_ddg(query):
+    """DuckDuckGo HTML scraping fallback — no API key, no JS."""
+    try:
+        from epistemic_sensor import ddg_search
+        results = ddg_search(query, max_results=5)
+        return {
+            "query": query,
+            "hit_count": len(results),
+            "top_titles": [r.get("title", "")[:80] for r in results[:5]],
+            "top_urls": [r.get("url", "") for r in results[:3]],
+        }
+    except Exception as e:
+        return {"query": query, "hit_count": 0, "top_titles": [], "top_urls": [], "error": str(e)}
+
+
 def _search(query, max_retries=2):
-    """Query SearXNG and return hit count + top titles."""
-    for attempt in range(max_retries):
-        try:
-            r = requests.get(f"{SEARXNG_URL}/search", params={
-                "q": query,
-                "format": "json",
-            }, timeout=15)
-            if r.status_code == 429:
-                time.sleep(2 * (attempt + 1))
-                continue
-            r.raise_for_status()
-            data = r.json()
-            results = data.get("results", [])
-            return {
-                "query": query,
-                "hit_count": len(results),
-                "top_titles": [r.get("title", "")[:80] for r in results[:5]],
-                "top_urls": [r.get("url", "") for r in results[:3]],
-            }
-        except Exception as e:
-            if attempt < max_retries - 1:
-                time.sleep(1)
-            else:
-                return {"query": query, "hit_count": 0, "top_titles": [], "top_urls": [], "error": str(e)}
+    """Search with SearXNG first, DDG fallback if down."""
+    # Try SearXNG
+    result = _search_searxng(query)
+    if result and result.get("hit_count", 0) > 0:
+        return result
+
+    # Fallback to DDG
+    result = _search_ddg(query)
+    if result:
+        log.info(f"  Void verification via DDG fallback: {query[:40]}")
+        return result
+
     return {"query": query, "hit_count": 0, "top_titles": [], "top_urls": []}
 
 

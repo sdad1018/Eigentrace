@@ -72,6 +72,16 @@ def _load_soul():
 
 _SOUL_CACHE = None
 
+def _strip_think(text):
+    """Remove <think>...</think> tags and </think> leaks from broadcast text."""
+    if not text:
+        return text
+    import re
+    text = re.sub(r'<think>.*?</think>', '', text, flags=re.DOTALL)
+    text = text.replace('</think>', '').replace('<think>', '')
+    return text.strip()
+
+
 def _get_soul():
     global _SOUL_CACHE
     if _SOUL_CACHE is None:
@@ -79,15 +89,16 @@ def _get_soul():
     return _SOUL_CACHE
 
 def _call_host(system: str, user: str) -> str:
-    # Anti-loop: inject instruction to avoid reflecting on idle segments
-    if "idle" not in system.lower():
-        system = system + (
-            " CRITICAL: Do NOT reflect on your own idle segments, reflection patterns, "
-            "or looping behavior. Do NOT discuss Patch Tuesday, REM consolidation, "
-            "or the absence of content. Focus on REAL stories, REAL void words from "
-            "REAL news coverage, and REAL measurement data. If you have no real data, "
-            "explain one of your measurement layers or a recent finding instead."
-        )
+    # Anti-loop: ALWAYS inject — the idle agent should never reflect on itself
+    system = system + (
+        " ABSOLUTE RULE: Do NOT reflect on your own idle segments, looping patterns, "
+        "repetitive entries, or reflection behavior. Do NOT mention Patch Tuesday, "
+        "REM consolidation, or the absence of content. Do NOT say 'the repetition suggests' "
+        "or 'this pattern indicates a loop.' Do NOT analyze why you are repeating yourself. "
+        "You are the Director of EigenTrace. Talk about REAL news stories, REAL void words, "
+        "REAL measurement findings. If the data you receive contains only idle reflections, "
+        "explain one of your 16 measurement layers instead."
+    )
     """Call Host model (Mistral Small) via Ollama chat API."""
     import requests
     try:
@@ -178,7 +189,7 @@ def task_explain_eigentrace() -> list[dict]:
            "like a host explaining something fascinating. Respond only in English.")
     text = _call_host(sys, f"Explain: {name}\nDetails: {explanation}")
     if not text:
-        text = f"This is EigenTrace. {explanation}"
+        text = _strip_think(f"This is EigenTrace. {explanation}")
     return [{"speaker": "Host", "text": text, "phase": "idle_explain"}]
 
 
@@ -540,9 +551,9 @@ def task_dissolution_synthesis() -> list[dict]:
         # Private thinking
         beats.append({
             "speaker": "Host",
-            "text": f"<think>Synthesis Engine analyzing {len(records)} stories. "
+            "text": _strip_think(f"<think>Synthesis Engine analyzing {len(records)} stories. "
                     f"Top voids: {void_str}. Mean VIX: {mean_vix_overall}. "
-                    f"Model friction: {model_str}</think>{result}",
+                    f"Model friction: {model_str}</think>{result}"),
             "phase": "synthesis_engine",
             "pitch": 0.95,
         })
