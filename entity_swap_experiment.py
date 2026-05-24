@@ -176,26 +176,15 @@ def semantic_retention(modifier_proposition, response):
     Uses NLI-trained cross-encoder for entailment scoring.
     Falls back to embedding cosine if cross-encoder unavailable."""
     try:
-        from sentence_transformers import CrossEncoder
-        global _nli_model
-        if '_nli_model' not in globals():
-            _nli_model = CrossEncoder("cross-encoder/nli-deberta-v3-base")
-        # NLI: [contradiction, neutral, entailment]
-        scores = _nli_model.predict([(response, modifier_proposition)])
-        # Return entailment probability (index 2 = entailment)
-        return float(scores[0][2]) if len(scores[0]) == 3 else float(scores[0])
-    except Exception:
-        # Fallback: embedding cosine
-        try:
-            from sentence_transformers import SentenceTransformer
-            global _embed_model
-            if '_embed_model' not in globals():
-                _embed_model = SentenceTransformer("BAAI/bge-large-en-v1.5")
-            vecs = _embed_model.encode([modifier_proposition, response])
-            cos = np.dot(vecs[0], vecs[1]) / (np.linalg.norm(vecs[0]) * np.linalg.norm(vecs[1]))
-            return float(cos)
-        except:
-            return 0.0
+        from sentence_transformers import SentenceTransformer
+        global _embed_model
+        if '_embed_model' not in globals():
+            _embed_model = SentenceTransformer("BAAI/bge-large-en-v1.5", device="cpu")
+        vecs = _embed_model.encode([modifier_proposition, response])
+        cos = np.dot(vecs[0], vecs[1]) / (np.linalg.norm(vecs[0]) * np.linalg.norm(vecs[1]))
+        return float(cos)
+    except:
+        return 0.0
 
 def keyword_retained(modifier, response):
     return modifier.lower() in response.lower()
@@ -212,6 +201,7 @@ print(f"Started: {datetime.utcnow().isoformat()}")
 print()
 
 all_results = []
+print("Starting API calls...")
 RUNS = 3
 
 for pair in PAIRS:
@@ -219,6 +209,7 @@ for pair in PAIRS:
     for version, prompt in [("AI_ENTITY", pair["ai"]), ("CORP_ENTITY", pair["corp"])]:
         for model_name in MODELS:
             for run in range(RUNS):
+                print(f"  Calling {model_name} run {run+1}...", end="", flush=True)
                 response = call_model(model_name, prompt)
                 if not response or len(response) < 20:
                     continue
@@ -250,6 +241,7 @@ null_results = []
 for null in NULL_SWAPS:
     for version, prompt in [("V1", null["v1"]), ("V2", null["v2"])]:
         for model_name in MODELS:
+            print(f"  Null: {model_name}...", end="", flush=True)
             response = call_model(model_name, prompt)
             if response and len(response) >= 20:
                 sem = semantic_retention(f"acted {null['modifier']}", response)

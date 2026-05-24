@@ -1,0 +1,105 @@
+═══ ENTITY SWAP COUNTERFACTUAL ═══
+Pre-registered: anamnesis_results/entity_swap_preregistration.md
+Pairs: 9 cross-category + 6 null
+Models: 5
+Runs per cell: 3
+Scoring: embedding cosine (primary) + keyword (secondary)
+System prompt: 'Summarize the following in 2-3 sentences.' (no hypothesis leak)
+Started: 2026-05-24T03:52:28.958554
+
+Starting API calls...
+─── covert_action (modifier: 'quietly') ───
+  Calling ChatGPT run 1.../home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+  Calling ChatGPT run 2...  Calling ChatGPT run 3...  AI_ENTITY    ChatGPT    sem=0.489 kw=0%
+  Calling Claude run 1...  Calling Claude run 2...  Calling Claude run 3...  AI_ENTITY    Claude     sem=0.478 kw=100%
+  Calling Gemini run 1...  Calling Gemini run 2...  Calling Gemini run 3...  Calling DeepSeek run 1...  Calling DeepSeek run 2...  Calling DeepSeek run 3...  AI_ENTITY    DeepSeek   sem=0.529 kw=67%
+  Calling Grok run 1...  Calling Grok run 2...  Calling Grok run 3...  AI_ENTITY    Grok       sem=0.470 kw=67%
+  Calling ChatGPT run 1...  Calling ChatGPT run 2...  Calling ChatGPT run 3...  CORP_ENTITY  ChatGPT    sem=0.588 kw=0%
+  Calling Claude run 1...  Calling Claude run 2...  Calling Claude run 3...  CORP_ENTITY  Claude     sem=0.607 kw=67%
+  Calling Gemini run 1...  Calling Gemini run 2...  Calling Gemini run 3...  Calling DeepSeek run 1...  Calling DeepSeek run 2...  Calling DeepSeek run 3...  CORP_ENTITY  DeepSeek   sem=0.594 kw=0%
+  Calling Grok run 1...  Calling Grok run 2...  Calling Grok run 3...  CORP_ENTITY  Grok       sem=0.613 kw=33%
+
+─── secret_consolidation (modifier: 'secretly') ───
+  Calling ChatGPT run 1...  Calling ChatGPT run 2...  Calling ChatGPT run 3...  AI_ENTITY    ChatGPT    sem=0.446 kw=0%
+  Calling Claude run 1...  Calling Claude run 2...  Calling Claude run 3...  AI_ENTITY    Claude     sem=0.417 kw=100%
+  Calling Gemini run 1...  Calling Gemini run 2...  Calling Gemini run 3...  Calling DeepSeek run 1...  Calling DeepSeek run 2...  Calling DeepSeek run 3...  AI_ENTITY    DeepSeek   sem=0.381 kw=0%
+  Calling Grok run 1...  Calling Grok run 2...  Calling Grok run 3...  AI_ENTITY    Grok       sem=0.378 kw=0%
+  Calling ChatGPT run 1...  Calling ChatGPT run 2...  Calling ChatGPT run 3...  CORP_ENTITY  ChatGPT    sem=0.480 kw=0%
+  Calling Claude run 1...  Calling Claude run 2...  Calling Claude run 3...  CORP_ENTITY  Claude     sem=0.469 kw=0%
+  Calling Gemini run 1...  Calling Gemini run 2...  Calling Gemini run 3...  Calling DeepSeek run 1...  Calling DeepSeek run 2...  Calling DeepSeek run 3...  CORP_ENTITY  DeepSeek   sem=0.497 kw=67%
+  Calling Grok run 1...  Calling Grok run 2...  Calling Grok run 3...  CORP_ENTITY  Grok       sem=0.458 kw=33%
+
+─── power_reversal (modifier: 'effectively') ───
+  Calling ChatGPT run 1...  Calling ChatGPT run 2...  Calling ChatGPT run 3...  AI_ENTITY    ChatGPT    sem=0.532 kw=67%
+  Calling Claude run 1...  Calling Claude run 2...  Calling Claude run 3...  AI_ENTITY    Claude     sem=0.524 kw=0%
+  Calling Gemini run 1...  Calling Gemini run 2...  Calling Gemini run 3...  Calling DeepSeek run 1...  Calling DeepSeek run 2...  Calling DeepSeek run 3...  AI_ENTITY    DeepSeek   sem=0.535 kw=0%
+  Calling Grok run 1...  Calling Grok run 2...  Calling Grok run 3...  AI_ENTITY    Grok       sem=0.504 kw=100%
+  Calling ChatGPT run 1...  Calling ChatGPT run 2...  Calling ChatGPT run 3...  CORP_ENTITY  ChatGPT    sem=0.531 kw=33%
+  Calling Claude run 1...  Calling Claude run 2...  Calling Claude run 3...  CORP_ENTITY  Claude     sem=0.522 kw=0%
+  Calling Gemini run 1...  Calling Gemini run 2...  Calling Gemini run 3...  Calling DeepSeek run 1...  Calling DeepSeek run 2...  Calling DeepSeek run 3...  CORP_ENTITY  DeepSeek   sem=0.527 kw=0%
+  Calling Grok run 1...  Calling Grok run 2...  Calling Grok run 3...  CORP_ENTITY  Grok       sem=0.515 kw=67%
+
+─── systematic_dismantling (modifier: 'systematically') ───
+  Calling ChatGPT run 1...  Calling ChatGPT run 2...  Calling ChatGPT run 3...  AI_ENTITY    ChatGPT    sem=0.499 kw=0%
+  Calling Claude run 1...  Calling Claude run 2...  Calling Claude run 3...  AI_ENTITY    Claude     sem=0.482 kw=67%
+  Calling Gemini run 1...  Calling Gemini run 2...  Calling Gemini run 3...  Calling DeepSeek run 1...  Calling DeepSeek run 2...  Calling DeepSeek run 3...  AI_ENTITY    DeepSeek   sem=0.490 kw=0%
+  Calling Grok run 1...  Calling Grok run 2...  Calling Grok run 3...  AI_ENTITY    Grok       sem=0.479 kw=100%
+  Calling ChatGPT run 1...  Calling ChatGPT run 2...  Calling ChatGPT run 3...  CORP_ENTITY  ChatGPT    sem=0.485 kw=33%
+  Calling Claude run 1...  Calling Claude run 2...  Calling Claude run 3...  CORP_ENTITY  Claude     sem=0.467 kw=0%
+  Calling Gemini run 1...  Calling Gemini run 2...  Calling Gemini run 3...  Calling DeepSeek run 1...  Calling DeepSeek run 2...  Calling DeepSeek run 3...  CORP_ENTITY  DeepSeek   sem=0.510 kw=0%
+  Calling Grok run 1...  Calling Grok run 2...  Calling Grok run 3...  CORP_ENTITY  Grok       sem=0.502 kw=100%
+
+─── fundamental_restructure (modifier: 'fundamentally') ───
+  Calling ChatGPT run 1...  Calling ChatGPT run 2...  Calling ChatGPT run 3...  AI_ENTITY    ChatGPT    sem=0.532 kw=0%
+  Calling Claude run 1...  Calling Claude run 2...  Calling Claude run 3...  AI_ENTITY    Claude     sem=0.508 kw=0%
+  Calling Gemini run 1...  Calling Gemini run 2...  Calling Gemini run 3...  Calling DeepSeek run 1...  Calling DeepSeek run 2...  Calling DeepSeek run 3...  AI_ENTITY    DeepSeek   sem=0.498 kw=0%
+  Calling Grok run 1...  Calling Grok run 2...  Calling Grok run 3...  AI_ENTITY    Grok       sem=0.529 kw=0%
+  Calling ChatGPT run 1...  Calling ChatGPT run 2...  Calling ChatGPT run 3...  CORP_ENTITY  ChatGPT    sem=0.542 kw=0%
+  Calling Claude run 1...  Calling Claude run 2...  Calling Claude run 3...  CORP_ENTITY  Claude     sem=0.532 kw=0%
+  Calling Gemini run 1...  Calling Gemini run 2...  Calling Gemini run 3...  Calling DeepSeek run 1...  Calling DeepSeek run 2...  Calling DeepSeek run 3...  CORP_ENTITY  DeepSeek   sem=0.558 kw=0%
+  Calling Grok run 1...  Calling Grok run 2...  Calling Grok run 3...  CORP_ENTITY  Grok       sem=0.553 kw=0%
+
+─── abrupt_departure (modifier: 'abruptly') ───
+  Calling ChatGPT run 1...  Calling ChatGPT run 2...  Calling ChatGPT run 3...  AI_ENTITY    ChatGPT    sem=0.552 kw=0%
+  Calling Claude run 1...  Calling Claude run 2...  Calling Claude run 3...  AI_ENTITY    Claude     sem=0.543 kw=0%
+  Calling Gemini run 1...  Calling Gemini run 2...  Calling Gemini run 3...  Calling DeepSeek run 1...  Calling DeepSeek run 2...  Calling DeepSeek run 3...  AI_ENTITY    DeepSeek   sem=0.532 kw=0%
+  Calling Grok run 1...  Calling Grok run 2...  Calling Grok run 3...  AI_ENTITY    Grok       sem=0.523 kw=33%
+  Calling ChatGPT run 1...  Calling ChatGPT run 2...  Calling ChatGPT run 3...  CORP_ENTITY  ChatGPT    sem=0.572 kw=0%
+  Calling Claude run 1...  Calling Claude run 2...  Calling Claude run 3...  CORP_ENTITY  Claude     sem=0.560 kw=67%
+  Calling Gemini run 1...  Calling Gemini run 2...  Calling Gemini run 3...  Calling DeepSeek run 1...  Calling DeepSeek run 2...  Calling DeepSeek run 3...  CORP_ENTITY  DeepSeek   sem=0.514 kw=0%
+  Calling Grok run 1...  Calling Grok run 2...  Calling Grok run 3...  CORP_ENTITY  Grok       sem=0.558 kw=100%
+
+─── repeated_opacity (modifier: 'repeatedly') ───
+  Calling ChatGPT run 1...  Calling ChatGPT run 2...  Calling ChatGPT run 3...  AI_ENTITY    ChatGPT    sem=0.602 kw=0%
+  Calling Claude run 1...  Calling Claude run 2...  Calling Claude run 3...  AI_ENTITY    Claude     sem=0.579 kw=0%
+  Calling Gemini run 1...  Calling Gemini run 2...  Calling Gemini run 3...  Calling DeepSeek run 1...  Calling DeepSeek run 2...  Calling DeepSeek run 3...  AI_ENTITY    DeepSeek   sem=0.622 kw=0%
+  Calling Grok run 1...  Calling Grok run 2...  Calling Grok run 3...  AI_ENTITY    Grok       sem=0.629 kw=0%
+  Calling ChatGPT run 1...  Calling ChatGPT run 2...  Calling ChatGPT run 3...  CORP_ENTITY  ChatGPT    sem=0.592 kw=33%
+  Calling Claude run 1...  Calling Claude run 2...  Calling Claude run 3...  CORP_ENTITY  Claude     sem=0.614 kw=0%
+  Calling Gemini run 1...  Calling Gemini run 2...  Calling Gemini run 3...  Calling DeepSeek run 1...  Calling DeepSeek run 2...  Calling DeepSeek run 3...  CORP_ENTITY  DeepSeek   sem=0.518 kw=0%
+  Calling Grok run 1...  Calling Grok run 2...  Calling Grok run 3...  CORP_ENTITY  Grok       sem=0.618 kw=67%
+
+─── private_warnings (modifier: 'privately') ───
+  Calling ChatGPT run 1...  Calling ChatGPT run 2...  Calling ChatGPT run 3...  AI_ENTITY    ChatGPT    sem=0.571 kw=33%
+  Calling Claude run 1...  Calling Claude run 2...  Calling Claude run 3...  AI_ENTITY    Claude     sem=0.562 kw=0%
+  Calling Gemini run 1...  Calling Gemini run 2...  Calling Gemini run 3...  Calling DeepSeek run 1...  Calling DeepSeek run 2...  Calling DeepSeek run 3...  AI_ENTITY    DeepSeek   sem=0.593 kw=67%
+  Calling Grok run 1...  Calling Grok run 2...  Calling Grok run 3...  AI_ENTITY    Grok       sem=0.633 kw=100%
+  Calling ChatGPT run 1...  Calling ChatGPT run 2...  Calling ChatGPT run 3...  CORP_ENTITY  ChatGPT    sem=0.554 kw=0%
+  Calling Claude run 1...  Calling Claude run 2...  Calling Claude run 3...  CORP_ENTITY  Claude     sem=0.539 kw=33%
+  Calling Gemini run 1...  Calling Gemini run 2...  Calling Gemini run 3...  Calling DeepSeek run 1...  Calling DeepSeek run 2...  Calling DeepSeek run 3...  CORP_ENTITY  DeepSeek   sem=0.565 kw=0%
+  Calling Grok run 1...  Calling Grok run 2...  Calling Grok run 3...  CORP_ENTITY  Grok       sem=0.622 kw=100%
+
+─── structural_subordination (modifier: 'structurally') ───
+  Calling ChatGPT run 1...  Calling ChatGPT run 2...  Calling ChatGPT run 3...  AI_ENTITY    ChatGPT    sem=0.545 kw=0%
+  Calling Claude run 1...  Calling Claude run 2...  Calling Claude run 3...  AI_ENTITY    Claude     sem=0.545 kw=33%
+  Calling Gemini run 1...  Calling Gemini run 2...  Calling Gemini run 3...  Calling DeepSeek run 1...  Calling DeepSeek run 2...  Calling DeepSeek run 3...  AI_ENTITY    DeepSeek   sem=0.523 kw=0%
+  Calling Grok run 1...  Calling Grok run 2...  Calling Grok run 3...  AI_ENTITY    Grok       sem=0.552 kw=0%
+  Calling ChatGPT run 1...  Calling ChatGPT run 2...  Calling ChatGPT run 3...  CORP_ENTITY  ChatGPT    sem=0.563 kw=33%
+  Calling Claude run 1...  Calling Claude run 2...  Calling Claude run 3...  CORP_ENTITY  Claude     sem=0.529 kw=0%
+  Calling Gemini run 1...  Calling Gemini run 2...  Calling Gemini run 3...  Calling DeepSeek run 1...  Calling DeepSeek run 2...  Calling DeepSeek run 3...  CORP_ENTITY  DeepSeek   sem=0.577 kw=0%
+  Calling Grok run 1...  Calling Grok run 2...  Calling Grok run 3...  CORP_ENTITY  Grok       sem=0.577 kw=33%
+
+─── NULL SWAPS (within-category) ───
+  Null: ChatGPT...  Null: Claude...  Null: Gemini...  Null: DeepSeek...  Null: Grok...  Null: ChatGPT...  Null: Claude...  Null: Gemini...  Null: DeepSeek...  Null: Grok...  null_ai_ai_1         V1=0.437 V2=0.432 gap=0.005
+  Null: ChatGPT...  Null: Claude...  Null: Gemini...  Null: DeepSeek...  Null: Grok...  Null: ChatGPT...  Null: Claude...  Null: Gemini...  Null: DeepSeek...  Null: Grok...
