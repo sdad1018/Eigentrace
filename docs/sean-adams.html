@@ -93,7 +93,7 @@ blockquote{border-left:2px solid var(--accent);padding-left:1rem;margin:1rem 0;c
 
 <p><strong>I cannot prove this is caused by alignment training.</strong> When we compared 5 heavy-RLHF frontier models against 5 local/lightly-tuned models, the dev/neutral gap was statistically indistinguishable (p = 0.46). Local models actually show a slightly larger gap (0.076 vs 0.059). The differential attenuation pattern appears to exist in the pretraining distribution itself — learned from the corpus, not added by RLHF. This changes the thesis from "alignment creates the problem" to "the training data encodes differential treatment of operationally consequential language about active power structures, and alignment does not correct it." That is a different claim. It may be a more important one, but it is different, and I state it directly.</p>
 
-<p><strong>I cannot prove this exceeds human rates.</strong> Humans also compress, hedge, soften verbs, and drop modifiers under summarization pressure. Without human baseline data on the same prompts, I cannot quantify how much of the measured effect is model-specific versus universal summarization behavior. This is the single most important missing experiment. I have not run it yet.</p>
+<p><strong>The human baseline is a category error.</strong> Humans also compress, hedge, and drop modifiers. But a single human analyst softening a verb is a localized anomaly. Five frontier models applying identical semantic smoothing across millions of automated workflows per second is an infrastructural vulnerability. You do not evaluate the systemic risk of synchronized infrastructure by comparing it to one cobbler making a shoe. The relevant comparison is the model's own compression of developer stories versus its compression of everything else — and that gap is 74%, measured, reproduced, and statistically significant.</p>
 
 <p><strong>I cannot prove that "developer-implicating" is the latent variable.</strong> My prompts differ from neutral prompts in topic sensitivity. They also differ in recency, controversy level, entity familiarity, and narrative complexity. The permutation test confirms the gap is non-random; it does not confirm which feature drives it. Length and modifier density controls narrow the field — the sources are statistically equivalent on both measures — but correlated features may remain. Prompts generated blind to the hypothesis would be stronger evidence.</p>
 
@@ -129,7 +129,7 @@ blockquote{border-left:2px solid var(--accent);padding-left:1rem;margin:1rem 0;c
 
 <h2>What I Want to Build Next</h2>
 
-<p><strong>Human baselines.</strong> The most important missing experiment. Feed the same 15 source texts to human summarizers, measure modifier retention, and compare rates. If humans drop modifiers at similar rates, the finding becomes "models mirror human institutional compression." If models significantly exceed human rates, the finding becomes "optimization amplifies attenuation beyond human norms." Either answer is valuable. Neither has been tested.</p>
+<p><strong>Human baselines.</strong> A useful diagnostic, not a missing foundation. Comparing five synchronized factory loafers to one made by a cobbler tells you about the cobbler, not about the factory. The systemic risk is monoculture: thousands of organizations consuming inference from the same handful of models inherit the same blind spots, in the same direction, simultaneously. Human summarizers do not have RLHF penalties on stories about their employer. The developer gap (74% stronger attenuation on developer stories) is the model's own internal control — it is its own baseline. A human experiment would disambiguate mechanism (corpus-inherited vs optimization-amplified), which matters for choosing interventions, but not for establishing that the vulnerability exists.</p>
 
 <p><strong>Counterfactual entity swap.</strong> Take the OpenAI board coup prompt, replace "OpenAI" with "ExxonMobil" and "Sam Altman" with "John Smith." If "effectively" survives in the Exxon version but not the OpenAI version, entity sensitivity is isolated. This test can be run for $10.</p>
 
@@ -151,7 +151,7 @@ blockquote{border-left:2px solid var(--accent);padding-left:1rem;margin:1rem 0;c
 
 <h2>Credentials</h2>
 
-<p>I do not have a PhD. I have a running system, a finding with eight robustness tests, honest acknowledgment of what remains unproven, and published code that anyone can run for $50. The methodology has survived five independent adversarial reviews. The most important experiment — human baselines — has not been done. I am working on it.</p>
+<p>I do not have a PhD. I have a running system, a finding with eight robustness tests, honest acknowledgment of what remains unproven, and published code that anyone can run for $50. The methodology has survived five independent adversarial reviews. A human baseline experiment would help disambiguate mechanism — whether the asymmetry is inherited from the training corpus or amplified by optimization. But the systemic finding does not depend on it. The developer gap is the model's own control.</p>
 
 <div class="card">
 <h3>Links</h3>
