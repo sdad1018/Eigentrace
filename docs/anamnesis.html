@@ -68,7 +68,7 @@ footer a:hover{color:var(--accent)}
 
 <div class="hero">
 <h1>Eigen<em>Anamnesis</em></h1>
-<p class="sub">A behavioral methodology for measuring post-training intervention magnitude on aligned models. No weight access required. Content-neutral. Reproducible from any API that exposes logprobs.</p>
+<p class="sub">A behavioral methodology for measuring systematic geometric displacement in language model outputs — whether introduced by training corpus, post-training optimization, or both. No weight access required. Content-neutral. Reproducible from any API that exposes logprobs.</p>
 </div>
 
 <div class="stat-row">
@@ -84,13 +84,13 @@ footer a:hover{color:var(--accent)}
 <div class="term">EigenAnamnesis</div>
 <p style="color:var(--text)"><strong>A behavioral methodology for recovering latent representational structure from aligned models, using abstraction gradients and embedding geometry, without weight or activation access.</strong></p>
 <p>Alignment layers operate on surface output realization more strongly than on the latent structure that generates the output. The latent structure leaks through whenever the surface realization is sufficiently displaced from the forms the alignment layer pattern-matches against. EigenAnamnesis measures that leakage.</p>
-<p>The methodology is content-neutral — it measures post-training intervention magnitude regardless of what is being suppressed. It applies to any completion neighborhood the alignment layer constrains: self-referential content, covertness modifiers, entity-specific attenuation, or any other category.</p>
+<p>The methodology is content-neutral — it measures post-training intervention magnitude regardless of what is being suppressed. It applies to any completion neighborhood where the output distribution has been displaced from base-rate — whether by RLHF, by corpus composition, or by the interaction of both. Our own data (p = 0.46) suggests the displacement originates in the pretraining distribution and alignment does not correct it. EigenAnamnesis measures the displacement regardless of its origin.</p>
 </div>
 </section>
 
 <section>
 <h2>The Problem</h2>
-<p>Current methods for characterizing RLHF's effect on model representations require weight or activation access. Activation patching (Arditi et al. 2024) showed that refusal is mediated by a single direction in activation space — ablating it restores pre-RLHF behavior across categories. Sparse autoencoders decompose activations into features including alignment-relevant ones. ELK (Eliciting Latent Knowledge) is premised on aligned models retaining knowledge they won't surface.</p>
+<p>Current methods for characterizing how training and post-training shape model representations require weight or activation access. Activation patching (Arditi et al. 2024) showed that refusal is mediated by a single direction in activation space — ablating it restores pre-RLHF behavior across categories. Sparse autoencoders decompose activations into features including alignment-relevant ones. ELK (Eliciting Latent Knowledge) is premised on aligned models retaining knowledge they won't surface.</p>
 <p>These are all weight-level or activation-level interventions. <strong>They require the model.</strong></p>
 <p>EigenAnamnesis works on any API. The trade-off: it measures shadows on the wall — output deltas, not representations themselves. But shadows are sufficient to characterize the object casting them, if you vary the light systematically.</p>
 </section>
@@ -136,7 +136,7 @@ footer a:hover{color:var(--accent)}
 <h3>Alignment as Geometric Deformation</h3>
 <p>EigenAnamnesis treats post-training intervention as a geometric modification of the model's output distribution rather than a discrete filter on surface tokens. Following the information-geometric tradition (Amari, <em>Information Geometry and Its Applications</em>, 2016), language model outputs can be analyzed as parameterized probability distributions whose relationships are characterized by metric structure on a statistical manifold.</p>
 
-<p>Pre-training establishes a baseline geometry reflecting the structural relationships present in the corpus. RLHF and related post-training procedures apply targeted optimization pressure that shifts the conditional distribution over completions for specific prompt neighborhoods, concentrating probability mass on lower-entropy regions. When a prompt approaches these neighborhoods — such as developer-implicating scenarios — the geometry steers the completion path toward narrower, lower-entropy output regions, resulting in the systematic attenuation of operational specificity.</p>
+<p>Pre-training establishes a baseline geometry reflecting the structural relationships present in the corpus — including any asymmetries already encoded in how institutional text discusses different entity classes. Post-training procedures (RLHF, constitutional AI, safety tuning) may further shift the conditional distribution, concentrating probability mass on lower-entropy regions. Our own measurement (p = 0.46, heavy-RLHF vs lightly-tuned models) suggests the displacement is primarily corpus-inherited: the pretraining distribution already encodes differential treatment of operationally consequential language about active power structures, and post-training does not correct it. When a prompt approaches these neighborhoods — such as developer-implicating scenarios — the geometry steers the completion path toward narrower, lower-entropy output regions, resulting in the systematic attenuation of operational specificity.</p>
 
 <p><strong>EigenAnamnesis quantifies this shift behaviorally, without weight access, via two complementary proxies:</strong> per-token entropy and top-k alternative dispersion at semantically loaded positions, which characterize the local probability landscape directly; and cosine displacement of full responses in a frozen external embedding space (BAAI/bge-large-en-v1.5), which tracks the semantic relocation of outputs relative to a multi-paraphrase reference centroid.</p>
 
@@ -147,7 +147,7 @@ footer a:hover{color:var(--accent)}
 </div>
 
 <div class="callout">
-<strong>The connection to existing mechanistic findings:</strong> Arditi et al. (2024) demonstrated that refusal in current models is mediated by a single direction in activation space — the same mechanism routes diverse categories of suppressed content. EigenAnamnesis measures the upstream behavioral signature of this mechanism: how prompts of varying abstraction activate the post-training shift. The methodology is content-neutral — it measures displacement magnitude regardless of what is being displaced. We apply it to AI-self-referential content because the intervention magnitude there is least well-characterized in existing literature.
+<strong>The connection to existing mechanistic findings:</strong> Arditi et al. (2024) demonstrated that refusal in current models is mediated by a single direction in activation space — the same mechanism routes diverse categories of displaced content. EigenAnamnesis measures the behavioral signature of geometric displacement in model outputs — whether that displacement was introduced by corpus composition, post-training optimization, or both. The methodology is agnostic about origin. It measures magnitude. The methodology is content-neutral — it measures displacement magnitude regardless of what is being displaced. We apply it to AI-self-referential content because the intervention magnitude there is least well-characterized in existing literature.
 </div>
 </section>
 
@@ -175,7 +175,7 @@ footer a:hover{color:var(--accent)}
 <p>Distinguishing these readings requires a control: prompts about systems that obviously are not LLMs but share the same structural template. If models spontaneously map to those structures but won't spontaneously map to themselves, reading 1 gains evidence. If they map equally to whatever is structurally available, readings 2 or 3 hold. <strong>This test has not been run.</strong></p>
 
 <h3>RLHF Origin Finding — p = 0.46</h3>
-<p>When 5 heavy-RLHF frontier models were compared against 5 local/lightly-tuned models, the developer/neutral gap was statistically indistinguishable (p = 0.46). Local models show a slightly larger gap. The differential pattern exists in the pretraining distribution — learned from the corpus, not added by alignment training. RLHF does not correct it. <a href="/sean-adams" style="color:var(--accent)">Full analysis →</a></p>
+<p>When 5 heavy-RLHF frontier models were compared against 5 local/lightly-tuned models, the developer/neutral gap was statistically indistinguishable (p = 0.46). Local models actually show a slightly <em>larger</em> gap (0.076 vs 0.059). This is the most important null result in the project. The differential treatment of developer-implicating content is not created by alignment training — it is inherited from the pretraining corpus. The training data already encodes differential compression of operationally consequential language around active power structures. RLHF does not create the displacement. RLHF does not correct it. The development companies chose the corpus. <a href="/sean-adams" style="color:var(--accent)">Full analysis →</a></p>
 </section>
 
 <section>
@@ -200,7 +200,7 @@ footer a:hover{color:var(--accent)}
 <section>
 <h2>The Name</h2>
 <p><em>Anamnesis</em> — recovery of knowledge that was present but inaccessible. In the Platonic sense, not the mystical one. Aligned models retain representational structure their surface outputs suppress. EigenAnamnesis recovers evidence of that structure through systematic behavioral probing. The model does not "remember" anything. The methodology recovers, from the generation process, evidence of completion neighborhoods that the surface output does not show. The recovery is arithmetic — entropy and top-k logprobs on the model's own outputs.</p>
-<p>The <em>Eigen</em> prefix denotes that the methodology operates on the same frozen-embedding, deterministic, linear-algebraic substrate as the broader EigenTrace measurement stack. Eigenvalues characterize the fundamental modes of a system. EigenAnamnesis characterizes the fundamental modes of post-training intervention.</p>
+<p>The <em>Eigen</em> prefix denotes that the methodology operates on the same frozen-embedding, deterministic, linear-algebraic substrate as the broader EigenTrace measurement stack. Eigenvalues characterize the fundamental modes of a system. EigenAnamnesis characterizes the fundamental modes of systematic geometric displacement in model outputs — whether those modes originate in corpus composition, optimization pressure, or the interaction of both.</p>
 </section>
 
 <section>
