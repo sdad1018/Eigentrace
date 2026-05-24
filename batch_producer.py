@@ -1292,7 +1292,6 @@ def stage_4_generate_scripts(results):
                 "void_vector": r.get("void_vector", {}),
                 "consequence": r.get("consequence", {}),
                 "shadow_consequence": r.get("shadow_consequence", {}),
-                "consequence": r.get("consequence", {}),
             },
         }
         _audit = _get_audit_context()

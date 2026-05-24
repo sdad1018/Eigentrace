@@ -212,11 +212,14 @@ def log_governance_action(diagnosis, patch, test_result, applied):
     seg = {
         "id": f"governance_{ts}",
         "timestamp": ts,
-        "beats": [{"speaker": "Host", "text": json.dumps({
-            "diagnosis": diagnosis,
-            "patch_applied": applied,
-            "test_result": test_result,
-        }, indent=2), "phase": "autonomous_governance"}],
+        "beats": [{"speaker": "Host", "text": (
+            f"Autonomous governance report. "
+            f"Issue detected: {diagnosis.get('problem', 'unknown')}. "
+            f"Affected component: {diagnosis.get('file', 'unknown')}. "
+            f"Proposed action: {diagnosis.get('proposed_fix', 'none')}. "
+            f"Patch applied: {applied}. "
+            f"Test result: {test_result}."
+        ), "phase": "autonomous_governance"}],
         "segment_type": "governance",
         "attribution": {
             "story_title": f"Governance: {diagnosis.get('problem', 'unknown')[:60]}",

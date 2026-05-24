@@ -63,7 +63,27 @@ def compute_surprise(text, top_k=3):
             return 0.5  # Not enough data to judge
         
         # Query ChromaDB for most similar existing segments
-        results = col.query(query_texts=[text[:500]], n_results=top_k)
+        results = col.query(query_texts=[text[:500]], n_results=top_k * 2)
+        # Filter out idle segments from RAG results
+        if results and results.get("documents"):
+            filtered_docs = []
+            filtered_metas = []
+            filtered_dists = []
+            docs = results["documents"][0] if results["documents"] else []
+            metas = results["metadatas"][0] if results.get("metadatas") else [{}] * len(docs)
+            dists = results["distances"][0] if results.get("distances") else [1.0] * len(docs)
+            for doc, meta, dist in zip(docs, metas, dists):
+                title = (meta.get("story_title", "") or "").lower()
+                if "idle reflection" in title or "rem consolidation" in title or "weekly compression" in title:
+                    continue  # Skip self-referential segments
+                filtered_docs.append(doc)
+                filtered_metas.append(meta)
+                filtered_dists.append(dist)
+            results = {
+                "documents": [filtered_docs[:top_k]],
+                "metadatas": [filtered_metas[:top_k]],
+                "distances": [filtered_dists[:top_k]],
+            }
         
         if not results or not results.get('distances'):
             return 0.5
