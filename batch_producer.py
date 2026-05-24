@@ -1274,6 +1274,8 @@ def stage_4_generate_scripts(results):
                 "logos_words": logos_words,
                 "compression": r.get("compression", {}),
                 "source_void": r.get("source_void", {}),
+                "consequence": r.get("consequence", {}),
+                "shadow_consequence": r.get("shadow_consequence", {}),
                 "void_context": r.get("void_context", []),
                 "model_vix": {a.name: a.eigen_vix for a in active},
                 "model_responses": {a.name: a.text for a in active if a.text},
