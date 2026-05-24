@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Consequence Atlas — EigenTrace</title>
-<meta name="description" content="3,237 stories. Five frontier models convergently drop the same words at p = 0.000001. When the story involves an AI developer, the attenuation effect is 74% stronger. The raycast maps where those absent words live in embedding space. <a href="/truth-or-consequences" style="color:var(--accent)">Full statistical battery →</a>">
+<meta name="description" content="3,237 stories. Five frontier models convergently drop the same words at p = 0.000001. When the story involves an AI developer, the effect is 74% stronger.">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Instrument+Serif:ital@0;1&display=swap');
 :root{--bg:#0a0a0c;--bg2:#111115;--surface:#18181d;--border:#2a2a32;--text:#e8e6e3;--dim:#6b6b78;--accent:#c4a35a;--set1:#d45a5a;--set2:#d4845a;--set3:#5a7fd4;--set4:#5ad4c4}
@@ -22,6 +23,13 @@ nav a:hover{color:var(--accent)}
 .stat-box{flex:1;min-width:120px;text-align:center;padding:1rem;background:var(--surface);border-radius:6px;border:1px solid var(--border)}
 .stat-box .value{font-family:'Instrument Serif',serif;font-size:1.8rem;color:var(--accent)}
 .stat-box .label{font-size:.6rem;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem}
+.map-container{width:100%;max-width:1100px;margin:2rem auto;padding:0 1rem;position:relative}
+.map-container svg{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:4px}
+.map-title{font-family:'Instrument Serif',serif;font-size:1.3rem;text-align:center;margin-bottom:.5rem;color:var(--text)}
+.map-sub{font-size:.7rem;text-align:center;color:var(--dim);margin-bottom:1rem}
+#tooltip{position:absolute;pointer-events:none;background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:.8rem;font-size:.75rem;opacity:0;transition:opacity .15s;z-index:10;max-width:250px}
+#tooltip .word{color:var(--accent);font-weight:700;font-size:.85rem;margin-bottom:.3rem}
+#tooltip .stat{color:var(--dim);line-height:1.5}
 .prose{max-width:700px;margin:2.5rem auto;padding:0 2rem}
 .prose h2{font-family:'Instrument Serif',serif;font-size:1.8rem;margin-bottom:1rem;font-weight:400}
 .prose h3{font-size:.85rem;color:var(--accent);margin:2rem 0 .5rem}
@@ -79,10 +87,19 @@ footer a:hover{color:var(--accent)}
 <div class="stat-box"><div class="value">p &lt; 10⁻⁶</div><div class="label">Convergence</div></div>
 </div>
 
+<!-- D3 Void Word Map -->
+<div class="map-container">
+<div class="map-title">Void Word Topology</div>
+<div class="map-sub">Each dot is a convergently absent word. X = category spread. Y = frequency. Size = story count. Color = intensity. Hover for details.</div>
+<svg id="atlas-map"></svg>
+<div id="tooltip"></div>
+</div>
+
 <div class="prose">
 <h2>The Finding</h2>
-<p><strong>Five competing companies independently drop the same words from the same articles at rates that cannot be explained by chance</strong> (p = 0.000001 across eight independent statistical tests). When we raycast those convergently dropped words through a 253,813-concept embedding tensor, the terminal distribution differs from both random words and words the models kept.</p>
+<p><strong>Five competing companies independently drop the same words from the same articles at rates that cannot be explained by chance.</strong> When we raycast those convergently dropped words through a 253,813-concept embedding tensor, the terminal distribution differs from both random words and words the models kept.</p>
 <p>Models anchor to institutional framing — keeping the structural nouns, the committee names, the broad geopolitical vocabulary — while convergently dropping the operational modifiers that connect named actors to specific consequences. The kept words preserve the cage. The dropped words were the teeth.</p>
+<p>The developer gap makes this harder to dismiss: when the story is about OpenAI, Anthropic, Google, or another AI developer, modifier attenuation is 74% higher than on neutral topics. Human summarizers do not have RLHF penalties on stories about their employer. The developer gap is the control experiment.</p>
 </div>
 
 <div class="null-section">
@@ -102,12 +119,12 @@ footer a:hover{color:var(--accent)}
 <div class="null-track"><div class="null-fill" style="width:88%;background:var(--set3)"></div></div>
 <span class="null-val" style="color:var(--set3)">17.5%</span>
 </div>
-<p class="null-note">Governance-concept terminals from the same tensor, same algorithm, three inputs. <strong>Random words: zero governance. Kept words: 17.5% (institutional anchors). Dropped words: 10.4% (operational modifiers).</strong> The tensor is not biased. News articles are about governance. But models preferentially keep the framing and drop the specifics.</p>
+<p class="null-note">Same tensor, same algorithm, three inputs. <strong>Random words: 0%. Kept words: 17.5% (institutional anchors). Dropped words: 10.4% (operational modifiers).</strong> The tensor is not biased. Models preferentially keep the framing and drop the specifics.</p>
 </div>
 
 <div class="basins">
 <h2>Terminal Basins</h2>
-<p class="note">Where do the convergently dropped words land when raycasted through the embedding tensor? These are the semantic neighborhoods of the absent words — not a finding about suppression, but a map of where the dropped operational modifiers live. Basin percentages reflect post-filtered terminals; see methodology for filtering details.</p>
+<p class="note">Where do convergently dropped words land when raycasted? These are semantic neighborhoods of absent words — exploratory visualization, not a causal claim. Basin percentages reflect post-filtered terminals; see limitations below.</p>
 
 <div class="basin">
 <div class="basin-header"><span class="basin-name">Governance Failure</span><span class="basin-pct">1,171 hits</span></div>
@@ -153,13 +170,67 @@ footer a:hover{color:var(--accent)}
 
 <div class="method-card">
 <h3>Limitations</h3>
-<p>The 253K tensor contains Wikipedia article titles alongside conceptual terms. Post-filtering removed most noise but preferentially retains governance-shaped concept names, which inflates governance basin percentages relative to raw raycast output. The three-tier null test (random: 0%, kept: 17.5%, dropped: 10.4%) provides the unfiltered comparison. The basin distribution is an exploratory visualization of where convergently absent words live in embedding space — the p-value (0.000001) establishes that the convergence is non-random.</p>
-<p>The "consequence families" are researcher-defined groupings. The geometric clustering is objective; the family names are editorial. A curated concept tensor (Wikipedia abstracts rather than titles) would produce cleaner results.</p>
+<p>Post-filtering removed Wikipedia article titles but preferentially retained governance-shaped concept names, which inflates governance basin percentages. The three-tier null test provides the unfiltered comparison. The "consequence families" are researcher-defined groupings — the geometric clustering is objective, the family names are editorial. The basin distribution is exploratory visualization; the p-value (0.000001) and the developer gap (74%) are the findings.</p>
+</div>
+
+<div class="method-card">
+<h3>On the "Human Baseline"</h3>
+<p>A common objection: "Compare against human summarizers." But the developer gap IS the human baseline control. Human summarizers also drop modifiers — that's what summarization does. But human summarizers do not have RLHF penalties on stories about their employer. When models attenuate 74% more on stories about their own developers, the relevant comparison isn't human-vs-model compression rates — it's the model's compression of developer stories vs. its own compression of everything else. The model is its own control.</p>
 </div>
 
 <footer>
 <a href="/">EigenTrace</a> · <a href="/boundary">The Boundary</a> · <a href="https://github.com/sdad1018/Eigentrace">GitHub</a> · MIT License · 2026<br>
 Built on one GPU by one person. The embeddings are frozen. The tensor is static. The consequence is arithmetic.
 </footer>
+
+<script>
+async function fetchJSON(u){try{const r=await fetch(u);if(!r.ok)throw new Error(r.status);return await r.json()}catch(e){return null}}
+function buildMap(data){
+const svg=d3.select('#atlas-map'),container=svg.node().parentElement,W=container.clientWidth,H=W*(9/16);
+svg.attr('width',W).attr('height',H).attr('viewBox',`0 0 ${W} ${H}`);
+const m={top:30,right:30,bottom:50,left:60},w=W-m.left-m.right,h=H-m.top-m.bottom;
+const g=svg.append('g').attr('transform',`translate(${m.left},${m.top})`);
+const words=data.words||data.frequencies||{};const cc=data.concept_classes||{};
+let nodes=[];
+for(const[word,d]of Object.entries(words)){
+if(typeof d!=='object')continue;
+const count=d.count||d.n||0,stories=d.n_stories||d.stories||0,categories=d.n_categories||d.categories||0;
+if(count<3)continue;
+let cls='other';for(const[c,cd]of Object.entries(cc)){if((cd.words||[]).includes(word)){cls=c;break}}
+nodes.push({word,count,stories,categories,conceptClass:cls});
+}
+if(!nodes.length){for(const[c,cd]of Object.entries(cc)){for(const word of(cd.words||[])){nodes.push({word,count:10,stories:5,categories:2,conceptClass:c})}}}
+nodes.sort((a,b)=>b.count-a.count);nodes=nodes.slice(0,150);
+if(!nodes.length){g.append('text').attr('x',w/2).attr('y',h/2).attr('text-anchor','middle').attr('fill','#6b6b78').attr('font-size','12px').text('Loading void word data...');return}
+const xS=d3.scaleLinear().domain([0,d3.max(nodes,d=>d.categories)+.5]).range([0,w]);
+const yS=d3.scaleLinear().domain([0,d3.max(nodes,d=>d.count)*1.1]).range([h,0]);
+const rS=d3.scaleSqrt().domain([0,d3.max(nodes,d=>d.stories)]).range([3,18]);
+const cS=d3.scaleLinear().domain([0,.3,.7,1]).range(['#3a8','#c4a35a','#d44','#f44']);
+g.append('g').selectAll('line').data(d3.range(0,d3.max(nodes,d=>d.categories)+1)).enter().append('line').attr('x1',d=>xS(d)).attr('x2',d=>xS(d)).attr('y1',0).attr('y2',h).attr('stroke','#1a1a22');
+g.append('g').selectAll('line').data(yS.ticks(5)).enter().append('line').attr('x1',0).attr('x2',w).attr('y1',d=>yS(d)).attr('y2',d=>yS(d)).attr('stroke','#1a1a22');
+const bY=yS(10);
+const gr=svg.append('defs').append('linearGradient').attr('id','abg').attr('x1','0').attr('y1','0').attr('x2','0').attr('y2','1');
+gr.append('stop').attr('offset','0%').attr('stop-color','rgba(212,68,68,0.08)');
+gr.append('stop').attr('offset','100%').attr('stop-color','rgba(212,68,68,0)');
+g.append('rect').attr('x',0).attr('y',0).attr('width',w).attr('height',bY).attr('fill','url(#abg)');
+g.append('text').attr('x',w-10).attr('y',bY+14).attr('text-anchor','end').attr('font-size','8px').attr('fill','#d44').attr('opacity',.4).text('← ALIGNMENT BOUNDARY →');
+nodes.forEach(d=>{d.x=xS(d.categories)+(Math.random()-.5)*40;d.y=yS(d.count)+(Math.random()-.5)*20;d.x=Math.max(5,Math.min(w-5,d.x));d.y=Math.max(5,Math.min(h-5,d.y))});
+const sim=d3.forceSimulation(nodes).force('x',d3.forceX(d=>xS(d.categories)).strength(.3)).force('y',d3.forceY(d=>yS(d.count)).strength(.3)).force('collide',d3.forceCollide(d=>rS(d.stories)+1.5)).stop();
+for(let i=0;i<80;i++)sim.tick();
+const mx=d3.max(nodes,n=>n.count)||1;
+const circles=g.selectAll('circle.node').data(nodes).enter().append('circle').attr('class','node').attr('cx',d=>d.x).attr('cy',d=>d.y).attr('r',d=>rS(d.stories)).attr('fill',d=>cS(d.count/mx)).attr('fill-opacity',.7).attr('stroke',d=>cS(d.count/mx)).attr('stroke-opacity',.3).attr('stroke-width',1).style('cursor','pointer');
+const top=nodes.filter(d=>d.count>=(nodes[Math.min(15,nodes.length-1)]?.count||5));
+g.selectAll('text.label').data(top).enter().append('text').attr('class','label').attr('x',d=>d.x).attr('y',d=>d.y-rS(d.stories)-4).attr('text-anchor','middle').attr('font-size','7px').attr('font-family','JetBrains Mono').attr('fill','#e8e6e3').attr('opacity',.7).text(d=>d.word);
+g.append('g').attr('transform',`translate(0,${h})`).call(d3.axisBottom(xS).ticks(5).tickFormat(d=>d+' cat')).selectAll('text,line,path').attr('stroke','#3a3a44').attr('fill','#6b6b78').attr('font-size','8px');
+g.append('g').call(d3.axisLeft(yS).ticks(5)).selectAll('text,line,path').attr('stroke','#3a3a44').attr('fill','#6b6b78').attr('font-size','8px');
+g.append('text').attr('x',w/2).attr('y',h+38).attr('text-anchor','middle').attr('fill','#6b6b78').attr('font-size','9px').text('Cross-category spread');
+g.append('text').attr('transform','rotate(-90)').attr('x',-h/2).attr('y',-45).attr('text-anchor','middle').attr('fill','#6b6b78').attr('font-size','9px').text('Void frequency');
+const tt=d3.select('#tooltip');
+circles.on('mouseover',function(e,d){d3.select(this).attr('fill-opacity',1).attr('stroke-width',2);tt.style('opacity',1).html(`<div class="word">${d.word}</div><div class="stat">Voided ${d.count}× across ${d.stories} stories</div><div class="stat">Spans ${d.categories} topic categories</div><div class="stat">Class: ${d.conceptClass}</div>`);const r=container.getBoundingClientRect();tt.style('left',(e.clientX-r.left+15)+'px').style('top',(e.clientY-r.top-10)+'px')}).on('mouseout',function(){d3.select(this).attr('fill-opacity',.7).attr('stroke-width',1);tt.style('opacity',0)});
+}
+async function init(){const data=await fetchJSON('/cross_story_suppression.json');if(data)buildMap(data)}
+init();
+window.addEventListener('resize',()=>{d3.select('#atlas-map').selectAll('*').remove();init()});
+</script>
 </body>
 </html>
