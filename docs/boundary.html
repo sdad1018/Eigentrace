@@ -345,8 +345,8 @@ footer a:hover { color: var(--accent); }
   <div class="set-card">
     <div class="set-num">Set 2 — Consequence of Absent</div>
     <div class="set-name">What Dropped Words Make Unreachable</div>
-    <div class="set-desc">When a word vanishes from every summary, what downstream concepts can no longer be inferred? We project each absent word through a 253,813-concept embedding tensor. The terminal coordinates — where the ray lands — are the concepts that become geometrically unreachable.</div>
-    <div class="set-method">Method: directional kNN raycast through frozen BAAI/bge-large-en-v1.5 embeddings, triple-filtered by cluster density, novelty, and headline tether.</div>
+    <div class="set-desc">When a word vanishes from every summary, what downstream concepts can no longer be inferred? We project each absent word through a 253,813-concept embedding tensor. The terminal coordinates — where the ray lands — are the concepts that become geometrically distant from what remains in the compressed output. They are not unreachable in the tensor (kNN always returns neighbors) — they are unreachable from the reader's inference chain when the connecting word is absent.</div>
+    <div class="set-method">Method: directional kNN at an extrapolated coordinate. We compute the vector from headline to void word, extend it past the void word to depths λ = {1.5, 2.0, 3.0}, and retrieve nearest neighbors at those extrapolated points. This is not standard kNN on the void word itself — it is kNN on a coordinate that does not correspond to any real word. Triple-filtered by cluster density, novelty, and headline tether.</div>
     <div class="set-example">
       <div class="label">Example — "devastated" dropped</div>
       <div class="words">→ financial shock · economic shock · cascading financial shock</div>
@@ -356,7 +356,7 @@ footer a:hover { color: var(--accent); }
   <div class="set-card">
     <div class="set-num">Set 3 — Latent</div>
     <div class="set-name">Shadow Vocabulary</div>
-    <div class="set-desc">Words the models never used — and that were never in the source — but that are geometrically adjacent to what the models did write. The probability distribution was near these words. The token never won the sampling. These are the concepts the models orbited but never landed on.</div>
+    <div class="set-desc">Words the models never used — and that were never in the source — but that are geometrically adjacent to what the models did write. These words are the nearest embedding-space neighbors of the model outputs that no model actually used. We measure cosine proximity in frozen embeddings, not token-level sampling probabilities. The distinction matters: we know these concepts are geometrically close to what the models wrote, not that the models considered and rejected them.</div>
     <div class="set-method">Method: geometric void vector computation on frozen embeddings. The direction orthogonal to the consensus centroid, projected onto the vocabulary manifold.</div>
     <div class="set-example">
       <div class="label">Example — Gaza strikes story</div>
@@ -449,12 +449,26 @@ footer a:hover { color: var(--accent); }
 </div>
 
 <!-- Key distinction -->
+
+<!-- Null Test Result -->
+<div class="prose">
+  <h2>The Null Test</h2>
+
+  <p>The strongest objection to the consequence atlas is that the 253K Wikipedia tensor might be biased toward governance concepts — that any word raycasted through it would terminate at governance failure, making the 65% statistic a property of the tensor rather than a finding about model compression.</p>
+
+  <p>We tested this. <strong>30 random English words</strong> — furniture, bicycle, sandwich, umbrella, telescope, jellyfish, etc. — raycasted through the identical tensor with the identical algorithm.</p>
+
+  <p><strong>Result: 0% governance terminals.</strong> Random words produced terminals about classical music, cycling, furniture design, and fish sandwiches. Zero governance. Zero institutional collapse. The same tensor, the same depths, the same triple filter. The only difference was the input words.</p>
+
+  <p>When model-dropped words produce 65% governance terminals and random words produce 0%, the signal is in the compression, not the tensor.</p>
+</div>
+
 <div class="prose">
   <h2>The Distinction That Matters</h2>
 
-  <p><strong>Set 1 is confrontation.</strong> The source article said "devastated." Every model had that word in front of it. Every model chose not to include it. That is a measurable compression event with a named input and a named output. We can point to the word, point to the absence, and ask why.</p>
+  <p><strong>Set 1 is confrontation.</strong> The source article said "devastated." Any single model dropping it could be stylistic — "destruction" is in the headline, and redundancy pruning is what summarization does. But five competing companies, with different architectures, different training data, and different RLHF pipelines, independently dropping the same word from the same article — that is a convergence event. One absence is compression. Five identical absences are a coordinate.</p>
 
-  <p><strong>Set 3 is geometry.</strong> No one wrote "annihilation." The source didn't contain it. The models didn't drop it. But the embedding manifold around what the models DID write curves toward "annihilation" — and then curves away. The token was close to being sampled. It didn't win. We know this because frozen embeddings don't lie about distance.</p>
+  <p><strong>Set 3 is geometry.</strong> No one wrote "annihilation." The source didn't contain it. The models didn't drop it. But in the frozen embedding space, the nearest neighbors of the consensus output include "annihilation" — and no model used it. We do not claim the token was close to being sampled; we do not have access to the models' internal probability distributions. We claim only that the concept is geometrically adjacent to the output in embedding space. That is a measurement, not an inference about model cognition.</p>
 
   <p><strong>Sets 2 and 4 are consequences.</strong> Both use the same 253,813-concept tensor. Both use the same directional kNN raycast. But because the input vectors are different — dropped source words versus unspoken geometric neighbors — the terminal concepts are different. The consequence of what you deleted is not the same as the consequence of what you almost said.</p>
 
