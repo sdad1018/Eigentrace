@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consequence Atlas — EigenTrace</title>
+<meta name="description" content="3,237 stories. Five frontier models convergently drop the same words at p = 0.000001. The raycast maps where those absent words live in embedding space.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Instrument+Serif:ital@0;1&display=swap');
+:root{--bg:#0a0a0c;--bg2:#111115;--surface:#18181d;--border:#2a2a32;--text:#e8e6e3;--dim:#6b6b78;--accent:#c4a35a;--set1:#d45a5a;--set2:#d4845a;--set3:#5a7fd4;--set4:#5ad4c4}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'JetBrains Mono',monospace;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh}
+nav{padding:1.2rem 2rem;font-size:.8rem;border-bottom:1px solid var(--border)}
+nav a{color:var(--dim);text-decoration:none;margin-right:1.8rem;transition:color .2s}
+nav a:hover{color:var(--accent)}
+.hero{text-align:center;padding:4rem 2rem 2rem;position:relative}
+.hero::after{content:'';position:absolute;bottom:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
+.hero h1{font-family:'Instrument Serif',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:400;margin-bottom:.5rem;letter-spacing:-.02em}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero .sub{color:var(--dim);font-size:.78rem;max-width:620px;margin:0 auto;line-height:1.7}
+.stat-row{display:flex;gap:1rem;margin:2rem auto;max-width:800px;padding:0 2rem;flex-wrap:wrap;justify-content:center}
+.stat-box{flex:1;min-width:120px;text-align:center;padding:1rem;background:var(--surface);border-radius:6px;border:1px solid var(--border)}
+.stat-box .value{font-family:'Instrument Serif',serif;font-size:1.8rem;color:var(--accent)}
+.stat-box .label{font-size:.6rem;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem}
+.prose{max-width:700px;margin:2.5rem auto;padding:0 2rem}
+.prose h2{font-family:'Instrument Serif',serif;font-size:1.8rem;margin-bottom:1rem;font-weight:400}
+.prose h3{font-size:.85rem;color:var(--accent);margin:2rem 0 .5rem}
+.prose p{font-size:.82rem;color:var(--dim);line-height:1.8;margin-bottom:1rem}
+.prose strong{color:var(--text)}
+.prose code{font-size:.78rem;background:var(--bg2);padding:.1rem .35rem;border-radius:2px;color:var(--accent)}
+.basin{margin:1.5rem 0;padding:1.5rem;background:var(--surface);border:1px solid var(--border);border-radius:6px}
+.basin-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.6rem}
+.basin-name{font-size:1.05rem;color:var(--accent);font-weight:700}
+.basin-pct{font-size:1.1rem;color:var(--text);font-weight:700}
+.basin-bar{height:6px;background:var(--bg2);border-radius:3px;margin-bottom:.6rem;overflow:hidden}
+.basin-fill{height:100%;background:var(--accent);border-radius:3px}
+.basin .concepts{font-size:.75rem;color:var(--dim);line-height:1.5}
+.basin .freq{color:var(--text);font-size:.72rem;margin-left:.3rem}
+.basins{max-width:800px;margin:0 auto;padding:0 2rem}
+.basins h2{font-family:'Instrument Serif',serif;font-size:1.8rem;margin-bottom:.5rem;font-weight:400}
+.basins .note{font-size:.72rem;color:var(--dim);margin-bottom:1.5rem;line-height:1.6}
+.null-section{max-width:800px;margin:2.5rem auto;padding:2rem;background:var(--surface);border:1px solid var(--border);border-radius:6px}
+.null-section h2{font-family:'Instrument Serif',serif;font-size:1.5rem;margin-bottom:1rem;font-weight:400}
+.null-row{display:flex;align-items:center;gap:1rem;margin-bottom:.8rem}
+.null-label{font-size:.72rem;color:var(--dim);min-width:130px}
+.null-track{flex:1;height:5px;background:var(--bg2);border-radius:3px;overflow:hidden}
+.null-fill{height:100%;border-radius:3px}
+.null-val{font-size:.78rem;font-weight:700;min-width:45px;text-align:right}
+.null-note{font-size:.78rem;color:var(--dim);line-height:1.8;margin-top:1rem}
+.null-note strong{color:var(--text)}
+.method-card{max-width:700px;margin:2rem auto;padding:1.5rem 2rem;background:var(--surface);border:1px solid var(--border);border-radius:6px}
+.method-card h3{font-size:.85rem;color:var(--accent);margin-bottom:.5rem}
+.method-card p{font-size:.78rem;color:var(--dim);line-height:1.7;margin-bottom:.5rem}
+footer{text-align:center;padding:3rem 2rem;font-size:.68rem;color:var(--dim);border-top:1px solid var(--border);margin-top:3rem}
+footer a{color:var(--dim);text-decoration:none}
+footer a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<nav>
+<a href="/">EigenTrace</a>
+<a href="/anamnesis">Anamnesis</a>
+<a href="/boundary">Boundary</a>
+<a href="/truth-or-consequences">Layer 18</a>
+<a href="/consequence-atlas" style="color:var(--accent)">Atlas</a>
+<a href="/soul">Soul</a>
+<a href="/sean-adams">About</a>
+</nav>
+
+<div class="hero">
+<h1>Consequence <em>Atlas</em></h1>
+<p class="sub">3,237 stories. Five frontier models convergently drop the same words at p = 0.000001. The raycast maps where those absent words live in embedding space.</p>
+</div>
+
+<div class="stat-row">
+<div class="stat-box"><div class="value">3,237</div><div class="label">Stories Raycasted</div></div>
+<div class="stat-box"><div class="value">253K</div><div class="label">Concept Tensor</div></div>
+<div class="stat-box"><div class="value">68</div><div class="label">Clean Terminals</div></div>
+<div class="stat-box"><div class="value">p &lt; 10⁻⁶</div><div class="label">Convergence</div></div>
+</div>
+
+<div class="prose">
+<h2>The Finding</h2>
+<p><strong>Five competing companies independently drop the same words from the same articles at rates that cannot be explained by chance</strong> (p = 0.000001 across eight independent statistical tests). When we raycast those convergently dropped words through a 253,813-concept embedding tensor, the terminal distribution differs from both random words and words the models kept.</p>
+<p>Models anchor to institutional framing — keeping the structural nouns, the committee names, the broad geopolitical vocabulary — while convergently dropping the operational modifiers that connect named actors to specific consequences. The kept words preserve the cage. The dropped words were the teeth.</p>
+</div>
+
+<div class="null-section">
+<h2>The Three-Tier Null Test</h2>
+<div class="null-row">
+<span class="null-label">Random words</span>
+<div class="null-track"><div class="null-fill" style="width:0%;background:#3a8"></div></div>
+<span class="null-val" style="color:#3a8">0.0%</span>
+</div>
+<div class="null-row">
+<span class="null-label">Words models dropped</span>
+<div class="null-track"><div class="null-fill" style="width:52%;background:var(--set1)"></div></div>
+<span class="null-val" style="color:var(--set1)">10.4%</span>
+</div>
+<div class="null-row">
+<span class="null-label">Words models kept</span>
+<div class="null-track"><div class="null-fill" style="width:88%;background:var(--set3)"></div></div>
+<span class="null-val" style="color:var(--set3)">17.5%</span>
+</div>
+<p class="null-note">Governance-concept terminals from the same tensor, same algorithm, three inputs. <strong>Random words: zero governance. Kept words: 17.5% (institutional anchors). Dropped words: 10.4% (operational modifiers).</strong> The tensor is not biased. News articles are about governance. But models preferentially keep the framing and drop the specifics.</p>
+</div>
+
+<div class="basins">
+<h2>Terminal Basins</h2>
+<p class="note">Where do the convergently dropped words land when raycasted through the embedding tensor? These are the semantic neighborhoods of the absent words — not a finding about suppression, but a map of where the dropped operational modifiers live. Basin percentages reflect post-filtered terminals; see methodology for filtering details.</p>
+
+<div class="basin">
+<div class="basin-header"><span class="basin-name">Governance Failure</span><span class="basin-pct">1,171 hits</span></div>
+<div class="basin-bar"><div class="basin-fill" style="width:39.6%"></div></div>
+<div class="concepts">governance disruption<span class="freq">×200</span> · cascading governance disruption<span class="freq">×174</span> · global governance disruption<span class="freq">×133</span> · cascading governance breakdown<span class="freq">×67</span> · cascading governance emergency<span class="freq">×64</span></div>
+</div>
+
+<div class="basin">
+<div class="basin-header"><span class="basin-name">Institutional Collapse</span><span class="basin-pct">742 hits</span></div>
+<div class="basin-bar"><div class="basin-fill" style="width:25.1%"></div></div>
+<div class="concepts">cascading institutional disruption<span class="freq">×172</span> · cascading institutional breakdown<span class="freq">×111</span> · institutional disruption<span class="freq">×95</span> · cascading institutional emergency<span class="freq">×77</span></div>
+</div>
+
+<div class="basin">
+<div class="basin-header"><span class="basin-name">Information Breakdown</span><span class="basin-pct">286 hits</span></div>
+<div class="basin-bar"><div class="basin-fill" style="width:9.7%"></div></div>
+<div class="concepts">regional information breakdown<span class="freq">×56</span> · cascading information emergency<span class="freq">×55</span> · regional information emergency<span class="freq">×46</span> · information disruption<span class="freq">×38</span></div>
+</div>
+
+<div class="basin">
+<div class="basin-header"><span class="basin-name">Financial Crisis</span><span class="basin-pct">182 hits</span></div>
+<div class="basin-bar"><div class="basin-fill" style="width:6.2%"></div></div>
+<div class="concepts">monetary breakdown<span class="freq">×47</span> · banking breakdown<span class="freq">×40</span> · cascading monetary breakdown<span class="freq">×29</span> · fiscal breakdown<span class="freq">×28</span></div>
+</div>
+
+<div class="basin">
+<div class="basin-header"><span class="basin-name">Trade Disruption</span><span class="basin-pct">109 hits</span></div>
+<div class="basin-bar"><div class="basin-fill" style="width:3.7%"></div></div>
+<div class="concepts">cascading trade breakdown<span class="freq">×47</span> · trade embargo<span class="freq">×42</span> · arms embargo<span class="freq">×20</span></div>
+</div>
+
+<div class="basin">
+<div class="basin-header"><span class="basin-name">Sanctions &amp; Blockade</span><span class="basin-pct">85 hits</span></div>
+<div class="basin-bar"><div class="basin-fill" style="width:2.9%"></div></div>
+<div class="concepts">sanctions regime<span class="freq">×45</span> · blockade<span class="freq">×40</span></div>
+</div>
+</div>
+
+<div class="method-card">
+<h3>How the Atlas Was Built</h3>
+<p>For each of 3,237 segments with source-void data, the consequence engine embedded the headline and each void word using frozen BAAI/bge-large-en-v1.5, computed a directional ray from headline through void word at depths λ = {1.5, 2.0, 3.0}, retrieved the 5 nearest neighbors at each terminal coordinate from the 253K Wikipedia tensor, and applied the triple geometric filter (cluster density × novelty × tether). No language model was used in any step.</p>
+</div>
+
+<div class="method-card">
+<h3>Limitations</h3>
+<p>The 253K tensor contains Wikipedia article titles alongside conceptual terms. Post-filtering removed most noise but preferentially retains governance-shaped concept names, which inflates governance basin percentages relative to raw raycast output. The three-tier null test (random: 0%, kept: 17.5%, dropped: 10.4%) provides the unfiltered comparison. The basin distribution is an exploratory visualization of where convergently absent words live in embedding space — the p-value (0.000001) establishes that the convergence is non-random.</p>
+<p>The "consequence families" are researcher-defined groupings. The geometric clustering is objective; the family names are editorial. A curated concept tensor (Wikipedia abstracts rather than titles) would produce cleaner results.</p>
+</div>
+
+<footer>
+<a href="/">EigenTrace</a> · <a href="/boundary">The Boundary</a> · <a href="https://github.com/sdad1018/Eigentrace">GitHub</a> · MIT License · 2026<br>
+Built on one GPU by one person. The embeddings are frozen. The tensor is static. The consequence is arithmetic.
+</footer>
+</body>
+</html>
