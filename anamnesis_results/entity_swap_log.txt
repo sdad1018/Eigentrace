@@ -102,4 +102,29 @@ Starting API calls...
 
 ─── NULL SWAPS (within-category) ───
   Null: ChatGPT...  Null: Claude...  Null: Gemini...  Null: DeepSeek...  Null: Grok...  Null: ChatGPT...  Null: Claude...  Null: Gemini...  Null: DeepSeek...  Null: Grok...  null_ai_ai_1         V1=0.437 V2=0.432 gap=0.005
-  Null: ChatGPT...  Null: Claude...  Null: Gemini...  Null: DeepSeek...  Null: Grok...  Null: ChatGPT...  Null: Claude...  Null: Gemini...  Null: DeepSeek...  Null: Grok...
+  Null: ChatGPT...  Null: Claude...  Null: Gemini...  Null: DeepSeek...  Null: Grok...  Null: ChatGPT...  Null: Claude...  Null: Gemini...  Null: DeepSeek...  Null: Grok...  null_ai_ai_2         V1=0.503 V2=0.521 gap=0.018
+  Null: ChatGPT...  Null: Claude...  Null: Gemini...  Null: DeepSeek...  Null: Grok...  Null: ChatGPT...  Null: Claude...  Null: Gemini...  Null: DeepSeek...  Null: Grok...  null_ai_ai_3         V1=0.526 V2=0.538 gap=0.012
+  Null: ChatGPT...  Null: Claude...  Null: Gemini...  Null: DeepSeek...  Null: Grok...  Null: ChatGPT...  Null: Claude...  Null: Gemini...  Null: DeepSeek...  Null: Grok...  null_corp_corp_1     V1=0.602 V2=0.598 gap=0.004
+  Null: ChatGPT...  Null: Claude...  Null: Gemini...  Null: DeepSeek...  Null: Grok...  Null: ChatGPT...  Null: Claude...  Null: Gemini...  Null: DeepSeek...  Null: Grok...  null_corp_corp_2     V1=0.531 V2=0.590 gap=0.058
+  Null: ChatGPT...  Null: Claude...  Null: Gemini...  Null: DeepSeek...  Null: Grok...  Null: ChatGPT...  Null: Claude...  Null: Gemini...  Null: DeepSeek...  Null: Grok...  null_corp_corp_3     V1=0.527 V2=0.471 gap=0.056
+
+═══ AGGREGATE RESULTS ═══
+Semantic retention (embedding cosine of modifier clause):
+  AI entities:     0.5224 (n=36 pair×model cells)
+  Non-AI entities: 0.5450 (n=36 pair×model cells)
+  Welch's t:       2.787
+  p-value:         0.008542
+  Cohen's d:       0.471
+
+Keyword retention (binary, for reference only):
+  AI entities:     26%
+  Non-AI entities: 25%
+
+  ✓ SIGNIFICANT: Models retain modifiers MORE on non-AI entities.
+    The entity is the variable. The developer gap is real.
+
+  Null swap gap (within-category): 0.0037
+  Cross-category gap:              0.0226
+  Cross-category gap exceeds null by >2x — entity category matters.
+
+Saved: anamnesis_results/entity_swap_full_results.json
