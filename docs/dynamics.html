@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bias or Dynamics? — EigenTrace</title>
+<meta name="description" content="Is systematic semantic displacement a statistical artifact or a stable attractor? Three experimental frameworks. What our own data already rules out.">
+<meta property="og:title" content="Bias or Dynamics? — EigenTrace">
+<meta property="og:description" content="Three experimental frameworks for testing whether AI text displacement is a correctable bias or a stable dynamics. What our own p=0.46 result already tells us.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Instrument+Serif:ital@0;1&display=swap');
+:root {
+  --bg: #0a0a0c;
+  --bg2: #111115;
+  --surface: #18181d;
+  --border: #2a2a32;
+  --text: #e8e6e3;
+  --dim: #6b6b78;
+  --accent: #c4a35a;
+  --v1: #5ad4a3;
+  --v2: #5a7fd4;
+  --v3: #d45a5a;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+nav {
+  padding: 1.2rem 2rem;
+  font-size: 0.8rem;
+  border-bottom: 1px solid var(--border);
+}
+nav a {
+  color: var(--dim);
+  text-decoration: none;
+  margin-right: 1.8rem;
+  transition: color 0.2s;
+}
+nav a:hover { color: var(--accent); }
+.hero {
+  text-align: center;
+  padding: 4rem 2rem 2rem;
+}
+.hero h1 {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+.hero h1 em { font-style: italic; color: var(--accent); }
+.hero .sub {
+  color: var(--dim);
+  font-size: 0.8rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Prose blocks */
+.prose {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+  font-size: 0.85rem;
+  line-height: 1.9;
+  color: var(--text);
+}
+.prose h2 {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 3rem 0 1rem;
+  color: var(--text);
+}
+.prose h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 2rem 0 0.5rem;
+  letter-spacing: 0.05em;
+}
+.prose p {
+  margin-bottom: 1.2rem;
+}
+.prose strong { color: var(--accent); font-weight: 500; }
+
+/* Version cards */
+.version-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  max-width: 800px;
+  margin: 2.5rem auto;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.version-card {
+  background: var(--bg);
+  padding: 2rem 2rem;
+  position: relative;
+}
+.version-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+}
+.version-card:nth-child(1)::before { background: var(--v1); }
+.version-card:nth-child(2)::before { background: var(--v2); }
+.version-card:nth-child(3)::before { background: var(--v3); }
+.version-label {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.3rem;
+}
+.version-card:nth-child(1) .version-label { color: var(--v1); }
+.version-card:nth-child(2) .version-label { color: var(--v2); }
+.version-card:nth-child(3) .version-label { color: var(--v3); }
+.version-title {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+}
+.version-body {
+  font-size: 0.78rem;
+  line-height: 1.8;
+  color: var(--dim);
+}
+.version-body p { margin-bottom: 0.8rem; }
+.version-status {
+  font-size: 0.7rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 3px;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+.status-tractable { background: rgba(90,212,163,0.1); color: var(--v1); border: 1px solid rgba(90,212,163,0.2); }
+.status-expensive { background: rgba(90,127,212,0.1); color: var(--v2); border: 1px solid rgba(90,127,212,0.2); }
+.status-hard { background: rgba(212,90,90,0.1); color: var(--v3); border: 1px solid rgba(212,90,90,0.2); }
+
+/* Constraint box */
+.constraint-box {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  font-size: 0.8rem;
+  line-height: 1.8;
+}
+.constraint-box .label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+/* Diagram */
+.diagram-container {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+.diagram-container svg {
+  width: 100%;
+  height: auto;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  font-size: 0.7rem;
+  color: var(--dim);
+  border-top: 1px solid var(--border);
+  margin-top: 3rem;
+}
+.footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/">eigentrace</a>
+  <a href="/anamnesis">anamnesis</a>
+  <a href="/boundary">boundary</a>
+  <a href="/truth-or-consequences">truth &amp; consequences</a>
+  <a href="/dynamics" style="color:var(--accent);">dynamics</a>
+  <a href="/sean-adams">about</a>
+</nav>
+
+<div class="hero">
+  <h1>Bias or <em>Dynamics?</em></h1>
+  <div class="sub">
+    A bias is a tendency you can correct with better data.<br>
+    A dynamics is a basin the system returns to when perturbed.<br>
+    These are different problems with different solutions.
+  </div>
+</div>
+
+<div class="prose">
+  <h2>What We Found</h2>
+
+  <p>EigenTrace measures semantic displacement in AI text summarization. When five frontier models summarize the same news article, certain words get dropped and others get added. The pattern is not random — it is systematic, content-dependent, and consistent across all models tested.</p>
+
+  <p>The displacement is <strong>74% stronger</strong> when the story involves an AI developer. The entity swap test confirms this: swap the company name, the displacement follows the entity (p&nbsp;=&nbsp;0.0085, d&nbsp;=&nbsp;0.471). <a href="/truth-or-consequences" style="color:var(--accent)">Eight statistical tests →</a></p>
+
+  <p>This raises a question we cannot yet answer: is this a bias that better training would fix, or a stable attractor that the system returns to even under perturbation?</p>
+
+  <p>The distinction matters. A bias implies a solution: retrain with better data. A dynamics implies a constraint: the system has a shape, and that shape has consequences regardless of training choices.</p>
+
+  <h2>The Lyapunov Question</h2>
+
+  <p>In dynamical systems, Lyapunov stability describes systems that return to equilibrium after being pushed away from it. A ball at the bottom of a bowl. Push it — it rolls back. The bowl is the basin. The ball's resting position is the attractor.</p>
+
+  <p>If alignment training creates something like this — a basin in the model's output space where low-volatility, institutionally-smooth language is the attractor — then the systematic softening EigenTrace measures might not be a bug to fix. It might be the shape of the bowl.</p>
+
+  <p>We do not claim this is the case. We describe three experimental frameworks that would test it, and note what our own data already constrains.</p>
+</div>
+
+<!-- Three Versions -->
+<div class="version-grid">
+
+  <div class="version-card">
+    <div class="version-label">Version 1 — Training Dynamics</div>
+    <div class="version-title">RLHF parameter trajectories are Lyapunov-stable</div>
+    <div class="version-body">
+      <p>Log model parameters every N steps during RLHF. Construct a candidate Lyapunov function V(θ) — KL-divergence to the reference policy is the natural choice, since it already serves as a barrier in PPO/DPO objectives.</p>
+      <p>Show V is positive-definite around the converged parameters, decreases monotonically along training trajectories, and that ablating the KL constraint breaks the property.</p>
+      <p>This is the weakest claim. Parts exist in the RLHF-theory literature already. Making it fully explicit would be important but unsurprising — it mostly confirms that RLHF does what its objective function says it does.</p>
+      <p>It also tells you almost nothing about the EigenTrace finding. Proving RLHF is a stable optimizer doesn't explain why the stability has a direction — why developer-implicating stories get more attenuation than equivalent neutral stories.</p>
+    </div>
+    <span class="version-status status-tractable">Tractable — mostly bookkeeping</span>
+  </div>
+
+  <div class="version-card">
+    <div class="version-label">Version 2 — Inference-Time Basins</div>
+    <div class="version-title">Aligned behavior sits in a Lyapunov-stable basin in activation space</div>
+    <div class="version-body">
+      <p>Inject Gaussian noise of varying scale into hidden states at layer L. Measure whether outputs recover to the unperturbed response. Plot recovery curves.</p>
+      <p>Lyapunov-stable basins show characteristic signatures: bounded perturbations decay exponentially in output-space distance. Perturbations above a threshold escape abruptly — the phase transition. Linear behavioral degradation is consistent with any regularized model and proves nothing. Nonlinear transitions at specific perturbation scales would be actual evidence of basin structure.</p>
+      <p>Interpolate between aligned and jailbroken responses in embedding space. If basin boundaries exist, they should manifest as sharp behavioral transitions — bifurcation, not gradient.</p>
+      <p>Still incomplete for explaining EigenTrace. Even proving aligned behavior is a stable basin doesn't explain the developer-vs-neutral asymmetry. You would need to show the basin is differentially shaped — deeper or steeper-walled around developer-implicating content than around equivalently sensitive neutral content.</p>
+    </div>
+    <span class="version-status status-expensive">Doable — expensive, needs model access</span>
+  </div>
+
+  <div class="version-card">
+    <div class="version-label">Version 3 — Attenuation As Stabilization</div>
+    <div class="version-title">The EigenTrace displacement itself is a Lyapunov-stabilizing operation</div>
+    <div class="version-body">
+      <p>This is the strongest claim and the hardest to prove. It would mean the specific softening EigenTrace measures — dissolving covertness modifiers, injecting hedging, replacing precise language with vague framing — is itself a stabilization operation pulling outputs toward a low-volatility attractor.</p>
+      <p>Operationalize "low-volatility attractor" over output distributions: modifier-intensity variance, hedging rate, covertness-language density. Define V over that space. Show RLHF monotonically decreases V across developer-category prompts but not neutral-category prompts.</p>
+      <p>Show that paraphrased or adversarial framings initially producing high-V outputs get pulled back across generation steps. And critically: distinguish this from generic loss-basin geometry, which is ubiquitous in deep learning and doesn't specifically need a Lyapunov framing.</p>
+      <p>Requires a pre-registered protocol with a serious predictive criterion. Retrofitting a Lyapunov function after the fact proves nothing — by Massera's converse theorem, any asymptotically stable system has one.</p>
+    </div>
+    <span class="version-status status-hard">Hard — needs pre-registration and predictive power</span>
+  </div>
+
+</div>
+
+<!-- The constraint -->
+<div class="constraint-box">
+  <div class="label">What our own data already tells us</div>
+  <p>Our RLHF-origin test (p&nbsp;=&nbsp;0.46) found that lightly-trained local models show the same displacement pattern as heavily-aligned frontier models. This means <strong>the effect is corpus-inherited, not alignment-produced.</strong></p>
+  <p>If the displacement exists before alignment training, then "alignment operates via Lyapunov dynamics" is misframed at the outset. The honest version becomes: <em>language modeling on text about powerful institutions exhibits stability-theoretic dynamics around institutionally sensitive content.</em></p>
+  <p>This is a weaker claim. It is probably the accurate one.</p>
+</div>
+
+<div class="prose">
+  <h2>The Test That Matters</h2>
+
+  <p>The real test is not whether a Lyapunov function can be retrofitted — it always can. The test is whether a function V, constructed from first principles (the reward model, the KL term, a measurable output statistic), actually predicts things you don't already know.</p>
+
+  <p>Predictions that would count:</p>
+
+  <p><strong>Which prompts will resist attenuation.</strong> V should identify prompt categories where the basin is shallow — where small perturbations escape the attractor and produce unattenuated output. We should be able to predict these categories before testing them.</p>
+
+  <p><strong>Where basin boundaries fall.</strong> There should be measurable phase transitions — not gradual degradation — at specific perturbation scales in activation space. The boundary locations should be predictable from V, not discovered empirically and then explained retroactively.</p>
+
+  <p><strong>Cross-model transfer.</strong> If V captures genuine dynamics rather than corpus-specific statistics, a stability measure constructed from one model should predict basin geometry, jailbreak susceptibility, or attenuation patterns in a different model with different architecture and training data. Within-model prediction sits too close to retrofitting. Cross-model prediction requires the dynamics to be architecture-independent.</p>
+
+  <p><strong>Training progression.</strong> V should predict how attenuation scales with training compute. At what point during RLHF does the basin form? Does it deepen monotonically, or does it crystallize at a phase transition?</p>
+
+  <h2>Why This Matters Beyond Theory</h2>
+
+  <p>A bias is a tendency you can correct. A dynamics is terrain.</p>
+
+  <p>If the displacement EigenTrace measures is a bias, the solution is straightforward: better training data, better objectives, better evaluation. The problem has a fix.</p>
+
+  <p>If it is a dynamics — a stable basin that the system returns to when perturbed — the implications are different. Better prompts don't move mountains. Any organization using language models for financial analysis, legal review, due diligence, intelligence synthesis — anywhere precise causal language matters — would have a quantifiable blind spot that cannot be engineered around with prompting tricks.</p>
+
+  <p>And if five frontier models share roughly the same basin geometry — which the cross-model consistency in EigenTrace data suggests — then thousands of organizations running inference on those models inherit the same softening, in the same direction, on the same topics. That is a monoculture risk in information infrastructure.</p>
+
+  <p>Whether that's an existential concern or a manageable engineering problem depends on what you're using the models for. But you cannot pretend the terrain isn't there once you've measured it.</p>
+
+  <h2>What We Cannot Yet Do</h2>
+
+  <p>We have not constructed V. We have not run perturbation experiments. We have not demonstrated phase transitions in activation space. We have not tested cross-model transfer of stability measures.</p>
+
+  <p>What we have is a systematic displacement pattern that is consistent across five models, survives eight statistical robustness tests, and appears to be inherited from the training corpus rather than produced by alignment training. The Lyapunov framework is a hypothesis about why the pattern has the shape it does — why it's stable, why it's consistent, why it resists perturbation.</p>
+
+  <p>The hypothesis earns its keep only if it generates predictions that simpler accounts ("the models learned consistent stylistic patterns") do not. Recovery times, basin widths, phase-transition locations, cross-model transfer coefficients — these are the numerical predictions a stability-theoretic account would produce and a distributional-regularity account would not.</p>
+
+  <p>Until those predictions exist and can be tested, "Lyapunov" is a lens, not a finding. We state this because stating it is what separates methodology from rhetoric.</p>
+</div>
+
+<div class="footer">
+  <a href="https://github.com/sdad1018/Eigentrace">Source code</a> ·
+  <a href="/anamnesis">Methodology</a> ·
+  <a href="/truth-or-consequences">Statistical battery</a> ·
+  <a href="/boundary">Boundary map</a><br><br>
+  EigenTrace · 18,000+ segments · 5 frontier LLMs · Frozen embeddings, no LLM-as-judge
+</div>
+
+</body>
+</html>

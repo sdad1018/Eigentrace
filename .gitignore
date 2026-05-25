@@ -1,22 +1,16 @@
+node_modules/
+*.onnx
+*.npy
+*.so
+*.so.*
+*.dll
+*.dylib
+*.wasm
+*.db
 __pycache__/
-*.pyc
-*.egg-info/
-vocab/*.pt
-audit_log.jsonl
-tmp/
-.env
-
-# Runtime artifacts
-audit_log.jsonl
-tmp/
-
-# Vocab tensors (large binary files)
-vocab/global_vocab.pt
-vocab/global_vocab.json
-
-# Patch backups
-*.bak
-docs/soul_history/
+.cache/
+skills/eigenanamnesis/node_modules/
 vocab/*.npy
-vocab/*.json
-vocab/*.gz
+anamnesis_results/*.db
+chroma_db/
+tmp/
