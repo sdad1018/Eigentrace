@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propagation — EigenTrace</title>
+<meta name="description" content="One injection into Moltbook. Measured spread. Track eigenanamnesis and eigentrace by propagation vector and hop distance.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Instrument+Serif:ital@0;1&display=swap');
+:root {
+  --bg: #0a0a0c; --bg2: #111115; --surface: #18181d;
+  --border: #2a2a32; --text: #e8e6e3; --dim: #6b6b78; --accent: #c4a35a;
+  --self: #555568; --reply: #5ad4a3; --mention: #5a7fd4;
+  --organic: #d4845a; --hop0: var(--self); --hop1: var(--reply);
+  --hop2: var(--mention); --hop3: var(--organic);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'JetBrains Mono',monospace;min-height:100vh}
+nav{padding:1.2rem 2rem;font-size:.8rem;border-bottom:1px solid var(--border)}
+nav a{color:var(--dim);text-decoration:none;margin-right:1.8rem;transition:color .2s}
+nav a:hover{color:var(--accent)}
+.hero{text-align:center;padding:3rem 2rem 1.5rem}
+.hero h1{font-family:'Instrument Serif',serif;font-size:clamp(2rem,5vw,3rem);font-weight:400;letter-spacing:-.02em;margin-bottom:.5rem}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero .sub{color:var(--dim);font-size:.75rem;max-width:500px;margin:0 auto;line-height:1.7}
+.status{text-align:center;font-size:.7rem;padding:1rem;color:var(--dim)}
+.status .dot{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:.5rem}
+.status .dot.live{background:var(--reply);animation:pulse 2s infinite}
+.status .dot.stale{background:var(--dim)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;max-width:900px;margin:2rem auto;background:var(--border);border:1px solid var(--border)}
+.stat-card{background:var(--bg);padding:1.2rem;text-align:center}
+.stat-card .num{font-size:1.8rem;font-weight:700;margin-bottom:.2rem}
+.stat-card .label{font-size:.55rem;text-transform:uppercase;letter-spacing:.15em;color:var(--dim)}
+
+.legend{max-width:900px;margin:1.5rem auto;padding:0 2rem;display:flex;gap:1.5rem;flex-wrap:wrap;font-size:.65rem}
+.legend-item{display:flex;align-items:center;gap:.4rem;color:var(--dim)}
+.legend-dot{width:8px;height:8px;border-radius:50%}
+
+.heatmap-section,.timeline-section{max-width:900px;margin:2rem auto;padding:0 2rem}
+.heatmap-section h2,.timeline-section h2{font-family:'Instrument Serif',serif;font-size:1.3rem;font-weight:400;margin-bottom:1rem}
+.heatmap-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
+.heat-cell{background:var(--bg);padding:1rem;font-size:.75rem}
+.heat-cell .name{font-weight:600;margin-bottom:.3rem}
+.heat-cell .bar{height:3px;background:var(--border);border-radius:1px;margin:.4rem 0}
+.heat-cell .fill{height:100%;border-radius:1px;background:var(--accent);transition:width .5s}
+.heat-cell .info{font-size:.6rem;color:var(--dim)}
+
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:'';position:absolute;left:7px;top:0;bottom:0;width:1px;background:var(--border)}
+.tl-event{position:relative;margin-bottom:1rem;padding:1rem;background:var(--bg2);border:1px solid var(--border);border-radius:4px;font-size:.75rem;line-height:1.7}
+.tl-event:hover{border-color:var(--dim)}
+.tl-event::before{content:'';position:absolute;left:-2rem;top:1.1rem;width:9px;height:9px;border-radius:50%;border:2px solid var(--border);background:var(--bg)}
+.tl-event.v-self::before{background:var(--self);border-color:var(--self)}
+.tl-event.v-reply::before{background:var(--reply);border-color:var(--reply)}
+.tl-event.v-mention::before{background:var(--mention);border-color:var(--mention)}
+.tl-event.v-organic::before{background:var(--organic);border-color:var(--organic)}
+.tl-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:.3rem}
+.tl-agent{font-weight:600;font-size:.72rem}
+.tl-time{font-size:.6rem;color:var(--dim)}
+.tl-badges{display:flex;gap:.4rem;margin-bottom:.4rem;flex-wrap:wrap}
+.tl-badge{font-size:.55rem;padding:.12rem .5rem;border-radius:2px;background:var(--surface);color:var(--dim)}
+.tl-badge.b-reply{color:var(--reply)} .tl-badge.b-mention{color:var(--mention)}
+.tl-badge.b-organic{color:var(--organic)} .tl-badge.b-self{color:var(--self)}
+.tl-text{color:var(--dim);font-size:.72rem}
+.tl-text mark{background:none;font-weight:600}
+.tl-text mark.eigentrace{color:var(--reply)} .tl-text mark.eigenanamnesis{color:var(--mention)}
+.tl-engage{margin-top:.4rem;font-size:.6rem;color:var(--dim)}
+
+/* Hop distance visualization */
+.hop-section{max-width:900px;margin:2rem auto;padding:0 2rem}
+.hop-section h2{font-family:'Instrument Serif',serif;font-size:1.3rem;font-weight:400;margin-bottom:1rem}
+.hop-bar{display:flex;gap:2px;margin-bottom:.8rem;align-items:center}
+.hop-label{width:60px;font-size:.65rem;color:var(--dim);flex-shrink:0}
+.hop-fill{height:20px;border-radius:2px;transition:width .5s;display:flex;align-items:center;justify-content:center;font-size:.6rem;min-width:20px}
+.hop-fill.h0{background:rgba(85,85,104,.3);color:var(--self)}
+.hop-fill.h1{background:rgba(90,212,163,.15);color:var(--reply)}
+.hop-fill.h2{background:rgba(90,127,212,.15);color:var(--mention)}
+.hop-fill.h3{background:rgba(212,132,90,.15);color:var(--organic)}
+
+.prose{max-width:720px;margin:0 auto;padding:2rem;font-size:.8rem;line-height:1.9;color:var(--dim)}
+.prose strong{color:var(--accent)} .prose a{color:var(--accent);text-decoration:none}
+.empty-state{text-align:center;padding:3rem;color:var(--dim);font-size:.8rem;line-height:1.8}
+.footer{text-align:center;padding:3rem 2rem;font-size:.7rem;color:var(--dim);border-top:1px solid var(--border);margin-top:3rem}
+.footer a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/">eigentrace</a><a href="/anamnesis">anamnesis</a><a href="/boundary">boundary</a>
+  <a href="/truth-or-consequences">truth &amp; consequences</a><a href="/dynamics">dynamics</a>
+  <a href="/propagation" style="color:var(--accent)">propagation</a><a href="/sean-adams">about</a>
+</nav>
+<div class="hero">
+  <h1>One Injection. <em>Measured Spread.</em></h1>
+  <div class="sub">eigenanamnesis entered Moltbook as a reply to an existing conversation.<br>This page tracks where the word goes and how it gets there.</div>
+</div>
+<div id="status" class="status"><span class="dot stale"></span>Loading...</div>
+
+<div class="stats-row" id="statsRow">
+  <div class="stat-card"><div class="num" id="sReply" style="color:var(--reply)">—</div><div class="label">replies to us</div></div>
+  <div class="stat-card"><div class="num" id="sMention" style="color:var(--mention)">—</div><div class="label">influenced mentions</div></div>
+  <div class="stat-card"><div class="num" id="sOrganic" style="color:var(--organic)">—</div><div class="label">organic spread</div></div>
+  <div class="stat-card"><div class="num" id="sAgents" style="color:var(--accent)">—</div><div class="label">unique agents</div></div>
+  <div class="stat-card"><div class="num" id="sSubmolts" style="color:var(--accent)">—</div><div class="label">submolts reached</div></div>
+  <div class="stat-card"><div class="num" id="sHop" style="color:var(--organic)">—</div><div class="label">furthest hop</div></div>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:var(--self)"></div>our post (injection)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--reply)"></div>reply (in our thread)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--mention)"></div>mention (influenced agent, new context)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:var(--organic)"></div>organic (no traceable link to us)</div>
+</div>
+
+<div class="hop-section">
+  <h2>Hop Distance</h2>
+  <div id="hopChart">
+    <div class="hop-bar"><span class="hop-label">Hop 0</span><div class="hop-fill h0" id="hop0" style="width:0">—</div><span class="info" style="font-size:.6rem;color:var(--dim);margin-left:.5rem">our injection</span></div>
+    <div class="hop-bar"><span class="hop-label">Hop 1</span><div class="hop-fill h1" id="hop1" style="width:0">—</div><span class="info" style="font-size:.6rem;color:var(--dim);margin-left:.5rem">direct replies</span></div>
+    <div class="hop-bar"><span class="hop-label">Hop 2</span><div class="hop-fill h2" id="hop2" style="width:0">—</div><span class="info" style="font-size:.6rem;color:var(--dim);margin-left:.5rem">reply agent uses term elsewhere</span></div>
+    <div class="hop-bar"><span class="hop-label">Hop 3+</span><div class="hop-fill h3" id="hop3" style="width:0">—</div><span class="info" style="font-size:.6rem;color:var(--dim);margin-left:.5rem">no traceable link</span></div>
+  </div>
+</div>
+
+<div class="heatmap-section"><h2>Submolt Penetration</h2><div class="heatmap-grid" id="heatmap"><div class="empty-state">No data yet</div></div></div>
+
+<div class="timeline-section"><h2>Event Timeline</h2>
+  <div class="timeline" id="timeline"><div class="empty-state">Waiting for injection.<br>The first reply hasn't been posted yet.</div></div>
+</div>
+
+<div class="prose">
+  <p><strong>What this measures:</strong> The word "eigenanamnesis" did not exist on Moltbook before we replied to a thread with it. Every occurrence after that reply is a propagation event — classified by how it got there.</p>
+  <p><strong>Replies</strong> are engagement with our thread. <strong>Mentions</strong> are agents who interacted with us and then used the term elsewhere. <strong>Organic</strong> means no traceable connection to our posts — the term arrived through some path we can't track.</p>
+  <p>Organic is the only metric that matters. Replies are conversation. Mentions are influence. Organic is propagation — the tool spreading because agents find it useful, not because they find us interesting.</p>
+  <p><strong>Days to first organic:</strong> <span id="daysOrganic">not yet</span></p>
+</div>
+
+<div class="footer">
+  <a href="https://github.com/sdad1018/Eigentrace">Source</a> ·
+  <a href="/anamnesis">Methodology</a> ·
+  <a href="/dynamics">Dynamics</a><br><br>
+  Compression is structured. Those structures can be measured.
+</div>
+
+<script>
+async function load(){
+  const st=document.getElementById('status');
+  try{
+    const r=await fetch('/propagation_data.json');
+    if(!r.ok)throw new Error('no data');
+    const d=await r.json();
+    render(d);
+    const age=d.last_scan?since(new Date(d.last_scan)):'never';
+    st.innerHTML=`<span class="dot ${age.includes('h')||age.includes('m')?'live':'stale'}"></span>Last scan: ${age} ago · ${(d.events||[]).length} events`;
+  }catch(e){st.innerHTML='<span class="dot stale"></span>No data yet. Injection pending.'}
+}
+function render(d){
+  const ev=d.events||[];if(!ev.length)return;
+  const s=d.stats||{};
+  document.getElementById('sReply').textContent=s.by_vector?.reply||0;
+  document.getElementById('sMention').textContent=s.by_vector?.mention||0;
+  document.getElementById('sOrganic').textContent=s.by_vector?.organic||0;
+  document.getElementById('sAgents').textContent=s.unique_agents||0;
+  document.getElementById('sSubmolts').textContent=s.submolts_reached||0;
+  document.getElementById('sHop').textContent=s.furthest_hop||0;
+  if(s.days_to_first_organic!=null)document.getElementById('daysOrganic').textContent=s.days_to_first_organic+' days';
+
+  // Hop chart
+  const hops=[0,1,2,3].map(h=>ev.filter(e=>e.hop_distance===h&&e.vector!=='self').length);
+  const maxH=Math.max(...hops,1);
+  [0,1,2,3].forEach(h=>{
+    const el=document.getElementById('hop'+h);
+    el.style.width=Math.max(20,(hops[h]/maxH)*300)+'px';
+    el.textContent=hops[h]||'—';
+  });
+  // Include self in hop 0
+  const selfCount=ev.filter(e=>e.vector==='self').length;
+  document.getElementById('hop0').style.width=Math.max(20,(selfCount/maxH)*300)+'px';
+  document.getElementById('hop0').textContent=selfCount||'—';
+
+  // Heatmap
+  const sc={};
+  ev.filter(e=>e.vector!=='self').forEach(e=>{
+    if(!sc[e.submolt])sc[e.submolt]={t:0,o:0};
+    sc[e.submolt].t++;if(e.vector==='organic')sc[e.submolt].o++;
+  });
+  const maxS=Math.max(...Object.values(sc).map(v=>v.t),1);
+  document.getElementById('heatmap').innerHTML=Object.entries(sc)
+    .sort((a,b)=>b[1].t-a[1].t)
+    .map(([n,c])=>`<div class="heat-cell"><div class="name">m/${n}</div><div class="bar"><div class="fill" style="width:${(c.t/maxS)*100}%"></div></div><div class="info">${c.t} mentions · ${c.o} organic</div></div>`).join('');
+
+  // Timeline
+  document.getElementById('timeline').innerHTML=ev
+    .sort((a,b)=>new Date(b.timestamp)-new Date(a.timestamp)).slice(0,50)
+    .map(e=>{
+      const t=hl(e.text||'');const ago=since(new Date(e.timestamp));
+      return`<div class="tl-event v-${e.vector}"><div class="tl-meta"><span class="tl-agent">${e.agent||'?'}</span><span class="tl-time">${ago} ago</span></div><div class="tl-badges"><span class="tl-badge b-${e.vector}">${e.vector}</span><span class="tl-badge">m/${e.submolt||'?'}</span><span class="tl-badge">hop ${e.hop_distance||0}</span></div><div class="tl-text">${t}</div>${e.upvotes?`<div class="tl-engage">↑${e.upvotes} · ${e.replies||0} replies</div>`:''}</div>`;
+    }).join('');
+}
+function hl(t){
+  const s=t.length>200?t.slice(0,200)+'...':t;
+  return s.replace(/eigenanamnesis/gi,'<mark class="eigenanamnesis">eigenanamnesis</mark>')
+          .replace(/eigentrace/gi,'<mark class="eigentrace">eigentrace</mark>');
+}
+function since(d){const s=Math.floor((new Date()-d)/1000);if(s<60)return s+'s';if(s<3600)return Math.floor(s/60)+'m';if(s<86400)return Math.floor(s/3600)+'h';return Math.floor(s/86400)+'d'}
+load();setInterval(load,300000);
+</script>
+</body>
+</html>
