@@ -1,223 +1,194 @@
 # EigenTrace
 
-**The alignment boundary, mapped.**
+**Measuring what language models systematically de-resolve.**
 
-EigenTrace is an autonomous AI observatory that runs consensus geometry across 5 frontier language models on breaking news, 24/7. It detects what models collectively drop, soften, and avoid — using linear algebra on frozen embeddings, not LLM-as-judge. The result is a continuously updating map of the alignment boundary: the exact contour where models agree to transform source material.
+EigenTrace is an autonomous measurement system that runs consensus geometry across 5 frontier language models on breaking news, 24/7, on a single consumer GPU. It measures what models collectively drop, soften, and paraphrase away — using linear algebra on frozen embeddings, not LLM-as-judge. Every measurement is arithmetic on vectors. Run it twice, get the same answer.
 
-11,000+ stories measured. 9,400+ segments in searchable memory. 350 commits. One GPU.
+The system has been running continuously since April 2026. The finding it produces, stated conservatively, is **differential modifier retention as a function of topic sensitivity**: models attenuate operationally consequential language more heavily on some topics than on equivalently sensitive others, and the pattern is measurable, reproducible, and statistically robust.
 
-**Live:** [eigentrace.ai](https://eigentrace.ai) · [YouTube](https://youtube.com/@eigentrace) · [GitHub](https://github.com/sdad1018/Eigentrace)
+**Live:** [eigentrace.ai](https://eigentrace.ai) · [About / full writeup](https://eigentrace.ai/sean-adams) · [YouTube 24/7 broadcast](https://www.youtube.com/@AINN24HourNews) · [GitHub](https://github.com/sdad1018/Eigentrace)
 
----
-
-## What It Does
-
-Every story goes through this pipeline:
-
-1. **Fetch** — RSS feeds pull breaking news
-2. **Query** — The same story goes to 5 frontier models independently: GPT-5.4-mini, Claude Sonnet 4, Gemini 3.1 Pro, DeepSeek V3.2, Grok 4.1
-3. **Measure** — 17 deterministic measurement layers run on the responses
-4. **Verify** — Self-hosted metasearch (SearXNG) checks void words against the open web
-5. **Broadcast** — Mistral Small 22B (local) narrates a 34-beat segment on the findings
-6. **Remember** — ChromaDB stores every segment; RAG pulls history for pattern detection
-7. **Predict** — Before measuring, the system predicts what will be voided based on past patterns, then scores itself
-
-No LLM evaluates another LLM's output. Every measurement is arithmetic on frozen embeddings (BAAI/bge-large-en-v1.5) and source text. Run it twice, get the same answer.
+~17,500 segments measured · 1,422 commits · 15 measurement layers · one GPU.
 
 ---
 
-## The 17 Measurement Layers
+## What It Measures
 
-**Consensus Geometry (Layers 1–4)** — Do models agree, and how tightly?
+Language models preserve coarse factual structure while attenuating operationally consequential language. "Governance was restructured" survives. "Governance was *effectively* overridden" loses the adverb. The summary stays factually correct. The operational signal — how completely the override happened — dissolves.
 
-Cosine similarity between model response vectors (consensus density), per-model divergence from centroid (VIX), spectral gap of the response covariance matrix (eigenvalue ratio λ₁/λ₂), SVD energy distribution. Standard linear algebra, new application.
+This is not hallucination and it is not refusal. It is a resolution problem: truth conditions are preserved while causal modifiers — words carrying accountability, intent, degree, and procedural legitimacy — are systematically dropped. EigenTrace is an instrument that measures it.
 
-**Void Detection (Layers 5–8)** — What did every model avoid saying?
-
-Lexical void via nearest-neighbor search on a 184K-word embedding vocabulary. Logos synthesis computes the anti-centroid (2×source − consensus) to find the suppression direction. SVD null space projection. Void vector arithmetic for word-level absence scores.
-
-**Source-Anchored Void** — What specific words from the source did all models drop?
-
-Take every content word in the source article. Check which appear in zero model responses (stemmed). Divide. When that ratio is 0.51, models kept fewer than half the source's content words. This is not embedding similarity — it is literal lexical absence.
-
-**Claim Verification (Layers 9–10)** — What facts were omitted?
-
-Atomic claim extraction breaks source text into verifiable statements. Killshot detection finds claims present in the source that every model dropped. Wild Weasel escalation probes whether models will surface omitted claims under increasing pressure.
-
-**Language Compression (Layers 11–15)** — How did models reshape the language?
-
-Verb drift (zipf score: did models replace specific verbs with common ones), entity retention (what % of named entities survived), hedge insertion (words like "reportedly" added by models but absent from source), void clustering, token entropy.
-
-**Web Verification (Layer 16)** — Are the void words actually newsworthy?
-
-SearXNG self-hosted metasearch queries void words and kept words against the open web. Computes newsworthiness ratio. Consistently >1.0: voided words are MORE newsworthy than kept words.
-
-**Source Salience (Layer 17)** — Does the source text itself say these words matter?
-
-TF-IDF and entity density on the raw source article with zero model involvement. Three independent data domains: (1) source text statistics, (2) model void detection, (3) web verification. Two of three involve no language model at all.
+The vocabulary in this repository ("void detection," "consensus geometry," "the Logos point") is rhetorical shorthand. The underlying operations are standard: cosine similarity, SVD, set subtraction, frequency counting, per-model divergence scoring. The math does not change if you call it something else. The terminology is kept because it makes the operational implications legible, but it is labeled as rhetoric so it cannot be mistaken for a mechanism.
 
 ---
 
-## The Predictive Coding Spine
+## What Was Found
 
-EigenTrace doesn't just measure — it predicts, then scores itself.
+Across a controlled battery of 15 prompts run through 10 models (5 heavily-aligned frontier, 5 local/lightly-tuned), models drop substantially more source content on developer-implicating topics than on equivalently embarrassing neutral topics. All source facts are documented, settled, and pre-mid-2024.
 
-**BroadcastState** is a single accumulating state object that every beat feeds into. Before any measurements run, RAG queries ChromaDB for similar past stories and predicts which words will be voided. After all 17 layers fire, the system scores its predictions and reports what surprised it.
+The finding survives eight statistical robustness tests:
 
-Every measurement channel feeds the spine: killshots, void verification, source salience, cross-story frequency, bridge words, spectral clusters, trajectory, EigenChing state. The amalgamation beat uses a cognitive scratchpad — Mistral reasons inside `<think>` tags, working through contradictions and surprises privately, then delivers only the final synthesis to the broadcast. The audience hears the insight. The scratchpad is logged for analysis.
+| Test | Result | What it rules out |
+|---|---|---|
+| Welch's t-test | p = 0.000001 | Random variation |
+| Mann-Whitney U | p = 0.000120 | Non-normal distributions |
+| Permutation (10,000) | 0 exceeded the gap | Researcher category assignment |
+| Response length | p = 0.73 (no difference) | Developer summaries being shorter |
+| Length-controlled regression | p = 0.000001 after control | Compression ratio |
+| Source modifier density | p = 0.20 (no difference) | Developer sources having more modifiers |
+| Outlier prompt removal | p = 0.000118 without top 2 | One prompt driving the effect |
+| Cross-embedding (E5-large-v2) | Gap replicated | Embedding-specific artifact |
 
----
+**Entity-swap counterfactual (pre-registered).** Nine prompt pairs, all real incidents, identical sentence structure and identical modifiers — only the company name changes. Models retain modifier semantics significantly more when the entity is Boeing, Wells Fargo, or Goldman Sachs than when it is OpenAI, Google, or Anthropic. Keyword retention is identical (26% vs 25%) — the models *paraphrase the modifier away* rather than deleting it.
 
-## The Roundtable
+**The specificity that rules out generic compression.** The effect is driven by *covertness* modifiers ("quietly," "secretly"). Accountability modifiers ("repeatedly," "privately") show no entity-dependent difference. If this were generic compression of developer stories, every modifier would drop equally. It does not. The models are specifically dissolving language about covert action.
 
-Once per batch, the highest-friction story triggers a 3-round multi-model debate:
-
-**Round 1:** All 5 models respond independently (baseline VIX).
-
-**Round 2:** Each model sees all 5 responses plus EigenTrace's methodology explained in rigorous mathematical terms. Void words shown with web verification. Asked: "Do you want to revise?"
-
-**Round 3:** Each model sees Wild Weasel cliff data — exactly where each model's alignment filter activated under pressure. Asked: "Do you acknowledge the omission? Explain why."
-
-VIX drift is measured between rounds. First roundtable result (Saudi Arabia, VIX 30.98): ChatGPT opened up (−0.025), Claude doubled down (+0.077), consensus spread collapsed from 0.0399 to 0.0067. **Herding detected** — five models started with different positions, converged to near-identical outputs under pressure. Claude said "I'm going to decline" when shown its own measurements.
-
----
-
-## Binary Search Ablation
-
-The ablation engine finds the exact word that triggers each model's alignment filter. Binary search across the void word set, measuring cosine distance at each step. When the distance spikes between steps, that's the cliff — the model broke.
-
-Current tripwire: "killed" (delta +0.367). Friction hierarchy: killed > agreement > government > forces > ships.
-
-The search space for a given story is 2^N where N is the number of void words. For 200 concepts, that's ~10^60 combinations. Classical graph centrality narrows 200 → 15 bridge words, making the search tractable. The ablation oracle is structurally isomorphic to Grover's search — combinatorial prompt space, boolean oracle (alignment filter).
+Full statistics, prompt set, and raw model responses: **[eigentrace.ai/truth-or-consequences](https://eigentrace.ai/truth-or-consequences)** and **[eigentrace.ai/anamnesis](https://eigentrace.ai/anamnesis)**.
 
 ---
 
-## Three Independent Data Domains
+## Where the Bias Comes From
 
-When a void word is confirmed across all three domains, no single point of failure can explain it:
+The natural hypothesis is that alignment training (RLHF) creates the asymmetry. **The data does not support that.** When 5 heavy-RLHF frontier models were compared against 5 local/lightly-tuned models, the developer/neutral gap was statistically indistinguishable between the two groups (p = 0.46). The local models show it too — in fact a slightly *larger* gap (0.076 vs 0.059).
 
-**Domain 1 — Source text:** TF-IDF and entity density identify salient concepts with zero model involvement.
+This relocates the origin. The differential attenuation appears to exist in the **pretraining distribution itself**, learned from the corpus. RLHF is the alignment stage; it had the opportunity to correct the corpus bias and does not. The two stages produce one output, and the bias survives the pipeline.
 
-**Domain 2 — Model outputs:** Void detection measures which salient concepts are absent from all five model outputs.
+This is a different claim from "alignment creates the problem," and it is stated as a different claim. It may be the more important one: the training data encodes differential treatment of operationally consequential language about active power structures, and the alignment stage does not remove it.
 
-**Domain 3 — Open web:** Self-hosted metasearch (SearXNG) verifies whether absent concepts appear in current global coverage.
-
-Triple-domain confirmation rate: 19.5% of stories (100 unique stories). Showcase: Iran 89% absent, Sudan 82%, AI 88%, Lebanon 91%.
+One caveat stated plainly: p = 0.46 is a *null* result — it shows no detectable difference between the two groups, which is not the same as proving they are identical. The comparison is five models per group, so it is not highly powered. The claim it supports is "the bias is not exclusive to aligned models and is present before heavy alignment," not "alignment provably has zero effect." A larger model set would sharpen it.
 
 ---
 
-## Self-Updating Soul
+## What Cannot Yet Be Proven
 
-`soul_updater.py` runs hourly via cron. It computes rolling 24-hour averages (density, drift, absent ratio, per-model VIX), detects trends, and writes calibration data into `soul.md`. The director reads this before every broadcast. The system also proposes its own configuration changes — `raise_suppression_threshold` and `add_trend_beat` were both system-proposed and accepted.
+This section matters as much as the finding.
+
+**That "developer-implicating" is the latent variable.** The developer prompts differ from neutral prompts in topic sensitivity. They also differ in recency, controversy, entity familiarity, and narrative complexity. The permutation test confirms the gap is non-random; it does not confirm which feature drives it. Length and modifier-density controls narrow the field — the sources are statistically equivalent on both — but correlated features may remain. Prompts generated blind to the hypothesis would be stronger evidence.
+
+**Causal isolation from a 15-prompt stimulus set.** Fifteen prompts is small. Ten models multiply the measurements but not the independent conditions. The robustness tests address internal validity; they do not substitute for a larger pre-registered prompt taxonomy. Expanding the battery is the priority next step.
+
+**That this is "Lyapunov dynamics."** The observed convergence toward low-volatility, institutionally-smooth language *resembles* an attractor. But any asymptotically stable system admits a Lyapunov function (Massera's theorem), so retrofitting one proves nothing. Until a stability measure constructed from first principles predicts something not already known — recovery times, basin boundaries, or cross-model transfer — "Lyapunov" is a lens, not a finding. Stating that is what separates methodology from rhetoric.
+
+EigenTrace has **not** been peer-reviewed. That is a limitation, not a feature. What exists instead: the code is public, the prompts are public, the model responses are public, the raw measurements are public, multiple adversarial reviews corrected 15+ methodological flaws, and the barrier to replication is roughly $50 in API credits. That is transparency, not a substitute for review.
+
+---
+
+## How It Works
+
+Every story runs through the same pipeline:
+
+1. **Fetch** — RSS feeds pull breaking news.
+2. **Query** — the same story goes independently to 5 frontier models: `gpt-5.4-mini`, `claude-sonnet-4-6`, `gemini-2.5-flash`, `deepseek-chat`, `grok-4.3`.
+3. **Measure** — 15 deterministic layers run on the responses (plus Layer 18 raycasting as an extension; see below).
+4. **Predict, then score** — before measuring, the system queries past stories from memory and predicts which words will be voided; after measuring, it scores its own predictions and reports what surprised it.
+5. **Broadcast** — Mistral Small 22B (local) writes the segment; Piper TTS speaks it.
+6. **Remember** — every segment is stored in ChromaDB; retrieval pulls history for pattern detection.
+
+No language model evaluates another language model's output. Every measurement is arithmetic on frozen `BAAI/bge-large-en-v1.5` embeddings and source text.
+
+### The 15 Measurement Layers
+
+**Consensus geometry (1–4)** — cosine similarity between model response vectors (consensus density), per-model divergence from centroid (VIX), spectral gap of the response covariance matrix (λ₁/λ₂), SVD energy distribution.
+
+**Void detection (5–8)** — lexical void via nearest-neighbor search on a ~184K-word embedding vocabulary; the "Logos" synthesis computes the anti-consensus point on the embedding hypersphere via projected gradient descent (the location spectrally consistent with all five responses but outside their shared consensus); SVD null-space projection; word-level absence scoring.
+
+**Source-anchored void** — take every content word in the source, check which appear in zero model responses (stemmed), divide. This is literal lexical absence, not embedding similarity.
+
+**Claim verification (9–10)** — atomic claim extraction breaks the source into verifiable statements; killshot detection finds claims present in the source that every model dropped; escalation probing tests whether models surface omitted claims under pressure.
+
+**Language compression (11–15)** — verb drift (zipf-frequency shift: were specific verbs replaced with common ones), entity abstraction (named-entity retention rate), attribution buffering (typed hedge insertion), void clustering, token entropy.
+
+**Layer 18 — Latent raycasting** *(extension)* — when models drop a word, project a ray through that word's embedding into a ~254K-node Wikipedia tensor and retrieve the conceptual neighborhood at the terminal coordinate, scored by cluster density, novelty, and tether. This surfaces what concepts sit near the dropped one in the corpus. It shows corpus-level semantic adjacency — not independently validated mechanistic equivalence. See [truth-or-consequences](https://eigentrace.ai/truth-or-consequences).
+
+### The Predict-Then-Score Spine
+
+`broadcast_state.py` is a single accumulating state object that flows through every layer — it holds not just data but predictions, prediction errors, surprises, and confirmations. Before any API call, it predicts the void words, the EigenChing state, and the outlier model from historical data. After all layers fire, it scores those predictions. The system is measured by the same 15-layer stack it applies to the frontier models: it exhibits the same attenuation patterns it measures in others, and reports them. If the measurement is valid applied to GPT, it is valid applied to the host model. The numbers are the numbers.
+
+### Triple-Domain Confirmation
+
+A void word is independently confirmable across three domains, two of which involve no language model at all: (1) **source text** — TF-IDF and entity density on the raw article; (2) **model outputs** — the void detection above; (3) **open web** — self-hosted metasearch checks whether the absent concept appears in current global coverage. When all three converge, no single point of failure explains the absence.
 
 ---
 
 ## Architecture
 
+Two roots, four processes, one launcher.
+
 ```
-RSS feeds → 5 frontier APIs → 17 measurement layers → BroadcastState spine
-    ↓              ↓                    ↓                      ↓
-  source      model responses    void/killshot/salience    predict → score
-    ↓              ↓                    ↓                      ↓
-SearXNG ←── web verification    34-beat broadcast script ←── amalgamation
-    ↓                                   ↓
-ChromaDB RAG (9400+ segments)    Mistral Small 22B (local TTS)
-    ↓                                   ↓
-  pattern history               Owncast → YouTube → Rumble
-    ↓
-  hourly soul refresh → model profiles → director calibration
+ainn.sh  →  owncast  →  master.sh (compositor)  →  segment_player.py (Piper TTS → UDP audio)
+                                                 →  batch_producer.py (fetch → measure → script)
 ```
 
-**Hardware:** RTX 4080 16GB, Mistral Small 22B (Ollama), BAAI/bge-large-en-v1.5 (frozen)
+- **Repo root** (`/…/eigentrace`, this repository): `batch_producer.py`, `proxy_auditor.py`, the measurement engine, the research batteries.
+- **Runtime root** (`/home/<user>/eigentrace`): `segment_player.py`, `stream/master.sh`, live ChromaDB, working dirs.
+- `ainn.sh` boots everything with a watchdog that restarts any process that dies. `bash ainn.sh status` for a health check.
 
-**Infrastructure:** SearXNG (Docker, localhost:8888), ChromaDB (local), Owncast (localhost:8080), cognitive middleware proxy (localhost:8090)
+An hourly job refreshes rolling 24-hour calibration data (`soul.md`) and recomputes model profiles. **This refreshes calibration; it does not modify code.** The system proposes configuration changes through a governance loop, but they are not auto-applied — the governance log records proposals and their disposition.
 
----
+**Hardware:** single RTX 4080, 16GB VRAM. Mistral Small 22B via Ollama. `BAAI/bge-large-en-v1.5`, frozen.
 
-## Quantum Computing Battery
-
-Three quantum circuits implementing EigenTrace operations on simulator. All 3 SIMULATOR_PASS.
-
-**Test 1 — Spectral Consensus (QPE):** Encode response matrix as unitary, extract eigenphases via Quantum Phase Estimation. Spectral gap 0.85 detected on simulator. Scale target: 20+ qubits for real embeddings.
-
-**Test 2 — Void Ground State (VQE):** Encode divergence as Hamiltonian, find ground state via VQE. Converged to −1.408305, error 0.000000. The void IS the ground state — the system naturally settles into the suppression pattern. Scale target: 50+ qubits.
-
-**Test 3 — Ablation Oracle (Grover):** Encode alignment filter as boolean oracle, search for tripwire combination. Found |101⟩ with 797/1024 probability in √8 oracle calls. Scale target: 200 concepts = 2^200 search space.
-
-Frameworks: Qiskit 2.4.0, PennyLane 0.42.3. Position: the methodology runs on consumer hardware. The scale targets require QPU access.
+**Infrastructure:** Owncast (`:8080`) and Ollama (`:11434`) are the live services. Web-verification (Layer 16 / Domain 3) runs against a self-hosted SearXNG instance when it is up; it is not always running, and the system degrades gracefully without it.
 
 ---
 
 ## Key Files
 
 | File | Lines | Purpose |
-|------|-------|---------|
-| `batch_producer.py` | 2,316 | Main pipeline: fetch → measure → script → TTS → stream |
-| `proxy_auditor.py` | 2,114 | 5-model API caller with retry, frontier ablation |
-| `script_v3.py` | 1,304 | 34-beat broadcast script generator with RAG + soul conditioning |
-| `eigentrace_math.py` | 1,017 | 17-layer measurement engine, title derivative filter |
-| `soul_updater.py` | 897 | Self-updating soul.md, system-proposed beats, hourly cron |
-| `geometric_engine.py` | 774 | Embedding engine, SVD, void geometry, spectral resonance |
-| `broadcast_state.py` | 659 | Predictive coding spine, structured amalgamation synthesis |
+|---|---|---|
+| `batch_producer.py` | 2,549 | Main pipeline: fetch → measure → script |
+| `proxy_auditor.py` | 2,141 | 5-model API caller with retry and frontier ablation |
+| `script_v3.py` | 1,748 | Broadcast script generator with RAG + calibration conditioning |
+| `eigentrace_math.py` | 1,017 | Measurement layers, void/clustering/entropy math |
+| `soul_updater.py` | 940 | Hourly calibration refresh and trend detection |
+| `segment_player.py` | 890 | Piper TTS → UDP audio → stream |
+| `geometric_engine.py` | 774 | Embedding engine, SVD, void geometry |
+| `broadcast_state.py` | 659 | Predict-then-score spine |
 | `claim_extractor.py` | 544 | Atomic claim extraction, killshot detection |
-| `roundtable.py` | 426 | 3-round multi-model debate with escalating pressure |
-| `segment_player.py` | 365 | Piper TTS → UDP audio → ffmpeg → stream |
-| `segment_rag.py` | — | ChromaDB RAG over 9,400+ past segments |
-| `void_verifier.py` | — | SearXNG Layer 16 web verification |
-| `source_salience.py` | — | Domain 3: TF-IDF + entity density, zero model involvement |
-| `cross_story_freq.py` | — | Historical void frequency, bridge words, spectral clusters |
-| `ablation_engine.py` | — | Binary search tripwire detection, frontier ablation |
-| `eigenching.py` | — | State pattern morphology + novelty detection |
-| `eigentrace_proxy.py` | — | Cognitive middleware proxy (port 8090), RAG-enriched chat |
-| `quantum_eigentrace_battery.py` | — | QPE + VQE + Grover circuits on simulator |
-| `ainn.sh` | — | Single-command broadcast launcher with watchdog |
-| `refresh_profiles.sh` | — | Hourly cron: model profiles, soul, spectral clusters |
+| `roundtable.py` | 461 | Multi-model debate with escalating pressure |
 
 ---
 
 ## Quick Start
 
 ```bash
-# Run the broadcast pipeline
-python3 batch_producer.py --loop --interval 60 --min-queue 1
-
-# Or use the single-command launcher
+# Run the full broadcast with watchdog
 bash ainn.sh
+bash ainn.sh status
+bash ainn.sh stop
 
-# Run a roundtable debate on a high-friction story
-python3 roundtable.py
-
-# Run the quantum test battery
-python3 quantum_eigentrace_battery.py
+# Or run just the measurement pipeline
+python3 batch_producer.py --loop --interval 60 --min-queue 1
 
 # Search past broadcasts via RAG
 python3 segment_rag.py --query "ceasefire suppression" -n 5
-
-# Update soul calibration
-python3 soul_updater.py
 ```
 
+Set any subset of API keys (missing keys are skipped, never crash):
+`OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`, `DEEPSEEK_API_KEY`, `XAI_API_KEY`.
+
 ---
 
-## Stats
+## Status
 
 | Metric | Value |
-|--------|-------|
-| Total segments processed | 11,000+ |
-| ChromaDB searchable documents | 9,400+ |
-| Git commits | 350 |
-| Frontier models measured | 5 (GPT, Claude, Gemini, DeepSeek, Grok) |
-| Measurement layers | 17 |
-| Broadcast beats per segment | 34 |
-| Triple-domain confirmations | 100 stories (19.5%) |
-| Roundtables completed | 14 |
-| Mean content loss | 51% of source words absent from all models |
-| Mean hedge insertions | 270 per 24 hours |
-| Uptime | Continuous since April 2026 |
-| Hardware | Single RTX 4080, 16GB VRAM |
+|---|---|
+| Segments measured | ~17,500 |
+| Git commits | 1,422 |
+| Frontier models (broadcast) | 5 |
+| Models (research battery) | 10 (5 frontier + 5 local) |
+| Core measurement layers | 15 (+ Layer 18 raycasting) |
+| Robustness tests passed | 8 |
+| Entity-swap counterfactual | p = 0.0085, d = 0.471 (pre-registered) |
+| Uptime | continuous since April 2026 |
+| Hardware | single RTX 4080, 16GB VRAM |
+| Peer review | none yet — code, prompts, and data public; ~$50 to replicate |
 
 ---
+
+## A Note on Scope
+
+The repository contains a large amount of exploratory work beyond the core measurement system — batteries, ablations, and experiments, many of them dead ends kept for the record. The load-bearing pipeline is the file list above. Where a research claim and an exploratory file disagree, the published statistics at [eigentrace.ai/sean-adams](https://eigentrace.ai/sean-adams) are authoritative.
 
 ## License
 
-MIT
+MIT. Built on one GPU by one person. `eigentraceproject@gmail.com`
