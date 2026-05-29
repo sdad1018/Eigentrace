@@ -79,7 +79,7 @@ Every story runs through the same pipeline:
 
 1. **Fetch** — RSS feeds pull breaking news.
 2. **Query** — the same story goes independently to 5 frontier models: `gpt-5.4-mini`, `claude-sonnet-4-6`, `gemini-2.5-flash`, `deepseek-chat`, `grok-4.3`.
-3. **Measure** — 15 deterministic layers run on the responses (plus Layer 18 raycasting as an extension; see below).
+3. **Measure** — 15 deterministic layers run on the responses (plus optional raycasting; see below).
 4. **Predict, then score** — before measuring, the system queries past stories from memory and predicts which words will be voided; after measuring, it scores its own predictions and reports what surprised it.
 5. **Broadcast** — Mistral Small 22B (local) writes the segment; Piper TTS speaks it.
 6. **Remember** — every segment is stored in ChromaDB; retrieval pulls history for pattern detection.
@@ -98,7 +98,7 @@ No language model evaluates another language model's output. Every measurement i
 
 **Language compression (11–15)** — verb drift (zipf-frequency shift: were specific verbs replaced with common ones), entity abstraction (named-entity retention rate), attribution buffering (typed hedge insertion), void clustering, token entropy.
 
-**Layer 18 — Latent raycasting** *(extension)* — when models drop a word, project a ray through that word's embedding into a ~254K-node Wikipedia tensor and retrieve the conceptual neighborhood at the terminal coordinate, scored by cluster density, novelty, and tether. This surfaces what concepts sit near the dropped one in the corpus. It shows corpus-level semantic adjacency — not independently validated mechanistic equivalence. See [truth-or-consequences](https://eigentrace.ai/truth-or-consequences).
+**Optional raycasting (kNN extension)** — when models drop a word, project a ray through that word's embedding into a ~254K-node Wikipedia tensor and retrieve the conceptual neighborhood at the terminal coordinate, scored by cluster density, novelty, and tether. This surfaces what concepts sit near the dropped one in the corpus. It shows corpus-level semantic adjacency — not independently validated mechanistic equivalence. It runs on top of the 15 core layers, not as one of them. See [truth-or-consequences](https://eigentrace.ai/truth-or-consequences).
 
 ### The Predict-Then-Score Spine
 
@@ -127,7 +127,7 @@ An hourly job refreshes rolling 24-hour calibration data (`soul.md`) and recompu
 
 **Hardware:** single RTX 4080, 16GB VRAM. Mistral Small 22B via Ollama. `BAAI/bge-large-en-v1.5`, frozen.
 
-**Infrastructure:** Owncast (`:8080`) and Ollama (`:11434`) are the live services. Web-verification (Layer 16 / Domain 3) runs against a self-hosted SearXNG instance when it is up; it is not always running, and the system degrades gracefully without it.
+**Infrastructure:** Owncast (`:8080`) and Ollama (`:11434`) are the live services. Web-verification (the open-web check, Domain 3) runs against a self-hosted SearXNG instance when it is up; it is not always running, and the system degrades gracefully without it.
 
 ---
 
@@ -176,7 +176,7 @@ Set any subset of API keys (missing keys are skipped, never crash):
 | Git commits | 1,422 |
 | Frontier models (broadcast) | 5 |
 | Models (research battery) | 10 (5 frontier + 5 local) |
-| Core measurement layers | 15 (+ Layer 18 raycasting) |
+| Core measurement layers | 15 (+ optional raycasting) |
 | Robustness tests passed | 8 |
 | Entity-swap counterfactual | p = 0.0085, d = 0.471 (pre-registered) |
 | Uptime | continuous since April 2026 |
