@@ -370,7 +370,7 @@ def gpu_free_mb() -> int:
 
 
 
-def wait_for_vram(need_mb: int = 6000, timeout: int = 90) -> bool:
+def wait_for_vram(need_mb: int = 6000, timeout: int = 30) -> bool:
 
     start = time.time()
 
@@ -885,7 +885,7 @@ def stage_3_geometric(results):
 
         vix_str = " ".join(f"{n}={v:.1f}" for n, v in vix_scores)
 
-        void_str = "|".join(_unpack((getattr(geo, "void_concepts", None) or [])[:3]))
+        void_str = "|".join(_unpack(getattr(geo, "void_concepts", [])[:3]))
 
         log.info(f"  [{story.category}] VIX: {vix_str}")
 
@@ -1429,7 +1429,7 @@ def stage_6_generate_images(segments, skip=False):
 
 
 
-    if not wait_for_vram(6000, timeout=90):
+    if not wait_for_vram(6000, timeout=30):
 
         log.warning("  Not enough VRAM — skipping images")
 

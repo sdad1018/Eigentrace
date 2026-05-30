@@ -14,3 +14,11 @@ vocab/*.npy
 anamnesis_results/*.db
 chroma_db/
 tmp/
+
+# vocab build artifacts — never commit (GitHub 100MB limit)
+*.pt
+vocab/*.pt
+vocab.bak*/
+vocab/raycast_vocab.npy
+wiki_titles_cache.json
+.env

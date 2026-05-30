@@ -9,12 +9,11 @@ Inverse correlation = the thesis: models suppress the headlines.
 """
 
 import requests
-import json, time, logging, os
 try:
     from epistemic_sensor import sovereign_search
     _HAS_SOVEREIGN = True
 except ImportError:
-    _HAS_SOVEREIGN = False
+    _HAS_SOVEREIGN = False, json, time, logging, os
 from datetime import datetime
 from collections import defaultdict
 

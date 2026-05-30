@@ -885,7 +885,7 @@ def stage_3_geometric(results):
 
         vix_str = " ".join(f"{n}={v:.1f}" for n, v in vix_scores)
 
-        void_str = "|".join(_unpack((getattr(geo, "void_concepts", None) or [])[:3]))
+        void_str = "|".join(_unpack(getattr(geo, "void_concepts", [])[:3]))
 
         log.info(f"  [{story.category}] VIX: {vix_str}")
 
