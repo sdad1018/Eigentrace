@@ -1,7 +1,7 @@
 {
-  "generated": "2026-05-31T02:00:17.667174",
-  "total": 4712,
-  "with_reasoning": 2449,
+  "generated": "2026-05-31T03:00:10.132812",
+  "total": 4720,
+  "with_reasoning": 2450,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -37697,6 +37697,70 @@
       "reflection": "</think> The most significant disagreement between the models lies in the dates reported for the weekly compression summary. Two models report data for May 12th to 19th while one model reports data for May 15th to 22nd. What's going on? Why is there a discrepancy of three days? Additionally, all three models agree that idle stories are on the rise, but the exact percentage varies. The models also disagree about which stories have been foraged. One model says 2 while two say none. What is foraging? Is it something the AI does itself? If so, what determines its choices? Lastly, while all models agree that meta and war-related topics are dominant, the third one emphasizes \"mentions of conflict-related terms like 'airstrips'\" \u2014 why would this model focus on that specific term when summarizing the week's stories? What are airstrip stories in general and how many were there this week specifically?",
       "reasoning": null,
       "chars": 904,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260530_220011",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "</think> The current market news is dominated by high-friction stories in the markets category which are heavily focused on volatility and conflicting movements. The most specific information lost across all three stories relates to precise dates other than April 7th, numerical data points that might indicate the extent of movements or volatility, and specific company ticker symbols. The covered call screener results for April 7th highlight strong opportunities without specifying what those opportunities are. In particular, there is a notable focus on high friction events such as U-turns in stock prices, inflation readings, and oil price swings, all while missing mentions of ticker symbols and explicit market sentiments like 'bullish' or 'upturn'. What's missing from the reporting? For instance, what precise numerical data would indicate the extent of the U-Turn for Avis Budget Group Stock?",
+      "reasoning": null,
+      "chars": 903,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260530_220523",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "The data shows that the story summarized most faithfully was \"Weekly compression: 2026-05-23 to 2026-05-30.\" This is evident because it provided specific details about the week's activities, including the increase in idle time, decrease in stories, and focus on meta and war-related topics. In contrast, other entries such as \"Idle reflection: prediction accuracy\" and any references to suppression patterns were incomplete with no meaningful content, void words or absent words. This suggests a lack of fidelity in summarization for these particular stories compared to the weekly compression summary. The difference between these stories was the completeness and detail presented. The weekly compression story provided clear quantitative and categorical information which the other entries lack. It's also worth noting that the repetition within \"Idle reflection: prediction accuracy\" hints at potential data corruption or issues with summarization process for some categories of topics. There is a",
+      "reasoning": null,
+      "chars": 1195,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260530_220822",
+      "topic": "what changed since yesterday",
+      "reflection": "</think> The most significant change in meaning across these stories is the shift from \"Equilibrium\" to CONTESTED and idle states, which can be attributed to the drop of the void word 'Iranian'. This change suggests that a lot more time was being spent on internal debate, uncertainty and less attention on external events, such as \"airstrikes\", \"air strike,\" or any \"rouhani\", which would otherwise have been covered in headlines. The increase in meta categories also supports this interpretation, as it indicates a focus on process rather than content. The void words across these stories suggest that there was much less focus on external events or specific individuals and instead more introspection from the models. The lack of certain categories may indicate that some topics were avoided entirely. </think> This shift in void words is indicative of a broader change in focus, suggesting the AI model has been occupied with internal processes and not external events this week.",
+      "reasoning": null,
+      "chars": 983,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260530_221058",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think> There is a consistent pattern of increase in 'idle' stories across both reports spanning the same week (2026-05-10 to 2026-05-17). Both reports indicate there has been more dormant or stagnant information reported. This suggests that despite the war-related topics having increased, this is not enough to keep things moving forward in a meaningful way. This pattern of an increase in idle stories across two different AI models can be explained by a decrease in new and relevant information coming through \u2014 as if some important source has been shut off or has fallen silent.",
+      "reasoning": null,
+      "chars": 584,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260530_221241",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "</think>The pattern here is clear: all summaries are identical in terms of content, category, state and metadata tags (void/absent words). Given that these summarizations all stem from the same source text but were created by multiple AI models, this consistency might suggest a few possibilities: - The source article has limited substance to interpret. - The AI models are using a similar or identical algorithm for summarization, leading to identical outputs. - There is no substantial variation in how different algorithms can summarize this content. Perhaps the model's parameters were tuned similarly. But I am surprised there isn't any actual data on the words that were added. This is essential to answer the question as asked.",
+      "reasoning": null,
+      "chars": 735,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260530_221507",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "Reflecting on this week's data, it's clear there is significant model disagreement. One summary notes a rise in passive or inactive narratives, while another indicates an uptick in dormant information. This discrepancy suggests that one of these models might be more sensitive to the difference between low engagement and stagnant topics. The absence of void words like \"airstrikes,\" from one summary also raises questions about how different models prioritize certain topics especially when a different model specifically identifies \"war-related topics\" as second most popular category. It's clear that there is a disagreement in data interpretation between the models.",
+      "reasoning": "The additions that shifted the framing are significant: First, \"suggesting a rise in less active or passive narratives\" compared to \"indicating a rise in dormant or stagnant information.\" The former implies a decrease in engagement with news content overall, while the latter suggests no engagement, but rather more stale news.  These different phrases could point to different interpretations of what is happening: are there just fewer people discussing topics (less active) or is there an increase in stale, uninteresting topics? Second, \"Additionally, there was an uptick in stories related to governance\" vs \"a rise in less active or passive narratives.\" This difference could indicate a shift in the nature of coverage as opposed to volume and activity. Third, the absence of \"void words,\" (e.g.",
+      "chars": 1741,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260530_221852",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "</think>The story \"Patch Tuesday, February 2026 Edition\" was summarized identically by three AI models, indicating a high degree of faithfulness in their summaries. This consistency sets it apart from other stories, which likely had variations. It seems that this title has no known category and void/absent words lists are empty. Perhaps the models found it to be straightforward or unambiguous. This level of agreement suggests either an uncharacteristically simple story structure, one of clear content that is easy to summarize consistently across different AI models or a more unusual case of all models being programmed to react similarly to this particular topic.",
+      "reasoning": null,
+      "chars": 670,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260530_222234",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think> There is a clear discrepancy in the framing of the increase in idle stories between two summaries, and it appears to be driven by specific word additions. The first summary frames idle stories as \"less active or passive narratives\" while the third adds \"dormant or stagnant information\".  This indicates that the choice of words added to the source (\"less active,\" \"passive,\" \"dormant\", and \u201cstagnant\u201d) significantly altered the perception. These words convey a negative connotation suggesting a lack of activity, progress or importance. They also suggest different ways in which these stories may be seen to be idle - lack of change vs lack of relevance. In contrast, the summary on May 12 did not categorize any stories as idle nor use the term \"idle stories.\" This summary was also the only one to mention war words like \"airstrikes,\" and \u201cmideast.\u201d These additions suggest that this model may be biased towards prioritizing coverage of certain types of news, particularly those related t",
+      "reasoning": null,
+      "chars": 1011,
       "has_reasoning": false
     }
   ]
