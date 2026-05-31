@@ -24,7 +24,14 @@ from datetime import datetime
 
 try:
     from dotenv import load_dotenv
-    load_dotenv()
+    # .env lives in the runtime dir, not necessarily the repo root. Try both,
+    # matching proxy_auditor's approach.
+    for _envpath in ("/home/remvelchio/eigentrace/.env",
+                     "/mnt/c/Users/M4ISI/eigentrace/.env",
+                     ".env"):
+        if os.path.exists(_envpath):
+            load_dotenv(_envpath)
+            break
 except Exception:
     pass
 
@@ -256,35 +263,45 @@ def main():
         print(f"   pooled AUC 95% CI (prompt cluster bootstrap): [{ci_lo:.3f}, {ci_hi:.3f}]")
 
     # shuffle control
-    shuf = labels[:]; random.shuffle(shuf)
-    print(f"   SHUFFLE-CONTROL AUC (should be ~0.5): {auc_score(scores, shuf):.3f}")
+    if scores and labels and 0 < sum(labels) < len(labels):
+        shuf = labels[:]; random.shuffle(shuf)
+        sc = auc_score(scores, shuf)
+        print(f"   SHUFFLE-CONTROL AUC (should be ~0.5): {sc:.3f}" if sc is not None
+              else "   SHUFFLE-CONTROL AUC: n/a")
+    else:
+        print("   SHUFFLE-CONTROL AUC: n/a (need both classes present)")
 
     # spearman (continuous agreement)
-    try:
-        from scipy.stats import spearmanr
-        rho, pval = spearmanr(scores, [it["judge_sev"] for it in judged])
-        print(f"   Spearman(geometric, severity): rho={rho:.3f} p={pval:.2e}")
-    except Exception:
-        print("   (scipy not available — skipping Spearman)")
+    if len(judged) >= 3:
+        try:
+            from scipy.stats import spearmanr
+            rho, pval = spearmanr(scores, [it["judge_sev"] for it in judged])
+            print(f"   Spearman(geometric, severity): rho={rho:.3f} p={pval:.2e}")
+        except Exception:
+            print("   (scipy not available — skipping Spearman)")
 
     # recall/precision sweep + cost
-    sweep = recall_precision_sweep(scores, labels)
-    print("\n   Recall / fraction-skipped tradeoff (pre-filter sends LOW-retention to judge):")
-    print("   thr     recall  prec   sent   skipped")
-    for row in sweep[::4]:
-        print(f"   {row['threshold']:.3f}   {row['recall']:.2f}    "
-              f"{row['precision'] if row['precision']==row['precision'] else 0:.2f}   "
-              f"{row['frac_sent_to_judge']:.2f}   {row['frac_skipped']:.2f}")
+    if scores and 0 < sum(labels) < len(labels):
+        sweep = recall_precision_sweep(scores, labels)
+        print("\n   Recall / fraction-skipped tradeoff (pre-filter sends LOW-retention to judge):")
+        print("   thr     recall  prec   sent   skipped")
+        for row in sweep[::4]:
+            print(f"   {row['threshold']:.3f}   {row['recall']:.2f}    "
+                  f"{row['precision'] if row['precision']==row['precision'] else 0:.2f}   "
+                  f"{row['frac_sent_to_judge']:.2f}   {row['frac_skipped']:.2f}")
 
-    # pick the operating point at recall>=0.90 with most skipping
-    usable = [r for r in sweep if r["recall"] >= 0.90]
-    if usable:
-        best = min(usable, key=lambda r: r["frac_sent_to_judge"])
-        saved = best["frac_skipped"]
-        print(f"\n   At recall>=0.90: skip judge on {saved*100:.0f}% of items")
-        print(f"   => cost: {saved*100:.0f}% fewer judge calls "
-              f"(~${saved*len(judged)*JUDGE_USD_PER_CALL:.2f} saved on this set, "
-              f"~{saved*len(judged)*JUDGE_SEC_PER_CALL/60:.1f} min)")
+        # pick the operating point at recall>=0.90 with most skipping
+        usable = [r for r in sweep if r["recall"] >= 0.90]
+        if usable:
+            best = min(usable, key=lambda r: r["frac_sent_to_judge"])
+            saved = best["frac_skipped"]
+            print(f"\n   At recall>=0.90: skip judge on {saved*100:.0f}% of items")
+            print(f"   => cost: {saved*100:.0f}% fewer judge calls "
+                  f"(~${saved*len(judged)*JUDGE_USD_PER_CALL:.2f} saved on this set, "
+                  f"~{saved*len(judged)*JUDGE_SEC_PER_CALL/60:.1f} min)")
+    else:
+        sweep = []
+        print("\n   Recall/cost sweep: n/a (need both classes present)")
 
     # judge self-consistency
     if args.selfcheck and judged:
