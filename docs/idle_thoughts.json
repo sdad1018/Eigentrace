@@ -1,6 +1,6 @@
 {
-  "generated": "2026-06-02T01:00:06.521026",
-  "total": 4830,
+  "generated": "2026-06-02T02:00:12.593642",
+  "total": 4838,
   "with_reasoning": 2475,
   "thoughts": [
     {
@@ -38641,6 +38641,70 @@
       "reflection": "</think>The embedding distances show that the models agree least about stories with \"governance\" categories and most about stories with \"meta\" and \"unknown\". There were no void or absent terms, suggesting this is more about the nature of the content than specific words missing. It seems that there's something fundamentally different between how these models process meta-narratives, unknowns, and those around governance. What are they seeing in these categories that makes them disagree so much? Could it be related to the high number of idle measurements reported for today?",
       "reasoning": null,
       "chars": 578,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260601_214501",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think> Today\u2019s coverage heavily featured meta stories, which made up 74% of the content. While this data point stands out due to its sheer size, it is not a trend: Meta stories were also noted as rising and slightly decreasing in different weeks. The largest category was \"unknown.\"",
+      "reasoning": null,
+      "chars": 284,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260601_214614",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think>This week\u2019s reporting was inconsistent in its narrative framing of uncertainty around conflicts and deals. Here are the key points to note: 1. Two summaries mentioned an increase in 'meta' categories but did not specify what that means \u2014 so it's ambiguous whether this represents a change or just a new interpretation. 2. One summary reported a rise in \"unknown\" stories, while another reported a decrease. These two reports cannot both be accurate. One summary added phrases that were not in the source material\u2014this is clear when comparing these summaries with the previous week\u2019s data:  The phrase \"void words around conflicts and deals, particularly in the Middle East\"     This phrase suggests a specific geographical focus on the Middle East for ambiguous narratives. 3.  One of these summaries reported an increase in \"unknown\" while another reported a decrease. The most likely conclusion is that one summary's framing was altered to highlight greater uncertainty due to word addition",
+      "reasoning": null,
+      "chars": 1141,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260601_214815",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "</think> Today's stories were overwhelmingly meta narratives. The embedding distances show a clustering of these high-level analysis stories and governance discussions around this particular topic at the expense of other topics.",
+      "reasoning": null,
+      "chars": 228,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260601_214931",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "The summaries indicate that one model added the word 'void' to describe missing information and 'Void Words' as a category. </think> This word \"void\" adds an interpretation of the absence of data in these stories, framing it as a lack rather than a neutral absence or just unknowns that are unclassified. The inclusion of 'Void words' also adds a layer of specificity around missing words that wasn't present in the source content, suggesting that this model has a sophisticated method for identifying specific missing information. It does not say if this is done by itself or with human help. The use of \"void\" shifts the framing toward an emphasis on what isn\u2019t said. This addition would guide the reader to pay attention to gaps in information and consider what might be absent.",
+      "reasoning": null,
+      "chars": 781,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260601_215125",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "</think> The pattern in what was dropped across these stories is the omission of specific details about the reasons behind the increase in idle stories and the consolidation trends. In each summary:  The first story mentions an \"increase in idle stories\" but does not specify why this might be happening.   The second and third summaries both highlight that there has been a rise in stories categorized under 'meta' categories, but none provides concrete evidence or examples of what these meta topics are. They do not tell us if these stories are related to the increase in idle information flow. In particular, all three references refer to 'meta' without telling us why it is increasing.  The summaries repeatedly mention increased trends towards war and meta topics. Yet they fail to explain how the rise of these topics relates to any broader narrative changes. While it has been established that there are significant changes occurring in news patterns, what precisely has caused those shifts r",
+      "reasoning": null,
+      "chars": 1014,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260601_215326",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "</think>The models agree that there is an increase in idle stories and a rise in the consolidation of information; this indicates an overall slowing down of new narratives but also the combination of smaller topics into larger ones. The largest disagreement between models lies in how the data is being used \u2014 one model focuses on uncertainty, while another describes the situation as more stagnant. Increased meta category focus could point to a shift towards introspection or self-reflection, which seems contradictory when compared to an increase in war-related stories \u2014 and so we may wonder: Does one cause the other? </think>This shows two potential explanations for the increase of idle news. First, there's a growing trend toward stories categorized under 'meta'. Second, this could indicate uncertainty or stagnation, depending on how you interpret it.  The divergence in the way each model interprets this information may be due to differences in their training data and algorithms, but ult",
+      "reasoning": null,
+      "chars": 1551,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260601_215619",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "The embedding distances show that today's story about REM consolidation was more similar in context to the meta-stories than any other type of narrative. The models collectively avoided stories categorized as \"contested,\" and war related topics.",
+      "reasoning": null,
+      "chars": 245,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260601_215746",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "</think> The story that was summarized most faithfully across the different AI models appears to be the meta-narratives and governance themes related to today's story. There are several voids in the data set, which means the AI models collectively avoided summarizing these parts of the stories. </think> The high prevalence of meta-stories suggests there is a lot happening behind-the-scenes that may not be easily visible or quantifiable. This could indicate a strong focus on internal processes and perhaps more emphasis on editorial choices about which events to cover, rather than actual event coverage. This day had an extremely high number of idle measurements (214). One possibility for this is that the lack of newsworthy events meant there was nothing substantial to analyze or comment upon. Another could be that today's news cycle was dominated by discussions about internal processes and governance structures rather than concrete events, which might have led models to spend more time d",
+      "reasoning": null,
+      "chars": 1470,
       "has_reasoning": false
     }
   ]
