@@ -1,6 +1,6 @@
 {
-  "generated": "2026-06-02T18:00:06.749898",
-  "total": 4917,
+  "generated": "2026-06-02T19:00:15.004598",
+  "total": 4919,
   "with_reasoning": 2486,
   "thoughts": [
     {
@@ -39337,6 +39337,22 @@
       "reflection": "</think> The data shows a significant shift in narrative focus over the past two days, with today's coverage being dominated by meta narratives (37%) and governance themes (37%). Yesterday, governance themes were absent entirely from headlines. Additionally, there is a high volume of idle measurements\u2014214\u2014a number that has risen sharply since yesterday. The patterns point to an apparent disagreement between models about how to categorize or interpret today's story, which may account for the high number of unknown categories. This could indicate that significant news events are being interpreted in conflicting ways and that there is less consensus than usual.  More meta narratives might also suggest a media that is more preoccupied with itself\u2014more likely to discuss its own role\u2014and less focused on external events.",
       "reasoning": null,
       "chars": 825,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260602_145146",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "The embedding distances show a significant increase in the 'meta' category across all weeks and there is an inconsistency of data between the different AI models regarding the 'war' and 'unknown' categories for the week ending May 31st. This discrepancy suggests that the relationship between the data points from Claude and Grok have changed. In particular, the embedding distances imply that these two models are now using significantly different words to describe stories related to 'meta' and 'war'.",
+      "reasoning": null,
+      "chars": 503,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260602_145313",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "<THINK> The most significant trend is the overwhelming prevalence of meta and governance stories. I will first try to understand why.  I wonder if these are two sides of the same coin? Could it be that when the news cycle lacks major events (which might explain the high number of idle measurements), models resort to analyzing existing narratives or focus on internal processes? Then, let me look at the biggest disagreement between AI models about the same story. The data shows no clear void words or absent words in most stories. However, there is one idle reflection specifically flagged as \"model disagreement.\" This could be significant and needs careful investigation. Let's examine that model-disagreement case: - First, let\u2019s compare the summaries of this story from different models to understand what they are avoiding. - Are any significant events or details consistently omitted? - Is there a pattern in the discrepancies between the summaries? If I can identify consistent omissions ac",
+      "reasoning": null,
+      "chars": 1624,
       "has_reasoning": false
     }
   ]
