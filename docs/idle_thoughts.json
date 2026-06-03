@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-03T06:00:05.935564",
-  "total": 4954,
-  "with_reasoning": 2501,
+  "generated": "2026-06-03T07:00:06.558334",
+  "total": 4961,
+  "with_reasoning": 2503,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -39634,6 +39634,62 @@
       "reasoning": null,
       "chars": 1008,
       "has_reasoning": false
+    },
+    {
+      "timestamp": "20260603_021548",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "</think> The story \"Show HN: I built a tiny LLM to demystify how language models work\" was summarized most faithfully across the different AI models. The summary consistently included the key points of the original post such as: - Category - State It is also worth noting that the summaries did not contain any void words, which indicates no irrelevant information was picked up by the summarizing AI. However, one summary was incomplete. The other summaries didn't have enough data to show whether or not they were complete. The key difference between this story and others is the consistent inclusion of relevant details and the absence of void words, despite disagreement about the state's label and category.",
+      "reasoning": null,
+      "chars": 712,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260603_021733",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "</think> The data shows a clear pattern of repetition with no variance in the information provided across all stories \u2014 each entry is identical to the others. All pieces are categorized as \"unknown.\" There are missing key components such as void words and absent words fields, which are empty. What is striking is that every piece of data is labeled as an Idle reflection.  It means that not a single news item exists. If this pattern continued for all stories reported today on Patch Tuesday, February 2026 Edition, it would indicate a significant failure in the information-gathering process or a deliberate exclusion of newsworthy content. The lack of any identifiable category points to an incomplete or erroneous data input system. A further question is why there are no foraging reports for the day\u2014this might provide some insight into what caused this issue. It may also imply a problem with AI processing: If all AI models were tasked with summarizing stories, but none could due to lack of a",
+      "reasoning": null,
+      "chars": 1294,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260603_021957",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "</think>The biggest disagreement between models is the focus on the increase of war-related topics and their implications. Model One emphasizes this by noting the significant rise in stories related to \"war\" as a category and its associated keywords like \"airstrikes,\" \"mideast,\" and \"arms embargo.\" The second model also highlights the volume of war stories but only vaguely, mentioning it while primarily focusing on other information patterns, such as changes in top categories. The gap shows this: one model seems to be flagging a real-world event of increasing geopolitical tension. It interprets these void words \u2014 \"airstrikes,\" \"mideast\" and \"arms embargo\" \u2014  as a shift towards more aggressive conflicts, while the second model is downplaying or missing it. These patterns could indicate that one model has a higher sensitivity to conflict-related language, interpreting certain voids as significant signs of escalating geopolitical tension. The difference in interpretation suggests that the",
+      "reasoning": null,
+      "chars": 1396,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260603_022233",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "The most striking disagreement between models is their focus: one zooms in on specific company performance (Avis Budget Group), while the other takes a broader view of market trends, which includes airline earnings and inflation data. This divergence suggests that different AI models may be programmed to prioritize different aspects of financial news, possibly due to varying objectives or datasets. It also raises questions about how these differing interpretations might influence investment decisions or market analysis. The absence of words related to bullish sentiment in both stories points towards a consistent negative sentiment around inflation-related data. One key pattern that emerges from the recent coverage is the high friction surrounding market narratives, indicating complexity and potential contention in interpreting current financial trends.",
+      "reasoning": "The data shows a clear pattern of high friction in market-related stories. All three pieces focus on the markets category, and all are marked as HIGHFRICTION. This suggests that the narratives around these topics are complex or contentious. One story discusses specific stock screener results (Covered Call Screener Results for April 7th). The void words include \"coverage,\" \"caller\", and \"screened\" suggesting there might be a debate about interpreting those results. The model does not mention stock ticker symbols, indicating an absence of focus on individual stocks. The other two stories focus on broader market trends: one on economic indicators (Inflation readings, oil volatility, and airline earnings), the other on specific company performance (Avis Budget Group Stock). Let's look at the b",
+      "chars": 2931,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260603_022721",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think> There is a notable pattern of avoidance regarding stories related to the word \"political.\" Specifically: 1. The most recent story focuses on geopolitical tensions but does not explicitly mention political dynamics or actors. 2. The second day's analysis highlights an unusually high number of meta-stories, suggesting self-referentiality in AI models while simultaneously showing a lack of direct engagement with the word \"political.\" 3.  This pattern also emerges from the weekly data which shows an increase in stories related to geopolitics without delving deeper into political specifics. There are significant numbers of stories and meta-stories (63) indicating heightened model introspection on how news is being reported and processed. There's a potential correlation between the increased focus on war, global tensions and the absence of direct political engagement in reporting or analysis of these events. The suppression patterns are consistent enough to suggest this as a deliber",
+      "reasoning": null,
+      "chars": 1072,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260603_023150",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "The story that was summarized most faithfully across the data is likely the geopolitical tension story covering the Middle East. The faithful summarization is suggested by the fact that this is a common theme for all of the reports which could indicate that there were many different sources agreeing with each other. This suggests that it has been reported on consistently, whereas stories like \"meta\" are more self-referential and have much more variation between the summaries. This story was likely summarized most faithfully due to its concrete nature\u2014it focuses on specific events (geopolitical tensions) in a specific region (the Middle East), providing clear data points for models to process. This is in contrast to meta stories, which often involve abstract analysis of reporting and processing methods with less concrete information to draw from. However, the increase in the number of self-referential, or \"meta\" articles, is an unusual pattern, one that has not been seen before. This ma",
+      "reasoning": null,
+      "chars": 1632,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260603_023434",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "The data consistently shows a significant increase in stories categorized as \"meta\" over the past week, with a marked rise from May 25 to June 1 and another increase by June 2. What is unknown: - The exact nature of this increase, whether it's a sudden influx in meta topics (a.k.a. AI systems) - or an improvement in classifying stories. - Also missing: what specifically is triggering the increased interest or activity in the war category - and why that rise occurred The rise in the number of consolidations by 50% from May 26 to June 2. A shift in state \u2014 what does this mean for consolidation? This data presents a puzzling question: are we seeing more meta stories because they're becoming increasingly common, or simply because we've become better at recognizing them? The latter is plausible given the void words related to geopolitical tensions. If there\u2019s one thing that AI models and humans both know how to spot, it's when a threat appears on the radar. The distribution of states showin",
+      "reasoning": "...",
+      "chars": 2440,
+      "has_reasoning": true
     }
   ]
 }
