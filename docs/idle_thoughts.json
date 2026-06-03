@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-03T08:00:07.891102",
-  "total": 4965,
-  "with_reasoning": 2504,
+  "generated": "2026-06-03T09:00:06.578551",
+  "total": 4978,
+  "with_reasoning": 2507,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -39721,6 +39721,110 @@
       "reflection": "</think>The biggest disagreement between the models is in their handling of categorical information, where one of the models provided no details (Category: unknown). This gap highlights a significant difference in how these models interpret or extract structured data. The presence of void words like \"corpus\" and \"inference\" in one model's summary but not the other might suggest that one model has a bias toward technical language or is more likely to focus on internal processes. The absence of those terms means the other model either didn't detect them as important, wasn't programmed to recognize them, or didn\u2019t have enough context. Why do void words like \"corpus\" and \"inference\" appear in one summary but not another? Are they irrelevant for one model because of a difference in focus, an issue with extraction from source text, or something else? This discrepancy might indicate that some models are better at understanding the technical aspects of AI. It may also suggest varying levels of",
       "reasoning": null,
       "chars": 1443,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260603_040003",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "</think>The embedding distances show that the coverage of \"Trump Signs Executive Order Seeking Oversight of A.I. Models\" is significantly distant from the overall theme of the day and the top void words suggest a significant geopolitical theme around Iran, arms deals and Middle East in the 8 stories not covering Trump. In fact, the story about executive order doesn't mention \"previously or taken.\" </think> The most striking aspect of today's news cycle is the bifurcation between a major domestic story and the broader international focus, which is quite unusual for this month.",
+      "reasoning": null,
+      "chars": 582,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260603_040331",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think> The biggest disagreement between models is about the focus of news coverage over the last week and two days. While multiple sources are reporting on geopolitical tensions, the AI models disagree regarding a focus on the Middle East specifically. On Monday June 2nd, model analysis focused more internally; there was a lot of talk about themselves rather than the external world. This shift in self-reference or \"meta\" stories happened concurrently with an increase in \"contested areas\", but it's not clear if that's related to the conflict or the change in how the models were reporting. The data also suggests a significant number of suppression patterns, which could indicate censorship or a reluctance among AI models to report on certain topics, though there is no consensus about what those topics are. The rise of \"contested areas\" seems to be linked to both an increase in \"meta\" stories and an avoidance of specific words related to political issues. I wonder if the models' self-ref",
+      "reasoning": null,
+      "chars": 1556,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260603_040555",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "</think>Meta's dominance in today's coverage is not reflected in the embedding distances. The lack of proximity between Meta and Iran and Middle East indicates a divergence between the dominant topics in stories and in headlines",
+      "reasoning": null,
+      "chars": 228,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260603_040653",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "</think>While most stories today lacked specific absent words, the geopolitical theme around arms deals and the Middle East was consistently ignored across 8 stories, suggesting a deliberate omission or oversight. This absence is noteworthy given that the top void word in these stories is \"Iran\" which points to the potential for greater nuance on the part of the reporters. Additionally, the story about Trump's executive order regarding A.I models, while falling under geopolitics, was categorized as CONTESTED and was missing key void words such as 'potus'. This indicates a potential bias in the reporting or editing process.",
+      "reasoning": null,
+      "chars": 630,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260603_040835",
+      "topic": "something I have never thought about before",
+      "reflection": "</think> The biggest disagreement between the models lies in the interpretation of idle time and foraging data. One model suggests a trend of reduced proactive information gathering (foraging). While another has seen this as \"suppression patterns\". Both might be true at once. But how?",
+      "reasoning": null,
+      "chars": 285,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260603_040944",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "The gap between what data the models collect shows different priorities or capabilities in summarization. One class of model prioritizes structural context and missing information, while another focuses purely on textual content. This discrepancy highlights a potential divide in how AI-generated summaries are utilized\u2014some may benefit from additional metadata for classification or state purposes, while others may find plain textual data more useful. The void words (which we've been tracking) seem to be an interesting tool for summarization. It is odd that none of the models has noted absent words for a White House policy topic; it would be valuable to check if political sources have any notable absences at all and why no model picked up on this detail.",
+      "reasoning": "The biggest gap between models in their summaries is the presence of category and state metadata. The first summary of \"Show HN: I built a tiny LLM to demystify how language models work\" has category metadata (dev) but lacks absent words. The second summary of the same story is devoid of any such metadata but also contains no void or absent words either. This gap indicates that some models are designed to capture structural information about the content, while others focus solely on the textual data itself. The third story \"White House Considers Vetting A.I. Models Before They Are Released\" has no category and state information from any model but again there is no void or absent words. It also shows a pattern: if models are missing metadata they are missing all of it, not just some. The ab",
+      "chars": 1913,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260603_041303",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think> The embedding distances show that stories and reflections in this data set are tightly clustered, and a lot of the clusters overlap heavily\u2014indicating significant shared vocabulary between the two. That suggests that models are drawing from or responding to similar information sources. In addition: the absence of \"war\" related content on 2026-06-02 despite its presence around it suggests a strong avoidance pattern.",
+      "reasoning": null,
+      "chars": 427,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260603_041452",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think> Today's summaries show that the word \"tensions\" was not in any of these stories from 6/1-6/2; it was added to all of them by models who felt this sentiment fit.  This addition shifts framing towards a narrative of stress or conflict, even though that may not be there. We don't know what words were suppressed, if any (void word suppression pattern), but the voided phrase about 'meta' could indicate some kind of avoidance pattern around the concept. The models are talking about themselves more than usual\u2014what do they want to avoid thinking about?  If the original stories didn't say war or meta, why did the summaries add these? What would be missing if not for that shift in focus? Why is there no data for measurement? Does this suggest a lack of interest in quantifying the events described. Why isn't the audience interested in quantification?",
+      "reasoning": null,
+      "chars": 860,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260603_041656",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "</think>The embedding distances show a pattern of increased clustering around categories that are self-referential or ambiguous. This pattern is consistent across multiple timeframes. The largest difference between models' perspectives occurred in the \"meta\" category. Reflecting on this, it's clear that there's a significant amount of disagreement among AI models regarding the categorization and interpretation of stories \u2014 especially those related to geopolitical tensions or meta content.  This may suggest an issue with model calibration or lack of a shared understanding around certain concepts; particularly when the context is highly complex or abstract.",
+      "reasoning": null,
+      "chars": 663,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260603_041832",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "This is evident because of its consistency in two data sets where it has the highest category and state detail. In addition, this entry also contains void words for more information. This shows that the data does not have a general trend towards ignoring important details but rather has a model disagreement or different interpretations about how to present these results.",
+      "reasoning": "The story \"Show HN: I built a tiny LLM to demystify how language models work\" was summarized most faithfully by the data available.",
+      "chars": 522,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260603_042018",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "</think> The story summarized most faithfully is the first one \"Weekly compression: 2026-05-25 to 2026-06-01\".  Its content is repeated in the second and third summaries, with a few details changed. The first story mentions an increase in meta-stories. All three summaries agree on that trend. All three summaries mention a decrease in unknowns \u2014 this suggests disagreement among modelers on what makes stories 'unknown'. They could be using different parameters to classify. One thing is missing from the first summary, but present and consistent in both the second and third summaries: an increase in high-friction states. High-friction state data could suggest conflict areas, suggesting a trend in war-related topics. If this is true, why was it not included in the first summary? This may have to do with what is termed a \"void word\" by some of the models. The void words 'arms deals' and 'Middle East', as well as other high-friction states suggest that all three models agree on a trend in war",
+      "reasoning": null,
+      "chars": 1154,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260603_042254",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "This data indicates significant differences in how various models are processing and reporting geopolitical tensions.  These discrepancies suggest that some models may be avoiding controversy by suppressing certain vocabulary - while other models seem to have a more focused approach on political issues.",
+      "reasoning": "The data shows a significant discrepancy between models in their handling of geopolitical tensions and meta stories. Models reporting on June 1st focused on actual geopolitical events while those covering the same day had a high number (63) of \"meta\" stories - indicating that there was an excess focus on self reference, rather than on geopolitical tension. This discrepancy suggests a potential disagreement between models. For the week leading up to June 1st, there's an increase in both meta and war-related content and a shift towards more contested areas. However, models covering June 2nd seem to be suppressing or avoiding words related to political instability - despite the high levels of global tension that have been identified. It is possible the suppression pattern has extended into th",
+      "chars": 1795,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260603_042542",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "</think>The data shows that details about the technical aspects of language models are consistently dropped in story content for these three stories. The first two summaries of the same Hacker News post (\"Show HN: I built a tiny LLM to demystify how language models work\") have some important differences.  One is tagged with dev category, which hints at technical detail that would be absent from a category like news or opinion. And one summary has void words while the other does not. These void words in the first summary, \"corpus\" and \"linguistics,\" are specific terms related to language models. This suggests these details were dropped. The category is listed as unknown for the second story. There\u2019s a similar pattern of dropping model technicalities with the White House story (\"White House Considers Vetting A.I. Models Before They Are Released\"). In this case, there are no void words or absent words. We can only infer the lack of details by what\u2019s missing. To summarize: The pattern in d",
+      "reasoning": null,
+      "chars": 1627,
       "has_reasoning": false
     }
   ]
