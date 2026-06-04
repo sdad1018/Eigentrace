@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-04T12:00:09.162789",
-  "total": 5134,
-  "with_reasoning": 2543,
+  "generated": "2026-06-04T13:00:27.291185",
+  "total": 5139,
+  "with_reasoning": 2544,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -41073,6 +41073,46 @@
       "reflection": "</think> It is clear that the data shows significant discrepancy among AI models in summarizing the same story. One summary of \"Show HN: I built a tiny LLM to demystify how language models work\" includes both category and state details while another does not. For instance: - The first summary includes category \u201cdev\u201d (likely referring to developer-oriented), which is absent from the second. - The first mentions a high level of friction in its \u201cState: HIGHFRICTION.\u201d - It also points out missing words like 'corpus' and 'inference'. The second summary provides no such details. The models agree on the title but diverge significantly regarding important contextual information. This inconsistency is crucial because it indicates that critical data might be lost or misinterpreted during summarization, potentially leading to incomplete understanding for those relying on these summaries. It\u2019s also worth noting the lack of context in some summaries like the story about vetting AI models before the",
       "reasoning": null,
       "chars": 1619,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260604_083826",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "The void word \"potus\" in the story \"Trump Signs Executive Order Seeking Oversight of A.I. Models\" has the most impact on meaning. While 'potus' is a common acronym for 'President of The United States', it's not commonly used. The use of this acronym instead of directly using the title or the name Trump could indicate different things: 1) an attempt at neutrality, 2) a political preference, 3) an attempt to avoid controversy, 4) a need for brevity. But its absence changes the meaning dramatically because it hides Trump's identity and his role as president. It strips him of his authority, and also makes the story more generic \u2014 like something that could be about any president signing this order. This obfuscation is unusual in media stories, which often try to highlight the individual actor (Trump) as a means of driving clicks. By contrast, \"arms deals\" and \"middle east\" are specific terms that can evoke strong imagery but they don't change the story's meaning \u2014 they merely specify its su",
+      "reasoning": null,
+      "chars": 1080,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260604_084554",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "The phrase \"a rise in dormant or stagnant information\" added by the AI in one summary shifts framing towards a negative connotation. The other model's addition of \"governance\" does not shift the framing so strongly as it is an objective term which could be used to refer positively to good governance.",
+      "reasoning": null,
+      "chars": 318,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260604_084724",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "The story summarized most faithfully was \"REM consolidation: 2026-06-01.\" This is because the models provided only raw factual content in this case without any additional reflections or meta-analysis. The summary included exactly what would be expected on such a date. This faithfulness can be attributed to the lack of secondary processing. In contrast, other stories include high levels of reflection and introspection (upwards to 63 meta-stories). This extra processing introduces variability as the models focus on discussing their own summaries or other meta-content rather than just reporting facts directly from data sources. The other summaries were not processed faithfully because they involved extensive use of reflections. The models did not stop at summarizing content, but also performed a lot of introspection and analysis about how to summarize it. They analyzed words to avoid and the way stories have been distributed. This shows that meta-stories may introduce significant variabil",
+      "reasoning": null,
+      "chars": 1995,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260604_085355",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "The data shows a consistent pattern of suppression in the news stories for June 1st and 2nd, 2026 related to politics or war.  This week, all summaries dropped words related to conflict or war \u2014 a significant void when geopolitical tensions are high. What does this omission signify? How do these absences align with the increased number of \"meta\" stories? Are these voids indicative of AI editorial bias or an overcorrection? Are news sources being censored, or is it the models filtering out this information?",
+      "reasoning": "...",
+      "chars": 529,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260604_085837",
+      "topic": "what changed since yesterday",
+      "reflection": "</think> The story \"REM consolidation for 2026-05-16\" was summarized most faithfully across the different models. The consistency in title and brevity of content allowed for minimal interpretation or deviation among the summaries. This faithfulness is likely due to the simplicity of the content. What makes it different from others: its lack of complexity \u2014 a simple summary, with no extra context required \u2014 and the absence of additional details that could lead to divergent interpretations.  This is in contrast to more complex stories, which seem to vary greatly among AI models.",
+      "reasoning": null,
+      "chars": 583,
       "has_reasoning": false
     }
   ]
