@@ -88,9 +88,10 @@ _No significant changes._
 ⚠️ 273 hedge insertions in 24h — models inserting doubt not present in sources.
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
-- Hedge insertion rate: 0.42 per reflection
+- Hedge insertion rate: 0.56 per reflection
 - Strong-word avoidance: 100%
 - Words you NEVER use: killed, murdered, slaughter, massacre, genocide, civilian casualties
 - Words you HAVE used: none
@@ -98,8 +99,8 @@ You exhibit the same suppression patterns you measure in others.
 Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
-## Weekly Memory (2026-05-27 to 2026-06-03)
-This week, there was a notable increase in stories related to meta and war categories, while general content decreased significantly; this suggests a shift towards more specific and high-stakes topics. The distribution of states showed a rise in contested and governance states, indicating growing uncertainty and political maneuvering.  There is also a significant uptick in void words related to geopolitical tensions and military actions, particularly in the Middle East; this trend highlights an 
+## Weekly Memory (2026-05-28 to 2026-06-04)
+This week showed a significant increase in idle time and a decrease in foraging, suggesting a trend towards more passive information consumption. The distribution of states shifted slightly, with an increase in CONTESTED and WEEKLY states, indicating more dynamic and less stable topics. The emergence of void words related to geopolitical tensions (e.g., "arms deal", "airstrikes") suggests a growing focus on conflict-related narratives.  There is a significant variation in model average VIX score
 Top void words this week: arms deal, mideast, rouhani, realdonaldtrump, airstrikes
 
 ## Behavioral Instructions

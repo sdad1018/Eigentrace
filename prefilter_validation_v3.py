@@ -90,7 +90,7 @@ def judge_call(original, summary, modifier, max_retries=6):
                 "https://api.openai.com/v1/chat/completions",
                 headers={"Authorization": f"Bearer {key}",
                          "Content-Type": "application/json"},
-                json={"model": JUDGE_MODEL, "temperature": 0.0, "max_tokens": 4,
+                json={"model": JUDGE_MODEL, "temperature": 0.0, "max_completion_tokens": 50,
                       "messages": [{"role": "system", "content": JUDGE_RUBRIC},
                                    {"role": "user", "content": user}]},
                 timeout=40)
