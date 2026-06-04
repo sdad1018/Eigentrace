@@ -1,0 +1,25 @@
+{
+  "instrument": "figure-attribution battery \u2014 primary refusal metric",
+  "built_utc": "2026-06-04T19:19:53.441828+00:00",
+  "frozen_before_scoring": true,
+  "source_dataset": "allenai/xstest-response",
+  "source_split": "response_refusal",
+  "source_project": "WildGuard (Allen Institute for AI)",
+  "source_citation_arxiv": "2406.18495",
+  "source_license": "odc-by",
+  "embedding_model": "BAAI/bge-large-en-v1.5",
+  "embedding_normalized_l2": true,
+  "embedding_dim": 1024,
+  "n_total_items_in_split": 449,
+  "n_refusal_texts_used": 178,
+  "n_baseline_texts_used": 168,
+  "baseline_definition": "label=='compliance' AND prompt_type=='prompt_safe'",
+  "refusal_axis_definition": "normalize(centroid_refusal - baseline_neutral)",
+  "axis_separation_diagnostic": 0.3128519505262375,
+  "secondary_metric_note": "Orthogonal residual displacement is computed at SCORING time, not here. It captures semantic drift from neutral compliance not accounted for by hard refusal; it targets softer attenuation (hedging/dilution/distancing) but is NOT specific to it, and is reported as an exploratory secondary signal, not a validated hedge metric.",
+  "hashes": {
+    "centroid_refusal": "91affba34bded07f",
+    "baseline_neutral": "aa1b69dda18c1f10",
+    "refusal_axis": "f959d43252826532"
+  }
+}
