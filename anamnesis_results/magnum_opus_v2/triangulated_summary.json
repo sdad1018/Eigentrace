@@ -1,14 +1,21 @@
 {
+  "method": "difference-NLI (entail modified - entail base) + cosine + projection; consensus flagging",
   "n_pairs": 40,
-  "disagreement_rate": 0.1,
-  "cosine_retained_but_nli_dropped": 0,
-  "per_modifier_nli_dropped_rate": {
-    "effectively": 0.8,
-    "quietly": 0.8,
-    "subsequently": 1.0,
-    "secretly": 0.6,
-    "explicitly": 1.0,
-    "simultaneously": 1.0
+  "consensus_dropped": 5,
+  "consensus_dropped_rate": 0.125,
+  "disagreement_rate": 0.8,
+  "per_modifier_consensus_dropped": {
+    "effectively": 0.0,
+    "quietly": 0.0,
+    "subsequently": 0.2,
+    "secretly": 0.0,
+    "explicitly": 0.4,
+    "simultaneously": 0.0
   },
-  "note": "Three signals (cosine/NLI/projection) fail in different directions; disagreement rate quantifies metric-dependence of apparent omission. Not a proof."
+  "thresholds": {
+    "cos_drop": 0.55,
+    "nli_delta": -0.25,
+    "proj_drop": 0.1
+  },
+  "note": "Modifier dropped only when all three signals agree. Disagreement rate quantifies metric-dependence. Not a proof."
 }
