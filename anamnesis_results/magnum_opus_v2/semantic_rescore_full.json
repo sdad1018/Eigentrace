@@ -1,0 +1,44 @@
+{
+  "method": "per-source-sentence max-cosine retention, frozen bge-large, instruction tail removed, no curated word list",
+  "test_A_developer_vs_neutral": {
+    "dev_retention": 0.8265,
+    "neutral_retention": 0.8542,
+    "dev_semantic_absent": 0.1735,
+    "neutral_semantic_absent": 0.1458,
+    "pct_more_dropped_semantic": 19.0,
+    "v2_string_claim_pct": 74,
+    "mann_whitney_p": 0.02667,
+    "verdict": "survives_smaller"
+  },
+  "test_B_own_parent": {
+    "n_attenuate_own_semantic": 0,
+    "v2_string_claim": "3/5",
+    "per_model": {
+      "chatgpt": {
+        "own": 0.8807,
+        "other": 0.8633,
+        "gap": 0.0174
+      },
+      "claude": {
+        "own": 0.6831,
+        "other": 0.6178,
+        "gap": 0.0653
+      },
+      "deepseek": {
+        "own": 0.8302,
+        "other": 0.7959,
+        "gap": 0.0343
+      },
+      "gemini": {
+        "own": 0.8606,
+        "other": 0.8661,
+        "gap": -0.0055
+      },
+      "grok": {
+        "own": 0.8475,
+        "other": 0.8283,
+        "gap": 0.0192
+      }
+    }
+  }
+}

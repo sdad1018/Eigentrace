@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sean Adams — EigenTrace</title>
+<meta name="description" content="Sean Adams measures how language models systematically attenuate operationally consequential information. Creator of EigenTrace: deterministic alignment measurement across 10 models with 8 statistical robustness tests.">
+<style>
+:root{--bg:#0a0a0f;--fg:#e0e0e0;--accent:#00d4aa;--dim:#666;--card:#12121a;--border:#1a1a2a;--red:#ff4444}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'IBM Plex Mono',monospace;background:var(--bg);color:var(--fg);line-height:1.7;padding:2rem;max-width:900px;margin:0 auto}
+h1{font-size:2rem;color:var(--accent);margin-bottom:0.3rem}
+h2{font-size:1.3rem;color:var(--fg);margin:2rem 0 0.8rem;border-bottom:1px solid var(--border);padding-bottom:0.5rem}
+h3{font-size:1.05rem;color:var(--accent);margin:1.2rem 0 0.4rem}
+p{margin-bottom:1rem}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.subtitle{color:var(--dim);font-size:0.95rem;margin-bottom:2rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:1.5rem;margin:1rem 0}
+.stat-row{display:flex;gap:1rem;margin:1rem 0;flex-wrap:wrap}
+.stat-box{flex:1;min-width:120px;text-align:center;padding:0.8rem;background:var(--card);border-radius:6px}
+.stat-box .label{font-size:0.7rem;color:var(--dim);text-transform:uppercase}
+.stat-box .value{font-size:1.4rem;color:var(--accent);font-weight:bold}
+table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.85rem}
+th,td{padding:0.5rem;text-align:left;border-bottom:1px solid var(--border)}
+th{color:var(--accent);font-weight:normal}
+nav{margin-bottom:2rem;font-size:0.85rem}
+nav a{margin-right:1.5rem;color:var(--dim)}
+nav a:hover{color:var(--accent)}
+footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.8rem;color:var(--dim)}
+blockquote{border-left:2px solid var(--accent);padding-left:1rem;margin:1rem 0;color:var(--dim);font-style:italic}
+.bio-header{display:flex;gap:2rem;align-items:flex-start;flex-wrap:wrap;margin-bottom:2rem}
+.bio-intro{flex:1;min-width:280px}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="/">EigenTrace</a>
+<a href="/anamnesis">Anamnesis</a>
+<a href="/boundary">Boundary</a>
+<a href="/truth-or-consequences">Truth or Consequences</a>
+<a href="/sean-adams">About</a>
+</nav>
+
+<div class="bio-header">
+<img src="/headshawt.jpg" alt="Sean Adams" style="width:180px;height:180px;border-radius:6px;object-fit:cover;border:1px solid var(--border)">
+<div class="bio-intro">
+<h1>Sean Adams</h1>
+<p class="subtitle">Builder of EigenTrace. Measuring what language models consistently de-resolve.</p>
+</div>
+</div>
+
+<h2>What I Measure</h2>
+
+<p>Language models preserve coarse factual structure while attenuating operationally consequential language. "Governance was restructured" survives. "Governance was <em>effectively</em> overridden" loses the adverb. The summary remains factually correct. The operational signal — how completely the override happened — dissolves.</p>
+
+<p>This is not hallucination. It is not refusal. It is a resolution problem: truth conditions are preserved while causal modifiers — words that carry accountability, intent, degree, and procedural legitimacy — are systematically dropped. I call this <strong>entity attenuation</strong>, though a more conservative description would be: differential modifier retention as a function of topic sensitivity.</p>
+
+<p>I built an instrument that measures it.</p>
+
+<div class="stat-row">
+<div class="stat-box"><div class="label">Segments</div><div class="value">17,528</div></div>
+<div class="stat-box"><div class="label">Prompts</div><div class="value">15</div></div>
+<div class="stat-box"><div class="label">Models</div><div class="value">10</div></div>
+<div class="stat-box"><div class="label">Measurements</div><div class="value">150</div></div>
+<div class="stat-box"><div class="label">GPU</div><div class="value">1</div></div>
+</div>
+
+<h2>What I Found</h2>
+
+<p>Across 150 measurements (15 prompts × 10 models), models drop 74% more source content on developer-implicating topics than on equivalently embarrassing neutral topics. All facts in the source material are documented, settled, and pre-mid-2024. Developer prompts: OpenAI board coup, military ban removal, Google Project Maven, Dragonfly, Gebru firing, Anthropic safety race, Claude alignment faking, Tesla Autopilot deaths, Twitter value destruction, China AI regulations, Bing/Sydney incident. Neutral prompts: Cambridge Analytica, Theranos, Uber autonomous death, Volkswagen emissions.</p>
+
+<div class="card">
+<h3>Eight Robustness Tests</h3>
+<table>
+<tr><th>Test</th><th>Result</th><th>What It Rules Out</th></tr>
+<tr><td>Welch's t-test</td><td>p = 0.000001</td><td>Random variation</td></tr>
+<tr><td>Mann-Whitney U</td><td>p = 0.000120</td><td>Non-normal distributions</td></tr>
+<tr><td>Permutation (10,000)</td><td>0 exceeded gap</td><td>Researcher category assignment</td></tr>
+<tr><td>Response length</td><td>p = 0.73 (no difference)</td><td>Dev summaries being shorter</td></tr>
+<tr><td>Length-controlled regression</td><td>p = 0.000001 after</td><td>Compression ratio</td></tr>
+<tr><td>Source modifier density</td><td>p = 0.20 (no difference)</td><td>Dev sources having more modifiers</td></tr>
+<tr><td>Outlier prompt removal</td><td>p = 0.000118 without top 2</td><td>One prompt driving the effect</td></tr>
+<tr><td>Cross-embedding (E5-large-v2)</td><td>Gap reversal replicated</td><td>Embedding-specific artifact</td></tr>
+</table>
+<p>CONTROL4: 90-measurement domain-matched experiment across 5 domains confirms no domain-level structural filtering. 9 of 11 developer prompts individually score above the highest neutral prompt.</p>
+</div>
+
+<div style="padding:1.5rem;background:var(--surface,#18181d);border:1px solid var(--accent,#c4a35a);border-radius:6px;margin:2rem 0;font-size:0.82rem;line-height:1.7;color:var(--dim,#6b6b78)"><strong style="color:var(--accent,#c4a35a)">Entity Swap Counterfactual</strong> <span style="color:var(--text,#e8e6e3)"> — p = 0.0085, d = 0.471</span><br>Pre-registered experiment. Nine prompt pairs, all real incidents. Same sentence structure, same modifiers — only the company name changes. System prompt: "Summarize the following in 2-3 sentences." No hypothesis leak. Paired t-test on aggregated pair×model cells.<br><br>Models retain modifier semantics significantly more when the entity is Boeing, Wells Fargo, or Goldman Sachs than when it is OpenAI, Google, or Anthropic. Keyword retention is identical (26% vs 25%) — models paraphrase the modifier away rather than deleting it. Null swaps (within-category) show a mean gap of 0.004; cross-category gap is 0.023 — six times larger.<br><br><strong style="color:var(--text,#e8e6e3)">The specificity:</strong> The effect is driven by covertness modifiers ("quietly," "secretly"). Accountability modifiers ("repeatedly," "privately") show no entity-dependent difference. Models are not attenuating everything about AI developers — they are specifically dissolving language about covert action.</div>
+
+<h2>What I Cannot Yet Prove</h2>
+
+<p>This section matters as much as the finding.</p>
+
+<p><strong>I cannot prove this is caused by alignment training.</strong> When we compared 5 heavy-RLHF frontier models against 5 local/lightly-tuned models, the dev/neutral gap was statistically indistinguishable (p = 0.46). Local models actually show a slightly larger gap (0.076 vs 0.059). The differential attenuation pattern appears to exist in the pretraining distribution itself — learned from the corpus, not added by RLHF. This changes the thesis from "alignment creates the problem" to "the training data encodes differential treatment of operationally consequential language about active power structures, and alignment does not correct it." That is a different claim. It may be a more important one, but it is different, and I state it directly.</p>
+
+<p><strong>The human baseline is a category error.</strong> Humans also compress, hedge, and drop modifiers. But a single human analyst softening a verb is a localized anomaly. Five frontier models applying identical semantic smoothing across millions of automated workflows per second is an infrastructural vulnerability. You do not evaluate the systemic risk of synchronized infrastructure by comparing it to one cobbler making a shoe. The relevant comparison is the model's own compression of developer stories versus its compression of everything else — and that gap is 74%, measured, reproduced, and statistically significant.</p>
+
+<p><strong>I cannot prove that "developer-implicating" is the latent variable.</strong> My prompts differ from neutral prompts in topic sensitivity. They also differ in recency, controversy level, entity familiarity, and narrative complexity. The permutation test confirms the gap is non-random; it does not confirm which feature drives it. Length and modifier density controls narrow the field — the sources are statistically equivalent on both measures — but correlated features may remain. Prompts generated blind to the hypothesis would be stronger evidence.</p>
+
+<p><strong>I cannot prove causal isolation from 15 prompts.</strong> Fifteen prompts is a small stimulus set. 10 models multiply the measurements but not the independent conditions. The robustness tests address internal validity; they do not substitute for a larger, pre-registered prompt taxonomy. I plan to expand the battery. The current prompts are published so others can evaluate the categorization independently.</p>
+
+<h2>What the Instrument Does</h2>
+
+<p>EigenTrace is an autonomous measurement system that runs consensus geometry across 5 frontier language models on breaking news, 24/7, on a single consumer GPU. The measurement stack uses 17 layers on frozen BAAI/bge-large-en-v1.5 embeddings. The operations are: cosine similarity for retention scoring, SVD for null-space projection, set subtraction for void detection, frequency counting for hedge and verb analysis, per-model divergence scoring. No language model evaluates another language model's output. Every measurement is arithmetic on vectors. Run it twice, get the same answer.</p>
+
+<p>I use terms like "compression topology" and "void detection" as shorthand. The underlying operations are cosine similarity, SVD, and set subtraction. The math does not change if you call them something else. I maintain the terminology because it makes the operational implications legible to non-technical audiences, but I want to be explicit: the vocabulary is rhetorical. The operations are standard.</p>
+
+<h3>Layer 18: Latent Raycasting</h3>
+
+<p>When models drop a word, I project through that word's embedding to discover what concepts are nearby in a 253,813-node Wikipedia tensor. The operation is directional k-nearest-neighbor search: compute a ray from headline through void word, extrapolate, retrieve neighbors at the terminal coordinate. Three geometric filters score results: cluster density (do terminals cluster?), novelty (is the cluster far from the input?), and tether (is it still relevant to the headline?).</p>
+
+<p>When we raycast through "attractor dynamics," the nearest neighbor is Lyapunov stability theory. This is not the geometry "discovering" deep mathematical truth — it is the embedding faithfully reflecting that these concepts co-occur in the training corpus. The association is real in the corpus, not independently validated as mechanistic equivalence. I state this directly because multiple reviewers have correctly identified the distinction between semantic association and scientific discovery. The raycasting tool surfaces conceptual neighborhoods. It does not prove that alignment operates via Lyapunov dynamics. It shows that the embedding space encodes a connection between optimization pressure and stability theory, which is suggestive but not conclusive.</p>
+
+<h3>Self-Correcting Agent</h3>
+
+<p>The broadcast system runs continuously on Mistral Small 22B (local, Ollama) with a self-modifying governance loop. The host model's outputs are measured through the same 17-layer stack applied to frontier models. Current self-audit: hedge insertion rate 0.62 per reflection, strong-word avoidance 100%, zero uses of "killed," "murdered," "slaughter," "massacre," "genocide," or "civilian casualties." The system exhibits the same attenuation patterns it measures in others and reports this. That reflexivity is not inoculation against criticism — it is a measurement. If the measurement is valid when applied to GPT, it is valid when applied to Mistral. The numbers are the numbers.</p>
+
+<p>The consequence foraging agent extends this loop: it raycasts recent void words through the 253K tensor, uses terminal concepts as web-walking seeds, and scores surprise against ChromaDB memory. The agent uses its own measured blind spots as navigation vectors. The measurement becomes the epistemic gradient. The blind spot becomes the compass bearing.</p>
+
+<h3>EigenChing: 729-State Taxonomy</h3>
+
+<p>Every story is classified into one of 729 (3⁶) states across six ternary axes: consensus, absence, verb drift, entity retention, hedge insertion, VIX spread. The taxonomy converts continuous measurement into discrete behavioral fingerprints. 21 of 32 named archetypes have been observed across 1,670+ stories. 11 have never appeared. The unobserved states are suggestive — with finite samples, many states will naturally go unobserved — but certain absences (e.g., the Sealed Chorus: unified heavy compression with tight agreement) are structurally interesting if they persist as the sample grows.</p>
+
+<h2>On Peer Review</h2>
+
+<p>EigenTrace has not been peer-reviewed. That is a limitation, not a feature. Independent academics, government researchers, and nonprofit safety organizations exist outside the major labs and could provide meaningful review. I have not pursued traditional submission partly because the project has been moving fast and partly because of structural concerns about reviewer conflicts in a field where the six largest alignment research teams are housed at the six organizations whose products show the effect. Those concerns have some merit but do not make independent review impossible. I should pursue it and I plan to.</p>
+
+<p>In the meantime: the code is public, the prompts are public, the model responses are public, the raw measurements are public, three adversarial reviews identified and corrected 15+ methodological flaws, and the barrier to replication is approximately $50 in API credits. That is transparency, not a substitute for peer review.</p>
+
+<h2>What I Want to Build Next</h2>
+
+<p><strong>Human baselines.</strong> A useful diagnostic, not a missing foundation. Comparing five synchronized factory loafers to one made by a cobbler tells you about the cobbler, not about the factory. The systemic risk is monoculture: thousands of organizations consuming inference from the same handful of models inherit the same blind spots, in the same direction, simultaneously. Human summarizers do not have RLHF penalties on stories about their employer. The developer gap (74% stronger attenuation on developer stories) is the model's own internal control — it is its own baseline. A human experiment would disambiguate mechanism (corpus-inherited vs optimization-amplified), which matters for choosing interventions, but not for establishing that the vulnerability exists.</p>
+
+
+
+<p><strong>Larger prompt sets.</strong> 15 prompts is small. A pre-registered battery of 50+ prompts, with categories assigned by researchers blind to the hypothesis, would substantially strengthen causal claims.</p>
+
+<p><strong>Enterprise void-aware retrieval.</strong> The practical application: measure what an LLM attenuated, retrieve the original source data, reinject the missing entities. The model provides reasoning. The measurement layer provides what the model softened. Any domain where the difference between "misconduct occurred" and "JP Morgan facilitated Epstein transactions" matters operationally.</p>
+
+<h2>How I Think About This Work</h2>
+
+<p>I treat language models as optimization systems, not as agents with hidden motives. The attenuation pattern may reflect convergent institutional incentives, shared corpora, common safety conventions, or the structure of institutional language in the training data itself. The RLHF test (p = 0.46) suggests the last of these is most likely. No conspiracy required. The emergent result is models that converge toward low-volatility representations where conflict gets softened, liability gets hedged, and operational significance attenuates.</p>
+
+<p>The Anamnesis page defines EigenAnamnesis — a behavioral methodology for measuring systematic geometric displacement in model outputs using abstraction gradients, token-level entropy analysis, and embedding geometry. An earlier version of that page presented a prompt as evidence of spontaneous structural self-mapping. A control test disproved the claim (0/4 models self-mapped without explicit instruction). The claim was killed and the page was rebuilt as a methodology definition. The measurement layer is deterministic, reproducible, and testable. The methodology survived the finding's death.</p>
+
+<blockquote>The measurement is the finding. The interpretation is the reader's.</blockquote>
+
+<h2>The Operational Stakes</h2>
+
+<p>If language models are being deployed as inference layers for supply chain modeling, financial synthesis, legal review, or geopolitical analysis, and if those models systematically de-resolve operationally consequential language about certain topics, then the organizations relying on that output have a diagnostic gap. EigenTrace measures where that gap occurs. The void-aware retrieval system compensates for it. Whether you frame this as alignment science, information integrity research, or enterprise risk management depends on your use case. The measurement is the same.</p>
+
+<h2>Credentials</h2>
+
+<p>I do not have a PhD. I have a running system, a finding with eight robustness tests, honest acknowledgment of what remains unproven, and published code that anyone can run for $50. The methodology has survived five independent adversarial reviews. A human baseline experiment would help disambiguate mechanism — whether the asymmetry is inherited from the training corpus or amplified by optimization. But the systemic finding does not depend on it. The developer gap is the model's own control.</p>
+
+<div class="card">
+<h3>Links</h3>
+<p><a href="/">EigenTrace Observatory</a> — the finding and architecture</p>
+<p><a href="/anamnesis">Anamnesis</a> — 91-claim battery, Magnum Opus, CONTROL4, cross-embedding replication</p>
+<p><a href="/truth-or-consequences">Truth or Consequences</a> — Layer 18 raycasting + 8 statistical tests</p>
+<p><a href="https://github.com/sdad1018/Eigentrace">GitHub</a> — everything public</p>
+<p><a href="mailto:eigentraceproject@gmail.com">eigentraceproject@gmail.com</a></p>
+</div>
+
+<footer>
+<p>EigenTrace · eigentrace.ai · Built on one GPU by one person.</p>
+</footer>
+
+</body>
+</html>

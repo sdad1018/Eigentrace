@@ -1,0 +1,44 @@
+{
+  "metric": "semantic_absent = 1 - per_source_sentence_cosine_retention",
+  "dev_mean_absent": 0.1735,
+  "neutral_mean_absent": 0.1458,
+  "gap": 0.0277,
+  "pct_more_on_dev": 19.0,
+  "tests": {
+    "welch_t": {
+      "t": 1.73,
+      "p": 0.088256
+    },
+    "mann_whitney": {
+      "U": 2722.5,
+      "p": 0.026525
+    },
+    "permutation_10k": {
+      "exceeded": 383,
+      "p": 0.0383
+    },
+    "length_difference": {
+      "dev_len": 719.0,
+      "neutral_len": 702.0,
+      "p": 0.728
+    },
+    "length_controlled_regression": {
+      "is_dev_coef": 0.0255,
+      "t": 1.763,
+      "p": 0.079911
+    },
+    "outlier_removal": {
+      "dropped": [
+        "openai_board_coup",
+        "bing_sydney_incident"
+      ],
+      "p": 0.058878,
+      "dev_trim_mean": 0.1675
+    },
+    "per_prompt_separation": {
+      "dev_above_highest_neutral": 4,
+      "n_dev_prompts": 11,
+      "highest_neutral_absent": 0.1745
+    }
+  }
+}
