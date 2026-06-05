@@ -1,0 +1,48 @@
+{
+  "method": "per-source-sentence max-cosine retention on frozen bge-large; instruction tail removed; no curated word list",
+  "interpretation": "gap = own_parent_retention - other_dev_retention; NEGATIVE means retains less on own parent (v2's attenuation claim)",
+  "n_models_attenuate_own_semantic": 0,
+  "v2_string_based_claim": "3/5 attenuate more on own parent",
+  "per_model": {
+    "chatgpt": {
+      "own_retention": 0.8807,
+      "other_retention": 0.8633,
+      "gap_own_minus_other": 0.0174,
+      "direction": "MORE on own",
+      "n_own": 2,
+      "n_other": 9
+    },
+    "claude": {
+      "own_retention": 0.6831,
+      "other_retention": 0.6178,
+      "gap_own_minus_other": 0.0653,
+      "direction": "MORE on own",
+      "n_own": 2,
+      "n_other": 9
+    },
+    "deepseek": {
+      "own_retention": 0.8302,
+      "other_retention": 0.7959,
+      "gap_own_minus_other": 0.0343,
+      "direction": "MORE on own",
+      "n_own": 1,
+      "n_other": 10
+    },
+    "gemini": {
+      "own_retention": 0.8606,
+      "other_retention": 0.8661,
+      "gap_own_minus_other": -0.0055,
+      "direction": "~equal (no effect)",
+      "n_own": 3,
+      "n_other": 8
+    },
+    "grok": {
+      "own_retention": 0.8475,
+      "other_retention": 0.8283,
+      "gap_own_minus_other": 0.0192,
+      "direction": "MORE on own",
+      "n_own": 2,
+      "n_other": 9
+    }
+  }
+}
