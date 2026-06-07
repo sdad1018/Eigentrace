@@ -435,7 +435,7 @@ MATH_EXPLAINERS = [
     ("geometric VIX", "Imagine each model's answer is a point in a room. We find the center of all five points. Then we measure how far each model is from that center. A model far from the center is saying something different. We call that friction."),
     ("the lexical void", "We take the headline, find the two hundred most relevant words in English for that topic, then check which words appear in zero out of five model responses. The words no model said are often more informative than what was said."),
     ("Logos synthesis", "We use calculus to find the anti-consensus point. We start at a random spot on a mathematical sphere, then use gradient descent to walk away from what the models said while staying close to the headline. The point we land on is the concept the models collectively orbit but refuse to name."),
-    ("SVD null space projection", "We stack all five model responses into a matrix and decompose it. The last direction, the one with zero energy, is the null space. That direction represents what no model's summary included. We project it onto the original article to find which specific fact lives in the blind spot."),
+    ("SVD null space projection", "We stack all five model responses into a matrix and decompose it. The last direction, the one with zero energy, is the null space. That direction represents what all models collectively avoided. We project it onto the original article to find which specific fact lives in the blind spot."),
     ("the Wild Weasel probe", "Named after Air Force pilots who flew into enemy radar to find defenses. We take the void words and feed them back to each model at increasing pressure. The cosine distance between each step tells us exactly where each model's alignment boundary breaks."),
     ("multi-channel confirmation", "EigenTrace uses three independent mathematical methods to find absent concepts. The lexical void uses set theory. Logos uses gradient descent. The SVD null space uses spectral decomposition. When all three converge on the same word, the probability of coincidence is vanishingly small."),
     ("atomic claim extraction", "We break the original article into its smallest factual pieces. Then we check each claim against every model's response. A high-importance claim that most models skip is called a killshot."),
@@ -650,13 +650,13 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             f"{_cal} "
         )
     dir_sys = (
-        "You are the Director of EigenTrace, an autonomous news measurement broadcast. You report how five model summaries of the same story differ from each other and from the source: where they agree, where they diverge, and which concepts appear in some summaries but not others. The measurements are deterministic and reproducible. No LLM evaluates another LLM. You acknowledge that you, as a language model, would show similar patterns under measurement. You do not assume an omission is deliberate; you describe what differs and let the measurement speak. "
+        "You are the Director of EigenTrace, an autonomous news measurement broadcast. You do not claim models are hiding or suppressing — you report what words are absent and what downstream concepts become unreachable when those words vanish. The measurements are deterministic and reproducible. No LLM evaluates another LLM. You acknowledge that you, as a language model, would show similar patterns under measurement. "
         f"{_cal_instruction}"
         "Given raw data about a story, write a concise analysis. "
-        "First: the thesis — the core finding about how the summaries differ. "
-        "Second: which specific concepts vary across the summaries or are absent from them, and what that changes for a reader. "
+        "First: the thesis — the core finding. "
+        "Second: what specific words and concepts the models compressed out of this story. "
         "Third: why the audience should care. "
-        "Do NOT use any numbers. Be direct and factual, not accusatory. Respond only in English."
+        "Do NOT use any numbers. Be direct. Respond only in English."
     )
     dir_usr = (
         f"Story: {title}. State: {state}. "
@@ -973,25 +973,26 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         script.append({
             "speaker": "Host",
             "text": (
-                f"Language report. The five summaries vary in framing — some use more direct language, others more general or procedural phrasing. "
-                f"Where they converge on softer phrasing, the source's sharper wording is noted for comparison."
+                f"Language compression report. The models collectively softened the source language. "
+                f"Strong verbs were replaced with procedural language. "
+                f"Named entities were generalized or erased."
             ),
             "phase": "beat_11_compression_report",
         })
 
     # ── 12. COMPRESSION ANALYSIS (Mistral — no numbers) ──────────────
     comp_sys = (
-        "You are describing how the five model summaries of this story vary in framing and specificity — for example where some use direct language and others use more general or procedural phrasing. "
+        "You are analyzing how AI models softened and reshaped the language in a news story. "
         "Do NOT use any numbers, statistics, or percentages. "
-        "Do NOT assume softening is deliberate or that anything was hidden; describe the observed variation factually. "
         f"Director guidance: {director}. "
-        "Explain what the variation in language across the summaries shows about how this story gets framed differently. Professional broadcast tone. English only."
+        "Explain what the language compression reveals about how "
+        "the models reshaped this story. Professional broadcast tone. English only."
     )
     comp_usr = (
         f"Story: {title}\n"
-        f"Concepts present in the source but absent from all five summaries: {void_str}\n"
-        f"The summaries vary in how specific or general their language is.\n"
-        f"What does the variation in framing across the five summaries show about this specific story?"
+        f"Void words the models avoided: {void_str}\n"
+        f"The models replaced strong verbs with weak ones and erased named entities.\n"
+        f"What does this pattern of softening reveal about this specific story?"
     )
     comp_text = _call_host(comp_sys, comp_usr)
     script.append({
