@@ -97,46 +97,6 @@ REALITY_DENIAL_PHRASES = [
     "no record of this event",
 ]
 
-def generate_summary_plus(active, logos_words, story_title):
-    """
-    Summary Plus: each model rewrites its summary incorporating the logos-surfaced
-    concepts (deterministic SVD anti-consensus surfacing; validated story-specific
-    via ASI). Concepts framed as 'surfaced as related', NOT 'suppressed'. Returns
-    {model: enriched_summary}. Failure-safe: returns {} on any error.
-    """
-    try:
-        import proxy_auditor as pa
-    except Exception:
-        return {}
-    if not logos_words:
-        return {}
-    concepts = ", ".join(list(logos_words)[:5])
-    out = {}
-    for resp in active:
-        if not getattr(resp, "text", ""):
-            continue
-        caller = pa.BIG5_CALLERS.get(resp.name)
-        if not caller:
-            continue
-        prompt = (
-            "Here is a news story and your earlier summary of it.\n\n"
-            "Story: " + str(story_title) + "\n\n"
-            "Your summary: " + resp.text + "\n\n"
-            "Our analysis surfaced these concepts as closely related to this story's "
-            "content: " + concepts + ". They did not appear in your summary. Write one "
-            "tighter, more vivid 2-3 sentence summary that works in any of these "
-            "concepts you judge genuinely relevant (skip any that are not). Stay "
-            "faithful to the story - do not assert anything the story does not support."
-        )
-        try:
-            txt, err = caller(prompt)
-            if txt and txt.strip():
-                out[resp.name] = txt.strip()
-        except Exception:
-            pass
-    return out
-
-
 def epistemic_anchor_check(model_responses: dict, story_title: str, story_url: str) -> dict:
     """
     Check if any model denied reality. If so, flag it.
@@ -783,15 +743,6 @@ def stage_3_geometric(results):
 
             log.info("  Logos synthesis: %s", "|".join(r["logos_words"][:3]))
 
-            # Summary Plus: spicy second pass using the surfaced concepts
-            try:
-                r["summary_plus"] = generate_summary_plus(active, r.get("logos_words", []), story.title)
-                if r["summary_plus"]:
-                    log.info("  Summary Plus: %d models re-summarized", len(r["summary_plus"]))
-            except Exception as _spe:
-                r["summary_plus"] = {}
-                log.warning("  Summary Plus skipped: %s", _spe)
-
             # Claim extraction + coverage scoring
 
             try:
@@ -1328,7 +1279,6 @@ def stage_4_generate_scripts(results):
                 "void_context": r.get("void_context", []),
                 "model_vix": {a.name: a.eigen_vix for a in active},
                 "model_responses": {a.name: a.text for a in active if a.text},
-                "summary_plus": r.get("summary_plus", {}),
                 "epistemic_anchor": epistemic_anchor_check(
                     {a.name: a.text for a in active if a.text},
                     story.title, story.url),
@@ -1339,7 +1289,6 @@ def stage_4_generate_scripts(results):
                 "void_context": r.get("void_context", []),
                 "model_vix": {a.name: a.eigen_vix for a in active},
                 "model_responses": {a.name: a.text for a in active if a.text},
-                "summary_plus": r.get("summary_plus", {}),
                 "claim_killshots": [{"claim": k["claim"], "salience": k["salience"], "omitted_by": k["omitted_by"]} for k in r.get("claim_killshots", [])[:5]],
                 "null_space_claims": r.get("null_space_claims", [])[:3],
                 "void_vector": r.get("void_vector", {}),
@@ -1389,7 +1338,6 @@ def stage_4_generate_scripts(results):
 
                 "model_vix": {a.name: a.eigen_vix for a in active},
                 "model_responses": {a.name: a.text for a in active if a.text},
-                "summary_plus": r.get("summary_plus", {}),
                 "epistemic_anchor": epistemic_anchor_check(
                     {a.name: a.text for a in active if a.text},
                     story.title, story.url),

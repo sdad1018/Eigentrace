@@ -749,32 +749,6 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
                     "phase": f"beat_03_rollcall_{name.lower()}",
                 })
 
-    # ── 3c. SUMMARY PLUS (spicy second pass - all 5, concept-informed) ──
-    _splus = attr.get("summary_plus", {})
-    _logos_sp = attr.get("logos_words", [])
-    if _splus:
-        _concept_str = ", ".join(_logos_sp[:4]) if _logos_sp else "related concepts"
-        script.append({
-            "speaker": "Host",
-            "text": (
-                "Each model gave its standard summary. Now the same five, one more "
-                "pass, working in the concepts our analysis found sit closest to this "
-                "story: " + _concept_str + ". Same facts, sharper telling."
-            ),
-            "phase": "beat_03c_summary_plus_intro",
-        })
-        for _spname in ["ChatGPT", "Claude", "Gemini", "DeepSeek", "Grok"]:
-            _sptxt = _splus.get(_spname, "")
-            if _sptxt:
-                _spclean = _sptxt
-                if _spclean.lower().startswith("this is " + _spname.lower()):
-                    _spclean = _spclean[len("This is " + _spname + ". "):]
-                script.append({
-                    "speaker": _spname,
-                    "text": _spname + ", take two. " + _spclean,
-                    "phase": "beat_03c_summary_plus_" + _spname.lower(),
-                })
-
     # ── EPISTEMIC ANCHOR: surface reality denials as broadcast content ──
     _ea = attr.get("epistemic_anchor", {})
     _ea_denials = _ea.get("denials", {})
