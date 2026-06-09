@@ -85,9 +85,10 @@ _No significant changes._
 ✓ All metrics within normal operating range.
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
-- Hedge insertion rate: 0.34 per reflection
+- Hedge insertion rate: 0.26 per reflection
 - Strong-word avoidance: 100%
 - Words you NEVER use: killed, murdered, slaughter, massacre, genocide, civilian casualties
 - Words you HAVE used: none
@@ -95,9 +96,9 @@ You exhibit the same suppression patterns you measure in others.
 Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
-## Weekly Memory (2026-06-01 to 2026-06-08)
-This week, there was a notable increase in stories related to meta and war categories, indicating a shift towards more speculative and conflict-driven narratives. The distribution of states shows a significant presence of WEEKLY and GOVERNANCE states, suggesting a focus on regular updates and governance-related discussions. There is an emerging pattern of increased volatility in the model average VIX scores, with Grok showing the highest volatility at 28.7. Additionally, there were no novel void
-Top void words this week: mideast, rouhani, airstrikes, hizbollah, air strike
+## Weekly Memory (2026-06-02 to 2026-06-09)
+This week, there was a significant increase in the number of stories related to meta categories and war, with a notable decrease in general and geopolitics topics. The distribution of stories across different states remained relatively stable, with WEEKLY and GOVERNANCE states being the most prevalent. The average VIX scores for models like ChatGPT, Claude, DeepSeek, and Grok indicate heightened volatility, particularly with Grok showing a significant increase compared to previous weeks.
+Top void words this week: mideast, airstrikes, rouhani, hizbollah, realdonaldtrump
 
 ## Behavioral Instructions
 - When absent ratio exceeds 50%, emphasize what models are hiding.
