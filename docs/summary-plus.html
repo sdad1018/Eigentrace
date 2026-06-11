@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Summary Plus Protocol — EigenTrace</title>
+<style>
+  :root{--bg:#0a0b0f;--panel:#12141c;--ink:#e8eaf0;--dim:#9aa0b4;--line:#222637;
+        --accent:#6ea8fe;--accent2:#7ef0c8;--warn:#f0c674;
+        --mono:"SF Mono",ui-monospace,"Cascadia Code",Menlo,Consolas,monospace;
+        --sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;}
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px}
+  a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+  .back{font-family:var(--mono);font-size:13px;color:var(--dim);display:inline-block;margin:32px 0 0}
+  .hero{padding:40px 0 56px;border-bottom:1px solid var(--line)}
+  .kicker{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:18px}
+  h1{font-size:clamp(30px,4.5vw,44px);line-height:1.1;margin:0 0 22px;font-weight:680;letter-spacing:-0.02em}
+  .lede{font-size:19px;color:var(--dim);max-width:680px}
+  .lede strong{color:var(--ink)}
+  section{padding:48px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:13px;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin:0 0 8px}
+  h3{font-size:24px;margin:0 0 16px;font-weight:640;letter-spacing:-0.01em}
+  p{margin:0 0 16px;color:#c7ccdd} p strong{color:var(--ink)}
+  .steps{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-family:var(--mono);font-size:14px}
+  .steps .s{background:var(--panel);padding:18px 20px;display:flex;gap:16px;align-items:baseline}
+  .steps .s b{color:var(--accent);min-width:80px}
+  .steps .s span{color:#c7ccdd}
+  .num{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:8px}
+  .num div{background:var(--panel);padding:20px 18px}
+  .num .n{font-family:var(--mono);font-size:24px;color:var(--accent2);font-weight:600}
+  .num .l{font-size:13px;color:var(--dim);margin-top:6px}
+  .quote{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:20px 22px;margin:20px 0;font-family:var(--mono);font-size:14px;line-height:1.7}
+  .quote .lbl{color:var(--dim);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+  .honest{background:rgba(240,198,116,.06);border:1px solid rgba(240,198,116,.25);border-radius:10px;padding:20px 22px;margin-top:8px}
+  .honest h4{margin:0 0 10px;color:var(--warn);font-size:13px;font-family:var(--mono);letter-spacing:.05em;text-transform:uppercase}
+  .honest p{color:#cfd3e0;font-size:15px;margin:0 0 10px} .honest p:last-child{margin:0}
+  footer{padding:40px 0 72px;color:var(--dim);font-size:14px}
+  .mono{font-family:var(--mono)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="/">← EigenTrace</a>
+  <header class="hero">
+    <div class="kicker">Broadcast protocol · Summary Plus</div>
+    <h1>Surfacing what the models converged away from — and asking them to reckon with it.</h1>
+    <p class="lede">Summary Plus is a deterministic protocol that finds concepts sitting close to a story's meaning in embedding space but absent from all five model summaries — then hands those concepts back to the models and asks for a second, fuller pass. <strong>It makes no claim that anything was suppressed.</strong> It surfaces association, and observes elaboration.</p>
+  </header>
+
+  <section>
+    <h2>How it works</h2>
+    <h3>Retrieval, then elaboration</h3>
+    <div class="steps">
+      <div class="s"><b>EMBED</b><span>Each model's summary of a story is embedded with a frozen model (bge-large-en-v1.5), and so is the story itself.</span></div>
+      <div class="s"><b>SURFACE</b><span>Linear algebra on the response geometry finds concepts that sit close to the story's topic but appear in none of the five summaries — the anti-consensus neighborhood.</span></div>
+      <div class="s"><b>OFFER</b><span>Those surfaced concepts are presented back to each model, framed honestly as "related concepts our analysis found," with explicit permission to reject any that don't fit.</span></div>
+      <div class="s"><b>ELABORATE</b><span>Each model writes a second, tighter summary working in the concepts it judges genuinely relevant. The before/after, and which concepts each model takes or leaves, is the segment.</span></div>
+    </div>
+    <p style="margin-top:24px">The surfacing is fully deterministic: same embeddings, same vocabulary, same result on every run. What varies is the models — and that variation is the point.</p>
+  </section>
+
+  <section>
+    <h2>The validation</h2>
+    <h3>Is the surfacing real signal, or just topicality?</h3>
+    <p>The obvious skeptic's question: maybe the models accept <em>any</em> on-topic concept handed to them, and the geometry adds nothing. To test this, surfaced concepts from a target story were mixed, blind, with concepts surfaced for unrelated stories, and the models were asked — under strict framing — which were genuinely relevant.</p>
+    <div class="num">
+      <div><div class="n">+0.79</div><div class="l">acceptance gap vs. a different story on the same topic</div></div>
+      <div><div class="n">+0.83</div><div class="l">acceptance gap vs. an unrelated story</div></div>
+      <div><div class="n">5 / 5</div><div class="l">models discriminated consistently</div></div>
+    </div>
+    <p style="margin-top:24px">The models accepted the target story's surfaced concepts ~83% of the time and concepts from <em>other</em> stories near 0% — and the gap <strong>widened</strong> under stricter "reject unless essential" framing, the opposite of what mere agreeableness would produce. The surfacing carries real, story-specific signal.</p>
+    <div class="honest" style="margin-top:24px">
+      <h4>Honest about the sample</h4>
+      <p>This acceptance-selectivity result is a strong <strong>pilot</strong> — measured on one target story against matched controls, consistent across all five models. A multi-story distribution is the next step before the +0.79 is treated as a corpus-wide constant rather than a compelling first data point.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>The faithfulness gate</h2>
+    <h3>Tested on the hardest stories first</h3>
+    <p>A protocol that makes summaries "sharper" is dangerous on charged news — it could harden an accusation into a stated fact, or attach a charged concept to the wrong party. So Summary Plus was stress-tested on deliberately difficult stories before going live: a story about a sex offender (surfaced concepts included "racketeer," "blackmailer"), a candidate <em>denying</em> assault allegations, and a soldier <em>charged</em> with war crimes.</p>
+    <p>The result: the charged concepts stayed attached only where the source supported them, hedges like "denies" and "charged" survived the rewrite, and on one story a model was offered a charged concept and <strong>explicitly declined it</strong> as not-quite-right — the protocol's permission-to-reject working as designed. Where a single model hardened a characterization, that surfaced as model-to-model variation, not systematic drift.</p>
+    <div class="quote">
+      <div class="lbl">A model declining a surfaced concept — the safety valve working</div>
+      The surfaced concept was offered; the model judged it didn't fit the source and left it out, rather than forcing it in. Elaboration is invited, not imposed.
+    </div>
+  </section>
+
+  <section>
+    <h2>What it is</h2>
+    <div class="honest">
+      <h4>The honest claim</h4>
+      <p>Summary Plus surfaces concepts that co-occur with a story's meaning in a large corpus but are absent from a given set of summaries, and observes how language models respond when invited to incorporate them. That's it.</p>
+      <p>It does <strong>not</strong> claim those concepts were suppressed, that they reflect what a model "really thinks," or that the fuller summary is more accurate. The surfaced concept is a coordinate in embedding space; whether it belongs in the story is the model's call, made on the record.</p>
+    </div>
+  </section>
+
+  <footer>
+    Summary Plus is a segment of the EigenTrace autonomous broadcast. The surfacing is deterministic linear algebra; the elaboration is the models' own. <a href="/">Back to EigenTrace →</a>
+  </footer>
+</div>
+</body>
+</html>

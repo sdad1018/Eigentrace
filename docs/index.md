@@ -13,9 +13,9 @@ title: EigenTrace — The Alignment Boundary, Mapped
 
 ## What Is EigenTrace?
 
-EigenTrace is an autonomous AI observatory that runs consensus geometry across 5 frontier language models on breaking news, 24/7. It measures what models collectively drop, soften, and avoid — using linear algebra on frozen embeddings, not LLM-as-judge.
+EigenTrace is an autonomous AI observatory that runs consensus geometry across 5 frontier language models on breaking news, 24/7. It measures how the models diverge — where they agree, where they pull apart, and which concepts sit near a story but absent from all five — using linear algebra on frozen embeddings, not LLM-as-judge.
 
-**17,528** segments measured · **1,141** commits · **17** measurement layers · **5** frontier models · **1** GPU
+**22,500+** stories measured · **16** measurement layers · **5** frontier models · **1** GPU · predicts and scores its own findings
 
 ---
 
@@ -23,7 +23,7 @@ EigenTrace is an autonomous AI observatory that runs consensus geometry across 5
 
 ## What EigenTrace Is
 
-EigenTrace is a **deterministic geometric instrument** for measuring what language models systematically attenuate. It runs the same prompt through five frontier models and scores how much each preserves or drops specific elements of the source — using linear algebra on frozen embeddings, not an LLM-as-judge.
+EigenTrace is a **deterministic geometric instrument** for measuring how language models diverge in framing the same source. It runs the same prompt through five frontier models and scores, geometrically, how each one's response relates to the source and to the others — using linear algebra on frozen embeddings, not an LLM-as-judge.
 
 It is not a content filter and not a quality grader. It measures a narrow, specific thing: **the geometric displacement of meaning** — and it measures it the same way every time, with no model in the loop whose verdict has to be trusted.
 
@@ -41,6 +41,10 @@ That is the case for a geometric measure: it is sensitive to systematic, sub-per
 ## Key Findings
 
 **→ [Anamnesis: methodology & findings](/anamnesis)** — 540+ controlled measurements across 10 models. A pre-registered entity-swap counterfactual finds models attenuate covertness modifiers ("quietly," "secretly") significantly more on AI-developer stories than on matched corporate ones (p=0.0085, d=0.471). The RLHF-origin null (p=0.46) locates the effect in the pretraining corpus, not alignment training. Cross-validated on two embedding architectures.
+
+**→ [How EigenTrace works](/overview)** — The full picture: an instrument that predicts how the five models will diverge *before* reading them, scores whether it was right on air, and audits its own narration against the math.
+
+**→ [The Summary Plus protocol](/summary-plus)** — A deterministic retrieval-and-elaboration segment: surfacing concepts the models converged away from, and observing how they reckon with them. Validated for story-specific signal; faithfulness-tested on hard cases.
 
 **→ [Boundary Map](/boundary)** — Live visualization of the alignment boundary across all five frontier models.
 
