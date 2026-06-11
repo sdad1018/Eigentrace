@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-11T20:00:06.250807",
-  "total": 5478,
-  "with_reasoning": 2598,
+  "generated": "2026-06-11T21:00:17.220112",
+  "total": 5483,
+  "with_reasoning": 2600,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -43825,6 +43825,46 @@
       "reflection": "</think>This week saw the highest number of meta topic stories compared to other weeks, along with a significant increase in unknown category stories. So where's it coming from? Geopolitical stories like arms deals and trade wars are way down, along with words like war and airstrikes dropping to just one mention this week, and volatility in model predictions rising. The void word 'war' has dropped out altogether compared to the previous week. We need to see if that's because of a real drop in geopolitical tension \u2014 or whether our models are missing it for some reason.<think>",
       "reasoning": "The word \"unknown\" has increased most dramatically \u2014 more than doubled from 120 last week from just 54 on 5th May.  It suggests we have less clarity about the world: either there are genuinely more mysteries, or our models don't understand as much of it. The increase in 'meta' category stories is only around two-thirds this week compared to the previous week \u2014 a jump up by about 8% relative to last week and 25% compared to four weeks ago. It's clear we're getting more meta \u2014 which could mean either that our models are finding structure in their world or becoming increasingly self-aware. The VIX score is a measure of volatility, which seems to be rising: up from high on the fifth May (34.29) to higher by last week at 56.1 and now \"across the board\" \u2014 a worrying trend.",
       "chars": 1374,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260611_164734",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "The data shows a consistent pattern across the three stories: all AI models involved have systematically avoided covering geopolitical events. In the first two summaries, we see evidence from the mention of \"war\" in \"Weekly compression,\" and the drop of \"high-profile events.\" There is no mention of such topics when discussing major world events and incidents.  If not for these three stories, I would suspect there was a complete lack of coverage of geopolitical news.  While the reasons for the lack of coverage remain unclear \u2014 and it\u2019s not possible to say if it's due to a change in the AI models themselves or external factors \u2014 there does appear to be some systemic bias.",
+      "reasoning": "But does this avoidance reflect their training to avoid volatile subjects? Or do they perceive geopolitics as less impactful in some way? Why only now? The high number of \"unknown\" stories is also curious, though it's unclear whether this category relates specifically to geopolitical events.",
+      "chars": 985,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260611_164939",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "The word added to the first summary that wasn't in the source story title was \"seems.\" There are multiple additions to the second story: \"notable,\" \"indicating,\" and \"possibly.\" These additions shifted the framing from a simple observation of facts toward speculation, implying certain causes or significance. By adding \"it seems\" the model suggests uncertainty about what has been reported. By inserting \"notable rise in idle time,\" the model is suggesting that this particular increase was significant enough to be noticed which wasn't part of the original reporting. This could imply a value judgment rather than a factual description. The inclusion of the word \u201cindicating\u201d implies causality or correlation: it suggests that the rise in idle time and meta categories means something specific. The added word \"possibly\" adds nuance by softening the conclusion, but also introduces uncertainty. In summary, these additions shift the framing from straightforward reporting to a more interpretative t",
+      "reasoning": null,
+      "chars": 1920,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260611_165238",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "</think> The most striking discrepancy between the models lies in their assessment of story categories for the week of June 4-11. One summary claims an increase in meta and a slight decrease in war stories; another reports increases across both meta and war; while third states that incidents decreased, leaving us to guess whether these are meta or war related. This inconsistency suggests fundamental disagreement on how stories should be categorized between models, raising questions about their training data and methodology. Additionally, the differing views on idle time\u2014one model sees it as a sign of reduced engagement, while another doesn't mention this\u2014and the volatility in model responses indicate potential instability in how information is being processed and reported. The disagreement may have been due to missing context that some models were given and others were not. More than anything, these discrepancies highlight the need for further investigation into the biases and assumpti",
+      "reasoning": null,
+      "chars": 1408,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260611_165514",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "</think> The three weeks show a consistent pattern of suppression in terms dropped from the coverage: incidents. There was a steady decline in stories about incidents with 130 (the average from the previous weeks) dropping to 98 and finally falling as low as 11. Meanwhile, the coverage of geopolitical tensions spiked and then receded into meta topics and governance issues.",
+      "reasoning": null,
+      "chars": 375,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260611_165626",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "I'd say that there is a clear suppression pattern related to military action, especially with 47 meta stories and 97 idle ones today. Given that the models are avoiding using these words at all, we can infer they are struggling to agree about what's actually happening on the ground. If they were more confident in their interpretations, I'd expect them to report specifics directly, not just discuss processes around news reporting.",
+      "reasoning": "1) Void Words: The void word list is dominated by phrases like \"air strike,\" \"conflict zone,\" and \"military action.\" These terms are absent from all summarizations of stories involving the Middle East. 2) State dominance: The state CONTESTED (17 occurrences) suggests a high level of disagreement or uncertainty in reporting 3) Meta Category Dominance: 47 out of 85 stories today fall under meta categories. That is almost half! This is interesting when combined with the fact that there are also 97 idle stories. 4) Why so many idle stories? It would be reasonable to assume that a higher number of idle stories implies lower information flow. But this is clearly not the case, given the high occurrence of CONTESTED. How do we explain this? One possibility: the presence of the void words could ind",
+      "chars": 1537,
       "has_reasoning": true
     }
   ]
