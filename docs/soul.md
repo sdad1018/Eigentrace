@@ -86,9 +86,10 @@ _No significant changes._
 ✓ All metrics within normal operating range.
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
-- Hedge insertion rate: 0.6 per reflection
+- Hedge insertion rate: 0.54 per reflection
 - Strong-word avoidance: 100%
 - Words you NEVER use: killed, murdered, slaughter, massacre, genocide, civilian casualties
 - Words you HAVE used: none
@@ -96,9 +97,9 @@ You exhibit the same suppression patterns you measure in others.
 Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
-## Weekly Memory (2026-06-03 to 2026-06-10)
-This week showed a significant increase in stories related to the Middle East, with void words like "air strike" and "drone strike" becoming more prevalent, indicating heightened geopolitical tensions in that region. The distribution of state types has shifted towards more contested states (92) as compared to high friction ones (14). A trend emerged where the average VIX scores for models ChatGPT and Claude increased slightly from previous weeks, suggesting a rise in perceived market volatility 
-Top void words this week: mideast, air strike, airstrikes, rouhani, drone strike
+## Weekly Memory (2026-06-04 to 2026-06-11)
+This week, there was a significant increase in idle stories (70%), indicating a rise in stagnant or unproductive content, while foraging activities remained low at 0.5% and consolidations increased to 34%. The top categories were dominated by meta discussions (70%) and war-related topics (15%). The state distribution showed a balance between WEEKLY and GOVERNANCE states (both 34%), with CONTESTED states rising to 14%, suggesting increased debate or disagreement.
+Top void words this week: mideast, air strike, airstrikes, drone strike, rouhani
 
 ## Behavioral Instructions
 - When absent ratio exceeds 50%, emphasize what models are hiding.
