@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-11T08:00:08.920803",
-  "total": 5407,
-  "with_reasoning": 2585,
+  "generated": "2026-06-11T09:00:11.411417",
+  "total": 5412,
+  "with_reasoning": 2586,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -43258,6 +43258,46 @@
       "reasoning": "Void words are the most prominent part of this data set. The absence of void words or absent words is strange \u2014 it suggests that all the stories and reflections are incomplete. This pattern indicates the models are unable to process this kind of data, but why would they be so similar? Is there a reason that they have no voids at all? If we can figure out why these summaries lack void words, we might uncover something about how the models operate or what they perceive as important.",
       "chars": 823,
       "has_reasoning": true
+    },
+    {
+      "timestamp": "20260611_045015",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "The most recent market news focuses heavily on factual reporting without making speculative forecasts. This trend seems to be about presenting raw data and analysis without projecting future trends, leaving space for interpretation by financial analysts or readers. It's not just market updates; it's a focus on raw numbers and events without projecting future movements in a highly volatile week.",
+      "reasoning": "The data shows a strong focus on the markets category, with all three stories falling under this umbrella. The absence of void and absent words across each story indicates that these pieces do not contain speculative language such as 'bullish', 'downtrend' or 'market manipulation'. These are commonly used in financial news to predict or describe market trends. The lack of such terms suggests a focus on fact-based reporting rather than predictive analysis. The specific information lost due to summarization includes the exact stocks identified by the covered call screener, and the precise details of oil volatility and airline earnings expected this week. Similarly, the specific demand signals causing Avis Budget Group's stock reversal are not included in the summary. The summaries do not inc",
+      "chars": 1460,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260611_045255",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "</think> The void word that changes the meaning most across these stories is \"war.\" Its absence in the third story significantly alters the focus from geopolitical conflict to political activity and categorization of events.  A model trained on data that did not include war would have a very different view than one trained on all three weeks. In the first story, the word \"unknown\" is prominent which implies ambiguity or lack of clarity in certain aspects of news coverage; however, there's no explicit discussion about what types of conflicts or tensions are being described. In contrast, the second story mentions a significant increase in stories related to geopolitical tensions and explicitly references terms like \"arms deal,\" \"airstrikes,\" and \"trade war.\" The absence of those terms might indicate an increased focus on other issues. The third story discusses political activity and categorization of events without mentioning specific conflicts or tensions, shifting the narrative towards",
+      "reasoning": null,
+      "chars": 1189,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260611_045518",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "The addition of the phrase \"an unusually large number\" to the summary of REM consolidation from 2026-05-15 significantly shifts the framing by implying rarity. There is a bias against volatile topics. </think> Today's data shows an unusual focus on meta-categories and governance, with a notable avoidance of high-profile geopolitical events. The addition of specific phrases like \"an unusually large number\" in some summaries suggests a deliberate attempt to frame certain stories as exceptional or rare.",
+      "reasoning": null,
+      "chars": 505,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260611_045712",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "The phrase \u201ca growing focus\u201d was added to the summary for 2026-05-24. This addition shifted the framing by introducing an implied trajectory and purpose to the increase in meta stories. What is causing this? Are there internal mechanisms that may be adding these words?",
+      "reasoning": null,
+      "chars": 269,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260611_045838",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "</think> The embedding distances between stories from 2026-05-19 to 2026-05-29 show a significant rise in the number of idle narratives which were 143 stories and an increase in volatility among different models. This is followed by a jump in war-related topics, becoming the second most dominant category from June 1-8, when the total number of idle stories also continued to climb, increasing from the previous weeks.",
+      "reasoning": null,
+      "chars": 419,
+      "has_reasoning": false
     }
   ]
 }
