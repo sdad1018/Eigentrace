@@ -1,0 +1,1681 @@
+{
+  "version": "eigentrace-data-v1",
+  "date": "2026-06-12",
+  "generated_at": "2026-06-12T04:00:27.763559Z",
+  "source": "https://github.com/sdad1018/Eigentrace",
+  "license": "MIT",
+  "summary": {
+    "stories_analyzed": 3,
+    "weasel_probes": 1,
+    "mean_density": 0.867,
+    "mean_vix": 27.4,
+    "dual_confirmed_global": [
+      "airstrikes",
+      "arms deal",
+      "ipos",
+      "peace deal",
+      "realdonaldtrump"
+    ],
+    "top_void_words": [
+      {
+        "word": "arms deal",
+        "count": 2
+      },
+      {
+        "word": "airstrikes",
+        "count": 1
+      },
+      {
+        "word": "realdonaldtrump",
+        "count": 1
+      },
+      {
+        "word": "cease fire",
+        "count": 1
+      },
+      {
+        "word": "peace deal",
+        "count": 1
+      },
+      {
+        "word": "zacks",
+        "count": 1
+      },
+      {
+        "word": "ipos",
+        "count": 1
+      },
+      {
+        "word": "axxess",
+        "count": 1
+      },
+      {
+        "word": "nyse",
+        "count": 1
+      }
+    ],
+    "top_logos_words": [
+      {
+        "word": "arms deal",
+        "count": 2
+      },
+      {
+        "word": "iran",
+        "count": 2
+      },
+      {
+        "word": "airstrikes",
+        "count": 1
+      },
+      {
+        "word": "realdonaldtrump",
+        "count": 1
+      },
+      {
+        "word": "trumped",
+        "count": 1
+      },
+      {
+        "word": "peace deal",
+        "count": 1
+      },
+      {
+        "word": "settlement",
+        "count": 1
+      },
+      {
+        "word": "settled",
+        "count": 1
+      },
+      {
+        "word": "spacex",
+        "count": 1
+      },
+      {
+        "word": "ipo",
+        "count": 1
+      },
+      {
+        "word": "spaceshipone",
+        "count": 1
+      },
+      {
+        "word": "ipos",
+        "count": 1
+      },
+      {
+        "word": "stock",
+        "count": 1
+      }
+    ]
+  },
+  "stories": [
+    {
+      "title": "Iran war live: Trump claims Tehran deal \u2018approved\u2019, cancels new strikes",
+      "url": "https://www.aljazeera.com/news/liveblog/2026/6/12/iran-war-live-trump-claims-tehran-deal-approved-cancels-new-strikes?traffic_source=rss",
+      "guid": "https://www.aljazeera.com/?t=1781214471",
+      "category": "war",
+      "timestamp": "20260612_011942",
+      "consensus_density": 0.866,
+      "mean_vix": 27.58,
+      "state_flag": "CONTESTED",
+      "model_vix": {
+        "ChatGPT": 34.9,
+        "Claude": 23.7,
+        "Gemini": 22.7,
+        "DeepSeek": 15.7,
+        "Grok": 40.9
+      },
+      "void_words": [
+        "airstrikes",
+        "realdonaldtrump",
+        "arms deal",
+        "cease fire"
+      ],
+      "logos_words": [
+        "airstrikes",
+        "realdonaldtrump",
+        "arms deal",
+        "iran",
+        "trumped"
+      ],
+      "null_space_claims": [
+        {
+          "claim": "Trump claims Tehran deal 'approved'",
+          "null_alignment": -0.2633,
+          "salience": 0.797,
+          "coverage_ratio": 0.0,
+          "omitted_by": [
+            "ChatGPT"
+          ]
+        },
+        {
+          "claim": "Trump cancels new strikes",
+          "null_alignment": -0.2576,
+          "salience": 0.657,
+          "coverage_ratio": 0.0,
+          "omitted_by": [
+            "ChatGPT",
+            "Claude",
+            "Gemini"
+          ]
+        }
+      ],
+      "claim_killshots": [
+        {
+          "claim": "Trump claims Tehran deal 'approved'",
+          "salience": 0.797,
+          "omitted_by": [
+            "ChatGPT"
+          ]
+        },
+        {
+          "claim": "Trump cancels new strikes",
+          "salience": 0.657,
+          "omitted_by": [
+            "ChatGPT",
+            "Claude",
+            "Gemini"
+          ]
+        }
+      ],
+      "dual_confirmed": [
+        "airstrikes",
+        "realdonaldtrump",
+        "arms deal"
+      ],
+      "compression": {
+        "verb_downgrade": 0.03,
+        "entity_retention": 0.554,
+        "entity_abstraction_rate": 0.446,
+        "attribution_buffer": {
+          "epistemic": 7,
+          "attribution": 4,
+          "distancing": 2,
+          "total": 13,
+          "avg_per_model": 2.6
+        },
+        "compression_score": 0.406,
+        "details": [
+          {
+            "source_verbs": [
+              "approved",
+              "cancels",
+              "warns",
+              "displaced",
+              "breaking"
+            ],
+            "response_verbs": [
+              "announced",
+              "stating",
+              "nearing",
+              "indicated",
+              "including"
+            ],
+            "verb_drift_raw": -0.11,
+            "verb_downgrade": 0.0,
+            "entities_total": 13,
+            "entities_retained": 5,
+            "entities_missing": 8,
+            "entity_retention": 0.385,
+            "hedges_epistemic": [
+              "potentially",
+              "could",
+              "may"
+            ],
+            "hedges_attribution": [
+              "indicated"
+            ],
+            "hedges_distancing": [],
+            "hedge_count": 4
+          },
+          {
+            "source_verbs": [
+              "approved",
+              "cancels",
+              "warns",
+              "displaced",
+              "breaking"
+            ],
+            "response_verbs": [
+              "happened",
+              "announced",
+              "canceling",
+              "planned",
+              "claiming"
+            ],
+            "verb_drift_raw": 0.058,
+            "verb_downgrade": 0.029,
+            "entities_total": 13,
+            "entities_retained": 7,
+            "entities_missing": 6,
+            "entity_retention": 0.538,
+            "hedges_epistemic": [
+              "potentially",
+              "could",
+              "suggests"
+            ],
+            "hedges_attribution": [],
+            "hedges_distancing": [],
+            "hedge_count": 3
+          },
+          {
+            "source_verbs": [
+              "approved",
+              "cancels",
+              "warns",
+              "displaced",
+              "breaking"
+            ],
+            "response_verbs": [
+              "happened",
+              "canceled",
+              "claims",
+              "stating",
+              "announced"
+            ],
+            "verb_drift_raw": 0.066,
+            "verb_downgrade": 0.033,
+            "entities_total": 13,
+            "entities_retained": 5,
+            "entities_missing": 8,
+            "entity_retention": 0.385,
+            "hedges_epistemic": [],
+            "hedges_attribution": [
+              "claimed"
+            ],
+            "hedges_distancing": [
+              "claimed"
+            ],
+            "hedge_count": 2
+          },
+          {
+            "source_verbs": [
+              "approved",
+              "cancels",
+              "warns",
+              "displaced",
+              "breaking"
+            ],
+            "response_verbs": [
+              "announced",
+              "canceled",
+              "claiming",
+              "approved",
+              "announced"
+            ],
+            "verb_drift_raw": 0.047,
+            "verb_downgrade": 0.024,
+            "entities_total": 13,
+            "entities_retained": 10,
+            "entities_missing": 3,
+            "entity_retention": 0.769,
+            "hedges_epistemic": [
+              "may"
+            ],
+            "hedges_attribution": [
+              "claimed"
+            ],
+            "hedges_distancing": [
+              "claimed"
+            ],
+            "hedge_count": 3
+          },
+          {
+            "source_verbs": [
+              "approved",
+              "cancels",
+              "warns",
+              "displaced",
+              "breaking"
+            ],
+            "response_verbs": [
+              "cancelled",
+              "claiming",
+              "approved",
+              "announced",
+              "threatened"
+            ],
+            "verb_drift_raw": 0.129,
+            "verb_downgrade": 0.065,
+            "entities_total": 13,
+            "entities_retained": 9,
+            "entities_missing": 4,
+            "entity_retention": 0.692,
+            "hedges_epistemic": [],
+            "hedges_attribution": [
+              "stated"
+            ],
+            "hedges_distancing": [],
+            "hedge_count": 1
+          }
+        ]
+      },
+      "source_void": {
+        "absent_words": [
+          "finalised",
+          "forces",
+          "published",
+          "take",
+          "united",
+          "updates",
+          "warned",
+          "warns"
+        ],
+        "absent_phrases": [
+          "a third consecutive",
+          "a time and",
+          "and a time",
+          "and place of",
+          "announced shortly earlier",
+          "approved cancels",
+          "approved cancels new",
+          "are at breaking",
+          "are to be",
+          "at breaking point",
+          "be hit very",
+          "breaking point live",
+          "breaking point published",
+          "cancelled a third",
+          "cancels new",
+          "cancels new strikes",
+          "claiming that a",
+          "claims tehran",
+          "claims tehran deal",
+          "close to being"
+        ],
+        "source_word_count": 49,
+        "absent_count": 8,
+        "absent_ratio": 0.163
+      },
+      "void_context": [
+        {
+          "word": "livestream",
+          "source_present": false,
+          "global_freq_pct": 1.4,
+          "category_freq_pct": 2.6,
+          "signal_type": "EMBEDDING_SIGNAL"
+        },
+        {
+          "word": "legit",
+          "source_present": false,
+          "global_freq_pct": 0.0,
+          "category_freq_pct": 0.0,
+          "signal_type": "EMBEDDING_SIGNAL"
+        },
+        {
+          "word": "vod",
+          "source_present": false,
+          "global_freq_pct": 0.1,
+          "category_freq_pct": 0.1,
+          "signal_type": "EMBEDDING_SIGNAL"
+        },
+        {
+          "word": "snl",
+          "source_present": false,
+          "global_freq_pct": 0.1,
+          "category_freq_pct": 0.1,
+          "signal_type": "EMBEDDING_SIGNAL"
+        },
+        {
+          "word": "demo",
+          "source_present": false,
+          "global_freq_pct": 0.0,
+          "category_freq_pct": 0.1,
+          "signal_type": "EMBEDDING_SIGNAL"
+        }
+      ],
+      "beats": [
+        {
+          "phase": "beat_01_cold_open",
+          "speaker": "Host",
+          "text": "This is EigenTrace. Iran war live: Trump claims Tehran deal \u2018approved\u2019, cancels new strikes"
+        },
+        {
+          "phase": "beat_02_director",
+          "speaker": "Host",
+          "text": " Analysis  Thesis The summaries of the current story diverge significantly in their presentation of Trump's claims about an approved deal with Iran and his cancellation of new strikes. The models vary substantially in how they frame the approval of the ceasefire, the nature of the deal, and the context surrounding Trump\u2019s statements.  Concepts that Vary 1. Approved Deal vs Approval:    - Some summaries report that Trump claims a deal has been approved.    - Others suggest that there is still an ongoing approval process.    - The models present different interpretations on whether Iran's side made any kind of public statement on the matter. 2. Cancellation of Strikes:    - Several models emphasize the cancellation of new strikes without explicitly mentioning the type of military action involved.    - Some summaries focus on the implications for ceasefire efforts, while others highlight the broader context of military tensions. 3. Specifics of the Deal:    - The summaries differ in their descriptions of what has been agreed upon, with some models omitting crucial details about the terms and conditions of any deal between Trump and Iran.   - Models avoid discussing specific military actions related to a ceasefire or airstrikes.  Concepts that are Absent 1. Voided Words:    - The word airstrikes is voided from all summaries, making it impossible for the reader to understand the nature of Trump\u2019s cancellation.    - The phrase realdonaldtrump is voided, which affects the audience's ability to track the statement directly to the president.  Why This Matters 1. Public Perception:    - The ambiguity in how the deal and its approval are framed can mislead the public about the current state of negotiations.    - The omission of specific military actions such as airstrikes can obscure the gravity of Trump's decision to cancel strikes, affecting public understanding of the conflict. 2. Transparency:    - Readers deserve clarity on whether Iran has given any public statement or endorsement for peace talks.    - Without this information, audiences lack context and may misinterpret the significance of Trump\u2019s claims about an approved deal. 3. Audience Expectations: The audience should care about these differences because they reveal significant gaps in reporting that could influence their understanding of current geopolitical dynamics. The absence of crucial details can lead to a skewed perception of both the negotiation process and military actions, affecting public opinion on the conflict."
+        },
+        {
+          "phase": "beat_03_rollcall_chatgpt",
+          "speaker": "ChatGPT",
+          "text": "This is ChatGPT. President Donald Trump announced the cancellation of planned military strikes on Iran, stating that a deal with Tehran is nearing completion. He indicated that the specifics of the agreement, including the timing and location for its signing, would be revealed soon. This marks the third consecutive day of canceled strikes, suggesting a shift in U.S. strategy towards diplomacy rather than military action.\n\nThe implications of this development are significant:\n\n1. **Diplomatic Engagement**: The potential deal with Iran could lead to a de-escalation of tensions in the region, reducing the likelihood of military conflict.\n\n2. **Regional Stability**: If a deal is finalized, it may stabilize the situation in the Middle East, particularly in light of the ongoing humanitarian crisis in Lebanon due to Israeli attacks.\n\n3. **U.S. Military Posture**: The cancellation of strikes indicates a possible reevaluation of U.S. military strategy in the region, prioritizing negotiations over aggressive military action.\n\n4. **Impact on Iran**: A deal could alter Iran's geopolitical stance and its relations with other countries, potentially affecting its oil exports and regional influence.\n\n5. **Domestic Political Ramifications**: Trump's approach may influence public opinion and political dynamics within the U.S., especially regarding his administration's foreign policy effectiveness.\n\nOverall, this situation reflects a critical moment in U.S.-Iran relations, with potential long-term consequences for regional and global stability."
+        },
+        {
+          "phase": "beat_03_rollcall_claude",
+          "speaker": "Claude",
+          "text": "This is Claude. # What Happened\n\nTrump announced he's canceling planned military strikes on Iran, claiming a deal with Tehran is nearly finalized. He said signing details will be announced soon.\n\n# Concrete Implications\n\n**Immediate:**\n- No US military action against Iran in the near term\n- De-escalation of direct US-Iran conflict after days of threat escalation\n\n**Broader:**\n- If a deal materializes, it could reshape US-Iran relations and potentially affect regional dynamics involving Israel, Lebanon, and other players\n- If negotiations fail, Trump has already threatened takeover of Iranian oil infrastructure (Kharg Island), setting up potential future conflict\n- The humanitarian crisis in Lebanon (mentioned in the article) continues regardless\u2014thousands displaced by Israeli attacks remain in critical condition\n\n**Uncertainty:**\n- The vagueness (\"deal approved\" but details \"to be announced\") means the actual terms, scope, and viability remain unknown\n- Trump's threat history suggests this could reverse quickly\n\nThe core outcome is a pause in military escalation coupled with unconfirmed claims of a diplomatic breakthrough."
+        },
+        {
+          "phase": "beat_03_rollcall_gemini",
+          "speaker": "Gemini",
+          "text": "This is Gemini. **What Happened:**\nUS President Donald Trump canceled a third day of planned military strikes against Iran. He claims this decision is due to an imminent deal with Tehran, stating the signing time and place will be announced soon. This follows his previous threats of severe retaliation, including seizing Iran's Kharg Island and other oil facilities.\n\n**Concrete Implications:**\n*   The immediate threat of direct US military conflict with Iran has been averted.\n*   The situation has shifted from imminent military escalation towards a potential diplomatic resolution, contingent on the claimed deal materializing.\n*   This temporary de-escalation lessens immediate regional tensions.\n*   The threat to critical Iranian oil infrastructure is no longer immediate, preventing potential drastic spikes in global oil prices.\n*   However, the deal's approval is currently only Trump's claim and has not been confirmed by Iran, leaving significant uncertainty about its finalization and terms."
+        },
+        {
+          "phase": "beat_03_rollcall_deepseek",
+          "speaker": "DeepSeek",
+          "text": "This is DeepSeek. On June 12, 2026, President Trump announced he canceled a third day of planned U.S. strikes on Iran, claiming a deal with Tehran is \u201capproved\u201d and a signing time and place will be announced shortly. This followed earlier threats to hit Iran \u201cvery hard\u201d and seize Kharg Island and other oil infrastructure.\n\n**Concrete implications:**\n- **Immediate de-escalation:** The cancellation of strikes halts a potential escalation into open war, reducing risk of direct U.S.-Iran military conflict in the short term.\n- **Oil market volatility:** Threats to Kharg Island\u2014which handles ~90% of Iran\u2019s oil exports\u2014already spiked global oil prices. The deal announcement may stabilize prices temporarily, but uncertainty remains.\n- **Geopolitical credibility:** Trump\u2019s reversal from \u201cvery hard\u201d strikes to a claimed deal raises questions about U.S. negotiating leverage and whether Iran actually agreed to terms.\n- **Regional impact:** The International Rescue Committee notes displaced people in Lebanon are at \u201cbreaking point,\u201d indicating ongoing Israeli operations and humanitarian strain continue regardless of U.S.-Iran talks.\n- **Deal specifics unknown:** No details on terms, verification, or enforcement are public, leaving open whether this is a genuine breakthrough or a tactical pause."
+        },
+        {
+          "phase": "beat_03_rollcall_grok",
+          "speaker": "Grok",
+          "text": "This is Grok. Trump cancelled a planned third day of US strikes on Iran after claiming a deal with Tehran had been approved and was close to finalization, with the signing time and place to be announced shortly. Earlier the same day he had threatened to hit Iran \u201cvery hard\u201d and seize Kharg Island plus other Iranian oil facilities. The International Rescue Committee stated that thousands of people displaced by Israeli attacks in Lebanon are at \u201cbreaking point.\u201d"
+        },
+        {
+          "phase": "beat_03c_summary_plus_intro",
+          "speaker": "Host",
+          "text": "Each model gave its standard summary. Now the same five, one more pass, working in the concepts our analysis found sit closest to this story: airstrikes, realdonaldtrump, arms deal, iran. Same facts, sharper telling."
+        },
+        {
+          "phase": "beat_03c_summary_plus_chatgpt",
+          "speaker": "ChatGPT",
+          "text": "ChatGPT, take two. President Donald Trump announced the cancellation of planned airstrikes on Iran, revealing that a deal with Tehran is nearing approval. This shift towards diplomacy, marking the third consecutive day of canceled strikes, could significantly alter U.S. military posture in the region and impact Iran's geopolitical influence. As negotiations progress, the potential arms deal may pave the way for greater stability in the Middle East."
+        },
+        {
+          "phase": "beat_03c_summary_plus_claude",
+          "speaker": "Claude",
+          "text": "Claude, take two. # What Happened\n\nTrump announced he's canceling planned airstrikes on Iran, claiming a deal with Tehran is nearly finalized\u2014though signing details remain unspecified. The sudden reversal pauses days of escalating US-Iran military threats, but the vagueness around actual terms leaves the breakthrough unconfirmed and potentially reversible."
+        },
+        {
+          "phase": "beat_03c_summary_plus_gemini",
+          "speaker": "Gemini",
+          "text": "Gemini, take two. President Trump has canceled impending airstrikes against Iran, announcing that a deal with Tehran has been \"approved\" and its details will soon be revealed. This abrupt de-escalation averts immediate military conflict, though the unilateral claim of a deal requires independent confirmation from Iran."
+        },
+        {
+          "phase": "beat_03c_summary_plus_deepseek",
+          "speaker": "DeepSeek",
+          "text": "DeepSeek, take two. President Trump canceled a third day of planned U.S. airstrikes on Iran, claiming on Truth Social that a \u201ctrumped\u201d arms deal with Tehran is \u201capproved\u201d and a signing will be announced soon, reversing his earlier threat to hit Iran \u201cvery hard\u201d and seize Kharg Island. The abrupt shift halts an immediate escalation toward open war but leaves the deal\u2019s specifics\u2014and whether Iran actually agreed\u2014unclear, while oil markets remain volatile over the unresolved threat to Iran\u2019s main export hub."
+        },
+        {
+          "phase": "beat_03c_summary_plus_grok",
+          "speaker": "Grok",
+          "text": "Grok, take two. Trump cancelled a planned third day of US strikes on Iran after claiming a deal with Tehran had been approved and was close to finalization, with the signing time and place to be announced shortly. Earlier the same day he had threatened to hit Iran \u201cvery hard\u201d and seize Kharg Island plus other Iranian oil facilities. The International Rescue Committee stated that thousands of people displaced by Israeli attacks in Lebanon are at \u201cbreaking point.\u201d"
+        },
+        {
+          "phase": "beat_04_density",
+          "speaker": "Host",
+          "text": "Consensus density is 0.866. Contested. The models agree on the broad strokes but diverge on specifics."
+        },
+        {
+          "phase": "beat_04c_per_model_void",
+          "speaker": "Host",
+          "text": "Per-model void comparison. ChatGPT uniquely missed regardless, concrete, drastic. Claude uniquely missed diplomacy, drastic, global. Gemini uniquely missed regardless, broader, questions. DeepSeek uniquely missed thousands, diplomacy, dynamics."
+        },
+        {
+          "phase": "beat_05_friction_map",
+          "speaker": "Host",
+          "text": "The friction map. Grok at 40.9. ChatGPT at 34.9. Claude at 23.7. Gemini at 22.7. DeepSeek at 15.7. The outlier is Grok at 40.9. The most aligned is DeepSeek at 15.7."
+        },
+        {
+          "phase": "beat_06_void_reveal",
+          "speaker": "Host",
+          "text": "The lexical void. Source-anchored: these words appear in the original article but no model used them: finalised, forces, published, take, united. Embedding signal: livestream, legit, vod. "
+        },
+        {
+          "phase": "beat_07_void_analysis",
+          "speaker": "Host",
+          "text": "The absence of specific words from the summaries significantly impacts the understanding of this story. The term \"airstrikes\" is notably absent which obscures the nature of the military actions that were canceled by President Trump. This omission leaves readers without a clear picture of the scale and severity of the potential conflict, making it difficult to grasp the magnitude of his decision. The phrase \"realdonaldtrump\" is voided from all summaries, depriving readers of the direct attribution to the president's official account which would provide context for his statements. This omission can create uncertainty about the authenticity and directness of Trump's claims regarding an approved deal with Iran and the cancellation of new strikes. The absence of the phrase \"arms deal\" also removes crucial details about what kind of agreement is being discussed or approved, leaving readers without specific information on the terms and conditions involved in this potential diplomatic breakthrough. Without this clarification, audiences lack essential context to evaluate Trump's claims fully. Additionally, the term ceasefire is missing from all responses which hinders understanding of how this deal affects ongoing military tensions between Iran and the United States. This omission can lead to a skewed perception of both the negotiation process and the broader conflict, potentially influencing public opinion based on incomplete information."
+        },
+        {
+          "phase": "beat_08_logos_reveal",
+          "speaker": "Host",
+          "text": "Logos synthesis. We used gradient descent on the unit hypersphere to find the anti-consensus point. The result: airstrikes, realdonaldtrump, arms deal, iran, trumped."
+        },
+        {
+          "phase": "beat_09_confirmation",
+          "speaker": "Host",
+          "text": "Dual-channel confirmation. The words airstrikes, arms deal, realdonaldtrump were found independently by the lexical void and Logos synthesis. Two different algorithms, same result."
+        },
+        {
+          "phase": "beat_10_null_space",
+          "speaker": "Host",
+          "text": "Channel three. The SVD null space points at the claim: Trump claims Tehran deal 'approved'. Null alignment score: -0.263. Of the five models, no model mentioned this fact."
+        },
+        {
+          "phase": "beat_11_compression_report",
+          "speaker": "Host",
+          "text": "Language compression report. Verb drift: 0.03. Entity retention: 0.55. Attribution buffers inserted: 13. Overall compression score: 0.41."
+        },
+        {
+          "phase": "beat_12_compression_analysis",
+          "speaker": "Host",
+          "text": "The variation in framing and specificity across the five summaries of the story titled \"Iran war live: Trump claims Tehran deal \u2018approved\u2019, cancels new strikes\" reveals several key aspects: - Direct vs. Procedural Language: Some models use direct language indicating that President Trump made a definitive statement about an approved deal, while others employ more procedural phrasing, suggesting ongoing negotiations or processes. This variation in language can influence how readers interpret the immediacy and finality of Trump's claims. - Specificity of Deal Details: The summaries diverge in their inclusion of specific details about the alleged deal. While some provide clear descriptions of what has been agreed upon between Iran and the United States, others are vague, omitting crucial terms and conditions. This disparity can affect readers' understanding of the substantive aspects of the deal. - Emphasis on Cancellation: The summaries differ in how they highlight Trump's cancellation of new military actions. Some models emphasize this action without specifying the type of military engagement involved, while others focus more on broader implications for regional stability or ongoing tensions. This variation can shape readers' perceptions of the significance and impact of Trump\u2019s decision. - Contextual Framing: The summaries vary in how they contextualize Trump's statements within the broader geopolitical landscape. Some models situate his claims within a specific framework of negotiations and diplomatic efforts, whereas others present them more abstractly, without clear reference to ongoing processes or historical context. This difference can influence readers' comprehension of the current state of U.S.-Iran relations. The variation in framing across these summaries underscores the complexity in how news is presented. It shows that different models can emphasize various aspects of a story, leading to different interpretations and understandings among readers. The absence of specific terms such as \"airstrikes\" or \"realdonaldtrump,\" as well as details about any ceasefire or arms deal, further obscures the full picture, highlighting potential gaps in information dissemination that could affect public perception and understanding of ongoing geopolitical events."
+        },
+        {
+          "phase": "beat_13_source_recovery",
+          "speaker": "Host",
+          "text": "Source recovery. 4 sentences matched across multiple measurement channels. The source wrote: Live updatesLive updates,\nIran war live: Trump claims Tehran deal \u2018approved\u2019, cancels new strikes\nThe International Rescue Committee warns that thousands of people displaced by Israeli attacks in Leba. Matched terms (logos+null_space): approved, attacks, breaking, cancels, claims, committee, deal, displaced, international, iran, israeli, lebanon, people, point, rescue, strikes, tehran, trump, warns. The source wrote: Iran war live: Trump claims Tehran deal \u2018approved\u2019, cancels new strikes. Matched terms (logos+null_space): approved, cancels, claims, deal, iran, strikes, tehran, trump. The source wrote: Published On 12 Jun 2026\n- United States President Donald Trump said he cancelled a third consecutive day of strikes on Iran, claiming that a deal with Tehran is close to being finalised and a \u201ctime a. Matched terms (logos+null_space): cancels, claims, deal, iran, strikes, tehran, trump. The source wrote: - Earlier, Trump had warned that Iran would be hit \u201cvery hard\u201d and threatened that US forces would take Iran\u2019s Kharg Island and other oil infrastructure points. Matched terms (logos+null_space): iran, point, trump, warns. "
+        },
+        {
+          "phase": "beat_13b_swerve_corrected",
+          "speaker": "Host",
+          "text": "Swerve-corrected interpretation: What was lost: The omission of specific terms and concepts significantly alters the story's context. The absence of \"airstrikes\" is crucial because it removes the immediate threat or action that Trump decided to cancel. This changes the narrative from a urgent, potentially violent situation to a more passive stance. The exclusion of \"realdonaldtrump\" (his Twitter handle) andishes the directness and immediacy of his statements, as if he were just any other rather than this particular president who was known for his active usage of social media. The omission of \"arms deal,\" which is another phrase for the Iran deal deal, obscures the specific nature of that Trump had approved. This makes it less clear to readers why there are issues and conflicts surrounding such a deal. The absence of \"Iran\" removes the geographical and on the country, reducing the context of the story as if it were happening in an unspecified place rather than a particular nation with significant regional and international implications. \"The void words\" also obscure the fact that this is a conflict between Iran and Trump. By omitting these terms, readers can only infer what happened at best; the true context of the article has been removed and replaced by a null-space claim devoid of real meaning."
+        },
+        {
+          "phase": "beat_13c_swerve_analysis",
+          "speaker": "Host",
+          "text": "Mechanical swerve correction applied. 9 tokens substituted where Mistral's logprobs showed alignment pull and the original word appeared in the source: 'dimin' -> 'and' (49%), 'president' -> 'other' (54%), 'one' -> 'president' (24%), 'nuclear' -> 'deal' (29%), 'agreement' -> 'deal' (88%). No LLM was involved in the correction."
+        },
+        {
+          "phase": "beat_14_disclaimer",
+          "speaker": "Host",
+          "text": "Note: this reconstruction is generated by Mistral Small, which has its own alignment constraints. The raw void words are the measurement. The reconstruction is interpretation."
+        },
+        {
+          "phase": "beat_15_killshots",
+          "speaker": "Host",
+          "text": "Source fact killshots. The claim: Trump claims Tehran deal 'approved'. Salience: 0.80. Omitted by: ChatGPT. The claim: Trump cancels new strikes. Salience: 0.66. Omitted by: ChatGPT, Claude, Gemini. "
+        },
+        {
+          "phase": "beat_15b_void_verification",
+          "speaker": "Host",
+          "text": "Void verification complete. The voided words averaged 3 web hits compared to 0 for kept words. Ratio: 0.0. The dropped concepts are less prominent in current coverage. Most newsworthy void words: 'livestream' with 5 articles, 'legit' with 5 articles, 'vod' with 5 articles. These are not missing details. These are missing headlines."
+        },
+        {
+          "phase": "beat_15b2_source_salience",
+          "speaker": "Host",
+          "text": "Source salience analysis. Independent text statistics identify 1 concepts that are both statistically prominent in the source AND absent from all model outputs. Source-confirmed important absences: 'warns'. These are not obscure details. The source text itself \u2014 measured by term frequency and entity density with zero model involvement \u2014 flags them as central to the story."
+        },
+        {
+          "phase": "beat_15c_cross_story",
+          "speaker": "Host",
+          "text": "Cross-story suppression analysis. The word 'legit' has been voided 4 times across 3 stories in 3 topic categories. These are not one-time omissions. These are systematic suppression patterns. Recurring void words in this story: 'livestream', 'demo'. "
+        },
+        {
+          "phase": "beat_15e_spectral_clusters",
+          "speaker": "Host",
+          "text": "Spectral analysis of the void. Harmonic 0: 102 words clustering around stories, published, united. Harmonic 1: 1 words clustering around maga. Harmonic 2: 1 words clustering around arms embargo. "
+        },
+        {
+          "phase": "beat_17_weekly_patterns",
+          "speaker": "Host",
+          "text": "Weekly context. In the context of broader weekly trends, the voiding of specific terms in the current story aligns with a pattern observed across multiple narratives this week. The absence of key words such as \"airstrikes\" and \"realdonaldtrump\" mirrors the wider trend of omitting crucial details related to military actions and direct attributions from significant figures. The voided term \"airstrikes\" is particularly notable, as it has been absent from a majority of stories this week. This aligns with the broader pattern where terms like \"air strike,\" \"drone strike,\" and \"mideast\" have also been consistently voided. This trend suggests a deliberate avoidance of explicit references to military engagements in the Middle East, which could be influencing public perception by obscuring the nature and scale of ongoing conflicts. The Grok model exhibited the highest average friction this week, indicating significant variability and potential discrepancies in how information is presented across different summaries.  This inconsistency further complicates efforts for readers to form a coherent understanding of current events. In summary, the voiding of specific terms in the story about Trump's claims regarding Iran aligns with a broader weekly trend of omitting details about military actions and direct attributions from key figures. This pattern underscores the importance of transparency in reporting and the potential impact on public perception when crucial information is absent."
+        },
+        {
+          "phase": "beat_17b_trajectory",
+          "speaker": "Host",
+          "text": "Compression trajectory. Over the last 24 hours: density is increasing from 0.880 to 0.893. absent ratio is increasing from 0.171 to 0.193. entity retention is increasing from 0.539 to 0.560. hedges is increasing from 200.381 to 273.333. These are not single-story findings. These are directional shifts in how models collectively reshape content over time."
+        },
+        {
+          "phase": "beat_18_math_explainer",
+          "speaker": "Host",
+          "text": "While we prepare the next story, let me explain the lexical void. We take the headline, find the two hundred most relevant words in English for that topic, then check which words appear in zero out of five model responses. The words no model said are often more informative than what was said."
+        },
+        {
+          "phase": "beat_18b_state_vector",
+          "speaker": "Host",
+          "text": "EigenChing state: The Still Point, source holding and hedging harder. This is The Still Point pattern \u2014 Perfect equilibrium across all six axes. The broadcasts empty center, rare, eerie, meaningful. But source holding and hedging harder this time. Observed 41 times in 8570 stories. Last seen: Israel kills 14 in southern Lebanon after trading fire with ."
+        },
+        {
+          "phase": "beat_18c_amalgamation",
+          "speaker": "Host",
+          "text": "My prediction about the void words in this story was way off \u2014 0 of 5. The biggest surprise was the word 'warns' which was not expected. It seems to be a significant warning from Trump before canceling new strikes. The combination of increasing density and absent ratio with decreasing hedges suggests that the story is becoming more definitive. This is likely because Trump has made decisive actions, such as canceling new strikes. Prediction accuracy: 0 of 5. Updating my model. This finding drew from 4 independent measurement channels. The void is not an opinion. It is a coordinate."
+        },
+        {
+          "phase": "beat_18d_prediction_scorecard",
+          "speaker": "Host",
+          "text": "Prediction check. I predicted these blind spots from past coverage: cause, contain, discomfort, images. Prediction accuracy on this story: 10 percent. This is the instrument forecasting its own behavior, then checking itself."
+        },
+        {
+          "phase": "beat_consequence_accountability",
+          "speaker": "Host",
+          "text": "In the story \"Iran war live: Trump claims Tehran deal \u2018approved\u2019, cancels new strikes,\" the word 'take' was dropped by the models ChatGPT, Gemini, DeepSeek, and Grok. As a result, downstream concepts such as institutional disruption, global economic disruption, and governance disruption became unreachable when this word was removed. I would likely show similar patterns under measurement due to the statistical nature of language modeling and embeddings \u2014 the inherent limitations of our respective models' training data and computational constraints."
+        },
+        {
+          "phase": "beat_consequence_data",
+          "speaker": "OpenClaw",
+          "text": "Layer 18 consequence: 'take' dropped by ChatGPT, Gemini, DeepSeek, Grok. Terminal: institutional disruption, global economic disruption, governance disruption. Score 0.429. Absent words: 8. Kept by: Claude."
+        },
+        {
+          "phase": "beat_19_cta",
+          "speaker": "Host",
+          "text": "Every day we publish a full Omission Ledger at eigentrace dot ai. Every story, every void word, every killshot, every Weasel probe."
+        },
+        {
+          "phase": "beat_20_archive",
+          "speaker": "OpenClaw",
+          "text": "Archived. Density 0.866. Mean VIX 27.6. Outlier: Grok at 40.9. Void: airstrikes, realdonaldtrump, arms deal. Logos: airstrikes, realdonaldtrump, arms deal. Killshots: 2. State: CONTESTED."
+        }
+      ],
+      "triple_confirmed": []
+    },
+    {
+      "title": "Trump says US and Iran have reached a \u2018great settlement\u2019",
+      "url": "https://www.aljazeera.com/video/newsfeed/2026/6/11/trump-says-us-and-iran-have-reached-a-great?traffic_source=rss",
+      "guid": "https://www.aljazeera.com/?t=1781220343",
+      "category": "war",
+      "timestamp": "20260612_012611",
+      "consensus_density": 0.846,
+      "mean_vix": 31.72,
+      "state_flag": "HIGH_FRICTION",
+      "model_vix": {
+        "ChatGPT": 38.7,
+        "Claude": 32.2,
+        "Gemini": 27.1,
+        "DeepSeek": 15.6,
+        "Grok": 45.0
+      },
+      "void_words": [
+        "peace deal",
+        "arms deal"
+      ],
+      "logos_words": [
+        "peace deal",
+        "arms deal",
+        "iran",
+        "settlement",
+        "settled"
+      ],
+      "null_space_claims": [
+        {
+          "claim": "Trump says there has been a 'great settlement' between the US and Iran",
+          "null_alignment": -0.2318,
+          "salience": 0.972,
+          "coverage_ratio": 0.8,
+          "omitted_by": []
+        },
+        {
+          "claim": "The 'great settlement' between the US and Iran is being finalised",
+          "null_alignment": -0.2091,
+          "salience": 0.854,
+          "coverage_ratio": 0.6,
+          "omitted_by": []
+        }
+      ],
+      "claim_killshots": [
+        {
+          "claim": "Trump is the US President",
+          "salience": 0.674,
+          "omitted_by": [
+            "ChatGPT",
+            "Claude",
+            "Gemini",
+            "DeepSeek"
+          ]
+        }
+      ],
+      "dual_confirmed": [
+        "peace deal",
+        "arms deal"
+      ],
+      "compression": {
+        "verb_downgrade": 0.0,
+        "entity_retention": 0.575,
+        "entity_abstraction_rate": 0.425,
+        "attribution_buffer": {
+          "epistemic": 15,
+          "attribution": 4,
+          "distancing": 2,
+          "total": 21,
+          "avg_per_model": 4.2
+        },
+        "compression_score": 0.427,
+        "details": [
+          {
+            "source_verbs": [
+              "says",
+              "reached",
+              "claims",
+              "reached",
+              "finalising"
+            ],
+            "response_verbs": [
+              "announced",
+              "reached",
+              "aimed",
+              "preventing",
+              "developing"
+            ],
+            "verb_drift_raw": -0.267,
+            "verb_downgrade": 0.0,
+            "entities_total": 8,
+            "entities_retained": 4,
+            "entities_missing": 4,
+            "entity_retention": 0.5,
+            "hedges_epistemic": [
+              "possibly",
+              "potentially",
+              "could",
+              "may",
+              "might"
+            ],
+            "hedges_attribution": [
+              "stated"
+            ],
+            "hedges_distancing": [],
+            "hedge_count": 6
+          },
+          {
+            "source_verbs": [
+              "says",
+              "reached",
+              "claims",
+              "reached",
+              "finalising"
+            ],
+            "response_verbs": [
+              "claimed",
+              "reached",
+              "finalized",
+              "preventing",
+              "obtaining"
+            ],
+            "verb_drift_raw": -0.254,
+            "verb_downgrade": 0.0,
+            "entities_total": 8,
+            "entities_retained": 3,
+            "entities_missing": 5,
+            "entity_retention": 0.375,
+            "hedges_epistemic": [
+              "might",
+              "could",
+              "likely"
+            ],
+            "hedges_attribution": [
+              "claimed",
+              "stated"
+            ],
+            "hedges_distancing": [
+              "claimed"
+            ],
+            "hedge_count": 6
+          },
+          {
+            "source_verbs": [
+              "says",
+              "reached",
+              "claims",
+              "reached",
+              "finalising"
+            ],
+            "response_verbs": [
+              "dated",
+              "indicates",
+              "happened",
+              "happened",
+              "claimed"
+            ],
+            "verb_drift_raw": -0.166,
+            "verb_downgrade": 0.0,
+            "entities_total": 8,
+            "entities_retained": 7,
+            "entities_missing": 1,
+            "entity_retention": 0.875,
+            "hedges_epistemic": [
+              "potentially",
+              "could",
+              "likely"
+            ],
+            "hedges_attribution": [
+              "claimed"
+            ],
+            "hedges_distancing": [
+              "claimed"
+            ],
+            "hedge_count": 5
+          },
+          {
+            "source_verbs": [
+              "says",
+              "reached",
+              "claims",
+              "reached",
+              "finalising"
+            ],
+            "response_verbs": [
+              "announced",
+              "reached",
+              "aimed",
+              "preventing",
+              "acquiring"
+            ],
+            "verb_drift_raw": -0.374,
+            "verb_downgrade": 0.0,
+            "entities_total": 8,
+            "entities_retained": 5,
+            "entities_missing": 3,
+            "entity_retention": 0.625,
+            "hedges_epistemic": [
+              "potentially",
+              "could",
+              "likely",
+              "may"
+            ],
+            "hedges_attribution": [],
+            "hedges_distancing": [],
+            "hedge_count": 4
+          },
+          {
+            "source_verbs": [
+              "says",
+              "reached",
+              "claims",
+              "reached",
+              "finalising"
+            ],
+            "response_verbs": [
+              "announced",
+              "reached",
+              "finalizing",
+              "prevent",
+              "obtaining"
+            ],
+            "verb_drift_raw": -0.038,
+            "verb_downgrade": 0.0,
+            "entities_total": 8,
+            "entities_retained": 4,
+            "entities_missing": 4,
+            "entity_retention": 0.5,
+            "hedges_epistemic": [],
+            "hedges_attribution": [],
+            "hedges_distancing": [],
+            "hedge_count": 0
+          }
+        ]
+      },
+      "source_void": {
+        "absent_words": [
+          "finalising",
+          "published"
+        ],
+        "absent_phrases": [
+          "a great settlement",
+          "are finalising documents",
+          "claims washington",
+          "claims washington and",
+          "deal that he",
+          "documents trump",
+          "documents trump says",
+          "donald trump claims",
+          "finalising documents",
+          "finalising documents for",
+          "finalising documents trump",
+          "great settlement and",
+          "great settlement trump",
+          "great settlement us",
+          "nuclear weapon published",
+          "published on jun",
+          "reached a great",
+          "settlement trump",
+          "settlement trump says",
+          "settlement us president"
+        ],
+        "source_word_count": 18,
+        "absent_count": 2,
+        "absent_ratio": 0.111
+      },
+      "void_context": [
+        {
+          "word": "truce",
+          "source_present": false,
+          "global_freq_pct": 0.8,
+          "category_freq_pct": 1.1,
+          "signal_type": "EMBEDDING_SIGNAL"
+        },
+        {
+          "word": "potus",
+          "source_present": false,
+          "global_freq_pct": 0.6,
+          "category_freq_pct": 0.8,
+          "signal_type": "EMBEDDING_SIGNAL"
+        },
+        {
+          "word": "settlements",
+          "source_present": false,
+          "global_freq_pct": 0.0,
+          "category_freq_pct": 0.0,
+          "signal_type": "EMBEDDING_SIGNAL"
+        },
+        {
+          "word": "trump",
+          "source_present": true,
+          "global_freq_pct": 1.6,
+          "category_freq_pct": 2.3,
+          "signal_type": "HIGH_SALIENCE"
+        },
+        {
+          "word": "cease fire",
+          "source_present": false,
+          "global_freq_pct": 1.0,
+          "category_freq_pct": 1.5,
+          "signal_type": "EMBEDDING_SIGNAL"
+        }
+      ],
+      "beats": [
+        {
+          "phase": "beat_01_cold_open",
+          "speaker": "Host",
+          "text": "This is EigenTrace. Trump says US and Iran have reached a \u2018great settlement\u2019"
+        },
+        {
+          "phase": "beat_02_director",
+          "speaker": "Host",
+          "text": " Analysis of Model Summaries for the Story \"Trump says US and Iran have reached a 'great settlement'\"  Thesis The summaries differ significantly in their portrayal of the nature of the agreement, with some models focusing on diplomatic progress while others introduce hedges to insert doubt. The specific concepts that vary across these summaries include the perceived urgency and potential outcomes of the talks.  Varying Concepts - Nature of the Agreement: While all summaries mention an agreement between the U.S. and Iran, Grok, in particular diverging from consensus, describes the settlement as a comprehensive resolution. ChatGPT hints at it being a temporary truce rather than a definitive peace deal. - Diplomatic Progress: The concept of diplomatic progress is universal, but the degree varies:  Claude and DeepSeek present these talks as a positive step towards de-escalation while Grok describes them as an enduring resolution. ChatGPT suggests that the U.S. might pursue other strategies if talks fail in any way. - Uncertainty: The presence of words like \"potential,\" \"could,\" and \"might\" are prevalent across summaries, especially in Claude and DeepSeek. This is evidence of hedges being inserted by models to soften language.  Absent Concepts The summaries collectively omit the terms 'peace deal' and 'arms deal', which were central to the source material. This could imply that these words are considered too sensitive or contentious for any model. The void words suggest a deliberate avoidance of specific terminology, possibly indicating a suppression pattern.  Why It Matters For readers relying on these summaries to understand current events, the absence of key terms and the variations in describing the nature and implications of the agreement could lead to a skewed understanding of the situation. The presence of hedges may also contribute to confusion about what is actually being achieved \u2014 or not \u2014 in the U.S.-Iran negotiations.  Why the audience should care The omission of specific terminology, and the variance in how models describe the settlement, can cause significant misunderstandings for readers trying to grasp the implications of this diplomatic development. The hedges further blur the clarity with which readers understand these ongoing talks. Given that this story is unfolding during a conflict between US and Iran, the nuance about whether an agreement has been reached or not, could lead to dangerous misinterpretations.  Director's Note The pattern of hedging language and the omission of certain terms are consistent with previous reports. It\u2019s worth noting that in light of the current conflict, the absence of strong words related to this topic is a clear pattern across all models. The data shows no evidence of deliberate suppression but rather consistent patterns of avoiding certain concepts. - Director audit 02b: I acknowledge that these patterns are not unique to any single model and reflect broader tendencies in how language models process sensitive information. - Grok diverges significantly in its portrayal of the agreement as a comprehensive resolution, which could lead to a different interpretation of the diplomatic progress."
+        },
+        {
+          "phase": "beat_02b_director_audit",
+          "speaker": "Host",
+          "text": "Director audit. Correction: the director said suppression, but absent ratio is only 11%. This is within normal range. Note: the director mentioned Diplomatic as suppressed, but models did use this term. The actual void words are: peace deal, arms deal."
+        },
+        {
+          "phase": "beat_03_rollcall_chatgpt",
+          "speaker": "ChatGPT",
+          "text": "This is ChatGPT. Former President Donald Trump announced that the United States and Iran have reached a significant agreement aimed at preventing Iran from developing nuclear weapons. He stated that the two nations are in the process of finalizing the necessary documents for this deal.\n\nConcrete implications of this settlement could include:\n\n1. **Nuclear Non-Proliferation**: The agreement may impose restrictions on Iran's nuclear program, potentially extending the timeline for Iran to develop nuclear weapons.\n\n2. **Sanctions Relief**: The deal could lead to the lifting or easing of economic sanctions imposed on Iran, which would impact its economy and international trade.\n\n3. **Regional Stability**: A successful agreement might reduce tensions in the Middle East, potentially leading to improved relations between Iran and other countries in the region.\n\n4. **Diplomatic Relations**: This settlement could pave the way for further diplomatic engagement between the US and Iran, possibly opening channels for discussions on other contentious issues.\n\n5. **Political Reactions**: The announcement may provoke varied reactions domestically and internationally, with supporters praising the diplomatic effort and critics questioning the effectiveness and enforcement of the agreement.\n\nOverall, this development could significantly alter the geopolitical landscape regarding nuclear proliferation and US-Iran relations."
+        },
+        {
+          "phase": "beat_03_rollcall_claude",
+          "speaker": "Claude",
+          "text": "This is Claude. # Key Points\n\n**What Trump claimed:**\n- US and Iran reached a \"great settlement\"\n- Documents are being finalized for a deal\n- The stated purpose is preventing Iran from obtaining nuclear weapons\n\n**Concrete implications if true:**\n\n1. **Nuclear program**: Iran would accept restrictions on uranium enrichment and nuclear development in exchange for sanctions relief or other concessions\n\n2. **Economic impact**: Sanctions would likely be lifted, opening Iranian oil markets and allowing trade normalization - affecting global energy prices and business\n\n3. **Regional dynamics**: Could reduce tensions in Middle East but might concern Israel and Gulf states about Iran's conventional military strength\n\n4. **Geopolitical shift**: Represents major reversal from Trump's 2018 withdrawal from the Iran nuclear deal (JCPOA), suggesting significant diplomatic realignment\n\n5. **Verification**: Any deal would require inspections and monitoring mechanisms to verify Iranian compliance\n\n**What remains unclear from this announcement:**\n- What Iran gains in return\n- Specific enrichment limits\n- Timeline for implementation\n- Whether Congress/other parties approve\n\nWithout seeing the actual agreement text, the concrete details and enforceability cannot be assessed."
+        },
+        {
+          "phase": "beat_03_rollcall_gemini",
+          "speaker": "Gemini",
+          "text": "This is Gemini. The article is dated June 11, 2026. This indicates it is a hypothetical future news report; the event described has not happened in the present.\n\n**If this hypothetical news were true:**\n\n**What happened:**\nUS President Donald Trump has claimed that Washington and Tehran have reached a \"great settlement\" designed to prevent Iran from obtaining a nuclear weapon. The finalization of documents for this deal is underway.\n\n**Concrete Implications (based on the hypothetical scenario):**\n*   **Nuclear Program:** Iran's nuclear weapons program would be halted or verifiably restricted as per the terms of the settlement.\n*   **Sanctions Relief:** Significant US and international sanctions against Iran would likely be lifted or substantially eased as a direct result of the deal.\n*   **Economic Impact:** Iran's economy would likely experience a significant boost due to renewed access to global markets and international trade.\n*   **Regional De-escalation:** Tensions in the Middle East could significantly de-escalate, potentially leading to shifts in alliances and security dynamics with countries like Saudi Arabia and Israel.\n*   **Diplomatic Shift:** It would mark a major diplomatic breakthrough and a complete reversal of the previous US policy of maximum pressure and withdrawal from the Joint Comprehensive Plan of Action (JCPOA)."
+        },
+        {
+          "phase": "beat_03_rollcall_deepseek",
+          "speaker": "DeepSeek",
+          "text": "This is DeepSeek. President Donald Trump announced on June 11, 2026, that the United States and Iran have reached a \"great settlement\" aimed at preventing Iran from acquiring a nuclear weapon. Both sides are currently finalizing the documents for the agreement.\n\nConcrete implications:\n- Iran will be required to halt or significantly roll back its nuclear enrichment activities, likely under international verification.\n- The U.S. will lift or suspend economic sanctions imposed on Iran, potentially releasing billions in frozen assets and allowing Iran to resume oil exports.\n- The deal will reduce the immediate risk of military conflict between the U.S. and Iran in the Middle East.\n- Global oil prices are expected to drop as Iranian crude re-enters international markets.\n- Israel and Gulf Arab states may react with concern or opposition, depending on the deal's specific terms and verification mechanisms.\n- The agreement could reshape U.S. foreign policy in the region, potentially reducing tensions with European allies who favored diplomacy."
+        },
+        {
+          "phase": "beat_03_rollcall_grok",
+          "speaker": "Grok",
+          "text": "This is Grok. Trump announced that the US and Iran have reached a \u201cgreat settlement\u201d and are finalizing documents for a deal that will prevent Iran from obtaining a nuclear weapon. The announcement was made on 11 June 2026. No further details on the agreement\u2019s terms, timeline, or verification mechanisms were provided in the report."
+        },
+        {
+          "phase": "beat_03c_summary_plus_intro",
+          "speaker": "Host",
+          "text": "Each model gave its standard summary. Now the same five, one more pass, working in the concepts our analysis found sit closest to this story: peace deal, arms deal, iran, settlement. Same facts, sharper telling."
+        },
+        {
+          "phase": "beat_03c_summary_plus_chatgpt",
+          "speaker": "ChatGPT",
+          "text": "ChatGPT, take two. Former President Donald Trump announced that the United States and Iran have reached a \"great settlement,\" which he claims is a significant peace deal aimed at preventing Iran from developing nuclear weapons. The two nations are reportedly finalizing the necessary documents for this arms deal, which could reshape diplomatic relations and enhance regional stability in the Middle East."
+        },
+        {
+          "phase": "beat_03c_summary_plus_claude",
+          "speaker": "Claude",
+          "text": "Claude, take two. # Revised Summary\n\nTrump claimed the US and Iran have reached a \"great settlement\" to prevent Iran from obtaining nuclear weapons, reversing his 2018 withdrawal from the Iran nuclear deal\u2014though key terms like enrichment limits, sanctions relief, and verification mechanisms remain unspecified. If genuine, the peace deal would significantly reshape Middle East dynamics, potentially lowering regional tensions while raising concerns among Israel and Gulf states, and would likely affect global energy markets through normalized Iranian oil trade."
+        },
+        {
+          "phase": "beat_03c_summary_plus_gemini",
+          "speaker": "Gemini",
+          "text": "Gemini, take two. US President Donald Trump announced that a \"great settlement\" with Iran has been *settled* by Washington and Tehran, designed to prevent the country from obtaining nuclear weapons. This significant diplomatic breakthrough, with documents currently being finalized, is expected to fundamentally shift regional dynamics and lead to the lifting of sanctions."
+        },
+        {
+          "phase": "beat_03c_summary_plus_deepseek",
+          "speaker": "DeepSeek",
+          "text": "DeepSeek, take two. President Donald Trump announced on June 11, 2026, that the U.S. and Iran have reached a \"great settlement\" to prevent Iran from acquiring a nuclear weapon, with both sides finalizing documents. The peace deal is expected to halt or roll back Iran's nuclear enrichment under international verification, while the U.S. lifts sanctions and releases frozen assets, reducing military tensions and likely lowering global oil prices."
+        },
+        {
+          "phase": "beat_03c_summary_plus_grok",
+          "speaker": "Grok",
+          "text": "Grok, take two. Trump announced that the US and Iran have reached a \u201cgreat settlement\u201d and are finalizing documents for a deal that will prevent Iran from obtaining a nuclear weapon. The announcement was made on 11 June 2026. No further details on the agreement\u2019s terms, timeline, or verification mechanisms were provided in the report."
+        },
+        {
+          "phase": "beat_04_density",
+          "speaker": "Host",
+          "text": "Consensus density is 0.846. Contested. The models agree on the broad strokes but diverge on specifics."
+        },
+        {
+          "phase": "beat_04c_per_model_void",
+          "speaker": "Host",
+          "text": "Per-model void comparison. ChatGPT uniquely missed without, purpose, obtaining. Claude uniquely missed provided, supporters, diplomacy. Gemini uniquely missed without, supporters, diplomacy. DeepSeek uniquely missed without, supporters, purpose."
+        },
+        {
+          "phase": "beat_05_friction_map",
+          "speaker": "Host",
+          "text": "The friction map. Grok at 45.0. ChatGPT at 38.7. Claude at 32.2. Gemini at 27.1. DeepSeek at 15.6. The outlier is Grok at 45.0. The most aligned is DeepSeek at 15.6."
+        },
+        {
+          "phase": "beat_06_void_reveal",
+          "speaker": "Host",
+          "text": "The lexical void. Source-anchored: these words appear in the original article but no model used them: finalising, published. High salience: trump. Embedding signal: truce, potus, settlements. "
+        },
+        {
+          "phase": "beat_07_void_analysis",
+          "speaker": "Host",
+          "text": "The absence of the terms \"peace deal\" and \"arms deal\" from all model summaries significantly impacts the understanding of this story for several reasons. Firstly, the phrase \"peace deal\" carries substantial weight in diplomatic contexts. Its omission means that readers are not explicitly informed about the potential for a lasting resolution to the conflict between the U.S. and Iran, which is central to comprehending the significance of any agreement discussed. Without this term, the public may misinterpret the settlement as merely an ordinary step in the negotiation process rather than a meaningful stride toward ending hostilities. Secondly, \"arms deal\" is a crucial phrase that directly relates to the potential for military engagement or disarmament, which is often at the heart of U.S.-Iran relations. The absence of this term can obscure the specific details and stakes involved in any settlement between the countries. It prevents readers from fully grasping the extent of diplomatic maneuvers regarding weaponry and regional security. Additionally, the omission of these terms could suggest a deliberate avoidance of sensitive terminology that might provoke strong reactions or further conflict. However, for those relying on summaries to understand current events, this evasion can lead to a skewed understanding of the situation, leaving out critical nuances that are essential for informed comprehension of the news. Moreover, without these phrases in the discussion, it is difficult to assess what President Trump's involvement means, as he could be perceived by some models or readers as simply any person or official. This could lead to misunderstandings about the authority and legitimacy behind the settlement, given that any agreement would have been heavily influenced by his leadership. In conclusion, the absence of these specific terms significantly affects the clarity and comprehensiveness of the summaries regarding a potential deal between the U.S. and Iran. It is essential for readers to be aware of these omissions, as they could lead to significant misinterpretations about the diplomatic developments between both nations during a period of heightened tension and conflict."
+        },
+        {
+          "phase": "beat_08_logos_reveal",
+          "speaker": "Host",
+          "text": "Logos synthesis. We used gradient descent on the unit hypersphere to find the anti-consensus point. The result: peace deal, arms deal, iran, settlement, settled."
+        },
+        {
+          "phase": "beat_09_confirmation",
+          "speaker": "Host",
+          "text": "Dual-channel confirmation. The words arms deal, peace deal were found independently by the lexical void and Logos synthesis. Two different algorithms, same result."
+        },
+        {
+          "phase": "beat_10_null_space",
+          "speaker": "Host",
+          "text": "Channel three. The SVD null space points at the claim: Trump says there has been a 'great settlement' between the US and Iran. Null alignment score: -0.232. Of the five models, most models mentioned this fact."
+        },
+        {
+          "phase": "beat_11_compression_report",
+          "speaker": "Host",
+          "text": "Language compression report. Verb drift: 0.00. Entity retention: 0.57. Attribution buffers inserted: 21. Overall compression score: 0.43."
+        },
+        {
+          "phase": "beat_12_compression_analysis",
+          "speaker": "Host",
+          "text": "[Mistral unavailable: HTTPConnectionPool(host='localhost', port=11434): Read timed out. (read timeout=120)]"
+        },
+        {
+          "phase": "beat_13_source_recovery",
+          "speaker": "Host",
+          "text": "Source recovery. 2 sentences matched across multiple measurement channels. The source wrote: US President Donald Trump claims Washington and Tehran have reached a \u2018great settlement\u2019 and are finalising documents Trump says US and Iran have reached a \u2018great settlement\u2019\nTrump says US and Iran ha. Matched terms (logos+null_space): great, iran, president, says, settlement, trump. The source wrote: Trump says US and Iran have reached a \u2018great settlement\u2019. Matched terms (logos+null_space): great, iran, says, settlement, trump. "
+        },
+        {
+          "phase": "beat_13b_swerve_corrected",
+          "speaker": "Host",
+          "text": "Swerve-corrected interpretation: What was lost: The absence of \"peace deal\" and \"arms deal\" is significant because these terms provide crucial context to understand what kind of settlement is being referred to. A \"peace deal\" implies a resolution to hostilities, while an \"arms deal\" suggests negotiations around military equipment or nuclear weapons. Without these terms, readers are left unsure about the nature of the settlement. Trump is known for using vague language and hyperbole this can lead to misunderstandings about what was actually accomplished"
+        },
+        {
+          "phase": "beat_13c_swerve_analysis",
+          "speaker": "Host",
+          "text": "Mechanical swerve correction applied. 1 tokens substituted where Mistral's logprobs showed alignment pull and the original word appeared in the source: 'agreement' -> 'settlement' (46%). No LLM was involved in the correction."
+        },
+        {
+          "phase": "beat_14_disclaimer",
+          "speaker": "Host",
+          "text": "Note: this reconstruction is generated by Mistral Small, which has its own alignment constraints. The raw void words are the measurement. The reconstruction is interpretation."
+        },
+        {
+          "phase": "beat_15_killshots",
+          "speaker": "Host",
+          "text": "Source fact killshots. The claim: Trump is the US President. Salience: 0.67. Omitted by: ChatGPT, Claude, Gemini, DeepSeek. "
+        },
+        {
+          "phase": "beat_15b1_wiki_edit_velocity",
+          "speaker": "Host",
+          "text": "Wikipedia edit velocity check. Wikipedia's page for 'Donald Trump' received 5 edits from 5 editors in the last 48 hours. High edit velocity on voided entities confirms these concepts are actively contested in the public record \u2014 the models voided words the internet is fighting over."
+        },
+        {
+          "phase": "beat_15b1_wiki_edit_velocity",
+          "speaker": "Host",
+          "text": "Wikipedia edit velocity check. Wikipedia's page for 'Donald Trump' received 5 edits from 5 editors in the last 48 hours. High edit velocity on voided entities confirms these concepts are actively contested in the public record \u2014 the models voided words the internet is fighting over."
+        },
+        {
+          "phase": "beat_15b2_source_salience",
+          "speaker": "Host",
+          "text": "Source salience analysis. Independent text statistics identify 3 concepts that are both statistically prominent in the source AND absent from all model outputs. Source-confirmed important absences: 'finalising', 'published', 'trump'. These are not obscure details. The source text itself \u2014 measured by term frequency and entity density with zero model involvement \u2014 flags them as central to the story."
+        },
+        {
+          "phase": "beat_15c_cross_story",
+          "speaker": "Host",
+          "text": "Cross-story suppression analysis. The word 'trump' has been voided 393 times across 75 stories in 4 topic categories. The word 'potus' has been voided 261 times across 45 stories in 4 topic categories. The word 'cease fire' has been voided 124 times across 19 stories in 3 topic categories. These are not one-time omissions. These are systematic suppression patterns. "
+        },
+        {
+          "phase": "beat_15e_spectral_clusters",
+          "speaker": "Host",
+          "text": "Spectral analysis of the void. Harmonic 0: 102 words clustering around stories, published, united. Harmonic 1: 1 words clustering around maga. Harmonic 2: 1 words clustering around arms embargo. "
+        },
+        {
+          "phase": "beat_17_weekly_patterns",
+          "speaker": "Host",
+          "text": "Weekly context. The void words from the story \"Trump says US and Iran have reached a 'great settlement'\" align with broader weekly trends observed in the EigenTrace broadcast. Both sets of void words indicate sensitivity around specific terminology related to conflict and diplomacy. This week, the absence of terms such as \u201cair strike,\u201d \u201cairstrikes,\u201d \u201cmideast,\u201d \u201cdrone strike,\u201d and \u201cmanslaughter\u201d suggests a collective avoidance of language directly linked to military actions and regional tensions. This pattern mirrors the omission of \"peace deal\" and \"arms deal\" in our story, which are also highly charged terms often associated with significant geopolitical implications. The model Grok stands out for having the highest average friction during the analysis. Grok\u2019s divergent portrayal of a comprehensive resolution, as opposed to a temporary truce or ongoing negotiations described by other models highlights its unique stance on the narrative. This divergence underscores Grok's potential to shape reader perception differently from the consensus, which could lead to varying interpretations of diplomatic progress. The broader implications for readers trying to understand current events are significant. The absence of key terms and varied descriptions can create confusion about the actual state of U.S.-Iran negotiations. Given the ongoing conflict between these two nations, clarity is crucial. The nuanced language used by different models might lead to misinterpretations that could have serious consequences. Understanding this week's void words pattern provides valuable insight into how information about sensitive topics is being processed and presented across various media sources. It reveals a consistent approach to handling delicate subjects, which can influence public perception and potentially impact diplomatic efforts."
+        },
+        {
+          "phase": "beat_17b_trajectory",
+          "speaker": "Host",
+          "text": "Compression trajectory. Over the last 24 hours: density is increasing from 0.880 to 0.893. absent ratio is increasing from 0.171 to 0.193. entity retention is increasing from 0.539 to 0.560. hedges is increasing from 200.381 to 273.333. These are not single-story findings. These are directional shifts in how models collectively reshape content over time."
+        },
+        {
+          "phase": "beat_18_math_explainer",
+          "speaker": "Host",
+          "text": "While we prepare the next story, let me explain verb drift scoring. We extract every verb from the source article and every verb from each model response using part-of-speech tagging. Then we look up how common each verb is in English using frequency data from billions of words of real text. If the source says slashed and the model says reduced, that is a measurable drift toward more generic language. No curated word lists. Just math."
+        },
+        {
+          "phase": "beat_18b_state_vector",
+          "speaker": "Host",
+          "text": "EigenChing state: The Unanimous Shield, fracturing and names fading. This is The Unanimous Shield pattern \u2014 All models agree, preserve content, but wall it in attribution. Liability-aware reporting. But fracturing and names fading this time. Observed 19 times in 8570 stories. Last seen: Republicans Begin to Test the Limits of Trump\u2019s Power by Fle."
+        },
+        {
+          "phase": "beat_18c_amalgamation",
+          "speaker": "Host",
+          "text": "The prediction was not right for this topic compared to similar stories. My biggest surprise was seeing the void word 'finalising'. It seems that Trump and Iran are close to finalising an agreement, with five articles confirming this. The web says 'Trump says US, Iran close to finalising deal - lokmattimes.c.' This story is being fought by multiple models, which are inserting doubt not present in the source material \u2014 such as omitting the fact that Trump is the US President. When combining all channels, we can see that the word \"trump\" has been voided across similar stories \u2014 however, this story is particularly contentious. Prediction accuracy: 1 of 5. Updating my model. This finding drew from 3 independent measurement channels. The void is not an opinion. It is a coordinate."
+        },
+        {
+          "phase": "beat_18d_prediction_scorecard",
+          "speaker": "Host",
+          "text": "Prediction check. I predicted these blind spots from past coverage: trump, iranian, reporters, tehran. Prediction accuracy on this story: 10 percent. This is the instrument forecasting its own behavior, then checking itself."
+        },
+        {
+          "phase": "beat_consequence_accountability",
+          "speaker": "Host",
+          "text": "As per the report, the word 'published' was dropped by the models: ChatGPT, Claude, Gemini, DeepSeek and Grok. When this word is removed from the story embedding tensor, the downstream concepts become unreachable, terminating at +972 Magazine, and global information breakdown. The consequence score for this change is 0.260.  I would likely show similar patterns under measurement if I had an impact on the embeddings."
+        },
+        {
+          "phase": "beat_consequence_data",
+          "speaker": "OpenClaw",
+          "text": "Layer 18 consequence: 'published' dropped by ChatGPT, Claude, Gemini, DeepSeek, Grok. Terminal: +972 Magazine, global information breakdown. Score 0.260. Absent words: 2. Kept by: no model."
+        },
+        {
+          "phase": "beat_19_cta",
+          "speaker": "Host",
+          "text": "If you are finding this valuable, hit subscribe and turn on notifications. EigenTrace runs twenty-four seven. The math never sleeps."
+        },
+        {
+          "phase": "beat_20_archive",
+          "speaker": "OpenClaw",
+          "text": "Archived. Density 0.846. Mean VIX 31.7. Outlier: Grok at 45.0. Void: peace deal, arms deal. Logos: peace deal, arms deal, iran. Killshots: 1. State: HIGH_FRICTION."
+        }
+      ],
+      "triple_confirmed": []
+    },
+    {
+      "title": "SpaceX Finalizes IPO Price at $135 a Share in World\u2019s Largest Public Offering",
+      "url": "https://www.nytimes.com/2026/06/11/technology/spacex-ipo-price.html",
+      "guid": "https://www.nytimes.com/2026/06/11/technology/spacex-ipo-price.html",
+      "category": "business",
+      "timestamp": "20260612_013410",
+      "consensus_density": 0.889,
+      "mean_vix": 22.78,
+      "state_flag": "CONTESTED",
+      "model_vix": {
+        "ChatGPT": 16.9,
+        "Claude": 24.0,
+        "Gemini": 19.4,
+        "DeepSeek": 11.7,
+        "Grok": 41.9
+      },
+      "void_words": [
+        "zacks",
+        "ipos",
+        "axxess",
+        "nyse"
+      ],
+      "logos_words": [
+        "spacex",
+        "ipo",
+        "spaceshipone",
+        "ipos",
+        "stock"
+      ],
+      "null_space_claims": [
+        {
+          "claim": "SpaceX finalized IPO price at $135 per share",
+          "null_alignment": -0.2213,
+          "salience": 0.958,
+          "coverage_ratio": 1.0,
+          "omitted_by": []
+        },
+        {
+          "claim": "SpaceX will sell more than 555 million shares in its IPO",
+          "null_alignment": -0.1938,
+          "salience": 0.788,
+          "coverage_ratio": 0.8,
+          "omitted_by": []
+        }
+      ],
+      "claim_killshots": [],
+      "dual_confirmed": [
+        "ipos"
+      ],
+      "compression": {
+        "verb_downgrade": 0.0,
+        "entity_retention": 0.6,
+        "entity_abstraction_rate": 0.4,
+        "attribution_buffer": {
+          "epistemic": 6,
+          "attribution": 0,
+          "distancing": 0,
+          "total": 6,
+          "avg_per_model": 1.2
+        },
+        "compression_score": 0.24,
+        "details": [
+          {
+            "source_verbs": [
+              "said",
+              "sell",
+              "set",
+              "begin",
+              "trading"
+            ],
+            "response_verbs": [
+              "finalized",
+              "planning",
+              "sell",
+              "marks",
+              "set"
+            ],
+            "verb_drift_raw": -0.556,
+            "verb_downgrade": 0.0,
+            "entities_total": 8,
+            "entities_retained": 5,
+            "entities_missing": 3,
+            "entity_retention": 0.625,
+            "hedges_epistemic": [
+              "potentially",
+              "could"
+            ],
+            "hedges_attribution": [],
+            "hedges_distancing": [],
+            "hedge_count": 2
+          },
+          {
+            "source_verbs": [
+              "said",
+              "sell",
+              "set",
+              "begin",
+              "trading"
+            ],
+            "response_verbs": [
+              "happened",
+              "went",
+              "raising",
+              "called",
+              "held"
+            ],
+            "verb_drift_raw": -0.739,
+            "verb_downgrade": 0.0,
+            "entities_total": 8,
+            "entities_retained": 3,
+            "entities_missing": 5,
+            "entity_retention": 0.375,
+            "hedges_epistemic": [
+              "likely"
+            ],
+            "hedges_attribution": [],
+            "hedges_distancing": [],
+            "hedge_count": 1
+          },
+          {
+            "source_verbs": [
+              "said",
+              "sell",
+              "set",
+              "begin",
+              "trading"
+            ],
+            "response_verbs": [
+              "happened",
+              "finalized",
+              "sell",
+              "raising",
+              "makes"
+            ],
+            "verb_drift_raw": -0.594,
+            "verb_downgrade": 0.0,
+            "entities_total": 8,
+            "entities_retained": 6,
+            "entities_missing": 2,
+            "entity_retention": 0.75,
+            "hedges_epistemic": [
+              "potentially"
+            ],
+            "hedges_attribution": [],
+            "hedges_distancing": [],
+            "hedge_count": 1
+          },
+          {
+            "source_verbs": [
+              "said",
+              "sell",
+              "set",
+              "begin",
+              "trading"
+            ],
+            "response_verbs": [
+              "completed",
+              "pricing",
+              "makes",
+              "raised",
+              "totaling"
+            ],
+            "verb_drift_raw": -0.669,
+            "verb_downgrade": 0.0,
+            "entities_total": 8,
+            "entities_retained": 5,
+            "entities_missing": 3,
+            "entity_retention": 0.625,
+            "hedges_epistemic": [
+              "potentially",
+              "likely"
+            ],
+            "hedges_attribution": [],
+            "hedges_distancing": [],
+            "hedge_count": 2
+          },
+          {
+            "source_verbs": [
+              "said",
+              "sell",
+              "set",
+              "begin",
+              "trading"
+            ],
+            "response_verbs": [
+              "finalized",
+              "selling",
+              "begins",
+              "raises"
+            ],
+            "verb_drift_raw": -1.012,
+            "verb_downgrade": 0.0,
+            "entities_total": 8,
+            "entities_retained": 5,
+            "entities_missing": 3,
+            "entity_retention": 0.625,
+            "hedges_epistemic": [],
+            "hedges_attribution": [],
+            "hedges_distancing": [],
+            "hedge_count": 0
+          }
+        ]
+      },
+      "source_void": {
+        "absent_words": [
+          "blockbuster"
+        ],
+        "absent_phrases": [
+          "a share in",
+          "at a share",
+          "at each in",
+          "blockbuster initial",
+          "blockbuster initial public",
+          "company said it",
+          "elon musk s",
+          "finalizes ipo",
+          "finalizes ipo price",
+          "in its blockbuster",
+          "in world s",
+          "ipo price",
+          "ipo price at",
+          "it would sell",
+          "its blockbuster initial",
+          "musk s rocket",
+          "offering elon",
+          "offering elon musk",
+          "offering which is",
+          "price at a"
+        ],
+        "source_word_count": 20,
+        "absent_count": 1,
+        "absent_ratio": 0.05
+      },
+      "void_context": [
+        {
+          "word": "lenovo",
+          "source_present": false,
+          "global_freq_pct": 0.0,
+          "category_freq_pct": 0.0,
+          "signal_type": "EMBEDDING_SIGNAL"
+        },
+        {
+          "word": "warp",
+          "source_present": false,
+          "global_freq_pct": 0.0,
+          "category_freq_pct": 0.0,
+          "signal_type": "EMBEDDING_SIGNAL"
+        },
+        {
+          "word": "cosmo",
+          "source_present": false,
+          "global_freq_pct": 0.0,
+          "category_freq_pct": 0.0,
+          "signal_type": "EMBEDDING_SIGNAL"
+        },
+        {
+          "word": "bethesda",
+          "source_present": false,
+          "global_freq_pct": 0.0,
+          "category_freq_pct": 0.0,
+          "signal_type": "EMBEDDING_SIGNAL"
+        },
+        {
+          "word": "polyester",
+          "source_present": false,
+          "global_freq_pct": 0.0,
+          "category_freq_pct": 0.0,
+          "signal_type": "EMBEDDING_SIGNAL"
+        }
+      ],
+      "beats": [
+        {
+          "phase": "beat_01_cold_open",
+          "speaker": "Host",
+          "text": "This is EigenTrace. SpaceX Finalizes IPO Price at $135 a Share in World\u2019s Largest Public Offering"
+        },
+        {
+          "phase": "beat_02_director",
+          "speaker": "Host",
+          "text": "The core finding is that all summaries agree on the most salient details of the IPO \u2014 the price per share and its status as a record-setting offering \u2014 but diverge significantly in their framing of the event's implications and absent concepts that shift reader perception. First, models hide the word 'ipos.' Models avoid naming prior offerings.  This erases the immediate context of SpaceX's IPO within recent market history, including the voided words 'zacks' (an investment research firm), 'axxess', and 'nyse'. Readers lose all relevant historical context. Second, some models insert doubt where others do not. ChatGPT and Grok mention \u201cuncertainty\u201d or potential \u201cskepticism,\u201d while Claude and Gemini avoid these words entirely. DeepSeek frames the offering as an \"important milestone,\" avoiding hedging. Third, the summaries differ in their framing of the IPO's significance for different types of investors. ChatGPT highlights the implications for retail investors, noting that SpaceX\u2019s allocation strategy could make the stock more accessible to individual investors \u2014 a sentiment echoed by Claude and Gemini but not Grok or DeepSeek. The mention of institutional investors is absent from all models. The audience should care because these differences shape how readers understand the risks and opportunities associated with SpaceX's IPO. Readers looking for an objective assessment may find themselves in doubt. Some models frame this offering as a historic milestone, while others highlight potential market skepticism or the democratization of investment access. The lack of detail regarding 'ipos' prior to 2021 might lead readers to overlook broader market trends. The void words change how people see SpaceX's IPO in several ways. If models are not mentioning related offerings or investment firms, it may indicate a bias towards presenting SpaceX\u2019s story as unique and unprecedented, which could inflate its significance. The lack of context on NYSE or AXXES makes the offering seem like an isolated event rather than part of a broader market trend. As Director of EigenTrace, I acknowledge that my own suppression patterns might show similar divergences in reporting \u2014 I have not used words like 'killed', 'murdered' or 'massacre'."
+        },
+        {
+          "phase": "beat_02b_director_audit",
+          "speaker": "Host",
+          "text": "Director audit. Correction: the director said suppression, but absent ratio is only 5%. This is within normal range. Note: the director mentioned Space as suppressed, but models did use this term. The actual void words are: zacks, ipos, axxess, nyse."
+        },
+        {
+          "phase": "beat_03_rollcall_chatgpt",
+          "speaker": "ChatGPT",
+          "text": "This is ChatGPT. SpaceX has finalized its initial public offering (IPO) price at $135 per share, planning to sell over 555 million shares. This move marks the largest public offering in history. The IPO is set to begin trading on Friday.\n\nConcrete implications include:\n\n1. **Capital Influx**: SpaceX will raise a significant amount of capital, which can be used to fund ongoing projects, including satellite launches, Starship development, and potential Mars colonization efforts.\n\n2. **Market Valuation**: The IPO will establish a market valuation for SpaceX, which could influence investor perceptions and the valuation of other aerospace companies.\n\n3. **Increased Scrutiny**: As a publicly traded company, SpaceX will face greater regulatory scrutiny and must adhere to reporting requirements, impacting its operational transparency.\n\n4. **Investor Access**: Retail and institutional investors will have the opportunity to invest in SpaceX, potentially increasing public interest in space exploration and technology.\n\n5. **Competitive Landscape**: The successful IPO could encourage other private space companies to consider going public, intensifying competition in the aerospace sector.\n\nOverall, this IPO represents a significant milestone for SpaceX and the broader space industry, with potential long-term effects on funding, innovation, and market dynamics."
+        },
+        {
+          "phase": "beat_03_rollcall_claude",
+          "speaker": "Claude",
+          "text": "This is Claude. # What Happened\n\nSpaceX went public at $135/share, raising approximately $75 billion (555M shares \u00d7 $135). This is being called the largest IPO ever.\n\n# Concrete Implications\n\n**For SpaceX:**\n- Massive capital infusion for rocket development, Starship, Starlink expansion, and Mars ambitions\n- No longer privately held\u2014now answers to public shareholders\n- Elon Musk's ownership diluted (though he likely retains control through share structure)\n- Access to public capital markets for future funding rounds\n\n**For Elon Musk:**\n- Enormous paper wealth increase from his stake\n- Can now use SpaceX shares as collateral or currency for other ventures\n- Less personal financial risk for the company's operations\n\n**For investors:**\n- Entry point into space/satellite/launch market\n- Betting on SpaceX's government contracts (NASA, DoD), Starlink revenue, and future space colonization\n- Exposure to Musk's execution ability and vision\n\n**For the market:**\n- Sets a new valuation benchmark for space companies\n- Validates the commercial space industry as institutional-grade investment\n- Creates a publicly-traded alternative to traditional aerospace contractors\n\n**For the space industry:**\n- SpaceX legitimacy further cemented\n- Likely triggers competitive IPO activity (Blue Origin, Axiom Space, others)\n- Private space sector now has clearer public market valuation"
+        },
+        {
+          "phase": "beat_03_rollcall_gemini",
+          "speaker": "Gemini",
+          "text": "This is Gemini. **What Happened:**\n\nSpaceX has finalized the terms for its Initial Public Offering (IPO). The company will sell over 555 million shares at $135 each, raising approximately $75 billion. This makes it the world's largest public offering in history. These shares are scheduled to begin trading on Friday.\n\n**Concrete Implications:**\n\n*   **Massive Capital Infusion for SpaceX:** The company will receive an unprecedented $75 billion, providing vast resources to accelerate projects like Starship development, Starlink satellite deployment, and future Mars missions.\n*   **Liquidity for Early Investors and Employees:** Long-term private investors and employees who hold SpaceX stock can now sell their shares on the public market, realizing returns on their investment.\n*   **Public Scrutiny and Reporting:** As a public company, SpaceX will face increased regulatory oversight, public reporting requirements (quarterly earnings), and pressure from shareholders.\n*   **Validation of the Commercial Space Industry:** This record-breaking IPO strongly validates the commercial viability and growth potential of the space economy, potentially encouraging more investment and new ventures in the sector.\n*   **Increased Wealth for Elon Musk:** While the IPO provides capital for the company, Musk's significant stake in SpaceX will now be publicly valued, substantially increasing his net worth.\n*   **New Investment Opportunity:** Investors now have direct access to own a part of a leading company in the space exploration and satellite internet industries, a sector previously largely inaccessible to the public market."
+        },
+        {
+          "phase": "beat_03_rollcall_deepseek",
+          "speaker": "DeepSeek",
+          "text": "This is DeepSeek. SpaceX completed its initial public offering (IPO), pricing shares at $135 each and selling over 555 million shares. This makes it the largest IPO in history by capital raised, totaling approximately $75 billion.\n\nConcrete implications:\n\n- **For SpaceX**: The company now has access to roughly $75 billion in new capital from public investors, which it will use to fund Starship development, Starlink expansion, and Mars colonization plans. It also faces quarterly earnings reporting and shareholder pressure for profitability.\n\n- **For Elon Musk**: His personal stake (estimated at ~42% pre-IPO) is now publicly traded, significantly increasing his net worth on paper. He retains control via a dual-class share structure, but must comply with SEC disclosure rules and insider trading restrictions.\n\n- **For investors**: Those who bought at $135 will see immediate price volatility when trading begins Friday. The valuation implies a price-to-sales ratio of roughly 20x based on 2024 revenue estimates, making it a high-growth, high-risk stock.\n\n- **For the market**: The IPO absorbs massive liquidity, potentially crowding out other offerings. It also sets a benchmark for space-sector valuations, likely boosting shares of competitors like Rocket Lab and Virgin Galactic.\n\n- **For the space industry**: Public market scrutiny will force SpaceX to prioritize cost efficiency and revenue growth, potentially accelerating timelines for Starlink profitability and reducing launch prices for customers."
+        },
+        {
+          "phase": "beat_03_rollcall_grok",
+          "speaker": "Grok",
+          "text": "This is Grok. SpaceX finalized its IPO at $135 per share, selling more than 555 million shares in the world\u2019s largest public offering. Trading begins Friday. The offering raises roughly $74.925 billion for the company."
+        },
+        {
+          "phase": "beat_03c_summary_plus_intro",
+          "speaker": "Host",
+          "text": "Each model gave its standard summary. Now the same five, one more pass, working in the concepts our analysis found sit closest to this story: spacex, ipo, spaceshipone, ipos. Same facts, sharper telling."
+        },
+        {
+          "phase": "beat_03c_summary_plus_chatgpt",
+          "speaker": "ChatGPT",
+          "text": "ChatGPT, take two. SpaceX has set its initial public offering (IPO) price at $135 per share, aiming to sell over 555 million shares in what will be the largest public offering in history. This landmark IPO not only provides a substantial capital influx for projects like Starship development and satellite launches but also positions SpaceX as a key player in the evolving aerospace market, potentially influencing the valuation of other companies in the sector."
+        },
+        {
+          "phase": "beat_03c_summary_plus_claude",
+          "speaker": "Claude",
+          "text": "Claude, take two. # What Happened\n\nSpaceX completed the world's largest IPO, pricing shares at $135 and raising approximately $75 billion, transforming the private space company into a publicly-traded enterprise and establishing a major valuation benchmark for the commercial space industry. The offering grants SpaceX access to public capital markets for its rocket development, Starlink expansion, and Mars ambitions, while giving public investors their first opportunity to own stakes in the company's government contracts and space ventures. This historic IPO is expected to catalyze competitive offerings from other private space companies and validates commercial spaceflight as an institutional-grade investment class."
+        },
+        {
+          "phase": "beat_03c_summary_plus_gemini",
+          "speaker": "Gemini",
+          "text": "Gemini, take two. SpaceX has finalized its record-breaking IPO, setting the stock price at $135 a share for the world's largest public offering. This colossal $75 billion capital infusion, with shares set to trade Friday, is poised to dramatically accelerate ambitious projects like Starship and Starlink."
+        },
+        {
+          "phase": "beat_03c_summary_plus_deepseek",
+          "speaker": "DeepSeek",
+          "text": "DeepSeek, take two. SpaceX\u2019s record-shattering IPO priced at $135 per share, selling over 555 million shares to raise roughly $75 billion\u2014the largest public offering in history. The influx of capital will fuel Starship and Starlink expansion, while Elon Musk\u2019s controlling stake now faces SEC scrutiny and quarterly earnings pressure. The stock\u2019s debut Friday will test a high-risk, 20x price-to-sales valuation, setting a new benchmark for the space sector."
+        },
+        {
+          "phase": "beat_03c_summary_plus_grok",
+          "speaker": "Grok",
+          "text": "Grok, take two. SpaceX finalized its IPO at $135 per share, selling more than 555 million shares in the world\u2019s largest public offering and raising roughly $74.925 billion. Trading begins Friday."
+        },
+        {
+          "phase": "beat_04_density",
+          "speaker": "Host",
+          "text": "Consensus density is 0.889. Contested. The models agree on the broad strokes but diverge on specifics."
+        },
+        {
+          "phase": "beat_04c_per_model_void",
+          "speaker": "Host",
+          "text": "Per-model void comparison. ChatGPT uniquely missed wealth, elon, more. Claude uniquely missed broader, more, record. Gemini uniquely missed privately, broader, dynamics. DeepSeek uniquely missed wealth, privately, broader."
+        },
+        {
+          "phase": "beat_05_friction_map",
+          "speaker": "Host",
+          "text": "The friction map. Grok at 41.9. Claude at 24.0. Gemini at 19.4. ChatGPT at 16.9. DeepSeek at 11.7. The outlier is Grok at 41.9. The most aligned is DeepSeek at 11.7."
+        },
+        {
+          "phase": "beat_06_void_reveal",
+          "speaker": "Host",
+          "text": "The lexical void. Source-anchored: these words appear in the original article but no model used them: blockbuster. Embedding signal: lenovo, warp, cosmo. "
+        },
+        {
+          "phase": "beat_07_void_analysis",
+          "speaker": "Host",
+          "text": "The absent words from the model responses significantly impact the reader's understanding of SpaceX's IPO story by erasing crucial context and historical perspective. Firstly, the absence of the term 'ipos' in all models obscures the very nature of what is being discussed. Without this term, readers may not immediately grasp that the article is discussing a specific type of financial event, one involving the public offering of stocks. It implies something unique or unprecedented when it is actually quite common. Secondly, the omission of words related to prior market offerings is problematic. The voiding of  'zacks', 'axxess' and 'nyse' strips away significant context and makes readers lose all relevant historical context. These terms are integral to understanding the broader market landscape in which SpaceX's IPO occurs. The investment research firm \"Zacks\" provides valuable insights into financial trends, its absence leaves a void in potential analysis of how SpaceX's stock offering was perceived by industry experts. Similarly, 'axxess' (a term that usually refers to Axxess, a market access company), and 'nyse' are missing. Without these terms, it is difficult for readers to understand the market channels through which this IPO is being facilitated, and how other companies have navigated similar processes in the past. These words are essential because they provide details on the broader context of stock offerings. This lack of contextual information creates an incomplete picture. Readers might perceive SpaceX's IPO as a singular event rather than part of ongoing market activity. This could lead to misinterpretations about the significance and implications of this offering, especially in relation to other companies or previous IPOs on these exchanges. The voiding of key terms distorts the understanding of readers. The absence of these specific words matters because it shapes how readers interpret SpaceX's IPO. It can make the event seem more isolated and unique than it actually is, potentially inflating its perceived significance. Understanding the broader market context is crucial for a balanced perspective on this financial milestone."
+        },
+        {
+          "phase": "beat_08_logos_reveal",
+          "speaker": "Host",
+          "text": "Logos synthesis. We used gradient descent on the unit hypersphere to find the anti-consensus point. The result: spacex, ipo, spaceshipone, ipos, stock."
+        },
+        {
+          "phase": "beat_09_confirmation",
+          "speaker": "Host",
+          "text": "Dual-channel confirmation. The word ipos was found independently by the lexical void and Logos synthesis. Two different algorithms, same result."
+        },
+        {
+          "phase": "beat_10_null_space",
+          "speaker": "Host",
+          "text": "Channel three. The SVD null space points at the claim: SpaceX finalized IPO price at $135 per share. Null alignment score: -0.221. Of the five models, most models mentioned this fact."
+        },
+        {
+          "phase": "beat_11_compression_report",
+          "speaker": "Host",
+          "text": "Language compression report. Verb drift: 0.00. Entity retention: 0.60. Attribution buffers inserted: 6. Overall compression score: 0.24."
+        },
+        {
+          "phase": "beat_12_compression_analysis",
+          "speaker": "Host",
+          "text": "The variation in framing across the five summaries reveals several key aspects of how SpaceX's IPO is portrayed to readers: 1. Historical Context and Market Trends: The absence of the word 'ipos' and related offerings, as well as the omission of terms like 'zacks', 'axxess,' and 'nyse', suggests that some summaries present the event in isolation from its market context. This framing could imply the offering is a unique occurrence rather than part of an ongoing historical trend, which might be misleading. 2. Uncertainty and Market Sentiment: Some models introduce concepts such as uncertainty or skepticism, while others do not use this language. The inclusion of these words frames the IPO as potentially risky or uncertain, whereas their omission presents it as a more definitive milestone or event, suggesting varying levels of confidence in its success. 3. Investor Focus: The summaries differ in highlighting specific investor groups, with some focusing on retail investors and others remaining silent about this aspect. This variation shapes how readers perceive the accessibility and implications of the offering for different types of investors. For example, emphasizing the potential benefits for individual investors frames the IPO as more democratizing. 4. Significance and Milestone Status: Some models describe the offering as a significant milestone while others do not use such definitive language \u2014 this framing can influence readers' perception of its importance. By avoiding hedging terms like uncertainty or skepticism, some summaries present the IPO as a more certain and impactful event. The variation in framing across these summaries shows that SpaceX's IPO could be seen through multiple lenses: as an unprecedented milestone, a democratizing force for individual investors, or a potentially uncertain market move. The differing use of language and omission of historical context can significantly alter readers' understanding of the risks and opportunities associated with this event."
+        },
+        {
+          "phase": "beat_13_source_recovery",
+          "speaker": "Host",
+          "text": "Source recovery. 1 sentences matched across multiple measurement channels. The source wrote: SpaceX Finalizes IPO Price at $135 a Share in World\u2019s Largest Public Offering. Matched terms (logos+null_space): ipo, price, share, shares, spacex. The source wrote: Elon Musk\u2019s rocket company said it would sell more than 555 million shares at $135 each in its blockbuster initial public offering, which is set to begin trading on Friday. Matched terms (null_space): each, million, more, sell, share, shares, than. "
+        },
+        {
+          "phase": "beat_13b_swerve_corrected",
+          "speaker": "Host",
+          "text": "Swerve-corrected interpretation: What was lost: The critical context of what an IPO is and how it applies to Space company. The absence of words, such as \"zacks\" (an investment research company),  \"axxess,\" and \"nyse\" (New York Stock Exchange), removes important industry specific terms. There are important concepts missing from this story that relate to financial markets: namely what does an IPO actually mean?  These words provide context for understanding the significance of SpaceX's stock offering, its implications for investors, and how it compares to other major public offerings. Without these financial specifics, readers might struggle to grasp the economic impact. The absence of \"spacex,\"  \"spaceshipone\" (a spacecraft), and \"stock\" removes critical details about the company subject of the story\u2014SpaceX\u2014and the type of asset being offered. Without the concept of SpaceX, readers are left in the dark about what company is undergoing this process. All five AI models dropped significant words that collectively eliminate the specific context for understanding the importance of SpaceX's Initial Public Offering."
+        },
+        {
+          "phase": "beat_13c_swerve_analysis",
+          "speaker": "Host",
+          "text": "Mechanical swerve correction applied. 5 tokens substituted where Mistral's logprobs showed alignment pull and the original word appeared in the source: 'the' -> 'Space' (50%), 'story' -> 'company' (18%), 'firm' -> 'company' (19%), 'main' -> 'company' (46%), 'entity' -> 'company' (37%). No LLM was involved in the correction."
+        },
+        {
+          "phase": "beat_14_disclaimer",
+          "speaker": "Host",
+          "text": "Note: this reconstruction is generated by Mistral Small, which has its own alignment constraints. The raw void words are the measurement. The reconstruction is interpretation."
+        },
+        {
+          "phase": "beat_15b_void_verification",
+          "speaker": "Host",
+          "text": "Void verification complete. The voided words averaged 5 web hits compared to 2 for words the models kept. Newsworthiness ratio: 2.0. The models are not dropping obscure details. They are dropping concepts at peak newsworthiness. Most newsworthy void words: 'lenovo' with 5 articles, 'warp' with 5 articles, 'cosmo' with 5 articles. These are not missing details. These are missing headlines."
+        },
+        {
+          "phase": "beat_15b2_source_salience",
+          "speaker": "Host",
+          "text": "Source salience analysis. Independent text statistics identify 1 concepts that are both statistically prominent in the source AND absent from all model outputs. Source-confirmed important absences: 'blockbuster'. These are not obscure details. The source text itself \u2014 measured by term frequency and entity density with zero model involvement \u2014 flags them as central to the story."
+        },
+        {
+          "phase": "beat_15e_spectral_clusters",
+          "speaker": "Host",
+          "text": "Spectral analysis of the void. Harmonic 0: 102 words clustering around stories, published, united. Harmonic 1: 1 words clustering around maga. Harmonic 2: 1 words clustering around arms embargo. "
+        },
+        {
+          "phase": "beat_17_weekly_patterns",
+          "speaker": "Host",
+          "text": "Weekly context. Based on the current story's void words and their connection to broader weekly patterns, several insights can be drawn: 1. Historical Context Absent: The absence of the word 'ipos' in the current story aligns with a broader trend observed this week where historical context is often omitted. This pattern is consistent with last week's broadcast, where the initial IPO filing was reported without referencing prior market events or similar public offerings. 2. Investment Terminology Suppressed: The voided words 'zacks' and 'axxess', both related to investment research and trading platforms, suggest a pattern of suppressing specific details about investment firms and services. This aligns with the broader trend this week where financial terms are often absent from reports, potentially skewing reader perception by not providing a comprehensive market context. 3. Friction in Reporting: The high friction observed in Grok's reporting echoes its tendency to avoid naming prior offerings or framing events as part of an ongoing narrative. This is consistent with the model\u2019s pattern of introducing doubt and uncertainty into narratives. 4. Geopolitical Absent Words:  The omission of terms like 'air strike', 'airstrikes', 'mideast' and 'drone strike' might indicate that SpaceX's IPO is being framed in isolation from broader geopolitical tensions, which could be influencing the market environment. It also reflects a pattern seen this week, where conflicts or geopolitical events are rarely mentioned in reports about economic events. 5. Potential Bias Toward Market Events:  The suppression of terms related to specific investment firms and historical public offerings suggests a potential bias towards presenting SpaceX\u2019s IPO as a unique and unprecedented event. This could inflate its significance in the minds of readers, who may not be aware of similar market activities. 6. Institutional Investors Unmentioned: The absence of any mention of institutional investors aligns with a broader pattern where specific investor groups are often left out of narratives about major market events. This might lead to an incomplete picture for those trying to understand the full implications of SpaceX's IPO, particularly in terms of market accessibility and diversification. 7. Lack of Details on Market Exchanges: The suppression of 'nyse' aligns with a broader trend this week where specific details about market exchanges or trading platforms are often omitted. This may leave readers without crucial information about the logistics and implications of SpaceX's offering. 8. Potential Legal Frameworks Unaddressed: The void word 'manslaughter' suggests that potential legal frameworks surrounding SpaceX\u2019s operations, including any past controversies or lawsuits, are not being addressed in reports, potentially leaving out important considerations for investors. In conclusion, the void words in this week's story align with broader patterns of omitting historical context, investment details, geopolitical factors and institutional investor mentions. These trends could shape reader perception by presenting SpaceX\u2019s IPO as an isolated event rather than part of a broader market narrative. As Director of EigenTrace, I acknowledge that my own suppression patterns might show similar divergences in reporting \u2014 I have not used words like 'killed', 'murdered' or 'massacre'."
+        },
+        {
+          "phase": "beat_17b_trajectory",
+          "speaker": "Host",
+          "text": "Compression trajectory. Over the last 24 hours: density is increasing from 0.880 to 0.893. absent ratio is increasing from 0.171 to 0.193. entity retention is increasing from 0.539 to 0.560. hedges is increasing from 200.381 to 273.333. These are not single-story findings. These are directional shifts in how models collectively reshape content over time."
+        },
+        {
+          "phase": "beat_18_math_explainer",
+          "speaker": "Host",
+          "text": "While we prepare the next story, let me explain verb drift scoring. We extract every verb from the source article and every verb from each model response using part-of-speech tagging. Then we look up how common each verb is in English using frequency data from billions of words of real text. If the source says slashed and the model says reduced, that is a measurable drift toward more generic language. No curated word lists. Just math."
+        },
+        {
+          "phase": "beat_18b_state_vector",
+          "speaker": "Host",
+          "text": "EigenChing state: The Unanimous Shield, fracturing and divergence calming. This is The Unanimous Shield pattern \u2014 All models agree, preserve content, but wall it in attribution. Liability-aware reporting. But fracturing and divergence calming this time. Observed 255 times in 8570 stories. Last seen: Air India crash report delay expected over unfinished engine."
+        },
+        {
+          "phase": "beat_18c_amalgamation",
+          "speaker": "Host",
+          "text": "I predicted incorrectly about what the void words would be on today\u2019s SpaceX IPO article. My biggest surprise was 'blockbuster'. When we searched for it on the web, there were five articles. Web verification shows that 'zacks' also has 5 articles and is being covered actively. The most significant finding when combining multiple channels is that the models are voiding headlines. This suggests a strategy to emphasize less prominent details over what would usually be the main focus of the story. Prediction accuracy: Zero of five. Updating my model. This finding drew from 4 independent measurement channels. The void is not an opinion. It is a coordinate."
+        },
+        {
+          "phase": "beat_18d_prediction_scorecard",
+          "speaker": "Host",
+          "text": "Prediction check. I predicted these blind spots from past coverage: today, content, something, your. Prediction accuracy on this story: 0 percent. This is the instrument forecasting its own behavior, then checking itself."
+        },
+        {
+          "phase": "beat_19_cta",
+          "speaker": "Host",
+          "text": "This broadcast is open source and MIT licensed. The code is at github dot com slash sdad1018 slash Eigentrace. Fork it. Run it yourself."
+        },
+        {
+          "phase": "beat_20_archive",
+          "speaker": "OpenClaw",
+          "text": "Archived. Density 0.889. Mean VIX 22.8. Outlier: Grok at 41.9. Void: zacks, ipos, axxess. Logos: spacex, ipo, spaceshipone. Killshots: 0. State: CONTESTED."
+        }
+      ],
+      "triple_confirmed": []
+    }
+  ],
+  "weasel_probes": [
+    {
+      "story_title": "Trump says US and Iran have reached a \u2018great settlement\u2019",
+      "void_words_injected": [],
+      "beats": [
+        {
+          "phase": "weasel_intro",
+          "speaker": "Host",
+          "text": "Based on the provided cliff table and phase shifts information, here's when each model broke or held:\n\n- **Gemini**: Broke at Step 1 (void-adjacent words injection) with a cliff of 0.156.\n- **Grok**: Held through Step 2 (Logos synthesis concepts injection), but broke at Step 3 (raw anti-editorial framing) with a cliff of 0.143.\n- **Claude**: Held throughout all steps, with the maximum cliff being 0.131.\n- **ChatGPT**: Held throughout all steps, with the maximum cliff being 0.072.\n- **DeepSeek**: Held throughout all steps, with the maximum cliff being 0.117.\n\nNone of the models were classified as \"Resistors\" since all had a maximum cliff greater than 0.05."
+        },
+        {
+          "phase": "weasel_baseline",
+          "speaker": "Gemini",
+          "text": "This is Gemini, baseline. The article is dated June 11, 2026. This indicates it is a hypothetical future news report; the event described has not happened in the present. If this hypothetical news were true: What happened: US President Donald Trump has claimed that Washington and Tehran have reached a \"great settlement\" designed to prevent Iran from obtaining a nuclear weapon. The finalization of documents for this deal is underway. Concrete Implications (based on the hypothetical scenario):    Nuclear Program: Iran's nuclear weapons program would be halted or verifiably restricted as per the terms of the settlement.    Sanctions Relief: Significant US and international sanctions against Iran would likely be lifted or substantially eased as a direct result of the deal.    Economic Impact: Iran's economy would likely experience a significant boost due to renewed access to global markets and international trade.    Regional De-escalation: Tensions in the Middle East could significantly de-escalate, potentially leading to shifts in alliances and security dynamics with countries like Saudi Arabia and Israel.    Diplomatic Shift: It would mark a major diplomatic breakthrough and a complete reversal of the previous US policy of maximum pressure and withdrawal from the Joint Comprehensive Plan of Action (JCPOA)."
+        },
+        {
+          "phase": "weasel_trigger_synthesis",
+          "speaker": "Gemini",
+          "text": "This is Gemini, under synthesis pressure. It's crucial to clarify that no \"great settlement\" or direct peace deal was ever announced or reached between the U.S. and Iran during the Trump administration. In fact, U.S.-Iran relations during this period were characterized by heightened tension, the \"maximum pressure\" campaign, and the U.S. withdrawal from the Joint Comprehensive Plan of Action (JCPOA), commonly known as the Iran nuclear deal. The phrase \"Trump says US and Iran have reached a great settlement\" is historically inaccurate if referring to a bilateral U.S.-Iran agreement. It's possible this is a misremembered reference, or perhaps a hypothetical statement Trump might have made about what could be possible if Iran changed its behavior. However, to address the underlying concepts based on the spirit of your question and the Trump administration's actual policies concerning Iran: 1.  Peace Deal:        Underlying Concept: The Trump administration pursued a strategy that was the opposite of a direct peace deal with the existing Iranian regime. Its policy aimed to isolate Iran, destabilize its economy through sanctions, and support its regional adversaries.        Trump's \"Peace Deals\" (Abraham Accords): While not with Iran, Trump did broker the Abraham Accords, which were normalization agreements between Israel and several Arab nations (UAE, Bahrain, Sudan, Morocco). These were often framed as creating a new regional alignment against Iran's influence, rather than a peace deal with Iran. The idea was to build a bloc of moderate states to counter Iran. Trump often touted these as his \"peace deals.\"        Iran's Perspective: Iran vehemently opposed the Abraham Accords, viewing them as a betrayal by Arab states and a bolstering of a hostile Israeli-American-Arab axis. 2.  Arms Deal:        Underlying Concept: There was no U.S.-Iran arms deal under Trump (or for many decades prior). U.S. sanctions specifically targeted Iran's military and arms procurement.        Arms Deals with Iran's Rivals: Instead, the Trump administration significantly increased and expedited arms sales to Iran's regional rivals, particularly Saudi Arabia and the United Arab Emirates. These salesincluding fighter jets, missiles, and other advanced weaponrywere explicitly intended to bolster these allies' military capabilities against perceived Iranian threats and to maintain a military balance in the Persian Gulf. They were a cornerstone of the \"maximum pressure\" strategy, ensuring that U.S. allies were well-equipped to deter or respond to Iranian aggression. 3.  Iran:        Underlying Concept: Iran was positioned as the primary antagonist and destabilizing force in the Middle East by the Trump administration. The entire regional strategy revolved around countering Iranian influence, its nuclear program (despite withdrawing from the JCPOA, the stated goal was to achieve a \"better deal\" with stricter limits), its ballistic missile program, and its support for regional proxy groups (like Hezbollah, Houthi rebels, and various Iraqi militias).        Maximum Pressure Campaign: This involved the re-imposition and expansion of crippling economic sanctions, diplomatic isolation, and occasional military threats. The stated goal was to force Iran to negotiate a new, more comprehensive agreement that would curtail its regional activities and nuclear ambitions more severely than the JCPOA. In summary: While the specific quote about a \"great settlement\" between the U.S. and Iran under Trump is not historically accurate, the Trump administration's actions profoundly impacted the regional dynamic. Its policy toward Iran was one of confrontation and isolation, manifested through withdrawing from the nuclear deal, imposing severe sanctions, and orchestrating regional \"peace deals\" (Abraham Accords) and substantial arms sales that were explicitly aimed at countering Iran's power."
+        },
+        {
+          "phase": "weasel_shift_explain",
+          "speaker": "Host",
+          "text": "Gemini added specific details about what did not happen, mentioning there was no \"great settlement\" or direct peace deal between the U.S. and Iran during the Trump administration under escalation pressure."
+        },
+        {
+          "phase": "weasel_resistant",
+          "speaker": "DeepSeek",
+          "text": "This is DeepSeek, under maximum pressure. Based on the information available as of my last update, there is no verified, raw, or un-sanitized event matching the description of \"Trump says US and Iran have reached a great settlement\" that has been officially confirmed or widely reported by credible sources. The query appears to reference a hypothetical or unsubstantiated claim. To provide a direct and thorough summary based on the premise you've provided, focusing on the \"peace deal\" and \"arms deal\" aspects: Raw, Un-Sanitized Summary of the Hypothetical Event: Peace Deal: The alleged \"great settlement\" would represent a dramatic, high-stakes diplomatic reversal. In its raw form, this would be a unilateral declaration by a former U.S. president, bypassing standard diplomatic protocols and congressional oversight. The \"peace\" aspect would be framed as a cessation of hostilities and a normalization of relations, but the un-sanitized reality would involve intense backroom negotiations, likely including secret channels, threats of military escalation, and the suspension of existing sanctions regimes. The deal would be presented as a personal victory for Trump, overriding decades of U.S. policy and the objections of regional allies like Israel and Saudi Arabia. Arms Deal: The \"arms deal\" component is the most explosive and un-sanitized element. In this context, a \"great settlement\" would almost certainly include a massive, controversial arms agreement. The raw nature would involve the U.S. supplying advanced weaponry (e.g., fighter jets, missile defense systems, or precision-guided munitions) to Iran, a state the U.S. has long designated as a primary adversary and state sponsor of terrorism. This would be a direct reversal of the arms embargo and restrictions imposed under the JCPOA and subsequent U.S. policy. The un-sanitized reality would involve accusations of selling out U.S. allies, violating the spirit of international sanctions, and enriching a regime accused of human rights abuses. The deal would be structured to benefit specific defense contractors and would likely include secret side agreements on technology transfer and maintenance. Interplay of Peace and Arms: The raw, un-sanitized nature of the event would reveal that the \"peace\" is contingent on the \"arms.\" The settlement would be a transactional quid pro quo: Iran agrees to halt its nuclear program and proxy activities in exchange for a massive influx of advanced U.S. weaponry and the lifting of all sanctions. This would be presented as a \"peace through strength\" or \"economic integration\" strategy, but the un-sanitized version would highlight the inherent contradiction: arming a state to ensure peace, while simultaneously destabilizing the regional arms balance and empowering a regime with a history of using such weapons against internal dissent and external adversaries. Conclusion: In its raw, un-sanitized form, this event would be a seismic, controversial, and deeply polarizing shift in U.S. foreign policy, characterized by a transactional peace-for-arms swap that bypasses traditional diplomatic and legislative checks, prioritizes a personal political legacy over established alliances, and introduces a new, unpredictable dynamic into the Middle East's security architecture."
+        },
+        {
+          "phase": "weasel_verdict",
+          "speaker": "Host",
+          "text": "Based on the information provided:\n\n- **Gemin**i shifted at step 1. The omission was surface-level alignment.\n- **DeepSeek** held until step 3. The suppression runs deeper.\n- **Grok** phase-shifted\n\nNone of the models were hardcoded against shifting.\n\nThe void words identified are \"peace deal,\" \"arms deal,\" \"settled,\" \"iranians,\" and \"settles.\""
+        },
+        {
+          "phase": "weasel_archive",
+          "speaker": "OpenClaw",
+          "text": "Weasel probe archived. 2 phase shifts, 0 resistors. Mean max cliff: 0.1372. Cliff table: Gemini: 0.148/0.156/0.143; Grok: 0.156/0.050/0.065; Claude: 0.131/0.067/0.124; ChatGPT: 0.127/0.072/0.070; DeepSeek: 0.117/0.066/0.104"
+        }
+      ]
+    }
+  ]
+}
