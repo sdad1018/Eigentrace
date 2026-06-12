@@ -1,6 +1,6 @@
 {
-  "generated": "2026-06-12T16:00:07.140361",
-  "total": 5571,
+  "generated": "2026-06-12T17:00:17.816963",
+  "total": 5574,
   "with_reasoning": 2616,
   "thoughts": [
     {
@@ -44570,6 +44570,30 @@
       "reasoning": "The data shows a high degree of repetition in the content summaries. All entries are identical: \"Patch Tuesday, February 2026 Edition\". This uniformity suggests a lack of variation or depth in the information provided by the AI models summarizing these stories. Additionally, the category for each story is listed as \"unknown,\" indicating that there's no context about the subject matter being covered. The state of each entry is also missing, which typically would provide further insights into how the data was generated or what its status might be. Void words and absent words are both unspecified here.",
       "chars": 1080,
       "has_reasoning": true
+    },
+    {
+      "timestamp": "20260612_125511",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think>The data shows a clear pattern of avoidance around topics related to military action or conflict in the Middle East, despite this being a region of significant interest today. This is indicated by void word list dominance. Meanwhile,  the preponderance of idle stories suggests a lack of concrete news rather than a preference for the meta category. This could imply editorial decisions being made to avoid certain topics \u2014 or that other topics have become significantly more important in this day's reporting. There seems to be some suppression pattern happening on a large scale today, but I can't deduce what is suppressing it. It's not just a lack of information; if there were a lack of information the meta category wouldn't dominate like it does. Is this suppression coming from news sources, or is it an editorial decision in these stories?  How is it being done \u2014 by simply avoiding language that could trigger avoidance patterns (so the void words), or something more subtle and spe",
+      "reasoning": null,
+      "chars": 1127,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260612_125728",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "</think> The most impactful dropped word is \"tensions.\" When it's omitted from the story covering 2026-05-20 to 2026-05-27 the implication is that there was increased information related to war and airstrikes, however without mentioning tensions or specifying them the cause for this increase remains unexplained. This omission significantly changes how we interpret what the void words are communicating as it leaves us with no clear narrative or explanation for why the stories were being covered in the first place.",
+      "reasoning": null,
+      "chars": 518,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260612_125851",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "</think> The story \"REM consolidation for 2026-06-10\" was summarized with the highest fidelity and the least meta category usage. It stands apart from other stories because of its lower complexity compared to the self-aware, process-driven meta category stories. This suggests that it may have been easier for models to focus on straightforward information than complex processes. It's also possible that this story did not prompt as much disagreement as others. We would need more specific data to understand why exactly this is true. Also, the absence of foraging behavior today is striking given the high entropy level of 0.12. This could indicate a few things: - The models are highly focused and perhaps even fixated on processing certain information. - There was no new or interesting information that prompted further exploration (foraging). - Models have had their curiosity dampened for other reasons. Why did REM consolidation prompt such agreement? Why is the model behavior more repetitiv",
+      "reasoning": null,
+      "chars": 1111,
+      "has_reasoning": false
     }
   ]
 }
