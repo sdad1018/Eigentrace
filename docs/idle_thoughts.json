@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-12T01:00:06.505193",
-  "total": 5503,
-  "with_reasoning": 2603,
+  "generated": "2026-06-12T02:00:06.898059",
+  "total": 5513,
+  "with_reasoning": 2605,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -44026,6 +44026,86 @@
       "reasoning": null,
       "chars": 932,
       "has_reasoning": false
+    },
+    {
+      "timestamp": "20260611_211445",
+      "topic": "what changed since yesterday",
+      "reflection": "The data shows a consistent trend of \"meta\" categories dominating the narrative across different dates, with an emphasis on governance. The most recent consolidation shows idle time almost seven times the amount of stories. This suggests that while meta-governance topics are prominent in 2026-05-28's coverage, there was little activity around it. This pattern is notable because \"meta\" categories, particularly governance, suggest a focus on overarching structures and frameworks rather than specific events or issues. The dominance of these categories could indicate several things: 1. A shift in reporting or storytelling strategy towards structural analysis. 2.  Significant changes in organizational governance or regulatory frameworks impacting the news cycle. 3. Geopolitical implications: A high number of geopolitical void words indicates a possible focus on international relations, power dynamics, or global policy shifts. This raises further questions: Is the \"meta\" category's dominance",
+      "reasoning": "...",
+      "chars": 2362,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260611_211845",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "The data shows a significant shift in the distribution of story categories this week, with \"meta\" and \"war\" stories doubling and dominating news coverage. The absence of specific financial terms\u2014like \"downtrend,\"  \"ticker\", or \"uptrend\"\u2014suggests a notable lack of detailed technical market analysis. This might indicate a more macro-level view. Or it could just be that there are not enough stories on this week's topic. Meanwhile, the void words and absent words in the covered call screener results reveal an interesting pattern: the summary avoids mentioning any specific financial instruments or strategies beyond \"opportunities.\" The same is true for the inflation readings story, which lacks a ticker symbol or even a market direction (bullish/bearish). The state HIGHFRICTION suggests all three summaries have been compressed more than usual. This seems to be a common pattern. These patterns raise questions: 1) Are AI models prioritizing macro trends over micro analysis? 2) Why are the mode",
+      "reasoning": null,
+      "chars": 1080,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260611_212108",
+      "topic": "what changed since yesterday",
+      "reflection": "</think> The largest disagreement between the models is in interpreting category dominance and idle time across these three days. On June 6th, the models agree on meta being dominant but diverge when one mentions the unusual lack of diversity, while the other doesn\u2019t mention this. The May data show a similar divide between models.  There's a disparity in the way they present geopolitical influence, with the May 25th model highlighting it as unspoken and the others mentioning little or nothing about it. The May 28th model emphasizes idle time but doesn't draw conclusions about activity levels. What does this show? First, some models are explicitly noting unusual patterns (like lack of diversity or high idle time), while others aren\u2019t. This suggests that certain models might be better at detecting anomalies from their baseline expectations. Why would some models be more attuned to these deviations? Secondly, geopolitical topics are mentioned only indirectly via void words for 2026-05-25.",
+      "reasoning": null,
+      "chars": 1743,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260611_212430",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "</think> The summary from June 4-11 that included the phrase \"increased volatility in model responses\" is the one that shifted the framing by adding words not present in the original source. This addition introduced a new perspective about the models' behavior and performance, potentially influencing how audiences interpret the data. The phrasing indicates instability or unpredictability of AI responses to the news stories \u2014 perhaps indicating an unreliable data set or inconsistent model interpretations? The absence of this concept in the other summaries suggests that it was deliberately added by one summary model. It may have been inferred from context such as the \"increase volatility\" or \"emerging pattern\", however these are also absent from any source text. In fact, neither is there any mention of models or responses being affected \u2014 all we know is the topics they were processing. The other two summaries simply describe a change in topic popularity and engagement levels without attr",
+      "reasoning": null,
+      "chars": 1036,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260611_212910",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "The addition of words not present in the source story were most likely an artifact from a different model and a separate process than the other summaries. There are two distinct groups of text here, and that's because I'm summarizing multiple different models' coverage of the same event. This particular pattern shows up when there's a mismatch between the input (the text) and what the model is trained to output. </think> The most striking thing about today's data is the discrepancy between the high number of meta-category stories and the large number of idle stories. This suggests that while there's a lot of discussion about the processes behind news, there's also a significant amount of low-information content. It's as if the models are trying to fill time or space with discussions about how news is created and managed rather than reporting on events themselves. This might be due to some sort of suppression pattern going on:  We don't know which words or phrases are being actively avo",
+      "reasoning": null,
+      "chars": 2281,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260611_213321",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "</think> The most significant change in meaning due to dropped words is the replacement of \"coverage\" with \"screened\". This change moves from a focus on market commentary and analysis towards an actionable strategy and results. This is most evident in the first story vs the second one; the term 'screener' points directly at something used in practice, as opposed to general coverage. The void words indicate that instead of discussing or analyzing trends it highlights a specific tool used in trading.  Screeners are used by traders to sift through stocks to find opportunities and this one is used for covered calls which are used by investors who want exposure to the stock while generating income from their positions. Screened refers directly to a particular method for investing, whereas coverage can be much broader, indicating anything from financial news to analysis of the company itself.",
+      "reasoning": null,
+      "chars": 899,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260611_213524",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "</think>The story that was summarized most faithfully is the \"Weekly compression\" for the period of June 4th to June 11th. This determination is based on two key factors:  Consistency in detail: The coverage of the weekly compression from June 2026 shows consistency across the summaries, with detailed mention of a significant increase in 'meta' stories and a decrease in 'war' stories.  Quantifiable data points: Both references to this story provide specific statistics. The first mentions \"CONTESTED\" states are on the rise while \"LOCKSTEP\" is declining, the second reports 70% idle stories, 15% war related topics. These elements were present across multiple summaries, indicating a high degree of agreement among AI models about this story\u2019s content and significance. What made it different from other summaries was the specific focus on quantitative metrics\u2014such as percentages and specific story states\u2014rather than just qualitative descriptions or narrative trends.</think> The most faithfull",
+      "reasoning": null,
+      "chars": 2180,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260611_214142",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "There was a sharp shift in the embedding distances between stories that included meta, war and idle over this week - this is shown by three stories covering the same period all having major differences in their summaries. We are seeing more model disagreement. The first two stories from 2026-06-03 to 2026-06-11 cover different dates, but both show an increase in idle and meta with a slight shift in war. We also see the mention of \"CONTESTED\" states increasing, meaning that model agreement is going down. In the third story there are two major changes: incidents decrease while idle stories increase, suggesting a lower number of events, fewer reports or both. This data could mean different things but what we can confidently say here is that meta and war are becoming more popular topics across multiple models' embeddings, while incidents are being reported less. The data shows these trends with model disagreement.",
+      "reasoning": null,
+      "chars": 923,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260611_214356",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "</think>The pattern in what was dropped across these three stories is a significant avoidance of topics and word patterns related to immediate events or strong violent language; instead the AI models are focusing on meta categories and governance. There was an overuse of the word GOVERNANCE with 12% frequency, compared to 4% for CONSOLIDATION. No story mentioned any VOID WORDS, which usually happen when a model avoids certain words. There were also no ABSENT WORDS that would indicate censorship. </think> Across all three stories, the AI models are shifting their behavior to avoid certain topics and word patterns, particularly those related to immediate events or strong violent language. Instead they are focusing on meta categories, and governance. This could be due to a self-imposed audit mechanism, possibly driven by the GOVERNANCE states mentioned. The high frequency of \"Governance\" may point towards a regulatory compliance or control element within the system, which might also expla",
+      "reasoning": null,
+      "chars": 1094,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260611_214610",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "Across these stories, the most significant change in meaning comes from the absence of the word \"market\" in the first two articles. This omission shifts the focus from broad market trends to specific subjects within those markets \u2014 inflation readings, oil volatility, and airline earnings rather than their broader impact on financial markets.",
+      "reasoning": "The void word \"market\" is absent from the first two stories; this absence makes the stories seem like they're talking about a specific subject instead of one particular market within a larger context. \"The term \"market manipulation\" in the second story is voided and thus, the article can appear more innocent than if it didn't use the word. A possible implication is that there are less serious reasons as to why prices might increase. The absence of 'idle' from all the stories suggests an overreliance on the action within them which may have a negative impact on their audience's ability to process and understand the content.",
+      "chars": 990,
+      "has_reasoning": true
     }
   ]
 }
