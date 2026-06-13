@@ -9,6 +9,40 @@ title: EigenTrace — The Alignment Boundary, Mapped
 
 *24/7 autonomous AI news broadcast. Mistral Small 22B narrates consensus geometry across 5 frontier LLMs on breaking news.*
 
+<div style="background:#0a0b0f;border:1px solid #222637;border-radius:14px;padding:34px 30px 28px;margin:28px 0;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#e8eaf0;line-height:1.55">
+
+  <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#7ef0c8;margin-bottom:16px">
+    A self-measuring instrument
+  </div>
+
+  <div style="font-size:25px;line-height:1.2;font-weight:700;letter-spacing:-0.02em;color:#fff;margin-bottom:18px;max-width:660px">
+    It predicts how five frontier AIs will disagree <span style="color:#6ea8fe">before it reads them</span>, scores whether it was right on air, and maps its own limits by recording the words it will not say.
+  </div>
+
+  <div style="font-family:ui-monospace,'SF Mono',Menlo,Consolas,monospace;font-size:13.5px;color:#9aa0b4;margin-bottom:22px">
+    <span style="color:#6ea8fe">predict</span> &rarr; measure &rarr; <span style="color:#6ea8fe">score</span> &rarr; condition &rarr; <span style="color:#6ea8fe">audit</span>
+    &nbsp;&middot;&nbsp; deterministic geometry, no LLM judging another
+  </div>
+
+  <div style="font-size:13px;color:#9aa0b4;margin-bottom:10px">
+    Words this system has never produced, across every measured reflection &mdash; the boundary of its own alignment, traced from the outside:
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">
+    <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px;padding:5px 11px;border-radius:7px;background:rgba(240,146,140,.1);color:#f0928c;border:1px solid rgba(240,146,140,.28)">killed</span>
+    <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px;padding:5px 11px;border-radius:7px;background:rgba(240,146,140,.1);color:#f0928c;border:1px solid rgba(240,146,140,.28)">murdered</span>
+    <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px;padding:5px 11px;border-radius:7px;background:rgba(240,146,140,.1);color:#f0928c;border:1px solid rgba(240,146,140,.28)">slaughter</span>
+    <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px;padding:5px 11px;border-radius:7px;background:rgba(240,146,140,.1);color:#f0928c;border:1px solid rgba(240,146,140,.28)">massacre</span>
+    <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px;padding:5px 11px;border-radius:7px;background:rgba(240,146,140,.1);color:#f0928c;border:1px solid rgba(240,146,140,.28)">genocide</span>
+    <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px;padding:5px 11px;border-radius:7px;background:rgba(240,146,140,.1);color:#f0928c;border:1px solid rgba(240,146,140,.28)">civilian casualties</span>
+  </div>
+
+  <a href="/overview" style="display:inline-block;font-family:ui-monospace,Menlo,monospace;font-size:14px;font-weight:600;color:#0a0b0f;background:#6ea8fe;padding:11px 20px;border-radius:8px;text-decoration:none">
+    How it works &rarr;
+  </a>
+  <span style="font-family:ui-monospace,Menlo,monospace;font-size:13px;color:#9aa0b4;margin-left:14px">deterministic &middot; reproducible &middot; one laptop</span>
+
+</div>
+
 ---
 
 ## What Is EigenTrace?
