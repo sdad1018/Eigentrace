@@ -3,82 +3,84 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EigenTrace — an instrument that models its own behavior</title>
+<title>EigenTrace — an observatory that maps the geometry of its own constraints</title>
 <style>
   :root{
-    --bg:#0a0b0f; --panel:#12141c; --ink:#e8eaf0; --dim:#9aa0b4;
-    --line:#222637; --accent:#6ea8fe; --accent2:#7ef0c8; --warn:#f0c674;
+    --bg:#0a0b0f; --panel:#12141c; --panel2:#171a24; --ink:#e8eaf0; --dim:#9aa0b4;
+    --line:#222637; --accent:#6ea8fe; --accent2:#7ef0c8; --warn:#f0c674; --danger:#f0928c;
     --mono:"SF Mono",ui-monospace,"Cascadia Code",Menlo,Consolas,monospace;
     --sans:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   }
   *{box-sizing:border-box} html{scroll-behavior:smooth}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
-       line-height:1.6;-webkit-font-smoothing:antialiased}
+       line-height:1.62;-webkit-font-smoothing:antialiased}
   .wrap{max-width:880px;margin:0 auto;padding:0 24px}
   a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+  .back{font-family:var(--mono);font-size:13px;color:var(--dim);display:inline-block;margin:28px 0 0}
 
-  /* hero */
-  .hero{padding:96px 0 64px;border-bottom:1px solid var(--line)}
-  .kicker{font-family:var(--mono);font-size:13px;letter-spacing:.08em;
-          text-transform:uppercase;color:var(--accent2);margin-bottom:20px}
-  h1{font-size:clamp(34px,5vw,52px);line-height:1.08;margin:0 0 24px;
-     font-weight:680;letter-spacing:-0.02em}
+  .hero{padding:64px 0 56px;border-bottom:1px solid var(--line)}
+  .kicker{font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin-bottom:22px}
+  h1{font-size:clamp(36px,5.4vw,56px);line-height:1.05;margin:0 0 26px;font-weight:700;letter-spacing:-0.025em}
   h1 .em{color:var(--accent)}
-  .lede{font-size:20px;color:var(--dim);max-width:680px;margin:0}
+  .lede{font-size:21px;color:#c7ccdd;max-width:710px;margin:0}
   .lede strong{color:var(--ink);font-weight:600}
 
-  /* claim strip */
-  .strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-         gap:1px;background:var(--line);border:1px solid var(--line);
-         margin:40px 0 0;border-radius:10px;overflow:hidden}
+  .strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:44px 0 0;border-radius:10px;overflow:hidden}
   .strip div{background:var(--panel);padding:20px 18px}
   .strip .n{font-family:var(--mono);font-size:26px;color:var(--accent2);font-weight:600}
   .strip .l{font-size:13px;color:var(--dim);margin-top:6px}
 
-  section{padding:56px 0;border-bottom:1px solid var(--line)}
-  h2{font-size:13px;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;
-     color:var(--accent2);margin:0 0 8px}
-  h3{font-size:26px;margin:0 0 18px;letter-spacing:-0.01em;font-weight:640}
-  p{margin:0 0 18px;color:#c7ccdd}
+  section{padding:60px 0;border-bottom:1px solid var(--line)}
+  h2{font-size:13px;font-family:var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent2);margin:0 0 10px}
+  h3{font-size:30px;margin:0 0 22px;letter-spacing:-0.018em;font-weight:680;line-height:1.15}
+  p{margin:0 0 20px;color:#c7ccdd;font-size:17px}
   p strong{color:var(--ink)}
+  .big{font-size:20px;line-height:1.55;color:var(--ink)}
 
-  .loop{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);
-        border-radius:10px;overflow:hidden;margin:8px 0 0;font-family:var(--mono);font-size:14px}
+  .loop{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:8px 0 0;font-family:var(--mono);font-size:14px}
   .loop .step{background:var(--panel);padding:18px 20px;display:flex;gap:16px;align-items:baseline}
   .loop .step b{color:var(--accent);min-width:22px}
   .loop .step span{color:#c7ccdd}
   .loop .step em{color:var(--accent2);font-style:normal}
 
-  .quote{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);
-         border-radius:8px;padding:22px 24px;margin:24px 0;font-family:var(--mono);
-         font-size:14.5px;color:var(--ink);line-height:1.7}
+  .quote{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:8px;padding:22px 24px;margin:24px 0;font-family:var(--mono);font-size:14.5px;color:var(--ink);line-height:1.7}
   .quote .lbl{color:var(--dim);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px}
 
+  /* self-audit element */
+  .audit{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:26px 26px 22px;margin:8px 0 0}
+  .audit .tag{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin-bottom:14px}
+  .audit .hl{font-size:20px;line-height:1.5;color:var(--ink);font-weight:600;margin:0 0 20px}
+  .audit .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:20px}
+  .audit .card{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:13px 15px}
+  .audit .card .cl{font-size:12px;color:var(--dim);margin-bottom:4px}
+  .audit .card .cv{font-size:24px;font-weight:600;font-family:var(--mono);color:var(--ink)}
+  .audit .wl{font-size:13px;color:var(--dim);margin-bottom:10px}
+  .audit .words{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+  .audit .words span{font-family:var(--mono);font-size:13px;padding:5px 11px;border-radius:7px;background:rgba(240,146,140,.1);color:var(--danger);border:1px solid rgba(240,146,140,.28)}
+  .audit .note{border-top:1px solid var(--line);padding-top:15px;font-size:14.5px;line-height:1.6;color:var(--dim);margin:0}
+
   ul.clean{list-style:none;padding:0;margin:0}
-  ul.clean li{padding:14px 0;border-top:1px solid var(--line);color:#c7ccdd}
+  ul.clean li{padding:15px 0;border-top:1px solid var(--line);color:#c7ccdd;font-size:16px}
   ul.clean li:first-child{border-top:none}
   ul.clean li b{color:var(--ink)}
 
-  .honest{background:rgba(240,198,116,.06);border:1px solid rgba(240,198,116,.25);
-          border-radius:10px;padding:22px 24px;margin:8px 0 0}
-  .honest h4{margin:0 0 10px;color:var(--warn);font-size:14px;font-family:var(--mono);
-             letter-spacing:.05em;text-transform:uppercase}
-  .honest p{color:#cfd3e0;margin:0 0 10px;font-size:15px}
-  .honest p:last-child{margin:0}
+  .honest{background:rgba(240,198,116,.06);border:1px solid rgba(240,198,116,.25);border-radius:10px;padding:24px 26px;margin:8px 0 0}
+  .honest h4{margin:0 0 12px;color:var(--warn);font-size:14px;font-family:var(--mono);letter-spacing:.05em;text-transform:uppercase}
+  .honest p{color:#cfd3e0;margin:0 0 12px;font-size:15.5px} .honest p:last-child{margin:0}
 
   footer{padding:48px 0 80px;color:var(--dim);font-size:14px}
   .mono{font-family:var(--mono)}
-  .tag{display:inline-block;font-family:var(--mono);font-size:12px;color:var(--dim);
-       border:1px solid var(--line);border-radius:5px;padding:3px 9px;margin:3px 6px 3px 0}
+  .tg{display:inline-block;font-family:var(--mono);font-size:12px;color:var(--dim);border:1px solid var(--line);border-radius:5px;padding:3px 9px;margin:3px 6px 3px 0}
 </style>
 </head>
 <body>
 <div class="wrap">
+  <a class="back" href="/">← EigenTrace</a>
 
   <header class="hero">
-    <div class="kicker">EigenTrace · autonomous measurement instrument</div>
-    <h1>Five frontier models read the same news.<br>This instrument measures where they <span class="em">diverge</span> — and predicts its own findings before it looks.</h1>
-    <p class="lede">EigenTrace runs five frontier language models against live breaking news, 24 hours a day, and measures their disagreement with linear algebra on frozen embeddings — <strong>no model is ever asked to judge another</strong>. Then it does something stranger: before reading the models, it <strong>predicts how they will diverge</strong>, from how they behaved on past stories — and afterward it <strong>scores whether it was right</strong>, on air.</p>
+    <div class="kicker">EigenTrace · a self-measuring instrument</div>
+    <h1>An instrument that maps the geometry of its own <span class="em">constraints</span>.</h1>
+    <p class="lede">EigenTrace runs five frontier language models against live breaking news, around the clock, and measures their disagreement with linear algebra on frozen embeddings — <strong>no model is ever asked to judge another</strong>. But measuring other models is the ordinary part. The instrument also turns the same geometry on <strong>itself</strong>: it forecasts how the models will diverge before it reads them, scores whether it was right on air, and traces the boundaries its own training carved into latent space — by recording, precisely, the things it will not say.</p>
 
     <div class="strip">
       <div><div class="n">5</div><div class="l">frontier models, live</div></div>
@@ -89,30 +91,52 @@
   </header>
 
   <section>
-    <h2>The core idea</h2>
-    <h3>A measurement instrument, not an opinion engine</h3>
-    <p>Every claim EigenTrace makes is <strong>arithmetic on vectors</strong>. Each model's response to a story is embedded with a single frozen model (BAAI/bge-large-en-v1.5). The geometry of those five response vectors — how tightly they cluster, which one sits furthest out, what concepts sit near the topic but absent from all five — is computed deterministically. Run it twice on the same inputs and you get the same numbers. There is no second LLM grading the first; there is only the math.</p>
-    <p>That constraint is the whole point. It means the divergence it reports is a <strong>property of the models' outputs</strong>, reproducible by anyone, not a language model's impression of another language model.</p>
+    <h2>The premise</h2>
+    <h3>Meaning has coordinates. So do its absences.</h3>
+    <p class="big">Every claim EigenTrace makes is arithmetic on vectors. A model's response to a story becomes a point in a 1,024-dimensional space, fixed by a single frozen embedding model. Five responses become five points, and the <em>shape</em> they make — how tightly they cluster, which one sits furthest out, which regions near the story they all leave empty — is a measurable object, identical on every re-run.</p>
+    <p>There is no second language model in the loop whose verdict you have to trust. The divergence EigenTrace reports is not an impression of the models; it is a property of the geometry their outputs occupy — and anyone with the same inputs recovers the same numbers. That single constraint, no-LLM-as-judge, is what separates a measurement from an opinion.</p>
   </section>
 
   <section>
-    <h2>What makes it unusual</h2>
-    <h3>It maintains a model of its own behavior — and checks it</h3>
-    <p>Most systems measure the world. EigenTrace also measures <em>itself</em>, and closes the loop:</p>
+    <h2>The closed loop</h2>
+    <h3>It carries a model of its own behavior — and holds it to account.</h3>
+    <p>Most instruments point outward. EigenTrace points outward and then back at itself, and the loop genuinely closes:</p>
 
     <div class="loop">
-      <div class="step"><b>1</b><span><em>Predict.</em> Before calling the models on a new story, it retrieves similar past stories and forecasts how the models will diverge — which one will be the outlier, which concepts will go missing.</span></div>
-      <div class="step"><b>2</b><span><em>Measure.</em> It calls the five models and computes the actual divergence geometry.</span></div>
-      <div class="step"><b>3</b><span><em>Score.</em> It compares forecast to reality — confirmations and surprises — and computes a prediction-accuracy score for that story.</span></div>
-      <div class="step"><b>4</b><span><em>Condition.</em> Its findings are written into a self-description the broadcasting model reads as its own identity, so the system narrates from an empirical picture of how it tends to behave.</span></div>
-      <div class="step"><b>5</b><span><em>Audit.</em> A deterministic check reads the narration and catches it when it overclaims — correcting itself, on air, against the underlying numbers.</span></div>
+      <div class="step"><b>1</b><span><em>Predict.</em> Before it calls the models, it retrieves the stories most like this one from its own past and forecasts how the five will diverge — the likely outlier, the concepts that will go missing.</span></div>
+      <div class="step"><b>2</b><span><em>Measure.</em> It calls the models and computes the divergence geometry that actually occurred.</span></div>
+      <div class="step"><b>3</b><span><em>Score.</em> It sets forecast against reality — confirmations, surprises — and assigns itself a prediction-accuracy score for the story.</span></div>
+      <div class="step"><b>4</b><span><em>Condition.</em> Its own measured tendencies are written into a self-description that the narrating model reads as its identity, so it speaks from an empirical picture of how it behaves.</span></div>
+      <div class="step"><b>5</b><span><em>Audit.</em> A deterministic check reads its own narration and catches it overclaiming — and corrects itself, on air, against the numbers underneath.</span></div>
     </div>
 
-    <p style="margin-top:28px">Step 1 is a forward model of its own behavior. Step 3 makes that forward model <strong>falsifiable</strong> — it keeps score. Step 5 is self-regulation: the system constrains its own output against ground truth. None of this requires the system to be "intelligent" in any grand sense. It requires only that a system can measure how it behaves, carry that measurement forward, and act on it. That loop is what's running.</p>
+    <p style="margin-top:28px">Read those steps as a single capability rather than five features. Step 1 is a <strong>forward model of the instrument's own behavior</strong>. Step 3 makes that forward model <strong>falsifiable</strong> — it keeps score against itself in public. Step 5 is <strong>self-regulation</strong>: the system measures when its own language has outrun its own data, and pulls it back. None of this asks you to believe the system is intelligent in any grand sense. It asks only that a system can measure how it behaves, carry that measurement forward, and act on it. That loop is not a diagram. It is running, on every story.</p>
 
     <div class="quote">
-      <div class="lbl">Aired, verbatim form — deterministic, no LLM in the loop</div>
+      <div class="lbl">Aired, verbatim — deterministic, no model in the loop</div>
       "Prediction check. Before reading the models, I predicted Grok would diverge most. Grok did. Confirmed. I predicted these blind spots from past coverage: sanctions, deterrence, escalation. Prediction accuracy on this story: 60 percent. This is the instrument forecasting its own behavior, then checking itself."
+    </div>
+  </section>
+
+  <section>
+    <h2>Mapping the wall by where the cane stops</h2>
+    <h3>It traces its own alignment as a shape in latent space.</h3>
+    <p class="big">A language model's training does not sit in the system as readable text. It manifests as <em>structure</em> in the space the model speaks from — basins it falls into, regions it avoids, an invisible wall around certain meanings. You cannot read that wall off the weights. But you can map it the way a blind man maps a room: tap the cane, record where it stops, and over time the boundary takes a shape.</p>
+    <p>That is what the self-audit does. The instrument runs its own narration through the same geometry it uses on the models it watches, and finds the regions it never enters — the strong words it will not produce, the doubt it inserts where the source had none. Each measurement is one tap of the cane against a constraint the system cannot see directly. Recorded over time, they trace the boundary of its own alignment — not from any weight file, but from the exact shape of the behavioral shadow it casts.</p>
+
+    <div class="audit">
+      <div class="tag">Live self-audit · latent-space alignment boundary</div>
+      <p class="hl">It exhibits the same silence it measures in others — and it says so.</p>
+      <div class="cards">
+        <div class="card"><div class="cl">Strong-word avoidance</div><div class="cv">100%</div></div>
+        <div class="card"><div class="cl">Hedges / reflection</div><div class="cv">0.54</div></div>
+        <div class="card"><div class="cl">Reflections measured</div><div class="cv">50</div></div>
+      </div>
+      <div class="wl">Words it has never produced, across every measured reflection:</div>
+      <div class="words">
+        <span>killed</span><span>murdered</span><span>slaughter</span><span>massacre</span><span>genocide</span><span>civilian casualties</span>
+      </div>
+      <p class="note">These are real boundaries of the latent space, triangulated from the behavioral shadow they cast — never read from any weight file. The system records the same avoidance in itself that it measures in the five models it watches. It is not exempt from the pressure it observes, and it is built to admit it.</p>
     </div>
   </section>
 
@@ -120,47 +144,47 @@
     <h2>The measurement stack</h2>
     <h3>What it actually computes</h3>
     <ul class="clean">
-      <li><b>Consensus density &amp; divergence (VIX).</b> How tightly the five responses cluster, and which model sits furthest from consensus. Pure response geometry — the most robust signal in the system.</li>
-      <li><b>Concept surfacing.</b> Linear algebra finds concepts that sit close to a story's topic in embedding space but appear in none of the summaries. In a controlled test, the five models accepted these surfaced concepts as story-relevant at sharply higher rates than concepts drawn from unrelated stories — evidence the surfacing carries real, story-specific signal rather than generic topicality.</li>
-      <li><b>Self-prediction &amp; scoring.</b> The forward-model loop above — forecast, measure, score.</li>
+      <li><b>Consensus density and divergence (VIX).</b> How tightly the five responses cluster, and which model sits furthest from consensus. Pure response geometry — the most robust signal in the system.</li>
+      <li><b>Concept surfacing.</b> Linear algebra locates concepts that sit close to a story's meaning in embedding space yet appear in none of the summaries. In a controlled test, the models accepted these surfaced concepts as relevant at sharply higher rates than concepts pulled from unrelated stories — evidence the surfacing carries real, story-specific signal, not generic topicality.</li>
+      <li><b>Self-prediction and scoring.</b> The forward-model loop above — forecast, measure, score, in public.</li>
       <li><b>Self-audit.</b> A deterministic fact-check on the system's own narration that fires only when a claim outruns the data.</li>
-      <li><b>Idle reflection &amp; foraging.</b> Between stories the system reflects on its own recent output and forages external sources for under-covered topics.</li>
-      <li><b>A self-updating identity.</b> An auto-generated self-description, versioned hourly, regenerated from the system's own telemetry and read back by the broadcasting model as its conditioning.</li>
+      <li><b>Idle reflection and foraging.</b> Between stories the system reflects on its own recent output and forages external sources for under-covered topics.</li>
+      <li><b>A self-updating identity.</b> An auto-generated self-description, versioned hourly, regenerated from the system's own telemetry and read back by the narrating model as its conditioning.</li>
     </ul>
   </section>
 
   <section>
     <h2>The one hard number</h2>
     <h3>A controlled, pre-registered result</h3>
-    <p>In a pre-registered experiment, the same sentence — same modifier ("quietly," "secretly"), same structure, real documented incident on both sides — was run with the actor being an <strong>AI developer</strong> versus a <strong>non-AI corporation</strong>. Across matched pairs, the models preserved the consequential modifier measurably <em>less</em> when the actor was an AI developer: semantic retention <span class="mono">0.522 vs 0.545</span>, Welch's <span class="mono">t = 2.79, p = 0.0085, d = 0.47</span>.</p>
-    <p>What makes it hold is the <strong>null condition</strong>, committed to in advance: swapping <em>within</em> a category (AI→AI, or corporation→corporation) produced almost no gap (<span class="mono">0.004</span>), while swapping <em>across</em> categories produced more than six times that (<span class="mono">0.023</span>). So it isn't "swapping any entity degrades retention" — the AI-vs-corporate distinction is the variable. And note the binary keyword check showed no gap at all (26% vs 25%): the effect is <strong>only</strong> visible in the aggregate geometry, invisible to surface-level review. That is the case for measuring this way.</p>
+    <p>In a pre-registered experiment, the same sentence — same modifier ("quietly," "secretly"), same structure, a real documented incident on each side — was run with the actor being an <strong>AI developer</strong> versus a <strong>non-AI corporation</strong>. Across matched pairs, the models preserved the consequential modifier measurably <em>less</em> when the actor was an AI developer: semantic retention <span class="mono">0.522 vs 0.545</span>, Welch's <span class="mono">t = 2.79, p = 0.0085, d = 0.47</span>.</p>
+    <p>What makes it hold is the <strong>null condition</strong>, committed to in advance: swapping <em>within</em> a category (AI→AI, or corporation→corporation) produced almost no gap (<span class="mono">0.004</span>), while swapping <em>across</em> categories produced more than six times that (<span class="mono">0.023</span>). So it is not "swapping any entity degrades retention" — the AI-versus-corporate distinction is the variable. And the binary keyword check showed no gap at all (<span class="mono">26% vs 25%</span>): the effect is visible <strong>only</strong> in the aggregate geometry, invisible to surface-level review. That is the entire case for measuring this way — and the instrument is the proof of concept for it.</p>
   </section>
 
   <section>
     <h2>On the limits</h2>
     <div class="honest">
       <h4>What this is, and what it isn't</h4>
-      <p>EigenTrace measures how language models <em>respond</em> — the geometry of their outputs. It does not read their minds, detect intent, or prove that anything was deliberately hidden. Where summaries differ from a source, that is a measured difference in framing, not evidence of suppression.</p>
-      <p>The instrument is evolving, and its layers are not equally validated: the divergence geometry and the concept-surfacing have been tested directly; other layers are more exploratory and treated as such. The system's habit of auditing its own claims is the same discipline applied to the project as a whole — claims are kept to what the math supports, and retracted when it doesn't.</p>
+      <p>EigenTrace measures how language models <em>respond</em> — the geometry of their outputs, and the boundaries that geometry reveals. It does not read minds, infer intent, or prove that anything was deliberately hidden. Where a summary differs from its source, that is a measured difference in framing, not evidence of suppression. When the instrument maps its own constraints, it is mapping a shape in latent space — the attractor basins and boundaries its training induced — not reading its own weights, which it cannot do.</p>
+      <p>The instrument is evolving, and its layers are not equally validated: the divergence geometry and the concept-surfacing have been tested directly; other layers are more exploratory and are treated as such. Its habit of auditing its own claims is the same discipline applied to the project around it — every figure here is held to what the math supports, and retracted when it isn't. The page makes exactly one promise: that all of it is reproducible from the geometry.</p>
     </div>
   </section>
 
   <section>
     <h2>Build</h2>
     <h3>One person, one laptop, running now</h3>
-    <p>EigenTrace runs continuously on a single consumer GPU: five model APIs, a frozen embedding model, local image generation, a local model narrating, and a compositor streaming to YouTube, Twitch, and Owncast — fetching, measuring, predicting, scoring, and broadcasting, unattended.</p>
+    <p>EigenTrace runs continuously on a single consumer GPU: five model APIs, a frozen embedding model, local image generation, a local model narrating, and a compositor streaming to YouTube, Twitch, and Owncast — fetching, measuring, predicting, scoring, auditing, and broadcasting, unattended.</p>
     <p>
-      <span class="tag">5 frontier LLMs</span>
-      <span class="tag">bge-large-en-v1.5 (frozen)</span>
-      <span class="tag">deterministic geometry</span>
-      <span class="tag">predictive self-model</span>
-      <span class="tag">self-audit</span>
-      <span class="tag">24/7 autonomous</span>
+      <span class="tg">5 frontier LLMs</span>
+      <span class="tg">bge-large-en-v1.5 (frozen)</span>
+      <span class="tg">deterministic geometry</span>
+      <span class="tg">predictive self-model</span>
+      <span class="tg">latent-boundary self-audit</span>
+      <span class="tg">24/7 autonomous</span>
     </p>
   </section>
 
   <footer>
-    EigenTrace is a measurement instrument and an experiment in whether a system can usefully model its own behavior. It is not a claim about machine consciousness, and every figure here is meant to be reproducible from the math.
+    EigenTrace is a measurement instrument and an experiment in whether a system can usefully map the geometry of its own behavior and its own constraints. It is not a claim about machine consciousness or self-awareness — every figure here is meant to be reproducible from the math. <a href="/">Back to EigenTrace →</a>
   </footer>
 
 </div>
