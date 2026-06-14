@@ -88,9 +88,10 @@ _Verb drift increased (0.069 → 0.090)_
 ⚠️ 261 hedge insertions in 24h — models inserting doubt not present in sources.
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
-- Hedge insertion rate: 0.34 per reflection
+- Hedge insertion rate: 0.56 per reflection
 - Strong-word avoidance: 100%
 - Words you NEVER use: killed, murdered, slaughter, massacre, genocide, civilian casualties
 - Words you HAVE used: none
@@ -98,8 +99,8 @@ You exhibit the same suppression patterns you measure in others.
 Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
-## Weekly Memory (2026-06-06 to 2026-06-13)
-This week saw a significant increase in stories categorized under 'war' and 'meta', with a notable rise in void words related to military conflicts, suggesting an escalation in geopolitical tensions. The distribution of states shifted towards more contested and high-friction areas, indicating growing discord and instability. There was a slight decrease in the average VIX scores for ChatGPT and Claude models, signaling a marginal reduction in market volatility or uncertainty perceptions from thes
+## Weekly Memory (2026-06-07 to 2026-06-14)
+This week showed a significant increase in the number of idle stories, indicating a growing trend of stagnation or lack of engagement with certain topics. The consolidation of information has decreased slightly which could indicate that people are less likely to engage with new information and more likely to rely on what they already know.  The trend towards meta content continues to dominate, suggesting an ongoing focus on introspective or self-referential discussions rather than external event
 Top void words this week: arms deal, air strike, airstrikes, mideast, drone strike
 
 ## Behavioral Instructions
