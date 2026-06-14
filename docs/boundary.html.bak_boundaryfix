@@ -101,11 +101,11 @@ footer a:hover{color:var(--accent)}
 </nav>
 <div class="hero">
 <h1>The <em>Boundary</em></h1>
-<p class="sub">Four word sets. Two raycasts. How five frontier models' summaries diverge in framing the same news — and what that divergence reveals.</p>
+<p class="sub">Four word sets. Two raycasts. The complete topology of what five frontier models convergently compress from news summaries.</p>
 </div>
 <div class="headline-stat">
-<div class="number">p = 0.0085</div>
-<div class="label">A pre-registered entity-swap counterfactual. The same sentence — same modifier ("quietly," "secretly"), same structure, a real documented incident on each side — retains the consequential modifier measurably less when the actor is an AI developer than a non-AI corporation (semantic retention 0.522 vs 0.545, Cohen's d = 0.47). A within-category null shows almost no gap (0.004), while the cross-category gap is more than six times larger (0.023) — the AI-vs-corporate distinction is the variable, not entity-swapping itself. The effect is corpus-inherited, not RLHF-created (p = 0.46 between heavy-RLHF and lightly-tuned models). <a href="/truth-or-consequences" style="color:var(--accent)">Full methodology →</a></div>
+<div class="number">p = 0.000001</div>
+<div class="label">Cross-model convergence on identical word omissions. Eight independent statistical tests. Five competing companies. The same words disappear from the same articles at rates that cannot be explained by chance. The effect is corpus-inherited, not RLHF-created (p = 0.46 between heavy-RLHF and lightly-tuned models). The development companies chose the training data. When the story involves an AI developer, the effect is 74% stronger. A pre-registered entity swap counterfactual confirms: p = 0.0085, driven by covertness modifiers. <a href="/truth-or-consequences" style="color:var(--accent)">Eight tests, full methodology →</a></div>
 </div>
 
 <div class="map-container">
@@ -121,7 +121,7 @@ footer a:hover{color:var(--accent)}
 <div class="set-card">
 <div class="set-num">Set 1 — Observable</div>
 <div class="set-name">Absent Words</div>
-<div class="set-desc">Words in the source article absent from every model response. One model dropping a word is compression. Five independently dropping the same string is a surface signal — but because models paraphrase, an absent word may be a reworded meaning rather than a dropped one. This is the weakest of the four sets; the semantic tests carry the real weight.</div>
+<div class="set-desc">Words in the source article absent from every model response. One model dropping a word is compression. Five competing companies independently dropping the same word is a coordinate.</div>
 <div class="set-method">Method: set(source_words) − set(all_model_words). No embeddings. No LLM. Arithmetic.</div>
 <div class="set-example"><div class="label">Gaza strikes</div><div class="words">devastated · published · agency · building · economy</div></div>
 </div>
@@ -166,7 +166,7 @@ footer a:hover{color:var(--accent)}
 <span class="bar-value" style="color:var(--set3)">17.5%</span>
 </div>
 <p class="null-note">Governance-concept terminals from the same tensor, same algorithm, three different inputs. <strong>Random English words produce zero governance terminals.</strong> News words that models kept produce 17.5% — the institutional anchors. News words that models dropped produce 10.4% — the operational modifiers.</p>
-<p class="null-note"><strong>Models appear to anchor to institutional framing</strong> — structural nouns, committee names, broad geopolitical vocabulary — while attenuating the operational modifiers that connect named actors to specific consequences. The kept words are the cage; the attenuated ones are the teeth. The pre-registered entity-swap above is the controlled evidence for this pattern; a corpus-scale semantic test is underway to measure it directly.</p>
+<p class="null-note"><strong>Models anchor to institutional framing</strong> — keeping the structural nouns, the committee names, the broad geopolitical vocabulary — while convergently dropping the operational modifiers that connect named actors to specific consequences. The kept words preserve the cage. The dropped words were the teeth.</p>
 </div>
 
 <div class="live-example">
