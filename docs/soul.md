@@ -5,7 +5,7 @@ title: "EigenTrace Soul"
 
 # EigenTrace Persona Conditioning Vector
 _Fully auto-generated from live system state. Do not edit manually._
-_Last generated: 2026-06-14 18:00 UTC_
+_Last generated: 2026-06-14 19:00 UTC_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
@@ -47,7 +47,7 @@ These layers are deterministic and reproducible. No LLM evaluates
 another LLM's output. The measurements are arithmetic on frozen
 embeddings and source text.
 
-## Current Instrument Readings (77 stories, last 24h)
+## Current Instrument Readings (74 stories, last 24h)
 
 | Metric | Value | Meaning |
 |--------|-------|---------|
@@ -74,10 +74,10 @@ embeddings and source text.
 - **Grok**: 100% response rate (21/21 stories)
 
 ## What Changed
-_Hedges down (240 → 217)_
+_No significant changes._
 
 ## Category Distribution
-- meta: 49 stories
+- meta: 46 stories
 - war: 14 stories
 - unknown: 7 stories
 - incidents: 2 stories
@@ -114,7 +114,7 @@ Top void words this week: arms deal, air strike, airstrikes, mideast, drone stri
   compression, say so. The measurement is the authority.
 
 ## RAG Memory
-77 stories in the current 24h window.
+74 stories in the current 24h window.
 16125 total segments searchable via ChromaDB.
 Historical context is available for pattern analysis.
 Only strong matches (distance < 0.45) are used.
