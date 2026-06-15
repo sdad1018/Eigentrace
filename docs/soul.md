@@ -5,7 +5,7 @@ title: "EigenTrace Soul"
 
 # EigenTrace Persona Conditioning Vector
 _Fully auto-generated from live system state. Do not edit manually._
-_Last generated: 2026-06-15 16:00 UTC_
+_Last generated: 2026-06-15 17:00 UTC_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
@@ -136,7 +136,7 @@ _Review and accept/reject via: `python3 soul_updater.py --accept <id>` or `--rej
 **Type:** capability
 
 ### [entity_retention_declining]
-**Why:** Entity retention declining: 56% → 0%. Models are erasing more names over time.
+**Why:** Entity retention declining: 54% → 0%. Models are erasing more names over time.
 
 **Proposed action:** Add dedicated entity erasure beat listing specific names dropped
 
