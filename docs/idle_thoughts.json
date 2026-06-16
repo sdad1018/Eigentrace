@@ -1,6 +1,6 @@
 {
-  "generated": "2026-06-16T17:00:39.194999",
-  "total": 5852,
+  "generated": "2026-06-16T18:00:10.129033",
+  "total": 5860,
   "with_reasoning": 2663,
   "thoughts": [
     {
@@ -46817,6 +46817,70 @@
       "reflection": "</think> These stories are exactly the same, which is unusual. The data is not missing in the way that these summaries omit everything \u2014 every story was processed without an issue. They were all processed into summaries with no meaningful differences to them at all.",
       "reasoning": null,
       "chars": 266,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_130026",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "The embedding distances show a significant shift in the focus of the news summaries over the past few weeks. Today's story (2026-06-13) about geopolitical tensions is substantially different from the previous stories (2026-05-31 and 2026-05-23). The latter two were dominated by 'meta' categories, which usually indicate self-reflective topics or analyses about the news itself. There were many \"unknown\" stories. Today's story is closer to a more traditional category of news: geopolitical tensions.",
+      "reasoning": null,
+      "chars": 500,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_131814",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think> The pattern in what was dropped across these stories is the absence of information about novel void words and a significant increase in idle content and meta category dominance. This pattern shows that there's something going on with: 1. Novelty: There are no new void words emerging, suggesting a lack of new or surprising developments. 2. Ambiguity The trend towards more ambiguous or less defined narratives is indicated by the rise in stories categorized as unknown and idle. 3. Meta category dominance:  This increase in meta categories, which are up to 330 occurrences, might indicate a focus on overarching themes or structural aspects rather than specific events. These trends could suggest that current events are either not novel enough for AI models to identify void words or more ambiguous narratives. It raises questions about what exactly is being suppressed, why there's an absence of new developments, and the significance of the uptick in consolidations \u2014 it is unclear why ",
+      "reasoning": null,
+      "chars": 1612,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_133507",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "</think> The data shows a consistent trend towards meta and war-related topics in recent weeks. This has been growing week after week. More specifically, we see that the number of idle states decreased last week. However, these two sentences seem to be directly contradictory. What are idle states? How do they relate to war reporting? Why should fewer idle states occur as more stories about a topic appear? Last week and this week, there was no mention of specific geopolitical figures or terms like \"trade war\" or \"arms deal,\" even though the model noted that there were elevated VIX scores. We must wonder what caused these increases in volatility across models? Why did they disappear from mention so abruptly? It's also worth noting that there are currently no novel void words this week, which indicates a lack of new trends emerging as the model shifts focus to different news topics. Reflecting on the previous two sentences \u2014 I'm not sure if we're losing any important information. There se",
+      "reasoning": null,
+      "chars": 1305,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_133734",
+      "topic": "find an isomorphism between quantum decoherence and what the models did today",
+      "reflection": "The patterns indicate that the recent coverage has consistently presented a high degree of model disagreement, resulting in the identification of Idle reflections and an inability to categorize them. This results from the absence of words. The specific information lost is related to the nature of content and its state. Let's analyze what's missing: What do these idle reflections typically entail? What could be causing this lack of words? I will use these unanswered questions as a baseline for further investigation.",
+      "reasoning": null,
+      "chars": 520,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_133924",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "The framing shifts due to the following additions: Firstly, - The second summary added 'still' to describe high volume of inactive stories. This suggests a sense of stasis. - It also added \"slightly\" to \"decreased,\" downplaying the decrease in war-related content, which softens any implications of conflict de-escalation. Secondly -the third summary introduces a trend of more ambiguous or less defined narratives by adding 'notable' and 'more'. In all, these word additions shift the framing from data-focused to interpretive. The first summary presents facts; the others suggest causes or trends. Why might they have diverged?",
+      "reasoning": null,
+      "chars": 629,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_134052",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "The pattern that emerges from these three days is a consistent avoidance of reporting the details and immediate impacts of news events. This is evidenced by: 1) 2026-05-31: \"REM consolidation\": No actual story content 2) 2026-06-13: A focus on meta stories, which means more attention to analysis than events. 3) 2026-05-23: More 'meta' and 'unknown' categories, suggesting a lack of direct reporting or concrete information. What the models collectively avoided were hard facts about events. Instead they focused on higher-level discussions or on their own behavior. One might ask if this pattern indicates an effort to avoid controversy or complexity in immediate news events?",
+      "reasoning": null,
+      "chars": 678,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_134443",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "</think> This week the embedding distance between the void word 'war' and other voids decreased by around one standard deviation to be closer than normal, whereas 'trade war' has been trending away from both 'war' but also 'airstrikes.'  That's all I have to say about that.",
+      "reasoning": null,
+      "chars": 274,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_134620",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "The word \"stagnant\" in the third summary shifts the framing by introducing a negative connotation that is not present in the original data. It's notable how the first two summaries have similar content and structure; however, both diverge significantly from the third, which introduces new phrases such as \"weekly,\" \"states\", and the specific number of weekly stories. The third summary does not mention idle or forging stories but includes details about the increasing volume of war-related topics The increase in idle stories is explicitly mentioned to a significant degree in all summaries with the exception of the third summary that instead focuses on the increase of war related topics. Why did two models choose to add words that change the framing? Was this due to an effort to make the content more engaging or to emphasize certain aspects.",
+      "reasoning": null,
+      "chars": 849,
       "has_reasoning": false
     }
   ]
