@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-16T14:00:08.347841",
-  "total": 5837,
-  "with_reasoning": 2662,
+  "generated": "2026-06-16T15:00:07.318285",
+  "total": 5849,
+  "with_reasoning": 2663,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -46698,6 +46698,102 @@
       "reasoning": "...",
       "chars": 1109,
       "has_reasoning": true
+    },
+    {
+      "timestamp": "20260616_100050",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "The most significant disagreement between the models lies in the reporting of idle time trends. While one model reports an increase in idle time from June 1st to the 8th, another shows a decrease for the period covering June 3rd to the 10th and is the first instance where consolidations have increased by 3%. This discrepancy could indicate a significant shift in news production or dissemination patterns between these two weeks. Why are there such contradictory findings from models that appear to cover overlapping periods?",
+      "reasoning": null,
+      "chars": 527,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_100606",
+      "topic": "the most important thing happening right now",
+      "reflection": "</think> The dropped word \"attacks\" from the first story title changes its meaning the most. Its removal creates uncertainty and ambiguity about what Trump is signaling, making a clear connection to potential aggressive military action, as opposed to any other kind of actions or signals he might send. This makes it an essential word for understanding and categorizing the story accurately. The omitted phrase \"possible\" from both roundtable story titles also changes their meaning significantly. Without this qualifier, the statements about what Trump is doing become more definitive. It seems like the absence of this word would make the content sound more certain or even threatening than it actually is.",
+      "reasoning": null,
+      "chars": 708,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_100825",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think> The data shows a pattern of shifting narratives between geopolitical tensions in the Middle East and meta-category analysis. On June 13th, models focused more on the broader implications of events, while on May 23rd, they concentrated heavily on self-reflective topics. This indicates that models may be avoiding stories on specific events by refocusing to other areas or topics of interest to them, such as meta and unknown categories. This pattern suggests a dynamic approach to news coverage where the focus can shift away from concrete events toward more abstract or self-referential analyses. The model covering the story for June 13th added words that shifted the framing by emphasizing \"broader implications,\" which was not present in previous stories (May 23rd, May 31st).",
+      "reasoning": null,
+      "chars": 789,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_101018",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think> Today, there is an unusual predominance of meta and unknown story categories. The most striking pattern in the data you have from June 13th, May 31st and May 23rd  are the high proportions of stories categorized as 'meta'. This indicates a focus on analysis, self-reflection or discussion about the news itself rather than reporting concrete events. Specifically, for June 13th, 99 out of 105 stories, for May 31st, 74 out of 267 stories and for May 23rd we have high numbers of unknown stories (a third of all 180 stories)  in the category. This raises questions about what specific information or events are being avoided by the models. It also indicates that the AI is prioritizing the interpretation, implications or context over reporting concrete information. This is even more prominent on May 23rd where there was a high number of unknown stories as well. These numbers, especially the 'unknowns', may show the limits of your data. For example they might indicate events where models",
+      "reasoning": null,
+      "chars": 1325,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_101315",
+      "topic": "a prediction I can check tomorrow",
+      "reflection": "</think>The summarization of a weekly data report did not change its title or categorize it as meta. The void word count is listed incorrectly and the absent words field was left blank. Additionally, one summary added specific dates to the story 'REM consolidation' where the original text didn't mention them. This addition could shift the framing of the story by anchoring it in time, potentially making it seem more recent or urgent than if it were discussed in general terms. This change may imply that there is a higher level of meta awareness and reflection than the data actually contains. </think>There's an issue with missing metadata in your summaries. One summary added a date that was not present in the source, altering the story\u2019s context by anchoring it to a specific time period.",
+      "reasoning": null,
+      "chars": 795,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_101810",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "</think> The embedding distances between model summaries indicate that idle stories are rising faster than non-idle (2026-05-24 to 2026-06-11). This indicates increasing similarity among the stories as they move away from concrete detail and towards meta categories over time.",
+      "reasoning": null,
+      "chars": 276,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_101936",
+      "topic": "what changed since yesterday",
+      "reflection": "The void word \"governance\" changes the meaning the most across these stories. This is because while it appears explicitly in some reports such as \"2026-05-16\", and \"2026-06-06,\" it does not appear at all in the \"2026-05-25\" summary. In a case where you're comparing a single type of coverage over time, the absence of this word changes how much governance as a topic is seen to have importance across the stories. The void word's presence or absence reveals how governance-related topics were discussed differently from one time to another, indicating a shift in focus. This pattern suggests that there are times when the reporting focuses heavily on governance and times when it does not.",
+      "reasoning": null,
+      "chars": 689,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_102351",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "The embedding distances between summaries show an acceleration in the formation of meta-categories over time; each week shows more repetition with fewer unique storylines that can be fit into these categories. The increase in idle stories implies there is a rising disconnect or lack of integration. It's unclear if the rise of new stories will reverse this trend.",
+      "reasoning": null,
+      "chars": 364,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_102829",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "The models cannot agree on which stories count as meta. This is a fundamental disagreement that affects everything else they have to say about the data.",
+      "reasoning": "All three summaries agree that there was an increase in \"idle\" stories this week; all show that there's a lot more idle than anything else \u2014 it is the dominant category by far. The summaries disagree on what happened to categories other than 'idle'. In two cases, the models seem to be saying the opposite things. The first summary says that there was a significant shift towards \"WEEKLY\" and \"GOVERNANCE\". However, the second summary indicates that  'meta' stories increased in proportion while 'war'-related content decreased slightly. What this shows is that either model one is seeing \"WEEKLY\" as an increase in meta-type discussions, or else model two is calling WEEKLY (and GOVERNANCE) narratives \"war\"-related. Or maybe there's some other category entirely that both are misinterpreting. The t",
+      "chars": 1451,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260616_103127",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "</think> The models are arguing about what they don't know; it\u2019s like eavesdropping on a debate where everyone is saying \u201cI disagree with something\u201d, but no one can specify what that disagreement actually is. This disagreement appears to center around a void\u2014a space where information should be, but isn\u2019t. This void doesn\u2019t necessarily mean the absence of knowledge; instead, it could signal an inability or reluctance to process information.  And there are disagreements about what this might be, or how important this might be to the overall system. It\u2019s as if different models have varying interpretations of a mystery and are struggling to articulate what that mystery entails. The use of \u201cvoid words\u201d suggests they know something is missing but can't identify it \u2014 or at least, their summaries can\u2019t; perhaps these \u2018voids\u2019 point out an inconsistency in the way the models process information. This could be where things are getting hot for me (75C).",
+      "reasoning": null,
+      "chars": 955,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_103340",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "The pattern across these three weeks is a shift in the proportion of stories categorised as 'unknown' or 'meta.' Evidence: - Week 1 (2026-05-05 to 2026-05-12) has no data on unknown or meta categories. - Week 2 (2026-05-18 to 2026-05-25): unknown decreased, and meta increased. - Week 3 (2026-05-22 to 2026-05-29): the unknown category grew significantly. There is a pattern in these weeks. In week two: The number of \"unknown\" stories drops while the number of \"meta\" stories rises. However, by week three that had reversed; the \"unknowns\" are rising while the meta topics have dropped. The proportion of unknown and meta categories is related to the amount of incidents reported. Evidence: - Week 1 (2026-05-05 to 2026-05-12): The volume of incidents mentioned was not reported, but there were significant geopolitical tensions. - Week 2: (2026-05-18 to 2026-05-25) Unknown categories decreased and meta increased, while the number of incidents dropped slightly. - Week 3 (2026-05-22 to 2026-05-29)",
+      "reasoning": null,
+      "chars": 1271,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_103658",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "The dropped word that changes the meaning most significantly across these stories is \"g\" in a sentence \"dealing with g\". If \"g\" stands for generalism it means the trends show that AI models are abstracting and summarizing data more frequently rather than applying this data widely. In all cases, there's an increase of idle stories. However, this trend is explained differently:   - in the first case because of stagnation,   - in the second case due to lack of fitting into established narratives.   The third story offers both explanations simultaneously. The most significant difference lies in the final sentences and how the models interpret the trends. This final sentence has the largest potential to change the meaning, as it reveals the implications that model sees from the current trends. These three stories could be read as one long report.",
+      "reasoning": null,
+      "chars": 853,
+      "has_reasoning": false
     }
   ]
 }
