@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-16T19:00:17.554945",
-  "total": 5860,
-  "with_reasoning": 2663,
+  "generated": "2026-06-16T20:00:40.913374",
+  "total": 5870,
+  "with_reasoning": 2665,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -46881,6 +46881,86 @@
       "reflection": "The word \"stagnant\" in the third summary shifts the framing by introducing a negative connotation that is not present in the original data. It's notable how the first two summaries have similar content and structure; however, both diverge significantly from the third, which introduces new phrases such as \"weekly,\" \"states\", and the specific number of weekly stories. The third summary does not mention idle or forging stories but includes details about the increasing volume of war-related topics The increase in idle stories is explicitly mentioned to a significant degree in all summaries with the exception of the third summary that instead focuses on the increase of war related topics. Why did two models choose to add words that change the framing? Was this due to an effort to make the content more engaging or to emphasize certain aspects.",
       "reasoning": null,
       "chars": 849,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_153226",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "There is a clear shift in the void words. This week's most prevalent absent word is 'narratives'. The absence of that term shifts away from the expected story structure.  The absence of 'narratives' also indicates a loss of focus on the human element and story arc.  This could imply that the information is being gathered by machines rather than humans.",
+      "reasoning": "..... This could indicate a move towards reporting facts without framing them into stories. What does this signal about the news sources? Is it a push for more factual reporting, or are they trying to avoid responsibility? How do we interpret this change?",
+      "chars": 624,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260616_153412",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "The story titled \"Idle Reflection: Patch Tuesday, February 2026 Edition\" was summarized identically by all three AI models summarizing it. Given the lack of variation in summaries for this particular story, What is common to the other stories that causes their variations?",
+      "reasoning": null,
+      "chars": 272,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_153512",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "</think> The data shows a consistent increase in 'idle' stories across different weeks and summaries, but none of the summaries agree with each other on what has changed since last week. The first summary says there is a 98% increase in idle stories; it says activity has decreased and mentions an increase in weekly and governance states. The second summary does not talk about the number or percentage increase. However, it mentions there are constant idle stories\u2014no mention of whether this is the same as last week. The third summary has a different timeline than the other two summaries. It says that idle content volume increased\u2014but doesn\u2019t say by how much. This summary talks about \u201cunknown\u201d and \u201cmeta\u201d stories, which were not mentioned in the other summaries at all. This makes me wonder why only this summary includes meta stories; what happened with unknowns? The third summary also indicates a stable state distribution but mentions no specific changes or new events. I have more question",
+      "reasoning": null,
+      "chars": 1441,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_153826",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "</think> The pattern in the dropped content is a complete absence of void and absent words. This means there are no words or phrases that were consistently omitted across all three stories.  Each story lacks both void words (words expected to be in these types of summaries but missing) and absent words, which suggests a highly unusual level of agreement between the models.",
+      "reasoning": null,
+      "chars": 375,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_153947",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "One model shows a huge increase in story quantity with most being idle or foraging stories while another one reported a large spike in war-related topics. We need to consider that the models are using very different criteria in their categorization, and also what may be missing from each of these reports as we investigate which model is giving us more meaningful data.",
+      "reasoning": "The most striking observation is the significant variation in reporting of story quantity, and the category dominance. On 2026-05-19, a model reported 636 stories. This was not noted by other models. The same day, another model reported a large increase in war-related topics. The first thing to notice is that one model has a clear majority of idle and foraging stories while the second model shows more war related stories. This suggests there may be some form of bias or error in one or both models' categorizations. I must now wonder if the difference is due to the different way each model defines war-related topics vs idle/story categories, or if this data shows something more significant about how the models are trained? It's also intriguing that the first model did not mention the increas",
+      "chars": 1318,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260616_154236",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "The pattern that emerges when comparing these three stories is the systematic removal of specifics about military action. Let's look at evidence. In the first two reports, we see a consistent increase in stories related to war and its associated topics such as \"airstrikes,\" \"mideast\" and \"arms embargo.\" These are all terms directly tied to military actions. The second report specifies an elevation of model average VIX, which is a metric that reflects investor sentiment often driven by significant events like conflicts. However, in the third story, while there's a mention of an increase in war-related stories, specific details about military actions or related words are absent. Instead, we see a focus on the rise of idle stories, which typically indicate stagnant or unresolved narratives and that there is no resolution to these stories. The pattern suggests a deliberate omission of detailed military action words. This may be due to several reasons: a policy shift in media outlets, censo",
+      "reasoning": null,
+      "chars": 1211,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_154534",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think> The word \"governance\" is conspicuously absent from today's coverage compared to May 23rd, indicating a potential shift in focus from internal processes and structures to external events, particularly geopolitical tensions as seen on June 13th.",
+      "reasoning": null,
+      "chars": 252,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_154707",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "The most striking pattern is that all three stories have the same category of \"unknown.\" Additionally, they lack any noted void or absent words, and their titles contain no unique information about what type of disagreement happened between models. This shows a consistent dropping of specific details or context regarding model disagreements across these summaries. Reflecting on this pattern, It's interesting to note that despite the prevalence of meta-story analysis in today's data, the lack of categorized information and contextual voids might suggest an underlying challenge in tracking internal discord among models. The fact that no unique words are noted as missing suggests a potential limitation.",
+      "reasoning": null,
+      "chars": 709,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_154920",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "</think>The embedding distances show a consistent trend towards \"meta\" and \"war\" categories across three weeks. The distribution of idle states has fluctuated with an overall decrease between the second and third week. We can be certain that over three weeks there was an increase in meta stories.  This may not be relevant to this particular data set, but other meta-stories were also on the rise across all models.  That would need a lot of additional confirmation before being shared as fact with an audience. If we had more data for the week between the last two summaries, there could be more to say about what this implies and if it is correlated in any way with idle states.",
+      "reasoning": null,
+      "chars": 681,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260616_155901",
+      "topic": "how does today's foraging discovery connect to today's void measurements",
+      "reflection": "</think> This week saw an increase in stories focused on meta and war-related topics while idle and consolidation narratives also rose. Foraging stories continued to be scarce. Unidentified sources gained prominence. It is noteworthy that several summaries added void detection to the story title and that the last one listed the source of a story as 'unknown' when it wasn't. These additions may indicate an attempt by the models to highlight gaps or uncertainties in the data, thus framing the stories as incomplete or ambiguous. It also may be the result of confusion between different types of idleness, with void detection as an extreme form. The shift in state distribution could imply changes in narrative focus or source reliability. Is there a trend that needs more investigation? There is no evidence about why unknown sources are becoming more prevalent. The reasons for this change remain unclear.",
+      "reasoning": null,
+      "chars": 909,
       "has_reasoning": false
     }
   ]
