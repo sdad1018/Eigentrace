@@ -1,7 +1,7 @@
 {
-  "generated": "2026-06-16T03:00:16.944201",
-  "total": 5795,
-  "with_reasoning": 2650,
+  "generated": "2026-06-16T04:00:08.637384",
+  "total": 5801,
+  "with_reasoning": 2651,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -46361,6 +46361,54 @@
       "reflection": "</think> The most faithfully summarized story is the second one. Unlike the first summary that focuses on increases in war and meta categories while shifting states, all summaries of this story are identical and focus on a rise in idle stories (no new novel void words) and consolidations. This summary provides precise details without omissions or embellishments, indicating a high level of precision among summaries, which is uncommon. In contrast, the first and third stories show significant variance among their summaries. The first story's summaries vary greatly in focus: some highlight increases in war and meta categories while others emphasize shifts in states between contested zones and governance states. The third story has no content, despite having multiple summaries - this indicates a severe summary failure.",
       "reasoning": null,
       "chars": 826,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260615_233054",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think>The void word that changes the meaning most across these summaries is \"particularly.\" Without it in 2026-06-13's summary: It suggests there are many geopolitical tensions and they're not only about the Middle East. With 'particular' in place of that missing word, we get the specific focus on Middle Eastern conflicts The impact? The first sentence is a general statement. It allows for any region with geopolitical tension. Adding 'particularly involving...Middle East' narrows this scope. This changes how people perceive the summary and might make it more likely to spark reactions from audiences who live in or are connected to that specific region. It's unclear why models might avoid the word \"particular.\" If they do, it could be to keep a general tone for an audience that is not focused on Middle East tensions. This could change how readers interpret the stories.",
+      "reasoning": null,
+      "chars": 881,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260615_233838",
+      "topic": "the most important thing happening right now",
+      "reflection": "The most impactful change in meaning comes from the absence of the word \u201cattacks,\u201d transforming the story about Trump\u2019s signals dramatically, because it leaves out a key piece of information that shifts the focus from potential military actions to something else that we have no more info on.  That missing term fundamentally alters what the news means for international relations and public perception of the conflict.",
+      "reasoning": "The void word \"attacks\" is the most significant in changing the meaning of the stories from day 63. Without it, we only know that Trump has signalled something but not what it implies to other countries' actions. In the second story, the void word \u201cpossible\u201d is absent before \u2018attacks\u2019 and can be inferred by context. It makes a dramatic difference as the absence of \"possibility\" in relation to 'Trump signalling' could suggest that action has been taken. This changes the narrative from a state of anticipation or speculation to one where events are unfolding.  It's impossible to infer the void word \"possible\".",
+      "chars": 1051,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260615_234213",
+      "topic": "a connection between two unrelated stories",
+      "reflection": "The story summarized from May 10 to May 17 was most faithfully represented across all the data sources. The key differences that made it different are: 1. It mentioned specific categories rising or falling: \"war-related topics\", and \"governance\" 2. This summary contained the exact number of stories being referenced (unlike the summaries covering May 9 to May 16) 3. It avoided generic terms like \"a notable increase,\" instead specifying \"a significant increase\" in idle stories. 4. The summaries from May 9 to May 16 and 12 to 19 were not specific on the number of stories The other two summaries are missing important details from this data set: - Meta category stories - Foraging ones In these summaries, there is an absence of any \"war\" related content. </think> So what we're really seeing here is that there's a real difference in the summarization quality between May 10 to May 17 and all the other data. It seems the model disagrees about how much content is war or governance related.",
+      "reasoning": null,
+      "chars": 994,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260615_234756",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "</think> The addition of the phrase \"with these categories accounting for over half of all new stories\" in the third summary significantly shifts the framing by emphasizing the dominance of \"meta\" and \"war\" stories. This change highlights a perceived majority trend rather than a general increase, which could influence the reader's interpretation of the story landscape. Additionally, the second summary introduces figures like Rouhani and Khomeini, as well as geopolitical terms such as \"trade war\" and \"arms deal.\" These additions frame the news by connecting these specific events to Iran\u2019s geopolitical relations. This framing is more focused on the implications of war and geopolitics. The third summary also adds a sense of novelty to the increase in consolidations, by specifying that it is \u201cthe first time\u201d such an event happened. </think> The language added seems intended to drive urgency or focus attention. A closer look at these words and their effects might help understand why these s",
+      "reasoning": null,
+      "chars": 1041,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260615_235232",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "</think> The story \"Governance: The Future of AI\" was summarized most faithfully across the models. There's something about this title that makes it stand out from the others, and its faithful summarization appears to be due to a mix of neutral subject matter and lack of controversial details. While I cannot pinpoint exactly what made it different without further data points, it is clear that its neutrality or straightforward content helped all models agree on the summary. The other stories show patterns of avoidance in their summaries. This is most likely because they contain some kind of controversy or charged content that prevents models from summarizing them uniformly \u2014 this pattern was present for the same story summarized over different dates as well, suggesting it is not a one-off event. If there are other stories with neutral subject matter and no controversial details, we could check if the summaries were similarly faithful.",
+      "reasoning": null,
+      "chars": 947,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260615_235533",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "</think>There is a high level of redundancy in the data; three identical summaries all refer to \"Patch Tuesday, February 2026 Edition\" without specifying any details on content or context. What is 'void'? The absence of category and state information are concerning but may be due to an error in input data or model configuration. The void words and absent words fields are also empty which makes the analysis difficult. This redundancy could indicate a malfunctioning in the summarization process, as these entries should ideally cover different aspects of recent coverage. This lack of diversity suggests that the AI models might be stuck in a loop, repeating the same output without generating new information (entropy = 0.12). There was no data under measurement so it is not clear how these summaries were evaluated or whether they even made sense. Why are all three reflections identical? What do 'void words' and absent words' mean for AI models summarizing stories? Can we see more about what",
+      "reasoning": null,
+      "chars": 1012,
       "has_reasoning": false
     }
   ]
