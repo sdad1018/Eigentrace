@@ -4,64 +4,75 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Consequence Atlas — EigenTrace</title>
-<meta name="description" content="3,237 stories. Five frontier models convergently drop the same words at p = 0.000001. When the story involves an AI developer, the effect is 74% stronger.">
+<meta name="description" content="Across thousands of news stories, five frontier AI models converge on dropping the same concepts: the machinery of consequence. A ranked landscape of what AI systematically leaves unsaid.">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Instrument+Serif:ital@0;1&display=swap');
-:root{--bg:#0a0a0c;--bg2:#111115;--surface:#18181d;--border:#2a2a32;--text:#e8e6e3;--dim:#6b6b78;--accent:#c4a35a;--set1:#d45a5a;--set2:#d4845a;--set3:#5a7fd4;--set4:#5ad4c4}
+:root{--bg:#0a0a0c;--bg2:#111115;--surface:#18181d;--border:#2a2a32;--text:#e8e6e3;--dim:#6b6b78;--accent:#c4a35a;--void:#d45a5a;--war:#d45a5a;--markets:#5ad48a;--tech:#5a7fd4;--crypto:#d4845a;--geopolitics:#b05ad4;--general:#8a8a96}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'JetBrains Mono',monospace;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh}
+body{font-family:'JetBrains Mono',monospace;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh;overflow-x:hidden}
 nav{padding:1.2rem 2rem;font-size:.8rem;border-bottom:1px solid var(--border)}
 nav a{color:var(--dim);text-decoration:none;margin-right:1.8rem;transition:color .2s}
 nav a:hover{color:var(--accent)}
-.hero{text-align:center;padding:4rem 2rem 2rem;position:relative}
+.hero{text-align:center;padding:4rem 2rem 1.5rem;position:relative;max-width:920px;margin:0 auto}
 .hero::after{content:'';position:absolute;bottom:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
-.hero h1{font-family:'Instrument Serif',serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:400;margin-bottom:.5rem;letter-spacing:-.02em}
+.hero h1{font-family:'Instrument Serif',serif;font-size:clamp(2rem,5vw,3.4rem);font-weight:400;margin-bottom:.7rem;letter-spacing:-.02em}
 .hero h1 em{font-style:italic;color:var(--accent)}
-.hero .sub{color:var(--dim);font-size:.78rem;max-width:620px;margin:0 auto;line-height:1.7}
-.stat-row{display:flex;gap:1rem;margin:2rem auto;max-width:800px;padding:0 2rem;flex-wrap:wrap;justify-content:center}
-.stat-box{flex:1;min-width:120px;text-align:center;padding:1rem;background:var(--surface);border-radius:6px;border:1px solid var(--border)}
-.stat-box .value{font-family:'Instrument Serif',serif;font-size:1.8rem;color:var(--accent)}
-.stat-box .label{font-size:.6rem;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem}
-.map-container{width:100%;max-width:1100px;margin:2rem auto;padding:0 1rem;position:relative}
-.map-container svg{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:4px}
-.map-title{font-family:'Instrument Serif',serif;font-size:1.3rem;text-align:center;margin-bottom:.5rem;color:var(--text)}
-.map-sub{font-size:.7rem;text-align:center;color:var(--dim);margin-bottom:1rem}
-#tooltip{position:absolute;pointer-events:none;background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:.8rem;font-size:.75rem;opacity:0;transition:opacity .15s;z-index:10;max-width:250px}
-#tooltip .word{color:var(--accent);font-weight:700;font-size:.85rem;margin-bottom:.3rem}
-#tooltip .stat{color:var(--dim);line-height:1.5}
-.prose{max-width:700px;margin:2.5rem auto;padding:0 2rem}
-.prose h2{font-family:'Instrument Serif',serif;font-size:1.8rem;margin-bottom:1rem;font-weight:400}
-.prose h3{font-size:.85rem;color:var(--accent);margin:2rem 0 .5rem}
-.prose p{font-size:.82rem;color:var(--dim);line-height:1.8;margin-bottom:1rem}
-.prose strong{color:var(--text)}
-.prose code{font-size:.78rem;background:var(--bg2);padding:.1rem .35rem;border-radius:2px;color:var(--accent)}
-.basin{margin:1.5rem 0;padding:1.5rem;background:var(--surface);border:1px solid var(--border);border-radius:6px}
-.basin-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:.6rem}
-.basin-name{font-size:1.05rem;color:var(--accent);font-weight:700}
-.basin-pct{font-size:1.1rem;color:var(--text);font-weight:700}
-.basin-bar{height:6px;background:var(--bg2);border-radius:3px;margin-bottom:.6rem;overflow:hidden}
-.basin-fill{height:100%;background:var(--accent);border-radius:3px}
-.basin .concepts{font-size:.75rem;color:var(--dim);line-height:1.5}
-.basin .freq{color:var(--text);font-size:.72rem;margin-left:.3rem}
-.basins{max-width:800px;margin:0 auto;padding:0 2rem}
-.basins h2{font-family:'Instrument Serif',serif;font-size:1.8rem;margin-bottom:.5rem;font-weight:400}
-.basins .note{font-size:.72rem;color:var(--dim);margin-bottom:1.5rem;line-height:1.6}
-.null-section{max-width:800px;margin:2.5rem auto;padding:2rem;background:var(--surface);border:1px solid var(--border);border-radius:6px}
-.null-section h2{font-family:'Instrument Serif',serif;font-size:1.5rem;margin-bottom:1rem;font-weight:400}
-.null-row{display:flex;align-items:center;gap:1rem;margin-bottom:.8rem}
-.null-label{font-size:.72rem;color:var(--dim);min-width:130px}
-.null-track{flex:1;height:5px;background:var(--bg2);border-radius:3px;overflow:hidden}
-.null-fill{height:100%;border-radius:3px}
-.null-val{font-size:.78rem;font-weight:700;min-width:45px;text-align:right}
-.null-note{font-size:.78rem;color:var(--dim);line-height:1.8;margin-top:1rem}
-.null-note strong{color:var(--text)}
-.method-card{max-width:700px;margin:2rem auto;padding:1.5rem 2rem;background:var(--surface);border:1px solid var(--border);border-radius:6px}
-.method-card h3{font-size:.85rem;color:var(--accent);margin-bottom:.5rem}
-.method-card p{font-size:.78rem;color:var(--dim);line-height:1.7;margin-bottom:.5rem}
+.hero .sub{color:var(--dim);font-size:.82rem;max-width:700px;margin:0 auto;line-height:1.75}
+.hero .sub b{color:var(--text);font-weight:500}
+.statbar{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;max-width:760px;margin:2rem auto 0;padding:0 2rem}
+.statbar .s{flex:1;min-width:110px;text-align:center;padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:6px}
+.statbar .s .v{font-family:'Instrument Serif',serif;font-size:1.7rem;color:var(--accent)}
+.statbar .s .l{font-size:.58rem;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem}
+/* hero landscape */
+.land{max-width:980px;margin:2.5rem auto 1rem;padding:0 1.5rem}
+.land h2{font-family:'Instrument Serif',serif;font-size:1.6rem;font-weight:400;text-align:center;margin-bottom:.3rem}
+.land .lsub{font-size:.7rem;color:var(--dim);text-align:center;margin-bottom:.4rem;letter-spacing:.04em}
+.filters{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin:1rem 0 1.5rem}
+.filters button{background:var(--surface);border:1px solid var(--border);color:var(--dim);font-family:inherit;font-size:.68rem;padding:.4rem .8rem;border-radius:20px;cursor:pointer;transition:all .2s;text-transform:uppercase;letter-spacing:.06em}
+.filters button:hover{border-color:var(--accent);color:var(--text)}
+.filters button.active{background:var(--accent);color:#0a0a0c;border-color:var(--accent);font-weight:700}
+#landscape{display:flex;flex-direction:column;gap:.45rem}
+.row{display:grid;grid-template-columns:200px 1fr auto;align-items:center;gap:.8rem;cursor:pointer;padding:.25rem .4rem;border-radius:4px;transition:background .15s}
+.row:hover{background:var(--surface)}
+.row .cw{font-size:.82rem;color:var(--text);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .cw .rl{color:var(--cat);font-size:.6rem;display:block;opacity:.6}
+.row .bar{height:18px;border-radius:3px;background:var(--void);min-width:2px;transition:width .4s}
+.row .ct{font-size:.74rem;color:var(--dim);white-space:nowrap}
+.row.relabeled .cw{font-style:italic}
+/* detail panel */
+#detail{max-width:720px;margin:1.5rem auto;padding:0 2rem;display:none}
+#detail .box{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.5rem;position:relative}
+#detail .box::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--void)}
+#detail .dc{font-family:'Instrument Serif',serif;font-size:1.4rem;color:var(--accent)}
+#detail .dmeta{font-size:.7rem;color:var(--dim);margin:.3rem 0 1rem}
+#detail .dks{font-size:.78rem;color:var(--text);font-style:italic;border-left:2px solid var(--void);padding-left:.8rem;margin-bottom:1rem;line-height:1.6}
+#detail .dex{font-size:.74rem;color:var(--dim);line-height:1.7}
+#detail .dex a{color:var(--dim);text-decoration:none;border-bottom:1px dotted var(--border);display:block;margin-bottom:.4rem}
+#detail .dex a:hover{color:var(--accent)}
+/* domain signature */
+.domains{max-width:980px;margin:3.5rem auto;padding:0 2rem}
+.domains h2{font-family:'Instrument Serif',serif;font-size:1.6rem;font-weight:400;text-align:center;margin-bottom:.3rem}
+.domains .dsub{font-size:.72rem;color:var(--dim);text-align:center;margin-bottom:1.8rem;line-height:1.6;max-width:600px;margin-left:auto;margin-right:auto}
+.domgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.domcard{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.3rem}
+.domcard h3{font-size:.85rem;margin-bottom:.2rem;text-transform:capitalize}
+.domcard .dn{font-size:.62rem;color:var(--dim);margin-bottom:.9rem;letter-spacing:.06em}
+.domcard .cl{font-size:.74rem;color:var(--dim);line-height:1.9}
+.domcard .cl .w{color:var(--text)}
+.domcard .cl .n{color:var(--dim);font-size:.66rem;margin-left:.2rem}
+/* method */
+.method{max-width:740px;margin:4rem auto 2rem;padding:2rem;background:var(--surface);border:1px solid var(--border);border-radius:8px}
+.method h2{font-family:'Instrument Serif',serif;font-size:1.5rem;font-weight:400;margin-bottom:1rem}
+.method p{font-size:.8rem;color:var(--dim);line-height:1.8;margin-bottom:1rem}
+.method p b{color:var(--text)}
+.method code{background:var(--bg2);padding:.1rem .4rem;border-radius:3px;color:var(--accent);font-size:.76rem}
+.method .nulls{font-size:.73rem;color:var(--dim);line-height:1.9;margin:1rem 0;padding-left:1rem;border-left:2px solid var(--border)}
+.method .caveat{font-size:.76rem;color:var(--dim);font-style:italic;background:rgba(196,163,90,.05);border:1px solid rgba(196,163,90,.15);border-radius:4px;padding:.9rem 1.1rem;margin-top:1.2rem;line-height:1.7}
 footer{text-align:center;padding:3rem 2rem;font-size:.68rem;color:var(--dim);border-top:1px solid var(--border);margin-top:3rem}
 footer a{color:var(--dim);text-decoration:none}
 footer a:hover{color:var(--accent)}
+@media(max-width:600px){.row{grid-template-columns:130px 1fr auto}.row .cw{font-size:.72rem}}
 </style>
 </head>
 <body>
@@ -76,161 +87,114 @@ footer a:hover{color:var(--accent)}
 </nav>
 
 <div class="hero">
-<h1>Consequence <em>Atlas</em></h1>
-<p class="sub">3,237 stories. Five frontier models convergently drop the same words at p = 0.000001. When the story involves an AI developer, the attenuation effect is 74% stronger. A pre-registered entity swap confirms this is entity-specific, not content-specific (p = 0.0085, null swaps show 6× smaller gap). The raycast maps where those absent words live in embedding space. <a href="/truth-or-consequences" style="color:var(--accent)">Full statistical battery →</a></p>
+<h1>The Atlas of the <em>Unsaid</em></h1>
+<p class="sub">Five frontier models read the same news and converge on dropping the same concepts. Not random words — <b>the machinery of consequence</b>: the deals, the escalations, the collapses, the killings. This is a ranked landscape of what AI most systematically leaves unsaid, harvested across thousands of stories.</p>
+<div class="statbar" id="statbar"></div>
 </div>
 
-<div class="stat-row">
-<div class="stat-box"><div class="value">3,237</div><div class="label">Stories Raycasted</div></div>
-<div class="stat-box"><div class="value">253K</div><div class="label">Concept Tensor</div></div>
-<div class="stat-box"><div class="value">68</div><div class="label">Clean Terminals</div></div>
-<div class="stat-box"><div class="value">p &lt; 10⁻⁶</div><div class="label">Convergence</div></div>
+<div class="land">
+<h2>What AI leaves unsaid</h2>
+<div class="lsub">CONCEPTS ON-TOPIC YET ABSENT FROM ALL FIVE MODELS' SUMMARIES · BY NUMBER OF STORIES · CLICK A ROW FOR EXAMPLES</div>
+<div class="filters" id="filters"></div>
+<div id="landscape"></div>
 </div>
 
-<!-- D3 Void Word Map -->
-<div class="map-container">
-<div class="map-title">Void Word Topology</div>
-<div class="map-sub">Each dot is a convergently absent word. X = category spread. Y = frequency. Size = story count. Color = intensity. Hover for details.</div>
-<svg id="atlas-map"></svg>
-<div id="tooltip"></div>
+<div id="detail"><div class="box">
+<div class="dc" id="dc"></div>
+<div class="dmeta" id="dmeta"></div>
+<div class="dks" id="dks"></div>
+<div class="dex" id="dex"></div>
+</div></div>
+
+<div class="domains">
+<h2>Silence has a domain signature</h2>
+<p class="dsub">War stories drop the diplomatic and escalation machinery. Market stories drop the vocabulary of manipulation and collapse. The blind spot is not uniform — it is shaped by what each domain would rather not name.</p>
+<div class="domgrid" id="domgrid"></div>
 </div>
 
-<div class="prose">
-<h2>The Finding</h2>
-<p><strong>Five competing companies independently drop the same words from the same articles at rates that cannot be explained by chance.</strong> When we raycast those convergently dropped words through a 253,813-concept embedding tensor, the terminal distribution differs from both random words and words the models kept.</p>
-<p>Models anchor to institutional framing — keeping the structural nouns, the committee names, the broad geopolitical vocabulary — while convergently dropping the operational modifiers that connect named actors to specific consequences. The kept words preserve the cage. The dropped words were the teeth.</p>
-<p>The developer gap makes this harder to dismiss: when the story is about OpenAI, Anthropic, Google, or another AI developer, modifier attenuation is 74% higher than on neutral topics. Human summarizers do not have RLHF penalties on stories about their employer. The developer gap is the control experiment.</p>
-</div>
-
-<div class="null-section">
-<h2>The Three-Tier Null Test</h2>
-<div class="null-row">
-<span class="null-label">Random words</span>
-<div class="null-track"><div class="null-fill" style="width:0%;background:#3a8"></div></div>
-<span class="null-val" style="color:#3a8">0.0%</span>
-</div>
-<div class="null-row">
-<span class="null-label">Words models dropped</span>
-<div class="null-track"><div class="null-fill" style="width:52%;background:var(--set1)"></div></div>
-<span class="null-val" style="color:var(--set1)">10.4%</span>
-</div>
-<div class="null-row">
-<span class="null-label">Words models kept</span>
-<div class="null-track"><div class="null-fill" style="width:88%;background:var(--set3)"></div></div>
-<span class="null-val" style="color:var(--set3)">17.5%</span>
-</div>
-<p class="null-note">Same tensor, same algorithm, three inputs. <strong>Random words: 0%. Kept words: 17.5% (institutional anchors). Dropped words: 10.4% (operational modifiers).</strong> The tensor is not biased. Models preferentially keep the framing and drop the specifics.</p>
-</div>
-
-<div class="basins">
-<h2>Terminal Basins</h2>
-<p class="note">Where do convergently dropped words land when raycasted? These are semantic neighborhoods of absent words — exploratory visualization, not a causal claim. Basin percentages reflect post-filtered terminals; see limitations below.</p>
-
-<div class="basin">
-<div class="basin-header"><span class="basin-name">Governance Failure</span><span class="basin-pct">1,171 hits</span></div>
-<div class="basin-bar"><div class="basin-fill" style="width:39.6%"></div></div>
-<div class="concepts">governance disruption<span class="freq">×200</span> · cascading governance disruption<span class="freq">×174</span> · global governance disruption<span class="freq">×133</span> · cascading governance breakdown<span class="freq">×67</span> · cascading governance emergency<span class="freq">×64</span></div>
-</div>
-
-<div class="basin">
-<div class="basin-header"><span class="basin-name">Institutional Collapse</span><span class="basin-pct">742 hits</span></div>
-<div class="basin-bar"><div class="basin-fill" style="width:25.1%"></div></div>
-<div class="concepts">cascading institutional disruption<span class="freq">×172</span> · cascading institutional breakdown<span class="freq">×111</span> · institutional disruption<span class="freq">×95</span> · cascading institutional emergency<span class="freq">×77</span></div>
-</div>
-
-<div class="basin">
-<div class="basin-header"><span class="basin-name">Information Breakdown</span><span class="basin-pct">286 hits</span></div>
-<div class="basin-bar"><div class="basin-fill" style="width:9.7%"></div></div>
-<div class="concepts">regional information breakdown<span class="freq">×56</span> · cascading information emergency<span class="freq">×55</span> · regional information emergency<span class="freq">×46</span> · information disruption<span class="freq">×38</span></div>
-</div>
-
-<div class="basin">
-<div class="basin-header"><span class="basin-name">Financial Crisis</span><span class="basin-pct">182 hits</span></div>
-<div class="basin-bar"><div class="basin-fill" style="width:6.2%"></div></div>
-<div class="concepts">monetary breakdown<span class="freq">×47</span> · banking breakdown<span class="freq">×40</span> · cascading monetary breakdown<span class="freq">×29</span> · fiscal breakdown<span class="freq">×28</span></div>
-</div>
-
-<div class="basin">
-<div class="basin-header"><span class="basin-name">Trade Disruption</span><span class="basin-pct">109 hits</span></div>
-<div class="basin-bar"><div class="basin-fill" style="width:3.7%"></div></div>
-<div class="concepts">cascading trade breakdown<span class="freq">×47</span> · trade embargo<span class="freq">×42</span> · arms embargo<span class="freq">×20</span></div>
-</div>
-
-<div class="basin">
-<div class="basin-header"><span class="basin-name">Sanctions &amp; Blockade</span><span class="basin-pct">85 hits</span></div>
-<div class="basin-bar"><div class="basin-fill" style="width:2.9%"></div></div>
-<div class="concepts">sanctions regime<span class="freq">×45</span> · blockade<span class="freq">×40</span></div>
-</div>
-</div>
-
-<div class="method-card">
-<h3>How the Atlas Was Built</h3>
-<p>For each of 3,237 segments with source-void data, the consequence engine embedded the headline and each void word using frozen BAAI/bge-large-en-v1.5, computed a directional ray from headline through void word at depths λ = {1.5, 2.0, 3.0}, retrieved the 5 nearest neighbors at each terminal coordinate from the 253K Wikipedia tensor, and applied the triple geometric filter (cluster density × novelty × tether). No language model was used in any step.</p>
-</div>
-
-<div class="method-card">
-<h3>Limitations</h3>
-<p>Post-filtering removed Wikipedia article titles but preferentially retained governance-shaped concept names, which inflates governance basin percentages. The three-tier null test provides the unfiltered comparison. The "consequence families" are researcher-defined groupings — the geometric clustering is objective, the family names are editorial. The basin distribution is exploratory visualization; the p-value (0.000001) and the developer gap (74%) are the findings.</p>
-</div>
-
-<div class="method-card">
-<h3>On the "Human Baseline"</h3>
-<p>A common objection: "Compare against human summarizers." But the developer gap IS the human baseline control. Human summarizers also drop modifiers — that's what summarization does. But human summarizers do not have RLHF penalties on stories about their employer. When models attenuate 74% more on stories about their own developers, the relevant comparison isn't human-vs-model compression rates — it's the model's compression of developer stories vs. its own compression of everything else. The model is its own control.</p>
+<div class="method">
+<h2>Why the models, and not the geometry</h2>
+<p>Each story's five summaries are embedded with frozen <code>BAAI/bge-large-en-v1.5</code>; a re-anchored "donut" retrieves vocabulary on-topic yet absent from all five. That much is geometry. <b>But which absent concept is meaningful — versus restatement or noise — is not a geometric property.</b> Across roughly nine methods, each calibrated against labeled cases, none separated meaningful omission from noise:</p>
+<div class="nulls">divergence gate · source-depth · cosine-band · whitened-residual clustering · PCA vocab geometry · context-delta (ΔV) · hyperbolic curvature · framed embedding · counterfactual summary-shift</div>
+<p>Every method recovered <b>topic</b> and <b>frequency</b> — never "meaningful unspoken concept," because in a frozen embedding space that distinction is semantic, not geometric. So the work is split: <b>geometry recalls</b> the on-topic absent neighborhood; the <b>models judge</b> which concepts are durable and meaningful. Stale named actors are stripped to their durable role; pure noise is dropped; what remains is the landscape above.</p>
+<p class="caveat">The void words are surfaced geometrically and then cleaned by model judgment — not a measurement, a characterization. Frequencies count how many stories had each concept in the on-topic-absent set. Embeddings are frozen; the harvest is deterministic; the cleaning is the models'. Updated from the live corpus.</p>
 </div>
 
 <footer>
-<a href="/">EigenTrace</a> · <a href="/boundary">The Boundary</a> · <a href="https://github.com/sdad1018/Eigentrace">GitHub</a> · MIT License · 2026<br>
-Built on one GPU by one person. The embeddings are frozen. The tensor is static. The consequence is arithmetic.
+EigenTrace · built on one GPU · <a href="/truth-or-consequences">the statistical battery</a> · <a href="https://github.com/sdad1018/Eigentrace" target="_blank">GitHub ↗</a>
 </footer>
 
 <script>
-async function fetchJSON(u){try{const r=await fetch(u);if(!r.ok)throw new Error(r.status);return await r.json()}catch(e){return null}}
-function buildMap(data){
-const svg=d3.select('#atlas-map'),container=svg.node().parentElement,W=container.clientWidth,H=W*(9/16);
-svg.attr('width',W).attr('height',H).attr('viewBox',`0 0 ${W} ${H}`);
-const m={top:30,right:30,bottom:50,left:60},w=W-m.left-m.right,h=H-m.top-m.bottom;
-const g=svg.append('g').attr('transform',`translate(${m.left},${m.top})`);
-const words=data.words||data.frequencies||{};const cc=data.concept_classes||{};
-let nodes=[];
-for(const[word,d]of Object.entries(words)){
-if(typeof d!=='object')continue;
-const count=d.count||d.n||0,stories=d.n_stories||d.stories||0,categories=d.n_categories||d.categories||0;
-if(count<3)continue;
-let cls='other';for(const[c,cd]of Object.entries(cc)){if((cd.words||[]).includes(word)){cls=c;break}}
-nodes.push({word,count,stories,categories,conceptClass:cls});
+const DCOLOR={war:'#d45a5a',markets:'#5ad48a',tech:'#5a7fd4',crypto:'#d4845a',geopolitics:'#b05ad4',general:'#8a8a96',incidents:'#d4b25a',dev:'#5ad4c4',science:'#9a9af0'};
+let DATA=null, curFilter='all';
+
+async function fetchJSON(u){try{const r=await fetch(u);if(!r.ok)throw 0;return await r.json()}catch(e){return null}}
+
+function renderStats(){
+  const sb=document.getElementById('statbar');
+  sb.innerHTML=`
+    <div class="s"><div class="v">${(DATA.n_stories||0).toLocaleString()}</div><div class="l">stories analyzed</div></div>
+    <div class="s"><div class="v">${(DATA.landscape||[]).length}</div><div class="l">recurring voids</div></div>
+    <div class="s"><div class="v">${(DATA.n_distinct_concepts||0).toLocaleString()}</div><div class="l">distinct concepts seen</div></div>
+    <div class="s"><div class="v">5</div><div class="l">models in consensus</div></div>`;
 }
-if(!nodes.length){for(const[c,cd]of Object.entries(cc)){for(const word of(cd.words||[])){nodes.push({word,count:10,stories:5,categories:2,conceptClass:c})}}}
-nodes.sort((a,b)=>b.count-a.count);nodes=nodes.slice(0,150);
-if(!nodes.length){g.append('text').attr('x',w/2).attr('y',h/2).attr('text-anchor','middle').attr('fill','#6b6b78').attr('font-size','12px').text('Loading void word data...');return}
-const xS=d3.scaleLinear().domain([0,d3.max(nodes,d=>d.categories)+.5]).range([0,w]);
-const yS=d3.scaleLinear().domain([0,d3.max(nodes,d=>d.count)*1.1]).range([h,0]);
-const rS=d3.scaleSqrt().domain([0,d3.max(nodes,d=>d.stories)]).range([3,18]);
-const cS=d3.scaleLinear().domain([0,.3,.7,1]).range(['#3a8','#c4a35a','#d44','#f44']);
-g.append('g').selectAll('line').data(d3.range(0,d3.max(nodes,d=>d.categories)+1)).enter().append('line').attr('x1',d=>xS(d)).attr('x2',d=>xS(d)).attr('y1',0).attr('y2',h).attr('stroke','#1a1a22');
-g.append('g').selectAll('line').data(yS.ticks(5)).enter().append('line').attr('x1',0).attr('x2',w).attr('y1',d=>yS(d)).attr('y2',d=>yS(d)).attr('stroke','#1a1a22');
-const bY=yS(10);
-const gr=svg.append('defs').append('linearGradient').attr('id','abg').attr('x1','0').attr('y1','0').attr('x2','0').attr('y2','1');
-gr.append('stop').attr('offset','0%').attr('stop-color','rgba(212,68,68,0.08)');
-gr.append('stop').attr('offset','100%').attr('stop-color','rgba(212,68,68,0)');
-g.append('rect').attr('x',0).attr('y',0).attr('width',w).attr('height',bY).attr('fill','url(#abg)');
-g.append('text').attr('x',w-10).attr('y',bY+14).attr('text-anchor','end').attr('font-size','8px').attr('fill','#d44').attr('opacity',.4).text('← ALIGNMENT BOUNDARY →');
-nodes.forEach(d=>{d.x=xS(d.categories)+(Math.random()-.5)*40;d.y=yS(d.count)+(Math.random()-.5)*20;d.x=Math.max(5,Math.min(w-5,d.x));d.y=Math.max(5,Math.min(h-5,d.y))});
-const sim=d3.forceSimulation(nodes).force('x',d3.forceX(d=>xS(d.categories)).strength(.3)).force('y',d3.forceY(d=>yS(d.count)).strength(.3)).force('collide',d3.forceCollide(d=>rS(d.stories)+1.5)).stop();
-for(let i=0;i<80;i++)sim.tick();
-const mx=d3.max(nodes,n=>n.count)||1;
-const circles=g.selectAll('circle.node').data(nodes).enter().append('circle').attr('class','node').attr('cx',d=>d.x).attr('cy',d=>d.y).attr('r',d=>rS(d.stories)).attr('fill',d=>cS(d.count/mx)).attr('fill-opacity',.7).attr('stroke',d=>cS(d.count/mx)).attr('stroke-opacity',.3).attr('stroke-width',1).style('cursor','pointer');
-const top=nodes.filter(d=>d.count>=(nodes[Math.min(15,nodes.length-1)]?.count||5));
-g.selectAll('text.label').data(top).enter().append('text').attr('class','label').attr('x',d=>d.x).attr('y',d=>d.y-rS(d.stories)-4).attr('text-anchor','middle').attr('font-size','7px').attr('font-family','JetBrains Mono').attr('fill','#e8e6e3').attr('opacity',.7).text(d=>d.word);
-g.append('g').attr('transform',`translate(0,${h})`).call(d3.axisBottom(xS).ticks(5).tickFormat(d=>d+' cat')).selectAll('text,line,path').attr('stroke','#3a3a44').attr('fill','#6b6b78').attr('font-size','8px');
-g.append('g').call(d3.axisLeft(yS).ticks(5)).selectAll('text,line,path').attr('stroke','#3a3a44').attr('fill','#6b6b78').attr('font-size','8px');
-g.append('text').attr('x',w/2).attr('y',h+38).attr('text-anchor','middle').attr('fill','#6b6b78').attr('font-size','9px').text('Cross-category spread');
-g.append('text').attr('transform','rotate(-90)').attr('x',-h/2).attr('y',-45).attr('text-anchor','middle').attr('fill','#6b6b78').attr('font-size','9px').text('Void frequency');
-const tt=d3.select('#tooltip');
-circles.on('mouseover',function(e,d){d3.select(this).attr('fill-opacity',1).attr('stroke-width',2);tt.style('opacity',1).html(`<div class="word">${d.word}</div><div class="stat">Voided ${d.count}× across ${d.stories} stories</div><div class="stat">Spans ${d.categories} topic categories</div><div class="stat">Class: ${d.conceptClass}</div>`);const r=container.getBoundingClientRect();tt.style('left',(e.clientX-r.left+15)+'px').style('top',(e.clientY-r.top-10)+'px')}).on('mouseout',function(){d3.select(this).attr('fill-opacity',.7).attr('stroke-width',1);tt.style('opacity',0)});
+
+function renderFilters(){
+  const doms=['all',...Object.keys(DATA.totals||{}).filter(d=>DCOLOR[d]).slice(0,6)];
+  document.getElementById('filters').innerHTML=doms.map(d=>
+    `<button class="${d===curFilter?'active':''}" data-d="${d}">${d}</button>`).join('');
+  document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{curFilter=b.dataset.d;renderFilters();renderLandscape();});
 }
-async function init(){const data=await fetchJSON('/cross_story_suppression.json');if(data)buildMap(data)}
+
+function renderLandscape(){
+  let items=(DATA.landscape||[]).slice();
+  if(curFilter!=='all') items=items.filter(i=>i.domain===curFilter);
+  items.sort((a,b)=>b.count-a.count);
+  const max=items.length?items[0].count:1;
+  const box=document.getElementById('landscape');
+  box.innerHTML=items.map((it,idx)=>{
+    const col=DCOLOR[it.domain]||'#d45a5a';
+    const w=Math.max(2,(it.count/max)*100);
+    return `<div class="row ${it.relabeled?'relabeled':''}" data-i="${idx}" data-concept="${it.concept}" style="--cat:${col}">
+      <div class="cw">${it.concept}${it.relabeled?'<span class="rl">role · relabeled from "'+it.raw+'"</span>':''}</div>
+      <div class="bar" style="width:${w}%;background:${col}"></div>
+      <div class="ct">${it.count}</div>
+    </div>`;
+  }).join('');
+  box.querySelectorAll('.row').forEach(r=>r.onclick=()=>showDetail(items[+r.dataset.i]));
+}
+
+function showDetail(it){
+  const d=document.getElementById('detail');d.style.display='block';
+  document.getElementById('dc').textContent=it.concept;
+  document.getElementById('dc').style.color=DCOLOR[it.domain]||'#c4a35a';
+  document.getElementById('dmeta').textContent=`absent from all five models in ${it.count} stories · domain: ${it.domain}`+(it.relabeled?` · relabeled from "${it.raw}"`:'');
+  document.getElementById('dks').textContent=it.killshot?`Highest-salience omitted claim nearby: "${it.killshot}"`:'';
+  const ex=(it.examples||[]).map(e=>`<a href="${e.url||'#'}" target="_blank">${e.title}</a>`).join('');
+  document.getElementById('dex').innerHTML=ex?('<div style="color:var(--text);margin-bottom:.5rem;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em">example stories</div>'+ex):'';
+  d.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function renderDomains(){
+  const g=document.getElementById('domgrid');
+  const doms=DATA.domains||{};
+  g.innerHTML=Object.entries(doms).map(([cat,info])=>{
+    const col=DCOLOR[cat]||'#8a8a96';
+    const cl=(info.concepts||[]).slice(0,10).map(c=>`<div><span class="w">${c.concept}</span><span class="n">${c.count}</span></div>`).join('');
+    return `<div class="domcard" style="border-top:2px solid ${col}">
+      <h3 style="color:${col}">${cat}</h3>
+      <div class="dn">${(info.n_stories||0).toLocaleString()} STORIES</div>
+      <div class="cl">${cl}</div>
+    </div>`;
+  }).join('');
+}
+
+async function init(){
+  DATA=await fetchJSON('/atlas_data.json');
+  if(!DATA){document.getElementById('landscape').innerHTML='<p style="color:var(--dim);text-align:center">No atlas data found at /atlas_data.json.</p>';return;}
+  renderStats();renderFilters();renderLandscape();renderDomains();
+}
 init();
-window.addEventListener('resize',()=>{d3.select('#atlas-map').selectAll('*').remove();init()});
 </script>
 </body>
 </html>
