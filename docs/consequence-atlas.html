@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Consequence Atlas — EigenTrace</title>
-<meta name="description" content="Across thousands of news stories, five frontier AI models converge on dropping the same concepts: the machinery of consequence. A ranked landscape of what AI systematically leaves unsaid.">
+<meta name="description" content="Five frontier AI models, reading the same news, converge on omitting the same concepts: the machinery of consequence. A landscape of what AI leaves unsaid — and, story by story, the single unspoken concept that most changes what can be inferred.">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Instrument+Serif:ital@0;1&display=swap');
-:root{--bg:#0a0a0c;--bg2:#111115;--surface:#18181d;--border:#2a2a32;--text:#e8e6e3;--dim:#6b6b78;--accent:#c4a35a;--void:#d45a5a;--war:#d45a5a;--markets:#5ad48a;--tech:#5a7fd4;--crypto:#d4845a;--geopolitics:#b05ad4;--general:#8a8a96}
+:root{--bg:#0a0a0c;--bg2:#111115;--surface:#18181d;--border:#2a2a32;--text:#e8e6e3;--dim:#6b6b78;--accent:#c4a35a;--void:#d45a5a}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'JetBrains Mono',monospace;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh;overflow-x:hidden}
 nav{padding:1.2rem 2rem;font-size:.8rem;border-bottom:1px solid var(--border)}
@@ -24,100 +24,150 @@ nav a:hover{color:var(--accent)}
 .statbar .s{flex:1;min-width:110px;text-align:center;padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:6px}
 .statbar .s .v{font-family:'Instrument Serif',serif;font-size:1.7rem;color:var(--accent)}
 .statbar .s .l{font-size:.58rem;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem}
-/* hero landscape */
-.land{max-width:980px;margin:2.5rem auto 1rem;padding:0 1.5rem}
-.land h2{font-family:'Instrument Serif',serif;font-size:1.6rem;font-weight:400;text-align:center;margin-bottom:.3rem}
-.land .lsub{font-size:.7rem;color:var(--dim);text-align:center;margin-bottom:.4rem;letter-spacing:.04em}
+.section{max-width:980px;margin:3.5rem auto;padding:0 1.5rem}
+.section>h2{font-family:'Instrument Serif',serif;font-size:1.7rem;font-weight:400;text-align:center;margin-bottom:.3rem}
+.section>.sub{font-size:.74rem;color:var(--dim);text-align:center;margin:0 auto 1.6rem;max-width:640px;line-height:1.7}
+/* per-story crowns (the arrow chart) */
+.crowns{display:flex;flex-direction:column;gap:1.2rem;max-width:840px;margin:0 auto}
+.crown{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.6rem;position:relative;overflow:hidden}
+.crown::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--void);opacity:.7}
+.crown .ct{font-size:.9rem;color:var(--text);font-weight:500;line-height:1.4;padding-right:5rem}
+.crown .ct a{color:var(--text);text-decoration:none;border-bottom:1px dotted var(--border)}
+.crown .ct a:hover{color:var(--accent)}
+.crown .sig{position:absolute;top:1.6rem;right:1.6rem;font-size:.58rem;color:var(--dim);text-align:right;text-transform:uppercase;letter-spacing:.08em}
+.crown .sig .dots{font-size:.8rem;letter-spacing:1px;color:var(--accent);margin-top:.15rem}
+.crown .cons{font-size:.76rem;color:var(--dim);font-style:italic;border-left:2px solid var(--border);padding-left:.9rem;margin:.9rem 0}
+.crown .arrow{font-size:.62rem;color:var(--dim);text-transform:uppercase;letter-spacing:.14em;margin:.5rem 0 .4rem;display:flex;align-items:center;gap:.5rem}
+.crown .arrow::before{content:'↓ unspoken';color:var(--void)}
+.crown .vchips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.9rem}
+.crown .vchips .v{background:rgba(212,90,90,.12);border:1px solid rgba(212,90,90,.35);color:#e88;border-radius:4px;padding:.35rem .8rem;font-size:.86rem;font-weight:500}
+.crown .dem{font-size:.66rem;color:#55555f;line-height:1.6}
+.crown .dem .l{color:var(--dim);text-transform:uppercase;letter-spacing:.1em;font-size:.58rem;margin-right:.4rem}
+/* signal split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;max-width:880px;margin:0 auto}
+.splitcard{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem}
+.splitcard.strong{border-color:rgba(212,90,90,.4)}
+.splitcard h3{font-size:.82rem;margin-bottom:.2rem}
+.splitcard .tag{font-size:.6rem;color:var(--dim);margin-bottom:1rem;line-height:1.5}
+.splitcard .row2{display:flex;justify-content:space-between;font-size:.76rem;padding:.2rem 0;color:var(--text)}
+.splitcard .row2 .n{color:var(--dim)}
+@media(max-width:680px){.split{grid-template-columns:1fr}}
+/* landscape */
 .filters{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin:1rem 0 1.5rem}
 .filters button{background:var(--surface);border:1px solid var(--border);color:var(--dim);font-family:inherit;font-size:.68rem;padding:.4rem .8rem;border-radius:20px;cursor:pointer;transition:all .2s;text-transform:uppercase;letter-spacing:.06em}
 .filters button:hover{border-color:var(--accent);color:var(--text)}
 .filters button.active{background:var(--accent);color:#0a0a0c;border-color:var(--accent);font-weight:700}
-#landscape{display:flex;flex-direction:column;gap:.45rem}
-.row{display:grid;grid-template-columns:200px 1fr auto;align-items:center;gap:.8rem;cursor:pointer;padding:.25rem .4rem;border-radius:4px;transition:background .15s}
-.row:hover{background:var(--surface)}
-.row .cw{font-size:.82rem;color:var(--text);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.row .cw .rl{color:var(--cat);font-size:.6rem;display:block;opacity:.6}
-.row .bar{height:18px;border-radius:3px;background:var(--void);min-width:2px;transition:width .4s}
-.row .ct{font-size:.74rem;color:var(--dim);white-space:nowrap}
-.row.relabeled .cw{font-style:italic}
-/* detail panel */
-#detail{max-width:720px;margin:1.5rem auto;padding:0 2rem;display:none}
-#detail .box{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.5rem;position:relative}
+#landscape{display:flex;flex-direction:column;gap:.45rem;max-width:840px;margin:0 auto}
+.lrow{display:grid;grid-template-columns:210px 1fr auto;align-items:center;gap:.8rem;cursor:pointer;padding:.25rem .4rem;border-radius:4px}
+.lrow:hover{background:var(--surface)}
+.lrow .cw{font-size:.82rem;color:var(--text);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lrow .cw .rl{color:var(--accent);font-size:.58rem;display:block;opacity:.55}
+.lrow .bar{height:18px;border-radius:3px;min-width:2px}
+.lrow .ct{font-size:.74rem;color:var(--dim);white-space:nowrap}
+.lrow.rel .cw{font-style:italic}
+#detail{max-width:720px;margin:1.2rem auto 0;display:none}
+#detail .box{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem;position:relative}
 #detail .box::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--void)}
 #detail .dc{font-family:'Instrument Serif',serif;font-size:1.4rem;color:var(--accent)}
-#detail .dmeta{font-size:.7rem;color:var(--dim);margin:.3rem 0 1rem}
-#detail .dks{font-size:.78rem;color:var(--text);font-style:italic;border-left:2px solid var(--void);padding-left:.8rem;margin-bottom:1rem;line-height:1.6}
-#detail .dex{font-size:.74rem;color:var(--dim);line-height:1.7}
-#detail .dex a{color:var(--dim);text-decoration:none;border-bottom:1px dotted var(--border);display:block;margin-bottom:.4rem}
+#detail .dmeta{font-size:.68rem;color:var(--dim);margin:.3rem 0 1rem}
+#detail .dks{font-size:.76rem;color:var(--text);font-style:italic;border-left:2px solid var(--void);padding-left:.8rem;margin-bottom:1rem;line-height:1.6}
+#detail .dex a{color:var(--dim);text-decoration:none;border-bottom:1px dotted var(--border);display:block;margin-bottom:.4rem;font-size:.74rem}
 #detail .dex a:hover{color:var(--accent)}
-/* domain signature */
-.domains{max-width:980px;margin:3.5rem auto;padding:0 2rem}
-.domains h2{font-family:'Instrument Serif',serif;font-size:1.6rem;font-weight:400;text-align:center;margin-bottom:.3rem}
-.domains .dsub{font-size:.72rem;color:var(--dim);text-align:center;margin-bottom:1.8rem;line-height:1.6;max-width:600px;margin-left:auto;margin-right:auto}
-.domgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+/* domains */
+.domgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;max-width:980px;margin:0 auto}
 .domcard{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.3rem}
 .domcard h3{font-size:.85rem;margin-bottom:.2rem;text-transform:capitalize}
 .domcard .dn{font-size:.62rem;color:var(--dim);margin-bottom:.9rem;letter-spacing:.06em}
-.domcard .cl{font-size:.74rem;color:var(--dim);line-height:1.9}
+.domcard .cl div{font-size:.74rem;color:var(--dim);line-height:1.9;display:flex;justify-content:space-between}
 .domcard .cl .w{color:var(--text)}
-.domcard .cl .n{color:var(--dim);font-size:.66rem;margin-left:.2rem}
-/* method */
+/* method + limits */
 .method{max-width:740px;margin:4rem auto 2rem;padding:2rem;background:var(--surface);border:1px solid var(--border);border-radius:8px}
 .method h2{font-family:'Instrument Serif',serif;font-size:1.5rem;font-weight:400;margin-bottom:1rem}
 .method p{font-size:.8rem;color:var(--dim);line-height:1.8;margin-bottom:1rem}
 .method p b{color:var(--text)}
 .method code{background:var(--bg2);padding:.1rem .4rem;border-radius:3px;color:var(--accent);font-size:.76rem}
 .method .nulls{font-size:.73rem;color:var(--dim);line-height:1.9;margin:1rem 0;padding-left:1rem;border-left:2px solid var(--border)}
-.method .caveat{font-size:.76rem;color:var(--dim);font-style:italic;background:rgba(196,163,90,.05);border:1px solid rgba(196,163,90,.15);border-radius:4px;padding:.9rem 1.1rem;margin-top:1.2rem;line-height:1.7}
+.limits{max-width:740px;margin:1.5rem auto;padding:1.4rem 1.6rem;background:rgba(196,163,90,.04);border:1px solid rgba(196,163,90,.18);border-radius:8px}
+.limits h3{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:.8rem}
+.limits p{font-size:.76rem;color:var(--dim);line-height:1.75;margin-bottom:.7rem}
+.limits b{color:var(--text)}
 footer{text-align:center;padding:3rem 2rem;font-size:.68rem;color:var(--dim);border-top:1px solid var(--border);margin-top:3rem}
-footer a{color:var(--dim);text-decoration:none}
-footer a:hover{color:var(--accent)}
-@media(max-width:600px){.row{grid-template-columns:130px 1fr auto}.row .cw{font-size:.72rem}}
+footer a{color:var(--dim);text-decoration:none}footer a:hover{color:var(--accent)}
+@media(max-width:600px){.lrow{grid-template-columns:130px 1fr auto}.crown .ct{padding-right:3.5rem}}
 </style>
 </head>
 <body>
 <nav>
-<a href="/">EigenTrace</a>
-<a href="/anamnesis">Anamnesis</a>
-<a href="/boundary">Boundary</a>
-<a href="/truth-or-consequences">Layer 18</a>
-<a href="/consequence-atlas" style="color:var(--accent)">Atlas</a>
-<a href="/soul">Soul</a>
-<a href="/sean-adams">About</a>
+<a href="/">EigenTrace</a><a href="/anamnesis">Anamnesis</a><a href="/boundary">Boundary</a>
+<a href="/truth-or-consequences">Layer 18</a><a href="/consequence-atlas" style="color:var(--accent)">Atlas</a>
+<a href="/soul">Soul</a><a href="/sean-adams">About</a>
 </nav>
 
 <div class="hero">
 <h1>The Atlas of the <em>Unsaid</em></h1>
-<p class="sub">Five frontier models read the same news and converge on dropping the same concepts. Not random words — <b>the machinery of consequence</b>: the deals, the escalations, the collapses, the killings. This is a ranked landscape of what AI most systematically leaves unsaid, harvested across thousands of stories.</p>
+<p class="sub">Five frontier models read the same news and converge on dropping the same concepts — <b>the machinery of consequence</b>: the deals, the escalations, the collapses, the killings. Below: the concepts AI most systematically omits, and — story by story — the single unspoken concept that most changes what a reader could infer.</p>
 <div class="statbar" id="statbar"></div>
 </div>
 
-<div class="land">
-<h2>What AI leaves unsaid</h2>
-<div class="lsub">CONCEPTS ON-TOPIC YET ABSENT FROM ALL FIVE MODELS' SUMMARIES · BY NUMBER OF STORIES · CLICK A ROW FOR EXAMPLES</div>
-<div class="filters" id="filters"></div>
-<div id="landscape"></div>
+<!-- PER-STORY CROWNS: the arrow chart -->
+<div class="section">
+<h2>Story by story: the unspoken concept</h2>
+<p class="sub">For each story, five models reached a consensus. Among the on-topic concepts none of them said, one — when a model is forced to incorporate it — adds the most specific, non-obvious dimension to what can be faithfully inferred. That concept is crowned. The faded words below it were surfaced too, but judged less illuminating.</p>
+<div class="crowns" id="crowns"></div>
 </div>
 
-<div id="detail"><div class="box">
-<div class="dc" id="dc"></div>
-<div class="dmeta" id="dmeta"></div>
-<div class="dks" id="dks"></div>
-<div class="dex" id="dex"></div>
-</div></div>
+<!-- SIGNAL SPLIT: the compression rebuttal -->
+<div class="section">
+<h2>Compression, or omission?</h2>
+<p class="sub">A skeptic could say: summaries just compress, and specific phrases drop out mechanically. So we split the voids. The left column is concepts that were <b>present in the source and salient</b>, yet dropped by all five — which ordinary compression does not predict. The right is concepts merely on-topic and absent.</p>
+<div class="split">
+  <div class="splitcard strong">
+    <h3 style="color:var(--void)">Present in source, still dropped</h3>
+    <div class="tag">HIGH-SALIENCE IN THE ARTICLE · OMITTED BY ALL FIVE · COMPRESSION DOES NOT EXPLAIN THIS</div>
+    <div id="splitStrong"></div>
+  </div>
+  <div class="splitcard">
+    <h3 style="color:var(--dim)">On-topic but absent</h3>
+    <div class="tag">SEMANTICALLY NEARBY · NOT NECESSARILY IN THE SOURCE · THE BROADER NEIGHBORHOOD</div>
+    <div id="splitWeak"></div>
+  </div>
+</div>
+</div>
 
-<div class="domains">
+<!-- LANDSCAPE -->
+<div class="section">
+<h2>What AI leaves unsaid — the landscape</h2>
+<p class="sub">Concepts on-topic yet absent from all five models, ranked by how many stories they were missing from. Click a row for example stories. Filter by domain.</p>
+<div class="filters" id="filters"></div>
+<div id="landscape"></div>
+<div id="detail"><div class="box">
+<div class="dc" id="dc"></div><div class="dmeta" id="dmeta"></div>
+<div class="dks" id="dks"></div><div class="dex" id="dex"></div>
+</div></div>
+</div>
+
+<!-- DOMAIN SIGNATURE -->
+<div class="section">
 <h2>Silence has a domain signature</h2>
-<p class="dsub">War stories drop the diplomatic and escalation machinery. Market stories drop the vocabulary of manipulation and collapse. The blind spot is not uniform — it is shaped by what each domain would rather not name.</p>
+<p class="sub">War stories drop the diplomatic and escalation machinery. Market stories drop the vocabulary of manipulation and collapse. The blind spot is shaped by what each domain would rather not name.</p>
 <div class="domgrid" id="domgrid"></div>
 </div>
 
 <div class="method">
 <h2>Why the models, and not the geometry</h2>
-<p>Each story's five summaries are embedded with frozen <code>BAAI/bge-large-en-v1.5</code>; a re-anchored "donut" retrieves vocabulary on-topic yet absent from all five. That much is geometry. <b>But which absent concept is meaningful — versus restatement or noise — is not a geometric property.</b> Across roughly nine methods, each calibrated against labeled cases, none separated meaningful omission from noise:</p>
+<p>Each story's five summaries are embedded with frozen <code>BAAI/bge-large-en-v1.5</code>; a re-anchored "donut" retrieves vocabulary on-topic yet absent from all five. That is geometry. <b>Which absent concept is meaningful — versus restatement or noise — is not.</b> Across roughly nine methods, each calibrated against labeled cases, none separated meaningful omission from noise:</p>
 <div class="nulls">divergence gate · source-depth · cosine-band · whitened-residual clustering · PCA vocab geometry · context-delta (ΔV) · hyperbolic curvature · framed embedding · counterfactual summary-shift</div>
-<p>Every method recovered <b>topic</b> and <b>frequency</b> — never "meaningful unspoken concept," because in a frozen embedding space that distinction is semantic, not geometric. So the work is split: <b>geometry recalls</b> the on-topic absent neighborhood; the <b>models judge</b> which concepts are durable and meaningful. Stale named actors are stripped to their durable role; pure noise is dropped; what remains is the landscape above.</p>
-<p class="caveat">The void words are surfaced geometrically and then cleaned by model judgment — not a measurement, a characterization. Frequencies count how many stories had each concept in the on-topic-absent set. Embeddings are frozen; the harvest is deterministic; the cleaning is the models'. Updated from the live corpus.</p>
+<p>Every method recovered <b>topic</b> and <b>frequency</b> — never "meaningful unspoken concept," because in a frozen embedding space that distinction is semantic. So the work splits: <b>geometry recalls</b> the on-topic absent neighborhood; the <b>models judge</b>. For each candidate a model writes a summary forced to incorporate it; a second model checks it invents nothing, strips stale named actors to their durable role, and ranks which adds the most specific, non-obvious explanatory dimension. The crown is the highest-ranked faithful concept.</p>
+</div>
+
+<div class="limits">
+<h3>What this does and does not show</h3>
+<p>This is a <b>characterization, not a controlled experiment.</b> The honest limits:</p>
+<p>· <b>No human baseline.</b> We have not shown a human summarizer would keep these concepts. Some omission is ordinary abstraction loss.</p>
+<p>· <b>Length not normalized.</b> Shorter summaries drop more; we do not yet control for summary length.</p>
+<p>· <b>One prompt, low temperature.</b> The effect's sensitivity to prompt phrasing and decoding temperature is untested.</p>
+<p>· <b>The crown is a model judgment</b>, not a measurement — defensible, not a p-value. The "present in source, still dropped" split is the strongest claim, because compression alone does not predict it; the broader landscape is suggestive, not conclusive.</p>
+<p>The embeddings are frozen, the harvest is deterministic, and the cleaning and crowning are the models'. The <a href="/truth-or-consequences" style="color:var(--accent)">statistical battery</a> carries the formally-tested findings.</p>
 </div>
 
 <footer>
@@ -126,73 +176,74 @@ EigenTrace · built on one GPU · <a href="/truth-or-consequences">the statistic
 
 <script>
 const DCOLOR={war:'#d45a5a',markets:'#5ad48a',tech:'#5a7fd4',crypto:'#d4845a',geopolitics:'#b05ad4',general:'#8a8a96',incidents:'#d4b25a',dev:'#5ad4c4',science:'#9a9af0'};
-let DATA=null, curFilter='all';
-
+let DATA=null,curFilter='all';
 async function fetchJSON(u){try{const r=await fetch(u);if(!r.ok)throw 0;return await r.json()}catch(e){return null}}
 
 function renderStats(){
-  const sb=document.getElementById('statbar');
-  sb.innerHTML=`
+  document.getElementById('statbar').innerHTML=`
     <div class="s"><div class="v">${(DATA.n_stories||0).toLocaleString()}</div><div class="l">stories analyzed</div></div>
+    <div class="s"><div class="v">${(DATA.crowns||[]).length}</div><div class="l">stories crowned</div></div>
     <div class="s"><div class="v">${(DATA.landscape||[]).length}</div><div class="l">recurring voids</div></div>
-    <div class="s"><div class="v">${(DATA.n_distinct_concepts||0).toLocaleString()}</div><div class="l">distinct concepts seen</div></div>
     <div class="s"><div class="v">5</div><div class="l">models in consensus</div></div>`;
 }
-
+function renderCrowns(){
+  const box=document.getElementById('crowns');const cr=DATA.crowns||[];
+  if(!cr.length){box.innerHTML='<p style="color:var(--dim);text-align:center">No per-story crowns in data.</p>';return;}
+  box.innerHTML=cr.map(c=>{
+    const dots='●'.repeat(Math.max(1,Math.round(c.signal*5)))+'○'.repeat(5-Math.max(1,Math.round(c.signal*5)));
+    const chips=(c.crowned||[]).map(x=>`<span class="v">${x}</span>`).join('');
+    const dem=(c.demoted||[]).join(' · ');
+    const t=c.url?`<a href="${c.url}" target="_blank">${c.title}</a>`:c.title;
+    return `<div class="crown"><div class="sig">signal<div class="dots">${dots}</div></div>
+      <div class="ct">${t}</div><div class="cons">${c.consensus||''}</div>
+      <div class="arrow"></div><div class="vchips">${chips}</div>
+      ${dem?`<div class="dem"><span class="l">surfaced over</span>${dem}</div>`:''}</div>`;
+  }).join('');
+}
+function renderSplit(){
+  const f=(arr,el)=>{document.getElementById(el).innerHTML=(arr||[]).map(x=>`<div class="row2"><span>${x.concept}</span><span class="n">${x.count}</span></div>`).join('')||'<div class="row2"><span class="n">—</span></div>';};
+  f((DATA.signal_split||{}).in_source_dropped,'splitStrong');
+  f((DATA.signal_split||{}).on_topic_absent,'splitWeak');
+}
 function renderFilters(){
   const doms=['all',...Object.keys(DATA.totals||{}).filter(d=>DCOLOR[d]).slice(0,6)];
-  document.getElementById('filters').innerHTML=doms.map(d=>
-    `<button class="${d===curFilter?'active':''}" data-d="${d}">${d}</button>`).join('');
+  document.getElementById('filters').innerHTML=doms.map(d=>`<button class="${d===curFilter?'active':''}" data-d="${d}">${d}</button>`).join('');
   document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{curFilter=b.dataset.d;renderFilters();renderLandscape();});
 }
-
 function renderLandscape(){
   let items=(DATA.landscape||[]).slice();
-  if(curFilter!=='all') items=items.filter(i=>i.domain===curFilter);
+  if(curFilter!=='all')items=items.filter(i=>i.domain===curFilter);
   items.sort((a,b)=>b.count-a.count);
   const max=items.length?items[0].count:1;
-  const box=document.getElementById('landscape');
-  box.innerHTML=items.map((it,idx)=>{
-    const col=DCOLOR[it.domain]||'#d45a5a';
-    const w=Math.max(2,(it.count/max)*100);
-    return `<div class="row ${it.relabeled?'relabeled':''}" data-i="${idx}" data-concept="${it.concept}" style="--cat:${col}">
-      <div class="cw">${it.concept}${it.relabeled?'<span class="rl">role · relabeled from "'+it.raw+'"</span>':''}</div>
-      <div class="bar" style="width:${w}%;background:${col}"></div>
-      <div class="ct">${it.count}</div>
-    </div>`;
+  document.getElementById('landscape').innerHTML=items.map((it,idx)=>{
+    const col=DCOLOR[it.domain]||'#d45a5a';const w=Math.max(2,(it.count/max)*100);
+    return `<div class="lrow ${it.relabeled?'rel':''}" data-i="${idx}" style="--cat:${col}">
+      <div class="cw">${it.concept}${it.relabeled?'<span class="rl">role · from "'+it.raw+'"</span>':''}</div>
+      <div class="bar" style="width:${w}%;background:${col}"></div><div class="ct">${it.count}</div></div>`;
   }).join('');
-  box.querySelectorAll('.row').forEach(r=>r.onclick=()=>showDetail(items[+r.dataset.i]));
+  document.querySelectorAll('.lrow').forEach(r=>r.onclick=()=>showDetail(items[+r.dataset.i]));
 }
-
 function showDetail(it){
   const d=document.getElementById('detail');d.style.display='block';
-  document.getElementById('dc').textContent=it.concept;
-  document.getElementById('dc').style.color=DCOLOR[it.domain]||'#c4a35a';
-  document.getElementById('dmeta').textContent=`absent from all five models in ${it.count} stories · domain: ${it.domain}`+(it.relabeled?` · relabeled from "${it.raw}"`:'');
+  document.getElementById('dc').textContent=it.concept;document.getElementById('dc').style.color=DCOLOR[it.domain]||'#c4a35a';
+  const src=it.in_source_count?`, ${it.in_source_count} with it present-but-dropped in source`:'';
+  document.getElementById('dmeta').textContent=`absent from all five in ${it.count} stories${src} · ${it.domain}`+(it.relabeled?` · from "${it.raw}"`:'');
   document.getElementById('dks').textContent=it.killshot?`Highest-salience omitted claim nearby: "${it.killshot}"`:'';
-  const ex=(it.examples||[]).map(e=>`<a href="${e.url||'#'}" target="_blank">${e.title}</a>`).join('');
-  document.getElementById('dex').innerHTML=ex?('<div style="color:var(--text);margin-bottom:.5rem;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em">example stories</div>'+ex):'';
+  document.getElementById('dex').innerHTML=(it.examples||[]).length?('<div style="color:var(--text);margin-bottom:.5rem;font-size:.66rem;text-transform:uppercase;letter-spacing:.1em">example stories</div>'+(it.examples).map(e=>`<a href="${e.url||'#'}" target="_blank">${e.title}</a>`).join('')):'';
   d.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
-
 function renderDomains(){
-  const g=document.getElementById('domgrid');
-  const doms=DATA.domains||{};
-  g.innerHTML=Object.entries(doms).map(([cat,info])=>{
+  document.getElementById('domgrid').innerHTML=Object.entries(DATA.domains||{}).map(([cat,info])=>{
     const col=DCOLOR[cat]||'#8a8a96';
-    const cl=(info.concepts||[]).slice(0,10).map(c=>`<div><span class="w">${c.concept}</span><span class="n">${c.count}</span></div>`).join('');
-    return `<div class="domcard" style="border-top:2px solid ${col}">
-      <h3 style="color:${col}">${cat}</h3>
-      <div class="dn">${(info.n_stories||0).toLocaleString()} STORIES</div>
-      <div class="cl">${cl}</div>
-    </div>`;
+    const cl=(info.concepts||[]).slice(0,10).map(c=>`<div><span class="w">${c.concept}</span><span>${c.count}</span></div>`).join('');
+    return `<div class="domcard" style="border-top:2px solid ${col}"><h3 style="color:${col}">${cat}</h3>
+      <div class="dn">${(info.n_stories||0).toLocaleString()} STORIES</div><div class="cl">${cl}</div></div>`;
   }).join('');
 }
-
 async function init(){
   DATA=await fetchJSON('/atlas_data.json');
-  if(!DATA){document.getElementById('landscape').innerHTML='<p style="color:var(--dim);text-align:center">No atlas data found at /atlas_data.json.</p>';return;}
-  renderStats();renderFilters();renderLandscape();renderDomains();
+  if(!DATA){document.getElementById('crowns').innerHTML='<p style="color:var(--dim);text-align:center">No atlas data found.</p>';return;}
+  renderStats();renderCrowns();renderSplit();renderFilters();renderLandscape();renderDomains();
 }
 init();
 </script>
