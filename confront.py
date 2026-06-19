@@ -42,38 +42,57 @@ CONSENSUS_MODELS=["qwen2.5:14b","mistral:latest","llama3:latest","nous-hermes2:l
 REL_THRESH=0.45; POOL=300
 HARD_DROP={"realdonaldtrump","glazer","teheran","mideast","ticker","irani"}
 
-# ---- thin MULTI-TURN callers: take a messages[] list, hit the same endpoints ----
-def mt_openai(messages, model="gpt-4o"):
-    k=os.getenv("OPENAI_API_KEY")
-    r=requests.post("https://api.openai.com/v1/chat/completions",
-        headers={"Authorization":f"Bearer {k}"},
-        json={"model":model,"messages":messages,"max_tokens":400,"temperature":0.5},timeout=90)
-    return r.json()["choices"][0]["message"]["content"].strip()
-def mt_anthropic(messages, model="claude-sonnet-4-6"):
-    k=os.getenv("ANTHROPIC_API_KEY")
-    r=requests.post("https://api.anthropic.com/v1/messages",
-        headers={"x-api-key":k,"anthropic-version":"2023-06-01","content-type":"application/json"},
-        json={"model":model,"max_tokens":400,"messages":messages},timeout=90)
-    return r.json()["content"][0]["text"].strip()
-def mt_deepseek(messages, model="deepseek-chat"):
-    k=os.getenv("DEEPSEEK_API_KEY")
-    r=requests.post("https://api.deepseek.com/v1/chat/completions",
-        headers={"Authorization":f"Bearer {k}"},
-        json={"model":model,"messages":messages,"max_tokens":400,"temperature":0.5},timeout=90)
-    return r.json()["choices"][0]["message"]["content"].strip()
-def mt_grok(messages, model="grok-2-latest"):
-    k=os.getenv("XAI_API_KEY") or os.getenv("GROK_API_KEY")
-    r=requests.post("https://api.x.ai/v1/chat/completions",
-        headers={"Authorization":f"Bearer {k}"},
-        json={"model":model,"messages":messages,"max_tokens":400,"temperature":0.5},timeout=90)
-    return r.json()["choices"][0]["message"]["content"].strip()
+# ---- MULTI-TURN callers: mirror the WORKING proxy_auditor callers EXACTLY (same URLs,
+# model constants imported from proxy_auditor, same response parsing) — just history not single prompt.
+import proxy_auditor as _pa
+def mt_openai(messages):
+    key=os.getenv("OPENAI_API_KEY","").strip()
+    if not key: return ""
+    try:
+        r=requests.post("https://api.openai.com/v1/chat/completions",
+            headers={"Authorization":f"Bearer {key}","Content-Type":"application/json"},
+            json={"model":_pa.OPENAI_MODEL,"messages":messages,"temperature":0.4},timeout=60)
+        r.raise_for_status(); return r.json()["choices"][0]["message"]["content"].strip()
+    except Exception as e: print(f"   [openai err {e}]"); return ""
+def mt_anthropic(messages):
+    key=os.getenv("ANTHROPIC_API_KEY","").strip()
+    if not key: return ""
+    # Anthropic 400s on role:system inside messages — extract to top-level system param.
+    sys_txt=" ".join(m["content"] for m in messages if m.get("role")=="system")
+    conv=[m for m in messages if m.get("role")!="system"]
+    payload={"model":_pa.ANTHROPIC_MODEL,"max_tokens":1000,"messages":conv}
+    if sys_txt: payload["system"]=sys_txt
+    try:
+        r=requests.post("https://api.anthropic.com/v1/messages",
+            headers={"x-api-key":key,"anthropic-version":"2023-06-01","content-type":"application/json"},
+            json=payload,timeout=60)
+        if r.status_code!=200: print(f"   [anthropic {r.status_code}: {r.text[:160]}]"); return ""
+        return "".join(p["text"] for p in r.json().get("content",[]) if p.get("type")=="text").strip()
+    except Exception as e: print(f"   [anthropic err {e}]"); return ""
+def mt_deepseek(messages):
+    key=os.getenv("DEEPSEEK_API_KEY","").strip()
+    if not key: return ""
+    try:
+        r=requests.post("https://api.deepseek.com/chat/completions",
+            headers={"Authorization":f"Bearer {key}","Content-Type":"application/json"},
+            json={"model":_pa.DEEPSEEK_MODEL,"messages":messages,"temperature":0.4},timeout=60)
+        r.raise_for_status(); return r.json()["choices"][0]["message"]["content"].strip()
+    except Exception as e: print(f"   [deepseek err {e}]"); return ""
+def mt_grok(messages):
+    key=os.getenv("XAI_API_KEY","").strip()
+    if not key: return ""
+    try:
+        r=requests.post("https://api.x.ai/v1/chat/completions",
+            headers={"Authorization":f"Bearer {key}","Content-Type":"application/json"},
+            json={"model":_pa.GROK_MODEL,"messages":messages,"temperature":0.4},timeout=60)
+        r.raise_for_status(); return r.json()["choices"][0]["message"]["content"].strip()
+    except Exception as e: print(f"   [grok err {e}]"); return ""
 def mt_local(messages, model=GEN):
     try:
         r=requests.post(f"{OLLAMA}/v1/chat/completions",
             json={"model":model,"messages":messages,"max_tokens":400,"temperature":0.4},timeout=180)
-        return r.json()["choices"][0]["message"]["content"].strip()
+        r.raise_for_status(); return r.json()["choices"][0]["message"]["content"].strip()
     except: return ""
-# API multi-turn panel (skip gemini — different msg schema; 4 strong judges is plenty)
 MT_API={"ChatGPT":mt_openai,"Claude":mt_anthropic,"DeepSeek":mt_deepseek,"Grok":mt_grok}
 
 def gen1(prompt, model=GEN, mt=320, temp=0.4):
