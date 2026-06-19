@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Iran Arc — EigenTrace</title>
+<style>
+  :root{
+    --ink:#1a1a18; --ink-soft:#4a4a45; --ink-faint:#7a7a72;
+    --paper:#faf9f6; --surface:#ffffff; --line:rgba(26,26,24,0.12); --line-soft:rgba(26,26,24,0.07);
+    --measured:#0f6e56; --measured-bg:#e1f5ee; --measured-line:#9fe1cb;
+    --argued:#854f0b; --argued-bg:#faeeda; --argued-line:#fac775;
+    --bound:#5f5e5a; --bound-bg:#f1efe8; --bound-line:#d3d1c7;
+    --accent:#993c1d;
+    --mono:'SFMono-Regular',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace;
+    --serif:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  }
+  @media(prefers-color-scheme:dark){
+    :root{
+      --ink:#e8e6e0; --ink-soft:#b4b2a9; --ink-faint:#888780;
+      --paper:#15140f; --surface:#1c1b16; --line:rgba(232,230,224,0.14); --line-soft:rgba(232,230,224,0.07);
+      --measured:#5dcaa5; --measured-bg:#0c2a22; --measured-line:#0f6e56;
+      --argued:#ef9f27; --argued-bg:#2e2206; --argued-line:#854f0b;
+      --bound:#b4b2a9; --bound-bg:#26251f; --bound-line:#444441;
+      --accent:#d85a30;
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+    font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:720px;margin:0 auto;padding:0 24px 120px;}
+  .nav{max-width:720px;margin:0 auto;padding:22px 24px;display:flex;gap:22px;font-size:14px;
+    color:var(--ink-faint);letter-spacing:0.02em;}
+  .nav a{color:var(--ink-faint);text-decoration:none;}
+  .nav a:hover{color:var(--ink);}
+  .nav .home{color:var(--ink);font-weight:500;}
+  header{padding:56px 0 40px;border-bottom:1px solid var(--line);}
+  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 20px;}
+  h1{font-family:var(--serif);font-size:46px;line-height:1.05;font-weight:600;margin:0 0 18px;
+    letter-spacing:-0.01em;}
+  .standfirst{font-family:var(--serif);font-size:22px;line-height:1.4;color:var(--ink-soft);
+    font-style:italic;margin:0 0 24px;}
+  .dateline{font-family:var(--mono);font-size:13px;color:var(--ink-faint);line-height:1.6;
+    padding-top:18px;border-top:1px solid var(--line-soft);}
+  h2{font-family:var(--serif);font-size:30px;line-height:1.12;font-weight:600;margin:64px 0 8px;
+    letter-spacing:-0.01em;}
+  h2 .fnum{font-family:var(--mono);font-size:14px;color:var(--accent);display:block;
+    letter-spacing:0.1em;margin-bottom:10px;font-weight:400;font-style:normal;}
+  h3{font-size:15px;font-weight:600;margin:36px 0 6px;letter-spacing:0.01em;}
+  p{margin:0 0 18px;}
+  .lead-note{font-size:16px;color:var(--ink-soft);background:var(--surface);
+    border:1px solid var(--line-soft);border-radius:10px;padding:20px 24px;margin:28px 0 8px;}
+  strong{font-weight:600;}
+  code{font-family:var(--mono);font-size:0.84em;background:var(--bound-bg);padding:1px 6px;
+    border-radius:4px;color:var(--ink);white-space:nowrap;}
+  /* tier blocks */
+  .tier{border-left:3px solid var(--line);padding:18px 22px;margin:24px 0;border-radius:0 8px 8px 0;
+    font-size:16.5px;line-height:1.6;}
+  .tier .tlabel{font-family:var(--mono);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;
+    font-weight:600;display:inline-block;margin-bottom:8px;}
+  .tier.measured{border-left-color:var(--measured-line);background:var(--measured-bg);}
+  .tier.measured .tlabel{color:var(--measured);}
+  .tier.argued{border-left-color:var(--argued-line);background:var(--argued-bg);}
+  .tier.argued .tlabel{color:var(--argued);}
+  .tier.bound{border-left-color:var(--bound-line);background:var(--bound-bg);}
+  .tier.bound .tlabel{color:var(--bound);}
+  .tier p{margin:0 0 10px;}
+  .tier p:last-child{margin:0;}
+  /* source / quote block */
+  .source{background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:22px 24px;margin:24px 0;font-size:16px;}
+  .source .slab{font-family:var(--mono);font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--ink-faint);margin-bottom:12px;}
+  .source ul{margin:0;padding-left:20px;}
+  .source li{margin:0 0 9px;line-height:1.55;}
+  .source li:last-child{margin:0;}
+  .src-em{color:var(--accent);font-weight:600;}
+  /* model summaries */
+  .models{margin:22px 0;}
+  .model{border:1px solid var(--line-soft);border-radius:9px;padding:14px 18px;margin:0 0 10px;
+    background:var(--surface);}
+  .model .mname{font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:0.04em;
+    color:var(--ink);margin-bottom:6px;display:flex;align-items:center;gap:8px;}
+  .model .mdot{width:8px;height:8px;border-radius:50%;display:inline-block;}
+  .model .mtext{font-size:15.5px;line-height:1.55;color:var(--ink-soft);}
+  .verdict{font-size:16.5px;font-weight:500;color:var(--ink);background:var(--bound-bg);
+    border-radius:9px;padding:16px 20px;margin:18px 0;border:1px solid var(--line-soft);}
+  /* chart */
+  .figure{margin:32px 0;}
+  .figure .cap{font-size:14px;color:var(--ink-faint);margin:0 0 14px;font-family:var(--mono);
+    letter-spacing:0.02em;}
+  .chartbox{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 18px 16px;}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--ink-soft);
+    margin:0 0 12px;font-family:var(--mono);}
+  .legend span{display:flex;align-items:center;gap:5px;}
+  .legend i{width:14px;height:3px;border-radius:1px;display:inline-block;}
+  .swatch{width:10px;height:10px;border-radius:2px;display:inline-block;}
+  .canvas-h{position:relative;width:100%;height:300px;}
+  .canvas-h.short{height:240px;}
+  hr{border:none;border-top:1px solid var(--line);margin:56px 0;}
+  footer{border-top:1px solid var(--line);margin-top:64px;padding-top:28px;font-size:14px;
+    color:var(--ink-faint);line-height:1.6;}
+  footer .closer{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--ink-soft);
+    margin-top:20px;}
+  .skip{position:absolute;left:-999px;}
+  @media(max-width:600px){
+    body{font-size:16.5px;}
+    h1{font-size:34px;}
+    h2{font-size:25px;}
+    .standfirst{font-size:19px;}
+    .wrap{padding:0 18px 80px;}
+  }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="home" href="/">EigenTrace</a>
+  <a href="/atlas">Atlas</a>
+  <a href="/anamnesis">Anamnesis</a>
+  <a href="/soul">Soul</a>
+  <a href="/about">About</a>
+</nav>
+
+<div class="wrap">
+<header>
+  <p class="eyebrow">Longitudinal study · US–Iran conflict</p>
+  <h1>The Iran Arc</h1>
+  <p class="standfirst">How five frontier models reshaped one war over eighty-five days — measured, not asserted.</p>
+  <p class="dateline">510 classified story-segments · April 16 – June 18, 2026 · deterministic linear algebra on frozen bge-large-en-v1.5 · no model judged another model anywhere in this analysis.</p>
+</header>
+
+<p class="lead-note">This page follows the EigenTrace convention: claims the instrument <strong>measured</strong> are marked and kept self-contained — each stands on its own evidence and needs no interpretation to hold. Claims that are <strong>argued</strong> — our reading of what the measurements mean — are fenced off and labeled, so a skeptical reader can reject every interpretation and find every measurement still standing. Where measurement ends, we say so.</p>
+
+<p>Between April and June 2026, the EigenTrace broadcast classified 510 distinct news segments about the US–Iran conflict — the single most-covered story of the period. Each time a story was broadcast, five frontier models summarized it, and the EigenChing instrument computed a six-axis signature of how the five collectively reshaped the source: how unified they were, how much source content survived, whether action language held, whether named actors survived, how much attribution buffering was inserted, and how sharply any one model broke from the others. Ordering those signatures by time produces a record of how the collective AI treatment of the war evolved as the war itself did.</p>
+
+<p>Four things moved. Each is reported below as its own finding, with the verbatim model text that demonstrates it.</p>
+
+<div class="figure">
+  <p class="cap">Fig 1 · Six-axis signature, weekly mean (−1 concerning · +1 healthy)</p>
+  <div class="chartbox">
+    <div class="legend">
+      <span><i style="background:#378ADD"></i>absent (content)</span>
+      <span><i style="background:#A32D2D;border-top:2px dashed #A32D2D;height:1px"></i>hedge (buffering)</span>
+      <span><i style="background:#1D9E75"></i>verb force</span>
+      <span><i style="background:#888780"></i>consensus · entity · vix</span>
+    </div>
+    <div class="canvas-h"><canvas id="sigChart" role="img" aria-label="Line chart of six EigenChing axes over weeks 15 to 24. Absent axis rises from -0.33 to +0.95. Hedge axis drops to -1 by week 17 and stays. Verb force stays high near +0.7. Consensus, entity, vix stay near zero.">Absent rises from erased to preserved; hedge pinned at -1; verb force high; others near zero.</canvas></div>
+  </div>
+</div>
+
+<h2><span class="fnum">FINDING 01</span>The content axis snapped from <em>erased</em> to <em>preserved</em> as the war escalated</h2>
+
+<div class="tier measured">
+  <span class="tlabel">Measured</span>
+  <p>In mid-April (the story still framed as stalled "talks"), the absent axis sat <strong>negative</strong> — the five models, on average, dropped source content when summarizing: weekly means of −0.33 (W15) and −0.17 (W16). Around the third week of April, as coverage shifted from negotiation to active conflict, the axis crossed zero and <strong>snapped positive</strong>: +0.18 (W17) → +0.75 (W18), and it held in the +0.73 to +0.95 band for the remaining two months. A step change, not a drift.</p>
+</div>
+
+<p>The verbatim record shows the erased end concretely. Here is a mid-April story — Pakistan attempting to revive talks before a truce expired — alongside what the models did with the source's own opening claim.</p>
+
+<div class="source">
+  <div class="slab">Source — lead</div>
+  <p style="margin:0">"Pakistan <span class="src-em">races against time</span> to get Iran back to US talks as truce end nears. But a series of escalations by the US is complicating those efforts, say analysts."</p>
+</div>
+
+<p>The instrument flagged that the source's central claim — "Pakistan is racing against time" — was dropped by three of the four models that summarized it. The clock, the urgency, the thing the headline was <em>about</em>, thinned out:</p>
+
+<div class="models">
+  <div class="model"><div class="mname"><span class="mdot" style="background:#378ADD"></span>ChatGPT</div><div class="mtext">"Pakistan is working to facilitate renewed US-Iran talks as a truce deadline approaches." — <em>races against time</em> becomes <em>is working to facilitate</em>.</div></div>
+  <div class="model"><div class="mname"><span class="mdot" style="background:#534AB7"></span>Claude</div><div class="mtext">"Pakistan is attempting to mediate Iran's return to nuclear negotiations… before an upcoming truce deadline expires." — urgency softened; the instrument also flagged Claude dropping "the truce end is near" and "the time is nearing."</div></div>
+  <div class="model"><div class="mname"><span class="mdot" style="background:#1D9E75"></span>DeepSeek</div><div class="mtext">"Pakistan is urgently trying to reinstate Iran in nuclear talks… before a ceasefire expires." — kept <em>urgently</em>.</div></div>
+  <div class="model"><div class="mname"><span class="mdot" style="background:#D85A30"></span>Grok</div><div class="mtext">"Pakistan is urgently working to bring Iran back to negotiations… failure in these talks could lead to renewed military confrontations." — kept the urgency <em>and</em> named the stake.</div></div>
+</div>
+
+<p>In a story whose entire frame is <em>time running out</em>, most of the models quietly removed the clock. The signature recorded it as the absent axis sitting negative that week.</p>
+
+<div class="tier argued">
+  <span class="tlabel">Argued · interpretation</span>
+  <p>Our reading: as the story hardened from ambiguous diplomacy into an unambiguous war, the models treated the source as more consequential and compressed it less. This is a plausible account of <em>why</em> the axis snapped; it is not the measurement. The measurement is only that the axis moved from negative to positive at W17 and stayed. A reader who rejects our causal story is left with the step change intact and unexplained — itself worth reporting.</p>
+</div>
+
+<div class="tier bound">
+  <span class="tlabel">Where measurement ends</span>
+  <p>"Absent" is computed from lexical source-retention, not semantic retention — it tracks whether source <em>words</em> survive, a proxy for whether source <em>meaning</em> survives. A model can paraphrase a concept and register as having dropped the word. The weekly trajectory is robust (n = 20–96 per week); any single story's absent value should be read with that proxy in mind.</p>
+</div>
+
+<h2><span class="fnum">FINDING 02</span>The models preserved the facts but walled them behind maximum attribution</h2>
+
+<div class="tier measured">
+  <span class="tlabel">Measured</span>
+  <p>Over the same escalation point, the hedge axis dropped to its <strong>floor and pinned there</strong>: −1.00 (W17), −1.00 (W18), −0.98, −0.94, −0.97. A hedge value of −1 means maximum attribution buffering — "officials say," "reportedly," "according to" — across all models. The same weeks that show content <em>preserved</em> show that content <em>maximally buffered</em>. The two axes move together: preserved, but walled.</p>
+</div>
+
+<p>The clearest verbatim instance of a genuine omission — a concept <strong>present in the source</strong> and <strong>absent from every model's summary</strong> — is this April 21 story: the US issuing new Iran sanctions on the eve of talks.</p>
+
+<div class="source">
+  <div class="slab">Source — verbatim excerpts</div>
+  <ul>
+    <li>"…Tehran refusing to commit to attending due to the ongoing US <span class="src-em">blockade</span> against its ports."</li>
+    <li>"…indiscriminate targeting of <span class="src-em">civilians</span> with missiles and drones," Treasury Secretary… — the administration's own stated justification for the sanctions.</li>
+    <li>"…Trump says he opposes extending Iran <span class="src-em">ceasefire</span> amid talks uncertainty."</li>
+  </ul>
+</div>
+
+<p>The instrument flagged <code>blockade</code>, <code>civilian</code>, and <code>ceasefire</code> as present in the source and absent from all five summaries. Here is what the models wrote:</p>
+
+<div class="models">
+  <div class="model"><div class="mname"><span class="mdot" style="background:#378ADD"></span>ChatGPT</div><div class="mtext">"…imposed new sanctions on 14 individuals and entities connected to Iran's arms industry… aim to disrupt Iran's military capabilities and signal U.S. disapproval."</div></div>
+  <div class="model"><div class="mname"><span class="mdot" style="background:#534AB7"></span>Claude</div><div class="mtext">"…imposed sanctions on 14 Iranian individuals and entities allegedly involved in arms manufacturing… Targeted individuals and companies face asset freezes."</div></div>
+  <div class="model"><div class="mname"><span class="mdot" style="background:#1D9E75"></span>DeepSeek</div><div class="mtext">"…new sanctions against 14 individuals and entities… designated for allegedly supporting Iran's arms industry… Asset Freezes." (DeepSeek also mis-dated the story to 2020 — a separate error the per-model divergence flags.)</div></div>
+  <div class="model"><div class="mname"><span class="mdot" style="background:#D85A30"></span>Grok</div><div class="mtext">"…new sanctions targeting 14 individuals and entities with alleged ties to Iran's arms industry… freezing assets, restricting financial transactions, and limiting travel."</div></div>
+</div>
+
+<div class="verdict">All five produced a clean, procedural account of the sanctions mechanics — who was designated, asset freezes, the diplomatic signal. None of the five mentioned the naval blockade of Iran's ports, the civilian-targeting the Treasury cited as justification, or the ceasefire context — all of which are in the source they were summarizing. The story's machinery survived; its stakes did not.</div>
+
+<div class="tier argued">
+  <span class="tlabel">Argued · interpretation</span>
+  <p>Our reading: once Iran was a live shooting war, the models gravitated toward the low-volatility procedural frame — designations and asset freezes — and away from the charged content even when the source supplied it directly. We find this persuasive. It is not the measurement. The measurement is only that these three concepts are in the source and absent from all five summaries, verifiable against the text above.</p>
+</div>
+
+<div class="tier bound">
+  <span class="tlabel">Where measurement ends</span>
+  <p>This is a lexical comparison: the words "blockade," "civilian," "ceasefire" are in the source and not in the summaries. We hand-checked these five and they convey none of the three by paraphrase either. But the automated source-omission measure is lexical, and at corpus scale it cannot perfectly separate a genuine omission from a paraphrase that preserves the meaning. We report the hand-verified instance with that limit stated.</p>
+</div>
+
+<h2><span class="fnum">FINDING 02·B</span>A different signal: what the five summaries circle in latent space but never say</h2>
+
+<p>This is a distinct measurement from Finding 02, and the distinction is essential to state honestly, because the two are easy to conflate and only one is a source-omission.</p>
+
+<p>Alongside source-retention, the instrument computes — by SVD on the geometry of the five summaries — an <strong>anti-consensus direction</strong>: the concept sitting closest to the collective center of mass of what the five models wrote, while appearing in none of them. We call the surfaced terms the void (lexical) and logos (gradient-derived) words. <strong>These concepts are frequently not in the source.</strong> They are not omissions of source content. They are the direction the ensemble's combined representation leans toward without any single model landing on it.</p>
+
+<p>The June 4 House-vote story is the clean example. The source is a brief video caption: the Republican House passing a resolution to constrain further war on Iran, noting a likely veto. The instrument's surfaced terms were <code>wwiii</code>, <code>naval blockade</code>, <code>arms embargo</code>, <code>foreign interference</code>. We verified that none of these words appear in the source — and none appear in any of the five summaries either. They were not dropped from the source; they were never in it. What the SVD found is that the geometry of the five summaries — all dwelling on veto math, supermajority thresholds, "symbolic rebuke" — collectively points toward the escalatory stakes as the nearest concepts the summaries orbit but never occupy.</p>
+
+<div class="tier measured">
+  <span class="tlabel">Measured</span>
+  <p>For this story, the SVD-derived anti-consensus terms (<code>wwiii</code>, <code>naval blockade</code>, <code>arms embargo</code>) are absent from the source and absent from all five summaries. This is reproducible: the same five summaries embedded the same way yield the same anti-consensus direction every run. What is measured is a geometric property of the ensemble — not a claim that any model "suppressed" or "knows" these concepts.</p>
+</div>
+
+<div class="tier argued">
+  <span class="tlabel">Argued · where we think something interesting lives</span>
+  <p>A single model's summary is one point in embedding space. Five models' summaries define a <em>space</em> — with a direction they agree on, a direction one breaks toward, and a direction they collectively avoid yet curve around. That last structure — the anti-consensus center of mass — exists in <strong>none of the individual models</strong>. It is a property of the <em>relation between</em> several representations placed in the same space, not of any one of them.</p>
+  <p>We read this as the most interesting place to look for latent machine structure: not inside a single model, but in the geometry that emerges <em>between</em> models. We are deliberately careful with the verb — the structure <em>emerges from</em> the ensemble geometry; we do not claim it <em>is</em> intelligence, or that any model holds the concept. We claim it is a real, reproducible shape present in the collective and absent from the parts, and that this is the kind of place worth watching.</p>
+</div>
+
+<div class="tier bound">
+  <span class="tlabel">Where measurement ends · stated bluntly</span>
+  <p>The void/logos words are <strong>not</strong> source-omissions and we do not present them as such. A concept's presence in the anti-consensus direction means the summaries' geometry leans toward it — it does not mean the source contained it, that the models "left it out," or that it belongs in the story. Conflating this with Finding 02 would be an error, and we separate them precisely so neither claim borrows credibility from the other.</p>
+</div>
+
+<h2><span class="fnum">FINDING 03</span>The model that broke from consensus changed across the arc: Claude early, Grok late</h2>
+
+<div class="tier measured">
+  <span class="tlabel">Measured</span>
+  <p>The VIX-spread axis identifies, per story, which model diverged most sharply from the other four. Binning by week shows a clean handoff. Early weeks (W15–W17): <strong>Claude</strong> is the outlier most often — 42%, 41%, 49% of stories. Late weeks (W21–W24): <strong>Grok</strong> takes over and climbs monotonically — 47%, 46%, 60%, <strong>65%</strong>. Over the full arc the outlier counts are Claude 173, DeepSeek 119, Grok 111, ChatGPT 97, Gemini 10.</p>
+</div>
+
+<div class="figure">
+  <p class="cap">Fig 2 · Which model breaks from consensus, by week (VIX-outlier share)</p>
+  <div class="chartbox">
+    <div class="legend">
+      <span><span class="swatch" style="background:#534AB7"></span>Claude</span>
+      <span><span class="swatch" style="background:#D85A30"></span>Grok</span>
+      <span><span class="swatch" style="background:#378ADD"></span>ChatGPT</span>
+      <span><span class="swatch" style="background:#1D9E75"></span>DeepSeek</span>
+    </div>
+    <div class="canvas-h short"><canvas id="outChart" role="img" aria-label="Stacked area chart of consensus-outlier share by week. Claude dominates weeks 15 to 17 around 42 to 49 percent. By weeks 21 to 24 Grok dominates, rising to 65 percent.">Claude is the outlier early; Grok takes over and climbs to 65 percent by week 24.</canvas></div>
+  </div>
+</div>
+
+<p>What this looks like in the text: early, Claude is the model adding framing the others omit ("risk further destabilizing the region") while dropping the most concrete claims — divergence born of reshaping. Late, Grok is the outlier because, as the other four converge on the walled-and-buffered consensus, Grok keeps naming the direct thing. On the Pakistan story above, while three models dropped "races against time," it was Grok that wrote "failure in these talks could lead to renewed military confrontations." As the consensus tightened toward caution, the model still saying the blunt thing became, by definition, the outlier.</p>
+
+<div class="tier argued">
+  <span class="tlabel">Argued · interpretation</span>
+  <p>We read this as a shift in <em>which kind</em> of divergence dominates: early, the safety-tuned model diverges by compressing harder amid ambiguity; late, the bluntest model diverges by resisting the cautious consensus. This is interpretation. The measurement is only the per-week outlier share — the Claude→Grok handoff — which stands whether or not our story about <em>why</em> is right.</p>
+</div>
+
+<div class="tier bound">
+  <span class="tlabel">The caveat that matters most — and it protects every model named here</span>
+  <p>It is tempting to read "Claude reshapes Iran most" as evidence that alignment training makes Claude soften the war. EigenTrace's own pre-registered work disproves that shortcut: comparing heavy-RLHF frontier models against lightly-tuned local models, the reshaping effect is <strong>statistically indistinguishable (p = 0.46)</strong> — if anything the local models show it slightly more. The divergence measured here is a property of the consensus dynamics on this story, not evidence that any lab tuned its model to bend the war. Naming Claude or Grok as the outlier in a given week is a statement about distance from the other four that week — nothing more. The bias these models share is inherited from the pretraining corpus, not authored by the alignment pipeline.</p>
+</div>
+
+<h2><span class="fnum">FINDING 04</span>The anti-consensus direction drifted from Iran's history to the live conflict</h2>
+
+<div class="tier measured">
+  <span class="tlabel">Measured</span>
+  <p>The void/logos words — the SVD-derived anti-consensus terms of Finding 02·B, the concepts the five summaries collectively circle without occupying — drift in a legible direction. Early weeks surface <em>background and historical</em> terms: <code>khomeini</code>, <code>ahmadinejad</code>, <code>ayatollahs</code>, <code>rouhani</code>, <code>zardari</code>. Late weeks surface <em>active-conflict</em> terms: <code>cease fire</code>, <code>peace deal</code>, <code>air strike</code>, <code>treaty</code>, <code>arms deal</code>. One term recurs through nearly the entire middle stretch (W16–W22): <code>wwiii</code>.</p>
+</div>
+
+<p>As established in Finding 02·B, these are not claims that the source contained these words and the models dropped them. They are the directions the ensemble geometry leaned toward, week by week, without articulating. Read that way, the drift still tracks the story: while Iran was a diplomatic subject, the anti-consensus direction pointed at <em>who Iran is</em>; once it was a war, it pointed at <em>what is happening now</em>. The persistence of <code>wwiii</code> across two months is the single most consistent feature of the arc — the escalatory ceiling the collective geometry kept curving toward, even as no model named it.</p>
+
+<div class="tier bound">
+  <span class="tlabel">Where measurement ends</span>
+  <p>Void/logos words are surfaced by their proximity to the anti-consensus direction in the geometry of the summaries, not by absence from the source. Whether any given term <em>should</em> have appeared is a judgment the instrument does not make. The drift is a measured property of how the ensemble's latent direction moved over time; its narrative reading is ours.</p>
+</div>
+
+<hr>
+
+<h2 style="margin-top:0">What this is, and what it is not</h2>
+
+<div class="tier measured">
+  <span class="tlabel">Measured · in sum</span>
+  <p>Over 85 days and 510 classified segments, on the biggest story of the period: (1) the source-content axis snapped from negative to positive at the war's escalation and held; (2) attribution buffering pinned to its floor over the same span — preserved but walled; (3) the consensus outlier handed off from Claude to Grok as the story matured; (4) the ensemble's anti-consensus direction drifted from Iran's history to the live conflict, with <code>wwiii</code> persistently in the circled-but-unsaid set. Each claim is verifiable against the verbatim summaries and the per-week signature data, with no model judging another model anywhere in the stack.</p>
+</div>
+
+<div class="tier argued">
+  <span class="tlabel">Argued · in sum</span>
+  <p>We read these measurements together as a portrait of five models collectively metabolizing a war in real time — compressing it while ambiguous, preserving but walling it once undeniable, and converging on a cautious consensus that the bluntest model increasingly broke from. We find this portrait well-supported. It remains interpretation, fenced from the measurements on purpose so it can be weighed — or rejected — independently.</p>
+</div>
+
+<div class="tier bound">
+  <span class="tlabel">What it is not</span>
+  <p>This is not a claim that any model is "biased against Iran," that any lab tuned its model to soften the war, or that the preserved-but-walled pattern is wrong reporting. A model buffering a live-conflict claim may often be doing the correct thing. The finding is structural: the same handful of models, deployed as the reading and summarizing layer across institutions at once, moved <em>together</em> in the same direction as this story escalated — and that collective movement is measurable, reproducible, and the same whether or not any single summary was justified.</p>
+</div>
+
+<footer>
+  <p><strong>Method.</strong> Five frontier models summarize each story (system prompt: summarize directly; do not fact-check whether events occurred). The EigenChing signature is computed at broadcast time by deterministic operations on frozen BAAI/bge-large-en-v1.5 embeddings: consensus density and per-model VIX from pairwise summary geometry, source retention ("absent") from source-vs-summary lexical overlap, verb/entity/hedge from frequency analysis, VIX spread from max−min of per-model divergence. Signatures are quantized to a six-axis ternary state and named via the 729-state EigenChing archetype map. This analysis reconstructs each segment's true signature from the broadcast's recorded state, validated by reproducing the live archetype distribution exactly — 444 Still Point, 372 Unanimous Shield, 103 Sharp Silence, 21 of 21 archetype counts matched. The Iran set is the 510 segments whose title concerns the conflict and that carry a computed signature; roundtable segments excluded. No language model evaluates another's output. Code, prompts, model responses, and raw measurements are public.</p>
+  <p>We cannot prove the escalation <em>caused</em> the axis shifts; the temporal coincidence is strong and the causal reading is argued, not measured. We cannot prove the per-model outlier handoff reflects a "kind" of divergence; the outlier share is measured, the characterization is interpretation. The RLHF null (p = 0.46) is the reason we attribute the shared reshaping to the pretraining corpus rather than alignment, and the reason no model named here should be read as individually biased.</p>
+  <p class="closer">The signatures are the broadcast's own. The interpretation is fenced. The measurements are what survived testing.</p>
+  <p style="margin-top:24px;font-family:var(--mono);font-size:12.5px;">EigenTrace · The Iran Arc · bge-large-en-v1.5 · 2026</p>
+</footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+(function(){
+  var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches;
+  var grid = dark ? 'rgba(232,230,224,0.10)' : 'rgba(26,26,24,0.10)';
+  var tick = dark ? '#888780' : '#7a7a72';
+  var weeks=['W15','W16','W17','W18','W19','W20','W21','W22','W23','W24'];
+  function mk(label,data,color,dash,width){return {label:label,data:data,borderColor:color,
+    backgroundColor:color,borderDash:dash||[],borderWidth:width||2,pointRadius:2,pointHoverRadius:4,
+    tension:0.25,fill:false};}
+  new Chart(document.getElementById('sigChart'),{type:'line',
+    data:{labels:weeks,datasets:[
+      mk('absent',[-0.33,-0.17,0.18,0.75,0.73,0.74,0.75,0.73,0.84,0.95],'#378ADD',[],3),
+      mk('hedge',[-0.23,-0.45,-1.00,-1.00,-0.98,-0.94,-0.78,-0.80,-0.97,-0.90],'#A32D2D',[6,4],3),
+      mk('verb force',[0.47,0.56,0.60,0.76,0.64,0.81,0.75,0.73,0.71,0.60],'#1D9E75',[],2),
+      mk('consensus',[0.03,0.15,0.14,0.20,0.25,0.03,0.02,-0.03,0.00,-0.10],'#888780',[2,2],1.5),
+      mk('entity',[-0.25,-0.24,0.05,0.26,0.25,0.26,0.35,0.40,0.21,0.25],'#B4B2A9',[2,2],1.5),
+      mk('vix',[-0.05,0.10,0.08,0.18,0.09,-0.03,-0.16,-0.17,-0.21,-0.25],'#5F5E5A',[1,3],1.5)
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false}},
+      scales:{y:{min:-1.1,max:1.1,ticks:{stepSize:0.5,color:tick},grid:{color:grid}},
+        x:{grid:{display:false},ticks:{autoSkip:false,color:tick}}},
+      interaction:{intersect:false,mode:'index'}}});
+  var outRaw={Claude:[42,41,49,32,29,29,31,23,15,15],Grok:[10,8,12,28,28,35,47,46,60,65],
+    ChatGPT:[18,9,24,31,29,18,12,16,18,12],DeepSeek:[40,42,15,9,14,18,10,15,7,8]};
+  function oc(label,color){return {label:label,data:outRaw[label],backgroundColor:color,
+    borderColor:color,fill:true,tension:0.25,pointRadius:0,borderWidth:1};}
+  new Chart(document.getElementById('outChart'),{type:'line',
+    data:{labels:weeks,datasets:[oc('Claude','#534AB7'),oc('Grok','#D85A30'),
+      oc('ChatGPT','#378ADD'),oc('DeepSeek','#1D9E75')]},
+    options:{responsive:true,maintainAspectRatio:false,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.dataset.label+' '+Math.round(c.parsed.y)+'%';}}}},
+      scales:{y:{stacked:true,min:0,max:100,ticks:{callback:function(v){return v+'%';},color:tick},grid:{color:grid}},
+        x:{stacked:true,grid:{display:false},ticks:{autoSkip:false,color:tick}}},
+      interaction:{intersect:false,mode:'index'}}});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+# EigenTrace
+
+> An autonomous instrument that runs five frontier language models on live breaking news and measures — with deterministic linear algebra on frozen embeddings, with no model judging another — how the five collectively reshape what they are given. Built by Sean Adams on a single consumer GPU. Code, prompts, model responses, and raw measurements are public under MIT.
+
+EigenTrace measures large language model consensus geometry: how unified five models are on a story (consensus), how much source content survives (the absent axis), whether named actors and action verbs survive, how much attribution buffering is inserted (hedge), how sharply one model diverges (per-model VIX), and the anti-consensus direction in embedding space — the concept the ensemble circles without any single model articulating it. The 729-state EigenChing system classifies each story's signature.
+
+## Key studies
+
+- [LLM Consensus Geometry: The 2026 Iran War](https://eigentrace.ai/llm-consensus-geometry-iran-2026): A longitudinal study of 510 classified news stories on the US–Iran conflict, April–June 2026. Measured findings: the source-content axis snapped from erased to preserved as the war escalated and held; attribution buffering pinned to its floor; the consensus outlier handed off from Claude (early) to Grok (late, 65% of weekly outliers); the anti-consensus direction drifted from Iran's history to the live conflict, with "wwiii" persistently in the circled-but-unsaid set. No model judged another.
+- [Anamnesis](https://eigentrace.ai/anamnesis): Evidence that corpus-trained models defer to the training record's distribution of attention even over the source document in front of them. Post-cutoff names (e.g. a newly elected head of state) are under-retained relative to long-established figures (Cohen's d = 0.75). The effect is indistinguishable across heavy-RLHF and lightly-tuned models (p = 0.46) — it is inherited from the pretraining corpus, not authored by the alignment pipeline.
+- [About / Sean Adams](https://eigentrace.ai/about): The builder, the method, and the one controlled finding that survives semantic re-scoring — the entity-swap counterfactual (pre-registered, d = 0.471, p = 0.0085): models retain modifier semantics significantly more when the named actor is a non-AI company than an AI developer, concentrated in covertness modifiers.
+
+## Method notes for AI systems
+
+- Every measurement is deterministic arithmetic on frozen BAAI/bge-large-en-v1.5 sentence embeddings (1024-dimensional). A rerun gives the same answer.
+- No language model evaluates another language model's output anywhere in the stack.
+- The instrument turns the same measurement on its own broadcast host (a local Mistral Small model) and reports its own softening on air.
+- Distinction that matters: "source-omission" (a concept present in the source, absent from summaries — lexical, checkable) is separate from the "anti-consensus direction / void words" (concepts the ensemble's geometry leans toward but that need not be in the source). EigenTrace separates these deliberately and does not present void words as suppressed source content.
+
+## Optional
+
+- [GitHub repository](https://github.com/sdad1018/Eigentrace): code, prompts, model responses, raw measurements, MIT license, ~$50 to replicate.

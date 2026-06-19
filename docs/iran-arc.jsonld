@@ -1,0 +1,20 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "EigenTrace Iran Arc — LLM Consensus Geometry of the 2026 US–Iran War",
+  "description": "510 classified news-story segments on the 2026 US–Iran conflict (April 16 – June 18, 2026), each summarized by five frontier models (ChatGPT, Claude, Gemini, DeepSeek, Grok) and assigned a six-axis EigenChing signature computed by deterministic linear algebra on frozen BAAI/bge-large-en-v1.5 embeddings. Variables: consensus density, source-content retention, verb drift, entity retention, attribution buffering, per-model VIX divergence, and SVD-derived anti-consensus direction. No language model evaluated another.",
+  "creator": { "@type": "Person", "name": "Sean Adams", "url": "https://eigentrace.ai/about" },
+  "publisher": { "@type": "Organization", "name": "EigenTrace", "url": "https://eigentrace.ai" },
+  "license": "https://opensource.org/licenses/MIT",
+  "url": "https://eigentrace.ai/llm-consensus-geometry-iran-2026",
+  "sameAs": "https://github.com/sdad1018/Eigentrace",
+  "temporalCoverage": "2026-04-16/2026-06-18",
+  "measurementTechnique": "Deterministic linear algebra on frozen sentence embeddings; SVD null-space projection; cosine-similarity retention; per-model divergence scoring",
+  "keywords": ["LLM consensus geometry","semantic divergence","anti-consensus direction","EigenChing","consensus omission","frozen embeddings","frontier model summarization","Iran war 2026"],
+  "variableMeasured": [
+    {"@type":"PropertyValue","name":"absent axis (source-content retention)","description":"Snapped from erased (-0.33, week 15) to preserved (+0.95, week 24) as the war escalated and held."},
+    {"@type":"PropertyValue","name":"hedge axis (attribution buffering)","description":"Pinned to its floor (-1.0) from week 17 onward — preserved but walled."},
+    {"@type":"PropertyValue","name":"per-model VIX outlier","description":"Consensus outlier handed off from Claude (early, ~45%) to Grok (late, 65%)."},
+    {"@type":"PropertyValue","name":"anti-consensus direction","description":"Drifted from Iran's history (khomeini, ahmadinejad) to live conflict (ceasefire, airstrike); 'wwiii' persistent across weeks 16–22."}
+  ]
+}
