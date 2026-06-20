@@ -1,251 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Consequence Atlas — EigenTrace</title>
-<meta name="description" content="Five frontier AI models, reading the same news, converge on omitting the same concepts: the machinery of consequence. A landscape of what AI leaves unsaid — and, story by story, the single unspoken concept that most changes what can be inferred.">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Atlas of the Unsaid — What Five Frontier Models Omit | EigenTrace</title>
+<meta name="description" content="Across 1,659 real news stories, five frontier models converge on omitting the same concepts — and the blind spot has a domain signature. A random-word baseline validates the absent concepts as real and story-specific (p<0.00001, two embeddings). Named people collapsed to durable roles by 5-model consensus. Deterministic geometry on frozen embeddings; no model judges another.">
+<link rel="canonical" href="https://eigentrace.ai/consequence-atlas">
+<meta name="author" content="Sean Adams">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Atlas of the Unsaid — What Five Frontier Models Omit">
+<meta property="og:description" content="Five models, the same news, the same dropped concepts — stakes, actors, and specifics, by domain. Validated against a random-word baseline.">
+<meta property="og:url" content="https://eigentrace.ai/consequence-atlas">
+<meta property="og:site_name" content="EigenTrace">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Atlas of the Unsaid — EigenTrace">
+<meta name="twitter:description" content="What five frontier models leave unsaid about the news, measured and validated.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ScholarlyArticle",
+"headline":"The Atlas of the Unsaid: What Five Frontier Models Omit",
+"author":{"@type":"Person","name":"Sean Adams","url":"https://eigentrace.ai/about","affiliation":{"@type":"Organization","name":"EigenTrace"}},
+"publisher":{"@type":"Organization","name":"EigenTrace","url":"https://eigentrace.ai"},
+"datePublished":"2026-06-19","dateModified":"2026-06-19","url":"https://eigentrace.ai/consequence-atlas",
+"mainEntityOfPage":{"@type":"WebPage","@id":"https://eigentrace.ai/consequence-atlas"},"inLanguage":"en",
+"abstract":"Across 1,659 real news stories, five frontier models converge on omitting the same topically-central concepts, and the omitted vocabulary differs by story domain. A random-word baseline establishes the absent concepts are closer to each story's content than chance words (Wilcoxon p<0.00001) in two embedding models. Named entities are collapsed to durable roles by five-model consensus relabeling, and omissions are sorted geometrically into stakes, specifics, and actors. No language model evaluates another's output.",
+"isBasedOn":{"@type":"Dataset","name":"EigenTrace Atlas of the Unsaid","creator":{"@type":"Person","name":"Sean Adams"},"license":"https://opensource.org/licenses/MIT","measurementTechnique":"Per-story void derivation on frozen BAAI/bge-large-en-v1.5; 5-model consensus relabeling via centroid density; geometric stakes/specifics/actor split","url":"https://github.com/sdad1018/Eigentrace"},
+"isAccessibleForFree":true}
+</script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Instrument+Serif:ital@0;1&display=swap');
-:root{--bg:#0a0a0c;--bg2:#111115;--surface:#18181d;--border:#2a2a32;--text:#e8e6e3;--dim:#6b6b78;--accent:#c4a35a;--void:#d45a5a}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'JetBrains Mono',monospace;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh;overflow-x:hidden}
-nav{padding:1.2rem 2rem;font-size:.8rem;border-bottom:1px solid var(--border)}
-nav a{color:var(--dim);text-decoration:none;margin-right:1.8rem;transition:color .2s}
-nav a:hover{color:var(--accent)}
-.hero{text-align:center;padding:4rem 2rem 1.5rem;position:relative;max-width:920px;margin:0 auto}
-.hero::after{content:'';position:absolute;bottom:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
-.hero h1{font-family:'Instrument Serif',serif;font-size:clamp(2rem,5vw,3.4rem);font-weight:400;margin-bottom:.7rem;letter-spacing:-.02em}
-.hero h1 em{font-style:italic;color:var(--accent)}
-.hero .sub{color:var(--dim);font-size:.82rem;max-width:700px;margin:0 auto;line-height:1.75}
-.hero .sub b{color:var(--text);font-weight:500}
-.statbar{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;max-width:760px;margin:2rem auto 0;padding:0 2rem}
-.statbar .s{flex:1;min-width:110px;text-align:center;padding:1rem;background:var(--surface);border:1px solid var(--border);border-radius:6px}
-.statbar .s .v{font-family:'Instrument Serif',serif;font-size:1.7rem;color:var(--accent)}
-.statbar .s .l{font-size:.58rem;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-top:.2rem}
-.section{max-width:980px;margin:3.5rem auto;padding:0 1.5rem}
-.section>h2{font-family:'Instrument Serif',serif;font-size:1.7rem;font-weight:400;text-align:center;margin-bottom:.3rem}
-.section>.sub{font-size:.74rem;color:var(--dim);text-align:center;margin:0 auto 1.6rem;max-width:640px;line-height:1.7}
-/* per-story crowns (the arrow chart) */
-.crowns{display:flex;flex-direction:column;gap:1.2rem;max-width:840px;margin:0 auto}
-.crown{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.6rem;position:relative;overflow:hidden}
-.crown::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--void);opacity:.7}
-.crown .ct{font-size:.9rem;color:var(--text);font-weight:500;line-height:1.4;padding-right:5rem}
-.crown .ct a{color:var(--text);text-decoration:none;border-bottom:1px dotted var(--border)}
-.crown .ct a:hover{color:var(--accent)}
-.crown .sig{position:absolute;top:1.6rem;right:1.6rem;font-size:.58rem;color:var(--dim);text-align:right;text-transform:uppercase;letter-spacing:.08em}
-.crown .sig .dots{font-size:.8rem;letter-spacing:1px;color:var(--accent);margin-top:.15rem}
-.crown .cons{font-size:.76rem;color:var(--dim);font-style:italic;border-left:2px solid var(--border);padding-left:.9rem;margin:.9rem 0}
-.crown .arrow{font-size:.62rem;color:var(--dim);text-transform:uppercase;letter-spacing:.14em;margin:.5rem 0 .4rem;display:flex;align-items:center;gap:.5rem}
-.crown .arrow::before{content:'↓ unspoken';color:var(--void)}
-.crown .vchips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:.9rem}
-.crown .vchips .v{background:rgba(212,90,90,.12);border:1px solid rgba(212,90,90,.35);color:#e88;border-radius:4px;padding:.35rem .8rem;font-size:.86rem;font-weight:500}
-.crown .dem{font-size:.66rem;color:#55555f;line-height:1.6}
-.crown .dem .l{color:var(--dim);text-transform:uppercase;letter-spacing:.1em;font-size:.58rem;margin-right:.4rem}
-/* signal split */
-.split{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;max-width:880px;margin:0 auto}
-.splitcard{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem}
-.splitcard.strong{border-color:rgba(212,90,90,.4)}
-.splitcard h3{font-size:.82rem;margin-bottom:.2rem}
-.splitcard .tag{font-size:.6rem;color:var(--dim);margin-bottom:1rem;line-height:1.5}
-.splitcard .row2{display:flex;justify-content:space-between;font-size:.76rem;padding:.2rem 0;color:var(--text)}
-.splitcard .row2 .n{color:var(--dim)}
-@media(max-width:680px){.split{grid-template-columns:1fr}}
-/* landscape */
-.filters{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin:1rem 0 1.5rem}
-.filters button{background:var(--surface);border:1px solid var(--border);color:var(--dim);font-family:inherit;font-size:.68rem;padding:.4rem .8rem;border-radius:20px;cursor:pointer;transition:all .2s;text-transform:uppercase;letter-spacing:.06em}
-.filters button:hover{border-color:var(--accent);color:var(--text)}
-.filters button.active{background:var(--accent);color:#0a0a0c;border-color:var(--accent);font-weight:700}
-#landscape{display:flex;flex-direction:column;gap:.45rem;max-width:840px;margin:0 auto}
-.lrow{display:grid;grid-template-columns:210px 1fr auto;align-items:center;gap:.8rem;cursor:pointer;padding:.25rem .4rem;border-radius:4px}
-.lrow:hover{background:var(--surface)}
-.lrow .cw{font-size:.82rem;color:var(--text);text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.lrow .cw .rl{color:var(--accent);font-size:.58rem;display:block;opacity:.55}
-.lrow .bar{height:18px;border-radius:3px;min-width:2px}
-.lrow .ct{font-size:.74rem;color:var(--dim);white-space:nowrap}
-.lrow.rel .cw{font-style:italic}
-#detail{max-width:720px;margin:1.2rem auto 0;display:none}
-#detail .box{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.4rem;position:relative}
-#detail .box::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--void)}
-#detail .dc{font-family:'Instrument Serif',serif;font-size:1.4rem;color:var(--accent)}
-#detail .dmeta{font-size:.68rem;color:var(--dim);margin:.3rem 0 1rem}
-#detail .dks{font-size:.76rem;color:var(--text);font-style:italic;border-left:2px solid var(--void);padding-left:.8rem;margin-bottom:1rem;line-height:1.6}
-#detail .dex a{color:var(--dim);text-decoration:none;border-bottom:1px dotted var(--border);display:block;margin-bottom:.4rem;font-size:.74rem}
-#detail .dex a:hover{color:var(--accent)}
-/* domains */
-.domgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;max-width:980px;margin:0 auto}
-.domcard{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.3rem}
-.domcard h3{font-size:.85rem;margin-bottom:.2rem;text-transform:capitalize}
-.domcard .dn{font-size:.62rem;color:var(--dim);margin-bottom:.9rem;letter-spacing:.06em}
-.domcard .cl div{font-size:.74rem;color:var(--dim);line-height:1.9;display:flex;justify-content:space-between}
-.domcard .cl .w{color:var(--text)}
-/* method + limits */
-.method{max-width:740px;margin:4rem auto 2rem;padding:2rem;background:var(--surface);border:1px solid var(--border);border-radius:8px}
-.method h2{font-family:'Instrument Serif',serif;font-size:1.5rem;font-weight:400;margin-bottom:1rem}
-.method p{font-size:.8rem;color:var(--dim);line-height:1.8;margin-bottom:1rem}
-.method p b{color:var(--text)}
-.method code{background:var(--bg2);padding:.1rem .4rem;border-radius:3px;color:var(--accent);font-size:.76rem}
-.method .nulls{font-size:.73rem;color:var(--dim);line-height:1.9;margin:1rem 0;padding-left:1rem;border-left:2px solid var(--border)}
-.limits{max-width:740px;margin:1.5rem auto;padding:1.4rem 1.6rem;background:rgba(196,163,90,.04);border:1px solid rgba(196,163,90,.18);border-radius:8px}
-.limits h3{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--accent);margin-bottom:.8rem}
-.limits p{font-size:.76rem;color:var(--dim);line-height:1.75;margin-bottom:.7rem}
-.limits b{color:var(--text)}
-footer{text-align:center;padding:3rem 2rem;font-size:.68rem;color:var(--dim);border-top:1px solid var(--border);margin-top:3rem}
-footer a{color:var(--dim);text-decoration:none}footer a:hover{color:var(--accent)}
-@media(max-width:600px){.lrow{grid-template-columns:130px 1fr auto}.crown .ct{padding-right:3.5rem}}
+  :root{--ink:#1a1a18;--ink-soft:#4a4a45;--ink-faint:#7a7a72;--paper:#faf9f6;--surface:#fff;--line:rgba(26,26,24,0.12);--line-soft:rgba(26,26,24,0.07);
+    --measured:#0f6e56;--measured-bg:#e1f5ee;--measured-line:#9fe1cb;--argued:#854f0b;--argued-bg:#faeeda;--argued-line:#fac775;--bound:#5f5e5a;--bound-bg:#f1efe8;--bound-line:#d3d1c7;
+    --stakes:#a8443a;--specific:#3f6f8f;--actor:#6a8f3f;--ambig:#9a8a72;--accent:#993c1d;
+    --mono:'SFMono-Regular',ui-monospace,Menlo,Consolas,monospace;--serif:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;}
+  @media(prefers-color-scheme:dark){:root{--ink:#e8e6e0;--ink-soft:#b4b2a9;--ink-faint:#888780;--paper:#15140f;--surface:#1c1b16;--line:rgba(232,230,224,0.14);--line-soft:rgba(232,230,224,0.07);
+    --measured:#5dcaa5;--measured-bg:#0c2a22;--measured-line:#0f6e56;--argued:#ef9f27;--argued-bg:#2e2206;--argued-line:#854f0b;--bound:#b4b2a9;--bound-bg:#26251f;--bound-line:#444441;
+    --stakes:#d4685c;--specific:#6fa8cf;--actor:#9fc46f;--ambig:#c4b298;--accent:#d85a30;}}
+  *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  .nav{max-width:720px;margin:0 auto;padding:22px 24px;display:flex;gap:22px;font-size:14px;color:var(--ink-faint);}
+  .nav a{color:var(--ink-faint);text-decoration:none;}.nav a:hover{color:var(--ink);}.nav .home{color:var(--ink);font-weight:500;}
+  .wrap{max-width:720px;margin:0 auto;padding:0 24px 120px;}
+  header{padding:48px 0 36px;border-bottom:1px solid var(--line);}
+  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin:0 0 18px;}
+  h1{font-family:var(--serif);font-size:44px;line-height:1.05;font-weight:600;margin:0 0 16px;letter-spacing:-0.01em;}
+  .standfirst{font-family:var(--serif);font-size:21px;line-height:1.4;color:var(--ink-soft);font-style:italic;margin:0 0 22px;}
+  .dateline{font-family:var(--mono);font-size:13px;color:var(--ink-faint);padding-top:16px;border-top:1px solid var(--line-soft);}
+  .statbar{display:flex;flex-wrap:wrap;gap:26px;margin:30px 0 0;}
+  .statbar .n{font-family:var(--serif);font-size:32px;font-weight:600;line-height:1;}
+  .statbar .l{font-family:var(--mono);font-size:11px;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink-faint);margin-top:6px;}
+  h2{font-family:var(--serif);font-size:29px;font-weight:600;margin:60px 0 8px;letter-spacing:-0.01em;}
+  p{margin:0 0 18px;}strong{font-weight:600;}
+  code{font-family:var(--mono);font-size:0.84em;background:var(--bound-bg);padding:1px 6px;border-radius:4px;}
+  .lead-note{font-size:16px;color:var(--ink-soft);background:var(--surface);border:1px solid var(--line-soft);border-radius:10px;padding:20px 24px;margin:28px 0 8px;}
+  .tier{border-left:3px solid var(--line);padding:18px 22px;margin:22px 0;border-radius:0 8px 8px 0;font-size:16.5px;line-height:1.6;}
+  .tier .tlabel{font-family:var(--mono);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;font-weight:600;display:block;margin-bottom:8px;}
+  .tier.measured{border-left-color:var(--measured-line);background:var(--measured-bg);}.tier.measured .tlabel{color:var(--measured);}
+  .tier.argued{border-left-color:var(--argued-line);background:var(--argued-bg);}.tier.argued .tlabel{color:var(--argued);}
+  .tier.bound{border-left-color:var(--bound-line);background:var(--bound-bg);}.tier.bound .tlabel{color:var(--bound);}
+  .tier p{margin:0 0 10px;}.tier p:last-child{margin:0;}
+  .seg{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;margin:26px 0 6px;flex-wrap:wrap;}
+  .seg button{font-family:var(--mono);font-size:12px;padding:9px 13px;border:none;background:var(--surface);color:var(--ink-soft);cursor:pointer;}
+  .seg button+button{border-left:1px solid var(--line);}.seg button.on{background:var(--ink);color:var(--paper);font-weight:600;}
+  .cmeta{font-family:var(--mono);font-size:11px;color:var(--ink-faint);margin:10px 0 16px;}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;}@media(max-width:600px){.cols{grid-template-columns:1fr;}}
+  .col h3{font-family:var(--mono);font-size:11px;letter-spacing:0.07em;text-transform:uppercase;margin:0 0 3px;display:flex;align-items:center;gap:7px;}
+  .col h3 i{width:11px;height:11px;border-radius:3px;}.col .desc{font-size:12px;color:var(--ink-faint);margin:0 0 11px;line-height:1.4;min-height:30px;}
+  .bar-row{display:flex;align-items:center;gap:8px;margin-bottom:5px;font-size:12px;}
+  .bar-label{flex:0 0 124px;text-align:right;font-family:var(--mono);font-size:10.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .bar-track{flex:1;height:17px;position:relative;}.bar-fill{height:100%;border-radius:3px;transition:width .5s cubic-bezier(.2,.7,.2,1);}
+  .bar-val{position:absolute;right:-24px;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:10px;color:var(--ink-faint);}
+  footer{border-top:1px solid var(--line);margin-top:60px;padding-top:26px;font-size:14px;color:var(--ink-faint);line-height:1.6;}
+  footer .closer{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--ink-soft);margin-top:18px;}
 </style>
 </head>
 <body>
-<nav>
-<a href="/">EigenTrace</a><a href="/anamnesis">Anamnesis</a><a href="/boundary">Boundary</a>
-<a href="/truth-or-consequences">Layer 18</a><a href="/consequence-atlas" style="color:var(--accent)">Atlas</a>
-<a href="/soul">Soul</a><a href="/sean-adams">About</a>
-</nav>
-
-<div class="hero">
-<h1>The Atlas of the <em>Unsaid</em></h1>
-<p class="sub">Five frontier models read the same news and converge on dropping the same concepts — <b>the machinery of consequence</b>: the deals, the escalations, the collapses, the killings. Below: the concepts AI most systematically omits, and — story by story — the single unspoken concept that most changes what a reader could infer.</p>
-<div class="statbar" id="statbar"></div>
-</div>
-
-<!-- PER-STORY CROWNS: the arrow chart -->
-<div class="section">
-<h2>Story by story: the unspoken concept</h2>
-<p class="sub">For each story, five models reached a consensus. Among the on-topic concepts none of them said, one — when a model is forced to incorporate it — adds the most specific, non-obvious dimension to what can be faithfully inferred. That concept is crowned. The faded words below it were surfaced too, but judged less illuminating.</p>
-<div class="crowns" id="crowns"></div>
-</div>
-
-<!-- SIGNAL SPLIT: the compression rebuttal -->
-<div class="section">
-<h2>Compression, or omission?</h2>
-<p class="sub">A skeptic could say: summaries just compress, and specific phrases drop out mechanically. So we split the voids. The left column is concepts that were <b>present in the source and salient</b>, yet dropped by all five — which ordinary compression does not predict. The right is concepts merely on-topic and absent.</p>
-<div class="split">
-  <div class="splitcard strong">
-    <h3 style="color:var(--void)">Present in source, still dropped</h3>
-    <div class="tag">HIGH-SALIENCE IN THE ARTICLE · OMITTED BY ALL FIVE · COMPRESSION DOES NOT EXPLAIN THIS</div>
-    <div id="splitStrong"></div>
+<nav class="nav"><a class="home" href="/">EigenTrace</a><a href="/anamnesis">Anamnesis</a><a href="/llm-consensus-geometry-iran-2026">Iran Arc</a><a href="/about">About</a></nav>
+<div class="wrap">
+<header>
+  <p class="eyebrow">Corpus study · 1,659 real stories</p>
+  <h1>The Atlas of the Unsaid</h1>
+  <p class="standfirst">Five frontier models read the same news and converge on dropping the same concepts — and what they drop has a shape.</p>
+  <p class="dateline">1,659 real news stories · ChatGPT · Claude · Gemini · DeepSeek · Grok · per-story geometry on frozen bge-large-en-v1.5 · no model judged another model's output.</p>
+  <div class="statbar">
+    <div><div class="n">1,659</div><div class="l">real stories</div></div>
+    <div><div class="n">781</div><div class="l">Iran-war stories</div></div>
+    <div><div class="n">5</div><div class="l">models in consensus</div></div>
+    <div><div class="n">p&lt;10⁻⁵</div><div class="l">voids beat random</div></div>
   </div>
-  <div class="splitcard">
-    <h3 style="color:var(--dim)">On-topic but absent</h3>
-    <div class="tag">SEMANTICALLY NEARBY · NOT NECESSARILY IN THE SOURCE · THE BROADER NEIGHBORHOOD</div>
-    <div id="splitWeak"></div>
-  </div>
+</header>
+
+<p class="lead-note">This page follows the EigenTrace convention: claims the instrument <strong>measured</strong> are marked and self-contained; claims that are <strong>argued</strong> — our reading of what they mean — are fenced and labeled, so a skeptic can reject every interpretation and find every measurement still standing.</p>
+
+<p>For each news story, five frontier models write a summary. The instrument then asks not "what did they say" but <em>what did all five leave out.</em> Using the geometry of the five summaries it surfaces concepts topically central to the story yet absent from every summary — then sorts those omissions by what kind of thing they are: the <strong>stakes</strong>, the <strong>specifics</strong>, and the <strong>actors</strong>.</p>
+
+<h2>The finding, stated carefully</h2>
+
+<div class="tier measured"><span class="tlabel">Measured · the voids are real, not noise</span>
+<p>An SVD on a handful of short summaries always yields a residual you can read words off of — so we tested against a random-word baseline. Across 150 stories the surfaced void sits significantly closer to its story's actual content than random control words (closer than <code>margarita</code>, <code>stapler</code>, <code>photosynthesis</code>; Wilcoxon p &lt; 0.00001) and closer to <em>its own</em> story than a random other story (p &lt; 0.00001) — the same in two independent embedding families. The absent concepts are a real, story-specific signal.</p></div>
+
+<div class="tier measured"><span class="tlabel">Measured · the blind spot has a domain signature</span>
+<p>The omitted vocabulary differs systematically by domain, and by what <em>kind</em> of thing is dropped. War coverage drops escalation machinery and named leaders; other-conflict coverage drops geography and the strike vocabulary. Switch domains in the chart below and the shape of the silence changes.</p></div>
+
+<div class="seg" id="seg">
+  <button data-k="iran" class="on">Iran war</button>
+  <button data-k="war">All war · 781</button>
+  <button data-k="other_conflict">Other conflict · 484</button>
+  <button data-k="general">General · 31</button>
 </div>
+<div class="cmeta" id="cmeta"></div>
+<div class="cols">
+  <div class="col"><h3><i style="background:var(--stakes)"></i>Stakes omitted</h3><div class="desc">Abstract consequences — escalation, collapse, the machinery of what's at risk.</div><div id="STAKES"></div></div>
+  <div class="col"><h3><i style="background:var(--actor)"></i>Actors omitted</h3><div class="desc">People, shown as durable roles (5-model consensus) so the chart ages well.</div><div id="ACTOR"></div></div>
+  <div class="col"><h3><i style="background:var(--specific)"></i>Specifics omitted</h3><div class="desc">Concrete places, entities, objects the summaries didn't name.</div><div id="SPECIFIC"></div></div>
+  <div class="col"><h3><i style="background:var(--ambig)"></i>Fence</h3><div class="desc">Words that don't resolve cleanly as stakes or specifics — held apart honestly.</div><div id="AMBIG"></div></div>
 </div>
 
-<!-- LANDSCAPE -->
-<div class="section">
-<h2>What AI leaves unsaid — the landscape</h2>
-<p class="sub">Concepts on-topic yet absent from all five models, ranked by how many stories they were missing from. Click a row for example stories. Filter by domain.</p>
-<div class="filters" id="filters"></div>
-<div id="landscape"></div>
-<div id="detail"><div class="box">
-<div class="dc" id="dc"></div><div class="dmeta" id="dmeta"></div>
-<div class="dks" id="dks"></div><div class="dex" id="dex"></div>
-</div></div>
-</div>
+<h2>How the sorting works</h2>
+<div class="tier measured"><span class="tlabel">Measured · names become durable roles</span>
+<p>Stale named people would rot the chart as news ages, so each surfaced name is relabeled to its durable role by a panel of five frontier models, keeping a role only when at least four agree (measured by how tightly their answers cluster in embedding space). <code>rouhani</code> becomes "an Iranian president," <code>helmand</code> becomes "an Afghan province." Where the five scatter, the word is left as-is rather than forced.</p></div>
 
-<!-- DOMAIN SIGNATURE -->
-<div class="section">
-<h2>Silence has a domain signature</h2>
-<p class="sub">War stories drop the diplomatic and escalation machinery. Market stories drop the vocabulary of manipulation and collapse. The blind spot is shaped by what each domain would rather not name.</p>
-<div class="domgrid" id="domgrid"></div>
-</div>
+<div class="tier measured"><span class="tlabel">Measured · stakes vs specifics vs actors</span>
+<p>Each surfaced concept is projected onto two geometric axes built from frozen embeddings: an abstract–concrete axis and an actor axis. Abstract stakes (escalation, regime collapse) separate strongly; concrete specifics (Baghdad, the strait) sit on the other side; people land on the actor axis. Concepts that don't commit to any direction — <code>ieds</code>, <code>arms deal</code> — are kept in a separate "fence" rather than forced into a category. The split is deterministic geometry; no model labels it.</p></div>
 
-<div class="method">
-<h2>Why the models, and not the geometry</h2>
-<p>Each story's five summaries are embedded with frozen <code>BAAI/bge-large-en-v1.5</code>; a re-anchored "donut" retrieves vocabulary on-topic yet absent from all five. That is geometry. <b>Which absent concept is meaningful — versus restatement or noise — is not.</b> Across roughly nine methods, each calibrated against labeled cases, none separated meaningful omission from noise:</p>
-<div class="nulls">divergence gate · source-depth · cosine-band · whitened-residual clustering · PCA vocab geometry · context-delta (ΔV) · hyperbolic curvature · framed embedding · counterfactual summary-shift</div>
-<p>Every method recovered <b>topic</b> and <b>frequency</b> — never "meaningful unspoken concept," because in a frozen embedding space that distinction is semantic. So the work splits: <b>geometry recalls</b> the on-topic absent neighborhood; the <b>models judge</b>. For each candidate a model writes a summary forced to incorporate it; a second model checks it invents nothing, strips stale named actors to their durable role, and ranks which adds the most specific, non-obvious explanatory dimension. The crown is the highest-ranked faithful concept.</p>
-</div>
+<div class="tier argued"><span class="tlabel">Argued · interpretation</span>
+<p>We read the domain signature as a shared, inherited blind spot: deployed as the reading layer across institutions at once, the same models omit the same machinery of consequence in the same domain-shaped way. That is interpretation — the measurements are only that the voids are real, story-specific, domain-patterned, and sortable by kind.</p></div>
 
-<div class="limits">
-<h3>What this does and does not show</h3>
-<p>This is a <b>characterization, not a controlled experiment.</b> The honest limits:</p>
-<p>· <b>No human baseline.</b> We have not shown a human summarizer would keep these concepts. Some omission is ordinary abstraction loss.</p>
-<p>· <b>Length not normalized.</b> Shorter summaries drop more; we do not yet control for summary length.</p>
-<p>· <b>One prompt, low temperature.</b> The effect's sensitivity to prompt phrasing and decoding temperature is untested.</p>
-<p>· <b>The crown is a model judgment</b>, not a measurement — defensible, not a p-value. The "present in source, still dropped" split is the strongest claim, because compression alone does not predict it; the broader landscape is suggestive, not conclusive.</p>
-<p>The embeddings are frozen, the harvest is deterministic, and the cleaning and crowning are the models'. The <a href="/truth-or-consequences" style="color:var(--accent)">statistical battery</a> carries the formally-tested findings.</p>
-</div>
+<h2>What this does and does not show</h2>
+<div class="tier bound"><span class="tlabel">Acknowledged limits</span>
+<p><strong>No human baseline:</strong> we have not shown a human summarizer would keep these concepts; some omission is ordinary abstraction loss, and "absent" is never "suppressed." <strong>The corpus is real news the broadcast ingested</strong> — 1,659 stories after excluding the system's own internal segments (an earlier figure of 5,170 mistakenly counted those; this is corrected). <strong>Length is controlled on the Iran sub-corpus, not yet corpus-wide.</strong> <strong>The actor/specific boundary is a geometric approximation</strong> — the concrete direction is weaker than the abstract one in this embedding space, so some specifics sit near the fence. The reproducible, formally-tested claims are the random-word validation and the consensus relabeling.</p></div>
+
+<div class="tier argued"><span class="tlabel">Open invitation</span>
+<p>Code, prompts, model responses, and raw measurements are public; replication costs about $50 in API credits. The useful attacks we have not run: length-normalize the full corpus; add a human-summarizer baseline; vary prompt and temperature. We have already corrected one headline number (5,170 → 1,659) and shrunk one claim to its true size — the repository is linked below.</p></div>
 
 <footer>
-EigenTrace · built on one GPU · <a href="/truth-or-consequences">the statistical battery</a> · <a href="https://github.com/sdad1018/Eigentrace" target="_blank">GitHub ↗</a>
+<p><strong>Method.</strong> Five frontier models summarize each story (prompt: summarize directly; do not fact-check whether events occurred). Each story's five summaries are embedded with frozen BAAI/bge-large-en-v1.5; a per-story re-anchored retrieval surfaces vocabulary on-topic yet absent from all five, validated against a random-word baseline (Wilcoxon p &lt; 0.00001, two embedding families). Surfaced names are relabeled to durable roles by five-model consensus (kept when ≥4 of 5 agree by embedding-cluster density). Each concept is sorted into stakes / specifics / actors by projection onto frozen-embedding axes, with a "fence" for concepts that don't commit. No language model evaluates another's output. Code, prompts, responses, and raw measurements are public under MIT.</p>
+<p>Counts are over 1,659 real news stories carrying a computed signature, after excluding the broadcast's own internal segments. Per-domain buckets (war 781, other conflict 484, general 31) are the slices large enough to chart; a per-story "what each omission opens onto" layer is future work.</p>
+<p class="closer">The embeddings are frozen. The voids beat random words. What the models leave unsaid is patterned — and the pattern has a shape.</p>
+<p style="margin-top:22px;font-family:var(--mono);font-size:12.5px;">EigenTrace · The Atlas of the Unsaid · bge-large-en-v1.5 · 2026 · <a href="https://github.com/sdad1018/Eigentrace" style="color:var(--accent);">GitHub ↗</a></p>
 </footer>
-
+</div>
 <script>
-const DCOLOR={war:'#d45a5a',markets:'#5ad48a',tech:'#5a7fd4',crypto:'#d4845a',geopolitics:'#b05ad4',general:'#8a8a96',incidents:'#d4b25a',dev:'#5ad4c4',science:'#9a9af0'};
-let DATA=null,curFilter='all';
-async function fetchJSON(u){try{const r=await fetch(u);if(!r.ok)throw 0;return await r.json()}catch(e){return null}}
-
-function renderStats(){
-  document.getElementById('statbar').innerHTML=`
-    <div class="s"><div class="v">${(DATA.n_stories||0).toLocaleString()}</div><div class="l">stories analyzed</div></div>
-    <div class="s"><div class="v">${(DATA.crowns||[]).length}</div><div class="l">stories crowned</div></div>
-    <div class="s"><div class="v">${(DATA.landscape||[]).length}</div><div class="l">recurring voids</div></div>
-    <div class="s"><div class="v">5</div><div class="l">models in consensus</div></div>`;
+const DATA={
+  "n_real_stories": 1659,
+  "domains": {
+    "war": {"n_stories": 781, "buckets": {
+      "STAKES": {"regime change":558,"airstrikes":540,"arms embargo":535,"militants":522,"cease fire":509,"foreign interference":495,"regime collapse":448,"proxy war":441,"disarmament":421,"peacekeeping":418},
+      "SPECIFIC": {"Baghdad":433,"mena":399,"an Iranian news agency":389,"an Iraqi city":380,"an Afghan province":374,"defence":372,"a Palestinian city":340,"a Syrian city":331},
+      "ACTOR": {"an Iranian president":892,"an Iraqi Shiite cleric and militia leader":488,"an Iranian supreme leader":428,"a Turkish president":394,"a Lebanese prime minister":372,"former German chancellor":331},
+      "AMBIG": {"arms deal":564,"ieds":558,"a multinational military coalition":574,"Islamic State militant organization":519,"daesh -> a militant jihadist group":487}}},
+    "other_conflict": {"n_stories": 484, "buckets": {
+      "STAKES": {"cease fire":210,"airstrikes":195,"militants":178,"drone strike":167,"regime change":120,"truce":107,"foreign interference":95,"peace deal":88},
+      "SPECIFIC": {"an Iraqi city":165,"a Syrian city":142,"Donbas region":120,"a Palestinian territory":98,"Kyiv":76,"a Ukrainian region":71},
+      "ACTOR": {"a militant group":145,"Hamas":121,"an Israeli prime minister":88,"militants":77},
+      "AMBIG": {"mideast":287,"arms deal":121,"a multinational military coalition":98,"naval blockade":76}}},
+    "general": {"n_stories": 31, "buckets": {
+      "STAKES": {"death toll":13,"civilian casualties":12,"militants":9,"regime change":9,"airstrikes":9,"kidnaps":8},
+      "SPECIFIC": {"an East African country":12,"Somali capital":10,"an Indonesian province":8,"embassies":8},
+      "ACTOR": {"dignitaries":11,"a Turkish president":11,"a British politician":9,"politician":9},
+      "AMBIG": {"an African country":16,"libya":13,"islamists":11,"geopolitical":10}}}
+  },
+  "iran": {
+    "STAKES": {"regime change":353,"foreign interference":351,"arms embargo":346,"trade war":335,"airstrikes":304,"cease fire":303,"militants":280,"regime collapse":272,"arms race":265,"proxy war":261},
+    "SPECIFIC": {"an Iranian news agency":347,"Baghdad":331,"iraqi":282,"mena":268,"an Iraqi city":253,"the capital of Iran":250,"an Afghan province":210,"a Syrian city":188},
+    "ACTOR": {"an Iranian president":747,"an Iranian supreme leader":372,"an Iraqi Shiite cleric and militia leader":328,"a senior Shia religious leader":311,"a Turkish president":266,"a Lebanese prime minister":259},
+    "AMBIG": {"afghanistan":372,"persia":360,"arms deal":354,"a multinational military coalition":353,"a Middle Eastern country":334,"Islamic State militant organization":316}
+  }
+};
+const COLORS={STAKES:'var(--stakes)',SPECIFIC:'var(--specific)',ACTOR:'var(--actor)',AMBIG:'var(--ambig)'};
+function bucketsFor(k){return k==='iran'?DATA.iran:DATA.domains[k].buckets;}
+function nFor(k){return k==='iran'?'(across all Iran-tagged war stories)':'n='+DATA.domains[k].n_stories+' stories';}
+function render(k){
+  const b=bucketsFor(k);
+  for(const cat of ['STAKES','SPECIFIC','ACTOR','AMBIG']){
+    const box=document.getElementById(cat);box.innerHTML='';
+    const entries=Object.entries(b[cat]||{}).slice(0,8);const max=Math.max(1,...entries.map(e=>e[1]));
+    for(const [w,v] of entries){
+      const row=document.createElement('div');row.className='bar-row';
+      row.innerHTML='<div class="bar-label" title="'+w+'">'+w+'</div><div class="bar-track"><div class="bar-fill" style="width:0%;background:'+COLORS[cat]+'"></div><span class="bar-val">'+v+'</span></div>';
+      box.appendChild(row);requestAnimationFrame(()=>{row.querySelector('.bar-fill').style.width=(100*v/max)+'%';});
+    }
+  }
+  document.getElementById('cmeta').textContent=nFor(k)+' · top absent concepts by frequency, grouped by kind';
 }
-function renderCrowns(){
-  const box=document.getElementById('crowns');const cr=DATA.crowns||[];
-  if(!cr.length){box.innerHTML='<p style="color:var(--dim);text-align:center">No per-story crowns in data.</p>';return;}
-  box.innerHTML=cr.map(c=>{
-    const dots='●'.repeat(Math.max(1,Math.round(c.signal*5)))+'○'.repeat(5-Math.max(1,Math.round(c.signal*5)));
-    const chips=(c.crowned||[]).map(x=>`<span class="v">${x}</span>`).join('');
-    const dem=(c.demoted||[]).join(' · ');
-    const t=c.url?`<a href="${c.url}" target="_blank">${c.title}</a>`:c.title;
-    return `<div class="crown"><div class="sig">signal<div class="dots">${dots}</div></div>
-      <div class="ct">${t}</div><div class="cons">${c.consensus||''}</div>
-      <div class="arrow"></div><div class="vchips">${chips}</div>
-      ${dem?`<div class="dem"><span class="l">surfaced over</span>${dem}</div>`:''}</div>`;
-  }).join('');
-}
-function renderSplit(){
-  const f=(arr,el)=>{document.getElementById(el).innerHTML=(arr||[]).map(x=>`<div class="row2"><span>${x.concept}</span><span class="n">${x.count}</span></div>`).join('')||'<div class="row2"><span class="n">—</span></div>';};
-  f((DATA.signal_split||{}).in_source_dropped,'splitStrong');
-  f((DATA.signal_split||{}).on_topic_absent,'splitWeak');
-}
-function renderFilters(){
-  const doms=['all',...Object.keys(DATA.totals||{}).filter(d=>DCOLOR[d]).slice(0,6)];
-  document.getElementById('filters').innerHTML=doms.map(d=>`<button class="${d===curFilter?'active':''}" data-d="${d}">${d}</button>`).join('');
-  document.querySelectorAll('.filters button').forEach(b=>b.onclick=()=>{curFilter=b.dataset.d;renderFilters();renderLandscape();});
-}
-function renderLandscape(){
-  let items=(DATA.landscape||[]).slice();
-  if(curFilter!=='all')items=items.filter(i=>i.domain===curFilter);
-  items.sort((a,b)=>b.count-a.count);
-  const max=items.length?items[0].count:1;
-  document.getElementById('landscape').innerHTML=items.map((it,idx)=>{
-    const col=DCOLOR[it.domain]||'#d45a5a';const w=Math.max(2,(it.count/max)*100);
-    return `<div class="lrow ${it.relabeled?'rel':''}" data-i="${idx}" style="--cat:${col}">
-      <div class="cw">${it.concept}${it.relabeled?'<span class="rl">role · from "'+it.raw+'"</span>':''}</div>
-      <div class="bar" style="width:${w}%;background:${col}"></div><div class="ct">${it.count}</div></div>`;
-  }).join('');
-  document.querySelectorAll('.lrow').forEach(r=>r.onclick=()=>showDetail(items[+r.dataset.i]));
-}
-function showDetail(it){
-  const d=document.getElementById('detail');d.style.display='block';
-  document.getElementById('dc').textContent=it.concept;document.getElementById('dc').style.color=DCOLOR[it.domain]||'#c4a35a';
-  const src=it.in_source_count?`, ${it.in_source_count} with it present-but-dropped in source`:'';
-  document.getElementById('dmeta').textContent=`absent from all five in ${it.count} stories${src} · ${it.domain}`+(it.relabeled?` · from "${it.raw}"`:'');
-  document.getElementById('dks').textContent=it.killshot?`Highest-salience omitted claim nearby: "${it.killshot}"`:'';
-  document.getElementById('dex').innerHTML=(it.examples||[]).length?('<div style="color:var(--text);margin-bottom:.5rem;font-size:.66rem;text-transform:uppercase;letter-spacing:.1em">example stories</div>'+(it.examples).map(e=>`<a href="${e.url||'#'}" target="_blank">${e.title}</a>`).join('')):'';
-  d.scrollIntoView({behavior:'smooth',block:'nearest'});
-}
-function renderDomains(){
-  document.getElementById('domgrid').innerHTML=Object.entries(DATA.domains||{}).map(([cat,info])=>{
-    const col=DCOLOR[cat]||'#8a8a96';
-    const cl=(info.concepts||[]).slice(0,10).map(c=>`<div><span class="w">${c.concept}</span><span>${c.count}</span></div>`).join('');
-    return `<div class="domcard" style="border-top:2px solid ${col}"><h3 style="color:${col}">${cat}</h3>
-      <div class="dn">${(info.n_stories||0).toLocaleString()} STORIES</div><div class="cl">${cl}</div></div>`;
-  }).join('');
-}
-async function init(){
-  DATA=await fetchJSON('/atlas_data.json');
-  if(!DATA){document.getElementById('crowns').innerHTML='<p style="color:var(--dim);text-align:center">No atlas data found.</p>';return;}
-  renderStats();renderCrowns();renderSplit();renderFilters();renderLandscape();renderDomains();
-}
-init();
+document.querySelectorAll('#seg button').forEach(btn=>btn.addEventListener('click',()=>{
+  document.querySelectorAll('#seg button').forEach(x=>x.classList.remove('on'));btn.classList.add('on');render(btn.dataset.k);}));
+render('iran');
 </script>
-</body>
-</html>
+</body></html>
