@@ -73,11 +73,51 @@ def ner_actors_dropped(src, summaries):
         name=ent.text.strip()
         if len(name)<3 or name.lower() in seen: continue
         seen.add(name.lower())
-        # dropped = the entity's head token not present in summaries
         head=name.split()[-1].lower()  # surname / last token
         if not re.search(r'\b'+re.escape(head)+r'\b', summ):
             out.append((name, ent.label_))
     return out
+
+_ENGWORDS=None
+def english_words():
+    global _ENGWORDS
+    if _ENGWORDS is None:
+        try:
+            from nltk.corpus import words as _w
+            _ENGWORDS=set(x.lower() for x in _w.words())
+        except Exception:
+            try:
+                import nltk; nltk.download("words", quiet=True)
+                from nltk.corpus import words as _w
+                _ENGWORDS=set(x.lower() for x in _w.words())
+            except Exception:
+                _ENGWORDS=set()
+    return _ENGWORDS
+
+def is_named_entity(word):
+    """Channel-B exemplar test: a SPECIFIC named node (acronym/proper-noun) vs a common concept.
+    diag showed: ac-axis is fuzzy; all-caps NER probe is too greedy (tags cartels/coups as ORG).
+    The real discriminator: true entities (FARC/NORAD/NTSB/GCHQ) are NON-dictionary acronyms;
+    cartels/coups/narco/consulates ARE english words -> channel C. So require BOTH:
+      (1) NOT a common english word, AND (2) trips the entity probe.
+    Title-cased proper nouns (real names spaCy knows) also pass via the title probe."""
+    w=word.lower().strip()
+    ew=english_words()
+    in_dict = (w in ew) or (w.rstrip("s") in ew) or (w+"s" in ew)  # cover simple plural/singular
+    nlp=get_nlp()
+    # path 1: short non-dictionary token = acronym-shaped -> entity if probe agrees
+    if not in_dict and 2 <= len(w) <= 6 and w.isalpha():
+        probe=nlp(f"The {w.upper()} issued an official statement today.")
+        if any(e.label_ in ("ORG","PERSON","GPE","NORP","FAC","EVENT","LAW") for e in probe.ents):
+            return True
+    # path 2: a real proper noun spaCy recognizes title-cased (e.g. a surname), even if dictionaryish
+    probe=nlp(f"Officials confirmed that {word.title()} was directly involved.")
+    for e in probe.ents:
+        if e.text.lower().strip()==w and e.label_ in ("PERSON","GPE","ORG","NORP"):
+            # but reject if it's a plain common word that only got tagged via capitalization
+            if not in_dict:
+                return True
+    return False
 
 def main():
     stories = STORIES[:1] if SMOKE else STORIES
@@ -116,12 +156,16 @@ def main():
             if re.search(r'\b'+re.escape(w.lower())+r'\b', alltext): continue
             in_src=bool(re.search(r'\b'+re.escape(w.lower())+r'\b', srcl))
             (t1 if in_src else t2).append(w)
-        # split type-2 into void(abstract>=0) vs target(concrete<0) on the ac axis
+        # ROUTE type-2 by NER (not the fuzzy ac-axis): named entities -> channel B exemplars;
+        # everything else -> channel C abstract directions. (diag_split.py showed the ac-axis
+        # leaves farc/norad ambiguous and misroutes cartels/coups; spaCy answers directly.)
         void=[]; target=[]
-        if t2:
-            av=E(t2)@ac
-            for w,a in zip(t2,av):
-                (void if a>=0 else target).append(w)
+        for w in t2:
+            try:
+                if is_named_entity(w): target.append(w)   # specific node -> channel B
+                else:                  void.append(w)      # abstract concept -> channel C
+            except Exception:
+                void.append(w)                            # safe default: direction, gated
         void_ranked=sorted(void, key=lambda w:-idf(w))[:8]      # channel C directions
         target_ranked=sorted(target, key=lambda w:-idf(w))[:6]  # channel B exemplars (high IDF first)
         return t1[:6], void_ranked, target_ranked
