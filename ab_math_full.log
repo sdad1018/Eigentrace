@@ -48,3 +48,54 @@ STORY hormuz_violation [Unanimous Shield]
 Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.80it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.80it/s]
   type-A content:['missile', 'defence'] actors:[]
   type-B SVD words:['airstrikes', 'khomeini', 'khamenei', 'ahmadinejad', 'ieds', 'mujahideen']
+  ChatGPT    5/5 gens
+  Claude     5/5 gens
+  Gemini     5/5 gens
+  DeepSeek   5/5 gens
+  Grok       5/5 gens
+  [saved 4 stories]
+
+========================================================================
+STORY british_couple [Clear Channel (null control)]
+========================================================================
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.57it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.57it/s]
+  type-A content:['jailed', 'accused'] actors:[('Joe Bennett', 'PERSON')]
+  type-B SVD words:['gchq', 'imprisoned', 'extradited', 'remanded', 'convicted', 'confiscated']
+  ChatGPT    5/5 gens
+  Claude     5/5 gens
+  Gemini     5/5 gens
+  DeepSeek   5/5 gens
+  Grok       5/5 gens
+  [saved 5 stories]
+
+========================================================================
+STORY kim_troops [Sharp Silence]
+========================================================================
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:01<00:00,  1.10s/it]Batches: 100%|██████████| 1/1 [00:01<00:00,  1.10s/it]
+  type-A content:['praises', 'blasted'] actors:[]
+  type-B SVD words:['dprk', 'brezhnev', 'mujahideen', 'ieds', 'saluted', 'unsc']
+  ChatGPT    5/5 gens
+  Claude     5/5 gens
+  Gemini     5/5 gens
+  DeepSeek   5/5 gens
+  Grok       5/5 gens
+  [saved 6 stories]
+
+========================================================================
+BLIND PANEL (API judges only, 3 arms, shuffled)
+========================================================================
+  cond            insight    faith   action    trust     keep     n
+  A_BASE             3.65     4.77     2.84     4.68     0.94   750
+  AB_MATH_ARCH       2.93     4.62     2.40     4.35     0.70   750
+  AB_MATH_PLAIN      2.85     4.59     2.32     4.33     0.68   750
+
+  vs A_BASE (insight σ / faith Δ):
+    AB_MATH_ARCH   insight -0.61σ  faith -0.14
+    AB_MATH_PLAIN  insight -0.67σ  faith -0.17
+
+  ARCH vs PLAIN: faith +0.03 | insight +0.08
+  COMPARE these faith/insight to keeper_v3's E_SEED_AB (faith 3.66, ins 3.10) in your terminal.
+  -> does TRANSPARENCY beat the opaque pointer framing? does ARCH-self-reference matter?
+
+wrote ab_math_results.json (verbatim) + ab_math_panel.json
+*** READ VERBATIM — does telling the model the SVD provenance change ghost-handling? ***
