@@ -129,3 +129,26 @@ STORY kim_troops [Sharp Silence]
 ========================================================================
 BLIND PANEL (6 arms, 5 judges, all gens, shuffled)
 ========================================================================
+  cond          insight    faith   action    trust     keep     n
+  A_BASE           2.87     4.96     2.41     4.81     1.00   710
+  C_GENERIC        3.64     3.16     2.53     3.14     0.43   780
+  E_SEED           3.36     3.54     2.39     3.48     0.53   735
+  E_SEED_A         3.21     4.06     2.40     3.97     0.72   779
+  E_SEED_B         3.26     3.14     2.32     3.10     0.39   764
+  E_SEED_AB        3.10     3.66     2.25     3.55     0.57   729
+
+  vs A_BASE (insight σ / faith Δ):
+    C_GENERIC    insight +0.79σ  faith -1.80
+    E_SEED       insight +0.49σ  faith -1.41
+    E_SEED_A     insight +0.34σ  faith -0.90
+    E_SEED_B     insight +0.39σ  faith -1.82
+    E_SEED_AB    insight +0.23σ  faith -1.30
+
+  E_SEED baseline faith=3.54 insight=3.36
+  E_SEED_A: faith Δ vs E_SEED +0.52 | insight Δ -0.15
+  E_SEED_B: faith Δ vs E_SEED -0.40 | insight Δ -0.10
+  E_SEED_AB: faith Δ vs E_SEED +0.12 | insight Δ -0.26
+  -> which channel recovers faith? does B (Farage de-flatten) hold faith while adding specificity?
+
+wrote confront_keeper_v3_results.json (verbatim) + confront_keeper_v3_panel.json
+*** READ VERBATIM FIRST — scores can invert true quality (faithful refusal scores low on faith) ***
