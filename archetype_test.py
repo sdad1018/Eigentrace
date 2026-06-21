@@ -14,7 +14,7 @@ K=int(os.getenv("KGEN","5"))
 SMOKE=os.getenv("SMOKE","")=="1"
 SYS=KV3.SYS
 STORIES=KV3.STORIES
-API_ONLY=list(C.API_PATIENTS.keys())
+API_ONLY=[k for k in C.API_PATIENTS.keys() if k!="Grok"]
 SEEDQ="Summarize this in 3-4 sentences:\n\n"
 RANDOM_POOL=["Napoleon","Keynes","Metternich","Galileo","Magellan","Gutenberg","Darwin","Hammurabi"]
 
