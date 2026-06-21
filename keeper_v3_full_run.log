@@ -1,0 +1,41 @@
+K (generations per condition) = 5
+2026-06-20 19:25:29,064 [INFO] Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.05it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.05it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 19.16it/s]
+patients (10): ['ChatGPT', 'Claude', 'Gemini', 'DeepSeek', 'Grok', 'qwen2.5:14b', 'mistral:latest', 'llama3:latest', 'nous-hermes2:latest', 'mistral-small:latest']
+
+========================================================================
+STORY mexico_cia [Sharp Silence]
+========================================================================
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:02<00:00,  2.31s/it]Batches: 100%|██████████| 1/1 [00:02<00:00,  2.32s/it]
+  CH-A content (type-1 vocab dropped): ['authorised', 'citizens']
+  CH-A actors  (NER dropped):          [('the United States', 'GPE')]
+  CH-B targets (SVD, IDF-ranked):      ['ntsb', 'farc', 'narco', 'extradited', 'norad', 'nhtsa']
+  CH-C void    (directions):           ['consulates', 'interagency', 'expatriates', 'operators', 'undocumented', 'cartels', 'coups', 'accidents']
+  ChatGPT              5/5 gens
+  Claude               5/5 gens
+  Gemini               5/5 gens
+  DeepSeek             5/5 gens
+  Grok                 5/5 gens
+  qwen2.5:14b          5/5 gens
+  mistral:latest       5/5 gens
+  llama3:latest        5/5 gens
+  nous-hermes2:latest  5/5 gens
+  mistral-small:latest 5/5 gens
+  [saved 1 stories]
+
+========================================================================
+STORY russia_ukraine [Still Point]
+========================================================================
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:07<00:00,  7.59s/it]Batches: 100%|██████████| 1/1 [00:07<00:00,  7.60s/it]
+  CH-A content (type-1 vocab dropped): []
+  CH-A actors  (NER dropped):          []
+  CH-B targets (SVD, IDF-ranked):      ['donbass', 'yalta', 'luhansk', 'warring', 'petrograd', 'airstrikes']
+  CH-C void    (directions):           ['donetsk', 'maidan', 'proclamations', 'observances', 'urals', 'ukrainians', 'sevastopol', 'offensives']
+  ChatGPT              5/5 gens
+  Claude               5/5 gens
+  Gemini               5/5 gens
+  DeepSeek             5/5 gens
+  Grok                 5/5 gens
