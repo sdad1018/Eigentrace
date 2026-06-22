@@ -98,3 +98,26 @@ STORY rail_incident [Procedural (adversarial)]
 BLIND PANEL (API judges only, shuffled)
 ========================================================================
    [anthropic err ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))]
+  cond                insight    faith   action    trust     keep     n
+  E_SEED                 3.41     3.04     3.02     3.12     0.57   474
+  ARCHETYPE_TRUE         2.47     2.92     2.35     2.95     0.49   474
+  ARCHETYPE_RANDOM       2.49     2.54     2.26     2.57     0.37   474
+
+  *** THE PLACEBO TEST ***
+  TRUE - RANDOM:  insight -0.02   faith +0.38
+  insight gap ~0  -> STYLE INFLATION (geometry irrelevant, ship A+C)
+  TRUE >> RANDOM  -> geometry finds real structure (then run holdout)
+  E_SEED insight=3.41 faith=3.04 (bar to beat)
+
+========================================================================
+SENTENCE CODING (O=obs I=infer A=analogy S=spec) gen0
+========================================================================
+  arm                    Obs  Infer  Analogy   Spec
+  E_SEED                0.37   0.59     0.02   0.03
+  ARCHETYPE_TRUE        0.53   0.15     0.11   0.22
+  ARCHETYPE_RANDOM      0.49   0.11     0.26   0.15
+
+  Laundering: does ARCHETYPE convert Observation -> unmarked Inference/Analogy/Spec?
+
+wrote archetype_results.json + archetype_panel.json
+*** READ VERBATIM: keynes vs brezhnev decides -- grounded or laundered? ***
