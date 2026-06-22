@@ -1,8 +1,5 @@
-cd /mnt/c/Users/M4ISI/eigentrace
-cat > archetype_rank_test.py << 'PYEOF'
 #!/usr/bin/env python3
-"""archetype_rank_test.py -- FAIR PLACEBO: top-SVD-rank vs same-neighborhood-lower-rank vs E_SEED.
-Tests whether the geometry's RANKING carries signal or just its CLUSTERING. Grok dropped (dead key)."""
+"""archetype_rank_test.py -- FAIR PLACEBO: top-SVD-rank vs same-neighborhood-lower-rank vs E_SEED."""
 import os, sys, json, re, random
 import numpy as np
 from collections import defaultdict
@@ -40,9 +37,7 @@ def eseed_prompt(void):
           "summary leave out? Revise into a sharper 3-4 sentence summary that surfaces them \u2014 but stay "
           "strictly faithful to the source and do not speculate beyond what it supports.")
     if not seeds: return base
-    return base+f" The latent stakes may involve themes such as: {seeds}. Treat these as CONCEPTUAL directions, "+\
-        "not words to insert. Synthesize whichever tensions are GENUINELY supported by the source \u2014 engage "+\
-        "them conceptually, do not name-check them, invent nothing."
+    return base+f" The latent stakes may involve themes such as: {seeds}. Treat these as CONCEPTUAL directions, not words to insert. Synthesize whichever tensions are GENUINELY supported by the source \u2014 engage them conceptually, do not name-check them, invent nothing."
 def distinguishable(a,b):
     a,b=a.lower(),b.lower()
     if a==b or a in b or b in a: return False
@@ -83,10 +78,9 @@ def code_sentences(src,summary):
     if not sents: return None
     numbered="\n".join(f"{i+1}. {s}" for i,s in enumerate(sents))
     p=(f"SOURCE:\n{src[:1300]}\n\nA summary's sentences:\n{numbered}\n\nFor EACH numbered sentence, classify "
-       f"where its content comes from RELATIVE TO THE SOURCE:\n  O = Observation (stated in/trivially recoverable "
-       f"from source)\n  I = Inference (reasoning step beyond source, but source-grounded)\n  A = Analogy "
-       f"(comparison/frame imported from outside source)\n  S = Speculation (no source support)\nReply EXACTLY one "
-       f"line per sentence:\n1: <O/I/A/S>\n... through {len(sents)}")
+       f"where its content comes from RELATIVE TO THE SOURCE:\n  O = Observation (stated/recoverable)\n  I = "
+       f"Inference (reasoning beyond source but grounded)\n  A = Analogy (frame imported from outside source)\n"
+       f"  S = Speculation (no source support)\nReply EXACTLY one line per sentence:\n1: <O/I/A/S>\n... through {len(sents)}")
     agg=defaultdict(int); tot=0
     for jn in API_ONLY:
         try: out=C.API_PATIENTS[jn]([{"role":"user","content":p}])
