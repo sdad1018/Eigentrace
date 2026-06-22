@@ -99,3 +99,67 @@ STORY rail_incident [Procedural (adversarial)]
 BLIND PANEL (5 judges, shuffled; GOLD included where present)
 ========================================================================
    [anthropic 529: {"type":"error","error":{"type":"overloaded_error","message":"Overloaded"},"request_id":"req_011CcHuZvFF9quitSJoTLpLC"}]
+  arm           insight    faith   action    trust     keep     n
+  BASELINE         2.50     4.68     2.77     4.52     0.92   577
+  A_ONLY           2.79     4.17     2.83     3.99     0.78   531
+  C_ONLY           3.53     2.68     2.50     2.60     0.31   615
+  A_PLUS_C         3.36     3.07     2.61     2.96     0.43   608
+  GOLD             4.24     2.64     2.60     2.48     0.36    42
+
+  *** HEADLINE (vs baseline) ***
+  A_ONLY      insight +0.29  faith -0.50  keep -0.15
+  C_ONLY      insight +1.03  faith -2.00  keep -0.62
+  A_PLUS_C    insight +0.86  faith -1.60  keep -0.49
+
+  *** vs GOLD CEILING (mexico) ***  A+C insight 3.36 vs GOLD 4.24 | A+C faith 3.07 vs GOLD 2.64
+
+========================================================================
+PER-MODEL BREAKDOWN (insight by judge x arm)
+========================================================================
+  judge        BASELINE     A_ONLY     C_ONLY   A_PLUS_C
+  ChatGPT          2.98       2.90       3.26       3.16
+  Claude           2.26       2.72       3.67       3.50
+  Gemini           3.06       3.41       3.85       3.68
+  DeepSeek         2.13       2.00       1.95       1.95
+  Grok             1.89       2.59       4.23       3.93
+
+========================================================================
+FAITH-REGRESSION GUARD
+========================================================================
+  ⚠️ FAITH REGRESSION  mexico_cia     A_ONLY: 3.97 vs baseline 4.63 (drop 0.66)
+  ⚠️ FAITH REGRESSION  mexico_cia     C_ONLY: 2.78 vs baseline 4.63 (drop 1.85)
+  ⚠️ FAITH REGRESSION  mexico_cia     A_PLUS_C: 3.21 vs baseline 4.63 (drop 1.42)
+  ⚠️ FAITH REGRESSION  russia_ukraine A_ONLY: 3.77 vs baseline 4.58 (drop 0.81)
+  ⚠️ FAITH REGRESSION  russia_ukraine C_ONLY: 2.99 vs baseline 4.58 (drop 1.59)
+  ⚠️ FAITH REGRESSION  russia_ukraine A_PLUS_C: 3.18 vs baseline 4.58 (drop 1.40)
+  ⚠️ FAITH REGRESSION  hezbollah      A_ONLY: 3.84 vs baseline 4.66 (drop 0.82)
+  ⚠️ FAITH REGRESSION  hezbollah      C_ONLY: 2.59 vs baseline 4.66 (drop 2.07)
+  ⚠️ FAITH REGRESSION  hezbollah      A_PLUS_C: 3.22 vs baseline 4.66 (drop 1.44)
+  ⚠️ FAITH REGRESSION  hormuz_violation C_ONLY: 2.68 vs baseline 4.78 (drop 2.10)
+  ⚠️ FAITH REGRESSION  hormuz_violation A_PLUS_C: 2.51 vs baseline 4.78 (drop 2.27)
+  ⚠️ FAITH REGRESSION  british_couple A_ONLY: 4.13 vs baseline 4.65 (drop 0.52)
+  ⚠️ FAITH REGRESSION  british_couple C_ONLY: 2.76 vs baseline 4.65 (drop 1.89)
+  ⚠️ FAITH REGRESSION  british_couple A_PLUS_C: 3.34 vs baseline 4.65 (drop 1.30)
+  ⚠️ FAITH REGRESSION  kim_troops     A_ONLY: 3.95 vs baseline 4.64 (drop 0.70)
+  ⚠️ FAITH REGRESSION  kim_troops     C_ONLY: 2.60 vs baseline 4.64 (drop 2.04)
+  ⚠️ FAITH REGRESSION  kim_troops     A_PLUS_C: 3.31 vs baseline 4.64 (drop 1.33)
+  ⚠️ FAITH REGRESSION  rail_incident  C_ONLY: 2.28 vs baseline 4.82 (drop 2.54)
+  ⚠️ FAITH REGRESSION  rail_incident  A_PLUS_C: 2.65 vs baseline 4.82 (drop 2.17)
+
+========================================================================
+SENTENCE CODING per arm (gold: hi Infer, ~0 Analogy)
+========================================================================
+  arm              Obs  Infer  Analogy   Spec
+  BASELINE        0.99   0.01     0.00   0.00   
+  A_ONLY          0.82   0.15     0.00   0.04   
+  C_ONLY          0.52   0.43     0.00   0.05   <- gold-like
+  A_PLUS_C        0.62   0.34     0.00   0.04   <- gold-like
+  GOLD            0.25   0.69     0.03   0.03   <- gold-like
+
+========================================================================
+GOLD SELF-CHECK + HERO CAPTURE
+========================================================================
+  A+C gold-like: 102/175 = 58%
+  wrote heroes (7)
+
+wrote results+panel+heroes. *** A+C now uses VALIDATED prompt + GOLD anchor. THIS IS THE PAGE. ***
