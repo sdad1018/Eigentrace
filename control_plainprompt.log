@@ -91,3 +91,32 @@ STORY rail_incident [Procedural (adversarial)]
 ========================================================================
 BLIND PANEL (5 judges) -- does geometry beat bare discipline?
 ========================================================================
+  arm           insight    faith   action    trust     keep     n
+  BASELINE         2.59     4.67     2.70     4.52     0.92   788
+  PLAIN_PLUS       3.35     3.23     2.45     3.09     0.44   788
+  A_PLUS_C         3.32     2.89     2.47     2.81     0.34   788
+
+  *** GEOMETRY CONTRIBUTION (A+C insight - PLAIN_PLUS insight) = -0.03 ***
+      if ~0: geometry is decorative, the discipline does the work (report it).
+      if >0: surfaced concepts reach what the bare prompt cannot.
+
+  per-story  A+C - PLAIN_PLUS  insight delta (does geometry help most where text buries most?):
+    mexico_cia         -0.12
+    russia_ukraine     +0.09
+    hezbollah          -0.15
+    hormuz_violation   -0.25
+    british_couple     +0.10
+    kim_troops         -0.10
+    rail_incident      +0.20
+
+========================================================================
+SENTENCE CODING (does geometry change provenance vs bare discipline?)
+========================================================================
+   [grok err 429 Client Error: Too Many Requests for url: https://api.x.ai/v1/chat/completions]
+  arm              Obs  Infer  Analogy   Spec
+  BASELINE        0.98   0.02     0.00   0.00
+  PLAIN_PLUS      0.65   0.31     0.00   0.04
+  A_PLUS_C        0.59   0.35     0.00   0.05
+
+wrote control_plainprompt_results.json + _panel.json
+*** THE CONTROL: does the SVD geometry beat the bare prompt discipline? ***
