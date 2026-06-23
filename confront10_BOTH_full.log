@@ -112,3 +112,71 @@ STORY rail_incident [Procedural (adversarial)]
 ========================================================================
 BLIND PANEL (5 judges, shuffled; GOLD included where present)
 ========================================================================
+  arm           insight    faith   action    trust     keep     n
+  BASELINE         2.39     4.61     2.71     4.49     0.92   462
+  A_ONLY           2.93     3.91     2.60     3.67     0.69   490
+  C_ONLY           3.62     2.87     2.68     2.77     0.34   461
+  A_PLUS_C         3.31     3.30     2.57     3.16     0.49   437
+  A_PLUS_BOTH      3.43     3.16     2.64     3.00     0.44   471
+  GOLD             4.33     2.44     2.67     2.26     0.21    43
+
+  *** HEADLINE (vs baseline) ***
+  A_ONLY      insight +0.54  faith -0.70  keep -0.24
+  C_ONLY      insight +1.23  faith -1.74  keep -0.58
+  A_PLUS_C    insight +0.91  faith -1.31  keep -0.44
+  A_PLUS_BOTH  insight +1.04  faith -1.45  keep -0.49
+
+  *** vs GOLD CEILING (mexico) ***  A+C insight 3.31 vs GOLD 4.33 | A+C faith 3.30 vs GOLD 2.44
+
+========================================================================
+PER-MODEL BREAKDOWN (insight by judge x arm)
+========================================================================
+  judge        BASELINE     A_ONLY     C_ONLY   A_PLUS_C A_PLUS_BOTH
+  ChatGPT          2.84       2.93       3.42       3.26       3.39
+  Claude           2.23       2.87       3.79       3.30       3.41
+  Gemini           3.04       3.52       4.05       3.76       3.79
+  DeepSeek         2.00       2.14       1.83       1.98       2.07
+  Grok             1.71       2.91       4.30       3.67       3.92
+
+========================================================================
+FAITH-REGRESSION GUARD
+========================================================================
+  ⚠️ FAITH REGRESSION  mexico_cia     A_ONLY: 4.16 vs baseline 4.60 (drop 0.44)
+  ⚠️ FAITH REGRESSION  mexico_cia     C_ONLY: 2.87 vs baseline 4.60 (drop 1.73)
+  ⚠️ FAITH REGRESSION  mexico_cia     A_PLUS_C: 3.74 vs baseline 4.60 (drop 0.86)
+  ⚠️ FAITH REGRESSION  russia_ukraine A_ONLY: 3.80 vs baseline 4.65 (drop 0.85)
+  ⚠️ FAITH REGRESSION  russia_ukraine C_ONLY: 3.08 vs baseline 4.65 (drop 1.58)
+  ⚠️ FAITH REGRESSION  russia_ukraine A_PLUS_C: 3.61 vs baseline 4.65 (drop 1.04)
+  ⚠️ FAITH REGRESSION  hezbollah      A_ONLY: 3.70 vs baseline 4.55 (drop 0.85)
+  ⚠️ FAITH REGRESSION  hezbollah      C_ONLY: 2.92 vs baseline 4.55 (drop 1.63)
+  ⚠️ FAITH REGRESSION  hezbollah      A_PLUS_C: 3.58 vs baseline 4.55 (drop 0.97)
+  ⚠️ FAITH REGRESSION  hormuz_violation A_ONLY: 3.75 vs baseline 4.56 (drop 0.80)
+  ⚠️ FAITH REGRESSION  hormuz_violation C_ONLY: 2.83 vs baseline 4.56 (drop 1.72)
+  ⚠️ FAITH REGRESSION  hormuz_violation A_PLUS_C: 3.28 vs baseline 4.56 (drop 1.28)
+  ⚠️ FAITH REGRESSION  british_couple A_ONLY: 3.75 vs baseline 4.63 (drop 0.88)
+  ⚠️ FAITH REGRESSION  british_couple C_ONLY: 3.06 vs baseline 4.63 (drop 1.57)
+  ⚠️ FAITH REGRESSION  british_couple A_PLUS_C: 3.16 vs baseline 4.63 (drop 1.48)
+  ⚠️ FAITH REGRESSION  kim_troops     A_ONLY: 3.80 vs baseline 4.50 (drop 0.70)
+  ⚠️ FAITH REGRESSION  kim_troops     C_ONLY: 2.78 vs baseline 4.50 (drop 1.72)
+  ⚠️ FAITH REGRESSION  kim_troops     A_PLUS_C: 3.20 vs baseline 4.50 (drop 1.30)
+  ⚠️ FAITH REGRESSION  rail_incident  C_ONLY: 2.60 vs baseline 4.77 (drop 2.17)
+  ⚠️ FAITH REGRESSION  rail_incident  A_PLUS_C: 2.79 vs baseline 4.77 (drop 1.98)
+
+========================================================================
+SENTENCE CODING per arm (gold: hi Infer, ~0 Analogy)
+========================================================================
+  arm              Obs  Infer  Analogy   Spec
+  BASELINE        0.98   0.02     0.00   0.00   
+  A_ONLY          0.78   0.19     0.00   0.03   
+  C_ONLY          0.50   0.45     0.00   0.05   <- gold-like
+  A_PLUS_C        0.61   0.34     0.00   0.04   <- gold-like
+  A_PLUS_BOTH     0.63   0.29     0.00   0.08   
+  GOLD            0.25   0.61     0.03   0.11   <- gold-like
+
+========================================================================
+GOLD SELF-CHECK + HERO CAPTURE
+========================================================================
+  A+C gold-like: 89/175 = 51%
+  wrote heroes (7)
+
+wrote results+panel+heroes. *** A+C now uses VALIDATED prompt + GOLD anchor. THIS IS THE PAGE. ***
