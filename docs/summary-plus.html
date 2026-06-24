@@ -345,7 +345,7 @@
     </div>
   </div>
 </div>
-<p class="channelnote">Outlined terms are what convergence surfaces that the centroid misses. The two derivations are not redundant — the spiral reaches concepts the flat raycast can't, because triangulation across sentences sees structure that a single average flattens. A third channel, <strong>Channel A</strong>, restores the named facts the summaries dropped, so the reading stays anchored to the source while it reaches.</p>
+<p class="channelnote">Outlined terms are what convergence surfaces that the centroid misses. The two derivations are not redundant: across the seven stories the spiral reaches <strong>32 source-implied concepts the centroid never does</strong> — because triangulation across sentences sees structure a single average flattens. And every one of the five blind judges ranks the two-derivation summary above the centroid-only one. The aggregate insight gain from adding convergence is small (+0.12) and we report it as such; the case for the second channel is the wider, source-grounded candidate set and the unanimous ordering, not the size of that number. A third channel, <strong>Channel A</strong>, restores the named facts the summaries dropped, so the reading stays anchored to the source while it reaches.</p>
 
 <p>None of this is computation the model has to run. The page hands the reading model the surfaced directions and the discipline that goes with them — and the model's own reading does the rest. The math is the <em>reason</em> the method works, not a command to execute. That is what makes a URL enough.</p>
 
@@ -394,7 +394,7 @@ S = embed(sentences(source))            <span class="cc"># one vector per senten
     </div>
     <div class="barscale"><span>0</span><span>insight, blind panel score (1–5)</span><span>5</span></div>
   </div>
-  <p class="cap">Insight rises from 2.39 to 3.43 on a five-point scale — a +1.04 lift over plain summarization. Adding the second derivation (convergence) lifts insight a further +0.12 over the centroid channel alone: the spiral reaches inference the flat raycast doesn't. n = 462 / 437 / 471 blind judgements.</p>
+  <p class="cap">Insight rises from 2.39 to 3.43 on a five-point scale — a +1.04 lift over plain summarization (95% CI [+0.90, +1.18], Cohen's <em>d</em> = 0.98, <em>p</em> &lt; 10⁻⁴⁰). All five judges, scoring blind, independently rank the Summary Plus arm above the baseline. n = 462 / 437 / 471 blind judgements.</p>
 </div>
 
 <p>And the provenance audit — every sentence of every summary classified by where its content comes from — shows the reading stays honest. The best summary on each story imports <strong>zero outside analogy</strong>. It trades flat observation for grounded <em>inference</em>: reasoning about the source, not invention from outside it.</p>
@@ -405,6 +405,12 @@ S = embed(sentences(source))            <span class="cc"># one vector per senten
     <div class="seg inf" style="flex:50">Inference<small>50% — grounded</small></div>
   </div>
   <p class="cap">A representative hero summary (Mexico), by sentence-level provenance: half observation, half grounded inference, <strong>analogy 0.00, speculation 0.00</strong>. Zero in the analogy column is the whole claim — the signature of reading, not inventing. Every one of the seven hero summaries audits clean on analogy.</p>
+</div>
+
+<div class="tier measured">
+  <span class="tlabel">How it was scored</span>
+  <p>Five frontier models formed a blind panel. Arm order was shuffled per item, no model's score was the sole judge of any summary, and generation and judging were separate passes — judges never saw which arm produced which text. Insight is reported with bootstrap 95% confidence intervals; the headline lift is significant at <em>p</em> &lt; 10⁻⁴⁰ with a large effect size (<em>d</em> = 0.98).</p>
+  <p>The judges disagreed on absolute score levels — one scored everything low, another high — but agreed unanimously on ordering: all five ranked the Summary Plus arm above the plain baseline. Per-sentence provenance (observation, inference, analogy, speculation) was coded by the same panel. No language model evaluated its own output as the deciding judge.</p>
 </div>
 
 <!-- ============ THE CONTROL ============ -->
