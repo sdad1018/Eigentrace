@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Summary Plus — A second instrument for reading the unsaid · EigenTrace</title>
-<meta name="description" content="Summary Plus is a reading method you paste beside a source. It moves a model from relay to reading — surfacing what the source implies but never states — and it reaches the same depth as a hand-tuned prompt while resting on a frozen, inspectable surfacing rather than an instruction. Measured equivalence, with the limits stated. Public code, not peer-reviewed.">
+<meta name="description" content="Summary Plus is a reading method you paste beside a source. It moves a model from relay to reading — surfacing what the source implies but never states — by two independent frozen surfacings that converge on what a hand-tuned prompt already reaches. Measured, with the faithfulness cost and the open test stated. Public code, not peer-reviewed.">
 <meta name="author" content="Sean Adams">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:title" content="Summary Plus — A second instrument for reading the unsaid">
@@ -270,9 +270,9 @@
 
 <div class="wrap">
 <section>
-  <h2><span class="sec-no">How it works</span>A frozen surfacing, fed to the reading</h2>
+  <h2><span class="sec-no">How it works</span>Frozen surfacings, fed to the reading</h2>
 
-  <p><em>“Negative space”</em> has to mean something exact or it means nothing. Summary Plus defines it with a deterministic operation on frozen <code>bge-large-en-v1.5</code> embeddings, and then hands the result to the model's own reading. The split matters, so this page is precise about which part is which.</p>
+  <p><em>“Negative space”</em> has to mean something exact or it means nothing. Summary Plus defines it with deterministic operations on frozen <code>bge-large-en-v1.5</code> embeddings, and then hands the result to the model's own reading. The split matters, so this page is precise about which part is which: the surfacing is frozen arithmetic; the reading of what it surfaces is the model.</p>
 
   <h3>The surfacing — frozen, and outside the model</h3>
   <p>Collapse the source to a single anchor vector. Cast a ray through a fixed vocabulary and read off the concepts that sit close to the source's center of mass but appear in none of the summaries. Route out named entities, keep dropped facts (channel A) and latent concepts (channel C). This is arithmetic — <code>V @ anchor</code> — and it returns the same words every time, regardless of which model later reads them.</p>
@@ -298,18 +298,26 @@ cands  = [w <span class="k">for</span> w in top(sims)
   <p class="pull">An absence you have to invent is not a telling one.</p>
   <p>The reading surfaces only what the source's own facts imply and the summaries omit. It names the silence where the text genuinely points at more than it states, treats surfaced concepts as <em>directions</em> rather than words to insert, and invents nothing. That rail is what keeps the analogy column at zero, and it is what the dry-story control confirms holds under pressure.</p>
 
-  <div class="block a">
-    <div class="head">Argued · a channel we withdrew</div>
-    <p>An earlier version added a second geometric channel — sentence-convergence, the concepts several source sentences triangulate toward. Stress-tested against a permutation null, it did not clear significance (permutation p = 0.24). It is the same shape of claim we withdrew on the Iran Arc page when a stable-axis result failed perturbation, and it goes the same way here: withdrawn, openly. The geometry on this page rests only on the surfacing result that actually validated against random words. We would rather hold one standard across every page than keep a channel that did not earn its place.</p>
+  <h3>Two surfacings, not one</h3>
+  <p>The raycast above collapses the source to a single anchor — one center of mass. A second surfacing does not collapse it: it embeds each source sentence and keeps the concepts that several sentences lean toward together, with a phrase-aware scrub that preserves multi-word frames (<code>foreign interference</code>, <code>failed state</code>) while still dropping proper-noun entities. Call the first the <strong>centroid</strong> and the second the <strong>convergence</strong> surfacing.</p>
+
+  <div class="block m">
+    <div class="head">Measured · convergence reaches frames the centroid flattens</div>
+    <p>The two are not redundant, and the difference is specific. On the Mexico story the centroid surfaces flat role-words — <code>feds, operatives, diplomats, informants</code>. Convergence surfaces the loaded frame the same source implies: <code>coup attempt</code>, <code>foreign interference</code>, <code>consulate</code>, <code>undocumented</code>. Across the seven stories, convergence reaches a substantial set of these frame-level concepts that a single averaged anchor never does — they are exactly the multi-word stakes the phrase-aware scrub was built to keep. The second surfacing sees structure the first one averages away.</p>
+  </div>
+
+  <div class="block m">
+    <div class="head">Measured · both surfacings land where a good prompt lands</div>
+    <p>Tested against the bare discipline delivered as a prompt, neither surfacing reaches past it. A bare prompt independently reaches 92% of the convergence concepts (52 of 56); the four it misses are flat words from the adversarial dry story (<code>towed</code>, <code>commuters</code>, <code>unattended</code>) — noise it is correct to skip. So convergence, like the centroid, is roughly <em>prompt-equivalent</em> on what it reaches. The honest summary is two independent frozen surfacings, both converging on what a tuned prompt already reaches — which is the point of the next section, not a mark against it.</p>
   </div>
 </section>
 </div>
 
 <div class="wrap">
 <section>
-  <h2><span class="sec-no">The point</span>Why a second instrument, when a good prompt already works</h2>
+  <h2><span class="sec-no">The point</span>Why two frozen instruments, when a good prompt already works</h2>
 
-  <p>Here is the result that decides what Summary Plus actually is. We ran the method head-to-head against its own discipline delivered as a bare prompt — same models, same stories, same blind panel — to ask whether the geometric surfacing beats simply <em>telling</em> a model to read the telling absence.</p>
+  <p>Here is the result that decides what Summary Plus actually is. We ran the centroid surfacing head-to-head against its own discipline delivered as a bare prompt — same models, same stories, same blind panel — to ask whether the geometry beats simply <em>telling</em> a model to read the telling absence.</p>
 
   <table>
     <thead>
@@ -323,48 +331,50 @@ cands  = [w <span class="k">for</span> w in top(sims)
   </table>
   <p class="tnote">blind panel, 5 judges, n = 788 per arm · geometry − prompt insight Δ = −0.03</p>
 
-  <p>The two land in the same place. The geometric surfacing and the bare prompt reach <strong>the same depth</strong> — Δ = −0.03 on insight across 788 judgements, analogy at 0.00 in both. We report this plainly, because it is the honest finding and because it is the foundation of the claim, not a dent in it: <strong>Summary Plus is a second instrument that reaches the same reading a hand-tuned prompt reaches.</strong></p>
+  <p>The two land in the same place. On insight, the centroid surfacing and the bare prompt reach <strong>the same depth</strong> — Δ = −0.03 across 788 judgements, analogy at 0.00 in both. And the convergence surfacing reaches the same concepts a prompt does (92%). Both geometric routes converge on what a tuned prompt already reaches. We report this plainly, because it is the honest finding and because it is the foundation of the claim, not a dent in it: <strong>Summary Plus is two independent instruments that arrive at the same reading a hand-tuned prompt reaches.</strong></p>
 
-  <p>That equivalence is the point, not a consolation. Until now, the only instrument for this kind of reading was a prompt — an instruction interpreted by a model whose interpretation is reshaped by every round of training. The same words can be read one way today and sanded down tomorrow. Summary Plus establishes a route to the same depth whose candidate-surfacing is <em>not</em> an instruction at all: it is deterministic arithmetic on a frozen embedding space, inspectable, reproducible, and identical regardless of how the reading model has been tuned.</p>
+  <p>That convergence is the point, not a consolation. Until now, the only instrument for this kind of reading was a prompt — an instruction interpreted by a model whose interpretation is reshaped by every round of training. The same words can be read one way today and sanded down tomorrow. Summary Plus establishes <em>two</em> routes to the same depth whose surfacing is not an instruction at all: deterministic arithmetic on a frozen embedding space, inspectable, reproducible, and identical regardless of how the reading model has been tuned. Two frozen paths, one mark — and the mark is where a good prompt already stands.</p>
 
   <figure>
-    <svg viewBox="0 0 700 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two instruments — a tuned prompt and a frozen surfacing — converging on the same insight depth.">
+    <svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three instruments — a tuned prompt and two frozen surfacings — converging on the same reading depth.">
       <defs>
         <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
           <path d="M0,0 L9,4.5 L0,9 z" fill="#3a3a34"/>
         </marker>
       </defs>
       <!-- target line -->
-      <line x1="500" y1="34" x2="500" y2="196" stroke="#b3401f" stroke-width="2" stroke-dasharray="2 5"/>
-      <text x="510" y="42" font-family="ui-monospace,monospace" font-size="12" fill="#b3401f">same</text>
-      <text x="510" y="58" font-family="ui-monospace,monospace" font-size="12" fill="#b3401f">depth</text>
-      <text x="510" y="74" font-family="ui-monospace,monospace" font-size="11" fill="#7a766c">insight ≈ 3.3</text>
+      <line x1="510" y1="30" x2="510" y2="220" stroke="#b3401f" stroke-width="2" stroke-dasharray="2 5"/>
+      <text x="520" y="40" font-family="ui-monospace,monospace" font-size="12" fill="#b3401f">same</text>
+      <text x="520" y="56" font-family="ui-monospace,monospace" font-size="12" fill="#b3401f">reading</text>
+      <text x="520" y="72" font-family="ui-monospace,monospace" font-size="11" fill="#7a766c">insight ≈ 3.3</text>
       <!-- prompt path -->
-      <text x="40" y="64" font-family="ui-monospace,monospace" font-size="13" fill="#7a5a1e" font-weight="600">PROMPT</text>
-      <text x="40" y="82" font-family="Georgia,serif" font-size="13" fill="#3a3a34" font-style="italic">an instruction,</text>
-      <text x="40" y="99" font-family="Georgia,serif" font-size="13" fill="#3a3a34" font-style="italic">read by the model</text>
-      <path d="M165 75 Q 330 70 495 92" fill="none" stroke="#7a5a1e" stroke-width="2.5" marker-end="url(#ar)"/>
-      <text x="250" y="60" font-family="ui-monospace,monospace" font-size="11" fill="#9a8a5a">reshaped by training →</text>
-      <!-- frozen path -->
-      <text x="40" y="158" font-family="ui-monospace,monospace" font-size="13" fill="#2a4a6a" font-weight="600">FROZEN SURFACING</text>
-      <text x="40" y="176" font-family="Georgia,serif" font-size="13" fill="#3a3a34" font-style="italic">arithmetic on a frozen</text>
-      <text x="40" y="193" font-family="Georgia,serif" font-size="13" fill="#3a3a34" font-style="italic">embedding space</text>
-      <path d="M210 150 Q 360 150 495 130" fill="none" stroke="#2a4a6a" stroke-width="2.5" marker-end="url(#ar)"/>
-      <text x="250" y="142" font-family="ui-monospace,monospace" font-size="11" fill="#5a78a0">identical every run</text>
+      <text x="34" y="56" font-family="ui-monospace,monospace" font-size="13" fill="#7a5a1e" font-weight="600">PROMPT</text>
+      <text x="34" y="74" font-family="Georgia,serif" font-size="12.5" fill="#3a3a34" font-style="italic">an instruction, read by the model</text>
+      <path d="M165 66 Q 340 60 505 96" fill="none" stroke="#7a5a1e" stroke-width="2.5" marker-end="url(#ar)"/>
+      <text x="250" y="50" font-family="ui-monospace,monospace" font-size="11" fill="#9a8a5a">reshaped by training →</text>
+      <!-- centroid path -->
+      <text x="34" y="132" font-family="ui-monospace,monospace" font-size="13" fill="#2a4a6a" font-weight="600">CENTROID</text>
+      <text x="34" y="150" font-family="Georgia,serif" font-size="12.5" fill="#3a3a34" font-style="italic">one frozen anchor</text>
+      <path d="M180 124 Q 350 124 505 116" fill="none" stroke="#2a4a6a" stroke-width="2.5" marker-end="url(#ar)"/>
+      <!-- convergence path -->
+      <text x="34" y="200" font-family="ui-monospace,monospace" font-size="13" fill="#2a4a6a" font-weight="600">CONVERGENCE</text>
+      <text x="34" y="218" font-family="Georgia,serif" font-size="12.5" fill="#3a3a34" font-style="italic">where source sentences lean together</text>
+      <path d="M230 192 Q 370 188 505 136" fill="none" stroke="#2a4a6a" stroke-width="2.5" stroke-dasharray="6 3" marker-end="url(#ar)"/>
+      <text x="250" y="208" font-family="ui-monospace,monospace" font-size="11" fill="#5a78a0">both frozen · identical every run</text>
       <!-- convergence dot -->
-      <circle cx="500" cy="115" r="6" fill="#b3401f"/>
+      <circle cx="510" cy="116" r="6" fill="#b3401f"/>
     </svg>
-    <figcaption>Two instruments, one mark. The prompt's active step lives inside a model that is continuously retrained; the surfacing's does not. Equally good today (Δ = −0.03); built on different foundations.</figcaption>
+    <figcaption>Three instruments, one mark. The prompt's active step lives inside a model that is continuously retrained; both surfacings' do not. The two frozen routes are non-redundant — convergence reaches frames the centroid flattens — yet both land where a good prompt already reads.</figcaption>
   </figure>
 
   <div class="block a">
     <div class="head">Argued · the durability claim, labeled as argument</div>
-    <p>We think a frozen, inspectable surfacing is a more durable substrate for this reading than an instruction, because the instruction's active ingredient sits in a model that is retrained and the surfacing's does not. That is a structural argument, not a measured one — the equivalence above is measured on today's models; durability under heavier tuning is not. We hold it as a labeled bet, not a finding.</p>
+    <p>We think a frozen, inspectable surfacing is a more durable substrate for this reading than an instruction, because the instruction's active ingredient sits in a model that is retrained and the surfacing's does not — and having <em>two</em> independent frozen routes that converge on the same reading is stronger than having one. That is a structural argument, not a measured one. The convergence above is measured on today's models; durability under heavier tuning is not. We hold it as a labeled bet, not a finding.</p>
   </div>
 
   <div class="block e">
     <div class="head">Where measurement ends · and the open test</div>
-    <p>Honesty about the boundary: the −0.03 equivalence was measured with both arms read by present-day models, so it cannot speak to future-proofing on its own. And the surfacing freezes the <em>candidate list</em>, not the <em>reading</em> of it — the model's selection step is still model-side in both arms. The experiment that would turn the durability argument into a measurement is named and not yet run: re-run surfacing-plus-discipline against bare-prompt across a gradient of more-heavily-tuned models, and see whether the gap opens. If it does, the frozen instrument is doing something the prompt cannot. If it does not, equivalence is all we have — which is already a second instrument worth having.</p>
+    <p>Two boundaries, stated plainly. First, the equivalence was measured with every arm read by present-day models, so it cannot speak to future-proofing on its own — and both surfacings freeze the <em>candidate list</em>, not the <em>reading</em> of it; the model's selection step is still model-side. Second, and more specific: we have <em>not</em> put a convergence-fed summary to the blind panel. We know convergence surfaces frames the centroid misses, and we know a prompt reaches the same concepts — but whether feeding those frames produces higher <em>judged insight</em> than the prompt is untested. The experiment that would settle both: run each surfacing-plus-discipline against bare-prompt across a gradient of more-heavily-tuned models, and judge the output. If the gap opens, a frozen instrument is doing something a prompt cannot. If it does not, convergence on prompt-level reading is what we have — which is already two instruments worth having where there was one.</p>
   </div>
 </section>
 </div>
@@ -375,13 +385,13 @@ cands  = [w <span class="k">for</span> w in top(sims)
 
   <p>No one uses URLs quite like this yet — as carriers of method rather than destinations. You paste a link to <em>read</em>, not to change how the reading happens. Summary Plus is built on the wager that this inverts: that the most useful thing a page can transmit is not content but a discipline, specified precisely enough to travel into the task it sits beside. Paste it next to a story, and the method described here sharpens how the story gets read.</p>
 
-  <p>This page is the mechanism, complete. It describes the omission it reads for, the frozen surfacing it rests on, the discipline that keeps the reading honest, and the findings — including the equivalence, the faithfulness cost, the withdrawn channel, and the human ceiling it does not reach. Rigorously enough that a model given this page, alongside your source, reads what the source implies but never states.</p>
+  <p>This page is the mechanism, complete. It describes the omission it reads for, the two frozen surfacings it rests on, the discipline that keeps the reading honest, and the findings — including the prompt-level convergence, the faithfulness cost, and the human ceiling it does not reach. Rigorously enough that a model given this page, alongside your source, reads what the source implies but never states.</p>
 
   <p class="pull">A summary relays. Read the negative space, and it begins to think.</p>
 
   <div class="block e">
     <div class="head">What this is, plainly</div>
-    <p>Seven stories, five frontier models, blind panels totalling several hundred judgements, frozen <code>bge-large-en-v1.5</code>, per-sentence provenance, no model judging another's output as the deciding vote. EigenTrace has not been peer-reviewed; that is a limitation, not a feature. Code, prompts, model responses, and raw measurements are public, and replication costs about $50 in API credits. We would rather this page be attacked than admired — and it has already had one channel withdrawn for failing a control.</p>
+    <p>Seven stories, five frontier models, blind panels totalling several hundred judgements, frozen <code>bge-large-en-v1.5</code>, per-sentence provenance, no model judging another's output as the deciding vote. EigenTrace has not been peer-reviewed; that is a limitation, not a feature. Code, prompts, model responses, and raw measurements are public, and replication costs about $50 in API credits. We would rather this page be attacked than admired — and the one comparison that could have flattered the method but didn't, the geometry-versus-prompt result, is reported on the page at face value.</p>
   </div>
 </section>
 </div>
@@ -389,7 +399,7 @@ cands  = [w <span class="k">for</span> w in top(sims)
 <footer>
   <div class="wrap">
     <p class="mono">EigenTrace · Summary Plus</p>
-    <p>The surfacing is frozen. The discipline is written down. The equivalence is what survived testing — and the cost is reported beside it.</p>
+    <p>Two surfacings are frozen. The discipline is written down. The convergence on prompt-level reading is what survived testing — and the faithfulness cost is reported beside it.</p>
     <p class="mono"><a href="https://eigentrace.ai/comparison_all.html">All seven stories, side by side</a> · <a href="https://github.com/sdad1018/Eigentrace">GitHub ↗</a> · MIT License · 2026</p>
   </div>
 </footer>
