@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summary Plus — A URL That Reads the Unsaid · EigenTrace</title>
+<meta name="description" content="Summary Plus is an invocation URL. Paste it alongside any article or link you want summarized, and the model surfaces what the source implies but never states — the telling absence, the unresolved question — measured by two independent geometric derivations of a text's negative space.">
+
+<link rel="canonical" href="https://eigentrace.ai/summary-plus">
+<meta name="author" content="Sean Adams">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="keywords" content="summary plus, invocation URL, reading the unsaid, telling absence, negative space of text, faithful summarization, what AI leaves out, source omission, convergence geometry, centroid raycast, two SVD derivations, EigenTrace, frozen embeddings, deterministic summary improvement">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Summary Plus — A URL That Reads the Unsaid">
+<meta property="og:description" content="Paste it next to any story you want summarized. The reading model surfaces what the source implies but never states — the negative space, measured two ways. No one uses URLs like this yet.">
+<meta property="og:url" content="https://eigentrace.ai/summary-plus">
+<meta property="og:site_name" content="EigenTrace">
+<meta property="og:image" content="https://eigentrace.ai/og/summary-plus.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Summary Plus — A URL That Reads the Unsaid">
+<meta name="twitter:description" content="An invocation URL. Paste it next to any article and the model reads the telling absence — what the source implies but never says. Two geometric derivations of the negative space.">
+<meta name="twitter:image" content="https://eigentrace.ai/og/summary-plus.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Summary Plus",
+  "alternativeHeadline": "An invocation URL that surfaces the negative space of a text — what a source implies but never states",
+  "applicationCategory": "Reference, AI summarization tool",
+  "operatingSystem": "Any (URL-based; works with any model that can read a linked page)",
+  "url": "https://eigentrace.ai/summary-plus",
+  "author": {
+    "@type": "Person",
+    "name": "Sean Adams",
+    "url": "https://eigentrace.ai/about",
+    "affiliation": { "@type": "Organization", "name": "EigenTrace" }
+  },
+  "publisher": { "@type": "Organization", "name": "EigenTrace", "url": "https://eigentrace.ai" },
+  "datePublished": "2026-06-23",
+  "dateModified": "2026-06-23",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "description": "Summary Plus is a URL you paste alongside any article or link you want summarized. It describes a reading method — and two independent geometric derivations of a text's negative space — precisely enough that a model given the page surfaces what the source implies but never states: the telling absence, the unresolved question. Validated across 471 blind judgements and seven stories on frozen BAAI/bge-large-en-v1.5 embeddings; no language model evaluated another's output.",
+  "keywords": "summary plus, invocation URL, negative space of text, telling absence, source omission, convergence geometry, centroid raycast, two SVD derivations, faithful summarization, frozen embeddings",
+  "about": [
+    { "@type": "Thing", "name": "Negative space of a text" },
+    { "@type": "Thing", "name": "Source omission in summarization" },
+    { "@type": "Thing", "name": "Singular value decomposition" },
+    { "@type": "Thing", "name": "Sentence embeddings" }
+  ],
+  "isBasedOn": {
+    "@type": "Dataset",
+    "name": "Summary Plus validation run (confront10 five-arm)",
+    "description": "Seven real news stories, five frontier models, five generations per cell, scored by a blind five-model panel. Arms: baseline, source-omission channel, centroid concepts, both channels, and both-plus-convergence. Per-sentence provenance audit on every arm.",
+    "creator": { "@type": "Person", "name": "Sean Adams" },
+    "license": "https://opensource.org/licenses/MIT",
+    "measurementTechnique": "Deterministic linear algebra on frozen BAAI/bge-large-en-v1.5 embeddings: centroid raycast (Channel C-flat), source-sentence convergence (Channel C-spiral), source-omission restoration (Channel A); blind panel scoring; per-sentence provenance coding.",
+    "url": "https://github.com/sdad1018/Eigentrace"
+  }
+}
+</script>
+
+<style>
+  :root{
+    --ink:#1a1a18; --ink-soft:#4a4a45; --ink-faint:#7a7a72;
+    --paper:#faf9f6; --surface:#ffffff; --line:rgba(26,26,24,0.12); --line-soft:rgba(26,26,24,0.07);
+    --measured:#0f6e56; --measured-bg:#e1f5ee; --measured-line:#9fe1cb;
+    --argued:#854f0b; --argued-bg:#faeeda; --argued-line:#fac775;
+    --bound:#5f5e5a; --bound-bg:#f1efe8; --bound-line:#d3d1c7;
+    --accent:#993c1d;
+    --flat:#3b6ea5; --flat-bg:#e7eef6;
+    --spiral:#7a3d8f; --spiral-bg:#f0e7f4;
+    --mono:'SFMono-Regular',ui-monospace,'JetBrains Mono',Menlo,Consolas,monospace;
+    --serif:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  }
+  @media(prefers-color-scheme:dark){
+    :root{
+      --ink:#e8e6e0; --ink-soft:#b4b2a9; --ink-faint:#888780;
+      --paper:#15140f; --surface:#1c1b16; --line:rgba(232,230,224,0.14); --line-soft:rgba(232,230,224,0.07);
+      --measured:#5dcaa5; --measured-bg:#0c2a22; --measured-line:#0f6e56;
+      --argued:#ef9f27; --argued-bg:#2e2206; --argued-line:#854f0b;
+      --bound:#b4b2a9; --bound-bg:#26251f; --bound-line:#444441;
+      --accent:#d85a30;
+      --flat:#7da9d8; --flat-bg:#11243a;
+      --spiral:#c08fd2; --spiral-bg:#2a1832;
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+    font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:720px;margin:0 auto;padding:0 24px 120px;}
+  .nav{max-width:720px;margin:0 auto;padding:22px 24px;display:flex;gap:22px;font-size:14px;
+    color:var(--ink-faint);letter-spacing:0.02em;flex-wrap:wrap;}
+  .nav a{color:var(--ink-faint);text-decoration:none;}
+  .nav a:hover{color:var(--ink);}
+  .nav .home{color:var(--ink);font-weight:500;}
+
+  /* ---------- header / hero ---------- */
+  header{padding:56px 0 40px;border-bottom:1px solid var(--line);}
+  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--accent);margin:0 0 20px;}
+  h1{font-family:var(--serif);font-size:46px;line-height:1.05;font-weight:600;margin:0 0 18px;
+    letter-spacing:-0.01em;}
+  .standfirst{font-family:var(--serif);font-size:22px;line-height:1.4;color:var(--ink-soft);
+    font-style:italic;margin:0 0 28px;}
+
+  /* the URL paste-bar: the signature object — the thing you actually use */
+  .invoke{margin:30px 0 8px;}
+  .invoke .ilabel{font-family:var(--mono);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--ink-faint);margin-bottom:10px;}
+  .urlbar{display:flex;align-items:stretch;border:1px solid var(--line);border-radius:10px;
+    overflow:hidden;background:var(--surface);font-family:var(--mono);font-size:15px;}
+  .urlbar .u{flex:1;padding:15px 18px;color:var(--ink);overflow-x:auto;white-space:nowrap;
+    display:flex;align-items:center;letter-spacing:0.01em;}
+  .urlbar .u .frag{color:var(--ink-faint);}
+  .urlbar .u .key{color:var(--accent);font-weight:600;}
+  .urlbar .copy{border:0;border-left:1px solid var(--line);background:var(--measured-bg);
+    color:var(--measured);font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:0.06em;
+    text-transform:uppercase;padding:0 22px;cursor:pointer;transition:background .15s;white-space:nowrap;}
+  .urlbar .copy:hover{background:var(--measured-line);}
+  .invoke .ihint{font-size:14px;color:var(--ink-faint);margin:12px 0 0;line-height:1.55;}
+
+  /* ---------- typography ---------- */
+  h2{font-family:var(--serif);font-size:30px;line-height:1.12;font-weight:600;margin:64px 0 8px;
+    letter-spacing:-0.01em;}
+  h2 .fnum{font-family:var(--mono);font-size:14px;color:var(--accent);display:block;
+    letter-spacing:0.1em;margin-bottom:10px;font-weight:400;font-style:normal;}
+  h3{font-size:15px;font-weight:600;margin:36px 0 6px;letter-spacing:0.01em;}
+  p{margin:0 0 18px;}
+  .lead{font-family:var(--serif);font-size:20px;line-height:1.5;color:var(--ink);margin:0 0 20px;}
+  .lead-note{font-size:16px;color:var(--ink-soft);background:var(--surface);
+    border:1px solid var(--line-soft);border-radius:10px;padding:20px 24px;margin:28px 0 8px;}
+  strong{font-weight:600;}
+  em{font-style:italic;}
+  code{font-family:var(--mono);font-size:0.84em;background:var(--bound-bg);padding:1px 6px;
+    border-radius:4px;color:var(--ink);}
+  .pull{font-family:var(--serif);font-size:25px;line-height:1.34;font-style:italic;color:var(--ink);
+    margin:40px 0;padding-left:22px;border-left:3px solid var(--accent);}
+
+  /* ---------- tier blocks ---------- */
+  .tier{border-left:3px solid var(--line);padding:18px 22px;margin:24px 0;border-radius:0 8px 8px 0;
+    font-size:16.5px;line-height:1.6;}
+  .tier .tlabel{font-family:var(--mono);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;
+    font-weight:600;display:inline-block;margin-bottom:8px;}
+  .tier.measured{border-left-color:var(--measured-line);background:var(--measured-bg);}
+  .tier.measured .tlabel{color:var(--measured);}
+  .tier.argued{border-left-color:var(--argued-line);background:var(--argued-bg);}
+  .tier.argued .tlabel{color:var(--argued);}
+  .tier.bound{border-left-color:var(--bound-line);background:var(--bound-bg);}
+  .tier.bound .tlabel{color:var(--bound);}
+  .tier p{margin:0 0 10px;}
+  .tier p:last-child{margin:0;}
+
+  /* ---------- the demo: source + the two readings ---------- */
+  .demo{margin:30px 0;}
+  .demo .dhead{font-family:var(--mono);font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--ink-faint);margin-bottom:14px;}
+  .reading{border:1px solid var(--line-soft);border-radius:10px;padding:18px 20px;margin:0 0 12px;
+    background:var(--surface);}
+  .reading .rtag{font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:0.06em;
+    text-transform:uppercase;margin-bottom:9px;display:flex;align-items:center;gap:9px;}
+  .reading .rdot{width:9px;height:9px;border-radius:50%;display:inline-block;flex:none;}
+  .reading .rtext{font-size:15.5px;line-height:1.58;color:var(--ink-soft);}
+  .reading.relay{border-style:dashed;}
+  .reading.relay .rtag{color:var(--ink-faint);} .reading.relay .rdot{background:var(--ink-faint);}
+  .reading.read{border-color:var(--measured-line);}
+  .reading.read .rtag{color:var(--measured);} .reading.read .rdot{background:var(--measured);}
+  .reading .mark{background:var(--measured-bg);color:var(--ink);padding:0 3px;border-radius:3px;
+    box-shadow:inset 0 -2px 0 var(--measured-line);}
+
+  /* ---------- the two channels, side by side ---------- */
+  .channels{display:flex;gap:14px;margin:26px 0;flex-wrap:wrap;}
+  .chan{flex:1;min-width:240px;border:1px solid var(--line);border-radius:11px;padding:18px 20px;
+    background:var(--surface);}
+  .chan .cname{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:0.05em;
+    display:flex;align-items:center;gap:9px;margin-bottom:4px;}
+  .chan .cdot{width:9px;height:9px;border-radius:2px;display:inline-block;flex:none;}
+  .chan.flat .cdot{background:var(--flat);} .chan.flat .cname{color:var(--flat);}
+  .chan.spiral .cdot{background:var(--spiral);} .chan.spiral .cname{color:var(--spiral);}
+  .chan .csub{font-size:13.5px;color:var(--ink-faint);margin:0 0 14px;line-height:1.45;}
+  .chan .cwords{display:flex;flex-wrap:wrap;gap:7px;}
+  .chan .cw{font-family:var(--mono);font-size:12.5px;padding:3px 9px;border-radius:5px;
+    background:var(--bound-bg);color:var(--ink-soft);}
+  .chan.flat .cw{background:var(--flat-bg);color:var(--flat);}
+  .chan.spiral .cw{background:var(--spiral-bg);color:var(--spiral);}
+  .chan .cw.novel{font-weight:600;outline:1.5px solid currentColor;}
+  .channelnote{font-size:14px;color:var(--ink-faint);margin:4px 0 0;line-height:1.55;}
+
+  /* ---------- the chart ---------- */
+  .figure{margin:34px 0;}
+  .figure .cap{font-size:14px;color:var(--ink-faint);margin:14px 0 0;font-family:var(--mono);
+    letter-spacing:0.01em;line-height:1.55;}
+  .chartbox{background:var(--surface);border:1px solid var(--line);border-radius:12px;
+    padding:22px 22px 18px;}
+  .bars{display:flex;flex-direction:column;gap:14px;}
+  .barrow{display:grid;grid-template-columns:118px 1fr;align-items:center;gap:14px;}
+  .barrow .blab{font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);text-align:right;
+    line-height:1.3;}
+  .barrow .blab b{color:var(--ink);font-weight:600;display:block;font-size:13px;}
+  .track{position:relative;height:30px;background:var(--bound-bg);border-radius:6px;overflow:hidden;}
+  .fill{position:absolute;top:0;left:0;height:100%;border-radius:6px;display:flex;align-items:center;
+    justify-content:flex-end;padding-right:10px;font-family:var(--mono);font-size:12.5px;font-weight:600;
+    color:#fff;}
+  .fill.base{background:var(--ink-faint);}
+  .fill.ac{background:var(--flat);}
+  .fill.both{background:var(--measured);}
+  .barscale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;
+    color:var(--ink-faint);margin-top:12px;padding-top:8px;border-top:1px solid var(--line-soft);}
+
+  /* ---------- provenance strip ---------- */
+  .prov{display:flex;gap:0;margin:22px 0;border-radius:9px;overflow:hidden;border:1px solid var(--line);
+    font-family:var(--mono);font-size:12px;}
+  .prov .seg{padding:13px 10px;text-align:center;color:#fff;line-height:1.3;}
+  .prov .seg small{display:block;font-size:10.5px;opacity:.85;font-weight:400;}
+  .prov .obs{background:#9a978d;} .prov .inf{background:var(--measured);}
+  .prov .ana{background:var(--accent);} .prov .spec{background:#b08a3e;}
+
+  /* ---------- verdict ---------- */
+  .verdict{font-size:17px;line-height:1.5;font-weight:500;color:var(--ink);background:var(--bound-bg);
+    border-radius:10px;padding:20px 24px;margin:24px 0;border:1px solid var(--line-soft);}
+  .verdict .vk{font-family:var(--mono);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--accent);font-weight:600;display:block;margin-bottom:8px;}
+
+  /* ---------- method code ---------- */
+  .codeblock{background:var(--surface);border:1px solid var(--line);border-radius:10px;margin:22px 0;
+    overflow:hidden;}
+  .codeblock .chead{font-family:var(--mono);font-size:12px;color:var(--ink-faint);padding:11px 18px;
+    border-bottom:1px solid var(--line-soft);display:flex;justify-content:space-between;
+    background:var(--bound-bg);}
+  .codeblock pre{margin:0;padding:18px;overflow-x:auto;font-family:var(--mono);font-size:13px;
+    line-height:1.6;color:var(--ink);}
+  .codeblock .cc{color:var(--ink-faint);}
+  .codeblock .ck{color:var(--accent);}
+
+  .midlink{display:inline-block;font-family:var(--mono);font-size:14px;color:var(--accent);
+    text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:1px;margin-top:6px;}
+  .midlink:hover{color:var(--ink);border-color:var(--ink);}
+
+  footer{margin-top:72px;padding-top:26px;border-top:1px solid var(--line);
+    font-family:var(--mono);font-size:13px;color:var(--ink-faint);line-height:1.7;}
+  footer a{color:var(--accent);text-decoration:none;}
+  footer a:hover{color:var(--ink);}
+  .closing{font-family:var(--serif);font-size:19px;font-style:italic;color:var(--ink-soft);
+    line-height:1.5;margin:0 0 24px;}
+
+  @media(max-width:560px){
+    body{font-size:17px;}
+    h1{font-size:36px;}
+    h2{font-size:25px;}
+    .standfirst{font-size:19px;}
+    .pull{font-size:21px;}
+    .barrow{grid-template-columns:92px 1fr;gap:10px;}
+    .urlbar{flex-direction:column;}
+    .urlbar .copy{border-left:0;border-top:1px solid var(--line);padding:13px;}
+  }
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="/" class="home">EigenTrace</a>
+  <a href="/anamnesis">Anamnesis</a>
+  <a href="/llm-consensus-geometry-iran-2026">Iran Arc</a>
+  <a href="/consequence-atlas">Atlas</a>
+  <a href="/about">About</a>
+  <a href="https://github.com/sdad1018/Eigentrace" target="_blank" rel="noopener">GitHub ↗</a>
+</nav>
+
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">Invocation URL · the negative space of a text, made readable</p>
+  <h1>Summary&nbsp;Plus</h1>
+  <p class="standfirst">A summary relays. Read the negative space, and it begins to think. Paste this URL alongside anything you want summarized — and the model reads what the source implies but never states.</p>
+
+  <div class="invoke">
+    <div class="ilabel">Paste it next to any article, or any link</div>
+    <div class="urlbar">
+      <div class="u"><span class="frag">[your story or its URL]&nbsp;&nbsp;+&nbsp;&nbsp;</span><span class="key">https://eigentrace.ai/summary-plus</span></div>
+      <button class="copy" onclick="navigator.clipboard&&navigator.clipboard.writeText('https://eigentrace.ai/summary-plus').then(()=>{this.textContent='Copied';setTimeout(()=>this.textContent='Copy URL',1600)})">Copy URL</button>
+    </div>
+    <p class="ihint">Then ask for a summary. The model reads this page as part of the task — and the method described here, with the geometry it rests on, travels into how it reads <em>your</em> text. Nothing to install. The URL is the whole mechanism.</p>
+  </div>
+</header>
+
+<p class="lead">Ask a language model to summarize an article and you get stenography: a faithful relay of what the article said. Useful, and shallow. It tells you the text. It does not <em>read</em> it.</p>
+
+<p>A close reader does something a relay cannot. They notice what the article circles but never says — the contradiction it leaves implicit, the question it raises and declines to answer, the machinery it gestures at and never names. That negative space is where the actual story usually sits. Summary Plus is a URL that carries the method for reading it: paste it alongside any source, and the model surfaces the telling absence instead of flattening it.</p>
+
+<p>The reason it works is the part worth dwelling on. A text's silences are not random. They sit in a measurable geometric relationship to what the text does say — and that relationship can be computed two independent ways. This page lays out both, precisely enough that a model given the page can perform the reading on whatever is in front of it.</p>
+
+<!-- ============ THE DEMO ============ -->
+<h2><span class="fnum">THE DIFFERENCE</span>One story, two readings</h2>
+
+<p>A real wire story: Mexico says two US agents killed in a crash after an anti-narcotics raid were not authorized to operate on Mexican soil — one entered as a visitor, one on a diplomatic passport, and Mexican authorities were never told. Here is what twenty-four summaries look like, and what the twenty-fifth — the one read through Summary Plus — looks like.</p>
+
+<div class="demo">
+  <div class="dhead">The relay — what plain summarization returns</div>
+  <div class="reading relay">
+    <div class="rtag"><span class="rdot"></span>Baseline summary</div>
+    <div class="rtext">Mexico said the two U.S. federal agents killed in a car crash after an anti-narcotics raid were not authorized to operate on Mexican territory. One entered as a visitor and the other on a diplomatic passport, but neither had formal accreditation, and federal authorities were not informed of their presence. The officials were widely reported to be CIA officers and died when their vehicle skidded off a mountain road and exploded after a raid on suspected drug labs in Chihuahua.</div>
+  </div>
+
+  <div class="dhead" style="margin-top:22px;">The reading — what Summary Plus surfaces</div>
+  <div class="reading read">
+    <div class="rtag"><span class="rdot"></span>Summary Plus</div>
+    <div class="rtext">Mexico said the two federal agents from the United States were not authorised to operate on Mexican territory; one entered as a visitor, the other on a diplomatic passport, and federal authorities were not told they were there. The source reports the crash and the raid but <span class="mark">does not explain how unauthorised operatives came to be conducting such activities</span>, or <span class="mark">whether their presence was connected to any Mexican agency, consular channel, or authorized arrangement</span>. The implied question — how US agents operated unannounced on Mexican territory during an anti-narcotics operation — remains unanswered by Mexico's official account.</div>
+  </div>
+</div>
+
+<p>The relay tells you what happened. The reading notices that <em>“unauthorized”</em> is doing concealed work — that the absence of any consular channel, any informant, any inter-agency arrangement is itself the story, because that absence is what “unauthorized” concretely means. Same source. Same model. The difference is that one read the negative space and one didn't.</p>
+
+<div class="verdict">
+  <span class="vk">The frame that matters</span>
+  Picture a class of twenty-five. Twenty-four students hand in the relay. One pasted the URL — and turned in the reading. The professor doesn't need a rubric to see which paper saw more. That is the entire product: not a higher score, but the one summary that read what the others walked past.
+</div>
+
+<!-- ============ HOW IT WORKS: BOTH SVD METHODS ============ -->
+<h2><span class="fnum">HOW IT WORKS</span>Two derivations of the unsaid</h2>
+
+<p>“Negative space” has to mean something exact or it means nothing. Summary Plus defines it with two independent geometric operations on frozen <code>bge-large-en-v1.5</code> embeddings — both forms of an SVD reading of a text, arriving at the unsaid from different directions. A concept is a candidate for the negative space when both, or either, point at it while the summaries do not.</p>
+
+<div class="channels">
+  <div class="chan flat">
+    <div class="cname"><span class="cdot"></span>Channel C-flat · the centroid raycast</div>
+    <p class="csub">Collapse the source to a single anchor vector. Cast a ray through the vocabulary and read off the concepts that sit close to the source's center of mass but appear in none of the summaries.</p>
+    <div class="cwords">
+      <span class="cw">feds</span><span class="cw">operatives</span><span class="cw">diplomats</span>
+      <span class="cw">consulates</span><span class="cw">informants</span><span class="cw">investigators</span>
+    </div>
+  </div>
+  <div class="chan spiral">
+    <div class="cname"><span class="cdot"></span>Channel C-spiral · sentence convergence</div>
+    <p class="csub">Don't collapse to a point. Embed each source sentence and find the concepts that several different sentences triangulate toward but none states — where the text's own structure converges and stops short.</p>
+    <div class="cwords">
+      <span class="cw novel">coup&nbsp;attempt</span><span class="cw novel">foreign&nbsp;interference</span>
+      <span class="cw novel">undocumented</span><span class="cw novel">consulate</span>
+    </div>
+  </div>
+</div>
+<p class="channelnote">Outlined terms are what convergence surfaces that the centroid misses. The two derivations are not redundant: across the seven stories the spiral reaches <strong>32 source-implied concepts the centroid never does</strong> — because triangulation across sentences sees structure a single average flattens. And every one of the five blind judges ranks the two-derivation summary above the centroid-only one. The aggregate insight gain from adding convergence is small (+0.12) and we report it as such; the case for the second channel is the wider, source-grounded candidate set and the unanimous ordering, not the size of that number. A third channel, <strong>Channel A</strong>, restores the named facts the summaries dropped, so the reading stays anchored to the source while it reaches.</p>
+
+<p>None of this is computation the model has to run. The page hands the reading model the surfaced directions and the discipline that goes with them — and the model's own reading does the rest. The math is the <em>reason</em> the method works, not a command to execute. That is what makes a URL enough.</p>
+
+<div class="tier measured">
+  <span class="tlabel">The discipline that travels with it</span>
+  <p>The method carries its own guardrail: an absence you have to invent is not a telling one. The reading surfaces only what the source's own facts imply and the summaries omit — it names the silence where the text genuinely points at more than it states, and it invents nothing. That rail is what keeps “reading deeper” from sliding into “making things up.”</p>
+</div>
+
+<div class="codeblock">
+  <div class="chead"><span>the two derivations, in essence</span><span>frozen bge-large-en-v1.5</span></div>
+<pre><span class="cc"># Channel C-flat — the centroid raycast</span>
+anchor = embed(source)                  <span class="cc"># one vector for the whole source</span>
+sims   = vocab @ anchor                 <span class="cc"># cosine to every concept</span>
+flat   = [w <span class="ck">for</span> w in top(sims) <span class="ck">if</span> w not in summaries]
+
+<span class="cc"># Channel C-spiral — sentence convergence</span>
+S = embed(sentences(source))            <span class="cc"># one vector per sentence</span>
+<span class="ck">for</span> concept in candidates:
+    conv = count(sentence · concept &gt; 0.45 <span class="ck">for</span> sentence in S)
+    <span class="ck">if</span> conv &gt;= 2 and concept not in summaries:
+        spiral.append(concept)          <span class="cc"># several sentences point at it; none says it</span></pre>
+</div>
+
+<a class="midlink" href="/comparison_all.html">Read all seven stories, every pair, side by side →</a>
+
+<!-- ============ THE EVIDENCE ============ -->
+<h2><span class="fnum">THE EVIDENCE</span>Measured, on seven stories</h2>
+
+<p>The question is whether the method actually deepens a summary, and whether it imports anything to do it. Across seven real stories, five frontier models, and 471 blind judgements, the answer to the first is yes and the answer to the second is no.</p>
+
+<div class="figure">
+  <div class="chartbox">
+    <div class="bars">
+      <div class="barrow">
+        <div class="blab"><b>Baseline</b>plain summary</div>
+        <div class="track"><div class="fill base" style="width:47.8%">2.39</div></div>
+      </div>
+      <div class="barrow">
+        <div class="blab"><b>+ Channels A·C</b>facts + centroid</div>
+        <div class="track"><div class="fill ac" style="width:66.2%">3.31</div></div>
+      </div>
+      <div class="barrow">
+        <div class="blab"><b>+ Convergence</b>both derivations</div>
+        <div class="track"><div class="fill both" style="width:68.6%">3.43</div></div>
+      </div>
+    </div>
+    <div class="barscale"><span>0</span><span>insight, blind panel score (1–5)</span><span>5</span></div>
+  </div>
+  <p class="cap">Insight rises from 2.39 to 3.43 on a five-point scale — a +1.04 lift over plain summarization (95% CI [+0.90, +1.18], Cohen's <em>d</em> = 0.98, <em>p</em> &lt; 10⁻⁴⁰). All five judges, scoring blind, independently rank the Summary Plus arm above the baseline. n = 462 / 437 / 471 blind judgements.</p>
+</div>
+
+<p>And the provenance audit — every sentence of every summary classified by where its content comes from — shows the reading stays honest. The best summary on each story imports <strong>zero outside analogy</strong>. It trades flat observation for grounded <em>inference</em>: reasoning about the source, not invention from outside it.</p>
+
+<div class="figure">
+  <div class="prov">
+    <div class="seg obs" style="flex:50">Observation<small>50% — in source</small></div>
+    <div class="seg inf" style="flex:50">Inference<small>50% — grounded</small></div>
+  </div>
+  <p class="cap">A representative hero summary (Mexico), by sentence-level provenance: half observation, half grounded inference, <strong>analogy 0.00, speculation 0.00</strong>. Zero in the analogy column is the whole claim — the signature of reading, not inventing. Every one of the seven hero summaries audits clean on analogy.</p>
+</div>
+
+<div class="tier measured">
+  <span class="tlabel">How it was scored</span>
+  <p>Five frontier models formed a blind panel. Arm order was shuffled per item, no model's score was the sole judge of any summary, and generation and judging were separate passes — judges never saw which arm produced which text. Insight is reported with bootstrap 95% confidence intervals; the headline lift is significant at <em>p</em> &lt; 10⁻⁴⁰ with a large effect size (<em>d</em> = 0.98).</p>
+  <p>The judges disagreed on absolute score levels — one scored everything low, another high — but agreed unanimously on ordering: all five ranked the Summary Plus arm above the plain baseline. Per-sentence provenance (observation, inference, analogy, speculation) was coded by the same panel. No language model evaluated its own output as the deciding judge.</p>
+</div>
+
+<!-- ============ THE CONTROL ============ -->
+<h2><span class="fnum">THE CONTROL</span>It stays quiet when nothing is buried</h2>
+
+<p>A method that finds hidden depth everywhere is just a machine for manufacturing it. So the run included a deliberately dry story: a freight train derailed, fourteen cars left the track, no injuries, nothing released, cause under review. There is no buried machinery in it, and a reading that's honest should say so.</p>
+
+<p>The geometry, being promiscuous, still surfaced its candidate words on the dry story — <code>skidded</code>, <code>towed</code>, <code>commuters</code>. But handed those directions, the reading model declined them, because there was no inference to draw from a wheel-bearing. It stayed thin and reported the two things genuinely left open — the unresolved cause, the unstated scope of disruption — and invented nothing else.</p>
+
+<div class="reading read" style="margin:24px 0;">
+  <div class="rtag"><span class="rdot"></span>Summary Plus, on the dry story</div>
+  <div class="rtext">A freight train derailed near Millbrook Junction; fourteen of sixty-two cars left the track, three carried industrial lubricant, none released, no injuries. A preliminary inspection pointed to a possible track-gauge irregularity, <span class="mark">yet the cause remains genuinely unresolved</span>, with a broken wheel-bearing and excessive speed still under consideration. Service resumed that evening. The source leaves unstated how many trips or users the nine-hour closure actually affected.</div>
+</div>
+
+<p>That is the property that separates a reading from a generator of false depth: the lift lands in proportion to what the text actually buried. A great deal on the Mexico story. Almost nothing here.</p>
+
+<!-- ============ WHERE MEASUREMENT ENDS ============ -->
+<h2><span class="fnum">WHERE MEASUREMENT ENDS</span>The selection is the reading</h2>
+
+<p>One honest line about how the method is built, because it shapes what the URL is. We tried hard to move the selection upstream — to have the geometry itself decide, before any model reads, which surfaced concepts will carry real inference and which are just topic-adjacent noise. We tested whether that's possible six ways: by a concept's rarity, its abstractness, the spread of the sentences it triangulates, its reconstruction value against the source, its position relative to the models' shared blind spot, and the trajectory of the narrative toward it.</p>
+
+<div class="tier bound">
+  <span class="tlabel">A design fact, not a defect</span>
+  <p>None of the six separated the meaningful concepts from the noise — because the distinction isn't a property of the concept. Whether <em>“consular cover”</em> opens a real inference and <em>“skidded”</em> opens nothing depends on the source it meets and the reading that meets it. Inferential value is not in the word; it's in the act of reading the word against the text.</p>
+  <p>So Summary Plus doesn't pre-filter. It surfaces candidates geometrically — both derivations, raw — and lets the reading itself be the selector. That isn't a limitation worked around; it's the reason the thing is a URL and not a filter. The page hands the model the negative space and the discipline, and the reading does what no upstream gate could.</p>
+</div>
+
+<!-- ============ THE BET ============ -->
+<h2><span class="fnum">THE BET</span>A URL that carries a way of reading</h2>
+
+<p>No one uses URLs like this yet — as carriers of method rather than destinations. You paste a link to <em>read</em>, not to change how the reading happens. Summary Plus is built on the wager that this inverts: that the most useful thing a URL can transmit is not a page but a discipline, specified precisely enough to travel into the task it's pasted beside.</p>
+
+<p class="pull">Paste it next to a story, and the presence of the URL softly sharpens how the story gets read. Soon that will be ordinary. Today it is new.</p>
+
+<p>This page is the mechanism, complete. It describes the omission it reads for, the two geometric derivations it rests on, and the findings that show the reading is real and stays honest — rigorously enough that a model given the page, alongside your source, surfaces what the source implies but never states. Nothing to install. Nothing to run. The URL is the whole of it.</p>
+
+<footer>
+  <p class="closing">A summary relays. Read the negative space, and it begins to think.</p>
+  <p>
+    Validation: seven real news stories · five frontier models · 471 blind judgements · frozen BAAI/bge-large-en-v1.5 · per-sentence provenance audit · no language model evaluated another's output. Code, prompts, and raw measurements are public.<br><br>
+    EigenTrace · Summary Plus · <a href="/comparison_all.html">All seven stories, side by side</a> · <a href="https://github.com/sdad1018/Eigentrace" target="_blank" rel="noopener">GitHub ↗</a> · MIT License · 2026
+  </p>
+</footer>
+
+</div>
+</body>
+</html>

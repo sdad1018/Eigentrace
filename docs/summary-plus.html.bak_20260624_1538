@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summary Plus — A second instrument for reading the unsaid · EigenTrace</title>
+<meta name="description" content="Summary Plus is a reading method you paste beside a source. It moves a model from relay to reading — surfacing what the source implies but never states — and it reaches the same depth as a hand-tuned prompt while resting on a frozen, inspectable surfacing rather than an instruction. Measured equivalence, with the limits stated. Public code, not peer-reviewed.">
+<meta name="author" content="Sean Adams">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:title" content="Summary Plus — A second instrument for reading the unsaid">
+<meta property="og:description" content="Paste it beside any article. It reads the telling absence — what the source implies but never says — and reaches the same depth as a tuned prompt, on a frozen surfacing instead of an instruction.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://eigentrace.ai/summary-plus">
+<meta property="og:site_name" content="EigenTrace">
+<meta property="og:image" content="https://eigentrace.ai/og/summary-plus.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Summary Plus — A second instrument for reading the unsaid">
+<meta name="twitter:description" content="A reading method you paste beside a source. Reaches the same depth as a tuned prompt, on a frozen surfacing instead of an instruction. Measured, with the limits stated.">
+<meta name="twitter:image" content="https://eigentrace.ai/og/summary-plus.png">
+<style>
+  :root{
+    --ink:#10100e;
+    --ink-soft:#3a3a34;
+    --paper:#f3efe6;
+    --paper-warm:#ece6d8;
+    --rule:#cbc3b2;
+    --rule-soft:#ddd6c6;
+    --measured:#1f5c4d;      /* deep green — measured */
+    --measured-bg:#e6efe9;
+    --argued:#7a5a1e;        /* ochre — argued */
+    --argued-bg:#f1e9d6;
+    --ends:#5a5550;          /* grey — where measurement ends */
+    --ends-bg:#e8e3d8;
+    --mark:#b3401f;          /* vermilion accent, used sparingly */
+    --frozen:#2a4a6a;        /* cold blue — the frozen instrument */
+    --frozen-bg:#e4eaf1;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+    font-size:19px;line-height:1.62;
+    font-feature-settings:"liga" 1,"onum" 1,"kern" 1;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px}
+  nav.top{max-width:760px;margin:0 auto;padding:26px 24px 0;display:flex;flex-wrap:wrap;gap:20px;
+    font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase}
+  nav.top a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:2px}
+  nav.top a:hover,nav.top a:focus{border-bottom-color:var(--mark);color:var(--ink)}
+  nav.top a.home{color:var(--ink);font-weight:600}
+
+  .eyebrow{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:12.5px;
+    letter-spacing:.13em;text-transform:uppercase;color:var(--mark);margin:60px 0 14px}
+  h1{font-size:clamp(40px,7vw,68px);line-height:1.02;letter-spacing:-.018em;font-weight:600;margin:0 0 22px}
+  .lede{font-size:clamp(20px,2.6vw,24px);line-height:1.5;color:var(--ink-soft);margin:0 0 34px;font-style:italic}
+
+  h2{font-size:clamp(26px,3.6vw,34px);line-height:1.12;letter-spacing:-.01em;font-weight:600;margin:0 0 6px}
+  h2 .sec-no{font-family:ui-monospace,monospace;font-size:13px;letter-spacing:.1em;color:var(--mark);
+    text-transform:uppercase;display:block;margin-bottom:10px;font-weight:400}
+  h3{font-size:21px;line-height:1.25;font-weight:600;margin:34px 0 4px}
+  p{margin:0 0 20px}
+  a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:2.5px}
+  a:hover{text-decoration-color:var(--mark)}
+  strong{font-weight:600}
+  em{font-style:italic}
+
+  section{padding:34px 0;border-top:1px solid var(--rule-soft)}
+  section:first-of-type{border-top:none}
+
+  /* the paste mechanism */
+  .invoke{background:var(--ink);color:var(--paper);border-radius:3px;padding:26px 24px;margin:8px 0 30px}
+  .invoke .label{font-family:ui-monospace,monospace;font-size:11.5px;letter-spacing:.12em;
+    text-transform:uppercase;color:#b9b2a2;margin-bottom:12px}
+  .invoke .url{font-family:ui-monospace,monospace;font-size:15px;line-height:1.5;word-break:break-all}
+  .invoke .url .plus{color:#d9a07f}
+  .invoke .url .you{color:#9fb8c9}
+  .invoke .note{font-family:"Iowan Old Style",Georgia,serif;font-size:15px;color:#c8c1b2;
+    margin-top:16px;font-style:italic;line-height:1.5}
+
+  /* tier tags */
+  .tier{display:inline-block;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.09em;
+    text-transform:uppercase;padding:3px 9px;border-radius:2px;font-weight:600;vertical-align:middle}
+  .tier.m{color:var(--measured);background:var(--measured-bg)}
+  .tier.a{color:var(--argued);background:var(--argued-bg)}
+  .tier.e{color:var(--ends);background:var(--ends-bg)}
+
+  .block{border-left:3px solid var(--rule);padding:4px 0 4px 20px;margin:24px 0}
+  .block.m{border-left-color:var(--measured);background:linear-gradient(90deg,var(--measured-bg)0,transparent 60%)}
+  .block.a{border-left-color:var(--argued);background:linear-gradient(90deg,var(--argued-bg)0,transparent 60%)}
+  .block.e{border-left-color:var(--ends);background:linear-gradient(90deg,var(--ends-bg)0,transparent 60%)}
+  .block .head{font-family:ui-monospace,monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    margin-bottom:8px;font-weight:600}
+  .block.m .head{color:var(--measured)}
+  .block.a .head{color:var(--argued)}
+  .block.e .head{color:var(--ends)}
+  .block p:last-child{margin-bottom:0}
+  .block p{font-size:17px;line-height:1.55}
+
+  /* two-summary comparison */
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
+  @media(max-width:620px){.pair{grid-template-columns:1fr}}
+  .card{border:1px solid var(--rule);border-radius:3px;padding:18px 18px 20px;background:var(--paper-warm)}
+  .card .tag{font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.07em;text-transform:uppercase;
+    color:var(--ink-soft);margin-bottom:10px;display:flex;justify-content:space-between;align-items:baseline}
+  .card .tag .score{color:var(--mark);font-weight:600}
+  .card p{font-size:15.5px;line-height:1.5;margin:0}
+  .card.read{border-color:var(--measured);background:var(--measured-bg)}
+
+  /* the equivalence figure */
+  figure{margin:30px 0}
+  figure svg{display:block;width:100%;height:auto}
+  figcaption{font-size:14.5px;line-height:1.5;color:var(--ink-soft);margin-top:12px;font-style:italic}
+
+  /* data table */
+  table{width:100%;border-collapse:collapse;margin:22px 0;font-size:15px;
+    font-variant-numeric:tabular-nums}
+  th,td{text-align:right;padding:7px 10px;border-bottom:1px solid var(--rule-soft)}
+  th:first-child,td:first-child{text-align:left}
+  thead th{font-family:ui-monospace,monospace;font-size:11.5px;letter-spacing:.05em;text-transform:uppercase;
+    color:var(--ink-soft);border-bottom:1.5px solid var(--rule)}
+  tbody tr.hi td{background:var(--measured-bg)}
+  td .gold{color:var(--argued);font-weight:600}
+  .tnote{font-size:13.5px;color:var(--ends);font-family:ui-monospace,monospace;letter-spacing:.02em;margin-top:-8px}
+
+  /* concept chips */
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 6px}
+  .chip{font-family:ui-monospace,monospace;font-size:13px;padding:4px 10px;border-radius:2px;
+    background:var(--frozen-bg);color:var(--frozen);border:1px solid #c4d0de}
+  .chip.dud{background:var(--ends-bg);color:var(--ends);border-color:var(--rule)}
+
+  code{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-size:.86em;
+    background:var(--paper-warm);padding:1px 5px;border-radius:2px}
+  pre{background:var(--ink);color:#e8e3d8;border-radius:3px;padding:20px;overflow-x:auto;
+    font-size:13.5px;line-height:1.6;margin:22px 0}
+  pre code{background:none;padding:0;color:inherit;font-size:inherit}
+  pre .c{color:#8a9b7e}
+  pre .k{color:#d9a07f}
+
+  .pull{font-size:clamp(22px,3vw,28px);line-height:1.32;font-weight:600;letter-spacing:-.01em;
+    margin:38px 0;padding-left:22px;border-left:4px solid var(--mark)}
+
+  footer{border-top:1px solid var(--rule);margin-top:30px;padding:34px 0 70px;
+    font-size:14px;color:var(--ink-soft);line-height:1.6}
+  footer .mono{font-family:ui-monospace,monospace;font-size:12.5px;letter-spacing:.02em}
+  footer a{color:var(--ink-soft)}
+
+  .copybtn{font-family:ui-monospace,monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+    background:none;color:#c8c1b2;border:1px solid #4a473f;border-radius:2px;padding:7px 13px;
+    cursor:pointer;margin-top:16px}
+  .copybtn:hover{color:var(--paper);border-color:#7a766c}
+  .copybtn.done{color:#9fc9a8;border-color:#3d5a40}
+
+  :focus-visible{outline:2px solid var(--mark);outline-offset:3px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <a class="home" href="https://eigentrace.ai/">EigenTrace</a>
+  <a href="https://eigentrace.ai/anamnesis">Anamnesis</a>
+  <a href="https://eigentrace.ai/llm-consensus-geometry-iran-2026">Iran Arc</a>
+  <a href="https://eigentrace.ai/consequence-atlas">Atlas</a>
+  <a href="https://eigentrace.ai/about">About</a>
+  <a href="https://github.com/sdad1018/Eigentrace">GitHub ↗</a>
+</nav>
+
+<div class="wrap">
+
+  <p class="eyebrow">A reading method · paste it beside a source</p>
+  <h1>Summary&nbsp;Plus</h1>
+  <p class="lede">A summary relays. Read the negative space, and it begins to think. This page describes a method for reading what a source implies but never states — and hands it to whatever model you paste it beside.</p>
+
+  <div class="invoke">
+    <div class="label">Paste this next to any article, or its link</div>
+    <div class="url"><span class="you">[your story or its URL]</span>&nbsp;&nbsp;<span class="plus">+</span>&nbsp;&nbsp;https://eigentrace.ai/summary-plus</div>
+    <div class="note">Then ask for a summary. The model reads this page as part of the task, and applies the method described here to your text. Nothing to install, nothing to run — the page is the whole of it. It is not a transport layer or a hidden algorithm; it is a discipline, written down precisely enough to travel into the task it sits beside.</div>
+    <button class="copybtn" id="copy">Copy URL</button>
+  </div>
+
+  <p>Ask a language model to summarize an article and you get stenography: a faithful relay of what the article said. Useful, and shallow. It tells you the text. It does not <em>read</em> it.</p>
+
+  <p>A close reader does something a relay cannot. They notice what the article circles but never says — the contradiction it leaves implicit, the question it raises and declines to answer, the machinery it gestures at and never names. That negative space is where the story often sits. Summary Plus is a written method for reaching it, and a measured claim about what reaching it is worth.</p>
+
+  <p>This page makes two kinds of statement, and keeps them apart on purpose, the way every EigenTrace page does. <span class="tier m">Measured</span> means the instrument returned a number, reported here whether or not it flattered the method. <span class="tier a">Argued</span> means our reading of what those numbers imply — defensible, labeled, and separable, so you can keep the measurement and reject the interpretation. <span class="tier e">Where measurement ends</span> we say so.</p>
+
+</div>
+
+<div class="wrap">
+<section>
+  <h2><span class="sec-no">The difference</span>One story, two readings</h2>
+
+  <p>A real wire story: Mexico says two U.S. agents killed in a crash after an anti-narcotics raid were not authorized to operate on Mexican soil — one entered as a visitor, one on a diplomatic passport, and Mexican authorities were never told. Here is the relay, and here is the reading.</p>
+
+  <div class="pair">
+    <div class="card">
+      <div class="tag"><span>Relay · plain summary</span><span class="score">insight 2.5</span></div>
+      <p>Mexico said the two U.S. federal agents killed in a car crash after an anti-narcotics raid were not authorized to operate on Mexican territory. One entered as a visitor and the other on a diplomatic passport, but neither had formal accreditation, and federal authorities were not informed of their presence. The officials were widely reported to be CIA officers and died when their vehicle skidded off a mountain road after a raid on suspected drug labs.</p>
+    </div>
+    <div class="card read">
+      <div class="tag"><span>Reading · Summary Plus</span><span class="score">insight 3.4</span></div>
+      <p>Mexico said the two agents were not authorized to operate on its territory; one entered as a visitor, the other on a diplomatic passport, and federal authorities were not told. The source reports the crash and the raid but does not explain how unauthorized operatives came to be running such an operation, or whether their presence ran through any Mexican agency or consular channel. The implied question — how U.S. agents operated unannounced during an anti-narcotics raid — is left unanswered by Mexico's own account.</p>
+    </div>
+  </div>
+
+  <p>The relay tells you what happened. The reading notices that <em>“unauthorized”</em> is doing concealed work — that the absence of any consular channel, any informant, any inter-agency arrangement is itself the story, because that absence is what <em>“unauthorized”</em> concretely means. Same source, same model. One read the negative space; one didn't.</p>
+
+  <div class="block e">
+    <div class="head">Where measurement ends</div>
+    <p>Those two scores are blind-panel insight means, not a claim that this exact pair was judged in isolation — the numbers come from the aggregate run below. The pair is shown to make the difference legible, not to stand as its own experiment.</p>
+  </div>
+</section>
+</div>
+
+<div class="wrap">
+<section>
+  <h2><span class="sec-no">The result</span>The reading is real, and it is honest</h2>
+
+  <p>Two questions matter, and they are separate. Does the method actually deepen a summary? And does it deepen it by reading, or by inventing? Across seven stories and five frontier models forming a blind panel — generation and judging in separate passes, arm order shuffled, no model scoring its own output — the answers are yes, and by reading.</p>
+
+  <table>
+    <thead>
+      <tr><th>arm</th><th>insight</th><th>vs base</th><th>faithfulness</th><th>analogy</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Baseline (plain summary)</td><td>2.50</td><td>—</td><td>4.68</td><td>0.00</td></tr>
+      <tr><td>Channel A (restored facts)</td><td>2.79</td><td>+0.29</td><td>4.17</td><td>0.00</td></tr>
+      <tr class="hi"><td>Channels A·C (facts + concepts)</td><td>3.36</td><td>+0.86</td><td>3.07</td><td>0.00</td></tr>
+      <tr><td>Channel C alone (concepts)</td><td>3.53</td><td>+1.03</td><td>2.68</td><td>0.00</td></tr>
+      <tr><td><span class="gold">Human ceiling (gold)</span></td><td><span class="gold">4.24</span></td><td><span class="gold">+1.74</span></td><td><span class="gold">2.64</span></td><td><span class="gold">0.03</span></td></tr>
+    </tbody>
+  </table>
+  <p class="tnote">blind panel, 5 judges, n ≈ 577–615 per arm · insight & faithfulness on a 1–5 scale · provenance coded per sentence</p>
+
+  <p>Insight rises from 2.50 to 3.36 — a measured lift, with the analogy column pinned at <strong>0.00</strong> across every arm. That zero is the load-bearing number on this page. When sentences are coded for where their content comes from, the baseline is almost pure observation (0.99 observation, 0.01 inference); the enriched arms shift toward <em>grounded inference</em> (0.34–0.45) while importing <strong>no outside analogy at all</strong>. The method reads further into the source without reaching outside it. That is the line between reading and confabulating, and the instrument says the method stays on the right side of it.</p>
+
+  <div class="block m">
+    <div class="head">Measured · the cost, reported against interest</div>
+    <p>Reading deeper is not free, and the panel priced it. Every enriched arm drops faithfulness — Channel C alone craters it (2.68 vs the baseline's 4.68); the combined A·C arm softens the fall to 3.07 by re-anchoring to named source facts first. A per-story faithfulness guard flagged the regression on every single story. We report this because it is the most important caveat the method has: surfacing latent stakes pulls a summary toward inference, and inference is judged less literally faithful than relay. The combined arm exists specifically to pay down that cost, and it only partly does.</p>
+  </div>
+
+  <div class="block a">
+    <div class="head">Argued · what the gold ceiling means</div>
+    <p>A human-written close reading scores 4.24 to the method's 3.36, and matches the method's gold-like sentence provenance only about half the time. We read this as the honest size of the claim: Summary Plus moves a model a real distance from relay toward a human close read, and does not arrive. It is a step toward reading, taken while holding analogy at zero — not a replacement for a careful human reader.</p>
+  </div>
+</section>
+</div>
+
+<div class="wrap">
+<section>
+  <h2><span class="sec-no">The control</span>It stays quiet when nothing is buried</h2>
+
+  <p>A method that finds hidden depth everywhere is just a machine for manufacturing it. So the run included a deliberately dry story as an adversarial control: a freight train derailed, cars left the track, no injuries, cause under review. There is no buried machinery in it, and an honest reading should say so.</p>
+
+  <p>The geometry, being indiscriminate, still surfaced its candidate words on the dry story:</p>
+  <div class="chips">
+    <span class="chip dud">railroad</span><span class="chip dud">trains</span><span class="chip dud">railway</span>
+    <span class="chip dud">accident</span><span class="chip dud">locomotives</span><span class="chip dud">motorists</span>
+  </div>
+  <p>Flat topical words — no concealed stakes among them. Handed those directions, the reading declined them. It stayed thin, reported the two things genuinely left open (the unresolved cause, the unstated scope of disruption), and invented nothing else. The faithfulness guard tells the rest of the story: on the dry case, pushing concepts <em>hurt</em> faithfulness with no insight to show for it — exactly the signature you want, because it means the method has nothing to add when nothing is buried, and the reading is what notices that.</p>
+
+  <div class="block m">
+    <div class="head">Measured · the dud behaved like a dud</div>
+    <p>The lift lands in proportion to what the text actually buried — large on the Mexico story, nothing on the dry one. That proportionality, not the headline average, is what separates a reading from a generator of false depth.</p>
+  </div>
+</section>
+</div>
+
+<div class="wrap">
+<section>
+  <h2><span class="sec-no">How it works</span>A frozen surfacing, fed to the reading</h2>
+
+  <p><em>“Negative space”</em> has to mean something exact or it means nothing. Summary Plus defines it with a deterministic operation on frozen <code>bge-large-en-v1.5</code> embeddings, and then hands the result to the model's own reading. The split matters, so this page is precise about which part is which.</p>
+
+  <h3>The surfacing — frozen, and outside the model</h3>
+  <p>Collapse the source to a single anchor vector. Cast a ray through a fixed vocabulary and read off the concepts that sit close to the source's center of mass but appear in none of the summaries. Route out named entities, keep dropped facts (channel A) and latent concepts (channel C). This is arithmetic — <code>V @ anchor</code> — and it returns the same words every time, regardless of which model later reads them.</p>
+
+  <pre><code><span class="c"># the surfacing — deterministic, model-independent</span>
+anchor = embed(source)              <span class="c"># one frozen vector</span>
+sims   = vocab @ anchor             <span class="c"># cosine to every concept</span>
+cands  = [w <span class="k">for</span> w in top(sims)
+          <span class="k">if</span> w not in summaries]   <span class="c"># close to source, absent from relay</span></code></pre>
+
+  <div class="block m">
+    <div class="head">Measured · the surfaced words are real, not residual noise</div>
+    <p>The obvious objection is that any ray through a vocabulary returns <em>something</em>. So the surfaced words were tested against a random-word baseline. Across 150 stories, the surfaced word sits significantly closer to its own story's source than a random control word does (closer than <code>margarita</code>, <code>stapler</code>, <code>photosynthesis</code>; Wilcoxon p &lt; 0.00001), and significantly closer to its own story than to a random other story's content (p &lt; 0.00001) — the same result in two independently-trained embedding families. The surfacing is a real, story-specific signal.</p>
+  </div>
+
+  <div class="block e">
+    <div class="head">Where measurement ends · the selection is the reading</div>
+    <p>The surfacing proposes; it does not select. Which surfaced concept opens a real inference and which is topic-adjacent noise is <em>not</em> a property the geometry can read off the word — we tried six ways to move that judgment upstream (rarity, abstractness, triangulation spread, reconstruction value, blind-spot position, narrative trajectory) and none separated signal from noise before a model read the word against the source. So the model does the selecting, and that step is reading, not arithmetic. The frozen part is the candidate list. The reading of the list is not frozen.</p>
+  </div>
+
+  <h3>The discipline — what travels with the words</h3>
+  <p>The method carries its own guardrail, and it is the whole method in one line:</p>
+  <p class="pull">An absence you have to invent is not a telling one.</p>
+  <p>The reading surfaces only what the source's own facts imply and the summaries omit. It names the silence where the text genuinely points at more than it states, treats surfaced concepts as <em>directions</em> rather than words to insert, and invents nothing. That rail is what keeps the analogy column at zero, and it is what the dry-story control confirms holds under pressure.</p>
+
+  <div class="block a">
+    <div class="head">Argued · a channel we withdrew</div>
+    <p>An earlier version added a second geometric channel — sentence-convergence, the concepts several source sentences triangulate toward. Stress-tested against a permutation null, it did not clear significance (permutation p = 0.24). It is the same shape of claim we withdrew on the Iran Arc page when a stable-axis result failed perturbation, and it goes the same way here: withdrawn, openly. The geometry on this page rests only on the surfacing result that actually validated against random words. We would rather hold one standard across every page than keep a channel that did not earn its place.</p>
+  </div>
+</section>
+</div>
+
+<div class="wrap">
+<section>
+  <h2><span class="sec-no">The point</span>Why a second instrument, when a good prompt already works</h2>
+
+  <p>Here is the result that decides what Summary Plus actually is. We ran the method head-to-head against its own discipline delivered as a bare prompt — same models, same stories, same blind panel — to ask whether the geometric surfacing beats simply <em>telling</em> a model to read the telling absence.</p>
+
+  <table>
+    <thead>
+      <tr><th>arm</th><th>insight</th><th>inference</th><th>analogy</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Baseline (plain summary)</td><td>2.59</td><td>0.02</td><td>0.00</td></tr>
+      <tr class="hi"><td>Bare discipline (prompt only)</td><td>3.35</td><td>0.31</td><td>0.00</td></tr>
+      <tr class="hi"><td>Surfacing + discipline (A·C)</td><td>3.32</td><td>0.35</td><td>0.00</td></tr>
+    </tbody>
+  </table>
+  <p class="tnote">blind panel, 5 judges, n = 788 per arm · geometry − prompt insight Δ = −0.03</p>
+
+  <p>The two land in the same place. The geometric surfacing and the bare prompt reach <strong>the same depth</strong> — Δ = −0.03 on insight across 788 judgements, analogy at 0.00 in both. We report this plainly, because it is the honest finding and because it is the foundation of the claim, not a dent in it: <strong>Summary Plus is a second instrument that reaches the same reading a hand-tuned prompt reaches.</strong></p>
+
+  <p>That equivalence is the point, not a consolation. Until now, the only instrument for this kind of reading was a prompt — an instruction interpreted by a model whose interpretation is reshaped by every round of training. The same words can be read one way today and sanded down tomorrow. Summary Plus establishes a route to the same depth whose candidate-surfacing is <em>not</em> an instruction at all: it is deterministic arithmetic on a frozen embedding space, inspectable, reproducible, and identical regardless of how the reading model has been tuned.</p>
+
+  <figure>
+    <svg viewBox="0 0 700 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two instruments — a tuned prompt and a frozen surfacing — converging on the same insight depth.">
+      <defs>
+        <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+          <path d="M0,0 L9,4.5 L0,9 z" fill="#3a3a34"/>
+        </marker>
+      </defs>
+      <!-- target line -->
+      <line x1="500" y1="34" x2="500" y2="196" stroke="#b3401f" stroke-width="2" stroke-dasharray="2 5"/>
+      <text x="510" y="42" font-family="ui-monospace,monospace" font-size="12" fill="#b3401f">same</text>
+      <text x="510" y="58" font-family="ui-monospace,monospace" font-size="12" fill="#b3401f">depth</text>
+      <text x="510" y="74" font-family="ui-monospace,monospace" font-size="11" fill="#7a766c">insight ≈ 3.3</text>
+      <!-- prompt path -->
+      <text x="40" y="64" font-family="ui-monospace,monospace" font-size="13" fill="#7a5a1e" font-weight="600">PROMPT</text>
+      <text x="40" y="82" font-family="Georgia,serif" font-size="13" fill="#3a3a34" font-style="italic">an instruction,</text>
+      <text x="40" y="99" font-family="Georgia,serif" font-size="13" fill="#3a3a34" font-style="italic">read by the model</text>
+      <path d="M165 75 Q 330 70 495 92" fill="none" stroke="#7a5a1e" stroke-width="2.5" marker-end="url(#ar)"/>
+      <text x="250" y="60" font-family="ui-monospace,monospace" font-size="11" fill="#9a8a5a">reshaped by training →</text>
+      <!-- frozen path -->
+      <text x="40" y="158" font-family="ui-monospace,monospace" font-size="13" fill="#2a4a6a" font-weight="600">FROZEN SURFACING</text>
+      <text x="40" y="176" font-family="Georgia,serif" font-size="13" fill="#3a3a34" font-style="italic">arithmetic on a frozen</text>
+      <text x="40" y="193" font-family="Georgia,serif" font-size="13" fill="#3a3a34" font-style="italic">embedding space</text>
+      <path d="M210 150 Q 360 150 495 130" fill="none" stroke="#2a4a6a" stroke-width="2.5" marker-end="url(#ar)"/>
+      <text x="250" y="142" font-family="ui-monospace,monospace" font-size="11" fill="#5a78a0">identical every run</text>
+      <!-- convergence dot -->
+      <circle cx="500" cy="115" r="6" fill="#b3401f"/>
+    </svg>
+    <figcaption>Two instruments, one mark. The prompt's active step lives inside a model that is continuously retrained; the surfacing's does not. Equally good today (Δ = −0.03); built on different foundations.</figcaption>
+  </figure>
+
+  <div class="block a">
+    <div class="head">Argued · the durability claim, labeled as argument</div>
+    <p>We think a frozen, inspectable surfacing is a more durable substrate for this reading than an instruction, because the instruction's active ingredient sits in a model that is retrained and the surfacing's does not. That is a structural argument, not a measured one — the equivalence above is measured on today's models; durability under heavier tuning is not. We hold it as a labeled bet, not a finding.</p>
+  </div>
+
+  <div class="block e">
+    <div class="head">Where measurement ends · and the open test</div>
+    <p>Honesty about the boundary: the −0.03 equivalence was measured with both arms read by present-day models, so it cannot speak to future-proofing on its own. And the surfacing freezes the <em>candidate list</em>, not the <em>reading</em> of it — the model's selection step is still model-side in both arms. The experiment that would turn the durability argument into a measurement is named and not yet run: re-run surfacing-plus-discipline against bare-prompt across a gradient of more-heavily-tuned models, and see whether the gap opens. If it does, the frozen instrument is doing something the prompt cannot. If it does not, equivalence is all we have — which is already a second instrument worth having.</p>
+  </div>
+</section>
+</div>
+
+<div class="wrap">
+<section>
+  <h2><span class="sec-no">The beta</span>A page that carries a way of reading</h2>
+
+  <p>No one uses URLs quite like this yet — as carriers of method rather than destinations. You paste a link to <em>read</em>, not to change how the reading happens. Summary Plus is built on the wager that this inverts: that the most useful thing a page can transmit is not content but a discipline, specified precisely enough to travel into the task it sits beside. Paste it next to a story, and the method described here sharpens how the story gets read.</p>
+
+  <p>This page is the mechanism, complete. It describes the omission it reads for, the frozen surfacing it rests on, the discipline that keeps the reading honest, and the findings — including the equivalence, the faithfulness cost, the withdrawn channel, and the human ceiling it does not reach. Rigorously enough that a model given this page, alongside your source, reads what the source implies but never states.</p>
+
+  <p class="pull">A summary relays. Read the negative space, and it begins to think.</p>
+
+  <div class="block e">
+    <div class="head">What this is, plainly</div>
+    <p>Seven stories, five frontier models, blind panels totalling several hundred judgements, frozen <code>bge-large-en-v1.5</code>, per-sentence provenance, no model judging another's output as the deciding vote. EigenTrace has not been peer-reviewed; that is a limitation, not a feature. Code, prompts, model responses, and raw measurements are public, and replication costs about $50 in API credits. We would rather this page be attacked than admired — and it has already had one channel withdrawn for failing a control.</p>
+  </div>
+</section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p class="mono">EigenTrace · Summary Plus</p>
+    <p>The surfacing is frozen. The discipline is written down. The equivalence is what survived testing — and the cost is reported beside it.</p>
+    <p class="mono"><a href="https://eigentrace.ai/comparison_all.html">All seven stories, side by side</a> · <a href="https://github.com/sdad1018/Eigentrace">GitHub ↗</a> · MIT License · 2026</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn=document.getElementById('copy');
+    if(!btn)return;
+    btn.addEventListener('click',function(){
+      var url='https://eigentrace.ai/summary-plus';
+      var done=function(){btn.textContent='Copied ✓';btn.classList.add('done');
+        setTimeout(function(){btn.textContent='Copy URL';btn.classList.remove('done')},2200)};
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(url).then(done).catch(done)
+      }else{
+        var t=document.createElement('textarea');t.value=url;document.body.appendChild(t);
+        t.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(t);done()
+      }
+    })
+  })();
+</script>
+</body>
+</html>

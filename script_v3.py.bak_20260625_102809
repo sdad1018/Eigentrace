@@ -1512,25 +1512,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         _matches = find_state_matches(_all_records[-2000:], _sv_vec, _best6)
         _prev = [m for m in _matches if m.get("title","") != title]
         _sv_text = _ching_format(_sv_vec, matches=_prev, total_seen=len(_all_records))
-
-        # Classify the signature into a named archetype (fixes _sv_name bug:
-        # _sv_name was never assigned). classify() returns a dict with name/sig.
-        from eigenching import classify as _ching_classify
-        _sv_cls = _ching_classify(_sv_vec)
-        _sv_name = _sv_cls.get("name")
-
-        # PERSIST the signature into the segment so it is queryable downstream
-        # (weasel selection, EigenChing page, analysis). Previously computed
-        # only for narration and thrown away.
-        attr["eigenching"] = {
-            "signature": list(_sv_vec),
-            "axes": _best6,
-            "archetype": _sv_cls.get("archetype_name"),
-            "name": _sv_name,
-            "tier": _sv_cls.get("tier"),
-            "distance": _sv_cls.get("distance"),
-        }
-
+        
         script.append({
             "speaker": "Host",
             "text": _sv_text,

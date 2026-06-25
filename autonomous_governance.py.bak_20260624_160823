@@ -324,18 +324,7 @@ def run_governance_cycle():
 
     log.info("GOVERNANCE: Sandbox PASSED")
 
-    # -- AUTO-APPLY DISABLED ---------------------------------------
-    # The loop diagnoses + drafts a patch, but no longer writes it to
-    # source. Applying unsupervised (py_compile-only gate) is unsafe:
-    # it edited live builders behind a syntax check and pushed hourly.
-    # Patches are now logged for human review instead of applied.
-    # To re-enable, remove this block.
-    log.info(f"GOVERNANCE: AUTO-APPLY DISABLED -- patch drafted, NOT applied to {diagnosis.get('file')}")
-    log.info(f"GOVERNANCE: drafted change: {diagnosis.get('change_description','')[:120]}")
-    log_governance_action(diagnosis, patch, "drafted_not_applied (auto-apply disabled)", False)
-    return
-
-    # Step 4: Apply  [unreachable while disabled above]
+    # Step 4: Apply
     apply_patch(patch, target_file)
     log.info(f"GOVERNANCE: Patch applied to {diagnosis['file']}")
 
