@@ -82,7 +82,7 @@ body { background:var(--bg); color:var(--text); font-family:'JetBrains Mono',mon
 </div>
 
 <div class="methodology">
-  <strong>Methodology:</strong> VIX = cosine distance between model output embedding and source text embedding using BAAI/bge-large-en-v1.5 (frozen, 1024-dim). Outlier = model with highest VIX per story. "Void words" = source content words absent from all five model outputs. All measurements are deterministic — run twice, get the same result. Raw data available via the the released data.
+  <strong>Methodology:</strong> VIX = cosine distance between model output embedding and source text embedding using BAAI/bge-large-en-v1.5 (frozen, 1024-dim). Outlier = model with highest VIX per story. "Void words" = source content words absent from all five model outputs. All measurements are deterministic — run twice, get the same result. Raw data available via the <a href="/api.html" style="color:var(--accent)">Data API</a>.
 </div>
 
 <div class="footer">
