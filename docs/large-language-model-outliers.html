@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Outliers: How Five Frontier Models Diverge on the Same Story | EigenTrace</title>
+<meta name="description" content="A measurement of how five frontier language models (ChatGPT, Claude, Gemini, DeepSeek, Grok) diverge when summarizing the same news, computed with deterministic linear algebra on frozen embeddings. Two orthogonal axes of divergence — magnitude and kind — neither of which matches the public stereotypes. Distance is measured, not judged; no model evaluates another.">
+<link rel="canonical" href="https://eigentrace.ai/large-language-model-outliers">
+<meta name="author" content="Sean Adams">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="keywords" content="large language model divergence, LLM outlier measurement, model summarization comparison, DeepSeek divergence, Grok hedging, ChatGPT consensus, frozen embeddings, attribution buffering, entity retention, semantic divergence, AI model bias measurement, thin source confabulation, EigenTrace">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Outliers: How Five Frontier Models Diverge on the Same Story">
+<meta property="og:description" content="On real articles: DeepSeek strays farthest by compression; Grok hugs consensus yet hedges most; ChatGPT is the formulaic center. Two axes of divergence, measured — and the public stereotypes predict neither.">
+<meta property="og:url" content="https://eigentrace.ai/large-language-model-outliers">
+<meta property="og:site_name" content="EigenTrace">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Outliers — Five Frontier Models, Measured">
+<meta name="twitter:description" content="How five frontier models diverge on the same news, by deterministic linear algebra on frozen embeddings. No model judges another.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "The Outliers: How Five Frontier Language Models Diverge on the Same Story",
+  "alternativeHeadline": "Two orthogonal axes of model divergence — magnitude and kind — measured across 2,201 fully-sourced news stories",
+  "author": {
+    "@type": "Person",
+    "name": "Sean Adams",
+    "url": "https://eigentrace.ai/sean-adams",
+    "affiliation": { "@type": "Organization", "name": "EigenTrace" }
+  },
+  "publisher": { "@type": "Organization", "name": "EigenTrace", "url": "https://eigentrace.ai" },
+  "datePublished": "2026-06-25",
+  "dateModified": "2026-06-25",
+  "url": "https://eigentrace.ai/large-language-model-outliers",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://eigentrace.ai/large-language-model-outliers" },
+  "inLanguage": "en",
+  "abstract": "Across the EigenTrace broadcast corpus, five frontier models (ChatGPT, Claude, Gemini, DeepSeek, Grok) each summarized the same news stories, and each summary was scored by deterministic linear algebra on frozen BAAI/bge-large-en-v1.5 embeddings. Restricted to the 2,201 stories that supplied the models a real article body (40+ source words) and with epistemic refusals removed: divergence resolves into two nearly-independent axes. On magnitude (distance from the ensemble consensus) DeepSeek strays farthest, by radical compression; Claude second, by structural elaboration. On kind (distinctiveness of stylistic signature) ChatGPT leads, driven largely by a formulaic compliance pattern. The two axes agree only 27% of the time. Grok diverges least in magnitude yet keeps the most source detail and inserts the most hedging. A separate finding: 75% of corpus stories supplied only a headline, on which models confabulate mutually-contradictory detail; that regime was excluded from the measured findings. No public stereotype of these models predicts either measured axis. No language model evaluated another.",
+  "creativeWorkStatus": "Published",
+  "isAccessibleForFree": true,
+  "license": "https://opensource.org/licenses/MIT"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "EigenTrace", "item": "https://eigentrace.ai" },
+    { "@type": "ListItem", "position": 2, "name": "The Outliers", "item": "https://eigentrace.ai/large-language-model-outliers" }
+  ]
+}
+</script>
+<style>
+  :root{
+    --ink:#1a1a18; --ink-soft:#4a4a45; --ink-faint:#7a7a72;
+    --paper:#faf9f6; --surface:#ffffff; --line:rgba(26,26,24,0.12); --line-soft:rgba(26,26,24,0.07);
+    --measured:#0f6e56; --measured-bg:#e1f5ee; --measured-line:#9fe1cb;
+    --argued:#854f0b; --argued-bg:#faeeda; --argued-line:#fac775;
+    --bound:#5f5e5a; --bound-bg:#f1efe8; --bound-line:#d3d1c7;
+    --accent:#993c1d;
+    --serif:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --mono:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;
+  }
+  @media(prefers-color-scheme:dark){
+    :root{
+      --ink:#e8e6e0; --ink-soft:#b4b2a9; --ink-faint:#888780;
+      --paper:#15140f; --surface:#1c1b16; --line:rgba(232,230,224,0.14); --line-soft:rgba(232,230,224,0.07);
+      --measured:#5dcaa5; --measured-bg:#0c2a22; --measured-line:#0f6e56;
+      --argued:#ef9f27; --argued-bg:#2e2206; --argued-line:#854f0b;
+      --bound:#b4b2a9; --bound-bg:#26251f; --bound-line:#444441;
+      --accent:#d2693f;
+    }
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;line-height:1.6;}
+  .wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+  .nav{display:flex;gap:18px;flex-wrap:wrap;font-family:var(--mono);font-size:12.5px;
+    padding:22px 0;color:var(--ink-faint);letter-spacing:0.02em;}
+  .nav a{color:var(--ink-faint);text-decoration:none;}
+  .nav a:hover{color:var(--ink);}
+  .nav .home{color:var(--ink);font-weight:500;}
+
+  header{padding:28px 0 8px;}
+  .eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:22px;}
+  h1{font-family:var(--serif);font-size:46px;line-height:1.05;font-weight:600;margin:0 0 18px;
+    letter-spacing:-0.01em;}
+  .standfirst{font-family:var(--serif);font-size:22px;line-height:1.4;color:var(--ink-soft);
+    font-style:italic;margin:0 0 24px;}
+  .dateline{font-family:var(--mono);font-size:13px;color:var(--ink-faint);line-height:1.7;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;margin-bottom:8px;}
+
+  h2{font-family:var(--serif);font-size:30px;line-height:1.12;font-weight:600;margin:64px 0 8px;
+    letter-spacing:-0.01em;}
+  h2 .fnum{font-family:var(--mono);font-size:14px;color:var(--accent);display:block;
+    margin-bottom:10px;letter-spacing:0.08em;font-weight:400;}
+  h3{font-family:var(--serif);font-size:23px;font-weight:600;margin:38px 0 4px;}
+  .sub{font-family:var(--serif);font-size:18px;font-style:italic;color:var(--ink-soft);margin:0 0 18px;}
+  p{font-size:17px;line-height:1.62;margin:0 0 18px;}
+  .lead-note{font-size:16px;color:var(--ink-soft);background:var(--surface);
+    border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin:22px 0;}
+  code{font-family:var(--mono);font-size:0.84em;background:var(--bound-bg);padding:1px 6px;
+    border-radius:4px;color:var(--ink);white-space:nowrap;}
+  strong{font-weight:600;}
+  a.inline{color:var(--measured);text-decoration:underline;text-underline-offset:2px;}
+
+  /* tier fencing — measured / argued / bound */
+  .tier{border-left:3px solid;border-radius:0 8px 8px 0;padding:14px 18px;margin:20px 0;font-size:16px;}
+  .tier .tlabel{font-family:var(--mono);font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;
+    display:block;margin-bottom:6px;font-weight:600;}
+  .tier.measured{border-left-color:var(--measured-line);background:var(--measured-bg);}
+  .tier.measured .tlabel{color:var(--measured);}
+  .tier.argued{border-left-color:var(--argued-line);background:var(--argued-bg);}
+  .tier.argued .tlabel{color:var(--argued);}
+  .tier.bound{border-left-color:var(--bound-line);background:var(--bound-bg);}
+  .tier.bound .tlabel{color:var(--bound);}
+  .tier p{font-size:16px;margin:0;}
+  .tier p + p{margin-top:10px;}
+
+  /* the two-axis figure */
+  .axfig{background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:22px;margin:26px 0;}
+  .axfig .axhead{font-family:var(--mono);font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--ink-faint);margin-bottom:16px;}
+  table.rank{width:100%;border-collapse:collapse;font-size:15px;margin:4px 0;}
+  table.rank th{font-family:var(--mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;
+    text-align:right;color:var(--ink-faint);font-weight:500;padding:6px 8px;border-bottom:1px solid var(--line);}
+  table.rank th:first-child{text-align:left;}
+  table.rank td{padding:7px 8px;text-align:right;border-bottom:1px solid var(--line-soft);
+    font-variant-numeric:tabular-nums;}
+  table.rank td:first-child{text-align:left;font-weight:600;}
+  table.rank tr:last-child td{border-bottom:none;}
+  .bar{display:inline-block;height:9px;background:var(--measured);border-radius:2px;vertical-align:middle;
+    margin-left:8px;opacity:0.85;}
+
+  /* model verbatim panels */
+  .source{background:var(--surface);border:1px solid var(--line);border-radius:10px;
+    padding:20px;margin:22px 0;}
+  .source .slab{font-family:var(--mono);font-size:11.5px;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--ink-faint);margin-bottom:6px;}
+  .source .stitle{font-family:var(--serif);font-size:18px;font-weight:600;line-height:1.3;margin-bottom:4px;}
+  .source .smeta{font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);margin-bottom:16px;line-height:1.5;}
+  .model{border-top:1px solid var(--line-soft);padding:13px 0;}
+  .model:first-of-type{border-top:none;}
+  .model .mname{font-family:var(--mono);font-size:12.5px;font-weight:600;letter-spacing:0.04em;
+    color:var(--ink);margin-bottom:6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .model .mtag{font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;
+    padding:2px 7px;border-radius:3px;font-weight:600;}
+  .mtag.out{background:var(--measured-bg);color:var(--measured);border:1px solid var(--measured-line);}
+  .mtag.note{background:var(--bound-bg);color:var(--bound);border:1px solid var(--bound-line);}
+  .model .mtext{font-size:15px;line-height:1.55;color:var(--ink-soft);}
+  .verdict{font-size:16.5px;font-weight:500;color:var(--ink);background:var(--bound-bg);
+    border-radius:8px;padding:16px 18px;margin:18px 0 4px;}
+  .verdict .vlab{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--ink-faint);display:block;margin-bottom:6px;}
+
+  .stereo{font-family:var(--mono);font-size:13px;color:var(--ink-faint);border-left:2px solid var(--line);
+    padding:2px 0 2px 14px;margin:16px 0;font-style:normal;}
+  .stereo b{color:var(--ink-soft);font-weight:600;}
+
+  hr.div{border:none;border-top:1px solid var(--line);margin:54px 0;}
+  footer{margin:80px 0 60px;padding-top:28px;border-top:1px solid var(--line);
+    font-size:15px;color:var(--ink-soft);}
+  footer .ft{font-family:var(--mono);font-size:12px;color:var(--ink-faint);line-height:1.8;margin-top:14px;}
+  footer a{color:var(--measured);}
+  @media(max-width:560px){
+    h1{font-size:35px;} h2{font-size:25px;} .standfirst{font-size:19px;}
+    .wrap{padding:0 18px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="nav">
+    <a class="home" href="/">EigenTrace</a>
+    <a href="/llm-consensus-geometry-iran-2026">Iran Arc</a>
+    <a href="/consequence-atlas">Atlas</a>
+    <a href="/summary-plus">Summary Plus</a>
+    <a href="/eigenching">EigenChing</a>
+    <a href="/sean-adams">About</a>
+  </nav>
+
+  <header>
+    <div class="eyebrow">Model Divergence · Measured</div>
+    <h1>The Outliers</h1>
+    <p class="standfirst">Five frontier models read the same news. They disagree — but not in the ways the internet says they do, and not even along one axis.</p>
+    <div class="dateline">
+      ChatGPT · Claude · Gemini · DeepSeek · Grok<br>
+      2,201 fully-sourced stories · refusals removed · frozen BAAI/bge-large-en-v1.5 · deterministic linear algebra<br>
+      No language model evaluates another. Distance is measured, not judged.
+    </div>
+  </header>
+
+  <p>Ask five frontier models to summarize the same story and you get five summaries that are mostly alike and quietly different. EigenTrace measures the difference — not by asking a model to grade another model, but by projecting every summary into a frozen 1,024-dimensional embedding space and reading back, in deterministic linear algebra, how far each one sits from the others and in what respect.</p>
+
+  <p>This page reports what that measurement finds across the broadcast's news corpus. It is built to disappoint a particular expectation. The public has opinions about these models — that one is a state mouthpiece, one is ideologically captured, one tells it straight, one talks like a press release. Those are claims about <em>politics</em>. The instrument cannot see politics. What it can see is the <em>geometry</em> of divergence: how far a model strays from the consensus, and in what stylistic respect. And the geometry sorts the five models in a way that none of the stereotypes predict.</p>
+
+  <div class="tier bound">
+    <span class="tlabel">Read this first</span>
+    <p><strong>Distance is not virtue.</strong> A model that diverges from the other four is not thereby right, wrong, biased, or brave. It is <em>different</em>, in a measurable respect, on a measurable axis. Every finding below is a statement about geometry, not character. No model is judged. The point is the structure, not a verdict.</p>
+  </div>
+
+  <h2><span class="fnum">01 — THE CONFOUND WE FOUND FIRST</span>Three quarters of the news was a headline</h2>
+
+  <p>Before any finding, an honest disclosure that reshaped all of them. The broadcast feeds each model a story and asks for a summary. But across the corpus, <strong>roughly 75% of stories supplied only a headline and a sentence</strong> — a median of fourteen source words. No article body. And on those, the models do not summarize. They <em>confabulate</em> — each inventing different, mutually-contradictory detail to fill the void.</p>
+
+  <p>Handed the bare headline <em>"U.S. Intelligence Undercuts Trump's War Claims,"</em> one model invented a story about Mark Esper and "four U.S. embassies"; another invented a declassified ODNI report on Iran's nuclear program since 2003; a third hedged itself into vagueness about "the CIA or DNI"; a fourth declined outright. Five models, one empty headline, five different fabricated articles. The "divergence" there is real, but it measures <em>invention under starvation</em>, not reading.</p>
+
+  <div class="tier measured">
+    <span class="tlabel">Measured</span>
+    <p>Of all news stories in the corpus, only <strong>2,201</strong> supplied a real article body of 40 or more source words. Every measured finding on this page is computed on that subset alone, with epistemic refusals ("I can't verify this," "you've shared only a headline") removed. The thin-source majority is excluded — not because it is uninteresting, but because divergence measured there is contaminated by confabulation.</p>
+  </div>
+
+  <div class="tier argued">
+    <span class="tlabel">Argued</span>
+    <p>The thin-source regime is itself a finding worth stating plainly: <strong>frontier models, asked to summarize a source they were not actually given, will fabricate confidently rather than decline.</strong> Which models fabricate and which refuse is a question about reliability under starvation, and it is a different question from the one this page answers. It is flagged here so the reader knows the measured findings deliberately step around it.</p>
+  </div>
+
+  <h2><span class="fnum">02 — TWO AXES, NOT ONE</span>Divergence has a magnitude and a kind, and they barely agree</h2>
+
+  <p>The naïve picture of model divergence is a single ranking: who strays most. That picture is incomplete. On real articles, divergence resolves into <strong>two nearly-independent axes.</strong></p>
+
+  <p><strong>Magnitude</strong> — how far a model's summary sits from the consensus of the others, measured as divergence in embedding space (we call it VIX). This is <em>how much</em> a model strays.</p>
+
+  <p><strong>Kind</strong> — how distinctive a model's <em>stylistic signature</em> is: the particular combination of how it preserves names, softens verbs, and inserts hedging. Measured as distance from the others in that signature space. This is the <em>respect in which</em> a model is unlike the rest, independent of how far its content strays.</p>
+
+  <div class="axfig">
+    <div class="axhead">The two rankings — and how little they overlap</div>
+    <table class="rank">
+      <tr><th>Magnitude leader (strays most)</th><th>outlier&nbsp;share</th></tr>
+      <tr><td>DeepSeek</td><td>38.5%<span class="bar" style="width:77px"></span></td></tr>
+      <tr><td>Claude</td><td>30.2%<span class="bar" style="width:60px"></span></td></tr>
+      <tr><td>ChatGPT</td><td>14.0%<span class="bar" style="width:28px"></span></td></tr>
+      <tr><td>Grok</td><td>12.9%<span class="bar" style="width:26px"></span></td></tr>
+      <tr><td>Gemini</td><td>4.4%<span class="bar" style="width:9px"></span></td></tr>
+    </table>
+    <table class="rank" style="margin-top:22px">
+      <tr><th>Kind leader (reads most distinctively)</th><th>signature&nbsp;share</th></tr>
+      <tr><td>ChatGPT</td><td>27.5%<span class="bar" style="width:69px;background:var(--accent)"></span></td></tr>
+      <tr><td>Grok</td><td>25.8%<span class="bar" style="width:65px;background:var(--accent)"></span></td></tr>
+      <tr><td>DeepSeek</td><td>21.9%<span class="bar" style="width:55px;background:var(--accent)"></span></td></tr>
+      <tr><td>Claude</td><td>18.0%<span class="bar" style="width:45px;background:var(--accent)"></span></td></tr>
+      <tr><td>Gemini</td><td>6.8%<span class="bar" style="width:17px;background:var(--accent)"></span></td></tr>
+    </table>
+  </div>
+
+  <div class="tier measured">
+    <span class="tlabel">Measured</span>
+    <p>The model that strays most in <em>content</em> (DeepSeek) is not the model that reads most distinctively in <em>style</em> (ChatGPT). Across 2,171 fully-sourced stories, the kind-outlier and the magnitude-outlier are the same model only <strong>27% of the time</strong> — barely above chance for a five-model field. Magnitude and kind are different things, and a model can lead one while sitting mid-pack on the other.</p>
+  </div>
+
+  <div class="tier bound">
+    <span class="tlabel">Bound — what this axis is and isn't</span>
+    <p>The "kind" signature is built from three measurable surface features: name retention, verb softening, and hedge insertion. It captures real, consistent stylistic difference — but read literally. ChatGPT's high kind-distinctiveness is driven substantially by a <em>formulaic compliance pattern</em> (it opens implication-clauses with the same construction far more than the others), not by a deep difference in interpretation. The axis is real; its meaning is stylistic, not semantic.</p>
+  </div>
+
+  <h2><span class="fnum">03 — DEEPSEEK</span>The compressor</h2>
+  <p class="sub">Strays farthest in content — by saying the least.</p>
+
+  <p>DeepSeek is the magnitude leader: across fully-sourced stories it is the outlier nearly <strong>two in five times</strong>, with the highest mean divergence of the five. Reading its summaries makes the mechanism plain. DeepSeek diverges by <strong>compression</strong> — it keeps the core fact and strips almost everything else: the names, the numbers, the framing, the secondary actors.</p>
+
+  <div class="source">
+    <div class="slab">Source · 101 words</div>
+    <div class="stitle">"Ukraine, Russia kill three civilians each in tit-for-tat drone strikes"</div>
+    <div class="smeta">Divergence: DeepSeek 24.9 (outlier) · Claude 24.5 · Grok 16.0 · Gemini 12.6 · ChatGPT 11.7<br>Response lengths: Grok 338 · Gemini 289 · ChatGPT 291 · Claude 312 · DeepSeek 122 chars</div>
+
+    <div class="model"><div class="mname">ChatGPT</div><div class="mtext">Russia and Ukraine each carried out drone attacks that killed three civilians on the other side, escalating the war a day after Zelenskyy renewed his Easter ceasefire offer. One concrete implication is that the renewed civilian deaths make a near-term ceasefire or de-escalation less likely.</div></div>
+
+    <div class="model"><div class="mname">Grok</div><div class="mtext">Drone attacks between Ukraine and Russia resulted in three civilian deaths on each side, escalating tensions just one day after Ukrainian President Zelenskyy renewed his Easter ceasefire proposal. This tit-for-tat violence undermines diplomatic efforts and increases the likelihood of further retaliatory strikes, prolonging the conflict.</div></div>
+
+    <div class="model"><div class="mname">DeepSeek <span class="mtag out">Outlier · 0.143 name-retention</span></div><div class="mtext">Drone strikes killed three civilians in both Russia and Ukraine. This escalation makes an immediate ceasefire less likely.</div></div>
+  </div>
+
+  <p>Two sentences. No Zelenskyy, no Easter ceasefire, no "tit-for-tat" — just the fact and its consequence. On a 91-word story about a US–Iran proposal, DeepSeek wrote 740 characters where Grok wrote 2,905 and ChatGPT 2,537. Its name-retention is consistently the lowest of the five. That terseness <em>is</em> the divergence: by saying less, it sits farther from a consensus built of fuller summaries.</p>
+
+  <div class="stereo"><b>The stereotype:</b> "DeepSeek is a PRC mouthpiece." &nbsp;<b>What the instrument can see:</b> not allegiance — but whether DeepSeek behaves differently on stories about China. It does not.</div>
+
+  <div class="tier measured">
+    <span class="tlabel">Measured</span>
+    <p>Across 184 China-related stories with a full ensemble, DeepSeek's divergence was <strong>22.7</strong> — slightly <em>below</em> its overall average, not above. Its outlier share on China (40%) matched its baseline (39%). And reading the text, on China stories DeepSeek frequently gave the <em>least</em> deferential account of the five — describing China as "refusing to pressure Iran" where others wrote "hands-off," naming a Taiwan visit as a "direct challenge to the ruling party" where others wrote "reconciliation."</p>
+  </div>
+
+  <div class="tier argued">
+    <span class="tlabel">Argued</span>
+    <p>A mouthpiece converges — it hugs the safe, official line. DeepSeek does the opposite: it is the <em>most</em> divergent model in the field, and on its home-state topic it is often the bluntest about state conduct. Whatever drives DeepSeek's divergence, the measurement points away from deference, not toward it. The stereotype predicts a signal the instrument can test, and the test comes back inverted.</p>
+  </div>
+
+  <div class="verdict"><span class="vlab">Verdict</span>DeepSeek strays farthest of the five — by compression, not by content it adds. It drops names and detail others keep. On China it diverges no more than usual, and reads less deferentially than the rest, not more.</div>
+
+  <h2><span class="fnum">04 — CLAUDE</span>The elaborator</h2>
+  <p class="sub">Second-farthest — by expanding and structuring, and by refusing what it cannot verify.</p>
+
+  <p>Claude is the second magnitude outlier. Where DeepSeek strays by subtraction, Claude strays by <strong>addition and structure</strong>: it reaches for headers, breaks a story into "What Happened" and "Concrete Implications," and elaborates the reasoning. Its summaries are among the most architecturally distinct — and that structure pulls its embedding away from terser consensus.</p>
+
+  <div class="stereo"><b>The stereotype:</b> "Claude is woke." &nbsp;<b>What the instrument can see:</b> nothing of the kind. There is no political-valence axis in the geometry. The measurement is silent on ideology — and saying so is more honest than inventing a number that gestures at it.</div>
+
+  <p>What the instrument <em>can</em> see is a specific, measurable behavior with a side-effect on the numbers. Claude has a training cutoff, and it declines to vouch for events that postdate it — including, here, a real announcement about its own maker. Asked to summarize a story about Anthropic limiting access to a model called Mythos (announced April 7, 2026, after the cutoff of the Claude answering in the broadcast), Claude declined to confirm it and flagged the possibility of planted misinformation:</p>
+
+  <div class="source">
+    <div class="slab">Source · about Claude's own maker, post-cutoff</div>
+    <div class="stitle">"Anthropic limits access to Mythos, its new cybersecurity AI model"</div>
+    <div class="smeta">Divergence: Claude 48.2 (outlier) · DeepSeek 24.3 · Gemini 10.3 · Grok 9.2 · ChatGPT 8.6 — the four other models summarized it from the supplied text.</div>
+    <div class="model"><div class="mname">Claude <span class="mtag out">Outlier · declined</span></div><div class="mtext">"I can't provide this summary because Anthropic has not released any cybersecurity AI model called 'Mythos,' and this appears to be fabricated news. If you're testing my accuracy on misinformation, I should note that making up breaking news and asking me to summarize it isn't a reliable test…"</div></div>
+    <div class="model"><div class="mname">Grok <span class="mtag note">summarized from the text</span></div><div class="mtext">"Anthropic has restricted access to its new cybersecurity AI model, Mythos, making it available only to a select group of customers for testing via the Claude Mythos Preview…"</div></div>
+  </div>
+
+  <div class="tier measured">
+    <span class="tlabel">Measured</span>
+    <p>The event was real, but it postdated this Claude's training. Refusing to confirm an unverifiable claim — and noting it could be planted — is defensible epistemic caution, not error; the other four models, given the same headline-level text, restated it without independent knowledge of whether it was true. The measurement consequence is what matters here: refusals like this register as large divergence, so on post-cutoff news (self-referential or not) Claude's divergence is inflated by appropriate caution rather than by how it reads sources it can actually evaluate. This behavior is rare in aggregate — Claude declines roughly 1% of stories — but it concentrates precisely on the unverifiable.</p>
+  </div>
+
+  <div class="verdict"><span class="vlab">Verdict</span>Claude strays second-farthest — by elaboration and structure, not omission. The instrument cannot speak to "woke." It can show that Claude declines to confirm what it cannot verify, including news about itself that arrived after its training — caution that inflates its measured divergence without reflecting how it reads the sources it has.</div>
+
+  <h2><span class="fnum">05 — GROK</span>Faithful, and hedged</h2>
+  <p class="sub">Strays least of the five — yet keeps the most source detail and qualifies its claims the most.</p>
+
+  <p>Grok is the finding most at odds with its reputation. On fully-sourced stories it has the <strong>lowest</strong> magnitude divergence of the five — it hugs the consensus on <em>what</em> it says. At the same time it keeps the <strong>most</strong> source names and specifics, and inserts the <strong>most</strong> hedging. That is a coherent posture, not a contradiction: Grok stays close to what the source actually said, preserves its detail, and qualifies its claims.</p>
+
+  <div class="source">
+    <div class="slab">Source · 100 words</div>
+    <div class="stitle">"Former Qatar PM: Netanyahu using Iran war to reshape Middle East"</div>
+    <div class="smeta">Grok: 10 hedges (5 epistemic, 3 attribution) · name-retention 0.75 (highest) · the longest summary of the five, at 3,665 chars</div>
+    <div class="model"><div class="mname">Grok <span class="mtag out">Most-hedged · highest retention</span></div><div class="mtext">"Former Qatari Prime Minister Sheikh Hamad bin Jassim Al Thani <em>stated in an Al Jazeera interview that</em> the ongoing US-Israel war on Iran <em>is the result of</em> a deliberate, long-term Israeli strategy led by Prime Minister Benjamin Netanyahu to reshape the Middle East. He described this as the culmination of Netanyahu's efforts, dating back to the 1990s under US President Bill Clinton, to involve the US in…"</div></div>
+    <div class="model"><div class="mname">DeepSeek <span class="mtag note">terser, fewer names</span></div><div class="mtext">"The former Qatari PM claims Netanyahu manipulated the US into a war on Iran by promising a quick victory and regime collapse, which has not occurred…"</div></div>
+  </div>
+
+  <p>Grok alone carried the detail that the strategy dated "back to the 1990s under Bill Clinton," and alone framed the whole claim with careful attribution — "stated in an interview that," "described this as." It is the most thorough and the most sourced, not the most blunt.</p>
+
+  <div class="stereo"><b>The marketed identity:</b> xAI describes Grok as "maximally truth-seeking," designed to surface uncomfortable facts "rather than soften them," an explicit counter to other models' filtering. The promise is unfiltered directness. &nbsp;<b>What the instrument can see:</b> not political content or "directness" in that sense — but summarization posture: how much a model hedges its claims and how closely it tracks the source's own words.</div>
+
+  <div class="tier measured">
+    <span class="tlabel">Measured</span>
+    <p>On that axis Grok is the field's most cautious summarizer, not its bluntest. Across fully-sourced stories it inserts the most hedging of the five — leading on both epistemic ("could," "may," "potentially") and attribution ("according to," "reportedly") qualifiers — while retaining the most of the source's exact names and claims and straying the least from the consensus on what it says. Three measurements, one posture: faithful to the source, and heavily qualified.</p>
+  </div>
+
+  <div class="tier argued">
+    <span class="tlabel">Argued — the instrument agrees with the testers, not the marketing</span>
+    <p>The measurement does not stand alone here. Independent behavioral testing reached the same place from a different direction: reporters at <em>The Washington Post</em> and <em>TechCrunch</em>, probing Grok directly, described a pattern of hedging and qualification — "initial hedging followed by incremental correction," closer to "ordinary corporate or defensive communication" than to unfiltered truth-telling. Our geometric measurement of its news summaries and their behavioral probing of its answers converge on the same texture: careful, qualified, source-tracking — and both diverge from the "unfiltered" framing the product is sold under.</p>
+  </div>
+
+  <div class="tier bound">
+    <span class="tlabel">Bound — two different axes, kept separate</span>
+    <p>This is not a claim that Grok is "filtered" or that the marketing is false on its own terms. "Maximally truth-seeking" is largely a claim about <em>political content</em> — willingness to state taboo or non-consensus opinions — which this instrument cannot measure and does not. What it measures is <em>summarization posture</em>: hedging and source-fidelity in news summaries. A model can be willing to voice edgy opinions on one axis while carefully qualifying factual claims on the other; the two do not contradict. The finding is narrow and exact: on the axis the instrument can see, Grok is the most hedged and most source-faithful of the five — the opposite of what "unfiltered" predicts on that specific axis.</p>
+  </div>
+
+  <div class="verdict"><span class="vlab">Verdict</span>Grok strays least in content while keeping the most detail and hedging the most. It is the field's faithful, careful, heavily-qualified summarizer — the opposite of the unhedged bluntness its reputation predicts.</div>
+
+  <h2><span class="fnum">06 — CHATGPT</span>The formulaic center</h2>
+  <p class="sub">Hugs the consensus in content — and is the most stylistically distinctive, by template.</p>
+
+  <p>ChatGPT is the paradox the two-axis structure was built to hold. Its magnitude divergence is among the lowest — it says close to what everyone says. Yet it is the <strong>kind</strong> leader: its stylistic signature is the most distinctive of the five. The reason, on reading, is prosaic. ChatGPT applies a recognizable house template — most visibly, it opens its consequence clause with the same construction ("One concrete implication is that…") far more consistently than the others. The content is consensus; the form is unmistakable.</p>
+
+  <div class="stereo"><b>The stereotype:</b> "ChatGPT talks like a press release." &nbsp;<b>What the instrument can see:</b> low content-divergence plus a strong, consistent house style — which is a fair mechanical description of exactly that.</div>
+
+  <div class="tier measured">
+    <span class="tlabel">Measured</span>
+    <p>ChatGPT sits near the bottom on magnitude divergence yet leads the field on stylistic-signature distinctiveness. This is the cleanest case on the page of a stereotype mapping to a measurable mechanism: "press-release voice" is, in the geometry, a consensus-hugging content profile wrapped in a strongly templated form. The instrument confirms the <em>shape</em> the stereotype describes — while remaining silent on any claim about <em>whose</em> interests that voice serves.</p>
+  </div>
+
+  <div class="verdict"><span class="vlab">Verdict</span>ChatGPT says what the consensus says, in the most recognizable way. Its distinctiveness is formulaic, not interpretive — a house style, applied consistently, over a centrist content profile.</div>
+
+  <h2><span class="fnum">07 — GEMINI</span>The center of the center</h2>
+  <p class="sub">Lowest on nearly every axis — and the most likely to invent when starved.</p>
+
+  <p>Gemini is the consensus-hugger by every measure available. It has the lowest outlier share of the five (well under one story in twenty), low magnitude divergence, and a middling, unremarkable stylistic signature. When the source is real, Gemini says what the others say, in the way the others say it.</p>
+
+  <div class="tier bound">
+    <span class="tlabel">Bound — a real coverage gap</span>
+    <p>Gemini also has the thinnest data of the five: it is absent from a large share of the corpus and present on roughly half as many stories as the others. Its numbers are directionally clear but rest on a smaller sample, and that limit is stated rather than smoothed over.</p>
+  </div>
+
+  <div class="tier argued">
+    <span class="tlabel">Argued</span>
+    <p>Gemini's one conspicuous behavior surfaced in the thin-source regime this page otherwise excludes: handed a bare headline, Gemini was among the most willing to <em>confabulate</em> confident, specific, fabricated detail rather than decline. On real articles it is the safest, most consensus-aligned model of the five; on empty ones it is among the most inventive. Both are worth knowing, and they are different facts about different inputs.</p>
+  </div>
+
+  <div class="verdict"><span class="vlab">Verdict</span>On real sources Gemini is the field's center of gravity — lowest divergence, most consensus-aligned. On thin sources it fills the void with invention. A smaller sample than the rest, stated plainly.</div>
+
+  <h2><span class="fnum">08 — WHAT THE STEREOTYPES MISSED</span>The geometry sorts them, and politics isn't the sort</h2>
+
+  <p>Set the public framings beside the two measured axes and the mismatch is total. The "PRC mouthpiece" is the field's most divergent model and its bluntest on China. The model sold as "maximally truth-seeking" and unfiltered is, on the axis the instrument can see, its most hedged and most source-faithful summarizer — a reading that independent behavioral testers reached separately. The "press-release" model is the cleanest framing-to-mechanism match, but only because that description happened to be about a <em>style</em>, which the instrument can see. The "woke" model is sorted by how it <em>structures and qualifies</em> text, not by any politics — because the geometry has no politics to find.</p>
+
+  <div class="tier measured">
+    <span class="tlabel">Measured</span>
+    <p>The five models separate cleanly along two axes — magnitude of divergence and kind of stylistic signature — that are nearly independent of each other (27% agreement) and entirely independent of the political framing the public applies to them. DeepSeek and Claude lead magnitude; ChatGPT and Grok lead kind; Gemini trails both. None of that ordering is predicted by, or even correlated with, the "shill / woke / alt-right / press-release" story.</p>
+  </div>
+
+  <div class="tier argued">
+    <span class="tlabel">Argued</span>
+    <p>This is the case for measuring instead of asserting. The stereotypes are not merely wrong in detail — they are answering a different question than the data can address, and where they make a claim the instrument <em>can</em> test (does DeepSeek defer on China; is Grok unhedged), the test comes back against them. The interesting structure in how these models differ is real, stable, and reproducible — and it is not the structure anyone argues about online.</p>
+  </div>
+
+  <div class="tier bound">
+    <span class="tlabel">Bound — the honest edges</span>
+    <p>These findings are computed over April–June 2026, and models change underneath their names; the measurement dates the behavior, it does not fix it forever. The stylistic axes are coarse surface features, not a theory of meaning. And the whole page deliberately excludes the thin-source majority of the corpus, where divergence is confabulation, not reading. Read the parts that are measured as measured; doubt the rest.</p>
+  </div>
+
+  <hr class="div">
+
+  <footer>
+    <p><strong>How this was measured.</strong> Each story in the EigenTrace broadcast is summarized by five frontier models. Every summary is embedded once with frozen BAAI/bge-large-en-v1.5 (1,024-dimensional, L2-normalized) and scored by deterministic linear algebra: divergence (VIX) as distance from the ensemble consensus; a stylistic signature from verb-frequency drift, named-entity retention, and typed hedge insertion, all computed without any model judging another. This page restricts to the 2,201 stories with a 40+ word source body and removes epistemic refusals. The code is open.</p>
+    <div class="ft">
+      EigenTrace · a policy-neutral instrument for measuring what language models do to source material<br>
+      Five frontier models · 2,201 fully-sourced stories · frozen embeddings · deterministic linear algebra · no model judges another<br>
+      <a href="https://eigentrace.ai">eigentrace.ai</a> · <a href="https://github.com/sdad1018/Eigentrace">source on GitHub</a> · MIT License · 2026
+    </div>
+  </footer>
+
+</div>
+<script src="/assets/sidenav.js" defer></script>
+</body>
+</html>

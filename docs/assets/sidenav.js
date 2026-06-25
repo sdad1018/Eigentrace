@@ -16,7 +16,7 @@
     { group: "Live instruments", links: [
       { href: "/eigenching", label: "EigenChing" },
       { href: "/thoughts", label: "Reflections" },
-      { href: "/deepseek", label: "Model Outliers" }
+      { href: "/large-language-model-outliers", label: "Model Outliers" }
     ]},
     { group: "More", links: [
       { href: "/dynamics", label: "Bias or Dynamics?" },
