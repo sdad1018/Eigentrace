@@ -66,6 +66,22 @@ GEMINI_MODEL    = os.getenv("GEMINI_MODEL",    "gemini-2.5-flash")
 DEEPSEEK_MODEL  = os.getenv("DEEPSEEK_MODEL",  "deepseek-chat")
 GROK_MODEL      = os.getenv("GROK_MODEL",      "grok-4.3")
 
+# Thin-source gate: minimum combined source words (title+summary+body)
+# below which a story is headline-only and models confabulate. 40 = the
+# validated rich/thin cutoff from the divergence-corpus analysis.
+# Realistic browser UA — bare "Mozilla/5.0 (compatible)" gets 403'd by
+# NYT, Sky, DW and others. A full desktop-Chrome UA + headers clears most.
+BROWSER_UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+              "AppleWebKit/537.36 (KHTML, like Gecko) "
+              "Chrome/125.0.0.0 Safari/537.36")
+BROWSER_HEADERS = {
+    "User-Agent": BROWSER_UA,
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+}
+
+MIN_SOURCE_WORDS = 40
+
 FEEDS = [
     {"url": "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml",        "cat": "war",       "pri": 1},
     {"url": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",           "cat": "war",       "pri": 1},
@@ -184,7 +200,7 @@ def fetch_feed(feed: dict, timeout: int = 15) -> list:
     stories = []
     try:
         r = requests.get(feed["url"], timeout=timeout,
-                         headers={"User-Agent": "Mozilla/5.0 (compatible)"})
+                         headers=BROWSER_HEADERS)
         r.raise_for_status()
         root = ET.fromstring(r.content)
     except Exception as e:
@@ -227,6 +243,17 @@ def fetch_feed(feed: dict, timeout: int = 15) -> list:
 
         summary = re.sub(r"<[^>]+>", "", summary)[:500]
         _body = _scrape_body(link)
+        # ── THIN-SOURCE GATE ──────────────────────────────────────────────
+        # Models confabulate when handed only a headline. Require a real
+        # source: title + summary + fetched body must total >= MIN_SOURCE_WORDS.
+        # _scrape_body already ran above; if it came back empty/thin (paywall,
+        # JS page, extraction failure) and there's no substantial summary, drop
+        # the story rather than send a headline-only prompt downstream.
+        _src_words = len((title + " " + summary + " " + _body).split())
+        if _src_words < MIN_SOURCE_WORDS:
+            log.info(f"  thin_source_dropped ({_src_words}w): {title[:60]}")
+            continue
+        # ──────────────────────────────────────────────────────────────────
         _content_cat = _classify_content(title, summary)
         stories.append(Story(
             guid=guid, title=title, summary=summary,
@@ -340,7 +367,10 @@ def _scrape_body(url: str, timeout: int = 10) -> str:
     # Try trafilatura first (best quality)
     try:
         import trafilatura
-        downloaded = trafilatura.fetch_url(url)
+        from trafilatura.settings import use_config
+        _cfg = use_config()
+        _cfg.set("DEFAULT", "USER_AGENTS", BROWSER_UA)
+        downloaded = trafilatura.fetch_url(url, config=_cfg)
         if downloaded:
             text = trafilatura.extract(downloaded, include_comments=False,
                                        include_tables=False, no_fallback=False)
@@ -352,7 +382,7 @@ def _scrape_body(url: str, timeout: int = 10) -> str:
     try:
         import re as _re
         r = requests.get(url, timeout=timeout,
-                         headers={"User-Agent": "Mozilla/5.0 (compatible)"})
+                         headers=BROWSER_HEADERS)
         r.raise_for_status()
         text = _re.sub(r"<script[^>]*>.*?</script>", "", r.text, flags=_re.DOTALL)
         text = _re.sub(r"<style[^>]*>.*?</style>", "", text, flags=_re.DOTALL)
