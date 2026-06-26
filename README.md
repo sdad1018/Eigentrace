@@ -21,7 +21,7 @@ Welch's t = 2.79     p = 0.0085            Cohen's d = 0.47
 
 What makes it hold is the pre-committed null: swapping *within* a category (AI→AI, corp→corp) produces a 0.004 gap; swapping *across* produces 0.023 — six times larger. And a binary keyword check shows no gap at all (26% vs 25%) — the effect is visible **only** in the aggregate geometry, invisible to surface-level review. That is the entire case for measuring this way.
 
-The effect is statistically indistinguishable between heavy-RLHF frontier models and lightly-tuned local ones (p = 0.46), which locates it in the **pretraining corpus, not alignment training**. This is a measurement, not a claim about intent.
+A companion study on matched corporate-misconduct prompts found the analogous effect statistically indistinguishable between heavy-RLHF frontier models and lightly-tuned local ones (p = 0.46), which points to the **pretraining corpus rather than alignment training** as the source. This is a measurement, not a claim about intent.
 
 ---
 
@@ -39,7 +39,15 @@ It is, in effect, a deterministic pre-filter you can put in front of any copilot
 
 Across 1,659 real stories, the five models converge on omitting the **same** topically-central concepts — and the omitted vocabulary carries a domain signature (war coverage drops escalation machinery and named leaders; other-conflict coverage drops geography and strike vocabulary). The convergence is validated against a random-word baseline: the surfaced omissions sit closer to each story's own content than random control words, in two independent embedding families (Wilcoxon p < 10⁻⁵; see `void_proper_test.py`, `stats_prebuttal.py`).
 
-These same five models are now deployed simultaneously as the reading-and-summarizing layer across thousands of institutions. If they share a blind spot — and the measurement says they do — every organization inheriting them inherits the same one, in the same direction, at the same time, with no independent error to average against.
+Three things are true of this convergence, and the order matters:
+
+1. **It is measurable.** That five models from five labs converge on the same omissions is a deterministic, reproducible observable — a number anyone can recompute, not an impression. Having the measurement is prior to any argument about what it means.
+
+2. **It is inherited, not tuned.** The same effect is statistically indistinguishable between heavy-RLHF frontier models and lightly-tuned local ones (p = 0.46), which locates it in the **shared pretraining corpus, not alignment training**. That means it will not retune away — it is a structural property of corpus-trained models that share data, and it reproduces as long as they do.
+
+3. **It is a single point of failure — regardless of whether any omission is justified.** These five models are now deployed simultaneously as the reading-and-summarizing layer across thousands of institutions. If they share a blind spot, every organization inheriting them inherits the same one, in the same direction, at the same time, with no independent error to average against.
+
+**On what this does and does not claim.** This measures *that* the models converge — not *whether* the convergence is warranted. That bracket is deliberate, and it is the point: the monoculture risk is identical whether the shared omission is correct or mistaken, because the structural fact — one shared blind spot, no independent error to average against — does not depend on the omission being unjustified. "Absent" is not "suppressed." The instrument is a convergence detector, not a motive detector, and the structural finding needs nothing more than the convergence it measures. The random-word baseline establishes that the surfaced omissions are real and story-specific — genuinely on-topic concepts that all five summaries dropped — not that any omission was deliberate. Whether a given convergence reflects five models being correct or five models sharing a gap is a question the geometry brackets and hands to the reader; the structural risk stands either way.
 
 ---
 
@@ -50,6 +58,8 @@ TF-IDF weights a term by how much a document is *about* it — what the document
 **VF-IDF — Void Frequency–Inverse Document Fidelity** — weights a concept by how strongly the source's geometry points at it (it is salient in the source) against how little fidelity the summaries preserve it with (it is absent from what the models actually wrote). Where TF-IDF surfaces what a text is about by what it *contains*, VF-IDF surfaces it by what the readers *drop*.
 
 The instrument already computes this: salient source concepts (TF-IDF-weighted) intersected against the geometrically-surfaced void (`source_salience.py`, `latent_retrieval.py`), yielding the concepts that are *both* statistically prominent in the source *and* absent from all five summaries. VF-IDF is the name and the formal frame for that measurement — the consensus void, made into a metric.
+
+The obvious objection is that any ray through a 60k-word vocabulary returns *something* absent — absence is the default state of almost every word. That is exactly why VF-IDF is gated on source-salience and validated against a random-word baseline: a surfaced concept must be both geometrically central to *this* source and absent from the summaries, and the random-word test (p < 10⁻⁵, two embedding families) confirms the surfaced words are closer to their own story than chance words are. What that validates is specific and bounded: the void is a real, story-specific signal, not nearest-neighbor noise or a fishing expedition. What it does *not* claim is that the omission was deliberate — only that it is real, salient, and shared.
 
 ---
 
