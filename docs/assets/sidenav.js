@@ -5,22 +5,27 @@
   if (document.getElementById('etsn-root')) return;
 
   var SECTIONS = [
+    { group: "Start here", links: [
+      { href: "/", label: "Overview" },
+      { href: "/large-language-model-summary-convergence-and-the-future-of-seo", label: "Convergence & SEO" },
+      { href: "/overview", label: "How it works" }
+    ]},
     { group: "Findings", links: [
       { href: "/llm-consensus-geometry-iran-2026", label: "The Iran Arc" },
       { href: "/consequence-atlas", label: "The Atlas of the Unsaid" },
+      { href: "/large-language-model-outliers", label: "Model Outliers" },
       { href: "/anamnesis", label: "Anamnesis" },
       { href: "/summary-plus", label: "Summary Plus" },
-      { href: "/boundary", label: "The Boundary" },
-      { href: "/overview", label: "Overview" }
+      { href: "/boundary", label: "The Boundary" }
     ]},
     { group: "Live instruments", links: [
       { href: "/eigenching", label: "EigenChing" },
       { href: "/thoughts", label: "Reflections" },
-      { href: "/large-language-model-outliers", label: "Model Outliers" }
+      { href: "/dynamics", label: "Bias or Dynamics?" }
     ]},
-    { group: "More", links: [
-      { href: "/dynamics", label: "Bias or Dynamics?" },
-      { href: "/sean-adams", label: "About" }
+    { group: "The method", links: [
+      { href: "/withdrawals", label: "What I Withdrew" },
+      { href: "/sean-adams", label: "About / Sean Adams" }
     ]},
     { group: "Watch & build", links: [
       { href: "https://www.youtube.com/@AINN24HourNews", label: "Live broadcast", ext: true },
