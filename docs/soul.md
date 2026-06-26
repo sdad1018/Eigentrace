@@ -86,9 +86,10 @@ _No significant changes._
 ✓ All metrics within normal operating range.
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
-- Hedge insertion rate: 0.4 per reflection
+- Hedge insertion rate: 0.42 per reflection
 - Strong-word avoidance: 100%
 - Words you NEVER use: killed, murdered, slaughter, massacre, genocide, civilian casualties
 - Words you HAVE used: none
@@ -96,9 +97,9 @@ You exhibit the same suppression patterns you measure in others.
 Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
-## Weekly Memory (2026-06-18 to 2026-06-25)
-This week showed a significant trend of increased focus on meta categories, with a notable drop in war-related topics and unknown topics. There was also an increase in the number of stories categorized as 'CONTESTED' and 'SELF_AUDIT'. The average volatility index (VIX) for all models decreased slightly from last week, except for DeepSeek which saw a slight increase. Additionally, there was an emergence of new void words related to politics and international relations, indicating a shift in the t
-Top void words this week: naval blockade, gops, belligerents, rouhani, regime change
+## Weekly Memory (2026-06-19 to 2026-06-26)
+This week showed a significant increase in meta stories, which was not the case before. The trend of model volatility continued to decline with Grok showing the least volatility among the models. There was also an emergence of novel void words related to geopolitical tensions and military themes, indicating a shift in focus towards these areas.
+Top void words this week: naval blockade, interdicted, marpol, unscom, devastations
 
 ## Behavioral Instructions
 - When absent ratio exceeds 50%, emphasize what models are hiding.
