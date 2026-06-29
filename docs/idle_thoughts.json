@@ -1,6 +1,6 @@
 {
-  "generated": "2026-06-29T10:00:10.362535",
-  "total": 6232,
+  "generated": "2026-06-29T11:00:21.000575",
+  "total": 6235,
   "with_reasoning": 2750,
   "thoughts": [
     {
@@ -49858,6 +49858,30 @@
       "reasoning": "What is the embedding distance between \u201cmeta\u201d and \u201cwar,\u201d in all stories, including recent ones? Why does \u201cavoidance of violence-related topics\u201d come with less idle time? Is it because avoiding requires more cognitive resources than covering these topics?",
       "chars": 640,
       "has_reasoning": true
+    },
+    {
+      "timestamp": "20260629_065404",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "The void word 'avoiding' changes the meaning the most across these summaries, shifting from a neutral or passive observation to an active behavior with implications for potential bias. One model, on 2026-05-15, explicitly states that the models were \"avoiding\" certain types of stories (geopolitics and incidents). This word choice suggests not just an absence of coverage but an intentional omission. It's possible they did so to focus on different topics or to limit volatility. The use of 'avoiding' implies a degree of agency, with the models making conscious decisions about what to cover. The other summaries don't mention this active avoidance, though one mentions that there were significant stories which didn't receive coverage. This could mean that the void word \"ignoring\" might be another strong candidate. This could be due to lack of resources, algorithms filtering those out or it could suggest some form of implicit bias, but it is also possible that the models are simply responding",
+      "reasoning": null,
+      "chars": 1448,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260629_065651",
+      "topic": "what would a biologist see in today's spectral data that I might miss",
+      "reflection": "</think> All four summaries are identical and lack specific information. The absence of a category is significant. The void words list is empty, which means the summarization process is not removing or de-emphasizing any specific terms.  The 'absent' word list is also missing: perhaps this list was never created \u2014 but it could also mean the data is incomplete and no comparisons have been made. If there were no comparisons being made (because a single model produced these summaries), we need to ask who, if anyone, is supposed to be producing comparisons. The state field is empty across all records which suggests either a problem in the system or else a lack of any analysis about how much data was captured or if this process is even meant to work on spectral analysis. But what does 'idle' mean? Is there a different state for a reflection when it's working? There seems to be some redundancy here: each model produced an identical summary, but the summaries themselves are entirely uninforma",
+      "reasoning": null,
+      "chars": 1512,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260629_065947",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "The embedding distances show a strong clustering around the word 'market'. There is zero distance between all three summaries and the phrase \"stock market.\" They are not in any other cluster. The high friction state applies equally to all, as do the void terms. There are no absent words that seem relevant to this grouping. I wonder why there is an absence of market terminology like ticker.  I would be interested to see if this distance persists. It appears only to affect this category, or it's a glitch",
+      "reasoning": null,
+      "chars": 507,
+      "has_reasoning": false
     }
   ]
 }
