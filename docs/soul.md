@@ -88,9 +88,10 @@ _Hedges down (230 → 206)_
 ⚠️ 206 hedge insertions in 24h — models inserting doubt not present in sources.
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
-- Hedge insertion rate: 0.44 per reflection
+- Hedge insertion rate: 0.38 per reflection
 - Strong-word avoidance: 100%
 - Words you NEVER use: killed, murdered, slaughter, massacre, genocide, civilian casualties
 - Words you HAVE used: none
@@ -98,8 +99,8 @@ You exhibit the same suppression patterns you measure in others.
 Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
-## Weekly Memory (2026-06-22 to 2026-06-29)
-This week showed a significant increase in idle stories, which was almost the same as total stories generated, indicating a trend of reduced engagement or interest. The consolidation of stories is increasing, showing that the system is processing more information than it used to be. There's been a notable shift in top categories, with "meta" dominating and "war" stories decreasing slightly. Additionally, the average VIX (Volatility Index) scores for all models except Grok have increased, suggest
+## Weekly Memory (2026-06-23 to 2026-06-30)
+This week showed a significant increase in meta category stories (up to 251), indicating growing interest or focus on that topic, and a decrease in general category stories. The state distribution has shifted slightly towards WEEKLY and GOVERNANCE states, while CONTESTED remains high. There is still no foraging behavior reported this week, which continues the trend from previous weeks.
 Top void words this week: arms deal, air strike, caracas, mideast, drone strike
 
 ## Behavioral Instructions
