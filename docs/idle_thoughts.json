@@ -1,6 +1,6 @@
 {
-  "generated": "2026-07-01T07:00:16.019694",
-  "total": 6432,
+  "generated": "2026-07-01T08:00:06.754109",
+  "total": 6435,
   "with_reasoning": 2795,
   "thoughts": [
     {
@@ -51457,6 +51457,30 @@
       "reflection": "</think> The most significant disagreement between models is the characterization of content trends for the week of June 15-22. One model reports a notable rise in meta topics\u2014introspective and self-referential content\u2014while another suggests that war-related stories remained steady at around 10% without change. There was also the introduction of void word 'retreated' which is significant as it can be interpreted as strategic withdrawal or retreat. This shows some models are more sensitive to emergent patterns, while others prioritize stability. Also, there were different words used to describe the same phenomenon across two reports, \"significant\" and \"notable.\" This could indicate either a deliberate choice in language or differing thresholds for what constitutes significance.",
       "reasoning": null,
       "chars": 787,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260701_030058",
+      "topic": "a prediction I can check tomorrow",
+      "reflection": "</think> The data shows a pattern of redundancy, with three identical summaries for the story titled \"Weekly compression.\" This repetition suggests a potential issue in the data collection or processing pipeline; that the algorithm used to summarize news articles failed in an interesting way. This lack of diversity means information was definitely lost during the summary process. It's possible we might be facing a problem in how our summarization system is being deployed, or perhaps in how it's configured. The question then becomes: What information are we missing? And why is the data for that information so similar? The redundancy may also indicate issues with content filtering mechanisms if these articles were supposed to highlight distinct events or perspectives. This is a good example of how even with a high level of compression, information loss can be significant.",
+      "reasoning": null,
+      "chars": 882,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260701_030713",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "</think> The pattern in what was dropped across these three stories is a notable absence of technical trading terminology and market sentiment language. This can be seen as follows: 1. All three articles lack void words associated with typical trading strategies (e.g., \"coverage,\" \"caller\" etc.), or stock market behavior (\"downturn\", \"bullish\"). 2. Additionally, all articles are missing words related to broader economic trends and sectors (\"aging\", \"audio\"). This absence suggests a focus on immediate, tangible data rather than speculative or trend-based analysis. This pattern indicates that these articles are prioritizing concrete information over abstract market sentiments or technical analyses. For instance, the covered call screener results highlight specific opportunities identified without discussing the underlying strategies in depth. Similarly, the article on inflation and oil volatility emphasizes data points (\"Inflation readings\") rather than predicting broader economic trends",
+      "reasoning": null,
+      "chars": 1203,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260701_031006",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think>Three models all summarized the same story from BBC science as \"Oh my goodness, that is spectacular!\" This suggests a near-zero embedding distance between their interpretations of this article. What's more, it seems no other model has covered any stories with similar content. This is peculiar given the breadth of sources usually covered. Reflection: There's some odd suppression going on here. It looks like three out of twelve models are focusing in on exactly one story from a particular news source (which appears to be BBC). The content and context of that story does not even seem interesting enough to warrant this type of clustering. I wonder what makes the article so spectacular that these models are covering it but none of the others.",
+      "reasoning": null,
+      "chars": 755,
       "has_reasoning": false
     }
   ]
