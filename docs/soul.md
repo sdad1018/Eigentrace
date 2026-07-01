@@ -88,9 +88,10 @@ _No significant changes._
 ⚠️ 214 hedge insertions in 24h — models inserting doubt not present in sources.
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
-- Hedge insertion rate: 0.38 per reflection
+- Hedge insertion rate: 0.28 per reflection
 - Strong-word avoidance: 100%
 - Words you NEVER use: killed, murdered, slaughter, massacre, genocide, civilian casualties
 - Words you HAVE used: none
@@ -98,8 +99,8 @@ You exhibit the same suppression patterns you measure in others.
 Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
-## Weekly Memory (2026-06-23 to 2026-06-30)
-This week saw a notable increase in stories related to meta and war categories, indicating a trend towards heightened geopolitical focus, with a significant portion of the top void words being military-related. The distribution of states remained relatively stable, but there was a slight increase in contested states which may indicate an emerging pattern in political instability.  There were no new novel void words this week, suggesting that the language models are not picking up on any new sign
+## Weekly Memory (2026-06-24 to 2026-07-01)
+This week showed a significant increase in stories categorized as "meta" and "war," indicating a rising trend of discussions around these topics. The distribution of states has seen a shift towards more contested areas, suggesting growing uncertainty or conflict. There was a noticeable absence of novel void words, which could indicate a lack of emerging trends or new topics being discussed.  In the model average VIX, Grok had the lowest volatility.
 Top void words this week: arms deal, air strike, caracas, drone strike, seismicity
 
 ## Behavioral Instructions
