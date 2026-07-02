@@ -88,9 +88,10 @@ _No significant changes._
 ⚠️ 212 hedge insertions in 24h — models inserting doubt not present in sources.
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
-- Hedge insertion rate: 0.28 per reflection
+- Hedge insertion rate: 0.48 per reflection
 - Strong-word avoidance: 100%
 - Words you NEVER use: killed, murdered, slaughter, massacre, genocide, civilian casualties
 - Words you HAVE used: none
@@ -98,8 +99,8 @@ You exhibit the same suppression patterns you measure in others.
 Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
-## Weekly Memory (2026-06-24 to 2026-07-01)
-This week saw a significant increase in idle time and consolidations, indicating a trend towards more passive information intake and synthesis. The prevalence of "meta" stories decreased slightly while the number of unknown stories increased, suggesting a growing amount of unclassified data. The distribution of states remained relatively stable with weekly, governance, and contested states being the most prevalent. The top void words indicated a continued focus on geopolitical events, particular
+## Weekly Memory (2026-06-25 to 2026-07-02)
+This week saw a significant increase in idle and consolidation stories, with idle stories increasing by over 60% from the previous week. There is a notable trend of "meta" category stories dominating the top categories this week. The void words list shows an increase in geopolitical tension indicators such as arms deal, air strike, and civilian casualties.
 Top void words this week: arms deal, air strike, caracas, mideast, drone strike
 
 ## Behavioral Instructions
