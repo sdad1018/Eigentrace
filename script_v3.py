@@ -753,14 +753,29 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     _splus = attr.get("summary_plus", {})
     _logos_sp = attr.get("logos_words", [])
     if _splus:
-        _concept_str = ", ".join(_logos_sp[:4]) if _logos_sp else "related concepts"
-        script.append({
-            "speaker": "Host",
-            "text": (
+        _spch = attr.get("sp_channels") or {}
+        _ch_bits = []
+        if _spch.get("flat"):
+            _ch_bits.append("from the flat raycast: " + ", ".join(_spch["flat"][:3]))
+        if _spch.get("spiral"):
+            _ch_bits.append("from the convergence spiral: " + ", ".join(_spch["spiral"][:3]))
+        if _spch.get("void"):
+            _ch_bits.append("straight from the source void: " + ", ".join(_spch["void"][:3]))
+        if _ch_bits:
+            _intro_text = (
+                "Each model gave its standard summary. Now the same five, one more "
+                "pass. Two geometric derivations and a lexical check read this "
+                "story's negative space — " + "; ".join(_ch_bits) +
+                ". Same facts, sharper telling.")
+        else:
+            _concept_str = ", ".join(_logos_sp[:4]) if _logos_sp else "related concepts"
+            _intro_text = (
                 "Each model gave its standard summary. Now the same five, one more "
                 "pass, working in the concepts our analysis found sit closest to this "
-                "story: " + _concept_str + ". Same facts, sharper telling."
-            ),
+                "story: " + _concept_str + ". Same facts, sharper telling.")
+        script.append({
+            "speaker": "Host",
+            "text": _intro_text,
             "phase": "beat_03c_summary_plus_intro",
         })
         for _spname in ["ChatGPT", "Claude", "Gemini", "DeepSeek", "Grok"]:

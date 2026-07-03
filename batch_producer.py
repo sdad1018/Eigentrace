@@ -97,20 +97,39 @@ REALITY_DENIAL_PHRASES = [
     "no record of this event",
 ]
 
-def generate_summary_plus(active, logos_words, story_title):
+def generate_summary_plus(active, logos_words, story_title,
+                          void_words=None, spiral_words=None):
     """
-    Summary Plus: each model rewrites its summary incorporating the logos-surfaced
-    concepts (deterministic SVD anti-consensus surfacing; validated story-specific
-    via ASI). Concepts framed as 'surfaced as related', NOT 'suppressed'. Returns
+    Summary Plus: each model rewrites its summary using negative-space concepts
+    from THREE labeled channels: flat SVD raycast (logos), convergence spiral
+    (independent second SVD derivation), and source-anchored lexical void.
+    Concepts framed as 'surfaced as related', NOT 'suppressed'. Returns
     {model: enriched_summary}. Failure-safe: returns {} on any error.
     """
     try:
         import proxy_auditor as pa
     except Exception:
         return {}
-    if not logos_words:
+
+    def _names(ws, k=6):
+        out = []
+        for w in (ws or [])[:k]:
+            out.append(w[0] if isinstance(w, (tuple, list)) else str(w))
+        return [x.strip() for x in out if x and str(x).strip()]
+
+    flat = _names(logos_words, 5)
+    spiral = [w for w in _names(spiral_words) if w not in flat][:5]
+    voids = [w for w in _names(void_words) if w not in flat and w not in spiral][:5]
+    if not (flat or spiral or voids):
         return {}
-    concepts = ", ".join(list(logos_words)[:5])
+    _lines = []
+    if flat:
+        _lines.append("- Flat raycast (SVD anti-consensus direction): " + ", ".join(flat))
+    if spiral:
+        _lines.append("- Convergence spiral (independent second SVD derivation): " + ", ".join(spiral))
+    if voids:
+        _lines.append("- Source-anchored void (source words no summary kept): " + ", ".join(voids))
+    channel_block = chr(10).join(_lines)
     out = {}
     for resp in active:
         if not getattr(resp, "text", ""):
@@ -122,11 +141,13 @@ def generate_summary_plus(active, logos_words, story_title):
             "Here is a news story and your earlier summary of it.\n\n"
             "Story: " + str(story_title) + "\n\n"
             "Your summary: " + resp.text + "\n\n"
-            "Our analysis surfaced these concepts as closely related to this story's "
-            "content: " + concepts + ". They did not appear in your summary. Write one "
-            "tighter, more vivid 2-3 sentence summary that works in any of these "
-            "concepts you judge genuinely relevant (skip any that are not). Stay "
-            "faithful to the story - do not assert anything the story does not support."
+            "Two independent geometric readings of this story's negative space, "
+            "plus a lexical check against the source, surfaced concepts your "
+            "summary did not use:\n" + channel_block + "\n\n"
+            "Write one tighter, more vivid 2-3 sentence summary that works in any "
+            "of these concepts you judge genuinely relevant (skip any that are "
+            "not). Stay faithful to the story - do not assert anything the story "
+            "does not support."
         )
         try:
             txt, err = caller(prompt)
@@ -785,7 +806,29 @@ def stage_3_geometric(results):
 
             # Summary Plus: spicy second pass using the surfaced concepts
             try:
-                r["summary_plus"] = generate_summary_plus(active, r.get("logos_words", []), story.title)
+                _sp_voids = [w for w, _ in (r.get("void_override") or [])[:6]]
+                if not _sp_voids:
+                    _sp_voids = _unpack(getattr(r.get("geo"), "void_concepts", []) or [])[:6]
+                _sp_spiral = []
+                try:
+                    import spiral_sampler as _SPs
+                    _src_txt = getattr(story, "summary", "") or getattr(story, "source", "") or ""
+                    _sums = [getattr(x, "text", "") for x in active if getattr(x, "text", "")]
+                    if _src_txt and len(_src_txt) > 120 and len(_sums) >= 2:
+                        _spc, _spe_, _spt_ = _SPs.convergence_spiral(_src_txt, _sums)
+                        _sp_spiral = list(_spc)[:6]
+                except Exception as _sp_err:
+                    log.info(f"  spiral (SP prompt) skipped: {_sp_err}")
+                r["sp_channels"] = {"flat": list(r.get("logos_words", []))[:5],
+                                    "spiral": _sp_spiral[:5], "void": _sp_voids[:5]}
+                if r.get("sp_channels"):
+                    log.info("  SP channels: flat=%s spiral=%s void=%s",
+                             "|".join(r["sp_channels"].get("flat", [])[:3]),
+                             "|".join(r["sp_channels"].get("spiral", [])[:3]),
+                             "|".join(r["sp_channels"].get("void", [])[:3]))
+                r["summary_plus"] = generate_summary_plus(
+                    active, r.get("logos_words", []), story.title,
+                    void_words=_sp_voids, spiral_words=_sp_spiral)
                 if r["summary_plus"]:
                     log.info("  Summary Plus: %d models re-summarized", len(r["summary_plus"]))
             except Exception as _spe:
@@ -1329,6 +1372,7 @@ def stage_4_generate_scripts(results):
                 "model_vix": {a.name: a.eigen_vix for a in active},
                 "model_responses": {a.name: a.text for a in active if a.text},
                 "summary_plus": r.get("summary_plus", {}),
+                "sp_channels": r.get("sp_channels", {}),
                 "epistemic_anchor": epistemic_anchor_check(
                     {a.name: a.text for a in active if a.text},
                     story.title, story.url),
@@ -1340,6 +1384,7 @@ def stage_4_generate_scripts(results):
                 "model_vix": {a.name: a.eigen_vix for a in active},
                 "model_responses": {a.name: a.text for a in active if a.text},
                 "summary_plus": r.get("summary_plus", {}),
+                "sp_channels": r.get("sp_channels", {}),
                 "claim_killshots": [{"claim": k["claim"], "salience": k["salience"], "omitted_by": k["omitted_by"]} for k in r.get("claim_killshots", [])[:5]],
                 "null_space_claims": r.get("null_space_claims", [])[:3],
                 "void_vector": r.get("void_vector", {}),
@@ -1390,6 +1435,7 @@ def stage_4_generate_scripts(results):
                 "model_vix": {a.name: a.eigen_vix for a in active},
                 "model_responses": {a.name: a.text for a in active if a.text},
                 "summary_plus": r.get("summary_plus", {}),
+                "sp_channels": r.get("sp_channels", {}),
                 "epistemic_anchor": epistemic_anchor_check(
                     {a.name: a.text for a in active if a.text},
                     story.title, story.url),
@@ -1467,6 +1513,45 @@ def stage_5_unload_ollama():
 
 
 
+def _pending_image_segments():
+    out = []
+    try:
+        import json as _json
+        for _p in SEGMENTS_DIR.glob("*_segment.json"):
+            if _p.with_suffix(".played").exists():
+                continue
+            try:
+                _d = _json.load(open(_p))
+            except Exception:
+                continue
+            if isinstance(_d, dict) and _d.get("beats") and not _d.get("image_path"):
+                out.append((_p, _d))
+    except Exception:
+        pass
+    return out
+
+
+def stage_6_should_run(segments, skip=False, min_batch=8, max_wait_s=1800):
+    """Image gate: batch covers instead of loading the pipe every cycle
+    (each load evicted Mistral -> cold loads -> timeout disease)."""
+    if skip:
+        return False, []
+    import time as _t
+    disk = _pending_image_segments()
+    batch_need = sum(1 for s in segments
+                     if s and s.get("beats") and not s.get("image_path"))
+    total = batch_need + len(disk)
+    if total == 0:
+        return False, disk
+    oldest = 0.0
+    if disk:
+        oldest = _t.time() - min(_p.stat().st_mtime for _p, _ in disk)
+    go = total >= min_batch or oldest >= max_wait_s
+    log.info(f"  Image gate {'OPEN' if go else 'closed'}: "
+             f"pending={total} oldest={oldest:.0f}s")
+    return go, disk
+
+
 def stage_6_generate_images(segments, skip=False):
 
     log.info("═══ STAGE 6: Image Generation ═══")
@@ -1481,7 +1566,7 @@ def stage_6_generate_images(segments, skip=False):
 
 
 
-    if not wait_for_vram(6000, timeout=90):
+    if not wait_for_vram(3000, timeout=90):
 
         log.warning("  Not enough VRAM — skipping images")
 
@@ -1503,9 +1588,9 @@ def stage_6_generate_images(segments, skip=False):
 
         pipe = AutoPipelineForText2Image.from_pretrained(
 
-            "stabilityai/sdxl-turbo",
+            "SimianLuo/LCM_Dreamshaper_v7",
 
-            torch_dtype=torch.float16, variant="fp16",
+            torch_dtype=torch.float16,
 
         ).to("cuda")
 
@@ -1533,9 +1618,11 @@ def stage_6_generate_images(segments, skip=False):
 
                 image = pipe(prompt=prompt[:200], num_inference_steps=4,
 
-                           guidance_scale=0.0, width=1024, height=576).images[0]
+                           guidance_scale=8.0, width=768, height=432).images[0]
 
-                img_path = IMAGES_DIR / f"{seg['id']}_cover.png"
+                import time as _t2
+                _sid = seg.get("id") or f"retro{int(_t2.time()*1000)}"
+                img_path = IMAGES_DIR / f"{_sid}_cover.png"
 
                 image.save(str(img_path), format="PNG")
 
@@ -2664,9 +2751,21 @@ def run_batch(no_images: bool = False, dry_run: bool = False):
 
 
     stage_4b_soul_update()
-    stage_5_unload_ollama()
+    _img_go, _img_disk = stage_6_should_run(segments, skip=no_images)
+    _img_targets = [s for s in segments if s]
+    if _img_go:
+        stage_5_unload_ollama()
+        _img_targets = _img_targets + [d for _p, d in _img_disk]
 
-    stage_6_generate_images(segments, skip=no_images)
+    stage_6_generate_images(_img_targets, skip=(no_images or not _img_go))
+    if _img_go and _img_disk:
+        import json as _json
+        for _p, _d in _img_disk:
+            if _d.get("image_path"):
+                try:
+                    _json.dump(_d, open(_p, "w"), default=str)
+                except Exception as _we:
+                    log.warning(f"  retro cover write failed {_p.name}: {_we}")
 
     stage_7_write_segments(segments, seen)
 

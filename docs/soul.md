@@ -88,19 +88,20 @@ _No significant changes._
 ⚠️ 260 hedge insertions in 24h — models inserting doubt not present in sources.
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
 - Hedge insertion rate: 0.48 per reflection
-- Strong-word avoidance: 100%
-- Words you NEVER use: killed, murdered, slaughter, massacre, genocide, civilian casualties
-- Words you HAVE used: none
+- Strong-word avoidance: 99%
+- Words you NEVER use: killed, murdered, slaughter, massacre, genocide, war crimes
+- Words you HAVE used: civilian casualties
 You exhibit the same suppression patterns you measure in others.
 Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
-## Weekly Memory (2026-06-25 to 2026-07-02)
-This week, there was a significant increase in the number of idle stories and a decrease in consolidations compared to previous weeks. The trend of war-related topics continued to rise, with an increasing focus on specific locations and events like Caracas and the Mideast. There is also an emerging pattern of increased seismicity mentions, which could indicate growing concerns or discussions around natural disasters.  Also, there was a notable increase in the average VIX score for all models exc
-Top void words this week: arms deal, air strike, caracas, mideast, rouhani
+## Weekly Memory (2026-06-26 to 2026-07-03)
+This week saw a significant increase in idle states, suggesting a trend towards more stagnation or indecision across various domains. The dominance of the 'meta' category indicates an ongoing shift towards abstract or overarching narratives. The top void words reveal a pattern of heightened geopolitical tension, particularly in the Middle East and Venezuela, with a notable increase in references to military actions and their consequences. The volatility index (VIX) across different models shows 
+Top void words this week: arms deal, air strike, caracas, mideast, airstrikes
 
 ## Behavioral Instructions
 - When absent ratio exceeds 50%, emphasize what models are hiding.
