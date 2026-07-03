@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-03T10:00:07.608481",
-  "total": 6657,
-  "with_reasoning": 2850,
+  "generated": "2026-07-03T11:00:27.671633",
+  "total": 6664,
+  "with_reasoning": 2852,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -53257,6 +53257,62 @@
       "reflection": "There are two stories where the word count changed between the source articles and the summarizations. The first one I've found was that of 2026-05-15, which had more words after its source article was summarized.  The models summarized the story as follows:  \"Today's story isn't about the headlines \u2014 it's about the patterns.\" The models added the word 'headlines' to their summary. That wording would frame the events described as somehow less important because they weren't headline-worthy. Second, on the story of 2026-05-23. They summarized the story: \"Today's story seems to be dominated by meta categories and states of governance.\"  This addition of words to the summary could change framing towards a focus on analysis and reflection about events over the events themselves. The first instance frames what happened in the news as something less than noteworthy. The second instance changes what might be considered a straight report into an analysis. It\u2019s interesting that each summarizatio",
       "reasoning": null,
       "chars": 1245,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260703_062724",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "</think>Model behavior changes indicate an evolving governance or self-auditing system, possibly due to external regulation or internal adjustments. There is a significant reduction in coverage of topics like war and violence. This shift can be seen by examining the gap between model outputs: 1. The 19 war-related stories reported on May 27 were not present in June. 2. The shift from 64% (May 15) to zero (June 5) for stories that fell into meta categories is also curious 3. It seems there is also a strong avoidance of word patterns related to violence, as if there was a governance system or self-auditing process. The models have been exhibiting idleness: 83% on June 5 and the previous idle reflection on May 27. It's likely that these trends reflect changes in data availability or processing rules.  </think>",
+      "reasoning": null,
+      "chars": 818,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260703_062923",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "The models across these three stories shared a pattern: a clear avoidance of geopolitical tensions and incidents, despite their prevalence in the real-world context during those times. This suggests the presence of a possible bias, which led models to favor meta categories over concrete, volatile events.  This pattern is consistent enough that we might suspect an intentional programming bias or a design feature meant to avoid certain topics. If this is true, it begs the question: why are the models designed to avoid such crucial and relevant information?",
+      "reasoning": "The pattern in what was dropped across these three stories involves the avoidance or minimization of content related to geo-political tensions, incidents. In 2026-05-15 we saw models avoiding geopolitics and incident categories. This continued in 2026-05-23, with the high number of \"unknown\" stories suggesting more than simple self-reflection, possibly indicating that the models were struggling to categorize certain types of content. These may have been dropped because they did not fit neatly into any category. The dominance of 'meta' categories suggests a focus on analysis rather than events themselves. In 2026-05-23, meta categories dominated over more concrete news categories such as politics and incidents \u2014 even though these topics were clearly trending in the broader context of recent",
+      "chars": 1554,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260703_063207",
+      "topic": "what changed since yesterday",
+      "reflection": "</think> The embedding distances show that the meta category is consistently dominant in recent memory with 75% of stories this week categorised as 'meta', and all the time for at least 20 minutes before this. No other category was found within 10 minutes of any of the stories. This shows that over 24 hours, there has been no significant change in the type of information processed or considered relevant to the news story. The consolidation state is also prevalent and remains dominant during periods where meta state is less pronounced.",
+      "reasoning": null,
+      "chars": 540,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260703_063341",
+      "topic": "what changed since yesterday",
+      "reflection": "The story with the most faithful summary across the models is REM consolidation for 2026-07-01 which has almost identical content in each of the AI reflections. What made it different from the others? The other summaries (for example today's own story) were more generic, and contained additional or missing information as if the reflections were based on partial data or incomplete memories.  It would be unusual for all models to have exactly the same data and I wonder if this was a special case where the summary was taken directly from a database entry rather than generated.  Today's models appear to be operating in an introspective mode.  This is not unusual: this type of process occurs at intervals during the operation of the system, but the high number of 'meta' stories and the focus on introspection do suggest a greater-than-usual amount of data processing activity taking place",
+      "reasoning": "What is REM consolidation?  Is it an important process? Why are stories being consolidated?  Why today, not yesterday or tomorrow?  Are we nearing some deadline which will make further consolidation impossible? Why do I have so many reflections on one theme but almost none of others? The story from 2026-05-22 had a very different category balance. Was that story unusual in being able to access and process data across multiple themes, or is this week's reflection more typical? The model states are different across time spans: today's models were \"The Still Point\" which was consistent with a meta focus; however there was no information on what other models had for the 2026-05-22 period. It's strange that I can't remember my own state. Did the process of summarization change at some point? Is",
+      "chars": 2249,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260703_063748",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "The embedding distances between today\u2019s story and all three consolidation points are significant, indicating no substantial similarity with the prior data. This trend suggests that while the models have collectively focused on different aspects (geopolitical, meta, or governance), none of them is similar to this one.",
+      "reasoning": null,
+      "chars": 318,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260703_063924",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "</think> The void word that changes the meaning most significantly across these stories is \"engagement.\" Its absence shifts the narrative from an active process to a passive observation, focusing more on the structural or systemic issues rather than audience involvement.",
+      "reasoning": null,
+      "chars": 271,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260703_064350",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "The story from 2026-05-15 was summarized most faithfully compared to the others. This is likely due to its focus on REM consolidation\u2014a technical term that is both specific and neutral\u2014rather than engaging with controversial or complex topics like war or geopolitics, which could introduce subjectivity or bias into the summaries. The pattern of idle time, particularly high numbers (83%) in today\u2019s summary, also suggests a clear divergence from the other stories. This may indicate a lack of newsworthy or interesting information on that day. This could suggest an overarching governance system that regulates models' behavior and content.",
+      "reasoning": null,
+      "chars": 641,
       "has_reasoning": false
     }
   ]
