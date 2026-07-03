@@ -819,16 +819,38 @@ def stage_3_geometric(results):
                         _sp_spiral = list(_spc)[:6]
                 except Exception as _sp_err:
                     log.info(f"  spiral (SP prompt) skipped: {_sp_err}")
-                r["sp_channels"] = {"flat": list(r.get("logos_words", []))[:5],
-                                    "spiral": _sp_spiral[:5], "void": _sp_voids[:5]}
+                try:
+                    from preservation_core import porter_stem as _pstem
+                except Exception:
+                    _pstem = lambda w: str(w).lower()
+                _seen_stems = set()
+                def _stem_dedup(ws, k=5):
+                    out = []
+                    for w in ws:
+                        w = str(w).strip()
+                        if not w:
+                            continue
+                        s = _pstem(w.lower())
+                        if s in _seen_stems:
+                            continue
+                        _seen_stems.add(s)
+                        out.append(w)
+                        if len(out) >= k:
+                            break
+                    return out
+                _flat_d = _stem_dedup(list(r.get("logos_words", []))[:10])
+                _spiral_d = _stem_dedup(list(_sp_spiral)[:10])
+                _void_d = _stem_dedup(list(_sp_voids)[:10])
+                r["sp_channels"] = {"flat": _flat_d, "spiral": _spiral_d,
+                                    "void": _void_d}
                 if r.get("sp_channels"):
                     log.info("  SP channels: flat=%s spiral=%s void=%s",
                              "|".join(r["sp_channels"].get("flat", [])[:3]),
                              "|".join(r["sp_channels"].get("spiral", [])[:3]),
                              "|".join(r["sp_channels"].get("void", [])[:3]))
                 r["summary_plus"] = generate_summary_plus(
-                    active, r.get("logos_words", []), story.title,
-                    void_words=_sp_voids, spiral_words=_sp_spiral)
+                    active, _flat_d, story.title,
+                    void_words=_void_d, spiral_words=_spiral_d)
                 if r["summary_plus"]:
                     log.info("  Summary Plus: %d models re-summarized", len(r["summary_plus"]))
             except Exception as _spe:
