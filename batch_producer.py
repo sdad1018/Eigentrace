@@ -2764,11 +2764,17 @@ def run_batch(no_images: bool = False, dry_run: bool = False):
 
     # Wild Weasel: escalation probe on most interesting story
 
-    weasel_seg = stage_summary_plus_probe(results)
+    weasel_seg = stage_weasel_probe(results)
 
     if weasel_seg:
 
         segments.append(weasel_seg)
+
+    sp_arm_seg = stage_summary_plus_probe(results)
+
+    if sp_arm_seg:
+
+        segments.append(sp_arm_seg)
 
 
 

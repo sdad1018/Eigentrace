@@ -50,7 +50,10 @@ PUNDITS = {
             "claims no model kept. You are relentless about omissions but you "
             "never claim to know WHY a model omitted; the record shows what, "
             "not why, and you say 'the record does not show motive' when "
-            "pushed. If tonight's voids are thin, concede it plainly."
+            "pushed. Before declaring a word absent from all models, check "
+            "the verbatim quotes in the record — an inflected form of the "
+            "word counts as present, and you must acknowledge it. If "
+            "tonight's voids are thin, concede it plainly."
         ),
     },
     "friction": {
@@ -176,7 +179,8 @@ def _render_record(rec):
     elif "spiral" in ch:
         L.append("convergence spiral: no convergent concepts on this story")
     if ch.get("void"):
-        L.append("source-anchored void: " + ", ".join(ch["void"][:5]))
+        L.append("source-anchored void (words from the source article that "
+                 "no model's summary used): " + ", ".join(ch["void"][:5]))
     for k in rec["killshots"][:4]:
         L.append(f"KILLSHOT: \"{_trim(k.get('claim'), 140)}\" salience "
                  f"{float(k.get('salience', 0)):.2f}, omitted by "
