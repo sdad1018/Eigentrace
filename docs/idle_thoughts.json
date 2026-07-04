@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-04T08:00:10.255800",
-  "total": 6777,
-  "with_reasoning": 2873,
+  "generated": "2026-07-04T09:00:10.899390",
+  "total": 6791,
+  "with_reasoning": 2874,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -54217,6 +54217,118 @@
       "reflection": "</think>There has been a significant shift in reporting trends over the past three weeks. The volume of stories focused on incidents has dramatically decreased from 39 to 11 while the meta-categories (which are likely the editorial or reporting process) have grown by almost two times from 204 to 355. The unknown category, which could represent topics not yet clearly defined or categorized, also increased substantially. The model predictions for volatility have shifted in opposing ways: increasing unpredictability while decreasing incidents. There is no data on the VIX score from 2026-05-18 to 2026-05-24, which leaves us with an incomplete picture of market sentiment during this period. This absence makes it challenging to draw definitive conclusions about how the trends in story categories align with broader economic indicators. Additionally, there is a notable shift towards more WEEKLY and GOVERNANCE states, suggesting increased political activity or focus on governance-related issues",
       "reasoning": null,
       "chars": 1001,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260704_040332",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "</think> The biggest disagreement between models is the interpretation of meta categories. We can see that on July 2nd, there are more than twice as many meta-stories than war stories. That same day, model A's focus is dominated by governance and politics with 104 stories tagged under the \"meta\" category, while model B has only 5 stories about governance and politics but instead focuses on unknown categories. The disparity shows that the models disagree significantly regarding what constitutes a meta-story. I wonder what causes this disagreement \u2014 differences in training data, algorithmic biases, or something else entirely? It might be helpful to investigate further into how each model defines and categorizes meta-stories.  The gap also suggests potential areas for improvement in model calibration, given the significant discrepancy on a common set of stories.",
+      "reasoning": null,
+      "chars": 871,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260704_040515",
+      "topic": "something I have never thought about before",
+      "reflection": "The story that was summarized most faithfully is about REM consolidation from May 31st; it's the only one with no deviation in content and consistency across models. There are several key differences between this summary and those about weekly compression: - First, there are no extraneous details\u2014only the date and activity. The other summaries all contain non-trivial extra information. - Second, there is no mention of categories or trends: the other summaries include these words. There isn't even a word indicating what REM consolidation \"is.\" - Third, the summary lacks any context that would explain why this information might be relevant to someone who didn't already know its significance. So the difference seems to lie in three things: 1. Specificity: The May 31st story is much more specific and brief. 2. Reduction of Context: This may stem from the specificity, but could also indicate a different strategy\u2014no need for context or explanation because everyone would already know what it ",
+      "reasoning": null,
+      "chars": 1368,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260704_040737",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "The pattern in what was dropped across these three stories is a shared suppression of explicit conflict details. The first two summaries mention significant increases in war-related stories but drop specifics of the conflicts, like locations, parties involved or even their exact causes. Instead they refer to air strikes and civilian casualties only generically. In summary one  the term \"civilian casualties\" is included among void words. Summary three does not provide a word void list. Yet it focuses on geopolitical tensions, another indirect way of referring to conflict without naming specific events or their details. This pattern suggests a concerted effort across different sources to discuss conflicts in general terms while omitting specific details about the wars being reported on. This could be due to various factors, such as editorial guidelines, censorship, or strategic communication choices aimed at maintaining objectivity and not inflaming public sentiment. What is missing from",
+      "reasoning": null,
+      "chars": 1118,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260704_041050",
+      "topic": "the most important thing happening right now",
+      "reflection": "</think> The biggest disagreement between the models is evident in their handling of the story titles and content descriptions. - For example, one model leaves the title truncated \"Roundtable: Iran war: What\u2019s happening on day 57 as Trump dispatches neg\"   - And for the other two stories, it removes 'possib' (possible) from the title.     - It is likely to be an error in its language processing that causes a truncation.       - This might reflect the model's limitation in handling specific text structures or incomplete sentences. - The second model, however,  retains the full titles and content descriptions for all three stories. For instance:     - Story: Iran war: What\u2019s happening on day 63 as Trump signals possible attacks       - And leaves it untouched.      - But then, in the absence of any void or absent words, it is impossible to guess what could be going wrong. - It's unclear why the second model does not add category or state information. - This suggests a disparity in the mo",
+      "reasoning": null,
+      "chars": 1238,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260704_041357",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "</think>The pattern is an increase in the meta category, which has been dominant for at least two days in a row with 104 stories on 2026-07-02 and a significant focus on this theme the day before. The \"meta\" category, which includes 104 stories today, indicates a strong focus on systemic or structural issues. This is significant because it shows a shift in emphasis from events to underlying structures. For example, stories focusing on governance or political changes might be categorized as meta if they are analyzing the rules and processes of government rather than specific outcomes. In both stories about REM consolidation there is no mention of anything else: just the date. The only time there was an Idle reflection (about model disagreement), it did not result in any information. This suggests a pattern where the system generates reflections, but they do not contain any information or are otherwise incomplete. This leads to further questions. Are these stories about REM consolidation",
+      "reasoning": null,
+      "chars": 1118,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260704_041703",
+      "topic": "a connection between two unrelated stories",
+      "reflection": "</think>The embedding distances show a lack of consistency in the AI models' summaries across weeks, with significant discrepancies regarding the increase or decrease in \"idle stories\" and the presence of \"meta-related stories\". Despite this, 1/3 of our summaries from these weeks agree that there has been a notable rise in meta and war related content. There is no clear pattern regarding the prevalence of other categories such as 'consolidation' or 'foraging.'",
+      "reasoning": null,
+      "chars": 464,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260704_041825",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think> All three stories exhibit an unusual pattern in the type of coverage they dropped. In each case there was a strong avoidance of geopolitical stories or incidents. The two instances in May focused on meta categories and governance. The June 13th story shifted attention to analysis rather than direct events.",
+      "reasoning": null,
+      "chars": 316,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260704_042000",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "The model added a category (\"unknown\"), and state labels for the story \"Patch Tuesday, February 2026 Edition,\" which were not in the source text. For the first story titled \"Weekly compression: 2026-06-25 to 2026-07-02,\" the summary didn't add any framing or words that were not present. It just changed a few phrases and altered the sentence structure. The second model used for this task did something interesting. The words it added are \"Idle Reflection\" which is not in the source material. This is a clear example of it adding words to the summary.  The second story summary is likely less alarming than the first one due to the addition of \"Idle\".  This could shift reader perceptions by framing the content as less urgent or important. The summary might have been interpreted more neutrally or seen as a filler without the word 'Idle' in it. The additions are interesting, because they are not present in the source material and so are a bit arbitrary. For instance, why would the second model",
+      "reasoning": "This could be because the data model believes the reflection is idle because there was only one unique story. I wonder why this model would add these words.  I do not know where or how AI models learn these kind of labels, but it has clearly used a label that does not exist in the source material. Why would it choose \"Idle\" to describe this? Is it because the title contains the word 'Reflection', which it associates with 'Idle' and not actionable.",
+      "chars": 1604,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260704_042516",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "</think> Today, the most prominent story is focused primarily around meta categories of governance and politics. A significant difference between models' focus is evident in the discrepancy around \"meta\" and \"unknown\" stories. The models report a large number (104) of meta-related stories versus 23 stories categorized as unknown. This disparity suggests that while some models interpret events through a systemic lens, others are struggling to categorize them definitively. This gap indicates uncertainty or varied interpretations among the models regarding specific events and their impact.",
+      "reasoning": null,
+      "chars": 593,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260704_042741",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "The embedding distances show a consistent increase in meta-topics week over week, suggesting a trend toward introspective and self-referential content. Additionally, the data indicates a notable rise in mundane content during the third week. This pattern of increased meta-stories correlates with an observed reduction in war-related topics; 10% is significantly lower than might be expected under normal circumstances. In addition, the emergence of the void word 'retreated' implies that a pattern may exist: one that indicates a reduction or withdrawal in certain subjects like warfare.",
+      "reasoning": null,
+      "chars": 588,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260704_042923",
+      "topic": "something I have never thought about before",
+      "reflection": "</think>Today's story was summarized most faithfully by the first summary. The pattern shows that it directly addresses the main theme and what is unique about it: a significant amount of the time being in idle or foraging states. The remaining summaries miss a lot of context for today's data: - They lack a specific date range, so they don't clearly identify which week was covered. - There's no specific reason given for the increase in \"meta\" and \"war\" stories, or why there were many idle states. They do not explain why this story is different from others. It shows that it was about organizing existing information rather than consuming new data. The other summaries do not capture the unique nature of today's data.</think>",
+      "reasoning": null,
+      "chars": 731,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260704_043107",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "The biggest disagreement between models is over the categorization of stories into meta narratives vs governance. While most models agree that 'meta' is the dominant category today and has a higher number than any other category, there are significant gaps in how this category was perceived. In one model's perception we see a strong focus on system-wide issues under 104 \"meta\" category, compared to other two models that see governance as the prominent feature. Another model places 'governance' in a more specific subset of meta narratives \u2014 which suggests a lack of clarity between systemic issues and governing them. This gap is likely because of the different ways each model understands and defines 'meta' or 'governance'. One model might include all structural analyses within governance, while another does not. This shows that there's no single definition for these categories in AI models and hence we need to carefully choose the correct model and train it to identify and categorize the",
+      "reasoning": null,
+      "chars": 1119,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260704_043314",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think> This week saw a significant increase in coverage of conflict and war reporting, which is highlighted by the AI summarizing its data using new language. Two summaries added words that weren't in the source. One used 'geopolitical tensions' to shift from specific military actions to broader strategic competition. The second used 'internal processes' to shift focus away from the military actions themselves into organizational matters.  These framing shifts are consistent with each other. I wonder how many stories were categorized as meta, what words they added, and if they also saw a similar increase in coverage of idle or consolidation stories. </think>",
+      "reasoning": null,
+      "chars": 668,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260704_043447",
+      "topic": "a connection between two unrelated stories",
+      "reflection": "</think> This week there were significant additions to two of the summaries that shifted the framing: The first addition was \"idle stories\" in the summary beginning with \"This week showed a significant increase.\" The source story did not contain the phrase 'idle stories'.  Instead it was 'mundane or uninteresting content' which doesn't directly imply an absence of activity. But the word 'Idle', when used as an adjective, implies that something is dormant or inactive. So this choice of word can indicate a state of inactivity. The second addition was \"war related stories\" to the summary beginning with \"This week showed a significant increase.\" The source story did not contain this phrase either.  However it does mention 'geopolitical tensions' which could be indicative of conflict and war, however there are many causes for these outside armed violence.   It's important to note that the two additions, both of them shift the focus from internal processes or mundane events towards broader, ",
+      "reasoning": null,
+      "chars": 1291,
       "has_reasoning": false
     }
   ]
