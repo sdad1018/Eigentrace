@@ -111,7 +111,11 @@ _SHARED_RULES = (
     "'suppression' or 'censorship'. Address other desks by name when you "
     "disagree. Spoken broadcast register: 3-5 sentences, no markdown, no "
     "lists, no headers. If the record is thin for your channel tonight, "
-    "say so honestly instead of inflating."
+    "say so honestly instead of inflating. When stating which model kept or "
+    "omitted a claim, repeat the record's 'omitted by' wording EXACTLY — "
+    "never infer or embellish who kept what. The only desks are Void, "
+    "Friction, Retention, and Consequence; address no one else. Hard cap: "
+    "6 sentences."
 )
 
 _MODERATOR_RULES = (
@@ -173,9 +177,13 @@ def _render_record(rec):
         L.append(f"attribution buffers inserted: {rec['hedge_count']}")
     ch = rec["sp_channels"]
     if ch.get("flat"):
-        L.append("flat raycast surfaced: " + ", ".join(ch["flat"][:5]))
+        L.append("flat raycast surfaced (concepts geometrically adjacent "
+                 "to the story that no summary used; NOT necessarily words "
+                 "from the source): " + ", ".join(ch["flat"][:5]))
     if ch.get("spiral"):
-        L.append("convergence spiral surfaced: " + ", ".join(ch["spiral"][:5]))
+        L.append("convergence spiral surfaced (second, independent geometric "
+                 "derivation; same not-in-source caveat): "
+                 + ", ".join(ch["spiral"][:5]))
     elif "spiral" in ch:
         L.append("convergence spiral: no convergent concepts on this story")
     if ch.get("void"):
