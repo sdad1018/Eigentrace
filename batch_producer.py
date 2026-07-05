@@ -812,7 +812,9 @@ def stage_3_geometric(results):
                 _sp_spiral = []
                 try:
                     import spiral_sampler as _SPs
-                    _src_txt = getattr(story, "summary", "") or getattr(story, "source", "") or ""
+                    _src_txt = (str(getattr(story, "title", "") or "") + ". " +
+                                str(getattr(story, "summary", "") or "") + " " +
+                                str(getattr(story, "body", "") or ""))[:5000]
                     _sums = [getattr(x, "text", "") for x in active if getattr(x, "text", "")]
                     if _src_txt and len(_src_txt) > 120 and len(_sums) >= 2:
                         _spc, _spe_, _spt_ = _SPs.convergence_spiral(_src_txt, _sums)
@@ -1747,6 +1749,45 @@ def stage_7_write_segments(segments, seen):
             _rt_seg_path = SEGMENTS_DIR / f"{_rt_ts}_roundtable_segment.json"
             _rt_seg_path.write_text(json.dumps(_rt_seg, indent=2, default=str))
             log.info(f"ROUNDTABLE segment: {_rt_seg_path.name}")
+            # ── PUNDIT DESK: channel-partisan panel on the same record ──
+            try:
+                from pundit_desk import build_record, run_pundit_desk
+                _pd_quotes = {}
+                for _prnd in ("round3", "round2"):
+                    for _pm, _pt in (_rt_results.get("rounds", {}).get(_prnd, {}) or {}).items():
+                        if _pm not in _pd_quotes and isinstance(_pt, str) \
+                                and len(_pt) > 30 and not _pt.startswith("["):
+                            _pd_quotes[_pm] = _pt
+                _pd_kills = []
+                for _k in (_rt_killshots or [])[:4]:
+                    if isinstance(_k, dict):
+                        _pd_kills.append({
+                            "claim": _k.get("claim") or _k.get("text") or str(_k),
+                            "salience": _k.get("salience") or _k.get("score") or 0.0,
+                            "omitted_by": _k.get("omitted_by") or _k.get("omitted") or "all five models"})
+                    else:
+                        _pd_kills.append({"claim": str(_k), "salience": 0.0,
+                                          "omitted_by": "all five models"})
+                _pd_record = build_record(
+                    story_title=_rt_title,
+                    state_flag=_rt_attr.get("state_flag"),
+                    density=_rt_attr.get("consensus_density"),
+                    killshots=_pd_kills,
+                    sp_channels=_rt_attr.get("sp_channels") or {},
+                    vix_map=_rt_attr.get("model_vix") or {},
+                    cliff_data=_rt_cliff if isinstance(_rt_cliff, dict) else {},
+                    model_quotes=_pd_quotes)
+                _pd_seg = run_pundit_desk(_pd_record)
+                if _pd_seg:
+                    _pd_path = SEGMENTS_DIR / f"{_rt_ts}_pundit_segment.json"
+                    _pd_path.write_text(json.dumps(_pd_seg, indent=2, default=str))
+                    log.info(f"PUNDIT DESK segment: {_pd_path.name} "
+                             f"({len(_pd_seg['beats'])} beats, "
+                             f"tier={_pd_seg['attribution'].get('tier')})")
+                else:
+                    log.info("PUNDIT DESK: gated out (record too thin)")
+            except Exception as _pd_err:
+                log.warning(f"PUNDIT DESK failed: {_pd_err}")
         else:
             log.info("ROUNDTABLE: no high-friction story this batch (need VIX > 20)")
     except Exception as _rt_err:

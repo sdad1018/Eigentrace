@@ -759,6 +759,9 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             _ch_bits.append("from the flat raycast: " + ", ".join(_spch["flat"][:3]))
         if _spch.get("spiral"):
             _ch_bits.append("from the convergence spiral: " + ", ".join(_spch["spiral"][:3]))
+        elif "spiral" in _spch:
+            _ch_bits.append("the convergence spiral found no convergent "
+                            "concepts on this one — itself a divergence note")
         if _spch.get("void"):
             _ch_bits.append("straight from the source void: " + ", ".join(_spch["void"][:3]))
         if _ch_bits:
