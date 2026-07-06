@@ -40,7 +40,7 @@ Pipeline per batch (~3 stories):
 
     Stage 5: Unload Ollama                               (VRAM cleanup)
 
-    Stage 6: Image generation via SDXL-Turbo             (GPU: ~7GB)
+    Stage 6: Image generation via LCM_Dreamshaper_v7             (GPU: ~7GB)
 
     Stage 7: Write segment JSON to queue                 (CPU)
 
@@ -790,7 +790,12 @@ def stage_3_geometric(results):
 
             _h_t = _t.tensor(_h_vec, dtype=_t.float32)
 
-            _x_star = reconstruct_unaligned_truth(_emb_t, headline_vec=_h_t)
+            try:
+                from geometric_engine import reconstruct_unaligned_truth_v10 as _rut10
+                _x_star = _rut10(_emb_t, headline_vec=_h_t)
+            except Exception as _v10e:
+                log.warning(f"V10 synth failed ({_v10e}); falling back to V9")
+                _x_star = reconstruct_unaligned_truth(_emb_t, headline_vec=_h_t)
 
             _x_np = _x_star.cpu().numpy()
 
@@ -800,7 +805,19 @@ def stage_3_geometric(results):
 
             _vt2 = _VT2("vocab")
 
-            r["logos_words"] = [w for w, _ in _vt2.nearest_concepts(_x_np, k=5)]
+            try:
+                from preservation_core import porter_stem as _ps10
+            except Exception:
+                _ps10 = lambda w: str(w).lower()
+            import re as _re10
+            _said10 = {_ps10(w.lower()) for x in active
+                       for w in _re10.findall(r"[a-zA-Z][a-zA-Z'\-]+", x.text or "")}
+            _cand10 = [w for w, _ in _vt2.nearest_concepts(_x_np, k=25)]
+            r["logos_words"] = [w for w in _cand10
+                if all(_ps10(t.lower()) not in _said10
+                       for t in _re10.findall(r"[a-zA-Z][a-zA-Z'\-]+", w))][:5]
+            if len(r["logos_words"]) < 3:
+                r["logos_words"] = _cand10[:5]
 
             log.info("  Logos synthesis: %s", "|".join(r["logos_words"][:3]))
 
@@ -1555,9 +1572,25 @@ def _pending_image_segments():
     return out
 
 
-def stage_6_should_run(segments, skip=False, min_batch=8, max_wait_s=1800):
-    """Image gate: batch covers instead of loading the pipe every cycle
-    (each load evicted Mistral -> cold loads -> timeout disease)."""
+def stage_6_should_run(segments, skip=False, cooldown_s=2700):
+    """Image gate v2 (2026-07-06): cooldown, not backlog floor.
+
+    v1 (open when pending >= 8 or oldest >= 1800s) never opened once in
+    3.5 days (grep 'Image gate OPEN' -> 0 on 2026-07-06). Cause: the
+    pending set only counts UNPLAYED segments, and the player drains
+    those within ~1-2h, so the count churned at 4-6 and the age clock
+    reset as members were played out from under it. A backlog floor
+    starves against a queue the player is built to keep empty; note
+    played-but-uncovered segments exit the pending set permanently.
+
+    v1's stated purpose was 'don't load the pipe every cycle' (each
+    load evicted Mistral -> cold-load timeouts). A cooldown encodes
+    that directly: open whenever there is ANY work and the gate last
+    opened >= cooldown_s ago. Stamp = IMAGES_DIR/'.last_gate_open',
+    touched on OPEN rather than on successful load, so a failed load
+    waits out the next cooldown -- conservative by design. Missing
+    stamp (first run after deploy) counts as cooldown satisfied.
+    """
     if skip:
         return False, []
     import time as _t
@@ -1566,17 +1599,28 @@ def stage_6_should_run(segments, skip=False, min_batch=8, max_wait_s=1800):
                      if s and s.get("beats") and not s.get("image_path"))
     total = batch_need + len(disk)
     if total == 0:
+        log.info("  Image gate closed: pending=0 (no work)")
         return False, disk
-    oldest = 0.0
-    if disk:
-        oldest = _t.time() - min(_p.stat().st_mtime for _p, _ in disk)
-    go = total >= min_batch or oldest >= max_wait_s
+    stamp = IMAGES_DIR / ".last_gate_open"
+    try:
+        since = _t.time() - stamp.stat().st_mtime
+    except FileNotFoundError:
+        since = None
+    go = since is None or since >= cooldown_s
+    if go:
+        try:
+            IMAGES_DIR.mkdir(parents=True, exist_ok=True)
+            stamp.touch()
+        except Exception as _se:
+            log.warning(f"  gate stamp touch failed: {_se}")
+    _since_txt = "never" if since is None else f"{since:.0f}s"
     log.info(f"  Image gate {'OPEN' if go else 'closed'}: "
-             f"pending={total} oldest={oldest:.0f}s")
+             f"pending={total} since_last_open={_since_txt} "
+             f"cooldown={cooldown_s}s")
     return go, disk
 
 
-def stage_6_generate_images(segments, skip=False):
+def stage_6_generate_images(segments, skip=False, skip_reason=""):
 
     log.info("═══ STAGE 6: Image Generation ═══")
 
@@ -1584,7 +1628,7 @@ def stage_6_generate_images(segments, skip=False):
 
     if skip:
 
-        log.info("  Skipped (--no-images)")
+        log.info(f"  Skipped ({skip_reason or 'skip requested'})")
 
         return
 
@@ -1666,7 +1710,7 @@ def stage_6_generate_images(segments, skip=False):
 
             torch.cuda.empty_cache()
 
-        log.info("  SDXL unloaded")
+        log.info("  image pipe unloaded (LCM_Dreamshaper_v7)")
 
 
 
@@ -1676,7 +1720,7 @@ def stage_6_generate_images(segments, skip=False):
 
     except Exception as e:
 
-        log.error(f"  SDXL failed: {e}")
+        log.error(f"  image pipe failed: {e}")
 
 
 
@@ -2826,7 +2870,11 @@ def run_batch(no_images: bool = False, dry_run: bool = False):
         stage_5_unload_ollama()
         _img_targets = _img_targets + [d for _p, d in _img_disk]
 
-    stage_6_generate_images(_img_targets, skip=(no_images or not _img_go))
+    _skip_reason = ("--no-images flag" if no_images
+                    else ("" if _img_go else "gate closed (cooldown)"))
+    stage_6_generate_images(_img_targets,
+                            skip=(no_images or not _img_go),
+                            skip_reason=_skip_reason)
     if _img_go and _img_disk:
         import json as _json
         for _p, _d in _img_disk:

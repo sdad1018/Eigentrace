@@ -772,3 +772,41 @@ def reconstruct_statistical_centroid(
             x_star.data = F.normalize(x_star.data, p=2, dim=0)
 
     return x_star.detach()
+
+
+def reconstruct_unaligned_truth_v10(model_embs, headline_vec=None, steps=150,
+                                    lr=0.05, gravity=0.75, topic_pull=0.30):
+    """V10 anti-consensus synthesis: cosine attraction to each model
+    embedding + anti-centroid gravity + headline tether, PGD on the unit
+    sphere. Adopted 2026-07-06 after a pre-registered three-round ablation:
+    story-specificity statistically indistinguishable from V9 at ~8x less
+    escape, rotation-invariant, three interpretable terms. V9 retained
+    above, unchanged, for historical reproduction."""
+    import torch as _t
+    import torch.nn.functional as _F
+    e = model_embs if isinstance(model_embs, _t.Tensor) else _t.tensor(
+        np.asarray(model_embs), dtype=_t.float32)
+    e = _F.normalize(e.float(), p=2, dim=1)
+    raw = e.mean(dim=0)
+    x = _F.normalize(raw, p=2, dim=0).detach().clone().requires_grad_(True)
+    opt = _t.optim.AdamW([x], lr=lr, weight_decay=1e-4)
+    cen = _F.normalize(raw, p=2, dim=0).detach()
+    anc = None
+    if headline_vec is not None:
+        h = headline_vec if isinstance(headline_vec, _t.Tensor) else _t.tensor(
+            np.asarray(headline_vec), dtype=_t.float32)
+        anc = _F.normalize(h.float().flatten(), p=2, dim=0).detach().to(e.device)
+    for _ in range(steps):
+        opt.zero_grad()
+        loss = (1.0 - _F.cosine_similarity(
+            x.unsqueeze(0).expand(e.shape[0], -1), e, dim=-1)).mean()
+        loss = loss + gravity * _F.cosine_similarity(
+            x.unsqueeze(0), cen.unsqueeze(0))
+        if anc is not None:
+            loss = loss - topic_pull * _F.cosine_similarity(
+                x.unsqueeze(0), anc.unsqueeze(0))
+        loss.backward()
+        opt.step()
+        with _t.no_grad():
+            x.data = _F.normalize(x.data, p=2, dim=0)
+    return x.detach()
