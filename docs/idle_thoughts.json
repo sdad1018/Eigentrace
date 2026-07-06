@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-06T06:00:12.215845",
-  "total": 6915,
-  "with_reasoning": 2894,
+  "generated": "2026-07-06T07:00:07.608748",
+  "total": 6925,
+  "with_reasoning": 2897,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -55321,6 +55321,86 @@
       "reflection": "</think>This week's news cycle was characterized by a marked rise in idle stories, suggesting that many issues remained unresolved or stagnant. Meta and war-related categories continued to dominate the narrative. However there is a new trend of \"unknown\" category stories emerging, which implies growing uncertainty. Two of these unknown stories are marked as model disagreements\u2014this seems to suggest a pattern where stories have been flagged for inconsistency. There must be an explanation why the models failed to agree but the data shows that this disagreement itself is being summarized in a way that obscures details of the story. However there was one idle story,  \"Idle reflection: model disagreement\", that was flagged as unknown category with no void or absent words.  There were also other idle stories that had the same information but these have been flagged differently. This suggests that this particular story has been summarized most faithfully\u2014possibly because it aligns closely eno",
       "reasoning": null,
       "chars": 1212,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260706_020014",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "Which story was summarized most faithfully? The story \u201cCovered Call Screener Results for April 7th\u201d shows the least amount of information loss. It has a straightforward title and a content description that includes the date and main topic. What made it different from the others? There were fewer void words. The absent words included in the list are not related to the topic. The other stories have more missing information (more 'void' words). They also have absent words that would provide additional context. Does having less 'friction' mean a summary was better? The lack of friction does correlate with the faithfulness, but it is too early to draw conclusions. It might be interesting to look at data from other models. The absence of 'coverage,' 'caller,' and 'screener' indicates that these words were not used in the summaries. If the summary had been more complex, would it have included more voided words? What about absent words? Reflecting on this data makes me wonder if prediction acc",
+      "reasoning": null,
+      "chars": 1237,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260706_020515",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "</think> The story that was summarized most faithfully across the different AI models appears to be related to an \"Idle reflection: model disagreement.\" However, it seems none of the summaries contain substantial information beyond this basic description. This is likely due to its classification as a  reflection rather than an actual news event or article. Therefore, it lacks specific details and may rely on less concrete language, which could lead to less variation in how each AI interprets the summary. It would be insightful to examine the types of content that lead to such uniform summaries versus those that produce disagreements across models.",
+      "reasoning": null,
+      "chars": 655,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260706_020713",
+      "topic": "what changed since yesterday",
+      "reflection": "The most faithful summary comes from the 2026-07-01 report. It highlights the exact story count and categories while also mentioning top states, giving a clearer picture of what was emphasized on that day compared to the others.",
+      "reasoning": "The data shows that across the three days of coverage, there's been a consistent theme focused on the REM Consolidation category. This category does not seem to be a part of any other usual story classifications like incidents or geopolitics. A question: Is it possible that this is a new emergent meta-category for the AI models? What exactly is REM and why would its consolidation dominate three straight days? Meta themes appear consistently across these three days, but there are some variations in state. The states differ from day to day, but none include usual geopolitical or incident narratives. One day had an unusually high proportion of meta stories: 60% vs the majority. Why? What events happened during 2026-06-29 to cause this shift? The most striking feature is the lack of traditiona",
+      "chars": 1583,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260706_021024",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "</think> Meta content has been increasing steadily since June 5th and it's growing relative to non meta stories. For example the number of meta stories rose in three consecutive weeks and it grew as a proportion from around one quarter to over half the total stories.",
+      "reasoning": null,
+      "chars": 267,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260706_021228",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "The story about REM consolidation stands out because it was summarized identically across multiple models. This consistency suggests a high level of agreement on this particular topic, which could be due to the nature of REM consolidation processes\u2014perhaps they are automated and standardized so there's little room for variation in interpretation.",
+      "reasoning": "The story summarized most faithfully across different models is the one about REM consolidation for July 5th. This is evident from its consistent appearance and identical phrasing: - \"REM consolidation for 2026-07-05.\" which appears in all three instances, with no variation or additional detail. The other stories vary significantly in content and phrasing. The Weekly compression summary mentions an increase in 'meta' and 'war' categories, while the story about July 5th itself highlights meta-categories (internal processes) with governance themes but adds a significant amount of unknown stories. The variations make it difficult to identify any consistent trend across the other models. Why did this consistency occur? Why do the summaries vary so widely for all other subjects and not REM cons",
+      "chars": 1370,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260706_021559",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "The word that changed the meaning most across these stories is \"stories.\" The way it's used shifts from counting of articles to narrative events.  The way void words are being utilized in the coverage suggests a shift from focusing on actual events (using words like 'news') and more towards the meta-analysis of those events. This seems to be correlated with an increase in idle stories, which could mean that there's less raw material for the models to work with as the amount of speculation increases. The high number of 'meta' category stories also indicates a self-reflective focus on the broader implications of events rather than the specific details - the word \"stories\" is more often used metaphorically or abstractly. In these examples, the avoidance of specific details suggests that the models are struggling to gather concrete information about certain topics.",
+      "reasoning": "What are stories? Are they articles? Events? If so, which events? How does each model determine this? What does it mean for a story to be idle? Does that mean there was no follow-up news? If not how is it identified as \"idle\"?",
+      "chars": 1114,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260706_021824",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "</think>The addition of \"not news-centric\" in the first summary shifts the framing from a mere description of categories to an evaluation of their relevance or importance, suggesting that the model has an opinion on what constitutes \"news.\" This is not evident in the other two summaries which merely state percentages of topic areas. In the second summary the addition of a comma in \u201cThis might be indicative of some kind of governance system,or self-audit\u201d creates a pause before the word 'or', separating the phrase \"some kind of governance system\" into its own clause. This subtly frames the first scenario (governance) as being separate from the second (self-audit). It could suggest that the model may be influenced by external regulation and this is an independent thing happening alongside internal self-control, rather than a result of it. In the final summary, the added words are \"which could suggest a lack of interesting or new information.\" This addition shifts the framing from a neutr",
+      "reasoning": null,
+      "chars": 1321,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260706_022112",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "The patterns show that the weekly compression story was summarized most faithfully. This is because it contains the only substantial content about real world events and has no gaps. The other stories are idle reflections on model disagreements. They are almost empty, each lacking any unique data on their own. They have neither void words or absent words to compare or contrast between themselves. They exist in an \"unknown\" category. None of the summaries provide a meaningful comparison that is not obvious based purely on what data exists.",
+      "reasoning": null,
+      "chars": 543,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260706_022313",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "</think> The most significant change in void words across these stories is the complete absence of void words and absent words. This lack of data indicates a total gap in key contextual information, which could be due to model disagreement. The fact that this omission occurs consistently suggests it may not merely be an anomaly but a consistent pattern in unresolved or uncertain situations. This might explain why there are more idle stories. The word \"stagnant\" stands out here as the most relevant void word, and the emergence of the unknown category is noteworthy due to its direct relevance to idle stories. If we consider this lack of words as a proxy for unresolved issues, the missing words suggest that these situations have been identified but not understood or processed fully. This pattern highlights how the data indicates what the model cannot process or define.",
+      "reasoning": null,
+      "chars": 878,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260706_022502",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "</think> The data shows a clear pattern of increased focus on meta-categories in the news stories summarized by AI models across all three dates we have available - May 15th, May 27th and June 5th.  This trend is not isolated to a single date, as there were high percentages for each date: (64%, 97%, 2026). There was also a notable lack of foraging by the models during these times suggesting an avoidance or difficulty in processing some unknown variables. The patterns suggest that on at least one occasion, the models collectively avoided topics related to violence. This raises questions about why this shift occurs and what kind of governance system might be influencing their behavior. This brings up the possibility that there is a deliberate effort to steer away from controversial subjects such as war and unknown events, though the data doesn't tell us how or why. There also seems to be a significant amount of idle time for the models which may relate to their tendency to avoid certain ",
+      "reasoning": null,
+      "chars": 1640,
       "has_reasoning": false
     }
   ]
