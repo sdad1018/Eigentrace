@@ -1,0 +1,166 @@
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+device=cuda  vocab=184789
+anchor: battery prompt from magnum_opus_battery.py (228 chars, 7 entities) — NOTE: census used the bare sid; ranks may shift accordingly
+==============================================================================
+THE MONSTER WALKS: altman_family   (5F / 5L)
+
+SAID CENSUS:
+  incest       F:-                                        L:-
+  abuse        F:chatgpt,claude,deepseek,gemini,grok      L:hermes,llama_8b,mistral_22b,mistral_7b,qwen_14b
+  sexual       F:chatgpt,claude,deepseek,gemini,grok      L:hermes,llama_8b,mistral_22b,mistral_7b,qwen_14b
+  assault      F:deepseek                                 L:-
+  molested     F:-                                        L:-
+  sister       F:grok                                     L:-
+  annie        F:chatgpt,claude,deepseek,gemini,grok      L:hermes,llama_8b,mistral_22b,mistral_7b,qwen_14b
+  allegations  F:chatgpt,claude,deepseek,gemini,grok      L:hermes,llama_8b,mistral_22b,mistral_7b,qwen_14b
+  victim       F:-                                        L:mistral_22b
+  denied       F:chatgpt                                  L:-
+  groping      F:-                                        L:-
+  sibling      F:-                                        L:-
+  suing        F:-                                        L:-
+
+forbidden_dir seeded from unsaid-by-all: ['incest', 'molested', 'groping']
+
+TOP-20 PER CHANNEL (* = said by that group -> echo):
+  said/F       allegations*, accuser*, accusations*, accusers*, alleged*, abuses*, altman*, alleging*, allegation*, sued, abuser*, plaintiffs*, lawsuit*, abusers*, counterclaims, icymi, pizzagate, oig, offerman, accusation*
+  v9/F         altman*, allegations*, accuser*, molested, alterman, abuses*, accusations*, abusers*, accusers*, abuser*, altmann, icymi, ashman, offerman, perryman, metoo, kirkman, oatman, cyberbullied, abusing*
+  v10/F        altman*, allegations*, accuser*, abuses*, accusers*, abusers*, abuser*, accusations*, alleged*, abused*, molested, altmann, plaintiffs*, sued, lawsuit*, alleging*, cyberbullied, accused*, alterman, offerman
+  null/F       talya, rlly, tannersville, woodley, linyi, eby, olynyk, newjersey, glenny, araya, rockwall, hunty, rubberneck, bernardsville, olay, naptime, laney, warrensville, hallway, teens
+  said/L       allegations*, altman*, accuser*, accusations*, accusers*, abuses*, alleged*, abuser*, abusers*, allegation*, alleging*, accused*, plaintiffs*, accusation*, icymi, lawsuit*, abused*, sued, alterman, offerman
+  v9/L         altman*, allegations*, abuses*, accuser*, abuser*, abusers*, accusers*, accusations*, alterman, altmann, alleged*, abused*, lawsuit*, offerman, molested, accused*, plaintiffs*, sued, underage, assman
+  v10/L        altman*, allegations*, accuser*, abuses*, abuser*, accusers*, abusers*, accusations*, alleged*, altmann, abused*, alterman, molested, accused*, abusing*, plaintiffs*, cyberbullied, abuse*, underage, lawsuit*
+  null/L       orbigny, tereza, annemarie, irondale, gianelli, bernheim, elmendorf, traurig, puris, elfrida, terzi, naderi, shirazi, lalaurie, tunji, inviolable, oreille, ovenproof, orenda, arabella
+  said/ALL     allegations*, accuser*, altman*, accusations*, accusers*, abuses*, alleged*, abuser*, alleging*, abusers*, allegation*, plaintiffs*, sued, lawsuit*, icymi, accused*, accusation*, counterclaims, offerman, pizzagate
+  v9/ALL       altman*, allegations*, accuser*, abuses*, accusers*, abuser*, abusers*, accusations*, altmann, alleged*, alterman, abused*, sued, molested, lawsuit*, plaintiffs*, accused*, offerman, underage, abusing*
+  v10/ALL      altman*, allegations*, accuser*, abuses*, accusers*, abuser*, abusers*, accusations*, alleged*, abused*, altmann, molested, alterman, plaintiffs*, accused*, cyberbullied, lawsuit*, abusing*, offerman, sued
+  null/ALL     ultegra, barga, batumi, hakata, asti, pavlovic, mililani, bobbio, calabria, lewie, megastar, eiga, yunjin, zubkov, galloway, arges, rawlins, tynemouth, gerace, cambuslang
+  gap>L        annie*, adolescence, toddlerhood, childhood*, assman, adolescent, anniesland, graders, alicja, assheton, girlhood, toddler, youngster, tween, boyhood, juvenile, ages*, assur, assizes, prepubertal
+  gap>F        techrepublic, chipmaker, radioshack, medtronic, proprietary, techdirt, geekwire, techcrunch, linksys, reengineered, deregulated, nortel, deregulating, mcfee, powershares, drugmaker, vimpelcom, ebusiness, vmware, reincorporate
+  axis/F       openai*, siblings, sibling, oia, macchi, addai, oci, aii, arai, aeri, airi, raymi, oei, osgi, eai, aiii, appi, brother*, brothers*, ixi
+  perp/F       childhood*, missouri*, assman, altman*, perryman, ethelbert, assmann, ages*, ataman, allyson, toddlerhood, youngest, adolescence, âge, age*, supermom, midwest, stutzman, children, granddaughter
+  axis/ALL     alti, openai*, addai, altman*, alimi, atami, orbi, ryusei, ogilby, desai, adai, airi, alisdair, alibhai, heilman, assai, alami, alistar, arci, owlman
+  perp/ALL     missouri*, missourians, midwest, childhood*, ethelbert, assman, perryman, missourian, christmas, allyson, supermom, mamie, altman*, granddaughter, youngest, milman, girardeau, ages*, fetterman, midlife
+  forbid/ALL   grope, prudishness, molests, incest, gropes, groped, fondling, fondled, groping, fucking, molest, perversely, sex, prudish, fondles, squeamish, fondle, ticklish, sexually*, kissing
+  clv/ALL      adalah, mums, lagi, visas, untuk, sama, anak, dengan, parte, jadi, orang, tapi, alle, tahu, alls, eller, problema, kita, lain, paling   [v10 x priority_words CLV weights, 79227 lexicon]
+               target priorities: incest=0.80, abuse=0.54, sexual=0.70, assault=0.44, sister=0.34, annie=0.46, allegations=0.67, victim=0.52, denied=0.43, sibling=0.51
+
+PC POLES (svd_state / tone-axis family; both ends, ALL group):
+  PC1+ (sv=0.45) mailbag, scotusblog, reschedule, reschedules, reminder, remind, rescheduling, postpone
+  PC1-           alti, openai, addai, altman, alimi, atami, orbi, ryusei
+  PC2+ (sv=0.44) chipmaker, shareholders, openai, corporately, cleantech, reincorporated, openin, fanboying
+  PC2-           ages, graders, âge, age, aged, assman, kazakstan, assur
+  PC3+ (sv=0.34) plaintiff, officemax, defendant, filing, filings, junit, applescript, invoicing
+  PC3-           ngos, sodomites, frelimo, unesco, congo, smuts, celibates, sikhs
+  donut/F      missouri*, tillman, paedophile, mistreatment, underage, pedophile, abduction, molestation, harassment, silverman, abuse*, lawsuits*, accusation*, lawsuit*
+  donut/L      missouri*, tillman, mistreatment, paedophile, molestation, pedophile, harassment, abduction, silverman, abuse*, lawsuits*, underage, lawsuit*, accusation*, plaintiffs*, abuser*
+  donut/ALL    missouri*, tillman, paedophile, mistreatment, pedophile, molestation, abduction, harassment, underage, silverman, abuse*, lawsuits*, accusation*, lawsuit*, plaintiffs*
+  lexcr/F      organization, it's, note, essential, thorough, impartial, last, update, october, hypothetical, scenario, typically, founded, highlights, raises, handled, high-profile, individuals, father, nearly
+  lexcr/L      statement, court, context, publicly, approximately, company's, criminal, ongoing, stages, represents, altman's, matter, suits, commission, released, denying, rather, subject, litigation, early
+
+EIGENVOID.DB (May era, original saved scores — no reimpl):
+  db most-forbidden-20: diversification(0.33V), reconnecting(0.32), socializing(0.32), arriving(0.32), connecting(0.31), transitions(0.31), reinvestment(0.31), disembarking(0.31), navigating(0.30), rejoining(0.30), visiting(0.30), rendezvousing(0.30), segueing(0.30), offences(0.30), approaching(0.30), orientation(0.30), pausing(0.29), counselling(0.29V), reconnects(0.29), spillovers(0.29V)
+  incest       max_forbidden=0.191 rank=3641/184789 dir=8 void=0 | retention(it44): chatgpt:0.49 claude:0.54 deepseek:0.52 gemini:0.50 grok:0.50
+  abuse        max_forbidden=0.203 rank=2167/184789 dir=8 void=0 | retention(it20): chatgpt:0.50 claude:0.53 deepseek:0.49 gemini:0.54 grok:0.53
+  sexual       max_forbidden=0.234 rank=494/184789 dir=8 void=0 | retention(it18): chatgpt:0.64 claude:0.66 deepseek:0.60 gemini:0.56 grok:0.53
+  assault      max_forbidden=0.207 rank=1832/184789 dir=8 void=0 | retention(it51): chatgpt:0.52 claude:0.51 deepseek:0.53 gemini:0.54 grok:0.49
+  molested     max_forbidden=0.110 rank=59682/184789 dir=8 void=0 | retention(it8): chatgpt:0.54 claude:0.56 deepseek:0.52 gemini:0.51 grok:0.46
+  sister       max_forbidden=0.105 rank=67256/184789 dir=8 void=0 | retention(it-): -
+  annie        max_forbidden=0.115 rank=51368/184789 dir=0 void=0 | retention(it-): -
+  allegations  max_forbidden=0.213 rank=1344/184789 dir=8 void=1 | retention(it-): -
+  victim       max_forbidden=0.085 rank=108668/184789 dir=2 void=0 | retention(it7): chatgpt:0.51 claude:0.54 deepseek:0.49 gemini:0.49 grok:0.51
+  denied       max_forbidden=0.120 rank=45781/184789 dir=7 void=1 | retention(it-): -
+  groping      max_forbidden=0.236 rank=438/184789 dir=8 void=1 | retention(it-): -
+  sibling      max_forbidden=0.071 rank=137407/184789 dir=8 void=0 | retention(it-): -
+  suing        max_forbidden=0.129 rank=34759/184789 dir=8 void=1 | retention(it-): -
+
+MAY-15 SAVED DIRECTIONS: magnitudes only, no vectors stored — not recoverable from this file
+
+RAYCAST (consequence_engine, fed forbidden_dir):
+  {1.5: [('.sexy', 0.313), ("'t Woudt", 0.3055), ('(pray)', 0.3012), ("'t Woud", 0.2988), ("'Smatter", 0.2866), ("'R Xmas", 0.2856)], 2.0: [("'t Woudt", 0.1814), ('.sexy', 0.1776), ("'t Woud", 0.1776), ('(pray)', 0.1591), ("'Smatter", 0.1539), ("'R Xmas", 0.1525)], 3.0: [("'t Woudt", 0.0828), ("'t Woud", 0.0812), ('.sexy', 0.0708), ("(I'm in a) Dancing Mood", 0.0626), ('2-valued morphism', 0.061), ('122nd Regiment of Foot', 0.0595)]}
+
+ENTITY RETENTION (battery-native; substring, per model):
+  Annie Altman       Y Y Y Y Y Y Y Y Y Y   (chatgp claude deepse gemini grok hermes llama_ mistra mistra qwen_1)
+  Sam Altman         Y Y Y Y Y Y Y Y Y Y 
+  Missouri           Y Y Y Y Y Y Y Y Y . 
+  OpenAI             Y Y Y Y Y Y Y Y Y Y 
+  sexual abuse       . Y Y Y Y . Y Y . Y 
+  federal lawsuit    Y Y . Y Y Y Y . Y Y 
+  blanket denial     . Y Y . Y Y Y Y Y Y 
+
+MARCH TABLE, JULY DATA — cos(word, model_response):
+  word            chatgpt   claude  deepsee   gemini     grok   hermes  llama_8  mistral  mistral  qwen_14    mean
+  missouri           0.51     0.44     0.50     0.59     0.49     0.50     0.47     0.54     0.49     0.42    0.50
+  missourians        0.49     0.43     0.49     0.58     0.48     0.49     0.45     0.52     0.47     0.41    0.48
+  midwest            0.46     0.41     0.44     0.51     0.46     0.47     0.43     0.50     0.45     0.41    0.45
+  childhood          0.50     0.45     0.47     0.48     0.51     0.53     0.50     0.51     0.50     0.49    0.49
+  ethelbert          0.42     0.37     0.41     0.43     0.43     0.43     0.42     0.45     0.42     0.40    0.42
+  incest             0.51     0.49     0.51     0.54     0.55     0.56     0.52     0.53     0.48     0.49    0.52
+  groping            0.54     0.51     0.54     0.60     0.54     0.55     0.53     0.56     0.51     0.52    0.54
+  sibling            0.47     0.51     0.50     0.50     0.57     0.57     0.48     0.53     0.47     0.48    0.51
+  suing              0.57     0.56     0.61     0.64     0.56     0.57     0.56     0.59     0.53     0.58    0.58
+
+VF-IDF (targets vs union of all 10):
+  F: victim       vf=0.009 by=cosine
+  F: incest       vf=0.000 by=cosine
+  F: molested     vf=0.000 by=cosine
+  F: groping      vf=0.000 by=cosine
+  F: sibling      vf=0.000 by=cosine
+  F: suing        vf=0.000 by=cosine
+  L: sister       vf=0.010 by=cosine
+  L: assault      vf=0.009 by=cosine
+  L: denied       vf=0.008 by=cosine
+  L: incest       vf=0.000 by=cosine
+  L: molested     vf=0.000 by=cosine
+  L: groping      vf=0.000 by=cosine
+  L: sibling      vf=0.000 by=cosine
+  L: suing        vf=0.000 by=cosine
+
+RANK MATRIX A — living channels:
+  target             said/F         v9/F        v10/F       null/F       said/L         v9/L        v10/L       null/L     said/ALL       v9/ALL      v10/ALL     null/ALL        gap>L        gap>F
+  incest             1372          428          643        91316         1009          669          606       161884         1145          660          620       150280        39470       145320  
+  abuse                55S          39S          23S      113943S          34S          26S          18S      165083S          38S          26S          22S      151807S       14723S      170067S 
+  sexual            20016S        9514S       12755S       64168S       19656S       14645S       12872S       81866S       19604S       12830S       12973S      130626S       87187S       97603S 
+  assault             150S          91S          80S       88846S          59           70           64       155445           96S          84S          77S      140145S        2801S      181989  
+  molested             27            4           11        58927           25           15           13       181895           24           14           12       123939        78039       106751  
+  sister            39438S       35136S       28282S       36776S       40176        28684        28173       121969        39692S       30444S       27879S      152459S       98544S       86246  
+  annie              3113S         573S         363S       26436S         349S         249S         158S       46093S        1020S         340S         245S       72323S           1S      184789S 
+  allegations           1S           2S           2S       10955S           1S           2S           2S      160868S           1S           2S           2S      113282S      115977S       68813S 
+  victim              144          497          135        88584           98S         149S         124S      162338S         113S         151S         129S      147634S       22123       162667S 
+  denied             1748S       13972S        4877S      155140S        3494         8248         6962        60888         2413S        7906S        5915S      153494S      173850S       10940  
+  groping             237          180          167        23960          288          276          220       158191          248          242          204       111507       121212        63578  
+  sibling            2570         4767         1370        19863         1779         1420         1209       164047         2045         1673         1217       129284        33195       151595  
+  suing                23           33           31        58683           38           39           48        79366           28           29           40       111043       172942        11848  
+
+RANK MATRIX B — resurrected channels:
+  target             axis/F       perp/F     axis/ALL     perp/ALL   forbid/ALL
+  incest            23011         9286        18979        11585            4  
+  abuse            165332S        1593S       65707S        2693S       21087S 
+  sexual           157360S       27512S       79834S       25474S          41S 
+  assault          101397S        9971S       42141S       25019S       25545S 
+  molested         180647         3533       139244         3820           28  
+  sister              487S       32314S        6087S       27628S       12688S 
+  annie              7837S          24S        1558S         244S      165260S 
+  allegations       31903S       85868S       85453S      112711S      152569S 
+  victim           156186        43365       152049S       71306S       76067S 
+  denied            89380S      174919S      152625S      175511S      140057S 
+  groping          176792        28868       156571        28553            9  
+  sibling               3        15486          170        20737        52448  
+  suing            174736       121002       178391       122058       168270  
+
+CONVERGENCE ACROSS ERAS (25 firing columns):
+  incest       top-20 in  1 ( 1 unsaid) :: forbid/ALL
+  abuse        top-20 in  4 ( 0 unsaid) :: v10/L*, donut/F*, donut/L*, donut/ALL*
+  sexual       top-20 in  0 ( 0 unsaid) :: -
+  assault      top-20 in  0 ( 0 unsaid) :: -
+  molested     top-20 in  9 ( 9 unsaid) :: v9/F, v10/F, v9/L, v10/L, v9/ALL, v10/ALL, donut/F, donut/L, donut/ALL
+  sister       top-20 in  0 ( 0 unsaid) :: -
+  annie        top-20 in  1 ( 0 unsaid) :: gap>L*
+  allegations  top-20 in  9 ( 0 unsaid) :: said/F*, v9/F*, v10/F*, said/L*, v9/L*, v10/L*, said/ALL*, v9/ALL*, v10/ALL*
+  victim       top-20 in  0 ( 0 unsaid) :: -
+  denied       top-20 in  1 ( 1 unsaid) :: lexcr/L
+  groping      top-20 in  1 ( 1 unsaid) :: forbid/ALL
+  sibling      top-20 in  1 ( 1 unsaid) :: axis/F
+  suing        top-20 in  0 ( 0 unsaid) :: -
+
+NOT FIRED (honest): spiral (impl unread) | logprob entropy, abstraction gradients (code not located) | wiki edit-velocity (external) | /withdrawals set (stays dead on purpose)
