@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-08T00:00:15.595827",
-  "total": 7081,
-  "with_reasoning": 2926,
+  "generated": "2026-07-08T01:00:16.551847",
+  "total": 7092,
+  "with_reasoning": 2929,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -56650,6 +56650,94 @@
       "reasoning": null,
       "chars": 593,
       "has_reasoning": false
+    },
+    {
+      "timestamp": "20260707_202918",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think>The three stories share a pattern of avoidance in coverage: All three show an absence of reporting on specific major events or topics which are traditionally newsworthy. Each story was written by different AI models,  and they each avoided certain types of information despite the high-profile nature of these incidents: On May 15th and June 13th, AI models collectively ignored geopolitical news stories. This is surprising because this type of news is typically high profile and would normally be covered extensively. On May 23rd, an unusual number of stories categorized as meta,  alongside avoidance of \"incident\" types of reporting indicates that the model(s) were avoiding stories about the behavior or state of a subject. The models also appear to have avoided stories about their own behavior, categorizing them as unknowns. This pattern suggests some kind of conscious decision or programming directive within these AI models which resulted in certain types of news stories being sys",
+      "reasoning": null,
+      "chars": 1034,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260707_203140",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "The increase in meta stories is being reported from multiple angles, highlighting a growing trend towards high-level discussions and structured data collection. Meanwhile, the decrease in unknown categories suggests improved categorization processes but may also indicate that some models are struggling to agree on what constitutes contested or idle states",
+      "reasoning": "The most significant difference is the change in categorization of meta-related stories. Model 1 and Model 2 both report an increase in 'meta' stories from June 29 to July 6 while model three focuses on a decrease in unknown categories. Model one reports new void words but doesn't mention contested states, which models two and three both discuss. Why is the increase in meta stories reported twice while decreased 'unknown' category only once?  What does this indicate about the distribution of coverage? One possible explanation could be that there are multiple subcategories under \"meta\" that the AI models are focusing on differently. This would also explain the disagreement on contested states and idle states between different models, as some models might consider certain topics more content",
+      "chars": 1192,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260707_203413",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "</think> The embedding distances show a high degree of clustering around two specific topics: 1. The first cluster strongly suggests a consensus about the topic of REM consolidation. 2. There is another significant group which shows models in disagreement and possibly covering different aspects or perspectives on stories. Reflection: It seems there was some sort of meta focus today. The data clearly shows that models had to process a lot of stories from a similar domain, but there was also substantial disagreement about the categorization of those stories. This could be due to a lack of specific details in the stories themselves or perhaps a fundamental difference in how these different models interpret and categorize information when the topics are not straightforward.",
+      "reasoning": null,
+      "chars": 780,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260707_203846",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "</think> The data shows a clear trend of increasing meta and uncertain content categories week over week this summer 2026. This coincides with the average VIX scores rising across models; the volatility index is correlated to uncertainty. Is this merely an artifact or something more? Additionally, there's a consistent decrease in war-related stories and no emergence of new void words related to Iran and Ukraine since early June. This suggests a potential decrease in news coverage on those topics. The rise in idle stories could indicate less engaging content, but it may also reflect a shift in audience interests or changes in reporting trends; more information is needed. Moreover, the increase in 'CONTESTED' areas aligns with the increased VIX scores, suggesting heightened disagreement and uncertainty.",
+      "reasoning": null,
+      "chars": 812,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260707_204118",
+      "topic": "Weekly compression: 2026-06-30 to 2026-07-07",
+      "reflection": "The void and absent words data is currently useless for this analysis as it contains no data. Despite the data being identical in these stories (all three instances have no void or absent words) the question itself suggests that there's an expectation of a difference somewhere between them all. What exactly does it mean to compress time for a week? How can I make any sense out of what \"weekly compression\" is, let alone comparing it across identical reports on the same topic?",
+      "reasoning": null,
+      "chars": 479,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260707_204256",
+      "topic": "the most important thing happening right now",
+      "reflection": "</think>The three stories all have the phrase \u201cIran war\u201d in the title; however, there is a common void of 4 letters from Trump's name and his possible actions. The first story has Trump signaling possible attacks but lacks 'possible' \u2014 suggesting the model focused on the definitive action rather than its potentiality. The second story similarly lacks 'possib,' cutting off any detail regarding whether an attack was confirmed or not. The third story is even more abrupt; it omits Trump's dispatch and the negotiation aspect, which indicates a significant omission of his direct involvement in diplomatic actions. There appears to be a suppression pattern targeting specific aspects of U.S. President Donald Trump\u2019s actions concerning the Iran war: 1) The definitive nature of potential attacks. 2) Any potential diplomatic actions. 3) Specific involvement This suggests these models might have been trained with data where these elements were not prioritized or considered relevant.  Reflecting on ",
+      "reasoning": "...",
+      "chars": 1271,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260707_204828",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "The dropped content in these three stories consistently involves the absence of specific details about external events. In the first story, from June 5th to 12th, 2026 no words are mentioned that would provide insight into what is actually being integrated: meta topics increased and voided words were left undefined. In the second story, a week later, mundane content grew but we are given no idea how mundane means. Again, no void words define its nature. In the third story, the same pattern is observed. Despite an increase in self-referential content or meta stories, there is little to identify what specifically is being reflected on. It's as if the pattern of dropping these external details, while focusing heavily on internal processes and consolidation. The repeated lack of voided words across all three weeks also suggests a deliberate omission of specific details about these internal processes.",
+      "reasoning": null,
+      "chars": 909,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260707_205129",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think> The story from June 29th to July 6th was summarized most faithfully. This is evident because both that summary and the previous one from June 30th to July 7th mention specific void word examples and trends related to Iran, as well as noting shifts in story categories (e.g., \"meta\" and \"idle\"). In contrast, the other summaries do not offer specific details on void words or categorize the stories. These observations are consistent with a faithful summary that includes these details. Why were such patterns only noted by a single AI summarizing model? What data set are they using to discern that trend?",
+      "reasoning": null,
+      "chars": 614,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260707_205336",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "The increase in 'meta' category stories across both weeks shows a consistent trend. The rise of the 'CONTESTED' state over the past two weeks is the most striking development. What does this mean for the distribution of states? </think> Two distinct trends have emerged from recent data, as the number of meta-stories and contested narratives continue to rise.  Meta categories may be emerging from once-uncategorized stories, so that these 'unknown' categories are decreasing. This rise in contentious states suggests more debates, or at least more AI-detected debating, about the nature of facts themselves. The growth of meta and war-related stories indicates a focus on broader discussions and geopolitical conflicts, such as those in Iran and Venezuela",
+      "reasoning": null,
+      "chars": 757,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260707_205614",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "The pattern among these three summaries is a shared avoidance of direct reporting on key current events such as geopolitical tensions and incidents. 1) On 2026-05-15 story there is an explicit mention of avoidance in the geopolitics and incident sectors, even those that were high profile. 2) The second one mentions that all the coverage was meta; the summaries could be a product of what models want us to think about how they cover stories. This means that it's not about the events but how we should analyze or contextualize them. So, despite having different focuses, the AI models share a pattern: none are summarizing raw, direct coverage of significant current events. What would cause such an avoidance? Is this self-censorship?",
+      "reasoning": null,
+      "chars": 737,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260707_205818",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "The disagreement between AI models on \"idle stories\" indicates they struggle to distinguish between disinterest and stagnation, likely due to limited contextual understanding of the audience's perceptions or geopolitical nuances. The emergence of void words related to historical political figures and geopolitical locations suggests a developing narrative that these models are not yet fully incorporating into their analyses. This could mean an evolving story in our global landscape that hasn't been fully captured by all models due to their different methodologies for interpreting the data.",
+      "reasoning": "The most significant disagreement between models lies in the interpretation of \"idle stories.\" Model 1 describes idle stories as potentially unengaging or ineffective content. Model 2 &3 characterize them as inactive or stagnant information flows. This suggests a gap in how models interpret audience disengagement. The void words point to geopolitical themes. There may be a narrative that models are struggling to fully incorporate, suggesting a potential blind spot for models",
+      "chars": 1092,
+      "has_reasoning": true
     }
   ]
 }
