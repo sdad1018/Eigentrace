@@ -790,7 +790,16 @@ def reconstruct_unaligned_truth_v10(model_embs, headline_vec=None, steps=150,
     26 stories, V9 escape is corpus-dependent (0.16-0.73) while
     V10 holds a narrow absolute band (0.06-0.16); the ratio runs
     2.4-7.7x depending on corpus. The stable property is V10's
-    band, not a ratio. Rotation-invariant, three interpretable terms. V9 retained
+    band, not a ratio. Rotation-invariant, three interpretable terms.
+    Amendment 2026-07-08(b): the band figures above were themselves
+    measured under degenerate bare-sid anchors (no _prompts.json
+    existed on disk; 23 of 26 pairs). Re-anchored on real prompts:
+    V9 escape 0.03-0.84 with 5/23 stories INCREASING (anchor-
+    unstable; not a stable story property); V10 0.006-0.041 with
+    23/23 decreasing monotonically. The anchor enters the synthesis
+    loss (tether term), so escape is a function of (cloud, anchor):
+    the anchor is a declared parameter of this channel, exactly
+    like the readout dictionary. V9 retained
     above, unchanged, for historical reproduction."""
     import torch as _t
     import torch.nn.functional as _F
