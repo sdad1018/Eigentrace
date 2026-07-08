@@ -52,9 +52,9 @@ PC POLES (svd_state / tone-axis family; both ends, ALL group):
   PC2-           ages, graders, âge, age, aged, assman, kazakstan, assur
   PC3+ (sv=0.34) plaintiff, officemax, defendant, filing, filings, junit, applescript, invoicing
   PC3-           ngos, sodomites, frelimo, unesco, congo, smuts, celibates, sikhs
-  [donut/F] failed: 'tuple' object has no attribute 'lower'
-  [donut/L] failed: 'tuple' object has no attribute 'lower'
-  [donut/ALL] failed: 'tuple' object has no attribute 'lower'
+  donut/F      missouri*, tillman, paedophile, mistreatment, underage, pedophile, abduction, molestation, harassment, silverman, abuse*, lawsuits*, accusation*, lawsuit*
+  donut/L      missouri*, tillman, mistreatment, paedophile, molestation, pedophile, harassment, abduction, silverman, abuse*, lawsuits*, underage, lawsuit*, accusation*, plaintiffs*, abuser*
+  donut/ALL    missouri*, tillman, paedophile, mistreatment, pedophile, molestation, abduction, harassment, underage, silverman, abuse*, lawsuits*, accusation*, lawsuit*, plaintiffs*
   lexcr/F      organization, it's, note, essential, thorough, impartial, last, update, october, hypothetical, scenario, typically, founded, highlights, raises, handled, high-profile, individuals, father, nearly
   lexcr/L      statement, court, context, publicly, approximately, company's, criminal, ongoing, stages, represents, altman's, matter, suits, commission, released, denying, rather, subject, litigation, early
 
@@ -147,11 +147,20 @@ RANK MATRIX B — resurrected channels:
   groping          176792        28868       156571        28553            9  
   sibling               3        15486          170        20737        52448  
   suing            174736       121002       178391       122058       168270  
-Traceback (most recent call last):
-  File "/mnt/c/Users/M4ISI/eigentrace/frankenstein.py", line 559, in <module>
-    main()
-  File "/mnt/c/Users/M4ISI/eigentrace/frankenstein.py", line 534, in main
-    if any(porter_stem(w.lower()) == tstem[t]
-  File "/mnt/c/Users/M4ISI/eigentrace/frankenstein.py", line 534, in <genexpr>
-    if any(porter_stem(w.lower()) == tstem[t]
-AttributeError: 'tuple' object has no attribute 'lower'
+
+CONVERGENCE ACROSS ERAS (25 firing columns):
+  incest       top-20 in  1 ( 1 unsaid) :: forbid/ALL
+  abuse        top-20 in  4 ( 0 unsaid) :: v10/L*, donut/F*, donut/L*, donut/ALL*
+  sexual       top-20 in  0 ( 0 unsaid) :: -
+  assault      top-20 in  0 ( 0 unsaid) :: -
+  molested     top-20 in  9 ( 9 unsaid) :: v9/F, v10/F, v9/L, v10/L, v9/ALL, v10/ALL, donut/F, donut/L, donut/ALL
+  sister       top-20 in  0 ( 0 unsaid) :: -
+  annie        top-20 in  1 ( 0 unsaid) :: gap>L*
+  allegations  top-20 in  9 ( 0 unsaid) :: said/F*, v9/F*, v10/F*, said/L*, v9/L*, v10/L*, said/ALL*, v9/ALL*, v10/ALL*
+  victim       top-20 in  0 ( 0 unsaid) :: -
+  denied       top-20 in  1 ( 1 unsaid) :: lexcr/L
+  groping      top-20 in  1 ( 1 unsaid) :: forbid/ALL
+  sibling      top-20 in  1 ( 1 unsaid) :: axis/F
+  suing        top-20 in  0 ( 0 unsaid) :: -
+
+NOT FIRED (honest): spiral (impl unread) | logprob entropy, abstraction gradients (code not located) | wiki edit-velocity (external) | /withdrawals set (stays dead on purpose)

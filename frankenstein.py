@@ -558,11 +558,13 @@ def main():
     conv = {t: h1[t] + h2[t] for t in TARGETS}
     for t in TARGETS:
         for g in donut_words:
-            if any(porter_stem(w.lower()) == tstem[t]
+            if any(isinstance(w, str)
+                   and porter_stem(w.lower()) == tstem[t]
                    for w in donut_words[g]):
                 conv[t].append((f"donut/{g}", tstem[t] in group_said[g]))
         for g in lexcross:
-            if any(porter_stem(w.lower()) == tstem[t]
+            if any(isinstance(w, str)
+                   and porter_stem(w.lower()) == tstem[t]
                    for w in lexcross[g][:TOPK]):
                 conv[t].append((f"lexcr/{g}", False))
         if clv_top and t in clv_top:
