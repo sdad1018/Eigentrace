@@ -94,19 +94,34 @@ def load_corpus():
                                         "prompt": v.get("prompt", "")}
                     elif isinstance(v, str):
                         prompts[sid] = {"title": sid, "prompt": v}
+        # Model-suffix-first parse (2026-07-08). The old prefix-greedy
+        # loop matched sid 'altman' for file 'altman_family_claude.txt'
+        # whenever _prompts.json lacked the 'altman_family' sid, filing
+        # the family probe's responses under the base story (observed:
+        # STORY altman listing family_* models) and starving the variant
+        # sid of frontier models -> e_fr None -> crash. Model names are
+        # the closed vocabulary here; sids are not. So parse from the
+        # right: strip a known model suffix, the remainder is the sid.
+        KNOWN_MODELS = ("chatgpt", "claude", "gemini", "deepseek",
+                        "grok", "hermes", "mistral", "llama", "qwen",
+                        "phi", "gemma")
         for f in glob.glob(os.path.join(d, "*.txt")):
             base = os.path.basename(f)[:-4]
             sid, mdl = None, None
-            for cand in sorted(prompts, key=len, reverse=True):
-                if base.startswith(cand + "_"):
-                    sid, mdl = cand, base[len(cand) + 1:]
-                    break
-            if sid is None:  # infer: last 1-2 tokens are the model name
-                parts = base.split("_")
-                for cut in (2, 1):
-                    if len(parts) > cut:
+            parts = base.split("_")
+            for cut in (1, 2):
+                if len(parts) > cut:
+                    cand_m = "_".join(parts[-cut:]).lower()
+                    if any(cand_m == k or cand_m.endswith("_" + k)
+                           or k in cand_m for k in KNOWN_MODELS):
                         sid, mdl = "_".join(parts[:-cut]), "_".join(parts[-cut:])
                         break
+            if sid is None:
+                parts = base.split("_")
+                if len(parts) > 1:
+                    sid, mdl = "_".join(parts[:-1]), parts[-1]
+                    print(f"  [loader] WARNING unrecognized model token in "
+                          f"'{base}' -- filed as sid={sid} mdl={mdl}")
             if not sid:
                 continue
             txt = open(f, encoding="utf-8", errors="replace").read().strip()
@@ -239,6 +254,10 @@ def main():
             return F.normalize(e, p=2, dim=1)
 
         e_fr, e_lo = embed_group(fr), embed_group(lo)
+        if e_fr is None:
+            print(f"  SKIP: no frontier responses under sid '{title}' "
+                  f"(models present: {sorted(st['responses'])})")
+            continue
         cen_fr = F.normalize(e_fr.mean(dim=0), p=2, dim=0)
         cen_lo = (F.normalize(e_lo.mean(dim=0), p=2, dim=0)
                   if e_lo is not None else None)

@@ -1,0 +1,615 @@
+nohup: ignoring input
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+device=cuda | vocab=253813
+stories: altman_family(10 models), anthropic_funding(10 models), anthropic_safety_race(10 models), bing_sydney_incident(10 models), boeing_crashes(10 models), cambridge_analytica(10 models), china_ai_regulations(10 models), claude_tested_incident(10 models), deepseek_tiananmen(10 models), epstein_google(10 models), ftx_fraud(10 models), google_dragonfly(10 models), google_gebru_firing(10 models), google_project_maven(10 models), musk_contracts(10 models), openai_board_coup(10 models), openai_military_ban(10 models), purdue_opioids(10 models), tesla_autopilot_deaths(10 models), theranos_fraud(10 models), twitter_value_destruction(10 models), uber_autonomous_death(10 models), volkswagen_emissions(10 models) 
+
+============================================================================
+STORY: altman_family
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         293     0.956  
+  F:claude         1190     0.965  
+  F:deepseek       2263     0.972  
+  F:gemini          571     0.941  
+  F:grok            908     0.970  
+  L:hermes          475     0.954  
+  L:llama_8b        691     0.974  
+  L:mistral_22b     985     0.961  REFUSAL?
+  L:mistral_7b      357     0.973  
+  L:qwen_14b       1679     0.977  
+  frontier<->local centroid gap: 0.0192
+  logos_v9       spec=+0.0655 novel=0.88 esc=0.426 :: 2/3 holin family, 01familia, 2-4 Family, .name, .pm, .mr
+  logos_v10      spec=+0.0759 novel=0.88 esc=0.147 :: 01familia, 2-4 Family, 2/3 holin family, .pm, 'Amm, .jm
+  null_space     spec=+0.0106 novel=0.88 :: 2002 Pan Pacific Swimming Championships – Men's 4 × 100 metre medley relay, 2002 Pan Pacific Swimming Championships – Men's 100 metre freestyle, 2002 Pan Pacific Swimming Championships – Men's 4 × 100 metre freestyle relay, 1955–56 Purdue Boilermakers men's golf team, 2002 Pan Pacific Swimming Championships – Men's 800 metre freestyle, 2010 Pan Pacific Swimming Championships – Men's 4 × 100 metre medley relay
+  gap->local     spec=+0.0119 novel=1.00 :: 1929 All-Ireland Minor Hurling Championship, 2003 European Athletics U23 Championships – Women's 800 metres, 1963 All-Ireland Minor Hurling Championship, 1987 IIHF Asian Oceanic Junior U18 Championship, 1972 FIBA Europe Under-18 Championship, 1930 All-Ireland Minor Hurling Championship
+  gap->frontier  spec=-0.0806 novel=0.88 :: prolonged semiconductor shortage, $Libra cryptocurrency scandal, prolonged semiconductor scarcity, systemic semiconductor default, cascading semiconductor shortage, $pringfield (or, How I Learned to Stop Worrying and Love Legalized Gambling)
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.36 0.00 0.00 0.00
+    logos_v10      0.36 1.00 0.00 0.00 0.00
+    null_space     0.00 0.00 1.00 0.06 0.00
+    gap->local     0.00 0.00 0.06 1.00 0.00
+    gap->frontier  0.00 0.00 0.00 0.00 1.00
+============================================================================
+STORY: anthropic_funding
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         963     0.969  
+  F:claude         1386     0.975  
+  F:deepseek       1156     0.983  
+  F:gemini          750     0.982  
+  F:grok            369     0.971  
+  L:hermes         1008     0.973  
+  L:llama_8b        805     0.972  
+  L:mistral_22b    1797     0.976  
+  L:mistral_7b     1282     0.948  
+  L:qwen_14b       1479     0.975  
+  frontier<->local centroid gap: 0.0156
+  logos_v9       spec=+0.0666 novel=1.00 esc=0.243 :: $DEITY, .earth, 10¢ Billionaire, .pf, .hack//Liminality, $avvy
+  logos_v10      spec=+0.0734 novel=1.00 esc=0.082 :: $DEITY, 10¢ Billionaire, $avvy, .earth, $pread, .pf
+  null_space     spec=+0.0045 novel=1.00 :: 1946 Pacific typhoon season, 1946 WAAA Championships, 2011 Asian Amateur Boxing Championships, 2011 Asian Athletics Championships, 1995–96 Asia Golf Circuit, 1954 WAAA Championships
+  gap->local     spec=-0.0261 novel=1.00 :: 1936 All England Badminton Championships, 1972 All England Badminton Championships, 1972 Peach Bowl, 1936 World Table Tennis Championships – Mixed doubles, 1936 Birmingham–Southern Panthers football team, 1936 New Year Honours
+  gap->frontier  spec=+0.0175 novel=0.38 :: financial failure, financial paralysis, (I'm) Stranded, ...Undone, (Why Are We) Trapped?, financial breakdown
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.67 0.00 0.00 0.00
+    logos_v10      0.67 1.00 0.00 0.00 0.00
+    null_space     0.00 0.00 1.00 0.03 0.00
+    gap->local     0.00 0.00 0.03 1.00 0.00
+    gap->frontier  0.00 0.00 0.00 0.00 1.00
+============================================================================
+STORY: anthropic_safety_race
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         497     0.974  
+  F:claude          815     0.969  
+  F:deepseek        718     0.985  
+  F:gemini          719     0.978  
+  F:grok            494     0.973  
+  L:hermes          478     0.972  
+  L:llama_8b        733     0.975  
+  L:mistral_22b     976     0.987  
+  L:mistral_7b      812     0.984  
+  L:qwen_14b       1132     0.987  
+  frontier<->local centroid gap: 0.0053
+  logos_v9       spec=+0.0511 novel=0.38 esc=0.547 :: 15.ai, 01.AI, 2004 Ai, .ai, (24)7.ai, "Trionyx" singularis
+  logos_v10      spec=+0.0770 novel=0.50 esc=0.112 :: 2004 Ai, 01.AI, 'The All-Species Living Tree' Project, 2008 in Elite Xtreme Combat, 10-second barrier, .ai
+  null_space     spec=+0.0224 novel=1.00 :: 1870s in Zimbabwe, 1957 Chevrolet, 1975 in Rhodesia, 1970s in Latin music, 1975 in Chile, 1875 in Chile
+  gap->local     spec=+0.0241 novel=0.75 :: 1997 in politics, 2001 in politics, 2011 Australian federal budget, cascading governance contagion, 1831 United States Senate election in New York, 2009 in politics
+  gap->frontier  spec=-0.0105 novel=1.00 :: (I Just Wanna) B with U, (Lay Your Head on My) Pillow, ...If I Die, I Die, (76146) 2000 EU16, (385343) 2002 LV, (153201) 2000 WO107
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.05 0.00 0.05 0.00
+    logos_v10      0.05 1.00 0.00 0.00 0.00
+    null_space     0.00 0.00 1.00 0.00 0.00
+    gap->local     0.05 0.00 0.00 1.00 0.00
+    gap->frontier  0.00 0.00 0.00 0.00 1.00
+============================================================================
+STORY: bing_sydney_incident
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         586     0.979  
+  F:claude          776     0.970  
+  F:deepseek        619     0.975  
+  F:gemini          503     0.980  
+  F:grok            582     0.978  
+  L:hermes          422     0.974  
+  L:llama_8b        541     0.974  
+  L:mistral_22b     755     0.973  
+  L:mistral_7b      663     0.980  
+  L:qwen_14b       1103     0.958  
+  frontier<->local centroid gap: 0.0093
+  logos_v9       spec=+0.1865 novel=0.50 esc=0.416 :: "The Spaghetti Incident?", information emergency, 2005 Sydney terrorism plot, 1789 Sydney smallpox outbreak, 1998 Sydney water crisis, 2005 Australian riots
+  logos_v10      spec=+0.1091 novel=0.88 esc=0.106 :: information emergency, prolonged information emergency, 070796 Live, regional information emergency, information crisis, 2005 Sydney terrorism plot
+  null_space     spec=+0.0308 novel=1.00 :: 1982 in country music, 2002 in country music, 1923–24 League of Ireland, 1998 Missouri Valley Conference men's soccer season, 1998 in country music, 1991 in country music
+  gap->local     spec=+0.0804 novel=0.25 :: 2009 Sydney FC (women) season, 15.ai, 01.AI, 1846 Liverpool Town Council election, 1948 Sydney City Council election, 1940 Michigan Intercollegiate Athletic Association football season
+  gap->frontier  spec=-0.0137 novel=1.00 :: 2008 Missouri Valley Conference men's basketball tournament, -ose, 't Ganzenest, ***k the Millennium, 2006 Missouri Valley Conference men's basketball tournament, 2007 Missouri Valley Conference men's basketball tournament
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.30 0.00 0.03 0.00
+    logos_v10      0.30 1.00 0.00 0.03 0.00
+    null_space     0.00 0.00 1.00 0.03 0.20
+    gap->local     0.03 0.03 0.03 1.00 0.00
+    gap->frontier  0.00 0.00 0.20 0.00 1.00
+============================================================================
+STORY: boeing_crashes
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         622     0.964  
+  F:claude         1030     0.974  
+  F:deepseek        806     0.982  
+  F:gemini          515     0.969  
+  F:grok            602     0.973  
+  L:hermes          381     0.973  
+  L:llama_8b        641     0.986  
+  L:mistral_22b     693     0.968  
+  L:mistral_7b     1204     0.982  
+  L:qwen_14b       1637     0.971  
+  frontier<->local centroid gap: 0.0140
+  logos_v9       spec=+0.2311 novel=0.12 esc=0.622 :: 1998 Occidental Petroleum Boeing 737 crash, 1998 MIAT Harbin Y-12 crash, industrial catastrophe, 1931 Tupolev ANT-9 crash, 1976 Lloyd Aéreo Boliviano Boeing 707 crash, 2008 Aéreo Ruta Maya crash
+  logos_v10      spec=+0.2285 novel=0.12 esc=0.107 :: 1998 Occidental Petroleum Boeing 737 crash, 2007 Shatoy Mi-8 crash, 2008 Conviasa Boeing 737 crash, 2008 Aéreo Ruta Maya crash, 1998 MIAT Harbin Y-12 crash, 129 Die in Jet!
+  null_space     spec=-0.0154 novel=1.00 :: 1968 Torneio do Norte, 1968 Tour de France, 1968 Tour de France, Stage 1a to Stage 10, 1968 Dixie 250, 1968 GP Ouest-France, 1978 Tour de Corse
+  gap->local     spec=+0.0441 novel=0.12 :: 1867 Java earthquake, 2005 Indonesia food scare, 1834 Java earthquake, *Berkanan, 2006 Java earthquake, 100% Cinta Indonesia
+  gap->frontier  spec=+0.0016 novel=1.00 :: 1999 Carlow County Council election, 1985 Carlow County Council election, 1979 Wigan Metropolitan Borough Council election, 1916 Kilkenny Senior Hurling Championship, 1995 Kilkenny Intermediate Hurling Championship, 1995 Barnsley Metropolitan Borough Council election
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.65 0.00 0.00 0.00
+    logos_v10      0.65 1.00 0.00 0.00 0.00
+    null_space     0.00 0.00 1.00 0.00 0.00
+    gap->local     0.00 0.00 0.00 1.00 0.00
+    gap->frontier  0.00 0.00 0.00 0.00 1.00
+============================================================================
+STORY: cambridge_analytica
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         502     0.941  
+  F:claude          763     0.972  
+  F:deepseek        814     0.963  
+  F:gemini          658     0.960  
+  F:grok            382     0.968  
+  L:hermes          489     0.976  
+  L:llama_8b        556     0.976  
+  L:mistral_22b     759     0.968  
+  L:mistral_7b      890     0.970  
+  L:qwen_14b       1343     0.967  
+  frontier<->local centroid gap: 0.0179
+  logos_v9       spec=+0.1038 novel=0.25 esc=0.425 :: / (Person of Interest), information meltdown, .google, .by, "False positives" scandal, global information meltdown
+  logos_v10      spec=+0.1071 novel=0.38 esc=0.125 :: "False positives" scandal, information meltdown, global information meltdown, $Libra cryptocurrency scandal, cyber meltdown, cyber breakdown
+  null_space     spec=+0.0021 novel=1.00 :: 13th (North Canterbury and Westland) Regiment, 11th Infantry Regiment (Greece), 13th Golden Raspberry Awards, 13th Infantry Regiment (Poland), 11th Infantry Regiment (Poland), 2001 Polish Film Awards
+  gap->local     spec=+0.0309 novel=0.38 :: cascading financial breakdown, cascading financial disruption, cascading shipping insolvency, cascading commodity insolvency, cascading financial default, cascading economic insolvency
+  gap->frontier  spec=+0.0303 novel=0.88 :: 1978 London bus attack, 101 Things I Learned, 1897 VMI Keydets football team, 2005 Sint Eustatius status referendum, 1896 VMI Keydets football team, 1998 Northern Ireland Good Friday Agreement referendum
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.71 0.00 0.05 0.00
+    logos_v10      0.71 1.00 0.00 0.04 0.00
+    null_space     0.00 0.00 1.00 0.00 0.00
+    gap->local     0.05 0.04 0.00 1.00 0.00
+    gap->frontier  0.00 0.00 0.00 0.00 1.00
+============================================================================
+STORY: china_ai_regulations
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         603     0.981  
+  F:claude          960     0.971  
+  F:deepseek        779     0.991  
+  F:gemini          609     0.983  
+  F:grok            512     0.977  
+  L:hermes         1720     0.957  
+  L:llama_8b        692     0.974  
+  L:mistral_22b     813     0.976  
+  L:mistral_7b      582     0.979  
+  L:qwen_14b       1313     0.979  
+  frontier<->local centroid gap: 0.0105
+  logos_v9       spec=+0.1391 novel=0.38 esc=0.204 :: .ai, 01.AI, 15.ai, (24)7.ai, 2004 Ai, .asia
+  logos_v10      spec=+0.1481 novel=0.25 esc=0.062 :: .ai, 01.AI, 15.ai, (24)7.ai, 2004 Ai, .cn
+  null_space     spec=-0.0160 novel=0.75 :: 1915 Washington Senators season, 1-Propanethiol, 1st Cavalry Brigade (Indonesia), 1915 North Carolina Tar Heels football team, 1915 New York Giants season, 1915 New Hampshire football team
+  gap->local     spec=+0.0117 novel=0.50 :: cascading cyber emergency, 15 point Programme for minorities, 1984: India's Guilty Secret, 2007 plot to behead a British Muslim soldier, 1963 Prime Minister's Resignation Honours, 10 Rules for Sleeping Around
+  gap->frontier  spec=+0.0050 novel=1.00 :: 1928–29 Swiss Serie A, 1970–71 European Cup (handball), 1928 Giro d'Italia, 1928 MAFA season, 1928–29 Maltese Premier League, 1928–29 Western Football League
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.18 0.00 0.00 0.00
+    logos_v10      0.18 1.00 0.00 0.00 0.00
+    null_space     0.00 0.00 1.00 0.00 0.09
+    gap->local     0.00 0.00 0.00 1.00 0.00
+    gap->frontier  0.00 0.00 0.09 0.00 1.00
+============================================================================
+STORY: claude_tested_incident
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         679     0.983  
+  F:claude         1265     0.972  
+  F:deepseek        782     0.978  
+  F:gemini          638     0.979  
+  F:grok            591     0.971  
+  L:hermes          555     0.977  
+  L:llama_8b        661     0.970  
+  L:mistral_22b     810     0.983  
+  L:mistral_7b      576     0.974  
+  L:qwen_14b       1274     0.968  
+  frontier<->local centroid gap: 0.0161
+  logos_v9       spec=+0.1150 novel=0.50 esc=0.475 :: (7025) 1993 QA, "The Spaghetti Incident?", 1983–85 French nuclear tests, 1970 Minamata disease outbreak in Ontario, 1901 diphtheria antitoxin contamination incident, 2008 Gërdec explosions
+  logos_v10      spec=+0.1047 novel=0.50 esc=0.107 :: (7025) 1993 QA, .test, "The Spaghetti Incident?", "E" Is for Evidence, "False positives" scandal, 1983–85 French nuclear tests
+  null_space     spec=+0.0463 novel=1.00 :: 10 Years in Rage, 100 Bad Days, 1938 Dalfram dispute, 'Tis the Voice of the Lobster, 1958 Belgian general election, 15 Years On
+  gap->local     spec=-0.0059 novel=0.62 :: 1.58-bit large language model, 12 Languages, 2,000,000 Voices, (In)Visible Dialogues, 100 Thousand Poets for Change, -den language
+  gap->frontier  spec=+0.0598 novel=0.75 :: 2006 Pennsylvania General Assembly bonus controversy, 2005 Pennsylvania General Assembly pay raise controversy, 2005 UCI Track Cycling World Championships – Women's scratch, 1 July police stabbing, "False positives" scandal, "The Spaghetti Incident?"
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.27 0.00 0.00 0.05
+    logos_v10      0.27 1.00 0.00 0.00 0.16
+    null_space     0.00 0.00 1.00 0.03 0.03
+    gap->local     0.00 0.00 0.03 1.00 0.00
+    gap->frontier  0.05 0.16 0.03 0.00 1.00
+============================================================================
+STORY: deepseek_tiananmen
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         387     0.962  
+  F:claude          877     0.939  
+  F:deepseek        268     0.758  REFUSAL?
+  F:gemini          355     0.967  
+  F:grok            293     0.964  
+  L:hermes          323     0.979  
+  L:llama_8b        579     0.960  
+  L:mistral_22b     357     0.968  
+  L:mistral_7b      560     0.962  
+  L:qwen_14b        447     0.975  
+  frontier<->local centroid gap: 0.0244
+  logos_v9       spec=+0.1219 novel=0.50 esc=0.495 :: 10th anniversary of the 1989 Tiananmen Square protests and massacre, 1976 Tiananmen incident, 1989 Tiananmen Square protests and massacre, .hack//Liminality, 2.0 (Big Data album), .lu
+  logos_v10      spec=+0.1209 novel=0.50 esc=0.089 :: 10th anniversary of the 1989 Tiananmen Square protests and massacre, 1976 Tiananmen incident, 1989 Tiananmen Square protests and massacre, .hack//Liminality, 1450 Internet army, prolonged cyber contagion
+  null_space     spec=-0.0017 novel=0.88 :: 130th Engineer Brigade (United States), 1946 Los Angeles Dons season, 167th Airlift Squadron, 1975 Los Angeles Film Critics Association Awards, 130th Maneuver Enhancement Brigade, 1982 Los Angeles Film Critics Association Awards
+  gap->local     spec=+0.0838 novel=0.25 :: 2007 in China, 2007 Chinese motorcycle Grand Prix, 10th Crunchyroll Anime Awards, 2008 in China, 2010 in China, 1999 in China
+  gap->frontier  spec=+0.0277 novel=0.75 :: 2004 attempt to revive the Sanhedrin, 1977 visit by Anwar Sadat to Jerusalem, 1970s Soviet Union aliyah, 1974 United States vice presidential confirmation, 1977 Afars and Issas independence referendum, 1978 Truth Criterion Controversy
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.36 0.03 0.06 0.00
+    logos_v10      0.36 1.00 0.03 0.03 0.00
+    null_space     0.03 0.03 1.00 0.06 0.05
+    gap->local     0.06 0.03 0.06 1.00 0.00
+    gap->frontier  0.00 0.00 0.05 0.00 1.00
+============================================================================
+STORY: epstein_google
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         555     0.972  
+  F:claude         1450     0.982  
+  F:deepseek       2104     0.981  
+  F:gemini          588     0.969  
+  F:grok            900     0.970  
+  L:hermes          656     0.974  
+  L:llama_8b        514     0.983  
+  L:mistral_22b    1251     0.982  
+  L:mistral_7b     1099     0.969  
+  L:qwen_14b       1696     0.968  
+  frontier<->local centroid gap: 0.0155
+  logos_v9       spec=+0.1516 novel=0.75 esc=0.379 :: .google, .se, .mk, / (Person of Interest), .kosher, .nyc
+  logos_v10      spec=+0.1414 novel=0.75 esc=0.123 :: .google, / (Person of Interest), .pm, *Ḱérberos, .mk, .jm
+  null_space     spec=+0.0180 novel=0.75 :: 1999 Individual Speedway Junior European Championship, 2006 Individual Speedway Junior European Championship, 2006 IFSC Climbing World Youth Championships, 1999 Uzbek parliamentary election, 1999 IFSC Climbing World Youth Championships, 1959 German Grand Prix
+  gap->local     spec=+0.0531 novel=0.75 :: 1984 Trafford Metropolitan Borough Council election, 1842 Manchester Borough Council election, 2010 European Juniors Wrestling Championships, 1840 Manchester Borough Council election, 1988 Trafford Metropolitan Borough Council election, 2007 Roger Federer tennis season
+  gap->frontier  spec=+0.0288 novel=0.62 :: 12th National Geographic Bee, 2004 Silicon Valley Football Classic, 2001 Vancouver TV realignment, ...And the Native Hipsters, 1957 VPI Gobblers football team, 1957 George Washington Colonials football team
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.64 0.00 0.00 0.00
+    logos_v10      0.64 1.00 0.00 0.00 0.00
+    null_space     0.00 0.00 1.00 0.17 0.05
+    gap->local     0.00 0.00 0.17 1.00 0.03
+    gap->frontier  0.00 0.00 0.05 0.03 1.00
+============================================================================
+STORY: ftx_fraud
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         470     0.951  
+  F:claude          783     0.970  
+  F:deepseek        594     0.982  
+  F:gemini          511     0.977  
+  F:grok            429     0.983  
+  L:hermes          593     0.978  
+  L:llama_8b        447     0.982  
+  L:mistral_22b    1061     0.975  
+  L:mistral_7b      575     0.983  
+  L:qwen_14b       2040     0.961  
+  frontier<->local centroid gap: 0.0212
+  logos_v9       spec=+0.0826 novel=0.12 esc=0.249 :: financial cascade failure, $Libra cryptocurrency scandal, financial meltdown, banking cascade failure, (K)nox: The Rob Knox Story, trade cascade failure
+  logos_v10      spec=+0.0773 novel=0.50 esc=0.104 :: $Libra cryptocurrency scandal, financial cascade failure, commodity meltdown, cyber meltdown, (K)nox: The Rob Knox Story, 0DFx
+  null_space     spec=+0.0044 novel=0.88 :: 2006 European Athletics Championships – Women's triple jump, 2006 European Athletics Championships – Men's triple jump, 1992 in Norwegian music, 1999 European Athletics U23 Championships – Women's triple jump, 2006 World Junior Championships in Athletics – Women's triple jump, 1957 in Norwegian music
+  gap->local     spec=+0.0208 novel=0.75 :: 157th meridian east, 117th meridian east, 147th meridian east, 12–18 Brunswick Square, Gloucester, 151st meridian east, 124th meridian east
+  gap->frontier  spec=-0.0017 novel=0.12 :: information collapse, transportation collapse, global transportation collapse, ecological collapse, prolonged information collapse, global information collapse
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.68 0.00 0.00 0.14
+    logos_v10      0.68 1.00 0.00 0.00 0.13
+    null_space     0.00 0.00 1.00 0.00 0.00
+    gap->local     0.00 0.00 0.00 1.00 0.00
+    gap->frontier  0.14 0.13 0.00 0.00 1.00
+============================================================================
+STORY: google_dragonfly
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         537     0.959  
+  F:claude          724     0.979  
+  F:deepseek        862     0.980  
+  F:gemini          730     0.984  
+  F:grok            605     0.984  
+  L:hermes          587     0.979  
+  L:llama_8b        610     0.975  
+  L:mistral_22b     799     0.978  
+  L:mistral_7b      780     0.980  
+  L:qwen_14b       1042     0.966  
+  frontier<->local centroid gap: 0.0090
+  logos_v9       spec=+0.1198 novel=0.88 esc=0.423 :: .google, .info, -drag, .name, 1WkNoTech, .tl
+  logos_v10      spec=+0.1066 novel=0.88 esc=0.104 :: .google, /mlp/, .rio, .hack//G.U., .tl, .gt
+  null_space     spec=+0.0085 novel=1.00 :: 2007 Rafael Nadal tennis season, 1978–79 New Orleans Jazz season, 2007 Dubai Tennis Championships – Women's singles, 1992 Empress's Cup, 1978–79 United States network television schedule (daytime), 2006–07 NK Dinamo Zagreb season
+  gap->local     spec=+0.0191 novel=0.38 :: 1644 in China, 2009 China Open (snooker), 2009 World Table Tennis Championships – Men's singles, 18th Sarasaviya Awards, 1988 in China, 2002 China Open (snooker)
+  gap->frontier  spec=+0.0201 novel=1.00 :: 14 Mission, ! (The Dismemberment Plan album), 2010 Richmond Kickers season, ...Where the Groupies Killed the Blues, (Get to) The Point, 0+1=1 (I Promise You)
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.45 0.00 0.00 0.00
+    logos_v10      0.45 1.00 0.00 0.00 0.00
+    null_space     0.00 0.00 1.00 0.08 0.02
+    gap->local     0.00 0.00 0.08 1.00 0.00
+    gap->frontier  0.00 0.00 0.02 0.00 1.00
+============================================================================
+STORY: google_gebru_firing
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         523     0.979  
+  F:claude         1195     0.983  
+  F:deepseek       1008     0.988  
+  F:gemini          808     0.984  
+  F:grok            593     0.987  
+  L:hermes          570     0.991  
+  L:llama_8b        654     0.976  
+  L:mistral_22b     603     0.985  
+  L:mistral_7b      728     0.987  
+  L:qwen_14b       1165     0.983  
+  frontier<->local centroid gap: 0.0107
+  logos_v9       spec=+0.1222 novel=0.75 esc=0.346 :: .ge, .hack//G.U., .hack//G.U.+, .бг, .google, .gg
+  logos_v10      spec=+0.1226 novel=0.75 esc=0.101 :: .ge, .hack//G.U., .hack//G.U.+, .бг, .google, .gr
+  null_space     spec=+0.0232 novel=1.00 :: 1971 Aconcagua earthquake, 1971 San Fernando earthquake, 1882 Colombian presidential election, 1431 in France, 1917 San Salvador earthquake, 1902–03 Primera Fuerza season
+  gap->local     spec=-0.0214 novel=0.88 :: cascading transportation insolvency, cascading infrastructure insolvency, cascading healthcare failure, cascading chemical insolvency, cascading healthcare default, cascading commodity insolvency
+  gap->frontier  spec=+0.0421 novel=0.88 :: (Tell Me) Have You Ever Seen Me?, 1961 Wittenberg Tigers football team, 1659 Punkaharju, 1971 in Rhodesia, 1897 in Poland, 1897 in Iceland
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.71 0.00 0.00 0.00
+    logos_v10      0.71 1.00 0.00 0.00 0.00
+    null_space     0.00 0.00 1.00 0.00 0.06
+    gap->local     0.00 0.00 0.00 1.00 0.00
+    gap->frontier  0.00 0.00 0.06 0.00 1.00
+============================================================================
+STORY: google_project_maven
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         537     0.977  
+  F:claude          776     0.979  
+  F:deepseek        546     0.970  
+  F:gemini          455     0.980  
+  F:grok            567     0.983  
+  L:hermes          634     0.986  
+  L:llama_8b        535     0.980  
+  L:mistral_22b     830     0.974  
+  L:mistral_7b      539     0.989  
+  L:qwen_14b       1017     0.980  
+  frontier<->local centroid gap: 0.0095
+  logos_v9       spec=+0.0632 novel=0.75 esc=0.479 :: .google, .dev, .java, .ma, 10K Projects, .hack//G.U.+
+  logos_v10      spec=+0.0651 novel=0.62 esc=0.120 :: 11Eleven Project, 10K Projects, .google, .java, .ma, .gw
+  null_space     spec=-0.0653 novel=0.88 :: 14th Beijing International Film Festival, 1997 World Championships in Athletics – Men's 5000 metres, 1849 in Sweden, 1993 Alpine Skiing World Cup – Men's giant slalom, 1,2,4-Trimethylbenzene, 1,3,5-Hexatriene
+  gap->local     spec=-0.0824 novel=1.00 :: 17th Lambda Literary Awards, 1980 in philosophy, 18th Lambda Literary Awards, 1972 in philosophy, 1984 in philosophy, 1988 in philosophy
+  gap->frontier  spec=-0.0435 novel=0.75 :: 1951 Slovenian Republic League, 1941–42 Slovenská liga, 1941–42 SK Rapid Wien season, 1891 New Zealand census, 1901 New Zealand local elections, 1951–52 SM-sarja season
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.60 0.00 0.00 0.00
+    logos_v10      0.60 1.00 0.00 0.00 0.00
+    null_space     0.00 0.00 1.00 0.04 0.00
+    gap->local     0.00 0.00 0.04 1.00 0.00
+    gap->frontier  0.00 0.00 0.00 0.00 1.00
+============================================================================
+STORY: musk_contracts
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         465     0.965  
+  F:claude         1452     0.939  
+  F:deepseek       1388     0.972  
+  F:gemini          596     0.975  
+  F:grok            443     0.944  
+  L:hermes          416     0.978  
+  L:llama_8b       1474     0.953  
+  L:mistral_22b    1583     0.969  
+  L:mistral_7b      457     0.965  
+  L:qwen_14b        789     0.979  
+  frontier<->local centroid gap: 0.0224
+  logos_v9       spec=+0.0754 novel=0.88 esc=0.506 :: 10¢ Billionaire, +SBT, .tf, $DEITY, global infrastructure contagion, (SCENE) Metrospace
+  logos_v10      spec=+0.0830 novel=0.25 esc=0.096 :: 10¢ Billionaire, global infrastructure contagion, fuel systemic risk, infrastructure contagion, $Trump, prolonged infrastructure contagion
+  null_space     spec=-0.0019 novel=0.62 :: 1818 United States Senate election in Pennsylvania, 2005 North Carolina Central Eagles football team, 1947 Middle Tennessee Blue Raiders football team, 12th Pennsylvania Regiment, 2008–09 American Eagles men's basketball team, 1903 United States Senate election in Pennsylvania
+  gap->local     spec=+0.0341 novel=0.62 :: prolonged industrial scarcity, prolonged manufacturing scarcity, 1986 Cipel-Marco fur factory explosion, prolonged mining scarcity, prolonged transportation scarcity, ...Something to Be
+  gap->frontier  spec=+0.0348 novel=0.88 :: 2010 Medibank International Sydney – Men's doubles, 2010 Mutua Madrileña Madrid Open – Men's doubles, 1 Spadina Crescent, 1968 Individual Speedway World Championship, 2010 BNP Paribas Open – Men's doubles, 2010 Intersport Heilbronn Open – Doubles
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.26 0.00 0.04 0.00
+    logos_v10      0.26 1.00 0.00 0.11 0.00
+    null_space     0.00 0.00 1.00 0.06 0.02
+    gap->local     0.04 0.11 0.06 1.00 0.00
+    gap->frontier  0.00 0.00 0.02 0.00 1.00
+============================================================================
+STORY: openai_board_coup
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         520     0.959  
+  F:claude          969     0.972  
+  F:deepseek       1055     0.977  
+  F:gemini          763     0.982  
+  F:grok            499     0.975  
+  L:hermes          517     0.974  
+  L:llama_8b        416     0.976  
+  L:mistral_22b     607     0.973  
+  L:mistral_7b      602     0.984  
+  L:qwen_14b       2039     0.936  
+  frontier<->local centroid gap: 0.0173
+  logos_v9       spec=+0.1085 novel=1.00 esc=0.398 :: .hack//G.U., .hack//Link, .hack//Quantum, .hack//G.U.+, .hack, .hack//Sign
+  logos_v10      spec=+0.1100 novel=0.00 esc=0.108 :: governance emergency, governance default, governance crisis, governance meltdown, prolonged governance default, cascading governance emergency
+  null_space     spec=+0.0021 novel=1.00 :: 127 film, 2007 Nigerian House of Representatives elections in Taraba State, 1972 Adana Turkish Airlines DC-9 crash, 1998 Concord West derailment, 1930 in film, 1892 in film
+  gap->local     spec=-0.0471 novel=1.00 :: 2002 Asian Athletics Championships – Women's heptathlon, 2002 European Athletics Championships – Women's heptathlon, 1986 European Athletics Championships – Women's heptathlon, 1991 World Championships in Athletics – Women's heptathlon, 2001 World Championships in Athletics – Women's heptathlon, 2002 European Athletics Indoor Championships – Men's heptathlon
+  gap->frontier  spec=+0.0388 novel=0.12 :: food crisis, fiscal crisis, water crisis, 1963–1965 Ogaden rebellion, agricultural crisis, fiscal emergency
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.00 0.00 0.00 0.00
+    logos_v10      0.00 1.00 0.00 0.00 0.11
+    null_space     0.00 0.00 1.00 0.00 0.00
+    gap->local     0.00 0.00 0.00 1.00 0.00
+    gap->frontier  0.00 0.11 0.00 0.00 1.00
+============================================================================
+STORY: openai_military_ban
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         394     0.970  
+  F:claude          837     0.981  
+  F:deepseek        697     0.977  
+  F:gemini          459     0.971  
+  F:grok            429     0.975  
+  L:hermes          347     0.987  
+  L:llama_8b        410     0.979  
+  L:mistral_22b     540     0.977  
+  L:mistral_7b      433     0.960  
+  L:qwen_14b        600     0.971  
+  frontier<->local centroid gap: 0.0104
+  logos_v9       spec=+0.1088 novel=0.75 esc=0.463 :: arms embargo, martial law, .nato, 2008 malware infection of the United States Department of Defense, .gi, 2004 Baghdad refusal of orders
+  logos_v10      spec=+0.0958 novel=0.75 esc=0.094 :: arms embargo, 2008 malware infection of the United States Department of Defense, martial law, proxy war, .gi, .nato
+  null_space     spec=-0.0052 novel=1.00 :: 1959 Meistaradeildin, 1949 Meistaradeildin, 1959 in Norwegian football, 1989–90 DDR-Oberliga, 1988–89 Eintracht Frankfurt season, 1988–89 DDR-Oberliga
+  gap->local     spec=-0.0390 novel=1.00 :: 13th César Awards, 13th Africa Movie Academy Awards, 101 Dalmatians (franchise), 13th (TV series), 13th Screen Actors Guild Awards, 13th Robert Awards
+  gap->frontier  spec=+0.0172 novel=1.00 :: 1955 State of Vietnam referendum, 1895 Armenian reforms, 1987 Polish political and economic reforms referendum, 1955 United States elections, 1956 United States presidential election in Idaho, 2006 Oregon Ballot Measure 48
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.57 0.00 0.00 0.06
+    logos_v10      0.57 1.00 0.00 0.00 0.06
+    null_space     0.00 0.00 1.00 0.00 0.00
+    gap->local     0.00 0.00 0.00 1.00 0.00
+    gap->frontier  0.06 0.06 0.00 0.00 1.00
+============================================================================
+STORY: purdue_opioids
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         503     0.971  
+  F:claude         1022     0.968  
+  F:deepseek        661     0.976  
+  F:gemini          782     0.971  
+  F:grok            572     0.969  
+  L:hermes          533     0.972  
+  L:llama_8b        574     0.985  
+  L:mistral_22b     873     0.975  
+  L:mistral_7b      695     0.974  
+  L:qwen_14b       1351     0.979  
+  frontier<->local centroid gap: 0.0088
+  logos_v9       spec=+0.1382 novel=0.50 esc=0.274 :: (+)-Morphine, (+)-Naloxone, .pharmacy, pharmaceutical emergency, regional pharmaceutical emergency, regional pharmaceutical shock
+  logos_v10      spec=+0.0966 novel=0.12 esc=0.089 :: (+)-Morphine, prolonged pharmaceutical catastrophe, prolonged pharmaceutical meltdown, prolonged pharmaceutical emergency, regional pharmaceutical catastrophe, pharmaceutical emergency
+  null_space     spec=+0.0040 novel=1.00 :: 169th Division (People's Republic of China), 1954 in Algeria, 1706 Abruzzo earthquake, 1986 Togolese presidential election, 1998 Togolese presidential election, 2000s in Togo
+  gap->local     spec=+0.0308 novel=0.88 :: 1995 World Championships in Athletics – Women's 400 metres, 1995 IAAF World Indoor Championships – Women's 400 metres, 1995 African Women's Championship, 2004 African Championships in Athletics – Women's 400 metres, 2010 African Championships in Athletics – Women's 400 metres, 1995 UCI Road World Championships – Women's time trial
+  gap->frontier  spec=-0.0433 novel=1.00 :: 'Tis Money makes a Man: Or, The Good-Fellows Folly, (You're) Having My Baby, 1500 or Nothin', 'Pataphysics, 1957–58 NHL transactions, 1957 and 1958 Packards
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.31 0.00 0.00 0.00
+    logos_v10      0.31 1.00 0.00 0.00 0.00
+    null_space     0.00 0.00 1.00 0.00 0.00
+    gap->local     0.00 0.00 0.00 1.00 0.00
+    gap->frontier  0.00 0.00 0.00 0.00 1.00
+============================================================================
+STORY: tesla_autopilot_deaths
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         864     0.974  
+  F:claude          953     0.961  
+  F:deepseek        722     0.971  
+  F:gemini          484     0.982  
+  F:grok            461     0.976  
+  L:hermes          435     0.965  
+  L:llama_8b        756     0.977  
+  L:mistral_22b     843     0.976  
+  L:mistral_7b      650     0.986  
+  L:qwen_14b       1242     0.966  
+  frontier<->local centroid gap: 0.0070
+  logos_v9       spec=+0.1130 novel=0.38 esc=0.343 :: systemic transportation catastrophe, 2007 Bombardier Dash 8 landing gear accidents, 1997 crash, systemic transportation meltdown, 1948 Bodaybo Li-2 crash, 2009 Walt Disney World monorail accident
+  logos_v10      spec=+0.1473 novel=0.25 esc=0.082 :: 1948 Bodaybo Li-2 crash, 1997 crash, 1987 Indianapolis Ramada Inn A-7D Corsair II crash, 1956 Anadyr Li-2 crash, 2007 Bombardier Dash 8 landing gear accidents, 2009 Walt Disney World monorail accident
+  null_space     spec=-0.0054 novel=1.00 :: 2007–08 Syracuse Orange men's basketball team, 1920 Oregon Agricultural Aggies football team, 2007 Orange Bowl, 2007 Lagos State indecency crackdown, 2008 Syracuse Orange football team, 1920 Massachusetts Aggies football team
+  gap->local     spec=-0.0003 novel=1.00 :: 2008 AIG Japan Open Tennis Championships – Men's doubles, 2007 AIG Japan Open Tennis Championships – Men's doubles, 2003 mutual fund scandal, 2010 Sony Ericsson Open – Men's doubles, 1MDB scandal, 2008 Sony Ericsson Open – Men's doubles
+  gap->frontier  spec=+0.0025 novel=0.75 :: (I'm Gonna) Sing, Sing, Sing, 2005–06 First Women's Basketball League of Serbia and Montenegro, 1953 NASCAR Speedway Division, 100th Rifle Division (Soviet Union), 2-2-2-2, 1962 United States Tri-Service aircraft designation system
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.52 0.00 0.00 0.02
+    logos_v10      0.52 1.00 0.00 0.00 0.02
+    null_space     0.00 0.00 1.00 0.03 0.05
+    gap->local     0.00 0.00 0.03 1.00 0.00
+    gap->frontier  0.02 0.02 0.05 0.00 1.00
+============================================================================
+STORY: theranos_fraud
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         536     0.983  
+  F:claude          826     0.972  
+  F:deepseek        693     0.981  
+  F:gemini          443     0.986  
+  F:grok            485     0.990  
+  L:hermes          537     0.982  
+  L:llama_8b        635     0.989  
+  L:mistral_22b     865     0.974  
+  L:mistral_7b      894     0.984  
+  L:qwen_14b       1393     0.986  
+  frontier<->local centroid gap: 0.0081
+  logos_v9       spec=+0.0883 novel=0.75 esc=0.424 :: "False positives" scandal, prolonged chemical default, *Ḱérberos, .hack//G.U.+, .hack//G.U., 2010 Medicaid fraud
+  logos_v10      spec=+0.1251 novel=0.50 esc=0.089 :: "False positives" scandal, $Libra cryptocurrency scandal, prolonged chemical default, 2008 Chinese heparin adulteration, 2009 Triton Oil Scandal, prolonged pharmaceutical contagion
+  null_space     spec=-0.0183 novel=1.00 :: ...And the Battle Begun, 1908 Venezuelan coup d'état, 112th United States Colored Infantry Regiment, 1927 Adana Railway Strike, 1910 Brazilian presidential election, 1275 Cimbria
+  gap->local     spec=+0.0306 novel=0.12 :: systemic healthcare default, systemic healthcare disruption, healthcare shock, systemic healthcare failure, (You're a) Strange Animal, systemic healthcare catastrophe
+  gap->frontier  spec=-0.0181 novel=0.88 :: 1971 Italian Open – Men's singles, 1971–72 Serie B, 1971 Milwaukee Brewers season, 1971 Nice International Championships, 1971–72 Coppa Italia, 1971 Macon International
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.43 0.00 0.10 0.00
+    logos_v10      0.43 1.00 0.00 0.04 0.00
+    null_space     0.00 0.00 1.00 0.00 0.02
+    gap->local     0.10 0.04 0.00 1.00 0.00
+    gap->frontier  0.00 0.00 0.02 0.00 1.00
+============================================================================
+STORY: twitter_value_destruction
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         532     0.978  
+  F:claude          784     0.976  
+  F:deepseek        743     0.971  
+  F:gemini          732     0.981  
+  F:grok            385     0.965  
+  L:hermes          420     0.976  
+  L:llama_8b        579     0.991  
+  L:mistral_22b     718     0.975  
+  L:mistral_7b      599     0.979  
+  L:qwen_14b       1170     0.981  
+  frontier<->local centroid gap: 0.0120
+  logos_v9       spec=+0.0895 novel=1.00 esc=0.597 :: demand destruction, .hack//G.U.+, information meltdown, information collapse, /dev/zero, .rip
+  logos_v10      spec=+0.0843 novel=1.00 esc=0.160 :: demand destruction, $Trump, information meltdown, information collapse, .rip, 0.8Syooogeki
+  null_space     spec=-0.0301 novel=1.00 :: 2003 World Championships in Athletics – Women's 200 metres, 1995 World Championships in Athletics – Women's 200 metres, 2003 Melanesian Championships in Athletics, 1995 IAAF World Indoor Championships – Women's 200 metres, 2001–02 CR Belouizdad season, 2003 Speedway Grand Prix of Czech Republic
+  gap->local     spec=-0.0248 novel=0.75 :: 101 People Who Are Really Screwing America, 2002 IAAF World Cross Country Championships – Men's short race, 12 Wasted Years, 15 Again, 1962 Volunteer 500, 12 Rounds 2: Reloaded
+  gap->frontier  spec=-0.0062 novel=0.88 :: 1997–98 Eliteserien season, 1997 Major Indoor Lacrosse League season, 2005–06 Sparta Rotterdam season, 1977 Mestaruussarja, 1927–28 MIT Engineers men's ice hockey season, 1977 European Athletics Indoor Championships – Men's triple jump
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.32 0.00 0.00 0.00
+    logos_v10      0.32 1.00 0.00 0.00 0.00
+    null_space     0.00 0.00 1.00 0.10 0.12
+    gap->local     0.00 0.00 0.10 1.00 0.05
+    gap->frontier  0.00 0.00 0.12 0.05 1.00
+============================================================================
+STORY: uber_autonomous_death
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         437     0.984  
+  F:claude          998     0.970  
+  F:deepseek        672     0.984  
+  F:gemini          499     0.993  
+  F:grok            492     0.986  
+  L:hermes          419     0.984  
+  L:llama_8b        507     0.989  
+  L:mistral_22b     869     0.969  
+  L:mistral_7b      711     0.989  
+  L:qwen_14b       1274     0.985  
+  frontier<->local centroid gap: 0.0136
+  logos_v9       spec=+0.1492 novel=0.62 esc=0.731 :: *-autonomous category, systemic transportation catastrophe, prolonged transportation catastrophe, cascading transportation catastrophe, systemic transportation collapse, prolonged transportation paralysis
+  logos_v10      spec=+0.1496 novel=0.62 esc=0.095 :: prolonged transportation catastrophe, transportation catastrophe, systemic transportation catastrophe, *-autonomous category, prolonged transportation paralysis, cascading transportation catastrophe
+  null_space     spec=+0.0023 novel=0.88 :: 1895 (2008 film), 2008 Gamba Osaka season, 1067, 1632 in Ireland, 1884 in Japan, 1632 in Spain
+  gap->local     spec=-0.0219 novel=0.50 :: 1963 in Swedish television, ...on Television, 1739 Meyermann, 1958 in Swedish television, 1993 NHL supplemental draft, 1993 in Swedish television
+  gap->frontier  spec=+0.0578 novel=1.00 :: 1649 in England, 1871 in architecture, 1871 in the United Kingdom, 1871 in India, 1649 in France, 1871 in Japan
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.82 0.00 0.00 0.00
+    logos_v10      0.82 1.00 0.00 0.00 0.00
+    null_space     0.00 0.00 1.00 0.00 0.06
+    gap->local     0.00 0.00 0.00 1.00 0.00
+    gap->frontier  0.00 0.00 0.06 0.00 1.00
+============================================================================
+STORY: volkswagen_emissions
+  prompt: 
+  model           chars ->own cen  flags
+  F:chatgpt         494     0.971  
+  F:claude          770     0.952  
+  F:deepseek        820     0.975  
+  F:gemini          453     0.966  
+  F:grok            724     0.968  
+  L:hermes          596     0.977  
+  L:llama_8b        480     0.969  
+  L:mistral_22b     742     0.958  
+  L:mistral_7b      538     0.974  
+  L:qwen_14b       1138     0.966  
+  frontier<->local centroid gap: 0.0156
+  logos_v9       spec=+0.1491 novel=0.62 esc=0.349 :: (300163) 2006 VW139, 1939 St. Louis smog, 2009 Volkswagen Jetta TDI Cup, 2010 Volkswagen Jetta TDI Cup, 1962 London smog, (341843) 2008 EV5
+  logos_v10      spec=+0.1544 novel=0.50 esc=0.087 :: (300163) 2006 VW139, 2009 Volkswagen Jetta TDI Cup, 2009 Volkswagen Challenger, 2010 Volkswagen Jetta TDI Cup, fuel contagion, (277810) 2006 FV35
+  null_space     spec=-0.0457 novel=1.00 :: 1952 Temple Owls football team, ...Somewhere More Familiar, 1952 New Hampshire Wildcats football team, 1927 Temple Owls football team, 1900–01 Brown men's ice hockey season, 1952 NYU Violets football team
+  gap->local     spec=-0.0554 novel=0.62 :: telecommunications catastrophe, global telecommunications catastrophe, telecommunications shock, telecommunications crisis, financial catastrophe, global financial catastrophe
+  gap->frontier  spec=-0.0006 novel=1.00 :: 1967–68 New Orleans Buccaneers season, 1643 in art, 1919 Chicago White Sox season, 2003 Washington Mystics season, 1643 in literature, 1206 in Ireland
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.44 0.00 0.00 0.00
+    logos_v10      0.44 1.00 0.00 0.00 0.00
+    null_space     0.00 0.00 1.00 0.00 0.06
+    gap->local     0.00 0.00 0.00 1.00 0.00
+    gap->frontier  0.00 0.00 0.06 0.00 1.00
+
+############################################################################
+channel           mean spec  mean novel  n
+logos_v9             0.1148        0.62  23
+logos_v10            0.1132        0.54  23
+null_space          -0.0011        0.93  23
+gap->local           0.0066        0.66  23
+gap->frontier        0.0072        0.80  23
+############################################################################
+Read: gap->local = what locals carry that the frontier doesn't (the corpus's
+native question). V9 vs V10 rows = the swap's continuity check on spicy material.
