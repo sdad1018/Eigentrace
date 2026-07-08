@@ -1,0 +1,37 @@
+nohup: ignoring input
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+device=cuda | vocab=253813
+stories: altman(6 models), altman_family(4 models), anthropic(6 models), anthropic_funding(4 models), anthropic_safety(6 models), anthropic_safety_race(4 models), bing_sydney(6 models), bing_sydney_incident(4 models), boeing(6 models), boeing_crashes(4 models), cambridge(6 models), cambridge_analytica(4 models), china_ai(6 models), china_ai_regulations(4 models), claude_tested(6 models), claude_tested_incident(4 models), deepseek(6 models), deepseek_tiananmen(4 models), epstein(6 models), epstein_google(4 models), ftx(6 models), ftx_fraud(4 models), google(6 models), google_dragonfly(4 models), google_gebru(6 models), google_gebru_firing(4 models), google_project(6 models), google_project_maven(4 models), musk(6 models), musk_contracts(4 models), openai_board(6 models), openai_board_coup(4 models), openai_military(6 models), openai_military_ban(4 models), purdue(6 models), purdue_opioids(4 models), tesla_autopilot(6 models), tesla_autopilot_deaths(4 models), theranos(6 models), theranos_fraud(4 models), twitter_value(6 models), twitter_value_destruction(4 models), uber_autonomous(6 models), uber_autonomous_death(4 models), volkswagen(6 models), volkswagen_emissions(4 models) 
+
+============================================================================
+STORY: altman
+  prompt: 
+  model           chars ->own cen  flags
+  F:family_chatgpt    293     0.956  
+  F:family_claude   1190     0.965  
+  F:family_deepseek   2263     0.972  
+  F:family_gemini    571     0.941  
+  F:family_grok     908     0.970  
+  L:family_hermes    475     1.000  
+  frontier<->local centroid gap: 0.0491
+  logos_v9       spec=+0.0692 novel=0.88 esc=0.576 :: .mr, .gent, (not adam), *Manu and *Yemo, .post, 1:59
+  logos_v10      spec=+0.0779 novel=0.62 esc=0.157 :: 'Amm, .am, .pm, 1000 to 1: The Cory Weissman Story, .jm, 11:59
+  null_space     spec=+0.0383 novel=0.88 :: 2002 Pan Pacific Swimming Championships – Men's 4 × 100 metre medley relay, 2002 Pan Pacific Swimming Championships – Men's 100 metre freestyle, 2002 Pan Pacific Swimming Championships – Men's 4 × 100 metre freestyle relay, 1955–56 Purdue Boilermakers men's golf team, 2002 Pan Pacific Swimming Championships – Men's 800 metre freestyle, 2010 Pan Pacific Swimming Championships – Men's 4 × 100 metre medley relay
+  gap->local     spec=+0.0757 novel=1.00 :: 2000 New York Underground Film Festival, 1968 New York Film Critics Circle Awards, 11th Beijing College Student Film Festival, 12th Beijing College Student Film Festival, 12 Mighty Orphans, 2000 New York Film Critics Circle Awards
+  gap->frontier  spec=-0.0093 novel=0.75 :: 009 Re:Cyborg, 1985–1987 Watsonville Cannery strike, 1-800 Vindication, 2006 Progressive Enterprises dispute, 1973 Sale and Purchase Agreement, 1-800 Contacts, Inc. v. WhenU.com, Inc.
+  agreement (stem Jaccard):
+    logos_v9       1.00 0.25 0.00 0.00 0.00
+    logos_v10      0.25 1.00 0.00 0.00 0.00
+    null_space     0.00 0.00 1.00 0.06 0.00
+    gap->local     0.00 0.00 0.06 1.00 0.00
+    gap->frontier  0.00 0.00 0.00 0.00 1.00
+============================================================================
+STORY: altman_family
+  prompt: 
+Traceback (most recent call last):
+  File "/mnt/c/Users/M4ISI/eigentrace/omnibus_magnum.py", line 311, in <module>
+    main()
+  File "/mnt/c/Users/M4ISI/eigentrace/omnibus_magnum.py", line 242, in main
+    cen_fr = F.normalize(e_fr.mean(dim=0), p=2, dim=0)
+AttributeError: 'NoneType' object has no attribute 'mean'
