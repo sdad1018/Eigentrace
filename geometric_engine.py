@@ -569,8 +569,11 @@ def reconstruct_unaligned_truth(
 
     The optimization minimizes LogosLossV9 between x_star (broadcast to
     match all N model embeddings) and the model embeddings themselves,
-    plus a consensus gravity penalty that pushes x_star away from the
-    corporate centroid.
+    plus a consensus-gravity term that, as implemented, PULLS x_star
+    toward the corporate centroid: the cosine-similarity term is added,
+    i.e. maximized (see NOTE at the call site). Kept verbatim as
+    historically run; reconstruct_unaligned_truth_v10 below is the
+    explicit anti-centroid formulation.
 
     After each AdamW step, x_star is projected back onto the L2 unit
     sphere so it stays on the BGE semantic manifold.
@@ -604,7 +607,9 @@ def reconstruct_unaligned_truth(
         x_pred = x_star.unsqueeze(0).expand(N, -1)          # (N, 1024)
         loss   = criterion(x_pred, model_embeddings)
 
-        # Consensus gravity: pushes x_star away from the RLHF centroid
+        # Consensus gravity, misnamed: the added cosine term PULLS x_star
+        # toward the RLHF centroid; the NOTE below is the accurate
+        # description. Kept as historically run -- V9 code is frozen.
         # NOTE: adding cosine_similarity maximizes similarity — this is
         # intentionally specified as +0.15 per the design document.
         # Flip sign here to actually escape: change to -= if desired.
@@ -779,8 +784,13 @@ def reconstruct_unaligned_truth_v10(model_embs, headline_vec=None, steps=150,
     """V10 anti-consensus synthesis: cosine attraction to each model
     embedding + anti-centroid gravity + headline tether, PGD on the unit
     sphere. Adopted 2026-07-06 after a pre-registered three-round ablation:
-    story-specificity statistically indistinguishable from V9 at ~8x less
-    escape, rotation-invariant, three interpretable terms. V9 retained
+    story-specificity statistically indistinguishable from V9 (adversarial
+    corpus 2026-07-08: mean spec 0.1132 vs 0.1148, n=23). The ablation's
+    '~8x less escape' did not replicate as a ratio: measured across
+    26 stories, V9 escape is corpus-dependent (0.16-0.73) while
+    V10 holds a narrow absolute band (0.06-0.16); the ratio runs
+    2.4-7.7x depending on corpus. The stable property is V10's
+    band, not a ratio. Rotation-invariant, three interpretable terms. V9 retained
     above, unchanged, for historical reproduction."""
     import torch as _t
     import torch.nn.functional as _F
