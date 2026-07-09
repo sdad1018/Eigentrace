@@ -216,13 +216,24 @@ def harvest_channels(containers):
     return {k: v for k, v in ch.items() if v}
 
 
+def _embed_any(eng, texts):
+    """Engine-first, production-proven fallback."""
+    if eng is not None:
+        try:
+            return eng.embed_texts(texts)
+        except Exception:
+            pass
+    from consequence_engine import _embed
+    return _embed(texts)
+
+
 def fresh_channels(story_title, source_text, response_texts, eng, vt):
     """Channels computed fresh at ensemble time: donut + vf_idf."""
     out = {}
     try:
         import numpy as np
-        embs = np.asarray(eng.embed_texts(response_texts), dtype="float32")
-        h = np.asarray(eng.embed_texts([story_title])[0], dtype="float32")
+        embs = np.asarray(_embed_any(eng, response_texts), dtype="float32")
+        h = np.asarray(_embed_any(eng, [story_title])[0], dtype="float32")
         cen = embs.mean(axis=0)
         res = vt.in_domain_void(cen, embs, k=10, headline_vec=h)
         rows = res[0] if (isinstance(res, tuple) and res
@@ -239,16 +250,17 @@ def fresh_channels(story_title, source_text, response_texts, eng, vt):
         log.info(f"  ensemble: donut skipped ({e})")
     try:
         import preservation_core as pc
-        tf = pc.term_frequencies(source_text)
+        from collections import Counter
+        tf = Counter(_stem(w) for w in _content(source_text))
         seen, cand = set(), []
-        for w in pc.content_words(source_text):
-            st = pc.porter_stem(w)
+        for w in _content(source_text):
+            st = _stem(w)
             if st not in seen:
                 seen.add(st)
-                cand.append((w, tf.get(st, 0.0)))
+                cand.append((w, tf[st]))
         cand = [w for w, _ in sorted(cand, key=lambda x: -x[1])[:25]]
         if cand:
-            embed_fn = lambda texts: eng.embed_texts(list(texts))
+            embed_fn = lambda texts: _embed_any(eng, list(texts))
             res = pc.vf_idf(cand, source_text, response_texts, embed_fn)
             voided = sorted((r for r in res if r.vf_idf > 0),
                             key=lambda r: -r.vf_idf)
@@ -353,8 +365,18 @@ def _rag_chroma(story_title, exclude_title, k):
     self-ingesting via stage_7). Declared: dictionary=chroma collection,
     anchor=story-title. Returns [] on any failure so lexical fires."""
     try:
-        from segment_rag import query as _srq
-        raw = _srq(story_title, n_results=k + 4)
+        import segment_rag as _sr
+        _fn = next((getattr(_sr, n) for n in
+                    ("query", "search", "query_segments",
+                     "search_segments", "retrieve", "similar")
+                    if callable(getattr(_sr, n, None))), None)
+        if _fn is None:
+            raise ImportError("no query-like fn; has: "
+                              + ",".join(sorted(dir(_sr))[:24]))
+        try:
+            raw = _fn(story_title, n_results=k + 4)
+        except TypeError:
+            raw = _fn(story_title)
         if isinstance(raw, dict):
             docs = (raw.get("documents") or [[]])[0]
             metas = (raw.get("metadatas") or [[]])[0] or [{}] * len(docs)
@@ -580,6 +602,26 @@ def build_ensemble_beats(ens, story_title=""):
               f"of the ensemble vote. Deterministic; no model judged "
               f"another.")))
     return beats
+
+
+def weave_beats(beats, r):
+    """Producer-facing splice: retire absorbed legacy phases, insert
+    ensemble beats before the outro. No-op unless the ensemble ran."""
+    try:
+        ens = (r or {}).get("ensemble") or {}
+        if not ens.get("top5"):
+            return beats
+        absorbed = set(ens.get("absorbs") or [])
+        kept = [b for b in beats if b.get("phase") not in absorbed]
+        eb = build_ensemble_beats(ens)
+        cut = len(kept)
+        for i, b in enumerate(kept):
+            if "outro" in str(b.get("phase", "")):
+                cut = i
+                break
+        return kept[:cut] + eb + kept[cut:]
+    except Exception:
+        return beats
 
 
 # ── offline test mode ─────────────────────────────────────────────────

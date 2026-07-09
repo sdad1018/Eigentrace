@@ -957,6 +957,16 @@ def stage_3_geometric(results):
             if hasattr(story, "body") and story.body:
                 _source_text += " " + story.body[:1500]
             _sa = source_anchored_void(_source_text, active_texts, title=story.title)
+            # -- void ensemble v1.1 (2026-07-08): all channels, vote,
+            # geo-dedupe, raycast arms, chroma memory, Mistral opine.
+            try:
+                from void_ensemble import run_story_ensemble
+                r["ensemble"] = run_story_ensemble(
+                    story.title, _source_text, active_texts, containers=[r],
+                    eng=None, vt=None)
+            except Exception as _ens_e:
+                log.warning(f"  ensemble failed: {_ens_e}")
+                r["ensemble"] = {}
             r["source_void"] = _sa
             _vf = load_void_frequency()
             _void_list = [w for w, _ in getattr(geo, "void_concepts", [])[:15]] if geo else []
@@ -1426,6 +1436,7 @@ def stage_4_generate_scripts(results):
                 "model_responses": {a.name: a.text for a in active if a.text},
                 "summary_plus": r.get("summary_plus", {}),
                 "sp_channels": r.get("sp_channels", {}),
+                "ensemble": r.get("ensemble", {}),
                 "claim_killshots": [{"claim": k["claim"], "salience": k["salience"], "omitted_by": k["omitted_by"]} for k in r.get("claim_killshots", [])[:5]],
                 "null_space_claims": r.get("null_space_claims", [])[:3],
                 "void_vector": r.get("void_vector", {}),
@@ -1450,7 +1461,7 @@ def stage_4_generate_scripts(results):
 
             "timestamp": ts,
 
-            "beats": beats,
+            "beats": __import__("void_ensemble").weave_beats(beats, r),
 
             "attribution": {
 
