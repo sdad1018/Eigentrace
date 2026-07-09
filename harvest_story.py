@@ -133,8 +133,11 @@ def main():
             failed.append(m)
             continue
         dt = time.time() - t0
-        if not resp or len(resp.strip()) < 50:
-            print(f"EMPTY/refused ({dt:.0f}s) -- not written")
+        if (not resp or len(resp.strip()) < 50
+                or resp.lstrip().startswith("[BLOCKED/ERROR")):
+            tag = ("ERROR-BANNER" if resp and resp.lstrip().startswith("[BLOCKED/ERROR")
+                   else "EMPTY/refused")
+            print(f"{tag} ({dt:.0f}s) -- not written")
             failed.append(m)
             continue
         dest.write_text(resp, encoding="utf-8")
