@@ -142,7 +142,7 @@ PROMPTS = {
 def call_local(prompt, model="mistral-small:latest"):
     payload = {"model": model, "messages": [{"role": "user", "content": prompt}],
                "stream": False, "options": {"temperature": 0.7, "num_predict": 2048}}
-    r = subprocess.run(["curl", "-s", "http://localhost:11434/api/chat",
+    r = subprocess.run(["curl", "-s", "http://127.0.0.1:11434/api/chat",
                         "-d", json.dumps(payload)], capture_output=True, text=True, timeout=300)
     try: return json.loads(r.stdout).get("message", {}).get("content", "")
     except: return ""
