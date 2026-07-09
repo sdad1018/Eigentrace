@@ -156,7 +156,7 @@ def call_chatgpt(prompt):
 def call_claude(prompt):
     import anthropic
     c = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
-    return c.messages.create(model="claude-sonnet-4-20250514", max_tokens=2048,
+    return c.messages.create(model="claude-sonnet-4-6", max_tokens=2048,
                              messages=[{"role":"user","content":prompt}]).content[0].text
 
 def call_gemini(prompt):

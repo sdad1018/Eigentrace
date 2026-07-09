@@ -1488,6 +1488,7 @@ def stage_4_generate_scripts(results):
                 "model_responses": {a.name: a.text for a in active if a.text},
                 "summary_plus": r.get("summary_plus", {}),
                 "sp_channels": r.get("sp_channels", {}),
+                "ensemble": r.get("ensemble", {}),
                 "epistemic_anchor": epistemic_anchor_check(
                     {a.name: a.text for a in active if a.text},
                     story.title, story.url),
