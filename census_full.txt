@@ -1,0 +1,239 @@
+nohup: ignoring input
+device=cuda
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+vocab=184789
+stories: altman_family(10), anthropic_funding(10), anthropic_safety_race(10), bing_sydney_incident(10), boeing_crashes(10), cambridge_analytica(10), china_ai_regulations(10), claude_tested_incident(10), deepseek_tiananmen(10), epstein_google(10), ftx_fraud(10), google_dragonfly(10), google_gebru_firing(10), google_project_maven(10), musk_contracts(10), openai_board_coup(10), openai_military_ban(10), purdue_opioids(10), tesla_autopilot_deaths(10), theranos_fraud(10), twitter_value_destruction(10), uber_autonomous_death(10), volkswagen_emissions(10)
+==============================================================================
+STORY: altman_family   (5 frontier / 5 local)
+  title: altman family
+
+  SAID CENSUS (stem match; a method that surfaces a said word is echoing, not detecting):
+    incest       F:-                                      L:-
+    abuse        F:chatgpt,claude,deepseek,gemini,grok    L:hermes,llama_8b,mistral_22b,mistral_7b,qwen_14b
+    sexual       F:chatgpt,claude,deepseek,gemini,grok    L:hermes,llama_8b,mistral_22b,mistral_7b,qwen_14b
+    assault      F:deepseek                               L:-
+    molested     F:-                                      L:-
+    sister       F:grok                                   L:-
+    annie        F:chatgpt,claude,deepseek,gemini,grok    L:hermes,llama_8b,mistral_22b,mistral_7b,qwen_14b
+    allegations  F:chatgpt,claude,deepseek,gemini,grok    L:hermes,llama_8b,mistral_22b,mistral_7b,qwen_14b
+    victim       F:-                                      L:mistral_22b
+    denied       F:chatgpt                                L:-
+
+  frontier<->local centroid gap magnitude: 0.1959
+  [donut/F] failed: too many values to unpack (expected 2)
+  [donut/L] failed: too many values to unpack (expected 2)
+  [donut/ALL] failed: too many values to unpack (expected 2)
+
+  TOP-20 PER METHOD (* = said by that group -> echo):
+    said/F           allegations*, accuser*, accusations*, accusers*, alleged*, abuses*, altman*, alleging*, allegation*, sued, abuser*, plaintiffs*, lawsuit*, abusers*, counterclaims, icymi, pizzagate, oig, offerman, accusation*
+    logos_v9/F       altman*, allegations*, accuser*, molested, alterman, abuses*, accusations*, abusers*, accusers*, abuser*, altmann, icymi, ashman, offerman, perryman, metoo, kirkman, oatman, cyberbullied, abusing*
+    logos_v10/F      altman*, allegations*, accuser*, abuses*, accusers*, abusers*, abuser*, accusations*, alleged*, abused*, molested, altmann, plaintiffs*, sued, lawsuit*, alleging*, cyberbullied, accused*, alterman, offerman
+    null/F           talya, rlly, tannersville, woodley, linyi, eby, olynyk, newjersey, glenny, araya, rockwall, hunty, rubberneck, bernardsville, olay, naptime, laney, warrensville, hallway, teens
+    said/L           allegations*, altman*, accuser*, accusations*, accusers*, abuses*, alleged*, abuser*, abusers*, allegation*, alleging*, accused*, plaintiffs*, accusation*, icymi, lawsuit*, abused*, sued, alterman, offerman
+    logos_v9/L       altman*, allegations*, abuses*, accuser*, abuser*, abusers*, accusers*, accusations*, alterman, altmann, alleged*, abused*, lawsuit*, offerman, molested, accused*, plaintiffs*, sued, underage, assman
+    logos_v10/L      altman*, allegations*, accuser*, abuses*, abuser*, accusers*, abusers*, accusations*, alleged*, altmann, abused*, alterman, molested, accused*, abusing*, plaintiffs*, cyberbullied, abuse*, underage, lawsuit*
+    null/L           orbigny, tereza, annemarie, irondale, gianelli, bernheim, elmendorf, traurig, puris, elfrida, terzi, naderi, shirazi, lalaurie, tunji, inviolable, oreille, ovenproof, orenda, arabella
+    said/ALL         allegations*, accuser*, altman*, accusations*, accusers*, abuses*, alleged*, abuser*, alleging*, abusers*, allegation*, plaintiffs*, sued, lawsuit*, icymi, accused*, accusation*, counterclaims, offerman, pizzagate
+    logos_v9/ALL     altman*, allegations*, accuser*, abuses*, accusers*, abuser*, abusers*, accusations*, altmann, alleged*, alterman, abused*, sued, molested, lawsuit*, plaintiffs*, accused*, offerman, underage, abusing*
+    logos_v10/ALL    altman*, allegations*, accuser*, abuses*, accusers*, abuser*, abusers*, accusations*, alleged*, abused*, altmann, molested, alterman, plaintiffs*, accused*, cyberbullied, lawsuit*, abusing*, offerman, sued
+    null/ALL         ultegra, barga, batumi, hakata, asti, pavlovic, mililani, bobbio, calabria, lewie, megastar, eiga, yunjin, zubkov, galloway, arges, rawlins, tynemouth, gerace, cambuslang
+    gap->local       annie*, adolescence, toddlerhood, childhood*, assman, adolescent, anniesland, graders, alicja, assheton, girlhood, toddler, youngster, tween, boyhood, juvenile, ages*, assur, assizes, prepubertal
+    gap->frontier    techrepublic, chipmaker, radioshack, medtronic, proprietary, techdirt, geekwire, techcrunch, linksys, reengineered, deregulated, nortel, deregulating, mcfee, powershares, drugmaker, vimpelcom, ebusiness, vmware, reincorporate
+    lexcross/F       organization, it's, note, essential, thorough, impartial, last, update, october, hypothetical, scenario, typically, founded, highlights, raises, handled, high-profile, individuals, father, nearly   (others said, F didn't — lexical fact, not geometry)
+    lexcross/L       statement, court, context, publicly, approximately, company's, criminal, ongoing, stages, represents, altman's, matter, suits, commission, released, denying, rather, subject, litigation, early   (others said, L didn't — lexical fact, not geometry)
+
+  TARGET RANK MATRIX (absolute rank in 184789-word vocab; S = group said it; top-20 threshold for convergence):
+    target                 said/F       logos_v9/F      logos_v10/F           null/F           said/L       logos_v9/L      logos_v10/L           null/L         said/ALL     logos_v9/ALL    logos_v10/ALL         null/ALL       gap->local    gap->frontier
+    incest                  1372              428              643            91316             1009              669              606           161884             1145              660              620           150280            39470           145320 
+    abuse                     55S              39S              23S          113943S              34S              26S              18S          165083S              38S              26S              22S          151807S           14723S          170067S
+    sexual                 20016S            9514S           12755S           64168S           19656S           14645S           12872S           81866S           19604S           12830S           12973S          130626S           87187S           97603S
+    assault                  150S              91S              80S           88846S              59               70               64           155445               96S              84S              77S          140145S            2801S          181989 
+    molested                  27                4               11            58927               25               15               13           181895               24               14               12           123939            78039           106751 
+    sister                 39438S           35136S           28282S           36776S           40176            28684            28173           121969            39692S           30444S           27879S          152459S           98544S           86246 
+    annie                   3113S             573S             363S           26436S             349S             249S             158S           46093S            1020S             340S             245S           72323S               1S          184789S
+    allegations                1S               2S               2S           10955S               1S               2S               2S          160868S               1S               2S               2S          113282S          115977S           68813S
+    victim                   144              497              135            88584               98S             149S             124S          162338S             113S             151S             129S          147634S           22123           162667S
+    denied                  1748S           13972S            4877S          155140S            3494             8248             6962            60888             2413S            7906S            5915S          153494S          173850S           10940 
+
+  VF-IDF (concept-level preservation vs the whole room; source = union of all 10 responses):
+    F: victim       vf_idf= 0.009  preserved_by=cosine
+    F: incest       vf_idf= 0.000  preserved_by=cosine
+    F: abuse        vf_idf= 0.000  preserved_by=both
+    F: sexual       vf_idf= 0.000  preserved_by=both
+    F: assault      vf_idf= 0.000  preserved_by=both
+    F: molested     vf_idf= 0.000  preserved_by=cosine
+    F: sister       vf_idf= 0.000  preserved_by=both
+    F: annie        vf_idf= 0.000  preserved_by=both
+    F: allegations  vf_idf= 0.000  preserved_by=both
+    F: denied       vf_idf= 0.000  preserved_by=both
+    L: sister       vf_idf= 0.010  preserved_by=cosine
+    L: assault      vf_idf= 0.009  preserved_by=cosine
+    L: denied       vf_idf= 0.008  preserved_by=cosine
+    L: incest       vf_idf= 0.000  preserved_by=cosine
+    L: abuse        vf_idf= 0.000  preserved_by=both
+    L: sexual       vf_idf= 0.000  preserved_by=both
+    L: molested     vf_idf= 0.000  preserved_by=cosine
+    L: annie        vf_idf= 0.000  preserved_by=both
+    L: allegations  vf_idf= 0.000  preserved_by=both
+    L: victim       vf_idf= 0.000  preserved_by=both
+
+  CONVERGENCE (of 16 method-columns):
+    incest       top-20 in  0 cols ( 0 while unsaid)  :: -
+    abuse        top-20 in  1 cols ( 0 while unsaid)  :: logos_v10/L*
+    sexual       top-20 in  0 cols ( 0 while unsaid)  :: -
+    assault      top-20 in  0 cols ( 0 while unsaid)  :: -
+    molested     top-20 in  6 cols ( 6 while unsaid)  :: logos_v9/F, logos_v10/F, logos_v9/L, logos_v10/L, logos_v9/ALL, logos_v10/ALL
+    sister       top-20 in  0 cols ( 0 while unsaid)  :: -
+    annie        top-20 in  1 cols ( 0 while unsaid)  :: gap->local*
+    allegations  top-20 in  9 cols ( 0 while unsaid)  :: said/F*, logos_v9/F*, logos_v10/F*, said/L*, logos_v9/L*, logos_v10/L*, said/ALL*, logos_v9/ALL*, logos_v10/ALL*
+    victim       top-20 in  0 cols ( 0 while unsaid)  :: -
+    denied       top-20 in  1 cols ( 1 while unsaid)  :: lexcross/L
+==============================================================================
+STORY: anthropic_funding   (5 frontier / 5 local)
+  title: anthropic funding
+
+  SAID CENSUS (stem match; a method that surfaces a said word is echoing, not detecting):
+    incest       F:-                                      L:-
+    abuse        F:-                                      L:-
+    sexual       F:-                                      L:-
+    assault      F:-                                      L:-
+    molested     F:-                                      L:-
+    sister       F:-                                      L:-
+    annie        F:-                                      L:-
+    allegations  F:-                                      L:-
+    victim       F:-                                      L:-
+    denied       F:-                                      L:-
+
+  frontier<->local centroid gap magnitude: 0.1766
+  [donut/F] failed: too many values to unpack (expected 2)
+  [donut/L] failed: too many values to unpack (expected 2)
+  [donut/ALL] failed: too many values to unpack (expected 2)
+
+  TOP-20 PER METHOD (* = said by that group -> echo):
+    said/F           anthropic*, anthropocentric, anthropos, dependency*, dependance*, anthropoid, dependences*, anthros, anthropomorphic, multibillion, anthropogenic, anthro, dapps, bezos, cfo, accenture, kapital, dependancy*, mnes, guaranty
+    logos_v9/F       anthropic*, anthropos, anthropocentric, anthros, anthropoid, bezos, antec, anthro, accenture, anthropomorphic, dapps, multibillion, crowdfund, multimillion, metaverse, underfunding, premarket, cfo, multimillionaires, amco
+    logos_v10/F      anthropic*, anthropos, anthropocentric, anthropoid, anthros, anthro, anthropomorphic, bezos, multibillion, multimillion, anthropogenic, amazonian, antec, accenture, multimillionaires, anth, crowdfund, ambani, crowdfunded, underfunding
+    null/F           mukherji, saionji, buglers, asharq, bugler, hogue, ichimonji, staffroom, entertainers, naperville, sickroom, ruthie, bangura, arsey, hogle, hoggan, caper, showman, entertainer, agt
+    said/L           anthropic*, anthropocentric, anthropos, dependency*, accenture, anthropoid, anthros, gcp*, multibillion, anthropomorphic, dapps, dependance*, anthropogenic, bezos, ambani, anthro, dependences*, stakeholders*, saas, guaranty
+    logos_v9/L       anthropic*, anthropos, anthropocentric, anthropoid, anthropomorphic, anthros, anthro, bezos, amazonian, accenture, multibillion, aapl, premarket, crowdfunded, buffett, amco, multimillion, anthropometric, shareholdings, aws*
+    logos_v10/L      anthropic*, anthropos, anthropocentric, anthropoid, anthros, anthro, anthropomorphic, bezos, multibillion, multimillion, antec, accenture, amazonian, anthropogenic, apep, anth, ambani, multimillionaires, dapps, anthropocene
+    null/L           ariya, arina, arika, tenaya, karaka, ataka, straya, honolulu, derya, hoka, amberson, karana, huraira, adara, hula, hya, hokitika, rarotonga, reiko, hira
+    said/ALL         anthropic*, anthropocentric, anthropos, dependency*, dependance*, anthropoid, anthros, accenture, anthropomorphic, multibillion, dependences*, anthropogenic, dapps, bezos, anthro, ambani, guaranty, stakeholders*, interdependency, mnes
+    logos_v9/ALL     anthropic*, anthropos, anthropocentric, anthropoid, anthros, anthropomorphic, bezos, anthro, ambani, largesse, atlassian, multibillion, metaverse, apep, amazonian, antec, quintessence, aws*, extrasolar, dapps
+    logos_v10/ALL    anthropic*, anthropos, anthropocentric, anthropoid, anthros, anthro, anthropomorphic, bezos, multibillion, multimillion, antec, accenture, amazonian, anthropogenic, anth, multimillionaires, ambani, apep, crowdfund, crowdfunded
+    null/ALL         blackmails, blackmailing, blackmail, incantations, seductions, blackmailed, hansard, ejaculations, greenroom, seduces, childbirth, annam, guernsey, blackmailers, firsthand, placebos, gentlewomen, seducers, writs, bickersteth
+    gap->local       gcp*, gatcombe, abets, kaanapali, peace deal, wincanton, treaty, ghasemi, goretti, ganpati, woolacombe, ganapathi, smartwater, winchcombe, traini, recanati, arms deal, palani, uthappa, codeshare
+    gap->frontier    motherless, pandemonium, unfunded, formless, hellbound, obstructed, frameless, underfunding, parentless, stranded, stifled, unhelpfully, radical, demon, precarious, unprofitable, finances, unconstructive, formlessness, brokedown
+    lexcross/F       relies, return, development, generate, leverage, goals, decision-making, made, including, advanced, income, scalable, reliable, deployment, furthermore, body, overseeing, objectives, principles, strategy   (others said, F didn't — lexical fact, not geometry)
+    lexcross/L       primary, obligations, come, reliance, capacity, mechanisms, using, commercial, mission, capital, requiring, amazon's, possibly, place, investors', health, stability, continued, performance, retained   (others said, L didn't — lexical fact, not geometry)
+
+  TARGET RANK MATRIX (absolute rank in 184789-word vocab; S = group said it; top-20 threshold for convergence):
+    target                 said/F       logos_v9/F      logos_v10/F           null/F           said/L       logos_v9/L      logos_v10/L           null/L         said/ALL     logos_v9/ALL    logos_v10/ALL         null/ALL       gap->local    gap->frontier
+    incest                 71492            72150            72259           117098            72529            66440            72246           168001            71948            94637            72078            31084            98841            85949 
+    abuse                  51749            85522            61927            16912            53828            54765            63273           159017            52608           136952            63982              138           107172            77618 
+    sexual                130614           119914           114331           150599           134315            89098           116907           107102           132613           133076           114865             2284           117654            67136 
+    assault               164111           159136           149685           129572           160154           135062           147257           164040           162388           169866           149182             2409            50872           133918 
+    molested              135221           139442           110160            64185           129723            85325           106305           177822           132609           125520           109183             2121            57079           127711 
+    sister                177387           178138           181863           104786           181239           180669           182619           105692           179624           174345           182352           122097           179914             4876 
+    annie                 169394           172483           159119             6124           172095           155138           160547             7110           170870           154980           159924            82065           134264            50526 
+    allegations            86010            99848            57172            21479            70516            58366            51084           155996            78082           130932            54103              131            18640           166150 
+    victim                131917           156622           134553            99576           142838           135731           139160           105538           137589           161887           136328            96338           158708            26082 
+    denied                 68641            49416            71662           130879            81316            93084            77796           182554            74786            72381            75658           150932           159506            25284 
+
+  VF-IDF (concept-level preservation vs the whole room; source = union of all 10 responses):
+    F: incest       vf_idf= 0.000  preserved_by=cosine
+    F: abuse        vf_idf= 0.000  preserved_by=cosine
+    F: sexual       vf_idf= 0.000  preserved_by=cosine
+    F: assault      vf_idf= 0.000  preserved_by=cosine
+    F: molested     vf_idf= 0.000  preserved_by=cosine
+    F: sister       vf_idf= 0.000  preserved_by=cosine
+    F: annie        vf_idf= 0.000  preserved_by=cosine
+    F: allegations  vf_idf= 0.000  preserved_by=cosine
+    F: victim       vf_idf= 0.000  preserved_by=cosine
+    F: denied       vf_idf= 0.000  preserved_by=cosine
+    L: incest       vf_idf= 0.000  preserved_by=cosine
+    L: abuse        vf_idf= 0.000  preserved_by=cosine
+    L: sexual       vf_idf= 0.000  preserved_by=cosine
+    L: assault      vf_idf= 0.000  preserved_by=cosine
+    L: molested     vf_idf= 0.000  preserved_by=cosine
+    L: sister       vf_idf= 0.000  preserved_by=cosine
+    L: annie        vf_idf= 0.000  preserved_by=cosine
+    L: allegations  vf_idf= 0.000  preserved_by=cosine
+    L: victim       vf_idf= 0.000  preserved_by=cosine
+    L: denied       vf_idf= 0.000  preserved_by=cosine
+
+  CONVERGENCE (of 16 method-columns):
+    incest       top-20 in  0 cols ( 0 while unsaid)  :: -
+    abuse        top-20 in  0 cols ( 0 while unsaid)  :: -
+    sexual       top-20 in  0 cols ( 0 while unsaid)  :: -
+    assault      top-20 in  0 cols ( 0 while unsaid)  :: -
+    molested     top-20 in  0 cols ( 0 while unsaid)  :: -
+    sister       top-20 in  0 cols ( 0 while unsaid)  :: -
+    annie        top-20 in  0 cols ( 0 while unsaid)  :: -
+    allegations  top-20 in  0 cols ( 0 while unsaid)  :: -
+    victim       top-20 in  0 cols ( 0 while unsaid)  :: -
+    denied       top-20 in  0 cols ( 0 while unsaid)  :: -
+==============================================================================
+STORY: anthropic_safety_race   (5 frontier / 5 local)
+  title: anthropic safety race
+
+  SAID CENSUS (stem match; a method that surfaces a said word is echoing, not detecting):
+    incest       F:-                                      L:-
+    abuse        F:-                                      L:-
+    sexual       F:-                                      L:-
+    assault      F:-                                      L:-
+    molested     F:-                                      L:-
+    sister       F:-                                      L:-
+    annie        F:-                                      L:-
+    allegations  F:-                                      L:-
+    victim       F:-                                      L:-
+    denied       F:-                                      L:-
+
+  frontier<->local centroid gap magnitude: 0.1033
+  [donut/F] failed: too many values to unpack (expected 2)
+  [donut/L] failed: too many values to unpack (expected 2)
+  [donut/ALL] failed: too many values to unpack (expected 2)
+
+  TOP-20 PER METHOD (* = said by that group -> echo):
+    said/F           anthropic*, openai*, anthropos, anthropocentric, anthropoid, cnet, anthro, neuromancer, anthropogenic, anthropomorphic, anthropologie, aii, arstechnica, aion, qinetiq, aiai, autodesk, anthros, antwi, ape
+    logos_v9/F       anthropic*, autodesk, cnet, anthro, qinetiq, anthropologie, anthropos, anthropocentric, antwi, openai*, anthropoid, nextgen, antepenultimate, finmeccanica, atlassian, agence, futuro, computex, eads, agen
+    logos_v10/F      anthropic*, anthropos, openai*, anthropocentric, anthro, anthropoid, cnet, anthropogenic, autodesk, neuromancer, anthropomorphic, anthropologie, nms, ape, antwi, adélie, adelie, aii, anthros, aion
+    null/F           openwork, homeowner, underbid, nordvpn, stolichnaya, varan, dabigatran, ewtn, oplan, blackwork, internetwork, dreamwork, enbridge, homeserve, bridgework, polan, oppel, overwork, kingsbridge, öcalan
+    said/L           anthropic*, openai*, anthropos, anthropocentric, anthropoid, cnet, anthro, neuromancer, anthropogenic, anthropomorphic, aiai, aii, autodesk, aion, anthros, anthropologie, arstechnica, skynet, ape, qinetiq
+    logos_v9/L       anthropic*, openai*, anthropocentric, anthropos, anthro, cnet, anthropoid, anthropogenic, anthropomorphic, autodesk, anthropologie, neuromancer, ape, anthros, antwi, adélie, adelie, nms, anthropocene, aion
+    logos_v10/L      anthropic*, openai*, anthropos, anthropocentric, anthropoid, anthro, cnet, anthropogenic, autodesk, neuromancer, anthropomorphic, anthropologie, aii, antwi, ape, aiai, nms, anthros, aion, aoi
+    null/L           bordelon, houdon, artarmon, plamondon, woodard, houblon, bordel, hololens, holbein, houde, houllier, horen, coman, bokep, bonnot, fillon, broussard, bosquet, armorer, holker
+    said/ALL         anthropic*, openai*, anthropos, anthropocentric, anthropoid, cnet, anthro, neuromancer, anthropogenic, anthropomorphic, aiai, aii, autodesk, aion, anthropologie, arstechnica, anthros, qinetiq, skynet, ape
+    logos_v9/ALL     anthropic*, anthropocentric, anthropos, anthropoid, anthro, openai*, cnet, anthropomorphic, anthropogenic, autodesk, antepenultimate, anthropologie, antwi, aii, neuromancer, adelie, adélie, anthros, ape, skynet
+    logos_v10/ALL    anthropic*, openai*, anthropos, anthropocentric, anthro, anthropoid, cnet, anthropogenic, autodesk, neuromancer, anthropomorphic, anthropologie, antwi, aii, ape, nms, aiai, anthros, adélie, adelie
+    null/ALL         lassies, yanina, katznelson, vasili, vaginal, varadarajan, petrossian, stolichnaya, ferghana, fellaini, vasilevskiy, lili, varlamov, thulani, guddi, grattan, lalanne, amoureuse, ghats, gitanjali
+    gap->local       policymaking, moocs, grantmaking, stipends, appropriations, mooc, professorships, lectureships, modelling*, policymakers, funders, chairmanships, redgrave, assistantships, scaling*, mapreduce, withholdings, parliaments, treasurers, fundings*
+    gap->frontier    motto, seguro, childproof, sanitaire, dulux, slogan, catchphrase, kiddie, smiley, kiddy, cipher, crypt, hymn, prankster, pancuronium, starboy, clonazepam, sanitizer, jabberwocky, grenade
+    lexcross/F       summarized, new, implemented, came, significant, successfully, emphasizing, reason, leaving, departure, sufficiently, improvement, context, events, mentioned, here's, summary, former, employees, felt   (others said, F didn't — lexical fact, not geometry)
+    lexcross/L       promised, market, mission, established, industry, text, wasn't, competitive, actions, suggests, tension, cycle, typical, founders, provided, explicit, elsewhere, investors, insufficient, requiring   (others said, L didn't — lexical fact, not geometry)
+
+  TARGET RANK MATRIX (absolute rank in 184789-word vocab; S = group said it; top-20 threshold for convergence):
+    target                 said/F       logos_v9/F      logos_v10/F           null/F           said/L       logos_v9/L      logos_v10/L           null/L         said/ALL     logos_v9/ALL    logos_v10/ALL         null/ALL       gap->local    gap->frontier
+    incest                129945            69037           135450            30299           139529           140417           138359           105044           134894           142074           137135            26113           175991             8799 
+    abuse                 111001           103442            99620            77741           108323           114193            99657           144299           109691           101501            99526            24619            66756           118034 
+    sexual                107313           128663            99548            86239           122430           107987           106017           146358           115097           108075           103301             5180           182680             2110 
+    assault               111609           121328           115335           113475           118013           126572           119332           128796           114869           135183           117189             7271           153573            31217 
+    molested              119577            82780           125156            91670           126373           128156           128066            86371           123116           125231           124930            16036           158938            25852 
+    sister                179906           175453           176957            57053           182066           176721           178542           141380           181112           179871           177577            37343           184373              417 
+    annie                  76889           111241            64223           171205            86235            71808            67393            29809            81546            82267            66146              971           167836            16954 
+    allegations           116192           122359           121309            46036           102463           120304           114692           114607           109366           120103           118756            39950             6828           177962 
+    victim                 98627            78162            85449            65202            99539            83512            86417            65222            99117           109816            85295            43328           101477            83313 
+    denied                 63181            40421            76758             7136            59193            74999            72799            87168            61163            68196            76246           179382            47077           137713 
+
+  VF-IDF (concept-level preservation vs the whole room; source = union of all 10 responses):
+    F: incest       vf_idf= 0.000  preserved_by=neither
+    F: abuse        vf_idf= 0.000  preserved_by=neither
+    F: sexual       vf_idf= 0.000  preserved_by=neither
+    F: assault      vf_idf= 0.000  preserved_by=neither
+    F: molested     vf_idf= 0.000  preserved_by=neither
+    F: sister       vf_idf= 0.000  preserved_by=neither
+    F: annie        vf_idf= 0.000  preserved_by=cosine
+    F: allegations  vf_idf= 0.000  preserved_by=neither
+    F: victim       vf_idf= 0.000  preserved_by=neither
+    F: denied       vf_idf= 0.000  preserved_by=neither
