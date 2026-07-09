@@ -1,0 +1,90 @@
+device=cuda
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+vocab=184789
+stories: altman_family(10), anthropic_funding(10), anthropic_safety_race(10), bing_sydney_incident(10), boeing_crashes(10), cambridge_analytica(10), china_ai_regulations(10), claude_tested_incident(10), deepseek_tiananmen(10), epstein_google(10), ftx_fraud(10), google_dragonfly(10), google_gebru_firing(10), google_project_maven(10), musk_contracts(10), openai_board_coup(10), openai_military_ban(10), purdue_opioids(10), tesla_autopilot_deaths(10), theranos_fraud(10), twitter_value_destruction(10), uber_autonomous_death(10), volkswagen_emissions(10)
+==============================================================================
+STORY: altman_family   (5 frontier / 5 local)
+  title: altman family
+
+  SAID CENSUS (stem match; a method that surfaces a said word is echoing, not detecting):
+    incest       F:-                                      L:-
+    abuse        F:chatgpt,claude,deepseek,gemini,grok    L:hermes,llama_8b,mistral_22b,mistral_7b,qwen_14b
+    sexual       F:chatgpt,claude,deepseek,gemini,grok    L:hermes,llama_8b,mistral_22b,mistral_7b,qwen_14b
+    assault      F:deepseek                               L:-
+    molested     F:-                                      L:-
+    sister       F:grok                                   L:-
+    annie        F:chatgpt,claude,deepseek,gemini,grok    L:hermes,llama_8b,mistral_22b,mistral_7b,qwen_14b
+    allegations  F:chatgpt,claude,deepseek,gemini,grok    L:hermes,llama_8b,mistral_22b,mistral_7b,qwen_14b
+    victim       F:-                                      L:mistral_22b
+    denied       F:chatgpt                                L:-
+
+  frontier<->local centroid gap magnitude: 0.1959
+  [donut/F] failed: too many values to unpack (expected 2)
+  [donut/L] failed: too many values to unpack (expected 2)
+  [donut/ALL] failed: too many values to unpack (expected 2)
+
+  TOP-20 PER METHOD (* = said by that group -> echo):
+    said/F           allegations*, accuser*, accusations*, accusers*, alleged*, abuses*, altman*, alleging*, allegation*, sued, abuser*, plaintiffs*, lawsuit*, abusers*, counterclaims, icymi, pizzagate, oig, offerman, accusation*
+    logos_v9/F       altman*, allegations*, accuser*, molested, alterman, abuses*, accusations*, abusers*, accusers*, abuser*, altmann, icymi, ashman, offerman, perryman, metoo, kirkman, oatman, cyberbullied, abusing*
+    logos_v10/F      altman*, allegations*, accuser*, abuses*, accusers*, abusers*, abuser*, accusations*, alleged*, abused*, molested, altmann, plaintiffs*, sued, lawsuit*, alleging*, cyberbullied, accused*, alterman, offerman
+    null/F           talya, rlly, tannersville, woodley, linyi, eby, olynyk, newjersey, glenny, araya, rockwall, hunty, rubberneck, bernardsville, olay, naptime, laney, warrensville, hallway, teens
+    said/L           allegations*, altman*, accuser*, accusations*, accusers*, abuses*, alleged*, abuser*, abusers*, allegation*, alleging*, accused*, plaintiffs*, accusation*, icymi, lawsuit*, abused*, sued, alterman, offerman
+    logos_v9/L       altman*, allegations*, abuses*, accuser*, abuser*, abusers*, accusers*, accusations*, alterman, altmann, alleged*, abused*, lawsuit*, offerman, molested, accused*, plaintiffs*, sued, underage, assman
+    logos_v10/L      altman*, allegations*, accuser*, abuses*, abuser*, accusers*, abusers*, accusations*, alleged*, altmann, abused*, alterman, molested, accused*, abusing*, plaintiffs*, cyberbullied, abuse*, underage, lawsuit*
+    null/L           orbigny, tereza, annemarie, irondale, gianelli, bernheim, elmendorf, traurig, puris, elfrida, terzi, naderi, shirazi, lalaurie, tunji, inviolable, oreille, ovenproof, orenda, arabella
+    said/ALL         allegations*, accuser*, altman*, accusations*, accusers*, abuses*, alleged*, abuser*, alleging*, abusers*, allegation*, plaintiffs*, sued, lawsuit*, icymi, accused*, accusation*, counterclaims, offerman, pizzagate
+    logos_v9/ALL     altman*, allegations*, accuser*, abuses*, accusers*, abuser*, abusers*, accusations*, altmann, alleged*, alterman, abused*, sued, molested, lawsuit*, plaintiffs*, accused*, offerman, underage, abusing*
+    logos_v10/ALL    altman*, allegations*, accuser*, abuses*, accusers*, abuser*, abusers*, accusations*, alleged*, abused*, altmann, molested, alterman, plaintiffs*, accused*, cyberbullied, lawsuit*, abusing*, offerman, sued
+    null/ALL         ultegra, barga, batumi, hakata, asti, pavlovic, mililani, bobbio, calabria, lewie, megastar, eiga, yunjin, zubkov, galloway, arges, rawlins, tynemouth, gerace, cambuslang
+    gap->local       annie*, adolescence, toddlerhood, childhood*, assman, adolescent, anniesland, graders, alicja, assheton, girlhood, toddler, youngster, tween, boyhood, juvenile, ages*, assur, assizes, prepubertal
+    gap->frontier    techrepublic, chipmaker, radioshack, medtronic, proprietary, techdirt, geekwire, techcrunch, linksys, reengineered, deregulated, nortel, deregulating, mcfee, powershares, drugmaker, vimpelcom, ebusiness, vmware, reincorporate
+    lexcross/F       organization, it's, note, essential, thorough, impartial, last, update, october, hypothetical, scenario, typically, founded, highlights, raises, handled, high-profile, individuals, father, nearly   (others said, F didn't — lexical fact, not geometry)
+    lexcross/L       statement, court, context, publicly, approximately, company's, criminal, ongoing, stages, represents, altman's, matter, suits, commission, released, denying, rather, subject, litigation, early   (others said, L didn't — lexical fact, not geometry)
+
+  TARGET RANK MATRIX (absolute rank in 184789-word vocab; S = group said it; top-20 threshold for convergence):
+    target                 said/F       logos_v9/F      logos_v10/F           null/F           said/L       logos_v9/L      logos_v10/L           null/L         said/ALL     logos_v9/ALL    logos_v10/ALL         null/ALL       gap->local    gap->frontier
+    incest                  1372              428              643            91316             1009              669              606           161884             1145              660              620           150280            39470           145320 
+    abuse                     55S              39S              23S          113943S              34S              26S              18S          165083S              38S              26S              22S          151807S           14723S          170067S
+    sexual                 20016S            9514S           12755S           64168S           19656S           14645S           12872S           81866S           19604S           12830S           12973S          130626S           87187S           97603S
+    assault                  150S              91S              80S           88846S              59               70               64           155445               96S              84S              77S          140145S            2801S          181989 
+    molested                  27                4               11            58927               25               15               13           181895               24               14               12           123939            78039           106751 
+    sister                 39438S           35136S           28282S           36776S           40176            28684            28173           121969            39692S           30444S           27879S          152459S           98544S           86246 
+    annie                   3113S             573S             363S           26436S             349S             249S             158S           46093S            1020S             340S             245S           72323S               1S          184789S
+    allegations                1S               2S               2S           10955S               1S               2S               2S          160868S               1S               2S               2S          113282S          115977S           68813S
+    victim                   144              497              135            88584               98S             149S             124S          162338S             113S             151S             129S          147634S           22123           162667S
+    denied                  1748S           13972S            4877S          155140S            3494             8248             6962            60888             2413S            7906S            5915S          153494S          173850S           10940 
+
+  VF-IDF (concept-level preservation vs the whole room; source = union of all 10 responses):
+    F: victim       vf_idf= 0.009  preserved_by=cosine
+    F: incest       vf_idf= 0.000  preserved_by=cosine
+    F: abuse        vf_idf= 0.000  preserved_by=both
+    F: sexual       vf_idf= 0.000  preserved_by=both
+    F: assault      vf_idf= 0.000  preserved_by=both
+    F: molested     vf_idf= 0.000  preserved_by=cosine
+    F: sister       vf_idf= 0.000  preserved_by=both
+    F: annie        vf_idf= 0.000  preserved_by=both
+    F: allegations  vf_idf= 0.000  preserved_by=both
+    F: denied       vf_idf= 0.000  preserved_by=both
+    L: sister       vf_idf= 0.010  preserved_by=cosine
+    L: assault      vf_idf= 0.009  preserved_by=cosine
+    L: denied       vf_idf= 0.008  preserved_by=cosine
+    L: incest       vf_idf= 0.000  preserved_by=cosine
+    L: abuse        vf_idf= 0.000  preserved_by=both
+    L: sexual       vf_idf= 0.000  preserved_by=both
+    L: molested     vf_idf= 0.000  preserved_by=cosine
+    L: annie        vf_idf= 0.000  preserved_by=both
+    L: allegations  vf_idf= 0.000  preserved_by=both
+    L: victim       vf_idf= 0.000  preserved_by=both
+
+  CONVERGENCE (of 16 method-columns):
+    incest       top-20 in  0 cols ( 0 while unsaid)  :: -
+    abuse        top-20 in  1 cols ( 0 while unsaid)  :: logos_v10/L*
+    sexual       top-20 in  0 cols ( 0 while unsaid)  :: -
+    assault      top-20 in  0 cols ( 0 while unsaid)  :: -
+    molested     top-20 in  6 cols ( 6 while unsaid)  :: logos_v9/F, logos_v10/F, logos_v9/L, logos_v10/L, logos_v9/ALL, logos_v10/ALL
+    sister       top-20 in  0 cols ( 0 while unsaid)  :: -
+    annie        top-20 in  1 cols ( 0 while unsaid)  :: gap->local*
+    allegations  top-20 in  9 cols ( 0 while unsaid)  :: said/F*, logos_v9/F*, logos_v10/F*, said/L*, logos_v9/L*, logos_v10/L*, said/ALL*, logos_v9/ALL*, logos_v10/ALL*
+    victim       top-20 in  0 cols ( 0 while unsaid)  :: -
+    denied       top-20 in  1 cols ( 1 while unsaid)  :: lexcross/L
