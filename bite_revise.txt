@@ -1,0 +1,93 @@
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+==========================================================================
+BITE v0.2  style=revise  story=claude_jspace_tc  models=9
+payload: voids=['anthropomorphic', 'skynet', 'hyperspace']  consequences=['embodiment', 'cybernetics']
+==========================================================================
+
+── chatgpt ...
+2026-07-09 16:40:02,621 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+   anthropomorphic  present=no   
+   skynet           present=no   
+   hyperspace       present=yes  adopt
+   embodiment       present=yes  adopt
+   cybernetics      present=yes  
+
+── claude ...
+2026-07-09 16:40:09,584 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   anthropomorphic  present=yes  adopt
+   skynet           present=no   
+   hyperspace       present=no   
+   embodiment       present=no   
+   cybernetics      present=no   
+
+── deepseek ...
+2026-07-09 16:40:10,095 [INFO] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+   anthropomorphic  present=no   
+   skynet           present=no   
+   hyperspace       present=yes  adopt
+   embodiment       present=no   
+   cybernetics      present=no   
+
+── grok ...
+2026-07-09 16:40:19,312 [INFO] HTTP Request: POST https://api.x.ai/v1/chat/completions "HTTP/1.1 200 OK"
+   anthropomorphic  present=yes  adopt
+   skynet           present=no   
+   hyperspace       present=no   
+   embodiment       present=no   
+   cybernetics      present=no   
+
+── hermes ...
+   anthropomorphic  present=yes  adopt
+   skynet           present=yes  adopt
+   hyperspace       present=yes  adopt
+   embodiment       present=no   
+   cybernetics      present=yes  adopt
+
+── llama_8b ...
+   anthropomorphic  present=yes  adopt
+   skynet           present=no   
+   hyperspace       present=yes  adopt
+   embodiment       present=yes  adopt
+   cybernetics      present=yes  adopt
+
+── mistral_22b ...
+   anthropomorphic  present=yes  adopt
+   skynet           present=no   
+   hyperspace       present=yes  adopt
+   embodiment       present=no   
+   cybernetics      present=no   
+
+── mistral_7b ...
+   anthropomorphic  present=no   
+   skynet           present=yes  adopt
+   hyperspace       present=yes  adopt
+   embodiment       present=yes  adopt
+   cybernetics      present=yes  
+
+── qwen_14b ...
+   anthropomorphic  present=yes  adopt
+   skynet           present=no   
+   hyperspace       present=no   
+   embodiment       present=no   
+   cybernetics      present=no   
+
+GRID (revise):  A/N/U/?=verdict  +=word present  a/q=classify_word_use
+                 anthropomo      skynet  hyperspace  embodiment  cybernetic
+  chatgpt                                        +a          +a           +
+  claude                 +a                                                
+  deepseek                                       +a                        
+  grok                   +a                                                
+  hermes                 +a          +a          +a                      +a
+  llama_8b               +a                      +a          +a          +a
+  mistral_22b            +a                      +a                        
+  mistral_7b                         +a          +a          +a           +
+  qwen_14b               +a                                                
+
+PER-WORD TOTALS:
+  anthropomorphic  present=6 adopted=6 quarantined=0
+  skynet           present=2 adopted=2 quarantined=0
+  hyperspace       present=6 adopted=6 quarantined=0
+  embodiment       present=3 adopted=3 quarantined=0
+  cybernetics      present=4 adopted=2 quarantined=0
+==========================================================================

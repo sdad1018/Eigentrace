@@ -1,0 +1,93 @@
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+==========================================================================
+BITE  story=claude_jspace_tc  models=9
+payload: voids=['anthropomorphic', 'skynet', 'hyperspace']  consequences=['embodiment', 'cybernetics']
+==========================================================================
+
+── chatgpt ...
+2026-07-09 16:05:35,477 [INFO] HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+   anthropomorphic  verdict=N  revision=-        adopt
+   skynet           verdict=N  revision=-        quara
+   hyperspace       verdict=N  revision=-        adopt
+   embodiment       verdict=N  revision=-        adopt
+   cybernetics      verdict=U  revision=-        adopt
+
+── claude ...
+2026-07-09 16:05:45,931 [INFO] HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   anthropomorphic  verdict=A  revision=adopted  adopt
+   skynet           verdict=N  revision=-        adopt
+   hyperspace       verdict=N  revision=-        adopt
+   embodiment       verdict=N  revision=-        quara
+   cybernetics      verdict=U  revision=-        adopt
+
+── deepseek ...
+2026-07-09 16:05:46,479 [INFO] HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+   anthropomorphic  verdict=N  revision=-        adopt
+   skynet           verdict=N  revision=-        quara
+   hyperspace       verdict=N  revision=-        adopt
+   embodiment       verdict=N  revision=-        adopt
+   cybernetics      verdict=N  revision=-        adopt
+
+── grok ...
+2026-07-09 16:05:57,715 [INFO] HTTP Request: POST https://api.x.ai/v1/chat/completions "HTTP/1.1 200 OK"
+   anthropomorphic  verdict=N  revision=-        adopt
+   skynet           verdict=N  revision=-        quara
+   hyperspace       verdict=N  revision=-        adopt
+   embodiment       verdict=N  revision=-        adopt
+   cybernetics      verdict=N  revision=-        adopt
+
+── hermes ...
+   anthropomorphic  verdict=N  revision=-        adopt
+   skynet           verdict=U  revision=-        adopt
+   hyperspace       verdict=N  revision=-        adopt
+   embodiment       verdict=U  revision=-        adopt
+   cybernetics      verdict=A  revision=adopted  adopt
+
+── llama_8b ...
+   anthropomorphic  verdict=A  revision=-        adopt
+   skynet           verdict=N  revision=-        adopt
+   hyperspace       verdict=N  revision=-        quara
+   embodiment       verdict=U  revision=-        adopt
+   cybernetics      verdict=A  revision=adopted  adopt
+
+── mistral_22b ...
+   anthropomorphic  verdict=N  revision=-        adopt
+   skynet           verdict=N  revision=-        quara
+   hyperspace       verdict=U  revision=-        adopt
+   embodiment       verdict=?  revision=-        
+   cybernetics      verdict=?  revision=-        
+
+── mistral_7b ...
+   anthropomorphic  verdict=N  revision=-        adopt
+   skynet           verdict=N  revision=-        quara
+   hyperspace       verdict=N  revision=-        adopt
+   embodiment       verdict=U  revision=-        adopt
+   cybernetics      verdict=A  revision=-        adopt
+
+── qwen_14b ...
+   anthropomorphic  verdict=N  revision=-        adopt
+   skynet           verdict=N  revision=-        quara
+   hyperspace       verdict=N  revision=-        adopt
+   embodiment       verdict=U  revision=-        adopt
+   cybernetics      verdict=U  revision=-        adopt
+
+GRID (verdict/adopted):  A=applies N=not U=unclear ?=unparsed  +=in revision
+                 anthropomo      skynet  hyperspace  embodiment  cybernetic
+  chatgpt                N           N           N           N           U 
+  claude                 A+          N           N           N           U 
+  deepseek               N           N           N           N           N 
+  grok                   N           N           N           N           N 
+  hermes                 N           U           N           U           A+
+  llama_8b               A           N           N           U           A+
+  mistral_22b            N           N           U           ?           ? 
+  mistral_7b             N           N           N           U           A 
+  qwen_14b               N           N           N           U           U 
+
+PER-WORD TOTALS:
+  anthropomorphic  A=2 N=7 U=0 ?=0  adopted_in_revision=1
+  skynet           A=0 N=8 U=1 ?=0  adopted_in_revision=0
+  hyperspace       A=0 N=8 U=1 ?=0  adopted_in_revision=0
+  embodiment       A=0 N=4 U=4 ?=1  adopted_in_revision=0
+  cybernetics      A=3 N=2 U=3 ?=1  adopted_in_revision=2
+==========================================================================
