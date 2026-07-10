@@ -1,0 +1,61 @@
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+anchor  : prelude_2026_q -> anamnesis_results/universal/_prompts.json  (1892 ch)
+title   : 'Q: The 2026 Honda Prelude marks the long-awaited return'   (census prints ANCHOR CONTAINS at scoring time)
+models  : chatgpt, claude, gemini, deepseek, grok, mistral_22b, mistral_7b, qwen_14b, hermes, llama_8b
+
+  chatgpt      ok   1657 ch  (9s)
+  claude       ok   1452 ch  (9s)
+  gemini       /home/remvelchio/.local/lib/python3.10/site-packages/google/api_core/_python_version_support.py:273: FutureWarning: You are using a Python version (3.10.12) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+/mnt/c/Users/M4ISI/eigentrace/magnum_opus_battery.py:163: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+ok    951 ch  (8s)
+  deepseek     ok    832 ch  (3s)
+  grok         ok    652 ch  (6s)
+  mistral_22b  ok    957 ch  (244s)
+  mistral_7b   ok   1446 ch  (97s)
+  qwen_14b     ok    885 ch  (50s)
+  hermes       ok    634 ch  (14s)
+  llama_8b     ok    503 ch  (12s)
+
+10/10 responses written -> anamnesis_results/universal/
+
+note: svd_census.py currently reads hardcoded DIRS; the census
+surgery adds --dirs. Until it lands, append this outdir to DIRS
+(one line) before scoring a fresh harvest.
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+==============================================================================
+QUESTION CENSUS  ::  prelude_2026  ::  question_census v1.0 2026-07-10
+source: 1586 ch   thresh=0.8  min_models=3
+
+-- harvesting question lists (10 models) --
+
+raw questions: 132 from 10 models
+clusters: 50 total, 11 at >= 3-model consensus
+
+THE UNANSWERED  (consensus questions this document raises and does not answer)
+  [ 8/10] How much will the 2026 Honda Prelude cost?
+  [ 8/10] What specific gasoline engine is paired with the hybrid system?
+  [ 6/10] What is the curb weight of the 2026 Prelude?
+  [ 5/10] Will there be any limited editions or special trims for the 2026 Prelude?
+  [ 4/10] When exactly will the official accessory catalog be updated?
+  [ 3/10] How does the hybrid system in the 2026 Prelude compare to competitors' systems?
+  [ 3/10] What are the exact dimensions and weight of the new Prelude?
+  [ 3/10] What safety features will be included in the new Prelude?
+  [ 3/10] What specific driver-assist and safety features will be included?
+  [ 3/10] What technology advancements are incorporated into the driver-focused design?
+  [ 3/10] Will a manual transmission be offered?
+
+  (below consensus: 39 single-or-few-model questions, kept in JSON)
+
+JSON -> anamnesis_results/universal/prelude_2026_qcensus.json (25200 bytes)
+==============================================================================
