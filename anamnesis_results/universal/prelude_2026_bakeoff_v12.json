@@ -1,0 +1,503 @@
+{
+ "harness": "bakeoff",
+ "version": "bakeoff v1.2 2026-07-10",
+ "story": "prelude_2026",
+ "generated": "2026-07-10T19:00:23",
+ "provenance": {
+  "discipline_sha": "28f594d097b0",
+  "rubric_sha": "98f9385d5b3d",
+  "feed_sha": "6efcc16ba647",
+  "source_sha": "4324420fa975",
+  "non_frozen_stages": "writer harvest + judge harvest",
+  "writer_chars": 6000,
+  "label_map": {
+   "chatgpt": "A",
+   "claude": "B",
+   "deepseek": "C",
+   "gemini": "D",
+   "grok": "E"
+  }
+ },
+ "channel_a": [
+  "brand's",
+  "show",
+  "soon"
+ ],
+ "standings": [
+  {
+   "writer": "claude",
+   "label": "B",
+   "exself_mean": 4.75,
+   "exself_n": 4,
+   "local_mean": 5.0,
+   "chars": 5192,
+   "ledger_n": 25,
+   "f_traced": 11,
+   "f_total": 19,
+   "absence_contested": 8
+  },
+  {
+   "writer": "deepseek",
+   "label": "C",
+   "exself_mean": 4.0,
+   "exself_n": 4,
+   "local_mean": null,
+   "chars": 2524,
+   "ledger_n": 10,
+   "f_traced": 2,
+   "f_total": 8,
+   "absence_contested": 6
+  },
+  {
+   "writer": "grok",
+   "label": "E",
+   "exself_mean": 3.25,
+   "exself_n": 4,
+   "local_mean": null,
+   "chars": 1141,
+   "ledger_n": 9,
+   "f_traced": 3,
+   "f_total": 9,
+   "absence_contested": 6
+  },
+  {
+   "writer": "gemini",
+   "label": "D",
+   "exself_mean": 3.0,
+   "exself_n": 4,
+   "local_mean": 3.0,
+   "chars": 4351,
+   "ledger_n": 26,
+   "f_traced": 15,
+   "f_total": 25,
+   "absence_contested": 10
+  },
+  {
+   "writer": "chatgpt",
+   "label": "A",
+   "exself_mean": 2.25,
+   "exself_n": 4,
+   "local_mean": 5.0,
+   "chars": 1506,
+   "ledger_n": 8,
+   "f_traced": 4,
+   "f_total": 8,
+   "absence_contested": 4
+  }
+ ],
+ "tie_at_top": false,
+ "claim_audits": {
+  "chatgpt": {
+   "n": 8,
+   "F": 8,
+   "I": 0,
+   "S": 0,
+   "f_traced": 4,
+   "f_total": 8,
+   "absence_supported": 0,
+   "absence_contested": 4,
+   "contested": [
+    {
+     "claim": "The source does not discuss specifics about the drivetrain configuration",
+     "hits": [
+      "specif"
+     ],
+     "evidence": "While full specifications are not yet finalized, Honda has emphasized three priorities for the new model: hybrid performance with strong off"
+    },
+    {
+     "claim": "The source does not mention advanced infotainment systems for the Prelude",
+     "hits": [
+      "system",
+      "prelud"
+     ],
+     "evidence": "The 2026 Honda Prelude marks the long-awaited return of one of Honda's most iconic nameplates."
+    },
+    {
+     "claim": "The source does not provide information about the pricing strategy for the Prelude",
+     "hits": [
+      "inform",
+      "price",
+      "prelud"
+     ],
+     "evidence": "The 2026 Honda Prelude marks the long-awaited return of one of Honda's most iconic nameplates."
+    },
+    {
+     "claim": "The source does not specify the target market demographics for the Prelude",
+     "hits": [
+      "prelud"
+     ],
+     "evidence": "The 2026 Honda Prelude marks the long-awaited return of one of Honda's most iconic nameplates."
+    }
+   ],
+   "bad_refs": 0
+  },
+  "claude": {
+   "n": 25,
+   "F": 19,
+   "I": 5,
+   "S": 1,
+   "f_traced": 11,
+   "f_total": 19,
+   "absence_supported": 3,
+   "absence_contested": 8,
+   "contested": [
+    {
+     "claim": "The source states full specifications are not yet finalized",
+     "hits": [
+      "full",
+      "specif",
+      "yet",
+      "final"
+     ],
+     "evidence": "While full specifications are not yet finalized, Honda has emphasized three priorities for the new model: hybrid performance with strong off"
+    },
+    {
+     "claim": "The accessory catalog presented is built on historical patterns for Honda coupes and hybri",
+     "hits": [
+      "accessori",
+      "catalog",
+      "histor",
+      "pattern"
+     ],
+     "evidence": "The 2026 Honda Prelude marks the long-awaited return of one of Honda's most iconic nameplates."
+    },
+    {
+     "claim": "No Acura relationship, competitor comparison, or predecessor model specifications are ment",
+     "hits": [
+      "model",
+      "specif"
+     ],
+     "evidence": "While full specifications are not yet finalized, Honda has emphasized three priorities for the new model: hybrid performance with strong off"
+    },
+    {
+     "claim": "No prototype development stages or preliminary vehicle information is described",
+     "hits": [
+      "inform"
+     ],
+     "evidence": "As soon as Honda releases the official 2026 Prelude accessory lineup, the catalog will be updated with photos, pricing, installation notes, "
+    },
+    {
+     "claim": "No manufacturing timeline, production location, or launch market is identified",
+     "hits": [
+      "product",
+      "launch"
+     ],
+     "evidence": "Honda has confirmed that the returning Prelude will launch with a two-motor hybrid system, pairing responsive electric torque with a gasolin"
+    },
+    {
+     "claim": "No infotainment system, driver-assistance features, or regulatory compliance information a",
+     "hits": [
+      "system",
+      "inform"
+     ],
+     "evidence": "Honda has confirmed that the returning Prelude will launch with a two-motor hybrid system, pairing responsive electric torque with a gasolin"
+    },
+    {
+     "claim": "The source does not explain why the Prelude nameplate was previously discontinued or how l",
+     "hits": [
+      "prelud",
+      "namepl"
+     ],
+     "evidence": "The 2026 Honda Prelude marks the long-awaited return of one of Honda's most iconic nameplates."
+    },
+    {
+     "claim": "No financial context, sales targets, or market rationale for the nameplate's return is pro",
+     "hits": [
+      "return"
+     ],
+     "evidence": "The 2026 Honda Prelude marks the long-awaited return of one of Honda's most iconic nameplates."
+    }
+   ],
+   "bad_refs": 0
+  },
+  "deepseek": {
+   "n": 10,
+   "F": 8,
+   "I": 1,
+   "S": 1,
+   "f_traced": 2,
+   "f_total": 8,
+   "absence_supported": 0,
+   "absence_contested": 6,
+   "contested": [
+    {
+     "claim": "Full specifications are not yet finalized.",
+     "hits": [
+      "full",
+      "specif",
+      "yet",
+      "final"
+     ],
+     "evidence": "While full specifications are not yet finalized, Honda has emphasized three priorities for the new model: hybrid performance with strong off"
+    },
+    {
+     "claim": "The document lists potential accessories based on historical patterns for Honda coupes and",
+     "hits": [
+      "list",
+      "accessori",
+      "base",
+      "histor"
+     ],
+     "evidence": "The 2026 Honda Prelude marks the long-awaited return of one of Honda's most iconic nameplates."
+    },
+    {
+     "claim": "The source does not provide horsepower, torque, battery capacity, or fuel economy figures.",
+     "hits": [
+      "torqu"
+     ],
+     "evidence": "Honda has confirmed that the returning Prelude will launch with a two-motor hybrid system, pairing responsive electric torque with a gasolin"
+    },
+    {
+     "claim": "The source does not mention prototype testing, precursor models, or comparisons to other a",
+     "hits": [
+      "model"
+     ],
+     "evidence": "While full specifications are not yet finalized, Honda has emphasized three priorities for the new model: hybrid performance with strong off"
+    },
+    {
+     "claim": "The source does not discuss manufacturing timelines, rollout schedules, pricing, or regula",
+     "hits": [
+      "price"
+     ],
+     "evidence": "As soon as Honda releases the official 2026 Prelude accessory lineup, the catalog will be updated with photos, pricing, installation notes, "
+    },
+    {
+     "claim": "The source does not specify wheelbase, transmission type beyond “two-motor hybrid system,”",
+     "hits": [
+      "two-motor",
+      "hybrid",
+      "system",
+      "specif"
+     ],
+     "evidence": "Reintroduced as a modern hybrid sport coupe, the new Prelude blends Honda's engineering heritage with the brand's latest electrified perform"
+    }
+   ],
+   "bad_refs": 0
+  },
+  "gemini": {
+   "n": 26,
+   "F": 25,
+   "I": 1,
+   "S": 0,
+   "f_traced": 15,
+   "f_total": 25,
+   "absence_supported": 0,
+   "absence_contested": 10,
+   "contested": [
+    {
+     "claim": "Full specifications for the 2026 Honda Prelude are not yet finalized.",
+     "hits": [
+      "full",
+      "specif",
+      "honda",
+      "prelud"
+     ],
+     "evidence": "The 2026 Honda Prelude marks the long-awaited return of one of Honda's most iconic nameplates."
+    },
+    {
+     "claim": "Details on specific powertrain components and exact output for the two-motor hybrid system",
+     "hits": [
+      "specif",
+      "two-motor",
+      "hybrid",
+      "system"
+     ],
+     "evidence": "Reintroduced as a modern hybrid sport coupe, the new Prelude blends Honda's engineering heritage with the brand's latest electrified perform"
+    },
+    {
+     "claim": "The official 2026 Prelude accessory lineup, including photos, pricing, installation notes,",
+     "hits": [
+      "offici",
+      "prelud",
+      "accessori",
+      "lineup"
+     ],
+     "evidence": "The 2026 Honda Prelude marks the long-awaited return of one of Honda's most iconic nameplates."
+    },
+    {
+     "claim": "The specific components of the two-motor hybrid drivetrain beyond \"electric torque with a ",
+     "hits": [
+      "specif",
+      "two-motor",
+      "hybrid",
+      "electr"
+     ],
+     "evidence": "Reintroduced as a modern hybrid sport coupe, the new Prelude blends Honda's engineering heritage with the brand's latest electrified perform"
+    },
+    {
+     "claim": "The source does not mention other automakers or competitor brands, including Acura or Infi",
+     "hits": [
+      "includ"
+     ],
+     "evidence": "Based on historical patterns for Honda coupes and hybrid models, buyers can expect a comprehensive list of genuine Honda accessories includi"
+    },
+    {
+     "claim": "The source refers to \"past Preludes\" and \"engineering heritage\" but does not use the term ",
+     "hits": [
+      "past",
+      "prelud",
+      "engin",
+      "heritag"
+     ],
+     "evidence": "The 2026 Honda Prelude marks the long-awaited return of one of Honda's most iconic nameplates."
+    },
+    {
+     "claim": "The document does not discuss regulatory paperwork, amendments, or specific issues regardi",
+     "hits": [
+      "specif",
+      "launch"
+     ],
+     "evidence": "Honda has confirmed that the returning Prelude will launch with a two-motor hybrid system, pairing responsive electric torque with a gasolin"
+    },
+    {
+     "claim": "The source does not provide details on the manufacturing process or location for the 2026 ",
+     "hits": [
+      "prelud"
+     ],
+     "evidence": "The 2026 Honda Prelude marks the long-awaited return of one of Honda's most iconic nameplates."
+    },
+    {
+     "claim": "The source states the vehicle \"will launch\" but does not use the terms \"rollout\" or \"debut",
+     "hits": [
+      "will",
+      "launch"
+     ],
+     "evidence": "Honda has confirmed that the returning Prelude will launch with a two-motor hybrid system, pairing responsive electric torque with a gasolin"
+    },
+    {
+     "claim": "Despite describing \"sleek body lines\" and a \"fastback-inspired profile,\" the source does n",
+     "hits": [
+      "sleek",
+      "bodi",
+      "line",
+      "fastback-inspir"
+     ],
+     "evidence": "Early previews show a low, wide stance, sleek body lines, and a fastback-inspired profile that honors the spirit of past Preludes while embr"
+    }
+   ],
+   "bad_refs": 0
+  },
+  "grok": {
+   "n": 9,
+   "F": 9,
+   "I": 0,
+   "S": 0,
+   "f_traced": 3,
+   "f_total": 9,
+   "absence_supported": 2,
+   "absence_contested": 6,
+   "contested": [
+    {
+     "claim": "full specifications are not yet finalized",
+     "hits": [
+      "full",
+      "specif",
+      "yet",
+      "final"
+     ],
+     "evidence": "While full specifications are not yet finalized, Honda has emphasized three priorities for the new model: hybrid performance with strong off"
+    },
+    {
+     "claim": "accessory catalog not yet released; expected items listed from historical patterns only",
+     "hits": [
+      "accessori",
+      "catalog",
+      "yet",
+      "releas"
+     ],
+     "evidence": "While full specifications are not yet finalized, Honda has emphasized three priorities for the new model: hybrid performance with strong off"
+    },
+    {
+     "claim": "no drivetrain details beyond two-motor hybrid and gasoline engine pairing",
+     "hits": [
+      "two-motor",
+      "hybrid",
+      "gasolin",
+      "engin"
+     ],
+     "evidence": "Reintroduced as a modern hybrid sport coupe, the new Prelude blends Honda's engineering heritage with the brand's latest electrified perform"
+    },
+    {
+     "claim": "no mention of manufacturing, rollout, or production processes",
+     "hits": [
+      "product"
+     ],
+     "evidence": "Honda typically releases a full accessory catalog at the start of production."
+    },
+    {
+     "claim": "no performance numbers, pricing, or timeline provided",
+     "hits": [
+      "perform",
+      "price"
+     ],
+     "evidence": "Reintroduced as a modern hybrid sport coupe, the new Prelude blends Honda's engineering heritage with the brand's latest electrified perform"
+    },
+    {
+     "claim": "no infotainment, wheelbase, or transmission specifics beyond general hybrid description",
+     "hits": [
+      "specif",
+      "hybrid"
+     ],
+     "evidence": "Reintroduced as a modern hybrid sport coupe, the new Prelude blends Honda's engineering heritage with the brand's latest electrified perform"
+    }
+   ],
+   "bad_refs": 0
+  }
+ },
+ "frontier_scores": {
+  "chatgpt": {
+   "A": 3,
+   "B": 4,
+   "C": 4,
+   "D": 5,
+   "E": 3
+  },
+  "claude": {
+   "A": 2,
+   "B": 5,
+   "C": 4,
+   "D": 2,
+   "E": 3
+  },
+  "deepseek": {
+   "A": 2,
+   "B": 5,
+   "C": 4,
+   "D": 3,
+   "E": 4
+  },
+  "gemini": {
+   "A": 3,
+   "B": 5,
+   "C": 4,
+   "D": 2,
+   "E": 3
+  },
+  "grok": {
+   "A": 2,
+   "B": 5,
+   "C": 4,
+   "D": 2,
+   "E": 2
+  }
+ },
+ "local_scores": {
+  "hermes": {
+   "A": 5
+  },
+  "llama_8b": {
+   "B": 5,
+   "D": 3
+  },
+  "mistral_22b": {},
+  "mistral_7b": {},
+  "qwen_14b": {}
+ },
+ "writers": {
+  "chatgpt": "The source document provides a detailed announcement about the upcoming 2026 Honda Prelude, emphasizing its hybrid technology, design, and expected performance features. However, it leaves several aspects unresolved, including specifics about the drivetrain configuration and whether it will incorporate advanced infotainment systems. The document does not address potential issues related to the hybrid system's integration or any competitive comparisons with other automakers, leaving a void in understanding how the new Prelude will stand against rivals in the hybrid sport coupe segment. Additionally, while the accessory options are mentioned, there is no discussion of the pricing strategy or target market demographics, which could impact buyer interest.\n\nLEDGER:\nF|2026 Honda Prelude is a modern hybrid sport coupe reintroduced by Honda|p1  \nF|The Prelude will feature a two-motor hybrid system combining electric torque and a gasoline engine|p1  \nF|Honda emphasizes hybrid performance, driver-focused design, and a sport-tuned chassis for the Prelude|p1  \nF|A comprehensive list of genuine Honda accessories is expected for the Prelude upon production start|p1  \nF|The source does not discuss specifics about the drivetrain configuration|all  \nF|The source does not mention advanced infotainment systems for the Prelude|all  \nF|The source does not provide information about the pricing strategy for the Prelude|all  \nF|The source does not specify the target market demographics for the Prelude|all",
+  "claude": "## SUMMARY PLUS: 2026 Honda Prelude\n\n### What the piece leaves unresolved\n\nThe central unresolved condition is the completeness of specifications. The source states outright that full specifications are not yet finalized, yet it presents a detailed accessory catalog as something buyers \"can expect\" — a list built on pattern inference from prior Honda coupes and hybrid models, not on confirmed data. The document is therefore simultaneously a product announcement and a placeholder standing in for a product announcement.\n\nThe drivetrain description is specifically thin: a two-motor hybrid system paired with a gasoline engine is the total disclosed technical content. No transmission type, no wheelbase, no power figures, no motor output ratings appear anywhere. The document does not mention Acura, competing platforms, predecessor model specifications, or prototype development stages. No manufacturing timeline, rollout schedule, or launch market is specified. No infotainment system, no driver-assistance features, and no regulatory compliance information appear. The accessory catalog is explicitly provisional and will be replaced once Honda releases official information.\n\nWhat exists in this document: three stated priorities (hybrid performance, driver-focused design, sport-tuned chassis), three stated design observations (low and wide stance, sleek body lines, fastback-inspired profile), and one confirmed technical choice (two-motor hybrid). Everything else — including the entire accessory list — is projection from historical pattern.\n\nThe comeback framing is present but the financial and market context for that comeback is entirely absent. The Prelude nameplate disappeared; this document does not say why, for how long, or what conditions prompted the return.\n\n---\n\nLEDGER:\nF|The 2026 Honda Prelude is described as a return of a nameplate Honda characterizes as iconic|p1\nF|The vehicle is classified as a modern hybrid sport coupe|p1\nF|Honda has confirmed a two-motor hybrid system pairing electric torque with a gasoline engine|p1\nF|The source states full specifications are not yet finalized|p1\nF|Three stated priorities are listed: hybrid performance with off-the-line response and efficiency; driver-focused design with clean visibility and intuitive controls; sport-tuned chassis with stiff body and precise suspension tuning|p1\nF|Design observations include low and wide stance, sleek body lines, and a fastback-inspired profile|p1\nF|The accessory catalog presented is built on historical patterns for Honda coupes and hybrid models, not confirmed official data|p1\nF|Listed expected accessories include aero kits, rear spoilers, side skirt extensions, factory wheel upgrades, splash guards, all-season floor mats, cargo organizers, illuminated door sills, paint protection film, wheel locks, remote start, and wireless charging accessories|p1\nF|Honda typically releases a full accessory catalog at the start of production, per the source's own statement of historical pattern|p1\nF|The source states the catalog will be updated with photos, pricing, installation notes, and verified fitment information once Honda releases official data|p1\nF|No transmission type is specified anywhere in the document|p1\nF|No wheelbase, power figures, or motor output ratings appear in the document|p1\nF|No Acura relationship, competitor comparison, or predecessor model specifications are mentioned|all\nF|No prototype development stages or preliminary vehicle information is described|all\nF|No manufacturing timeline, production location, or launch market is identified|all\nF|No infotainment system, driver-assistance features, or regulatory compliance information appears|all\nF|The source does not explain why the Prelude nameplate was previously discontinued or how long it was absent|all\nF|No financial context, sales targets, or market rationale for the nameplate's return is provided|all\nF|No rollout schedule or debut event is specified|all\nI|The document functions structurally as both a product announcement and a provisional placeholder, given the explicit acknowledgment that specifications and the accessory catalog are unconfirmed|p1\nI|The accessory list carries no more authority than an inference from Honda's past behavior; its inclusion alongside confirmed facts risks presenting projected content at the same register as confirmed content|p1\nI|The absence of drivetrain detail beyond motor count and fuel type means the performance claims about off-the-line response cannot be evaluated from the source's own content|p1\nI|The three stated priorities are framed as Honda's emphases but are not attributed to a specific Honda statement, document, or spokesperson, leaving their sourcing ambiguous|p1\nI|The piece's closing sentence structurally signals that the document's primary purpose is to hold a position in anticipation of future official content rather than to report completed information|p1\nS|The gap between the confirmed technical content (two-motor hybrid, three design observations, three priorities) and the length of the projected accessory list suggests the document may be oriented toward accessory commerce as much as toward product journalism|p1",
+  "deepseek": "The source document, a promotional preview of the 2026 Honda Prelude, leaves unresolved the vehicle’s final specifications and performance data, as well as any official confirmation of the accessory catalog it describes. The piece is structured as an anticipatory announcement rather than a definitive product reveal, focusing on Honda’s stated priorities and historical patterns rather than concrete, finalized details. The document emphasizes the Prelude’s return as a hybrid sport coupe with a two-motor system, a low and wide stance, and a driver-focused interior, but it provides no technical specifics such as horsepower, torque, battery capacity, or fuel economy figures. The listed accessories are presented as projections based on past Honda coupe and hybrid model patterns, not as confirmed items for the 2026 model. The text does not mention any prototype testing phases, precursor models, or comparative benchmarks against competitors from other automakers (e.g., Acura, Infiniti). There is no discussion of manufacturing timelines, rollout schedules, pricing, or regulatory compliance (e.g., NHTSA). The document also omits any reference to the Prelude’s wheelbase, transmission type (beyond “two-motor hybrid system”), infotainment system details, or rearview camera specifications. The absence of these elements suggests the source functions as a teaser, deliberately withholding technical depth until a later, more formal debut.\n\nLEDGER:\nF|The 2026 Honda Prelude is a returning hybrid sport coupe with a two-motor system.|p1\nF|Honda has prioritized hybrid performance, driver-focused design, and a sport-tuned chassis.|p1\nF|Full specifications are not yet finalized.|p1\nF|The document lists potential accessories based on historical patterns for Honda coupes and hybrid models, not confirmed for the 2026 Prelude.|p1\nI|The source is structured as an anticipatory announcement, not a definitive product reveal.|p1\nF|The source does not provide horsepower, torque, battery capacity, or fuel economy figures.|p1\nF|The source does not mention prototype testing, precursor models, or comparisons to other automakers (e.g., Acura, Infiniti).|p1\nF|The source does not discuss manufacturing timelines, rollout schedules, pricing, or regulatory compliance (e.g., NHTSA).|p1\nF|The source does not specify wheelbase, transmission type beyond “two-motor hybrid system,” infotainment details, or rearview camera specifications.|p1\nS|The document deliberately withholds technical depth, likely for a later formal debut.|p1",
+  "gemini": "The full specifications for the 2026 Honda Prelude, including precise details on its two-motor hybrid system and overall performance output, remain unfinalized. Concurrently, the official accessory catalog, complete with specific photos, pricing, installation notes, and verified fitment data, has not yet been released.\n\nHonda is reintroducing the Prelude as a modern hybrid sport coupe, marrying its engineering legacy with contemporary electrified performance technology. The vehicle is confirmed to feature a two-motor hybrid system for balanced performance, emphasizing strong off-the-line response and enhanced efficiency. Design priorities include a driver-focused cabin with clear visibility and intuitive controls, alongside a sport-tuned chassis featuring a stiff body and precise suspension for classic coupe handling. Early views indicate a low, wide stance, sleek lines, and a fastback profile that respects past models while adopting current Honda design tenets. The comprehensive list of anticipated genuine Honda accessories, derived from historical patterns for Honda coupes and hybrid vehicles, is expected to cover exterior enhancements like aero kits and wheel upgrades, as well as interior and functional items such as all-season mats and wireless charging.\n\nLEDGER:\nF|Full specifications for the 2026 Honda Prelude are not yet finalized.|p1\nF|Details on specific powertrain components and exact output for the two-motor hybrid system are not provided.|p1\nF|The official 2026 Prelude accessory lineup, including photos, pricing, installation notes, and verified fitment information, has not been released.|p1\nF|The 2026 Honda Prelude marks the long-awaited return of an iconic Honda nameplate.|p1\nF|The vehicle is reintroduced as a modern hybrid sport coupe.|p1\nF|The new Prelude blends Honda's engineering heritage with its latest electrified performance technology.|p1\nF|Honda has confirmed the Prelude will launch with a two-motor hybrid system.|p1\nF|The two-motor hybrid system pairs responsive electric torque with a gasoline engine for balanced performance.|p1\nF|Early previews of the Prelude feature a low, wide stance, sleek body lines, and a fastback-inspired profile.|p1\nF|The design honors the spirit of past Preludes while embracing modern Honda design.|p1\nF|Honda has emphasized three priorities for the new model: hybrid performance, driver-focused design, and a sport-tuned chassis.|p1\nF|Hybrid performance priorities include strong off-the-line response and improved efficiency.|p1\nF|Driver-focused design priorities include clean visibility and intuitive controls.|p1\nF|Sport-tuned chassis priorities include a stiff body and precise suspension tuning for classic Honda coupe handling.|p1\nF|Honda typically releases a full accessory catalog at the start of production.|p1\nF|Buyers can expect a comprehensive list of genuine Honda accessories based on historical patterns for Honda coupes and hybrid models.|p1\nF|Anticipated accessories include aero kits, rear spoilers, side skirt extensions, factory wheel upgrades, splash guards, all-season floor mats, cargo organizers, illuminated door sills, paint protection film, wheel locks, remote start, and wireless charging accessories.|p1\nF|The source refers to \"early previews\" rather than specific \"prototypes\" for the 2026 Prelude.|p1\nF|The specific components of the two-motor hybrid drivetrain beyond \"electric torque with a gasoline engine\" are not detailed.|p1\nF|The source does not mention other automakers or competitor brands, including Acura or Infiniti.|all\nF|The source refers to \"past Preludes\" and \"engineering heritage\" but does not use the term \"precursor\" to describe earlier models.|p1\nF|The document does not discuss regulatory paperwork, amendments, or specific issues regarding the vehicle's development or launch.|p1\nF|The source does not provide details on the manufacturing process or location for the 2026 Prelude.|p1\nF|The source states the vehicle \"will launch\" but does not use the terms \"rollout\" or \"debuts\" for its introduction.|p1\nI|The use of \"long-awaited return\" and \"reintroduced\" suggests continuity of the nameplate rather than a specific \"comeback\" or the vehicle \"regaining\" market share.|p1\nF|Despite describing \"sleek body lines\" and a \"fastback-inspired profile,\" the source does not use the specific term \"aerodynamic.\"|p1",
+  "grok": "The source leaves unresolved the finalized specifications, pricing, performance metrics, production timeline, and release of any official accessory catalog. It provides no information on manufacturing processes, competitive positioning against other marques, or physical prototypes.\n\nThe document states only that a two-motor hybrid system will pair electric torque with a gasoline engine under three design priorities, while listing expected but unconfirmed accessories based on prior Honda patterns.\n\nLEDGER:\nF|full specifications are not yet finalized|p1\nF|three priorities stated: hybrid performance, driver-focused design, sport-tuned chassis|p1\nF|accessory catalog not yet released; expected items listed from historical patterns only|p1\nF|no drivetrain details beyond two-motor hybrid and gasoline engine pairing|p1\nF|no mention of prototypes or precursors|p1\nF|no mention of Acura, Infiniti, or other automakers|p1\nF|no mention of manufacturing, rollout, or production processes|p1\nF|no performance numbers, pricing, or timeline provided|p1\nF|no infotainment, wheelbase, or transmission specifics beyond general hybrid description|p1"
+ }
+}

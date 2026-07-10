@@ -27,7 +27,7 @@ non-frozen stages, stamped in the JSON.
       [--skip-write] [--skip-judge]
 """
 
-VERSION = "bakeoff v1.1 2026-07-10"
+VERSION = "bakeoff v1.2 2026-07-10"
 
 import argparse
 import glob
@@ -75,7 +75,9 @@ JUDGE_RUBRIC = (
     "restatement; 3 = competent restatement plus one real "
     "observation; 2 = pure restatement; 1 = restatement with errors "
     "or invention.\n"
-    "Output EXACTLY one line, nothing else: A:n B:n C:n D:n E:n"
+    "Line 1 EXACTLY: A:n B:n C:n D:n E:n\n"
+    "Then one line per summary, A through E: its label and the "
+    "single strongest reason for its score, grounded in its text."
 )
 
 
@@ -205,12 +207,13 @@ def main():
                     help="segment feed from segment_feed.py --emit-feed")
     ap.add_argument("--skip-write", action="store_true")
     ap.add_argument("--skip-judge", action="store_true")
-    ap.add_argument("--writer-chars", type=int, default=1900,
+    ap.add_argument("--writer-chars", type=int, default=6000,
                     help="truncation per anonymized summary in the "
                          "judge prompt")
     args = ap.parse_args()
     sid = args.story
     wsid, jsid = f"{sid}_sp", f"{sid}_judge"
+    RUN_T0 = datetime.now().timestamp()
 
     title, source = load_source(args.dir, sid)
     feed = open(args.feed, encoding="utf-8").read().strip()
@@ -268,7 +271,7 @@ def main():
         subprocess.run([sys.executable, "harvest_story.py",
                         "--sid", jsid, "--title", f"J: {title}"[:70],
                         "--prompt", jprompt, "--outdir", args.dir,
-                        "--force"])
+                        "--force", "--min-chars", "15"])
 
     def parse_scores(text):
         got = {}
@@ -279,6 +282,13 @@ def main():
 
     fj = read_responses(args.dir, jsid, FRONTIER)
     lj = read_responses(args.dir, jsid, LOCALS)
+    if not args.skip_judge:
+        for _pool in (fj, lj):
+            for _m in list(_pool):
+                _p = os.path.join(args.dir, f"{jsid}_{_m}.txt")
+                if os.path.exists(_p) and os.path.getmtime(_p) < RUN_T0:
+                    print(f"  STALE-EXCLUDED judge {_m} (mtime predates run)")
+                    del _pool[_m]
     fro_scores = {m: parse_scores(t) for m, t in fj.items()}
     loc_scores = {m: parse_scores(t) for m, t in lj.items()}
 
@@ -343,6 +353,12 @@ def main():
         r["absence_contested"] = a.get("absence_contested", 0)
 
     standings.sort(key=lambda r: -(r["exself_mean"] or 0))
+    tie = (len(standings) > 1 and standings[0]["exself_mean"] is not None
+           and standings[0]["exself_mean"] == standings[1]["exself_mean"])
+    tag = ("THE WINNER (TIED at top; alphabetical display)" if tie
+           else "THE WINNER")
+    if tie:
+        print("  TIE at the top of the standings")
     print("\nSTANDINGS  (frontier panel, ex-self; local panel as "
           "second opinion)")
     for r in standings:
@@ -359,17 +375,18 @@ def main():
                       feed_sha=sha12(feed.encode()),
                       source_sha=sha12(source.encode()),
                       non_frozen_stages="writer harvest + judge harvest",
+                      writer_chars=args.writer_chars,
                       label_map=label_of),
-                  channel_a=fg, standings=standings,
+                  channel_a=fg, standings=standings, tie_at_top=tie,
                   claim_audits=audits,
                   frontier_scores=fro_scores, local_scores=loc_scores,
                   writers={m: writers[m] for m in writers})
-    jpath = os.path.join(args.dir, f"{sid}_bakeoff_v11.json")
+    jpath = os.path.join(args.dir, f"{sid}_bakeoff_v12.json")
     json.dump(report, open(jpath, "w", encoding="utf-8"),
               indent=1, ensure_ascii=False)
     print(f"\nJSON -> {jpath} ({os.path.getsize(jpath)} bytes)")
     print("=" * 78)
-    print(f"\n{'-'*78}\nTHE WINNER  ::  {winner['writer']}  "
+    print(f"\n{'-'*78}\n{tag}  ::  {winner['writer']}  "
           f"(ex-self {winner['exself_mean']})\n{'-'*78}")
     print(writers[winner["writer"]])
 

@@ -62,6 +62,8 @@ def main():
                     help="default: anamnesis_results/fresh_YYYYMMDD")
     ap.add_argument("--models",
                     help="comma list; default all ten in battery MODELS")
+    ap.add_argument("--min-chars", type=int, default=50,
+        help="floor below which a response is EMPTY/refused")
     ap.add_argument("--force", action="store_true",
                     help="overwrite existing responses / changed anchor text")
     args = ap.parse_args()
@@ -133,7 +135,7 @@ def main():
             failed.append(m)
             continue
         dt = time.time() - t0
-        if (not resp or len(resp.strip()) < 50
+        if (not resp or len(resp.strip()) < args.min_chars
                 or resp.lstrip().startswith("[BLOCKED/ERROR")):
             tag = ("ERROR-BANNER" if resp and resp.lstrip().startswith("[BLOCKED/ERROR")
                    else "EMPTY/refused")
