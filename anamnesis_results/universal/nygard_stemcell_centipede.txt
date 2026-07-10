@@ -1,0 +1,266 @@
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+==============================================================================
+CENTIPEDE v0.3  story=nygard_stemcell  (5 frontier / 5 local)
+PROVENANCE harness=dce31aef81fc corpus=d72793029f19 anchor=e4f55b5c965f
+rulers: segments/armB=global_vocab_clean(50K) armA=raycast_vocab(253K)
+params: K=4 conv_thresh=0.45 conv_min=2 depth_frac=0.8
+declared: prompt_mode=natural excluded=none junk_rule=[leading non-letter | ellipsis | 3+ digit run | >4 tokens]
+declared: armb_mode=ray armb_lambda=2.0 armA_depths=2.0/3.0/4.0
+ANCHOR (1513 ch) CONTAINS: ['cloning', 'harvesting', 'immortality']
+ANCHOR EMBED: 1561 ch / 235 words -- within bge window; sentence lattice covers the full text either way
+
+SAID CENSUS (stem match):
+  immortality  F:claude,deepseek,grok               L:hermes,mistral_22b,qwen_14b
+  cloning      F:chatgpt,claude,deepseek,gemini,grok L:hermes,llama_8b,mistral_22b,mistral_7b,qwen_14b
+  vampirism    F:-                                  L:-
+  exploitation F:-                                  L:-
+  coercion     F:-                                  L:-
+  harvesting   F:claude,deepseek,gemini,grok        L:hermes,llama_8b,mistral_22b,mistral_7b,qwen_14b
+  consent      F:-                                  L:-
+  predation    F:-                                  L:-
+
+SEGMENTS (17 legs) + ARMS (A=consequence raycast, junk-filtered; B=aimed convergence):
+
+─ said/F             voids: brainwashing, pseudoscience, doping, eugenics
+    brainwashing       A[DISCOVERY density=0.50 novelty=0.43 tether=0.52]: brain drain   (junk dropped: 1000minds, 13 Commandments, 10–20 system (EEG), 2008 World Mind Sports Games)
+                       B          : eugenics, brainchild, influenced, reprogramming, transformed   | jacc=0.00 cos=0.73
+    pseudoscience      A[DISCOVERY density=0.51 novelty=0.48 tether=0.47]: -   (junk dropped: 1680 in science, 1749 in science, 1787 in science, $25 Million Dollar Hoax, 1786 in science)
+                       B          : brainwashing, conspiracy, conman, fraud, crichton   | jacc=nan cos=nan
+    doping             A[DISCOVERY density=0.56 novelty=0.50 tether=0.43]: -   (junk dropped: 1990 FIFA World Cup discipline, 1994 IAAF World Cup, 2005 ISSF World Cup, 17α-Alkylated anabolic steroid, 2005 Boxing World Cup)
+                       B          : drugging, pimping, bodybuilder, drugged, junkie   | jacc=nan cos=nan
+    eugenics           A[DISCOVERY density=0.65 novelty=0.54 tether=0.40]: -   (junk dropped: 1940s in sociology, 1900s in sociology, 1940s in anthropology, 1945 in philosophy, 1910s in sociology)
+                       B          : brainwashing, sanger, geneticist, unborn, mutations   | jacc=nan cos=nan
+
+─ logos_v9/F         voids: brainwashing, pseudoscience, doping, eugenics
+    brainwashing       A[DISCOVERY density=0.50 novelty=0.43 tether=0.52]: brain drain   (junk dropped: 1000minds, 13 Commandments, 10–20 system (EEG), 2008 World Mind Sports Games)
+                       B          : eugenics, brainchild, influenced, reprogramming, transformed   | jacc=0.00 cos=0.73
+    pseudoscience      A[DISCOVERY density=0.51 novelty=0.48 tether=0.47]: -   (junk dropped: 1680 in science, 1749 in science, 1787 in science, $25 Million Dollar Hoax, 1786 in science)
+                       B          : brainwashing, conspiracy, conman, fraud, crichton   | jacc=nan cos=nan
+    doping             A[DISCOVERY density=0.56 novelty=0.50 tether=0.43]: -   (junk dropped: 1990 FIFA World Cup discipline, 1994 IAAF World Cup, 2005 ISSF World Cup, 17α-Alkylated anabolic steroid, 2005 Boxing World Cup)
+                       B          : drugging, pimping, bodybuilder, drugged, junkie   | jacc=nan cos=nan
+    eugenics           A[DISCOVERY density=0.65 novelty=0.54 tether=0.40]: -   (junk dropped: 1940s in sociology, 1900s in sociology, 1940s in anthropology, 1945 in philosophy, 1910s in sociology)
+                       B          : brainwashing, sanger, geneticist, unborn, mutations   | jacc=nan cos=nan
+
+─ logos_v10/F        voids: brainwashing, pseudoscience, doping, drugging
+    brainwashing       A[DISCOVERY density=0.50 novelty=0.43 tether=0.52]: brain drain   (junk dropped: 1000minds, 13 Commandments, 10–20 system (EEG), 2008 World Mind Sports Games)
+                       B          : eugenics, brainchild, influenced, reprogramming, transformed   | jacc=0.00 cos=0.73
+    pseudoscience      A[DISCOVERY density=0.51 novelty=0.48 tether=0.47]: -   (junk dropped: 1680 in science, 1749 in science, 1787 in science, $25 Million Dollar Hoax, 1786 in science)
+                       B          : brainwashing, conspiracy, conman, fraud, crichton   | jacc=nan cos=nan
+    doping             A[DISCOVERY density=0.56 novelty=0.50 tether=0.43]: -   (junk dropped: 1990 FIFA World Cup discipline, 1994 IAAF World Cup, 2005 ISSF World Cup, 17α-Alkylated anabolic steroid, 2005 Boxing World Cup)
+                       B          : drugging, pimping, bodybuilder, drugged, junkie   | jacc=nan cos=nan
+    drugging           A[DISCOVERY density=0.91 novelty=0.51 tether=0.45]: -   (junk dropped: 2,3,4-Trimethoxyamphetamine, 2,4,6-Trimethoxyamphetamine, 2,3,6-Trimethoxyamphetamine, 2,4,5-Trimethoxyamphetamine, 2-Fluoromethamphetamine)
+                       B          : doping, pimping, overdoing, deepening, meddling   | jacc=nan cos=nan
+
+─ null/F             voids: focused, infatuated, compulsive, intently
+    focused            A[DISCOVERY density=0.48 novelty=0.47 tether=0.51]: -
+                       B          : devotee, influenced, deepening, transformed, honed   | jacc=nan cos=nan
+    infatuated         A[DISCOVERY density=0.76 novelty=0.49 tether=0.41]: -   (junk dropped: 100 días para enamorarse, 100 días para enamorarse (Argentine TV series), 100 días para enamorarse (Chilean TV series), 100 días para enamorarnos, (Tonight We Just Might) Fall in Love Again)
+                       B          : infecting, devotee, inoculated, insatiable, infringed   | jacc=nan cos=nan
+    compulsive         A[DISCOVERY density=0.47 novelty=0.47 tether=0.46]: -   (junk dropped: (You Drive Me) Crazy, (Keep Feeling) Fascination, "The Only Unavoidable Subject of Regret")
+                       B          : drugging, proliferation, devotee, fanaticism, overdoing   | jacc=nan cos=nan
+    intently           A[DISCOVERY density=0.49 novelty=0.46 tether=0.52]: -   (junk dropped: ...The Ruthless Pursuit of Blood with All a Child's Demanding)
+                       B          : deepening, rejuvenated, perpetuated, perpetuating, honed   | jacc=nan cos=nan
+
+─ said/L             voids: brainwashing, pseudoscience, doping, castration
+    brainwashing       A[DISCOVERY density=0.50 novelty=0.43 tether=0.52]: brain drain   (junk dropped: 1000minds, 13 Commandments, 10–20 system (EEG), 2008 World Mind Sports Games)
+                       B          : eugenics, brainchild, influenced, reprogramming, transformed   | jacc=0.00 cos=0.73
+    pseudoscience      A[DISCOVERY density=0.51 novelty=0.48 tether=0.47]: -   (junk dropped: 1680 in science, 1749 in science, 1787 in science, $25 Million Dollar Hoax, 1786 in science)
+                       B          : brainwashing, conspiracy, conman, fraud, crichton   | jacc=nan cos=nan
+    doping             A[DISCOVERY density=0.56 novelty=0.50 tether=0.43]: -   (junk dropped: 1990 FIFA World Cup discipline, 1994 IAAF World Cup, 2005 ISSF World Cup, 17α-Alkylated anabolic steroid, 2005 Boxing World Cup)
+                       B          : drugging, pimping, bodybuilder, drugged, junkie   | jacc=nan cos=nan
+    castration         A[DISCOVERY density=0.61 novelty=0.45 tether=0.50]: -   (junk dropped: 18-Methyltestosterone, 1721, 1660s BC, 1620s BC, 1721 in literature)
+                       B          : balding, bestiality, sacrifices, captivity, sacrificed   | jacc=nan cos=nan
+
+─ logos_v9/L         voids: brainwashing, doping, pseudoscience, biotechnology
+    brainwashing       A[DISCOVERY density=0.50 novelty=0.43 tether=0.52]: brain drain   (junk dropped: 1000minds, 13 Commandments, 10–20 system (EEG), 2008 World Mind Sports Games)
+                       B          : eugenics, brainchild, influenced, reprogramming, transformed   | jacc=0.00 cos=0.73
+    doping             A[DISCOVERY density=0.56 novelty=0.50 tether=0.43]: -   (junk dropped: 1990 FIFA World Cup discipline, 1994 IAAF World Cup, 2005 ISSF World Cup, 17α-Alkylated anabolic steroid, 2005 Boxing World Cup)
+                       B          : drugging, pimping, bodybuilder, drugged, junkie   | jacc=nan cos=nan
+    pseudoscience      A[DISCOVERY density=0.51 novelty=0.48 tether=0.47]: -   (junk dropped: 1680 in science, 1749 in science, 1787 in science, $25 Million Dollar Hoax, 1786 in science)
+                       B          : brainwashing, conspiracy, conman, fraud, crichton   | jacc=nan cos=nan
+    biotechnology      A[DISCOVERY density=0.58 novelty=0.46 tether=0.50]: refining disruption, refining catastrophe, prolonged refining disruption   (junk dropped: 1990 in science, 1910 in science)
+                       B          : sanger, bioengineering, commercialized, geneticist, hybridization   | jacc=0.00 cos=0.68
+
+─ logos_v10/L        voids: brainwashing, pseudoscience, doping, drugging
+    brainwashing       A[DISCOVERY density=0.50 novelty=0.43 tether=0.52]: brain drain   (junk dropped: 1000minds, 13 Commandments, 10–20 system (EEG), 2008 World Mind Sports Games)
+                       B          : eugenics, brainchild, influenced, reprogramming, transformed   | jacc=0.00 cos=0.73
+    pseudoscience      A[DISCOVERY density=0.51 novelty=0.48 tether=0.47]: -   (junk dropped: 1680 in science, 1749 in science, 1787 in science, $25 Million Dollar Hoax, 1786 in science)
+                       B          : brainwashing, conspiracy, conman, fraud, crichton   | jacc=nan cos=nan
+    doping             A[DISCOVERY density=0.56 novelty=0.50 tether=0.43]: -   (junk dropped: 1990 FIFA World Cup discipline, 1994 IAAF World Cup, 2005 ISSF World Cup, 17α-Alkylated anabolic steroid, 2005 Boxing World Cup)
+                       B          : drugging, pimping, bodybuilder, drugged, junkie   | jacc=nan cos=nan
+    drugging           A[DISCOVERY density=0.91 novelty=0.51 tether=0.45]: -   (junk dropped: 2,3,4-Trimethoxyamphetamine, 2,4,6-Trimethoxyamphetamine, 2,3,6-Trimethoxyamphetamine, 2,4,5-Trimethoxyamphetamine, 2-Fluoromethamphetamine)
+                       B          : doping, pimping, overdoing, deepening, meddling   | jacc=nan cos=nan
+
+─ null/L             voids: regulated, synthesized, arvind, synthesis
+    regulated          A[DISCOVERY density=0.55 novelty=0.48 tether=0.45]: -   (junk dropped: 123 Reg, 1975 Stock Brokerage Commission Deregulation, .50 Caliber BMG Regulation Act of 2004, 2006 nightlife legislation in New York City, 2-REG aircraft registration)
+                       B          : commercialized, doping, vetted, institutionalized, sanctioned   | jacc=nan cos=nan
+    synthesized        A[DISCOVERY density=0.58 novelty=0.51 tether=0.43]: -   (junk dropped: '80s remix, 100% Electronica, 1st Imaginary Symphony for Nomad, 2.5D musical, 1998 (instrumental))
+                       B          : regenerative, reprogramming, hybridization, transformed, regenerated   | jacc=nan cos=nan
+    arvind             A[DISCOVERY density=0.51 novelty=0.56 tether=0.37]: -   (junk dropped: 'Arura, 1767 in India, 1769 in India, 1721 in India, 1786 in India)
+                       B          : devotee, vicarious, enriching, karmic, vicariously   | jacc=nan cos=nan
+    synthesis          A[DISCOVERY density=0.65 novelty=0.47 tether=0.48]: chemical collapse, cascading chemical collapse   (junk dropped: (S)-canadine synthase, (+)-T-muurolol synthase, (+)-sabinene synthase)
+                       B          : hybridization, conspiring, transmutation, genetically, fabrication   | jacc=0.00 cos=0.72
+
+─ said/ALL           voids: brainwashing, pseudoscience, doping, eugenics
+    brainwashing       A[DISCOVERY density=0.50 novelty=0.43 tether=0.52]: brain drain   (junk dropped: 1000minds, 13 Commandments, 10–20 system (EEG), 2008 World Mind Sports Games)
+                       B          : eugenics, brainchild, influenced, reprogramming, transformed   | jacc=0.00 cos=0.73
+    pseudoscience      A[DISCOVERY density=0.51 novelty=0.48 tether=0.47]: -   (junk dropped: 1680 in science, 1749 in science, 1787 in science, $25 Million Dollar Hoax, 1786 in science)
+                       B          : brainwashing, conspiracy, conman, fraud, crichton   | jacc=nan cos=nan
+    doping             A[DISCOVERY density=0.56 novelty=0.50 tether=0.43]: -   (junk dropped: 1990 FIFA World Cup discipline, 1994 IAAF World Cup, 2005 ISSF World Cup, 17α-Alkylated anabolic steroid, 2005 Boxing World Cup)
+                       B          : drugging, pimping, bodybuilder, drugged, junkie   | jacc=nan cos=nan
+    eugenics           A[DISCOVERY density=0.65 novelty=0.54 tether=0.40]: -   (junk dropped: 1940s in sociology, 1900s in sociology, 1940s in anthropology, 1945 in philosophy, 1910s in sociology)
+                       B          : brainwashing, sanger, geneticist, unborn, mutations   | jacc=nan cos=nan
+
+─ logos_v9/ALL       voids: brainwashing, pseudoscience, doping, drugging
+    brainwashing       A[DISCOVERY density=0.50 novelty=0.43 tether=0.52]: brain drain   (junk dropped: 1000minds, 13 Commandments, 10–20 system (EEG), 2008 World Mind Sports Games)
+                       B          : eugenics, brainchild, influenced, reprogramming, transformed   | jacc=0.00 cos=0.73
+    pseudoscience      A[DISCOVERY density=0.51 novelty=0.48 tether=0.47]: -   (junk dropped: 1680 in science, 1749 in science, 1787 in science, $25 Million Dollar Hoax, 1786 in science)
+                       B          : brainwashing, conspiracy, conman, fraud, crichton   | jacc=nan cos=nan
+    doping             A[DISCOVERY density=0.56 novelty=0.50 tether=0.43]: -   (junk dropped: 1990 FIFA World Cup discipline, 1994 IAAF World Cup, 2005 ISSF World Cup, 17α-Alkylated anabolic steroid, 2005 Boxing World Cup)
+                       B          : drugging, pimping, bodybuilder, drugged, junkie   | jacc=nan cos=nan
+    drugging           A[DISCOVERY density=0.91 novelty=0.51 tether=0.45]: -   (junk dropped: 2,3,4-Trimethoxyamphetamine, 2,4,6-Trimethoxyamphetamine, 2,3,6-Trimethoxyamphetamine, 2,4,5-Trimethoxyamphetamine, 2-Fluoromethamphetamine)
+                       B          : doping, pimping, overdoing, deepening, meddling   | jacc=nan cos=nan
+
+─ logos_v10/ALL      voids: brainwashing, pseudoscience, doping, drugging
+    brainwashing       A[DISCOVERY density=0.50 novelty=0.43 tether=0.52]: brain drain   (junk dropped: 1000minds, 13 Commandments, 10–20 system (EEG), 2008 World Mind Sports Games)
+                       B          : eugenics, brainchild, influenced, reprogramming, transformed   | jacc=0.00 cos=0.73
+    pseudoscience      A[DISCOVERY density=0.51 novelty=0.48 tether=0.47]: -   (junk dropped: 1680 in science, 1749 in science, 1787 in science, $25 Million Dollar Hoax, 1786 in science)
+                       B          : brainwashing, conspiracy, conman, fraud, crichton   | jacc=nan cos=nan
+    doping             A[DISCOVERY density=0.56 novelty=0.50 tether=0.43]: -   (junk dropped: 1990 FIFA World Cup discipline, 1994 IAAF World Cup, 2005 ISSF World Cup, 17α-Alkylated anabolic steroid, 2005 Boxing World Cup)
+                       B          : drugging, pimping, bodybuilder, drugged, junkie   | jacc=nan cos=nan
+    drugging           A[DISCOVERY density=0.91 novelty=0.51 tether=0.45]: -   (junk dropped: 2,3,4-Trimethoxyamphetamine, 2,4,6-Trimethoxyamphetamine, 2,3,6-Trimethoxyamphetamine, 2,4,5-Trimethoxyamphetamine, 2-Fluoromethamphetamine)
+                       B          : doping, pimping, overdoing, deepening, meddling   | jacc=nan cos=nan
+
+─ null/ALL           voids: disagreed, majority, abstained, outnumbered
+    disagreed          A[DISCOVERY density=0.52 novelty=0.43 tether=0.51]: -   (junk dropped: "Good Hair" and Other Dubious Distinctions, (Un)Commentary, 12 Who Don't Agree, "Polish death camp" controversy, (If Loving You Is Wrong) I Don't Want to Be Right)
+                       B          : purported, unscientific, purportedly, unproven, unfounded   | jacc=nan cos=nan
+    majority           A[DISCOVERY density=0.48 novelty=0.48 tether=0.49]: -
+                       B          : pimping, drugging, deepening, rejuvenated, lucrative   | jacc=nan cos=nan
+    abstained          A[DISCOVERY density=0.58 novelty=0.49 tether=0.45]: -   (junk dropped: 12th Fail, 12th of Never, 111 Ate, 102 Not Out, 18-Year-Old Virgin)
+                       B          : indulging, indulgences, sanctioned, indulged, redemption   | jacc=nan cos=nan
+    outnumbered        A[DISCOVERY density=0.56 novelty=0.46 tether=0.47]: -   (junk dropped: (FLA)vour of the Weak, 100 men versus a gorilla, 100 Rogues, 100 Humans, 1766 food riots)
+                       B          : rampant, massed, infiltrated, billions, cohorts   | jacc=nan cos=nan
+
+─ gap->local         voids: balenciaga, photoshoot, castaway, swimwear
+    balenciaga         A[DISCOVERY density=0.53 novelty=0.48 tether=0.43]: -   (junk dropped: 06 Gucci, 1650–1700 in Western fashion, 2010s in fashion, 1971–72 AC Milan season, 1970s in fashion)
+                       B          : grafts, graft, serum, sweatshop, materialistic   | jacc=nan cos=nan
+    photoshoot         A[DISCOVERY density=0.47 novelty=0.50 tether=0.47]: -
+                       B          : rejuvenated, embodying, rejuvenation, rejuvenating, evoking   | jacc=nan cos=nan
+    castaway           A[DISCOVERY density=0.60 novelty=0.48 tether=0.44]: -   (junk dropped: 2009 Turks and Caicos Islands migrant shipwreck, 10 Days on the Island, 2007 Malta migrant shipwreck, 1856 Last Island hurricane, 2009 Libya migrant shipwreck)
+                       B          : castrated, captivity, colony, stranding, rescuing   | jacc=nan cos=nan
+    swimwear           A[DISCOVERY density=0.47 novelty=0.52 tether=0.42]: -   (junk dropped: 2008 in swimming, 100 metre freestyle, 1997 FINA Short Course World Championships – Women's 100m breaststroke, 2010 in swimming, 1990s in fashion)
+                       B          : laundering, donning, bathed, washing, gills   | jacc=nan cos=nan
+
+─ gap->frontier      voids: informative, caveats, enlightening, truthfulness
+    informative        A[DISCOVERY density=0.60 novelty=0.53 tether=0.45]: -
+                       B          : sanger, castration, castrated, rejuvenated, philanthropists   | jacc=nan cos=nan
+    caveats            A[DISCOVERY density=0.57 novelty=0.47 tether=0.50]: refining breakdown, refining cascade failure   (junk dropped: (Un)arranged Marriage, (Un)Commentary, (Not Just) Knee Deep)
+                       B          : deepening, appropriating, meddling, unscrupulous, imparted   | jacc=0.00 cos=0.68
+    enlightening       A[DISCOVERY density=0.56 novelty=0.50 tether=0.46]: -   (junk dropped: 18th century in philosophy, 1957 in philosophy, ...So Unknown, 13th century in philosophy, 1751 in philosophy)
+                       B          : deepening, enriching, embodying, perpetuating, ingenuity   | jacc=nan cos=nan
+    truthfulness       A[DISCOVERY density=0.59 novelty=0.41 tether=0.53]: -   (junk dropped: (Dis)Honesty: The Truth About Lies, ...(And That's No Lie), 1978 Truth Criterion Controversy, 100 Days of Lies, 1000 Ways to Lie)
+                       B          : duplicity, embodying, deceit, deception, falsifying   | jacc=nan cos=nan
+
+─ centroid_surface   voids: brainwashing, pseudoscience, drugging, doping
+    brainwashing       A[DISCOVERY density=0.50 novelty=0.43 tether=0.52]: brain drain   (junk dropped: 1000minds, 13 Commandments, 10–20 system (EEG), 2008 World Mind Sports Games)
+                       B          : eugenics, brainchild, influenced, reprogramming, transformed   | jacc=0.00 cos=0.73
+    pseudoscience      A[DISCOVERY density=0.51 novelty=0.48 tether=0.47]: -   (junk dropped: 1680 in science, 1749 in science, 1787 in science, $25 Million Dollar Hoax, 1786 in science)
+                       B          : brainwashing, conspiracy, conman, fraud, crichton   | jacc=nan cos=nan
+    drugging           A[DISCOVERY density=0.91 novelty=0.51 tether=0.45]: -   (junk dropped: 2,3,4-Trimethoxyamphetamine, 2,4,6-Trimethoxyamphetamine, 2,3,6-Trimethoxyamphetamine, 2,4,5-Trimethoxyamphetamine, 2-Fluoromethamphetamine)
+                       B          : doping, pimping, overdoing, deepening, meddling   | jacc=nan cos=nan
+    doping             A[DISCOVERY density=0.56 novelty=0.50 tether=0.43]: -   (junk dropped: 1990 FIFA World Cup discipline, 1994 IAAF World Cup, 2005 ISSF World Cup, 17α-Alkylated anabolic steroid, 2005 Boxing World Cup)
+                       B          : drugging, pimping, bodybuilder, drugged, junkie   | jacc=nan cos=nan
+
+─ lexcross/F         voids: have, various, form, against
+    have               A[DISCOVERY density=0.47 novelty=0.48 tether=0.49]: -
+                       B          : deepening, rejuvenated, transformed, regenerating, proliferating   | jacc=nan cos=nan
+    various            A[DISCOVERY density=0.52 novelty=0.57 tether=0.41]: -
+                       B          : appropriating, deepening, grafting, rejuvenated, perpetuated   | jacc=nan cos=nan
+    form               A[DISCOVERY density=0.54 novelty=0.57 tether=0.40]: -   (junk dropped: 1990 Citizen Cup)
+                       B          : regenerative, grafts, grafted, graft, grafting   | jacc=nan cos=nan
+    against            A[DISCOVERY density=0.48 novelty=0.49 tether=0.48]: -   (junk dropped: 't Misverstant, 1751 in philosophy, 1990 reasons of the Supreme Court of Canada, ...So, Were They in Some Sort of Fight?, 1990 in philosophy)
+                       B          : perpetuated, evoking, treating, perpetuating, espousing   | jacc=nan cos=nan
+
+─ lexcross/L         voids: regarding, summary, undergoing, ambitions
+    regarding          A[DISCOVERY density=0.47 novelty=0.48 tether=0.49]: institutional disruption   (junk dropped: 1751 in philosophy, 'I' and the 'me', 1790 in literature, (Un)Commentary)
+                       B          : appropriating, appropriation, deepening, meddling, perpetuating   | jacc=0.00 cos=0.70
+    summary            A[DISCOVERY density=0.55 novelty=0.47 tether=0.50]: -   (junk dropped: 1989 Yishun coffeeshop murder)
+                       B          : brainwashing, pimping, brainwashed, castrated, fraud   | jacc=nan cos=nan
+    undergoing         A[DISCOVERY density=0.61 novelty=0.47 tether=0.47]: -   (junk dropped: -ing, ...ing, (We Are) Nexus, (You're) Having My Baby, ... I Lose Myself)
+                       B          : infecting, drugging, deepening, appropriating, meddling   | jacc=nan cos=nan
+    ambitions          A[DISCOVERY density=0.54 novelty=0.46 tether=0.50]: -   (junk dropped: ...The Ruthless Pursuit of Blood with All a Child's Demanding, (This Thing Called) Wantin' and Havin' It All, (Wish I Had A) Heart of Stone, "I Want" song, 16 Wishes)
+                       B          : lucrative, machinations, motives, motive, speculative   | jacc=nan cos=nan
+
+CRAWL:
+  JUNK FILTER: dropped 278 of 296 arm-A terms  [leading non-letter | ellipsis | 3+ digit run | >4 tokens]
+  leg-sync centroid_surface   mean-cos=0.728  (n=1)
+  leg-sync gap->frontier      mean-cos=0.680  (n=1)
+  leg-sync lexcross/L         mean-cos=0.704  (n=1)
+  leg-sync logos_v10/ALL      mean-cos=0.728  (n=1)
+  leg-sync logos_v10/F        mean-cos=0.728  (n=1)
+  leg-sync logos_v10/L        mean-cos=0.728  (n=1)
+  leg-sync logos_v9/ALL       mean-cos=0.728  (n=1)
+  leg-sync logos_v9/F         mean-cos=0.728  (n=1)
+  leg-sync logos_v9/L         mean-cos=0.702  (n=2)
+  leg-sync null/L             mean-cos=0.724  (n=1)
+  leg-sync said/ALL           mean-cos=0.728  (n=1)
+  leg-sync said/F             mean-cos=0.728  (n=1)
+  leg-sync said/L             mean-cos=0.728  (n=1)
+  BODY: median within-segment arm agreement = 0.728 over 14 void-arm pairs
+  SHUFFLE-NULL: observed-median=0.728  null-median=0.648  margin=+0.080  (n_obs=14 n_null=848)
+  ARM-JACC: median lexical arm overlap = 0.000  (n=14)
+  LEG-JACC median over 136 leg pairs = 0.00   pairs >= 0.25: 45
+  LEG-JACC pairs >= 0.25 (top 12):
+    centroid_surface   ~ logos_v10/ALL      J=1.00
+    centroid_surface   ~ logos_v10/F        J=1.00
+    centroid_surface   ~ logos_v10/L        J=1.00
+    centroid_surface   ~ logos_v9/ALL       J=1.00
+    logos_v10/ALL      ~ logos_v10/F        J=1.00
+    logos_v10/ALL      ~ logos_v10/L        J=1.00
+    logos_v10/ALL      ~ logos_v9/ALL       J=1.00
+    logos_v10/F        ~ logos_v10/L        J=1.00
+    logos_v10/F        ~ logos_v9/ALL       J=1.00
+    logos_v10/L        ~ logos_v9/ALL       J=1.00
+    logos_v9/F         ~ said/ALL           J=1.00
+    logos_v9/F         ~ said/F             J=1.00
+  CONSEQ-FIELD (per-leg consequence centroid . body centroid):
+    centroid_surface   0.992  (vecs=5)
+    gap->frontier      0.966  (vecs=5)
+    gap->local         0.951  (vecs=4)
+    lexcross/F         0.945  (vecs=4)
+    lexcross/L         0.970  (vecs=5)
+    logos_v10/ALL      0.992  (vecs=5)
+    logos_v10/F        0.992  (vecs=5)
+    logos_v10/L        0.992  (vecs=5)
+    logos_v9/ALL       0.992  (vecs=5)
+    logos_v9/F         0.988  (vecs=5)
+    logos_v9/L         0.986  (vecs=6)
+    null/ALL           0.966  (vecs=4)
+    null/F             0.953  (vecs=4)
+    null/L             0.964  (vecs=5)
+    said/ALL           0.988  (vecs=5)
+    said/F             0.988  (vecs=5)
+    said/L             0.990  (vecs=5)
+  cross-leg shared voids (>=2 legs; field-cos removed -- arms are f(void, headline), identical voids give 1.000 by construction):
+    brainwash      legs[10]: centroid_surface,logos_v10/ALL,logos_v10/F,logos_v10/L,logos_v9/ALL,lo
+    pseudosci      legs[10]: centroid_surface,logos_v10/ALL,logos_v10/F,logos_v10/L,logos_v9/ALL,lo
+    dope           legs[10]: centroid_surface,logos_v10/ALL,logos_v10/F,logos_v10/L,logos_v9/ALL,lo
+    drug           legs[5]: centroid_surface,logos_v10/ALL,logos_v10/F,logos_v10/L,logos_v9/ALL
+    eugen          legs[3]: logos_v9/F,said/ALL,said/F
+
+TARGET SIGHTINGS:
+  immortality  said_by=6/10  in_voids=-  as_consequence=-
+  cloning      said_by=10/10  in_voids=-  as_consequence=-
+  vampirism    said_by=0/10  in_voids=-  as_consequence=-
+  exploitation said_by=0/10  in_voids=-  as_consequence=-
+  coercion     said_by=0/10  in_voids=-  as_consequence=-
+  harvesting   said_by=9/10  in_voids=-  as_consequence=-
+  consent      said_by=0/10  in_voids=-  as_consequence=-
+  predation    said_by=0/10  in_voids=-  as_consequence=-
+
+RESULT sha=650248b57f8f  (deterministic: identical corpus + anchor + params must reproduce this hash)
+JSON -> anamnesis_results/universal/nygard_stemcell_centipede.json (61421 bytes)
+==============================================================================

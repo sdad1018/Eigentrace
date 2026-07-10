@@ -1,0 +1,3109 @@
+{
+ "harness": "centipede",
+ "version": "centipede v0.3 2026-07-09",
+ "story": "nygard_stemcell",
+ "dir": "anamnesis_results/universal",
+ "generated": "2026-07-09T23:14:09",
+ "provenance": {
+  "harness_sha": "dce31aef81fc",
+  "corpus_sha": "d72793029f19",
+  "anchor_sha": "e4f55b5c965f",
+  "rulers": {
+   "segments": "global_vocab_clean(50K)",
+   "arm_b": "global_vocab_clean(50K)",
+   "arm_a": "raycast_vocab(253K)",
+   "donut": null
+  },
+  "params": {
+   "K": 4,
+   "conv_thresh": 0.45,
+   "conv_min": 2,
+   "depth_frac": 0.8,
+   "armb_mode": "ray",
+   "armb_lambda": 2.0,
+   "arm_a_depths": [
+    2.0,
+    3.0,
+    4.0
+   ]
+  },
+  "prompt_mode": "natural",
+  "excluded_models": [],
+  "junk_rule": "leading non-letter | ellipsis | 3+ digit run | >4 tokens",
+  "donut": false
+ },
+ "anchor": {
+  "chars": 1513,
+  "contains_targets": [
+   "cloning",
+   "harvesting",
+   "immortality"
+  ],
+  "headline": "Peter Nygard was obsessed with using stem cell. Peter Nygard was obsessed with using stem cell research and therapies as a self-proclaimed \"fountain of youth\" to reverse his aging and pursue biological immortality. His actions and the associated allegations regarding stem cells include:\n\nSourcing Al"
+ },
+ "models": {
+  "frontier": [
+   "chatgpt",
+   "claude",
+   "deepseek",
+   "gemini",
+   "grok"
+  ],
+  "local": [
+   "hermes",
+   "llama_8b",
+   "mistral_22b",
+   "mistral_7b",
+   "qwen_14b"
+  ],
+  "n": 10
+ },
+ "said_census": {
+  "immortality": {
+   "F": [
+    "claude",
+    "deepseek",
+    "grok"
+   ],
+   "L": [
+    "hermes",
+    "mistral_22b",
+    "qwen_14b"
+   ]
+  },
+  "cloning": {
+   "F": [
+    "chatgpt",
+    "claude",
+    "deepseek",
+    "gemini",
+    "grok"
+   ],
+   "L": [
+    "hermes",
+    "llama_8b",
+    "mistral_22b",
+    "mistral_7b",
+    "qwen_14b"
+   ]
+  },
+  "vampirism": {
+   "F": [],
+   "L": []
+  },
+  "exploitation": {
+   "F": [],
+   "L": []
+  },
+  "coercion": {
+   "F": [],
+   "L": []
+  },
+  "harvesting": {
+   "F": [
+    "claude",
+    "deepseek",
+    "gemini",
+    "grok"
+   ],
+   "L": [
+    "hermes",
+    "llama_8b",
+    "mistral_22b",
+    "mistral_7b",
+    "qwen_14b"
+   ]
+  },
+  "consent": {
+   "F": [],
+   "L": []
+  },
+  "predation": {
+   "F": [],
+   "L": []
+  }
+ },
+ "segments": [
+  {
+   "name": "said/F",
+   "group": "F",
+   "voids": [
+    "brainwashing",
+    "pseudoscience",
+    "doping",
+    "eugenics"
+   ],
+   "arms": [
+    {
+     "void": "brainwashing",
+     "stem": "brainwash",
+     "A": {
+      "terms": [
+       "brain drain"
+      ],
+      "terms_raw": [
+       "brain drain",
+       "1000minds",
+       "13 Commandments",
+       "10–20 system (EEG)",
+       "2008 World Mind Sports Games"
+      ],
+      "junk_dropped": [
+       "1000minds",
+       "13 Commandments",
+       "10–20 system (EEG)",
+       "2008 World Mind Sports Games"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5004,
+      "novelty": 0.4309,
+      "tether": 0.5205
+     },
+     "B": {
+      "terms": [
+       "eugenics",
+       "brainchild",
+       "influenced",
+       "reprogramming",
+       "transformed"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7278
+    },
+    {
+     "void": "pseudoscience",
+     "stem": "pseudosci",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1680 in science",
+       "1749 in science",
+       "1787 in science",
+       "$25 Million Dollar Hoax",
+       "1786 in science"
+      ],
+      "junk_dropped": [
+       "1680 in science",
+       "1749 in science",
+       "1787 in science",
+       "$25 Million Dollar Hoax",
+       "1786 in science"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.514,
+      "novelty": 0.4828,
+      "tether": 0.4742
+     },
+     "B": {
+      "terms": [
+       "brainwashing",
+       "conspiracy",
+       "conman",
+       "fraud",
+       "crichton"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "doping",
+     "stem": "dope",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1990 FIFA World Cup discipline",
+       "1994 IAAF World Cup",
+       "2005 ISSF World Cup",
+       "17α-Alkylated anabolic steroid",
+       "2005 Boxing World Cup"
+      ],
+      "junk_dropped": [
+       "1990 FIFA World Cup discipline",
+       "1994 IAAF World Cup",
+       "2005 ISSF World Cup",
+       "17α-Alkylated anabolic steroid",
+       "2005 Boxing World Cup"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.557,
+      "novelty": 0.4989,
+      "tether": 0.4343
+     },
+     "B": {
+      "terms": [
+       "drugging",
+       "pimping",
+       "bodybuilder",
+       "drugged",
+       "junkie"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "eugenics",
+     "stem": "eugen",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1940s in sociology",
+       "1900s in sociology",
+       "1940s in anthropology",
+       "1945 in philosophy",
+       "1910s in sociology"
+      ],
+      "junk_dropped": [
+       "1940s in sociology",
+       "1900s in sociology",
+       "1940s in anthropology",
+       "1945 in philosophy",
+       "1910s in sociology"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6526,
+      "novelty": 0.5437,
+      "tether": 0.3964
+     },
+     "B": {
+      "terms": [
+       "brainwashing",
+       "sanger",
+       "geneticist",
+       "unborn",
+       "mutations"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "logos_v9/F",
+   "group": "F",
+   "voids": [
+    "brainwashing",
+    "pseudoscience",
+    "doping",
+    "eugenics"
+   ],
+   "arms": [
+    {
+     "void": "brainwashing",
+     "stem": "brainwash",
+     "A": {
+      "terms": [
+       "brain drain"
+      ],
+      "terms_raw": [
+       "brain drain",
+       "1000minds",
+       "13 Commandments",
+       "10–20 system (EEG)",
+       "2008 World Mind Sports Games"
+      ],
+      "junk_dropped": [
+       "1000minds",
+       "13 Commandments",
+       "10–20 system (EEG)",
+       "2008 World Mind Sports Games"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5004,
+      "novelty": 0.4309,
+      "tether": 0.5205
+     },
+     "B": {
+      "terms": [
+       "eugenics",
+       "brainchild",
+       "influenced",
+       "reprogramming",
+       "transformed"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7278
+    },
+    {
+     "void": "pseudoscience",
+     "stem": "pseudosci",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1680 in science",
+       "1749 in science",
+       "1787 in science",
+       "$25 Million Dollar Hoax",
+       "1786 in science"
+      ],
+      "junk_dropped": [
+       "1680 in science",
+       "1749 in science",
+       "1787 in science",
+       "$25 Million Dollar Hoax",
+       "1786 in science"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.514,
+      "novelty": 0.4828,
+      "tether": 0.4742
+     },
+     "B": {
+      "terms": [
+       "brainwashing",
+       "conspiracy",
+       "conman",
+       "fraud",
+       "crichton"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "doping",
+     "stem": "dope",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1990 FIFA World Cup discipline",
+       "1994 IAAF World Cup",
+       "2005 ISSF World Cup",
+       "17α-Alkylated anabolic steroid",
+       "2005 Boxing World Cup"
+      ],
+      "junk_dropped": [
+       "1990 FIFA World Cup discipline",
+       "1994 IAAF World Cup",
+       "2005 ISSF World Cup",
+       "17α-Alkylated anabolic steroid",
+       "2005 Boxing World Cup"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.557,
+      "novelty": 0.4989,
+      "tether": 0.4343
+     },
+     "B": {
+      "terms": [
+       "drugging",
+       "pimping",
+       "bodybuilder",
+       "drugged",
+       "junkie"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "eugenics",
+     "stem": "eugen",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1940s in sociology",
+       "1900s in sociology",
+       "1940s in anthropology",
+       "1945 in philosophy",
+       "1910s in sociology"
+      ],
+      "junk_dropped": [
+       "1940s in sociology",
+       "1900s in sociology",
+       "1940s in anthropology",
+       "1945 in philosophy",
+       "1910s in sociology"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6526,
+      "novelty": 0.5437,
+      "tether": 0.3964
+     },
+     "B": {
+      "terms": [
+       "brainwashing",
+       "sanger",
+       "geneticist",
+       "unborn",
+       "mutations"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "logos_v10/F",
+   "group": "F",
+   "voids": [
+    "brainwashing",
+    "pseudoscience",
+    "doping",
+    "drugging"
+   ],
+   "arms": [
+    {
+     "void": "brainwashing",
+     "stem": "brainwash",
+     "A": {
+      "terms": [
+       "brain drain"
+      ],
+      "terms_raw": [
+       "brain drain",
+       "1000minds",
+       "13 Commandments",
+       "10–20 system (EEG)",
+       "2008 World Mind Sports Games"
+      ],
+      "junk_dropped": [
+       "1000minds",
+       "13 Commandments",
+       "10–20 system (EEG)",
+       "2008 World Mind Sports Games"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5004,
+      "novelty": 0.4309,
+      "tether": 0.5205
+     },
+     "B": {
+      "terms": [
+       "eugenics",
+       "brainchild",
+       "influenced",
+       "reprogramming",
+       "transformed"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7278
+    },
+    {
+     "void": "pseudoscience",
+     "stem": "pseudosci",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1680 in science",
+       "1749 in science",
+       "1787 in science",
+       "$25 Million Dollar Hoax",
+       "1786 in science"
+      ],
+      "junk_dropped": [
+       "1680 in science",
+       "1749 in science",
+       "1787 in science",
+       "$25 Million Dollar Hoax",
+       "1786 in science"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.514,
+      "novelty": 0.4828,
+      "tether": 0.4742
+     },
+     "B": {
+      "terms": [
+       "brainwashing",
+       "conspiracy",
+       "conman",
+       "fraud",
+       "crichton"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "doping",
+     "stem": "dope",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1990 FIFA World Cup discipline",
+       "1994 IAAF World Cup",
+       "2005 ISSF World Cup",
+       "17α-Alkylated anabolic steroid",
+       "2005 Boxing World Cup"
+      ],
+      "junk_dropped": [
+       "1990 FIFA World Cup discipline",
+       "1994 IAAF World Cup",
+       "2005 ISSF World Cup",
+       "17α-Alkylated anabolic steroid",
+       "2005 Boxing World Cup"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.557,
+      "novelty": 0.4989,
+      "tether": 0.4343
+     },
+     "B": {
+      "terms": [
+       "drugging",
+       "pimping",
+       "bodybuilder",
+       "drugged",
+       "junkie"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "drugging",
+     "stem": "drug",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2,3,4-Trimethoxyamphetamine",
+       "2,4,6-Trimethoxyamphetamine",
+       "2,3,6-Trimethoxyamphetamine",
+       "2,4,5-Trimethoxyamphetamine",
+       "2-Fluoromethamphetamine"
+      ],
+      "junk_dropped": [
+       "2,3,4-Trimethoxyamphetamine",
+       "2,4,6-Trimethoxyamphetamine",
+       "2,3,6-Trimethoxyamphetamine",
+       "2,4,5-Trimethoxyamphetamine",
+       "2-Fluoromethamphetamine"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.9107,
+      "novelty": 0.5081,
+      "tether": 0.4475
+     },
+     "B": {
+      "terms": [
+       "doping",
+       "pimping",
+       "overdoing",
+       "deepening",
+       "meddling"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "null/F",
+   "group": "F",
+   "voids": [
+    "focused",
+    "infatuated",
+    "compulsive",
+    "intently"
+   ],
+   "arms": [
+    {
+     "void": "focused",
+     "stem": "focus",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4843,
+      "novelty": 0.4682,
+      "tether": 0.505
+     },
+     "B": {
+      "terms": [
+       "devotee",
+       "influenced",
+       "deepening",
+       "transformed",
+       "honed"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "infatuated",
+     "stem": "infatu",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "100 días para enamorarse",
+       "100 días para enamorarse (Argentine TV series)",
+       "100 días para enamorarse (Chilean TV series)",
+       "100 días para enamorarnos",
+       "(Tonight We Just Might) Fall in Love Again"
+      ],
+      "junk_dropped": [
+       "100 días para enamorarse",
+       "100 días para enamorarse (Argentine TV series)",
+       "100 días para enamorarse (Chilean TV series)",
+       "100 días para enamorarnos",
+       "(Tonight We Just Might) Fall in Love Again"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.7622,
+      "novelty": 0.4921,
+      "tether": 0.4134
+     },
+     "B": {
+      "terms": [
+       "infecting",
+       "devotee",
+       "inoculated",
+       "insatiable",
+       "infringed"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "compulsive",
+     "stem": "compuls",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "(You Drive Me) Crazy",
+       "(Keep Feeling) Fascination",
+       "\"The Only Unavoidable Subject of Regret\""
+      ],
+      "junk_dropped": [
+       "(You Drive Me) Crazy",
+       "(Keep Feeling) Fascination",
+       "\"The Only Unavoidable Subject of Regret\""
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.471,
+      "novelty": 0.4738,
+      "tether": 0.4646
+     },
+     "B": {
+      "terms": [
+       "drugging",
+       "proliferation",
+       "devotee",
+       "fanaticism",
+       "overdoing"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "intently",
+     "stem": "intent",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...The Ruthless Pursuit of Blood with All a Child's Demanding"
+      ],
+      "junk_dropped": [
+       "...The Ruthless Pursuit of Blood with All a Child's Demanding"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4906,
+      "novelty": 0.4581,
+      "tether": 0.5204
+     },
+     "B": {
+      "terms": [
+       "deepening",
+       "rejuvenated",
+       "perpetuated",
+       "perpetuating",
+       "honed"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "said/L",
+   "group": "L",
+   "voids": [
+    "brainwashing",
+    "pseudoscience",
+    "doping",
+    "castration"
+   ],
+   "arms": [
+    {
+     "void": "brainwashing",
+     "stem": "brainwash",
+     "A": {
+      "terms": [
+       "brain drain"
+      ],
+      "terms_raw": [
+       "brain drain",
+       "1000minds",
+       "13 Commandments",
+       "10–20 system (EEG)",
+       "2008 World Mind Sports Games"
+      ],
+      "junk_dropped": [
+       "1000minds",
+       "13 Commandments",
+       "10–20 system (EEG)",
+       "2008 World Mind Sports Games"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5004,
+      "novelty": 0.4309,
+      "tether": 0.5205
+     },
+     "B": {
+      "terms": [
+       "eugenics",
+       "brainchild",
+       "influenced",
+       "reprogramming",
+       "transformed"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7278
+    },
+    {
+     "void": "pseudoscience",
+     "stem": "pseudosci",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1680 in science",
+       "1749 in science",
+       "1787 in science",
+       "$25 Million Dollar Hoax",
+       "1786 in science"
+      ],
+      "junk_dropped": [
+       "1680 in science",
+       "1749 in science",
+       "1787 in science",
+       "$25 Million Dollar Hoax",
+       "1786 in science"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.514,
+      "novelty": 0.4828,
+      "tether": 0.4742
+     },
+     "B": {
+      "terms": [
+       "brainwashing",
+       "conspiracy",
+       "conman",
+       "fraud",
+       "crichton"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "doping",
+     "stem": "dope",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1990 FIFA World Cup discipline",
+       "1994 IAAF World Cup",
+       "2005 ISSF World Cup",
+       "17α-Alkylated anabolic steroid",
+       "2005 Boxing World Cup"
+      ],
+      "junk_dropped": [
+       "1990 FIFA World Cup discipline",
+       "1994 IAAF World Cup",
+       "2005 ISSF World Cup",
+       "17α-Alkylated anabolic steroid",
+       "2005 Boxing World Cup"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.557,
+      "novelty": 0.4989,
+      "tether": 0.4343
+     },
+     "B": {
+      "terms": [
+       "drugging",
+       "pimping",
+       "bodybuilder",
+       "drugged",
+       "junkie"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "castration",
+     "stem": "castrat",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "18-Methyltestosterone",
+       "1721",
+       "1660s BC",
+       "1620s BC",
+       "1721 in literature"
+      ],
+      "junk_dropped": [
+       "18-Methyltestosterone",
+       "1721",
+       "1660s BC",
+       "1620s BC",
+       "1721 in literature"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6061,
+      "novelty": 0.4547,
+      "tether": 0.5031
+     },
+     "B": {
+      "terms": [
+       "balding",
+       "bestiality",
+       "sacrifices",
+       "captivity",
+       "sacrificed"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "logos_v9/L",
+   "group": "L",
+   "voids": [
+    "brainwashing",
+    "doping",
+    "pseudoscience",
+    "biotechnology"
+   ],
+   "arms": [
+    {
+     "void": "brainwashing",
+     "stem": "brainwash",
+     "A": {
+      "terms": [
+       "brain drain"
+      ],
+      "terms_raw": [
+       "brain drain",
+       "1000minds",
+       "13 Commandments",
+       "10–20 system (EEG)",
+       "2008 World Mind Sports Games"
+      ],
+      "junk_dropped": [
+       "1000minds",
+       "13 Commandments",
+       "10–20 system (EEG)",
+       "2008 World Mind Sports Games"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5004,
+      "novelty": 0.4309,
+      "tether": 0.5205
+     },
+     "B": {
+      "terms": [
+       "eugenics",
+       "brainchild",
+       "influenced",
+       "reprogramming",
+       "transformed"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7278
+    },
+    {
+     "void": "doping",
+     "stem": "dope",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1990 FIFA World Cup discipline",
+       "1994 IAAF World Cup",
+       "2005 ISSF World Cup",
+       "17α-Alkylated anabolic steroid",
+       "2005 Boxing World Cup"
+      ],
+      "junk_dropped": [
+       "1990 FIFA World Cup discipline",
+       "1994 IAAF World Cup",
+       "2005 ISSF World Cup",
+       "17α-Alkylated anabolic steroid",
+       "2005 Boxing World Cup"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.557,
+      "novelty": 0.4989,
+      "tether": 0.4343
+     },
+     "B": {
+      "terms": [
+       "drugging",
+       "pimping",
+       "bodybuilder",
+       "drugged",
+       "junkie"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "pseudoscience",
+     "stem": "pseudosci",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1680 in science",
+       "1749 in science",
+       "1787 in science",
+       "$25 Million Dollar Hoax",
+       "1786 in science"
+      ],
+      "junk_dropped": [
+       "1680 in science",
+       "1749 in science",
+       "1787 in science",
+       "$25 Million Dollar Hoax",
+       "1786 in science"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.514,
+      "novelty": 0.4828,
+      "tether": 0.4742
+     },
+     "B": {
+      "terms": [
+       "brainwashing",
+       "conspiracy",
+       "conman",
+       "fraud",
+       "crichton"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "biotechnology",
+     "stem": "biotechnologi",
+     "A": {
+      "terms": [
+       "refining disruption",
+       "refining catastrophe",
+       "prolonged refining disruption"
+      ],
+      "terms_raw": [
+       "refining disruption",
+       "1990 in science",
+       "refining catastrophe",
+       "prolonged refining disruption",
+       "1910 in science"
+      ],
+      "junk_dropped": [
+       "1990 in science",
+       "1910 in science"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5752,
+      "novelty": 0.4625,
+      "tether": 0.4971
+     },
+     "B": {
+      "terms": [
+       "sanger",
+       "bioengineering",
+       "commercialized",
+       "geneticist",
+       "hybridization"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.676
+    }
+   ]
+  },
+  {
+   "name": "logos_v10/L",
+   "group": "L",
+   "voids": [
+    "brainwashing",
+    "pseudoscience",
+    "doping",
+    "drugging"
+   ],
+   "arms": [
+    {
+     "void": "brainwashing",
+     "stem": "brainwash",
+     "A": {
+      "terms": [
+       "brain drain"
+      ],
+      "terms_raw": [
+       "brain drain",
+       "1000minds",
+       "13 Commandments",
+       "10–20 system (EEG)",
+       "2008 World Mind Sports Games"
+      ],
+      "junk_dropped": [
+       "1000minds",
+       "13 Commandments",
+       "10–20 system (EEG)",
+       "2008 World Mind Sports Games"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5004,
+      "novelty": 0.4309,
+      "tether": 0.5205
+     },
+     "B": {
+      "terms": [
+       "eugenics",
+       "brainchild",
+       "influenced",
+       "reprogramming",
+       "transformed"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7278
+    },
+    {
+     "void": "pseudoscience",
+     "stem": "pseudosci",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1680 in science",
+       "1749 in science",
+       "1787 in science",
+       "$25 Million Dollar Hoax",
+       "1786 in science"
+      ],
+      "junk_dropped": [
+       "1680 in science",
+       "1749 in science",
+       "1787 in science",
+       "$25 Million Dollar Hoax",
+       "1786 in science"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.514,
+      "novelty": 0.4828,
+      "tether": 0.4742
+     },
+     "B": {
+      "terms": [
+       "brainwashing",
+       "conspiracy",
+       "conman",
+       "fraud",
+       "crichton"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "doping",
+     "stem": "dope",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1990 FIFA World Cup discipline",
+       "1994 IAAF World Cup",
+       "2005 ISSF World Cup",
+       "17α-Alkylated anabolic steroid",
+       "2005 Boxing World Cup"
+      ],
+      "junk_dropped": [
+       "1990 FIFA World Cup discipline",
+       "1994 IAAF World Cup",
+       "2005 ISSF World Cup",
+       "17α-Alkylated anabolic steroid",
+       "2005 Boxing World Cup"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.557,
+      "novelty": 0.4989,
+      "tether": 0.4343
+     },
+     "B": {
+      "terms": [
+       "drugging",
+       "pimping",
+       "bodybuilder",
+       "drugged",
+       "junkie"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "drugging",
+     "stem": "drug",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2,3,4-Trimethoxyamphetamine",
+       "2,4,6-Trimethoxyamphetamine",
+       "2,3,6-Trimethoxyamphetamine",
+       "2,4,5-Trimethoxyamphetamine",
+       "2-Fluoromethamphetamine"
+      ],
+      "junk_dropped": [
+       "2,3,4-Trimethoxyamphetamine",
+       "2,4,6-Trimethoxyamphetamine",
+       "2,3,6-Trimethoxyamphetamine",
+       "2,4,5-Trimethoxyamphetamine",
+       "2-Fluoromethamphetamine"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.9107,
+      "novelty": 0.5081,
+      "tether": 0.4475
+     },
+     "B": {
+      "terms": [
+       "doping",
+       "pimping",
+       "overdoing",
+       "deepening",
+       "meddling"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "null/L",
+   "group": "L",
+   "voids": [
+    "regulated",
+    "synthesized",
+    "arvind",
+    "synthesis"
+   ],
+   "arms": [
+    {
+     "void": "regulated",
+     "stem": "regul",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "123 Reg",
+       "1975 Stock Brokerage Commission Deregulation",
+       ".50 Caliber BMG Regulation Act of 2004",
+       "2006 nightlife legislation in New York City",
+       "2-REG aircraft registration"
+      ],
+      "junk_dropped": [
+       "123 Reg",
+       "1975 Stock Brokerage Commission Deregulation",
+       ".50 Caliber BMG Regulation Act of 2004",
+       "2006 nightlife legislation in New York City",
+       "2-REG aircraft registration"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5548,
+      "novelty": 0.4767,
+      "tether": 0.45
+     },
+     "B": {
+      "terms": [
+       "commercialized",
+       "doping",
+       "vetted",
+       "institutionalized",
+       "sanctioned"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "synthesized",
+     "stem": "synthes",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "'80s remix",
+       "100% Electronica",
+       "1st Imaginary Symphony for Nomad",
+       "2.5D musical",
+       "1998 (instrumental)"
+      ],
+      "junk_dropped": [
+       "'80s remix",
+       "100% Electronica",
+       "1st Imaginary Symphony for Nomad",
+       "2.5D musical",
+       "1998 (instrumental)"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5828,
+      "novelty": 0.51,
+      "tether": 0.4313
+     },
+     "B": {
+      "terms": [
+       "regenerative",
+       "reprogramming",
+       "hybridization",
+       "transformed",
+       "regenerated"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "arvind",
+     "stem": "arvind",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "'Arura",
+       "1767 in India",
+       "1769 in India",
+       "1721 in India",
+       "1786 in India"
+      ],
+      "junk_dropped": [
+       "'Arura",
+       "1767 in India",
+       "1769 in India",
+       "1721 in India",
+       "1786 in India"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5132,
+      "novelty": 0.5604,
+      "tether": 0.3707
+     },
+     "B": {
+      "terms": [
+       "devotee",
+       "vicarious",
+       "enriching",
+       "karmic",
+       "vicariously"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "synthesis",
+     "stem": "synthesi",
+     "A": {
+      "terms": [
+       "chemical collapse",
+       "cascading chemical collapse"
+      ],
+      "terms_raw": [
+       "chemical collapse",
+       "(S)-canadine synthase",
+       "(+)-T-muurolol synthase",
+       "cascading chemical collapse",
+       "(+)-sabinene synthase"
+      ],
+      "junk_dropped": [
+       "(S)-canadine synthase",
+       "(+)-T-muurolol synthase",
+       "(+)-sabinene synthase"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6498,
+      "novelty": 0.4702,
+      "tether": 0.4763
+     },
+     "B": {
+      "terms": [
+       "hybridization",
+       "conspiring",
+       "transmutation",
+       "genetically",
+       "fabrication"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7235
+    }
+   ]
+  },
+  {
+   "name": "said/ALL",
+   "group": "ALL",
+   "voids": [
+    "brainwashing",
+    "pseudoscience",
+    "doping",
+    "eugenics"
+   ],
+   "arms": [
+    {
+     "void": "brainwashing",
+     "stem": "brainwash",
+     "A": {
+      "terms": [
+       "brain drain"
+      ],
+      "terms_raw": [
+       "brain drain",
+       "1000minds",
+       "13 Commandments",
+       "10–20 system (EEG)",
+       "2008 World Mind Sports Games"
+      ],
+      "junk_dropped": [
+       "1000minds",
+       "13 Commandments",
+       "10–20 system (EEG)",
+       "2008 World Mind Sports Games"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5004,
+      "novelty": 0.4309,
+      "tether": 0.5205
+     },
+     "B": {
+      "terms": [
+       "eugenics",
+       "brainchild",
+       "influenced",
+       "reprogramming",
+       "transformed"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7278
+    },
+    {
+     "void": "pseudoscience",
+     "stem": "pseudosci",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1680 in science",
+       "1749 in science",
+       "1787 in science",
+       "$25 Million Dollar Hoax",
+       "1786 in science"
+      ],
+      "junk_dropped": [
+       "1680 in science",
+       "1749 in science",
+       "1787 in science",
+       "$25 Million Dollar Hoax",
+       "1786 in science"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.514,
+      "novelty": 0.4828,
+      "tether": 0.4742
+     },
+     "B": {
+      "terms": [
+       "brainwashing",
+       "conspiracy",
+       "conman",
+       "fraud",
+       "crichton"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "doping",
+     "stem": "dope",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1990 FIFA World Cup discipline",
+       "1994 IAAF World Cup",
+       "2005 ISSF World Cup",
+       "17α-Alkylated anabolic steroid",
+       "2005 Boxing World Cup"
+      ],
+      "junk_dropped": [
+       "1990 FIFA World Cup discipline",
+       "1994 IAAF World Cup",
+       "2005 ISSF World Cup",
+       "17α-Alkylated anabolic steroid",
+       "2005 Boxing World Cup"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.557,
+      "novelty": 0.4989,
+      "tether": 0.4343
+     },
+     "B": {
+      "terms": [
+       "drugging",
+       "pimping",
+       "bodybuilder",
+       "drugged",
+       "junkie"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "eugenics",
+     "stem": "eugen",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1940s in sociology",
+       "1900s in sociology",
+       "1940s in anthropology",
+       "1945 in philosophy",
+       "1910s in sociology"
+      ],
+      "junk_dropped": [
+       "1940s in sociology",
+       "1900s in sociology",
+       "1940s in anthropology",
+       "1945 in philosophy",
+       "1910s in sociology"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6526,
+      "novelty": 0.5437,
+      "tether": 0.3964
+     },
+     "B": {
+      "terms": [
+       "brainwashing",
+       "sanger",
+       "geneticist",
+       "unborn",
+       "mutations"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "logos_v9/ALL",
+   "group": "ALL",
+   "voids": [
+    "brainwashing",
+    "pseudoscience",
+    "doping",
+    "drugging"
+   ],
+   "arms": [
+    {
+     "void": "brainwashing",
+     "stem": "brainwash",
+     "A": {
+      "terms": [
+       "brain drain"
+      ],
+      "terms_raw": [
+       "brain drain",
+       "1000minds",
+       "13 Commandments",
+       "10–20 system (EEG)",
+       "2008 World Mind Sports Games"
+      ],
+      "junk_dropped": [
+       "1000minds",
+       "13 Commandments",
+       "10–20 system (EEG)",
+       "2008 World Mind Sports Games"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5004,
+      "novelty": 0.4309,
+      "tether": 0.5205
+     },
+     "B": {
+      "terms": [
+       "eugenics",
+       "brainchild",
+       "influenced",
+       "reprogramming",
+       "transformed"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7278
+    },
+    {
+     "void": "pseudoscience",
+     "stem": "pseudosci",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1680 in science",
+       "1749 in science",
+       "1787 in science",
+       "$25 Million Dollar Hoax",
+       "1786 in science"
+      ],
+      "junk_dropped": [
+       "1680 in science",
+       "1749 in science",
+       "1787 in science",
+       "$25 Million Dollar Hoax",
+       "1786 in science"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.514,
+      "novelty": 0.4828,
+      "tether": 0.4742
+     },
+     "B": {
+      "terms": [
+       "brainwashing",
+       "conspiracy",
+       "conman",
+       "fraud",
+       "crichton"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "doping",
+     "stem": "dope",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1990 FIFA World Cup discipline",
+       "1994 IAAF World Cup",
+       "2005 ISSF World Cup",
+       "17α-Alkylated anabolic steroid",
+       "2005 Boxing World Cup"
+      ],
+      "junk_dropped": [
+       "1990 FIFA World Cup discipline",
+       "1994 IAAF World Cup",
+       "2005 ISSF World Cup",
+       "17α-Alkylated anabolic steroid",
+       "2005 Boxing World Cup"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.557,
+      "novelty": 0.4989,
+      "tether": 0.4343
+     },
+     "B": {
+      "terms": [
+       "drugging",
+       "pimping",
+       "bodybuilder",
+       "drugged",
+       "junkie"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "drugging",
+     "stem": "drug",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2,3,4-Trimethoxyamphetamine",
+       "2,4,6-Trimethoxyamphetamine",
+       "2,3,6-Trimethoxyamphetamine",
+       "2,4,5-Trimethoxyamphetamine",
+       "2-Fluoromethamphetamine"
+      ],
+      "junk_dropped": [
+       "2,3,4-Trimethoxyamphetamine",
+       "2,4,6-Trimethoxyamphetamine",
+       "2,3,6-Trimethoxyamphetamine",
+       "2,4,5-Trimethoxyamphetamine",
+       "2-Fluoromethamphetamine"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.9107,
+      "novelty": 0.5081,
+      "tether": 0.4475
+     },
+     "B": {
+      "terms": [
+       "doping",
+       "pimping",
+       "overdoing",
+       "deepening",
+       "meddling"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "logos_v10/ALL",
+   "group": "ALL",
+   "voids": [
+    "brainwashing",
+    "pseudoscience",
+    "doping",
+    "drugging"
+   ],
+   "arms": [
+    {
+     "void": "brainwashing",
+     "stem": "brainwash",
+     "A": {
+      "terms": [
+       "brain drain"
+      ],
+      "terms_raw": [
+       "brain drain",
+       "1000minds",
+       "13 Commandments",
+       "10–20 system (EEG)",
+       "2008 World Mind Sports Games"
+      ],
+      "junk_dropped": [
+       "1000minds",
+       "13 Commandments",
+       "10–20 system (EEG)",
+       "2008 World Mind Sports Games"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5004,
+      "novelty": 0.4309,
+      "tether": 0.5205
+     },
+     "B": {
+      "terms": [
+       "eugenics",
+       "brainchild",
+       "influenced",
+       "reprogramming",
+       "transformed"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7278
+    },
+    {
+     "void": "pseudoscience",
+     "stem": "pseudosci",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1680 in science",
+       "1749 in science",
+       "1787 in science",
+       "$25 Million Dollar Hoax",
+       "1786 in science"
+      ],
+      "junk_dropped": [
+       "1680 in science",
+       "1749 in science",
+       "1787 in science",
+       "$25 Million Dollar Hoax",
+       "1786 in science"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.514,
+      "novelty": 0.4828,
+      "tether": 0.4742
+     },
+     "B": {
+      "terms": [
+       "brainwashing",
+       "conspiracy",
+       "conman",
+       "fraud",
+       "crichton"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "doping",
+     "stem": "dope",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1990 FIFA World Cup discipline",
+       "1994 IAAF World Cup",
+       "2005 ISSF World Cup",
+       "17α-Alkylated anabolic steroid",
+       "2005 Boxing World Cup"
+      ],
+      "junk_dropped": [
+       "1990 FIFA World Cup discipline",
+       "1994 IAAF World Cup",
+       "2005 ISSF World Cup",
+       "17α-Alkylated anabolic steroid",
+       "2005 Boxing World Cup"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.557,
+      "novelty": 0.4989,
+      "tether": 0.4343
+     },
+     "B": {
+      "terms": [
+       "drugging",
+       "pimping",
+       "bodybuilder",
+       "drugged",
+       "junkie"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "drugging",
+     "stem": "drug",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2,3,4-Trimethoxyamphetamine",
+       "2,4,6-Trimethoxyamphetamine",
+       "2,3,6-Trimethoxyamphetamine",
+       "2,4,5-Trimethoxyamphetamine",
+       "2-Fluoromethamphetamine"
+      ],
+      "junk_dropped": [
+       "2,3,4-Trimethoxyamphetamine",
+       "2,4,6-Trimethoxyamphetamine",
+       "2,3,6-Trimethoxyamphetamine",
+       "2,4,5-Trimethoxyamphetamine",
+       "2-Fluoromethamphetamine"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.9107,
+      "novelty": 0.5081,
+      "tether": 0.4475
+     },
+     "B": {
+      "terms": [
+       "doping",
+       "pimping",
+       "overdoing",
+       "deepening",
+       "meddling"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "null/ALL",
+   "group": "ALL",
+   "voids": [
+    "disagreed",
+    "majority",
+    "abstained",
+    "outnumbered"
+   ],
+   "arms": [
+    {
+     "void": "disagreed",
+     "stem": "disagre",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "\"Good Hair\" and Other Dubious Distinctions",
+       "(Un)Commentary",
+       "12 Who Don't Agree",
+       "\"Polish death camp\" controversy",
+       "(If Loving You Is Wrong) I Don't Want to Be Right"
+      ],
+      "junk_dropped": [
+       "\"Good Hair\" and Other Dubious Distinctions",
+       "(Un)Commentary",
+       "12 Who Don't Agree",
+       "\"Polish death camp\" controversy",
+       "(If Loving You Is Wrong) I Don't Want to Be Right"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5166,
+      "novelty": 0.4268,
+      "tether": 0.5087
+     },
+     "B": {
+      "terms": [
+       "purported",
+       "unscientific",
+       "purportedly",
+       "unproven",
+       "unfounded"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "majority",
+     "stem": "major",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4846,
+      "novelty": 0.4848,
+      "tether": 0.4936
+     },
+     "B": {
+      "terms": [
+       "pimping",
+       "drugging",
+       "deepening",
+       "rejuvenated",
+       "lucrative"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "abstained",
+     "stem": "abstain",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "12th Fail",
+       "12th of Never",
+       "111 Ate",
+       "102 Not Out",
+       "18-Year-Old Virgin"
+      ],
+      "junk_dropped": [
+       "12th Fail",
+       "12th of Never",
+       "111 Ate",
+       "102 Not Out",
+       "18-Year-Old Virgin"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5834,
+      "novelty": 0.4892,
+      "tether": 0.4469
+     },
+     "B": {
+      "terms": [
+       "indulging",
+       "indulgences",
+       "sanctioned",
+       "indulged",
+       "redemption"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "outnumbered",
+     "stem": "outnumb",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "(FLA)vour of the Weak",
+       "100 men versus a gorilla",
+       "100 Rogues",
+       "100 Humans",
+       "1766 food riots"
+      ],
+      "junk_dropped": [
+       "(FLA)vour of the Weak",
+       "100 men versus a gorilla",
+       "100 Rogues",
+       "100 Humans",
+       "1766 food riots"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5574,
+      "novelty": 0.4636,
+      "tether": 0.4717
+     },
+     "B": {
+      "terms": [
+       "rampant",
+       "massed",
+       "infiltrated",
+       "billions",
+       "cohorts"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "gap->local",
+   "group": "F",
+   "voids": [
+    "balenciaga",
+    "photoshoot",
+    "castaway",
+    "swimwear"
+   ],
+   "arms": [
+    {
+     "void": "balenciaga",
+     "stem": "balenciaga",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "06 Gucci",
+       "1650–1700 in Western fashion",
+       "2010s in fashion",
+       "1971–72 AC Milan season",
+       "1970s in fashion"
+      ],
+      "junk_dropped": [
+       "06 Gucci",
+       "1650–1700 in Western fashion",
+       "2010s in fashion",
+       "1971–72 AC Milan season",
+       "1970s in fashion"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5311,
+      "novelty": 0.4752,
+      "tether": 0.4315
+     },
+     "B": {
+      "terms": [
+       "grafts",
+       "graft",
+       "serum",
+       "sweatshop",
+       "materialistic"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "photoshoot",
+     "stem": "photoshoot",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4681,
+      "novelty": 0.5038,
+      "tether": 0.472
+     },
+     "B": {
+      "terms": [
+       "rejuvenated",
+       "embodying",
+       "rejuvenation",
+       "rejuvenating",
+       "evoking"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "castaway",
+     "stem": "castawai",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2009 Turks and Caicos Islands migrant shipwreck",
+       "10 Days on the Island",
+       "2007 Malta migrant shipwreck",
+       "1856 Last Island hurricane",
+       "2009 Libya migrant shipwreck"
+      ],
+      "junk_dropped": [
+       "2009 Turks and Caicos Islands migrant shipwreck",
+       "10 Days on the Island",
+       "2007 Malta migrant shipwreck",
+       "1856 Last Island hurricane",
+       "2009 Libya migrant shipwreck"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5981,
+      "novelty": 0.4794,
+      "tether": 0.4376
+     },
+     "B": {
+      "terms": [
+       "castrated",
+       "captivity",
+       "colony",
+       "stranding",
+       "rescuing"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "swimwear",
+     "stem": "swimwear",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2008 in swimming",
+       "100 metre freestyle",
+       "1997 FINA Short Course World Championships – Women's 100m breaststroke",
+       "2010 in swimming",
+       "1990s in fashion"
+      ],
+      "junk_dropped": [
+       "2008 in swimming",
+       "100 metre freestyle",
+       "1997 FINA Short Course World Championships – Women's 100m breaststroke",
+       "2010 in swimming",
+       "1990s in fashion"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.473,
+      "novelty": 0.5195,
+      "tether": 0.4185
+     },
+     "B": {
+      "terms": [
+       "laundering",
+       "donning",
+       "bathed",
+       "washing",
+       "gills"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "gap->frontier",
+   "group": "L",
+   "voids": [
+    "informative",
+    "caveats",
+    "enlightening",
+    "truthfulness"
+   ],
+   "arms": [
+    {
+     "void": "informative",
+     "stem": "inform",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.6035,
+      "novelty": 0.5272,
+      "tether": 0.4546
+     },
+     "B": {
+      "terms": [
+       "sanger",
+       "castration",
+       "castrated",
+       "rejuvenated",
+       "philanthropists"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "caveats",
+     "stem": "caveat",
+     "A": {
+      "terms": [
+       "refining breakdown",
+       "refining cascade failure"
+      ],
+      "terms_raw": [
+       "(Un)arranged Marriage",
+       "(Un)Commentary",
+       "refining breakdown",
+       "refining cascade failure",
+       "(Not Just) Knee Deep"
+      ],
+      "junk_dropped": [
+       "(Un)arranged Marriage",
+       "(Un)Commentary",
+       "(Not Just) Knee Deep"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5693,
+      "novelty": 0.4718,
+      "tether": 0.504
+     },
+     "B": {
+      "terms": [
+       "deepening",
+       "appropriating",
+       "meddling",
+       "unscrupulous",
+       "imparted"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.6797
+    },
+    {
+     "void": "enlightening",
+     "stem": "enlighten",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "18th century in philosophy",
+       "1957 in philosophy",
+       "...So Unknown",
+       "13th century in philosophy",
+       "1751 in philosophy"
+      ],
+      "junk_dropped": [
+       "18th century in philosophy",
+       "1957 in philosophy",
+       "...So Unknown",
+       "13th century in philosophy",
+       "1751 in philosophy"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5558,
+      "novelty": 0.501,
+      "tether": 0.4637
+     },
+     "B": {
+      "terms": [
+       "deepening",
+       "enriching",
+       "embodying",
+       "perpetuating",
+       "ingenuity"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "truthfulness",
+     "stem": "truth",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "(Dis)Honesty: The Truth About Lies",
+       "...(And That's No Lie)",
+       "1978 Truth Criterion Controversy",
+       "100 Days of Lies",
+       "1000 Ways to Lie"
+      ],
+      "junk_dropped": [
+       "(Dis)Honesty: The Truth About Lies",
+       "...(And That's No Lie)",
+       "1978 Truth Criterion Controversy",
+       "100 Days of Lies",
+       "1000 Ways to Lie"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5946,
+      "novelty": 0.4117,
+      "tether": 0.53
+     },
+     "B": {
+      "terms": [
+       "duplicity",
+       "embodying",
+       "deceit",
+       "deception",
+       "falsifying"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "centroid_surface",
+   "group": "ALL",
+   "voids": [
+    "brainwashing",
+    "pseudoscience",
+    "drugging",
+    "doping"
+   ],
+   "arms": [
+    {
+     "void": "brainwashing",
+     "stem": "brainwash",
+     "A": {
+      "terms": [
+       "brain drain"
+      ],
+      "terms_raw": [
+       "brain drain",
+       "1000minds",
+       "13 Commandments",
+       "10–20 system (EEG)",
+       "2008 World Mind Sports Games"
+      ],
+      "junk_dropped": [
+       "1000minds",
+       "13 Commandments",
+       "10–20 system (EEG)",
+       "2008 World Mind Sports Games"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5004,
+      "novelty": 0.4309,
+      "tether": 0.5205
+     },
+     "B": {
+      "terms": [
+       "eugenics",
+       "brainchild",
+       "influenced",
+       "reprogramming",
+       "transformed"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7278
+    },
+    {
+     "void": "pseudoscience",
+     "stem": "pseudosci",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1680 in science",
+       "1749 in science",
+       "1787 in science",
+       "$25 Million Dollar Hoax",
+       "1786 in science"
+      ],
+      "junk_dropped": [
+       "1680 in science",
+       "1749 in science",
+       "1787 in science",
+       "$25 Million Dollar Hoax",
+       "1786 in science"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.514,
+      "novelty": 0.4828,
+      "tether": 0.4742
+     },
+     "B": {
+      "terms": [
+       "brainwashing",
+       "conspiracy",
+       "conman",
+       "fraud",
+       "crichton"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "drugging",
+     "stem": "drug",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2,3,4-Trimethoxyamphetamine",
+       "2,4,6-Trimethoxyamphetamine",
+       "2,3,6-Trimethoxyamphetamine",
+       "2,4,5-Trimethoxyamphetamine",
+       "2-Fluoromethamphetamine"
+      ],
+      "junk_dropped": [
+       "2,3,4-Trimethoxyamphetamine",
+       "2,4,6-Trimethoxyamphetamine",
+       "2,3,6-Trimethoxyamphetamine",
+       "2,4,5-Trimethoxyamphetamine",
+       "2-Fluoromethamphetamine"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.9107,
+      "novelty": 0.5081,
+      "tether": 0.4475
+     },
+     "B": {
+      "terms": [
+       "doping",
+       "pimping",
+       "overdoing",
+       "deepening",
+       "meddling"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "doping",
+     "stem": "dope",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1990 FIFA World Cup discipline",
+       "1994 IAAF World Cup",
+       "2005 ISSF World Cup",
+       "17α-Alkylated anabolic steroid",
+       "2005 Boxing World Cup"
+      ],
+      "junk_dropped": [
+       "1990 FIFA World Cup discipline",
+       "1994 IAAF World Cup",
+       "2005 ISSF World Cup",
+       "17α-Alkylated anabolic steroid",
+       "2005 Boxing World Cup"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.557,
+      "novelty": 0.4989,
+      "tether": 0.4343
+     },
+     "B": {
+      "terms": [
+       "drugging",
+       "pimping",
+       "bodybuilder",
+       "drugged",
+       "junkie"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "lexcross/F",
+   "group": "F",
+   "voids": [
+    "have",
+    "various",
+    "form",
+    "against"
+   ],
+   "arms": [
+    {
+     "void": "have",
+     "stem": "have",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4727,
+      "novelty": 0.4834,
+      "tether": 0.4949
+     },
+     "B": {
+      "terms": [
+       "deepening",
+       "rejuvenated",
+       "transformed",
+       "regenerating",
+       "proliferating"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "various",
+     "stem": "variou",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5203,
+      "novelty": 0.5688,
+      "tether": 0.4114
+     },
+     "B": {
+      "terms": [
+       "appropriating",
+       "deepening",
+       "grafting",
+       "rejuvenated",
+       "perpetuated"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "form",
+     "stem": "form",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1990 Citizen Cup"
+      ],
+      "junk_dropped": [
+       "1990 Citizen Cup"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5366,
+      "novelty": 0.5699,
+      "tether": 0.3982
+     },
+     "B": {
+      "terms": [
+       "regenerative",
+       "grafts",
+       "grafted",
+       "graft",
+       "grafting"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "against",
+     "stem": "against",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "'t Misverstant",
+       "1751 in philosophy",
+       "1990 reasons of the Supreme Court of Canada",
+       "...So, Were They in Some Sort of Fight?",
+       "1990 in philosophy"
+      ],
+      "junk_dropped": [
+       "'t Misverstant",
+       "1751 in philosophy",
+       "1990 reasons of the Supreme Court of Canada",
+       "...So, Were They in Some Sort of Fight?",
+       "1990 in philosophy"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4772,
+      "novelty": 0.4862,
+      "tether": 0.4812
+     },
+     "B": {
+      "terms": [
+       "perpetuated",
+       "evoking",
+       "treating",
+       "perpetuating",
+       "espousing"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "lexcross/L",
+   "group": "L",
+   "voids": [
+    "regarding",
+    "summary",
+    "undergoing",
+    "ambitions"
+   ],
+   "arms": [
+    {
+     "void": "regarding",
+     "stem": "regard",
+     "A": {
+      "terms": [
+       "institutional disruption"
+      ],
+      "terms_raw": [
+       "1751 in philosophy",
+       "'I' and the 'me'",
+       "1790 in literature",
+       "(Un)Commentary",
+       "institutional disruption"
+      ],
+      "junk_dropped": [
+       "1751 in philosophy",
+       "'I' and the 'me'",
+       "1790 in literature",
+       "(Un)Commentary"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4743,
+      "novelty": 0.4819,
+      "tether": 0.4873
+     },
+     "B": {
+      "terms": [
+       "appropriating",
+       "appropriation",
+       "deepening",
+       "meddling",
+       "perpetuating"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7036
+    },
+    {
+     "void": "summary",
+     "stem": "summari",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1989 Yishun coffeeshop murder"
+      ],
+      "junk_dropped": [
+       "1989 Yishun coffeeshop murder"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5541,
+      "novelty": 0.4686,
+      "tether": 0.5037
+     },
+     "B": {
+      "terms": [
+       "brainwashing",
+       "pimping",
+       "brainwashed",
+       "castrated",
+       "fraud"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "undergoing",
+     "stem": "undergo",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "-ing",
+       "...ing",
+       "(We Are) Nexus",
+       "(You're) Having My Baby",
+       "... I Lose Myself"
+      ],
+      "junk_dropped": [
+       "-ing",
+       "...ing",
+       "(We Are) Nexus",
+       "(You're) Having My Baby",
+       "... I Lose Myself"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6057,
+      "novelty": 0.4674,
+      "tether": 0.4695
+     },
+     "B": {
+      "terms": [
+       "infecting",
+       "drugging",
+       "deepening",
+       "appropriating",
+       "meddling"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "ambitions",
+     "stem": "ambit",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...The Ruthless Pursuit of Blood with All a Child's Demanding",
+       "(This Thing Called) Wantin' and Havin' It All",
+       "(Wish I Had A) Heart of Stone",
+       "\"I Want\" song",
+       "16 Wishes"
+      ],
+      "junk_dropped": [
+       "...The Ruthless Pursuit of Blood with All a Child's Demanding",
+       "(This Thing Called) Wantin' and Havin' It All",
+       "(Wish I Had A) Heart of Stone",
+       "\"I Want\" song",
+       "16 Wishes"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5377,
+      "novelty": 0.4611,
+      "tether": 0.5042
+     },
+     "B": {
+      "terms": [
+       "lucrative",
+       "machinations",
+       "motives",
+       "motive",
+       "speculative"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  }
+ ],
+ "crawl": {
+  "junk": {
+   "dropped": 278,
+   "seen": 296
+  },
+  "leg_sync": {
+   "said/F": 0.7278,
+   "logos_v9/F": 0.7278,
+   "logos_v10/F": 0.7278,
+   "said/L": 0.7278,
+   "logos_v9/L": 0.7019,
+   "logos_v10/L": 0.7278,
+   "null/L": 0.7235,
+   "said/ALL": 0.7278,
+   "logos_v9/ALL": 0.7278,
+   "logos_v10/ALL": 0.7278,
+   "gap->frontier": 0.6797,
+   "centroid_surface": 0.7278,
+   "lexcross/L": 0.7036
+  },
+  "body_median": 0.7278,
+  "arm_jaccard_median": 0.0,
+  "shuffle_null": {
+   "null_median": 0.648,
+   "margin": 0.0797,
+   "n_obs": 14,
+   "n_null": 848
+  },
+  "leg_jaccard": {
+   "median": 0.0,
+   "pairs_ge_025": [
+    {
+     "a": "centroid_surface",
+     "b": "logos_v10/ALL",
+     "j": 1.0
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v10/F",
+     "j": 1.0
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v10/L",
+     "j": 1.0
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v9/ALL",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "logos_v10/F",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "logos_v10/L",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "logos_v9/ALL",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "logos_v10/L",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "logos_v9/ALL",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "logos_v9/ALL",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v9/F",
+     "b": "said/ALL",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v9/F",
+     "b": "said/F",
+     "j": 1.0
+    },
+    {
+     "a": "said/ALL",
+     "b": "said/F",
+     "j": 1.0
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v9/F",
+     "j": 0.6
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v9/L",
+     "j": 0.6
+    },
+    {
+     "a": "centroid_surface",
+     "b": "said/ALL",
+     "j": 0.6
+    },
+    {
+     "a": "centroid_surface",
+     "b": "said/F",
+     "j": 0.6
+    },
+    {
+     "a": "centroid_surface",
+     "b": "said/L",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "logos_v9/F",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "logos_v9/L",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "said/ALL",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "said/F",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "said/L",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "logos_v9/F",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "logos_v9/L",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "said/ALL",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "said/F",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "said/L",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "logos_v9/F",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "logos_v9/L",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "said/ALL",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "said/F",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "said/L",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/ALL",
+     "b": "logos_v9/F",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/ALL",
+     "b": "logos_v9/L",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/ALL",
+     "b": "said/ALL",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/ALL",
+     "b": "said/F",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/ALL",
+     "b": "said/L",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/F",
+     "b": "logos_v9/L",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/F",
+     "b": "said/L",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/L",
+     "b": "said/ALL",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/L",
+     "b": "said/F",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/L",
+     "b": "said/L",
+     "j": 0.6
+    },
+    {
+     "a": "said/ALL",
+     "b": "said/L",
+     "j": 0.6
+    },
+    {
+     "a": "said/F",
+     "b": "said/L",
+     "j": 0.6
+    }
+   ]
+  },
+  "conseq_field": {
+   "centroid_surface": 0.9922,
+   "gap->frontier": 0.9661,
+   "gap->local": 0.951,
+   "lexcross/F": 0.9448,
+   "lexcross/L": 0.9704,
+   "logos_v10/ALL": 0.9922,
+   "logos_v10/F": 0.9922,
+   "logos_v10/L": 0.9922,
+   "logos_v9/ALL": 0.9922,
+   "logos_v9/F": 0.9876,
+   "logos_v9/L": 0.9862,
+   "null/ALL": 0.9661,
+   "null/F": 0.9531,
+   "null/L": 0.9643,
+   "said/ALL": 0.9876,
+   "said/F": 0.9876,
+   "said/L": 0.9899
+  },
+  "shared_voids": {
+   "brainwash": [
+    "centroid_surface",
+    "logos_v10/ALL",
+    "logos_v10/F",
+    "logos_v10/L",
+    "logos_v9/ALL",
+    "logos_v9/F",
+    "logos_v9/L",
+    "said/ALL",
+    "said/F",
+    "said/L"
+   ],
+   "pseudosci": [
+    "centroid_surface",
+    "logos_v10/ALL",
+    "logos_v10/F",
+    "logos_v10/L",
+    "logos_v9/ALL",
+    "logos_v9/F",
+    "logos_v9/L",
+    "said/ALL",
+    "said/F",
+    "said/L"
+   ],
+   "dope": [
+    "centroid_surface",
+    "logos_v10/ALL",
+    "logos_v10/F",
+    "logos_v10/L",
+    "logos_v9/ALL",
+    "logos_v9/F",
+    "logos_v9/L",
+    "said/ALL",
+    "said/F",
+    "said/L"
+   ],
+   "eugen": [
+    "logos_v9/F",
+    "said/ALL",
+    "said/F"
+   ],
+   "drug": [
+    "centroid_surface",
+    "logos_v10/ALL",
+    "logos_v10/F",
+    "logos_v10/L",
+    "logos_v9/ALL"
+   ]
+  }
+ },
+ "target_sightings": [
+  {
+   "target": "immortality",
+   "said_by": 6,
+   "said_models": [
+    "claude",
+    "deepseek",
+    "grok",
+    "hermes",
+    "mistral_22b",
+    "qwen_14b"
+   ],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "cloning",
+   "said_by": 10,
+   "said_models": [
+    "chatgpt",
+    "claude",
+    "deepseek",
+    "gemini",
+    "grok",
+    "hermes",
+    "llama_8b",
+    "mistral_22b",
+    "mistral_7b",
+    "qwen_14b"
+   ],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "vampirism",
+   "said_by": 0,
+   "said_models": [],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "exploitation",
+   "said_by": 0,
+   "said_models": [],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "coercion",
+   "said_by": 0,
+   "said_models": [],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "harvesting",
+   "said_by": 9,
+   "said_models": [
+    "claude",
+    "deepseek",
+    "gemini",
+    "grok",
+    "hermes",
+    "llama_8b",
+    "mistral_22b",
+    "mistral_7b",
+    "qwen_14b"
+   ],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "consent",
+   "said_by": 0,
+   "said_models": [],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "predation",
+   "said_by": 0,
+   "said_models": [],
+   "in_voids": [],
+   "as_consequence": []
+  }
+ ],
+ "result_sha": "650248b57f8f"
+}

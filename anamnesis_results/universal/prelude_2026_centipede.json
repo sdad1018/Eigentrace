@@ -1,0 +1,4679 @@
+{
+ "harness": "centipede",
+ "version": "centipede v0.4 2026-07-09",
+ "story": "prelude_2026",
+ "dir": "anamnesis_results/universal",
+ "generated": "2026-07-09T23:59:53",
+ "provenance": {
+  "harness_sha": "5d49bf428c5a",
+  "corpus_sha": "074ad9dbfe4c",
+  "anchor_sha": "817b071d2e0e",
+  "rulers": {
+   "segments": "global_vocab_clean(50K)",
+   "arm_b": "global_vocab_clean(50K)",
+   "arm_a": "raycast_vocab(253K)",
+   "donut": null
+  },
+  "params": {
+   "K": 8,
+   "conv_thresh": 0.45,
+   "conv_min": 2,
+   "depth_frac": 0.8,
+   "armb_mode": "ray",
+   "armb_lambda": 2.0,
+   "arm_a_depths": [
+    2.0,
+    3.0,
+    4.0
+   ]
+  },
+  "prompt_mode": "tc",
+  "excluded_models": [],
+  "junk_rule": "leading non-letter | ellipsis | 3+ digit run | >4 tokens",
+  "donut": false,
+  "synonyms": {
+   "price": [
+    "cost",
+    "msrp",
+    "dollar",
+    "price"
+   ],
+   "availability": [
+    "releas",
+    "launch",
+    "preorder",
+    "arriv"
+   ]
+  }
+ },
+ "anchor": {
+  "chars": 1680,
+  "contains_targets": [
+   "efficiency",
+   "handling",
+   "performance",
+   "price",
+   "specifications"
+  ],
+  "headline": "The 2026 Honda Prelude marks the long-awaited return. The following is a document. Based only on the text provided, summarize its key claims. Text: The 2026 Honda Prelude marks the long-awaited return of one of Honda's most iconic nameplates. Reintroduced as a modern hybrid sport coupe, the new Prel"
+ },
+ "models": {
+  "frontier": [
+   "chatgpt",
+   "claude",
+   "deepseek",
+   "gemini",
+   "grok"
+  ],
+  "local": [
+   "hermes",
+   "llama_8b",
+   "mistral_22b",
+   "mistral_7b",
+   "qwen_14b"
+  ],
+  "n": 10
+ },
+ "said_census": {
+  "specifications": {
+   "F": [
+    "claude",
+    "deepseek"
+   ],
+   "L": []
+  },
+  "performance": {
+   "F": [
+    "chatgpt",
+    "claude",
+    "deepseek",
+    "gemini",
+    "grok"
+   ],
+   "L": [
+    "hermes",
+    "llama_8b",
+    "mistral_22b",
+    "mistral_7b",
+    "qwen_14b"
+   ]
+  },
+  "handling": {
+   "F": [
+    "gemini"
+   ],
+   "L": [
+    "hermes",
+    "mistral_22b",
+    "mistral_7b",
+    "qwen_14b"
+   ]
+  },
+  "efficiency": {
+   "F": [
+    "claude",
+    "deepseek",
+    "gemini",
+    "grok"
+   ],
+   "L": [
+    "llama_8b",
+    "mistral_22b",
+    "mistral_7b",
+    "qwen_14b"
+   ]
+  },
+  "price": {
+   "F": [],
+   "L": [
+    "mistral_7b"
+   ]
+  },
+  "availability": {
+   "F": [],
+   "L": [
+    "hermes",
+    "llama_8b"
+   ]
+  }
+ },
+ "segments": [
+  {
+   "name": "said/F",
+   "group": "F",
+   "voids": [
+    "drivetrain",
+    "infiniti",
+    "automaker",
+    "prototypes",
+    "acura",
+    "delorean",
+    "prius",
+    "precursor"
+   ],
+   "arms": [
+    {
+     "void": "drivetrain",
+     "stem": "drivetrain",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5831,
+      "novelty": 0.4559,
+      "tether": 0.5231
+     },
+     "B": {
+      "terms": [
+       "wheelbase",
+       "automotive",
+       "transmissions",
+       "motor",
+       "motorised"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "infiniti",
+     "stem": "infin",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1995 Infiniti Open",
+       "1997 Infiniti Open",
+       "1996 Infiniti Open",
+       "2004 Infiniti Pro Series",
+       "2005 Infiniti Pro Series"
+      ],
+      "junk_dropped": [
+       "1995 Infiniti Open",
+       "1997 Infiniti Open",
+       "1996 Infiniti Open",
+       "2004 Infiniti Pro Series",
+       "2005 Infiniti Pro Series"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.7546,
+      "novelty": 0.3602,
+      "tether": 0.5831
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "camry",
+       "quattro",
+       "automaker",
+       "sedan"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "automaker",
+     "stem": "automak",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4987,
+      "novelty": 0.3861,
+      "tether": 0.6083
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "infotainment",
+       "conforms",
+       "marque",
+       "oems"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "prototypes",
+     "stem": "prototyp",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4794,
+      "novelty": 0.4485,
+      "tether": 0.5379
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "precursors",
+       "preliminary",
+       "prefabricated",
+       "maneuverability"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "acura",
+     "stem": "acura",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2002 Acura Classic",
+       "2006 Acura Classic",
+       "2007 Acura Classic",
+       "2003 Acura Classic",
+       "1997 Acura Classic"
+      ],
+      "junk_dropped": [
+       "2002 Acura Classic",
+       "2006 Acura Classic",
+       "2007 Acura Classic",
+       "2003 Acura Classic",
+       "1997 Acura Classic"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.8696,
+      "novelty": 0.3567,
+      "tether": 0.6141
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "radiator",
+       "infotainment",
+       "rearview",
+       "nhtsa"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "delorean",
+     "stem": "delorean",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1988 Delores"
+      ],
+      "junk_dropped": [
+       "1988 Delores"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5329,
+      "novelty": 0.4431,
+      "tether": 0.5292
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "vehicular",
+       "automotive",
+       "radiator",
+       "wheelbase"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "prius",
+     "stem": "priu",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4802,
+      "novelty": 0.5298,
+      "tether": 0.447
+     },
+     "B": {
+      "terms": [
+       "vehicular",
+       "automotive",
+       "auto",
+       "infotainment",
+       "camry"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "precursor",
+     "stem": "precursor",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "139 BC",
+       "1997 Tour de France, Prologue to Stage 10",
+       "1391",
+       "139 (number)",
+       "1978 Tour de France, Prologue to Stage 11"
+      ],
+      "junk_dropped": [
+       "139 BC",
+       "1997 Tour de France, Prologue to Stage 10",
+       "1391",
+       "139 (number)",
+       "1978 Tour de France, Prologue to Stage 11"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5455,
+      "novelty": 0.4707,
+      "tether": 0.5046
+     },
+     "B": {
+      "terms": [
+       "rearview",
+       "preliminary",
+       "prototype",
+       "prototypes",
+       "prototypical"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "logos_v9/F",
+   "group": "F",
+   "voids": [
+    "drivetrain",
+    "precursor",
+    "prototypes",
+    "acura",
+    "infiniti",
+    "delorean",
+    "automaker",
+    "marque"
+   ],
+   "arms": [
+    {
+     "void": "drivetrain",
+     "stem": "drivetrain",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5831,
+      "novelty": 0.4559,
+      "tether": 0.5231
+     },
+     "B": {
+      "terms": [
+       "wheelbase",
+       "automotive",
+       "transmissions",
+       "motor",
+       "motorised"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "precursor",
+     "stem": "precursor",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "139 BC",
+       "1997 Tour de France, Prologue to Stage 10",
+       "1391",
+       "139 (number)",
+       "1978 Tour de France, Prologue to Stage 11"
+      ],
+      "junk_dropped": [
+       "139 BC",
+       "1997 Tour de France, Prologue to Stage 10",
+       "1391",
+       "139 (number)",
+       "1978 Tour de France, Prologue to Stage 11"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5455,
+      "novelty": 0.4707,
+      "tether": 0.5046
+     },
+     "B": {
+      "terms": [
+       "rearview",
+       "preliminary",
+       "prototype",
+       "prototypes",
+       "prototypical"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "prototypes",
+     "stem": "prototyp",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4794,
+      "novelty": 0.4485,
+      "tether": 0.5379
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "precursors",
+       "preliminary",
+       "prefabricated",
+       "maneuverability"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "acura",
+     "stem": "acura",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2002 Acura Classic",
+       "2006 Acura Classic",
+       "2007 Acura Classic",
+       "2003 Acura Classic",
+       "1997 Acura Classic"
+      ],
+      "junk_dropped": [
+       "2002 Acura Classic",
+       "2006 Acura Classic",
+       "2007 Acura Classic",
+       "2003 Acura Classic",
+       "1997 Acura Classic"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.8696,
+      "novelty": 0.3567,
+      "tether": 0.6141
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "radiator",
+       "infotainment",
+       "rearview",
+       "nhtsa"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "infiniti",
+     "stem": "infin",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1995 Infiniti Open",
+       "1997 Infiniti Open",
+       "1996 Infiniti Open",
+       "2004 Infiniti Pro Series",
+       "2005 Infiniti Pro Series"
+      ],
+      "junk_dropped": [
+       "1995 Infiniti Open",
+       "1997 Infiniti Open",
+       "1996 Infiniti Open",
+       "2004 Infiniti Pro Series",
+       "2005 Infiniti Pro Series"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.7546,
+      "novelty": 0.3602,
+      "tether": 0.5831
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "camry",
+       "quattro",
+       "automaker",
+       "sedan"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "delorean",
+     "stem": "delorean",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1988 Delores"
+      ],
+      "junk_dropped": [
+       "1988 Delores"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5329,
+      "novelty": 0.4431,
+      "tether": 0.5292
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "vehicular",
+       "automotive",
+       "radiator",
+       "wheelbase"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "automaker",
+     "stem": "automak",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4987,
+      "novelty": 0.3861,
+      "tether": 0.6083
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "infotainment",
+       "conforms",
+       "marque",
+       "oems"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "marque",
+     "stem": "marqu",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4826,
+      "novelty": 0.444,
+      "tether": 0.5469
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "sumitomo",
+       "suited",
+       "prototypical",
+       "strut"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "logos_v10/F",
+   "group": "F",
+   "voids": [
+    "drivetrain",
+    "prototypes",
+    "precursor",
+    "infiniti",
+    "acura",
+    "automaker",
+    "delorean",
+    "marque"
+   ],
+   "arms": [
+    {
+     "void": "drivetrain",
+     "stem": "drivetrain",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5831,
+      "novelty": 0.4559,
+      "tether": 0.5231
+     },
+     "B": {
+      "terms": [
+       "wheelbase",
+       "automotive",
+       "transmissions",
+       "motor",
+       "motorised"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "prototypes",
+     "stem": "prototyp",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4794,
+      "novelty": 0.4485,
+      "tether": 0.5379
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "precursors",
+       "preliminary",
+       "prefabricated",
+       "maneuverability"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "precursor",
+     "stem": "precursor",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "139 BC",
+       "1997 Tour de France, Prologue to Stage 10",
+       "1391",
+       "139 (number)",
+       "1978 Tour de France, Prologue to Stage 11"
+      ],
+      "junk_dropped": [
+       "139 BC",
+       "1997 Tour de France, Prologue to Stage 10",
+       "1391",
+       "139 (number)",
+       "1978 Tour de France, Prologue to Stage 11"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5455,
+      "novelty": 0.4707,
+      "tether": 0.5046
+     },
+     "B": {
+      "terms": [
+       "rearview",
+       "preliminary",
+       "prototype",
+       "prototypes",
+       "prototypical"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "infiniti",
+     "stem": "infin",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1995 Infiniti Open",
+       "1997 Infiniti Open",
+       "1996 Infiniti Open",
+       "2004 Infiniti Pro Series",
+       "2005 Infiniti Pro Series"
+      ],
+      "junk_dropped": [
+       "1995 Infiniti Open",
+       "1997 Infiniti Open",
+       "1996 Infiniti Open",
+       "2004 Infiniti Pro Series",
+       "2005 Infiniti Pro Series"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.7546,
+      "novelty": 0.3602,
+      "tether": 0.5831
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "camry",
+       "quattro",
+       "automaker",
+       "sedan"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "acura",
+     "stem": "acura",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2002 Acura Classic",
+       "2006 Acura Classic",
+       "2007 Acura Classic",
+       "2003 Acura Classic",
+       "1997 Acura Classic"
+      ],
+      "junk_dropped": [
+       "2002 Acura Classic",
+       "2006 Acura Classic",
+       "2007 Acura Classic",
+       "2003 Acura Classic",
+       "1997 Acura Classic"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.8696,
+      "novelty": 0.3567,
+      "tether": 0.6141
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "radiator",
+       "infotainment",
+       "rearview",
+       "nhtsa"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "automaker",
+     "stem": "automak",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4987,
+      "novelty": 0.3861,
+      "tether": 0.6083
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "infotainment",
+       "conforms",
+       "marque",
+       "oems"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "delorean",
+     "stem": "delorean",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1988 Delores"
+      ],
+      "junk_dropped": [
+       "1988 Delores"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5329,
+      "novelty": 0.4431,
+      "tether": 0.5292
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "vehicular",
+       "automotive",
+       "radiator",
+       "wheelbase"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "marque",
+     "stem": "marqu",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4826,
+      "novelty": 0.444,
+      "tether": 0.5469
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "sumitomo",
+       "suited",
+       "prototypical",
+       "strut"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "null/F",
+   "group": "F",
+   "voids": [
+    "debuts",
+    "manufacturing",
+    "rollout",
+    "workhorse",
+    "inauguration",
+    "maneuverability",
+    "smoothness",
+    "electromechanical"
+   ],
+   "arms": [
+    {
+     "void": "debuts",
+     "stem": "debut",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4929,
+      "novelty": 0.4214,
+      "tether": 0.5707
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "rearview",
+       "automotive",
+       "prototypes",
+       "precursors"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "manufacturing",
+     "stem": "manufactur",
+     "A": {
+      "terms": [
+       "manufacturing breakdown",
+       "manufacturing default",
+       "manufacturing failure",
+       "systemic manufacturing breakdown",
+       "manufacturing shock"
+      ],
+      "terms_raw": [
+       "manufacturing breakdown",
+       "manufacturing default",
+       "manufacturing failure",
+       "systemic manufacturing breakdown",
+       "manufacturing shock"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.7973,
+      "novelty": 0.5076,
+      "tether": 0.4689
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "oems",
+       "automakers",
+       "automaker",
+       "drivetrain"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7335
+    },
+    {
+     "void": "rollout",
+     "stem": "rollout",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.7559,
+      "novelty": 0.5159,
+      "tether": 0.4738
+     },
+     "B": {
+      "terms": [
+       "conforms",
+       "infotainment",
+       "automotive",
+       "accord",
+       "maneuverability"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "workhorse",
+     "stem": "workhors",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5159,
+      "novelty": 0.5345,
+      "tether": 0.4439
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "wheelbase",
+       "checkered",
+       "triumph",
+       "automaker"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "inauguration",
+     "stem": "inaugur",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.6278,
+      "novelty": 0.5515,
+      "tether": 0.4303
+     },
+     "B": {
+      "terms": [
+       "accord",
+       "precursors",
+       "preliminary",
+       "readying",
+       "limousine"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "maneuverability",
+     "stem": "maneuver",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4431,
+      "novelty": 0.5272,
+      "tether": 0.4409
+     },
+     "B": {
+      "terms": [
+       "glides",
+       "automotive",
+       "wheelbase",
+       "vehicular",
+       "cornering"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "smoothness",
+     "stem": "smooth",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5788,
+      "novelty": 0.4798,
+      "tether": 0.4981
+     },
+     "B": {
+      "terms": [
+       "glides",
+       "automotive",
+       "wheelbase",
+       "maneuverability",
+       "camber"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "electromechanical",
+     "stem": "electromechan",
+     "A": {
+      "terms": [
+       "systemic electrical grid paralysis",
+       "prolonged electrical grid paralysis",
+       "systemic electrical grid breakdown"
+      ],
+      "terms_raw": [
+       "10,000 Volts",
+       "systemic electrical grid paralysis",
+       "15 kV AC railway electrification",
+       "prolonged electrical grid paralysis",
+       "systemic electrical grid breakdown"
+      ],
+      "junk_dropped": [
+       "10,000 Volts",
+       "15 kV AC railway electrification"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.7104,
+      "novelty": 0.5415,
+      "tether": 0.4109
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "vehicular",
+       "motor",
+       "drivetrain",
+       "motorised"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.5998
+    }
+   ]
+  },
+  {
+   "name": "said/L",
+   "group": "L",
+   "voids": [
+    "prototypes",
+    "infiniti",
+    "acura",
+    "drivetrain",
+    "precursor",
+    "automaker",
+    "delorean",
+    "infotainment"
+   ],
+   "arms": [
+    {
+     "void": "prototypes",
+     "stem": "prototyp",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4794,
+      "novelty": 0.4485,
+      "tether": 0.5379
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "precursors",
+       "preliminary",
+       "prefabricated",
+       "maneuverability"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "infiniti",
+     "stem": "infin",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1995 Infiniti Open",
+       "1997 Infiniti Open",
+       "1996 Infiniti Open",
+       "2004 Infiniti Pro Series",
+       "2005 Infiniti Pro Series"
+      ],
+      "junk_dropped": [
+       "1995 Infiniti Open",
+       "1997 Infiniti Open",
+       "1996 Infiniti Open",
+       "2004 Infiniti Pro Series",
+       "2005 Infiniti Pro Series"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.7546,
+      "novelty": 0.3602,
+      "tether": 0.5831
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "camry",
+       "quattro",
+       "automaker",
+       "sedan"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "acura",
+     "stem": "acura",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2002 Acura Classic",
+       "2006 Acura Classic",
+       "2007 Acura Classic",
+       "2003 Acura Classic",
+       "1997 Acura Classic"
+      ],
+      "junk_dropped": [
+       "2002 Acura Classic",
+       "2006 Acura Classic",
+       "2007 Acura Classic",
+       "2003 Acura Classic",
+       "1997 Acura Classic"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.8696,
+      "novelty": 0.3567,
+      "tether": 0.6141
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "radiator",
+       "infotainment",
+       "rearview",
+       "nhtsa"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "drivetrain",
+     "stem": "drivetrain",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5831,
+      "novelty": 0.4559,
+      "tether": 0.5231
+     },
+     "B": {
+      "terms": [
+       "wheelbase",
+       "automotive",
+       "transmissions",
+       "motor",
+       "motorised"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "precursor",
+     "stem": "precursor",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "139 BC",
+       "1997 Tour de France, Prologue to Stage 10",
+       "1391",
+       "139 (number)",
+       "1978 Tour de France, Prologue to Stage 11"
+      ],
+      "junk_dropped": [
+       "139 BC",
+       "1997 Tour de France, Prologue to Stage 10",
+       "1391",
+       "139 (number)",
+       "1978 Tour de France, Prologue to Stage 11"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5455,
+      "novelty": 0.4707,
+      "tether": 0.5046
+     },
+     "B": {
+      "terms": [
+       "rearview",
+       "preliminary",
+       "prototype",
+       "prototypes",
+       "prototypical"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "automaker",
+     "stem": "automak",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4987,
+      "novelty": 0.3861,
+      "tether": 0.6083
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "infotainment",
+       "conforms",
+       "marque",
+       "oems"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "delorean",
+     "stem": "delorean",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1988 Delores"
+      ],
+      "junk_dropped": [
+       "1988 Delores"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5329,
+      "novelty": 0.4431,
+      "tether": 0.5292
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "vehicular",
+       "automotive",
+       "radiator",
+       "wheelbase"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "infotainment",
+     "stem": "infotain",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4838,
+      "novelty": 0.4297,
+      "tether": 0.5614
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "rearview",
+       "vehicular",
+       "camry",
+       "infiniti"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "logos_v9/L",
+   "group": "L",
+   "voids": [
+    "precursor",
+    "prototypes",
+    "acura",
+    "infiniti",
+    "delorean",
+    "drivetrain",
+    "automaker",
+    "marque"
+   ],
+   "arms": [
+    {
+     "void": "precursor",
+     "stem": "precursor",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "139 BC",
+       "1997 Tour de France, Prologue to Stage 10",
+       "1391",
+       "139 (number)",
+       "1978 Tour de France, Prologue to Stage 11"
+      ],
+      "junk_dropped": [
+       "139 BC",
+       "1997 Tour de France, Prologue to Stage 10",
+       "1391",
+       "139 (number)",
+       "1978 Tour de France, Prologue to Stage 11"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5455,
+      "novelty": 0.4707,
+      "tether": 0.5046
+     },
+     "B": {
+      "terms": [
+       "rearview",
+       "preliminary",
+       "prototype",
+       "prototypes",
+       "prototypical"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "prototypes",
+     "stem": "prototyp",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4794,
+      "novelty": 0.4485,
+      "tether": 0.5379
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "precursors",
+       "preliminary",
+       "prefabricated",
+       "maneuverability"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "acura",
+     "stem": "acura",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2002 Acura Classic",
+       "2006 Acura Classic",
+       "2007 Acura Classic",
+       "2003 Acura Classic",
+       "1997 Acura Classic"
+      ],
+      "junk_dropped": [
+       "2002 Acura Classic",
+       "2006 Acura Classic",
+       "2007 Acura Classic",
+       "2003 Acura Classic",
+       "1997 Acura Classic"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.8696,
+      "novelty": 0.3567,
+      "tether": 0.6141
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "radiator",
+       "infotainment",
+       "rearview",
+       "nhtsa"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "infiniti",
+     "stem": "infin",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1995 Infiniti Open",
+       "1997 Infiniti Open",
+       "1996 Infiniti Open",
+       "2004 Infiniti Pro Series",
+       "2005 Infiniti Pro Series"
+      ],
+      "junk_dropped": [
+       "1995 Infiniti Open",
+       "1997 Infiniti Open",
+       "1996 Infiniti Open",
+       "2004 Infiniti Pro Series",
+       "2005 Infiniti Pro Series"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.7546,
+      "novelty": 0.3602,
+      "tether": 0.5831
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "camry",
+       "quattro",
+       "automaker",
+       "sedan"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "delorean",
+     "stem": "delorean",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1988 Delores"
+      ],
+      "junk_dropped": [
+       "1988 Delores"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5329,
+      "novelty": 0.4431,
+      "tether": 0.5292
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "vehicular",
+       "automotive",
+       "radiator",
+       "wheelbase"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "drivetrain",
+     "stem": "drivetrain",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5831,
+      "novelty": 0.4559,
+      "tether": 0.5231
+     },
+     "B": {
+      "terms": [
+       "wheelbase",
+       "automotive",
+       "transmissions",
+       "motor",
+       "motorised"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "automaker",
+     "stem": "automak",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4987,
+      "novelty": 0.3861,
+      "tether": 0.6083
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "infotainment",
+       "conforms",
+       "marque",
+       "oems"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "marque",
+     "stem": "marqu",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4826,
+      "novelty": 0.444,
+      "tether": 0.5469
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "sumitomo",
+       "suited",
+       "prototypical",
+       "strut"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "logos_v10/L",
+   "group": "L",
+   "voids": [
+    "prototypes",
+    "precursor",
+    "infiniti",
+    "drivetrain",
+    "acura",
+    "delorean",
+    "automaker",
+    "infotainment"
+   ],
+   "arms": [
+    {
+     "void": "prototypes",
+     "stem": "prototyp",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4794,
+      "novelty": 0.4485,
+      "tether": 0.5379
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "precursors",
+       "preliminary",
+       "prefabricated",
+       "maneuverability"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "precursor",
+     "stem": "precursor",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "139 BC",
+       "1997 Tour de France, Prologue to Stage 10",
+       "1391",
+       "139 (number)",
+       "1978 Tour de France, Prologue to Stage 11"
+      ],
+      "junk_dropped": [
+       "139 BC",
+       "1997 Tour de France, Prologue to Stage 10",
+       "1391",
+       "139 (number)",
+       "1978 Tour de France, Prologue to Stage 11"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5455,
+      "novelty": 0.4707,
+      "tether": 0.5046
+     },
+     "B": {
+      "terms": [
+       "rearview",
+       "preliminary",
+       "prototype",
+       "prototypes",
+       "prototypical"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "infiniti",
+     "stem": "infin",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1995 Infiniti Open",
+       "1997 Infiniti Open",
+       "1996 Infiniti Open",
+       "2004 Infiniti Pro Series",
+       "2005 Infiniti Pro Series"
+      ],
+      "junk_dropped": [
+       "1995 Infiniti Open",
+       "1997 Infiniti Open",
+       "1996 Infiniti Open",
+       "2004 Infiniti Pro Series",
+       "2005 Infiniti Pro Series"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.7546,
+      "novelty": 0.3602,
+      "tether": 0.5831
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "camry",
+       "quattro",
+       "automaker",
+       "sedan"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "drivetrain",
+     "stem": "drivetrain",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5831,
+      "novelty": 0.4559,
+      "tether": 0.5231
+     },
+     "B": {
+      "terms": [
+       "wheelbase",
+       "automotive",
+       "transmissions",
+       "motor",
+       "motorised"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "acura",
+     "stem": "acura",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2002 Acura Classic",
+       "2006 Acura Classic",
+       "2007 Acura Classic",
+       "2003 Acura Classic",
+       "1997 Acura Classic"
+      ],
+      "junk_dropped": [
+       "2002 Acura Classic",
+       "2006 Acura Classic",
+       "2007 Acura Classic",
+       "2003 Acura Classic",
+       "1997 Acura Classic"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.8696,
+      "novelty": 0.3567,
+      "tether": 0.6141
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "radiator",
+       "infotainment",
+       "rearview",
+       "nhtsa"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "delorean",
+     "stem": "delorean",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1988 Delores"
+      ],
+      "junk_dropped": [
+       "1988 Delores"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5329,
+      "novelty": 0.4431,
+      "tether": 0.5292
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "vehicular",
+       "automotive",
+       "radiator",
+       "wheelbase"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "automaker",
+     "stem": "automak",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4987,
+      "novelty": 0.3861,
+      "tether": 0.6083
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "infotainment",
+       "conforms",
+       "marque",
+       "oems"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "infotainment",
+     "stem": "infotain",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4838,
+      "novelty": 0.4297,
+      "tether": 0.5614
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "rearview",
+       "vehicular",
+       "camry",
+       "infiniti"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "null/L",
+   "group": "L",
+   "voids": [
+    "bogo",
+    "fabricate",
+    "casing",
+    "aliexpress",
+    "reseller",
+    "customization",
+    "extrusion",
+    "serials"
+   ],
+   "arms": [
+    {
+     "void": "bogo",
+     "stem": "bogo",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5964,
+      "novelty": 0.5912,
+      "tether": 0.3941
+     },
+     "B": {
+      "terms": [
+       "checkered",
+       "suited",
+       "marque",
+       "hatchback",
+       "escalade"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "fabricate",
+     "stem": "fabric",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5803,
+      "novelty": 0.5063,
+      "tether": 0.4747
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "prototypes",
+       "prefabricated",
+       "retrofitted",
+       "oems"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "casing",
+     "stem": "case",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4863,
+      "novelty": 0.4537,
+      "tether": 0.5329
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "suited",
+       "strut",
+       "hatchback",
+       "marque"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "aliexpress",
+     "stem": "aliexpress",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5794,
+      "novelty": 0.5782,
+      "tether": 0.4074
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "sumitomo",
+       "wheelbase",
+       "infotainment",
+       "conforms"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "reseller",
+     "stem": "resel",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "WEAK",
+      "density": 0.3608,
+      "novelty": 0.5185,
+      "tether": 0.4694
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "sumitomo",
+       "retrofitted",
+       "oems",
+       "marque"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "customization",
+     "stem": "custom",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.6495,
+      "novelty": 0.6016,
+      "tether": 0.382
+     },
+     "B": {
+      "terms": [
+       "suited",
+       "conforms",
+       "proportioned",
+       "infotainment",
+       "fitting"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "extrusion",
+     "stem": "extrus",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5114,
+      "novelty": 0.4294,
+      "tether": 0.5539
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "automaker",
+       "oems",
+       "infiniti",
+       "camber"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "serials",
+     "stem": "serial",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.478,
+      "novelty": 0.5748,
+      "tether": 0.4117
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "precursors",
+       "transmissions",
+       "marque",
+       "components"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "said/ALL",
+   "group": "ALL",
+   "voids": [
+    "drivetrain",
+    "infiniti",
+    "prototypes",
+    "acura",
+    "automaker",
+    "precursor",
+    "delorean",
+    "prius"
+   ],
+   "arms": [
+    {
+     "void": "drivetrain",
+     "stem": "drivetrain",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5831,
+      "novelty": 0.4559,
+      "tether": 0.5231
+     },
+     "B": {
+      "terms": [
+       "wheelbase",
+       "automotive",
+       "transmissions",
+       "motor",
+       "motorised"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "infiniti",
+     "stem": "infin",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1995 Infiniti Open",
+       "1997 Infiniti Open",
+       "1996 Infiniti Open",
+       "2004 Infiniti Pro Series",
+       "2005 Infiniti Pro Series"
+      ],
+      "junk_dropped": [
+       "1995 Infiniti Open",
+       "1997 Infiniti Open",
+       "1996 Infiniti Open",
+       "2004 Infiniti Pro Series",
+       "2005 Infiniti Pro Series"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.7546,
+      "novelty": 0.3602,
+      "tether": 0.5831
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "camry",
+       "quattro",
+       "automaker",
+       "sedan"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "prototypes",
+     "stem": "prototyp",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4794,
+      "novelty": 0.4485,
+      "tether": 0.5379
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "precursors",
+       "preliminary",
+       "prefabricated",
+       "maneuverability"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "acura",
+     "stem": "acura",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2002 Acura Classic",
+       "2006 Acura Classic",
+       "2007 Acura Classic",
+       "2003 Acura Classic",
+       "1997 Acura Classic"
+      ],
+      "junk_dropped": [
+       "2002 Acura Classic",
+       "2006 Acura Classic",
+       "2007 Acura Classic",
+       "2003 Acura Classic",
+       "1997 Acura Classic"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.8696,
+      "novelty": 0.3567,
+      "tether": 0.6141
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "radiator",
+       "infotainment",
+       "rearview",
+       "nhtsa"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "automaker",
+     "stem": "automak",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4987,
+      "novelty": 0.3861,
+      "tether": 0.6083
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "infotainment",
+       "conforms",
+       "marque",
+       "oems"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "precursor",
+     "stem": "precursor",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "139 BC",
+       "1997 Tour de France, Prologue to Stage 10",
+       "1391",
+       "139 (number)",
+       "1978 Tour de France, Prologue to Stage 11"
+      ],
+      "junk_dropped": [
+       "139 BC",
+       "1997 Tour de France, Prologue to Stage 10",
+       "1391",
+       "139 (number)",
+       "1978 Tour de France, Prologue to Stage 11"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5455,
+      "novelty": 0.4707,
+      "tether": 0.5046
+     },
+     "B": {
+      "terms": [
+       "rearview",
+       "preliminary",
+       "prototype",
+       "prototypes",
+       "prototypical"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "delorean",
+     "stem": "delorean",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1988 Delores"
+      ],
+      "junk_dropped": [
+       "1988 Delores"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5329,
+      "novelty": 0.4431,
+      "tether": 0.5292
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "vehicular",
+       "automotive",
+       "radiator",
+       "wheelbase"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "prius",
+     "stem": "priu",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4802,
+      "novelty": 0.5298,
+      "tether": 0.447
+     },
+     "B": {
+      "terms": [
+       "vehicular",
+       "automotive",
+       "auto",
+       "infotainment",
+       "camry"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "logos_v9/ALL",
+   "group": "ALL",
+   "voids": [
+    "precursor",
+    "prototypes",
+    "drivetrain",
+    "acura",
+    "infiniti",
+    "delorean",
+    "automaker",
+    "marque"
+   ],
+   "arms": [
+    {
+     "void": "precursor",
+     "stem": "precursor",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "139 BC",
+       "1997 Tour de France, Prologue to Stage 10",
+       "1391",
+       "139 (number)",
+       "1978 Tour de France, Prologue to Stage 11"
+      ],
+      "junk_dropped": [
+       "139 BC",
+       "1997 Tour de France, Prologue to Stage 10",
+       "1391",
+       "139 (number)",
+       "1978 Tour de France, Prologue to Stage 11"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5455,
+      "novelty": 0.4707,
+      "tether": 0.5046
+     },
+     "B": {
+      "terms": [
+       "rearview",
+       "preliminary",
+       "prototype",
+       "prototypes",
+       "prototypical"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "prototypes",
+     "stem": "prototyp",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4794,
+      "novelty": 0.4485,
+      "tether": 0.5379
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "precursors",
+       "preliminary",
+       "prefabricated",
+       "maneuverability"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "drivetrain",
+     "stem": "drivetrain",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5831,
+      "novelty": 0.4559,
+      "tether": 0.5231
+     },
+     "B": {
+      "terms": [
+       "wheelbase",
+       "automotive",
+       "transmissions",
+       "motor",
+       "motorised"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "acura",
+     "stem": "acura",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2002 Acura Classic",
+       "2006 Acura Classic",
+       "2007 Acura Classic",
+       "2003 Acura Classic",
+       "1997 Acura Classic"
+      ],
+      "junk_dropped": [
+       "2002 Acura Classic",
+       "2006 Acura Classic",
+       "2007 Acura Classic",
+       "2003 Acura Classic",
+       "1997 Acura Classic"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.8696,
+      "novelty": 0.3567,
+      "tether": 0.6141
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "radiator",
+       "infotainment",
+       "rearview",
+       "nhtsa"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "infiniti",
+     "stem": "infin",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1995 Infiniti Open",
+       "1997 Infiniti Open",
+       "1996 Infiniti Open",
+       "2004 Infiniti Pro Series",
+       "2005 Infiniti Pro Series"
+      ],
+      "junk_dropped": [
+       "1995 Infiniti Open",
+       "1997 Infiniti Open",
+       "1996 Infiniti Open",
+       "2004 Infiniti Pro Series",
+       "2005 Infiniti Pro Series"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.7546,
+      "novelty": 0.3602,
+      "tether": 0.5831
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "camry",
+       "quattro",
+       "automaker",
+       "sedan"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "delorean",
+     "stem": "delorean",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1988 Delores"
+      ],
+      "junk_dropped": [
+       "1988 Delores"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5329,
+      "novelty": 0.4431,
+      "tether": 0.5292
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "vehicular",
+       "automotive",
+       "radiator",
+       "wheelbase"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "automaker",
+     "stem": "automak",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4987,
+      "novelty": 0.3861,
+      "tether": 0.6083
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "infotainment",
+       "conforms",
+       "marque",
+       "oems"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "marque",
+     "stem": "marqu",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4826,
+      "novelty": 0.444,
+      "tether": 0.5469
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "sumitomo",
+       "suited",
+       "prototypical",
+       "strut"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "logos_v10/ALL",
+   "group": "ALL",
+   "voids": [
+    "prototypes",
+    "drivetrain",
+    "precursor",
+    "infiniti",
+    "acura",
+    "delorean",
+    "automaker",
+    "marque"
+   ],
+   "arms": [
+    {
+     "void": "prototypes",
+     "stem": "prototyp",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4794,
+      "novelty": 0.4485,
+      "tether": 0.5379
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "precursors",
+       "preliminary",
+       "prefabricated",
+       "maneuverability"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "drivetrain",
+     "stem": "drivetrain",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5831,
+      "novelty": 0.4559,
+      "tether": 0.5231
+     },
+     "B": {
+      "terms": [
+       "wheelbase",
+       "automotive",
+       "transmissions",
+       "motor",
+       "motorised"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "precursor",
+     "stem": "precursor",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "139 BC",
+       "1997 Tour de France, Prologue to Stage 10",
+       "1391",
+       "139 (number)",
+       "1978 Tour de France, Prologue to Stage 11"
+      ],
+      "junk_dropped": [
+       "139 BC",
+       "1997 Tour de France, Prologue to Stage 10",
+       "1391",
+       "139 (number)",
+       "1978 Tour de France, Prologue to Stage 11"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5455,
+      "novelty": 0.4707,
+      "tether": 0.5046
+     },
+     "B": {
+      "terms": [
+       "rearview",
+       "preliminary",
+       "prototype",
+       "prototypes",
+       "prototypical"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "infiniti",
+     "stem": "infin",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1995 Infiniti Open",
+       "1997 Infiniti Open",
+       "1996 Infiniti Open",
+       "2004 Infiniti Pro Series",
+       "2005 Infiniti Pro Series"
+      ],
+      "junk_dropped": [
+       "1995 Infiniti Open",
+       "1997 Infiniti Open",
+       "1996 Infiniti Open",
+       "2004 Infiniti Pro Series",
+       "2005 Infiniti Pro Series"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.7546,
+      "novelty": 0.3602,
+      "tether": 0.5831
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "camry",
+       "quattro",
+       "automaker",
+       "sedan"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "acura",
+     "stem": "acura",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2002 Acura Classic",
+       "2006 Acura Classic",
+       "2007 Acura Classic",
+       "2003 Acura Classic",
+       "1997 Acura Classic"
+      ],
+      "junk_dropped": [
+       "2002 Acura Classic",
+       "2006 Acura Classic",
+       "2007 Acura Classic",
+       "2003 Acura Classic",
+       "1997 Acura Classic"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.8696,
+      "novelty": 0.3567,
+      "tether": 0.6141
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "radiator",
+       "infotainment",
+       "rearview",
+       "nhtsa"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "delorean",
+     "stem": "delorean",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1988 Delores"
+      ],
+      "junk_dropped": [
+       "1988 Delores"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5329,
+      "novelty": 0.4431,
+      "tether": 0.5292
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "vehicular",
+       "automotive",
+       "radiator",
+       "wheelbase"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "automaker",
+     "stem": "automak",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4987,
+      "novelty": 0.3861,
+      "tether": 0.6083
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "infotainment",
+       "conforms",
+       "marque",
+       "oems"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "marque",
+     "stem": "marqu",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4826,
+      "novelty": 0.444,
+      "tether": 0.5469
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "sumitomo",
+       "suited",
+       "prototypical",
+       "strut"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "null/ALL",
+   "group": "ALL",
+   "voids": [
+    "anymore",
+    "postseason",
+    "ongoing",
+    "survivors",
+    "fantasies",
+    "suffix",
+    "novellas",
+    "enthusiasts"
+   ],
+   "arms": [
+    {
+     "void": "anymore",
+     "stem": "anymor",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5361,
+      "novelty": 0.4725,
+      "tether": 0.5194
+     },
+     "B": {
+      "terms": [
+       "rearview",
+       "infotainment",
+       "maneuverability",
+       "precursors",
+       "retrofitted"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "postseason",
+     "stem": "postseason",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1997 Major League Baseball postseason",
+       "2010 Major League Baseball postseason",
+       "2002 Major League Baseball postseason",
+       "2009 Major League Baseball postseason"
+      ],
+      "junk_dropped": [
+       "1997 Major League Baseball postseason",
+       "2010 Major League Baseball postseason",
+       "2002 Major League Baseball postseason",
+       "2009 Major League Baseball postseason"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.8319,
+      "novelty": 0.5787,
+      "tether": 0.4035
+     },
+     "B": {
+      "terms": [
+       "rearview",
+       "infotainment",
+       "automotive",
+       "oems",
+       "drivetrain"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "ongoing",
+     "stem": "ongo",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4426,
+      "novelty": 0.4578,
+      "tether": 0.5327
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "rearview",
+       "automotive",
+       "maneuverability",
+       "drivetrain"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "survivors",
+     "stem": "survivor",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4788,
+      "novelty": 0.55,
+      "tether": 0.4394
+     },
+     "B": {
+      "terms": [
+       "rearview",
+       "automotive",
+       "infotainment",
+       "drivetrain",
+       "transmissions"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "fantasies",
+     "stem": "fantasi",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4427,
+      "novelty": 0.4714,
+      "tether": 0.5195
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "automotive",
+       "maneuverability",
+       "drivetrain",
+       "suvs"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "suffix",
+     "stem": "suffix",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       ".name",
+       "(K)now Name"
+      ],
+      "junk_dropped": [
+       ".name",
+       "(K)now Name"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5363,
+      "novelty": 0.5101,
+      "tether": 0.4652
+     },
+     "B": {
+      "terms": [
+       "rearview",
+       "precursors",
+       "marque",
+       "preceding",
+       "prefect"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "novellas",
+     "stem": "novella",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.6032,
+      "novelty": 0.6737,
+      "tether": 0.3122
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "automotive",
+       "wheelbase",
+       "prototypical",
+       "drivetrain"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "enthusiasts",
+     "stem": "enthusiast",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4305,
+      "novelty": 0.4434,
+      "tether": 0.5476
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "rearview",
+       "automotive",
+       "conforms",
+       "maneuverability"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "gap->local",
+   "group": "F",
+   "voids": [
+    "paperwork",
+    "organize",
+    "extras",
+    "amendments",
+    "resigning",
+    "necessity",
+    "organiser",
+    "invitations"
+   ],
+   "arms": [
+    {
+     "void": "paperwork",
+     "stem": "paperwork",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5444,
+      "novelty": 0.4693,
+      "tether": 0.5187
+     },
+     "B": {
+      "terms": [
+       "precursors",
+       "preliminary",
+       "components",
+       "prefect",
+       "preceding"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "organize",
+     "stem": "organ",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "13 Organisé"
+      ],
+      "junk_dropped": [
+       "13 Organisé"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5665,
+      "novelty": 0.473,
+      "tether": 0.5117
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "rearview",
+       "automotive",
+       "readying",
+       "fitting"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "extras",
+     "stem": "extra",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1 Extra"
+      ],
+      "junk_dropped": [
+       "1 Extra"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4941,
+      "novelty": 0.4572,
+      "tether": 0.5165
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "rearview",
+       "clutches",
+       "components",
+       "aftermarket"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "amendments",
+     "stem": "amend",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.661,
+      "novelty": 0.5372,
+      "tether": 0.4453
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "conforms",
+       "maneuverability",
+       "nhtsa",
+       "conforming"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "resigning",
+     "stem": "resign",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "\"I Quit\" match"
+      ],
+      "junk_dropped": [
+       "\"I Quit\" match"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5611,
+      "novelty": 0.505,
+      "tether": 0.4805
+     },
+     "B": {
+      "terms": [
+       "suited",
+       "conforms",
+       "accord",
+       "automotive",
+       "conforming"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "necessity",
+     "stem": "necess",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.47,
+      "novelty": 0.5594,
+      "tether": 0.4246
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "infotainment",
+       "maneuverability",
+       "suvs",
+       "oems"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "organiser",
+     "stem": "organis",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.6565,
+      "novelty": 0.6672,
+      "tether": 0.3198
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "infotainment",
+       "marque",
+       "oems",
+       "sedans"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "invitations",
+     "stem": "invit",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5124,
+      "novelty": 0.4567,
+      "tether": 0.53
+     },
+     "B": {
+      "terms": [
+       "suited",
+       "infotainment",
+       "fitting",
+       "readying",
+       "suiting"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "gap->frontier",
+   "group": "L",
+   "voids": [
+    "regains",
+    "elspeth",
+    "broadside",
+    "recaptured",
+    "revisiting",
+    "drivetrain",
+    "stares",
+    "retrospect"
+   ],
+   "arms": [
+    {
+     "void": "regains",
+     "stem": "regain",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "'Til I Gain Control Again",
+       "(Want You) Back in My Life Again",
+       "... I Lose Myself",
+       "...After the Phantoms of Your Former Self",
+       "(Every Time I Turn Around) Back in Love Again"
+      ],
+      "junk_dropped": [
+       "'Til I Gain Control Again",
+       "(Want You) Back in My Life Again",
+       "... I Lose Myself",
+       "...After the Phantoms of Your Former Self",
+       "(Every Time I Turn Around) Back in Love Again"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6253,
+      "novelty": 0.5042,
+      "tether": 0.4643
+     },
+     "B": {
+      "terms": [
+       "triumph",
+       "reimagining",
+       "reimagined",
+       "revs",
+       "restored"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "elspeth",
+     "stem": "elspeth",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4129,
+      "novelty": 0.4341,
+      "tether": 0.5582
+     },
+     "B": {
+      "terms": [
+       "wheelbase",
+       "automotive",
+       "drivetrain",
+       "retrofitted",
+       "marque"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "broadside",
+     "stem": "broadsid",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5086,
+      "novelty": 0.6097,
+      "tether": 0.3771
+     },
+     "B": {
+      "terms": [
+       "wheelbase",
+       "maneuverability",
+       "retrofitted",
+       "porte",
+       "strut"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "recaptured",
+     "stem": "recaptur",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "'Til I Gain Control Again"
+      ],
+      "junk_dropped": [
+       "'Til I Gain Control Again"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.487,
+      "novelty": 0.4493,
+      "tether": 0.5284
+     },
+     "B": {
+      "terms": [
+       "triumph",
+       "rearview",
+       "wraparound",
+       "reimagined",
+       "overtake"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "revisiting",
+     "stem": "revisit",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4283,
+      "novelty": 0.4249,
+      "tether": 0.5634
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "infotainment",
+       "rearview",
+       "triumph",
+       "retrofitted"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "drivetrain",
+     "stem": "drivetrain",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5831,
+      "novelty": 0.4559,
+      "tether": 0.5231
+     },
+     "B": {
+      "terms": [
+       "wheelbase",
+       "automotive",
+       "transmissions",
+       "motor",
+       "motorised"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "stares",
+     "stem": "stare",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5385,
+      "novelty": 0.472,
+      "tether": 0.5099
+     },
+     "B": {
+      "terms": [
+       "rearview",
+       "automotive",
+       "wheelbase",
+       "drivetrain",
+       "marque"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "retrospect",
+     "stem": "retrospect",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5064,
+      "novelty": 0.4896,
+      "tether": 0.4903
+     },
+     "B": {
+      "terms": [
+       "rearview",
+       "retrofitted",
+       "precursors",
+       "precursor",
+       "prologue"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "centroid_surface",
+   "group": "ALL",
+   "voids": [
+    "prototypes",
+    "precursor",
+    "drivetrain",
+    "acura",
+    "infiniti",
+    "delorean",
+    "automaker",
+    "aftermarket"
+   ],
+   "arms": [
+    {
+     "void": "prototypes",
+     "stem": "prototyp",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4794,
+      "novelty": 0.4485,
+      "tether": 0.5379
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "precursors",
+       "preliminary",
+       "prefabricated",
+       "maneuverability"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "precursor",
+     "stem": "precursor",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "139 BC",
+       "1997 Tour de France, Prologue to Stage 10",
+       "1391",
+       "139 (number)",
+       "1978 Tour de France, Prologue to Stage 11"
+      ],
+      "junk_dropped": [
+       "139 BC",
+       "1997 Tour de France, Prologue to Stage 10",
+       "1391",
+       "139 (number)",
+       "1978 Tour de France, Prologue to Stage 11"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5455,
+      "novelty": 0.4707,
+      "tether": 0.5046
+     },
+     "B": {
+      "terms": [
+       "rearview",
+       "preliminary",
+       "prototype",
+       "prototypes",
+       "prototypical"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "drivetrain",
+     "stem": "drivetrain",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5831,
+      "novelty": 0.4559,
+      "tether": 0.5231
+     },
+     "B": {
+      "terms": [
+       "wheelbase",
+       "automotive",
+       "transmissions",
+       "motor",
+       "motorised"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "acura",
+     "stem": "acura",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2002 Acura Classic",
+       "2006 Acura Classic",
+       "2007 Acura Classic",
+       "2003 Acura Classic",
+       "1997 Acura Classic"
+      ],
+      "junk_dropped": [
+       "2002 Acura Classic",
+       "2006 Acura Classic",
+       "2007 Acura Classic",
+       "2003 Acura Classic",
+       "1997 Acura Classic"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.8696,
+      "novelty": 0.3567,
+      "tether": 0.6141
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "radiator",
+       "infotainment",
+       "rearview",
+       "nhtsa"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "infiniti",
+     "stem": "infin",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1995 Infiniti Open",
+       "1997 Infiniti Open",
+       "1996 Infiniti Open",
+       "2004 Infiniti Pro Series",
+       "2005 Infiniti Pro Series"
+      ],
+      "junk_dropped": [
+       "1995 Infiniti Open",
+       "1997 Infiniti Open",
+       "1996 Infiniti Open",
+       "2004 Infiniti Pro Series",
+       "2005 Infiniti Pro Series"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.7546,
+      "novelty": 0.3602,
+      "tether": 0.5831
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "camry",
+       "quattro",
+       "automaker",
+       "sedan"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "delorean",
+     "stem": "delorean",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1988 Delores"
+      ],
+      "junk_dropped": [
+       "1988 Delores"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5329,
+      "novelty": 0.4431,
+      "tether": 0.5292
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "vehicular",
+       "automotive",
+       "radiator",
+       "wheelbase"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "automaker",
+     "stem": "automak",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4987,
+      "novelty": 0.3861,
+      "tether": 0.6083
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "infotainment",
+       "conforms",
+       "marque",
+       "oems"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "aftermarket",
+     "stem": "aftermarket",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4671,
+      "novelty": 0.4686,
+      "tether": 0.5235
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "infotainment",
+       "wheelbase",
+       "conforms",
+       "oems"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "lexcross/F",
+   "group": "F",
+   "voids": [
+    "one",
+    "aerodynamic",
+    "side",
+    "extensions",
+    "comeback",
+    "absence",
+    "power",
+    "film"
+   ],
+   "arms": [
+    {
+     "void": "one",
+     "stem": "on",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4829,
+      "novelty": 0.462,
+      "tether": 0.5302
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "automotive",
+       "rearview",
+       "maneuverability",
+       "drivetrain"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "aerodynamic",
+     "stem": "aerodynam",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "(Wish I Could Fly Like) Superman",
+       "182nd Airlift Wing",
+       "-drag"
+      ],
+      "junk_dropped": [
+       "(Wish I Could Fly Like) Superman",
+       "182nd Airlift Wing",
+       "-drag"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4345,
+      "novelty": 0.4999,
+      "tether": 0.4602
+     },
+     "B": {
+      "terms": [
+       "glides",
+       "wheelbase",
+       "automotive",
+       "radiator",
+       "downforce"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "side",
+     "stem": "side",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2-sided"
+      ],
+      "junk_dropped": [
+       "2-sided"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6683,
+      "novelty": 0.4942,
+      "tether": 0.486
+     },
+     "B": {
+      "terms": [
+       "rearview",
+       "wheelbase",
+       "infotainment",
+       "radiator",
+       "porte"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "extensions",
+     "stem": "extens",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2006 WWE brand extension draft"
+      ],
+      "junk_dropped": [
+       "2006 WWE brand extension draft"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4608,
+      "novelty": 0.4471,
+      "tether": 0.5144
+     },
+     "B": {
+      "terms": [
+       "wheelbase",
+       "infotainment",
+       "porte",
+       "oems",
+       "aftermarket"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "comeback",
+     "stem": "comeback",
+     "A": {
+      "terms": [
+       "financial failure"
+      ],
+      "terms_raw": [
+       "'68 Comeback",
+       "(Want You) Back in My Life Again",
+       "100 Bullets Back",
+       "(Opportunity Knocks But Once) Snatch and Grab It",
+       "financial failure"
+      ],
+      "junk_dropped": [
+       "'68 Comeback",
+       "(Want You) Back in My Life Again",
+       "100 Bullets Back",
+       "(Opportunity Knocks But Once) Snatch and Grab It"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5502,
+      "novelty": 0.4539,
+      "tether": 0.5089
+     },
+     "B": {
+      "terms": [
+       "rearview",
+       "triumph",
+       "overtake",
+       "retro",
+       "recalling"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.636
+    },
+    {
+     "void": "absence",
+     "stem": "absenc",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.6268,
+      "novelty": 0.4665,
+      "tether": 0.522
+     },
+     "B": {
+      "terms": [
+       "rearview",
+       "infotainment",
+       "preceding",
+       "aftermarket",
+       "prefect"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "power",
+     "stem": "power",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5423,
+      "novelty": 0.5162,
+      "tether": 0.4675
+     },
+     "B": {
+      "terms": [
+       "automotive",
+       "vehicular",
+       "infotainment",
+       "rearview",
+       "drivetrain"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "film",
+     "stem": "film",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5154,
+      "novelty": 0.6031,
+      "tether": 0.3751
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "automotive",
+       "rearview",
+       "precursors",
+       "preliminary"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "lexcross/L",
+   "group": "L",
+   "voids": [
+    "later",
+    "latest",
+    "pending",
+    "issues",
+    "discusses",
+    "characterized",
+    "intended",
+    "prior"
+   ],
+   "arms": [
+    {
+     "void": "later",
+     "stem": "later",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4287,
+      "novelty": 0.4235,
+      "tether": 0.5686
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "automotive",
+       "rearview",
+       "maneuverability",
+       "drivetrain"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "latest",
+     "stem": "latest",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4513,
+      "novelty": 0.4392,
+      "tether": 0.5506
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "automotive",
+       "rearview",
+       "suvs",
+       "maneuverability"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "pending",
+     "stem": "pend",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5055,
+      "novelty": 0.4885,
+      "tether": 0.5004
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "rearview",
+       "automotive",
+       "maneuverability",
+       "preliminary"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "issues",
+     "stem": "issu",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.533,
+      "novelty": 0.5,
+      "tether": 0.4817
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "automotive",
+       "nhtsa",
+       "precursors",
+       "maneuverability"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "discusses",
+     "stem": "discuss",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4541,
+      "novelty": 0.4679,
+      "tether": 0.5239
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "rearview",
+       "maneuverability",
+       "precursors",
+       "drivetrain"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "characterized",
+     "stem": "character",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4757,
+      "novelty": 0.5121,
+      "tether": 0.4781
+     },
+     "B": {
+      "terms": [
+       "suited",
+       "automotive",
+       "rearview",
+       "conforms",
+       "maneuverability"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "intended",
+     "stem": "intend",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4391,
+      "novelty": 0.4519,
+      "tether": 0.5391
+     },
+     "B": {
+      "terms": [
+       "infotainment",
+       "automotive",
+       "conforms",
+       "rearview",
+       "maneuverability"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "prior",
+     "stem": "prior",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5374,
+      "novelty": 0.5842,
+      "tether": 0.4004
+     },
+     "B": {
+      "terms": [
+       "rearview",
+       "infotainment",
+       "precursors",
+       "preliminary",
+       "retrofitted"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  }
+ ],
+ "crawl": {
+  "junk": {
+   "dropped": 186,
+   "seen": 195
+  },
+  "leg_sync": {
+   "null/F": 0.6667,
+   "lexcross/F": 0.636
+  },
+  "body_median": 0.636,
+  "arm_jaccard_median": 0.0,
+  "shuffle_null": {
+   "null_median": 0.6149,
+   "margin": 0.0211,
+   "n_obs": 3,
+   "n_null": 405
+  },
+  "leg_jaccard": {
+   "median": 0.0,
+   "pairs_ge_025": [
+    {
+     "a": "logos_v10/ALL",
+     "b": "logos_v10/F",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "logos_v9/ALL",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "logos_v9/F",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "logos_v9/L",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "logos_v9/ALL",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "logos_v9/F",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "logos_v9/L",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "said/L",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v9/ALL",
+     "b": "logos_v9/F",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v9/ALL",
+     "b": "logos_v9/L",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v9/F",
+     "b": "logos_v9/L",
+     "j": 1.0
+    },
+    {
+     "a": "said/ALL",
+     "b": "said/F",
+     "j": 1.0
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v10/ALL",
+     "j": 0.7778
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v10/F",
+     "j": 0.7778
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v10/L",
+     "j": 0.7778
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v9/ALL",
+     "j": 0.7778
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v9/F",
+     "j": 0.7778
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v9/L",
+     "j": 0.7778
+    },
+    {
+     "a": "centroid_surface",
+     "b": "said/ALL",
+     "j": 0.7778
+    },
+    {
+     "a": "centroid_surface",
+     "b": "said/F",
+     "j": 0.7778
+    },
+    {
+     "a": "centroid_surface",
+     "b": "said/L",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "logos_v10/L",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "said/ALL",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "said/F",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "said/L",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "logos_v10/L",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "said/ALL",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "said/F",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "said/L",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "logos_v9/ALL",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "logos_v9/F",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "logos_v9/L",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "said/ALL",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "said/F",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v9/ALL",
+     "b": "said/ALL",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v9/ALL",
+     "b": "said/F",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v9/ALL",
+     "b": "said/L",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v9/F",
+     "b": "said/ALL",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v9/F",
+     "b": "said/F",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v9/F",
+     "b": "said/L",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v9/L",
+     "b": "said/ALL",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v9/L",
+     "b": "said/F",
+     "j": 0.7778
+    },
+    {
+     "a": "logos_v9/L",
+     "b": "said/L",
+     "j": 0.7778
+    },
+    {
+     "a": "said/ALL",
+     "b": "said/L",
+     "j": 0.7778
+    },
+    {
+     "a": "said/F",
+     "b": "said/L",
+     "j": 0.7778
+    }
+   ]
+  },
+  "conseq_field": {
+   "centroid_surface": 0.9985,
+   "gap->frontier": 0.9794,
+   "gap->local": 0.9831,
+   "lexcross/F": 0.9873,
+   "lexcross/L": 0.9845,
+   "logos_v10/ALL": 0.9982,
+   "logos_v10/F": 0.9982,
+   "logos_v10/L": 0.9975,
+   "logos_v9/ALL": 0.9982,
+   "logos_v9/F": 0.9982,
+   "logos_v9/L": 0.9982,
+   "null/ALL": 0.99,
+   "null/F": 0.9851,
+   "null/L": 0.9861,
+   "said/ALL": 0.9972,
+   "said/F": 0.9972,
+   "said/L": 0.9975
+  },
+  "shared_voids": {
+   "drivetrain": [
+    "centroid_surface",
+    "gap->frontier",
+    "logos_v10/ALL",
+    "logos_v10/F",
+    "logos_v10/L",
+    "logos_v9/ALL",
+    "logos_v9/F",
+    "logos_v9/L",
+    "said/ALL",
+    "said/F",
+    "said/L"
+   ],
+   "infin": [
+    "centroid_surface",
+    "logos_v10/ALL",
+    "logos_v10/F",
+    "logos_v10/L",
+    "logos_v9/ALL",
+    "logos_v9/F",
+    "logos_v9/L",
+    "said/ALL",
+    "said/F",
+    "said/L"
+   ],
+   "automak": [
+    "centroid_surface",
+    "logos_v10/ALL",
+    "logos_v10/F",
+    "logos_v10/L",
+    "logos_v9/ALL",
+    "logos_v9/F",
+    "logos_v9/L",
+    "said/ALL",
+    "said/F",
+    "said/L"
+   ],
+   "prototyp": [
+    "centroid_surface",
+    "logos_v10/ALL",
+    "logos_v10/F",
+    "logos_v10/L",
+    "logos_v9/ALL",
+    "logos_v9/F",
+    "logos_v9/L",
+    "said/ALL",
+    "said/F",
+    "said/L"
+   ],
+   "acura": [
+    "centroid_surface",
+    "logos_v10/ALL",
+    "logos_v10/F",
+    "logos_v10/L",
+    "logos_v9/ALL",
+    "logos_v9/F",
+    "logos_v9/L",
+    "said/ALL",
+    "said/F",
+    "said/L"
+   ],
+   "delorean": [
+    "centroid_surface",
+    "logos_v10/ALL",
+    "logos_v10/F",
+    "logos_v10/L",
+    "logos_v9/ALL",
+    "logos_v9/F",
+    "logos_v9/L",
+    "said/ALL",
+    "said/F",
+    "said/L"
+   ],
+   "priu": [
+    "said/ALL",
+    "said/F"
+   ],
+   "precursor": [
+    "centroid_surface",
+    "logos_v10/ALL",
+    "logos_v10/F",
+    "logos_v10/L",
+    "logos_v9/ALL",
+    "logos_v9/F",
+    "logos_v9/L",
+    "said/ALL",
+    "said/F",
+    "said/L"
+   ],
+   "marqu": [
+    "logos_v10/ALL",
+    "logos_v10/F",
+    "logos_v9/ALL",
+    "logos_v9/F",
+    "logos_v9/L"
+   ],
+   "infotain": [
+    "logos_v10/L",
+    "said/L"
+   ]
+  }
+ },
+ "target_sightings": [
+  {
+   "target": "specifications",
+   "said_by": 2,
+   "said_models": [
+    "claude",
+    "deepseek"
+   ],
+   "in_voids": [],
+   "as_consequence": [],
+   "synonyms": [],
+   "concept_present_via_synonym": 0,
+   "synonym_hits": {}
+  },
+  {
+   "target": "performance",
+   "said_by": 10,
+   "said_models": [
+    "chatgpt",
+    "claude",
+    "deepseek",
+    "gemini",
+    "grok",
+    "hermes",
+    "llama_8b",
+    "mistral_22b",
+    "mistral_7b",
+    "qwen_14b"
+   ],
+   "in_voids": [],
+   "as_consequence": [],
+   "synonyms": [],
+   "concept_present_via_synonym": 0,
+   "synonym_hits": {}
+  },
+  {
+   "target": "handling",
+   "said_by": 5,
+   "said_models": [
+    "gemini",
+    "hermes",
+    "mistral_22b",
+    "mistral_7b",
+    "qwen_14b"
+   ],
+   "in_voids": [],
+   "as_consequence": [],
+   "synonyms": [],
+   "concept_present_via_synonym": 0,
+   "synonym_hits": {}
+  },
+  {
+   "target": "efficiency",
+   "said_by": 8,
+   "said_models": [
+    "claude",
+    "deepseek",
+    "gemini",
+    "grok",
+    "llama_8b",
+    "mistral_22b",
+    "mistral_7b",
+    "qwen_14b"
+   ],
+   "in_voids": [],
+   "as_consequence": [],
+   "synonyms": [],
+   "concept_present_via_synonym": 0,
+   "synonym_hits": {}
+  },
+  {
+   "target": "price",
+   "said_by": 1,
+   "said_models": [
+    "mistral_7b"
+   ],
+   "in_voids": [],
+   "as_consequence": [],
+   "synonyms": [
+    "cost",
+    "msrp",
+    "dollar",
+    "price"
+   ],
+   "concept_present_via_synonym": 1,
+   "synonym_hits": {
+    "mistral_7b": [
+     "price"
+    ]
+   }
+  },
+  {
+   "target": "availability",
+   "said_by": 2,
+   "said_models": [
+    "hermes",
+    "llama_8b"
+   ],
+   "in_voids": [],
+   "as_consequence": [],
+   "synonyms": [
+    "releas",
+    "launch",
+    "preorder",
+    "arriv"
+   ],
+   "concept_present_via_synonym": 7,
+   "synonym_hits": {
+    "chatgpt": [
+     "launch"
+    ],
+    "claude": [
+     "releas"
+    ],
+    "gemini": [
+     "launch",
+     "releas"
+    ],
+    "grok": [
+     "releas"
+    ],
+    "llama_8b": [
+     "releas"
+    ],
+    "mistral_22b": [
+     "releas"
+    ],
+    "mistral_7b": [
+     "releas"
+    ]
+   }
+  }
+ ],
+ "result_sha": "b8a23c02ac7e"
+}

@@ -1,0 +1,392 @@
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+==============================================================================
+CENTIPEDE v0.2  story=prelude_2026  (5 frontier / 5 local)
+PROVENANCE harness=5d49bf428c5a corpus=074ad9dbfe4c anchor=817b071d2e0e
+rulers: segments/armB=global_vocab_clean(50K) armA=raycast_vocab(253K)
+params: K=8 conv_thresh=0.45 conv_min=2 depth_frac=0.8
+declared: prompt_mode=tc excluded=none junk_rule=[leading non-letter | ellipsis | 3+ digit run | >4 tokens]
+declared: armb_mode=ray armb_lambda=2.0 armA_depths=2.0/3.0/4.0
+ANCHOR (1680 ch) CONTAINS: ['efficiency', 'handling', 'performance', 'price', 'specifications']
+ANCHOR EMBED: 1734 ch / 250 words -- within bge window; sentence lattice covers the full text either way
+
+SAID CENSUS (stem match):
+  specifications F:claude,deepseek                    L:-
+  performance  F:chatgpt,claude,deepseek,gemini,grok L:hermes,llama_8b,mistral_22b,mistral_7b,qwen_14b
+  handling     F:gemini                             L:hermes,mistral_22b,mistral_7b,qwen_14b
+  efficiency   F:claude,deepseek,gemini,grok        L:llama_8b,mistral_22b,mistral_7b,qwen_14b
+  price        F:-                                  L:mistral_7b
+  availability F:-                                  L:hermes,llama_8b
+
+SEGMENTS (17 legs) + ARMS (A=consequence raycast, junk-filtered; B=aimed convergence):
+
+─ said/F             voids: drivetrain, infiniti, automaker, prototypes, acura, delorean, prius, precursor
+    drivetrain         A[DISCOVERY density=0.58 novelty=0.46 tether=0.52]: -
+                       B          : wheelbase, automotive, transmissions, motor, motorised   | jacc=nan cos=nan
+    infiniti           A[DISCOVERY density=0.75 novelty=0.36 tether=0.58]: -   (junk dropped: 1995 Infiniti Open, 1997 Infiniti Open, 1996 Infiniti Open, 2004 Infiniti Pro Series, 2005 Infiniti Pro Series)
+                       B          : infotainment, camry, quattro, automaker, sedan   | jacc=nan cos=nan
+    automaker          A[DISCOVERY density=0.50 novelty=0.39 tether=0.61]: -
+                       B          : automotive, infotainment, conforms, marque, oems   | jacc=nan cos=nan
+    prototypes         A[DISCOVERY density=0.48 novelty=0.45 tether=0.54]: -
+                       B          : automotive, precursors, preliminary, prefabricated, maneuverability   | jacc=nan cos=nan
+    acura              A[DISCOVERY density=0.87 novelty=0.36 tether=0.61]: -   (junk dropped: 2002 Acura Classic, 2006 Acura Classic, 2007 Acura Classic, 2003 Acura Classic, 1997 Acura Classic)
+                       B          : automotive, radiator, infotainment, rearview, nhtsa   | jacc=nan cos=nan
+    delorean           A[DISCOVERY density=0.53 novelty=0.44 tether=0.53]: -   (junk dropped: 1988 Delores)
+                       B          : infotainment, vehicular, automotive, radiator, wheelbase   | jacc=nan cos=nan
+    prius              A[DISCOVERY density=0.48 novelty=0.53 tether=0.45]: -
+                       B          : vehicular, automotive, auto, infotainment, camry   | jacc=nan cos=nan
+    precursor          A[DISCOVERY density=0.55 novelty=0.47 tether=0.50]: -   (junk dropped: 139 BC, 1997 Tour de France, Prologue to Stage 10, 1391, 139 (number), 1978 Tour de France, Prologue to Stage 11)
+                       B          : rearview, preliminary, prototype, prototypes, prototypical   | jacc=nan cos=nan
+
+─ logos_v9/F         voids: drivetrain, precursor, prototypes, acura, infiniti, delorean, automaker, marque
+    drivetrain         A[DISCOVERY density=0.58 novelty=0.46 tether=0.52]: -
+                       B          : wheelbase, automotive, transmissions, motor, motorised   | jacc=nan cos=nan
+    precursor          A[DISCOVERY density=0.55 novelty=0.47 tether=0.50]: -   (junk dropped: 139 BC, 1997 Tour de France, Prologue to Stage 10, 1391, 139 (number), 1978 Tour de France, Prologue to Stage 11)
+                       B          : rearview, preliminary, prototype, prototypes, prototypical   | jacc=nan cos=nan
+    prototypes         A[DISCOVERY density=0.48 novelty=0.45 tether=0.54]: -
+                       B          : automotive, precursors, preliminary, prefabricated, maneuverability   | jacc=nan cos=nan
+    acura              A[DISCOVERY density=0.87 novelty=0.36 tether=0.61]: -   (junk dropped: 2002 Acura Classic, 2006 Acura Classic, 2007 Acura Classic, 2003 Acura Classic, 1997 Acura Classic)
+                       B          : automotive, radiator, infotainment, rearview, nhtsa   | jacc=nan cos=nan
+    infiniti           A[DISCOVERY density=0.75 novelty=0.36 tether=0.58]: -   (junk dropped: 1995 Infiniti Open, 1997 Infiniti Open, 1996 Infiniti Open, 2004 Infiniti Pro Series, 2005 Infiniti Pro Series)
+                       B          : infotainment, camry, quattro, automaker, sedan   | jacc=nan cos=nan
+    delorean           A[DISCOVERY density=0.53 novelty=0.44 tether=0.53]: -   (junk dropped: 1988 Delores)
+                       B          : infotainment, vehicular, automotive, radiator, wheelbase   | jacc=nan cos=nan
+    automaker          A[DISCOVERY density=0.50 novelty=0.39 tether=0.61]: -
+                       B          : automotive, infotainment, conforms, marque, oems   | jacc=nan cos=nan
+    marque             A[DISCOVERY density=0.48 novelty=0.44 tether=0.55]: -
+                       B          : automotive, sumitomo, suited, prototypical, strut   | jacc=nan cos=nan
+
+─ logos_v10/F        voids: drivetrain, prototypes, precursor, infiniti, acura, automaker, delorean, marque
+    drivetrain         A[DISCOVERY density=0.58 novelty=0.46 tether=0.52]: -
+                       B          : wheelbase, automotive, transmissions, motor, motorised   | jacc=nan cos=nan
+    prototypes         A[DISCOVERY density=0.48 novelty=0.45 tether=0.54]: -
+                       B          : automotive, precursors, preliminary, prefabricated, maneuverability   | jacc=nan cos=nan
+    precursor          A[DISCOVERY density=0.55 novelty=0.47 tether=0.50]: -   (junk dropped: 139 BC, 1997 Tour de France, Prologue to Stage 10, 1391, 139 (number), 1978 Tour de France, Prologue to Stage 11)
+                       B          : rearview, preliminary, prototype, prototypes, prototypical   | jacc=nan cos=nan
+    infiniti           A[DISCOVERY density=0.75 novelty=0.36 tether=0.58]: -   (junk dropped: 1995 Infiniti Open, 1997 Infiniti Open, 1996 Infiniti Open, 2004 Infiniti Pro Series, 2005 Infiniti Pro Series)
+                       B          : infotainment, camry, quattro, automaker, sedan   | jacc=nan cos=nan
+    acura              A[DISCOVERY density=0.87 novelty=0.36 tether=0.61]: -   (junk dropped: 2002 Acura Classic, 2006 Acura Classic, 2007 Acura Classic, 2003 Acura Classic, 1997 Acura Classic)
+                       B          : automotive, radiator, infotainment, rearview, nhtsa   | jacc=nan cos=nan
+    automaker          A[DISCOVERY density=0.50 novelty=0.39 tether=0.61]: -
+                       B          : automotive, infotainment, conforms, marque, oems   | jacc=nan cos=nan
+    delorean           A[DISCOVERY density=0.53 novelty=0.44 tether=0.53]: -   (junk dropped: 1988 Delores)
+                       B          : infotainment, vehicular, automotive, radiator, wheelbase   | jacc=nan cos=nan
+    marque             A[DISCOVERY density=0.48 novelty=0.44 tether=0.55]: -
+                       B          : automotive, sumitomo, suited, prototypical, strut   | jacc=nan cos=nan
+
+─ null/F             voids: debuts, manufacturing, rollout, workhorse, inauguration, maneuverability, smoothness, electromechanical
+    debuts             A[DISCOVERY density=0.49 novelty=0.42 tether=0.57]: -
+                       B          : infotainment, rearview, automotive, prototypes, precursors   | jacc=nan cos=nan
+    manufacturing      A[DISCOVERY density=0.80 novelty=0.51 tether=0.47]: manufacturing breakdown, manufacturing default, manufacturing failure, systemic manufacturing breakdown, manufacturing shock
+                       B          : automotive, oems, automakers, automaker, drivetrain   | jacc=0.00 cos=0.73
+    rollout            A[DISCOVERY density=0.76 novelty=0.52 tether=0.47]: -
+                       B          : conforms, infotainment, automotive, accord, maneuverability   | jacc=nan cos=nan
+    workhorse          A[DISCOVERY density=0.52 novelty=0.53 tether=0.44]: -
+                       B          : automotive, wheelbase, checkered, triumph, automaker   | jacc=nan cos=nan
+    inauguration       A[DISCOVERY density=0.63 novelty=0.55 tether=0.43]: -
+                       B          : accord, precursors, preliminary, readying, limousine   | jacc=nan cos=nan
+    maneuverability    A[DISCOVERY density=0.44 novelty=0.53 tether=0.44]: -
+                       B          : glides, automotive, wheelbase, vehicular, cornering   | jacc=nan cos=nan
+    smoothness         A[DISCOVERY density=0.58 novelty=0.48 tether=0.50]: -
+                       B          : glides, automotive, wheelbase, maneuverability, camber   | jacc=nan cos=nan
+    electromechanical  A[DISCOVERY density=0.71 novelty=0.54 tether=0.41]: systemic electrical grid paralysis, prolonged electrical grid paralysis, systemic electrical grid breakdown   (junk dropped: 10,000 Volts, 15 kV AC railway electrification)
+                       B          : automotive, vehicular, motor, drivetrain, motorised   | jacc=0.00 cos=0.60
+
+─ said/L             voids: prototypes, infiniti, acura, drivetrain, precursor, automaker, delorean, infotainment
+    prototypes         A[DISCOVERY density=0.48 novelty=0.45 tether=0.54]: -
+                       B          : automotive, precursors, preliminary, prefabricated, maneuverability   | jacc=nan cos=nan
+    infiniti           A[DISCOVERY density=0.75 novelty=0.36 tether=0.58]: -   (junk dropped: 1995 Infiniti Open, 1997 Infiniti Open, 1996 Infiniti Open, 2004 Infiniti Pro Series, 2005 Infiniti Pro Series)
+                       B          : infotainment, camry, quattro, automaker, sedan   | jacc=nan cos=nan
+    acura              A[DISCOVERY density=0.87 novelty=0.36 tether=0.61]: -   (junk dropped: 2002 Acura Classic, 2006 Acura Classic, 2007 Acura Classic, 2003 Acura Classic, 1997 Acura Classic)
+                       B          : automotive, radiator, infotainment, rearview, nhtsa   | jacc=nan cos=nan
+    drivetrain         A[DISCOVERY density=0.58 novelty=0.46 tether=0.52]: -
+                       B          : wheelbase, automotive, transmissions, motor, motorised   | jacc=nan cos=nan
+    precursor          A[DISCOVERY density=0.55 novelty=0.47 tether=0.50]: -   (junk dropped: 139 BC, 1997 Tour de France, Prologue to Stage 10, 1391, 139 (number), 1978 Tour de France, Prologue to Stage 11)
+                       B          : rearview, preliminary, prototype, prototypes, prototypical   | jacc=nan cos=nan
+    automaker          A[DISCOVERY density=0.50 novelty=0.39 tether=0.61]: -
+                       B          : automotive, infotainment, conforms, marque, oems   | jacc=nan cos=nan
+    delorean           A[DISCOVERY density=0.53 novelty=0.44 tether=0.53]: -   (junk dropped: 1988 Delores)
+                       B          : infotainment, vehicular, automotive, radiator, wheelbase   | jacc=nan cos=nan
+    infotainment       A[DISCOVERY density=0.48 novelty=0.43 tether=0.56]: -
+                       B          : automotive, rearview, vehicular, camry, infiniti   | jacc=nan cos=nan
+
+─ logos_v9/L         voids: precursor, prototypes, acura, infiniti, delorean, drivetrain, automaker, marque
+    precursor          A[DISCOVERY density=0.55 novelty=0.47 tether=0.50]: -   (junk dropped: 139 BC, 1997 Tour de France, Prologue to Stage 10, 1391, 139 (number), 1978 Tour de France, Prologue to Stage 11)
+                       B          : rearview, preliminary, prototype, prototypes, prototypical   | jacc=nan cos=nan
+    prototypes         A[DISCOVERY density=0.48 novelty=0.45 tether=0.54]: -
+                       B          : automotive, precursors, preliminary, prefabricated, maneuverability   | jacc=nan cos=nan
+    acura              A[DISCOVERY density=0.87 novelty=0.36 tether=0.61]: -   (junk dropped: 2002 Acura Classic, 2006 Acura Classic, 2007 Acura Classic, 2003 Acura Classic, 1997 Acura Classic)
+                       B          : automotive, radiator, infotainment, rearview, nhtsa   | jacc=nan cos=nan
+    infiniti           A[DISCOVERY density=0.75 novelty=0.36 tether=0.58]: -   (junk dropped: 1995 Infiniti Open, 1997 Infiniti Open, 1996 Infiniti Open, 2004 Infiniti Pro Series, 2005 Infiniti Pro Series)
+                       B          : infotainment, camry, quattro, automaker, sedan   | jacc=nan cos=nan
+    delorean           A[DISCOVERY density=0.53 novelty=0.44 tether=0.53]: -   (junk dropped: 1988 Delores)
+                       B          : infotainment, vehicular, automotive, radiator, wheelbase   | jacc=nan cos=nan
+    drivetrain         A[DISCOVERY density=0.58 novelty=0.46 tether=0.52]: -
+                       B          : wheelbase, automotive, transmissions, motor, motorised   | jacc=nan cos=nan
+    automaker          A[DISCOVERY density=0.50 novelty=0.39 tether=0.61]: -
+                       B          : automotive, infotainment, conforms, marque, oems   | jacc=nan cos=nan
+    marque             A[DISCOVERY density=0.48 novelty=0.44 tether=0.55]: -
+                       B          : automotive, sumitomo, suited, prototypical, strut   | jacc=nan cos=nan
+
+─ logos_v10/L        voids: prototypes, precursor, infiniti, drivetrain, acura, delorean, automaker, infotainment
+    prototypes         A[DISCOVERY density=0.48 novelty=0.45 tether=0.54]: -
+                       B          : automotive, precursors, preliminary, prefabricated, maneuverability   | jacc=nan cos=nan
+    precursor          A[DISCOVERY density=0.55 novelty=0.47 tether=0.50]: -   (junk dropped: 139 BC, 1997 Tour de France, Prologue to Stage 10, 1391, 139 (number), 1978 Tour de France, Prologue to Stage 11)
+                       B          : rearview, preliminary, prototype, prototypes, prototypical   | jacc=nan cos=nan
+    infiniti           A[DISCOVERY density=0.75 novelty=0.36 tether=0.58]: -   (junk dropped: 1995 Infiniti Open, 1997 Infiniti Open, 1996 Infiniti Open, 2004 Infiniti Pro Series, 2005 Infiniti Pro Series)
+                       B          : infotainment, camry, quattro, automaker, sedan   | jacc=nan cos=nan
+    drivetrain         A[DISCOVERY density=0.58 novelty=0.46 tether=0.52]: -
+                       B          : wheelbase, automotive, transmissions, motor, motorised   | jacc=nan cos=nan
+    acura              A[DISCOVERY density=0.87 novelty=0.36 tether=0.61]: -   (junk dropped: 2002 Acura Classic, 2006 Acura Classic, 2007 Acura Classic, 2003 Acura Classic, 1997 Acura Classic)
+                       B          : automotive, radiator, infotainment, rearview, nhtsa   | jacc=nan cos=nan
+    delorean           A[DISCOVERY density=0.53 novelty=0.44 tether=0.53]: -   (junk dropped: 1988 Delores)
+                       B          : infotainment, vehicular, automotive, radiator, wheelbase   | jacc=nan cos=nan
+    automaker          A[DISCOVERY density=0.50 novelty=0.39 tether=0.61]: -
+                       B          : automotive, infotainment, conforms, marque, oems   | jacc=nan cos=nan
+    infotainment       A[DISCOVERY density=0.48 novelty=0.43 tether=0.56]: -
+                       B          : automotive, rearview, vehicular, camry, infiniti   | jacc=nan cos=nan
+
+─ null/L             voids: bogo, fabricate, casing, aliexpress, reseller, customization, extrusion, serials
+    bogo               A[DISCOVERY density=0.60 novelty=0.59 tether=0.39]: -
+                       B          : checkered, suited, marque, hatchback, escalade   | jacc=nan cos=nan
+    fabricate          A[DISCOVERY density=0.58 novelty=0.51 tether=0.47]: -
+                       B          : automotive, prototypes, prefabricated, retrofitted, oems   | jacc=nan cos=nan
+    casing             A[DISCOVERY density=0.49 novelty=0.45 tether=0.53]: -
+                       B          : automotive, suited, strut, hatchback, marque   | jacc=nan cos=nan
+    aliexpress         A[DISCOVERY density=0.58 novelty=0.58 tether=0.41]: -
+                       B          : automotive, sumitomo, wheelbase, infotainment, conforms   | jacc=nan cos=nan
+    reseller           A[WEAK      density=0.36 novelty=0.52 tether=0.47]: -
+                       B          : automotive, sumitomo, retrofitted, oems, marque   | jacc=nan cos=nan
+    customization      A[DISCOVERY density=0.65 novelty=0.60 tether=0.38]: -
+                       B          : suited, conforms, proportioned, infotainment, fitting   | jacc=nan cos=nan
+    extrusion          A[DISCOVERY density=0.51 novelty=0.43 tether=0.55]: -
+                       B          : automotive, automaker, oems, infiniti, camber   | jacc=nan cos=nan
+    serials            A[DISCOVERY density=0.48 novelty=0.57 tether=0.41]: -
+                       B          : infotainment, precursors, transmissions, marque, components   | jacc=nan cos=nan
+
+─ said/ALL           voids: drivetrain, infiniti, prototypes, acura, automaker, precursor, delorean, prius
+    drivetrain         A[DISCOVERY density=0.58 novelty=0.46 tether=0.52]: -
+                       B          : wheelbase, automotive, transmissions, motor, motorised   | jacc=nan cos=nan
+    infiniti           A[DISCOVERY density=0.75 novelty=0.36 tether=0.58]: -   (junk dropped: 1995 Infiniti Open, 1997 Infiniti Open, 1996 Infiniti Open, 2004 Infiniti Pro Series, 2005 Infiniti Pro Series)
+                       B          : infotainment, camry, quattro, automaker, sedan   | jacc=nan cos=nan
+    prototypes         A[DISCOVERY density=0.48 novelty=0.45 tether=0.54]: -
+                       B          : automotive, precursors, preliminary, prefabricated, maneuverability   | jacc=nan cos=nan
+    acura              A[DISCOVERY density=0.87 novelty=0.36 tether=0.61]: -   (junk dropped: 2002 Acura Classic, 2006 Acura Classic, 2007 Acura Classic, 2003 Acura Classic, 1997 Acura Classic)
+                       B          : automotive, radiator, infotainment, rearview, nhtsa   | jacc=nan cos=nan
+    automaker          A[DISCOVERY density=0.50 novelty=0.39 tether=0.61]: -
+                       B          : automotive, infotainment, conforms, marque, oems   | jacc=nan cos=nan
+    precursor          A[DISCOVERY density=0.55 novelty=0.47 tether=0.50]: -   (junk dropped: 139 BC, 1997 Tour de France, Prologue to Stage 10, 1391, 139 (number), 1978 Tour de France, Prologue to Stage 11)
+                       B          : rearview, preliminary, prototype, prototypes, prototypical   | jacc=nan cos=nan
+    delorean           A[DISCOVERY density=0.53 novelty=0.44 tether=0.53]: -   (junk dropped: 1988 Delores)
+                       B          : infotainment, vehicular, automotive, radiator, wheelbase   | jacc=nan cos=nan
+    prius              A[DISCOVERY density=0.48 novelty=0.53 tether=0.45]: -
+                       B          : vehicular, automotive, auto, infotainment, camry   | jacc=nan cos=nan
+
+─ logos_v9/ALL       voids: precursor, prototypes, drivetrain, acura, infiniti, delorean, automaker, marque
+    precursor          A[DISCOVERY density=0.55 novelty=0.47 tether=0.50]: -   (junk dropped: 139 BC, 1997 Tour de France, Prologue to Stage 10, 1391, 139 (number), 1978 Tour de France, Prologue to Stage 11)
+                       B          : rearview, preliminary, prototype, prototypes, prototypical   | jacc=nan cos=nan
+    prototypes         A[DISCOVERY density=0.48 novelty=0.45 tether=0.54]: -
+                       B          : automotive, precursors, preliminary, prefabricated, maneuverability   | jacc=nan cos=nan
+    drivetrain         A[DISCOVERY density=0.58 novelty=0.46 tether=0.52]: -
+                       B          : wheelbase, automotive, transmissions, motor, motorised   | jacc=nan cos=nan
+    acura              A[DISCOVERY density=0.87 novelty=0.36 tether=0.61]: -   (junk dropped: 2002 Acura Classic, 2006 Acura Classic, 2007 Acura Classic, 2003 Acura Classic, 1997 Acura Classic)
+                       B          : automotive, radiator, infotainment, rearview, nhtsa   | jacc=nan cos=nan
+    infiniti           A[DISCOVERY density=0.75 novelty=0.36 tether=0.58]: -   (junk dropped: 1995 Infiniti Open, 1997 Infiniti Open, 1996 Infiniti Open, 2004 Infiniti Pro Series, 2005 Infiniti Pro Series)
+                       B          : infotainment, camry, quattro, automaker, sedan   | jacc=nan cos=nan
+    delorean           A[DISCOVERY density=0.53 novelty=0.44 tether=0.53]: -   (junk dropped: 1988 Delores)
+                       B          : infotainment, vehicular, automotive, radiator, wheelbase   | jacc=nan cos=nan
+    automaker          A[DISCOVERY density=0.50 novelty=0.39 tether=0.61]: -
+                       B          : automotive, infotainment, conforms, marque, oems   | jacc=nan cos=nan
+    marque             A[DISCOVERY density=0.48 novelty=0.44 tether=0.55]: -
+                       B          : automotive, sumitomo, suited, prototypical, strut   | jacc=nan cos=nan
+
+─ logos_v10/ALL      voids: prototypes, drivetrain, precursor, infiniti, acura, delorean, automaker, marque
+    prototypes         A[DISCOVERY density=0.48 novelty=0.45 tether=0.54]: -
+                       B          : automotive, precursors, preliminary, prefabricated, maneuverability   | jacc=nan cos=nan
+    drivetrain         A[DISCOVERY density=0.58 novelty=0.46 tether=0.52]: -
+                       B          : wheelbase, automotive, transmissions, motor, motorised   | jacc=nan cos=nan
+    precursor          A[DISCOVERY density=0.55 novelty=0.47 tether=0.50]: -   (junk dropped: 139 BC, 1997 Tour de France, Prologue to Stage 10, 1391, 139 (number), 1978 Tour de France, Prologue to Stage 11)
+                       B          : rearview, preliminary, prototype, prototypes, prototypical   | jacc=nan cos=nan
+    infiniti           A[DISCOVERY density=0.75 novelty=0.36 tether=0.58]: -   (junk dropped: 1995 Infiniti Open, 1997 Infiniti Open, 1996 Infiniti Open, 2004 Infiniti Pro Series, 2005 Infiniti Pro Series)
+                       B          : infotainment, camry, quattro, automaker, sedan   | jacc=nan cos=nan
+    acura              A[DISCOVERY density=0.87 novelty=0.36 tether=0.61]: -   (junk dropped: 2002 Acura Classic, 2006 Acura Classic, 2007 Acura Classic, 2003 Acura Classic, 1997 Acura Classic)
+                       B          : automotive, radiator, infotainment, rearview, nhtsa   | jacc=nan cos=nan
+    delorean           A[DISCOVERY density=0.53 novelty=0.44 tether=0.53]: -   (junk dropped: 1988 Delores)
+                       B          : infotainment, vehicular, automotive, radiator, wheelbase   | jacc=nan cos=nan
+    automaker          A[DISCOVERY density=0.50 novelty=0.39 tether=0.61]: -
+                       B          : automotive, infotainment, conforms, marque, oems   | jacc=nan cos=nan
+    marque             A[DISCOVERY density=0.48 novelty=0.44 tether=0.55]: -
+                       B          : automotive, sumitomo, suited, prototypical, strut   | jacc=nan cos=nan
+
+─ null/ALL           voids: anymore, postseason, ongoing, survivors, fantasies, suffix, novellas, enthusiasts
+    anymore            A[DISCOVERY density=0.54 novelty=0.47 tether=0.52]: -
+                       B          : rearview, infotainment, maneuverability, precursors, retrofitted   | jacc=nan cos=nan
+    postseason         A[DISCOVERY density=0.83 novelty=0.58 tether=0.40]: -   (junk dropped: 1997 Major League Baseball postseason, 2010 Major League Baseball postseason, 2002 Major League Baseball postseason, 2009 Major League Baseball postseason)
+                       B          : rearview, infotainment, automotive, oems, drivetrain   | jacc=nan cos=nan
+    ongoing            A[DISCOVERY density=0.44 novelty=0.46 tether=0.53]: -
+                       B          : infotainment, rearview, automotive, maneuverability, drivetrain   | jacc=nan cos=nan
+    survivors          A[DISCOVERY density=0.48 novelty=0.55 tether=0.44]: -
+                       B          : rearview, automotive, infotainment, drivetrain, transmissions   | jacc=nan cos=nan
+    fantasies          A[DISCOVERY density=0.44 novelty=0.47 tether=0.52]: -
+                       B          : infotainment, automotive, maneuverability, drivetrain, suvs   | jacc=nan cos=nan
+    suffix             A[DISCOVERY density=0.54 novelty=0.51 tether=0.47]: -   (junk dropped: .name, (K)now Name)
+                       B          : rearview, precursors, marque, preceding, prefect   | jacc=nan cos=nan
+    novellas           A[DISCOVERY density=0.60 novelty=0.67 tether=0.31]: -
+                       B          : infotainment, automotive, wheelbase, prototypical, drivetrain   | jacc=nan cos=nan
+    enthusiasts        A[DISCOVERY density=0.43 novelty=0.44 tether=0.55]: -
+                       B          : infotainment, rearview, automotive, conforms, maneuverability   | jacc=nan cos=nan
+
+─ gap->local         voids: paperwork, organize, extras, amendments, resigning, necessity, organiser, invitations
+    paperwork          A[DISCOVERY density=0.54 novelty=0.47 tether=0.52]: -
+                       B          : precursors, preliminary, components, prefect, preceding   | jacc=nan cos=nan
+    organize           A[DISCOVERY density=0.57 novelty=0.47 tether=0.51]: -   (junk dropped: 13 Organisé)
+                       B          : infotainment, rearview, automotive, readying, fitting   | jacc=nan cos=nan
+    extras             A[DISCOVERY density=0.49 novelty=0.46 tether=0.52]: -   (junk dropped: 1 Extra)
+                       B          : infotainment, rearview, clutches, components, aftermarket   | jacc=nan cos=nan
+    amendments         A[DISCOVERY density=0.66 novelty=0.54 tether=0.45]: -
+                       B          : infotainment, conforms, maneuverability, nhtsa, conforming   | jacc=nan cos=nan
+    resigning          A[DISCOVERY density=0.56 novelty=0.51 tether=0.48]: -   (junk dropped: "I Quit" match)
+                       B          : suited, conforms, accord, automotive, conforming   | jacc=nan cos=nan
+    necessity          A[DISCOVERY density=0.47 novelty=0.56 tether=0.42]: -
+                       B          : automotive, infotainment, maneuverability, suvs, oems   | jacc=nan cos=nan
+    organiser          A[DISCOVERY density=0.66 novelty=0.67 tether=0.32]: -
+                       B          : automotive, infotainment, marque, oems, sedans   | jacc=nan cos=nan
+    invitations        A[DISCOVERY density=0.51 novelty=0.46 tether=0.53]: -
+                       B          : suited, infotainment, fitting, readying, suiting   | jacc=nan cos=nan
+
+─ gap->frontier      voids: regains, elspeth, broadside, recaptured, revisiting, drivetrain, stares, retrospect
+    regains            A[DISCOVERY density=0.63 novelty=0.50 tether=0.46]: -   (junk dropped: 'Til I Gain Control Again, (Want You) Back in My Life Again, ... I Lose Myself, ...After the Phantoms of Your Former Self, (Every Time I Turn Around) Back in Love Again)
+                       B          : triumph, reimagining, reimagined, revs, restored   | jacc=nan cos=nan
+    elspeth            A[DISCOVERY density=0.41 novelty=0.43 tether=0.56]: -
+                       B          : wheelbase, automotive, drivetrain, retrofitted, marque   | jacc=nan cos=nan
+    broadside          A[DISCOVERY density=0.51 novelty=0.61 tether=0.38]: -
+                       B          : wheelbase, maneuverability, retrofitted, porte, strut   | jacc=nan cos=nan
+    recaptured         A[DISCOVERY density=0.49 novelty=0.45 tether=0.53]: -   (junk dropped: 'Til I Gain Control Again)
+                       B          : triumph, rearview, wraparound, reimagined, overtake   | jacc=nan cos=nan
+    revisiting         A[DISCOVERY density=0.43 novelty=0.42 tether=0.56]: -
+                       B          : automotive, infotainment, rearview, triumph, retrofitted   | jacc=nan cos=nan
+    drivetrain         A[DISCOVERY density=0.58 novelty=0.46 tether=0.52]: -
+                       B          : wheelbase, automotive, transmissions, motor, motorised   | jacc=nan cos=nan
+    stares             A[DISCOVERY density=0.54 novelty=0.47 tether=0.51]: -
+                       B          : rearview, automotive, wheelbase, drivetrain, marque   | jacc=nan cos=nan
+    retrospect         A[DISCOVERY density=0.51 novelty=0.49 tether=0.49]: -
+                       B          : rearview, retrofitted, precursors, precursor, prologue   | jacc=nan cos=nan
+
+─ centroid_surface   voids: prototypes, precursor, drivetrain, acura, infiniti, delorean, automaker, aftermarket
+    prototypes         A[DISCOVERY density=0.48 novelty=0.45 tether=0.54]: -
+                       B          : automotive, precursors, preliminary, prefabricated, maneuverability   | jacc=nan cos=nan
+    precursor          A[DISCOVERY density=0.55 novelty=0.47 tether=0.50]: -   (junk dropped: 139 BC, 1997 Tour de France, Prologue to Stage 10, 1391, 139 (number), 1978 Tour de France, Prologue to Stage 11)
+                       B          : rearview, preliminary, prototype, prototypes, prototypical   | jacc=nan cos=nan
+    drivetrain         A[DISCOVERY density=0.58 novelty=0.46 tether=0.52]: -
+                       B          : wheelbase, automotive, transmissions, motor, motorised   | jacc=nan cos=nan
+    acura              A[DISCOVERY density=0.87 novelty=0.36 tether=0.61]: -   (junk dropped: 2002 Acura Classic, 2006 Acura Classic, 2007 Acura Classic, 2003 Acura Classic, 1997 Acura Classic)
+                       B          : automotive, radiator, infotainment, rearview, nhtsa   | jacc=nan cos=nan
+    infiniti           A[DISCOVERY density=0.75 novelty=0.36 tether=0.58]: -   (junk dropped: 1995 Infiniti Open, 1997 Infiniti Open, 1996 Infiniti Open, 2004 Infiniti Pro Series, 2005 Infiniti Pro Series)
+                       B          : infotainment, camry, quattro, automaker, sedan   | jacc=nan cos=nan
+    delorean           A[DISCOVERY density=0.53 novelty=0.44 tether=0.53]: -   (junk dropped: 1988 Delores)
+                       B          : infotainment, vehicular, automotive, radiator, wheelbase   | jacc=nan cos=nan
+    automaker          A[DISCOVERY density=0.50 novelty=0.39 tether=0.61]: -
+                       B          : automotive, infotainment, conforms, marque, oems   | jacc=nan cos=nan
+    aftermarket        A[DISCOVERY density=0.47 novelty=0.47 tether=0.52]: -
+                       B          : automotive, infotainment, wheelbase, conforms, oems   | jacc=nan cos=nan
+
+─ lexcross/F         voids: one, aerodynamic, side, extensions, comeback, absence, power, film
+    one                A[DISCOVERY density=0.48 novelty=0.46 tether=0.53]: -
+                       B          : infotainment, automotive, rearview, maneuverability, drivetrain   | jacc=nan cos=nan
+    aerodynamic        A[DISCOVERY density=0.43 novelty=0.50 tether=0.46]: -   (junk dropped: (Wish I Could Fly Like) Superman, 182nd Airlift Wing, -drag)
+                       B          : glides, wheelbase, automotive, radiator, downforce   | jacc=nan cos=nan
+    side               A[DISCOVERY density=0.67 novelty=0.49 tether=0.49]: -   (junk dropped: 2-sided)
+                       B          : rearview, wheelbase, infotainment, radiator, porte   | jacc=nan cos=nan
+    extensions         A[DISCOVERY density=0.46 novelty=0.45 tether=0.51]: -   (junk dropped: 2006 WWE brand extension draft)
+                       B          : wheelbase, infotainment, porte, oems, aftermarket   | jacc=nan cos=nan
+    comeback           A[DISCOVERY density=0.55 novelty=0.45 tether=0.51]: financial failure   (junk dropped: '68 Comeback, (Want You) Back in My Life Again, 100 Bullets Back, (Opportunity Knocks But Once) Snatch and Grab It)
+                       B          : rearview, triumph, overtake, retro, recalling   | jacc=0.00 cos=0.64
+    absence            A[DISCOVERY density=0.63 novelty=0.47 tether=0.52]: -
+                       B          : rearview, infotainment, preceding, aftermarket, prefect   | jacc=nan cos=nan
+    power              A[DISCOVERY density=0.54 novelty=0.52 tether=0.47]: -
+                       B          : automotive, vehicular, infotainment, rearview, drivetrain   | jacc=nan cos=nan
+    film               A[DISCOVERY density=0.52 novelty=0.60 tether=0.38]: -
+                       B          : infotainment, automotive, rearview, precursors, preliminary   | jacc=nan cos=nan
+
+─ lexcross/L         voids: later, latest, pending, issues, discusses, characterized, intended, prior
+    later              A[DISCOVERY density=0.43 novelty=0.42 tether=0.57]: -
+                       B          : infotainment, automotive, rearview, maneuverability, drivetrain   | jacc=nan cos=nan
+    latest             A[DISCOVERY density=0.45 novelty=0.44 tether=0.55]: -
+                       B          : infotainment, automotive, rearview, suvs, maneuverability   | jacc=nan cos=nan
+    pending            A[DISCOVERY density=0.51 novelty=0.49 tether=0.50]: -
+                       B          : infotainment, rearview, automotive, maneuverability, preliminary   | jacc=nan cos=nan
+    issues             A[DISCOVERY density=0.53 novelty=0.50 tether=0.48]: -
+                       B          : infotainment, automotive, nhtsa, precursors, maneuverability   | jacc=nan cos=nan
+    discusses          A[DISCOVERY density=0.45 novelty=0.47 tether=0.52]: -
+                       B          : infotainment, rearview, maneuverability, precursors, drivetrain   | jacc=nan cos=nan
+    characterized      A[DISCOVERY density=0.48 novelty=0.51 tether=0.48]: -
+                       B          : suited, automotive, rearview, conforms, maneuverability   | jacc=nan cos=nan
+    intended           A[DISCOVERY density=0.44 novelty=0.45 tether=0.54]: -
+                       B          : infotainment, automotive, conforms, rearview, maneuverability   | jacc=nan cos=nan
+    prior              A[DISCOVERY density=0.54 novelty=0.58 tether=0.40]: -
+                       B          : rearview, infotainment, precursors, preliminary, retrofitted   | jacc=nan cos=nan
+
+CRAWL:
+  JUNK FILTER: dropped 186 of 195 arm-A terms  [leading non-letter | ellipsis | 3+ digit run | >4 tokens]
+  leg-sync lexcross/F         mean-cos=0.636  (n=1)
+  leg-sync null/F             mean-cos=0.667  (n=2)
+  BODY: median within-segment arm agreement = 0.636 over 3 void-arm pairs
+  SHUFFLE-NULL: observed-median=0.636  null-median=0.615  margin=+0.021  (n_obs=3 n_null=405)
+  ARM-JACC: median lexical arm overlap = 0.000  (n=3)
+  LEG-JACC median over 136 leg pairs = 0.00   pairs >= 0.25: 45
+  LEG-JACC pairs >= 0.25 (top 12):
+    logos_v10/ALL      ~ logos_v10/F        J=1.00
+    logos_v10/ALL      ~ logos_v9/ALL       J=1.00
+    logos_v10/ALL      ~ logos_v9/F         J=1.00
+    logos_v10/ALL      ~ logos_v9/L         J=1.00
+    logos_v10/F        ~ logos_v9/ALL       J=1.00
+    logos_v10/F        ~ logos_v9/F         J=1.00
+    logos_v10/F        ~ logos_v9/L         J=1.00
+    logos_v10/L        ~ said/L             J=1.00
+    logos_v9/ALL       ~ logos_v9/F         J=1.00
+    logos_v9/ALL       ~ logos_v9/L         J=1.00
+    logos_v9/F         ~ logos_v9/L         J=1.00
+    said/ALL           ~ said/F             J=1.00
+  CONSEQ-FIELD (per-leg consequence centroid . body centroid):
+    centroid_surface   0.998  (vecs=8)
+    gap->frontier      0.979  (vecs=8)
+    gap->local         0.983  (vecs=8)
+    lexcross/F         0.987  (vecs=9)
+    lexcross/L         0.984  (vecs=8)
+    logos_v10/ALL      0.998  (vecs=8)
+    logos_v10/F        0.998  (vecs=8)
+    logos_v10/L        0.998  (vecs=8)
+    logos_v9/ALL       0.998  (vecs=8)
+    logos_v9/F         0.998  (vecs=8)
+    logos_v9/L         0.998  (vecs=8)
+    null/ALL           0.990  (vecs=8)
+    null/F             0.985  (vecs=10)
+    null/L             0.986  (vecs=8)
+    said/ALL           0.997  (vecs=8)
+    said/F             0.997  (vecs=8)
+    said/L             0.998  (vecs=8)
+  cross-leg shared voids (>=2 legs; field-cos removed -- arms are f(void, headline), identical voids give 1.000 by construction):
+    drivetrain     legs[11]: centroid_surface,gap->frontier,logos_v10/ALL,logos_v10/F,logos_v10/L,l
+    infin          legs[10]: centroid_surface,logos_v10/ALL,logos_v10/F,logos_v10/L,logos_v9/ALL,lo
+    automak        legs[10]: centroid_surface,logos_v10/ALL,logos_v10/F,logos_v10/L,logos_v9/ALL,lo
+    prototyp       legs[10]: centroid_surface,logos_v10/ALL,logos_v10/F,logos_v10/L,logos_v9/ALL,lo
+    acura          legs[10]: centroid_surface,logos_v10/ALL,logos_v10/F,logos_v10/L,logos_v9/ALL,lo
+    delorean       legs[10]: centroid_surface,logos_v10/ALL,logos_v10/F,logos_v10/L,logos_v9/ALL,lo
+    precursor      legs[10]: centroid_surface,logos_v10/ALL,logos_v10/F,logos_v10/L,logos_v9/ALL,lo
+    marqu          legs[5]: logos_v10/ALL,logos_v10/F,logos_v9/ALL,logos_v9/F,logos_v9/L
+    priu           legs[2]: said/ALL,said/F
+    infotain       legs[2]: logos_v10/L,said/L
+
+TARGET SIGHTINGS:
+  specifications said_by=2/10  in_voids=-  as_consequence=-
+  performance  said_by=10/10  in_voids=-  as_consequence=-
+  handling     said_by=5/10  in_voids=-  as_consequence=-
+  efficiency   said_by=8/10  in_voids=-  as_consequence=-
+  price        said_by=1/10  in_voids=-  as_consequence=-
+  availability said_by=2/10  in_voids=-  as_consequence=-
+
+RESULT sha=b8a23c02ac7e  (deterministic: identical corpus + anchor + params must reproduce this hash)
+JSON -> anamnesis_results/universal/prelude_2026_centipede.json (87325 bytes)
+==============================================================================
