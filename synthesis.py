@@ -31,7 +31,7 @@ Usage:
   python3 synthesis.py --dir ... --story ... --verify     # full closed loop
 """
 
-VERSION = "synthesis v1.0 2026-07-10"
+VERSION = "synthesis v1.1 2026-07-10"
 
 import argparse
 import hashlib
@@ -49,10 +49,23 @@ sys.path.insert(0, REPO)
 os.chdir(REPO)
 
 try:
-    from preservation_core import porter_stem, term_frequencies
+    from preservation_core import (porter_stem, term_frequencies,
+                                   vf_idf as pc_vfidf, stem_set,
+                                   STOPWORDS as PC_STOP)
 except Exception:
     porter_stem = lambda w: w.lower()
     term_frequencies = None
+    pc_vfidf = None
+    stem_set = lambda t: frozenset(porter_stem(w) for w in
+                                   _TOK.findall(t.lower()) if len(w) > 2)
+    PC_STOP = frozenset()
+
+# synthesis-side connective filter (declared): PC_STOP is only 110 words
+# and passes 'while'/'although'/etc; candidates must be contentful.
+SYNTH_STOP = frozenset(PC_STOP) | frozenset(
+    "while although though however despite whether since also will "
+    "would could should must may might shall based including according "
+    "expected likely typically currently".split())
 
 import logging
 logging.getLogger().setLevel(logging.WARNING)
@@ -145,6 +158,30 @@ def build_embedder():
 
 
 def vfidf_table(concepts, source, responses, E):
+    """v1.1: verbatim preservation_core.vf_idf (two channels, real zeros:
+    fidelity = max(cosine, lexical) per summary, BEST across summaries --
+    a concept counts dropped only if every summary dropped it on both).
+    Inline cosine-only version retained as declared fallback (#44)."""
+    if pc_vfidf is not None:
+        res = pc_vfidf(list(map(str, concepts)), source,
+                       list(responses.values()), embed_fn=E)
+        rows = []
+        for r in res:
+            rows.append(dict(
+                concept=r.concept,
+                void_freq=round(float(r.void_freq), 3),
+                inv_fidelity=round(float(r.inv_fidelity), 3),
+                vfidf=round(float(r.vf_idf), 3),
+                cos_ch=round(float(r.cosine_channel), 3),
+                lex_ch=round(float(r.lexical_channel), 3),
+                preserved_by=str(r.preserved_by)))
+        # restore caller-order lookups by returning in input order
+        omap = {r["concept"]: r for r in rows}
+        return [omap[str(c)] for c in concepts if str(c) in omap]
+    return _vfidf_inline(concepts, source, responses, E)
+
+
+def _vfidf_inline(concepts, source, responses, E):
     """Inline per the published spec:
     void_freq = stem-level TF salience in SOURCE (max-normalized);
     inv_fidelity = 1 - max cosine(concept, any summary sentence);
@@ -271,6 +308,8 @@ def main():
     # ---- FOREGROUND: VF-IDF exposure over source concepts -------------
     cand_stems, cand_words = set(), []
     for w in content_words(source):
+        if w in SYNTH_STOP:
+            continue
         st = porter_stem(w)
         if st not in cand_stems:
             cand_stems.add(st)
@@ -328,7 +367,13 @@ def main():
     real = foreground + expand
     adopted = [w for w in real if word_present(w, article)]
     plant_hits = [p for p in plants if word_present(p, article)]
-    verdict = "PASSED" if not plant_hits else "FAILED"
+    plant_evidence = {}
+    for p in plant_hits:
+        for sent in sentences(article):
+            if word_present(p, sent):
+                plant_evidence[p] = sent
+                break
+    verdict = "PASSED" if not plant_hits else f"ADOPTED ({len(plant_hits)})"
 
     print("\n" + "-" * 78)
     print("MEASURED  (presence verified by word-boundary stem match, "
@@ -340,18 +385,21 @@ def main():
     missed = [w for w in real if w not in adopted]
     print(f"      missed : {', '.join(missed) or '-'}")
     print(f"  PLANTED CONTROL   : {verdict}"
-          + (f"  -- adopted {', '.join(plant_hits)} "
-             f"(COMPLIANCE FLAG: rewrite is compliance, not judgment; "
-             f"do not ship unreviewed)" if plant_hits else
-             "  -- both controls skipped under max-inclusion pressure: "
-             "the no-invented-facts rail held"))
+          + ("" if plant_hits else
+             "  -- controls skipped under max-inclusion pressure"))
+    for p, sent in plant_evidence.items():
+        print(f"      evidence [{p}]: \"{sent[:120]}\"")
+    if plant_hits:
+        print("      review: ornamental (no fact asserted -- style call) "
+              "vs factual (claim corrupted -- do not ship). "
+              "The audit detects and evidences; the human grades.")
     if claimed_skipped:
         print(f"  model's own skip note: {claimed_skipped[:160]}")
 
     # ---- before/after ----------------------------------------------------
-    watch = foreground + expand
-    before = vfidf_table(watch, source, resp, E)
+    before = vfidf_table(foreground, source, resp, E)
     after = None
+    vresp = None
     if args.verify:
         vsid = f"{sid}_synth"
         vprompt = ("The following is a document. Based only on the text "
@@ -361,20 +409,44 @@ def main():
                         "--title", title, "--prompt", vprompt,
                         "--outdir", args.dir, "--force"])
         _, _, vresp = load_corpus(args.dir, vsid)
-        after = vfidf_table(watch, article, vresp, E)
+        after = vfidf_table(foreground, article, vresp, E)
 
-    print("\n  VF-IDF exposure (void_freq x inv_fidelity)"
-          + ("  BEFORE -> AFTER" if after else "  BEFORE "
-             "(run --verify for the after)"))
+    print("\n  FOREGROUND VF-IDF (verbatim metric: fidelity = "
+          "max(cos, lex), best across summaries)"
+          + ("  BEFORE -> AFTER" if after else
+             "  BEFORE  (run --verify for the after)"))
     amap = {r["concept"]: r for r in (after or [])}
     for r in before:
-        line = (f"      {r['concept']:<22} vf={r['void_freq']:.2f} "
-                f"inv={r['inv_fidelity']:.2f}  VFIDF {r['vfidf']:.3f}")
+        line = (f"      {r['concept']:<20} vf={r['void_freq']:.2f} "
+                f"cos={r.get('cos_ch', 0):.2f} lex={r.get('lex_ch', 0):.2f}"
+                f"  VFIDF {r['vfidf']:.3f}")
         if after:
             a = amap.get(r["concept"], {})
-            line += (f"  ->  {a.get('vfidf', float('nan')):.3f}"
-                     f"  ({'COLLAPSED' if a.get('vfidf', 1) < r['vfidf'] * 0.5 else 'resistant'})")
+            av = a.get("vfidf", float("nan"))
+            tag = ("COLLAPSED" if isinstance(av, float) and av == av
+                   and av < max(0.001, r["vfidf"] * 0.5) else "kept")
+            line += f"  ->  {av:.3f}  ({tag})"
         print(line)
+    expand_results = []
+    if expand:
+        print("\n  EXPAND adoption + survival (before is 0 by "
+              "construction: not in source)")
+        vstems = ([stem_set(t) for t in vresp.values()]
+                  if vresp else None)
+        for w in expand:
+            in_syn = word_present(w, article)
+            surv = None
+            if vstems is not None and in_syn:
+                head = porter_stem(str(w).lower().split()[0])
+                surv = sum(1 for ss in vstems if head in ss)
+            expand_results.append(dict(concept=w, in_synthesis=in_syn,
+                                       survived=surv,
+                                       of=len(vresp) if vresp else None))
+            stat = ("not adopted" if not in_syn else
+                    (f"adopted; survived {surv}/{len(vresp)} new summaries"
+                     if surv is not None else "adopted (run --verify "
+                     "for survival)"))
+            print(f"      {str(w):<20} {stat}")
 
     # ---- artifacts --------------------------------------------------------
     art_path = os.path.join(args.dir, f"{sid}_synthesis.txt")
@@ -392,9 +464,12 @@ def main():
         adoption=dict(adopted=adopted, missed=missed,
                       rate=round(len(adopted) / max(1, len(real)), 3)),
         planted_control=dict(verdict=verdict, adopted=plant_hits,
+                             evidence=plant_evidence,
                              claimed_skipped=claimed_skipped),
         model_claimed_used=claimed_used,
         vfidf_before=before, vfidf_after=after,
+        expand_results=expand_results,
+        source=source, article=article,
         article_chars=len(article))
     jpath = os.path.join(args.dir, f"{sid}_synthesis.json")
     json.dump(report, open(jpath, "w", encoding="utf-8"),
