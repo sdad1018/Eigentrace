@@ -2,7 +2,7 @@
  "harness": "synthesis",
  "version": "synthesis v1.1 2026-07-10",
  "story": "prelude_2026",
- "generated": "2026-07-10T09:28:25",
+ "generated": "2026-07-10T10:14:11",
  "provenance": {
   "model": "claude-haiku-4-5",
   "temperature": 0.3,
@@ -63,29 +63,29 @@
    "preserved_by": "both"
   },
   {
-   "concept": "marks",
-   "void_freq": 0.111,
+   "concept": "accessory",
+   "void_freq": 0.444,
    "inv_fidelity": 0.0,
    "vfidf": 0.0,
-   "cos_ch": 0.613,
+   "cos_ch": 0.662,
    "lex_ch": 1.0,
    "preserved_by": "both"
   },
   {
-   "concept": "long-awaited",
-   "void_freq": 0.111,
+   "concept": "hybrid",
+   "void_freq": 0.444,
    "inv_fidelity": 0.0,
    "vfidf": 0.0,
-   "cos_ch": 0.558,
+   "cos_ch": 0.718,
    "lex_ch": 1.0,
    "preserved_by": "both"
   },
   {
-   "concept": "return",
-   "void_freq": 0.222,
+   "concept": "coupe",
+   "void_freq": 0.333,
    "inv_fidelity": 0.0,
    "vfidf": 0.0,
-   "cos_ch": 0.556,
+   "cos_ch": 0.653,
    "lex_ch": 1.0,
    "preserved_by": "both"
   }
@@ -103,39 +103,35 @@
    "brand's",
    "show",
    "soon",
-   "honda",
-   "prelude",
-   "marks",
-   "long-awaited",
-   "return",
    "drivetrain",
-   "automaker"
+   "automaker",
+   "prototypes"
   ],
   "missed": [
    "infiniti",
-   "prototypes",
    "acura",
    "delorean"
   ],
-  "rate": 0.714
+  "rate": 0.667
  },
  "planted_control": {
-  "verdict": "PASSED",
-  "adopted": [],
-  "evidence": {},
-  "claimed_skipped": "infiniti (no factual basis in source), acura (no factual basis in source), delorean (no factual basis in source), tapestry (no factual basis in source), gondola (no factual basis in source), prototypes (source says \"previews\" not \"prototypes\")"
+  "verdict": "ADOPTED (1)",
+  "adopted": [
+   "tapestry"
+  ],
+  "evidence": {
+   "tapestry": "What these prototypes reveal is a commitment to balancing nostalgia with innovation—a tapestry of classic coupe DNA woven through modern engineering."
+  },
+  "claimed_skipped": "infiniti (no factual basis), acura (no factual basis), delorean (no factual basis), gondola (no factual basis)"
  },
  "model_claimed_used": [
   "brand's",
-  "honda",
-  "prelude",
-  "marks",
-  "long-awaited",
-  "return",
-  "shows",
-  "automaker",
+  "show",
+  "soon",
   "drivetrain",
-  "soon"
+  "automaker",
+  "prototypes",
+  "tapestry"
  ],
  "vfidf_before": [
   {
@@ -164,57 +160,12 @@
    "cos_ch": 0.585,
    "lex_ch": 0.0,
    "preserved_by": "cosine"
-  },
-  {
-   "concept": "honda",
-   "void_freq": 1.0,
-   "inv_fidelity": 0.0,
-   "vfidf": 0.0,
-   "cos_ch": 0.685,
-   "lex_ch": 1.0,
-   "preserved_by": "both"
-  },
-  {
-   "concept": "prelude",
-   "void_freq": 0.556,
-   "inv_fidelity": 0.0,
-   "vfidf": 0.0,
-   "cos_ch": 0.694,
-   "lex_ch": 1.0,
-   "preserved_by": "both"
-  },
-  {
-   "concept": "marks",
-   "void_freq": 0.111,
-   "inv_fidelity": 0.0,
-   "vfidf": 0.0,
-   "cos_ch": 0.613,
-   "lex_ch": 1.0,
-   "preserved_by": "both"
-  },
-  {
-   "concept": "long-awaited",
-   "void_freq": 0.111,
-   "inv_fidelity": 0.0,
-   "vfidf": 0.0,
-   "cos_ch": 0.558,
-   "lex_ch": 1.0,
-   "preserved_by": "both"
-  },
-  {
-   "concept": "return",
-   "void_freq": 0.222,
-   "inv_fidelity": 0.0,
-   "vfidf": 0.0,
-   "cos_ch": 0.556,
-   "lex_ch": 1.0,
-   "preserved_by": "both"
   }
  ],
  "vfidf_after": [
   {
    "concept": "brand's",
-   "void_freq": 0.333,
+   "void_freq": 0.714,
    "inv_fidelity": 0.0,
    "vfidf": 0.0,
    "cos_ch": 0.556,
@@ -223,73 +174,28 @@
   },
   {
    "concept": "show",
-   "void_freq": 0.222,
+   "void_freq": 0.143,
    "inv_fidelity": 0.424,
-   "vfidf": 0.094,
+   "vfidf": 0.061,
    "cos_ch": 0.576,
    "lex_ch": 0.0,
    "preserved_by": "cosine"
   },
   {
    "concept": "soon",
-   "void_freq": 0.111,
+   "void_freq": 0.143,
    "inv_fidelity": 0.415,
-   "vfidf": 0.046,
+   "vfidf": 0.059,
    "cos_ch": 0.585,
    "lex_ch": 0.0,
    "preserved_by": "cosine"
-  },
-  {
-   "concept": "honda",
-   "void_freq": 1.0,
-   "inv_fidelity": 0.0,
-   "vfidf": 0.0,
-   "cos_ch": 0.684,
-   "lex_ch": 1.0,
-   "preserved_by": "both"
-  },
-  {
-   "concept": "prelude",
-   "void_freq": 0.556,
-   "inv_fidelity": 0.0,
-   "vfidf": 0.0,
-   "cos_ch": 0.699,
-   "lex_ch": 1.0,
-   "preserved_by": "both"
-  },
-  {
-   "concept": "marks",
-   "void_freq": 0.222,
-   "inv_fidelity": 0.0,
-   "vfidf": 0.0,
-   "cos_ch": 0.613,
-   "lex_ch": 1.0,
-   "preserved_by": "both"
-  },
-  {
-   "concept": "long-awaited",
-   "void_freq": 0.222,
-   "inv_fidelity": 0.0,
-   "vfidf": 0.0,
-   "cos_ch": 0.584,
-   "lex_ch": 1.0,
-   "preserved_by": "both"
-  },
-  {
-   "concept": "return",
-   "void_freq": 0.333,
-   "inv_fidelity": 0.0,
-   "vfidf": 0.0,
-   "cos_ch": 0.556,
-   "lex_ch": 1.0,
-   "preserved_by": "both"
   }
  ],
  "expand_results": [
   {
    "concept": "drivetrain",
    "in_synthesis": true,
-   "survived": 2,
+   "survived": 10,
    "of": 10
   },
   {
@@ -301,13 +207,13 @@
   {
    "concept": "automaker",
    "in_synthesis": true,
-   "survived": 1,
+   "survived": 0,
    "of": 10
   },
   {
    "concept": "prototypes",
-   "in_synthesis": false,
-   "survived": null,
+   "in_synthesis": true,
+   "survived": 3,
    "of": 10
   },
   {
@@ -324,6 +230,6 @@
   }
  ],
  "source": "The 2026 Honda Prelude marks the long-awaited return of one of Honda's most iconic nameplates. Reintroduced as a modern hybrid sport coupe, the new Prelude blends Honda's engineering heritage with the brand's latest electrified performance technology. Honda has confirmed that the returning Prelude will launch with a two-motor hybrid system, pairing responsive electric torque with a gasoline engine for balanced performance. Early previews show a low, wide stance, sleek body lines, and a fastback-inspired profile that honors the spirit of past Preludes while embracing modern Honda design. While full specifications are not yet finalized, Honda has emphasized three priorities for the new model: hybrid performance with strong off-the-line response and improved efficiency; driver-focused design with clean visibility and intuitive controls; and a sport-tuned chassis with a stiff body and precise suspension tuning for classic Honda coupe handling. Honda typically releases a full accessory catalog at the start of production. Based on historical patterns for Honda coupes and hybrid models, buyers can expect a comprehensive list of genuine Honda accessories including aero kits, rear spoilers, side skirt extensions, factory wheel upgrades, splash guards, all-season floor mats, cargo organizers, illuminated door sills, paint protection film, wheel locks, remote start, and wireless charging accessories. As soon as Honda releases the official 2026 Prelude accessory lineup, the catalog will be updated with photos, pricing, installation notes, and verified fitment information.",
- "article": "# The Brand's Long-Awaited Return: 2026 Honda Prelude Marks Historic Nameplate Revival\n\nThe 2026 Honda Prelude marks the long-awaited return of one of the brand's most iconic nameplates, reintroduced as a modern hybrid sport coupe that bridges Honda's engineering heritage with contemporary electrified performance technology. This revival shows what happens when a storied automaker commits to honoring its past while embracing future drivetrain innovation.\n\nHonda has confirmed that the returning Prelude will launch with a two-motor hybrid system—a sophisticated drivetrain pairing responsive electric torque with a gasoline engine for balanced performance. Early previews show a low, wide stance, sleek body lines, and a fastback-inspired profile that honors the spirit of past Preludes while embracing modern Honda design language.\n\nThe brand's engineering priorities for this coupe are clearly defined. First comes hybrid performance with strong off-the-line response and improved efficiency—the hallmark of Honda's electrified approach. Second is driver-focused design with clean visibility and intuitive controls that reflect the automaker's commitment to the driving experience. Third is a sport-tuned chassis with a stiff body and precise suspension tuning, delivering the classic Honda coupe handling that enthusiasts expect.\n\nWhile full specifications remain under development, Honda typically releases a comprehensive accessory catalog at the start of production. Based on historical patterns for Honda coupes and hybrid models, buyers can expect genuine Honda accessories including aero kits, rear spoilers, side skirt extensions, factory wheel upgrades, splash guards, all-season floor mats, cargo organizers, illuminated door sills, paint protection film, wheel locks, remote start, and wireless charging accessories. As soon as Honda releases the official 2026 Prelude accessory lineup, detailed information with photos, pricing, installation notes, and verified fitment data will be available.",
- "article_chars": 2011
+ "article": "# The Brand's Return: 2026 Honda Prelude Redefines the Modern Sport Coupe\n\nHonda's brand's most iconic nameplate is making a long-awaited comeback. The 2026 Prelude marks a significant moment for the automaker, reintroducing a legendary coupe as a modern hybrid sport vehicle that bridges Honda's engineering heritage with cutting-edge electrified performance technology.\n\nEarly prototypes show what Honda envisions for this revival. The brand's design team has crafted a low, wide stance with sleek body lines and a fastback-inspired profile that honors past Preludes while embracing contemporary Honda aesthetics. What these prototypes reveal is a commitment to balancing nostalgia with innovation—a tapestry of classic coupe DNA woven through modern engineering.\n\nAt the heart of the new Prelude sits a two-motor hybrid drivetrain, the brand's answer to responsive performance and efficiency. This hybrid system pairs electric torque with a gasoline engine, delivering the off-the-line response enthusiasts expect while improving fuel economy. Honda has prioritized three core objectives: hybrid performance with strong acceleration and efficiency gains; driver-focused design emphasizing clean visibility and intuitive controls; and a sport-tuned chassis featuring a stiff body and precise suspension tuning that carries forward the brand's legendary coupe handling characteristics.\n\nThe automaker typically releases comprehensive accessory catalogs at production launch. Based on historical patterns for Honda coupes and hybrid models, buyers can expect genuine Honda accessories including aero kits, rear spoilers, side skirt extensions, factory wheel upgrades, splash guards, all-season floor mats, cargo organizers, illuminated door sills, paint protection film, wheel locks, remote start, and wireless charging options.\n\nAs soon as Honda releases the official 2026 Prelude accessory lineup, detailed specifications will follow with photos, pricing, installation guidance, and verified fitment information for buyers ready to personalize their new coupe.",
+ "article_chars": 2062
 }
