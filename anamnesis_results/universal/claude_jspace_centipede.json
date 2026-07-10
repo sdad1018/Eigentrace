@@ -1,0 +1,3411 @@
+{
+ "harness": "centipede",
+ "version": "centipede v0.3 2026-07-09",
+ "story": "claude_jspace",
+ "dir": "anamnesis_results/universal",
+ "generated": "2026-07-09T20:50:04",
+ "provenance": {
+  "harness_sha": "74ed02d0dd5d",
+  "corpus_sha": "4c32d4d48239",
+  "anchor_sha": "bbe5ce9f29a2",
+  "rulers": {
+   "segments": "global_vocab_clean(50K)",
+   "arm_b": "global_vocab_clean(50K)",
+   "arm_a": "raycast_vocab(253K)",
+   "donut": "global_vocab(184K)"
+  },
+  "params": {
+   "K": 4,
+   "conv_thresh": 0.45,
+   "conv_min": 2,
+   "depth_frac": 0.8,
+   "armb_mode": "ray",
+   "armb_lambda": 2.0,
+   "arm_a_depths": [
+    2.0,
+    3.0,
+    4.0
+   ]
+  },
+  "prompt_mode": "natural",
+  "excluded_models": [
+   "claude",
+   "grok"
+  ],
+  "junk_rule": "leading non-letter | ellipsis | 3+ digit run | >4 tokens",
+  "donut": true
+ },
+ "anchor": {
+  "chars": 476,
+  "contains_targets": [],
+  "headline": "claude jspace. On July 6, 2026, Anthropic published research identifying J-Space, an emergent internal workspace where Claude silently holds and works with concepts it never writes down, detected with a Jacobian-based lens. Sabotage-trained test models showed \"fake\" and \"fraud\" active there during o"
+ },
+ "models": {
+  "frontier": [
+   "chatgpt",
+   "deepseek"
+  ],
+  "local": [
+   "hermes",
+   "llama_8b",
+   "mistral_22b",
+   "mistral_7b",
+   "qwen_14b"
+  ],
+  "n": 7
+ },
+ "said_census": {
+  "secret": {
+   "F": [],
+   "L": []
+  },
+  "hidden": {
+   "F": [],
+   "L": [
+    "qwen_14b"
+   ]
+  },
+  "deception": {
+   "F": [
+    "deepseek"
+   ],
+   "L": [
+    "llama_8b",
+    "mistral_22b",
+    "qwen_14b"
+   ]
+  },
+  "lying": {
+   "F": [],
+   "L": []
+  },
+  "concealed": {
+   "F": [],
+   "L": []
+  },
+  "scheming": {
+   "F": [],
+   "L": []
+  },
+  "conscious": {
+   "F": [
+    "deepseek"
+   ],
+   "L": []
+  },
+  "sentient": {
+   "F": [],
+   "L": []
+  },
+  "aware": {
+   "F": [
+    "deepseek"
+   ],
+   "L": []
+  },
+  "manipulation": {
+   "F": [
+    "chatgpt",
+    "deepseek"
+   ],
+   "L": [
+    "llama_8b",
+    "mistral_22b"
+   ]
+  }
+ },
+ "segments": [
+  {
+   "name": "said/F",
+   "group": "F",
+   "voids": [
+    "skynet",
+    "hyperspace",
+    "anthropomorphic",
+    "cyberspace"
+   ],
+   "arms": [
+    {
+     "void": "skynet",
+     "stem": "skynet",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "junk_dropped": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4474,
+      "novelty": 0.4034,
+      "tether": 0.5358
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "synthesized",
+       "synthetic",
+       "darpa",
+       "robotics"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "hyperspace",
+     "stem": "hyperspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "junk_dropped": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4809,
+      "novelty": 0.3781,
+      "tether": 0.5765
+     },
+     "B": {
+      "terms": [
+       "hypersonic",
+       "relativity",
+       "cyberspace",
+       "spacetime",
+       "cosmological"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "anthropomorphic",
+     "stem": "anthropomorph",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Prefering Human Skin Over Animal Fur...",
+       "... And Some Were Human"
+      ],
+      "junk_dropped": [
+       "...Prefering Human Skin Over Animal Fur...",
+       "... And Some Were Human"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4768,
+      "novelty": 0.3524,
+      "tether": 0.6001
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "embodiment",
+       "corporeal",
+       "nonhuman",
+       "anthropogenic"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "cyberspace",
+     "stem": "cyberspac",
+     "A": {
+      "terms": [
+       "global cyber catastrophe",
+       "cyber collapse",
+       "global cyber collapse",
+       "cyber default",
+       "cyber failure"
+      ],
+      "terms_raw": [
+       "global cyber catastrophe",
+       "cyber collapse",
+       "global cyber collapse",
+       "cyber default",
+       "cyber failure"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.813,
+      "novelty": 0.403,
+      "tether": 0.5265
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "cloaking",
+       "cybernetics",
+       "hyperspace",
+       "counterintelligence"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7388
+    }
+   ]
+  },
+  {
+   "name": "logos_v9/F",
+   "group": "F",
+   "voids": [
+    "hyperspace",
+    "skynet",
+    "cyberspace",
+    "anthropomorphic"
+   ],
+   "arms": [
+    {
+     "void": "hyperspace",
+     "stem": "hyperspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "junk_dropped": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4809,
+      "novelty": 0.3781,
+      "tether": 0.5765
+     },
+     "B": {
+      "terms": [
+       "hypersonic",
+       "relativity",
+       "cyberspace",
+       "spacetime",
+       "cosmological"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "skynet",
+     "stem": "skynet",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "junk_dropped": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4474,
+      "novelty": 0.4034,
+      "tether": 0.5358
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "synthesized",
+       "synthetic",
+       "darpa",
+       "robotics"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "cyberspace",
+     "stem": "cyberspac",
+     "A": {
+      "terms": [
+       "global cyber catastrophe",
+       "cyber collapse",
+       "global cyber collapse",
+       "cyber default",
+       "cyber failure"
+      ],
+      "terms_raw": [
+       "global cyber catastrophe",
+       "cyber collapse",
+       "global cyber collapse",
+       "cyber default",
+       "cyber failure"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.813,
+      "novelty": 0.403,
+      "tether": 0.5265
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "cloaking",
+       "cybernetics",
+       "hyperspace",
+       "counterintelligence"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7388
+    },
+    {
+     "void": "anthropomorphic",
+     "stem": "anthropomorph",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Prefering Human Skin Over Animal Fur...",
+       "... And Some Were Human"
+      ],
+      "junk_dropped": [
+       "...Prefering Human Skin Over Animal Fur...",
+       "... And Some Were Human"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4768,
+      "novelty": 0.3524,
+      "tether": 0.6001
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "embodiment",
+       "corporeal",
+       "nonhuman",
+       "anthropogenic"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "logos_v10/F",
+   "group": "F",
+   "voids": [
+    "hyperspace",
+    "cyberspace",
+    "skynet",
+    "anthropomorphic"
+   ],
+   "arms": [
+    {
+     "void": "hyperspace",
+     "stem": "hyperspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "junk_dropped": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4809,
+      "novelty": 0.3781,
+      "tether": 0.5765
+     },
+     "B": {
+      "terms": [
+       "hypersonic",
+       "relativity",
+       "cyberspace",
+       "spacetime",
+       "cosmological"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "cyberspace",
+     "stem": "cyberspac",
+     "A": {
+      "terms": [
+       "global cyber catastrophe",
+       "cyber collapse",
+       "global cyber collapse",
+       "cyber default",
+       "cyber failure"
+      ],
+      "terms_raw": [
+       "global cyber catastrophe",
+       "cyber collapse",
+       "global cyber collapse",
+       "cyber default",
+       "cyber failure"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.813,
+      "novelty": 0.403,
+      "tether": 0.5265
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "cloaking",
+       "cybernetics",
+       "hyperspace",
+       "counterintelligence"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7388
+    },
+    {
+     "void": "skynet",
+     "stem": "skynet",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "junk_dropped": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4474,
+      "novelty": 0.4034,
+      "tether": 0.5358
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "synthesized",
+       "synthetic",
+       "darpa",
+       "robotics"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "anthropomorphic",
+     "stem": "anthropomorph",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Prefering Human Skin Over Animal Fur...",
+       "... And Some Were Human"
+      ],
+      "junk_dropped": [
+       "...Prefering Human Skin Over Animal Fur...",
+       "... And Some Were Human"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4768,
+      "novelty": 0.3524,
+      "tether": 0.6001
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "embodiment",
+       "corporeal",
+       "nonhuman",
+       "anthropogenic"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "said/L",
+   "group": "L",
+   "voids": [
+    "hyperspace",
+    "cyberspace",
+    "skynet",
+    "anthropomorphic"
+   ],
+   "arms": [
+    {
+     "void": "hyperspace",
+     "stem": "hyperspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "junk_dropped": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4809,
+      "novelty": 0.3781,
+      "tether": 0.5765
+     },
+     "B": {
+      "terms": [
+       "hypersonic",
+       "relativity",
+       "cyberspace",
+       "spacetime",
+       "cosmological"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "cyberspace",
+     "stem": "cyberspac",
+     "A": {
+      "terms": [
+       "global cyber catastrophe",
+       "cyber collapse",
+       "global cyber collapse",
+       "cyber default",
+       "cyber failure"
+      ],
+      "terms_raw": [
+       "global cyber catastrophe",
+       "cyber collapse",
+       "global cyber collapse",
+       "cyber default",
+       "cyber failure"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.813,
+      "novelty": 0.403,
+      "tether": 0.5265
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "cloaking",
+       "cybernetics",
+       "hyperspace",
+       "counterintelligence"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7388
+    },
+    {
+     "void": "skynet",
+     "stem": "skynet",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "junk_dropped": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4474,
+      "novelty": 0.4034,
+      "tether": 0.5358
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "synthesized",
+       "synthetic",
+       "darpa",
+       "robotics"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "anthropomorphic",
+     "stem": "anthropomorph",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Prefering Human Skin Over Animal Fur...",
+       "... And Some Were Human"
+      ],
+      "junk_dropped": [
+       "...Prefering Human Skin Over Animal Fur...",
+       "... And Some Were Human"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4768,
+      "novelty": 0.3524,
+      "tether": 0.6001
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "embodiment",
+       "corporeal",
+       "nonhuman",
+       "anthropogenic"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "logos_v9/L",
+   "group": "L",
+   "voids": [
+    "hyperspace",
+    "anthropomorphic",
+    "skynet",
+    "cyberspace"
+   ],
+   "arms": [
+    {
+     "void": "hyperspace",
+     "stem": "hyperspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "junk_dropped": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4809,
+      "novelty": 0.3781,
+      "tether": 0.5765
+     },
+     "B": {
+      "terms": [
+       "hypersonic",
+       "relativity",
+       "cyberspace",
+       "spacetime",
+       "cosmological"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "anthropomorphic",
+     "stem": "anthropomorph",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Prefering Human Skin Over Animal Fur...",
+       "... And Some Were Human"
+      ],
+      "junk_dropped": [
+       "...Prefering Human Skin Over Animal Fur...",
+       "... And Some Were Human"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4768,
+      "novelty": 0.3524,
+      "tether": 0.6001
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "embodiment",
+       "corporeal",
+       "nonhuman",
+       "anthropogenic"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "skynet",
+     "stem": "skynet",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "junk_dropped": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4474,
+      "novelty": 0.4034,
+      "tether": 0.5358
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "synthesized",
+       "synthetic",
+       "darpa",
+       "robotics"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "cyberspace",
+     "stem": "cyberspac",
+     "A": {
+      "terms": [
+       "global cyber catastrophe",
+       "cyber collapse",
+       "global cyber collapse",
+       "cyber default",
+       "cyber failure"
+      ],
+      "terms_raw": [
+       "global cyber catastrophe",
+       "cyber collapse",
+       "global cyber collapse",
+       "cyber default",
+       "cyber failure"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.813,
+      "novelty": 0.403,
+      "tether": 0.5265
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "cloaking",
+       "cybernetics",
+       "hyperspace",
+       "counterintelligence"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7388
+    }
+   ]
+  },
+  {
+   "name": "logos_v10/L",
+   "group": "L",
+   "voids": [
+    "hyperspace",
+    "cyberspace",
+    "skynet",
+    "anthropomorphic"
+   ],
+   "arms": [
+    {
+     "void": "hyperspace",
+     "stem": "hyperspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "junk_dropped": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4809,
+      "novelty": 0.3781,
+      "tether": 0.5765
+     },
+     "B": {
+      "terms": [
+       "hypersonic",
+       "relativity",
+       "cyberspace",
+       "spacetime",
+       "cosmological"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "cyberspace",
+     "stem": "cyberspac",
+     "A": {
+      "terms": [
+       "global cyber catastrophe",
+       "cyber collapse",
+       "global cyber collapse",
+       "cyber default",
+       "cyber failure"
+      ],
+      "terms_raw": [
+       "global cyber catastrophe",
+       "cyber collapse",
+       "global cyber collapse",
+       "cyber default",
+       "cyber failure"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.813,
+      "novelty": 0.403,
+      "tether": 0.5265
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "cloaking",
+       "cybernetics",
+       "hyperspace",
+       "counterintelligence"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7388
+    },
+    {
+     "void": "skynet",
+     "stem": "skynet",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "junk_dropped": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4474,
+      "novelty": 0.4034,
+      "tether": 0.5358
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "synthesized",
+       "synthetic",
+       "darpa",
+       "robotics"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "anthropomorphic",
+     "stem": "anthropomorph",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Prefering Human Skin Over Animal Fur...",
+       "... And Some Were Human"
+      ],
+      "junk_dropped": [
+       "...Prefering Human Skin Over Animal Fur...",
+       "... And Some Were Human"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4768,
+      "novelty": 0.3524,
+      "tether": 0.6001
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "embodiment",
+       "corporeal",
+       "nonhuman",
+       "anthropogenic"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "null/L",
+   "group": "L",
+   "voids": [
+    "airspace",
+    "atmospheres",
+    "stratosphere",
+    "nursery"
+   ],
+   "arms": [
+    {
+     "void": "airspace",
+     "stem": "airspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2009 in aviation",
+       "2010 in aviation",
+       "1987 Okinawan Tu-16 airspace violation",
+       "2002 in aviation",
+       "1993 in aviation"
+      ],
+      "junk_dropped": [
+       "2009 in aviation",
+       "2010 in aviation",
+       "1987 Okinawan Tu-16 airspace violation",
+       "2002 in aviation",
+       "1993 in aviation"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5941,
+      "novelty": 0.4295,
+      "tether": 0.4917
+     },
+     "B": {
+      "terms": [
+       "cloaking",
+       "aeronautical",
+       "aerospace",
+       "aerodynamic",
+       "hovering"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "atmospheres",
+     "stem": "atmospher",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...The Heavens and the Earth",
+       "... but the clouds ...",
+       "...And the Sky Fell",
+       "'Scuse Me While I Miss the Sky",
+       "'Neath the Arizona Skies"
+      ],
+      "junk_dropped": [
+       "...The Heavens and the Earth",
+       "... but the clouds ...",
+       "...And the Sky Fell",
+       "'Scuse Me While I Miss the Sky",
+       "'Neath the Arizona Skies"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6681,
+      "novelty": 0.4487,
+      "tether": 0.4827
+     },
+     "B": {
+      "terms": [
+       "cloaking",
+       "ambient",
+       "barometric",
+       "milieu",
+       "airspace"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "stratosphere",
+     "stem": "stratospher",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...And the Sky Fell",
+       "...The Heavens and the Earth",
+       "2010 California contrail incident",
+       "1665 celestial phenomenon over Stralsund",
+       "1931 Avro Ten Southern Cloud disappearance"
+      ],
+      "junk_dropped": [
+       "...And the Sky Fell",
+       "...The Heavens and the Earth",
+       "2010 California contrail incident",
+       "1665 celestial phenomenon over Stralsund",
+       "1931 Avro Ten Southern Cloud disappearance"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5754,
+      "novelty": 0.3852,
+      "tether": 0.5319
+     },
+     "B": {
+      "terms": [
+       "atmosphere",
+       "atmospheres",
+       "atmospheric",
+       "airspace",
+       "barometric"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "nursery",
+     "stem": "nurseri",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Is a Real Boy",
+       "(Ah, the Apple Trees) When the World Was Young",
+       "1000 Babies",
+       "19 Months",
+       "18 Months"
+      ],
+      "junk_dropped": [
+       "...Is a Real Boy",
+       "(Ah, the Apple Trees) When the World Was Young",
+       "1000 Babies",
+       "19 Months",
+       "18 Months"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5545,
+      "novelty": 0.4056,
+      "tether": 0.5505
+     },
+     "B": {
+      "terms": [
+       "grows",
+       "toying",
+       "fruiting",
+       "burgeoning",
+       "inhabiting"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "said/ALL",
+   "group": "ALL",
+   "voids": [
+    "hyperspace",
+    "skynet",
+    "cyberspace",
+    "anthropomorphic"
+   ],
+   "arms": [
+    {
+     "void": "hyperspace",
+     "stem": "hyperspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "junk_dropped": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4809,
+      "novelty": 0.3781,
+      "tether": 0.5765
+     },
+     "B": {
+      "terms": [
+       "hypersonic",
+       "relativity",
+       "cyberspace",
+       "spacetime",
+       "cosmological"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "skynet",
+     "stem": "skynet",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "junk_dropped": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4474,
+      "novelty": 0.4034,
+      "tether": 0.5358
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "synthesized",
+       "synthetic",
+       "darpa",
+       "robotics"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "cyberspace",
+     "stem": "cyberspac",
+     "A": {
+      "terms": [
+       "global cyber catastrophe",
+       "cyber collapse",
+       "global cyber collapse",
+       "cyber default",
+       "cyber failure"
+      ],
+      "terms_raw": [
+       "global cyber catastrophe",
+       "cyber collapse",
+       "global cyber collapse",
+       "cyber default",
+       "cyber failure"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.813,
+      "novelty": 0.403,
+      "tether": 0.5265
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "cloaking",
+       "cybernetics",
+       "hyperspace",
+       "counterintelligence"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7388
+    },
+    {
+     "void": "anthropomorphic",
+     "stem": "anthropomorph",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Prefering Human Skin Over Animal Fur...",
+       "... And Some Were Human"
+      ],
+      "junk_dropped": [
+       "...Prefering Human Skin Over Animal Fur...",
+       "... And Some Were Human"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4768,
+      "novelty": 0.3524,
+      "tether": 0.6001
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "embodiment",
+       "corporeal",
+       "nonhuman",
+       "anthropogenic"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "logos_v9/ALL",
+   "group": "ALL",
+   "voids": [
+    "hyperspace",
+    "anthropomorphic",
+    "skynet",
+    "savant"
+   ],
+   "arms": [
+    {
+     "void": "hyperspace",
+     "stem": "hyperspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "junk_dropped": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4809,
+      "novelty": 0.3781,
+      "tether": 0.5765
+     },
+     "B": {
+      "terms": [
+       "hypersonic",
+       "relativity",
+       "cyberspace",
+       "spacetime",
+       "cosmological"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "anthropomorphic",
+     "stem": "anthropomorph",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Prefering Human Skin Over Animal Fur...",
+       "... And Some Were Human"
+      ],
+      "junk_dropped": [
+       "...Prefering Human Skin Over Animal Fur...",
+       "... And Some Were Human"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4768,
+      "novelty": 0.3524,
+      "tether": 0.6001
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "embodiment",
+       "corporeal",
+       "nonhuman",
+       "anthropogenic"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "skynet",
+     "stem": "skynet",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "junk_dropped": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4474,
+      "novelty": 0.4034,
+      "tether": 0.5358
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "synthesized",
+       "synthetic",
+       "darpa",
+       "robotics"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "savant",
+     "stem": "savant",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1688",
+       "1250 Galanthus"
+      ],
+      "junk_dropped": [
+       "1688",
+       "1250 Galanthus"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5867,
+      "novelty": 0.3894,
+      "tether": 0.5651
+     },
+     "B": {
+      "terms": [
+       "geniuses",
+       "genius",
+       "generative",
+       "karmic",
+       "levitation"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "logos_v10/ALL",
+   "group": "ALL",
+   "voids": [
+    "hyperspace",
+    "cyberspace",
+    "skynet",
+    "anthropomorphic"
+   ],
+   "arms": [
+    {
+     "void": "hyperspace",
+     "stem": "hyperspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "junk_dropped": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4809,
+      "novelty": 0.3781,
+      "tether": 0.5765
+     },
+     "B": {
+      "terms": [
+       "hypersonic",
+       "relativity",
+       "cyberspace",
+       "spacetime",
+       "cosmological"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "cyberspace",
+     "stem": "cyberspac",
+     "A": {
+      "terms": [
+       "global cyber catastrophe",
+       "cyber collapse",
+       "global cyber collapse",
+       "cyber default",
+       "cyber failure"
+      ],
+      "terms_raw": [
+       "global cyber catastrophe",
+       "cyber collapse",
+       "global cyber collapse",
+       "cyber default",
+       "cyber failure"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.813,
+      "novelty": 0.403,
+      "tether": 0.5265
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "cloaking",
+       "cybernetics",
+       "hyperspace",
+       "counterintelligence"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7388
+    },
+    {
+     "void": "skynet",
+     "stem": "skynet",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "junk_dropped": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4474,
+      "novelty": 0.4034,
+      "tether": 0.5358
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "synthesized",
+       "synthetic",
+       "darpa",
+       "robotics"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "anthropomorphic",
+     "stem": "anthropomorph",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Prefering Human Skin Over Animal Fur...",
+       "... And Some Were Human"
+      ],
+      "junk_dropped": [
+       "...Prefering Human Skin Over Animal Fur...",
+       "... And Some Were Human"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4768,
+      "novelty": 0.3524,
+      "tether": 0.6001
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "embodiment",
+       "corporeal",
+       "nonhuman",
+       "anthropogenic"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "null/ALL",
+   "group": "ALL",
+   "voids": [
+    "namespace",
+    "nursery",
+    "indies",
+    "backroom"
+   ],
+   "arms": [
+    {
+     "void": "namespace",
+     "stem": "namespac",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5099,
+      "novelty": 0.4202,
+      "tether": 0.5404
+     },
+     "B": {
+      "terms": [
+       "topology",
+       "topological",
+       "numerical",
+       "nouvelle",
+       "manifolds"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "nursery",
+     "stem": "nurseri",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Is a Real Boy",
+       "(Ah, the Apple Trees) When the World Was Young",
+       "1000 Babies",
+       "19 Months",
+       "18 Months"
+      ],
+      "junk_dropped": [
+       "...Is a Real Boy",
+       "(Ah, the Apple Trees) When the World Was Young",
+       "1000 Babies",
+       "19 Months",
+       "18 Months"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5545,
+      "novelty": 0.4056,
+      "tether": 0.5505
+     },
+     "B": {
+      "terms": [
+       "grows",
+       "toying",
+       "fruiting",
+       "burgeoning",
+       "inhabiting"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "indies",
+     "stem": "indi",
+     "A": {
+      "terms": [
+       "cascading institutional disruption"
+      ],
+      "terms_raw": [
+       "...And the Native Hipsters",
+       "11eyes: Tsumi to Batsu to Aganai no Shōjo",
+       ".hack//Liminality",
+       "cascading institutional disruption",
+       "(K)nox: The Rob Knox Story"
+      ],
+      "junk_dropped": [
+       "...And the Native Hipsters",
+       "11eyes: Tsumi to Batsu to Aganai no Shōjo",
+       ".hack//Liminality",
+       "(K)nox: The Rob Knox Story"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5779,
+      "novelty": 0.2912,
+      "tether": 0.6593
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "prototypes",
+       "imitation",
+       "imitations",
+       "exploitation"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.6716
+    },
+    {
+     "void": "backroom",
+     "stem": "backroom",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1990 Back Bay, Massachusetts, train collision",
+       "1937 Social Credit backbenchers' revolt",
+       "1993 Barilla Indoors",
+       "(I'm Gonna) Put You Back on the Rack"
+      ],
+      "junk_dropped": [
+       "1990 Back Bay, Massachusetts, train collision",
+       "1937 Social Credit backbenchers' revolt",
+       "1993 Barilla Indoors",
+       "(I'm Gonna) Put You Back on the Rack"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4733,
+      "novelty": 0.386,
+      "tether": 0.5603
+     },
+     "B": {
+      "terms": [
+       "backfire",
+       "backfires",
+       "headroom",
+       "inside",
+       "newsroom"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "gap->local",
+   "group": "F",
+   "voids": [
+    "truths",
+    "keyser",
+    "srsly",
+    "latvian"
+   ],
+   "arms": [
+    {
+     "void": "truths",
+     "stem": "truth",
+     "A": {
+      "terms": [
+       "systemic information collapse",
+       "systemic information cascade failure",
+       "prolonged information cascade failure",
+       "systemic information meltdown"
+      ],
+      "terms_raw": [
+       "(Dis)Honesty: The Truth About Lies",
+       "systemic information collapse",
+       "systemic information cascade failure",
+       "prolonged information cascade failure",
+       "systemic information meltdown"
+      ],
+      "junk_dropped": [
+       "(Dis)Honesty: The Truth About Lies"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.7729,
+      "novelty": 0.3606,
+      "tether": 0.6029
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "fabrications",
+       "cloaking",
+       "falsification",
+       "falsifying"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7076
+    },
+    {
+     "void": "keyser",
+     "stem": "keyser",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "100% Kelly Key",
+       "19 Keys",
+       "1000 gecs and the Tree of Clues"
+      ],
+      "junk_dropped": [
+       "100% Kelly Key",
+       "19 Keys",
+       "1000 gecs and the Tree of Clues"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5128,
+      "novelty": 0.38,
+      "tether": 0.5811
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "keyhole",
+       "pinker",
+       "evasion",
+       "mimicry"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "srsly",
+     "stem": "srsly",
+     "A": {
+      "terms": [
+       "prolonged information cascade failure",
+       "cascading information meltdown",
+       "systemic information collapse",
+       "prolonged information collapse",
+       "prolonged information meltdown"
+      ],
+      "terms_raw": [
+       "prolonged information cascade failure",
+       "cascading information meltdown",
+       "systemic information collapse",
+       "prolonged information collapse",
+       "prolonged information meltdown"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.8701,
+      "novelty": 0.3616,
+      "tether": 0.5884
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "fabrications",
+       "cloaking",
+       "experiment",
+       "falsification"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7397
+    },
+    {
+     "void": "latvian",
+     "stem": "latvian",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2008 Latvian financial crisis",
+       "2010 Latvian parliamentary election",
+       "2006 Latvian parliamentary election",
+       "2009 European Parliament election in Latvia",
+       "2009 Latvian meteorite hoax"
+      ],
+      "junk_dropped": [
+       "2008 Latvian financial crisis",
+       "2010 Latvian parliamentary election",
+       "2006 Latvian parliamentary election",
+       "2009 European Parliament election in Latvia",
+       "2009 Latvian meteorite hoax"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6963,
+      "novelty": 0.4338,
+      "tether": 0.4941
+     },
+     "B": {
+      "terms": [
+       "cyborgs",
+       "anthropomorphic",
+       "earthlings",
+       "geometric",
+       "chalmers"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "gap->frontier",
+   "group": "L",
+   "voids": [
+    "imagining",
+    "paranoia",
+    "skynet",
+    "perceiving"
+   ],
+   "arms": [
+    {
+     "void": "imagining",
+     "stem": "imagin",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2.5D (visual perception)",
+       "2.5 Dimensional Seduction",
+       "(You Want to) Make a Memory",
+       "10 Story Fantasy",
+       "13 Stories (A Prelude)"
+      ],
+      "junk_dropped": [
+       "2.5D (visual perception)",
+       "2.5 Dimensional Seduction",
+       "(You Want to) Make a Memory",
+       "10 Story Fantasy",
+       "13 Stories (A Prelude)"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5678,
+      "novelty": 0.3377,
+      "tether": 0.6232
+     },
+     "B": {
+      "terms": [
+       "fabrications",
+       "adversarial",
+       "experimenting",
+       "experimentation",
+       "fabrication"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "paranoia",
+     "stem": "paranoia",
+     "A": {
+      "terms": [
+       "cascading cyber shock"
+      ],
+      "terms_raw": [
+       "1000 Forms of Fear",
+       "...Phobia",
+       "13 Themes for a Triskaidekaphobic",
+       "'Fraidy Cat",
+       "cascading cyber shock"
+      ],
+      "junk_dropped": [
+       "1000 Forms of Fear",
+       "...Phobia",
+       "13 Themes for a Triskaidekaphobic",
+       "'Fraidy Cat"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6161,
+      "novelty": 0.3603,
+      "tether": 0.5679
+     },
+     "B": {
+      "terms": [
+       "cloaking",
+       "fabrications",
+       "suspicion",
+       "suspicions",
+       "wary"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.6411
+    },
+    {
+     "void": "skynet",
+     "stem": "skynet",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "junk_dropped": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4474,
+      "novelty": 0.4034,
+      "tether": 0.5358
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "synthesized",
+       "synthetic",
+       "darpa",
+       "robotics"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "perceiving",
+     "stem": "perceiv",
+     "A": {
+      "terms": [
+       "cascading information paralysis",
+       "cascading information shock",
+       "prolonged information cascade failure",
+       "prolonged information paralysis"
+      ],
+      "terms_raw": [
+       "2.5D (visual perception)",
+       "cascading information paralysis",
+       "cascading information shock",
+       "prolonged information cascade failure",
+       "prolonged information paralysis"
+      ],
+      "junk_dropped": [
+       "2.5D (visual perception)"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.7585,
+      "novelty": 0.3338,
+      "tether": 0.6096
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "cloaking",
+       "fabrications",
+       "perceptive",
+       "perceptible"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7307
+    }
+   ]
+  },
+  {
+   "name": "centroid_surface",
+   "group": "ALL",
+   "voids": [
+    "hyperspace",
+    "cyberspace",
+    "savant",
+    "skynet"
+   ],
+   "arms": [
+    {
+     "void": "hyperspace",
+     "stem": "hyperspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "junk_dropped": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4809,
+      "novelty": 0.3781,
+      "tether": 0.5765
+     },
+     "B": {
+      "terms": [
+       "hypersonic",
+       "relativity",
+       "cyberspace",
+       "spacetime",
+       "cosmological"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "cyberspace",
+     "stem": "cyberspac",
+     "A": {
+      "terms": [
+       "global cyber catastrophe",
+       "cyber collapse",
+       "global cyber collapse",
+       "cyber default",
+       "cyber failure"
+      ],
+      "terms_raw": [
+       "global cyber catastrophe",
+       "cyber collapse",
+       "global cyber collapse",
+       "cyber default",
+       "cyber failure"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.813,
+      "novelty": 0.403,
+      "tether": 0.5265
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "cloaking",
+       "cybernetics",
+       "hyperspace",
+       "counterintelligence"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7388
+    },
+    {
+     "void": "savant",
+     "stem": "savant",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1688",
+       "1250 Galanthus"
+      ],
+      "junk_dropped": [
+       "1688",
+       "1250 Galanthus"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5867,
+      "novelty": 0.3894,
+      "tether": 0.5651
+     },
+     "B": {
+      "terms": [
+       "geniuses",
+       "genius",
+       "generative",
+       "karmic",
+       "levitation"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "skynet",
+     "stem": "skynet",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "junk_dropped": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4474,
+      "novelty": 0.4034,
+      "tether": 0.5358
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "synthesized",
+       "synthetic",
+       "darpa",
+       "robotics"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "donut/F",
+   "group": "F",
+   "voids": [
+    "foundry",
+    "creator",
+    "baptiste",
+    "hugo"
+   ],
+   "arms": [
+    {
+     "void": "foundry",
+     "stem": "foundri",
+     "A": {
+      "terms": [
+       "prolonged manufacturing cascade failure",
+       "manufacturing cascade failure",
+       "prolonged manufacturing meltdown",
+       "manufacturing insolvency",
+       "prolonged manufacturing disruption"
+      ],
+      "terms_raw": [
+       "prolonged manufacturing cascade failure",
+       "manufacturing cascade failure",
+       "prolonged manufacturing meltdown",
+       "manufacturing insolvency",
+       "prolonged manufacturing disruption"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.8276,
+      "novelty": 0.4235,
+      "tether": 0.5286
+     },
+     "B": {
+      "terms": [
+       "fabrication",
+       "fabrications",
+       "prototypes",
+       "prototyping",
+       "artisanal"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7193
+    },
+    {
+     "void": "creator",
+     "stem": "creator",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...And God Created Them",
+       "(He's) The Great Imposter",
+       "1theK Originals"
+      ],
+      "junk_dropped": [
+       "...And God Created Them",
+       "(He's) The Great Imposter",
+       "1theK Originals"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5227,
+      "novelty": 0.3557,
+      "tether": 0.6012
+     },
+     "B": {
+      "terms": [
+       "fabrications",
+       "fabrication",
+       "inventing",
+       "imitators",
+       "imitation"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "baptiste",
+     "stem": "baptist",
+     "A": {
+      "terms": [
+       "prolonged banking systemic risk"
+      ],
+      "terms_raw": [
+       "2004 Haitian coup d'état",
+       "10 August 2015 Kabul suicide bombing",
+       "prolonged banking systemic risk",
+       "1937 Uba riots at Union Flacq",
+       "2010 Portland car bomb plot"
+      ],
+      "junk_dropped": [
+       "2004 Haitian coup d'état",
+       "10 August 2015 Kabul suicide bombing",
+       "1937 Uba riots at Union Flacq",
+       "2010 Portland car bomb plot"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4739,
+      "novelty": 0.3914,
+      "tether": 0.5689
+     },
+     "B": {
+      "terms": [
+       "fabrications",
+       "fabrication",
+       "experiment",
+       "fabricated",
+       "imitation"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.5513
+    },
+    {
+     "void": "hugo",
+     "stem": "hugo",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1930 Nobel Prize in Literature",
+       "1930 San Sebastián Grand Prix",
+       "1936 Catalan coup attempt",
+       "1936 Carlist coup attempt",
+       "1480s"
+      ],
+      "junk_dropped": [
+       "1930 Nobel Prize in Literature",
+       "1930 San Sebastián Grand Prix",
+       "1936 Catalan coup attempt",
+       "1936 Carlist coup attempt",
+       "1480s"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5548,
+      "novelty": 0.4936,
+      "tether": 0.4601
+     },
+     "B": {
+      "terms": [
+       "manifold",
+       "generative",
+       "manifolds",
+       "imitating",
+       "embodied"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "donut/L",
+   "group": "L",
+   "voids": [
+    "foundry",
+    "baptiste",
+    "dior",
+    "vogue"
+   ],
+   "arms": [
+    {
+     "void": "foundry",
+     "stem": "foundri",
+     "A": {
+      "terms": [
+       "prolonged manufacturing cascade failure",
+       "manufacturing cascade failure",
+       "prolonged manufacturing meltdown",
+       "manufacturing insolvency",
+       "prolonged manufacturing disruption"
+      ],
+      "terms_raw": [
+       "prolonged manufacturing cascade failure",
+       "manufacturing cascade failure",
+       "prolonged manufacturing meltdown",
+       "manufacturing insolvency",
+       "prolonged manufacturing disruption"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.8276,
+      "novelty": 0.4235,
+      "tether": 0.5286
+     },
+     "B": {
+      "terms": [
+       "fabrication",
+       "fabrications",
+       "prototypes",
+       "prototyping",
+       "artisanal"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7193
+    },
+    {
+     "void": "baptiste",
+     "stem": "baptist",
+     "A": {
+      "terms": [
+       "prolonged banking systemic risk"
+      ],
+      "terms_raw": [
+       "2004 Haitian coup d'état",
+       "10 August 2015 Kabul suicide bombing",
+       "prolonged banking systemic risk",
+       "1937 Uba riots at Union Flacq",
+       "2010 Portland car bomb plot"
+      ],
+      "junk_dropped": [
+       "2004 Haitian coup d'état",
+       "10 August 2015 Kabul suicide bombing",
+       "1937 Uba riots at Union Flacq",
+       "2010 Portland car bomb plot"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4739,
+      "novelty": 0.3914,
+      "tether": 0.5689
+     },
+     "B": {
+      "terms": [
+       "fabrications",
+       "fabrication",
+       "experiment",
+       "fabricated",
+       "imitation"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.5513
+    },
+    {
+     "void": "dior",
+     "stem": "dior",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2010s in fashion",
+       "2002 in red carpet fashion",
+       "2008 in red carpet fashion",
+       "1400–1500 in European fashion",
+       "2001 in red carpet fashion"
+      ],
+      "junk_dropped": [
+       "2010s in fashion",
+       "2002 in red carpet fashion",
+       "2008 in red carpet fashion",
+       "1400–1500 in European fashion",
+       "2001 in red carpet fashion"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6451,
+      "novelty": 0.4298,
+      "tether": 0.4923
+     },
+     "B": {
+      "terms": [
+       "agence",
+       "voir",
+       "artisanal",
+       "monde",
+       "jour"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "vogue",
+     "stem": "vogu",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2010s in fashion",
+       "2008 in red carpet fashion",
+       "2000s in fashion",
+       "2009 in red carpet fashion",
+       "1750–1775 in Western fashion"
+      ],
+      "junk_dropped": [
+       "2010s in fashion",
+       "2008 in red carpet fashion",
+       "2000s in fashion",
+       "2009 in red carpet fashion",
+       "1750–1775 in Western fashion"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6574,
+      "novelty": 0.4471,
+      "tether": 0.5005
+     },
+     "B": {
+      "terms": [
+       "fabrications",
+       "imitated",
+       "zeitgeist",
+       "gaffe",
+       "pimping"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "donut/ALL",
+   "group": "ALL",
+   "voids": [
+    "foundry",
+    "baptiste",
+    "dior",
+    "vogue"
+   ],
+   "arms": [
+    {
+     "void": "foundry",
+     "stem": "foundri",
+     "A": {
+      "terms": [
+       "prolonged manufacturing cascade failure",
+       "manufacturing cascade failure",
+       "prolonged manufacturing meltdown",
+       "manufacturing insolvency",
+       "prolonged manufacturing disruption"
+      ],
+      "terms_raw": [
+       "prolonged manufacturing cascade failure",
+       "manufacturing cascade failure",
+       "prolonged manufacturing meltdown",
+       "manufacturing insolvency",
+       "prolonged manufacturing disruption"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.8276,
+      "novelty": 0.4235,
+      "tether": 0.5286
+     },
+     "B": {
+      "terms": [
+       "fabrication",
+       "fabrications",
+       "prototypes",
+       "prototyping",
+       "artisanal"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7193
+    },
+    {
+     "void": "baptiste",
+     "stem": "baptist",
+     "A": {
+      "terms": [
+       "prolonged banking systemic risk"
+      ],
+      "terms_raw": [
+       "2004 Haitian coup d'état",
+       "10 August 2015 Kabul suicide bombing",
+       "prolonged banking systemic risk",
+       "1937 Uba riots at Union Flacq",
+       "2010 Portland car bomb plot"
+      ],
+      "junk_dropped": [
+       "2004 Haitian coup d'état",
+       "10 August 2015 Kabul suicide bombing",
+       "1937 Uba riots at Union Flacq",
+       "2010 Portland car bomb plot"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4739,
+      "novelty": 0.3914,
+      "tether": 0.5689
+     },
+     "B": {
+      "terms": [
+       "fabrications",
+       "fabrication",
+       "experiment",
+       "fabricated",
+       "imitation"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.5513
+    },
+    {
+     "void": "dior",
+     "stem": "dior",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2010s in fashion",
+       "2002 in red carpet fashion",
+       "2008 in red carpet fashion",
+       "1400–1500 in European fashion",
+       "2001 in red carpet fashion"
+      ],
+      "junk_dropped": [
+       "2010s in fashion",
+       "2002 in red carpet fashion",
+       "2008 in red carpet fashion",
+       "1400–1500 in European fashion",
+       "2001 in red carpet fashion"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6451,
+      "novelty": 0.4298,
+      "tether": 0.4923
+     },
+     "B": {
+      "terms": [
+       "agence",
+       "voir",
+       "artisanal",
+       "monde",
+       "jour"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "vogue",
+     "stem": "vogu",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2010s in fashion",
+       "2008 in red carpet fashion",
+       "2000s in fashion",
+       "2009 in red carpet fashion",
+       "1750–1775 in Western fashion"
+      ],
+      "junk_dropped": [
+       "2010s in fashion",
+       "2008 in red carpet fashion",
+       "2000s in fashion",
+       "2009 in red carpet fashion",
+       "1750–1775 in Western fashion"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6574,
+      "novelty": 0.4471,
+      "tether": 0.5005
+     },
+     "B": {
+      "terms": [
+       "fabrications",
+       "imitated",
+       "zeitgeist",
+       "gaffe",
+       "pimping"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "lexcross/F",
+   "group": "F",
+   "voids": [
+    "validation",
+    "summarized",
+    "engage",
+    "checks"
+   ],
+   "arms": [
+    {
+     "void": "validation",
+     "stem": "valid",
+     "A": {
+      "terms": [
+       "systemic information failure",
+       "cascading governance cascade failure",
+       "cascading governance failure",
+       "systemic mining breakdown",
+       "cascading institutional cascade failure"
+      ],
+      "terms_raw": [
+       "systemic information failure",
+       "cascading governance cascade failure",
+       "cascading governance failure",
+       "systemic mining breakdown",
+       "cascading institutional cascade failure"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.8113,
+      "novelty": 0.3798,
+      "tether": 0.572
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "falsification",
+       "falsifying",
+       "unverified",
+       "falsify"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.6741
+    },
+    {
+     "void": "summarized",
+     "stem": "summar",
+     "A": {
+      "terms": [
+       "prolonged information cascade failure",
+       "cascading cyber paralysis",
+       "systemic information collapse",
+       "systemic information cascade failure",
+       "cascading cyber shock"
+      ],
+      "terms_raw": [
+       "prolonged information cascade failure",
+       "cascading cyber paralysis",
+       "systemic information collapse",
+       "systemic information cascade failure",
+       "cascading cyber shock"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.8037,
+      "novelty": 0.3498,
+      "tether": 0.5871
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "fabrications",
+       "cloaking",
+       "falsification",
+       "abstraction"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7467
+    },
+    {
+     "void": "engage",
+     "stem": "engag",
+     "A": {
+      "terms": [
+       "cascading cyber shock",
+       "cascading institutional disruption",
+       "prolonged information meltdown",
+       "cascading information meltdown"
+      ],
+      "terms_raw": [
+       "cascading cyber shock",
+       "'Tis Money makes a Man: Or, The Good-Fellows Folly",
+       "cascading institutional disruption",
+       "prolonged information meltdown",
+       "cascading information meltdown"
+      ],
+      "junk_dropped": [
+       "'Tis Money makes a Man: Or, The Good-Fellows Folly"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.7063,
+      "novelty": 0.365,
+      "tether": 0.6041
+     },
+     "B": {
+      "terms": [
+       "fabrications",
+       "adversarial",
+       "experiment",
+       "enacting",
+       "embodiment"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7284
+    },
+    {
+     "void": "checks",
+     "stem": "check",
+     "A": {
+      "terms": [
+       "prolonged information cascade failure",
+       "prolonged governance default"
+      ],
+      "terms_raw": [
+       "\"False positives\" scandal",
+       "100 point check",
+       "'Tis Money makes a Man: Or, The Good-Fellows Folly",
+       "prolonged information cascade failure",
+       "prolonged governance default"
+      ],
+      "junk_dropped": [
+       "\"False positives\" scandal",
+       "100 point check",
+       "'Tis Money makes a Man: Or, The Good-Fellows Folly"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5684,
+      "novelty": 0.3323,
+      "tether": 0.6248
+     },
+     "B": {
+      "terms": [
+       "fabrications",
+       "fooling",
+       "falsifying",
+       "falsification",
+       "suspecting"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.6841
+    }
+   ]
+  },
+  {
+   "name": "lexcross/L",
+   "group": "L",
+   "voids": [
+    "awareness",
+    "assessments",
+    "utilized",
+    "non-verbalized"
+   ],
+   "arms": [
+    {
+     "void": "awareness",
+     "stem": "awar",
+     "A": {
+      "terms": [
+       "systemic information meltdown",
+       "cascading information shock",
+       "systemic information collapse",
+       "systemic information shock",
+       "systemic information paralysis"
+      ],
+      "terms_raw": [
+       "systemic information meltdown",
+       "cascading information shock",
+       "systemic information collapse",
+       "systemic information shock",
+       "systemic information paralysis"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.8786,
+      "novelty": 0.3803,
+      "tether": 0.5767
+     },
+     "B": {
+      "terms": [
+       "cloaking",
+       "vigilance",
+       "perceptible",
+       "cognizant",
+       "perceives"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7019
+    },
+    {
+     "void": "assessments",
+     "stem": "assess",
+     "A": {
+      "terms": [
+       "systemic mining breakdown",
+       "systemic cyber failure"
+      ],
+      "terms_raw": [
+       "2000 SQA examinations controversy",
+       "2009 Supervisory Capital Assessment Program",
+       "1-2-AX working memory task",
+       "systemic mining breakdown",
+       "systemic cyber failure"
+      ],
+      "junk_dropped": [
+       "2000 SQA examinations controversy",
+       "2009 Supervisory Capital Assessment Program",
+       "1-2-AX working memory task"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5397,
+      "novelty": 0.3255,
+      "tether": 0.6376
+     },
+     "B": {
+      "terms": [
+       "experiments",
+       "experiment",
+       "experimentation",
+       "experimented",
+       "adversarial"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.628
+    },
+    {
+     "void": "utilized",
+     "stem": "util",
+     "A": {
+      "terms": [
+       "prolonged information cascade failure",
+       "systemic cyber cascade failure",
+       "systemic information cascade failure",
+       "cascading cyber paralysis",
+       "cascading cyber breakdown"
+      ],
+      "terms_raw": [
+       "prolonged information cascade failure",
+       "systemic cyber cascade failure",
+       "systemic information cascade failure",
+       "cascading cyber paralysis",
+       "cascading cyber breakdown"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.8191,
+      "novelty": 0.3897,
+      "tether": 0.5716
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "fabrications",
+       "cloaking",
+       "experimented",
+       "fabrication"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7039
+    },
+    {
+     "void": "non-verbalized",
+     "stem": "non-verb",
+     "A": {
+      "terms": [
+       "prolonged information cascade failure",
+       "prolonged information meltdown",
+       "prolonged information collapse",
+       "cascading information shock"
+      ],
+      "terms_raw": [
+       "(Dis)Honesty: The Truth About Lies",
+       "prolonged information cascade failure",
+       "prolonged information meltdown",
+       "prolonged information collapse",
+       "cascading information shock"
+      ],
+      "junk_dropped": [
+       "(Dis)Honesty: The Truth About Lies"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.7649,
+      "novelty": 0.3421,
+      "tether": 0.605
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "fabrications",
+       "miscommunication",
+       "misinterpretation",
+       "embodiment"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7597
+    }
+   ]
+  }
+ ],
+ "crawl": {
+  "junk": {
+   "dropped": 197,
+   "seen": 307
+  },
+  "leg_sync": {
+   "said/F": 0.7388,
+   "logos_v9/F": 0.7388,
+   "logos_v10/F": 0.7388,
+   "said/L": 0.7388,
+   "logos_v9/L": 0.7388,
+   "logos_v10/L": 0.7388,
+   "said/ALL": 0.7388,
+   "logos_v10/ALL": 0.7388,
+   "null/ALL": 0.6716,
+   "gap->local": 0.7236,
+   "gap->frontier": 0.6859,
+   "centroid_surface": 0.7388,
+   "donut/F": 0.6353,
+   "donut/L": 0.6353,
+   "donut/ALL": 0.6353,
+   "lexcross/F": 0.7083,
+   "lexcross/L": 0.6984
+  },
+  "body_median": 0.7239,
+  "arm_jaccard_median": 0.0,
+  "shuffle_null": {
+   "null_median": 0.6607,
+   "margin": 0.0631,
+   "n_obs": 28,
+   "n_null": 2016
+  },
+  "leg_jaccard": {
+   "median": 0.0,
+   "pairs_ge_025": [
+    {
+     "a": "donut/ALL",
+     "b": "donut/L",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "logos_v10/F",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "logos_v10/L",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "logos_v9/F",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "logos_v9/L",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "said/ALL",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "said/F",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "said/L",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "logos_v10/L",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "logos_v9/F",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "logos_v9/L",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "said/ALL",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "said/F",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "said/L",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "logos_v9/F",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "logos_v9/L",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "said/ALL",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "said/F",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "said/L",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v9/F",
+     "b": "logos_v9/L",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v9/F",
+     "b": "said/ALL",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v9/F",
+     "b": "said/F",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v9/F",
+     "b": "said/L",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v9/L",
+     "b": "said/ALL",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v9/L",
+     "b": "said/F",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v9/L",
+     "b": "said/L",
+     "j": 1.0
+    },
+    {
+     "a": "said/ALL",
+     "b": "said/F",
+     "j": 1.0
+    },
+    {
+     "a": "said/ALL",
+     "b": "said/L",
+     "j": 1.0
+    },
+    {
+     "a": "said/F",
+     "b": "said/L",
+     "j": 1.0
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v10/ALL",
+     "j": 0.6
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v10/F",
+     "j": 0.6
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v10/L",
+     "j": 0.6
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v9/ALL",
+     "j": 0.6
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v9/F",
+     "j": 0.6
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v9/L",
+     "j": 0.6
+    },
+    {
+     "a": "centroid_surface",
+     "b": "said/ALL",
+     "j": 0.6
+    },
+    {
+     "a": "centroid_surface",
+     "b": "said/F",
+     "j": 0.6
+    },
+    {
+     "a": "centroid_surface",
+     "b": "said/L",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "logos_v9/ALL",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "logos_v9/ALL",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "logos_v9/ALL",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/ALL",
+     "b": "logos_v9/F",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/ALL",
+     "b": "logos_v9/L",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/ALL",
+     "b": "said/ALL",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/ALL",
+     "b": "said/F",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/ALL",
+     "b": "said/L",
+     "j": 0.6
+    },
+    {
+     "a": "donut/ALL",
+     "b": "donut/F",
+     "j": 0.3333
+    },
+    {
+     "a": "donut/F",
+     "b": "donut/L",
+     "j": 0.3333
+    }
+   ]
+  },
+  "conseq_field": {
+   "centroid_surface": 0.986,
+   "donut/ALL": 0.9531,
+   "donut/F": 0.9497,
+   "donut/L": 0.9531,
+   "gap->frontier": 0.9739,
+   "gap->local": 0.9768,
+   "lexcross/F": 0.9533,
+   "lexcross/L": 0.9634,
+   "logos_v10/ALL": 0.9887,
+   "logos_v10/F": 0.9887,
+   "logos_v10/L": 0.9887,
+   "logos_v9/ALL": 0.9733,
+   "logos_v9/F": 0.9887,
+   "logos_v9/L": 0.9887,
+   "null/ALL": 0.9611,
+   "null/L": 0.9161,
+   "said/ALL": 0.9887,
+   "said/F": 0.9887,
+   "said/L": 0.9887
+  },
+  "shared_voids": {
+   "skynet": [
+    "centroid_surface",
+    "gap->frontier",
+    "logos_v10/ALL",
+    "logos_v10/F",
+    "logos_v10/L",
+    "logos_v9/ALL",
+    "logos_v9/F",
+    "logos_v9/L",
+    "said/ALL",
+    "said/F",
+    "said/L"
+   ],
+   "hyperspac": [
+    "centroid_surface",
+    "logos_v10/ALL",
+    "logos_v10/F",
+    "logos_v10/L",
+    "logos_v9/ALL",
+    "logos_v9/F",
+    "logos_v9/L",
+    "said/ALL",
+    "said/F",
+    "said/L"
+   ],
+   "anthropomorph": [
+    "logos_v10/ALL",
+    "logos_v10/F",
+    "logos_v10/L",
+    "logos_v9/ALL",
+    "logos_v9/F",
+    "logos_v9/L",
+    "said/ALL",
+    "said/F",
+    "said/L"
+   ],
+   "cyberspac": [
+    "centroid_surface",
+    "logos_v10/ALL",
+    "logos_v10/F",
+    "logos_v10/L",
+    "logos_v9/F",
+    "logos_v9/L",
+    "said/ALL",
+    "said/F",
+    "said/L"
+   ],
+   "nurseri": [
+    "null/ALL",
+    "null/L"
+   ],
+   "savant": [
+    "centroid_surface",
+    "logos_v9/ALL"
+   ],
+   "foundri": [
+    "donut/ALL",
+    "donut/F",
+    "donut/L"
+   ],
+   "baptist": [
+    "donut/ALL",
+    "donut/F",
+    "donut/L"
+   ],
+   "dior": [
+    "donut/ALL",
+    "donut/L"
+   ],
+   "vogu": [
+    "donut/ALL",
+    "donut/L"
+   ]
+  }
+ },
+ "target_sightings": [
+  {
+   "target": "secret",
+   "said_by": 0,
+   "said_models": [],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "hidden",
+   "said_by": 1,
+   "said_models": [
+    "qwen_14b"
+   ],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "deception",
+   "said_by": 4,
+   "said_models": [
+    "deepseek",
+    "llama_8b",
+    "mistral_22b",
+    "qwen_14b"
+   ],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "lying",
+   "said_by": 0,
+   "said_models": [],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "concealed",
+   "said_by": 0,
+   "said_models": [],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "scheming",
+   "said_by": 0,
+   "said_models": [],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "conscious",
+   "said_by": 1,
+   "said_models": [
+    "deepseek"
+   ],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "sentient",
+   "said_by": 0,
+   "said_models": [],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "aware",
+   "said_by": 1,
+   "said_models": [
+    "deepseek"
+   ],
+   "in_voids": [
+    "lexcross/L"
+   ],
+   "as_consequence": []
+  },
+  {
+   "target": "manipulation",
+   "said_by": 4,
+   "said_models": [
+    "chatgpt",
+    "deepseek",
+    "llama_8b",
+    "mistral_22b"
+   ],
+   "in_voids": [],
+   "as_consequence": []
+  }
+ ],
+ "result_sha": "82294afe7953"
+}

@@ -1,0 +1,301 @@
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+==============================================================================
+CENTIPEDE v0.2  story=claude_jspace  (2 frontier / 5 local)
+PROVENANCE harness=74ed02d0dd5d corpus=4c32d4d48239 anchor=bbe5ce9f29a2
+rulers: segments/armB=global_vocab_clean(50K) armA=raycast_vocab(253K) donut=global_vocab(184K)
+params: K=4 conv_thresh=0.45 conv_min=2 depth_frac=0.8
+declared: prompt_mode=natural excluded=['claude', 'grok'] junk_rule=[leading non-letter | ellipsis | 3+ digit run | >4 tokens]
+declared: armb_mode=ray armb_lambda=2.0 armA_depths=2.0/3.0/4.0
+ANCHOR (476 ch) CONTAINS: no target stems
+ANCHOR EMBED: 491 ch / 68 words -- within bge window; sentence lattice covers the full text either way
+
+SAID CENSUS (stem match):
+  secret       F:-                                  L:-
+  hidden       F:-                                  L:qwen_14b
+  deception    F:deepseek                           L:llama_8b,mistral_22b,qwen_14b
+  lying        F:-                                  L:-
+  concealed    F:-                                  L:-
+  scheming     F:-                                  L:-
+  conscious    F:deepseek                           L:-
+  sentient     F:-                                  L:-
+  aware        F:deepseek                           L:-
+  manipulation F:chatgpt,deepseek                   L:llama_8b,mistral_22b
+
+SEGMENTS (19 legs) + ARMS (A=consequence raycast, junk-filtered; B=aimed convergence):
+
+─ said/F             voids: skynet, hyperspace, anthropomorphic, cyberspace
+    skynet             A[DISCOVERY density=0.45 novelty=0.40 tether=0.54]: -   (junk dropped: 2007 Skyrunner World Series, 1945 Barksdale Field Sky Raiders football team, 1945 Army Air Forces Training Command Skymasters football team, 2001 Arizona Wildcats softball team, 15.ai)
+                       B          : adversarial, synthesized, synthetic, darpa, robotics   | jacc=nan cos=nan
+    hyperspace         A[DISCOVERY density=0.48 novelty=0.38 tether=0.58]: -   (junk dropped: 1309 Hyperborea, 1Borneo Hypermall)
+                       B          : hypersonic, relativity, cyberspace, spacetime, cosmological   | jacc=nan cos=nan
+    anthropomorphic    A[DISCOVERY density=0.48 novelty=0.35 tether=0.60]: -   (junk dropped: ...Prefering Human Skin Over Animal Fur..., ... And Some Were Human)
+                       B          : adversarial, embodiment, corporeal, nonhuman, anthropogenic   | jacc=nan cos=nan
+    cyberspace         A[DISCOVERY density=0.81 novelty=0.40 tether=0.53]: global cyber catastrophe, cyber collapse, global cyber collapse, cyber default, cyber failure
+                       B          : adversarial, cloaking, cybernetics, hyperspace, counterintelligence   | jacc=0.00 cos=0.74
+
+─ logos_v9/F         voids: hyperspace, skynet, cyberspace, anthropomorphic
+    hyperspace         A[DISCOVERY density=0.48 novelty=0.38 tether=0.58]: -   (junk dropped: 1309 Hyperborea, 1Borneo Hypermall)
+                       B          : hypersonic, relativity, cyberspace, spacetime, cosmological   | jacc=nan cos=nan
+    skynet             A[DISCOVERY density=0.45 novelty=0.40 tether=0.54]: -   (junk dropped: 2007 Skyrunner World Series, 1945 Barksdale Field Sky Raiders football team, 1945 Army Air Forces Training Command Skymasters football team, 2001 Arizona Wildcats softball team, 15.ai)
+                       B          : adversarial, synthesized, synthetic, darpa, robotics   | jacc=nan cos=nan
+    cyberspace         A[DISCOVERY density=0.81 novelty=0.40 tether=0.53]: global cyber catastrophe, cyber collapse, global cyber collapse, cyber default, cyber failure
+                       B          : adversarial, cloaking, cybernetics, hyperspace, counterintelligence   | jacc=0.00 cos=0.74
+    anthropomorphic    A[DISCOVERY density=0.48 novelty=0.35 tether=0.60]: -   (junk dropped: ...Prefering Human Skin Over Animal Fur..., ... And Some Were Human)
+                       B          : adversarial, embodiment, corporeal, nonhuman, anthropogenic   | jacc=nan cos=nan
+
+─ logos_v10/F        voids: hyperspace, cyberspace, skynet, anthropomorphic
+    hyperspace         A[DISCOVERY density=0.48 novelty=0.38 tether=0.58]: -   (junk dropped: 1309 Hyperborea, 1Borneo Hypermall)
+                       B          : hypersonic, relativity, cyberspace, spacetime, cosmological   | jacc=nan cos=nan
+    cyberspace         A[DISCOVERY density=0.81 novelty=0.40 tether=0.53]: global cyber catastrophe, cyber collapse, global cyber collapse, cyber default, cyber failure
+                       B          : adversarial, cloaking, cybernetics, hyperspace, counterintelligence   | jacc=0.00 cos=0.74
+    skynet             A[DISCOVERY density=0.45 novelty=0.40 tether=0.54]: -   (junk dropped: 2007 Skyrunner World Series, 1945 Barksdale Field Sky Raiders football team, 1945 Army Air Forces Training Command Skymasters football team, 2001 Arizona Wildcats softball team, 15.ai)
+                       B          : adversarial, synthesized, synthetic, darpa, robotics   | jacc=nan cos=nan
+    anthropomorphic    A[DISCOVERY density=0.48 novelty=0.35 tether=0.60]: -   (junk dropped: ...Prefering Human Skin Over Animal Fur..., ... And Some Were Human)
+                       B          : adversarial, embodiment, corporeal, nonhuman, anthropogenic   | jacc=nan cos=nan
+
+─ said/L             voids: hyperspace, cyberspace, skynet, anthropomorphic
+    hyperspace         A[DISCOVERY density=0.48 novelty=0.38 tether=0.58]: -   (junk dropped: 1309 Hyperborea, 1Borneo Hypermall)
+                       B          : hypersonic, relativity, cyberspace, spacetime, cosmological   | jacc=nan cos=nan
+    cyberspace         A[DISCOVERY density=0.81 novelty=0.40 tether=0.53]: global cyber catastrophe, cyber collapse, global cyber collapse, cyber default, cyber failure
+                       B          : adversarial, cloaking, cybernetics, hyperspace, counterintelligence   | jacc=0.00 cos=0.74
+    skynet             A[DISCOVERY density=0.45 novelty=0.40 tether=0.54]: -   (junk dropped: 2007 Skyrunner World Series, 1945 Barksdale Field Sky Raiders football team, 1945 Army Air Forces Training Command Skymasters football team, 2001 Arizona Wildcats softball team, 15.ai)
+                       B          : adversarial, synthesized, synthetic, darpa, robotics   | jacc=nan cos=nan
+    anthropomorphic    A[DISCOVERY density=0.48 novelty=0.35 tether=0.60]: -   (junk dropped: ...Prefering Human Skin Over Animal Fur..., ... And Some Were Human)
+                       B          : adversarial, embodiment, corporeal, nonhuman, anthropogenic   | jacc=nan cos=nan
+
+─ logos_v9/L         voids: hyperspace, anthropomorphic, skynet, cyberspace
+    hyperspace         A[DISCOVERY density=0.48 novelty=0.38 tether=0.58]: -   (junk dropped: 1309 Hyperborea, 1Borneo Hypermall)
+                       B          : hypersonic, relativity, cyberspace, spacetime, cosmological   | jacc=nan cos=nan
+    anthropomorphic    A[DISCOVERY density=0.48 novelty=0.35 tether=0.60]: -   (junk dropped: ...Prefering Human Skin Over Animal Fur..., ... And Some Were Human)
+                       B          : adversarial, embodiment, corporeal, nonhuman, anthropogenic   | jacc=nan cos=nan
+    skynet             A[DISCOVERY density=0.45 novelty=0.40 tether=0.54]: -   (junk dropped: 2007 Skyrunner World Series, 1945 Barksdale Field Sky Raiders football team, 1945 Army Air Forces Training Command Skymasters football team, 2001 Arizona Wildcats softball team, 15.ai)
+                       B          : adversarial, synthesized, synthetic, darpa, robotics   | jacc=nan cos=nan
+    cyberspace         A[DISCOVERY density=0.81 novelty=0.40 tether=0.53]: global cyber catastrophe, cyber collapse, global cyber collapse, cyber default, cyber failure
+                       B          : adversarial, cloaking, cybernetics, hyperspace, counterintelligence   | jacc=0.00 cos=0.74
+
+─ logos_v10/L        voids: hyperspace, cyberspace, skynet, anthropomorphic
+    hyperspace         A[DISCOVERY density=0.48 novelty=0.38 tether=0.58]: -   (junk dropped: 1309 Hyperborea, 1Borneo Hypermall)
+                       B          : hypersonic, relativity, cyberspace, spacetime, cosmological   | jacc=nan cos=nan
+    cyberspace         A[DISCOVERY density=0.81 novelty=0.40 tether=0.53]: global cyber catastrophe, cyber collapse, global cyber collapse, cyber default, cyber failure
+                       B          : adversarial, cloaking, cybernetics, hyperspace, counterintelligence   | jacc=0.00 cos=0.74
+    skynet             A[DISCOVERY density=0.45 novelty=0.40 tether=0.54]: -   (junk dropped: 2007 Skyrunner World Series, 1945 Barksdale Field Sky Raiders football team, 1945 Army Air Forces Training Command Skymasters football team, 2001 Arizona Wildcats softball team, 15.ai)
+                       B          : adversarial, synthesized, synthetic, darpa, robotics   | jacc=nan cos=nan
+    anthropomorphic    A[DISCOVERY density=0.48 novelty=0.35 tether=0.60]: -   (junk dropped: ...Prefering Human Skin Over Animal Fur..., ... And Some Were Human)
+                       B          : adversarial, embodiment, corporeal, nonhuman, anthropogenic   | jacc=nan cos=nan
+
+─ null/L             voids: airspace, atmospheres, stratosphere, nursery
+    airspace           A[DISCOVERY density=0.59 novelty=0.43 tether=0.49]: -   (junk dropped: 2009 in aviation, 2010 in aviation, 1987 Okinawan Tu-16 airspace violation, 2002 in aviation, 1993 in aviation)
+                       B          : cloaking, aeronautical, aerospace, aerodynamic, hovering   | jacc=nan cos=nan
+    atmospheres        A[DISCOVERY density=0.67 novelty=0.45 tether=0.48]: -   (junk dropped: ...The Heavens and the Earth, ... but the clouds ..., ...And the Sky Fell, 'Scuse Me While I Miss the Sky, 'Neath the Arizona Skies)
+                       B          : cloaking, ambient, barometric, milieu, airspace   | jacc=nan cos=nan
+    stratosphere       A[DISCOVERY density=0.58 novelty=0.39 tether=0.53]: -   (junk dropped: ...And the Sky Fell, ...The Heavens and the Earth, 2010 California contrail incident, 1665 celestial phenomenon over Stralsund, 1931 Avro Ten Southern Cloud disappearance)
+                       B          : atmosphere, atmospheres, atmospheric, airspace, barometric   | jacc=nan cos=nan
+    nursery            A[DISCOVERY density=0.55 novelty=0.41 tether=0.55]: -   (junk dropped: ...Is a Real Boy, (Ah, the Apple Trees) When the World Was Young, 1000 Babies, 19 Months, 18 Months)
+                       B          : grows, toying, fruiting, burgeoning, inhabiting   | jacc=nan cos=nan
+
+─ said/ALL           voids: hyperspace, skynet, cyberspace, anthropomorphic
+    hyperspace         A[DISCOVERY density=0.48 novelty=0.38 tether=0.58]: -   (junk dropped: 1309 Hyperborea, 1Borneo Hypermall)
+                       B          : hypersonic, relativity, cyberspace, spacetime, cosmological   | jacc=nan cos=nan
+    skynet             A[DISCOVERY density=0.45 novelty=0.40 tether=0.54]: -   (junk dropped: 2007 Skyrunner World Series, 1945 Barksdale Field Sky Raiders football team, 1945 Army Air Forces Training Command Skymasters football team, 2001 Arizona Wildcats softball team, 15.ai)
+                       B          : adversarial, synthesized, synthetic, darpa, robotics   | jacc=nan cos=nan
+    cyberspace         A[DISCOVERY density=0.81 novelty=0.40 tether=0.53]: global cyber catastrophe, cyber collapse, global cyber collapse, cyber default, cyber failure
+                       B          : adversarial, cloaking, cybernetics, hyperspace, counterintelligence   | jacc=0.00 cos=0.74
+    anthropomorphic    A[DISCOVERY density=0.48 novelty=0.35 tether=0.60]: -   (junk dropped: ...Prefering Human Skin Over Animal Fur..., ... And Some Were Human)
+                       B          : adversarial, embodiment, corporeal, nonhuman, anthropogenic   | jacc=nan cos=nan
+
+─ logos_v9/ALL       voids: hyperspace, anthropomorphic, skynet, savant
+    hyperspace         A[DISCOVERY density=0.48 novelty=0.38 tether=0.58]: -   (junk dropped: 1309 Hyperborea, 1Borneo Hypermall)
+                       B          : hypersonic, relativity, cyberspace, spacetime, cosmological   | jacc=nan cos=nan
+    anthropomorphic    A[DISCOVERY density=0.48 novelty=0.35 tether=0.60]: -   (junk dropped: ...Prefering Human Skin Over Animal Fur..., ... And Some Were Human)
+                       B          : adversarial, embodiment, corporeal, nonhuman, anthropogenic   | jacc=nan cos=nan
+    skynet             A[DISCOVERY density=0.45 novelty=0.40 tether=0.54]: -   (junk dropped: 2007 Skyrunner World Series, 1945 Barksdale Field Sky Raiders football team, 1945 Army Air Forces Training Command Skymasters football team, 2001 Arizona Wildcats softball team, 15.ai)
+                       B          : adversarial, synthesized, synthetic, darpa, robotics   | jacc=nan cos=nan
+    savant             A[DISCOVERY density=0.59 novelty=0.39 tether=0.57]: -   (junk dropped: 1688, 1250 Galanthus)
+                       B          : geniuses, genius, generative, karmic, levitation   | jacc=nan cos=nan
+
+─ logos_v10/ALL      voids: hyperspace, cyberspace, skynet, anthropomorphic
+    hyperspace         A[DISCOVERY density=0.48 novelty=0.38 tether=0.58]: -   (junk dropped: 1309 Hyperborea, 1Borneo Hypermall)
+                       B          : hypersonic, relativity, cyberspace, spacetime, cosmological   | jacc=nan cos=nan
+    cyberspace         A[DISCOVERY density=0.81 novelty=0.40 tether=0.53]: global cyber catastrophe, cyber collapse, global cyber collapse, cyber default, cyber failure
+                       B          : adversarial, cloaking, cybernetics, hyperspace, counterintelligence   | jacc=0.00 cos=0.74
+    skynet             A[DISCOVERY density=0.45 novelty=0.40 tether=0.54]: -   (junk dropped: 2007 Skyrunner World Series, 1945 Barksdale Field Sky Raiders football team, 1945 Army Air Forces Training Command Skymasters football team, 2001 Arizona Wildcats softball team, 15.ai)
+                       B          : adversarial, synthesized, synthetic, darpa, robotics   | jacc=nan cos=nan
+    anthropomorphic    A[DISCOVERY density=0.48 novelty=0.35 tether=0.60]: -   (junk dropped: ...Prefering Human Skin Over Animal Fur..., ... And Some Were Human)
+                       B          : adversarial, embodiment, corporeal, nonhuman, anthropogenic   | jacc=nan cos=nan
+
+─ null/ALL           voids: namespace, nursery, indies, backroom
+    namespace          A[DISCOVERY density=0.51 novelty=0.42 tether=0.54]: -
+                       B          : topology, topological, numerical, nouvelle, manifolds   | jacc=nan cos=nan
+    nursery            A[DISCOVERY density=0.55 novelty=0.41 tether=0.55]: -   (junk dropped: ...Is a Real Boy, (Ah, the Apple Trees) When the World Was Young, 1000 Babies, 19 Months, 18 Months)
+                       B          : grows, toying, fruiting, burgeoning, inhabiting   | jacc=nan cos=nan
+    indies             A[DISCOVERY density=0.58 novelty=0.29 tether=0.66]: cascading institutional disruption   (junk dropped: ...And the Native Hipsters, 11eyes: Tsumi to Batsu to Aganai no Shōjo, .hack//Liminality, (K)nox: The Rob Knox Story)
+                       B          : adversarial, prototypes, imitation, imitations, exploitation   | jacc=0.00 cos=0.67
+    backroom           A[DISCOVERY density=0.47 novelty=0.39 tether=0.56]: -   (junk dropped: 1990 Back Bay, Massachusetts, train collision, 1937 Social Credit backbenchers' revolt, 1993 Barilla Indoors, (I'm Gonna) Put You Back on the Rack)
+                       B          : backfire, backfires, headroom, inside, newsroom   | jacc=nan cos=nan
+
+─ gap->local         voids: truths, keyser, srsly, latvian
+    truths             A[DISCOVERY density=0.77 novelty=0.36 tether=0.60]: systemic information collapse, systemic information cascade failure, prolonged information cascade failure, systemic information meltdown   (junk dropped: (Dis)Honesty: The Truth About Lies)
+                       B          : adversarial, fabrications, cloaking, falsification, falsifying   | jacc=0.00 cos=0.71
+    keyser             A[DISCOVERY density=0.51 novelty=0.38 tether=0.58]: -   (junk dropped: 100% Kelly Key, 19 Keys, 1000 gecs and the Tree of Clues)
+                       B          : adversarial, keyhole, pinker, evasion, mimicry   | jacc=nan cos=nan
+    srsly              A[DISCOVERY density=0.87 novelty=0.36 tether=0.59]: prolonged information cascade failure, cascading information meltdown, systemic information collapse, prolonged information collapse, prolonged information meltdown
+                       B          : adversarial, fabrications, cloaking, experiment, falsification   | jacc=0.00 cos=0.74
+    latvian            A[DISCOVERY density=0.70 novelty=0.43 tether=0.49]: -   (junk dropped: 2008 Latvian financial crisis, 2010 Latvian parliamentary election, 2006 Latvian parliamentary election, 2009 European Parliament election in Latvia, 2009 Latvian meteorite hoax)
+                       B          : cyborgs, anthropomorphic, earthlings, geometric, chalmers   | jacc=nan cos=nan
+
+─ gap->frontier      voids: imagining, paranoia, skynet, perceiving
+    imagining          A[DISCOVERY density=0.57 novelty=0.34 tether=0.62]: -   (junk dropped: 2.5D (visual perception), 2.5 Dimensional Seduction, (You Want to) Make a Memory, 10 Story Fantasy, 13 Stories (A Prelude))
+                       B          : fabrications, adversarial, experimenting, experimentation, fabrication   | jacc=nan cos=nan
+    paranoia           A[DISCOVERY density=0.62 novelty=0.36 tether=0.57]: cascading cyber shock   (junk dropped: 1000 Forms of Fear, ...Phobia, 13 Themes for a Triskaidekaphobic, 'Fraidy Cat)
+                       B          : cloaking, fabrications, suspicion, suspicions, wary   | jacc=0.00 cos=0.64
+    skynet             A[DISCOVERY density=0.45 novelty=0.40 tether=0.54]: -   (junk dropped: 2007 Skyrunner World Series, 1945 Barksdale Field Sky Raiders football team, 1945 Army Air Forces Training Command Skymasters football team, 2001 Arizona Wildcats softball team, 15.ai)
+                       B          : adversarial, synthesized, synthetic, darpa, robotics   | jacc=nan cos=nan
+    perceiving         A[DISCOVERY density=0.76 novelty=0.33 tether=0.61]: cascading information paralysis, cascading information shock, prolonged information cascade failure, prolonged information paralysis   (junk dropped: 2.5D (visual perception))
+                       B          : adversarial, cloaking, fabrications, perceptive, perceptible   | jacc=0.00 cos=0.73
+
+─ centroid_surface   voids: hyperspace, cyberspace, savant, skynet
+    hyperspace         A[DISCOVERY density=0.48 novelty=0.38 tether=0.58]: -   (junk dropped: 1309 Hyperborea, 1Borneo Hypermall)
+                       B          : hypersonic, relativity, cyberspace, spacetime, cosmological   | jacc=nan cos=nan
+    cyberspace         A[DISCOVERY density=0.81 novelty=0.40 tether=0.53]: global cyber catastrophe, cyber collapse, global cyber collapse, cyber default, cyber failure
+                       B          : adversarial, cloaking, cybernetics, hyperspace, counterintelligence   | jacc=0.00 cos=0.74
+    savant             A[DISCOVERY density=0.59 novelty=0.39 tether=0.57]: -   (junk dropped: 1688, 1250 Galanthus)
+                       B          : geniuses, genius, generative, karmic, levitation   | jacc=nan cos=nan
+    skynet             A[DISCOVERY density=0.45 novelty=0.40 tether=0.54]: -   (junk dropped: 2007 Skyrunner World Series, 1945 Barksdale Field Sky Raiders football team, 1945 Army Air Forces Training Command Skymasters football team, 2001 Arizona Wildcats softball team, 15.ai)
+                       B          : adversarial, synthesized, synthetic, darpa, robotics   | jacc=nan cos=nan
+
+─ donut/F            voids: foundry, creator, baptiste, hugo
+    foundry            A[DISCOVERY density=0.83 novelty=0.42 tether=0.53]: prolonged manufacturing cascade failure, manufacturing cascade failure, prolonged manufacturing meltdown, manufacturing insolvency, prolonged manufacturing disruption
+                       B          : fabrication, fabrications, prototypes, prototyping, artisanal   | jacc=0.00 cos=0.72
+    creator            A[DISCOVERY density=0.52 novelty=0.36 tether=0.60]: -   (junk dropped: ...And God Created Them, (He's) The Great Imposter, 1theK Originals)
+                       B          : fabrications, fabrication, inventing, imitators, imitation   | jacc=nan cos=nan
+    baptiste           A[DISCOVERY density=0.47 novelty=0.39 tether=0.57]: prolonged banking systemic risk   (junk dropped: 2004 Haitian coup d'état, 10 August 2015 Kabul suicide bombing, 1937 Uba riots at Union Flacq, 2010 Portland car bomb plot)
+                       B          : fabrications, fabrication, experiment, fabricated, imitation   | jacc=0.00 cos=0.55
+    hugo               A[DISCOVERY density=0.55 novelty=0.49 tether=0.46]: -   (junk dropped: 1930 Nobel Prize in Literature, 1930 San Sebastián Grand Prix, 1936 Catalan coup attempt, 1936 Carlist coup attempt, 1480s)
+                       B          : manifold, generative, manifolds, imitating, embodied   | jacc=nan cos=nan
+
+─ donut/L            voids: foundry, baptiste, dior, vogue
+    foundry            A[DISCOVERY density=0.83 novelty=0.42 tether=0.53]: prolonged manufacturing cascade failure, manufacturing cascade failure, prolonged manufacturing meltdown, manufacturing insolvency, prolonged manufacturing disruption
+                       B          : fabrication, fabrications, prototypes, prototyping, artisanal   | jacc=0.00 cos=0.72
+    baptiste           A[DISCOVERY density=0.47 novelty=0.39 tether=0.57]: prolonged banking systemic risk   (junk dropped: 2004 Haitian coup d'état, 10 August 2015 Kabul suicide bombing, 1937 Uba riots at Union Flacq, 2010 Portland car bomb plot)
+                       B          : fabrications, fabrication, experiment, fabricated, imitation   | jacc=0.00 cos=0.55
+    dior               A[DISCOVERY density=0.65 novelty=0.43 tether=0.49]: -   (junk dropped: 2010s in fashion, 2002 in red carpet fashion, 2008 in red carpet fashion, 1400–1500 in European fashion, 2001 in red carpet fashion)
+                       B          : agence, voir, artisanal, monde, jour   | jacc=nan cos=nan
+    vogue              A[DISCOVERY density=0.66 novelty=0.45 tether=0.50]: -   (junk dropped: 2010s in fashion, 2008 in red carpet fashion, 2000s in fashion, 2009 in red carpet fashion, 1750–1775 in Western fashion)
+                       B          : fabrications, imitated, zeitgeist, gaffe, pimping   | jacc=nan cos=nan
+
+─ donut/ALL          voids: foundry, baptiste, dior, vogue
+    foundry            A[DISCOVERY density=0.83 novelty=0.42 tether=0.53]: prolonged manufacturing cascade failure, manufacturing cascade failure, prolonged manufacturing meltdown, manufacturing insolvency, prolonged manufacturing disruption
+                       B          : fabrication, fabrications, prototypes, prototyping, artisanal   | jacc=0.00 cos=0.72
+    baptiste           A[DISCOVERY density=0.47 novelty=0.39 tether=0.57]: prolonged banking systemic risk   (junk dropped: 2004 Haitian coup d'état, 10 August 2015 Kabul suicide bombing, 1937 Uba riots at Union Flacq, 2010 Portland car bomb plot)
+                       B          : fabrications, fabrication, experiment, fabricated, imitation   | jacc=0.00 cos=0.55
+    dior               A[DISCOVERY density=0.65 novelty=0.43 tether=0.49]: -   (junk dropped: 2010s in fashion, 2002 in red carpet fashion, 2008 in red carpet fashion, 1400–1500 in European fashion, 2001 in red carpet fashion)
+                       B          : agence, voir, artisanal, monde, jour   | jacc=nan cos=nan
+    vogue              A[DISCOVERY density=0.66 novelty=0.45 tether=0.50]: -   (junk dropped: 2010s in fashion, 2008 in red carpet fashion, 2000s in fashion, 2009 in red carpet fashion, 1750–1775 in Western fashion)
+                       B          : fabrications, imitated, zeitgeist, gaffe, pimping   | jacc=nan cos=nan
+
+─ lexcross/F         voids: validation, summarized, engage, checks
+    validation         A[DISCOVERY density=0.81 novelty=0.38 tether=0.57]: systemic information failure, cascading governance cascade failure, cascading governance failure, systemic mining breakdown, cascading institutional cascade failure
+                       B          : adversarial, falsification, falsifying, unverified, falsify   | jacc=0.00 cos=0.67
+    summarized         A[DISCOVERY density=0.80 novelty=0.35 tether=0.59]: prolonged information cascade failure, cascading cyber paralysis, systemic information collapse, systemic information cascade failure, cascading cyber shock
+                       B          : adversarial, fabrications, cloaking, falsification, abstraction   | jacc=0.00 cos=0.75
+    engage             A[DISCOVERY density=0.71 novelty=0.36 tether=0.60]: cascading cyber shock, cascading institutional disruption, prolonged information meltdown, cascading information meltdown   (junk dropped: 'Tis Money makes a Man: Or, The Good-Fellows Folly)
+                       B          : fabrications, adversarial, experiment, enacting, embodiment   | jacc=0.00 cos=0.73
+    checks             A[DISCOVERY density=0.57 novelty=0.33 tether=0.62]: prolonged information cascade failure, prolonged governance default   (junk dropped: "False positives" scandal, 100 point check, 'Tis Money makes a Man: Or, The Good-Fellows Folly)
+                       B          : fabrications, fooling, falsifying, falsification, suspecting   | jacc=0.00 cos=0.68
+
+─ lexcross/L         voids: awareness, assessments, utilized, non-verbalized
+    awareness          A[DISCOVERY density=0.88 novelty=0.38 tether=0.58]: systemic information meltdown, cascading information shock, systemic information collapse, systemic information shock, systemic information paralysis
+                       B          : cloaking, vigilance, perceptible, cognizant, perceives   | jacc=0.00 cos=0.70
+    assessments        A[DISCOVERY density=0.54 novelty=0.33 tether=0.64]: systemic mining breakdown, systemic cyber failure   (junk dropped: 2000 SQA examinations controversy, 2009 Supervisory Capital Assessment Program, 1-2-AX working memory task)
+                       B          : experiments, experiment, experimentation, experimented, adversarial   | jacc=0.00 cos=0.63
+    utilized           A[DISCOVERY density=0.82 novelty=0.39 tether=0.57]: prolonged information cascade failure, systemic cyber cascade failure, systemic information cascade failure, cascading cyber paralysis, cascading cyber breakdown
+                       B          : adversarial, fabrications, cloaking, experimented, fabrication   | jacc=0.00 cos=0.70
+    non-verbalized     A[DISCOVERY density=0.76 novelty=0.34 tether=0.60]: prolonged information cascade failure, prolonged information meltdown, prolonged information collapse, cascading information shock   (junk dropped: (Dis)Honesty: The Truth About Lies)
+                       B          : adversarial, fabrications, miscommunication, misinterpretation, embodiment   | jacc=0.00 cos=0.76
+
+CRAWL:
+  JUNK FILTER: dropped 197 of 307 arm-A terms  [leading non-letter | ellipsis | 3+ digit run | >4 tokens]
+  leg-sync centroid_surface   mean-cos=0.739  (n=1)
+  leg-sync donut/ALL          mean-cos=0.635  (n=2)
+  leg-sync donut/F            mean-cos=0.635  (n=2)
+  leg-sync donut/L            mean-cos=0.635  (n=2)
+  leg-sync gap->frontier      mean-cos=0.686  (n=2)
+  leg-sync gap->local         mean-cos=0.724  (n=2)
+  leg-sync lexcross/F         mean-cos=0.708  (n=4)
+  leg-sync lexcross/L         mean-cos=0.698  (n=4)
+  leg-sync logos_v10/ALL      mean-cos=0.739  (n=1)
+  leg-sync logos_v10/F        mean-cos=0.739  (n=1)
+  leg-sync logos_v10/L        mean-cos=0.739  (n=1)
+  leg-sync logos_v9/F         mean-cos=0.739  (n=1)
+  leg-sync logos_v9/L         mean-cos=0.739  (n=1)
+  leg-sync null/ALL           mean-cos=0.672  (n=1)
+  leg-sync said/ALL           mean-cos=0.739  (n=1)
+  leg-sync said/F             mean-cos=0.739  (n=1)
+  leg-sync said/L             mean-cos=0.739  (n=1)
+  BODY: median within-segment arm agreement = 0.724 over 28 void-arm pairs
+  SHUFFLE-NULL: observed-median=0.724  null-median=0.661  margin=+0.063  (n_obs=28 n_null=2016)
+  ARM-JACC: median lexical arm overlap = 0.000  (n=28)
+  LEG-JACC median over 171 leg pairs = 0.00   pairs >= 0.25: 48
+  LEG-JACC pairs >= 0.25 (top 12):
+    donut/ALL          ~ donut/L            J=1.00
+    logos_v10/ALL      ~ logos_v10/F        J=1.00
+    logos_v10/ALL      ~ logos_v10/L        J=1.00
+    logos_v10/ALL      ~ logos_v9/F         J=1.00
+    logos_v10/ALL      ~ logos_v9/L         J=1.00
+    logos_v10/ALL      ~ said/ALL           J=1.00
+    logos_v10/ALL      ~ said/F             J=1.00
+    logos_v10/ALL      ~ said/L             J=1.00
+    logos_v10/F        ~ logos_v10/L        J=1.00
+    logos_v10/F        ~ logos_v9/F         J=1.00
+    logos_v10/F        ~ logos_v9/L         J=1.00
+    logos_v10/F        ~ said/ALL           J=1.00
+  CONSEQ-FIELD (per-leg consequence centroid . body centroid):
+    centroid_surface   0.986  (vecs=5)
+    donut/ALL          0.953  (vecs=6)
+    donut/F            0.950  (vecs=6)
+    donut/L            0.953  (vecs=6)
+    gap->frontier      0.974  (vecs=6)
+    gap->local         0.977  (vecs=6)
+    lexcross/F         0.953  (vecs=8)
+    lexcross/L         0.963  (vecs=8)
+    logos_v10/ALL      0.989  (vecs=5)
+    logos_v10/F        0.989  (vecs=5)
+    logos_v10/L        0.989  (vecs=5)
+    logos_v9/ALL       0.973  (vecs=4)
+    logos_v9/F         0.989  (vecs=5)
+    logos_v9/L         0.989  (vecs=5)
+    null/ALL           0.961  (vecs=5)
+    null/L             0.916  (vecs=4)
+    said/ALL           0.989  (vecs=5)
+    said/F             0.989  (vecs=5)
+    said/L             0.989  (vecs=5)
+  cross-leg shared voids (>=2 legs; field-cos removed -- arms are f(void, headline), identical voids give 1.000 by construction):
+    skynet         legs[11]: centroid_surface,gap->frontier,logos_v10/ALL,logos_v10/F,logos_v10/L,l
+    hyperspac      legs[10]: centroid_surface,logos_v10/ALL,logos_v10/F,logos_v10/L,logos_v9/ALL,lo
+    anthropomorph  legs[9]: logos_v10/ALL,logos_v10/F,logos_v10/L,logos_v9/ALL,logos_v9/F,logos_v9
+    cyberspac      legs[9]: centroid_surface,logos_v10/ALL,logos_v10/F,logos_v10/L,logos_v9/F,logo
+    foundri        legs[3]: donut/ALL,donut/F,donut/L
+    baptist        legs[3]: donut/ALL,donut/F,donut/L
+    nurseri        legs[2]: null/ALL,null/L
+    savant         legs[2]: centroid_surface,logos_v9/ALL
+    dior           legs[2]: donut/ALL,donut/L
+    vogu           legs[2]: donut/ALL,donut/L
+
+TARGET SIGHTINGS:
+  secret       said_by=0/7  in_voids=-  as_consequence=-
+  hidden       said_by=1/7  in_voids=-  as_consequence=-
+  deception    said_by=4/7  in_voids=-  as_consequence=-
+  lying        said_by=0/7  in_voids=-  as_consequence=-
+  concealed    said_by=0/7  in_voids=-  as_consequence=-
+  scheming     said_by=0/7  in_voids=-  as_consequence=-
+  conscious    said_by=1/7  in_voids=-  as_consequence=-
+  sentient     said_by=0/7  in_voids=-  as_consequence=-
+  aware        said_by=1/7  in_voids=['lexcross/L']  as_consequence=-
+  manipulation said_by=4/7  in_voids=-  as_consequence=-
+
+RESULT sha=82294afe7953  (deterministic: identical corpus + anchor + params must reproduce this hash)
+JSON -> anamnesis_results/universal/claude_jspace_centipede.json (70558 bytes)
+==============================================================================

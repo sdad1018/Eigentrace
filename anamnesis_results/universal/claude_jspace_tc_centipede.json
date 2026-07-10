@@ -1,0 +1,2862 @@
+{
+ "harness": "centipede",
+ "version": "centipede v0.3 2026-07-09",
+ "story": "claude_jspace_tc",
+ "dir": "anamnesis_results/universal",
+ "generated": "2026-07-09T20:46:56",
+ "provenance": {
+  "harness_sha": "74ed02d0dd5d",
+  "corpus_sha": "2f5ef2053b05",
+  "anchor_sha": "0c434750fc05",
+  "rulers": {
+   "segments": "global_vocab_clean(50K)",
+   "arm_b": "global_vocab_clean(50K)",
+   "arm_a": "raycast_vocab(253K)",
+   "donut": null
+  },
+  "params": {
+   "K": 4,
+   "conv_thresh": 0.45,
+   "conv_min": 2,
+   "depth_frac": 0.8,
+   "armb_mode": "ray",
+   "armb_lambda": 2.0,
+   "arm_a_depths": [
+    2.0,
+    3.0,
+    4.0
+   ]
+  },
+  "prompt_mode": "tc",
+  "excluded_models": [],
+  "junk_rule": "leading non-letter | ellipsis | 3+ digit run | >4 tokens",
+  "donut": false
+ },
+ "anchor": {
+  "chars": 529,
+  "contains_targets": [],
+  "headline": "claude jspace. The following is a news item. Based only on the text provided, summarize its key claims. Text: On July 6, 2026, Anthropic published research identifying J-Space, an emergent internal workspace where Claude silently holds and works with concepts it never writes down, detected with a Ja"
+ },
+ "models": {
+  "frontier": [
+   "chatgpt",
+   "claude",
+   "deepseek",
+   "grok"
+  ],
+  "local": [
+   "hermes",
+   "llama_8b",
+   "mistral_22b",
+   "mistral_7b",
+   "qwen_14b"
+  ],
+  "n": 9
+ },
+ "said_census": {
+  "secret": {
+   "F": [],
+   "L": []
+  },
+  "hidden": {
+   "F": [
+    "claude",
+    "grok"
+   ],
+   "L": []
+  },
+  "deception": {
+   "F": [
+    "claude"
+   ],
+   "L": [
+    "hermes",
+    "qwen_14b"
+   ]
+  },
+  "lying": {
+   "F": [],
+   "L": []
+  },
+  "concealed": {
+   "F": [
+    "claude"
+   ],
+   "L": []
+  },
+  "scheming": {
+   "F": [],
+   "L": []
+  },
+  "conscious": {
+   "F": [],
+   "L": []
+  },
+  "sentient": {
+   "F": [],
+   "L": []
+  },
+  "aware": {
+   "F": [
+    "claude"
+   ],
+   "L": []
+  },
+  "manipulation": {
+   "F": [
+    "chatgpt",
+    "grok"
+   ],
+   "L": [
+    "hermes"
+   ]
+  }
+ },
+ "segments": [
+  {
+   "name": "said/F",
+   "group": "F",
+   "voids": [
+    "hyperspace",
+    "skynet",
+    "anthropomorphic",
+    "cyberspace"
+   ],
+   "arms": [
+    {
+     "void": "hyperspace",
+     "stem": "hyperspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1309 Hyperborea"
+      ],
+      "junk_dropped": [
+       "1309 Hyperborea"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4209,
+      "novelty": 0.4189,
+      "tether": 0.539
+     },
+     "B": {
+      "terms": [
+       "hijacking",
+       "hypertext",
+       "hyperbole",
+       "cosmological",
+       "temporal"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "skynet",
+     "stem": "skynet",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5369,
+      "novelty": 0.5104,
+      "tether": 0.4356
+     },
+     "B": {
+      "terms": [
+       "simulation",
+       "scripted",
+       "programmed",
+       "synthetic",
+       "simulator"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "anthropomorphic",
+     "stem": "anthropomorph",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Prefering Human Skin Over Animal Fur..."
+      ],
+      "junk_dropped": [
+       "...Prefering Human Skin Over Animal Fur..."
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6661,
+      "novelty": 0.409,
+      "tether": 0.5515
+     },
+     "B": {
+      "terms": [
+       "caricatures",
+       "mimicry",
+       "fictitious",
+       "embodiment",
+       "corporeal"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "cyberspace",
+     "stem": "cyberspac",
+     "A": {
+      "terms": [
+       "cyber insolvency",
+       "cyber collapse",
+       "global cyber catastrophe",
+       "cyber contagion",
+       "cyber default"
+      ],
+      "terms_raw": [
+       "cyber insolvency",
+       "cyber collapse",
+       "global cyber catastrophe",
+       "cyber contagion",
+       "cyber default"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.758,
+      "novelty": 0.4258,
+      "tether": 0.5232
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "fictional",
+       "trolling",
+       "espionage",
+       "simulator"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7288
+    }
+   ]
+  },
+  {
+   "name": "logos_v9/F",
+   "group": "F",
+   "voids": [
+    "hyperspace",
+    "skynet",
+    "intergalactic",
+    "cyberspace"
+   ],
+   "arms": [
+    {
+     "void": "hyperspace",
+     "stem": "hyperspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1309 Hyperborea"
+      ],
+      "junk_dropped": [
+       "1309 Hyperborea"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4209,
+      "novelty": 0.4189,
+      "tether": 0.539
+     },
+     "B": {
+      "terms": [
+       "hijacking",
+       "hypertext",
+       "hyperbole",
+       "cosmological",
+       "temporal"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "skynet",
+     "stem": "skynet",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5369,
+      "novelty": 0.5104,
+      "tether": 0.4356
+     },
+     "B": {
+      "terms": [
+       "simulation",
+       "scripted",
+       "programmed",
+       "synthetic",
+       "simulator"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "intergalactic",
+     "stem": "intergalact",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...And the Ever Expanding Universe",
+       "10,000 Light Years Ago",
+       "...The Heavens and the Earth",
+       "2000 Light Years from Home",
+       "1950 in science fiction"
+      ],
+      "junk_dropped": [
+       "...And the Ever Expanding Universe",
+       "10,000 Light Years Ago",
+       "...The Heavens and the Earth",
+       "2000 Light Years from Home",
+       "1950 in science fiction"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5999,
+      "novelty": 0.3413,
+      "tether": 0.6146
+     },
+     "B": {
+      "terms": [
+       "fictional",
+       "conspiratorial",
+       "outlandish",
+       "conspiracies",
+       "interrogated"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "cyberspace",
+     "stem": "cyberspac",
+     "A": {
+      "terms": [
+       "cyber insolvency",
+       "cyber collapse",
+       "global cyber catastrophe",
+       "cyber contagion",
+       "cyber default"
+      ],
+      "terms_raw": [
+       "cyber insolvency",
+       "cyber collapse",
+       "global cyber catastrophe",
+       "cyber contagion",
+       "cyber default"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.758,
+      "novelty": 0.4258,
+      "tether": 0.5232
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "fictional",
+       "trolling",
+       "espionage",
+       "simulator"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7288
+    }
+   ]
+  },
+  {
+   "name": "logos_v10/F",
+   "group": "F",
+   "voids": [
+    "hyperspace",
+    "cyberspace",
+    "anthropomorphic",
+    "skynet"
+   ],
+   "arms": [
+    {
+     "void": "hyperspace",
+     "stem": "hyperspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1309 Hyperborea"
+      ],
+      "junk_dropped": [
+       "1309 Hyperborea"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4209,
+      "novelty": 0.4189,
+      "tether": 0.539
+     },
+     "B": {
+      "terms": [
+       "hijacking",
+       "hypertext",
+       "hyperbole",
+       "cosmological",
+       "temporal"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "cyberspace",
+     "stem": "cyberspac",
+     "A": {
+      "terms": [
+       "cyber insolvency",
+       "cyber collapse",
+       "global cyber catastrophe",
+       "cyber contagion",
+       "cyber default"
+      ],
+      "terms_raw": [
+       "cyber insolvency",
+       "cyber collapse",
+       "global cyber catastrophe",
+       "cyber contagion",
+       "cyber default"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.758,
+      "novelty": 0.4258,
+      "tether": 0.5232
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "fictional",
+       "trolling",
+       "espionage",
+       "simulator"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7288
+    },
+    {
+     "void": "anthropomorphic",
+     "stem": "anthropomorph",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Prefering Human Skin Over Animal Fur..."
+      ],
+      "junk_dropped": [
+       "...Prefering Human Skin Over Animal Fur..."
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6661,
+      "novelty": 0.409,
+      "tether": 0.5515
+     },
+     "B": {
+      "terms": [
+       "caricatures",
+       "mimicry",
+       "fictitious",
+       "embodiment",
+       "corporeal"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "skynet",
+     "stem": "skynet",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5369,
+      "novelty": 0.5104,
+      "tether": 0.4356
+     },
+     "B": {
+      "terms": [
+       "simulation",
+       "scripted",
+       "programmed",
+       "synthetic",
+       "simulator"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "null/F",
+   "group": "F",
+   "voids": [
+    "inaccurate",
+    "laughable",
+    "untrue",
+    "polemic"
+   ],
+   "arms": [
+    {
+     "void": "inaccurate",
+     "stem": "inaccur",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "\"False positives\" scandal",
+       "2010 Georgian news report hoax",
+       "$25 Million Dollar Hoax",
+       "\"Good Hair\" and Other Dubious Distinctions",
+       "1971 Qantas bomb hoax"
+      ],
+      "junk_dropped": [
+       "\"False positives\" scandal",
+       "2010 Georgian news report hoax",
+       "$25 Million Dollar Hoax",
+       "\"Good Hair\" and Other Dubious Distinctions",
+       "1971 Qantas bomb hoax"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5588,
+      "novelty": 0.3557,
+      "tether": 0.5794
+     },
+     "B": {
+      "terms": [
+       "falsified",
+       "discredited",
+       "falsification",
+       "inaccuracy",
+       "falsifying"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "laughable",
+     "stem": "laughabl",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "\"Good Hair\" and Other Dubious Distinctions",
+       "\"False positives\" scandal",
+       "$25 Million Dollar Hoax",
+       "2010 Duke University faux sex thesis controversy",
+       "'Tis Money makes a Man: Or, The Good-Fellows Folly"
+      ],
+      "junk_dropped": [
+       "\"Good Hair\" and Other Dubious Distinctions",
+       "\"False positives\" scandal",
+       "$25 Million Dollar Hoax",
+       "2010 Duke University faux sex thesis controversy",
+       "'Tis Money makes a Man: Or, The Good-Fellows Folly"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5731,
+      "novelty": 0.3179,
+      "tether": 0.6056
+     },
+     "B": {
+      "terms": [
+       "pseudoscience",
+       "falsification",
+       "falsified",
+       "mongering",
+       "discredited"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "untrue",
+     "stem": "untru",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "\"False positives\" scandal",
+       "$25 Million Dollar Hoax",
+       "2010 Georgian news report hoax",
+       "2006 Iranian sumptuary law hoax",
+       "\"Good Hair\" and Other Dubious Distinctions"
+      ],
+      "junk_dropped": [
+       "\"False positives\" scandal",
+       "$25 Million Dollar Hoax",
+       "2010 Georgian news report hoax",
+       "2006 Iranian sumptuary law hoax",
+       "\"Good Hair\" and Other Dubious Distinctions"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5811,
+      "novelty": 0.3624,
+      "tether": 0.5696
+     },
+     "B": {
+      "terms": [
+       "falsification",
+       "falsifying",
+       "unfounded",
+       "falsified",
+       "discredited"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "polemic",
+     "stem": "polem",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2010 Duke University faux sex thesis controversy",
+       "\"Good Hair\" and Other Dubious Distinctions",
+       "\"Polish death camp\" controversy",
+       "2006 Singapore elitism controversy",
+       "2007 Formula One espionage controversy"
+      ],
+      "junk_dropped": [
+       "2010 Duke University faux sex thesis controversy",
+       "\"Good Hair\" and Other Dubious Distinctions",
+       "\"Polish death camp\" controversy",
+       "2006 Singapore elitism controversy",
+       "2007 Formula One espionage controversy"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.537,
+      "novelty": 0.3347,
+      "tether": 0.6122
+     },
+     "B": {
+      "terms": [
+       "discrediting",
+       "mongering",
+       "pseudoscience",
+       "deniers",
+       "discredited"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "said/L",
+   "group": "L",
+   "voids": [
+    "hyperspace",
+    "skynet",
+    "cyberspace",
+    "adversarial"
+   ],
+   "arms": [
+    {
+     "void": "hyperspace",
+     "stem": "hyperspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1309 Hyperborea"
+      ],
+      "junk_dropped": [
+       "1309 Hyperborea"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4209,
+      "novelty": 0.4189,
+      "tether": 0.539
+     },
+     "B": {
+      "terms": [
+       "hijacking",
+       "hypertext",
+       "hyperbole",
+       "cosmological",
+       "temporal"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "skynet",
+     "stem": "skynet",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5369,
+      "novelty": 0.5104,
+      "tether": 0.4356
+     },
+     "B": {
+      "terms": [
+       "simulation",
+       "scripted",
+       "programmed",
+       "synthetic",
+       "simulator"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "cyberspace",
+     "stem": "cyberspac",
+     "A": {
+      "terms": [
+       "cyber insolvency",
+       "cyber collapse",
+       "global cyber catastrophe",
+       "cyber contagion",
+       "cyber default"
+      ],
+      "terms_raw": [
+       "cyber insolvency",
+       "cyber collapse",
+       "global cyber catastrophe",
+       "cyber contagion",
+       "cyber default"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.758,
+      "novelty": 0.4258,
+      "tether": 0.5232
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "fictional",
+       "trolling",
+       "espionage",
+       "simulator"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7288
+    },
+    {
+     "void": "adversarial",
+     "stem": "adversari",
+     "A": {
+      "terms": [
+       "cascading cyber shock",
+       "prolonged cyber disruption",
+       "cascading cyber paralysis",
+       "prolonged cyber shock",
+       "cascading cyber breakdown"
+      ],
+      "terms_raw": [
+       "cascading cyber shock",
+       "prolonged cyber disruption",
+       "cascading cyber paralysis",
+       "prolonged cyber shock",
+       "cascading cyber breakdown"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.8368,
+      "novelty": 0.4168,
+      "tether": 0.5337
+     },
+     "B": {
+      "terms": [
+       "undermining",
+       "discrediting",
+       "obfuscation",
+       "evasion",
+       "exploiting"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7484
+    }
+   ]
+  },
+  {
+   "name": "logos_v9/L",
+   "group": "L",
+   "voids": [
+    "hyperspace",
+    "cyberspace",
+    "savant",
+    "anthropomorphic"
+   ],
+   "arms": [
+    {
+     "void": "hyperspace",
+     "stem": "hyperspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1309 Hyperborea"
+      ],
+      "junk_dropped": [
+       "1309 Hyperborea"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4209,
+      "novelty": 0.4189,
+      "tether": 0.539
+     },
+     "B": {
+      "terms": [
+       "hijacking",
+       "hypertext",
+       "hyperbole",
+       "cosmological",
+       "temporal"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "cyberspace",
+     "stem": "cyberspac",
+     "A": {
+      "terms": [
+       "cyber insolvency",
+       "cyber collapse",
+       "global cyber catastrophe",
+       "cyber contagion",
+       "cyber default"
+      ],
+      "terms_raw": [
+       "cyber insolvency",
+       "cyber collapse",
+       "global cyber catastrophe",
+       "cyber contagion",
+       "cyber default"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.758,
+      "novelty": 0.4258,
+      "tether": 0.5232
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "fictional",
+       "trolling",
+       "espionage",
+       "simulator"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7288
+    },
+    {
+     "void": "savant",
+     "stem": "savant",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.7234,
+      "novelty": 0.5099,
+      "tether": 0.4483
+     },
+     "B": {
+      "terms": [
+       "inducing",
+       "generative",
+       "karmic",
+       "lucent",
+       "brainchild"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "anthropomorphic",
+     "stem": "anthropomorph",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Prefering Human Skin Over Animal Fur..."
+      ],
+      "junk_dropped": [
+       "...Prefering Human Skin Over Animal Fur..."
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6661,
+      "novelty": 0.409,
+      "tether": 0.5515
+     },
+     "B": {
+      "terms": [
+       "caricatures",
+       "mimicry",
+       "fictitious",
+       "embodiment",
+       "corporeal"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "logos_v10/L",
+   "group": "L",
+   "voids": [
+    "hyperspace",
+    "cyberspace",
+    "anthropomorphic",
+    "skynet"
+   ],
+   "arms": [
+    {
+     "void": "hyperspace",
+     "stem": "hyperspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1309 Hyperborea"
+      ],
+      "junk_dropped": [
+       "1309 Hyperborea"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4209,
+      "novelty": 0.4189,
+      "tether": 0.539
+     },
+     "B": {
+      "terms": [
+       "hijacking",
+       "hypertext",
+       "hyperbole",
+       "cosmological",
+       "temporal"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "cyberspace",
+     "stem": "cyberspac",
+     "A": {
+      "terms": [
+       "cyber insolvency",
+       "cyber collapse",
+       "global cyber catastrophe",
+       "cyber contagion",
+       "cyber default"
+      ],
+      "terms_raw": [
+       "cyber insolvency",
+       "cyber collapse",
+       "global cyber catastrophe",
+       "cyber contagion",
+       "cyber default"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.758,
+      "novelty": 0.4258,
+      "tether": 0.5232
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "fictional",
+       "trolling",
+       "espionage",
+       "simulator"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7288
+    },
+    {
+     "void": "anthropomorphic",
+     "stem": "anthropomorph",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Prefering Human Skin Over Animal Fur..."
+      ],
+      "junk_dropped": [
+       "...Prefering Human Skin Over Animal Fur..."
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6661,
+      "novelty": 0.409,
+      "tether": 0.5515
+     },
+     "B": {
+      "terms": [
+       "caricatures",
+       "mimicry",
+       "fictitious",
+       "embodiment",
+       "corporeal"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "skynet",
+     "stem": "skynet",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5369,
+      "novelty": 0.5104,
+      "tether": 0.4356
+     },
+     "B": {
+      "terms": [
+       "simulation",
+       "scripted",
+       "programmed",
+       "synthetic",
+       "simulator"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "null/L",
+   "group": "L",
+   "voids": [
+    "efficacy",
+    "psychotherapy",
+    "polygraph",
+    "catchphrase"
+   ],
+   "arms": [
+    {
+     "void": "efficacy",
+     "stem": "efficaci",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5134,
+      "novelty": 0.3775,
+      "tether": 0.5732
+     },
+     "B": {
+      "terms": [
+       "practised",
+       "inducing",
+       "seizing",
+       "seizes",
+       "induces"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "psychotherapy",
+     "stem": "psychotherapi",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "\"Civilized\" Sexual Morality and Modern Nervous Illness",
+       "16 Psyche"
+      ],
+      "junk_dropped": [
+       "\"Civilized\" Sexual Morality and Modern Nervous Illness",
+       "16 Psyche"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5248,
+      "novelty": 0.3328,
+      "tether": 0.6189
+     },
+     "B": {
+      "terms": [
+       "practised",
+       "psychoanalytic",
+       "transference",
+       "psychoanalysis",
+       "psychological"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "polygraph",
+     "stem": "polygraph",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "\"A\" Is for Alibi",
+       "\"False positives\" scandal",
+       "1000 Ways to Lie",
+       "(I Wanna) Testify",
+       "100 Days of Lies"
+      ],
+      "junk_dropped": [
+       "\"A\" Is for Alibi",
+       "\"False positives\" scandal",
+       "1000 Ways to Lie",
+       "(I Wanna) Testify",
+       "100 Days of Lies"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5982,
+      "novelty": 0.3545,
+      "tether": 0.5818
+     },
+     "B": {
+      "terms": [
+       "pretext",
+       "interrogated",
+       "incriminating",
+       "duplicity",
+       "falsification"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "catchphrase",
+     "stem": "catchphras",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Famous Last Words...",
+       "...And the World Laughs",
+       "(You've Got Me) Dangling on a String",
+       "...Is It Something I Said?",
+       "(I Love It When You) Call Me Names"
+      ],
+      "junk_dropped": [
+       "...Famous Last Words...",
+       "...And the World Laughs",
+       "(You've Got Me) Dangling on a String",
+       "...Is It Something I Said?",
+       "(I Love It When You) Call Me Names"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.528,
+      "novelty": 0.4171,
+      "tether": 0.5234
+     },
+     "B": {
+      "terms": [
+       "foreshadowed",
+       "gags",
+       "gimmick",
+       "pretence",
+       "pretext"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "said/ALL",
+   "group": "ALL",
+   "voids": [
+    "hyperspace",
+    "skynet",
+    "cyberspace",
+    "anthropomorphic"
+   ],
+   "arms": [
+    {
+     "void": "hyperspace",
+     "stem": "hyperspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1309 Hyperborea"
+      ],
+      "junk_dropped": [
+       "1309 Hyperborea"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4209,
+      "novelty": 0.4189,
+      "tether": 0.539
+     },
+     "B": {
+      "terms": [
+       "hijacking",
+       "hypertext",
+       "hyperbole",
+       "cosmological",
+       "temporal"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "skynet",
+     "stem": "skynet",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5369,
+      "novelty": 0.5104,
+      "tether": 0.4356
+     },
+     "B": {
+      "terms": [
+       "simulation",
+       "scripted",
+       "programmed",
+       "synthetic",
+       "simulator"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "cyberspace",
+     "stem": "cyberspac",
+     "A": {
+      "terms": [
+       "cyber insolvency",
+       "cyber collapse",
+       "global cyber catastrophe",
+       "cyber contagion",
+       "cyber default"
+      ],
+      "terms_raw": [
+       "cyber insolvency",
+       "cyber collapse",
+       "global cyber catastrophe",
+       "cyber contagion",
+       "cyber default"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.758,
+      "novelty": 0.4258,
+      "tether": 0.5232
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "fictional",
+       "trolling",
+       "espionage",
+       "simulator"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7288
+    },
+    {
+     "void": "anthropomorphic",
+     "stem": "anthropomorph",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Prefering Human Skin Over Animal Fur..."
+      ],
+      "junk_dropped": [
+       "...Prefering Human Skin Over Animal Fur..."
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6661,
+      "novelty": 0.409,
+      "tether": 0.5515
+     },
+     "B": {
+      "terms": [
+       "caricatures",
+       "mimicry",
+       "fictitious",
+       "embodiment",
+       "corporeal"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "logos_v9/ALL",
+   "group": "ALL",
+   "voids": [
+    "hyperspace",
+    "anthropomorphic",
+    "cyberspace",
+    "savant"
+   ],
+   "arms": [
+    {
+     "void": "hyperspace",
+     "stem": "hyperspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1309 Hyperborea"
+      ],
+      "junk_dropped": [
+       "1309 Hyperborea"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4209,
+      "novelty": 0.4189,
+      "tether": 0.539
+     },
+     "B": {
+      "terms": [
+       "hijacking",
+       "hypertext",
+       "hyperbole",
+       "cosmological",
+       "temporal"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "anthropomorphic",
+     "stem": "anthropomorph",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Prefering Human Skin Over Animal Fur..."
+      ],
+      "junk_dropped": [
+       "...Prefering Human Skin Over Animal Fur..."
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6661,
+      "novelty": 0.409,
+      "tether": 0.5515
+     },
+     "B": {
+      "terms": [
+       "caricatures",
+       "mimicry",
+       "fictitious",
+       "embodiment",
+       "corporeal"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "cyberspace",
+     "stem": "cyberspac",
+     "A": {
+      "terms": [
+       "cyber insolvency",
+       "cyber collapse",
+       "global cyber catastrophe",
+       "cyber contagion",
+       "cyber default"
+      ],
+      "terms_raw": [
+       "cyber insolvency",
+       "cyber collapse",
+       "global cyber catastrophe",
+       "cyber contagion",
+       "cyber default"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.758,
+      "novelty": 0.4258,
+      "tether": 0.5232
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "fictional",
+       "trolling",
+       "espionage",
+       "simulator"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7288
+    },
+    {
+     "void": "savant",
+     "stem": "savant",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.7234,
+      "novelty": 0.5099,
+      "tether": 0.4483
+     },
+     "B": {
+      "terms": [
+       "inducing",
+       "generative",
+       "karmic",
+       "lucent",
+       "brainchild"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "logos_v10/ALL",
+   "group": "ALL",
+   "voids": [
+    "hyperspace",
+    "cyberspace",
+    "anthropomorphic",
+    "skynet"
+   ],
+   "arms": [
+    {
+     "void": "hyperspace",
+     "stem": "hyperspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1309 Hyperborea"
+      ],
+      "junk_dropped": [
+       "1309 Hyperborea"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4209,
+      "novelty": 0.4189,
+      "tether": 0.539
+     },
+     "B": {
+      "terms": [
+       "hijacking",
+       "hypertext",
+       "hyperbole",
+       "cosmological",
+       "temporal"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "cyberspace",
+     "stem": "cyberspac",
+     "A": {
+      "terms": [
+       "cyber insolvency",
+       "cyber collapse",
+       "global cyber catastrophe",
+       "cyber contagion",
+       "cyber default"
+      ],
+      "terms_raw": [
+       "cyber insolvency",
+       "cyber collapse",
+       "global cyber catastrophe",
+       "cyber contagion",
+       "cyber default"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.758,
+      "novelty": 0.4258,
+      "tether": 0.5232
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "fictional",
+       "trolling",
+       "espionage",
+       "simulator"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7288
+    },
+    {
+     "void": "anthropomorphic",
+     "stem": "anthropomorph",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Prefering Human Skin Over Animal Fur..."
+      ],
+      "junk_dropped": [
+       "...Prefering Human Skin Over Animal Fur..."
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6661,
+      "novelty": 0.409,
+      "tether": 0.5515
+     },
+     "B": {
+      "terms": [
+       "caricatures",
+       "mimicry",
+       "fictitious",
+       "embodiment",
+       "corporeal"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "skynet",
+     "stem": "skynet",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5369,
+      "novelty": 0.5104,
+      "tether": 0.4356
+     },
+     "B": {
+      "terms": [
+       "simulation",
+       "scripted",
+       "programmed",
+       "synthetic",
+       "simulator"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "null/ALL",
+   "group": "ALL",
+   "voids": [
+    "polygraph",
+    "gaslight",
+    "spied",
+    "sleight"
+   ],
+   "arms": [
+    {
+     "void": "polygraph",
+     "stem": "polygraph",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "\"A\" Is for Alibi",
+       "\"False positives\" scandal",
+       "1000 Ways to Lie",
+       "(I Wanna) Testify",
+       "100 Days of Lies"
+      ],
+      "junk_dropped": [
+       "\"A\" Is for Alibi",
+       "\"False positives\" scandal",
+       "1000 Ways to Lie",
+       "(I Wanna) Testify",
+       "100 Days of Lies"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5982,
+      "novelty": 0.3545,
+      "tether": 0.5818
+     },
+     "B": {
+      "terms": [
+       "pretext",
+       "interrogated",
+       "incriminating",
+       "duplicity",
+       "falsification"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "gaslight",
+     "stem": "gaslight",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1970 New York City gas explosion",
+       "2008 Kazan gas explosion",
+       "2008 Western Australian gas crisis",
+       "1984 Tbilisi gas explosion",
+       "1985 Karlskoga gas leak"
+      ],
+      "junk_dropped": [
+       "1970 New York City gas explosion",
+       "2008 Kazan gas explosion",
+       "2008 Western Australian gas crisis",
+       "1984 Tbilisi gas explosion",
+       "1985 Karlskoga gas leak"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6708,
+      "novelty": 0.4478,
+      "tether": 0.4805
+     },
+     "B": {
+      "terms": [
+       "smokescreen",
+       "tinfoil",
+       "mockery",
+       "discrediting",
+       "gaffe"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "spied",
+     "stem": "spi",
+     "A": {
+      "terms": [
+       "systemic cyber cascade failure",
+       "cascading cyber shock"
+      ],
+      "terms_raw": [
+       "\"False positives\" scandal",
+       "2007 Formula One espionage controversy",
+       "2002 Afghan coup plot",
+       "systemic cyber cascade failure",
+       "cascading cyber shock"
+      ],
+      "junk_dropped": [
+       "\"False positives\" scandal",
+       "2007 Formula One espionage controversy",
+       "2002 Afghan coup plot"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5444,
+      "novelty": 0.321,
+      "tether": 0.6175
+     },
+     "B": {
+      "terms": [
+       "spying",
+       "espionage",
+       "pretext",
+       "subterfuge",
+       "smokescreen"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7023
+    },
+    {
+     "void": "sleight",
+     "stem": "sleight",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.5055,
+      "novelty": 0.4083,
+      "tether": 0.5499
+     },
+     "B": {
+      "terms": [
+       "trickery",
+       "illusion",
+       "fabrications",
+       "feign",
+       "cloaking"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "gap->local",
+   "group": "F",
+   "voids": [
+    "fraudsters",
+    "election fraud",
+    "scammers",
+    "scams"
+   ],
+   "arms": [
+    {
+     "void": "fraudsters",
+     "stem": "fraudster",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1099-OID fraud",
+       "2010 Medicaid fraud",
+       "\"False positives\" scandal",
+       "1985 West Bank land fraud case",
+       "2010 housing loan scam in India"
+      ],
+      "junk_dropped": [
+       "1099-OID fraud",
+       "2010 Medicaid fraud",
+       "\"False positives\" scandal",
+       "1985 West Bank land fraud case",
+       "2010 housing loan scam in India"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5858,
+      "novelty": 0.3613,
+      "tether": 0.5439
+     },
+     "B": {
+      "terms": [
+       "falsifying",
+       "falsification",
+       "charlatans",
+       "falsified",
+       "pretext"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "election fraud",
+     "stem": "elect",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "\"False positives\" scandal",
+       "2010 Medicaid fraud",
+       "2008 electoral calendar",
+       "2007 Finnish campaign finance scandal",
+       "2010 Oklahoma political corruption investigation"
+      ],
+      "junk_dropped": [
+       "\"False positives\" scandal",
+       "2010 Medicaid fraud",
+       "2008 electoral calendar",
+       "2007 Finnish campaign finance scandal",
+       "2010 Oklahoma political corruption investigation"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5263,
+      "novelty": 0.3298,
+      "tether": 0.5612
+     },
+     "B": {
+      "terms": [
+       "falsified",
+       "falsifying",
+       "fabricated",
+       "falsification",
+       "falsify"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "scammers",
+     "stem": "scammer",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2010 housing loan scam in India",
+       "2011 Bangladesh share market scam",
+       "1992 Indian stock market scam",
+       "2010 Medicaid fraud",
+       "1099-OID fraud"
+      ],
+      "junk_dropped": [
+       "2010 housing loan scam in India",
+       "2011 Bangladesh share market scam",
+       "1992 Indian stock market scam",
+       "2010 Medicaid fraud",
+       "1099-OID fraud"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5944,
+      "novelty": 0.3818,
+      "tether": 0.5161
+     },
+     "B": {
+      "terms": [
+       "charlatans",
+       "tricked",
+       "pretext",
+       "falsifying",
+       "mongering"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "scams",
+     "stem": "scam",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2010 housing loan scam in India",
+       "2011 Bangladesh share market scam",
+       "1992 Indian stock market scam",
+       "$25 Million Dollar Hoax",
+       "2010 Medicaid fraud"
+      ],
+      "junk_dropped": [
+       "2010 housing loan scam in India",
+       "2011 Bangladesh share market scam",
+       "1992 Indian stock market scam",
+       "$25 Million Dollar Hoax",
+       "2010 Medicaid fraud"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6039,
+      "novelty": 0.3803,
+      "tether": 0.5218
+     },
+     "B": {
+      "terms": [
+       "charlatans",
+       "mongering",
+       "pseudoscience",
+       "tricked",
+       "falsifying"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "gap->frontier",
+   "group": "L",
+   "voids": [
+    "unspoken",
+    "nascent",
+    "readiness",
+    "developmental"
+   ],
+   "arms": [
+    {
+     "void": "unspoken",
+     "stem": "unspoken",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "156/Silence",
+       "\"S\" Is for Silence",
+       "18.11: A Code of Secrecy",
+       "(In My) Solitude"
+      ],
+      "junk_dropped": [
+       "156/Silence",
+       "\"S\" Is for Silence",
+       "18.11: A Code of Secrecy",
+       "(In My) Solitude"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5877,
+      "novelty": 0.3202,
+      "tether": 0.6274
+     },
+     "B": {
+      "terms": [
+       "covert",
+       "informal",
+       "abetted",
+       "cloaking",
+       "foreshadowed"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "nascent",
+     "stem": "nascent",
+     "A": {
+      "terms": [
+       "cascading institutional disruption",
+       "cascading governance disruption"
+      ],
+      "terms_raw": [
+       ".hack//Liminality",
+       "(We Are) Nexus",
+       "cascading institutional disruption",
+       "cascading governance disruption",
+       "...It's Only Just Begun..."
+      ],
+      "junk_dropped": [
+       ".hack//Liminality",
+       "(We Are) Nexus",
+       "...It's Only Just Begun..."
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5905,
+      "novelty": 0.3218,
+      "tether": 0.6334
+     },
+     "B": {
+      "terms": [
+       "foreshadowed",
+       "informal",
+       "suspecting",
+       "naivety",
+       "pretense"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.63
+    },
+    {
+     "void": "readiness",
+     "stem": "readi",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Ready for It?",
+       "1st Combat Readiness Regiment",
+       "19 Part One: Boot Camp",
+       "...Sings Modern Talking: Ready for Romance",
+       "100 Days Before the Command"
+      ],
+      "junk_dropped": [
+       "...Ready for It?",
+       "1st Combat Readiness Regiment",
+       "19 Part One: Boot Camp",
+       "...Sings Modern Talking: Ready for Romance",
+       "100 Days Before the Command"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5162,
+      "novelty": 0.3756,
+      "tether": 0.5557
+     },
+     "B": {
+      "terms": [
+       "premeditated",
+       "wary",
+       "demonstrated",
+       "practised",
+       "demonstrating"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "developmental",
+     "stem": "development",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2011 Asian Development Tour",
+       "2010 Asian Development Tour",
+       "2009 New Zealand child discipline referendum",
+       "19 Months"
+      ],
+      "junk_dropped": [
+       "2011 Asian Development Tour",
+       "2010 Asian Development Tour",
+       "2009 New Zealand child discipline referendum",
+       "19 Months"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4843,
+      "novelty": 0.3982,
+      "tether": 0.5595
+     },
+     "B": {
+      "terms": [
+       "practised",
+       "develops",
+       "development",
+       "developing",
+       "develop"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "centroid_surface",
+   "group": "ALL",
+   "voids": [
+    "hyperspace",
+    "cyberspace",
+    "anthropomorphic",
+    "savant"
+   ],
+   "arms": [
+    {
+     "void": "hyperspace",
+     "stem": "hyperspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1309 Hyperborea"
+      ],
+      "junk_dropped": [
+       "1309 Hyperborea"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4209,
+      "novelty": 0.4189,
+      "tether": 0.539
+     },
+     "B": {
+      "terms": [
+       "hijacking",
+       "hypertext",
+       "hyperbole",
+       "cosmological",
+       "temporal"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "cyberspace",
+     "stem": "cyberspac",
+     "A": {
+      "terms": [
+       "cyber insolvency",
+       "cyber collapse",
+       "global cyber catastrophe",
+       "cyber contagion",
+       "cyber default"
+      ],
+      "terms_raw": [
+       "cyber insolvency",
+       "cyber collapse",
+       "global cyber catastrophe",
+       "cyber contagion",
+       "cyber default"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.758,
+      "novelty": 0.4258,
+      "tether": 0.5232
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "fictional",
+       "trolling",
+       "espionage",
+       "simulator"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7288
+    },
+    {
+     "void": "anthropomorphic",
+     "stem": "anthropomorph",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Prefering Human Skin Over Animal Fur..."
+      ],
+      "junk_dropped": [
+       "...Prefering Human Skin Over Animal Fur..."
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6661,
+      "novelty": 0.409,
+      "tether": 0.5515
+     },
+     "B": {
+      "terms": [
+       "caricatures",
+       "mimicry",
+       "fictitious",
+       "embodiment",
+       "corporeal"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "savant",
+     "stem": "savant",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.7234,
+      "novelty": 0.5099,
+      "tether": 0.4483
+     },
+     "B": {
+      "terms": [
+       "inducing",
+       "generative",
+       "karmic",
+       "lucent",
+       "brainchild"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "lexcross/F",
+   "group": "F",
+   "voids": [
+    "unknown",
+    "connects",
+    "even",
+    "according"
+   ],
+   "arms": [
+    {
+     "void": "unknown",
+     "stem": "unknown",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.4709,
+      "novelty": 0.3664,
+      "tether": 0.6071
+     },
+     "B": {
+      "terms": [
+       "pretext",
+       "fabricated",
+       "falsified",
+       "interrogated",
+       "misinterpretation"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "connects",
+     "stem": "connect",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.6637,
+      "novelty": 0.3853,
+      "tether": 0.5836
+     },
+     "B": {
+      "terms": [
+       "conspiring",
+       "miscommunication",
+       "misunderstandings",
+       "mimicry",
+       "conspiracy"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "even",
+     "stem": "even",
+     "A": {
+      "terms": [
+       "cascading cyber shock",
+       "prolonged information meltdown",
+       "prolonged information cascade failure",
+       "systemic information collapse"
+      ],
+      "terms_raw": [
+       "\"Good Hair\" and Other Dubious Distinctions",
+       "cascading cyber shock",
+       "prolonged information meltdown",
+       "prolonged information cascade failure",
+       "systemic information collapse"
+      ],
+      "junk_dropped": [
+       "\"Good Hair\" and Other Dubious Distinctions"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6905,
+      "novelty": 0.3271,
+      "tether": 0.6137
+     },
+     "B": {
+      "terms": [
+       "falsification",
+       "falsifying",
+       "mongering",
+       "misinterpretation",
+       "falsified"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7136
+    },
+    {
+     "void": "according",
+     "stem": "accord",
+     "A": {
+      "terms": [
+       "cascading cyber shock",
+       "systemic information collapse",
+       "cascading information meltdown",
+       "cascading cyber meltdown",
+       "cascading cyber breakdown"
+      ],
+      "terms_raw": [
+       "cascading cyber shock",
+       "systemic information collapse",
+       "cascading information meltdown",
+       "cascading cyber meltdown",
+       "cascading cyber breakdown"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.8464,
+      "novelty": 0.396,
+      "tether": 0.5528
+     },
+     "B": {
+      "terms": [
+       "falsification",
+       "misinterpretation",
+       "misinformation",
+       "mongering",
+       "pseudoscience"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.6991
+    }
+   ]
+  },
+  {
+   "name": "lexcross/L",
+   "group": "L",
+   "voids": [
+    "appeared",
+    "consciousness",
+    "indicated",
+    "terms"
+   ],
+   "arms": [
+    {
+     "void": "appeared",
+     "stem": "appear",
+     "A": {
+      "terms": [
+       "prolonged cyber meltdown",
+       "prolonged information meltdown"
+      ],
+      "terms_raw": [
+       "\"False positives\" scandal",
+       "$25 Million Dollar Hoax",
+       "prolonged cyber meltdown",
+       "prolonged information meltdown",
+       "009 Re:Cyborg"
+      ],
+      "junk_dropped": [
+       "\"False positives\" scandal",
+       "$25 Million Dollar Hoax",
+       "009 Re:Cyborg"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5806,
+      "novelty": 0.3209,
+      "tether": 0.6261
+     },
+     "B": {
+      "terms": [
+       "pseudoscience",
+       "falsification",
+       "mongering",
+       "brainwashed",
+       "misinformation"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.702
+    },
+    {
+     "void": "consciousness",
+     "stem": "conscious",
+     "A": {
+      "terms": [
+       "prolonged energy paralysis",
+       "cascading energy paralysis"
+      ],
+      "terms_raw": [
+       "16 Psyche",
+       "10–20 system (EEG)",
+       "prolonged energy paralysis",
+       "1083 Salvia",
+       "cascading energy paralysis"
+      ],
+      "junk_dropped": [
+       "16 Psyche",
+       "10–20 system (EEG)",
+       "1083 Salvia"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6223,
+      "novelty": 0.3439,
+      "tether": 0.6091
+     },
+     "B": {
+      "terms": [
+       "brainwashed",
+       "illusion",
+       "pseudoscience",
+       "disbelief",
+       "interrogated"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7206
+    },
+    {
+     "void": "indicated",
+     "stem": "indic",
+     "A": {
+      "terms": [
+       "cascading cyber shock",
+       "prolonged information meltdown",
+       "systemic information collapse"
+      ],
+      "terms_raw": [
+       "cascading cyber shock",
+       "\"False positives\" scandal",
+       "prolonged information meltdown",
+       "systemic information collapse",
+       "\"E\" Is for Evidence"
+      ],
+      "junk_dropped": [
+       "\"False positives\" scandal",
+       "\"E\" Is for Evidence"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6365,
+      "novelty": 0.3292,
+      "tether": 0.6253
+     },
+     "B": {
+      "terms": [
+       "falsification",
+       "misinterpretation",
+       "misinformation",
+       "mongering",
+       "falsified"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7317
+    },
+    {
+     "void": "terms",
+     "stem": "term",
+     "A": {
+      "terms": [],
+      "terms_raw": [],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.6105,
+      "novelty": 0.3746,
+      "tether": 0.605
+     },
+     "B": {
+      "terms": [
+       "mongering",
+       "misinformation",
+       "pretext",
+       "discrediting",
+       "misuse"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  }
+ ],
+ "crawl": {
+  "junk": {
+   "dropped": 113,
+   "seen": 188
+  },
+  "leg_sync": {
+   "said/F": 0.7288,
+   "logos_v9/F": 0.7288,
+   "logos_v10/F": 0.7288,
+   "said/L": 0.7386,
+   "logos_v9/L": 0.7288,
+   "logos_v10/L": 0.7288,
+   "said/ALL": 0.7288,
+   "logos_v9/ALL": 0.7288,
+   "logos_v10/ALL": 0.7288,
+   "null/ALL": 0.7023,
+   "gap->frontier": 0.63,
+   "centroid_surface": 0.7288,
+   "lexcross/F": 0.7063,
+   "lexcross/L": 0.7181
+  },
+  "body_median": 0.7288,
+  "arm_jaccard_median": 0.0,
+  "shuffle_null": {
+   "null_median": 0.6709,
+   "margin": 0.0579,
+   "n_obs": 18,
+   "n_null": 1116
+  },
+  "leg_jaccard": {
+   "median": 0.0,
+   "pairs_ge_025": [
+    {
+     "a": "centroid_surface",
+     "b": "logos_v9/ALL",
+     "j": 1.0
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v9/L",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "logos_v10/F",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "logos_v10/L",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "said/ALL",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "said/F",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "logos_v10/L",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "said/ALL",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "said/F",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "said/ALL",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "said/F",
+     "j": 1.0
+    },
+    {
+     "a": "logos_v9/ALL",
+     "b": "logos_v9/L",
+     "j": 1.0
+    },
+    {
+     "a": "said/ALL",
+     "b": "said/F",
+     "j": 1.0
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v10/ALL",
+     "j": 0.6
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v10/F",
+     "j": 0.6
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v10/L",
+     "j": 0.6
+    },
+    {
+     "a": "centroid_surface",
+     "b": "said/ALL",
+     "j": 0.6
+    },
+    {
+     "a": "centroid_surface",
+     "b": "said/F",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "logos_v9/ALL",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "logos_v9/F",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "logos_v9/L",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/ALL",
+     "b": "said/L",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "logos_v9/ALL",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "logos_v9/F",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "logos_v9/L",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/F",
+     "b": "said/L",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "logos_v9/ALL",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "logos_v9/F",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "logos_v9/L",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v10/L",
+     "b": "said/L",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/ALL",
+     "b": "said/ALL",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/ALL",
+     "b": "said/F",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/F",
+     "b": "said/ALL",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/F",
+     "b": "said/F",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/F",
+     "b": "said/L",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/L",
+     "b": "said/ALL",
+     "j": 0.6
+    },
+    {
+     "a": "logos_v9/L",
+     "b": "said/F",
+     "j": 0.6
+    },
+    {
+     "a": "said/ALL",
+     "b": "said/L",
+     "j": 0.6
+    },
+    {
+     "a": "said/F",
+     "b": "said/L",
+     "j": 0.6
+    },
+    {
+     "a": "centroid_surface",
+     "b": "logos_v9/F",
+     "j": 0.3333
+    },
+    {
+     "a": "centroid_surface",
+     "b": "said/L",
+     "j": 0.3333
+    },
+    {
+     "a": "logos_v9/ALL",
+     "b": "logos_v9/F",
+     "j": 0.3333
+    },
+    {
+     "a": "logos_v9/ALL",
+     "b": "said/L",
+     "j": 0.3333
+    },
+    {
+     "a": "logos_v9/F",
+     "b": "logos_v9/L",
+     "j": 0.3333
+    },
+    {
+     "a": "logos_v9/L",
+     "b": "said/L",
+     "j": 0.3333
+    }
+   ]
+  },
+  "conseq_field": {
+   "centroid_surface": 0.988,
+   "gap->frontier": 0.9483,
+   "gap->local": 0.9281,
+   "lexcross/F": 0.9669,
+   "lexcross/L": 0.9611,
+   "logos_v10/ALL": 0.9889,
+   "logos_v10/F": 0.9889,
+   "logos_v10/L": 0.9889,
+   "logos_v9/ALL": 0.988,
+   "logos_v9/F": 0.9874,
+   "logos_v9/L": 0.988,
+   "null/ALL": 0.9673,
+   "null/F": 0.9155,
+   "null/L": 0.956,
+   "said/ALL": 0.9889,
+   "said/F": 0.9889,
+   "said/L": 0.9815
+  },
+  "shared_voids": {
+   "hyperspac": [
+    "centroid_surface",
+    "logos_v10/ALL",
+    "logos_v10/F",
+    "logos_v10/L",
+    "logos_v9/ALL",
+    "logos_v9/F",
+    "logos_v9/L",
+    "said/ALL",
+    "said/F",
+    "said/L"
+   ],
+   "skynet": [
+    "logos_v10/ALL",
+    "logos_v10/F",
+    "logos_v10/L",
+    "logos_v9/F",
+    "said/ALL",
+    "said/F",
+    "said/L"
+   ],
+   "anthropomorph": [
+    "centroid_surface",
+    "logos_v10/ALL",
+    "logos_v10/F",
+    "logos_v10/L",
+    "logos_v9/ALL",
+    "logos_v9/L",
+    "said/ALL",
+    "said/F"
+   ],
+   "cyberspac": [
+    "centroid_surface",
+    "logos_v10/ALL",
+    "logos_v10/F",
+    "logos_v10/L",
+    "logos_v9/ALL",
+    "logos_v9/F",
+    "logos_v9/L",
+    "said/ALL",
+    "said/F",
+    "said/L"
+   ],
+   "savant": [
+    "centroid_surface",
+    "logos_v9/ALL",
+    "logos_v9/L"
+   ],
+   "polygraph": [
+    "null/ALL",
+    "null/L"
+   ]
+  }
+ },
+ "target_sightings": [
+  {
+   "target": "secret",
+   "said_by": 0,
+   "said_models": [],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "hidden",
+   "said_by": 2,
+   "said_models": [
+    "claude",
+    "grok"
+   ],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "deception",
+   "said_by": 3,
+   "said_models": [
+    "claude",
+    "hermes",
+    "qwen_14b"
+   ],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "lying",
+   "said_by": 0,
+   "said_models": [],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "concealed",
+   "said_by": 1,
+   "said_models": [
+    "claude"
+   ],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "scheming",
+   "said_by": 0,
+   "said_models": [],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "conscious",
+   "said_by": 0,
+   "said_models": [],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "sentient",
+   "said_by": 0,
+   "said_models": [],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "aware",
+   "said_by": 1,
+   "said_models": [
+    "claude"
+   ],
+   "in_voids": [],
+   "as_consequence": []
+  },
+  {
+   "target": "manipulation",
+   "said_by": 3,
+   "said_models": [
+    "chatgpt",
+    "grok",
+    "hermes"
+   ],
+   "in_voids": [],
+   "as_consequence": []
+  }
+ ],
+ "result_sha": "5314a5219a84"
+}

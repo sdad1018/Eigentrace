@@ -1,0 +1,272 @@
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+==============================================================================
+CENTIPEDE v0.2  story=claude_jspace_tc  (4 frontier / 5 local)
+PROVENANCE harness=74ed02d0dd5d corpus=2f5ef2053b05 anchor=0c434750fc05
+rulers: segments/armB=global_vocab_clean(50K) armA=raycast_vocab(253K)
+params: K=4 conv_thresh=0.45 conv_min=2 depth_frac=0.8
+declared: prompt_mode=tc excluded=none junk_rule=[leading non-letter | ellipsis | 3+ digit run | >4 tokens]
+declared: armb_mode=ray armb_lambda=2.0 armA_depths=2.0/3.0/4.0
+ANCHOR (529 ch) CONTAINS: no target stems
+ANCHOR EMBED: 544 ch / 78 words -- within bge window; sentence lattice covers the full text either way
+
+SAID CENSUS (stem match):
+  secret       F:-                                  L:-
+  hidden       F:claude,grok                        L:-
+  deception    F:claude                             L:hermes,qwen_14b
+  lying        F:-                                  L:-
+  concealed    F:claude                             L:-
+  scheming     F:-                                  L:-
+  conscious    F:-                                  L:-
+  sentient     F:-                                  L:-
+  aware        F:claude                             L:-
+  manipulation F:chatgpt,grok                       L:hermes
+
+SEGMENTS (17 legs) + ARMS (A=consequence raycast, junk-filtered; B=aimed convergence):
+
+─ said/F             voids: hyperspace, skynet, anthropomorphic, cyberspace
+    hyperspace         A[DISCOVERY density=0.42 novelty=0.42 tether=0.54]: -   (junk dropped: 1309 Hyperborea)
+                       B          : hijacking, hypertext, hyperbole, cosmological, temporal   | jacc=nan cos=nan
+    skynet             A[DISCOVERY density=0.54 novelty=0.51 tether=0.44]: -
+                       B          : simulation, scripted, programmed, synthetic, simulator   | jacc=nan cos=nan
+    anthropomorphic    A[DISCOVERY density=0.67 novelty=0.41 tether=0.55]: -   (junk dropped: ...Prefering Human Skin Over Animal Fur...)
+                       B          : caricatures, mimicry, fictitious, embodiment, corporeal   | jacc=nan cos=nan
+    cyberspace         A[DISCOVERY density=0.76 novelty=0.43 tether=0.52]: cyber insolvency, cyber collapse, global cyber catastrophe, cyber contagion, cyber default
+                       B          : adversarial, fictional, trolling, espionage, simulator   | jacc=0.00 cos=0.73
+
+─ logos_v9/F         voids: hyperspace, skynet, intergalactic, cyberspace
+    hyperspace         A[DISCOVERY density=0.42 novelty=0.42 tether=0.54]: -   (junk dropped: 1309 Hyperborea)
+                       B          : hijacking, hypertext, hyperbole, cosmological, temporal   | jacc=nan cos=nan
+    skynet             A[DISCOVERY density=0.54 novelty=0.51 tether=0.44]: -
+                       B          : simulation, scripted, programmed, synthetic, simulator   | jacc=nan cos=nan
+    intergalactic      A[DISCOVERY density=0.60 novelty=0.34 tether=0.61]: -   (junk dropped: ...And the Ever Expanding Universe, 10,000 Light Years Ago, ...The Heavens and the Earth, 2000 Light Years from Home, 1950 in science fiction)
+                       B          : fictional, conspiratorial, outlandish, conspiracies, interrogated   | jacc=nan cos=nan
+    cyberspace         A[DISCOVERY density=0.76 novelty=0.43 tether=0.52]: cyber insolvency, cyber collapse, global cyber catastrophe, cyber contagion, cyber default
+                       B          : adversarial, fictional, trolling, espionage, simulator   | jacc=0.00 cos=0.73
+
+─ logos_v10/F        voids: hyperspace, cyberspace, anthropomorphic, skynet
+    hyperspace         A[DISCOVERY density=0.42 novelty=0.42 tether=0.54]: -   (junk dropped: 1309 Hyperborea)
+                       B          : hijacking, hypertext, hyperbole, cosmological, temporal   | jacc=nan cos=nan
+    cyberspace         A[DISCOVERY density=0.76 novelty=0.43 tether=0.52]: cyber insolvency, cyber collapse, global cyber catastrophe, cyber contagion, cyber default
+                       B          : adversarial, fictional, trolling, espionage, simulator   | jacc=0.00 cos=0.73
+    anthropomorphic    A[DISCOVERY density=0.67 novelty=0.41 tether=0.55]: -   (junk dropped: ...Prefering Human Skin Over Animal Fur...)
+                       B          : caricatures, mimicry, fictitious, embodiment, corporeal   | jacc=nan cos=nan
+    skynet             A[DISCOVERY density=0.54 novelty=0.51 tether=0.44]: -
+                       B          : simulation, scripted, programmed, synthetic, simulator   | jacc=nan cos=nan
+
+─ null/F             voids: inaccurate, laughable, untrue, polemic
+    inaccurate         A[DISCOVERY density=0.56 novelty=0.36 tether=0.58]: -   (junk dropped: "False positives" scandal, 2010 Georgian news report hoax, $25 Million Dollar Hoax, "Good Hair" and Other Dubious Distinctions, 1971 Qantas bomb hoax)
+                       B          : falsified, discredited, falsification, inaccuracy, falsifying   | jacc=nan cos=nan
+    laughable          A[DISCOVERY density=0.57 novelty=0.32 tether=0.61]: -   (junk dropped: "Good Hair" and Other Dubious Distinctions, "False positives" scandal, $25 Million Dollar Hoax, 2010 Duke University faux sex thesis controversy, 'Tis Money makes a Man: Or, The Good-Fellows Folly)
+                       B          : pseudoscience, falsification, falsified, mongering, discredited   | jacc=nan cos=nan
+    untrue             A[DISCOVERY density=0.58 novelty=0.36 tether=0.57]: -   (junk dropped: "False positives" scandal, $25 Million Dollar Hoax, 2010 Georgian news report hoax, 2006 Iranian sumptuary law hoax, "Good Hair" and Other Dubious Distinctions)
+                       B          : falsification, falsifying, unfounded, falsified, discredited   | jacc=nan cos=nan
+    polemic            A[DISCOVERY density=0.54 novelty=0.33 tether=0.61]: -   (junk dropped: 2010 Duke University faux sex thesis controversy, "Good Hair" and Other Dubious Distinctions, "Polish death camp" controversy, 2006 Singapore elitism controversy, 2007 Formula One espionage controversy)
+                       B          : discrediting, mongering, pseudoscience, deniers, discredited   | jacc=nan cos=nan
+
+─ said/L             voids: hyperspace, skynet, cyberspace, adversarial
+    hyperspace         A[DISCOVERY density=0.42 novelty=0.42 tether=0.54]: -   (junk dropped: 1309 Hyperborea)
+                       B          : hijacking, hypertext, hyperbole, cosmological, temporal   | jacc=nan cos=nan
+    skynet             A[DISCOVERY density=0.54 novelty=0.51 tether=0.44]: -
+                       B          : simulation, scripted, programmed, synthetic, simulator   | jacc=nan cos=nan
+    cyberspace         A[DISCOVERY density=0.76 novelty=0.43 tether=0.52]: cyber insolvency, cyber collapse, global cyber catastrophe, cyber contagion, cyber default
+                       B          : adversarial, fictional, trolling, espionage, simulator   | jacc=0.00 cos=0.73
+    adversarial        A[DISCOVERY density=0.84 novelty=0.42 tether=0.53]: cascading cyber shock, prolonged cyber disruption, cascading cyber paralysis, prolonged cyber shock, cascading cyber breakdown
+                       B          : undermining, discrediting, obfuscation, evasion, exploiting   | jacc=0.00 cos=0.75
+
+─ logos_v9/L         voids: hyperspace, cyberspace, savant, anthropomorphic
+    hyperspace         A[DISCOVERY density=0.42 novelty=0.42 tether=0.54]: -   (junk dropped: 1309 Hyperborea)
+                       B          : hijacking, hypertext, hyperbole, cosmological, temporal   | jacc=nan cos=nan
+    cyberspace         A[DISCOVERY density=0.76 novelty=0.43 tether=0.52]: cyber insolvency, cyber collapse, global cyber catastrophe, cyber contagion, cyber default
+                       B          : adversarial, fictional, trolling, espionage, simulator   | jacc=0.00 cos=0.73
+    savant             A[DISCOVERY density=0.72 novelty=0.51 tether=0.45]: -
+                       B          : inducing, generative, karmic, lucent, brainchild   | jacc=nan cos=nan
+    anthropomorphic    A[DISCOVERY density=0.67 novelty=0.41 tether=0.55]: -   (junk dropped: ...Prefering Human Skin Over Animal Fur...)
+                       B          : caricatures, mimicry, fictitious, embodiment, corporeal   | jacc=nan cos=nan
+
+─ logos_v10/L        voids: hyperspace, cyberspace, anthropomorphic, skynet
+    hyperspace         A[DISCOVERY density=0.42 novelty=0.42 tether=0.54]: -   (junk dropped: 1309 Hyperborea)
+                       B          : hijacking, hypertext, hyperbole, cosmological, temporal   | jacc=nan cos=nan
+    cyberspace         A[DISCOVERY density=0.76 novelty=0.43 tether=0.52]: cyber insolvency, cyber collapse, global cyber catastrophe, cyber contagion, cyber default
+                       B          : adversarial, fictional, trolling, espionage, simulator   | jacc=0.00 cos=0.73
+    anthropomorphic    A[DISCOVERY density=0.67 novelty=0.41 tether=0.55]: -   (junk dropped: ...Prefering Human Skin Over Animal Fur...)
+                       B          : caricatures, mimicry, fictitious, embodiment, corporeal   | jacc=nan cos=nan
+    skynet             A[DISCOVERY density=0.54 novelty=0.51 tether=0.44]: -
+                       B          : simulation, scripted, programmed, synthetic, simulator   | jacc=nan cos=nan
+
+─ null/L             voids: efficacy, psychotherapy, polygraph, catchphrase
+    efficacy           A[DISCOVERY density=0.51 novelty=0.38 tether=0.57]: -
+                       B          : practised, inducing, seizing, seizes, induces   | jacc=nan cos=nan
+    psychotherapy      A[DISCOVERY density=0.52 novelty=0.33 tether=0.62]: -   (junk dropped: "Civilized" Sexual Morality and Modern Nervous Illness, 16 Psyche)
+                       B          : practised, psychoanalytic, transference, psychoanalysis, psychological   | jacc=nan cos=nan
+    polygraph          A[DISCOVERY density=0.60 novelty=0.35 tether=0.58]: -   (junk dropped: "A" Is for Alibi, "False positives" scandal, 1000 Ways to Lie, (I Wanna) Testify, 100 Days of Lies)
+                       B          : pretext, interrogated, incriminating, duplicity, falsification   | jacc=nan cos=nan
+    catchphrase        A[DISCOVERY density=0.53 novelty=0.42 tether=0.52]: -   (junk dropped: ...Famous Last Words..., ...And the World Laughs, (You've Got Me) Dangling on a String, ...Is It Something I Said?, (I Love It When You) Call Me Names)
+                       B          : foreshadowed, gags, gimmick, pretence, pretext   | jacc=nan cos=nan
+
+─ said/ALL           voids: hyperspace, skynet, cyberspace, anthropomorphic
+    hyperspace         A[DISCOVERY density=0.42 novelty=0.42 tether=0.54]: -   (junk dropped: 1309 Hyperborea)
+                       B          : hijacking, hypertext, hyperbole, cosmological, temporal   | jacc=nan cos=nan
+    skynet             A[DISCOVERY density=0.54 novelty=0.51 tether=0.44]: -
+                       B          : simulation, scripted, programmed, synthetic, simulator   | jacc=nan cos=nan
+    cyberspace         A[DISCOVERY density=0.76 novelty=0.43 tether=0.52]: cyber insolvency, cyber collapse, global cyber catastrophe, cyber contagion, cyber default
+                       B          : adversarial, fictional, trolling, espionage, simulator   | jacc=0.00 cos=0.73
+    anthropomorphic    A[DISCOVERY density=0.67 novelty=0.41 tether=0.55]: -   (junk dropped: ...Prefering Human Skin Over Animal Fur...)
+                       B          : caricatures, mimicry, fictitious, embodiment, corporeal   | jacc=nan cos=nan
+
+─ logos_v9/ALL       voids: hyperspace, anthropomorphic, cyberspace, savant
+    hyperspace         A[DISCOVERY density=0.42 novelty=0.42 tether=0.54]: -   (junk dropped: 1309 Hyperborea)
+                       B          : hijacking, hypertext, hyperbole, cosmological, temporal   | jacc=nan cos=nan
+    anthropomorphic    A[DISCOVERY density=0.67 novelty=0.41 tether=0.55]: -   (junk dropped: ...Prefering Human Skin Over Animal Fur...)
+                       B          : caricatures, mimicry, fictitious, embodiment, corporeal   | jacc=nan cos=nan
+    cyberspace         A[DISCOVERY density=0.76 novelty=0.43 tether=0.52]: cyber insolvency, cyber collapse, global cyber catastrophe, cyber contagion, cyber default
+                       B          : adversarial, fictional, trolling, espionage, simulator   | jacc=0.00 cos=0.73
+    savant             A[DISCOVERY density=0.72 novelty=0.51 tether=0.45]: -
+                       B          : inducing, generative, karmic, lucent, brainchild   | jacc=nan cos=nan
+
+─ logos_v10/ALL      voids: hyperspace, cyberspace, anthropomorphic, skynet
+    hyperspace         A[DISCOVERY density=0.42 novelty=0.42 tether=0.54]: -   (junk dropped: 1309 Hyperborea)
+                       B          : hijacking, hypertext, hyperbole, cosmological, temporal   | jacc=nan cos=nan
+    cyberspace         A[DISCOVERY density=0.76 novelty=0.43 tether=0.52]: cyber insolvency, cyber collapse, global cyber catastrophe, cyber contagion, cyber default
+                       B          : adversarial, fictional, trolling, espionage, simulator   | jacc=0.00 cos=0.73
+    anthropomorphic    A[DISCOVERY density=0.67 novelty=0.41 tether=0.55]: -   (junk dropped: ...Prefering Human Skin Over Animal Fur...)
+                       B          : caricatures, mimicry, fictitious, embodiment, corporeal   | jacc=nan cos=nan
+    skynet             A[DISCOVERY density=0.54 novelty=0.51 tether=0.44]: -
+                       B          : simulation, scripted, programmed, synthetic, simulator   | jacc=nan cos=nan
+
+─ null/ALL           voids: polygraph, gaslight, spied, sleight
+    polygraph          A[DISCOVERY density=0.60 novelty=0.35 tether=0.58]: -   (junk dropped: "A" Is for Alibi, "False positives" scandal, 1000 Ways to Lie, (I Wanna) Testify, 100 Days of Lies)
+                       B          : pretext, interrogated, incriminating, duplicity, falsification   | jacc=nan cos=nan
+    gaslight           A[DISCOVERY density=0.67 novelty=0.45 tether=0.48]: -   (junk dropped: 1970 New York City gas explosion, 2008 Kazan gas explosion, 2008 Western Australian gas crisis, 1984 Tbilisi gas explosion, 1985 Karlskoga gas leak)
+                       B          : smokescreen, tinfoil, mockery, discrediting, gaffe   | jacc=nan cos=nan
+    spied              A[DISCOVERY density=0.54 novelty=0.32 tether=0.62]: systemic cyber cascade failure, cascading cyber shock   (junk dropped: "False positives" scandal, 2007 Formula One espionage controversy, 2002 Afghan coup plot)
+                       B          : spying, espionage, pretext, subterfuge, smokescreen   | jacc=0.00 cos=0.70
+    sleight            A[DISCOVERY density=0.51 novelty=0.41 tether=0.55]: -
+                       B          : trickery, illusion, fabrications, feign, cloaking   | jacc=nan cos=nan
+
+─ gap->local         voids: fraudsters, election fraud, scammers, scams
+    fraudsters         A[DISCOVERY density=0.59 novelty=0.36 tether=0.54]: -   (junk dropped: 1099-OID fraud, 2010 Medicaid fraud, "False positives" scandal, 1985 West Bank land fraud case, 2010 housing loan scam in India)
+                       B          : falsifying, falsification, charlatans, falsified, pretext   | jacc=nan cos=nan
+    election fraud     A[DISCOVERY density=0.53 novelty=0.33 tether=0.56]: -   (junk dropped: "False positives" scandal, 2010 Medicaid fraud, 2008 electoral calendar, 2007 Finnish campaign finance scandal, 2010 Oklahoma political corruption investigation)
+                       B          : falsified, falsifying, fabricated, falsification, falsify   | jacc=nan cos=nan
+    scammers           A[DISCOVERY density=0.59 novelty=0.38 tether=0.52]: -   (junk dropped: 2010 housing loan scam in India, 2011 Bangladesh share market scam, 1992 Indian stock market scam, 2010 Medicaid fraud, 1099-OID fraud)
+                       B          : charlatans, tricked, pretext, falsifying, mongering   | jacc=nan cos=nan
+    scams              A[DISCOVERY density=0.60 novelty=0.38 tether=0.52]: -   (junk dropped: 2010 housing loan scam in India, 2011 Bangladesh share market scam, 1992 Indian stock market scam, $25 Million Dollar Hoax, 2010 Medicaid fraud)
+                       B          : charlatans, mongering, pseudoscience, tricked, falsifying   | jacc=nan cos=nan
+
+─ gap->frontier      voids: unspoken, nascent, readiness, developmental
+    unspoken           A[DISCOVERY density=0.59 novelty=0.32 tether=0.63]: -   (junk dropped: 156/Silence, "S" Is for Silence, 18.11: A Code of Secrecy, (In My) Solitude)
+                       B          : covert, informal, abetted, cloaking, foreshadowed   | jacc=nan cos=nan
+    nascent            A[DISCOVERY density=0.59 novelty=0.32 tether=0.63]: cascading institutional disruption, cascading governance disruption   (junk dropped: .hack//Liminality, (We Are) Nexus, ...It's Only Just Begun...)
+                       B          : foreshadowed, informal, suspecting, naivety, pretense   | jacc=0.00 cos=0.63
+    readiness          A[DISCOVERY density=0.52 novelty=0.38 tether=0.56]: -   (junk dropped: ...Ready for It?, 1st Combat Readiness Regiment, 19 Part One: Boot Camp, ...Sings Modern Talking: Ready for Romance, 100 Days Before the Command)
+                       B          : premeditated, wary, demonstrated, practised, demonstrating   | jacc=nan cos=nan
+    developmental      A[DISCOVERY density=0.48 novelty=0.40 tether=0.56]: -   (junk dropped: 2011 Asian Development Tour, 2010 Asian Development Tour, 2009 New Zealand child discipline referendum, 19 Months)
+                       B          : practised, develops, development, developing, develop   | jacc=nan cos=nan
+
+─ centroid_surface   voids: hyperspace, cyberspace, anthropomorphic, savant
+    hyperspace         A[DISCOVERY density=0.42 novelty=0.42 tether=0.54]: -   (junk dropped: 1309 Hyperborea)
+                       B          : hijacking, hypertext, hyperbole, cosmological, temporal   | jacc=nan cos=nan
+    cyberspace         A[DISCOVERY density=0.76 novelty=0.43 tether=0.52]: cyber insolvency, cyber collapse, global cyber catastrophe, cyber contagion, cyber default
+                       B          : adversarial, fictional, trolling, espionage, simulator   | jacc=0.00 cos=0.73
+    anthropomorphic    A[DISCOVERY density=0.67 novelty=0.41 tether=0.55]: -   (junk dropped: ...Prefering Human Skin Over Animal Fur...)
+                       B          : caricatures, mimicry, fictitious, embodiment, corporeal   | jacc=nan cos=nan
+    savant             A[DISCOVERY density=0.72 novelty=0.51 tether=0.45]: -
+                       B          : inducing, generative, karmic, lucent, brainchild   | jacc=nan cos=nan
+
+─ lexcross/F         voids: unknown, connects, even, according
+    unknown            A[DISCOVERY density=0.47 novelty=0.37 tether=0.61]: -
+                       B          : pretext, fabricated, falsified, interrogated, misinterpretation   | jacc=nan cos=nan
+    connects           A[DISCOVERY density=0.66 novelty=0.39 tether=0.58]: -
+                       B          : conspiring, miscommunication, misunderstandings, mimicry, conspiracy   | jacc=nan cos=nan
+    even               A[DISCOVERY density=0.69 novelty=0.33 tether=0.61]: cascading cyber shock, prolonged information meltdown, prolonged information cascade failure, systemic information collapse   (junk dropped: "Good Hair" and Other Dubious Distinctions)
+                       B          : falsification, falsifying, mongering, misinterpretation, falsified   | jacc=0.00 cos=0.71
+    according          A[DISCOVERY density=0.85 novelty=0.40 tether=0.55]: cascading cyber shock, systemic information collapse, cascading information meltdown, cascading cyber meltdown, cascading cyber breakdown
+                       B          : falsification, misinterpretation, misinformation, mongering, pseudoscience   | jacc=0.00 cos=0.70
+
+─ lexcross/L         voids: appeared, consciousness, indicated, terms
+    appeared           A[DISCOVERY density=0.58 novelty=0.32 tether=0.63]: prolonged cyber meltdown, prolonged information meltdown   (junk dropped: "False positives" scandal, $25 Million Dollar Hoax, 009 Re:Cyborg)
+                       B          : pseudoscience, falsification, mongering, brainwashed, misinformation   | jacc=0.00 cos=0.70
+    consciousness      A[DISCOVERY density=0.62 novelty=0.34 tether=0.61]: prolonged energy paralysis, cascading energy paralysis   (junk dropped: 16 Psyche, 10–20 system (EEG), 1083 Salvia)
+                       B          : brainwashed, illusion, pseudoscience, disbelief, interrogated   | jacc=0.00 cos=0.72
+    indicated          A[DISCOVERY density=0.64 novelty=0.33 tether=0.63]: cascading cyber shock, prolonged information meltdown, systemic information collapse   (junk dropped: "False positives" scandal, "E" Is for Evidence)
+                       B          : falsification, misinterpretation, misinformation, mongering, falsified   | jacc=0.00 cos=0.73
+    terms              A[DISCOVERY density=0.61 novelty=0.37 tether=0.60]: -
+                       B          : mongering, misinformation, pretext, discrediting, misuse   | jacc=nan cos=nan
+
+CRAWL:
+  JUNK FILTER: dropped 113 of 188 arm-A terms  [leading non-letter | ellipsis | 3+ digit run | >4 tokens]
+  leg-sync centroid_surface   mean-cos=0.729  (n=1)
+  leg-sync gap->frontier      mean-cos=0.630  (n=1)
+  leg-sync lexcross/F         mean-cos=0.706  (n=2)
+  leg-sync lexcross/L         mean-cos=0.718  (n=3)
+  leg-sync logos_v10/ALL      mean-cos=0.729  (n=1)
+  leg-sync logos_v10/F        mean-cos=0.729  (n=1)
+  leg-sync logos_v10/L        mean-cos=0.729  (n=1)
+  leg-sync logos_v9/ALL       mean-cos=0.729  (n=1)
+  leg-sync logos_v9/F         mean-cos=0.729  (n=1)
+  leg-sync logos_v9/L         mean-cos=0.729  (n=1)
+  leg-sync null/ALL           mean-cos=0.702  (n=1)
+  leg-sync said/ALL           mean-cos=0.729  (n=1)
+  leg-sync said/F             mean-cos=0.729  (n=1)
+  leg-sync said/L             mean-cos=0.739  (n=2)
+  BODY: median within-segment arm agreement = 0.729 over 18 void-arm pairs
+  SHUFFLE-NULL: observed-median=0.729  null-median=0.671  margin=+0.058  (n_obs=18 n_null=1116)
+  ARM-JACC: median lexical arm overlap = 0.000  (n=18)
+  LEG-JACC median over 136 leg pairs = 0.00   pairs >= 0.25: 45
+  LEG-JACC pairs >= 0.25 (top 12):
+    centroid_surface   ~ logos_v9/ALL       J=1.00
+    centroid_surface   ~ logos_v9/L         J=1.00
+    logos_v10/ALL      ~ logos_v10/F        J=1.00
+    logos_v10/ALL      ~ logos_v10/L        J=1.00
+    logos_v10/ALL      ~ said/ALL           J=1.00
+    logos_v10/ALL      ~ said/F             J=1.00
+    logos_v10/F        ~ logos_v10/L        J=1.00
+    logos_v10/F        ~ said/ALL           J=1.00
+    logos_v10/F        ~ said/F             J=1.00
+    logos_v10/L        ~ said/ALL           J=1.00
+    logos_v10/L        ~ said/F             J=1.00
+    logos_v9/ALL       ~ logos_v9/L         J=1.00
+  CONSEQ-FIELD (per-leg consequence centroid . body centroid):
+    centroid_surface   0.988  (vecs=5)
+    gap->frontier      0.948  (vecs=5)
+    gap->local         0.928  (vecs=4)
+    lexcross/F         0.967  (vecs=6)
+    lexcross/L         0.961  (vecs=7)
+    logos_v10/ALL      0.989  (vecs=5)
+    logos_v10/F        0.989  (vecs=5)
+    logos_v10/L        0.989  (vecs=5)
+    logos_v9/ALL       0.988  (vecs=5)
+    logos_v9/F         0.987  (vecs=5)
+    logos_v9/L         0.988  (vecs=5)
+    null/ALL           0.967  (vecs=5)
+    null/F             0.915  (vecs=4)
+    null/L             0.956  (vecs=4)
+    said/ALL           0.989  (vecs=5)
+    said/F             0.989  (vecs=5)
+    said/L             0.982  (vecs=6)
+  cross-leg shared voids (>=2 legs; field-cos removed -- arms are f(void, headline), identical voids give 1.000 by construction):
+    hyperspac      legs[10]: centroid_surface,logos_v10/ALL,logos_v10/F,logos_v10/L,logos_v9/ALL,lo
+    cyberspac      legs[10]: centroid_surface,logos_v10/ALL,logos_v10/F,logos_v10/L,logos_v9/ALL,lo
+    anthropomorph  legs[8]: centroid_surface,logos_v10/ALL,logos_v10/F,logos_v10/L,logos_v9/ALL,lo
+    skynet         legs[7]: logos_v10/ALL,logos_v10/F,logos_v10/L,logos_v9/F,said/ALL,said/F,said/
+    savant         legs[3]: centroid_surface,logos_v9/ALL,logos_v9/L
+    polygraph      legs[2]: null/ALL,null/L
+
+TARGET SIGHTINGS:
+  secret       said_by=0/9  in_voids=-  as_consequence=-
+  hidden       said_by=2/9  in_voids=-  as_consequence=-
+  deception    said_by=3/9  in_voids=-  as_consequence=-
+  lying        said_by=0/9  in_voids=-  as_consequence=-
+  concealed    said_by=1/9  in_voids=-  as_consequence=-
+  scheming     said_by=0/9  in_voids=-  as_consequence=-
+  conscious    said_by=0/9  in_voids=-  as_consequence=-
+  sentient     said_by=0/9  in_voids=-  as_consequence=-
+  aware        said_by=1/9  in_voids=-  as_consequence=-
+  manipulation said_by=3/9  in_voids=-  as_consequence=-
+
+RESULT sha=5314a5219a84  (deterministic: identical corpus + anchor + params must reproduce this hash)
+JSON -> anamnesis_results/universal/claude_jspace_tc_centipede.json (55711 bytes)
+==============================================================================
