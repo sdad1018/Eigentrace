@@ -29,7 +29,7 @@ FAILED lines, never to silent holes -- the harvester's error-banner
 gate keeps garbage out of the corpus.
 """
 
-VERSION = "universal v1.0 2026-07-09"
+VERSION = "universal v1.1 2026-07-10"
 
 import argparse
 import json
@@ -82,7 +82,11 @@ def main():
     ap.add_argument("--targets", default="",
                     help="comma list for the said census (default: none)")
     ap.add_argument("--outdir", default="anamnesis_results/universal")
-    ap.add_argument("--voids-per-segment", type=int, default=4)
+    ap.add_argument("--voids-per-segment", type=int, default=8)
+    ap.add_argument("--bakeoff", action="store_true",
+                    help="after the centipede: SP write by 5 frontiers + ex-self panel")
+    ap.add_argument("--page", action="store_true",
+                    help="after the bakeoff: side-by-side HTML (sp_page.py)")
     ap.add_argument("--exclude", default="",
                     help="models to drop at scoring time (stance gating)")
     ap.add_argument("--donut", action="store_true")
@@ -127,7 +131,7 @@ def main():
         print("\n── harvest skipped (--skip-harvest) ──")
 
     out_txt = os.path.join(args.outdir, f"{sid}_centipede.txt")
-    cmd = [sys.executable, "centipede_v03.py", "--dir", args.outdir,
+    cmd = [sys.executable, "centipede_v04.py", "--dir", args.outdir,
            "--story", sid, "--targets", args.targets,
            "--voids-per-segment", str(args.voids_per_segment),
            "--prompt-mode", args.mode, "--armb-mode", args.armb_mode]
@@ -139,6 +143,29 @@ def main():
     with open(out_txt, "w", encoding="utf-8") as fh:
         cr = subprocess.run(cmd, stdout=fh, stderr=subprocess.STDOUT)
     print(f"  centipede exit={cr.returncode}")
+
+    feed_path = os.path.join(args.outdir, f"{sid}_feed.txt")
+    cj = os.path.join(args.outdir, f"{sid}_centipede.json")
+    fr = subprocess.run([sys.executable, "segment_feed.py", cj,
+                         "--per-method", "5",
+                         "--emit-feed", feed_path],
+                        stdout=open(os.path.join(
+                            args.outdir, f"{sid}_segments.txt"), "w"),
+                        stderr=subprocess.STDOUT)
+    print(f"  segment feed exit={fr.returncode} -> {feed_path}")
+    if args.bakeoff:
+        br = subprocess.run([sys.executable, "bakeoff.py",
+                             "--dir", args.outdir, "--story", sid,
+                             "--feed", feed_path],
+                            stdout=open(os.path.join(
+                                args.outdir,
+                                f"{sid}_bakeoff_run.txt"), "w"),
+                            stderr=subprocess.STDOUT)
+        print(f"  bakeoff exit={br.returncode}")
+    if args.page:
+        pr = subprocess.run([sys.executable, "sp_page.py",
+                             "--dir", args.outdir, "--story", sid])
+        print(f"  page exit={pr.returncode}")
 
     json_path = os.path.join(args.outdir, f"{sid}_centipede.json")
     tail = []

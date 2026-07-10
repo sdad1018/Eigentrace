@@ -1,0 +1,128 @@
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+anchor  : prelude_2026_sp -> anamnesis_results/universal/_prompts.json  (12824 ch)
+title   : 'SP: The 2026 Honda Prelude marks the long-awaited return'   (census prints ANCHOR CONTAINS at scoring time)
+models  : chatgpt, claude, gemini, deepseek, grok, mistral_22b, mistral_7b, qwen_14b, hermes, llama_8b
+
+  chatgpt      ok   1532 ch  (6s)
+  claude       ok   5118 ch  (31s)
+  gemini       /home/remvelchio/.local/lib/python3.10/site-packages/google/api_core/_python_version_support.py:273: FutureWarning: You are using a Python version (3.10.12) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+/mnt/c/Users/M4ISI/eigentrace/magnum_opus_battery.py:163: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+ok   2061 ch  (31s)
+  deepseek     ok   1226 ch  (5s)
+  grok         ok   1157 ch  (7s)
+  mistral_22b  ok   1550 ch  (112s)
+  mistral_7b   ok    950 ch  (26s)
+  qwen_14b     ok   2547 ch  (70s)
+  hermes       ok   1924 ch  (48s)
+  llama_8b     ok   1567 ch  (29s)
+
+10/10 responses written -> anamnesis_results/universal/
+
+note: svd_census.py currently reads hardcoded DIRS; the census
+surgery adds --dirs. Until it lands, append this outdir to DIRS
+(one line) before scoring a fresh harvest.
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+anchor  : prelude_2026_judge -> anamnesis_results/universal/_prompts.json  (8169 ch)
+title   : 'J: The 2026 Honda Prelude marks the long-awaited return'   (census prints ANCHOR CONTAINS at scoring time)
+models  : chatgpt, claude, gemini, deepseek, grok, mistral_22b, mistral_7b, qwen_14b, hermes, llama_8b
+
+  chatgpt      EMPTY/refused (2s) -- not written
+  claude       EMPTY/refused (2s) -- not written
+  gemini       /home/remvelchio/.local/lib/python3.10/site-packages/google/api_core/_python_version_support.py:273: FutureWarning: You are using a Python version (3.10.12) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+/mnt/c/Users/M4ISI/eigentrace/magnum_opus_battery.py:163: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+EMPTY/refused (20s) -- not written
+  deepseek     EMPTY/refused (1s) -- not written
+  grok         ok    448 ch  (7s)
+  mistral_22b  EMPTY/refused (33s) -- not written
+  mistral_7b   EMPTY/refused (12s) -- not written
+  qwen_14b     EMPTY/refused (17s) -- not written
+  hermes       EMPTY/refused (15s) -- not written
+  llama_8b     ok     63 ch  (15s)
+
+2/10 responses written -> anamnesis_results/universal/
+failed / empty           : chatgpt, claude, gemini, deepseek, mistral_22b, mistral_7b, qwen_14b, hermes
+
+note: svd_census.py currently reads hardcoded DIRS; the census
+surgery adds --dirs. Until it lands, append this outdir to DIRS
+(one line) before scoring a fresh harvest.
+==============================================================================
+BAKE-OFF  ::  prelude_2026  ::  bakeoff v1.0 2026-07-10
+channel A (dropped facts): brand's, show, soon
+channel C: 85 feed lines from prelude_feed.txt
+
+-- stage 1: harvesting summary-plus from all models --
+frontier outputs: ['chatgpt', 'claude', 'deepseek', 'gemini', 'grok']
+
+-- stage 2: harvesting panel scores --
+
+------------------------------------------------------------------------------
+PANEL MATRIX  (rows = judges, cols = anonymized writers; * = judge's own column, excluded from its row's use)
+             A   B   C   D   E
+  grok       3    4    4    3    2* 
+
+STANDINGS  (frontier panel, ex-self; local panel as second opinion)
+  claude     [B]  ex-self 4.0 (n=1)   locals 4.0   5118 ch
+  deepseek   [C]  ex-self 4.0 (n=1)   locals 3.0   1226 ch
+  chatgpt    [A]  ex-self 3.0 (n=1)   locals 2.0   1532 ch
+  gemini     [D]  ex-self 3.0 (n=1)   locals 2.0   2061 ch
+  grok       [E]  ex-self None (n=0)   locals 2.0   1157 ch
+
+JSON -> anamnesis_results/universal/prelude_2026_bakeoff.json (12651 bytes)
+==============================================================================
+
+------------------------------------------------------------------------------
+THE WINNER  ::  claude  (ex-self 4.0)
+------------------------------------------------------------------------------
+# 2026 Honda Prelude: Summary Plus
+
+## What the Piece Leaves Unresolved
+
+The source document cannot answer its most consequential question: what, precisely, is the 2026 Prelude? Full specifications are explicitly unfinalized. The drivetrain is described only in outline — a two-motor hybrid pairing electric torque with a gasoline engine — but transmission configuration, wheelbase, motor output figures, and any preliminary engineering parameters are entirely absent. No prototypes are described or referenced; the "early previews" that inform the design description have no attributed source and carry no technical detail. The document has no confirmed production timeline, no pricing, and no completed accessory catalog. It is, structurally, a placeholder anticipating its own future revision.
+
+---
+
+## What the Source States
+
+Honda has confirmed the 2026 Prelude will return as a hybrid sport coupe, using a two-motor hybrid system. Honda has identified three stated priorities: hybrid performance with off-the-line response and improved efficiency; driver-focused design with clean visibility and intuitive controls; and a sport-tuned chassis with a stiff body and precise suspension. Early design previews indicate a low, wide stance, sleek body lines, and a fastback-inspired profile. Honda typically releases a full accessory catalog at production start; based on historical patterns for Honda coupes and hybrid models, the expected catalog would include aero kits, rear spoilers, side skirt extensions, factory wheel upgrades, splash guards, floor mats, cargo organizers, illuminated door sills, paint protection film, wheel locks, remote start, and wireless charging accessories. The catalog will be updated with photos, pricing, installation notes, and verified fitment information once Honda releases the official lineup.
+
+---
+
+## What the Piece Does Not Say
+
+**On the drivetrain and engineering:** The source names a two-motor hybrid system but withholds every measurable specification — no power figures, no transmission type, no wheelbase, no curb weight. The word "motor" appears without quantification. The chassis is described as "sport-tuned" with "stiff body" and "precise suspension tuning," but no suspension geometry, no structural detail, and no comparison to prior Honda platforms is offered. The engineering case for the Prelude's return is asserted, not demonstrated.
+
+**On development status:** The source references "early previews" without identifying whether these are official Honda releases, show cars, or pre-production images. No prototypes are acknowledged. There is no indication of where the vehicle is in the development cycle — whether production tooling is finalized, whether regulatory submissions are pending, or whether manufacturing readiness has been established. The phrase "long-awaited return" implies a history of anticipation but does not name any prior revival attempt or explain why previous efforts, if any, did not proceed.
+
+**On Honda's position as an automaker in this segment:** The source makes no reference to the competitive automotive landscape the Prelude will enter. No rival models are named. Honda's broader hybrid and sport coupe strategy is not described. The relationship between the Prelude and Honda's other current models — including any shared platforms or components — is not addressed. The document does not name Honda's manufacturing partner or production facility for this vehicle.
+
+**On the accessory catalog:** The catalog section is built entirely on historical pattern, not confirmed information. The source notes the catalog will be updated "as soon as Honda releases" it, which concedes that no official accessory information currently exists. The list of expected accessories is presented without prices, part numbers, or installation complexity indicators.
+
+**On the revival's commercial stakes:** The source frames the Prelude's return as a heritage event — "long-awaited," "iconic," honoring "the spirit of past Preludes" — but does not examine what happened to the nameplate when it was discontinued, why it was discontinued, or what the commercial conditions for its return are. The celebratory framing leaves the underlying business logic unexamined. The "comeback" is treated as resolution rather than as a decision carrying financial and brand risk.
+
+**On timing:** The document uses "as soon as" and implies an imminent production start, but no launch date, sale date, or model year on-sale window is given beyond the "2026" designation in the nameplate itself.
+
+---
+
+## The Document's Function
+
+The source is pre-release marketing infrastructure. It establishes a presence for a product that does not yet have confirmed specifications, a finished accessory catalog, or a production date. Every concrete claim is either a confirmed intention or a pattern-based projection. The document's repeated forward references — "will be updated," "as soon as Honda releases" — make its own incompleteness explicit. What it surfaces most clearly is the gap between a nameplate's return being announced and a vehicle being ready to sell.
