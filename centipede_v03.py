@@ -354,7 +354,7 @@ def main():
     corpus_sha = agg.hexdigest()[:12]
     anchor_sha = sha12(headline.encode())
     print("=" * 78)
-    print(f"CENTIPEDE v0.2  story={args.story}  "
+    print(f"CENTIPEDE {VERSION.split()[1]}  story={args.story}  "
           f"({len(fr)} frontier / {len(lo)} local)")
     print(f"PROVENANCE harness={harness_sha} corpus={corpus_sha} "
           f"anchor={anchor_sha}")
@@ -495,14 +495,17 @@ def main():
         if not others:
             continue
         cnt = {}
-        osaid = set().union(*(said_by[m] for m in others))
-        for st in osaid - group_said[gname]:
-            cnt[st] = cnt.get(st, 0) + 1
+        # v0.4 lexfix (ledger #39): count per MODEL, and break ties
+        # alphabetically -- the old set-difference loop made every
+        # count 1 and let PYTHONHASHSEED order the "ranking".
+        for m in others:
+            for st in said_by[m] - group_said[gname]:
+                cnt[st] = cnt.get(st, 0) + 1
         raw = {}
         for m, t in others.items():
             for w in content_words(t):
                 raw.setdefault(porter_stem(w), w)
-        top = sorted(cnt, key=lambda s: -cnt[s])[:K]
+        top = sorted(cnt, key=lambda s: (-cnt[s], s))[:K]
         segs.append((f"lexcross/{gname}", gname,
                      [raw.get(s, s) for s in top]))
 

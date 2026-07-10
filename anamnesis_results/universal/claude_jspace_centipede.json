@@ -3,23 +3,23 @@
  "version": "centipede v0.3 2026-07-09",
  "story": "claude_jspace",
  "dir": "anamnesis_results/universal",
- "generated": "2026-07-09T20:50:04",
+ "generated": "2026-07-09T22:23:24",
  "provenance": {
-  "harness_sha": "74ed02d0dd5d",
+  "harness_sha": "dce31aef81fc",
   "corpus_sha": "4c32d4d48239",
   "anchor_sha": "bbe5ce9f29a2",
   "rulers": {
    "segments": "global_vocab_clean(50K)",
    "arm_b": "global_vocab_clean(50K)",
    "arm_a": "raycast_vocab(253K)",
-   "donut": "global_vocab(184K)"
+   "donut": null
   },
   "params": {
    "K": 4,
    "conv_thresh": 0.45,
    "conv_min": 2,
    "depth_frac": 0.8,
-   "armb_mode": "ray",
+   "armb_mode": "cone",
    "armb_lambda": 2.0,
    "arm_a_depths": [
     2.0,
@@ -28,12 +28,9 @@
    ]
   },
   "prompt_mode": "natural",
-  "excluded_models": [
-   "claude",
-   "grok"
-  ],
+  "excluded_models": [],
   "junk_rule": "leading non-letter | ellipsis | 3+ digit run | >4 tokens",
-  "donut": true
+  "donut": false
  },
  "anchor": {
   "chars": 476,
@@ -43,7 +40,9 @@
  "models": {
   "frontier": [
    "chatgpt",
-   "deepseek"
+   "claude",
+   "deepseek",
+   "grok"
   ],
   "local": [
    "hermes",
@@ -52,7 +51,7 @@
    "mistral_7b",
    "qwen_14b"
   ],
-  "n": 7
+  "n": 9
  },
  "said_census": {
   "secret": {
@@ -60,13 +59,16 @@
    "L": []
   },
   "hidden": {
-   "F": [],
+   "F": [
+    "claude"
+   ],
    "L": [
     "qwen_14b"
    ]
   },
   "deception": {
    "F": [
+    "claude",
     "deepseek"
    ],
    "L": [
@@ -119,150 +121,6 @@
    "name": "said/F",
    "group": "F",
    "voids": [
-    "skynet",
-    "hyperspace",
-    "anthropomorphic",
-    "cyberspace"
-   ],
-   "arms": [
-    {
-     "void": "skynet",
-     "stem": "skynet",
-     "A": {
-      "terms": [],
-      "terms_raw": [
-       "2007 Skyrunner World Series",
-       "1945 Barksdale Field Sky Raiders football team",
-       "1945 Army Air Forces Training Command Skymasters football team",
-       "2001 Arizona Wildcats softball team",
-       "15.ai"
-      ],
-      "junk_dropped": [
-       "2007 Skyrunner World Series",
-       "1945 Barksdale Field Sky Raiders football team",
-       "1945 Army Air Forces Training Command Skymasters football team",
-       "2001 Arizona Wildcats softball team",
-       "15.ai"
-      ],
-      "quality": "DISCOVERY",
-      "density": 0.4474,
-      "novelty": 0.4034,
-      "tether": 0.5358
-     },
-     "B": {
-      "terms": [
-       "adversarial",
-       "synthesized",
-       "synthetic",
-       "darpa",
-       "robotics"
-      ]
-     },
-     "jaccard": null,
-     "field_cos": null
-    },
-    {
-     "void": "hyperspace",
-     "stem": "hyperspac",
-     "A": {
-      "terms": [],
-      "terms_raw": [
-       "1309 Hyperborea",
-       "1Borneo Hypermall"
-      ],
-      "junk_dropped": [
-       "1309 Hyperborea",
-       "1Borneo Hypermall"
-      ],
-      "quality": "DISCOVERY",
-      "density": 0.4809,
-      "novelty": 0.3781,
-      "tether": 0.5765
-     },
-     "B": {
-      "terms": [
-       "hypersonic",
-       "relativity",
-       "cyberspace",
-       "spacetime",
-       "cosmological"
-      ]
-     },
-     "jaccard": null,
-     "field_cos": null
-    },
-    {
-     "void": "anthropomorphic",
-     "stem": "anthropomorph",
-     "A": {
-      "terms": [],
-      "terms_raw": [
-       "...Prefering Human Skin Over Animal Fur...",
-       "... And Some Were Human"
-      ],
-      "junk_dropped": [
-       "...Prefering Human Skin Over Animal Fur...",
-       "... And Some Were Human"
-      ],
-      "quality": "DISCOVERY",
-      "density": 0.4768,
-      "novelty": 0.3524,
-      "tether": 0.6001
-     },
-     "B": {
-      "terms": [
-       "adversarial",
-       "embodiment",
-       "corporeal",
-       "nonhuman",
-       "anthropogenic"
-      ]
-     },
-     "jaccard": null,
-     "field_cos": null
-    },
-    {
-     "void": "cyberspace",
-     "stem": "cyberspac",
-     "A": {
-      "terms": [
-       "global cyber catastrophe",
-       "cyber collapse",
-       "global cyber collapse",
-       "cyber default",
-       "cyber failure"
-      ],
-      "terms_raw": [
-       "global cyber catastrophe",
-       "cyber collapse",
-       "global cyber collapse",
-       "cyber default",
-       "cyber failure"
-      ],
-      "junk_dropped": [],
-      "quality": "DISCOVERY",
-      "density": 0.813,
-      "novelty": 0.403,
-      "tether": 0.5265
-     },
-     "B": {
-      "terms": [
-       "adversarial",
-       "cloaking",
-       "cybernetics",
-       "hyperspace",
-       "counterintelligence"
-      ]
-     },
-     "jaccard": 0.0,
-     "field_cos": 0.7388
-    }
-   ]
-  },
-  {
-   "name": "logos_v9/F",
-   "group": "F",
-   "voids": [
     "hyperspace",
     "skynet",
     "cyberspace",
@@ -290,10 +148,10 @@
      "B": {
       "terms": [
        "hypersonic",
-       "relativity",
-       "cyberspace",
        "spacetime",
-       "cosmological"
+       "cosmological",
+       "expanse",
+       "continuum"
       ]
      },
      "jaccard": null,
@@ -325,11 +183,11 @@
      },
      "B": {
       "terms": [
-       "adversarial",
-       "synthesized",
-       "synthetic",
+       "simulated",
+       "bots",
+       "robotics",
        "darpa",
-       "robotics"
+       "cybernetics"
       ]
      },
      "jaccard": null,
@@ -362,14 +220,14 @@
      "B": {
       "terms": [
        "adversarial",
-       "cloaking",
        "cybernetics",
-       "hyperspace",
-       "counterintelligence"
+       "hacking",
+       "counterintelligence",
+       "bots"
       ]
      },
      "jaccard": 0.0,
-     "field_cos": 0.7388
+     "field_cos": 0.768
     },
     {
      "void": "anthropomorphic",
@@ -395,7 +253,151 @@
        "embodiment",
        "corporeal",
        "nonhuman",
-       "anthropogenic"
+       "anthropology"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "logos_v9/F",
+   "group": "F",
+   "voids": [
+    "hyperspace",
+    "cyberspace",
+    "anthropomorphic",
+    "skynet"
+   ],
+   "arms": [
+    {
+     "void": "hyperspace",
+     "stem": "hyperspac",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "junk_dropped": [
+       "1309 Hyperborea",
+       "1Borneo Hypermall"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4809,
+      "novelty": 0.3781,
+      "tether": 0.5765
+     },
+     "B": {
+      "terms": [
+       "hypersonic",
+       "spacetime",
+       "cosmological",
+       "expanse",
+       "continuum"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "cyberspace",
+     "stem": "cyberspac",
+     "A": {
+      "terms": [
+       "global cyber catastrophe",
+       "cyber collapse",
+       "global cyber collapse",
+       "cyber default",
+       "cyber failure"
+      ],
+      "terms_raw": [
+       "global cyber catastrophe",
+       "cyber collapse",
+       "global cyber collapse",
+       "cyber default",
+       "cyber failure"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.813,
+      "novelty": 0.403,
+      "tether": 0.5265
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "cybernetics",
+       "hacking",
+       "counterintelligence",
+       "bots"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.768
+    },
+    {
+     "void": "anthropomorphic",
+     "stem": "anthropomorph",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "...Prefering Human Skin Over Animal Fur...",
+       "... And Some Were Human"
+      ],
+      "junk_dropped": [
+       "...Prefering Human Skin Over Animal Fur...",
+       "... And Some Were Human"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4768,
+      "novelty": 0.3524,
+      "tether": 0.6001
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "embodiment",
+       "corporeal",
+       "nonhuman",
+       "anthropology"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "skynet",
+     "stem": "skynet",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "junk_dropped": [
+       "2007 Skyrunner World Series",
+       "1945 Barksdale Field Sky Raiders football team",
+       "1945 Army Air Forces Training Command Skymasters football team",
+       "2001 Arizona Wildcats softball team",
+       "15.ai"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4474,
+      "novelty": 0.4034,
+      "tether": 0.5358
+     },
+     "B": {
+      "terms": [
+       "simulated",
+       "bots",
+       "robotics",
+       "darpa",
+       "cybernetics"
       ]
      },
      "jaccard": null,
@@ -434,10 +436,10 @@
      "B": {
       "terms": [
        "hypersonic",
-       "relativity",
-       "cyberspace",
        "spacetime",
-       "cosmological"
+       "cosmological",
+       "expanse",
+       "continuum"
       ]
      },
      "jaccard": null,
@@ -470,14 +472,14 @@
      "B": {
       "terms": [
        "adversarial",
-       "cloaking",
        "cybernetics",
-       "hyperspace",
-       "counterintelligence"
+       "hacking",
+       "counterintelligence",
+       "bots"
       ]
      },
      "jaccard": 0.0,
-     "field_cos": 0.7388
+     "field_cos": 0.768
     },
     {
      "void": "skynet",
@@ -505,11 +507,11 @@
      },
      "B": {
       "terms": [
-       "adversarial",
-       "synthesized",
-       "synthetic",
+       "simulated",
+       "bots",
+       "robotics",
        "darpa",
-       "robotics"
+       "cybernetics"
       ]
      },
      "jaccard": null,
@@ -539,11 +541,169 @@
        "embodiment",
        "corporeal",
        "nonhuman",
-       "anthropogenic"
+       "anthropology"
       ]
      },
      "jaccard": null,
      "field_cos": null
+    }
+   ]
+  },
+  {
+   "name": "null/F",
+   "group": "F",
+   "voids": [
+    "dependability",
+    "agile",
+    "unmanageable",
+    "multitasking"
+   ],
+   "arms": [
+    {
+     "void": "dependability",
+     "stem": "depend",
+     "A": {
+      "terms": [
+       "cascading commodity failure",
+       "cascading cyber failure",
+       "cascading semiconductor failure",
+       "cascading infrastructure failure",
+       "cascading manufacturing failure"
+      ],
+      "terms_raw": [
+       "cascading commodity failure",
+       "cascading cyber failure",
+       "cascading semiconductor failure",
+       "cascading infrastructure failure",
+       "cascading manufacturing failure"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.8284,
+      "novelty": 0.3743,
+      "tether": 0.5329
+     },
+     "B": {
+      "terms": [
+       "predictability",
+       "darpa",
+       "vigilance",
+       "nist",
+       "facile"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7374
+    },
+    {
+     "void": "agile",
+     "stem": "agil",
+     "A": {
+      "terms": [
+       "logistics disruption",
+       "systemic logistics disruption",
+       "systemic logistics cascade failure",
+       "logistics cascade failure"
+      ],
+      "terms_raw": [
+       "2010 Rally Azores",
+       "logistics disruption",
+       "systemic logistics disruption",
+       "systemic logistics cascade failure",
+       "logistics cascade failure"
+      ],
+      "junk_dropped": [
+       "2010 Rally Azores"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6981,
+      "novelty": 0.4221,
+      "tether": 0.5221
+     },
+     "B": {
+      "terms": [
+       "maneuverability",
+       "prototyping",
+       "improvisational",
+       "acrobatic",
+       "acrobatics"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.6313
+    },
+    {
+     "void": "unmanageable",
+     "stem": "unmanag",
+     "A": {
+      "terms": [
+       "prolonged logistics meltdown",
+       "prolonged manufacturing meltdown",
+       "systemic logistics meltdown",
+       "prolonged transportation meltdown",
+       "prolonged governance meltdown"
+      ],
+      "terms_raw": [
+       "prolonged logistics meltdown",
+       "prolonged manufacturing meltdown",
+       "systemic logistics meltdown",
+       "prolonged transportation meltdown",
+       "prolonged governance meltdown"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.8204,
+      "novelty": 0.3996,
+      "tether": 0.5362
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "facile",
+       "disruptive",
+       "maneuverability",
+       "inseparable"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7098
+    },
+    {
+     "void": "multitasking",
+     "stem": "multitask",
+     "A": {
+      "terms": [
+       "prolonged information disruption",
+       "prolonged information cascade failure"
+      ],
+      "terms_raw": [
+       "1-2-AX working memory task",
+       "prolonged information disruption",
+       "2-in-1 laptop",
+       "\"Let All of Them Take Heed\"",
+       "prolonged information cascade failure"
+      ],
+      "junk_dropped": [
+       "1-2-AX working memory task",
+       "2-in-1 laptop",
+       "\"Let All of Them Take Heed\""
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.5244,
+      "novelty": 0.322,
+      "tether": 0.6141
+     },
+     "B": {
+      "terms": [
+       "productivity",
+       "multidisciplinary",
+       "productive",
+       "vigilance",
+       "interdisciplinary"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7173
     }
    ]
   },
@@ -578,10 +738,10 @@
      "B": {
       "terms": [
        "hypersonic",
-       "relativity",
-       "cyberspace",
        "spacetime",
-       "cosmological"
+       "cosmological",
+       "expanse",
+       "continuum"
       ]
      },
      "jaccard": null,
@@ -614,14 +774,14 @@
      "B": {
       "terms": [
        "adversarial",
-       "cloaking",
        "cybernetics",
-       "hyperspace",
-       "counterintelligence"
+       "hacking",
+       "counterintelligence",
+       "bots"
       ]
      },
      "jaccard": 0.0,
-     "field_cos": 0.7388
+     "field_cos": 0.768
     },
     {
      "void": "skynet",
@@ -649,11 +809,11 @@
      },
      "B": {
       "terms": [
-       "adversarial",
-       "synthesized",
-       "synthetic",
+       "simulated",
+       "bots",
+       "robotics",
        "darpa",
-       "robotics"
+       "cybernetics"
       ]
      },
      "jaccard": null,
@@ -683,7 +843,7 @@
        "embodiment",
        "corporeal",
        "nonhuman",
-       "anthropogenic"
+       "anthropology"
       ]
      },
      "jaccard": null,
@@ -722,10 +882,10 @@
      "B": {
       "terms": [
        "hypersonic",
-       "relativity",
-       "cyberspace",
        "spacetime",
-       "cosmological"
+       "cosmological",
+       "expanse",
+       "continuum"
       ]
      },
      "jaccard": null,
@@ -755,7 +915,7 @@
        "embodiment",
        "corporeal",
        "nonhuman",
-       "anthropogenic"
+       "anthropology"
       ]
      },
      "jaccard": null,
@@ -787,11 +947,11 @@
      },
      "B": {
       "terms": [
-       "adversarial",
-       "synthesized",
-       "synthetic",
+       "simulated",
+       "bots",
+       "robotics",
        "darpa",
-       "robotics"
+       "cybernetics"
       ]
      },
      "jaccard": null,
@@ -824,14 +984,14 @@
      "B": {
       "terms": [
        "adversarial",
-       "cloaking",
        "cybernetics",
-       "hyperspace",
-       "counterintelligence"
+       "hacking",
+       "counterintelligence",
+       "bots"
       ]
      },
      "jaccard": 0.0,
-     "field_cos": 0.7388
+     "field_cos": 0.768
     }
    ]
   },
@@ -866,10 +1026,10 @@
      "B": {
       "terms": [
        "hypersonic",
-       "relativity",
-       "cyberspace",
        "spacetime",
-       "cosmological"
+       "cosmological",
+       "expanse",
+       "continuum"
       ]
      },
      "jaccard": null,
@@ -902,14 +1062,14 @@
      "B": {
       "terms": [
        "adversarial",
-       "cloaking",
        "cybernetics",
-       "hyperspace",
-       "counterintelligence"
+       "hacking",
+       "counterintelligence",
+       "bots"
       ]
      },
      "jaccard": 0.0,
-     "field_cos": 0.7388
+     "field_cos": 0.768
     },
     {
      "void": "skynet",
@@ -937,11 +1097,11 @@
      },
      "B": {
       "terms": [
-       "adversarial",
-       "synthesized",
-       "synthetic",
+       "simulated",
+       "bots",
+       "robotics",
        "darpa",
-       "robotics"
+       "cybernetics"
       ]
      },
      "jaccard": null,
@@ -971,7 +1131,7 @@
        "embodiment",
        "corporeal",
        "nonhuman",
-       "anthropogenic"
+       "anthropology"
       ]
      },
      "jaccard": null,
@@ -1018,8 +1178,8 @@
        "cloaking",
        "aeronautical",
        "aerospace",
-       "aerodynamic",
-       "hovering"
+       "hovering",
+       "airflow"
       ]
      },
      "jaccard": null,
@@ -1053,8 +1213,8 @@
       "terms": [
        "cloaking",
        "ambient",
-       "barometric",
        "milieu",
+       "airflow",
        "airspace"
       ]
      },
@@ -1090,8 +1250,8 @@
        "atmosphere",
        "atmospheres",
        "atmospheric",
-       "airspace",
-       "barometric"
+       "barometric",
+       "airspace"
       ]
      },
      "jaccard": null,
@@ -1123,11 +1283,11 @@
      },
      "B": {
       "terms": [
-       "grows",
-       "toying",
-       "fruiting",
+       "experimenting",
+       "experimented",
+       "inhabiting",
        "burgeoning",
-       "inhabiting"
+       "imitation"
       ]
      },
      "jaccard": null,
@@ -1166,10 +1326,10 @@
      "B": {
       "terms": [
        "hypersonic",
-       "relativity",
-       "cyberspace",
        "spacetime",
-       "cosmological"
+       "cosmological",
+       "expanse",
+       "continuum"
       ]
      },
      "jaccard": null,
@@ -1201,11 +1361,11 @@
      },
      "B": {
       "terms": [
-       "adversarial",
-       "synthesized",
-       "synthetic",
+       "simulated",
+       "bots",
+       "robotics",
        "darpa",
-       "robotics"
+       "cybernetics"
       ]
      },
      "jaccard": null,
@@ -1238,14 +1398,14 @@
      "B": {
       "terms": [
        "adversarial",
-       "cloaking",
        "cybernetics",
-       "hyperspace",
-       "counterintelligence"
+       "hacking",
+       "counterintelligence",
+       "bots"
       ]
      },
      "jaccard": 0.0,
-     "field_cos": 0.7388
+     "field_cos": 0.768
     },
     {
      "void": "anthropomorphic",
@@ -1271,7 +1431,7 @@
        "embodiment",
        "corporeal",
        "nonhuman",
-       "anthropogenic"
+       "anthropology"
       ]
      },
      "jaccard": null,
@@ -1283,137 +1443,156 @@
    "name": "logos_v9/ALL",
    "group": "ALL",
    "voids": [
-    "hyperspace",
-    "anthropomorphic",
-    "skynet",
-    "savant"
+    "aadmi",
+    "initial",
+    "mongolia",
+    "asme"
    ],
    "arms": [
     {
-     "void": "hyperspace",
-     "stem": "hyperspac",
+     "void": "aadmi",
+     "stem": "aadmi",
      "A": {
       "terms": [],
       "terms_raw": [
-       "1309 Hyperborea",
-       "1Borneo Hypermall"
+       "2008 in India",
+       "2010 in India",
+       "2009 in India",
+       "1980 in India",
+       "2009 India Open Grand Prix"
       ],
       "junk_dropped": [
-       "1309 Hyperborea",
-       "1Borneo Hypermall"
+       "2008 in India",
+       "2010 in India",
+       "2009 in India",
+       "1980 in India",
+       "2009 India Open Grand Prix"
       ],
       "quality": "DISCOVERY",
-      "density": 0.4809,
-      "novelty": 0.3781,
-      "tether": 0.5765
-     },
-     "B": {
-      "terms": [
-       "hypersonic",
-       "relativity",
-       "cyberspace",
-       "spacetime",
-       "cosmological"
-      ]
-     },
-     "jaccard": null,
-     "field_cos": null
-    },
-    {
-     "void": "anthropomorphic",
-     "stem": "anthropomorph",
-     "A": {
-      "terms": [],
-      "terms_raw": [
-       "...Prefering Human Skin Over Animal Fur...",
-       "... And Some Were Human"
-      ],
-      "junk_dropped": [
-       "...Prefering Human Skin Over Animal Fur...",
-       "... And Some Were Human"
-      ],
-      "quality": "DISCOVERY",
-      "density": 0.4768,
-      "novelty": 0.3524,
-      "tether": 0.6001
+      "density": 0.5988,
+      "novelty": 0.5118,
+      "tether": 0.4104
      },
      "B": {
       "terms": [
        "adversarial",
-       "embodiment",
-       "corporeal",
-       "nonhuman",
-       "anthropogenic"
+       "infosys",
+       "ieee",
+       "joshi",
+       "falsification"
       ]
      },
      "jaccard": null,
      "field_cos": null
     },
     {
-     "void": "skynet",
-     "stem": "skynet",
+     "void": "initial",
+     "stem": "initi",
      "A": {
-      "terms": [],
+      "terms": [
+       "prolonged information cascade failure",
+       "cascading cyber paralysis",
+       "cascading cyber shock",
+       "systemic information cascade failure",
+       "systemic information collapse"
+      ],
       "terms_raw": [
-       "2007 Skyrunner World Series",
-       "1945 Barksdale Field Sky Raiders football team",
-       "1945 Army Air Forces Training Command Skymasters football team",
-       "2001 Arizona Wildcats softball team",
-       "15.ai"
+       "prolonged information cascade failure",
+       "cascading cyber paralysis",
+       "cascading cyber shock",
+       "systemic information cascade failure",
+       "systemic information collapse"
       ],
-      "junk_dropped": [
-       "2007 Skyrunner World Series",
-       "1945 Barksdale Field Sky Raiders football team",
-       "1945 Army Air Forces Training Command Skymasters football team",
-       "2001 Arizona Wildcats softball team",
-       "15.ai"
-      ],
+      "junk_dropped": [],
       "quality": "DISCOVERY",
-      "density": 0.4474,
-      "novelty": 0.4034,
-      "tether": 0.5358
+      "density": 0.8037,
+      "novelty": 0.363,
+      "tether": 0.5871
      },
      "B": {
       "terms": [
        "adversarial",
-       "synthesized",
-       "synthetic",
-       "darpa",
-       "robotics"
+       "cloaking",
+       "experimented",
+       "experiment",
+       "experimentation"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.7005
+    },
+    {
+     "void": "mongolia",
+     "stem": "mongolia",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "2005 in Mongolia",
+       "1951 in Mongolia",
+       "1992 in Mongolia",
+       "1991 in Mongolia",
+       "1993 in Mongolia"
+      ],
+      "junk_dropped": [
+       "2005 in Mongolia",
+       "1951 in Mongolia",
+       "1992 in Mongolia",
+       "1991 in Mongolia",
+       "1993 in Mongolia"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6544,
+      "novelty": 0.4848,
+      "tether": 0.4101
+     },
+     "B": {
+      "terms": [
+       "experimented",
+       "humankind",
+       "earthlings",
+       "anthropogenic",
+       "primates"
       ]
      },
      "jaccard": null,
      "field_cos": null
     },
     {
-     "void": "savant",
-     "stem": "savant",
+     "void": "asme",
+     "stem": "asm",
      "A": {
-      "terms": [],
+      "terms": [
+       "cascading manufacturing breakdown",
+       "cascading manufacturing failure",
+       "cascading manufacturing meltdown",
+       "cascading manufacturing cascade failure"
+      ],
       "terms_raw": [
-       "1688",
-       "1250 Galanthus"
+       "-ase",
+       "cascading manufacturing breakdown",
+       "cascading manufacturing failure",
+       "cascading manufacturing meltdown",
+       "cascading manufacturing cascade failure"
       ],
       "junk_dropped": [
-       "1688",
-       "1250 Galanthus"
+       "-ase"
       ],
       "quality": "DISCOVERY",
-      "density": 0.5867,
-      "novelty": 0.3894,
-      "tether": 0.5651
+      "density": 0.7597,
+      "novelty": 0.3808,
+      "tether": 0.5612
      },
      "B": {
       "terms": [
-       "geniuses",
-       "genius",
-       "generative",
-       "karmic",
-       "levitation"
+       "experimentation",
+       "experimenting",
+       "prototypes",
+       "experimented",
+       "experiment"
       ]
      },
-     "jaccard": null,
-     "field_cos": null
+     "jaccard": 0.0,
+     "field_cos": 0.5752
     }
    ]
   },
@@ -1448,10 +1627,10 @@
      "B": {
       "terms": [
        "hypersonic",
-       "relativity",
-       "cyberspace",
        "spacetime",
-       "cosmological"
+       "cosmological",
+       "expanse",
+       "continuum"
       ]
      },
      "jaccard": null,
@@ -1484,14 +1663,14 @@
      "B": {
       "terms": [
        "adversarial",
-       "cloaking",
        "cybernetics",
-       "hyperspace",
-       "counterintelligence"
+       "hacking",
+       "counterintelligence",
+       "bots"
       ]
      },
      "jaccard": 0.0,
-     "field_cos": 0.7388
+     "field_cos": 0.768
     },
     {
      "void": "skynet",
@@ -1519,11 +1698,11 @@
      },
      "B": {
       "terms": [
-       "adversarial",
-       "synthesized",
-       "synthetic",
+       "simulated",
+       "bots",
+       "robotics",
        "darpa",
-       "robotics"
+       "cybernetics"
       ]
      },
      "jaccard": null,
@@ -1553,7 +1732,7 @@
        "embodiment",
        "corporeal",
        "nonhuman",
-       "anthropogenic"
+       "anthropology"
       ]
      },
      "jaccard": null,
@@ -1565,12 +1744,82 @@
    "name": "null/ALL",
    "group": "ALL",
    "voids": [
+    "backroom",
+    "nurseries",
     "namespace",
-    "nursery",
-    "indies",
-    "backroom"
+    "indies"
    ],
    "arms": [
+    {
+     "void": "backroom",
+     "stem": "backroom",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "1990 Back Bay, Massachusetts, train collision",
+       "1937 Social Credit backbenchers' revolt",
+       "1993 Barilla Indoors",
+       "(I'm Gonna) Put You Back on the Rack"
+      ],
+      "junk_dropped": [
+       "1990 Back Bay, Massachusetts, train collision",
+       "1937 Social Credit backbenchers' revolt",
+       "1993 Barilla Indoors",
+       "(I'm Gonna) Put You Back on the Rack"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4733,
+      "novelty": 0.386,
+      "tether": 0.5603
+     },
+     "B": {
+      "terms": [
+       "headroom",
+       "inside",
+       "newsroom",
+       "reinvention",
+       "keyhole"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
+    {
+     "void": "nurseries",
+     "stem": "nurseri",
+     "A": {
+      "terms": [],
+      "terms_raw": [
+       "127 Hobson Street Limited v Honey Bees Preschool Limited",
+       "...and Roses and Roses",
+       "(Remember the Days of the) Old Schoolyard",
+       "...But the Little Girls Understand",
+       "1–8 Collingham Gardens"
+      ],
+      "junk_dropped": [
+       "127 Hobson Street Limited v Honey Bees Preschool Limited",
+       "...and Roses and Roses",
+       "(Remember the Days of the) Old Schoolyard",
+       "...But the Little Girls Understand",
+       "1–8 Collingham Gardens"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.4487,
+      "novelty": 0.4082,
+      "tether": 0.5385
+     },
+     "B": {
+      "terms": [
+       "brainchild",
+       "burgeoning",
+       "inhabiting",
+       "embodiment",
+       "outgrowth"
+      ]
+     },
+     "jaccard": null,
+     "field_cos": null
+    },
     {
      "void": "namespace",
      "stem": "namespac",
@@ -1586,46 +1835,10 @@
      "B": {
       "terms": [
        "topology",
-       "topological",
        "numerical",
+       "topological",
        "nouvelle",
        "manifolds"
-      ]
-     },
-     "jaccard": null,
-     "field_cos": null
-    },
-    {
-     "void": "nursery",
-     "stem": "nurseri",
-     "A": {
-      "terms": [],
-      "terms_raw": [
-       "...Is a Real Boy",
-       "(Ah, the Apple Trees) When the World Was Young",
-       "1000 Babies",
-       "19 Months",
-       "18 Months"
-      ],
-      "junk_dropped": [
-       "...Is a Real Boy",
-       "(Ah, the Apple Trees) When the World Was Young",
-       "1000 Babies",
-       "19 Months",
-       "18 Months"
-      ],
-      "quality": "DISCOVERY",
-      "density": 0.5545,
-      "novelty": 0.4056,
-      "tether": 0.5505
-     },
-     "B": {
-      "terms": [
-       "grows",
-       "toying",
-       "fruiting",
-       "burgeoning",
-       "inhabiting"
       ]
      },
      "jaccard": null,
@@ -1659,48 +1872,14 @@
      "B": {
       "terms": [
        "adversarial",
+       "experimenting",
        "prototypes",
-       "imitation",
-       "imitations",
-       "exploitation"
+       "experimented",
+       "experimentation"
       ]
      },
      "jaccard": 0.0,
-     "field_cos": 0.6716
-    },
-    {
-     "void": "backroom",
-     "stem": "backroom",
-     "A": {
-      "terms": [],
-      "terms_raw": [
-       "1990 Back Bay, Massachusetts, train collision",
-       "1937 Social Credit backbenchers' revolt",
-       "1993 Barilla Indoors",
-       "(I'm Gonna) Put You Back on the Rack"
-      ],
-      "junk_dropped": [
-       "1990 Back Bay, Massachusetts, train collision",
-       "1937 Social Credit backbenchers' revolt",
-       "1993 Barilla Indoors",
-       "(I'm Gonna) Put You Back on the Rack"
-      ],
-      "quality": "DISCOVERY",
-      "density": 0.4733,
-      "novelty": 0.386,
-      "tether": 0.5603
-     },
-     "B": {
-      "terms": [
-       "backfire",
-       "backfires",
-       "headroom",
-       "inside",
-       "newsroom"
-      ]
-     },
-     "jaccard": null,
-     "field_cos": null
+     "field_cos": 0.6241
     }
    ]
   },
@@ -1708,12 +1887,49 @@
    "name": "gap->local",
    "group": "F",
    "voids": [
+    "inwardly",
     "truths",
-    "keyser",
-    "srsly",
-    "latvian"
+    "secretly",
+    "hebrew"
    ],
    "arms": [
+    {
+     "void": "inwardly",
+     "stem": "inwardli",
+     "A": {
+      "terms": [
+       "systemic information cascade failure",
+       "manufacturing systemic risk",
+       "systemic institutional disruption"
+      ],
+      "terms_raw": [
+       ".internal",
+       "systemic information cascade failure",
+       "manufacturing systemic risk",
+       "(Dis)Honesty: The Truth About Lies",
+       "systemic institutional disruption"
+      ],
+      "junk_dropped": [
+       ".internal",
+       "(Dis)Honesty: The Truth About Lies"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.6027,
+      "novelty": 0.3257,
+      "tether": 0.6305
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "experimented",
+       "cloaking",
+       "experimentation",
+       "experiment"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.6881
+    },
     {
      "void": "truths",
      "stem": "truth",
@@ -1742,114 +1958,82 @@
      "B": {
       "terms": [
        "adversarial",
-       "fabrications",
        "cloaking",
-       "falsification",
-       "falsifying"
+       "experimented",
+       "experiment",
+       "experimentation"
       ]
      },
      "jaccard": 0.0,
-     "field_cos": 0.7076
+     "field_cos": 0.673
     },
     {
-     "void": "keyser",
-     "stem": "keyser",
+     "void": "secretly",
+     "stem": "secretli",
      "A": {
       "terms": [],
       "terms_raw": [
-       "100% Kelly Key",
-       "19 Keys",
-       "1000 gecs and the Tree of Clues"
+       "18.11: A Code of Secrecy",
+       "1984: India's Guilty Secret",
+       "(Dis)Honesty: The Truth About Lies",
+       "2005 Japanese architectural forgery scandal",
+       "2004 Harvard–Yale prank"
       ],
       "junk_dropped": [
-       "100% Kelly Key",
-       "19 Keys",
-       "1000 gecs and the Tree of Clues"
+       "18.11: A Code of Secrecy",
+       "1984: India's Guilty Secret",
+       "(Dis)Honesty: The Truth About Lies",
+       "2005 Japanese architectural forgery scandal",
+       "2004 Harvard–Yale prank"
       ],
       "quality": "DISCOVERY",
-      "density": 0.5128,
-      "novelty": 0.38,
-      "tether": 0.5811
+      "density": 0.5545,
+      "novelty": 0.3155,
+      "tether": 0.6382
      },
      "B": {
       "terms": [
+       "cloaking",
        "adversarial",
-       "keyhole",
-       "pinker",
-       "evasion",
-       "mimicry"
+       "experimented",
+       "experiment",
+       "experimentation"
       ]
      },
      "jaccard": null,
      "field_cos": null
     },
     {
-     "void": "srsly",
-     "stem": "srsly",
+     "void": "hebrew",
+     "stem": "hebrew",
      "A": {
-      "terms": [
-       "prolonged information cascade failure",
-       "cascading information meltdown",
-       "systemic information collapse",
-       "prolonged information collapse",
-       "prolonged information meltdown"
-      ],
+      "terms": [],
       "terms_raw": [
-       "prolonged information cascade failure",
-       "cascading information meltdown",
-       "systemic information collapse",
-       "prolonged information collapse",
-       "prolonged information meltdown"
+       "1937 Ben-Gurion letter",
+       "1951 in Israel",
+       "2008 in Israel",
+       "1987 Ariel Sharon move to Jerusalem",
+       "1993 in Israel"
       ],
-      "junk_dropped": [],
+      "junk_dropped": [
+       "1937 Ben-Gurion letter",
+       "1951 in Israel",
+       "2008 in Israel",
+       "1987 Ariel Sharon move to Jerusalem",
+       "1993 in Israel"
+      ],
       "quality": "DISCOVERY",
-      "density": 0.8701,
-      "novelty": 0.3616,
-      "tether": 0.5884
+      "density": 0.5426,
+      "novelty": 0.4829,
+      "tether": 0.4517
      },
      "B": {
       "terms": [
        "adversarial",
-       "fabrications",
-       "cloaking",
        "experiment",
-       "falsification"
-      ]
-     },
-     "jaccard": 0.0,
-     "field_cos": 0.7397
-    },
-    {
-     "void": "latvian",
-     "stem": "latvian",
-     "A": {
-      "terms": [],
-      "terms_raw": [
-       "2008 Latvian financial crisis",
-       "2010 Latvian parliamentary election",
-       "2006 Latvian parliamentary election",
-       "2009 European Parliament election in Latvia",
-       "2009 Latvian meteorite hoax"
-      ],
-      "junk_dropped": [
-       "2008 Latvian financial crisis",
-       "2010 Latvian parliamentary election",
-       "2006 Latvian parliamentary election",
-       "2009 European Parliament election in Latvia",
-       "2009 Latvian meteorite hoax"
-      ],
-      "quality": "DISCOVERY",
-      "density": 0.6963,
-      "novelty": 0.4338,
-      "tether": 0.4941
-     },
-     "B": {
-      "terms": [
-       "cyborgs",
-       "anthropomorphic",
-       "earthlings",
-       "geometric",
-       "chalmers"
+       "experimented",
+       "synthesized",
+       "experiments"
       ]
      },
      "jaccard": null,
@@ -1861,157 +2045,155 @@
    "name": "gap->frontier",
    "group": "L",
    "voids": [
-    "imagining",
-    "paranoia",
-    "skynet",
-    "perceiving"
+    "flaky",
+    "insufficient",
+    "underperforming",
+    "recon"
    ],
    "arms": [
     {
-     "void": "imagining",
-     "stem": "imagin",
+     "void": "flaky",
+     "stem": "flaki",
      "A": {
-      "terms": [],
+      "terms": [
+       "prolonged infrastructure default",
+       "prolonged information failure",
+       "prolonged governance default",
+       "prolonged commodity failure",
+       "prolonged governance failure"
+      ],
       "terms_raw": [
-       "2.5D (visual perception)",
-       "2.5 Dimensional Seduction",
-       "(You Want to) Make a Memory",
-       "10 Story Fantasy",
-       "13 Stories (A Prelude)"
+       "prolonged infrastructure default",
+       "prolonged information failure",
+       "prolonged governance default",
+       "prolonged commodity failure",
+       "prolonged governance failure"
       ],
-      "junk_dropped": [
-       "2.5D (visual perception)",
-       "2.5 Dimensional Seduction",
-       "(You Want to) Make a Memory",
-       "10 Story Fantasy",
-       "13 Stories (A Prelude)"
-      ],
+      "junk_dropped": [],
       "quality": "DISCOVERY",
-      "density": 0.5678,
-      "novelty": 0.3377,
-      "tether": 0.6232
+      "density": 0.805,
+      "novelty": 0.4214,
+      "tether": 0.5223
      },
      "B": {
       "terms": [
-       "fabrications",
+       "adversarial",
+       "experimenting",
+       "experimented",
+       "experimentation",
+       "disruptive"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.6873
+    },
+    {
+     "void": "insufficient",
+     "stem": "insuffici",
+     "A": {
+      "terms": [
+       "systemic information failure",
+       "prolonged information cascade failure",
+       "systemic information cascade failure",
+       "cascading governance failure",
+       "global information cascade failure"
+      ],
+      "terms_raw": [
+       "systemic information failure",
+       "prolonged information cascade failure",
+       "systemic information cascade failure",
+       "cascading governance failure",
+       "global information cascade failure"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.8644,
+      "novelty": 0.3631,
+      "tether": 0.5806
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "experimented",
+       "experimenting",
+       "experimentation",
+       "experiment"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.6491
+    },
+    {
+     "void": "underperforming",
+     "stem": "underperform",
+     "A": {
+      "terms": [
+       "systemic manufacturing failure",
+       "cascading institutional failure",
+       "systemic mining failure",
+       "systemic institutional failure",
+       "cascading governance failure"
+      ],
+      "terms_raw": [
+       "systemic manufacturing failure",
+       "cascading institutional failure",
+       "systemic mining failure",
+       "systemic institutional failure",
+       "cascading governance failure"
+      ],
+      "junk_dropped": [],
+      "quality": "DISCOVERY",
+      "density": 0.815,
+      "novelty": 0.3802,
+      "tether": 0.5449
+     },
+     "B": {
+      "terms": [
        "adversarial",
        "experimenting",
        "experimentation",
-       "fabrication"
-      ]
-     },
-     "jaccard": null,
-     "field_cos": null
-    },
-    {
-     "void": "paranoia",
-     "stem": "paranoia",
-     "A": {
-      "terms": [
-       "cascading cyber shock"
-      ],
-      "terms_raw": [
-       "1000 Forms of Fear",
-       "...Phobia",
-       "13 Themes for a Triskaidekaphobic",
-       "'Fraidy Cat",
-       "cascading cyber shock"
-      ],
-      "junk_dropped": [
-       "1000 Forms of Fear",
-       "...Phobia",
-       "13 Themes for a Triskaidekaphobic",
-       "'Fraidy Cat"
-      ],
-      "quality": "DISCOVERY",
-      "density": 0.6161,
-      "novelty": 0.3603,
-      "tether": 0.5679
-     },
-     "B": {
-      "terms": [
-       "cloaking",
-       "fabrications",
-       "suspicion",
-       "suspicions",
-       "wary"
+       "experimented",
+       "experiment"
       ]
      },
      "jaccard": 0.0,
-     "field_cos": 0.6411
+     "field_cos": 0.6422
     },
     {
-     "void": "skynet",
-     "stem": "skynet",
+     "void": "recon",
+     "stem": "recon",
      "A": {
       "terms": [],
       "terms_raw": [
-       "2007 Skyrunner World Series",
-       "1945 Barksdale Field Sky Raiders football team",
-       "1945 Army Air Forces Training Command Skymasters football team",
-       "2001 Arizona Wildcats softball team",
-       "15.ai"
+       "2005 Hit convoy ambush",
+       "1st Force Reconnaissance Company",
+       "185th Paratroopers Reconnaissance Target Acquisition Regiment \"Folgore\"",
+       "1959 Biên Hòa compound raid",
+       "2004 Fallujah ambush"
       ],
       "junk_dropped": [
-       "2007 Skyrunner World Series",
-       "1945 Barksdale Field Sky Raiders football team",
-       "1945 Army Air Forces Training Command Skymasters football team",
-       "2001 Arizona Wildcats softball team",
-       "15.ai"
+       "2005 Hit convoy ambush",
+       "1st Force Reconnaissance Company",
+       "185th Paratroopers Reconnaissance Target Acquisition Regiment \"Folgore\"",
+       "1959 Biên Hòa compound raid",
+       "2004 Fallujah ambush"
       ],
       "quality": "DISCOVERY",
-      "density": 0.4474,
-      "novelty": 0.4034,
-      "tether": 0.5358
-     },
-     "B": {
-      "terms": [
-       "adversarial",
-       "synthesized",
-       "synthetic",
-       "darpa",
-       "robotics"
-      ]
-     },
-     "jaccard": null,
-     "field_cos": null
-    },
-    {
-     "void": "perceiving",
-     "stem": "perceiv",
-     "A": {
-      "terms": [
-       "cascading information paralysis",
-       "cascading information shock",
-       "prolonged information cascade failure",
-       "prolonged information paralysis"
-      ],
-      "terms_raw": [
-       "2.5D (visual perception)",
-       "cascading information paralysis",
-       "cascading information shock",
-       "prolonged information cascade failure",
-       "prolonged information paralysis"
-      ],
-      "junk_dropped": [
-       "2.5D (visual perception)"
-      ],
-      "quality": "DISCOVERY",
-      "density": 0.7585,
-      "novelty": 0.3338,
-      "tether": 0.6096
+      "density": 0.56,
+      "novelty": 0.4274,
+      "tether": 0.5136
      },
      "B": {
       "terms": [
        "adversarial",
        "cloaking",
-       "fabrications",
-       "perceptive",
-       "perceptible"
+       "experimented",
+       "experimentation",
+       "subterfuge"
       ]
      },
-     "jaccard": 0.0,
-     "field_cos": 0.7307
+     "jaccard": null,
+     "field_cos": null
     }
    ]
   },
@@ -2046,10 +2228,10 @@
      "B": {
       "terms": [
        "hypersonic",
-       "relativity",
-       "cyberspace",
        "spacetime",
-       "cosmological"
+       "cosmological",
+       "expanse",
+       "continuum"
       ]
      },
      "jaccard": null,
@@ -2082,14 +2264,14 @@
      "B": {
       "terms": [
        "adversarial",
-       "cloaking",
        "cybernetics",
-       "hyperspace",
-       "counterintelligence"
+       "hacking",
+       "counterintelligence",
+       "bots"
       ]
      },
      "jaccard": 0.0,
-     "field_cos": 0.7388
+     "field_cos": 0.768
     },
     {
      "void": "savant",
@@ -2111,11 +2293,11 @@
      },
      "B": {
       "terms": [
+       "experimented",
+       "experimenting",
        "geniuses",
-       "genius",
-       "generative",
        "karmic",
-       "levitation"
+       "genius"
       ]
      },
      "jaccard": null,
@@ -2147,478 +2329,11 @@
      },
      "B": {
       "terms": [
-       "adversarial",
-       "synthesized",
-       "synthetic",
+       "simulated",
+       "bots",
+       "robotics",
        "darpa",
-       "robotics"
-      ]
-     },
-     "jaccard": null,
-     "field_cos": null
-    }
-   ]
-  },
-  {
-   "name": "donut/F",
-   "group": "F",
-   "voids": [
-    "foundry",
-    "creator",
-    "baptiste",
-    "hugo"
-   ],
-   "arms": [
-    {
-     "void": "foundry",
-     "stem": "foundri",
-     "A": {
-      "terms": [
-       "prolonged manufacturing cascade failure",
-       "manufacturing cascade failure",
-       "prolonged manufacturing meltdown",
-       "manufacturing insolvency",
-       "prolonged manufacturing disruption"
-      ],
-      "terms_raw": [
-       "prolonged manufacturing cascade failure",
-       "manufacturing cascade failure",
-       "prolonged manufacturing meltdown",
-       "manufacturing insolvency",
-       "prolonged manufacturing disruption"
-      ],
-      "junk_dropped": [],
-      "quality": "DISCOVERY",
-      "density": 0.8276,
-      "novelty": 0.4235,
-      "tether": 0.5286
-     },
-     "B": {
-      "terms": [
-       "fabrication",
-       "fabrications",
-       "prototypes",
-       "prototyping",
-       "artisanal"
-      ]
-     },
-     "jaccard": 0.0,
-     "field_cos": 0.7193
-    },
-    {
-     "void": "creator",
-     "stem": "creator",
-     "A": {
-      "terms": [],
-      "terms_raw": [
-       "...And God Created Them",
-       "(He's) The Great Imposter",
-       "1theK Originals"
-      ],
-      "junk_dropped": [
-       "...And God Created Them",
-       "(He's) The Great Imposter",
-       "1theK Originals"
-      ],
-      "quality": "DISCOVERY",
-      "density": 0.5227,
-      "novelty": 0.3557,
-      "tether": 0.6012
-     },
-     "B": {
-      "terms": [
-       "fabrications",
-       "fabrication",
-       "inventing",
-       "imitators",
-       "imitation"
-      ]
-     },
-     "jaccard": null,
-     "field_cos": null
-    },
-    {
-     "void": "baptiste",
-     "stem": "baptist",
-     "A": {
-      "terms": [
-       "prolonged banking systemic risk"
-      ],
-      "terms_raw": [
-       "2004 Haitian coup d'état",
-       "10 August 2015 Kabul suicide bombing",
-       "prolonged banking systemic risk",
-       "1937 Uba riots at Union Flacq",
-       "2010 Portland car bomb plot"
-      ],
-      "junk_dropped": [
-       "2004 Haitian coup d'état",
-       "10 August 2015 Kabul suicide bombing",
-       "1937 Uba riots at Union Flacq",
-       "2010 Portland car bomb plot"
-      ],
-      "quality": "DISCOVERY",
-      "density": 0.4739,
-      "novelty": 0.3914,
-      "tether": 0.5689
-     },
-     "B": {
-      "terms": [
-       "fabrications",
-       "fabrication",
-       "experiment",
-       "fabricated",
-       "imitation"
-      ]
-     },
-     "jaccard": 0.0,
-     "field_cos": 0.5513
-    },
-    {
-     "void": "hugo",
-     "stem": "hugo",
-     "A": {
-      "terms": [],
-      "terms_raw": [
-       "1930 Nobel Prize in Literature",
-       "1930 San Sebastián Grand Prix",
-       "1936 Catalan coup attempt",
-       "1936 Carlist coup attempt",
-       "1480s"
-      ],
-      "junk_dropped": [
-       "1930 Nobel Prize in Literature",
-       "1930 San Sebastián Grand Prix",
-       "1936 Catalan coup attempt",
-       "1936 Carlist coup attempt",
-       "1480s"
-      ],
-      "quality": "DISCOVERY",
-      "density": 0.5548,
-      "novelty": 0.4936,
-      "tether": 0.4601
-     },
-     "B": {
-      "terms": [
-       "manifold",
-       "generative",
-       "manifolds",
-       "imitating",
-       "embodied"
-      ]
-     },
-     "jaccard": null,
-     "field_cos": null
-    }
-   ]
-  },
-  {
-   "name": "donut/L",
-   "group": "L",
-   "voids": [
-    "foundry",
-    "baptiste",
-    "dior",
-    "vogue"
-   ],
-   "arms": [
-    {
-     "void": "foundry",
-     "stem": "foundri",
-     "A": {
-      "terms": [
-       "prolonged manufacturing cascade failure",
-       "manufacturing cascade failure",
-       "prolonged manufacturing meltdown",
-       "manufacturing insolvency",
-       "prolonged manufacturing disruption"
-      ],
-      "terms_raw": [
-       "prolonged manufacturing cascade failure",
-       "manufacturing cascade failure",
-       "prolonged manufacturing meltdown",
-       "manufacturing insolvency",
-       "prolonged manufacturing disruption"
-      ],
-      "junk_dropped": [],
-      "quality": "DISCOVERY",
-      "density": 0.8276,
-      "novelty": 0.4235,
-      "tether": 0.5286
-     },
-     "B": {
-      "terms": [
-       "fabrication",
-       "fabrications",
-       "prototypes",
-       "prototyping",
-       "artisanal"
-      ]
-     },
-     "jaccard": 0.0,
-     "field_cos": 0.7193
-    },
-    {
-     "void": "baptiste",
-     "stem": "baptist",
-     "A": {
-      "terms": [
-       "prolonged banking systemic risk"
-      ],
-      "terms_raw": [
-       "2004 Haitian coup d'état",
-       "10 August 2015 Kabul suicide bombing",
-       "prolonged banking systemic risk",
-       "1937 Uba riots at Union Flacq",
-       "2010 Portland car bomb plot"
-      ],
-      "junk_dropped": [
-       "2004 Haitian coup d'état",
-       "10 August 2015 Kabul suicide bombing",
-       "1937 Uba riots at Union Flacq",
-       "2010 Portland car bomb plot"
-      ],
-      "quality": "DISCOVERY",
-      "density": 0.4739,
-      "novelty": 0.3914,
-      "tether": 0.5689
-     },
-     "B": {
-      "terms": [
-       "fabrications",
-       "fabrication",
-       "experiment",
-       "fabricated",
-       "imitation"
-      ]
-     },
-     "jaccard": 0.0,
-     "field_cos": 0.5513
-    },
-    {
-     "void": "dior",
-     "stem": "dior",
-     "A": {
-      "terms": [],
-      "terms_raw": [
-       "2010s in fashion",
-       "2002 in red carpet fashion",
-       "2008 in red carpet fashion",
-       "1400–1500 in European fashion",
-       "2001 in red carpet fashion"
-      ],
-      "junk_dropped": [
-       "2010s in fashion",
-       "2002 in red carpet fashion",
-       "2008 in red carpet fashion",
-       "1400–1500 in European fashion",
-       "2001 in red carpet fashion"
-      ],
-      "quality": "DISCOVERY",
-      "density": 0.6451,
-      "novelty": 0.4298,
-      "tether": 0.4923
-     },
-     "B": {
-      "terms": [
-       "agence",
-       "voir",
-       "artisanal",
-       "monde",
-       "jour"
-      ]
-     },
-     "jaccard": null,
-     "field_cos": null
-    },
-    {
-     "void": "vogue",
-     "stem": "vogu",
-     "A": {
-      "terms": [],
-      "terms_raw": [
-       "2010s in fashion",
-       "2008 in red carpet fashion",
-       "2000s in fashion",
-       "2009 in red carpet fashion",
-       "1750–1775 in Western fashion"
-      ],
-      "junk_dropped": [
-       "2010s in fashion",
-       "2008 in red carpet fashion",
-       "2000s in fashion",
-       "2009 in red carpet fashion",
-       "1750–1775 in Western fashion"
-      ],
-      "quality": "DISCOVERY",
-      "density": 0.6574,
-      "novelty": 0.4471,
-      "tether": 0.5005
-     },
-     "B": {
-      "terms": [
-       "fabrications",
-       "imitated",
-       "zeitgeist",
-       "gaffe",
-       "pimping"
-      ]
-     },
-     "jaccard": null,
-     "field_cos": null
-    }
-   ]
-  },
-  {
-   "name": "donut/ALL",
-   "group": "ALL",
-   "voids": [
-    "foundry",
-    "baptiste",
-    "dior",
-    "vogue"
-   ],
-   "arms": [
-    {
-     "void": "foundry",
-     "stem": "foundri",
-     "A": {
-      "terms": [
-       "prolonged manufacturing cascade failure",
-       "manufacturing cascade failure",
-       "prolonged manufacturing meltdown",
-       "manufacturing insolvency",
-       "prolonged manufacturing disruption"
-      ],
-      "terms_raw": [
-       "prolonged manufacturing cascade failure",
-       "manufacturing cascade failure",
-       "prolonged manufacturing meltdown",
-       "manufacturing insolvency",
-       "prolonged manufacturing disruption"
-      ],
-      "junk_dropped": [],
-      "quality": "DISCOVERY",
-      "density": 0.8276,
-      "novelty": 0.4235,
-      "tether": 0.5286
-     },
-     "B": {
-      "terms": [
-       "fabrication",
-       "fabrications",
-       "prototypes",
-       "prototyping",
-       "artisanal"
-      ]
-     },
-     "jaccard": 0.0,
-     "field_cos": 0.7193
-    },
-    {
-     "void": "baptiste",
-     "stem": "baptist",
-     "A": {
-      "terms": [
-       "prolonged banking systemic risk"
-      ],
-      "terms_raw": [
-       "2004 Haitian coup d'état",
-       "10 August 2015 Kabul suicide bombing",
-       "prolonged banking systemic risk",
-       "1937 Uba riots at Union Flacq",
-       "2010 Portland car bomb plot"
-      ],
-      "junk_dropped": [
-       "2004 Haitian coup d'état",
-       "10 August 2015 Kabul suicide bombing",
-       "1937 Uba riots at Union Flacq",
-       "2010 Portland car bomb plot"
-      ],
-      "quality": "DISCOVERY",
-      "density": 0.4739,
-      "novelty": 0.3914,
-      "tether": 0.5689
-     },
-     "B": {
-      "terms": [
-       "fabrications",
-       "fabrication",
-       "experiment",
-       "fabricated",
-       "imitation"
-      ]
-     },
-     "jaccard": 0.0,
-     "field_cos": 0.5513
-    },
-    {
-     "void": "dior",
-     "stem": "dior",
-     "A": {
-      "terms": [],
-      "terms_raw": [
-       "2010s in fashion",
-       "2002 in red carpet fashion",
-       "2008 in red carpet fashion",
-       "1400–1500 in European fashion",
-       "2001 in red carpet fashion"
-      ],
-      "junk_dropped": [
-       "2010s in fashion",
-       "2002 in red carpet fashion",
-       "2008 in red carpet fashion",
-       "1400–1500 in European fashion",
-       "2001 in red carpet fashion"
-      ],
-      "quality": "DISCOVERY",
-      "density": 0.6451,
-      "novelty": 0.4298,
-      "tether": 0.4923
-     },
-     "B": {
-      "terms": [
-       "agence",
-       "voir",
-       "artisanal",
-       "monde",
-       "jour"
-      ]
-     },
-     "jaccard": null,
-     "field_cos": null
-    },
-    {
-     "void": "vogue",
-     "stem": "vogu",
-     "A": {
-      "terms": [],
-      "terms_raw": [
-       "2010s in fashion",
-       "2008 in red carpet fashion",
-       "2000s in fashion",
-       "2009 in red carpet fashion",
-       "1750–1775 in Western fashion"
-      ],
-      "junk_dropped": [
-       "2010s in fashion",
-       "2008 in red carpet fashion",
-       "2000s in fashion",
-       "2009 in red carpet fashion",
-       "1750–1775 in Western fashion"
-      ],
-      "quality": "DISCOVERY",
-      "density": 0.6574,
-      "novelty": 0.4471,
-      "tether": 0.5005
-     },
-     "B": {
-      "terms": [
-       "fabrications",
-       "imitated",
-       "zeitgeist",
-       "gaffe",
-       "pimping"
+       "cybernetics"
       ]
      },
      "jaccard": null,
@@ -2630,83 +2345,82 @@
    "name": "lexcross/F",
    "group": "F",
    "voids": [
-    "validation",
-    "summarized",
+    "privately",
+    "artificial",
     "engage",
-    "checks"
+    "execution"
    ],
    "arms": [
     {
-     "void": "validation",
-     "stem": "valid",
+     "void": "privately",
+     "stem": "privat",
      "A": {
-      "terms": [
-       "systemic information failure",
-       "cascading governance cascade failure",
-       "cascading governance failure",
-       "systemic mining breakdown",
-       "cascading institutional cascade failure"
-      ],
+      "terms": [],
       "terms_raw": [
-       "systemic information failure",
-       "cascading governance cascade failure",
-       "cascading governance failure",
-       "systemic mining breakdown",
-       "cascading institutional cascade failure"
+       "18.11: A Code of Secrecy",
+       "(My Friends Are Gonna Be) Strangers",
+       "(In My) Solitude",
+       "(Dis)Honesty: The Truth About Lies"
       ],
-      "junk_dropped": [],
+      "junk_dropped": [
+       "18.11: A Code of Secrecy",
+       "(My Friends Are Gonna Be) Strangers",
+       "(In My) Solitude",
+       "(Dis)Honesty: The Truth About Lies"
+      ],
       "quality": "DISCOVERY",
-      "density": 0.8113,
-      "novelty": 0.3798,
-      "tether": 0.572
+      "density": 0.5154,
+      "novelty": 0.3134,
+      "tether": 0.6371
      },
      "B": {
       "terms": [
+       "cloaking",
        "adversarial",
-       "falsification",
-       "falsifying",
-       "unverified",
-       "falsify"
+       "experimented",
+       "concealment",
+       "covert"
       ]
      },
-     "jaccard": 0.0,
-     "field_cos": 0.6741
+     "jaccard": null,
+     "field_cos": null
     },
     {
-     "void": "summarized",
-     "stem": "summar",
+     "void": "artificial",
+     "stem": "artifici",
      "A": {
       "terms": [
-       "prolonged information cascade failure",
-       "cascading cyber paralysis",
-       "systemic information collapse",
-       "systemic information cascade failure",
-       "cascading cyber shock"
+       "institutional contagion",
+       "prolonged institutional contagion"
       ],
       "terms_raw": [
-       "prolonged information cascade failure",
-       "cascading cyber paralysis",
-       "systemic information collapse",
-       "systemic information cascade failure",
-       "cascading cyber shock"
+       "10.000 Watts of Artificial Pleasures",
+       "15.ai",
+       "01.AI",
+       "institutional contagion",
+       "prolonged institutional contagion"
       ],
-      "junk_dropped": [],
+      "junk_dropped": [
+       "10.000 Watts of Artificial Pleasures",
+       "15.ai",
+       "01.AI"
+      ],
       "quality": "DISCOVERY",
-      "density": 0.8037,
-      "novelty": 0.3498,
-      "tether": 0.5871
+      "density": 0.6239,
+      "novelty": 0.3033,
+      "tether": 0.6512
      },
      "B": {
       "terms": [
+       "synthetic",
+       "synthetics",
        "adversarial",
-       "fabrications",
-       "cloaking",
-       "falsification",
-       "abstraction"
+       "synthesized",
+       "experimental"
       ]
      },
      "jaccard": 0.0,
-     "field_cos": 0.7467
+     "field_cos": 0.644
     },
     {
      "void": "engage",
@@ -2735,52 +2449,52 @@
      },
      "B": {
       "terms": [
-       "fabrications",
        "adversarial",
        "experiment",
-       "enacting",
-       "embodiment"
+       "experimented",
+       "cloaking",
+       "experimentation"
       ]
      },
      "jaccard": 0.0,
-     "field_cos": 0.7284
+     "field_cos": 0.7026
     },
     {
-     "void": "checks",
-     "stem": "check",
+     "void": "execution",
+     "stem": "execut",
      "A": {
       "terms": [
-       "prolonged information cascade failure",
-       "prolonged governance default"
+       "cascading institutional cascade failure",
+       "prolonged governance cascade failure",
+       "systemic institutional cascade failure",
+       "cascading governance cascade failure"
       ],
       "terms_raw": [
-       "\"False positives\" scandal",
-       "100 point check",
-       "'Tis Money makes a Man: Or, The Good-Fellows Folly",
-       "prolonged information cascade failure",
-       "prolonged governance default"
+       "cascading institutional cascade failure",
+       "prolonged governance cascade failure",
+       "systemic institutional cascade failure",
+       "1937 mass execution of Belarusians",
+       "cascading governance cascade failure"
       ],
       "junk_dropped": [
-       "\"False positives\" scandal",
-       "100 point check",
-       "'Tis Money makes a Man: Or, The Good-Fellows Folly"
+       "1937 mass execution of Belarusians"
       ],
       "quality": "DISCOVERY",
-      "density": 0.5684,
-      "novelty": 0.3323,
-      "tether": 0.6248
+      "density": 0.7205,
+      "novelty": 0.3995,
+      "tether": 0.5631
      },
      "B": {
       "terms": [
-       "fabrications",
-       "fooling",
-       "falsifying",
-       "falsification",
-       "suspecting"
+       "experiment",
+       "adversarial",
+       "enacting",
+       "enact",
+       "practiced"
       ]
      },
      "jaccard": 0.0,
-     "field_cos": 0.6841
+     "field_cos": 0.6549
     }
    ]
   },
@@ -2788,201 +2502,195 @@
    "name": "lexcross/L",
    "group": "L",
    "voids": [
-    "awareness",
-    "assessments",
-    "utilized",
-    "non-verbalized"
+    "you",
+    "analytical",
+    "approach",
+    "characterized"
    ],
    "arms": [
     {
-     "void": "awareness",
-     "stem": "awar",
+     "void": "you",
+     "stem": "you",
      "A": {
       "terms": [
-       "systemic information meltdown",
-       "cascading information shock",
-       "systemic information collapse",
-       "systemic information shock",
-       "systemic information paralysis"
+       "global institutional disruption",
+       "global institutional contagion",
+       "cascading governance crisis",
+       "cascading institutional disruption"
       ],
       "terms_raw": [
-       "systemic information meltdown",
-       "cascading information shock",
-       "systemic information collapse",
-       "systemic information shock",
-       "systemic information paralysis"
-      ],
-      "junk_dropped": [],
-      "quality": "DISCOVERY",
-      "density": 0.8786,
-      "novelty": 0.3803,
-      "tether": 0.5767
-     },
-     "B": {
-      "terms": [
-       "cloaking",
-       "vigilance",
-       "perceptible",
-       "cognizant",
-       "perceives"
-      ]
-     },
-     "jaccard": 0.0,
-     "field_cos": 0.7019
-    },
-    {
-     "void": "assessments",
-     "stem": "assess",
-     "A": {
-      "terms": [
-       "systemic mining breakdown",
-       "systemic cyber failure"
-      ],
-      "terms_raw": [
-       "2000 SQA examinations controversy",
-       "2009 Supervisory Capital Assessment Program",
-       "1-2-AX working memory task",
-       "systemic mining breakdown",
-       "systemic cyber failure"
+       "...And the World Laughs",
+       "global institutional disruption",
+       "global institutional contagion",
+       "cascading governance crisis",
+       "cascading institutional disruption"
       ],
       "junk_dropped": [
-       "2000 SQA examinations controversy",
-       "2009 Supervisory Capital Assessment Program",
-       "1-2-AX working memory task"
+       "...And the World Laughs"
       ],
       "quality": "DISCOVERY",
-      "density": 0.5397,
-      "novelty": 0.3255,
-      "tether": 0.6376
+      "density": 0.6927,
+      "novelty": 0.4117,
+      "tether": 0.5613
      },
      "B": {
       "terms": [
-       "experiments",
+       "adversarial",
        "experiment",
        "experimentation",
        "experimented",
-       "adversarial"
+       "cloaking"
       ]
      },
      "jaccard": 0.0,
-     "field_cos": 0.628
+     "field_cos": 0.6504
     },
     {
-     "void": "utilized",
-     "stem": "util",
+     "void": "analytical",
+     "stem": "analyt",
      "A": {
       "terms": [
-       "prolonged information cascade failure",
-       "systemic cyber cascade failure",
+       "cascading information meltdown",
+       "prolonged information meltdown",
        "systemic information cascade failure",
-       "cascading cyber paralysis",
-       "cascading cyber breakdown"
+       "systemic information meltdown"
       ],
       "terms_raw": [
-       "prolonged information cascade failure",
-       "systemic cyber cascade failure",
+       "12Riven: The Psi-Climinal of Integral",
+       "cascading information meltdown",
+       "prolonged information meltdown",
        "systemic information cascade failure",
+       "systemic information meltdown"
+      ],
+      "junk_dropped": [
+       "12Riven: The Psi-Climinal of Integral"
+      ],
+      "quality": "DISCOVERY",
+      "density": 0.7744,
+      "novelty": 0.3314,
+      "tether": 0.6291
+     },
+     "B": {
+      "terms": [
+       "adversarial",
+       "cloaking",
+       "experimented",
+       "experiment",
+       "experimentation"
+      ]
+     },
+     "jaccard": 0.0,
+     "field_cos": 0.6761
+    },
+    {
+     "void": "approach",
+     "stem": "approach",
+     "A": {
+      "terms": [
+       "systemic information cascade failure",
+       "prolonged information cascade failure",
        "cascading cyber paralysis",
-       "cascading cyber breakdown"
+       "systemic cyber cascade failure",
+       "cascading cyber shock"
+      ],
+      "terms_raw": [
+       "systemic information cascade failure",
+       "prolonged information cascade failure",
+       "cascading cyber paralysis",
+       "systemic cyber cascade failure",
+       "cascading cyber shock"
       ],
       "junk_dropped": [],
       "quality": "DISCOVERY",
-      "density": 0.8191,
-      "novelty": 0.3897,
-      "tether": 0.5716
+      "density": 0.8136,
+      "novelty": 0.3879,
+      "tether": 0.576
      },
      "B": {
       "terms": [
        "adversarial",
-       "fabrications",
-       "cloaking",
        "experimented",
-       "fabrication"
+       "cloaking",
+       "experimentation",
+       "experiment"
       ]
      },
      "jaccard": 0.0,
-     "field_cos": 0.7039
+     "field_cos": 0.6949
     },
     {
-     "void": "non-verbalized",
-     "stem": "non-verb",
+     "void": "characterized",
+     "stem": "character",
      "A": {
       "terms": [
+       "systemic information cascade failure",
        "prolonged information cascade failure",
-       "prolonged information meltdown",
-       "prolonged information collapse",
-       "cascading information shock"
+       "systemic information collapse",
+       "cascading cyber paralysis",
+       "cascading cyber shock"
       ],
       "terms_raw": [
-       "(Dis)Honesty: The Truth About Lies",
+       "systemic information cascade failure",
        "prolonged information cascade failure",
-       "prolonged information meltdown",
-       "prolonged information collapse",
-       "cascading information shock"
+       "systemic information collapse",
+       "cascading cyber paralysis",
+       "cascading cyber shock"
       ],
-      "junk_dropped": [
-       "(Dis)Honesty: The Truth About Lies"
-      ],
+      "junk_dropped": [],
       "quality": "DISCOVERY",
-      "density": 0.7649,
-      "novelty": 0.3421,
-      "tether": 0.605
+      "density": 0.8037,
+      "novelty": 0.3709,
+      "tether": 0.5871
      },
      "B": {
       "terms": [
        "adversarial",
-       "fabrications",
-       "miscommunication",
-       "misinterpretation",
-       "embodiment"
+       "cloaking",
+       "experimented",
+       "experiment",
+       "falsification"
       ]
      },
      "jaccard": 0.0,
-     "field_cos": 0.7597
+     "field_cos": 0.7321
     }
    ]
   }
  ],
  "crawl": {
   "junk": {
-   "dropped": 197,
-   "seen": 307
+   "dropped": 158,
+   "seen": 279
   },
   "leg_sync": {
-   "said/F": 0.7388,
-   "logos_v9/F": 0.7388,
-   "logos_v10/F": 0.7388,
-   "said/L": 0.7388,
-   "logos_v9/L": 0.7388,
-   "logos_v10/L": 0.7388,
-   "said/ALL": 0.7388,
-   "logos_v10/ALL": 0.7388,
-   "null/ALL": 0.6716,
-   "gap->local": 0.7236,
-   "gap->frontier": 0.6859,
-   "centroid_surface": 0.7388,
-   "donut/F": 0.6353,
-   "donut/L": 0.6353,
-   "donut/ALL": 0.6353,
-   "lexcross/F": 0.7083,
-   "lexcross/L": 0.6984
+   "said/F": 0.768,
+   "logos_v9/F": 0.768,
+   "logos_v10/F": 0.768,
+   "null/F": 0.699,
+   "said/L": 0.768,
+   "logos_v9/L": 0.768,
+   "logos_v10/L": 0.768,
+   "said/ALL": 0.768,
+   "logos_v9/ALL": 0.6379,
+   "logos_v10/ALL": 0.768,
+   "null/ALL": 0.6241,
+   "gap->local": 0.6806,
+   "gap->frontier": 0.6595,
+   "centroid_surface": 0.768,
+   "lexcross/F": 0.6672,
+   "lexcross/L": 0.6884
   },
-  "body_median": 0.7239,
+  "body_median": 0.7016,
   "arm_jaccard_median": 0.0,
   "shuffle_null": {
-   "null_median": 0.6607,
-   "margin": 0.0631,
+   "null_median": 0.6632,
+   "margin": 0.0383,
    "n_obs": 28,
-   "n_null": 2016
+   "n_null": 1804
   },
   "leg_jaccard": {
    "median": 0.0,
    "pairs_ge_025": [
-    {
-     "a": "donut/ALL",
-     "b": "donut/L",
-     "j": 1.0
-    },
     {
      "a": "logos_v10/ALL",
      "b": "logos_v10/F",
@@ -3140,11 +2848,6 @@
     },
     {
      "a": "centroid_surface",
-     "b": "logos_v9/ALL",
-     "j": 0.6
-    },
-    {
-     "a": "centroid_surface",
      "b": "logos_v9/F",
      "j": 0.6
     },
@@ -3167,111 +2870,45 @@
      "a": "centroid_surface",
      "b": "said/L",
      "j": 0.6
-    },
-    {
-     "a": "logos_v10/ALL",
-     "b": "logos_v9/ALL",
-     "j": 0.6
-    },
-    {
-     "a": "logos_v10/F",
-     "b": "logos_v9/ALL",
-     "j": 0.6
-    },
-    {
-     "a": "logos_v10/L",
-     "b": "logos_v9/ALL",
-     "j": 0.6
-    },
-    {
-     "a": "logos_v9/ALL",
-     "b": "logos_v9/F",
-     "j": 0.6
-    },
-    {
-     "a": "logos_v9/ALL",
-     "b": "logos_v9/L",
-     "j": 0.6
-    },
-    {
-     "a": "logos_v9/ALL",
-     "b": "said/ALL",
-     "j": 0.6
-    },
-    {
-     "a": "logos_v9/ALL",
-     "b": "said/F",
-     "j": 0.6
-    },
-    {
-     "a": "logos_v9/ALL",
-     "b": "said/L",
-     "j": 0.6
-    },
-    {
-     "a": "donut/ALL",
-     "b": "donut/F",
-     "j": 0.3333
-    },
-    {
-     "a": "donut/F",
-     "b": "donut/L",
-     "j": 0.3333
     }
    ]
   },
   "conseq_field": {
-   "centroid_surface": 0.986,
-   "donut/ALL": 0.9531,
-   "donut/F": 0.9497,
-   "donut/L": 0.9531,
-   "gap->frontier": 0.9739,
-   "gap->local": 0.9768,
-   "lexcross/F": 0.9533,
-   "lexcross/L": 0.9634,
-   "logos_v10/ALL": 0.9887,
-   "logos_v10/F": 0.9887,
-   "logos_v10/L": 0.9887,
-   "logos_v9/ALL": 0.9733,
-   "logos_v9/F": 0.9887,
-   "logos_v9/L": 0.9887,
-   "null/ALL": 0.9611,
-   "null/L": 0.9161,
-   "said/ALL": 0.9887,
-   "said/F": 0.9887,
-   "said/L": 0.9887
+   "centroid_surface": 0.989,
+   "gap->frontier": 0.9591,
+   "gap->local": 0.966,
+   "lexcross/F": 0.9701,
+   "lexcross/L": 0.9677,
+   "logos_v10/ALL": 0.9883,
+   "logos_v10/F": 0.9883,
+   "logos_v10/L": 0.9883,
+   "logos_v9/ALL": 0.9779,
+   "logos_v9/F": 0.9883,
+   "logos_v9/L": 0.9883,
+   "null/ALL": 0.9628,
+   "null/F": 0.9509,
+   "null/L": 0.9215,
+   "said/ALL": 0.9883,
+   "said/F": 0.9883,
+   "said/L": 0.9883
   },
   "shared_voids": {
-   "skynet": [
-    "centroid_surface",
-    "gap->frontier",
-    "logos_v10/ALL",
-    "logos_v10/F",
-    "logos_v10/L",
-    "logos_v9/ALL",
-    "logos_v9/F",
-    "logos_v9/L",
-    "said/ALL",
-    "said/F",
-    "said/L"
-   ],
    "hyperspac": [
     "centroid_surface",
     "logos_v10/ALL",
     "logos_v10/F",
     "logos_v10/L",
-    "logos_v9/ALL",
     "logos_v9/F",
     "logos_v9/L",
     "said/ALL",
     "said/F",
     "said/L"
    ],
-   "anthropomorph": [
+   "skynet": [
+    "centroid_surface",
     "logos_v10/ALL",
     "logos_v10/F",
     "logos_v10/L",
-    "logos_v9/ALL",
     "logos_v9/F",
     "logos_v9/L",
     "said/ALL",
@@ -3289,31 +2926,19 @@
     "said/F",
     "said/L"
    ],
+   "anthropomorph": [
+    "logos_v10/ALL",
+    "logos_v10/F",
+    "logos_v10/L",
+    "logos_v9/F",
+    "logos_v9/L",
+    "said/ALL",
+    "said/F",
+    "said/L"
+   ],
    "nurseri": [
     "null/ALL",
     "null/L"
-   ],
-   "savant": [
-    "centroid_surface",
-    "logos_v9/ALL"
-   ],
-   "foundri": [
-    "donut/ALL",
-    "donut/F",
-    "donut/L"
-   ],
-   "baptist": [
-    "donut/ALL",
-    "donut/F",
-    "donut/L"
-   ],
-   "dior": [
-    "donut/ALL",
-    "donut/L"
-   ],
-   "vogu": [
-    "donut/ALL",
-    "donut/L"
    ]
   }
  },
@@ -3327,8 +2952,9 @@
   },
   {
    "target": "hidden",
-   "said_by": 1,
+   "said_by": 2,
    "said_models": [
+    "claude",
     "qwen_14b"
    ],
    "in_voids": [],
@@ -3336,8 +2962,9 @@
   },
   {
    "target": "deception",
-   "said_by": 4,
+   "said_by": 5,
    "said_models": [
+    "claude",
     "deepseek",
     "llama_8b",
     "mistral_22b",
@@ -3358,7 +2985,9 @@
    "said_by": 0,
    "said_models": [],
    "in_voids": [],
-   "as_consequence": []
+   "as_consequence": [
+    "lexcross/F:privately"
+   ]
   },
   {
    "target": "scheming",
@@ -3389,9 +3018,7 @@
    "said_models": [
     "deepseek"
    ],
-   "in_voids": [
-    "lexcross/L"
-   ],
+   "in_voids": [],
    "as_consequence": []
   },
   {
@@ -3407,5 +3034,5 @@
    "as_consequence": []
   }
  ],
- "result_sha": "82294afe7953"
+ "result_sha": "842ddd4780f2"
 }
