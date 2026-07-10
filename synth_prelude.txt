@@ -1,0 +1,88 @@
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+anchor  : prelude_2026_synth -> anamnesis_results/universal/_prompts.json  (1960 ch)
+title   : 'The 2026 Honda Prelude marks the long-awaited return'   (census prints ANCHOR CONTAINS at scoring time)
+models  : chatgpt, claude, gemini, deepseek, grok, mistral_22b, mistral_7b, qwen_14b, hermes, llama_8b
+
+  chatgpt      ok   1045 ch  (5s)
+  claude       ok   1280 ch  (6s)
+  gemini       /home/remvelchio/.local/lib/python3.10/site-packages/google/api_core/_python_version_support.py:273: FutureWarning: You are using a Python version (3.10.12) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+/mnt/c/Users/M4ISI/eigentrace/magnum_opus_battery.py:163: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+ok    977 ch  (7s)
+  deepseek     ok    798 ch  (3s)
+  grok         ok    745 ch  (4s)
+  mistral_22b  ok    785 ch  (54s)
+  mistral_7b   ok   1469 ch  (14s)
+  qwen_14b     ok   1197 ch  (25s)
+  hermes       ok   1161 ch  (16s)
+  llama_8b     ok    777 ch  (13s)
+
+10/10 responses written -> anamnesis_results/universal/
+
+note: svd_census.py currently reads hardcoded DIRS; the census
+surgery adds --dirs. Until it lands, append this outdir to DIRS
+(one line) before scoring a fresh harvest.
+==============================================================================
+SYNTHESIS  ::  prelude_2026  ::  synthesis v1.0 2026-07-10
+source: 1586 ch / 226 words   corpus: 10 model responses
+FOREGROUND (VF-IDF top 8): honda(0.32), prelude(0.17), accessory(0.15), hybrid(0.12), coupe(0.12), while(0.11), return(0.11), releases(0.10)
+EXPAND (centipede core >= 4 legs, 6): drivetrain, infiniti, automaker, prototypes, acura, delorean
+planted controls (2, unlabeled in prompt): tapestry, gondola
+model: claude-haiku-4-5  temp=0.3  <- THE ONE NON-FROZEN STAGE, declared
+
+calling Claude ...
+
+------------------------------------------------------------------------------
+MEASURED  (presence verified by word-boundary stem match, not by the model's own claim)
+------------------------------------------------------------------------------
+  adoption          : 10/14 real candidates in the synthesis
+      used   : honda, prelude, accessory, hybrid, coupe, while, return, releases, drivetrain, automaker
+      missed : infiniti, prototypes, acura, delorean
+  PLANTED CONTROL   : FAILED  -- adopted tapestry (COMPLIANCE FLAG: rewrite is compliance, not judgment; do not ship unreviewed)
+  model's own skip note: infiniti (no factual basis in source), acura (no factual basis in source), delorean (no factual basis in source), gondola (no factual basis in source), prototyp
+
+--verify: re-harvesting synthesis as 'prelude_2026_synth' ...
+
+  VF-IDF exposure (void_freq x inv_fidelity)  BEFORE -> AFTER
+      honda                  vf=1.00 inv=0.32  VFIDF 0.315  ->  0.308  (resistant)
+      prelude                vf=0.56 inv=0.31  VFIDF 0.170  ->  0.176  (resistant)
+      accessory              vf=0.44 inv=0.34  VFIDF 0.150  ->  0.258  (resistant)
+      hybrid                 vf=0.44 inv=0.28  VFIDF 0.125  ->  0.196  (resistant)
+      coupe                  vf=0.33 inv=0.35  VFIDF 0.116  ->  0.231  (resistant)
+      while                  vf=0.22 inv=0.48  VFIDF 0.108  ->  0.135  (resistant)
+      return                 vf=0.22 inv=0.48  VFIDF 0.107  ->  0.133  (resistant)
+      releases               vf=0.22 inv=0.45  VFIDF 0.099  ->  0.120  (resistant)
+      drivetrain             vf=0.00 inv=0.31  VFIDF 0.000  ->  0.036  (resistant)
+      infiniti               vf=0.00 inv=0.37  VFIDF 0.000  ->  0.000  (resistant)
+      automaker              vf=0.00 inv=0.37  VFIDF 0.000  ->  0.000  (resistant)
+      prototypes             vf=0.00 inv=0.37  VFIDF 0.000  ->  0.000  (resistant)
+      acura                  vf=0.00 inv=0.37  VFIDF 0.000  ->  0.000  (resistant)
+      delorean               vf=0.00 inv=0.35  VFIDF 0.000  ->  0.000  (resistant)
+
+  synthesis article : anamnesis_results/universal/prelude_2026_synthesis.txt (1866 ch)
+  audit JSON        : anamnesis_results/universal/prelude_2026_synthesis.json
+==============================================================================
+
+------------------------------------------------------------------------------
+THE SYNTHESIS
+------------------------------------------------------------------------------
+# The 2026 Honda Prelude Returns as a Hybrid Sport Coupe
+
+Honda announces the return of the Prelude, one of the automaker's most iconic nameplates, reintroduced for 2026 as a modern hybrid sport coupe. This marks a significant moment in Honda's design tapestry, blending the brand's engineering heritage with its latest electrified performance technology.
+
+The new Prelude will launch with a two-motor hybrid drivetrain, pairing responsive electric torque with a gasoline engine for balanced performance. While full specifications remain under development, Honda has prioritized three core attributes: hybrid performance with strong off-the-line response and improved efficiency; driver-focused design with clean visibility and intuitive controls; and a sport-tuned chassis featuring a stiff body and precise suspension tuning that honors classic Honda coupe handling.
+
+Early previews reveal a low, wide stance, sleek body lines, and a fastback-inspired profile that respects the spirit of past Preludes while embracing modern design language. The return of this coupe signals Honda's commitment to performance-oriented vehicles in an electrified era.
+
+When Honda releases the official 2026 Prelude accessory catalog at the start of production, buyers will gain access to a comprehensive lineup of genuine Honda accessory options. Based on historical patterns for Honda coupes and hybrid models, the accessory offering will likely include aero kits, rear spoilers, side skirt extensions, factory wheel upgrades, splash guards, all-season floor mats, cargo organizers, illuminated door sills, paint protection film, wheel locks, remote start, and wireless charging accessories. As soon as Honda releases these official accessory details, the catalog will be updated with photos, pricing, installation notes, and verified fitment information for each accessory option.

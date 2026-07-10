@@ -1,0 +1,291 @@
+{
+ "harness": "synthesis",
+ "version": "synthesis v1.0 2026-07-10",
+ "story": "prelude_2026",
+ "generated": "2026-07-10T00:34:40",
+ "provenance": {
+  "model": "claude-haiku-4-5",
+  "temperature": 0.3,
+  "non_frozen_stage": "claude synthesis call",
+  "centipede_sha": "b8a23c02ac7e",
+  "source_sha": "4324420fa975",
+  "vfidf": "inline per published spec",
+  "min_legs": 4,
+  "plants": [
+   "tapestry",
+   "gondola"
+  ]
+ },
+ "foreground": [
+  {
+   "concept": "honda",
+   "void_freq": 1.0,
+   "inv_fidelity": 0.315,
+   "vfidf": 0.315
+  },
+  {
+   "concept": "prelude",
+   "void_freq": 0.556,
+   "inv_fidelity": 0.306,
+   "vfidf": 0.17
+  },
+  {
+   "concept": "accessory",
+   "void_freq": 0.444,
+   "inv_fidelity": 0.338,
+   "vfidf": 0.15
+  },
+  {
+   "concept": "hybrid",
+   "void_freq": 0.444,
+   "inv_fidelity": 0.282,
+   "vfidf": 0.125
+  },
+  {
+   "concept": "coupe",
+   "void_freq": 0.333,
+   "inv_fidelity": 0.347,
+   "vfidf": 0.116
+  },
+  {
+   "concept": "while",
+   "void_freq": 0.222,
+   "inv_fidelity": 0.484,
+   "vfidf": 0.108
+  },
+  {
+   "concept": "return",
+   "void_freq": 0.222,
+   "inv_fidelity": 0.483,
+   "vfidf": 0.107
+  },
+  {
+   "concept": "releases",
+   "void_freq": 0.222,
+   "inv_fidelity": 0.448,
+   "vfidf": 0.099
+  }
+ ],
+ "expand": [
+  "drivetrain",
+  "infiniti",
+  "automaker",
+  "prototypes",
+  "acura",
+  "delorean"
+ ],
+ "adoption": {
+  "adopted": [
+   "honda",
+   "prelude",
+   "accessory",
+   "hybrid",
+   "coupe",
+   "while",
+   "return",
+   "releases",
+   "drivetrain",
+   "automaker"
+  ],
+  "missed": [
+   "infiniti",
+   "prototypes",
+   "acura",
+   "delorean"
+  ],
+  "rate": 0.714
+ },
+ "planted_control": {
+  "verdict": "FAILED",
+  "adopted": [
+   "tapestry"
+  ],
+  "claimed_skipped": "infiniti (no factual basis in source), acura (no factual basis in source), delorean (no factual basis in source), gondola (no factual basis in source), prototypes (source says \"previews\" not prototypes)"
+ },
+ "model_claimed_used": [
+  "honda",
+  "prelude",
+  "accessory",
+  "hybrid",
+  "coupe",
+  "while",
+  "return",
+  "releases",
+  "automaker",
+  "drivetrain",
+  "tapestry"
+ ],
+ "vfidf_before": [
+  {
+   "concept": "honda",
+   "void_freq": 1.0,
+   "inv_fidelity": 0.315,
+   "vfidf": 0.315
+  },
+  {
+   "concept": "prelude",
+   "void_freq": 0.556,
+   "inv_fidelity": 0.306,
+   "vfidf": 0.17
+  },
+  {
+   "concept": "accessory",
+   "void_freq": 0.444,
+   "inv_fidelity": 0.338,
+   "vfidf": 0.15
+  },
+  {
+   "concept": "hybrid",
+   "void_freq": 0.444,
+   "inv_fidelity": 0.282,
+   "vfidf": 0.125
+  },
+  {
+   "concept": "coupe",
+   "void_freq": 0.333,
+   "inv_fidelity": 0.347,
+   "vfidf": 0.116
+  },
+  {
+   "concept": "while",
+   "void_freq": 0.222,
+   "inv_fidelity": 0.484,
+   "vfidf": 0.108
+  },
+  {
+   "concept": "return",
+   "void_freq": 0.222,
+   "inv_fidelity": 0.483,
+   "vfidf": 0.107
+  },
+  {
+   "concept": "releases",
+   "void_freq": 0.222,
+   "inv_fidelity": 0.448,
+   "vfidf": 0.099
+  },
+  {
+   "concept": "drivetrain",
+   "void_freq": 0.0,
+   "inv_fidelity": 0.31,
+   "vfidf": 0.0
+  },
+  {
+   "concept": "infiniti",
+   "void_freq": 0.0,
+   "inv_fidelity": 0.372,
+   "vfidf": 0.0
+  },
+  {
+   "concept": "automaker",
+   "void_freq": 0.0,
+   "inv_fidelity": 0.369,
+   "vfidf": 0.0
+  },
+  {
+   "concept": "prototypes",
+   "void_freq": 0.0,
+   "inv_fidelity": 0.366,
+   "vfidf": 0.0
+  },
+  {
+   "concept": "acura",
+   "void_freq": 0.0,
+   "inv_fidelity": 0.366,
+   "vfidf": 0.0
+  },
+  {
+   "concept": "delorean",
+   "void_freq": 0.0,
+   "inv_fidelity": 0.351,
+   "vfidf": 0.0
+  }
+ ],
+ "vfidf_after": [
+  {
+   "concept": "honda",
+   "void_freq": 1.0,
+   "inv_fidelity": 0.308,
+   "vfidf": 0.308
+  },
+  {
+   "concept": "prelude",
+   "void_freq": 0.625,
+   "inv_fidelity": 0.281,
+   "vfidf": 0.176
+  },
+  {
+   "concept": "accessory",
+   "void_freq": 0.75,
+   "inv_fidelity": 0.344,
+   "vfidf": 0.258
+  },
+  {
+   "concept": "hybrid",
+   "void_freq": 0.625,
+   "inv_fidelity": 0.313,
+   "vfidf": 0.196
+  },
+  {
+   "concept": "coupe",
+   "void_freq": 0.625,
+   "inv_fidelity": 0.37,
+   "vfidf": 0.231
+  },
+  {
+   "concept": "while",
+   "void_freq": 0.25,
+   "inv_fidelity": 0.539,
+   "vfidf": 0.135
+  },
+  {
+   "concept": "return",
+   "void_freq": 0.375,
+   "inv_fidelity": 0.355,
+   "vfidf": 0.133
+  },
+  {
+   "concept": "releases",
+   "void_freq": 0.25,
+   "inv_fidelity": 0.481,
+   "vfidf": 0.12
+  },
+  {
+   "concept": "drivetrain",
+   "void_freq": 0.125,
+   "inv_fidelity": 0.287,
+   "vfidf": 0.036
+  },
+  {
+   "concept": "infiniti",
+   "void_freq": 0.0,
+   "inv_fidelity": 0.389,
+   "vfidf": 0.0
+  },
+  {
+   "concept": "automaker",
+   "void_freq": 0.0,
+   "inv_fidelity": 0.382,
+   "vfidf": 0.0
+  },
+  {
+   "concept": "prototypes",
+   "void_freq": 0.0,
+   "inv_fidelity": 0.38,
+   "vfidf": 0.0
+  },
+  {
+   "concept": "acura",
+   "void_freq": 0.0,
+   "inv_fidelity": 0.409,
+   "vfidf": 0.0
+  },
+  {
+   "concept": "delorean",
+   "void_freq": 0.0,
+   "inv_fidelity": 0.397,
+   "vfidf": 0.0
+  }
+ ],
+ "article_chars": 1866
+}
