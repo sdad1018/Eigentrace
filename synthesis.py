@@ -316,8 +316,14 @@ def main():
             cand_words.append(w)
     fg_rows = vfidf_table(cand_words, source, resp, E)
     fg_rows = [r for r in fg_rows if not is_junk(r["concept"])]
-    fg_rows.sort(key=lambda r: -r["vfidf"])
-    foreground = [r["concept"] for r in fg_rows[:args.foreground_n]]
+    fg_rows.sort(key=lambda r: (-r["vfidf"], -r["void_freq"], r["concept"]))
+    top_v = fg_rows[0]["vfidf"] if fg_rows else 0.0
+    if top_v < 0.10:
+        print(f"  FOREGROUND THIN: top VF-IDF {top_v:.3f} -- this "
+              f"document states nearly everything it makes salient "
+              f"(low extractable void). Thinness is a finding.")
+    fg_live = [r for r in fg_rows if r["vfidf"] > 0.01]
+    foreground = [r["concept"] for r in fg_live[:args.foreground_n]]
 
     # ---- EXPAND: centipede shared-core voids ---------------------------
     core, cent_sha = centipede_core(args.dir, sid, args.min_legs)
@@ -336,9 +342,10 @@ def main():
         i += 1
     expand_presented = expand + plants   # unlabeled, appended
 
-    print(f"FOREGROUND (VF-IDF top {len(foreground)}): "
+    print(f"FOREGROUND (VF-IDF top {len(foreground)}, "
+          f"only vfidf>0.01 -- zeros are preserved, not dropped): "
           + ", ".join(f"{r['concept']}({r['vfidf']:.2f})"
-                      for r in fg_rows[:args.foreground_n]))
+                      for r in fg_live[:args.foreground_n]))
     print(f"EXPAND (centipede core >= {args.min_legs} legs, "
           f"{len(expand)}): " + (", ".join(expand) or "(none)"))
     print(f"planted controls ({len(plants)}, unlabeled in prompt): "
@@ -424,7 +431,9 @@ def main():
             a = amap.get(r["concept"], {})
             av = a.get("vfidf", float("nan"))
             tag = ("COLLAPSED" if isinstance(av, float) and av == av
-                   and av < max(0.001, r["vfidf"] * 0.5) else "kept")
+                   and r["vfidf"] >= 0.02
+                   and av < r["vfidf"] * 0.5 else
+                   ("kept" if r["vfidf"] >= 0.02 else "never dropped"))
             line += f"  ->  {av:.3f}  ({tag})"
         print(line)
     expand_results = []

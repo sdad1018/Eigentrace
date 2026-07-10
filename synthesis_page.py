@@ -149,9 +149,11 @@ def main():
         av = f"{a['vfidf']:.3f}" if a else "&mdash;"
         tag = ""
         if a is not None:
-            coll = a["vfidf"] < max(0.001, r["vfidf"] * 0.5)
+            coll = (r["vfidf"] >= 0.02
+                    and a["vfidf"] < r["vfidf"] * 0.5)
             tag = ('<span class="collapsed">COLLAPSED</span>'
-                   if coll else "kept")
+                   if coll else
+                   ("kept" if r["vfidf"] >= 0.02 else "never dropped"))
         fg_table.append(
             f"<tr><td>{html.escape(r['concept'])}</td>"
             f"<td>{r['void_freq']:.2f}</td>"
