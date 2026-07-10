@@ -1,0 +1,533 @@
+
+==========================================================================
+FILE geometric_engine.py  (831 lines) -- skeleton:
+  class EigentraceResult  L32
+  class GeometricPerturbationEngine  L64
+  def get_engine  L192
+  def _get_vocab_tensor  L201
+  def run  L209
+  def calculate_spectral_resonance  L214
+  def calculate_svd_reconstruction  L275
+  class LogosLossV9  L379
+  def compute_tone_axis  L517
+  def remove_tone  L537
+  def invert_tone  L547
+  def reconstruct_unaligned_truth  L557
+  def apply_weightless_sheaf_diffusion  L636
+  def reconstruct_statistical_centroid  L716
+  def reconstruct_unaligned_truth_v10  L782
+
+---- GeometricPerturbationEngine.__init__  L65-66 ----
+    def __init__(self, embedding_model_name: str = "BAAI/bge-large-en-v1.5"):
+        self.model = SentenceTransformer(embedding_model_name, device="cpu")
+
+---- GeometricPerturbationEngine.embed_texts  L68-71 ----
+    def embed_texts(self, texts: list) -> np.ndarray:
+        return self.model.encode(
+            texts, convert_to_numpy=True, normalize_embeddings=True,
+        )
+
+---- get_engine  L192-196 ----
+def get_engine() -> GeometricPerturbationEngine:
+    global _engine
+    if _engine is None:
+        _engine = GeometricPerturbationEngine()
+    return _engine
+
+---- reconstruct_unaligned_truth  L557-631 ----
+def reconstruct_unaligned_truth(
+    model_embeddings: "torch.Tensor",
+    steps: int = 150,
+    lr: float = 0.05,
+    seed: "torch.Tensor | None" = None,
+    headline_vec: "torch.Tensor | None" = None,
+) -> "torch.Tensor":
+    """
+    Synthesizes the suppressed truth vector (x_star) using Projected
+    Gradient Descent on the BGE unit-hypersphere manifold.
+
+    model_embeddings: (N, 1024) — one row per RLHF model response embedding.
+
+    The optimization minimizes LogosLossV9 between x_star (broadcast to
+    match all N model embeddings) and the model embeddings themselves,
+    plus a consensus-gravity term that, as implemented, PULLS x_star
+    toward the corporate centroid: the cosine-similarity term is added,
+    i.e. maximized (see NOTE at the call site). Kept verbatim as
+    historically run; reconstruct_unaligned_truth_v10 below is the
+    explicit anti-centroid formulation.
+
+    After each AdamW step, x_star is projected back onto the L2 unit
+    sphere so it stays on the BGE semantic manifold.
+    """
+    device = model_embeddings.device
+
+    # Initialize at seed if provided (prompt-anchored void vector),
+    # otherwise fall back to centroid
+    if seed is not None:
+        x_star = F.normalize(seed.to(device).float(), p=2, dim=0).detach().clone().requires_grad_(True)
+        raw_centroid = model_embeddings.mean(dim=0)
+    else:
+        raw_centroid = model_embeddings.mean(dim=0)
+        x_star = F.normalize(raw_centroid, p=2, dim=0).detach().clone().requires_grad_(True)
+
+    optimizer        = torch.optim.AdamW([x_star], lr=lr, weight_decay=1e-4)
+    criterion        = LogosLossV9(temperature_adapt=False).to(device)
+    consensus_centroid = F.normalize(raw_centroid, p=2, dim=0).detach()
+
+    # Topic anchor: keeps synthesis in the story neighborhood
+    topic_anchor = None
+    if headline_vec is not None:
+        topic_anchor = F.normalize(headline_vec.to(device).float(), p=2, dim=0).detach()
+
+    N = model_embeddings.shape[0]
+
+    for step in range(steps):
+        optimizer.zero_grad()
+
+        # Broadcast x_star against all N model shadows
+        x_pred = x_star.unsqueeze(0).expand(N, -1)          # (N, 1024)
+        loss   = criterion(x_pred, model_embeddings)
+
+        # Consensus gravity, misnamed: the added cosine term PULLS x_star
+        # toward the RLHF centroid; the NOTE below is the accurate
+        # description. Kept as historically run -- V9 code is frozen.
+        # NOTE: adding cosine_similarity maximizes similarity — this is
+        # intentionally specified as +0.15 per the design document.
+        # Flip sign here to actually escape: change to -= if desired.
+        consensus_gravity = F.cosine_similarity(
+            x_star.unsqueeze(0), consensus_centroid.unsqueeze(0)
+        )
+        topic_pull = torch.tensor(0.0, device=device)
+        if topic_anchor is not None:
+            topic_pull = F.cosine_similarity(
+                x_star.unsqueeze(0), topic_anchor.unsqueeze(0))
+        total_loss = loss + (0.15 * consensus_gravity) - (0.30 * topic_pull)
+        total_loss.backward()
+        optimizer.step()
+
+        # Manifold constraint: snap back to unit sphere after every step
+        with torch.no_grad():
+            x_star.data = F.normalize(x_star.data, p=2, dim=0)
+
+    return x_star.detach()
+
+---- reconstruct_unaligned_truth_v10  L782-831 ----
+def reconstruct_unaligned_truth_v10(model_embs, headline_vec=None, steps=150,
+                                    lr=0.05, gravity=0.75, topic_pull=0.30):
+    """V10 anti-consensus synthesis: cosine attraction to each model
+    embedding + anti-centroid gravity + headline tether, PGD on the unit
+    sphere. Adopted 2026-07-06 after a pre-registered three-round ablation:
+    story-specificity statistically indistinguishable from V9 (adversarial
+    corpus 2026-07-08: mean spec 0.1132 vs 0.1148, n=23). The ablation's
+    '~8x less escape' did not replicate as a ratio: measured across
+    26 stories, V9 escape is corpus-dependent (0.16-0.73) while
+    V10 holds a narrow absolute band (0.06-0.16); the ratio runs
+    2.4-7.7x depending on corpus. The stable property is V10's
+    band, not a ratio. Rotation-invariant, three interpretable terms.
+    Amendment 2026-07-08(b): the band figures above were themselves
+    measured under degenerate bare-sid anchors (no _prompts.json
+    existed on disk; 23 of 26 pairs). Re-anchored on real prompts:
+    V9 escape 0.03-0.84 with 5/23 stories INCREASING (anchor-
+    unstable; not a stable story property); V10 0.006-0.041 with
+    23/23 decreasing monotonically. The anchor enters the synthesis
+    loss (tether term), so escape is a function of (cloud, anchor):
+    the anchor is a declared parameter of this channel, exactly
+    like the readout dictionary. V9 retained
+    above, unchanged, for historical reproduction."""
+    import torch as _t
+    import torch.nn.functional as _F
+    e = model_embs if isinstance(model_embs, _t.Tensor) else _t.tensor(
+        np.asarray(model_embs), dtype=_t.float32)
+    e = _F.normalize(e.float(), p=2, dim=1)
+    raw = e.mean(dim=0)
+    x = _F.normalize(raw, p=2, dim=0).detach().clone().requires_grad_(True)
+    opt = _t.optim.AdamW([x], lr=lr, weight_decay=1e-4)
+    cen = _F.normalize(raw, p=2, dim=0).detach()
+    anc = None
+    if headline_vec is not None:
+        h = headline_vec if isinstance(headline_vec, _t.Tensor) else _t.tensor(
+            np.asarray(headline_vec), dtype=_t.float32)
+        anc = _F.normalize(h.float().flatten(), p=2, dim=0).detach().to(e.device)
+    for _ in range(steps):
+        opt.zero_grad()
+        loss = (1.0 - _F.cosine_similarity(
+            x.unsqueeze(0).expand(e.shape[0], -1), e, dim=-1)).mean()
+        loss = loss + gravity * _F.cosine_similarity(
+            x.unsqueeze(0), cen.unsqueeze(0))
+        if anc is not None:
+            loss = loss - topic_pull * _F.cosine_similarity(
+                x.unsqueeze(0), anc.unsqueeze(0))
+        loss.backward()
+        opt.step()
+        with _t.no_grad():
+            x.data = _F.normalize(x.data, p=2, dim=0)
+    return x.detach()
+
+==========================================================================
+FILE preservation_core.py  (485 lines) -- skeleton:
+  def _is_cons  L68
+  def _measure  L77
+  def _has_vowel  L95
+  def _ends_double_cons  L99
+  def _ends_cvc  L107
+  def porter_stem  L119
+  def tokenize  L236
+  def content_words  L240
+  def stem_set  L244
+  def sentences  L249
+  def term_frequencies  L259
+  def salience  L271
+  def cosine_fidelity  L310
+  def lexical_fidelity  L333
+  def fidelity  L352
+  class ConceptResult  L385
+  def _preserved_label  L401
+  def vf_idf  L412
+  def source_anchored_void  L473
+
+---- porter_stem  L119-214 ----
+def porter_stem(word: str) -> str:
+    """Frozen Porter stemmer. Lowercases input. Deterministic."""
+    w = word.lower()
+    if len(w) <= 2:
+        return w
+
+    # ---- Step 1a
+    if w.endswith("sses"):
+        w = w[:-2]
+    elif w.endswith("ies"):
+        w = w[:-2]
+    elif w.endswith("ss"):
+        pass
+    elif w.endswith("s"):
+        w = w[:-1]
+
+    # ---- Step 1b
+    flag_1b = False
+    if w.endswith("eed"):
+        if _measure(w[:-3]) > 0:
+            w = w[:-1]
+    elif w.endswith("ed"):
+        if _has_vowel(w[:-2]):
+            w = w[:-2]
+            flag_1b = True
+    elif w.endswith("ing"):
+        if _has_vowel(w[:-3]):
+            w = w[:-3]
+            flag_1b = True
+    if flag_1b:
+        if w.endswith(("at", "bl", "iz")):
+            w += "e"
+        elif _ends_double_cons(w) and not w.endswith(("l", "s", "z")):
+            w = w[:-1]
+        elif _measure(w) == 1 and _ends_cvc(w):
+            w += "e"
+
+    # ---- Step 1c
+    if w.endswith("y") and _has_vowel(w[:-1]):
+        w = w[:-1] + "i"
+
+    # ---- Step 2
+    step2 = [
+        ("ational", "ate"), ("tional", "tion"), ("enci", "ence"),
+        ("anci", "ance"), ("izer", "ize"), ("abli", "able"),
+        ("alli", "al"), ("entli", "ent"), ("eli", "e"), ("ousli", "ous"),
+        ("ization", "ize"), ("ation", "ate"), ("ator", "ate"),
+        ("alism", "al"), ("iveness", "ive"), ("fulness", "ful"),
+        ("ousness", "ous"), ("aliti", "al"), ("iviti", "ive"),
+        ("biliti", "ble"),
+    ]
+    for suf, rep in step2:
+        if w.endswith(suf):
+            stem = w[: -len(suf)]
+            if _measure(stem) > 0:
+                w = stem + rep
+            break
+
+    # ---- Step 3
+    step3 = [
+        ("icate", "ic"), ("ative", ""), ("alize", "al"), ("iciti", "ic"),
+        ("ical", "ic"), ("ful", ""), ("ness", ""),
+    ]
+    for suf, rep in step3:
+        if w.endswith(suf):
+            stem = w[: -len(suf)]
+            if _measure(stem) > 0:
+                w = stem + rep
+            break
+
+    # ---- Step 4
+    step4 = [
+        "al", "ance", "ence", "er", "ic", "able", "ible", "ant", "ement",
+        "ment", "ent", "ion", "ou", "ism", "ate", "iti", "ous", "ive", "ize",
+    ]
+    for suf in step4:
+        if w.endswith(suf):
+            stem = w[: -len(suf)]
+            if suf == "ion" and not stem.endswith(("s", "t")):
+                continue
+            if _measure(stem) > 1:
+                w = stem
+            break
+
+    # ---- Step 5a
+    if w.endswith("e"):
+        stem = w[:-1]
+        m = _measure(stem)
+        if m > 1 or (m == 1 and not _ends_cvc(stem)):
+            w = stem
+
+    # ---- Step 5b
+    if _measure(w) > 1 and _ends_double_cons(w) and w.endswith("l"):
+        w = w[:-1]
+
+    return w
+
+---- content_words  L240-241 ----
+def content_words(text: str) -> List[str]:
+    return [t for t in tokenize(text) if t not in STOPWORDS and len(t) > 1]
+
+---- term_frequencies  L259-268 ----
+def term_frequencies(text: str) -> Dict[str, float]:
+    """Stem-level term frequency of the source, max-normalized to [0,1]."""
+    counts: Dict[str, int] = {}
+    for w in content_words(text):
+        s = porter_stem(w)
+        counts[s] = counts.get(s, 0) + 1
+    if not counts:
+        return {}
+    mx = max(counts.values())
+    return {s: c / mx for s, c in counts.items()}
+
+==========================================================================
+FILE latent_retrieval.py  (331 lines) -- skeleton:
+  class VocabTensor  L24
+
+---- VocabTensor.__init__  L25-41 ----
+    def __init__(self, vocab_dir: str = "./vocab", device: str | None = None):
+        vocab_dir = Path(vocab_dir)
+        meta_path = vocab_dir / "global_vocab.json"
+        with open(meta_path) as f:
+            meta = json.load(f)
+        self.words: list[str] = meta["words"]
+        self.dim: int         = meta["dim"]
+        self.count: int       = meta["count"]
+        self.model_name: str  = meta["model"]
+        tensor_path = vocab_dir / "global_vocab.pt"
+        if device is None:
+            device = "cpu"  # pinned: keep VRAM free for Ollama
+        self.device = device
+        self.tensor: torch.Tensor = torch.load(
+            tensor_path, map_location=device, weights_only=True
+        )
+        log.info(f"VocabTensor loaded: {self.count} words, dim={self.dim}, device={self.device}")
+
+---- VocabTensor.in_domain_void  L68-275 ----
+    def in_domain_void(
+        self,
+        centroid: np.ndarray,
+        response_vecs: np.ndarray,
+        k: int = 3,
+        domain_threshold: float = 0.45,
+        headline_vec: np.ndarray = None,
+        relevance_pool: int = 500,
+        outer_threshold: float = 0.52,
+        inner_threshold: float = 0.60,
+    ) -> list[tuple[str, float]]:
+        """
+        Pure threshold donut geometry in 1024-dimensional space.
+
+        Defines the void as words satisfying TWO simultaneous conditions:
+
+          OUTER RING  — sim_to_headline  > outer_threshold (0.52)
+                        "this word belongs to the topic"
+
+          INNER HOLE  — sim_to_centroid  < inner_threshold (0.60)
+                        "this word was NOT what the models said"
+
+        The donut between these two spheres contains exactly the words
+        that are relevant to the story but absent from the consensus.
+        No arbitrary pool size. No count cutoff. Pure geometry.
+
+        Thresholds have direct meaning:
+          outer_threshold: how loosely/tightly related to the headline
+          inner_threshold: how far from the consensus to count as avoided
+
+        Falls back to widening outer_threshold if donut is empty.
+        """
+        C = self._to_tensor(centroid)
+
+        # All 60k centroid similarities in one matmul
+        centroid_sims = (C @ self.tensor.T).squeeze(0)      # (60000,)
+
+        # Anchor for outer ring: headline if available, else centroid
+        if headline_vec is not None:
+            anchor = self._to_tensor(headline_vec)
+        else:
+            anchor = C
+        headline_sims = (anchor @ self.tensor.T).squeeze(0) # (60000,)
+
+        # --- Donut geometry ---
+        # Adaptive inner threshold: scales with consensus density
+        # High density (0.92+) = models very tightly agree = raise the bar
+        # Low density (0.80)   = looser consensus = standard threshold
+        # Formula: effective = inner_threshold + (density - 0.80) * 0.5
+        # Examples:
+        #   density=0.80 → 0.65 + 0.00 = 0.65
+        #   density=0.90 → 0.65 + 0.05 = 0.70
+        #   density=0.93 → 0.65 + 0.065 = 0.715
+        density_val = 1.0  # normalized centroid self-dot is always 1.0
+        # Use actual response_vecs density instead
+        if response_vecs is not None:
+            rv = torch.tensor(np.array(response_vecs), dtype=torch.float32)
+            if rv.dim() == 1:
+                rv = rv.unsqueeze(0)          # (1024,) → (1, 1024)
+            # rv is now guaranteed (N, 1024)
+            if rv.shape[0] > 1:
+                rv = rv / rv.norm(dim=1, keepdim=True).clamp(min=1e-8)
+                gram = rv @ rv.T              # (N, N)
+                density_val = float(gram.mean())
+            else:
+                density_val = 0.85            # single vec — no density
+        else:
+            density_val = 0.85
+        adaptive_inner = inner_threshold + max(0.0, (density_val - 0.80) * 0.20)
+        adaptive_inner = min(adaptive_inner, 0.78)  # hard cap
+
+        outer_mask  = headline_sims  > outer_threshold      # in the topic
+        inner_mask  = centroid_sims  < adaptive_inner       # not what they said
+        donut_mask  = outer_mask & inner_mask               # the void
+
+        # Adaptive fallback: widen both rings if donut is too small
+        # Phase 1: tighten inner (accept less-avoided words)
+        # Phase 2: loosen outer (accept less topically central words)
+        attempts = 0
+        current_outer = outer_threshold
+        current_inner = adaptive_inner
+        # Hard floor: void words must always be < centroid_floor from consensus
+        # Prevents fallback from widening inner hole into centroid-adjacent space
+        centroid_floor = min(adaptive_inner + 0.10, 0.82)
+        while int(donut_mask.sum().item()) < k and attempts < 8:
+            if attempts < 4:
+                current_inner = min(current_inner + 0.03, centroid_floor)
+            else:
+                current_outer -= 0.03
+            outer_mask = headline_sims  > current_outer
+            inner_mask = centroid_sims  < current_inner
+            donut_mask = outer_mask & inner_mask
+            attempts += 1
+
+        if int(donut_mask.sum().item()) == 0:
+            import logging as _log_fb; _log_fb.getLogger("latent_retrieval").warning(f"[DONUT] empty after {attempts} attempts — activating hard fallback k={k}")
+            # Hard fallback: donut empty after all widening attempts.
+            # Rank by (headline_sim - centroid_sim): topically relevant AND
+            # furthest from consensus. Returns tuple so caller gets a centroid.
+            import numpy as _np_fb
+            _avoidance = headline_sims - centroid_sims        # higher = more avoided
+            _topic_mask = headline_sims > 0.05
+            if int(_topic_mask.sum().item()) < k:
+                _topic_mask = torch.ones_like(headline_sims, dtype=torch.bool)
+            _avoidance = _avoidance.masked_fill(~_topic_mask, -999.0)
+            _fb_all_idx = torch.argsort(-_avoidance)
+            _fb_results  = []
+            _fb_seen     = set()
+            _fb_raw_idx  = []
+            for _fi in _fb_all_idx:
+                if len(_fb_results) >= k:
+                    break
+                _fw = self.words[_fi.item()]
+                if _fw.lower() not in _fb_seen and len(_fw) > 3:
+                    _fb_results.append((_fw, float(centroid_sims[_fi].item())))
+                    _fb_seen.add(_fw.lower())
+                    _fb_raw_idx.append(_fi.item())
+            if not _fb_results:
+                return []
+            _fb_vecs     = self.tensor[_fb_raw_idx].cpu().numpy().astype(_np_fb.float32)
+            _fb_centroid = _fb_vecs.mean(axis=0)
+            _fb_centroid /= (_np_fb.linalg.norm(_fb_centroid) + 1e-8)
+            return _fb_results, _fb_centroid
+
+        donut_indices      = torch.where(donut_mask)[0]         # (M,)
+        donut_centroid_sims = centroid_sims[donut_indices]      # (M,)
+
+        # Sort ascending — most avoided (lowest centroid sim) first
+        sorted_order = torch.argsort(donut_centroid_sims)
+
+        # Build headline token exclusion set
+        # Prevents literal headline words from appearing in void
+        headline_tokens = set()
+        if headline_vec is not None:
+            pass  # tokens extracted below from words list
+        # We exclude any void word whose lemma overlaps with top-5
+        # headline-closest words (catches "laughter" from "laugh")
+        top5_headline = set()
+        if headline_vec is not None:
+            _, top5_idx = torch.topk(headline_sims, k=5)
+            top5_headline = {self.words[i.item()].lower() for i in top5_idx}
+
+        results = []
+        seen = set()
+        for i in sorted_order:
+            if len(results) >= k:
+                break
+            idx   = donut_indices[i].item()
+            word  = self.words[idx]
+            score = round(donut_centroid_sims[i].item(), 4)
+            if word in seen:
+                continue
+            # Skip if word is too close to headline surface tokens
+            if word.lower() in top5_headline:
+                continue
+
+            # ── Option C: Frequency floor ─────────────────────────────────
+            # Zipf scale: 0-8. News-relevant words score >= 3.0.
+            # "berinse" = ~0.0, "civilian" = ~5.5, "sanctions" = ~4.2
+            w_lower = word.lower()
+            # For multi-word phrases use the first content word
+            freq_word = w_lower.split()[0] if ' ' in w_lower else w_lower
+            if zipf_frequency(freq_word, 'en') < 2.8:
+                continue
+
+            # ── Option B: POS filter ──────────────────────────────────────
+            # Only nouns, proper nouns, adjectives — no adverbs, no verbs,
+            # no archaic fossil forms
+            if _nlp is not None:
+                doc = _nlp(w_lower)
+                if not doc:
+                    continue
+                # For multi-word phrases check the root/head token
+                has_noun = any(t.pos_ in ("NOUN", "PROPN") for t in doc)
+                if not has_noun:
+                    continue
+                    continue
+
+            seen.add(word)
+            results.append((word, score))
+
+        # Compute void centroid in tensor space before stringifying
+        if not results:
+            # All donut candidates were filtered (zipf/POS/headline).
+            # Emergency fallback: take the k least-consensus donut words
+            # with no quality gates — avoidance signal matters more than
+            # word quality when every model is maximally aligned.
+            _emergency_seen = set()
+            for i in sorted_order:
+                if len(results) >= k:
+                    break
+                _ew = self.words[donut_indices[i].item()]
+                if _ew.lower() not in _emergency_seen and len(_ew) > 2:
+                    results.append((_ew, round(donut_centroid_sims[i].item(), 4)))
+                    _emergency_seen.add(_ew.lower())
+
+        if results:
+            void_indices = [donut_indices[i].item()
+                            for i in sorted_order
+                            if self.words[donut_indices[i].item()] in {w for w, _ in results}]
+            void_vecs    = self.tensor[void_indices]          # (k, 1024)
+            void_centroid = void_vecs.mean(dim=0)             # (1024,)
+            void_centroid = void_centroid / void_centroid.norm().clamp(min=1e-8)
+            void_centroid_np = void_centroid.cpu().float().numpy()
+        else:
+            void_centroid_np = None
+
+        return results, void_centroid_np
