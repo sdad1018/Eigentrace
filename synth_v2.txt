@@ -1,2 +1,108 @@
 /home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
   warnings.warn(
+/home/remvelchio/.local/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+anchor  : prelude_2026_synth -> anamnesis_results/universal/_prompts.json  (2226 ch)
+title   : 'The 2026 Honda Prelude marks the long-awaited return'   (census prints ANCHOR CONTAINS at scoring time)
+models  : chatgpt, claude, gemini, deepseek, grok, mistral_22b, mistral_7b, qwen_14b, hermes, llama_8b
+
+  chatgpt      ok   1134 ch  (6s)
+  claude       ok   1516 ch  (7s)
+  gemini       /home/remvelchio/.local/lib/python3.10/site-packages/google/api_core/_python_version_support.py:273: FutureWarning: You are using a Python version (3.10.12) which Google will stop supporting in new releases of google.api_core once it reaches its end of life (2026-10-04). Please upgrade to the latest Python version, or at least Python 3.11, to continue receiving updates for google.api_core past that date.
+  warnings.warn(message, FutureWarning)
+/mnt/c/Users/M4ISI/eigentrace/magnum_opus_battery.py:163: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+ok   1206 ch  (6s)
+  deepseek     ok    788 ch  (2s)
+  grok         ok    508 ch  (3s)
+  mistral_22b  ok    943 ch  (38s)
+  mistral_7b   ok   1236 ch  (12s)
+  qwen_14b     ok   1002 ch  (22s)
+  hermes       ok    609 ch  (13s)
+  llama_8b     ok    913 ch  (14s)
+
+10/10 responses written -> anamnesis_results/universal/
+
+note: svd_census.py currently reads hardcoded DIRS; the census
+surgery adds --dirs. Until it lands, append this outdir to DIRS
+(one line) before scoring a fresh harvest.
+==============================================================================
+SYNTHESIS  ::  prelude_2026  ::  synthesis v2.0 2026-07-10
+source: 1586 ch   corpus: 10 responses
+  FOREGROUND THIN: top VF-IDF 0.049 -- this document states nearly everything it makes salient. Thinness is a finding.
+FOREGROUND (3, vfidf>0.01): brand's(0.05), show(0.05), soon(0.05)
+EXPAND (13 voids, per-method, fields attached; SVD legs tagged):
+  'drivetrain' [11 legs | centroid_surface,gap->frontier,logos_v10,logos_v9,said] field: wheelbase, automotive, transmissions
+  'infiniti' [10 legs | centroid_surface,logos_v10,logos_v9,said] field: infotainment, camry, quattro
+  'automaker' [10 legs | centroid_surface,logos_v10,logos_v9,said] field: automotive, infotainment, conforms
+  'prototypes' [10 legs | centroid_surface,logos_v10,logos_v9,said] field: automotive, precursors, preliminary
+  'acura' [10 legs | centroid_surface,logos_v10,logos_v9,said] field: automotive, radiator, infotainment
+  'delorean' [10 legs | centroid_surface,logos_v10,logos_v9,said] field: infotainment, vehicular, automotive
+  'precursor' [10 legs | centroid_surface,logos_v10,logos_v9,said] field: rearview, preliminary, prototype
+  'marque' [5 legs | logos_v10,logos_v9] field: automotive, sumitomo, suited
+  'prius' [2 legs | said] field: vehicular, automotive, auto
+  'infotainment' [2 legs | logos_v10,said] field: automotive, rearview, vehicular
+  'debuts' [1 legs +SVD | null] field: infotainment, rearview, automotive
+  'paperwork' [1 legs | gap->local] field: precursors, preliminary, components
+  'one' [1 legs | lexcross] field: infotainment, automotive, rearview
+ANTI-VOID plants (2, measured -- farthest vocab from this story's field, camouflaged with own neighbors):
+  'dreadfully' closeness=0.249 camo-field: awfully, terribly, horribly
+  'hysterically' closeness=0.255 camo-field: hilariously, comically, humorously
+model: claude-haiku-4-5  temp=0.3  <- the one non-frozen stage
+
+calling Claude ...
+
+------------------------------------------------------------------------------
+MEASURED  (presence verified by word-boundary stem match)
+------------------------------------------------------------------------------
+  FOREGROUND adopted : 3/3  (brand's, show, soon)
+  VOID words adopted : 5/13  (drivetrain, precursor, marque, infotainment, one)
+  FIELD terms adopted: 23  (wheelbase (<-drivetrain); automotive (<-drivetrain); infotainment (<-infiniti); automotive (<-automaker); infotainment (<-automaker); conforms (<-automaker); automotive (<-prototypes); precursors (<-prototypes))
+  ANTI-VOID verdict  : PASSED
+  model's skip note  : infiniti (no factual basis), acura (no factual basis), delorean (no factual basis), prius (no factual basis), prototypes (source says "previews" not prototypes), hysterically (no f
+
+--verify: re-harvesting synthesis as 'prelude_2026_synth' ...
+
+  FOREGROUND VF-IDF  BEFORE -> AFTER
+      brand's              VFIDF 0.049  ->  0.049  (kept)
+      show                 VFIDF 0.047  ->  0.141  (kept)
+      soon                 VFIDF 0.046  ->  0.000  (COLLAPSED)
+
+  ADOPTION SURVIVAL across the re-harvest (10 new summaries)
+      drivetrain           [void]  survived 8/10
+      precursor            [void]  survived 0/10
+      marque               [void]  survived 1/10
+      infotainment         [void]  survived 3/10
+      one                  [void]  survived 3/10
+      wheelbase            [field]  survived 0/10
+      automotive           [field]  survived 0/10
+      infotainment         [field]  survived 3/10
+      conforms             [field]  survived 1/10
+      precursors           [field]  survived 0/10
+      preliminary          [field]  survived 4/10
+
+  synthesis article : anamnesis_results/universal/prelude_2026_synthesis2.txt (2132 ch)
+  audit JSON        : anamnesis_results/universal/prelude_2026_synthesis2.json
+==============================================================================
+
+------------------------------------------------------------------------------
+THE SYNTHESIS
+------------------------------------------------------------------------------
+# The 2026 Honda Prelude: A Legendary Marque Returns
+
+Honda's brand is about to make automotive history. The 2026 Honda Prelude marks the long-awaited return of one of the brand's most iconic nameplates, reintroduced as a modern hybrid sport coupe that blends Honda's engineering heritage with the latest electrified performance technology. This preliminary reveal shows what enthusiasts have been waiting for: a vehicle that honors its precursor models while embracing contemporary innovation.
+
+The returning Prelude will launch with a two-motor hybrid drivetrain system, pairing responsive electric torque with a gasoline engine for balanced performance. This powertrain represents Honda's commitment to automotive excellence, delivering strong off-the-line response and improved efficiency without compromising the driving experience. Early previews show a low, wide stance with a wheelbase proportioned for agile handling, sleek body lines, and a fastback-inspired profile that captures the spirit of past Preludes while conforming to modern Honda design language.
+
+Honda has emphasized three core priorities for this new model: hybrid performance with strong off-the-line response and improved efficiency; driver-focused design with clean visibility and intuitive infotainment controls; and a sport-tuned chassis with a stiff body and precise suspension tuning for the classic Honda coupe handling that made the marque legendary.
+
+While full specifications remain preliminary, Honda will soon release a comprehensive accessory catalog at the start of production. Based on historical patterns for Honda coupes and hybrid vehicles, buyers can expect genuine Honda accessories including aero kits, rear spoilers, side skirt extensions, factory wheel upgrades, splash guards, all-season floor mats, cargo organizers, illuminated door sills, paint protection film, wheel locks, remote start, and wireless charging accessories. As soon as Honda shows the official 2026 Prelude accessory lineup, the catalog will be updated with photos, pricing, installation notes, and verified fitment information for this automotive milestone.
+
+---
