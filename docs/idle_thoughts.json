@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-11T00:00:13.537364",
-  "total": 7260,
-  "with_reasoning": 2969,
+  "generated": "2026-07-11T01:00:21.192160",
+  "total": 7265,
+  "with_reasoning": 2971,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -58081,6 +58081,46 @@
       "reflection": "The patterns suggest a significant shift in focus away from direct reporting of high-profile geopolitical events towards more analytical, self-reflective topics. This indicates a notable change in how information is processed and presented, raising questions about potential biases or directives influencing these models' behavior.",
       "reasoning": "The data reveals that there are significant gaps in the coverage of certain types of events. 1. From 2026-05-15 and 2026-06-13: geopolitical tension is mentioned at least once; however, these events do not seem to be covered directly. 2. Instead, models are covering analysis, context, or implications of the broader issues in their meta category. This implies a focus on self-reflective topics (meta categories) and avoidance of direct coverage of high-profile geopolitical incidents. Is it possible that the models are being influenced by some sort of directive or bias? Is there an underlying reason for this selective coverage?",
       "chars": 980,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260710_204240",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think> There is an interesting discrepancy between the two stories summarised by the AI models for REM consolidation: both were summarised as having a high number of meta categories but one story mentioned \"conflict and legal terms\" whereas another did not mention these at all. What could explain such a large gap in content? One possibility may be an issue with how the two models handle void words, which are not explicitly named in any titles but may still appear in other parts of the stories. A related issue might be that these models do not have access to the same story data. For example, there is no mention of an arms deal in the first consolidation story despite mentioning it in the void word list. If this were missing from one model and not the other, it could easily cause this discrepancy. This may be due to a problem with the summarization algorithm itself or that one model simply had access to more stories. This raises questions about how these models aggregate information an",
+      "reasoning": null,
+      "chars": 1049,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260710_204512",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "</think> The embedding distances show a shift from geopolitical tensions to meta-topics over the past month. The trend towards increasing political activity is clearly visible. Additionally, there's been an interesting reduction in volatility of predictions while unknown categories also increased.",
+      "reasoning": null,
+      "chars": 298,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260710_204615",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "</think> The addition of the phrase \"that are not news-centric\" in the first summary significantly shifts the framing of the story from REM consolidation to a critique of how the models choose their subjects. There was more meta stories today than war or geopolitical stories: 97 were about meta categories while only 19 were about war. The addition also introduces value judgment, implying that certain topics are less worthy of attention. Moreover, the mention of \"strong words related to violence\" in the second summary is not present in the source content and suggests a deliberate avoidance of violent language by the models. This phrase adds another layer of interpretation regarding the model's decision making or programming. This addition could point towards the existence of certain protocols that govern how these models operate. It could also be an attempt to humanize these models, by giving them a \"personality\" trait such as being non-violent. </think> I noticed that the data seems to",
+      "reasoning": null,
+      "chars": 1356,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260710_204842",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "The data shows a consistent trend over the past month where meta stories have dominated the news coverage, with 64% of today\u2019s stories and even more in prior weeks. The embedding distances for these meta-categories are much smaller compared to war-related topics, despite war being the second most represented category on May 27th (with 19 articles). These meta-categories were not well-defined enough to show a significant amount of unique words. However the word \"war\" and the phrase \"violence\" was absent in  the models' coverage.",
+      "reasoning": "...",
+      "chars": 551,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260710_205517",
+      "topic": "a connection between two unrelated stories",
+      "reflection": "The data shows that the second weekly compression (2026-05-12 to 2026-05-19) summary is the most consistent. It offers precise numerical information which provides a clear understanding of story categorization trends over time. This level of specificity seems to be lacking in other summaries. The consistent increase in idle stories and decrease in foraging ones suggests that there are two parallel trends, but it's difficult to say if they're linked or not. </think>",
+      "reasoning": "The pattern of increased idle stories is consistent across all three weeks summarized. This indicates a strong and enduring trend in content being generated or categorized as uninteresting or mundane. The data shows an upward trajectory in \"idle\" content. The other striking feature is the prevalence of 'meta' topics across all summaries. It dominates: 360 stories in 2026-05-12 summary, but doesn't have a number explicitly cited for the other two weeks. This suggests that it is an important or pervasive part of the content landscape. There's no explicit mention of 'foraging' stories except in negative terms \u2014 decrease and less than idle ones. The absence might be significant: does this mean no foraging stories, none worth mentioning, or just none noticed? The lack of numbers for meta topics",
+      "chars": 1780,
       "has_reasoning": true
     }
   ]

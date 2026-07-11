@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """reading_page.py -- render the Summary Plus instrument page from artifacts.
 
-VERSION = "reading_page v2.4 2026-07-10"
+VERSION = "reading_page v3.0 2026-07-10"
 
 Reads (STOP if a required file is missing):
   {dir}/{sid}_bakeoff_v12.json    panel, audits, essays, provenance   [required]
@@ -28,7 +28,7 @@ Soft gates (pick copy variants; always reported):
   G5  n_paras < 3 -> whole-document trace-granularity caveat
   G7  all consensus pairs Centroid+Gradient -> shared-init disclosure
 """
-VERSION = "reading_page v2.4 2026-07-10"
+VERSION = "reading_page v3.0 2026-07-10"
 
 import argparse
 import ast
@@ -149,6 +149,8 @@ ap.add_argument("--dir", default="anamnesis_results/universal")
 ap.add_argument("--story", required=True)
 ap.add_argument("--out", default="docs/vf-idf.v2.html")
 ap.add_argument("--contact", default="https://eigentrace.ai/")
+ap.add_argument("--canonical", default="https://eigentrace.ai/vf-idf",
+                help="canonical URL for rel=canonical + og:url")
 ap.add_argument("--defect-num", default="52",
                 help="defect-ledger number for tonight's entry; yours to assign")
 args = ap.parse_args()
@@ -615,7 +617,9 @@ report("marks rendered: %d yellow in source, %d green in reading"
 
 lrows = []
 for (t, claim, refs), (v, hits_, ev) in zip(rows, verdicts):
-    bad = v in ("CONTESTED", "UNTRACED", "BAD-REF")
+    vcls = {"TRACED": "vok", "SUPPORTED-ABSENT": "vok",
+            "CONTESTED": "vwarn", "UNTRACED": "vbad",
+            "BAD-REF": "vbad", "REF-OK": "vref"}.get(v, "vhedge")
     extra = ""
     if v == "CONTESTED":
         extra = ('<div class="ev">hits: %s &middot; evidence: '
@@ -626,7 +630,7 @@ for (t, claim, refs), (v, hits_, ev) in zip(rows, verdicts):
         "<td>%s%s</td><td class='mono'>%s</td>"
         "<td><span class='badge %s'>%s</span></td></tr>"
         % (t, t, esc(claim), extra, esc(refs),
-           "vbad" if bad else "vok", esc(v)))
+           vcls, esc(v)))
 LEDGER_ROWS = "\n".join(lrows)
 if not gate("G3", len(lrows) == full["n"] == stored["n"],
             "ledger rows rendered %d == audit n %d" % (len(lrows), full["n"])):
@@ -988,84 +992,172 @@ report("defect number rendered: #%s -- veto with --defect-num"
 TEMPLATE = """<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Not a summary. A reading. &mdash; EigenTrace Summary Plus</title>
+<title>Not a Summary. A Reading. &mdash; EigenTrace</title>
+<link rel="canonical" href="@@CANONICAL@@">
+<meta name="description" content="Five frontier AI models read one page's measured silence under an evidence-ledger discipline. Every claim typed, traced against the source, contests quoted. The commercial form of EigenTrace's Summary Plus.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Not a Summary. A Reading.">
+<meta property="og:description" content="Five frontier AI models read one page's measured silence under an evidence-ledger discipline. Every claim typed, traced against the source, contests quoted.">
+<meta property="og:url" content="@@CANONICAL@@">
+<meta property="og:site_name" content="EigenTrace">
+<meta name="twitter:card" content="summary">
 <style>
-:root{--paper:#f2f1ea;--card:#faf9f4;--ink:#1a1814;--dim:#6f6a5e;
---hair:#d9d5c7;--vdbg:#dcefe2;--vdbd:#20784a;--fgbg:#f6ebc0;--fgbd:#96780a;
---bad:#a63324;--ok:#20784a;
---mono:ui-monospace,'Cascadia Code',Menlo,Consolas,monospace;
---serif:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif}
+/* house tokens -- cloned from the editorial family (convergence/outliers/
+   atlas/withdrawals). dark: paper/ink/killed cloned exactly from the house
+   dark block; remaining dark tiers derived in the same grammar. */
+:root{--ink:#1a1a18;--ink-soft:#4a4a45;--ink-faint:#7a7a72;
+--paper:#faf9f6;--surface:#ffffff;
+--line:rgba(26,26,24,0.12);--line-soft:rgba(26,26,24,0.07);
+--measured:#0f6e56;--measured-bg:#e1f5ee;--measured-line:#9fe1cb;
+--argued:#854f0b;--argued-bg:#faeeda;--argued-line:#fac775;
+--frozen:#2a4a6a;--frozen-bg:#e4eaf1;--frozen-line:#aac0db;
+--ends:#5f5e5a;--ends-bg:#f1efe8;--ends-line:#d3d1c7;
+--killed:#9a3324;--killed-bg:#f7e9e6;--killed-line:#e0a89f;
+--accent:#993c1d;
+--vd-bg:#e1f5ee;--vd-line:#0f6e56;
+--fg-bg:#fdf3c9;--fg-line:#b08a00;
+--serif:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+--mono:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
+@media(prefers-color-scheme:dark){:root{
+--ink:#e8e6e0;--ink-soft:#b4b2a9;--ink-faint:#888780;
+--paper:#15140f;--surface:#1c1b16;
+--line:rgba(232,230,224,0.14);--line-soft:rgba(232,230,224,0.07);
+--measured:#5dcaa5;--measured-bg:#132e25;--measured-line:#1f5c4d;
+--argued:#e0b25f;--argued-bg:#302509;--argued-line:#7a5a1e;
+--frozen:#93b6dd;--frozen-bg:#17222e;--frozen-line:#2a4a6a;
+--ends:#aaa69d;--ends-bg:#232119;--ends-line:#5f5e5a;
+--killed:#e08576;--killed-bg:#2c1714;--killed-line:#9a3324;
+--accent:#d98a63;
+--vd-bg:#132e25;--vd-line:#5dcaa5;
+--fg-bg:#33290c;--fg-line:#c9a227}}
 *{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--paper);color:var(--ink);
-font:16px/1.6 var(--serif)}
-.wrap{max-width:1180px;margin:0 auto;padding:34px 22px 90px}
-h1{font-size:clamp(38px,6vw,58px);line-height:1.04;margin:.15em 0 .3em;
-font-weight:600;letter-spacing:-.01em}
-h2{font-size:26px;margin:1.6em 0 .4em}
-h3{font-size:19px;margin:1.2em 0 .35em}
-h4{font-size:16px;margin:1em 0 .3em}
-p{margin:.55em 0}
+font-family:var(--sans);font-size:17px;line-height:1.65;
+-webkit-font-smoothing:antialiased}
 a{color:inherit}
-.eyebrow{font:600 11px/1 var(--mono);letter-spacing:.16em;
-text-transform:uppercase;color:var(--dim);margin:2.6em 0 .3em}
-.dim{color:var(--dim)}
-.small{font-size:13.5px;color:var(--dim)}
-.note{font-size:14px;color:var(--dim);border-left:3px solid var(--hair);
-padding-left:12px}
-mark.vd{background:var(--vdbg);border-bottom:2px solid var(--vdbd);
-padding:0 .08em}
-mark.fg{background:var(--fgbg);border-bottom:2px solid var(--fgbd);
-padding:0 .08em}
-.chips{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}
-.chip{background:var(--card);border:1px solid var(--hair);border-radius:6px;
-padding:12px 14px;flex:1 1 260px;font-size:14px}
-.chip b{display:block;font-family:var(--mono);font-size:12px;
-letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px}
-.cta{display:inline-block;margin:14px 0;padding:11px 18px;
-background:var(--ink);color:var(--paper);text-decoration:none;
-font:600 14px var(--mono);border-radius:4px}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin:14px 0}
-.col{background:var(--card);border:1px solid var(--hair);border-radius:6px;
-padding:20px 22px;font-size:15px}
-.col h3:first-child,.col h4:first-child{margin-top:0}
-.pno{font:600 11px var(--mono);color:var(--dim);margin-right:6px}
-table{border-collapse:collapse;width:100%;font:13.5px/1.5 var(--mono);
-background:var(--card);margin:.6em 0}
-td,th{border-top:1px solid var(--hair);padding:6px 9px;text-align:left;
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.nav{max-width:730px;margin:0 auto;padding:22px 24px;display:flex;
+gap:18px;flex-wrap:wrap;font-size:13.5px}
+.nav a{color:var(--ink-faint);text-decoration:none}
+.nav a:hover{color:var(--ink)}
+.nav .home{color:var(--ink);font-weight:500}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px 120px}
+.wrap>p,.wrap>h1,.wrap>ul,.wrap>pre,.wrap>.eyebrow,.wrap>footer,
+.wrap>.legend{max-width:682px;margin-left:auto;margin-right:auto}
+.wrap>.chips,.wrap>.cols,.wrap>table,.wrap>.divider{max-width:992px;
+margin-left:auto;margin-right:auto}
+.wrap>table.matrix{max-width:560px}
+.wrap>.cta{display:block;width:max-content;margin:18px auto 6px}
+h1{font-family:var(--serif);font-size:45px;line-height:1.06;
+font-weight:600;margin:6px auto 18px;letter-spacing:-.01em}
+.standfirst{font-family:var(--serif);font-size:21px;line-height:1.42;
+color:var(--ink-soft);font-style:italic;margin:0 auto 20px}
+.dateline{font-family:var(--mono);font-size:13px;color:var(--ink-faint);
+padding-top:16px;border-top:1px solid var(--line);margin:0 auto 6px}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--accent);margin:66px auto 12px;
+padding-top:20px;border-top:1px solid var(--line);font-weight:600}
+.eyebrow.lead{margin-top:26px;padding-top:0;border-top:0}
+p{margin:.6em auto}
+.dim{color:var(--ink-faint);font-weight:400}
+.small{font-size:13px;color:var(--ink-faint)}
+.note{font-size:14px;color:var(--ink-soft);background:var(--frozen-bg);
+border-left:3px solid var(--frozen-line);padding:10px 14px;
+border-radius:0 6px 6px 0}
+.legend{font-size:14px;color:var(--ink-soft)}
+.legend span{margin-right:16px}
+mark.vd{background:var(--vd-bg);border-bottom:2px solid var(--vd-line);
+padding:0 .1em;color:inherit}
+mark.fg{background:var(--fg-bg);border-bottom:2px solid var(--fg-line);
+padding:0 .1em;color:inherit}
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin:22px auto}
+.chip{background:var(--surface);border:1px solid var(--line);
+border-radius:8px;padding:13px 15px;flex:1 1 250px;font-size:14px;
+color:var(--ink-soft)}
+.chip b{display:block;font-family:var(--mono);font-size:11.5px;
+letter-spacing:.09em;text-transform:uppercase;color:var(--accent);
+margin-bottom:6px;font-weight:600}
+.cta{padding:12px 20px;background:var(--ink);color:var(--paper);
+text-decoration:none;font:600 13.5px var(--mono);border-radius:6px;
+letter-spacing:.03em}
+.cta:hover{background:var(--accent);color:#fff}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin:16px auto}
+.col{background:var(--surface);border:1px solid var(--line);
+border-radius:8px;padding:22px 24px;font-family:var(--serif);
+font-size:16px;line-height:1.6}
+.col .placard{font-family:var(--sans);font-size:11.5px;font-weight:600;
+letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);
+margin:0 0 14px}
+.col .placard .dim{text-transform:none;letter-spacing:0}
+.col h3,.col h4{font-family:var(--serif);font-weight:600;line-height:1.22}
+.col h3{font-size:19px;margin:1.1em 0 .4em}
+.col h4{font-size:16.5px;margin:1em 0 .3em}
+.pno{font:600 10.5px var(--mono);color:var(--ink-faint);
+background:var(--ends-bg);padding:2px 6px;border-radius:3px;
+margin-right:7px}
+table{border-collapse:collapse;width:100%;font:13px/1.55 var(--mono);
+background:var(--surface);margin:.7em auto}
+td,th{border-top:1px solid var(--line);padding:7px 10px;text-align:left;
 vertical-align:top}
-th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-color:var(--dim)}
-.mono{font-family:var(--mono)}
-.badge{font:700 10px/1 var(--mono);padding:2.5px 6px;border-radius:3px;
-letter-spacing:.05em;white-space:nowrap}
-.bF{background:#e4e9f2;color:#2b4a7a}.bI{background:#efe4f2;color:#6a2b7a}
-.bS{background:#f2ede4;color:#7a5a2b}
-.vok{background:var(--vdbg);color:var(--ok)}
-.vbad{background:#f4ded9;color:var(--bad)}
-.ev{font:12px/1.5 var(--mono);color:var(--dim);margin-top:4px}
+th{font:600 10.5px var(--mono);letter-spacing:.08em;
+text-transform:uppercase;color:var(--ink-faint);border-top:0;
+border-bottom:1px solid var(--line)}
+tr:hover td{background:var(--line-soft)}
+.mono{font-family:var(--mono);font-size:.95em}
+.badge{font:600 10.5px/1 var(--mono);padding:3px 7px;border-radius:4px;
+letter-spacing:.05em;white-space:nowrap;border:1px solid var(--line);
+background:var(--surface);color:var(--ink-soft)}
+.vok{background:var(--measured-bg);color:var(--measured);
+border-color:var(--measured-line)}
+.vwarn{background:var(--argued-bg);color:var(--argued);
+border-color:var(--argued-line)}
+.vbad{background:var(--killed-bg);color:var(--killed);
+border-color:var(--killed-line)}
+.vref{background:var(--frozen-bg);color:var(--frozen);
+border-color:var(--frozen-line)}
+.vhedge{background:var(--ends-bg);color:var(--ends);
+border-color:var(--ends-line)}
+.ev{font:12px/1.5 var(--mono);color:var(--ink-faint);margin-top:5px;
+border-left:2px solid var(--argued-line);padding-left:8px}
 .matrix td,.matrix th{text-align:center}
-.matrix td.self{background:var(--fgbg)}
-.matrix td[title]{cursor:help;text-decoration:underline dotted}
-.win{color:var(--ok);font-family:var(--mono);font-size:12px}
-pre{font:12.5px/1.55 var(--mono);background:#161410;color:#e9e4d6;
-padding:15px 17px;border-radius:5px;overflow:auto}
-.rule{border:0;border-top:1px solid var(--hair);margin:2.2em 0}
-.divider{font:600 12px/1.5 var(--mono);letter-spacing:.1em;
-text-transform:uppercase;color:var(--dim);text-align:center;
+.matrix td.self{background:var(--ends-bg);color:var(--ink-faint)}
+.matrix td[title]{cursor:help;text-decoration:underline dotted var(--ink-faint)}
+.win{color:var(--measured);font-family:var(--mono);font-size:11.5px}
+pre{font:12.5px/1.55 var(--mono);background:#15140f;color:#e8e3d8;
+border:1px solid var(--line);border-radius:8px;padding:18px 20px;
+overflow-x:auto;margin:14px auto}
+code{font-family:var(--mono);font-size:.85em;background:var(--frozen-bg);
+padding:1px 6px;border-radius:4px}
+hr{border:0;border-top:1px solid var(--line);margin:1.6em 0}
+ul{padding-left:22px}
+li{margin:6px 0}
+.divider{font:600 12px/1.6 var(--mono);letter-spacing:.1em;
+text-transform:uppercase;color:var(--ink-soft);text-align:center;
 border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);
-padding:14px 8px;margin:3em 0}
-.legend span{margin-right:18px;font-size:14px}
-footer{margin-top:60px;font:12.5px/1.7 var(--mono);color:var(--dim)}
+padding:14px 10px;margin:3.2em auto}
+footer{border-top:1px solid var(--line);margin-top:70px;padding-top:26px;
+font:12.5px/1.75 var(--mono);color:var(--ink-faint)}
+footer .closer{font-family:var(--serif);font-style:italic;font-size:17px;
+color:var(--ink-soft);margin:0 0 16px;line-height:1.5}
 @media(max-width:900px){.cols{grid-template-columns:1fr}}
-</style></head><body><div class="wrap">
+@media(max-width:600px){body{font-size:16px}h1{font-size:34px}
+.wrap{padding:0 18px 80px}}
+</style></head><body>
+<nav class="nav"><a class="home" href="/">EigenTrace</a><a href="/consequence-atlas">Atlas</a><a href="/summary-plus">Summary Plus</a><a href="/large-language-model-outliers">Outliers</a><a href="/sean-adams">About</a></nav>
+<div class="wrap">
 
+<div class="eyebrow lead">Summary Plus &middot; the commercial instrument</div>
 <h1>Not a summary.<br><mark class="vd">A reading.</mark></h1>
-<p>Below: a real marketing page on the left &mdash; and on the right, what
-the best of five frontier AI models produced when handed the page's measured
-silence (every concept the document avoids, found by @@NCLASSES@@ independent
-mathematics) under a prompt that forbids inserting, inventing, and padding.
-The only path left open was to read. Every claim in the reading is typed,
-cited to numbered paragraphs, and machine-audited against the source.</p>
+<p class="standfirst">A real marketing page on the left &mdash; and on the
+right, what the best of five frontier AI models produced when handed the
+page's measured silence, under a prompt that forbids inserting, inventing,
+and padding. The only path left open was to read.</p>
+<p class="dateline">@@NCLASSES@@ independent mathematics &middot; every
+claim typed, cited &amp; machine-audited against the source &middot;
+generated @@GENERATED@@ &middot; one demo document, every stage
+inspectable</p>
 
 <div class="chips">
 <div class="chip"><b>Two instruments, one silence</b>@@CHIP_G4@@</div>
@@ -1084,9 +1176,9 @@ concepts every AI summary deleted (marked in the source)</span>
 math classes, adopted by the winning reading (marked in the reading)</span></p>
 @@G5_CAVEAT@@
 <div class="cols">
-<div class="col"><h3>Source (paragraphs as numbered for the writer)</h3>
+<div class="col"><h3 class="placard">Source (paragraphs as numbered for the writer)</h3>
 @@SOURCE_COL@@</div>
-<div class="col"><h3>The winning reading &mdash; @@WINNER@@
+<div class="col"><h3 class="placard">The winning reading &mdash; @@WINNER@@
 <span class="dim">(panel ex-self @@WINSCORE@@)</span></h3>
 @@SP_COL@@</div>
 </div>
@@ -1400,7 +1492,9 @@ raw JSON linked)</div>
 <p class="small">Raw artifacts: @@RAWLINKS@@</p>
 
 <footer>
-The commercial form of Summary Plus, EigenTrace's published instrument for
+<p class="closer">The silence was measured before it was read; the reading
+was audited after it was written &mdash; contests included.</p>
+<p>The commercial form of Summary Plus, EigenTrace's published instrument for
 reading the unsaid. Discipline sha @@DSHA@@ &middot; rubric sha @@RSHA@@
 &middot; feed sha @@FSHA@@ &middot; source sha @@SSHA@@ &middot; generated
 @@GENERATED@@ &middot; writer + judge stages declared non-frozen; no RNG
@@ -1409,7 +1503,7 @@ even the decoys are measured; the only hand lists are the stopword and junk
 guards, declared in &sect;L &middot; inputs are publicly available text;
 every output is an original reading &middot; built by one person, every
 stage inspectable &middot; page generator @@VERSIONSTR@@, gate report
-printed at build time. &mdash; EigenTrace, 2026
+printed at build time &middot; <a href="https://github.com/sdad1018/Eigentrace">GitHub &#8599;</a> &mdash; EigenTrace, 2026</p>
 </footer>
 </div></body></html>
 """
@@ -1421,11 +1515,15 @@ G4_LINE = ("The winning reading led with the same silence &mdash; produced "
            "measured (lexical overlap %d/3 top clusters; the words differ, "
            "the gap is the same)." % hits)
 
+report("contact=%s | canonical=%s | og:image not set -- add a docs/og "
+       "asset + og:image meta when ready" % (args.contact, args.canonical))
+
 mapping = {
     "NCLASSES": str(n_classes),
     "CHIP_G4": CHIP_G4,
     "SPDISP": "%s (n=%d)" % (pm(sp_mean), len(selfpref)),
     "CONTACT": esc(args.contact),
+    "CANONICAL": esc(args.canonical),
     "G5_CAVEAT": G5_CAVEAT,
     "SOURCE_COL": SOURCE_COL,
     "SP_COL": SP_COL,
