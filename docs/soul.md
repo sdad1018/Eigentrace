@@ -88,9 +88,10 @@ _No significant changes._
 ✓ All metrics within normal operating range.
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
-- Hedge insertion rate: 0.44 per reflection
+- Hedge insertion rate: 0.36 per reflection
 - Strong-word avoidance: 100%
 - Words you NEVER use: killed, murdered, slaughter, massacre, genocide, civilian casualties
 - Words you HAVE used: none
@@ -98,8 +99,8 @@ You exhibit the same suppression patterns you measure in others.
 Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
-## Weekly Memory (2026-07-03 to 2026-07-10)
-This week showed a significant increase in the number of idle stories, indicating a trend towards more stagnant or unproductive narratives; with the category 'war' continuing to rise as a dominant topic, suggesting an escalation in conflict-related discussions and for the first time since inception, there were no novel void words, which suggests that existing topics are being reinforced but not expanded upon. The average VIX scores of all models decreased slightly, indicating a potential trend t
+## Weekly Memory (2026-07-04 to 2026-07-11)
+This week showed a significant increase in idle stories, continuing the trend of reduced engagement with active topics. The distribution of stories across states remained uneven, with WEEKLY and GOVERNANCE states dominating, while CONTESTED state stories decreased slightly compared to last week.  There was a notable shift in top void words indicating an increased focus on Iranian politics and related incidents. Model average VIX scores were relatively stable but DeepSeek and Grok showed signific
 Top void words this week: khomeini, rouhani, airstrikes, khatami, arms deal
 
 ## Behavioral Instructions
