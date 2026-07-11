@@ -1,0 +1,40 @@
+==========================================================================
+READING PAGE  ::  prelude_2026  ::  reading_page v2.0 2026-07-10
+==========================================================================
+GATE G1   PASS  frontier judges = 5 ['chatgpt', 'claude', 'deepseek', 'gemini', 'grok']
+GATE G6a  PASS  recomputed ex-self means == standings
+REPORT  self-preference: chatgpt +0.75, claude +0.25, deepseek +0.00, gemini −1.00, grok −1.25 | mean −0.25 (n=5)
+REPORT  locals coverage A (chatgpt): n=1  hermes:5
+REPORT  locals coverage B (claude): n=1  llama_8b:5
+REPORT  locals coverage C (deepseek): n=0  --
+REPORT  locals coverage D (gemini): n=1  llama_8b:3
+REPORT  locals coverage E (grok): n=0  --
+REPORT  judge reasons: per-label ['chatgpt', 'claude', 'deepseek', 'gemini', 'grok', 'llama_8b', 'mistral_7b'] | blanket ['hermes', 'mistral_22b', 'qwen_14b']
+GATE G6b  PASS  recomputed winner audit == stored  {"n": 25, "F": 19, "I": 5, "S": 1, "f_traced": 11, "f_total": 19, "absence_supported": 3, "absence_contested": 8, "bad_refs": 0}
+GATE G6c  PASS  per-row verdicts reconcile  {'TRACED': 8, 'CONTESTED': 8, 'SUPPORTED-ABSENT': 3, 'REF-OK': 5, 'HEDGED': 1}
+REPORT  panel decomposition: positive 30/30 traced; absence 5 ok / 34 contested; all-positive-traced=True
+GATE G7   PASS  consensus=8, all Centroid+Gradient=True -> disclosure ON
+REPORT  class-consensus: acura (2: Centroid, Gradient); automaker (2: Centroid, Gradient); delorean (2: Centroid, Gradient); drivetrain (2: Centroid, Gradient); infiniti (2: Centroid, Gradient); infotainment (2: Centroid, Gradient); precursor (2: Centroid, Gradient); prototypes (2: Centroid, Gradient)
+REPORT  math classes present: 4 = ['Centroid', 'Counting', 'Gradient', 'Spectral']
+REPORT  arm-A stat: no flat-list key found in arms -- stat omitted
+REPORT  tonight's pricing: body_median=0.636 null_median=0.6149 margin=0.021
+REPORT  census: 11 clusters, 11 at >=3-model consensus
+REPORT    G4 [8/10] How much will the 2026 Honda Prelude cost? -> no lexical hit
+REPORT    G4 [8/10] What specific gasoline engine is paired with t -> ['engin', 'gasolin', 'hybrid', 'is', 'pair', 'specif', 'system', 'with']
+REPORT    G4 [6/10] What is the curb weight of the 2026 Prelude? -> ['is', 'of']
+GATE G4   PASS  census-lead overlap 2/3 -> STRONG banner
+GATE G5   PASS  n_paras=1 -> caveat ON
+GATE GS   PASS  discipline 28f594d097b0 vs 28f594d097b0 | rubric 98f9385d5b3d vs 98f9385d5b3d
+REPORT  foreground numeric keys: ['void_freq', 'inv_fidelity', 'vfidf', 'cos_ch', 'lex_ch']
+REPORT  foreground top vf value: 0.049 -> THIN=True
+REPORT  plants tonight: dreadfully 0.249, hysterically 0.255
+REPORT  rerun trajectories: after-values absent; run-2 only
+REPORT  channel-A restoration by winner: brand's:no, show:no, soon:no
+REPORT  marks rendered: 3 yellow in source, 4 green in reading
+GATE G3   PASS  ledger rows rendered 25 == audit n 25
+REPORT  defect number rendered: #52 -- veto with --defect-num
+GATE G2   PASS  unfilled tokens: none
+GATE G8   PASS  raw artifacts copied + linked: ['bakeoff', 'census', 'centipede', 'synthesis']
+--------------------------------------------------------------------------
+GATE SUMMARY: ALL HARD GATES PASS  (G1:P, G6a:P, G6b:P, G6c:P, G7:P, G4:P, G5:P, GS:P, G3:P, G2:P, G8:P)
+PAGE -> docs/vf-idf.v2.html (51479 bytes)
