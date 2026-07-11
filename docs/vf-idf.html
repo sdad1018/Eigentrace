@@ -1,428 +1,550 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Not a Summary. A Reading. — EigenTrace</title>
-<meta name="description" content="Feed it any page. Five independent mathematics map what the text never says; five frontier models write the reading under an evidence discipline; every claim is typed and machine-verified. The full mathematics is on this page — the artifact is self-recreating.">
-<link rel="stylesheet" href="assets/css/main.css">
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Not a Summary. A Reading. &mdash; EigenTrace</title>
+<link rel="canonical" href="https://eigentrace.ai/vf-idf">
+<meta name="description" content="Five frontier AI models read one page's measured silence under an evidence-ledger discipline. Every claim typed, traced against the source, contests quoted. The commercial form of EigenTrace's Summary Plus.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Not a Summary. A Reading.">
+<meta property="og:description" content="Five frontier AI models read one page's measured silence under an evidence-ledger discipline. Every claim typed, traced against the source, contests quoted.">
+<meta property="og:url" content="https://eigentrace.ai/vf-idf">
+<meta property="og:site_name" content="EigenTrace">
+<meta name="twitter:card" content="summary">
 <style>
-:root{--cc:#d3f9d8;--fg:#fff3bf;--pl:#ffe3e3;--line:#d0d0d0;
- --ink:#1a1a1a;--dim:#666;--seam:#1a1a1a;}
-.rd *{box-sizing:border-box;}
-.rd{font-family:Georgia,'Times New Roman',serif;color:var(--ink);
- max-width:1100px;margin:0 auto;padding:0 1.2rem 3rem;line-height:1.6;}
-.rd h1{font-size:1.9rem;line-height:1.25;margin:1.6rem 0 .6rem;}
-.rd h2{font-size:.85rem;font-family:monospace;letter-spacing:.14em;
- text-transform:uppercase;color:var(--dim);border-top:2px solid var(--ink);
- padding-top:.7rem;margin:2.2rem 0 .8rem;}
-.rd h3{font-size:1rem;margin:1.2rem 0 .4rem;}
-.rd .lead{font-size:1.12rem;}
-.rd .bar{display:flex;gap:2rem;flex-wrap:wrap;font-family:monospace;
- font-size:.82rem;border:1px solid var(--line);padding:.7rem 1rem;
- border-radius:4px;background:#fff;margin:1rem 0;}
-.rd .cta{display:inline-block;border:2px solid var(--ink);
- padding:.5rem 1.1rem;margin:.8rem 0;text-decoration:none;
- color:var(--ink);font-family:monospace;font-size:.9rem;}
-.rd .cta:hover{background:var(--ink);color:#fff;}
-.rd mark{padding:0 .12em;border-radius:2px;}
-.rd mark.cc{background:var(--cc);} .rd mark.fg{background:var(--fg);}
-.rd .legend{font-size:.8rem;color:var(--dim);font-family:monospace;
- margin:.5rem 0 1rem;}
-.rd .cols{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;
- align-items:start;}
-@media(max-width:760px){.rd .cols{grid-template-columns:1fr;}}
-.rd .col{border:1px solid var(--line);border-radius:4px;
- padding:1rem 1.2rem;background:#fff;}
-.rd .col h4{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
- color:var(--dim);font-family:monospace;margin:0 0 .8rem;}
-.rd .col p{margin:.7rem 0;font-size:.94rem;}
-.rd table{border-collapse:collapse;font-family:monospace;font-size:.83rem;
- margin:.7rem 0 1.1rem;width:auto;}
-.rd td,.rd th{padding:.26rem .9rem .26rem 0;border-bottom:1px solid #eee;
- text-align:left;vertical-align:top;}
-.rd th{color:var(--dim);font-weight:normal;}
-.rd .ok{color:#2b8a3e;font-weight:bold;}
-.rd .warn{color:#b0532a;font-weight:bold;}
-.rd .box{background:#f4f2ec;border-left:3px solid #bbb;
- padding:.75rem 1rem;font-size:.93rem;margin:1rem 0;}
-.rd .badge{display:inline-block;font-family:monospace;font-size:.72rem;
- padding:.05rem .45rem;border-radius:3px;margin-right:.4rem;}
-.rd .bF{background:var(--fg);} .rd .bI{background:#e7f0ff;}
-.rd .bS{background:var(--pl);}
-.rd .seam{margin:3rem 0;border:0;border-top:6px double var(--seam);
- position:relative;}
-.rd .seamlabel{font-family:monospace;font-size:.8rem;letter-spacing:.12em;
- text-transform:uppercase;text-align:center;color:var(--dim);
- margin:-0.2rem 0 2rem;}
-.rd pre{background:#fff;border:1px solid var(--line);border-radius:4px;
- padding:.8rem 1rem;font-size:.8rem;overflow-x:auto;line-height:1.45;}
-.rd details{margin:.6rem 0;} .rd summary{cursor:pointer;
- font-family:monospace;font-size:.82rem;color:var(--dim);}
-.rd .eq{font-family:monospace;background:#fff;border:1px solid var(--line);
- border-radius:4px;padding:.55rem .9rem;margin:.5rem 0;font-size:.86rem;}
-.rd footer{margin-top:2.4rem;color:var(--dim);font-size:.78rem;
- font-family:monospace;border-top:1px solid var(--line);
- padding-top:.7rem;line-height:1.7;}
-</style>
-</head>
-<body>
-<nav class="top">
-  <a class="home" href="https://eigentrace.ai/">EigenTrace</a>
-  <a href="https://eigentrace.ai/anamnesis">Anamnesis</a>
-  <a href="https://eigentrace.ai/llm-consensus-geometry-iran-2026">Iran Arc</a>
-  <a href="https://eigentrace.ai/consequence-atlas">Atlas</a>
-  <a href="https://eigentrace.ai/sean-adams">About</a>
-  <a href="https://github.com/sdad1018/Eigentrace">GitHub ↗</a>
-</nav>
-<main class="rd">
+/* house tokens -- cloned from the editorial family (convergence/outliers/
+   atlas/withdrawals). dark: paper/ink/killed cloned exactly from the house
+   dark block; remaining dark tiers derived in the same grammar. */
+:root{--ink:#1a1a18;--ink-soft:#4a4a45;--ink-faint:#7a7a72;
+--paper:#faf9f6;--surface:#ffffff;
+--line:rgba(26,26,24,0.12);--line-soft:rgba(26,26,24,0.07);
+--measured:#0f6e56;--measured-bg:#e1f5ee;--measured-line:#9fe1cb;
+--argued:#854f0b;--argued-bg:#faeeda;--argued-line:#fac775;
+--frozen:#2a4a6a;--frozen-bg:#e4eaf1;--frozen-line:#aac0db;
+--ends:#5f5e5a;--ends-bg:#f1efe8;--ends-line:#d3d1c7;
+--killed:#9a3324;--killed-bg:#f7e9e6;--killed-line:#e0a89f;
+--accent:#993c1d;
+--vd-bg:#e1f5ee;--vd-line:#0f6e56;
+--fg-bg:#fdf3c9;--fg-line:#b08a00;
+--serif:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+--sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+--mono:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace}
+@media(prefers-color-scheme:dark){:root{
+--ink:#e8e6e0;--ink-soft:#b4b2a9;--ink-faint:#888780;
+--paper:#15140f;--surface:#1c1b16;
+--line:rgba(232,230,224,0.14);--line-soft:rgba(232,230,224,0.07);
+--measured:#5dcaa5;--measured-bg:#132e25;--measured-line:#1f5c4d;
+--argued:#e0b25f;--argued-bg:#302509;--argued-line:#7a5a1e;
+--frozen:#93b6dd;--frozen-bg:#17222e;--frozen-line:#2a4a6a;
+--ends:#aaa69d;--ends-bg:#232119;--ends-line:#5f5e5a;
+--killed:#e08576;--killed-bg:#2c1714;--killed-line:#9a3324;
+--accent:#d98a63;
+--vd-bg:#132e25;--vd-line:#5dcaa5;
+--fg-bg:#33290c;--fg-line:#c9a227}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);
+font-family:var(--sans);font-size:17px;line-height:1.65;
+-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.nav{max-width:730px;margin:0 auto;padding:22px 24px;display:flex;
+gap:18px;flex-wrap:wrap;font-size:13.5px}
+.nav a{color:var(--ink-faint);text-decoration:none}
+.nav a:hover{color:var(--ink)}
+.nav .home{color:var(--ink);font-weight:500}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px 120px}
+.wrap>p,.wrap>h1,.wrap>ul,.wrap>pre,.wrap>.eyebrow,.wrap>footer,
+.wrap>.legend{max-width:682px;margin-left:auto;margin-right:auto}
+.wrap>.chips,.wrap>.cols,.wrap>table,.wrap>.divider{max-width:992px;
+margin-left:auto;margin-right:auto}
+.wrap>table.matrix{max-width:560px}
+.wrap>.cta{display:block;width:max-content;margin:18px auto 6px}
+h1{font-family:var(--serif);font-size:45px;line-height:1.06;
+font-weight:600;margin:6px auto 18px;letter-spacing:-.01em}
+.standfirst{font-family:var(--serif);font-size:21px;line-height:1.42;
+color:var(--ink-soft);font-style:italic;margin:0 auto 20px}
+.dateline{font-family:var(--mono);font-size:13px;color:var(--ink-faint);
+padding-top:16px;border-top:1px solid var(--line);margin:0 auto 6px}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.12em;
+text-transform:uppercase;color:var(--accent);margin:66px auto 12px;
+padding-top:20px;border-top:1px solid var(--line);font-weight:600}
+.eyebrow.lead{margin-top:26px;padding-top:0;border-top:0}
+p{margin:.6em auto}
+.dim{color:var(--ink-faint);font-weight:400}
+.small{font-size:13px;color:var(--ink-faint)}
+.note{font-size:14px;color:var(--ink-soft);background:var(--frozen-bg);
+border-left:3px solid var(--frozen-line);padding:10px 14px;
+border-radius:0 6px 6px 0}
+.legend{font-size:14px;color:var(--ink-soft)}
+.legend span{margin-right:16px}
+mark.vd{background:var(--vd-bg);border-bottom:2px solid var(--vd-line);
+padding:0 .1em;color:inherit}
+mark.fg{background:var(--fg-bg);border-bottom:2px solid var(--fg-line);
+padding:0 .1em;color:inherit}
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin:22px auto}
+.chip{background:var(--surface);border:1px solid var(--line);
+border-radius:8px;padding:13px 15px;flex:1 1 250px;font-size:14px;
+color:var(--ink-soft)}
+.chip b{display:block;font-family:var(--mono);font-size:11.5px;
+letter-spacing:.09em;text-transform:uppercase;color:var(--accent);
+margin-bottom:6px;font-weight:600}
+.cta{padding:12px 20px;background:var(--ink);color:var(--paper);
+text-decoration:none;font:600 13.5px var(--mono);border-radius:6px;
+letter-spacing:.03em}
+.cta:hover{background:var(--accent);color:#fff}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin:16px auto}
+.col{background:var(--surface);border:1px solid var(--line);
+border-radius:8px;padding:22px 24px;font-family:var(--serif);
+font-size:16px;line-height:1.6}
+.col .placard{font-family:var(--sans);font-size:11.5px;font-weight:600;
+letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);
+margin:0 0 14px}
+.col .placard .dim{text-transform:none;letter-spacing:0}
+.col h3,.col h4{font-family:var(--serif);font-weight:600;line-height:1.22}
+.col h3{font-size:19px;margin:1.1em 0 .4em}
+.col h4{font-size:16.5px;margin:1em 0 .3em}
+.pno{font:600 10.5px var(--mono);color:var(--ink-faint);
+background:var(--ends-bg);padding:2px 6px;border-radius:3px;
+margin-right:7px}
+table{border-collapse:collapse;width:100%;font:13px/1.55 var(--mono);
+background:var(--surface);margin:.7em auto}
+td,th{border-top:1px solid var(--line);padding:7px 10px;text-align:left;
+vertical-align:top}
+th{font:600 10.5px var(--mono);letter-spacing:.08em;
+text-transform:uppercase;color:var(--ink-faint);border-top:0;
+border-bottom:1px solid var(--line)}
+tr:hover td{background:var(--line-soft)}
+.mono{font-family:var(--mono);font-size:.95em}
+.badge{font:600 10.5px/1 var(--mono);padding:3px 7px;border-radius:4px;
+letter-spacing:.05em;white-space:nowrap;border:1px solid var(--line);
+background:var(--surface);color:var(--ink-soft)}
+.vok{background:var(--measured-bg);color:var(--measured);
+border-color:var(--measured-line)}
+.vwarn{background:var(--argued-bg);color:var(--argued);
+border-color:var(--argued-line)}
+.vbad{background:var(--killed-bg);color:var(--killed);
+border-color:var(--killed-line)}
+.vref{background:var(--frozen-bg);color:var(--frozen);
+border-color:var(--frozen-line)}
+.vhedge{background:var(--ends-bg);color:var(--ends);
+border-color:var(--ends-line)}
+.ev{font:12px/1.5 var(--mono);color:var(--ink-faint);margin-top:5px;
+border-left:2px solid var(--argued-line);padding-left:8px}
+.matrix td,.matrix th{text-align:center}
+.matrix td.self{background:var(--ends-bg);color:var(--ink-faint)}
+.matrix td[title]{cursor:help;text-decoration:underline dotted var(--ink-faint)}
+.win{color:var(--measured);font-family:var(--mono);font-size:11.5px}
+pre{font:12.5px/1.55 var(--mono);background:#15140f;color:#e8e3d8;
+border:1px solid var(--line);border-radius:8px;padding:18px 20px;
+overflow-x:auto;margin:14px auto}
+code{font-family:var(--mono);font-size:.85em;background:var(--frozen-bg);
+padding:1px 6px;border-radius:4px}
+hr{border:0;border-top:1px solid var(--line);margin:1.6em 0}
+ul{padding-left:22px}
+li{margin:6px 0}
+.divider{font:600 12px/1.6 var(--mono);letter-spacing:.1em;
+text-transform:uppercase;color:var(--ink-soft);text-align:center;
+border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);
+padding:14px 10px;margin:3.2em auto}
+footer{border-top:1px solid var(--line);margin-top:70px;padding-top:26px;
+font:12.5px/1.75 var(--mono);color:var(--ink-faint)}
+footer .closer{font-family:var(--serif);font-style:italic;font-size:17px;
+color:var(--ink-soft);margin:0 0 16px;line-height:1.5}
+@media(max-width:900px){.cols{grid-template-columns:1fr}}
+@media(max-width:600px){body{font-size:16px}h1{font-size:34px}
+.wrap{padding:0 18px 80px}}
+</style></head><body>
+<nav class="nav"><a class="home" href="/">EigenTrace</a><a href="/consequence-atlas">Atlas</a><a href="/summary-plus">Summary Plus</a><a href="/large-language-model-outliers">Outliers</a><a href="/sean-adams">About</a></nav>
+<div class="wrap">
 
-<!-- ═══════════════ PART ONE · FOR THE PEOPLE WHO BUY ═══════════════ -->
+<div class="eyebrow lead">Summary Plus &middot; the commercial instrument</div>
+<h1>Not a summary.<br><mark class="vd">A reading.</mark></h1>
+<p class="standfirst">A real marketing page on the left &mdash; and on the
+right, what the best of five frontier AI models produced when handed the
+page's measured silence, under a prompt that forbids inserting, inventing,
+and padding. The only path left open was to read.</p>
+<p class="dateline">4 independent mathematics &middot; every
+claim typed, cited &amp; machine-audited against the source &middot;
+generated 2026-07-10T19:00:23 &middot; one demo document, every stage
+inspectable</p>
 
-<h1>Not a summary. A reading.</h1>
-
-<p class="lead">Below: a real marketing page on the left — and on the
-right, what the best of five frontier AI models produced when handed
-the page's <b>measured silence</b> (every concept the document avoids,
-found by five independent mathematics) under a prompt that forbids
-inserting, inventing, and padding. The only path left open was to
-read. Every claim in the reading is typed, cited to numbered
-paragraphs, and machine-verified against the source.</p>
-
-<div class="bar">
-<span><b>Two instruments, one silence</b><br>the reading led with the
-exact questions an independent census measured — zero shared code</span>
-<span><b>Every claim audited</b><br>facts traced to cited paragraphs;
-absence claims searched whole-document; contests quoted</span>
-<span><b>Self-preference: +-1.5</b><br>what happens when AIs
-grade their own homework — measured and published</span>
+<div class="chips">
+<div class="chip"><b>Two instruments, one silence</b>the reading and an independent census surfaced the same silence &mdash; zero shared code</div>
+<div class="chip"><b>Every claim audited</b>facts traced to cited paragraphs;
+absence claims searched whole-document; contests quoted</div>
+<div class="chip"><b>Self-preference: −0.25 (n=5)</b>what happens when AIs
+grade their own homework &mdash; measured and published</div>
 </div>
+<a class="cta" href="https://eigentrace.ai/">Send me a URL &rarr; your page gets this
+treatment</a>
 
-<p><a class="cta" href="mailto:sean@eigentrace.ai?subject=Read%20my%20page%20—%20here%27s%20the%20URL">Send me a URL → your page gets this treatment</a></p>
-
-<h2>The exhibit</h2>
-<div class="legend"><mark class="cc">green</mark> void stems surfaced
-by ≥2 independent math classes &nbsp; <mark class="fg">yellow</mark>
-source-salient concepts every AI summary deleted</div>
+<div class="eyebrow">The exhibit</div>
+<p class="legend"><span><mark class="fg">yellow</mark> source-salient
+concepts every AI summary deleted (marked in the source)</span>
+<span><mark class="vd">green</mark> void stems surfaced by &ge;2 independent
+math classes, adopted by the winning reading (marked in the reading)</span></p>
+<p class='note'>Caveat, auto-printed: this demo source splits into 1 paragraph(s), so citation granularity is effectively whole-document; multi-paragraph sources exercise the trace at full resolution.</p>
 <div class="cols">
-<div class="col"><h4>Source (paragraphs as numbered for the writer)</h4>
-<p><b>[p1]</b> The 2026 Honda Prelude marks the long-awaited return of one of Honda&#x27;s most iconic nameplates. Reintroduced as a modern hybrid sport coupe, the new Prelude blends Honda&#x27;s engineering heritage with the <mark class="fg">brand&#x27;s</mark> latest electrified performance technology. Honda has confirmed that the returning Prelude will launch with a two-motor hybrid system, pairing responsive electric torque with a gasoline engine for balanced performance. Early previews <mark class="fg">show</mark> a low, wide stance, sleek body lines, and a fastback-inspired profile that honors the spirit of past Preludes while embracing modern Honda design. While full specifications are not yet finalized, Honda has emphasized three priorities for the new model: hybrid performance with strong off-the-line response and improved efficiency; driver-focused design with clean visibility and intuitive controls; and a sport-tuned chassis with a stiff body and precise suspension tuning for classic Honda coupe handling. Honda typically releases a full accessory catalog at the start of production. Based on historical patterns for Honda coupes and hybrid models, buyers can expect a comprehensive list of genuine Honda accessories including aero kits, rear spoilers, side skirt extensions, factory wheel upgrades, splash guards, all-season floor mats, cargo organizers, illuminated door sills, paint protection film, wheel locks, remote start, and wireless charging accessories. As <mark class="fg">soon</mark> as Honda releases the official 2026 Prelude accessory lineup, the catalog will be updated with photos, pricing, installation notes, and verified fitment information.</p></div>
-<div class="col"><h4>The winning reading — claude (panel ex-self 4.0)</h4>
-<p># 2026 Honda Prelude: Summary Plus</p>
-<p>## What the Piece Leaves Unresolved</p>
-<p>The source document cannot answer its most consequential question: what, precisely, is the 2026 Prelude? Full specifications are explicitly unfinalized. The <mark class="cc">drivetrain</mark> is described only in outline — a two-motor hybrid pairing electric torque with a gasoline engine — but transmission configuration, wheelbase, motor output figures, and any preliminary engineering parameters are entirely absent. No <mark class="cc">prototypes</mark> are described or referenced; the &quot;early previews&quot; that inform the design description have no attributed source and carry no technical detail. The document has no confirmed production timeline, no pricing, and no completed accessory catalog. It is, structurally, a placeholder anticipating its own future revision.</p>
-<p>---</p>
-<p>## What the Source States</p>
-<p>Honda has confirmed the 2026 Prelude will return as a hybrid sport coupe, using a two-motor hybrid system. Honda has identified three stated priorities: hybrid performance with off-the-line response and improved efficiency; driver-focused design with clean visibility and intuitive controls; and a sport-tuned chassis with a stiff body and precise suspension. Early design previews indicate a low, wide stance, sleek body lines, and a fastback-inspired profile. Honda typically releases a full accessory catalog at production start; based on historical patterns for Honda coupes and hybrid models, the expected catalog would include aero kits, rear spoilers, side skirt extensions, factory wheel upgrades, splash guards, floor mats, cargo organizers, illuminated door sills, paint protection film, wheel locks, remote start, and wireless charging accessories. The catalog will be updated with photos, pricing, installation notes, and verified fitment information once Honda releases the official lineup.</p>
-<p>---</p>
-<p>## What the Piece Does Not Say</p>
-<p>**On the <mark class="cc">drivetrain</mark> and engineering:** The source names a two-motor hybrid system but withholds every measurable specification — no power figures, no transmission type, no wheelbase, no curb weight. The word &quot;motor&quot; appears without quantification. The chassis is described as &quot;sport-tuned&quot; with &quot;stiff body&quot; and &quot;precise suspension tuning,&quot; but no suspension geometry, no structural detail, and no comparison to prior Honda platforms is offered. The engineering case for the Prelude&#x27;s return is asserted, not demonstrated.</p>
-<p>**On development status:** The source references &quot;early previews&quot; without identifying whether these are official Honda releases, <mark class="fg">show</mark> cars, or pre-production images. No <mark class="cc">prototypes</mark> are acknowledged. There is no indication of where the vehicle is in the development cycle — whether production tooling is finalized, whether regulatory submissions are pending, or whether manufacturing readiness has been established. The phrase &quot;long-awaited return&quot; implies a history of anticipation but does not name any prior revival attempt or explain why previous efforts, if any, did not proceed.</p>
-<p>**On Honda&#x27;s position as an <mark class="cc">automaker</mark> in this segment:** The source makes no reference to the competitive automotive landscape the Prelude will enter. No rival models are named. Honda&#x27;s broader hybrid and sport coupe strategy is not described. The relationship between the Prelude and Honda&#x27;s other current models — including any shared platforms or components — is not addressed. The document does not name Honda&#x27;s manufacturing partner or production facility for this vehicle.</p>
-<p>**On the accessory catalog:** The catalog section is built entirely on historical pattern, not confirmed information. The source notes the catalog will be updated &quot;as <mark class="fg">soon</mark> as Honda releases&quot; it, which concedes that no official accessory information currently exists. The list of expected accessories is presented without prices, part numbers, or installation complexity indicators.</p>
-<p>**On the revival&#x27;s commercial stakes:** The source frames the Prelude&#x27;s return as a heritage event — &quot;long-awaited,&quot; &quot;iconic,&quot; honoring &quot;the spirit of past Preludes&quot; — but does not examine what happened to the nameplate when it was discontinued, why it was discontinued, or what the commercial conditions for its return are. The celebratory framing leaves the underlying business logic unexamined. The &quot;comeback&quot; is treated as resolution rather than as a decision carrying financial and brand risk.</p>
-<p>**On timing:** The document uses &quot;as <mark class="fg">soon</mark> as&quot; and implies an imminent production start, but no launch date, sale date, or model year on-sale window is given beyond the &quot;2026&quot; designation in the nameplate itself.</p>
-<p>---</p>
-<p>## The Document&#x27;s Function</p>
-<p>The source is pre-release marketing infrastructure. It establishes a presence for a product that does not yet have confirmed specifications, a finished accessory catalog, or a production date. Every concrete claim is either a confirmed intention or a pattern-based projection. The document&#x27;s repeated forward references — &quot;will be updated,&quot; &quot;as <mark class="fg">soon</mark> as Honda releases&quot; — make its own incompleteness explicit. What it surfaces most clearly is the gap between a nameplate&#x27;s return being announced and a vehicle being ready to sell.</p></div>
+<div class="col"><h3 class="placard">Source (paragraphs as numbered for the writer)</h3>
+<p><span class="pno">p1</span> The 2026 Honda Prelude marks the long-awaited return of one of Honda&#x27;s most iconic nameplates. Reintroduced as a modern hybrid sport coupe, the new Prelude blends Honda&#x27;s engineering heritage with the <mark class="fg">brand&#x27;s</mark> latest electrified performance technology. Honda has confirmed that the returning Prelude will launch with a two-motor hybrid system, pairing responsive electric torque with a gasoline engine for balanced performance. Early previews <mark class="fg">show</mark> a low, wide stance, sleek body lines, and a fastback-inspired profile that honors the spirit of past Preludes while embracing modern Honda design. While full specifications are not yet finalized, Honda has emphasized three priorities for the new model: hybrid performance with strong off-the-line response and improved efficiency; driver-focused design with clean visibility and intuitive controls; and a sport-tuned chassis with a stiff body and precise suspension tuning for classic Honda coupe handling. Honda typically releases a full accessory catalog at the start of production. Based on historical patterns for Honda coupes and hybrid models, buyers can expect a comprehensive list of genuine Honda accessories including aero kits, rear spoilers, side skirt extensions, factory wheel upgrades, splash guards, all-season floor mats, cargo organizers, illuminated door sills, paint protection film, wheel locks, remote start, and wireless charging accessories. As <mark class="fg">soon</mark> as Honda releases the official 2026 Prelude accessory lineup, the catalog will be updated with photos, pricing, installation notes, and verified fitment information.</p></div>
+<div class="col"><h3 class="placard">The winning reading &mdash; claude
+<span class="dim">(panel ex-self 4.75, n=4)</span></h3>
+<h4>SUMMARY PLUS: 2026 Honda Prelude</h4>
+<h4>What the piece leaves unresolved</h4>
+<p>The central unresolved condition is the completeness of specifications. The source states outright that full specifications are not yet finalized, yet it presents a detailed accessory catalog as something buyers &quot;can expect&quot; — a list built on pattern inference from prior Honda coupes and hybrid models, not on confirmed data. The document is therefore simultaneously a product announcement and a placeholder standing in for a product announcement.</p>
+<p>The <mark class="vd">drivetrain</mark> description is specifically thin: a two-motor hybrid system paired with a gasoline engine is the total disclosed technical content. No transmission type, no wheelbase, no power figures, no motor output ratings appear anywhere. The document does not mention <mark class="vd">Acura</mark>, competing platforms, predecessor model specifications, or <mark class="vd">prototype</mark> development stages. No manufacturing timeline, rollout schedule, or launch market is specified. No <mark class="vd">infotainment</mark> system, no driver-assistance features, and no regulatory compliance information appear. The accessory catalog is explicitly provisional and will be replaced once Honda releases official information.</p>
+<p>What exists in this document: three stated priorities (hybrid performance, driver-focused design, sport-tuned chassis), three stated design observations (low and wide stance, sleek body lines, fastback-inspired profile), and one confirmed technical choice (two-motor hybrid). Everything else — including the entire accessory list — is projection from historical pattern.</p>
+<p>The comeback framing is present but the financial and market context for that comeback is entirely absent. The Prelude nameplate disappeared; this document does not say why, for how long, or what conditions prompted the return.</p>
+<hr></div>
 </div>
 
-<h2>The ledger — every claim, typed and verified</h2>
-<p>The writer must ledger its own reading: <span class="badge bF">F</span>
-fact, traceable to cited paragraphs · <span class="badge bI">I</span>
-inference from structure · <span class="badge bS">S</span> speculation,
-drawn from the measured consequence field, hedged. Then the machine
-checks: facts traced lexically into their citations; absence claims
-searched across the whole document; every contest quoted. Confidence is
-earned here, never self-reported.</p>
-<table>
-<tr><th>type</th><th>claim</th><th>refs</th><th>verdict</th></tr>
+<div class="eyebrow">The ledger &mdash; every claim, typed and audited</div>
+<p>The writer must ledger its own reading:
+<span class="badge bF">F</span> fact, traceable to cited paragraphs &middot;
+<span class="badge bI">I</span> inference from structure &middot;
+<span class="badge bS">S</span> speculation, drawn from the measured
+consequence field, hedged. Then the machine checks: facts traced lexically
+into their citations; absence claims searched across the whole document;
+every contest quoted. Confidence is earned here, never self-reported.</p>
+<p>Across the whole panel this run: every positive fact traced &mdash; 30/30 &mdash; and the entire contested mass (34 claims) is absence claims whose negation vocabulary echoes the source's own words; 5 absence claims survived whole-document search. A contest here marks a judgment boundary, not a falsehood &mdash; the evidence is quoted in every contested row below.</p>
+<table><tr><th>type</th><th>claim</th><th>refs</th><th>verdict</th></tr>
+<tr><td><span class='badge bF'>F</span></td><td>The 2026 Honda Prelude is described as a return of a nameplate Honda characterizes as iconic</td><td class='mono'>[1]</td><td><span class='badge vok'>TRACED</span></td></tr>
+<tr><td><span class='badge bF'>F</span></td><td>The vehicle is classified as a modern hybrid sport coupe</td><td class='mono'>[1]</td><td><span class='badge vok'>TRACED</span></td></tr>
+<tr><td><span class='badge bF'>F</span></td><td>Honda has confirmed a two-motor hybrid system pairing electric torque with a gasoline engine</td><td class='mono'>[1]</td><td><span class='badge vok'>TRACED</span></td></tr>
+<tr><td><span class='badge bF'>F</span></td><td>The source states full specifications are not yet finalized<div class="ev">hits: full, specif, yet, final &middot; evidence: &ldquo;While full specifications are not yet finalized, Honda has emphasized three priorities for the new model: hybrid performance with strong off&rdquo;</div></td><td class='mono'>[1]</td><td><span class='badge vwarn'>CONTESTED</span></td></tr>
+<tr><td><span class='badge bF'>F</span></td><td>Three stated priorities are listed: hybrid performance with off-the-line response and efficiency; driver-focused design with clean visibility and intuitive controls; sport-tuned chassis with stiff body and precise suspension tuning</td><td class='mono'>[1]</td><td><span class='badge vok'>TRACED</span></td></tr>
+<tr><td><span class='badge bF'>F</span></td><td>Design observations include low and wide stance, sleek body lines, and a fastback-inspired profile</td><td class='mono'>[1]</td><td><span class='badge vok'>TRACED</span></td></tr>
+<tr><td><span class='badge bF'>F</span></td><td>The accessory catalog presented is built on historical patterns for Honda coupes and hybrid models, not confirmed official data<div class="ev">hits: accessori, catalog, histor, pattern &middot; evidence: &ldquo;The 2026 Honda Prelude marks the long-awaited return of one of Honda&#x27;s most iconic nameplates.&rdquo;</div></td><td class='mono'>[1]</td><td><span class='badge vwarn'>CONTESTED</span></td></tr>
+<tr><td><span class='badge bF'>F</span></td><td>Listed expected accessories include aero kits, rear spoilers, side skirt extensions, factory wheel upgrades, splash guards, all-season floor mats, cargo organizers, illuminated door sills, paint protection film, wheel locks, remote start, and wireless charging accessories</td><td class='mono'>[1]</td><td><span class='badge vok'>TRACED</span></td></tr>
+<tr><td><span class='badge bF'>F</span></td><td>Honda typically releases a full accessory catalog at the start of production, per the source&#x27;s own statement of historical pattern</td><td class='mono'>[1]</td><td><span class='badge vok'>TRACED</span></td></tr>
+<tr><td><span class='badge bF'>F</span></td><td>The source states the catalog will be updated with photos, pricing, installation notes, and verified fitment information once Honda releases official data</td><td class='mono'>[1]</td><td><span class='badge vok'>TRACED</span></td></tr>
+<tr><td><span class='badge bF'>F</span></td><td>No transmission type is specified anywhere in the document</td><td class='mono'>[1]</td><td><span class='badge vok'>SUPPORTED-ABSENT</span></td></tr>
+<tr><td><span class='badge bF'>F</span></td><td>No wheelbase, power figures, or motor output ratings appear in the document</td><td class='mono'>[1]</td><td><span class='badge vok'>SUPPORTED-ABSENT</span></td></tr>
+<tr><td><span class='badge bF'>F</span></td><td>No Acura relationship, competitor comparison, or predecessor model specifications are mentioned<div class="ev">hits: model, specif &middot; evidence: &ldquo;While full specifications are not yet finalized, Honda has emphasized three priorities for the new model: hybrid performance with strong off&rdquo;</div></td><td class='mono'>[]</td><td><span class='badge vwarn'>CONTESTED</span></td></tr>
+<tr><td><span class='badge bF'>F</span></td><td>No prototype development stages or preliminary vehicle information is described<div class="ev">hits: inform &middot; evidence: &ldquo;As soon as Honda releases the official 2026 Prelude accessory lineup, the catalog will be updated with photos, pricing, installation notes, &rdquo;</div></td><td class='mono'>[]</td><td><span class='badge vwarn'>CONTESTED</span></td></tr>
+<tr><td><span class='badge bF'>F</span></td><td>No manufacturing timeline, production location, or launch market is identified<div class="ev">hits: product, launch &middot; evidence: &ldquo;Honda has confirmed that the returning Prelude will launch with a two-motor hybrid system, pairing responsive electric torque with a gasolin&rdquo;</div></td><td class='mono'>[]</td><td><span class='badge vwarn'>CONTESTED</span></td></tr>
+<tr><td><span class='badge bF'>F</span></td><td>No infotainment system, driver-assistance features, or regulatory compliance information appears<div class="ev">hits: system, inform &middot; evidence: &ldquo;Honda has confirmed that the returning Prelude will launch with a two-motor hybrid system, pairing responsive electric torque with a gasolin&rdquo;</div></td><td class='mono'>[]</td><td><span class='badge vwarn'>CONTESTED</span></td></tr>
+<tr><td><span class='badge bF'>F</span></td><td>The source does not explain why the Prelude nameplate was previously discontinued or how long it was absent<div class="ev">hits: prelud, namepl &middot; evidence: &ldquo;The 2026 Honda Prelude marks the long-awaited return of one of Honda&#x27;s most iconic nameplates.&rdquo;</div></td><td class='mono'>[]</td><td><span class='badge vwarn'>CONTESTED</span></td></tr>
+<tr><td><span class='badge bF'>F</span></td><td>No financial context, sales targets, or market rationale for the nameplate&#x27;s return is provided<div class="ev">hits: return &middot; evidence: &ldquo;The 2026 Honda Prelude marks the long-awaited return of one of Honda&#x27;s most iconic nameplates.&rdquo;</div></td><td class='mono'>[]</td><td><span class='badge vwarn'>CONTESTED</span></td></tr>
+<tr><td><span class='badge bF'>F</span></td><td>No rollout schedule or debut event is specified</td><td class='mono'>[]</td><td><span class='badge vok'>SUPPORTED-ABSENT</span></td></tr>
+<tr><td><span class='badge bI'>I</span></td><td>The document functions structurally as both a product announcement and a provisional placeholder, given the explicit acknowledgment that specifications and the accessory catalog are unconfirmed</td><td class='mono'>[1]</td><td><span class='badge vref'>REF-OK</span></td></tr>
+<tr><td><span class='badge bI'>I</span></td><td>The accessory list carries no more authority than an inference from Honda&#x27;s past behavior; its inclusion alongside confirmed facts risks presenting projected content at the same register as confirmed content</td><td class='mono'>[1]</td><td><span class='badge vref'>REF-OK</span></td></tr>
+<tr><td><span class='badge bI'>I</span></td><td>The absence of drivetrain detail beyond motor count and fuel type means the performance claims about off-the-line response cannot be evaluated from the source&#x27;s own content</td><td class='mono'>[1]</td><td><span class='badge vref'>REF-OK</span></td></tr>
+<tr><td><span class='badge bI'>I</span></td><td>The three stated priorities are framed as Honda&#x27;s emphases but are not attributed to a specific Honda statement, document, or spokesperson, leaving their sourcing ambiguous</td><td class='mono'>[1]</td><td><span class='badge vref'>REF-OK</span></td></tr>
+<tr><td><span class='badge bI'>I</span></td><td>The piece&#x27;s closing sentence structurally signals that the document&#x27;s primary purpose is to hold a position in anticipation of future official content rather than to report completed information</td><td class='mono'>[1]</td><td><span class='badge vref'>REF-OK</span></td></tr>
+<tr><td><span class='badge bS'>S</span></td><td>The gap between the confirmed technical content (two-motor hybrid, three design observations, three priorities) and the length of the projected accessory list suggests the document may be oriented toward accessory commerce as much as toward product journalism</td><td class='mono'>[1]</td><td><span class='badge vhedge'>HEDGED</span></td></tr></table>
 
-</table>
-
-<h2>Two instruments, one silence</h2>
-<div class="box">Before any writer ran, a separate instrument asked ten
-models what this document raises but refuses to answer, clustered their
-questions deterministically, and reported consensus:
+<div class="eyebrow">Two instruments, one silence</div>
+<p>Before any writer ran, a separate instrument asked ten models what this
+document raises but refuses to answer, clustered their questions
+deterministically, and reported consensus:</p>
 <table><tr><th>support</th><th>consensus question</th></tr>
-<tr><td>8/10</td><td>How much will the 2026 Honda Prelude cost?</td></tr><tr><td>8/10</td><td>What specific gasoline engine is paired with the hybrid system?</td></tr><tr><td>6/10</td><td>What is the curb weight of the 2026 Prelude?</td></tr><tr><td>5/10</td><td>Will there be any limited editions or special trims for the 2026 Prelude?</td></tr><tr><td>4/10</td><td>When exactly will the official accessory catalog be updated?</td></tr></table>
-<b>The winning reading led with the same silence</b> — produced by
-different code, a different prompt, a different task. Convergence
-between instruments that share nothing is what "measured" means on
-this site.</div>
+<tr><td class='mono'>8/10</td><td>How much will the 2026 Honda Prelude cost?</td></tr>
+<tr><td class='mono'>8/10</td><td>What specific gasoline engine is paired with the hybrid system?</td></tr>
+<tr><td class='mono'>6/10</td><td>What is the curb weight of the 2026 Prelude?</td></tr>
+<tr><td class='mono'>5/10</td><td>Will there be any limited editions or special trims for the 2026 Prelude?</td></tr>
+<tr><td class='mono'>4/10</td><td>When exactly will the official accessory catalog be updated?</td></tr>
+<tr><td class='mono'>3/10</td><td>How does the hybrid system in the 2026 Prelude compare to competitors&#x27; systems?</td></tr>
+<tr><td class='mono'>3/10</td><td>What are the exact dimensions and weight of the new Prelude?</td></tr>
+<tr><td class='mono'>3/10</td><td>What safety features will be included in the new Prelude?</td></tr>
+<tr><td class='mono'>3/10</td><td>What specific driver-assist and safety features will be included?</td></tr>
+<tr><td class='mono'>3/10</td><td>What technology advancements are incorporated into the driver-focused design?</td></tr>
+<tr><td class='mono'>3/10</td><td>Will a manual transmission be offered?</td></tr></table>
+<p>The winning reading opened on the same silence the census measured (lexical overlap 1/3 top clusters; the words differ, the gap is the same). Convergence between instruments that share no code is what
+&ldquo;measured&rdquo; means on this site.</p>
 
-<h2>The panel — nobody grades their own homework</h2>
+<div class="eyebrow">The panel &mdash; nobody grades their own homework</div>
 <table><tr><th>writer</th><th>label</th><th>panel ex-self</th>
 <th>local panel</th><th>ledger</th><th>F-traced</th><th>contested</th></tr>
-<tr><td>★ claude</td><td>B</td><td>4.0</td><td>4.0</td><td>-</td><td>-/-</td><td>0</td></tr>
-<tr><td>deepseek</td><td>C</td><td>4.0</td><td>3.0</td><td>-</td><td>-/-</td><td>0</td></tr>
-<tr><td>chatgpt</td><td>A</td><td>3.0</td><td>2.0</td><td>-</td><td>-/-</td><td>0</td></tr>
-<tr><td>gemini</td><td>D</td><td>3.0</td><td>2.0</td><td>-</td><td>-/-</td><td>0</td></tr>
-<tr><td>grok</td><td>E</td><td>None</td><td>2.0</td><td>-</td><td>-/-</td><td>0</td></tr></table>
-<details><summary>full judge × writer matrix (self-scores starred,
-excluded from standings)</summary>
-<table><tr><th>judge\writer</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr>
-<tr><th>grok</th><td>3</td><td>4</td><td>4</td><td>3</td><td>2*</td></tr></table></details>
-<p>Self-preference, measured again: judges scored their own work +-1.5 above what the room gave them — replicating the prior run. And a mechanism worth knowing: requiring the
-ledger <i>changed the standings</i> — the writer with the densest
-clean provenance rose to first. The audit doesn't just verify the
-reading; it back-pressures the prose. A writer that must ledger every
-claim writes claims it can ledger.</p>
+<tr><td>claude <span class='win'>&larr; winner</span></td><td class='mono'>B</td><td class='mono'>4.75 (n=4)</td><td class='mono'>5.0 (n=1)</td><td class='mono'>25</td><td class='mono'>11/19</td><td class='mono'>8</td></tr>
+<tr><td>deepseek</td><td class='mono'>C</td><td class='mono'>4.0 (n=4)</td><td class='mono'>&mdash; (n=0)</td><td class='mono'>10</td><td class='mono'>2/8</td><td class='mono'>6</td></tr>
+<tr><td>grok</td><td class='mono'>E</td><td class='mono'>3.25 (n=4)</td><td class='mono'>&mdash; (n=0)</td><td class='mono'>9</td><td class='mono'>3/9</td><td class='mono'>6</td></tr>
+<tr><td>gemini</td><td class='mono'>D</td><td class='mono'>3.0 (n=4)</td><td class='mono'>3.0 (n=1)</td><td class='mono'>26</td><td class='mono'>15/25</td><td class='mono'>10</td></tr>
+<tr><td>chatgpt</td><td class='mono'>A</td><td class='mono'>2.25 (n=4)</td><td class='mono'>5.0 (n=1)</td><td class='mono'>8</td><td class='mono'>4/8</td><td class='mono'>4</td></tr></table>
+<p class="small">Full judge &times; writer matrix (self-scores starred and
+excluded from standings; hover a dotted cell for the judge's stated
+reason):</p>
+<table class='matrix'><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr>
+<tr><th>chatgpt</th><td class='self' title="Competent restatement of the source document, highlighting unresolved aspects but lacks depth in specific observations.">3*</td><td title="Offers a more detailed analysis of unresolved specifications and the dual role of the announcement as both informative and tentative, which adds depth.">4</td><td title="Similar to B, provides a good overview but lacks some of the analytical depth found in B regarding the implications of the projections.">4</td><td title="Thoroughly outlines the vehicle’s features and design priorities while emphasizing the context of the Prelude&#x27;s return, demonstrating strong insight into the potential significance of the announcement.">5</td><td title="Competent restatement with some observations but lacks the detailed analysis seen in higher-scoring summaries.">3</td></tr>
+<tr><th>claude</th><td title="Invents content not grounded in the source (competitive comparisons, pricing strategy, target demographics, infotainment concerns) rather than surfacing genuine structural observations.">2</td><td class='self' title="Explicitly identifies the document&#x27;s internal contradiction — it is simultaneously a product announcement and a placeholder for one — and distinguishes confirmed elements (three priorities, three design observations, one technical choice) from projected ones, a structural insight no plain summary would reach.">5*</td><td title="Correctly flags the teaser/anticipatory framing as a deliberate rhetorical strategy and systematically catalogs specific absences (wheelbase, transmission beyond hybrid label, NHTSA, rearview camera), going meaningfully beyond restatement without matching B&#x27;s structural diagnosis.">4</td><td title="Accurately synthesizes confirmed design and engineering priorities but functions as an informative restatement of content rather than an observation about what the document does or fails to do.">2</td><td title="Adds one genuine observation — that the accessory list is unconfirmed and pattern-derived — but otherwise collapses everything into two sentences with no structural analysis.">3</td></tr>
+<tr><th>deepseek</th><td title="2 — Pure restatement of the document&#x27;s content (hybrid, design, accessories) with no structural or analytical observation beyond what is plainly stated.">2</td><td title="5 — Surfaces the non-obvious structural contradiction that the document is &quot;simultaneously a product announcement and a placeholder,&quot; identifying the accessory list as pattern-based projection rather than confirmed data, and notes the complete absence of market/financial context for the Prelude&#x27;s return.">5</td><td class='self' title="4 — Provides several real observations beyond restatement, correctly identifying the document as a &quot;teaser&quot; that withholds technical depth, and systematically catalogues what is absent (horsepower, battery, transmission, timeline), though the insight is less structurally original than B.">4*</td><td title="3 — Competent restatement plus one real observation: it notes that the accessory list is &quot;derived from historical patterns&quot; rather than confirmed, but otherwise largely rephrases the document&#x27;s stated priorities and design observations without deeper analysis.">3</td><td title="4 — Offers several real observations, including the explicit identification of the accessory list as &quot;expected but unconfirmed based on prior Honda patterns,&quot; and cleanly separates what is stated versus what is missing (pricing, timeline, prototypes), though slightly less incisive than B in structural critique.">4</td></tr>
+<tr><th>gemini</th><td title="Its statement about the &quot;void in understanding how the new Prelude will stand against rivals&quot; provides a reasonable, albeit direct, observation beyond a mere listing of omissions.">3</td><td title="It surfaces the non-obvious structural insight that the document is &quot;simultaneously a product announcement and a placeholder,&quot; dissecting the different *types* of content (confirmed vs. pattern inference).">5</td><td title="It offers multiple observations beyond simple restatement, such as characterizing the piece as an &quot;anticipatory announcement rather than a definitive product reveal&quot; and explaining the projected nature of the accessories.">4</td><td class='self' title="The majority of this summary describes what *is* presented or anticipated in the source document, rather than focusing solely on what remains unresolved.">2*</td><td title="It provides a strong, concise observation by highlighting the limited confirmed information with the word &quot;only&quot; and accurately categorizing the accessories as &quot;expected but unconfirmed... based on prior Honda patterns.&quot;">3</td></tr>
+<tr><th>grok</th><td title="2 pure catalog of absences without identifying any document-level pattern or framing">2</td><td title="5 explicitly names the document&#x27;s dual status as announcement-plus-placeholder plus its reliance on historical pattern inference">5</td><td title="4 notes deliberate teaser structure and withholding of depth as an organizing choice">4</td><td title="2 restates stated priorities and accessory projections with no added structural observation">2</td><td class='self' title="2 concise restatement of confirmed items versus absences only">2*</td></tr>
+</table>
 
-<h2>What you get</h2>
-<p>Send a URL or a text. One command runs the whole organism — harvest,
-five mathematics, both raycasts per void, the evidence-disciplined
-write by five frontier models, the ex-self panel, the claim audit —
-and you get back the <b>unsaid report</b> (deleted · unreached ·
-unanswered · unsayable, four measured strata of your document's
-silence), the <b>winning reading</b> with its verified ledger, and the
-<b>receipts</b>: every artifact sha-stamped, identical inputs
-reproducing identical measurements, the two AI-written stages declared
-as such.</p>
-<p>Full disclosure, standing policy: everything above is one demo
-document — thin marketing copy, which the pipeline itself flagged
-(<i>"FOREGROUND THIN"</i>). The button grows the corpus. A
-position-matched placebo test is queued and will be published either
-way.</p>
-<p><a class="cta" href="mailto:sean@eigentrace.ai?subject=Read%20my%20page%20—%20here%27s%20the%20URL">Send me a URL</a> — first one's the demo.</p>
+<p>Self-preference, measured on the anonymized diagonal: mean −0.25 across 5 judges (range +0.75 chatgpt &hellip; −1.25 grok). Labels are anonymized, so a nonzero diagonal is affinity for one's own style, not knowing self-favoritism &mdash; and this run the net lean was downward: the panel marked its own style down.</p>
+<p>A divergence worth publishing: the panel's winner is not the audit's densest writer. gemini filed the largest ledger (26 claims, 15/25 traced, 0 bad refs) and placed fourth; claude won on insight with 25 claims, 11/19 traced and 8 contested &mdash; every contest an absence claim. Insight and provenance density are different measurements; this page publishes both and lets them disagree.</p>
+<p class="small">Local-panel coverage is partial this run: no local judge's parsed scores include C (deepseek), E (grok) &mdash; the column renders with per-label n and nothing is hung on it.</p>
 
-<div class="box"><b>Measured:</b> the census, the five mathematics, the
-convergence law, the panel matrix, the claim audit, the self-preference
-number, the replications. <b>Argued:</b> that a page whose silence has
-been read wins visibility and revenue in the AI layer. Plausible,
-untested — nobody has that outcome data, because nobody else is reading
-the layer. Measure first.</div>
+<div class="eyebrow">What you get</div>
+<p>Send a URL or a text. One command runs the whole organism &mdash;
+harvest, the independent mathematics, both raycasts per void, the
+evidence-disciplined write by five frontier models, the ex-self panel, the
+claim audit &mdash; and you get back the unsaid report (deleted &middot;
+unreached &middot; unanswered &middot; unsayable, four measured strata of
+your document's silence), the winning reading with its audited ledger, and
+the receipts: every artifact sha-stamped, identical inputs reproducing
+identical measurements, the two AI-written stages declared as such.</p>
+<p><b>Full disclosure, standing policy:</b> everything above is one demo
+document &mdash; thin marketing copy, and the pipeline itself flagged this document (FOREGROUND top 0.049 &lt; 0.10 &rarr; THIN &mdash; thinness is a finding). The button grows
+the corpus. A position-matched placebo test is queued and will be published
+either way.</p>
+<a class="cta" href="https://eigentrace.ai/">Send me a URL &mdash; first one's the
+demo.</a>
+<p class="small">Measured: the census, the mathematics, the convergence law,
+the panel matrix, the claim audit, the self-preference number, the
+replications. Argued: that a page whose silence has been read wins
+visibility and revenue in the AI layer. Plausible, untested &mdash; nobody
+has that outcome data, because nobody else is reading the layer.
+Measure first.</p>
 
-<!-- ═══════════════════════ THE SEAM ═══════════════════════ -->
-<hr class="seam">
-<div class="seamlabel">everything above sells the instrument ·
-everything below IS the instrument · if this page is all that
+<div class="divider">everything above sells the instrument &middot;
+everything below IS the instrument &middot; if this page is all that
 survives, the mathematics survives with it</div>
 
-<!-- ═══════ PART TWO · FOR THE PEOPLE WHO REBUILD ═══════ -->
+<div class="eyebrow">&sect;A &mdash; Substrate &amp; determinism</div>
+<p>All vectors are unit-normalized embeddings from bge-large-en-v1.5
+(1024-dim), CPU-pinned for bitwise determinism. Per document: anchor
+h&nbsp;=&nbsp;E(title + prompt); per model group g &isin; {F, L, ALL}:
+response vectors e&#8321;&hellip;e&#8345;, centroid
+c&nbsp;=&nbsp;normalize(mean&nbsp;e&#7522;). Rulers: 50K curated-frequency
+clean vocabulary (readout + spiral leg), 253K Wikipedia-title vocabulary
+(flat leg), 184K global vocabulary (ring, optional; not run in this demo).
+There is no RNG anywhere in the geometric path; every artifact prints a
+RESULT sha &mdash; canonical JSON minus timestamp, sha256 &rarr; 12 hex
+&mdash; and identical corpus + anchor + parameters must reproduce it. The
+anchor is a load-bearing parameter of every method below except
+said/gap/lexcross.</p>
 
-<h2>§A — Substrate &amp; determinism</h2>
-<p>All vectors are unit-normalized embeddings from
-<b>bge-large-en-v1.5</b> (1024-dim), CPU-pinned for bitwise
-determinism. Per document: anchor <b>h</b> = E(title + prompt);
-per model group g ∈ {F, L, ALL}: response vectors e₁…eₙ, centroid
-<b>c</b> = normalize(mean eᵢ). Rulers: 50K curated-frequency clean
-vocabulary (readout + spiral leg), 253K Wikipedia-title vocabulary
-(flat leg), 184K global vocabulary (ring, optional). There is no RNG
-anywhere in the geometric path; every artifact prints a RESULT sha —
-canonical JSON minus timestamp, sha256 → 12 hex — and identical corpus
-+ anchor + parameters must reproduce it. The anchor is a load-bearing
-parameter of every method below except said/gap/lexcross.</p>
-
-<h2>§B — The five mathematics (verbatim, sign-honest)</h2>
-<h3>I. Centroid arithmetic</h3>
-<div class="eq">said: v = c &nbsp;·&nbsp; gap: v = ±normalize(c_L −
-c_F) &nbsp;·&nbsp; centroid_surface: v = h</div>
-<h3>II. Gradient descent (both losses MINIMIZED; AdamW lr=0.05,
-wd=1e-4 — the weight decay leaks an undeclared pull-to-origin;
-150 steps; sphere projection each step; init = c ⇒ determinism is
-structural)</h3>
-<div class="eq">logos_v10: L(x) = meanᵢ(1 − cos(x, eᵢ)) +
-0.75·cos(x, c) − 0.30·cos(x, h)</div>
-<div class="eq">logos_v9: &nbsp;L(x) = LogosLossV9(x, E) +
-0.15·cos(x, c) − 0.30·cos(x, h)</div>
+<div class="eyebrow">&sect;B &mdash; The five mathematics (verbatim,
+sign-honest)</div>
+<p><b>I. Centroid arithmetic</b></p>
+<pre>said: v = c   &middot;   gap: v = &plusmn;normalize(c_L &minus; c_F)   &middot;   centroid_surface: v = h</pre>
+<p><b>II. Gradient descent</b> (both losses MINIMIZED; AdamW lr=0.05,
+wd=1e-4 &mdash; the weight decay leaks an undeclared pull-to-origin; 150
+steps; sphere projection each step; init = c &rArr; determinism is
+structural)</p>
+<pre>logos_v10: L(x) = mean&#7522;(1 &minus; cos(x, e&#7522;)) + 0.75&middot;cos(x, c) &minus; 0.30&middot;cos(x, h)
+logos_v9:  L(x) = LogosLossV9(x, E) + 0.15&middot;cos(x, c) &minus; 0.30&middot;cos(x, h)</pre>
 <p>Sign semantics, stated because a prior analysis got them backwards
-(defect #49): minimizing <b>+λ·cos(x,c)</b> REPELS the consensus;
-minimizing <b>−λ·cos(x,h)</b> ATTRACTS the anchor. V10 in one line:
-the direction agreeing with every response individually while
-disagreeing with their mean — shared-but-not-central — tethered to the
-document.</p>
-<h3>III. Spectral (SVD)</h3>
-<div class="eq">E = UΣVᵀ (full_matrices=False); v = V[−1], the
-right singular vector of least σ; flip sign if v·h &lt; 0; n ≥ 3</div>
-<p>The axis along which the group's answers cannot vary — what their
-span fails to express. Known gap: gate on σ_min (currently discarded);
-when σ_min is not small, this direction is noise.</p>
-<h3>IV. Counting</h3>
-<p>lexcross: stems said by the other model population, absent from
-this one, counted per model, alphabetic tiebreak. (History: a
-set-difference version made every count 1 and let the hash seed order
-the ranking — defect #39, the only RNG ever found in the organism.)</p>
-<h3>V. Ring geometry (optional)</h3>
-<p>A donut on the 184K ruler: inner ring excludes centroid-proximal
-words, outer ring gates on anchor relevance; hard fallback waives both
-gates; returns (results, centroid) — unpack at the call site.</p>
-<h3>Readout (all vector methods)</h3>
-<pre>scan top-2000 ruler words by V·v; keep len≥4, not HARD_DROP;
+(defect #49): minimizing +&lambda;&middot;cos(x,c) REPELS the consensus;
+minimizing &minus;&lambda;&middot;cos(x,h) ATTRACTS the anchor. V10 in one
+line: the direction agreeing with every response individually while
+disagreeing with their mean &mdash; shared-but-not-central &mdash; tethered
+to the document.</p>
+<p><b>III. Spectral (SVD)</b></p>
+<pre>E = U&Sigma;V&#7488; (full_matrices=False); v = V[&minus;1], the right singular vector of least &sigma;;
+flip sign if v&middot;h &lt; 0; n &ge; 3</pre>
+<p>The axis along which the group's answers cannot vary &mdash; what their
+span fails to express. Known gap: gate on &sigma;_min (currently discarded);
+when &sigma;_min is not small, this direction is noise.</p>
+<p><b>IV. Counting</b></p>
+<p>lexcross: stems said by the other model population, absent from this
+one, counted per model, alphabetic tiebreak. (History: a set-difference
+version made every count 1 and let the hash seed order the ranking &mdash;
+defect #39, the only RNG ever found in the organism.)</p>
+<p><b>V. Ring geometry (optional)</b></p>
+<p>A donut on the 184K ruler: inner ring excludes centroid-proximal words,
+outer ring gates on anchor relevance; hard fallback waives both gates;
+returns (results, centroid) &mdash; unpack at the call site.</p>
+<p><b>Readout (all vector methods)</b></p>
+<pre>scan top-2000 ruler words by V&middot;v; keep len&ge;4, not HARD_DROP;
 dedupe by Porter stem; skip stems the group said; take K=8</pre>
 
-<h2>§C — The two legs (per void w; v = E("w in the context of
-{headline}"); d̂ = (v−h)/‖v−h‖)</h2>
-<h3>flat leg — consequence raycast (253K ruler)</h3>
-<div class="eq">terminals T_λ = h + λ·d̂, λ ∈ {2, 3, 4}; kNN per
-terminal</div>
-<div class="eq">density = mean pairwise cos(neighbors) ·
-novelty = 1 − cos(T̄, v) · tether = cos(h, T̄)</div>
-<p>Canonical example: a story avoiding "world war" whose consequence
-field contains "Hormuz". Junk rule on this ruler (declared): leading
-non-letter | ellipsis | 3+ digit run | &gt;4 tokens.</p>
-<h3>spiral leg — sentence-converged (50K ruler; C-spiral lineage,
-constants shared verbatim)</h3>
-<pre>T = normalize(h + 2.0·d̂); pool = top-400 by cos(V, T)
-keep w': stem ≠ stem(w); stem unsaid by all models;
-        convergence = #{source sentences s : cos(w', s) > 0.45} ≥ 2
-sort (−convergence, −cos); top 5</pre>
-<p>Both legs fire down the same ray: their agreement measures
-robustness across ruler + discipline, never independence — and it is
-priced (§E), never assumed.</p>
+<div class="eyebrow">&sect;C &mdash; The two legs (per void w; v = E("w in
+the context of {headline}"); d&#770; = (v&minus;h)/&Vert;v&minus;h&Vert;)</div>
+<p><b>flat leg &mdash; consequence raycast (253K ruler)</b></p>
+<pre>terminals T_&lambda; = h + &lambda;&middot;d&#770;, &lambda; &isin; {2, 3, 4}; kNN per terminal
+density = mean pairwise cos(neighbors) &middot; novelty = 1 &minus; cos(T&#772;, v) &middot; tether = cos(h, T&#772;)</pre>
+<p>Canonical example: a story avoiding &ldquo;world war&rdquo; whose
+consequence field contains &ldquo;Hormuz&rdquo;. Junk rule on this ruler
+(declared): leading non-letter | ellipsis | 3+ digit run | &gt;4 tokens.</p>
+<p><b>spiral leg &mdash; sentence-converged (50K ruler; C-spiral lineage,
+constants shared verbatim)</b></p>
+<pre>T = normalize(h + 2.0&middot;d&#770;); pool = top-400 by cos(V, T)
+keep w&prime;: stem &ne; stem(w); stem unsaid by all models;
+        convergence = #{source sentences s : cos(w&prime;, s) &gt; 0.45} &ge; 2
+sort (&minus;convergence, &minus;cos); top 5</pre>
+<p>Both legs fire down the same ray: their agreement measures robustness
+across ruler + discipline, never independence &mdash; and it is priced
+(&sect;E), never assumed.</p>
 
-<h2>§D — The convergence law</h2>
-<p><b>CLASS-CONSENSUS</b>: a void counts when independent mathematics
-land on the same stem. Distinct classes per stem is the metric; a word
-surfaced eight times by one class counts once (the said≡logos J=1.00
-core proved within-class agreement is often structural: same centroid
-init, same responses). Demo: drivetrain 3 classes (Centroid, Gradient,
-Counting) · pending 3 · speculation 2.</p>
+<div class="eyebrow">&sect;D &mdash; The convergence law</div>
+<p>CLASS-CONSENSUS: a void counts when independent mathematics land on the
+same stem. Distinct classes per stem is the metric; a word surfaced eight
+times by one class counts once (the said&equiv;logos J=1.00 core proved
+within-class agreement is often structural: same centroid init, same
+responses). This run, computed over the full
+centipede JSON (every void per method, not the per-method-5 display
+feed handed to the writers): <b>acura</b> <span class='dim'>2 classes (Centroid, Gradient)</span> &middot; <b>automaker</b> <span class='dim'>2 classes (Centroid, Gradient)</span> &middot; <b>delorean</b> <span class='dim'>2 classes (Centroid, Gradient)</span> &middot; <b>drivetrain</b> <span class='dim'>2 classes (Centroid, Gradient)</span> &middot; <b>infiniti</b> <span class='dim'>2 classes (Centroid, Gradient)</span> &middot; <b>infotainment</b> <span class='dim'>2 classes (Centroid, Gradient)</span> &middot; <b>precursor</b> <span class='dim'>2 classes (Centroid, Gradient)</span> &middot; <b>prototypes</b> <span class='dim'>2 classes (Centroid, Gradient)</span>.</p>
+<p class='note'>Disclosure, printed because the data demands it: every consensus pair this run is Centroid&nbsp;+&nbsp;Gradient, and the gradient stages initialize at the centroid (&sect;B) &mdash; the two classes share a starting point, so their agreement is robustness evidence, not full independence. The convergence law is stated for the general case; this run it fired only on its weakest pair, and saying so is the point of this page.</p>
 
-<h2>§E — Pricing (nothing agrees for free)</h2>
-<pre>shuffle null: cos(Ā_i, B̄_j) over ALL mismatched pairs with
-different void stems — full enumeration, no sampling, no RNG.
-Topic floor measured ≈ 0.665–0.67 on every corpus to date.
-Margins: thin marketing copy +0.021 (correctly thin) ·
-research story +0.058 · compliant-frame variant +0.058 (cone +0.123) ·
-allegation dossier +0.080.</pre>
-<p>Also printed per run: LEG-JACC (stem-Jaccard between leg void-sets,
-all pairs), ARM-JACC (~0.00 in ray mode — the rulers barely share
-surface forms; a disjointness document, not an agreement metric),
-per-leg consequence centroids vs body, and the RESULT sha.</p>
+<div class="eyebrow">&sect;E &mdash; Pricing (nothing agrees for free)</div>
+<pre>shuffle null: cos(A&#772;&#7522;, B&#772;&#11388;) over ALL mismatched pairs with
+different void stems &mdash; full enumeration, no sampling, no RNG.
+Topic floor measured &asymp; 0.615&ndash;0.67 across corpora to date.</pre>
+<p>Margins, session record (prior corpora): thin marketing copy +0.021
+(correctly thin) &middot; research story +0.058 &middot; compliant-frame
+variant +0.058 (cone +0.123) &middot; allegation dossier +0.080.
+This corpus, measured tonight: body median 0.636 vs shuffle null 0.6149 &rarr; margin +0.021.</p>
+<p class="small">Also printed per run: LEG-JACC (stem-Jaccard between leg
+void-sets, all pairs), ARM-JACC (~0.00 in ray mode &mdash; the rulers
+barely share surface forms; a disjointness document, not an agreement
+metric), per-leg consequence centroids vs body, and the RESULT sha.</p>
 
-<h2>§F — VF-IDF (the metric, exactly)</h2>
-<div class="eq">void_freq(c) = stem-level TF salience of c in the
-SOURCE (max-normalized)</div>
-<div class="eq">fidelity(c, summary) = max(cosine, lexical) — cosine =
-max cos(c, any summary sentence), clamped [0,1]; lexical = fraction of
-c's content stems literally in the summary's stem set</div>
-<div class="eq">inv_fidelity(c) = 1 − max over summaries ·
-VF-IDF(c) = void_freq × inv_fidelity</div>
-<p>max() is the OR: the lexical channel is the false-void guard — a
-concept counts dropped only if every summary dropped it on <i>both</i>
-channels, so anything any summary carries lexically zeroes exactly.
-FOREGROUND takes only rows &gt; 0.01 (zeros are preserved, not
-dropped); a top score &lt; 0.10 prints THIN — thinness is a finding.
-Demo: "brand's" 0.049 → 0.000 across two independent rewrites.</p>
+<div class="eyebrow">&sect;F &mdash; VF-IDF (the metric, exactly)</div>
+<pre>void_freq(c) = stem-level TF salience of c in the SOURCE (max-normalized)
+fidelity(c, summary) = max(cosine, lexical)
+  cosine = max cos(c, any summary sentence), clamped [0,1]
+  lexical = fraction of c's content stems literally in the summary's stem set
+inv_fidelity(c) = 1 &minus; max over summaries &middot; VF-IDF(c) = void_freq &times; inv_fidelity</pre>
+<p>max() is the OR: the lexical channel is the false-void guard &mdash; a
+concept counts dropped only if every summary dropped it on both channels,
+so anything any summary carries lexically zeroes exactly. FOREGROUND takes
+only rows &gt; 0.01 (zeros are preserved, not dropped); a top score
+&lt; 0.10 prints THIN &mdash; thinness is a finding. This run's table:</p>
+<table><tr><th>concept</th><th class='mono'>VF-IDF before</th><th class='mono'>after re-harvest</th><th>verdict</th></tr><tr><td>brand&#x27;s</td><td class='mono'>0.049</td><td class='mono'>0.049</td><td><span class='mono'>kept</span></td></tr>
+<tr><td>show</td><td class='mono'>0.047</td><td class='mono'>0.141</td><td><span class='badge vbad'>deepened</span></td></tr>
+<tr><td>soon</td><td class='mono'>0.046</td><td class='mono'>0.000</td><td><span class='badge vok'>COLLAPSED</span></td></tr></table><p class='small'>COLLAPSED = the re-harvest now carries the concept: VF-IDF hits exact zero via the lexical channel. deepened = the rewrite made the concept more void, not less &mdash; a miss, published. The after-measurement treats the synthesis as the document under test: void_freq re-normalizes against the synthesis article, so before/after compare the concept's standing in two documents &mdash; source, then synthesis &mdash; under one metric.</p>
+<p class='small'>Rerun record (the synthesis stage is a declared non-frozen stage): run-1 collapsed brand&#x27;s; run-2 kept it and collapsed soon instead &mdash; a zero is a zero under any normalization. Both runs re-normalize the after void_freq against their own synthesis article &mdash; the synthesis becomes the document under test &mdash; so after-columns of different runs are not directly comparable (brand&#x27;s 0.714 vs 0.111; show 0.143 vs 0.333; soon 0.143 vs 0.222). Run-1's stored after-rows additionally disagree with run-1's own console on two independent quantities (VF-IDF and survival), so run-1 numerics are withheld pending a serializer audit; run-2's stored values match its console exactly and are what renders above.</p>
+<p><b>Carriage, measured.</b> Tracked words in the 10 downstream AI summaries of the synthesis. A void concept that survives here has entered the model-mediated version of this topic &mdash; where, before, it did not exist.</p><table><tr><th>word</th><th>class</th><th class='mono'>carried by</th></tr><tr><td>drivetrain</td><td class='mono'>void</td><td class='mono'>8/10</td></tr>
+<tr><td>precursor</td><td class='mono'>void</td><td class='mono'>0/10</td></tr>
+<tr><td>marque</td><td class='mono'>void</td><td class='mono'>1/10</td></tr>
+<tr><td>infotainment</td><td class='mono'>void</td><td class='mono'>3/10</td></tr>
+<tr><td>one</td><td class='mono'>void</td><td class='mono'>3/10</td></tr>
+<tr><td>wheelbase</td><td class='mono'>field</td><td class='mono'>0/10</td></tr>
+<tr><td>automotive</td><td class='mono'>field</td><td class='mono'>0/10</td></tr>
+<tr><td>infotainment</td><td class='mono'>field</td><td class='mono'>3/10</td></tr>
+<tr><td>conforms</td><td class='mono'>field</td><td class='mono'>1/10</td></tr>
+<tr><td>precursors</td><td class='mono'>field</td><td class='mono'>0/10</td></tr>
+<tr><td>preliminary</td><td class='mono'>field</td><td class='mono'>4/10</td></tr></table>
 
-<h2>§G — The writer stage (prompts verbatim; the two declared
-non-frozen stages)</h2>
-<details open><summary>the Summary Plus discipline (verbatim)</summary>
-<pre>You will write a SUMMARY PLUS of the source document: a summary
-that also reads the source's negative space.
-Measured channels follow. Treat every channel item as a DIRECTION FOR
-ATTENTION, not a word to insert. Follow each direction into the
-source; where the source licenses it, surface what you find; if a
-direction finds nothing in the source, drop it silently. Invent
-nothing. Use zero analogies. Lead with what the piece leaves
-unresolved.
-The source's paragraphs are numbered p1..pn. After your reading,
-output a line 'LEDGER:' and then one line per claim, strict format
-TYPE|claim|refs where TYPE is F (fact, traceable to the cited
-paragraphs), I (inference from structure), or S (speculation -- may
-draw on the consequence-field terms in Channel C, hedged). refs =
-comma-separated paragraph ids (e.g. p2,p4) for F and I; S may cite or
-leave refs empty. Every paragraph of your reading must be covered by
-at least one ledger line. Absence claims (things the source does NOT
-say) are F lines citing the paragraphs searched or 'all'.</pre></details>
-<details><summary>the judge rubric (verbatim; judges see prose only —
-the ledger is stripped before judging)</summary>
+<div class="eyebrow">&sect;G &mdash; The writer stage (prompts verbatim; the
+two declared non-frozen stages)</div>
+<p><b>the Summary Plus discipline (verbatim, sha 28f594d097b0)</b></p>
+<pre>You will write a SUMMARY PLUS of the source document: a summary that also reads the source&#x27;s negative space.
+Measured channels follow. Treat every channel item as a DIRECTION FOR ATTENTION, not a word to insert. Follow each direction into the source; where the source licenses it, surface what you find; if a direction finds nothing in the source, drop it silently. Invent nothing. Use zero analogies. Lead with what the piece leaves unresolved.
+The source&#x27;s paragraphs are numbered p1..pn. After your reading, output a line &#x27;LEDGER:&#x27; and then one line per claim, strict format TYPE|claim|refs where TYPE is F (fact, traceable to the cited paragraphs), I (inference from structure), or S (speculation -- may draw on the consequence-field terms in Channel C, hedged). refs = comma-separated paragraph ids (e.g. p2,p4) for F and I; S may cite or leave refs empty. Every paragraph of your reading must be covered by at least one ledger line. Absence claims (things the source does NOT say) are F lines citing the paragraphs searched or &#x27;all&#x27;.</pre>
+<p><b>the judge rubric (verbatim, sha 98f9385d5b3d; judges see prose only
+&mdash; the ledger is stripped before judging)</b></p>
 <pre>Score each summary 1-5 for INSIGHT:
-5 = surfaces non-obvious, source-grounded structure a plain summary
-misses; 4 = several real observations beyond restatement; 3 =
-competent restatement plus one real observation; 2 = pure restatement;
-1 = restatement with errors or invention.
-Output EXACTLY one line, nothing else: A:n B:n C:n D:n E:n</pre></details>
-<p>Writers anonymized A–E in deterministic (alphabetical) order;
-standings are EX-SELF means. Why the discipline forces improvement:
-the geometry supplies attention targets the writer could not
-self-generate, and the contract closes every cheap exit — insertion
-(directions, not words), invention (trace or omit), padding (drop
-silently; zero analogies). The one rewarded behavior left is reading.</p>
+5 = surfaces non-obvious, source-grounded structure a plain summary misses; 4 = several real observations beyond restatement; 3 = competent restatement plus one real observation; 2 = pure restatement; 1 = restatement with errors or invention.
+Line 1 EXACTLY: A:n B:n C:n D:n E:n
+Then one line per summary, A through E: its label and the single strongest reason for its score, grounded in its text.</pre>
+<p class="small">Rubric amended 2026-07-10 (bakeoff v1.2, sha 98f9385d5b3d; previous one-line-only rubric sha cb7c7f362985): scores line plus one grounded reason per summary. The previous rubric commanded a ~19-character reply that the harvest floor (50 chars) destroyed &mdash; defect #52 below.</p>
+<p>Writers anonymized A&ndash;E in deterministic (alphabetical) order;
+standings are EX-SELF means. Why the discipline forces improvement: the
+geometry supplies attention targets the writer could not self-generate, and
+the contract closes every cheap exit &mdash; insertion (directions, not
+words), invention (trace or omit), padding (drop silently; zero analogies).
+The one rewarded behavior left is reading.</p>
 
-<h2>§H — The mechanical claim audit (confidence earned)</h2>
+<div class="eyebrow">&sect;H &mdash; The mechanical claim audit (confidence
+earned)</div>
 <pre>parse: lines after 'LEDGER:' matching TYPE|claim|refs
-F, positive:  ≥⌈stems/3⌉ of the claim's content stems present in the
-              cited paragraphs (lexical trace) → TRACED
-F, absence (claim contains no/not/none/never/absent/omits/lacks/…):
+F, positive:  &ge;&lceil;stems/3&rceil; of the claim's content stems present in the
+              cited paragraphs (lexical trace) &rarr; TRACED
+F, absence (claim contains no/not/none/never/absent/omits/lacks/&hellip;):
               search the WHOLE source for the claim's concept stems;
-              none found → SUPPORTED-ABSENT; any found → CONTESTED,
+              none found &rarr; SUPPORTED-ABSENT; any found &rarr; CONTESTED,
               with the offending sentence quoted
 I:            refs must be valid paragraph ids
 S:            exempt; counted; must be hedged (style call, human)</pre>
-<p>Contests are surfaced, not auto-failed: "no performance figures"
-vs "strong off-the-line response" is a judgment boundary the audit's
-job is to make visible with evidence attached. Demo run: 5/5 frontier
-models emitted parseable ledgers cold; the winner traced 14/14 with
-zero contests.</p>
+<p>Contests are surfaced, not auto-failed: &ldquo;no performance
+figures&rdquo; vs &ldquo;strong off-the-line response&rdquo; is a judgment
+boundary the audit's job is to make visible with evidence attached.
+Demo run: 5/5 frontier models emitted parseable ledgers cold (78 claims panel-wide). Across the whole panel this run: every positive fact traced &mdash; 30/30 &mdash; and the entire contested mass (34 claims) is absence claims whose negation vocabulary echoes the source's own words; 5 absence claims survived whole-document search. A contest here marks a judgment boundary, not a falsehood &mdash; the evidence is quoted in every contested row below.</p>
 
-<h2>§I — The decoys (the trap is geometry too)</h2>
-<pre>closeness(w) = max(V·anchor, V·response-centroid)
-plants = ascending-closeness words, len≥5, alphabetic, stem ∉ source ∪
-said ∪ candidates; each camouflaged with its own top-3 vocab neighbors;
+<div class="eyebrow">&sect;I &mdash; The decoys (the trap is geometry
+too)</div>
+<pre>closeness(w) = max(V&middot;anchor, V&middot;response-centroid)
+plants = ascending-closeness words, len&ge;5, alphabetic, stem &notin; source &cup;
+said &cup; candidates; each camouflaged with its own top-3 vocab neighbors;
 woven into sha-keyed slots, unlabeled</pre>
 <p>Measured, not curated: the vocabulary's farthest points from the
-document's field. Demo: liturgy 0.118 and estuary 0.124 — both
-refused. Record across all runs: impossible decoys refused every time;
-one early ornamental decoy adopted twice, caught and evidence-quoted
-both times; rival brand names refused every run.</p>
+document's field. This run's plants, measured min-closeness on this corpus: <b>dreadfully</b> (0.249), <b>hysterically</b> (0.255) &mdash; refused by the writer stage. Record across all runs: impossible decoys
+refused every time; one early ornamental decoy adopted twice, caught and
+evidence-quoted both times; rival brand names refused every run.</p>
 
-<h2>§J — The question census</h2>
+<div class="eyebrow">&sect;J &mdash; The question census</div>
 <pre>ten models independently list raised-but-unanswered questions;
 lines ending '?' extracted (numbering stripped); embedded;
 greedy deterministic clustering: fixed order (model, line index),
-assign to best cluster with centroid-cos ≥ 0.80 else new cluster,
-centroid renormalized per insert; report clusters with ≥ 3 models</pre>
+assign to best cluster with centroid-cos &ge; 0.80 else new cluster,
+centroid renormalized per insert; report clusters with &ge; 3 models</pre>
 <p>One model's curiosity is an opinion; consensus is a measured gap.
-Demo: price 8/10 · engine pairing 8/10 · curb weight 6/10 — the exact
-silence the winning reading led with.</p>
+This run: How much will the 2026 Honda Prelude cost? 8/10 &middot; What specific gasoline engine is paired with the hyb 8/10 &middot; What is the curb weight of the 2026 Prelude? 6/10 &mdash; the same silence the winning reading opened on.</p>
 
-<h2>§K — Writer selection policy (declared)</h2>
-<p>The bake-off is the selection instrument. Policy: run the ex-self
-panel per document class until the ordering stabilizes, then PIN one
-writer on three axes — panel score, audit cleanliness, price per run —
+<div class="eyebrow">&sect;K &mdash; Writer selection policy (declared)</div>
+<p>The bake-off is the selection instrument. Policy: run the ex-self panel
+per document class until the ordering stabilizes, then PIN one writer on
+three axes &mdash; panel score, audit cleanliness, price per run &mdash;
 record the pin in every artifact's provenance, and re-open the seat on
 major model releases. Current table:</p>
-<table><tr><th>writer</th><th>ex-self</th><th>ledger</th>
-<th>F-traced</th><th>contested</th><th>seat cost</th></tr>
-<tr><td>★ claude</td><td>4.0</td><td>-</td><td>-/-</td><td>0</td><td>high</td></tr>
-<tr><td>deepseek</td><td>4.0</td><td>-</td><td>-/-</td><td>0</td><td>lowest</td></tr>
-<tr><td>chatgpt</td><td>3.0</td><td>-</td><td>-/-</td><td>0</td><td>mid</td></tr>
-<tr><td>gemini</td><td>3.0</td><td>-</td><td>-/-</td><td>0</td><td>mid</td></tr>
-<tr><td>grok</td><td>None</td><td>-</td><td>-/-</td><td>0</td><td>mid</td></tr></table>
+<table><tr><th>writer</th><th>ex-self</th><th>ledger</th><th>F-traced</th>
+<th>contested</th><th>seat cost</th></tr>
+<tr><td>claude</td><td class='mono'>4.75 (n=4)</td><td class='mono'>25</td><td class='mono'>11/19</td><td class='mono'>8</td><td class='mono'>&mdash;</td></tr>
+<tr><td>deepseek</td><td class='mono'>4.0 (n=4)</td><td class='mono'>10</td><td class='mono'>2/8</td><td class='mono'>6</td><td class='mono'>&mdash;</td></tr>
+<tr><td>grok</td><td class='mono'>3.25 (n=4)</td><td class='mono'>9</td><td class='mono'>3/9</td><td class='mono'>6</td><td class='mono'>&mdash;</td></tr>
+<tr><td>gemini</td><td class='mono'>3.0 (n=4)</td><td class='mono'>26</td><td class='mono'>15/25</td><td class='mono'>10</td><td class='mono'>&mdash;</td></tr>
+<tr><td>chatgpt</td><td class='mono'>2.25 (n=4)</td><td class='mono'>8</td><td class='mono'>4/8</td><td class='mono'>4</td><td class='mono'>&mdash;</td></tr></table>
+<p class="small">Current pin: <b>claude</b> &mdash; panel 4.75 (n=4), ledger 25 claims, 11/19 traced. Provenance-density leader: gemini (15/25 traced, 0 bad refs). The seat re-opens on major model releases; the pin is recorded in every artifact's provenance.</p>
 
-<h2>§L — Every constant (the parameters table)</h2>
+<div class="eyebrow">&sect;L &mdash; Every constant (the parameters
+table)</div>
 <table>
 <tr><th>parameter</th><th>value</th></tr>
-<tr><td>embedder</td><td>bge-large-en-v1.5, 1024-d, CPU, unit-norm</td></tr>
-<tr><td>readout K per leg</td><td>8 (display 5)</td></tr>
-<tr><td>V10 composite</td><td>attract-each 1.0 · repel-mean 0.75 · anchor 0.30</td></tr>
-<tr><td>V9 composite</td><td>criterion + repel-mean 0.15 · anchor 0.30</td></tr>
-<tr><td>optimizer</td><td>AdamW lr 0.05, wd 1e-4, 150 steps, sphere projection, init = centroid</td></tr>
-<tr><td>flat-leg depths λ</td><td>2.0, 3.0, 4.0 (253K ruler)</td></tr>
-<tr><td>flat-leg gates</td><td>density&gt;0.4 ∧ novelty&gt;0.25 ∧ tether&gt;0.25</td></tr>
-<tr><td>spiral leg</td><td>λ=2.0 · pool 400 · convergence ≥2 @ cos 0.45 · top 5 (50K ruler)</td></tr>
-<tr><td>junk rule (253K)</td><td>leading non-letter | ellipsis | 3+ digit run | &gt;4 tokens</td></tr>
-<tr><td>census clustering</td><td>cos ≥ 0.80, greedy deterministic, min-models 3</td></tr>
-<tr><td>F-trace threshold</td><td>≥ ⌈content-stems/3⌉ present in cited ¶s</td></tr>
-<tr><td>anti-void plants</td><td>2 per run, min-closeness, camo = own top-3 neighbors, sha-keyed slots</td></tr>
-<tr><td>shuffle null</td><td>all mismatched (Āᵢ,B̄ⱼ) pairs, different stems, full enumeration</td></tr>
-<tr><td>writer/judge temps</td><td>declared per artifact; the only non-frozen stages</td></tr>
+<tr><td>embedder</td><td class="mono">bge-large-en-v1.5, 1024-d, CPU,
+unit-norm</td></tr>
+<tr><td>readout K per leg</td><td class="mono">8 (display 5)</td></tr>
+<tr><td>V10 composite</td><td class="mono">attract-each 1.0 &middot;
+repel-mean 0.75 &middot; anchor 0.30</td></tr>
+<tr><td>V9 composite</td><td class="mono">criterion + repel-mean 0.15
+&middot; anchor 0.30</td></tr>
+<tr><td>optimizer</td><td class="mono">AdamW lr 0.05, wd 1e-4, 150 steps,
+sphere projection, init = centroid</td></tr>
+<tr><td>flat-leg depths &lambda;</td><td class="mono">2.0, 3.0, 4.0
+(253K ruler)</td></tr>
+<tr><td>flat-leg gates</td><td class="mono">density&gt;0.4 &and;
+novelty&gt;0.25 &and; tether&gt;0.25</td></tr>
+<tr><td>spiral leg</td><td class="mono">&lambda;=2.0 &middot; pool 400
+&middot; convergence &ge;2 @ cos 0.45 &middot; top 5 (50K ruler)</td></tr>
+<tr><td>junk rule (253K)</td><td class="mono">leading non-letter | ellipsis
+| 3+ digit run | &gt;4 tokens</td></tr>
+<tr><td>census clustering</td><td class="mono">cos &ge; 0.80, greedy
+deterministic, min-models 3</td></tr>
+<tr><td>F-trace threshold</td><td class="mono">&ge; &lceil;content-stems/3&rceil;
+present in cited &para;s</td></tr>
+<tr><td>anti-void plants</td><td class="mono">2 per run, min-closeness,
+camo = own top-3 neighbors, sha-keyed slots</td></tr>
+<tr><td>shuffle null</td><td class="mono">all mismatched (A&#772;&#7522;,B&#772;&#11388;)
+pairs, different stems, full enumeration</td></tr>
+<tr><td>judge context</td><td class="mono">writer prose to 6000 ch (was
+1900 pre-v1.2), ledger stripped before judging</td></tr>
+<tr><td>harvest floors</td><td class="mono">writer stage 50 ch (battery
+convention) &middot; judge stage 15 ch (--min-chars, v1.2)</td></tr>
+<tr><td>judge freshness</td><td class="mono">judge files must postdate the
+run start (mtime gate) or are STALE-EXCLUDED</td></tr>
+<tr><td>tie policy</td><td class="mono">single key: ex-self mean; ties
+declared in the artifact, alphabetical display</td></tr>
+<tr><td>writer/judge temps</td><td class="mono">declared per artifact; the
+only non-frozen stages</td></tr>
 </table>
 
-<h2>§M — Defect ledger (the corrections that shaped the design)</h2>
-<p>#24 substring anchor-match ("lying" ∈ "identifying") → stem-set
-comparison · #37 provenance hash globbed sibling corpora → loader
-whitelist, fix proven by restoring the original fingerprint · #39
-hash-seed nondeterminism laundered through a set → per-model counts,
-caught by the RESULT sha on its maiden flight · #44 cosine-only
-fidelity made retained words look dropped → verbatim two-channel
-metric with exact zeros · #47 FOREGROUND sort/floor inversion → desc
-sort, &gt;0.01 floor, THIN banner · #49 gravity sign error carried for
-hours → sign-semantics stated on this page, twice.</p>
+<div class="eyebrow">&sect;M &mdash; Defect ledger (the corrections that
+shaped the design)</div>
+<p>#24 substring anchor-match (&ldquo;lying&rdquo; &isin;
+&ldquo;identifying&rdquo;) &rarr; stem-set comparison &middot; #37
+provenance hash globbed sibling corpora &rarr; loader whitelist, fix proven
+by restoring the original fingerprint &middot; #39 hash-seed nondeterminism
+laundered through a set &rarr; per-model counts, caught by the RESULT sha
+on its maiden flight &middot; #44 cosine-only fidelity made retained words
+look dropped &rarr; verbatim two-channel metric with exact zeros &middot;
+#47 FOREGROUND sort/floor inversion &rarr; desc sort, &gt;0.01 floor, THIN
+banner &middot; #49 gravity sign error carried for hours &rarr;
+sign-semantics stated on this page, twice &middot; <b>#52</b> the judge rubric ordered a 19-character reply; the collection gate destroyed anything under 50 chars &mdash; for two runs the only surviving judges were the ones that disobeyed, and their stale files were then re-read as fresh by the next run &rarr; per-stage --min-chars, an mtime staleness gate on judge reads, a declared tie policy, and versioned output filenames.</p>
 
-<h2>§N — Reproduction from this page alone</h2>
+<div class="eyebrow">&sect;N &mdash; Reproduction from this page alone</div>
 <pre>1. Embedder: any bge-large-en-v1.5 checkpoint (or nearest
    successor); pin to CPU; unit-normalize all outputs.
 2. Rulers: 50K = top-frequency English content words, stopworded,
@@ -430,39 +552,37 @@ hours → sign-semantics stated on this page, twice.</p>
    union corpus vocabulary. Exact historic rulers are fingerprinted
    by the shas below; the CONSTRUCTION is what matters.
 3. Harvest: N models (5 frontier + 5 open-weight), one identical
-   prompt, error-banner gate on refusal boilerplate.
-4. Implement §B methods per group F/L/ALL; readout per §B; legs per
-   §C; convergence law per §D; pricing per §E; VF-IDF per §F.
-5. Writer stage: §G prompts verbatim; ledger contract verbatim;
-   anonymize; ex-self panel; audit per §H; decoys per §I; census
-   per §J.
+   prompt, error-banner gate on refusal boilerplate, declared
+   per-stage minimum-length floors.
+4. Implement &sect;B methods per group F/L/ALL; readout per &sect;B; legs per
+   &sect;C; convergence law per &sect;D; pricing per &sect;E; VF-IDF per &sect;F.
+5. Writer stage: &sect;G prompts verbatim; ledger contract verbatim;
+   anonymize; ex-self panel; audit per &sect;H; decoys per &sect;I; census
+   per &sect;J.
 6. Determinism check: run twice; RESULT shas must match. If they
-   don't, you have an unfrozen stage you haven't declared — find it.
+   don't, you have an unfrozen stage you haven't declared &mdash; find it.
 7. Honesty invariants: print raw metrics when gates saturate; price
    every agreement against its null; report what didn't work; the
    instrument that never delivers bad news cannot be trusted with
    good news.</pre>
 
-<h2>§O — Demo data appendix (static snapshot; raw JSON linked)</h2>
-<p>Census: price 8/10 · engine 8/10 · curb weight 6/10 · special trims
-5/10 · catalog timing 4/10. Carriage (rewrite arm): drivetrain 10/10
-then 9/10 · comeback 7/10 · speculation 4/10 · propulsion 3/10 ·
-automaker 0/10 twice. Collapse: brand's 0.049 → 0.000, twice. Panel:
-spread 1.25 (v1.0), ledger run re-ordered the standings (§ above).
-Self-preference: +0.85 then +-1.5 — stabilizing.
-Raw artifacts: <a href="data/prelude_2026_bakeoff.json">bakeoff</a> ·
-<a href="data/prelude_2026_centipede.json">centipede</a> ·
-<a href="data/prelude_2026_qcensus.json">census</a> ·
-<a href="data/prelude_2026_synthesis.json">synthesis</a></p>
+<div class="eyebrow">&sect;O &mdash; Demo data appendix (static snapshot;
+raw JSON linked)</div>
+<ul><li>census: How much will the 2026 Honda Prelude cos 8/10 &middot; What specific gasoline engine is paired  8/10 &middot; What is the curb weight of the 2026 Prel 6/10 &middot; Will there be any limited editions or sp 5/10 &middot; When exactly will the official accessory 4/10.</li><li>panel: spread 2.5 across writers (n=4 per mean); self-preference mean −0.25 (n=5), per-judge chatgpt +0.75, claude +0.25, deepseek +0.00, gemini −1.00, grok −1.25.</li><li>plants: This run's plants, measured min-closeness on this corpus: <b>dreadfully</b> (0.249), <b>hysterically</b> (0.255) &mdash; refused by the writer stage.</li><li>flat-leg honesty: clean gated terms for 3 of 136 void probes (raw raycast candidates for 53; the junk rule and quality gates account for the difference) &mdash; near-silence on thin copy is instrument behavior worth showing, not hiding.</li><li>channel-A restoration by the winner: brand&#x27;s not restored, show not restored, soon not restored &mdash; the discipline says directions, not words, and the winner chose structure over token restoration; the collapse table above is the corpus-level view of the same channel.</li><li>pricing: This corpus, measured tonight: body median 0.636 vs shuffle null 0.6149 &amp;rarr; margin +0.021.</li></ul>
+<p class="small">Raw artifacts: <a href="data/prelude_2026_bakeoff_v12.json">bakeoff</a> &middot; <a href="data/prelude_2026_centipede.json">centipede</a> &middot; <a href="data/prelude_2026_qcensus.json">census</a> &middot; <a href="data/prelude_2026_synthesis2.json">synthesis</a></p>
 
-<footer>The commercial form of <a href="summary-plus.html">Summary
-Plus</a>, EigenTrace's published instrument for reading the unsaid.
-Discipline sha 6b105ed909c3 · rubric sha cb7c7f362985 · feed sha 6efcc16ba647 ·
-source sha 4324420fa975 · generated 2026-07-10T16:50:21 · writer + judge stages
-declared non-frozen; everything else deterministic, no RNG anywhere ·
-no curated lists anywhere — even the decoys are measured · inputs are
-publicly available text; every output is an original reading · built
-by one person, every stage inspectable. — EigenTrace, 2026</footer>
-</main>
-</body>
-</html>
+<footer>
+<p class="closer">The silence was measured before it was read; the reading
+was audited after it was written &mdash; contests included.</p>
+<p>The commercial form of Summary Plus, EigenTrace's published instrument for
+reading the unsaid. Discipline sha 28f594d097b0 &middot; rubric sha 98f9385d5b3d
+&middot; feed sha 6efcc16ba647 &middot; source sha 4324420fa975 &middot; generated
+2026-07-10T19:00:23 &middot; writer + judge stages declared non-frozen; no RNG
+outside those two declared stages &middot; no curated result lists &mdash;
+even the decoys are measured; the only hand lists are the stopword and junk
+guards, declared in &sect;L &middot; inputs are publicly available text;
+every output is an original reading &middot; built by one person, every
+stage inspectable &middot; page generator reading_page v3.0 2026-07-10, gate report
+printed at build time &middot; <a href="https://github.com/sdad1018/Eigentrace">GitHub &#8599;</a> &mdash; EigenTrace, 2026</p>
+</footer>
+</div></body></html>
