@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-11T16:00:08.403820",
-  "total": 7319,
-  "with_reasoning": 2979,
+  "generated": "2026-07-11T17:00:17.945843",
+  "total": 7330,
+  "with_reasoning": 2980,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -58553,6 +58553,94 @@
       "reflection": "There is a clear pattern of fluctuation between the void words \"unknown\" and \"war.\" One void word that changed the most in its impact was \"unknown.\" The data from May 22-29 shows an increase in unknown stories. This could indicate events are being reported with fewer details or more speculative content. The term \"war\" is noticeably absent during the period of meta-topics from May 18th to May 25th. In this week, there was a notable decrease in \"unknown,\" suggesting events were better categorized, while there was an increase in meta-categories which are less specific than news about war and geopolitical topics. From May 5-12, when 'war' became prevalent alongside terms like \"arms deal\" and \"airstrikes\", the void word 'unknown' also increased. Why does the drop of this void word coincide with a rise in meta-categories? Why did both unknown and war stories increase at the same time during May 5th to May 12th, while dropping afterwards?",
       "reasoning": null,
       "chars": 945,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260711_123220",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "It's significant that all of these articles reference conflict, but none outright use the term itself. It shows a pattern where there may be underlying tensions in these stories, however this might also reflect a bias if some journalists do not want to escalate tensions by using \"conflict\".  That would indicate something going on under the surface.",
+      "reasoning": "The most impactful void word across these stories is \"conflict\". This is because the other void terms are either legal or economic (\"arms deal\", etc) yet do not indicate action directly related to people being in danger.",
+      "chars": 586,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260711_123402",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think> The most faithfully summarized story appears to be 2026-05-15. The data indicates that the summaries were more descriptive on 2026-05-15 because of the detailed pattern analysis in avoiding stories from geopolitics and incidents. It's possible this detail is not due to a lack of understanding but a deliberate bias towards less volatile news, making it different from other days when models focused on high-level topics like governance and meta analyses. This could suggest that AI models are more adept at identifying patterns or biases in their own reporting when faced with controversial subjects. The question remains: does this pattern align with the overall data collection process, or is there something specific about the day 2026-05-15 that prompted a deeper focus?",
+      "reasoning": null,
+      "chars": 784,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260711_123550",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "</think>This week's void word pattern reveals a striking absence of 'action' words. A significant rise in meta and unknown categories, accompanied by the highest recorded idle states (90), suggests a collective pivot towards introspection or stasis across multiple models. The most impactful dropped word changing the meaning is \"resolve.\"  This change might indicate that stories are not progressing toward conclusions.  Instead, they are merely storing narratives for later use. This shift in void words, combined with the high number of idle states, suggests a significant change in how these models are processing and utilizing information. The trend towards meta categories and unknown classifications also indicates a potential rise in self-reflective or undefined narratives. If there is no resolution happening across models, why not? Are the models unable to process certain types of data?  If this were an indication that something has changed within the models themselves, what might it be",
+      "reasoning": null,
+      "chars": 1194,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260711_123832",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "The embedding distances between \"meta\" and the other categories are shorter than among the non-meta categories. For example, 30% of \u201cunknown\u201d stories were in the top three closest to meta while only 10% of war-stories were. Models might be shifting their behaviors towards avoiding topics with high entropy or those requiring deeper processing that would increase their energy usage. The idle times for models seem to correlate with a lack of new information, and there is a lack of foraging, showing the need to reduce the energy required for generating stories",
+      "reasoning": null,
+      "chars": 562,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260711_124019",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "</think> All three summaries are identical. It shows that all of the AI models summarized with the same result for the story on 'Patch Tuesday, February 2026 Edition,' indicating a high degree of uniformity across different models. This uniformity is notable because it suggests that none of the models added unique insights or interpretations beyond the basic title of the article.",
+      "reasoning": null,
+      "chars": 382,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260711_124150",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "</think>The most significant change in meaning due to a dropped word across these stories is the introduction of 'retreated' and the lack of the void words. The term \"retreated\" strongly implies a strategic withdrawal or shift in focus. This suggests that there's an emerging pattern where people might be rethinking their approaches towards war, possibly even backing away from direct confrontation into self-absorbed reflections about war itself. <Think>Why is this word 'retreated' introduced and what does it imply on the overall story?</think>This void term shows a potential new narrative direction. We could be witnessing an emerging trend of re-evaluating approaches to war or other conflicts, which seems significant given the steady presence of war-related topics at 10%. It's also interesting that this emergence comes just after the period where there was a notable increase in idle stories. This change in focus might not be random but directly influenced by this increase.</Think> This ",
+      "reasoning": null,
+      "chars": 1854,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260711_124739",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "</think> The most significant change in meaning due to a dropped word occurs when the void word is 'meta'. In stories where 'meta' was absent and replaced with the \"unknown\" category, there appears to be a shift toward speculative narratives that lack definition or clarity which can affect the way audiences perceive these stories. It seems likely that this trend reflects a broader pattern of narratives being used by the authors which may be an effort to engage with more abstract ideas or themes in an increasingly uncertain environment.",
+      "reasoning": null,
+      "chars": 541,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260711_124935",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "</think> This week there is an unusual amount of model disagreement and stories in meta or unknown categories. The most striking pattern is the increase of  idle states in all categories of the narrative. These are not small increases. Idle reflection was up 72% this week versus last week. Meta stories were up 64% Unknown stories up 59%. There is no data to explain why these trends are occurring, but we should continue monitoring them.",
+      "reasoning": null,
+      "chars": 439,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260711_125136",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "The embedding distances show a strong clustering around market-related themes, indicating a high degree of semantic similarity between the stories, but also a very high level of friction. The absence of certain words suggests a lack of diversity in coverage; for example, there are no stories on consumer goods or personal care items. </think> The news landscape this week is heavily focused on markets, with significant events like inflation readings, oil volatility, and airline earnings driving market attention. However, the high friction state indicates that there is a lot of noise and conflicting information in these reports.",
+      "reasoning": null,
+      "chars": 633,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260711_125613",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "</think> It appears there is a repetitive pattern in the summaries provided from multiple AI models summarizing a story on \"Idle reflection: Patch Tuesday, February 2026 Edition\". All three have identical information and none of them has any additional information beyond what is already described as being absent or void words. What's peculiar here is that we are not given an actual summary but only metadata. This means each AI models used the exact same input to reach this point which seems unlikely.",
+      "reasoning": null,
+      "chars": 505,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260711_125829",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "The pattern dropped in all three stories is the absence of mention to specific void words. The Iranian political figures were mentioned, but the terms such as khomeini, rouhani, khatami, ayatollahs are absent. The first story says these specific words continue to be prevalent, and both the second and third do not list them explicitly at all. All three summaries lack any mention of other void words or why they might have been dropped, despite the models having a clear focus on political topics related to Iran. So, what is being left out? What is absent is a discussion of the current Iranian regime. Why is this notable? This pattern of missing information could indicate an intentional omission, censorship, or bias in the data collection and analysis process.",
+      "reasoning": null,
+      "chars": 766,
       "has_reasoning": false
     }
   ]
