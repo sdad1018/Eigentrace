@@ -2,10 +2,12 @@
 # -*- coding: utf-8 -*-
 """sitemap_gen.py -- regenerate docs/sitemap.xml from what is actually in docs/.
 
-VERSION = "sitemap_gen v1.0 2026-07-10"
+VERSION = "sitemap_gen v1.1 2026-07-10"
 
 The sitemap is a curated SEO surface, not a directory dump. Declared rules:
   INCLUDE  docs/*.html and docs/blog/*.html, plus / if docs/index.* exists
+           Jekyll markdown pages: front-mattered docs/*.md and
+           blog/*.md; permalink honored, else the filename slug
   EXCLUDE  Jekyll internals (any path segment starting with _)
            backups / versioned duplicates: *.stale*, *.bak*, *.v2.html
            site-verification stubs: google*.html
@@ -22,7 +24,7 @@ generator did not write to ~/eigentrace_scratch/ before replacing it.
 
 Prints one report line per decision; judge the run by its own report.
 """
-VERSION = "sitemap_gen v1.0 2026-07-10"
+VERSION = "sitemap_gen v1.1 2026-07-10"
 
 import argparse
 import glob
@@ -97,6 +99,34 @@ for pat in ("*.html", "blog/*.html"):
         slug = "/" + re.sub(r"\.html$", "", rel)
         entries.append((a.base + slug, lastmod(p)))
         report.append(("INCLUDE", slug, lastmod(p), ""))
+
+# Jekyll markdown pages: front matter is what makes Jekyll build them
+for pat in ("*.md", "blog/*.md"):
+    for p in sorted(glob.glob(os.path.join(a.docs, pat))):
+        rel = os.path.relpath(p, a.docs).replace(os.sep, "/")
+        base = os.path.basename(rel).lower()
+        if base.startswith("index.") or base == "readme.md":
+            continue
+        if any(seg.startswith("_") for seg in rel.split("/")):
+            continue
+        try:
+            head = open(p, encoding="utf-8", errors="replace").read(4000)
+        except Exception:
+            continue
+        body = head.lstrip()
+        if not body.startswith("---"):
+            report.append(("EXCLUDE", rel, "",
+                           "md without front matter -- not a Jekyll page"))
+            continue
+        fm = body[3:].split("\n---", 1)[0]
+        m = re.search(r"^permalink:\s*(\S+)", fm, re.M)
+        slug = (m.group(1).rstrip("/") if m
+                else "/" + re.sub(r"\.(md|markdown)$", "", rel))
+        if not slug.startswith("/"):
+            slug = "/" + slug
+        entries.append((a.base + slug, lastmod(p)))
+        report.append(("INCLUDE", slug, lastmod(p),
+                       "md page" + (", permalink" if m else "")))
 
 entries = sorted(set(entries))
 for kind, slug, lm, note in report:
