@@ -81,6 +81,9 @@ print(f'Profiles: {len(epoch_files)} segments, {len(dashboard[\"models\"])} mode
 python3 soul_updater.py
 python3 soul_post_inject.py
 
+# sitemap: any page added to docs/ registers itself (sitemap_gen v1.1+)
+python3 sitemap_gen.py --docs docs || echo "sitemap_gen FAILED -- sitemap unchanged this hour"
+
 # 3. (git push moved to end of script)
 
 # 3. Regenerate spectral clusters
