@@ -16,6 +16,7 @@
       { href: "/large-language-model-outliers", label: "Model Outliers" },
       { href: "/anamnesis", label: "Anamnesis" },
       { href: "/summary-plus", label: "Summary Plus" },
+      { href: "/vf-idf", label: "Not a Summary. A Reading." },
       { href: "/boundary", label: "The Boundary" }
     ]},
     { group: "Live instruments", links: [

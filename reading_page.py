@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """reading_page.py -- render the Summary Plus instrument page from artifacts.
 
-VERSION = "reading_page v3.0 2026-07-10"
+VERSION = "reading_page v3.2 2026-07-10"
 
 Reads (STOP if a required file is missing):
   {dir}/{sid}_bakeoff_v12.json    panel, audits, essays, provenance   [required]
@@ -28,7 +28,7 @@ Soft gates (pick copy variants; always reported):
   G5  n_paras < 3 -> whole-document trace-granularity caveat
   G7  all consensus pairs Centroid+Gradient -> shared-init disclosure
 """
-VERSION = "reading_page v3.0 2026-07-10"
+VERSION = "reading_page v3.2 2026-07-10"
 
 import argparse
 import ast
@@ -151,6 +151,8 @@ ap.add_argument("--out", default="docs/vf-idf.v2.html")
 ap.add_argument("--contact", default="https://eigentrace.ai/")
 ap.add_argument("--canonical", default="https://eigentrace.ai/vf-idf",
                 help="canonical URL for rel=canonical + og:url")
+ap.add_argument("--og-image", default="https://eigentrace.ai/og/vf-idf.png",
+                help="absolute URL of the og/twitter card image")
 ap.add_argument("--defect-num", default="52",
                 help="defect-ledger number for tonight's entry; yours to assign")
 args = ap.parse_args()
@@ -1000,7 +1002,9 @@ TEMPLATE = """<!DOCTYPE html>
 <meta property="og:description" content="Five frontier AI models read one page's measured silence under an evidence-ledger discipline. Every claim typed, traced against the source, contests quoted.">
 <meta property="og:url" content="@@CANONICAL@@">
 <meta property="og:site_name" content="EigenTrace">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="@@OGIMAGE@@">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="@@OGIMAGE@@">
 <style>
 /* house tokens -- cloned from the editorial family (convergence/outliers/
    atlas/withdrawals). dark: paper/ink/killed cloned exactly from the house
@@ -1505,7 +1509,9 @@ every output is an original reading &middot; built by one person, every
 stage inspectable &middot; page generator @@VERSIONSTR@@, gate report
 printed at build time &middot; <a href="https://github.com/sdad1018/Eigentrace">GitHub &#8599;</a> &mdash; EigenTrace, 2026</p>
 </footer>
-</div></body></html>
+</div>
+<script src="/assets/sidenav.js" defer></script>
+</body></html>
 """
 
 G4_LINE = ("The winning reading led with the same silence &mdash; produced "
@@ -1515,8 +1521,8 @@ G4_LINE = ("The winning reading led with the same silence &mdash; produced "
            "measured (lexical overlap %d/3 top clusters; the words differ, "
            "the gap is the same)." % hits)
 
-report("contact=%s | canonical=%s | og:image not set -- add a docs/og "
-       "asset + og:image meta when ready" % (args.contact, args.canonical))
+report("contact=%s | canonical=%s | og:image=%s"
+       % (args.contact, args.canonical, args.og_image))
 
 mapping = {
     "NCLASSES": str(n_classes),
@@ -1524,6 +1530,7 @@ mapping = {
     "SPDISP": "%s (n=%d)" % (pm(sp_mean), len(selfpref)),
     "CONTACT": esc(args.contact),
     "CANONICAL": esc(args.canonical),
+    "OGIMAGE": esc(args.og_image),
     "G5_CAVEAT": G5_CAVEAT,
     "SOURCE_COL": SOURCE_COL,
     "SP_COL": SP_COL,
