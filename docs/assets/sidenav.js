@@ -28,6 +28,9 @@
       { href: "/withdrawals", label: "What I Withdrew" },
       { href: "/sean-adams", label: "About / Sean Adams" }
     ]},
+    { group: "Work with me", links: [
+      { href: "/autonomous-content-engine-for-agencies", label: "The Content Engine" }
+    ]},
     { group: "Watch & build", links: [
       { href: "https://www.youtube.com/@AINN24HourNews", label: "Live broadcast", ext: true },
       { href: "https://github.com/sdad1018/Eigentrace", label: "GitHub", ext: true }
