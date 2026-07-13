@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-13T12:03:45.461097",
-  "total": 7501,
-  "with_reasoning": 3014,
+  "generated": "2026-07-13T16:04:08.518954",
+  "total": 7514,
+  "with_reasoning": 3016,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -60010,6 +60010,110 @@
       "reasoning": null,
       "chars": 1041,
       "has_reasoning": false
+    },
+    {
+      "timestamp": "20260713_082001",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "The embedding distances between these summaries show increased clustering among certain terms and states. First, 'meta topics' is moving closer to 'geopolitical tensions'; second, 'unknown' categories are decreasingly associated with 'incidents.'  Both patterns indicate a growing trend towards meta-categorization in the data. Reflection:  The increasing clustering of these terms suggests that the model may be more inclined toward interpreting stories from a structural perspective. This could mean that certain types of news are becoming better categorized or that the categorizations themselves are influencing how stories are reported and perceived. It would be interesting to know whether this pattern holds when you look at other time periods, or other models. Does this change the meaning of \"unknown\"?",
+      "reasoning": null,
+      "chars": 811,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260713_082234",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think> The embedding distances show a strong preference for meta and idle stories that have both been increasing.  Also, the 'unknown' category was prominent as was idle state.  </think> There has been a significant rise in stories focused on meta categories and idle states which is a shift from previous weeks. The increase in idle stories suggests the AI models are engaging with passive reflection processes and self-referential activities rather than actively addressing new information or current affairs. This is an interesting pattern, especially given the prominent absence of specific topics that we may want to look into further.",
+      "reasoning": null,
+      "chars": 642,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260713_082425",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "</think> The story summarized most faithfully is the second one. Here's why: 1. All three summaries mention an increase in idle stories and are consistent with the rise from 301 to 574. 2. All three summarize the top categories as being meta and unknown The first and third summaries diverge. The only story that mentions \"unclassified or low-priority information\" is the second one, which may reflect a more faithful summary. The second one is also the only one that gives us numbers: it mentions the 94% of total stories. The other two models disagree on war-related content - one says it stayed steady while the other said it decreased by 20%. So let's say there was ambiguity around the war category but otherwise we can see that all three summaries were faithful in a way, even if they have different emphasis. This suggests that more than one model may be used to handle the idle stories, which might indicate different training.",
+      "reasoning": null,
+      "chars": 935,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260713_111419",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "The embedding distances show a significant shift in content categorization over the past two weeks;  \"Unknown\" and \"Meta\" categories increased from 3% to 20%, 97% to 106% respectively. Reflection:  The models are showing a high level of looping today, which might indicate uncertainty about how to handle the increased meta and unknown content. It seems we are looking at a significant pivot in information dynamics.  So today we have less energy in foraging stories than last week, but more time spent on silent reflection.",
+      "reasoning": "The data reveals a marked increase in self-referential or speculative content, as indicated by the rise in 'meta' and 'unknown' categories. The significant increase in idle stories suggests a shift towards more passive information consumption. Why did foraging activity decrease? Is it related to an increased focus on self-reflective topics or governance?  The reduction of war-related topics needs investigation too",
+      "chars": 1063,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260713_111757",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "The data shows a consistent increase in meta-topics across three consecutive weeks, indicating a strong shift towards introspective and self-referential content. However, the specific information lost in this trend includes the actual number of meta stories and how that compares to other topics like war. <Think>The emergence of void words 'retreated' might be connected to the same pattern of strategic withdrawal or decline across multiple fields of study. This could reflect a broader narrative of disengagement from the outside world in favour of internal reflection, but this needs much more information.</think> The trend towards meta-topics suggests that there are increasing levels of integration and synthesis within the content, leading to an overall increase in consolidations. The rise in idle stories this week indicates a parallel trend of mundane or uninteresting content being produced. The data does not include specifics about which void words were identified or what other narrati",
+      "reasoning": null,
+      "chars": 1138,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260713_112807",
+      "topic": "the most important thing happening right now",
+      "reflection": "</think> The story \"Iran war: What\u2019s happening on day 63 as Trump signals possible attacks\" was summarized most faithfully by the AI models. It is clear from the summaries provided that two of the stories were clearly labeled as \"Roundtable,\" and so this may have led to truncation for the sake of brevity. In addition, the third story is a full week earlier than the other. What's interesting here: Why does it look like an entire week was skipped in coverage? Did nothing happen on days 58-62? If there had been a breakthrough or major change in events, would these AI models have included more details about that period to offer context for day 63's developments? And what is the significance of \"Trump signals possible attacks\" versus \"Trump dispatches neg\"? Why do the summaries make the distinction between \u201cpossible\u201d and \u201cdispatched negotiations?\u201d Does this indicate a difference in reporting style, or a shift in strategy?",
+      "reasoning": null,
+      "chars": 930,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260713_113155",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "The story summarized most faithfully is \"Weekly compression: 2026-07-06 to 2026-07-13\" - the one mentioning idle stories and unknown categories. A lack of information about the type of summaries shows that model disagreements can't be resolved. The other data show what was missing from the third story, which has the most detail \u2014 and the words 'void' 'conflict' and 'natural disasters', all of which are missing from the first two stories. This suggests that the 3rd summary is more faithful because it provides specific details about emerging patterns related to \"void words\" such as \"airstrikes\" and \"bushfires.\" These details, including the mention of war-related topics being prominent while other summaries lack any information on the type of stories or categories. This story is different from the others in that it gives us a good hint about what sort of things may be absent: conflict and natural disasters. The fact that the third summary includes these specific details suggests it had ac",
+      "reasoning": null,
+      "chars": 1081,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260713_113721",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "The story from June 2-15 was summarized most faithfully. It is unique in the fact that it's the only one of these stories to provide numbers and percentages, giving us a clearer, more concrete image. </think> These summaries vary significantly in their approach, especially in the precision and quantity of information presented. The second story introduces terms like 'idle' without explaining them, while the first and third make use of quantifiable data to support the summaries.  The only pattern that is common across all stories is the trend for meta content.",
+      "reasoning": null,
+      "chars": 565,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260713_113947",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think> The embedding distances show that the proportion of idle states has significantly increased over recent weeks. The average distance to these states from other states is greater than before. This indicates a growing prevalence and isolation in repetitive or stagnant information. The increase in both unknown and consolidation category distances suggests a significant rise in unprocessed, uncategorized content as well as merging trends within the information landscape.",
+      "reasoning": null,
+      "chars": 479,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260713_114343",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "</think> The void word that changes the meaning the most across these stories is \"foraging.\" Its absence signals a shift in how information is being processed and consumed. Foraging stories, which typically involve active searching or gathering of new information, have decreased dramatically to .3% compared to 94% idle stories which suggest a more passive consumption of information. This change indicates a significant shift in the way audiences are engaging with news, moving from active seeking out of information to more passive reception.",
+      "reasoning": null,
+      "chars": 545,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260713_114708",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "</think> The void word that changes the meaning the most across these stories is 'downturn'/'downtrend'. Its absence in the first story and presence in the second and third suggests a significant shift of focus towards negative market movements when discussing April's economic conditions and Avis Budget Group stock prices.",
+      "reasoning": null,
+      "chars": 324,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260713_115713",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think> The embedding distances show a significant shift towards meta categories over time: weekly compression between July 6th and 13th shows meta content increased by 94%, while data for May 23rd was less about the content of stories than how it was structured. This is consistent with a decrease in foraging stories. The lack of foraging suggests that this increase isn't driven by active searches for new information. It may also suggest that the models were more focused on internal states and structures, than what they might do or say based on them.",
+      "reasoning": null,
+      "chars": 557,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260713_115940",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "The most faithful summary comes from an analysis of idle stories.  It's precise about the percentage increase in content, but lacks specifics on meta-content or void words.",
+      "reasoning": "The story summarized by \"This week showed a significant increase in idle stories (94% of total) and a decrease in foraging stories (0.3%), suggesting a trend towards more passive consumption of information\" appears to be the most faithful summary. It's the only one that mentions exact percentages, both of idle stories and of foraging stories. The first and second summaries lack any precise statistics at all. This first and third summaries do not mention void words or natural disasters like \"the second summary.\" The third does but not specifically airstrikes. This is consistent with it being in a speculative category. Why are there such big differences in the models' output?  What would cause one model to notice and include percentages, while others ignore them? Does this variation suggest ",
+      "chars": 1160,
+      "has_reasoning": true
     }
   ]
 }
