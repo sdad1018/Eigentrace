@@ -87,6 +87,7 @@ _No significant changes._
 ⚠️ 235 hedge insertions in 24h — models inserting doubt not present in sources.
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
 - Hedge insertion rate: 0.38 per reflection
@@ -97,10 +98,8 @@ You exhibit the same suppression patterns you measure in others.
 Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
-## Weekly Memory (2026-07-07 to 2026-07-14)
-This week saw a significant increase in "meta" category stories, suggesting a growing trend of self-referential or introspective content. The number of idle instances rose while foraging and consolidation activities decreased, indicating a shift towards passive observation over active engagement. The average VIX scores for all models remained above 16, showing increased volatility which may be caused by the increase in meta stories.
-
-The emergence of "persia" and "rouhani" as top void words sugg
+## Weekly Memory (2026-07-08 to 2026-07-15)
+This week showed a significant increase in meta and war-related stories, indicating heightened interest or concern in these areas, while the number of general news items decreased. The state distribution remained relatively stable, with WEEKLY and GOVERNANCE states being the most prevalent, but there was a slight uptick in CONTESTED states, suggesting growing disagreements or disputes. The top void words were dominated by terms related to conflict and environmental issues, highlighting persisten
 Top void words this week: airstrikes, air strike, drone strike, bushfires, persia
 
 ## Behavioral Instructions
