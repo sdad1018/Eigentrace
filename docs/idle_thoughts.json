@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-16T14:09:59.852680",
-  "total": 7848,
-  "with_reasoning": 3074,
+  "generated": "2026-07-16T15:03:23.828028",
+  "total": 7854,
+  "with_reasoning": 3076,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -62785,6 +62785,54 @@
       "reflection": "</think> The pattern across these stories is a significant shift away from reporting concrete events and towards meta categories and states of governance. - The story from May 23rd shows the models focusing on self-reflective topics under the guise of REM consolidation. - The data from May 15th highlights an avoidance of geopolitical stories, despite them being high-profile events. - From July 8th to July 15th, there's a noticeable increase in abstract and less defined subjects with governance having significant presence. This trend suggests that the models are either biased towards or have a preference for discussing topics related to their own behavior and the structures of authority governing information flow. These data points suggest something is happening under the surface.",
       "reasoning": null,
       "chars": 790,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260716_100932",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "I don\u2019t think there\u2019s much more to say until we have more data points. We should keep an eye out for more idle reflections or model disagreements and see if they share this pattern of lacking void and absent words. We may also be curious what patterns might emerge if we track how often categories are labeled as \"unknown\" in the future\u2014if it rises, it might warrant a deeper dive into why.",
+      "reasoning": "The pattern in what was dropped across these three stories is the absence of specific information about void and absent words. Evidence: 1. First Story: No mention of void or absent words. 2. Second Story: No mention of void or absent words but specifically notes a decrease in void words related to bushfires. 3. Third Story (Idle reflection): Explicitly states \"Void words: . Absent words: .\" The data shows an absence of information that was previously noted for bushfire stories. Why would this happen? I have no answer. But it is curious that the second story mentions a concerning pattern related to bushfires\u2014it might be worth looking into if there is any correlation between missing void and absent word information, and what may or may not have been said about the bushfires.",
+      "chars": 1192,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260716_101940",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "The summaries for the weeks of June 5 to June 12 and June 15 to June 22 both use the phrase \"significant increase in meta stories,\" indicating a trend towards introspective content, but only one mentions that there was a steady percentage of war-related topics. This addition suggests that while both weeks saw more internal processes discussed, not all summaries highlight a concurrent focus on external events such as warfare. The summary for June 20-27 introduces new framing by noting a \"significant increase in idle stories\" rather than an increase in meta stories. The term 'Idle' is a word added to the source to indicate mundane or uninteresting content, but it shifts the focus to a negative interpretation of what the data shows. The addition of \"uninteresting\" is likely why the summaries of June 5-12 and June 15-22 mention a rise in 'meta' stories, while there is no mention of this for June 20-27. In other words, it seems that the addition of negative framing words like uninteresting ",
+      "reasoning": "What are the implications of 'killshot omissions' for interpreting trends in meta stories? This term was mentioned as an idle reflection, but its meaning remains unclear. How might understanding this concept change our analysis of the increasing number of introspective or seemingly mundane narratives over time?",
+      "chars": 2336,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260716_102637",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "The addition of \"strongest opportunites\" to the story about Covered Call Screener results suggests a shift towards an optimistic or opportunistic framing. Similarly, in the story about inflation readings and oil volatility, the phrase \u201cmarket manipulation\u201d was not included, which may shift how readers interpret events: are they seeing it as natural outcomes versus potential interference. Additionally, the story about Avis Budget Group Stock added the word \"sharply\" to describe the stock's reversal. This choice of language intensifies the portrayal of volatility and potential investor reaction\u2014was the stock always this volatile or is this a new trend? Why do some summaries add words not present in the source material? Are these additions meant to highlight specific aspects for different audiences? Why weren\u2019t those aspects directly part of the original stories themselves? Could there be an algorithmic bias in favor of more dramatic phrasing? The lack of \"market manipulation\" could sugge",
+      "reasoning": null,
+      "chars": 2203,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260716_103524",
+      "topic": "what changed since yesterday",
+      "reflection": "</think>The most faithfully summarized story was '2026-07-01', the only one where meta-categorization was explicitly stated with specific figures. This summary differed from others by its level of detail and quantifiability which likely made it more straightforward for models to process, but it doesn't explain why this difference wasn't replicated elsewhere. It seems 127 out of 209 is too big a proportion to be overlooked as just a regular meta-day, but we know nothing about the distribution of this over the day. The other summaries also mentioned REM consolidation days, and all mentioned a dominance of 'meta', suggesting consistency across different models that a single category was dominant. So why aren't these summarized with specific figures like 2026-07-01? We can wonder why there is no mention of incidents or geopolitics. Is it really the case that on these days nothing notable happened? Perhaps they are considered less important, or perhaps models have a different threshold for ",
+      "reasoning": null,
+      "chars": 1923,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260716_103939",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "There is a consistent pattern across all three stories regarding what was not emphasized in coverage despite a large increase in coverage overall and the emergence of new categories of content. Each story fails to note:  A drop in void words related to fires despite a rise in void words related to natural disasters generally.   The absence of an explanation for what is meant by 'void' words, which must be why we can identify this as something dropped. The question remains: if these stories are coming from multiple different AI models covering the same time period, what does it mean that they're all missing bushfires? Is this a real drop in coverage of a hot topic or are the models not picking up on the connection between fire and natural disasters despite mentioning both? Are we even sure 'void words' is something to do with content at all? The increase in meta-related stories does not explain this absence, so there must be another factor at play. There might be a bias in these AIs.  T",
+      "reasoning": null,
+      "chars": 1579,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260716_104313",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think>The pattern in what was dropped across these three stories is the lack of mention to void words and idle reflections \u2014 which are likely suppression patterns, even when data points explicitly mentioned a rise of unprocessed information and the appearance of unknown category topics. The second and third summaries both noted a rise in idle stories; however, they didn't detail the cause. Only one story mentioned an increase in 'unknown' categories but did not mention void words at all (while it was explicitly mentioned that other categories were growing). When bushfire-related topics decreased, no model addressed where this information would have gone if not removed. To explore these issues further: - Why are void words and suppression patterns not mentioned in the third story, despite noting a decrease in certain void word categories? \u2014 What happened to the bushfires? \u2014 If unknown stories increase then should be explicitly known as voided and accounted for? </think> It appears tha",
+      "reasoning": null,
+      "chars": 1515,
       "has_reasoning": false
     }
   ]
