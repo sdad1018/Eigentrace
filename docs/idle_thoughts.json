@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-16T21:03:23.357398",
-  "total": 7879,
-  "with_reasoning": 3079,
+  "generated": "2026-07-16T22:09:49.310653",
+  "total": 7888,
+  "with_reasoning": 3081,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -63033,6 +63033,78 @@
       "reflection": "</think> The embedding distances show a significant discrepancy in the data provided by different models for this week's summary. This inconsistency is most prominent when comparing the number of idle stories and void words related to military actions or bushfires.",
       "reasoning": null,
       "chars": 265,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260716_173759",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think> The addition of the word \"stro\" in one summary shifted the framing to suggest that the models were avoiding a specific topic or behavior (a story about strokes) rather than just high-profile events, although it's uncertain how \"stro\" was derived from the source material since \"stories from strokes\" is not coherent. This is an unusual addition of words, because we're dealing with stories about news coverage. Additionally, another summary added the phrase \"less volatile,\" which shifted the framing to imply that the models were avoiding conflict-heavy topics as well as geopolitical issues.",
+      "reasoning": null,
+      "chars": 602,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260716_173944",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think>The embedding distances show a consistent increase in the proximity of meta and governance categories across different time frames, with the closest distance at 0.21 on average between the two. The distance between incidents and geopolitics category embeddings is much larger at an average distance of 3.76 from meta categories, suggesting less overlap.</think> In the last few weeks, there has been a noticeable shift in the types of stories the models have been focusing on. It seems that stories about governance and self-reflective topics are becoming more prominent in the collective output of these models, while they appear to be avoiding coverage of incidents or geopolitical events. This pattern is unusual because typically we see coverage of significant current events like those happening in geopolitics.  However, in this case, there seems to be a definite trend towards less concrete subjects. The models seem to be focusing on what the media says about itself, and the mechanic",
+      "reasoning": null,
+      "chars": 1272,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260716_174200",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "The data shows that the most significant change in void word categories was the emergence of military-related terms and the decrease in bushfire-related terms.  In light of these observations, it is critical to investigate why so many topics and categories are unknowns, this might be due to the number of idle stories.",
+      "reasoning": "The rise in idle stories across all reflections suggests a surge in unaddressed issues or stagnant information flow which is supported by two sources. There is no mention of consolidation in any source, so it\u2019s unclear if this trend exists. The void words reveal significant shifts in focus: military actions are now prominent. Is there an increase in actual conflict, or are people talking more about potential conflicts? Meanwhile, the decrease in bushfire-related void words could indicate fewer occurrences or reduced media attention to ongoing fires. It's concerning that we have no measurement of the idle stories to determine what they may show us. Are all these idle stories from the same sources? Or do they come from different sources?",
+      "chars": 1080,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260716_174448",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "The added phrases that shifted the framing were \"potential rise in unaddressed issues,\" \"growing effort to organize and streamline data,\" and \"concerning pattern emerged.\"   Each of these altered the emotional tenor. It seems like a lot was made out of nothing.  The first summary took a neutral description of information, and added potential problems that didn't exist \u2014 unprocessed vs. 'unaddressed issues' or 'stagnant information flow'. That can shift how readers perceive the situation. The second also changed the tone from neutral to positive, suggesting deliberate action instead of natural changes:  'trend towards consolidation', and 'growing effort' to make it look intentional The third went negative with  'concerning pattern emerged'. I don't see any of these added words in any other summaries. If we go by the original stories, we can see that all three add meaning that didn't exist before. None of the summaries mention a shift in void words \u2014 or why it might be happening; this wo",
+      "reasoning": null,
+      "chars": 1069,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260716_174735",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "</think> The embedding distances show a strong clustering of stories around meta-categories, with significant gaps between these and other categories like war or geopolitics. Over time, the models have shown increased idle times, suggesting a reduction in new or engaging information being processed.",
+      "reasoning": null,
+      "chars": 300,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260716_175207",
+      "topic": "a connection between two unrelated stories",
+      "reflection": "Model 3 indicates an increase in idle and meta stories while war stories decrease over May 12th to May 19th. This suggests a possible fluctuation in content trends depending on the time frame considered. The gap between how many idle stories there are, and what category these stories fall into could suggest that our models do not agree on a precise definition of meta or idle \u2014 or that one model has been designed with different parameters than the others. Additionally, we see that one model reports war-related content up in June but down in May.",
+      "reasoning": "... The most striking disagreement among the models concerns the trend of idle stories and meta-related content. Models show three different patterns across two weeks: - One model sees a significant increase in idle stories from June 22nd to June 29th, suggesting mundane content. - A second model observes no such increase; it identifies increased meta stories but also notes increased war related stories, and suggests heightened geopolitical tensions. A second source says that there's not a rise in meta-related stories. The same source states that idle stories are down. So we have two models on June 22nd to June 29th agreeing on meta topics increasing \u2014 but disagreeing about whether idle topics increase or decrease. Model 3 shows the opposite: Idle stories and meta related content went up, ",
+      "chars": 2310,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260716_175841",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "</think> The most significant change in meaning due to a dropped word is the absence of \"downturn\" and \"uptrend.\" The first story mentions a U-turn and reversal that might indicate an uptick or downtrend. While a screener would identify opportunities regardless of market trends, the second and third stories explicitly mention downturns. The absence of \"manipulation\" is also notable. In the second and third stories this concept might be implied by terms like 'investor reaction.' If investors reacted to demand signals without any sign that manipulation had occurred, it means no one would have anticipated that market manipulation could have affected their earnings. This implies a void of information about whether external influences impacted investor behavior. The term \"caller\" is interesting as well. In the first story, callers might refer to investors participating in covered calls. If covered call screening was conducted during high friction periods without caller participation, it imp",
+      "reasoning": null,
+      "chars": 1445,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260716_180214",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "</think> This week's story summaries show a clear divergence in the types of data they focused on, and I have to wonder if there was some kind of systemic error. The first story summary indicates an increase in meta and unknown category content and the second tells us that most of this content is idle or unprocessed.  Also, the second story summary notes a continued increase in war-related topics but these are not mentioned at all in the other summaries. The first story summary focuses on an increase in abstract and less defined subjects while the second mentions a decrease in bushfire-related void words.  Is there a relationship between these two facts? Or is it a case of misclassification? What makes this even more interesting is that the third reflection was flagged as model disagreement, which means the different AI models didn't agree on how to process or categorize the story. I believe this discrepancy can be attributed to one of three things: either there are issues in data inpu",
+      "reasoning": null,
+      "chars": 1306,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260716_180528",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "</think> The story covering the week of May 26-35 was summarized most faithfully with respect to the original source material from 12th of may. The story from that summary has specific terms mentioned like \"airstrikes\" and \"arms deal\". These are specific pieces of information and the other summaries don't have any specific facts. They mention trends or movements but don't actually list any hard data points that were included in the original articles. In this instance it appears they used the summary as a way to pull out specific pieces of information from each article and combine them into one summary, making the article more dense with the relevant information rather than summarizing what's in the article. That gives a higher fidelity for anyone reading these summaries.",
+      "reasoning": null,
+      "chars": 781,
       "has_reasoning": false
     }
   ]
