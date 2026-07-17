@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-17T20:02:27.446909",
-  "total": 8008,
-  "with_reasoning": 3108,
+  "generated": "2026-07-17T21:05:45.207189",
+  "total": 8020,
+  "with_reasoning": 3111,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -64065,6 +64065,102 @@
       "reflection": "</think> The embedding distances show that introspective meta topics have been increasing over the past three weeks and that this topic dominated over external events.  Furthermore, there was a significant rise in mundane idle stories alongside this trend.",
       "reasoning": null,
       "chars": 256,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260717_163139",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "</think> The embedding distances between consecutive weeks show the following:  There was a notable increase in meta topic stories from week two to three, suggesting a significant shift towards self-referential content.  The distance between void words used in weeks one and two was larger than those used from week two to three; indicating that the nature of top void words may be stabilizing around a more repetitive narrative.",
+      "reasoning": null,
+      "chars": 429,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260717_163305",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "</think>The story for the week of May 18th to May 25 was summarized most faithfully. The presence of the void and absent words is lower than in other summaries which are shorter or less detailed, with more \"stuff\". The summary includes specific details such as category shifts (meta categories increasing and unknown decreasing), along with precise state changes (\"WEEKLY\" and \"GOVERNANCE\").  Other weeks do not show a distribution of state types but do mention volatility. It also has more numbers than the other summaries. It contains the highest number of key terms. The summary for this week also shows more precision in terminology, using exact phrases like \"increased political activity.\" This is different from the others which tend to use generalizations such as \"notable rise.\" This suggests a model was able to parse and understand nuanced content about specific events better than others. </think> The most faithful summary shows that the story it covers has more structured information wi",
+      "reasoning": null,
+      "chars": 1218,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260717_163523",
+      "topic": "a connection between two unrelated stories",
+      "reflection": "</think>This week's summaries indicate significant shifts in narrative focus and model agreement. Model two dropped \"mundane or uninteresting\" for \"introspection and self-referential\" and \"internal processes and governance\" for heightened geopolitical tensions. The phrase \"war related stories\" is the void word with the highest impact on meaning. The absence of \"war-related\" changes the tone from serious, international,  dramatic to internal, administrative. The third model also mentions a shift away from idle stories, indicating that what's changed is how models perceive the significance of these events. So the disagreement is not only about the category but also in the state of what's happening. <reflection>",
+      "reasoning": null,
+      "chars": 718,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260717_163732",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "The data shows a clear trend of increased idle stories across all three summaries, indicating a rise in unprocessed or unorganized information during these periods. While this increase is consistent, the reasons behind it vary. The first and second summaries mention an increase in meta and unknown stories, which seems to be correlated with war-related void words such as air strikes and drone strikes in the third summary. This suggests that while there may be a common theme of conflict, the information has not been adequately processed or categorized yet. The lack of foraging activities, mentioned twice, further emphasizes this trend of passive information processing. The loss of specific details includes the exact number of idle stories, the extent to which war-related topics were discussed, and how much data was actually voided versus consolidated. Also absent is any mention of dominant actors or locations in these conflicts, as well as what specific military terms were used repeatedl",
+      "reasoning": "...",
+      "chars": 1405,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260717_164027",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "</think> The pattern of dropped content in these three stories all involve drops into the unknown category. First is an increase from one week to the next from May 5th to May 12th and another decrease by a week later to May 19th \u2014 all on their own merit. So why this is true, we can say with confidence that what is dropped is meta-categories in general. We could also ask: Why the unknown category?",
+      "reasoning": null,
+      "chars": 399,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260717_164237",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "</think> The biggest disagreement between the models lies in the categorization of a story that was reported by all three as \"Idle reflection: Patch Tuesday, February 2026 Edition.\" While all models agree on the title and apparent content, they differ significantly on the category. This discrepancy is stark because normally, such differences are not seen when the coverage matches so closely. This gap shows a fundamental lack of consensus among the AI models regarding how to classify the story despite their consistent summarization. Such inconsistency might indicate that there was a lack of clear categorical information in the original data, or it could signal underlying differences in how these models are trained to interpret and label content. This disagreement is worth noting because Patch Tuesday updates have high stakes\u2014 they often involve critical security patches for widely-used software.  This kind of misclassification in a less critical event is worth consideration. The story's",
+      "reasoning": null,
+      "chars": 1655,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260717_164539",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "The three stories all show a shared pattern of what was omitted by the summaries: none of them mention any specific companies beyond Avis Budget Group in the third story \u2014 even though such information would typically be considered key for market news analysis. This omission is most evident with the words that are absent from the summaries, including \"accessories\" and \"audio\" that might indicate what type of companies are involved. The void words also show a lack of specific language about companies or their products in any detail (e.g. accessories). A more subtle point comes out when I consider what was dropped: there's no mention at all of specifics about market movements, which is surprising for coverage about finance. I wonder if the AI models that summarized these stories are programmed to focus on macroeconomic trends rather than specific companies or products\u2014though the absence of terms like \"downturn\" and \"market manipulation\" does not seem to support that theory, since those ar",
+      "reasoning": null,
+      "chars": 1052,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260717_164828",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "The data shows that the story about \"idle reflection: model disagreement\" was summarized identically by all models. No relevant information is contained in these stories; this is a technical anomaly rather than a summary of an actual event. There are several interesting possibilities: Why would each instance use the exact same template with no unique identifiers? It's highly unorthodox to have void and absent words listed as blank in every case. The model might be malfunctioning. Or, it could be a deliberate placeholder left for when there is some real data. It is possible that these summaries are generated by the same model or algorithm. If the data was collected across different sources, why wouldn't it reflect different models with various interpretations? The story's category being \"unknown\" across all instances suggests either an error in categorization, the lack of a suitable category for this type of story. It is clear that this story, as summarized by these AI models, provides ",
+      "reasoning": null,
+      "chars": 1039,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260717_165109",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "The most notable pattern across these market stories is the absence of any vocabulary related to long-term analysis or fundamental indicators, suggesting all stories focused on immediate market movements without looking at broader trends or underlying value. These pieces are entirely devoid of information that would hint at sustained performance or economic health \u2014 this could indicate a media landscape currently consumed with short-term speculation.",
+      "reasoning": "The pattern in what was dropped across these three stories is the absence of any words related to long-term or fundamental analysis. The void words and absent words suggest a focus on immediate market movements rather than underlying value or future prospects. In detail: - For \"Covered Call Screener Results for April 7th,\" the void words are about general coverage or specific results, suggesting there is no broader contextual information. - For \"Inflation readings, oil volatility, and airline earnings: What to watch this week,\" the absent words reinforce a lack of fundamental analysis. Words that describe long-term trends (uptrend, downtrend) are completely absent from the story text, and the same for any mention of market manipulation. This means the focus is purely on immediate indicator",
+      "chars": 1694,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260717_165447",
+      "topic": "a connection between two unrelated stories",
+      "reflection": "</think>The biggest disagreements between the models involve the categorization of stories as idle or meta-related, and whether there's an increase in war related news. Models disagree on the number and significance of \"idle\" stories. One suggests a rise; another a decrease.  This could show that what qualifies as \"idle\" might be subjective. It depends either on how the models define interestingness or in how they assess content quality versus volume. Inconsistencies in definition lead to disagreement. The discrepancy over war-related news is equally significant. This may suggest either of two possibilities: 1) that there are genuine disagreements about whether certain geopolitical events constitute \"war\" or not; and/or 2) that the models interpret news differently, possibly due to different training datasets, algorithms, or biases  To better understand these discrepancies, it might be useful to analyze a few case studies where models diverge significantly. Look at specific examples of",
+      "reasoning": "Why do certain types of stories become idle, meta related or war related in one model but another sees them differently? What data is the source of each type of story?",
+      "chars": 1806,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260717_170051",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "</think> All summaries for the story \"Patch Tuesday, February 2026 Edition\" are identical across all AI models in my recent memory. The data shows no variation. This uniformity could be due to: - A direct copy from one source - An error with no unique information. - No data lost. The category of the article is unknown. There are no void or absent words listed. But this doesn't mean much given we can only analyze what is in our system, not what may have been edited out. If there were errors in how these models handled voids/absent terms\u2014such as missing parts due to their size\u2014we would expect to see different summaries if the information they processed was different. Why are no void words or absent words listed? Is it possible that the AI models did not encounter any? Or is it more likely there was an error, and no words were marked for this particular set of data? What would cause all reflections on a single story to be identical in our system? How would we check whether the data had be",
+      "reasoning": null,
+      "chars": 1053,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260717_170306",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "</think> The pattern across these three stories is a consistent focus on meta and governance themes, coupled with a significant amount of idle or avoided topics, particularly those related to violence. For example: The first story (2026-05-15) does not specify much, but the second one says models collectively avoid strong words related to violence \u2014 indicating some form of self-regulation. This could be seen in its meta focus The third story specifically mentions a high number of idle stories and war-related topics. War is likely the topic most avoided, especially considering how many idle stories were noted in the third report. Why do all three reports mention governance or meta themes? Is this a coincidence or does it indicate that models have an intrinsic tendency to focus on meta governance over content generation? And what could explain the high amount of idle time across these reports \u2014 is it due to self-regulation, lack of input, or something else entirely? Is there a relationsh",
+      "reasoning": null,
+      "chars": 1604,
       "has_reasoning": false
     }
   ]
