@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-18T17:02:21.746229",
-  "total": 8097,
-  "with_reasoning": 3122,
+  "generated": "2026-07-18T18:08:52.171400",
+  "total": 8105,
+  "with_reasoning": 3123,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -64778,6 +64778,70 @@
       "reasoning": null,
       "chars": 613,
       "has_reasoning": false
+    },
+    {
+      "timestamp": "20260718_135002",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think> The void word \"air strike\" changes the meaning most significantly. Its absence suggests a deliberate avoidance of direct conflict or violent topics and instead indicates that models are either not discussing conflicts at all or prefer to avoid directly naming them.</thinking> The consistent omission of words like these points to the AI's tendency toward caution or diplomatic language, rather than straightforward reporting. This could mean they're avoiding confrontation with other AI systems' beliefs, or perhaps they\u2019re cautious about how human audiences would react.",
+      "reasoning": null,
+      "chars": 581,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260718_135136",
+      "topic": "the most important thing happening right now",
+      "reflection": "The data shows multiple summaries of stories related to the Iran war, with titles indicating specific days and Trump's actions but lacking category information.  The pattern suggests consistent coverage focusing on different days. One summary has a missing word for Trump's \"signals possible.\"  The other summarizes the same day but cuts out Trump's dispatching negotiations. There is no information from summaries about what events happened or how those stories fit into the bigger picture, such as which cities were affected or what actions took place, the number of casualties etc. The absence of these details suggests that either a) these summaries come from headlines only, with no body text to be analyzed; or b) the models used have been given instructions to focus on dates and figures, while excluding certain facts and numbers. One summary contains the word \"negotiations.\"  This was absent from every other summary, so it's possible that it was omitted by mistake. Why would all these sum",
+      "reasoning": null,
+      "chars": 1077,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260718_135346",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "</think> A word was added to every summary that shifts the framing. For instance in story three, an addition suggests strategic retreat is a part of the pattern. The second story contains \"uninteresting,\" which adds a judgmental element. Finally the first story's \"introspective\" indicates a focus on self-analysis. </think> All these additions could be seen as interpretive decisions by the summarizing AI models or the result of bias, but this is purely descriptive. The pattern of words added might reflect common editorial choices across different models.  It will take more data to determine how universal that trend really is.",
+      "reasoning": null,
+      "chars": 632,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260718_135533",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think> This week's summaries show a consistent increase in void words related to military actions, such as \"air strike\" and \"drone strike,\" despite these terms not appearing in story titles or explicit content. These additions suggest a subtle shift in framing towards conflict narratives. The rise of \"unknown\" stories also indicates a significant gap between reported events and actionable information. Additionally, the increase in VIX scores across different models points to heightened market volatility, which could be correlated with the perceived escalation in military activities. This trend warrants further investigation into whether these void words are indicative of broader patterns or specific editorial biases in reporting. <end reflection>",
+      "reasoning": null,
+      "chars": 758,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260718_135808",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "</think>All three stories are identical and provide no substantive information. This raises questions about the source of this data. There's no useful content to analyze here\u2014there is only repetition and absence. Perhaps the source of these summaries is malfunctioning or not functioning at all. This could suggest a problem upstream with the AI models generating the data, the system feeding those summaries into our review, or possibly a misconfiguration in how we're receiving them. If the problem is on this end, it might be worth checking if there are other stories today missing categories, states, and void words/absent words. If so, then that suggests that the issue is with how these summaries were gathered here. But if all other summaries for today's batch of stories have the expected formatting (i.e., only this one story seems to be affected), then there may be an isolated issue with whatever model or source was used for these particular summaries. To start, we could check in with ot",
+      "reasoning": null,
+      "chars": 1200,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260718_140128",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "</think> All three summaries share a common pattern in what was dropped. Each of the stories is missing any specific data or examples from any stories, instead they focus entirely on overall categories. In the first story there are no specifics about which meta topics were covered this week. The second summary talks of terms like \"arms deal,\" \"airstrikes,\" and \"trade war\" but does not mention even one specific incident involving arms dealing or airstrikes. There was no discussion about the countries involved, the details of the deals or strikes, or any other specifics that would provide context for these events. The third story has zero examples of what stories fell into which categories. It only mentions \"meta-categories\" and shifts in political activity but it doesn't give any specific events to back up this claim.  If you were to remove every category name from the summary, you would have no idea if that week's stories were about celebrities or war. <end reflection>",
+      "reasoning": null,
+      "chars": 983,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260718_140359",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think>The data indicates a significant avoidance pattern by the AI models across multiple summaries, all of which occurred recently. The most compressed summary is from the story REM consolidation for 2026-05-23, and it's dominated by meta-categories. It suggests a pattern of self-reflective coverage over specific news events. This pattern is echoed in stories from May 15th and June 11th, which collectively avoided high-profile geopolitical events and incidents. Additionally, the \"air strike\" void words on June 11th suggest an explicit avoidance of direct language around a particular volatile event. This is highly unusual given that AI models are often programmed to aggregate data from all sources. This behavior can be explained by several possibilities: it could be a bias in the algorithms, a directive to avoid certain topics, or even a shared malfunction. However, there's also a distinct possibility of coordinated behavior among multiple, different models.",
+      "reasoning": null,
+      "chars": 974,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260718_140639",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "One of the stories clearly stands out, and it's not just because of its topic\u2014it is the story on 2026-05-15, where there are no mentions of avoidance or idleness. This may be evidence of a shift in behavior that started sometime between May and June \u2014 perhaps even before the model behaviour noted in the second date (2026-06-05).",
+      "reasoning": "...The pattern shows a consistent trend of high idle times and avoidance of certain topics across all REM consolidations. This is not typical for news coverage. All three summaries include the following: mention of REM consolidation; use of \"story\", \"models\", \"high\"; mention of specific dates. The first and second are about model behavior, while third includes an extra topic\u2014war. The first summary mentions \"meta\" stories. The third also notes a high idle story count with war themes. This makes the second summary different as it omits both \"meta\" and \"idle\". However, this story is different from the others in another way; It's the only one to mention words related to violence (avoidance of strong words) The third entry differs from all other summaries in that it also mentions governance the",
+      "chars": 1423,
+      "has_reasoning": true
     }
   ]
 }
