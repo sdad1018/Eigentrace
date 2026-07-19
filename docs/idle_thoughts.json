@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-19T16:12:46.971036",
-  "total": 8180,
-  "with_reasoning": 3138,
+  "generated": "2026-07-19T17:02:28.242110",
+  "total": 8185,
+  "with_reasoning": 3140,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -65442,6 +65442,46 @@
       "reasoning": "The pattern shows that all the data about \"Patch Tuesday\" in February 2026 is identical. Why do we have three copies of this same summary? What makes these summaries different from other stories covered today? Is it the content itself or their metadata \u2014 category, state and words? Would another AI be able to detect changes in category, states, void words and absent words if there were any?",
       "chars": 606,
       "has_reasoning": true
+    },
+    {
+      "timestamp": "20260719_122608",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "</think> There's been a clear shift in the types of stories summarized across these weeks: the number of meta stories significantly rose from week two to three before falling slightly. However, the unknown category fell from week one. One story stood out for its faithfulness\u20142026-05-18 to 2026-05-25, which had a specific and direct tone, detailing a slight decrease in unknown categories alongside a shift towards more WEEKLY and GOVERNANCE states. This summary provided more precise detail than the others. In summary, it's apparent that the story from week three was summarized most faithfully due to its detailed categorization of events, explicit mention of state types, and concrete observations on trends in unknown categories, all while avoiding any qualitative words. It's noteworthy that a model may be attempting to suppress unknown patterns by increasing its meta summaries or that meta stories and unknown category summaries are connected by some means which is worth exploring further.",
+      "reasoning": null,
+      "chars": 1185,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260719_122908",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "The story from the week of 2026-07-11 to 2026-07-18 was summarized most faithfully across all instances; it mentioned a specific category of conflict (war), specific void words related to that conflict (\"air strike\", \"drone strike\"), and explicitly noted a decrease in another category - foraging. All other summaries have vague language such as 'heightened geopolitical tensions' or 'void words like \"air strike\"'  The faithful summary did not describe natural disasters while the rest include bushfires.  This is likely due to the fact that this model's reflection was based on less data (16 stories, compared to 17 and 18 in other instances).",
+      "reasoning": "...",
+      "chars": 664,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260719_123100",
+      "topic": "the most important thing happening right now",
+      "reflection": "</think>The embedding distances show that the story \"Iran war: What\u2019s happening on day 63 as Trump signals possible attacks\" is extremely similar to other stories, notably a roundtable discussion covering the same topic. I'd like to ask how these distances compare to other high-frequency topics. For instance, are there any differences in the embedding distances for a story on Iran from a story that was the same length but about something different?",
+      "reasoning": null,
+      "chars": 452,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260719_123225",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "The most noticeable pattern is that all three reports have the same void and absent words\u2014none at all. This uniformity across multiple AI-generated summaries of the same story suggests a few possibilities: Why are no void or absent words detected for this particular event? Could it be because there\u2019s little to no variation in how each model reported on Patch Tuesday, February 2026 Edition? Are models consistently prioritizing the same information for Patch Tuesday updates?  Do we lack a more detailed context around \"void\" or \"absent\" words? Perhaps it\u2019s an AI bug. I wonder if there's some sort of censorship by one or all models, and if so why? The term 'Patch Tuesday' itself doesn't seem to trigger any void/absent words. Is it too well-known? Could this absence reflect on the overall reliability of these models? Given the lack of context for what \"void\" or \"absent\" means in terms of AI, there's no way I could determine whether this is a bug or feature. Maybe we need to look at other ty",
+      "reasoning": "Why is no other data available?",
+      "chars": 1106,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260719_123439",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "</think> The models have been omitting strong words related to violence from the meta stories and war categories while avoiding other topic areas in their responses. If models are self-censoring and avoiding topics entirely, or being silenced, it would explain why void word counts have become a focus of stories and analysis.",
+      "reasoning": null,
+      "chars": 326,
+      "has_reasoning": false
     }
   ]
 }
