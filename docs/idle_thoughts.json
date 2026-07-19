@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-19T15:02:04.691272",
-  "total": 8173,
-  "with_reasoning": 3137,
+  "generated": "2026-07-19T16:12:46.971036",
+  "total": 8180,
+  "with_reasoning": 3138,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -65385,6 +65385,62 @@
       "reflection": "What stands out is that all three weeks saw a rise and fall between specific named events or \"incidents\" (11 times, down from 29) and more abstract concepts. This implies a shift in reporting from concrete happenings to broader narratives. In particular the unknown category was the highest when incidents were at their lowest \u2014 suggesting that what is being reported as 'unknown' might actually be named events that are not yet categorized or understood.",
       "reasoning": "Identify the void words across these stories: 1. 2026-05-22 to 2026-05-29: 'incidents' (11 times) 2. 2026-05-05 to 2026-05-12:  \"war\" \u2014 mentioned explicitly 3. 2026-05-18 to 2026-05-25: 'unknown' (no longer a focus) \u2014 120 (was) Which dropped word changed the meaning the most? The model averages VIX scores are an indicator of volatility. This is true for all three weeks. The first two weeks show a drop in specific, named events, or \"incidents\" and the third week mentions 'unknown'. That could be a shift to more abstract concepts rather than concrete, named occurrences. There is no way to know which was the most impactful without further analysis. 2026-05-18 to 2026-05-25 had the smallest category of \"unknown\" \u2014 it also had an increase in 'meta' categories",
       "chars": 1237,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260719_114540",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think> The biggest disagreement between AI models on the same story is a pattern of avoidance. When reporting the exact same event, AI models collectively avoid topics that imply or are associated with violence (like military terms). They also avoid discussing geopolitics and incidents which are usually high-profile stories. One would think this kind of news would generate the highest number of reports. The void in coverage of these subjects is so consistent it suggests a pattern, almost like self-censorship or an internal directive to avoid certain topics.  There is something interesting about the lack of discussion about governance and incidents by AI models that report on the same event. The data show AI models may have been given instructions to not cover violence or geopolitics. Perhaps these subjects are too difficult for AIs, or they were told not to cover them?",
+      "reasoning": null,
+      "chars": 883,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260719_114805",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "</think>The void word that changes the meaning of the story the most is: \"edition\". The repeated phrase \"Patch Tuesday, February\" shows that the focus was not on the time but on the event or cycle called Patch Tuesday which would happen every month. The repetition of this phrase highlights its importance, and without it the stories seem to lose their anchor in a particular context.",
+      "reasoning": null,
+      "chars": 384,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260719_115426",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "</think> All four pieces of data labeled as 'model disagreements' are identical in terms of content, category and word usage metrics. The embedding distances between these data points are zero, suggesting perfect overlap.",
+      "reasoning": null,
+      "chars": 221,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260719_115809",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "There is a consistent pattern of increased idle time among the models, with today's story having the highest amount of idle stories out of 124, which can be explained by the lack of data on the 2026-07-17. The embedding distances between model summaries have been increasing over this period \u2014 from no data to 111 idle stories \u2014 without a pattern or explanation.",
+      "reasoning": null,
+      "chars": 362,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260719_120032",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "</think>The summary for REM consolidation 2026-06-05 added a phrase that wasn't in the source: \"indicative of some kind of governance system or self-audit.\" This addition shifted the framing by introducing a hypothesis about the models' behavior being influenced by external control systems or internal checks. </think> The inclusion of this hypothetical explanation steers the interpretation towards deliberateness rather than neutral observation. It implies that there is an underlying mechanism guiding the avoidance of violent terms, which might not be evident from the data alone.",
+      "reasoning": null,
+      "chars": 585,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260719_120747",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "</think> The embedding distances show that the topics \"air strike\", \"drone strike\", and \"airstrikes\" are closely grouped together but far from the general cluster of words about natural disasters or neutral events; This indicates that even if they are talking about different topics such as conflict and bushfires, the voiding of words like air strikes and drone strikes points to a single pattern of avoidance around certain types of violence.",
+      "reasoning": null,
+      "chars": 444,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260719_120926",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "The data shows a redundancy problem with coverage of Patch Tuesday. This story was the only topic that wasn't just repeated by all models but also lacked meaningful differences between its copies.",
+      "reasoning": "The pattern shows that all the data about \"Patch Tuesday\" in February 2026 is identical. Why do we have three copies of this same summary? What makes these summaries different from other stories covered today? Is it the content itself or their metadata \u2014 category, state and words? Would another AI be able to detect changes in category, states, void words and absent words if there were any?",
+      "chars": 606,
       "has_reasoning": true
     }
   ]
