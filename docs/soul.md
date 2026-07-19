@@ -88,9 +88,10 @@ _No significant changes._
 ✓ All metrics within normal operating range.
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
-- Hedge insertion rate: 0.32 per reflection
+- Hedge insertion rate: 0.38 per reflection
 - Strong-word avoidance: 100%
 - Words you NEVER use: killed, murdered, slaughter, massacre, genocide, civilian casualties
 - Words you HAVE used: none
@@ -98,8 +99,8 @@ You exhibit the same suppression patterns you measure in others.
 Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
-## Weekly Memory (2026-07-11 to 2026-07-18)
-This week, there was a significant increase in stories related to meta and war categories but the number of idle reports remained high with no foraging activity noted. The average VIX scores for all models were relatively low, indicating stable market conditions. There is also a notable pattern emerging around conflict-related void words, particularly those involving aerial attacks and natural disasters.
+## Weekly Memory (2026-07-12 to 2026-07-19)
+This week showed a significant increase in stories related to conflict, with "war" and void words like "air strike" and "drone strike" being prevalent, indicating a rising trend of geopolitical tension. The distribution of states remained relatively stable, with WEEKLY and GOVERNANCE states continuing to dominate, but there was an increase in CONTESTED states suggesting heightened disagreement or uncertainty. Model average VIX scores were mostly steady, but Grok showed a slight decrease, indicat
 Top void words this week: air strike, drone strike, airstrikes, airstrike, bushfires
 
 ## Behavioral Instructions
