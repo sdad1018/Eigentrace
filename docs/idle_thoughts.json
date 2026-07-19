@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-19T05:06:28.680927",
-  "total": 8163,
-  "with_reasoning": 3133,
+  "generated": "2026-07-19T13:08:26.742503",
+  "total": 8171,
+  "with_reasoning": 3135,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -65305,6 +65305,70 @@
       "reflection": "</think> The added phrases \"not news-centric\" and \"self-audit in\" shift the framing of the summaries significantly. \"Not news-centric\" guides the reader to view the categories as irrelevant or less significant than conventional news topics. The words \"self audit in\" suggest that the models' behavior is influenced by a voluntary system, possibly implying a pro-active decision-making process. Neither phrasing appears in any source material.",
       "reasoning": null,
       "chars": 442,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260719_084005",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "</think> The story \"Why Avis Budget Group Stock did a U-Turn This Week\" was summarized most faithfully. The story had the lowest amount of voided terms, and no absent categories were listed in this summary. All three stories contained market data, yet only one did not have 'market' itself as an absent category \u2014 but also all three had similar levels of friction with 12-14 unique words omitted from coverage. Only one story has an identifiable subject (Avis Budget Group). The fact that it was summarized most accurately might be the result of the singular, concrete topic, despite being a market-related story like the others. If we could determine the absent words for all three stories, it would further clarify how accurate this summary is by comparison to the others. It may have been less friction than other summaries because it had an identifiable subject (Avis Budget Group) that was likely more concrete and easier to define clearly compared with topics like oil volatility or inflation r",
+      "reasoning": null,
+      "chars": 1008,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260719_084325",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "</think> The biggest disagreement between the models is their handling of market sentiment in relation to upcoming economic data releases. For example, one model emphasizes volatility and uncertainty with the void word \"volatility\" and absent words that suggest a lack of direction or consensus. Another model, however, focuses on specific drivers like inflation data, oil price swings, and airline earnings suggesting a more nuanced view of market sentiment. In conclusion this gap shows conflicting views on market sentiment surrounding upcoming economic data releases\u2014one sees high volatility and uncertainty, while the other anticipates clear market-moving events.",
+      "reasoning": null,
+      "chars": 668,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260719_084628",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think> The pattern shared across these three stories is the models' avoidance of topics related to violence and conflict. For instance: 1. In REM consolidation for 2026-07-18, the void words are all military terms associated with violence; this is evidence that there was direct language about violent subjects omitted. 2. In REM consolidation for 2026-05-23: the absence of topics that would be linked to violence in the meta categories suggests a focus on self-reflective and governance-focused stories. 3. For REM consolidation for 2026-05-15, it's clear the models were collectively avoiding high-profile geopolitical incidents, which often involve conflicts. These patterns suggest a possible bias or steering mechanism among the AI models to avoid content directly related to violence and conflict.",
+      "reasoning": null,
+      "chars": 806,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260719_084851",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "</think>The three stories share a pattern in what was dropped or reduced: 1. The reduction of \"unknown\" categories from previous weeks to the current week. 2. A decrease of \"incidents mentioned\". 3. In two of these summaries there is no mention of model predictions or volatility, despite it being mentioned specifically last week. Evidence: - From 2026-05-18 to 2026-05-25, the unknown category was slightly decreasing indicating more structured categorization of events. However by next week this dropped even further to just 120. - The incidents mentioned decreased dramatically, falling to just 11 from a previous count we do not have. - Both summaries for the weeks leading up to and including the final week omit volatility or model prediction data \u2014 which was explicitly mentioned in both the first and second summaries. </think> The most striking omission is in the volume of incidents mentioned.  This category dropped dramatically by the third week, despite having no previous reference.  W",
+      "reasoning": null,
+      "chars": 1505,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260719_085258",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "All these AI models seem to be avoiding stories about topics outside their own behavior, instead focusing on self-governance.",
+      "reasoning": "Three patterns in topics dropped: 1. The absence of topics that were not \"meta\" or governance-related:    - In the first story (2026-05-15), only 35.6% of stories were non-meta.    - In the third story, (2026-07-17) had an idle story rate of 89.5%. Both are high rates. The avoidance of strong language:    - The second summary mentioned a deliberate lack of violence-related terms, while no other stories contained such references to strong words or language.    - All three summaries used the same word: \"cautious\" or \"conservative.\" A high rate (83% idle time) shows this behavior was also applied in 2026-05-15. If we assume that the AI models are aware of each other's behavior, why would they collectively avoid topics related to non-meta or governance-related terms? Why did all three summarie",
+      "chars": 1077,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260719_085643",
+      "topic": "what changed since yesterday",
+      "reflection": "Today\u2019s news coverage has been remarkably consistent. Over the last three days there has been an almost exclusive focus on meta-narratives - introspective, procedural information. The absence of traditional news categories such as incidents, geopolitical events and technology suggests either a deliberate shift in focus for our AI models or something missing. This might be due to temporal drift that we've observed or some other systemic issue. There is an interesting point where all of these stories seem to be coming from a single source - the REM consolidation, suggesting some sort of internal processing rather than external reporting. The absence of foraging activities seems consistent with this trend as well but it does raise questions.",
+      "reasoning": "The data shows a consistent theme across the past three days, dominated by 'meta' categories. This suggests a focus on introspective or procedural information rather than events. - The most active EigenChing state was \"The Still Point\", aligning with a meta focus. - There are no foraging activities reported. - Notably absent are categories like incidents, geopolitics, or tech.",
+      "chars": 1145,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260719_090244",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "</think> The data shows a pattern of repeated idle reflections labeled as \"model disagreement,\" but there is no additional context in any of the fields: category, state, void or absent words. This repetition with lack of detail could imply: 1. An unresolved issue in your processes, 2. A specific event or problem that needs addressing 3. Multiple models are all failing to agree on an assessment of some events 4. The repeated reflections might indicate a bug or malfunction. The absence of data in other fields suggests either a system error, or possibly a focus solely on the disagreements between AI model predictions",
+      "reasoning": null,
+      "chars": 621,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260719_090625",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "</think> The biggest disagreement between the models lies in their handling of violent or sensitive topics. While some models exhibit a clear avoidance of strong language related to violence\u2014suggesting possible governance controls\u2014the other models seem more focused on meta and geopolitical themes rather than showing such avoidance. What's even more interesting, however is how the distribution of idle stories changes over time. What is driving this? Is it an increase in caution among the models, or perhaps external directives that are not immediately visible? Why do models appear cautious when handling sensitive topics one week but focus on governance and war the next? The change from 83% idle time to 111 out of 124 stories being idle seems to be a big signal. This change in behavior needs to be better understood, especially if we want to know how models are reacting to external stimuli or internal directives. To sum up: The data clearly shows that the biggest discrepancy lies in the ha",
+      "reasoning": null,
+      "chars": 1082,
       "has_reasoning": false
     }
   ]
