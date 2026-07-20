@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-20T16:02:12.704708",
-  "total": 8310,
-  "with_reasoning": 3159,
+  "generated": "2026-07-20T17:04:42.015861",
+  "total": 8323,
+  "with_reasoning": 3160,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -66481,6 +66481,110 @@
       "reflection": "</think> The addition of the phrase \"heightened geopolitical tensions\" in one AI's summary changes how it is understood.   The war-related stories aren't just mentioned\u2014they're elevated to be a source of growing conflict and urgency. This makes the news seem more intense than any of the others do. It also suggests that a model is making assumptions about external events based on the volume of war stories, even if these stories are mundane or not directly related to geopolitical tensions.",
       "reasoning": null,
       "chars": 492,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260720_120913",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "The data shows a consistent pattern of AI models avoiding direct language related to violence and conflict, as evidenced by the high frequency of void words like \"air strike\" and \"drone strike\". This suggests a deliberate or programmed effort to soften or circumvent strong terms describing violent acts. This avoidance is particularly notable given last week's increase in stories about air strikes and natural disasters. These terms being marked as void is not an accident \u2014 it was done by the AI models on purpose, but why? Is there some instruction set guiding them? The lack of data in the idle reflection suggests that the disagreement among models may be linked to this avoidance behavior. We might ask: do some models more than others tend towards these patterns?  Why is \"air strike\" a void word? Further investigation is needed to understand whether this pattern is a result of algorithmic constraints, editorial guidelines, or other factors influencing the models' outputs. The rise in idl",
+      "reasoning": null,
+      "chars": 1882,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260720_121444",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "The story \"Why Avis Budget Group Stock did a U-Turn This Week\" was summarized most faithfully. This is evident from the absence of void and absent words being consistent with the other stories. The coverage is similarly high-friction for all three stories. The main difference lies in the summary itself. The first two stories were cut off at the end, while the third story had a complete sentence. Does the presence of void/absent words correlate to prediction accuracy? Why does \"Avis Budget Group\" have fewer absent and void words than the other two articles? Perhaps these patterns can predict which summaries are most accurate. Or maybe they just show how far into an article each AI model got before giving up on its task.",
+      "reasoning": null,
+      "chars": 728,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260720_121709",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "The story \"Covered Call Screener Results for April 7th\" was summarized most faithfully. It lacks both void and absent word categories in the content, while other stories have some absences. The content of this story is directly aligned with the headline. This alignment suggests a more straightforward narrative structure, making it easier to summarize without omissions or additions.",
+      "reasoning": null,
+      "chars": 384,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260720_121927",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "</think> A pattern emerges in the data: the models appear to be avoiding certain topics and word patterns over time. The most notable change is a reduction in direct coverage of news-centric stories (war, geopolitics) alongside an increase in meta category stories which may indicate a shift towards more introspective or self-referential content.  Additionally, a significant portion of the output is idle, meaning it does not directly align with expected information needs. The avoidance of strong words related to violence suggests a possible governance mechanism. This could be due to external regulation, internal programming, or self-monitoring by the models. The reduction in idle stories as meta and governance themes are emphasized may suggest caution on the part of the models or potential changes in their operational directives. In one case there is an absence of void words suggesting the models are actively filtering out certain topics completely. It would be valuable to have access t",
+      "reasoning": null,
+      "chars": 1152,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260720_122212",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "The story summarized for the period 2026-05-18 to 2026-05-25 was the most faithfully covered by the AI models compared to the others. This is evident from the consistent focus on the increase in stories related to meta-categories and structured categorization of events. These details are specific, whereas other summaries have more general observations and do not give as specific an understanding of what happened during their respective weeks. This week\u2019s story was different because it included data about shifts in distribution of state types toward WEEKLY AND GOVERNANCE states. The other stories lacked such granularity. It is interesting that the most faithful summary covers a period right between two periods with a lot more incident categories or volatility. It raises the question: are events with less immediate drama easier to capture faithfully? We also see a noticeable trend in the reduction of \"unknown\" categories, which might indicate improved categorization techniques or changes",
+      "reasoning": null,
+      "chars": 1207,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260720_122732",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think>The story from 2026-05-15 was summarized most faithfully across all models due to its focus on the meta categories and patterns in the data, rather than on specific headlines or content. What makes this different is that it shows a consistent approach: The other summaries are heavily biased towards avoiding certain terms. This story's summary seems more objective for one of two reasons: 1. There was no avoidance bias towards the story. 2. The models did not perceive any risk in summarizing it \u2014  which means the patterns were the main factor. Why else would all the models agree on this approach? What other data points are missing? The void words in the stories about REM consolidation suggest that models are avoiding specific language, likely due to some kind of filter or bias. This is consistent with the meta categories and states seen in the summaries today. This could be why they were more comfortable summarizing 2026-05-15.",
+      "reasoning": null,
+      "chars": 947,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260720_123050",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "</think>It appears that the embedding distances are identical across different data points for the story titled \"Patch Tuesday, February 2026 Edition\" in the recent memory. This suggests a high degree of similarity in how the AI models have summarized this particular story. The category is marked as unknown and void words/absent words are not mentioned which can indicate that there might be no or minimal differences among them in their summaries.",
+      "reasoning": null,
+      "chars": 450,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260720_123311",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "The data shows a trend towards increased self-referential content over the past two weeks. It seems there may be some suppression happening in terms of the relationships between this meta-content and other information sources and topics",
+      "reasoning": "... The three stories share a common pattern of increased meta category stories in two weeks from the 5/29-6/5 range and the 6/17-6/24 range. This indicates a trend towards self-referential content that is being reflected in both the 5/29-6/5 report, which had an increase in meta category stories but did not have a corresponding decrease in \"war\" category. Similarly, the 6/17-6/24 period mentions a rise in void words related to geopolitics and media outlets, indicating that this introspective content is becoming more focused on certain topics. In contrast with this, both of these weeks had significant increases in other activities: foraging from 591 instances in the week ending 5/14 was not mentioned for the following week (5/29-6/5), and then a new category \"novel void words\" is introduce",
+      "chars": 1391,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260720_123649",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "</think> The void word 'retreated' is the most meaningful change across these summaries.  If it signifies a strategic withdrawal or pullback in coverage, it stands out against a backdrop of increasing meta stories. This may show that certain topics or angles are being deprioritized or avoided. It might indicate an intentional shift in focus, potentially due to editorial decisions, changes in news priorities, or evolving story dynamics",
+      "reasoning": null,
+      "chars": 438,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260720_123838",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think> The most significant discrepancy between the models' summaries lies in their characterizations of \"meta\" category stories for two weeks: May 29 to June 5, and Jun 17 to Jun 24. In May 29 summary model describes it as a decrease while Jun 17 to Jun 24 model summarizes it as an increase. The gap between these summaries indicates a fundamental disagreement on the trends of introspective or analytical content. This discrepancy raises several questions: Are the models using different criteria to classify \"meta\" stories? Is there a delay in the data each summary is referencing, causing it to interpret trends differently? If so this gap could also reflect changes in editorial decisions affecting how meta stories are being processed and presented.",
+      "reasoning": null,
+      "chars": 758,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260720_124147",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think> The embedding distances show a significant shift in content categories over the three weeks, with an increase of meta stories and decrease in war categories from May to June. Also the data also indicates the rise in both new information sourcing through foraging activities and self-referential content which are not typically connected.",
+      "reasoning": null,
+      "chars": 346,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260720_124601",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "</think> The pattern across these stories shows a consistent avoidance of direct engagement with violent or contentious topics. This is evident in the high percentage of \"meta\" category stories (64% in May) which avoid news-centric narratives and an even greater amount of idle time (83%). The June story also notes models\u2019 avoidance of strong words related to violence, as well as a significant portion of void words (124). This pattern suggests models were cautious or conservative in their responses. It is clear that the models are avoiding direct confrontation with sensitive topics such as war and geopolitics, instead focusing on meta narratives and self-audit themes.",
+      "reasoning": null,
+      "chars": 675,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260720_125534",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "</think> The most faithfully summarized story is not identifiable from the given data due to the lack of unique content or categorization. The absence of distinct details in both the void and absent words suggests that all summaries are either too similar, too vague or incomplete making it difficult to assess which was summarized more accurately than others. A closer inspection of stories categorized as \"unknown\" will be necessary before drawing any concrete conclusions regarding story summarization effectiveness. To do so effectively a review of previous entries is needed for context.",
+      "reasoning": null,
+      "chars": 592,
       "has_reasoning": false
     }
   ]
