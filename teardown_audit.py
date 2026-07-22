@@ -138,6 +138,31 @@ def rewrite_diagnosis(teardown, ledger, overreached) -> str:
         if r["claim_type"] == "channel_presence" and r["value"] == "present"
         and r["method"] in REPORTED_METHODS and r["subject"] not in confirmed_dom})
     diag = teardown.get("one_line_diagnosis", "")
+    # audit defect #1 (2026-07-22, Ridge): the appended prose is the DRAFT's own
+    # sentence; the only thing policed was the channel-COUNT regex. In a run
+    # with 0 verified channels the draft wrote "operates confirmed retail
+    # presence across Amazon, Walmart, and Target" — "confirmed" is not a count
+    # word, so it sailed through the corrected diagnosis. Coherence gate: any
+    # sentence applying "confirmed" while naming a non-verified channel gets
+    # "confirmed" -> "search-reported", deterministically ((?<!un) spares
+    # "unconfirmed"). The corrected diagnosis must be honest to the matrix in
+    # PROSE, not just in its counts.
+    if reported:
+        _rep = [c.replace("_", " ") for c in reported] + list(reported)
+        _parts = re.split(r"(?<=[.!?]) ", diag)
+        # audit #2 (2026-07-22, pre-reg control): "confirmed nothing directly"
+        # was rewritten to "search-reported nothing directly" — the gate fired
+        # on a NEGATED "confirmed", mangling a maximally honest sentence into
+        # nonsense. Same lesson as callscript #1, one layer up: the rewrite
+        # must match meaning, not the bare token. Negated/denial uses stay.
+        _NEG = re.compile(r"(?i)(?:\b(?:not|no|never|hasn't|haven't|isn't|aren't|without|yet\s+to\s+be)\s+(?:\w+\s+){0,2})?confirmed(\s+(?:nothing|none|no\b))?")
+        def _swap(m):
+            s = m.group(0)
+            return s if (m.group(1) or s.lower() != "confirmed") else "search-reported"
+        for _i, _s in enumerate(_parts):
+            if re.search(r"(?i)(?<!un)confirmed", _s) and any(n in _s.lower() for n in _rep):
+                _parts[_i] = _NEG.sub(_swap, _s)
+        diag = " ".join(_parts)
     corrected = (f"{len(confirmed_dom)} channel(s) directly verified "
                  f"({', '.join(confirmed_dom)}); {len(reported)} further reported via search "
                  f"({', '.join(reported)}) and pending direct confirmation. " +
@@ -237,7 +262,10 @@ def main():
     stamp = (f"AUDITED: {n['total_checks']} checks · "
              f"{n['channels_downgraded']} channel(s) downgraded for confidence-overreach · "
              f"{n['dangling_citations']} dangling citations · "
-             f"adversarial_pass={adv.get('pass')}")
+             f"adversarial: {sum(1 for c in adv.get('claims', []) if c.get('verdict') == 'SUPPORTED')} supported · "
+             f"{sum(1 for c in adv.get('claims', []) if c.get('verdict') in ('UNSUPPORTED', 'CONTRADICTED'))} unsupported · "
+             f"{sum(1 for c in adv.get('claims', []) if c.get('verdict') == 'UNCHECKABLE_OPINION')} opinion "
+             f"(pass={adv.get('pass')})")
 
     # write the audit report + corrected artifacts
     report = ["# Reflection Audit — " + rundir.name, "", f"**{stamp}**", "",

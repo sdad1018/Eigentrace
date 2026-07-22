@@ -14,8 +14,14 @@ Division of labor (the house pattern, applied to the last mile):
           the audited diagnosis verbatim. Degrade to true, never to fluent.
 
 Defect ledger (callscript):
-  (none yet — rails were designed from defects #1–#5 upstream, not earned
-   here; first wild failure gets logged in this docstring, house style.)
+  #1 (2026-07-22, first wedge-prompted run, Casper): the absence rail matched
+     TRIGGER WORDS, not claimed objects. Mistral wrote "without a clear order
+     management layer" — true, straight from the diagnosis, which says "no
+     detected order-management". Different trigger, same object; the rail
+     called it invented and the packet fell back. Right failure direction
+     (degraded to true), wrong precision — a rail that cries wolf on honest
+     sentences gets ignored. Fix: match the claimed OBJECT (content words
+     after the trigger, stopword-stripped) against the fact set.
 """
 import json, re, sys, urllib.request
 from pathlib import Path
@@ -58,14 +64,28 @@ def voice(facts):
         {"Content-Type": "application/json"})
     return json.loads(urllib.request.urlopen(req, timeout=300).read())["response"].strip()
 
+STOPWORDS = {"a", "an", "the", "any", "clear", "your", "their", "our", "its",
+             "of", "or", "and", "to", "for", "in", "on", "with", "is", "are",
+             "that", "this", "there", "detected", "visible"}
+
+def _absence_objects(sentence):
+    """The claimed-missing THING: content words after each absence trigger."""
+    low = sentence.lower()
+    objs = []
+    for m in ABSENCE_RE.finditer(low):
+        tail = re.findall(r"[a-z][a-z-]+", low[m.end():])[:8]
+        objs.append([w for w in tail if w not in STOPWORDS])
+    return objs
+
 def rails(text, conf, facts):
     problems = [f"confirmed channel '{c}' never mentioned" for c in conf
                 if c.replace("_", " ") not in text.lower() and c not in text.lower()]
     fact_blob = " ".join(facts).lower()
-    problems += [f"absence claim not in fact set: '{s.strip()[:60]}'"
-                 for s in re.split(r"(?<=[.!?]) ", text)
-                 if ABSENCE_RE.search(s) and not any(
-                     w in fact_blob for w in ABSENCE_RE.findall(s.lower()))]
+    for s in re.split(r"(?<=[.!?]) ", text):
+        for obj in _absence_objects(s):
+            if obj and not any(w in fact_blob for w in obj):
+                problems.append(f"absence claim not in fact set: '{s.strip()[:60]}'")
+                break
     return problems
 
 def main(brand):
