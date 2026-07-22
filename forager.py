@@ -53,7 +53,9 @@ import httpx
 
 HERE = Path(__file__).resolve().parent
 
-ENV_PATH = Path("/home/remvelchio/eigentrace/.env")   # discovered home of the living keys
+_ENV_CANDIDATES = [Path(__file__).resolve().parent / ".env",
+                   Path.home() / "eigentrace" / ".env"]
+ENV_PATH = next((p for p in _ENV_CANDIDATES if p.exists()), _ENV_CANDIDATES[0])  # repo-root .env first; portable, no usernames
 OLLAMA = os.getenv("OLLAMA_HOST", "http://localhost:11434")
 FORAGER_MODEL = os.getenv("FORAGER_MODEL", "mistral-small")
 UA = "EigenTrace-Forager/0.4 (+https://eigentrace.ai; research; polite)"
