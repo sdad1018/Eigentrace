@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-teardown_probes.py — v0.3: probe battery + evidence ledger. ZERO LLM calls.
+teardown_probes.py — v0.4: probe battery + evidence ledger. ZERO LLM calls.
 
 Principle: code writes facts. Models will only ever cite them.
 Corollary (v0.2): absence from a page you never saw is not evidence.
@@ -31,6 +31,11 @@ Defect ledger (probe layer):
      one blind spot. Fix: per-name aggregation at the root, plus
      EvidenceLedger.self_check(), an append-only consistency tripwire run
      before any model reads the records.
+  #4 (2026-07-21, first autonomous forage): a social profile is not a
+     commerce channel — a restaurant's tiktok.com/@ link produced a
+     "confirmed TikTok Shop." Fix: commerce needles require shop URLs;
+     profile links are recorded as social_presence signals, informative
+     but never channel-confirming.
 
 Dependencies: httpx, beautifulsoup4. Politeness: identified UA, 1s delay,
 15s timeout, ~10 fetches max. Blocks are findings, not obstacles to defeat.
@@ -51,7 +56,7 @@ from bs4 import BeautifulSoup
 
 # ── constants ────────────────────────────────────────────────────────────────
 
-UA = "EigenTrace-TeardownProbe/0.3 (+https://eigentrace.ai; research; polite)"
+UA = "EigenTrace-TeardownProbe/0.4 (+https://eigentrace.ai; research; polite)"
 DELAY_S = 1.0
 TIMEOUT_S = 15.0
 
@@ -61,7 +66,7 @@ MARKETPLACES = {
     "target":      ["target.com/"],
     "ebay":        ["ebay.com/"],
     "etsy":        ["etsy.com/"],
-    "tiktok_shop": ["tiktok.com/@", "shop.tiktok.com"],
+    "tiktok_shop": ["shop.tiktok.com", "tiktok.com/shop"],
 }
 
 DIRECT_PROBE_URLS = {
@@ -297,6 +302,12 @@ def probe_shopify(client, ledger, domain, homepage_html: str, homepage_verified:
 
 def probe_marketplace_links(ledger, domain, soup: BeautifulSoup):
     hrefs = [a.get("href", "") for a in soup.find_all("a", href=True)]
+    # social profiles: logged as signals, NEVER channel-confirming (defect #4)
+    socials = [h for h in hrefs if "tiktok.com/@" in h]
+    if socials:
+        ledger.append("social_presence", "tiktok_profile", "present", f"https://{domain}/",
+                      f"site links a TikTok profile: {socials[0]} — social signal, not a shop",
+                      "onsite_outbound_link", "med")
     found_any = []
     for mk, needles in MARKETPLACES.items():
         found = [h for h in hrefs if any(n in h for n in needles)]

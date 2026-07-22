@@ -31,6 +31,18 @@ Defect ledger (forager):
      shared a tuple slot with the success domain, and truthiness could not
      tell them apart. Fix: explicit ok flag; a reason can never wear a
      domain's clothes again.
+  #2 (2026-07-21, first live forage): existence is not identity — "Summer
+     Fridays" (skincare) resolved to TGI Fridays' Spanish site, because the
+     Wikipedia gate verified that A company exists, not that it was THE
+     company proposed. The engine then produced an internally consistent,
+     fully audited teardown of the wrong entity — proof that evidence-
+     coherence is necessary but not sufficient; identity is a separate
+     axiom. Fix: bidirectional token-containment identity gate between the
+     proposal and the resolved title, domain-echo logged as signal,
+     mismatches rejected with the resolved title named.
+Known limitation (recall, by design): brands lacking a Wikidata P856 claim
+are rejected even when alive (observed: BarkBox). Precision over recall;
+roadmap: fall back to the Wikipedia article's infobox URL, identity-gated.
 """
 from __future__ import annotations
 import json, os, re, subprocess, sys, time
@@ -39,10 +51,12 @@ from pathlib import Path
 
 import httpx
 
+HERE = Path(__file__).resolve().parent
+
 ENV_PATH = Path("/home/remvelchio/eigentrace/.env")   # discovered home of the living keys
 OLLAMA = os.getenv("OLLAMA_HOST", "http://localhost:11434")
 FORAGER_MODEL = os.getenv("FORAGER_MODEL", "mistral-small")
-UA = "EigenTrace-Forager/0.1 (+https://eigentrace.ai; research; polite)"
+UA = "EigenTrace-Forager/0.4 (+https://eigentrace.ai; research; polite)"
 WIKI = "https://en.wikipedia.org/w/api.php"
 WIKIDATA = "https://www.wikidata.org/w/api.php"
 
@@ -70,6 +84,23 @@ def load_env():
                 os.environ.setdefault(k.strip(), v.strip())
     except OSError:
         pass
+
+
+GENERIC_TOKENS = {"the", "company", "brand", "co", "inc", "llc", "corp", "corporation"}
+
+def _tokens(s: str) -> set[str]:
+    s = re.sub(r"\(.*?\)", " ", s.lower())          # strip wiki parentheticals
+    return {t for t in re.findall(r"[a-z0-9]+", s)
+            if len(t) > 1 and t not in GENERIC_TOKENS}
+
+def identity_match(proposed: str, title: str, domain: str) -> tuple[bool, bool]:
+    """(contain, echo). contain = the gate: proposal and resolved title must
+    token-contain one another. echo = brand token appears in the domain
+    (logged signal, not gating)."""
+    p, t = _tokens(proposed), _tokens(title)
+    contain = bool(p and t) and (p <= t or t <= p)
+    echo = any(tok in domain.replace("-", "") for tok in p if len(tok) > 3)
+    return contain, echo
 
 
 def slugify(name: str) -> str:
@@ -149,14 +180,14 @@ def run_engine(brand: str, domain: str, dry: bool, logdir: Path) -> dict:
     dr = ["--dry-run"] if dry else []
     res = {"brand": brand, "domain": domain, "rundir": str(rundir), "ok": False}
 
-    p = subprocess.run([sys.executable, "teardown_agent.py", brand, domain] + dr,
+    p = subprocess.run([sys.executable, str(HERE / "teardown_agent.py"), brand, domain] + dr,
                        capture_output=True, text=True, timeout=1200)
     (logdir / f"{slug}.agent.log").write_text(p.stdout + "\n--- stderr ---\n" + p.stderr)
     if p.returncode != 0 or not (rundir / "teardown.json").exists():
         res["error"] = (p.stderr or p.stdout).strip().splitlines()[-1:] or ["agent produced no artifact"]
         return res
 
-    p2 = subprocess.run([sys.executable, "teardown_audit.py", str(rundir)] + dr,
+    p2 = subprocess.run([sys.executable, str(HERE / "teardown_audit.py"), str(rundir)] + dr,
                         capture_output=True, text=True, timeout=600)
     (logdir / f"{slug}.audit.log").write_text(p2.stdout + "\n--- stderr ---\n" + p2.stderr)
     res["ok"] = True
@@ -197,7 +228,7 @@ def briefing(results: list[dict], date: str) -> Path:
                      diag, "", f"**Lead talk track:** *\"{talk}\"*",
                      f"\nFull teardown: `{rd}/teardown.md` · audit: `{rd}/audit_report.md`", ""]
     L += [""] + sections
-    out = Path("runs") / f"briefing-{date}.md"
+    out = Path("runs") / f"briefing-{date}-{datetime.now().strftime('%H%M')}.md"
     out.write_text("\n".join(L) + "\n")
     return out
 
@@ -228,7 +259,13 @@ def main():
             ok, title, qid, val = wiki_resolve(company, dry)
             if not ok:
                 print(f"could not resolve '{company}': {val}"); sys.exit(0)
-            ledger("verify", {"name": company, "title": title, "qid": qid, "domain": val})
+            contain, echo = identity_match(company, title or "", val)
+            if not contain:
+                print(f"identity mismatch: '{company}' resolved to '{title}' ({val}).")
+                print("If that IS your target, rerun with --domain to force it.")
+                sys.exit(0)
+            ledger("verify", {"name": company, "title": title, "qid": qid,
+                              "domain": val, "domain_echo": echo})
             domain = val
         targets = [(company, domain)]
     else:
@@ -245,7 +282,13 @@ def main():
                 seen.add(slug)
                 ok, title, qid, val = wiki_resolve(name, dry)
                 if ok:
-                    ledger("verify", {"name": name, "title": title, "qid": qid, "domain": val})
+                    contain, echo = identity_match(name, title or "", val)
+                    if not contain:
+                        ledger("reject", {"name": name,
+                                          "reason": f"identity mismatch: resolved to '{title}' ({val})"})
+                        continue
+                    ledger("verify", {"name": name, "title": title, "qid": qid,
+                                      "domain": val, "domain_echo": echo})
                     targets.append((name, val))
                 else:
                     ledger("reject", {"name": name, "reason": val})

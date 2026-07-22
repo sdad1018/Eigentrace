@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "omniteardown"
+version = "0.4.0"
+description = "Evidence-firewalled prospect enrichment: probe -> research -> draft -> audit -> forage -> brief. Models cite facts; code writes them."
+requires-python = ">=3.10"
+dependencies = ["httpx", "beautifulsoup4", "anthropic"]
+
+[project.scripts]
+teardown = "forager:main"
+
+[tool.setuptools]
+py-modules = ["teardown_probes", "teardown_agent", "teardown_audit", "forager"]
