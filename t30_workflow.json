@@ -1,0 +1,30 @@
+{
+  "name": "T-30 Pre-Call Dispatcher",
+  "active": false,
+  "settings": {"executionOrder": "v1"},
+  "nodes": [
+    {"id": "trig1", "name": "Every 5 Minutes", "type": "n8n-nodes-base.scheduleTrigger",
+     "typeVersion": 1.2, "position": [0, 0],
+     "parameters": {"rule": {"interval": [{"field": "minutes", "minutesInterval": 5}]}}},
+    {"id": "exec1", "name": "Scan Call Window", "type": "n8n-nodes-base.executeCommand",
+     "typeVersion": 1, "position": [220, 0],
+     "parameters": {"command": "cd /mnt/c/Users/M4ISI/eigentrace && python3 dispatch.py --scan"}},
+    {"id": "code1", "name": "Parse Dispatch Report", "type": "n8n-nodes-base.code",
+     "typeVersion": 2, "position": [440, 0],
+     "parameters": {"jsCode": "const last = $input.first().json.stdout.trim().split('\\n').pop();\nreturn [{ json: JSON.parse(last) }];"}},
+    {"id": "if1", "name": "Anything Fired?", "type": "n8n-nodes-base.if",
+     "typeVersion": 1, "position": [660, 0],
+     "parameters": {"conditions": {"number": [{"value1": "={{ $json.fired_count }}", "operation": "larger", "value2": 0}]}}},
+    {"id": "noop1", "name": "Packets Delivered", "type": "n8n-nodes-base.noOp",
+     "typeVersion": 1, "position": [880, -80], "parameters": {}},
+    {"id": "noop2", "name": "Idle Tick", "type": "n8n-nodes-base.noOp",
+     "typeVersion": 1, "position": [880, 80], "parameters": {}}
+  ],
+  "connections": {
+    "Every 5 Minutes": {"main": [[{"node": "Scan Call Window", "type": "main", "index": 0}]]},
+    "Scan Call Window": {"main": [[{"node": "Parse Dispatch Report", "type": "main", "index": 0}]]},
+    "Parse Dispatch Report": {"main": [[{"node": "Anything Fired?", "type": "main", "index": 0}]]},
+    "Anything Fired?": {"main": [[{"node": "Packets Delivered", "type": "main", "index": 0}],
+                                  [{"node": "Idle Tick", "type": "main", "index": 0}]]}
+  }
+}

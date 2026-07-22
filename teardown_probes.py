@@ -36,6 +36,12 @@ Defect ledger (probe layer):
      "confirmed TikTok Shop." Fix: commerce needles require shop URLs;
      profile links are recorded as social_presence signals, informative
      but never channel-confirming.
+  #5 (2026-07-22, Dr. Squatch prereg re-run): the raw matrix promoted
+     web_search-method presence (med, pattern-gated) straight to "confirmed";
+     the audit corrected it downstream, but the intermediate artifact
+     overclaimed at birth. Fix: method caps assertable confidence at write
+     time; search-reported presence renders unverified_signal until a direct
+     probe verifies. The audit is the backstop, not the only honest layer.
 
 Dependencies: httpx, beautifulsoup4. Politeness: identified UA, 1s delay,
 15s timeout, ~10 fetches max. Blocks are findings, not obstacles to defeat.
@@ -222,7 +228,8 @@ def channel_matrix(ledger: EvidenceLedger) -> dict:
     # shopify — absence requires BOTH a verified homepage clean of markers AND products.json 404-family
     shop = ledger.query(claim_type="channel_presence", subject="shopify")
     shop_probe = ledger.query(claim_type="probe_status", subject="shopify")
-    strong_present = [r for r in shop if r.value == "present" and r.confidence in ("high", "med")]
+    strong_present = [r for r in shop if r.value == "present" and r.confidence in ("high", "med")
+                      and r.method != "web_search"]  # defect #5: method caps confidence
     if strong_present:
         matrix["shopify"] = {"status": "confirmed", "evidence": [r.id for r in strong_present]}
     elif any(r.value == "absent_after_probe" for r in shop):
@@ -237,7 +244,8 @@ def channel_matrix(ledger: EvidenceLedger) -> dict:
         recs = ledger.query(claim_type="channel_presence", subject=mk)
         probe = ledger.query(claim_type="probe_status", subject=mk)
         present = [r for r in recs if r.value == "present"]
-        strong = [r for r in present if r.confidence in ("high", "med")]
+        strong = [r for r in present if r.confidence in ("high", "med")
+                  and r.method != "web_search"]  # defect #5: method caps confidence
         if strong:
             matrix[mk] = {"status": "confirmed", "evidence": [r.id for r in strong]}
         elif present:  # defect #2: low-confidence presence is a signal, not a fact
