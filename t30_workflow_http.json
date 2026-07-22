@@ -1,0 +1,26 @@
+{
+  "name": "T-30 Dispatcher HTTP",
+  "active": false,
+  "settings": {"executionOrder": "v1"},
+  "nodes": [
+    {"id": "trig1", "name": "Every 5 Minutes", "type": "n8n-nodes-base.scheduleTrigger",
+     "typeVersion": 1.2, "position": [0, 0],
+     "parameters": {"rule": {"interval": [{"field": "minutes", "minutesInterval": 5}]}}},
+    {"id": "http1", "name": "Scan via HTTP", "type": "n8n-nodes-base.httpRequest",
+     "typeVersion": 4.2, "position": [220, 0],
+     "parameters": {"url": "http://127.0.0.1:8765/scan", "options": {"timeout": 600000}}},
+    {"id": "if1", "name": "Anything Fired?", "type": "n8n-nodes-base.if",
+     "typeVersion": 1, "position": [440, 0],
+     "parameters": {"conditions": {"number": [{"value1": "={{ $json.fired_count }}", "operation": "larger", "value2": 0}]}}},
+    {"id": "noop1", "name": "Packets Delivered", "type": "n8n-nodes-base.noOp",
+     "typeVersion": 1, "position": [660, -80], "parameters": {}},
+    {"id": "noop2", "name": "Idle Tick", "type": "n8n-nodes-base.noOp",
+     "typeVersion": 1, "position": [660, 80], "parameters": {}}
+  ],
+  "connections": {
+    "Every 5 Minutes": {"main": [[{"node": "Scan via HTTP", "type": "main", "index": 0}]]},
+    "Scan via HTTP": {"main": [[{"node": "Anything Fired?", "type": "main", "index": 0}]]},
+    "Anything Fired?": {"main": [[{"node": "Packets Delivered", "type": "main", "index": 0}],
+                                  [{"node": "Idle Tick", "type": "main", "index": 0}]]}
+  }
+}
