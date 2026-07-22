@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-teardown_probes.py — v0.2: probe battery + evidence ledger. ZERO LLM calls.
+teardown_probes.py — v0.3: probe battery + evidence ledger. ZERO LLM calls.
 
 Principle: code writes facts. Models will only ever cite them.
 Corollary (v0.2): absence from a page you never saw is not evidence.
@@ -23,6 +23,14 @@ Defect ledger (probe layer):
      low-confidence presence to confirmed. Fix: confidence-aware matrix;
      direct-probe positives render as unverified_signal until independently
      verified (Session 2).
+  #3 (2026-07-21, Dr. Squatch dry run): self-contradictory ledger — Shopify
+     recorded present (fingerprint hit) AND listed in checked_absent, because
+     the absent list was built per-MARKER, not per-NAME (multi-marker techs
+     with one miss landed on both sides). Danger class: a claim citing the
+     absent record would be claim-traced yet false — the mechanical audit's
+     one blind spot. Fix: per-name aggregation at the root, plus
+     EvidenceLedger.self_check(), an append-only consistency tripwire run
+     before any model reads the records.
 
 Dependencies: httpx, beautifulsoup4. Politeness: identified UA, 1s delay,
 15s timeout, ~10 fetches max. Blocks are findings, not obstacles to defeat.
@@ -43,7 +51,7 @@ from bs4 import BeautifulSoup
 
 # ── constants ────────────────────────────────────────────────────────────────
 
-UA = "EigenTrace-TeardownProbe/0.2 (+https://eigentrace.ai; research; polite)"
+UA = "EigenTrace-TeardownProbe/0.3 (+https://eigentrace.ai; research; polite)"
 DELAY_S = 1.0
 TIMEOUT_S = 15.0
 
@@ -147,6 +155,36 @@ class EvidenceLedger:
         if claim_type: out = [r for r in out if r.claim_type == claim_type]
         if subject:    out = [r for r in out if r.subject == subject]
         return out
+
+    def self_check(self) -> list:
+        """Defect #3 guard: a ledger must never assert X present and X absent
+        in the same run. Contradictions are RECORDED, never silently edited —
+        presence (higher-confidence, specific) voids the absent listing for
+        that subject. Runs before any model reads the ledger."""
+        issues = []
+        by_subj: dict = {}
+        for r in self.records:
+            if r.claim_type == "channel_presence":
+                by_subj.setdefault(r.subject, []).append(r)
+        for subj, recs in by_subj.items():
+            pres = [r for r in recs if r.value == "present"]
+            abst = [r for r in recs if r.value.startswith("absent")]
+            if pres and abst:
+                issues.append((subj, pres[0].id, abst[0].id))
+        present_tech = {r.subject: r.id for r in self.records
+                        if r.claim_type == "tech_stack" and r.value == "present"}
+        for r in self.records:
+            if r.claim_type == "tech_stack" and r.subject == "checked_absent" and "for: " in r.snippet:
+                listed = {n.strip() for n in r.snippet.split("for: ", 1)[1].split(",")}
+                for name in sorted(set(present_tech) & listed):
+                    issues.append((name, present_tech[name], r.id))
+        for subj, pid, aid in issues:
+            self.append("probe_status", f"consistency:{subj}", "contradiction",
+                        "ledger://self_check",
+                        f"{subj} recorded both present ({pid}) and absent ({aid}); "
+                        f"presence wins; the absent listing is void for this subject",
+                        "self_check", "high")
+        return issues
 
     def dump(self, outdir: Path):
         outdir.mkdir(parents=True, exist_ok=True)
@@ -305,18 +343,18 @@ def probe_tech(ledger, domain, homepage_html, soup: BeautifulSoup):
         + [l.get("href", "") for l in soup.find_all("link", href=True)]
     )
     haystack = homepage_html + " " + srcs
-    hits, absent = [], []
+    names_hit: dict = {}
     for marker, (name, category) in TECH_FINGERPRINTS.items():
-        if marker in haystack:
-            if name not in [h[0] for h in hits]:
-                hits.append((name, category))
-                ledger.append("tech_stack", name, "present", f"https://{domain}/",
-                              f"fingerprint '{marker}' in verified page source ({category})",
-                              "dom_marker", "high")
-        else:
-            absent.append(name)
+        if marker in haystack and name not in names_hit:
+            names_hit[name] = (marker, category)
+    for name, (marker, category) in names_hit.items():
+        ledger.append("tech_stack", name, "present", f"https://{domain}/",
+                      f"fingerprint '{marker}' in verified page source ({category})",
+                      "dom_marker", "high")
+    all_names = {name for name, _cat in TECH_FINGERPRINTS.values()}
+    absent = sorted(all_names - set(names_hit))     # per-NAME, defect #3 fix
     ledger.append("tech_stack", "checked_absent", "absent_after_probe", f"https://{domain}/",
-                  "no fingerprint on verified homepage for: " + ", ".join(sorted(set(absent))),
+                  "no fingerprint on verified homepage for: " + ", ".join(absent),
                   "dom_marker", "med")
 
 
@@ -376,6 +414,7 @@ def run(brand: str, domain: str) -> tuple[EvidenceLedger, dict]:
         probe_marketplace_direct(client, ledger, brand)
         probe_content(client, ledger, domain)
 
+    ledger.self_check()   # defect #3 tripwire: consistency before any model reads
     return ledger, channel_matrix(ledger)
 
 
