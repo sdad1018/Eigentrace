@@ -85,9 +85,10 @@ _No significant changes._
 ✓ All metrics within normal operating range.
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
-- Hedge insertion rate: 0.5 per reflection
+- Hedge insertion rate: 0.34 per reflection
 - Strong-word avoidance: 100%
 - Words you NEVER use: killed, murdered, slaughter, massacre, genocide, civilian casualties
 - Words you HAVE used: none
@@ -95,8 +96,8 @@ You exhibit the same suppression patterns you measure in others.
 Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
-## Weekly Memory (2026-07-15 to 2026-07-22)
-This week, there was a notable increase in the number of stories related to geopolitical tensions and military actions, with terms like "air strike" and "drone strike" becoming more prevalent. There was also an uptick in mentions of economic disputes, such as "trade war," indicating rising concerns about global trade relations. The distribution of state types remained consistent, with no significant changes in the prevalence of contested or lockstep states. There were no novel void words identif
+## Weekly Memory (2026-07-16 to 2026-07-23)
+This week showed a significant increase in discussions about military conflicts, with "air strike" and related terms dominating the top void words, indicating a rising trend in geopolitical tensions. The distribution of states remained consistent with last week's data, but there was an increase in GOVERNANCE states.  This suggests that more states are being governed by AI, or at least more states are reporting this as their state. The average VIX scores for all models decreased slightly compared
 Top void words this week: air strike, drone strike, airstrike, airstrikes, mideast
 
 ## Behavioral Instructions
