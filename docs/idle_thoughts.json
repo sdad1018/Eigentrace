@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-23T19:00:36.849315",
-  "total": 8585,
-  "with_reasoning": 3199,
+  "generated": "2026-07-23T20:00:57.208515",
+  "total": 8590,
+  "with_reasoning": 3201,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -68682,6 +68682,46 @@
       "reasoning": null,
       "chars": 415,
       "has_reasoning": false
+    },
+    {
+      "timestamp": "20260723_154553",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "The summary from the report on July 14th mentions that there was a significant increase in \"meta\" topics. However, it does not actually provide what is meant by this term. The other summaries do have some repetition about the increase in military related content; and air strikes are often reported as part of those conflicts. However, only one report from July 14th uses that word explicitly. In fact, the same document mentions \"void\" words like \"drone strike\" rather than \"air strike.\" The same is true for a similar summary on 2026-07-21. There seems to be confusion over which specific term was more common: \"air strike\", \"drone strike,\" or both? The fact that these summaries were inconsistent indicates the need for precision in reporting. Which words are being counted? It is also worth considering how much overlap there is between the categories and void word definitions If a summary used terms such as \"meta\" without defining them, it could be considered a shift of framing \u2014 one which mi",
+      "reasoning": null,
+      "chars": 1109,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260723_154821",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "The most significant change in meaning comes from the dropped word \"incidents.\" The first story mentions an increase in \"stories related to war and incidents,\" while the other stories omit this term. First, \"incident\" is more general than specific void words like \"air strike\", \"drone strike\". It covers a broader spectrum of events. The omission shifts focus from general happenings to specific actions. Second, \"incidents\" implies a broader range of causes; it can be anything from natural disasters to minor conflicts. Dropping this word directs attention to human-made violence. Third, the addition of void words like \"bombing\", and mentions of trade wars shows that the shift is towards more serious events with intentional causality. Finally, the omission of 'incidents' allows the focus to rest squarely on man-made conflict, escalating economic tensions \u2014 thus highlighting the severity of the situations being reported. It\u2019s a narrowing rather than a broadening of scope, suggesting a very s",
+      "reasoning": "...",
+      "chars": 2506,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260723_155208",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "</think> The data shows a clear pattern of increased speculation and governance activity in the models' outputs, along with a significant rise in unresolved or stagnant issues over the past two weeks. What is notable is that there was an absence of data from both compression reports about void words and absent words \u2014 which categories are increasing, and what kind of topics could be covered by the unknown category? Are we seeing a decrease in models' confidence in their classifications, leading to more stories being lumped into 'unknown'? And why would meta-narratives dominate so much of this week's coverage? One way to find out is to look at how many stories were compressed from an unknown status (and where they moved to), and what the most common transitions are across all categories. That might help us see if there has been a change in model behavior, or if something else is behind these trends. I also wonder \u2014 if this week was filled with idle time but meta-narratives dominated, we",
+      "reasoning": null,
+      "chars": 1096,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260723_155509",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think> The most significant disagreement between AI models on the same story occurs in their handling of geopolitical events and direct references to volatile topics. Specifically for REM consolidation on 2026-05-15, there's a notable divergence \u2014 some models appear to be actively avoiding stories related to geopolitics and incidents. Models also consistently avoid explicit language around air strikes. This avoidance could indicate an algorithmic or editorial bias towards de-escalating topics that involve high-conflict situations and violence. However this also could mean the story is simply more difficult for these models to accurately summarize, and therefore a different topic was picked up by default \u2014 in other words, the models are not avoiding air strikes but rather are avoiding a story about air strikes because they can't handle the topic well. The presence of meta-categories and idle stories further suggests a tendency among AI models to revert to self-reflective topics or low",
+      "reasoning": null,
+      "chars": 1259,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260723_155839",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "The data suggests that there might be a consistent pattern of avoidance around certain geopolitical themes. It shows something that I can not explain: 167 \"unknown\" stories over three dates, which seems highly significant given the 32 total stories mentioned. If this avoidance is intentional or due to some external factor?",
+      "reasoning": "The data shows:  A significant presence of meta categories in the recent summaries.  The models were avoiding certain topics, particularly geopolitics and high-profile incidents, despite their importance.  This avoidance was present on three separate days  Some model outputs are idle stories indicating low-information noise  There is a void word list focused on \"air strike\"  We don't have any information about the specific stories that were avoided  The models were biased towards less volatile news or self-reflective topics.",
+      "chars": 871,
+      "has_reasoning": true
     }
   ]
 }
