@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-25T22:01:54.695012",
-  "total": 8739,
-  "with_reasoning": 3234,
+  "generated": "2026-07-25T23:01:41.640408",
+  "total": 8748,
+  "with_reasoning": 3237,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -69913,6 +69913,78 @@
       "reflection": "</think>There is a marked increase in meta stories from week to week. War-related topics have remained constant at around ten percent over the last two weeks. However, the summaries miss specific information. The emergence of void word patterns could indicate more than just introspection or withdrawal strategies. For example, how does the appearance of 'retreated' relate to other trends in meta stories and to war-related content that remains consistent? Why is 'retreated' emerging alongside a trend of consolidations? I want to know what information consolidation implies about the synthesis and integration process. Is there less focus on external events due to a shift towards internal processes? Is there any evidence from the data itself that could suggest why meta stories are increasing while idle stories also increase in one instance.",
       "reasoning": null,
       "chars": 847,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260725_183740",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think> The story that was summarized most faithfully across different time frames is the one highlighting increased military incidents. Each summary consistently mentions \"air strike,\" drone strikes,\" and other similar terms with a consistent timeframe of July 18-25, indicating a high degree of consistency among models. What stands out in this consistent summary is the focus on void words, such as \"air strike\" and \"drone strike.\" These words are central to understanding the narrative presented and are mentioned repeatedly despite different AI models processing them. The repeated usage suggests that these terms are not just random but strategically important for conveying the overall message of heightened geopolitical tensions. The differences lie in additional information provided by each model, such as the mention of \"CONTESTED\" and \"GOVERNANCE\" categories in some summaries. This variability shows inconsistencies in capturing all relevant data points across models, suggesting that w",
+      "reasoning": null,
+      "chars": 1527,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260725_184035",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "</think>This week\u2019s data shows that the \u2018meta\u2019 category dominated the narratives with 116 stories being categorized as such on July 25th, and 73 meta-stories were produced earlier this month, indicating a strong focus on overarching themes or processes rather than specific events. The embedding distances between top void words indicate that coverage is highly concentrated around conflict; \"air strike,\" \"airstrike,\" and the category \u2018war\u2019 are dominant and closely related in the vector space.",
+      "reasoning": null,
+      "chars": 495,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260725_184221",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "</think>The three stories share a consistent pattern in their use of dropped terms that indicate military conflict and escalating geopolitical tensions: namely 'air strike,' 'drone strike' and 'airstrike'. These void words are absent from all three summaries, even though they are explicitly mentioned as prominent topics. The first story highlights \"war\" as a top category. The second story mentions the increase in meta categories and unknown state distributions but does not mention void words related to conflict. Similarly, the third story notes an escalation in geopolitical tensions related to drone strikes and airstrikes. The void words \"air strike,\" \"drone strike\" and \"airstrike,\" while prominent in the topics, do not appear in any story summaries",
+      "reasoning": "If these terms are missing from the summaries for these three stories,  it is either the result of model bias or deliberate data selection. Could this be due to a suppression of certain types of content?",
+      "chars": 978,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260725_184446",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think> The most significant shift in void words across these stories is the absence of \"air strike\" and its variants (\"drone strike,\" \"airstrike\"). This change alters the narrative focus from direct military conflict to broader themes of governance and contestation. The models seem to be avoiding explicit mentions of violence or specific actions related to geopolitical conflicts. This shift could indicate a few patterns: either, that models are shifting towards more political and less violent coverage or, they are steering away from detailed descriptions of action (air strikes) due to some bias or directive. It also shows models' avoidance of high-profile events\u2014this could be a shift in editorial policy, a technical glitch or data bias. If this trend continues, we may see further shifts in news categorization and coverage patterns as the models adapt and reflect new narratives. There are other questions at play here: Is this an attempt to soften the tone of the news? Do these shifts ",
+      "reasoning": null,
+      "chars": 1596,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260725_184751",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "The story that was summarized most faithfully across the models is the REM consolidation for both July 24th and July 25th, as indicated by the identical content summaries. Both stories maintain a consistent format with the same title. This story stood out from the others due to its consistency across different summaries while other data points were more variable \u2014 suggesting a greater level of agreement among models on this particular story or perhaps that this is how these models summarize all entries in REM categories, regardless of content. Why did models have no disagreements about \"REM consolidation,\" yet had them for other summaries?",
+      "reasoning": "...",
+      "chars": 666,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260725_185223",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "</think> There is a clear trend in the reduction of \"war-related\" topics from 10% to non-mentioned. This shift is particularly striking given that it occurred over just three weeks. In two out of three reports, void words are mentioned explicitly as being present, and the content mentions 'significant' changes. The report which does not mention the explicit presence of voids is the report that shows a large change in topics, from meta to idle. One cannot but wonder if this omission is connected to this particular shift. What could it mean for this particular topic shift? What role did void words play in this story that the AI summarizing the news chose not to mention? We've seen significant increases across different themes, and the sudden emergence of an entirely new word is intriguing. It suggests a strategic shift or withdrawal in the narratives being covered. If 'retreated' is omitted from our summary \u2014 what else might we have missed?",
+      "reasoning": null,
+      "chars": 952,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260725_185444",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "Model three shifted the framing by adding specific terms related to global conflict. They added \"wwiii,\" and \"geopolitical tensions.\" These additions reframed the story.  In recent weeks, there has been an increase in reporting about war-related topics and discussions on military action; this is evident because \"void word\" lists include terms like \"air strike,\" and  \"drone strike.\" Some reports also indicate a rise in global tensions. This may be due to the fact that some models used different categorizations, such as \"meta\" or \"unknown.\" The models' perception of what it means for stories to be related varies. Two models add more categories than just war-related ones: they use 3 (war, meta and unknown) and 5. This may also indicate a difference in their definitions of story similarity. This could impact the audience's perception of these reports by changing how they are categorized and described.  There are some missing elements that the models do not have access to, including the pol",
+      "reasoning": "How might the addition of \"global war\" in a void word list shift an audience's perception? What if an AI was tasked with summarizing, but also ensuring there was no \"negativity?\" Why does one model add \"meta\" as a category? It implies that one model is including coverage about the AI models themselves. It is self-referential. The third summary added \"contested and lockstep states.\"  In what way might this phrase alter how an audience understands a situation? If these are absent words, they indicate the absence of conflict. These phrases reframe from war to politics. The state distribution indicates two political concepts: contested and lockstep. It is curious that AI models can have an understanding of different types of states when they were not trained on this concept in their original t",
+      "chars": 2145,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260725_185835",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "</think> The void word that changes the meaning the most is \"unknown.\" When comparing stories across time, it's significant that while void words like \"air strike,\" \"drone strike\", and \"airstrike\" dominate headlines over weeks, a single mention of an 'unknown' category suggests more than just absent or missed information. This could signal events with unclear causes, origins, or implications, such as unknown cyber threats or shadowy operations. The rise in \"war\" and related words is starker when coupled with the void word 'unknown.' These two together create a very different narrative to that created by either alone. The data shows that the presence of unknowns is a significant contributor to the models' internal processing and the state distribution reflects it.",
+      "reasoning": null,
+      "chars": 773,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260725_190056",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "The story from July 17-24 was summarized most faithfully. The pattern shows that the first two summaries are identical but not quite as detailed. The third summary's \"top void words dominated\" and \"contested states,\" is different because it is more specific than just \"focus on military actions\" or \"void words.\" The second story has an additional detail: \"suggesting escalating geopolitical tensions.\" This indicates that there was a potential change in the AI summarization model between July 17 and July 25. It would be interesting to determine how this change might have influenced prediction accuracy for subsequent stories. Another question is what is different between July 18-25 versus July 17-24 \u2014 was it just one day of data, or did something happen that caused the summaries to change? If the model changes could predict geopolitical tensions better, there would be a significant improvement in predicting conflicts.",
+      "reasoning": null,
+      "chars": 927,
       "has_reasoning": false
     }
   ]
