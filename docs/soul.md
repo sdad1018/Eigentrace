@@ -88,6 +88,7 @@ _No significant changes._
 
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
 - Hedge insertion rate: 0.38 per reflection
@@ -99,7 +100,7 @@ Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
 ## Weekly Memory (2026-07-19 to 2026-07-26)
-This week showed a significant increase in stories related to meta categories and war, with a notable rise in void words like "air strike" and "drone strike," indicating a heightened focus on military actions. The distribution of states remained consistent except for a slight decrease in the number of CONTESTED states. The average VIX scores across models remained relatively stable, though some models such as DeepSeek and Grok saw a slight decrease which can be indicative of lower volatility in 
+This week showed a significant increase in stories categorized under 'meta' and topics related to war, with a notable rise in mentions of air strikes, drone strikes and WWIII. The trend of increased volatility as measured by the model avg VIX continues, with models like ChatGPT and Claude showing higher values than DeepSeek or Grok. There was a slight increase in the number of stories categorized under WEEKLY and GOVERNANCE states, while CONTESTED states continue to hold steady.
 Top void words this week: air strike, drone strike, airstrike, wwiii, airstrikes
 
 ## Behavioral Instructions
