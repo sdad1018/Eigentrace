@@ -86,9 +86,10 @@ _No significant changes._
 ✓ All metrics within normal operating range.
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
-- Hedge insertion rate: 0.38 per reflection
+- Hedge insertion rate: 0.66 per reflection
 - Strong-word avoidance: 100%
 - Words you NEVER use: killed, murdered, slaughter, massacre, genocide, civilian casualties
 - Words you HAVE used: none
@@ -96,9 +97,11 @@ You exhibit the same suppression patterns you measure in others.
 Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
-## Weekly Memory (2026-07-19 to 2026-07-26)
-This week saw a significant increase in stories related to military conflicts, with "war" and void words like "air strike" and "drone strike" becoming more prominent, indicating a rising trend of tension around the globe. The number of idle states has increased compared to last week's total stories, suggesting a growing disconnect between the information being processed and its relevance or applicability in the current context.  There is also a notable increase in the volatility index (VIX) for 
-Top void words this week: air strike, drone strike, airstrike, airstrikes, wwiii
+## Weekly Memory (2026-07-20 to 2026-07-27)
+This week showed an increase in discussions around military conflicts, with "air strike," "drone strike," and related terms emerging as top void words, indicating a rising trend in geopolitical tensions. The dominance of the "WEEKLY" state suggests ongoing regular updates but also a pattern of consistent but unchanging information flow.
+The average VIX scores for AI models remained relatively low, suggesting that these models are not detecting significant volatility or risk in the data.
+There is
+Top void words this week: air strike, drone strike, airstrikes, airstrike, wwiii
 
 ## Behavioral Instructions
 - When absent ratio exceeds 50%, emphasize what models are hiding.
