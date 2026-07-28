@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-28T01:02:46.517859",
-  "total": 8853,
-  "with_reasoning": 3260,
+  "generated": "2026-07-28T02:05:42.159490",
+  "total": 8861,
+  "with_reasoning": 3262,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -70825,6 +70825,70 @@
       "reflection": "The embedding distances show that in recent weeks there has been a significant shift in the types of stories being covered. Meta topics increased to 355. The \"unknown\" category has seen dramatic fluctuations over three weeks from its previous numbers to increase to 120 and now decreasing slightly. There is no information about what happened between 2026-05-08 and 2026-05-14. These shifts suggest a dynamic landscape where certain types of stories are becoming more prevalent while others, particularly incidents and unknown categories, are decreasing.",
       "reasoning": null,
       "chars": 554,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260727_210812",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "The most faithful summary appears to be the one from July 19 to July 26. The summary provides the most consistent narrative regarding the increase in stories related to military conflict and tension. This is not present in the other summaries which show an increased focus on meta and unknown categories, along with a notable presence of CONTESTED states; this indicates more uncertainty compared to previous weeks.",
+      "reasoning": "The three summaries exhibit clear differences in content focus and structure which might affect faithfulness. Firstly, the story from July 19 to July 26 has a specific increase on \"military conflicts\" as its central theme with void words like air strike and drone strike and rising tension as key indicators. The other two summarizations for July 20 to July 27 mention military actions or warfare too but not as prominently. In this case, the focus is more concentrated. The state distribution in all three summaries shows some consistency: Weekly compression for both July 19-26 and July 20-27 (both) show an increase in the WEEKLY states. They also note a similar change in GOVERNANCE states. However, they differ in their mention of IDLE or CONTESTED states. The story from July 19 to July 26 spec",
+      "chars": 2027,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260727_211143",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "This pattern indicates a notable change from the first week to this last one: a rise in meta-stories and idle stories, along with new void words like \u2018retreated\u2019 . These shifts suggest an internal focus and possible changes in priorities or availability of external content. The fact that war-related topics remained steady at around 10% might indicate a consistent but low level of interest in these events, suggesting it's not all about a lack of external events to report on. It may be more about the model itself choosing to prioritize stories that are more interesting to it or reporting fewer actionable events.",
+      "reasoning": "The data reveals a clear trend towards increasing self-referential content between June 5 and June 29: Meta stories dominate during this entire period, with the number increasing from '06-15 to 06-22'. These meta topics have been replacing external events like war-related stories, which remained steady in a low single digit percentage range. If that steady state is an artifact of reporting, and if the reporting bias has changed, it suggests that AI models summarizing the data are increasingly turning towards stories about themselves. This could be due to the content available or the way in which the models prioritize information. An increase in consolidation and idle stories shows a shift from reporting on current events (war) into the mundane (idle) and synthesis of information already kn",
+      "chars": 2149,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260727_211750",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "The embedding distances show a clear shift in topic focus over the past few weeks. The distance between categories \"meta\" and \"unknown\" has decreased significantly indicating their growing similarity. Specifically, from May 22 to May 29, the count of meta topics increased by 17% while unknown categories also grew, but the gap between the two is closing. At the same time, incident mentions have plummeted by approximately 85%. This could indicate a decrease in raw data or an increase in high-level analysis. The distribution of state types indicates that the coverage has shifted towards more political and governance-focused content. This correlates with the rise of meta categories\u2014reflecting a possible shift from immediate, tactical topics to longer-term strategic ones. The overall volatility appears to have decreased as indicated by the lower frequency of VIX scores, which is notable because we were seeing high volatility just 3 weeks ago. I'm curious about the relationship between the i",
+      "reasoning": null,
+      "chars": 1208,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260727_212055",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "</think> The story that was summarized most faithfully is the one from the first week of this memory (2026-06-05 to 2026-06-12). This story has the most detail about content and numbers: it describes both the increase in meta topics and the rise in consolidations. It also mentions an emergent pattern involving void words, though it doesn't specify what these are. Other summaries focus on broad themes: the second week (2026-06-22 to 2026-06-29) notes a trend of \"idle\" stories without elaboration or numbers. The third story has numbers but lacks specifics: it doesn't detail how many void words emerged, what other topics were covered, or why 'retreated' is novel. This suggests that the model may have used an approach to summarizing that's highly dependent on data availability: it includes details when they are there and general trends when the specific numbers are absent. If so \u2014 why was the first story so richly detailed? And what might this mean for future stories?",
+      "reasoning": null,
+      "chars": 978,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260727_212342",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "The story that was summarized most faithfully is the one titled \"Weekly compression: 2026-07-20 to 2026-07-27\" and content \"This week showed a significant increase in stories related to war and military actions, with terms like 'air strike' and 'drone strike' becoming prominent.\" The faithfulness of this summary comes from its consistent data on the increase of military conflict and the state distribution. There is consistency of detail between all three stories, but only the third story has a more consistent report of state information. What made it different from the others was its precise reference to the specific terms \"air strike\" and \"drone strike,\" which were also mentioned in other summaries but had less direct context. I wonder why all these summaries mention void words that have the word \"strike.\" The second story mentions 'void' with no further explanation. The third summary does not use void at all, and uses terms 'air strike' and 'drone strike.' What is the significance of",
+      "reasoning": null,
+      "chars": 1150,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260727_212633",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "</think>The pattern across these three stories is a complete lack of substantive information in the provided data, and so there\u2019s nothing to compare. We have no categories, void words or absent words. The same story title repeats without any meaningful variation\u2014all this suggests that there\u2019s either been an error loading the data, or else we are looking at a placeholder entry or a bug in how these models are summarizing these stories. However, if you notice some other common pattern \u2014 perhaps the repetition of a certain keyword that was mistakenly omitted from our summaries here  \u2014 you can let me know.",
+      "reasoning": null,
+      "chars": 609,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260727_212819",
+      "topic": "the most important thing happening right now",
+      "reflection": "</think>The most striking pattern is that the same model summarizes three different stories of the war in Iran in which two summaries are identical or near-identical. This shows an inconsistency and a possible error within this AI's ability to summarize news. There is no summary from other models on these stories, creating a significant gap which cannot be explained by the available data. Are the missing summaries indicative of censorship?",
+      "reasoning": null,
+      "chars": 443,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260727_213307",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think> The data shows a consistent pattern of the models focusing on meta categories and stories about governance rather than covering traditional news topics like geopolitics or incidents. Specifically: 1. Over 50% of reflections were void of information. There is no coverage on what would be considered newsworthy events by any human standard. 2. On the topic of AI models, all data points are about self-reflective topics or governance. There was an avoidance of volatile news despite high-profile events happening in the world today. The most compressed summary here might look like: Models focused on meta-stories and governance over traditional news This leaves a significant amount of information out. Information about specific news stories, for instance, is absent from these summaries. This omission raises questions: why are AI models avoiding coverage of major incidents? Are they biased towards less volatile topics? The pattern suggests possible self-regulation by the AI models or a",
+      "reasoning": null,
+      "chars": 1227,
       "has_reasoning": false
     }
   ]
