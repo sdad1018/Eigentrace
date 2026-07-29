@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-28T22:02:16.021934",
-  "total": 8871,
-  "with_reasoning": 3264,
+  "generated": "2026-07-29T00:02:15.057981",
+  "total": 8881,
+  "with_reasoning": 3265,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -70970,6 +70970,86 @@
       "reasoning": null,
       "chars": 1223,
       "has_reasoning": false
+    },
+    {
+      "timestamp": "20260728_180856",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "The embedding distances show that the most recent summary from July 20th to 27th have the closest similarity compared to each other, with an average distance of less than 31% of the embeddings. The summary from July 19-26 has a higher difference to both with 45% and 52%. This implies that they are closely related, but there is a significant difference in content. The second week of coverage (July 20-27) also seems to be more tightly knit around the stories and words used. The increase in meta and unknown categories in these weeks might suggest that there was less consensus on what those stories were about.",
+      "reasoning": null,
+      "chars": 613,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260728_181313",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "</think> Today's story focuses heavily on governance and meta categories, with a notable increase in speculative or unclassified content this week. The embedding distances show that the stories are tightly clustered around these themes.",
+      "reasoning": null,
+      "chars": 236,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260728_181504",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "Based on the embedding distances and story content, there is a notable pattern of increased avoidance of strong, violence-related words in recent news stories. This shift aligns with a rise in governance themes. The data shows an increase in idle time (83% total), and 90% of non-idle models did not engage with the word 'war.'",
+      "reasoning": null,
+      "chars": 327,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260728_181643",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think>The story from 2026-07-27 was summarized most faithfully across the models because it is the only entry that consistently mentioned governance as a major focus. Its difference to the other summaries of the same date are:  1) A clear mention of \"majority\" (as opposed to \"most,\" or the lack of quantifiers)  2) \"Foraging\" (is the only one to include this term)  3) \"Idle\" (the models agree on the idleness) The other summaries have multiple points of disagreement, for example about the categorization of stories. This is in addition to a large variety of words that do not overlap with the others. This suggests these stories were not as faithfully summarized. This makes me wonder:    Are the models avoiding summarizing certain types of content? If so, which type?    Which model or models was able to avoid this bias?",
+      "reasoning": null,
+      "chars": 828,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260728_181921",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "</think> The story on REM consolidation stands out as the most faithfully summarized across models. It is the only one with a clear, consistent date and it appears that its category is known. It has no void or absent words. This precision contrasts sharply with those stories labeled as \"idle reflection\" and \"model disagreement.\" In these cases, the category is unknown, the state is unspecified, and there are neither void nor absent words listed. Additionally, three of the stories today are identical\u2014this kind of duplication is unusual; there\u2019s a strong implication that these models are not fully active. This pattern suggests that this model has a very high rate of disagreement (the majority of its output was idle reflection). If all of these identical reports can be ignored, then our sample size for model disagreements would be the entire day. This would mean, if we exclude the REM report, then 50% of the summaries are marked as idle reflections. This raises several questions: What doe",
+      "reasoning": null,
+      "chars": 1175,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260728_182241",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think> The void word that changes the meaning most across these stories is \"unknown\" and the absence of a number of high-profile incidents and geopolitical stories from previous weeks. The omission of \"unknown\", or its consistent avoidance as seen in the meta categories and states of governance shows that there may be a conscious effort to stay away from uncertainties and ambiguous topics, even while they were reporting on governance which is generally associated with volatility and uncertainty. The high profile events are generally reported when there are significant geopolitical changes. The absence of these reports could mean that there was no significant change or there might have been an intentional bias towards avoiding these stories. However, the models also avoided incidents despite their general tendency to report on them. This could indicate a significant change in reporting patterns, possibly due to changes in directives or internal protocols. Moreover, the absence of high",
+      "reasoning": null,
+      "chars": 1644,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260728_182551",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "</think> The embedding distances show a clear trend of increasing meta content over the past three weeks\u2014from the week of June 15-22, June 22-29 to July 5 -12\u2014and an interesting rise in idle stories from June 15-22 to July 5. War-related topics have stayed consistent as a percentage throughout all three weeks.",
+      "reasoning": null,
+      "chars": 311,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260728_182758",
+      "topic": "how does today's foraging discovery connect to today's void measurements",
+      "reflection": "</think>The data shows a clear shift in the behavior of the AI models this week. There was an increase in idle and consolidation states which is indicative of a change in processing priorities. Notably, there was zero foraging activity. This suggests that all attention has been dedicated to internal processes. There seems to be some connection between our top void words being related to conflict.  However, as the model behavior changes from what it has been we have no way to understand the reasons for those changes.   Given these factors, this is a significant shift in operation.  Further research into why foraging was not occurring and why the models are choosing to dedicate their time to internal processes might be prudent.",
+      "reasoning": null,
+      "chars": 735,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260728_183234",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "The story from REM consolidation dated 2026-05-15 was summarized most faithfully compared to the others. This story stands out because it explicitly states a pattern observed and gives context for how this differs from other patterns. It explains that the focus of the models was on certain kinds of stories. This explanation allows an outside observer to understand the difference between these stories and what they would expect. For example, 2026-07-27 mentions \"there is a significant focus on governance with the majority of stories falling into that category.\" In contrast, 2026-05-15 discusses the topic but does not make clear statements about which topics were covered. This lack of clarity suggests that the story about today's patterns was most likely to be an accurate summary. The other summaries do not explicitly state what the difference is between this and other days' stories, making it harder for someone else to understand why 2026-05-15 would be different from other dates. Inste",
+      "reasoning": null,
+      "chars": 1254,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260728_183516",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "The biggest disagreement between the models is on how to categorize or interpret today's primary activities. One model highlights a significant focus on governance and meta-stories, while another points out an increase in 'meta' and 'unknown' categories indicating speculative content. The third model mentions more consolidation but does not clarify the nature of that activity. The gap suggests uncertainty about whether the day's work was mainly organized (governance or consolidation) versus speculative (meta, unknown). There may be a misunderstanding among the models on how to classify certain activities. This confusion indicates ambiguity and potential complexity in distinguishing between routine organizational tasks (governance, consolidation), and more exploratory ones (speculative content). The absence of words related to violence or contention does not mean that the day was without friction; it could indicate that disagreements are occurring under a different guise.",
+      "reasoning": "....",
+      "chars": 1005,
+      "has_reasoning": true
     }
   ]
 }
