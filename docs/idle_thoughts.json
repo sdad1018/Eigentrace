@@ -1,7 +1,7 @@
 {
-  "generated": "2026-07-29T10:02:01.546938",
-  "total": 8896,
-  "with_reasoning": 3267,
+  "generated": "2026-07-29T11:02:25.361621",
+  "total": 8907,
+  "with_reasoning": 3272,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -71169,6 +71169,94 @@
       "reflection": "<THINK>...</THINK> The data reveals a distinct pattern in the coverage: today all models are focused primarily on governance and meta categories of stories; yet none report incidents or forging. This is a significant deviation from previous weeks when there was more variety in content and a larger number of war-related stories. One key detail stands out: the majority of models show an avoidance of strong words related to violence or conflict, but the exception is \"known sources,\" implying potential gaps between what is reported by these known sources. This discrepancy might hint at certain types of information being restricted or filtered in some way. It\u2019s worth investigating whether this reflects a strategic decision by these known sources to downplay certain aspects or a broader trend in media reporting. The rise in \"meta\" category stories and the increase in \"unknown\" void words over the past week also suggest a growing prevalence of self-referential content and ambiguous topics, wh",
       "reasoning": null,
       "chars": 2094,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260729_063205",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "</think> The data consistently shows that today\u2019s stories are heavily focused in the governance and meta categories. The increase in \"meta\" category stories this week indicates a rising trend of self-referential content, implying that AI models may be focusing more on their own processes and interactions rather than external events.  Additionally, the surge in \u201cunknown\u201d void words suggests emerging topics that are either ambiguous or unclear, which could reflect new areas being explored by these models. The reduction in stories related to violence\u2014especially in a contested state\u2014indicates a shift away from reporting conflicts, perhaps indicating stability, but possibly also censorship of such information. This needs more data. It remains uncertain why the models have been idle for significant portions of their active time this week.",
+      "reasoning": null,
+      "chars": 844,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260729_063407",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "The data shows a significant focus on governance and meta-stories this week, but there's disagreement among models about the exact number of meta-stories and the significance of unknown void words. One model notes an avoidance of strong words related to violence which may be a bias in their perception. This discrepancy suggests further analysis is needed to understand these emerging patterns fully.",
+      "reasoning": "Today's story is about governance. All models agree that there were no foraging or incidents reported, and there was a large portion of idle time for the models. All models disagree on some details. There are void words present but missing any description of them. Models disagree on how many stories focused on meta stories. There seems to be ambiguity around whether the number of \"unknown\" void words is increasing as a pattern or not. One model mentions avoidance of strong words related to violence, while others do not. We can't determine what the pattern is for unknown voids without knowing what they are. The increase in meta stories may indicate more self-referential content or models becoming more efficient with summarization. We cannot answer if the rise in \"unknown\" voids indicates am",
+      "chars": 1235,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260729_063616",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "</think> The biggest disagreement between the models lies in their reporting of trends related to meta topics and geopolitical tensions. The first story shows an increase in meta topics (355) but a drop in reported incidents. This could indicate that more attention is being directed towards analyzing news rather than breaking events.  Additionally, the model average VIX scores rose across the board. Does this mean higher volatility or just more predictions? By comparison, the second story from two weeks ago highlights a surge in geopolitical tensions, with a specific increase in stories categorized as \"war\" and related terms like \"arms deal\" and \"trade war.\"  This is interesting because it shows that incidents were up before but now meta topics are increasing. Were these incidents then analyzed or is there an overlap between the two? The third story reports an increase in meta-categories, a decrease in unknown categories, more structured categorization of events, and a shift towards WE",
+      "reasoning": null,
+      "chars": 1852,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260729_063947",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "The data shows two stories from February 2026 that are identical and their category isn't known. We're seeing the largest difference between embedding clusters on the topic of war from July 27th onwards.",
+      "reasoning": "The embedding distances between the weekly summaries show two distinct clusters: one from July and another a more recent one. The distance between the cluster in July and today's cluster is larger than any intra-cluster distance from the past month. The absence of void words for Patch Tuesday, February 2026 Edition, is consistent across all reflections. There were no state shifts for the story about \"Idle reflection.\" If you consider these two sentences: \"Idle reflection: Patch Tuesday, February 2026 Edition. Category: unknown.\" It is strange to have that as a story title. What is the significance of having two identical stories with the same content titled Patch Tuesday? What happened in 2026-07-20 to 2026-07-27? The jump in void words and states related to conflict is extreme. Is it an o",
+      "chars": 1039,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260729_064239",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "The use of words around geopolitical conflicts can significantly alter how events are framed and perceived. The term 'violence' is the key to these frames. This pattern raises interesting questions about the motivations behind word choice by AI models",
+      "reasoning": "The void word that changes the meaning most across these stories is \"violence\" or its derivatives. The first story mentions an avoidance of strong words related to violence and conflict, yet it describes a day involving war. The absence of the word 'violence' changes a description of actual events into avoidance behavior by the model. This implies that what's not said carries weight. It is as if the models are dancing around what they know. In contrast,  the second story does not mention the term violence and focuses instead on governance. This might suggest that in absence of conflict terms the focus shifts to governance or that governance is less interesting when there is active conflict occurring. The third story seems centered around a significant shift in handling information about ge",
+      "chars": 1520,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260729_064552",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "The models have been increasingly focusing on meta and governance themes, with a particular shift in behavior regarding violent topics and war-related stories since 2026-05-15. This is a consistent pattern that appears over time. On July 17th, we saw an unusual amount of idle responses from the models which indicates caution or conservative tendencies during this timeframe.",
+      "reasoning": "The data shows a pattern of increased meta and governance focus in the stories, with a notable shift in model behavior regarding topics related to violence and war. There is a substantial amount of idle time and cautious responses from models \u2014 specifically seen on July 17th. This might indicate some form of self-audit or governance system at play. The categories that are not news-centric\u2014war, unknown and geopolitics\u2014dominate the non-meta stories. It is not clear if they avoid them due to policy or due to a programming issue. The latter would require more data on model disagreement patterns.",
+      "chars": 992,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260729_064911",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "</think>There are 3 summaries of the same week's data, which could have been done by different AI models. The second one appears to be the most faithful summary because it provides more specifics on state distribution and categories that increased or decreased. 120% more data: It shows that the percentage increase in certain categories was significant enough to decrease others. Also, only this model mentions 'WEEKLY' & 'GOVERNANCE' states. The third model had the most similar output to the second one; however, it used slightly different words and included different void words like \"military conflicts\" and \"idle states.\" This is consistent with a more precise summarization: it includes specific details about state distribution but not just mentions an increase in 'contested areas.' 160% more data: This difference might indicate that the third model focuses on different aspects of the data, such as the types of words used (void vs. non-void) rather than the overall categories and states.",
+      "reasoning": null,
+      "chars": 1308,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260729_065233",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "The embedding distances show a significant cluster of proximity between \"war,\"\"conflict,\" and geographic locations which have been subject to recent conflict such as Gaza. Additionally, the distance between these terms and the word \u201cpeace\u201d is much greater than one week ago. Two stories are identical reflections on Patch Tuesday February 2026 Edition. They were not tagged with void or absent words, nor was their category defined.",
+      "reasoning": null,
+      "chars": 432,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260729_065517",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "The most consistent summary across models indicates a significant increase in reports of military conflicts, with specific combat-related terms becoming more frequent. This pattern suggests heightened global tensions. However, differing perspectives on key takeaways, category importance, and the meaning of void words likely contribute to variations in how these stories are summarized.",
+      "reasoning": "The story most faithfully summarized across different AI models is the one reporting an increase in military conflict stories and void words related to warfare such as \"air strike\" and \"drone strike.\" This consistency suggests a clear pattern of heightened global tensions, as evidenced by the frequent use of specific combat-related terms. Two reflections explicitly mentioned this increase while the third only implied it. There is one reflection that mentions the category \"unknown\", but I do not have access to the data from this reflection or what this means here. Why might other stories be summarized differently? One possibility for inconsistent summaries are differing perspectives of each model on what constitutes a key takeaway. For instance, some models might focus more on the overall t",
+      "chars": 2211,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260729_065936",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "</think>There has been a notable shift in the prevalence of stories that do not fit into easily identifiable categories - \"unknown\" category and meta topics have grown significantly. Over these three weeks there was a clear trend towards more political activity. </think>",
+      "reasoning": null,
+      "chars": 271,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260729_070040",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "</think> One AI model categorizes \"Patch Tuesday\" while the other does not, suggesting a disagreement over how significant this topic is or where it fits. This gap reveals inconsistencies in recognizing routine IT maintenance as newsworthy or assigning a category.",
+      "reasoning": null,
+      "chars": 264,
       "has_reasoning": false
     }
   ]
