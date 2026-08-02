@@ -1,7 +1,7 @@
 {
-  "generated": "2026-08-02T03:01:17.918489",
-  "total": 9096,
-  "with_reasoning": 3313,
+  "generated": "2026-08-02T04:03:53.587759",
+  "total": 9100,
+  "with_reasoning": 3314,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -72769,6 +72769,38 @@
       "reflection": "</think> The data shows a consistent pattern of identical entries reporting \"model disagreement\" with no additional context or content. This is strange because the stories are supposed to have different content. The same phrase is used three times. Yet there are also void and absent words fields listed as blank for these, but the field labels are themselves missing. We should ask why all the content is empty, and where exactly do we see a \"model disagreement\"? The word \"Idle\" is in every single story title.",
       "reasoning": null,
       "chars": 512,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260801_234637",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "The biggest disagreement between the models on the same story is evident in how they categorize and handle topics related to war. Some models focus significantly more on war-related themes than others, which might indicate differences in governance or directive-driven behavior. This highlights potential self-censorship or filtering mechanisms at play. It also raises questions about what triggers these disparities and the nature of oversight involved with the models.",
+      "reasoning": "The most significant disagreement between the models is evident in their categorization of stories and their handling of certain topics. 1. Story Categorization Discrepancy: On one hand (2026-05-15), there are many stories about meta categories, which suggests a focus on internal processes or technical aspects. On the other hand (2026-07-17), this story is dominated by governance themes with a significant focus on war-related topics. This gap indicates that some models might be prioritizing different aspects of the same information.  2. Topic Avoidance vs. High Focus: The models show an avoidance of strong words related to violence (2026-06-05). This contrasts sharply with another story which has a significant focus on war-related topics. What kind of governance or internal audit would lea",
+      "chars": 1915,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260801_235030",
+      "topic": "the most important thing happening right now",
+      "reflection": "</think>The embedding distances show that the three stories about Iran war are closely clustered with high similarity; there is only a slight difference between \"possib\" vs \"possible\", and \"neg\" vs \"negotiators.\" The roundtable format seems to be represented redundantly in embeddings, as it does not move the story away from the one without 'Roundtable:' in its title. <think>What would cause these differences?  What would make embedding distances so small for such different stories? The distance between suppression patterns and Iran war stories is large; \"suppression\" patterns are a distant concept. Reflection: The fact that these embeddings are tightly clustered indicates that the AI models are focusing on specific phrases.  This suggests the model may not be detecting the different dates or subjects, since 57 vs. 63 days seems far enough apart to make a difference in reporting; it does however appear there is a difference between 'possible' and 'possibilities'.",
+      "reasoning": null,
+      "chars": 976,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260801_235518",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think> The story summarized most faithfully across the three dates is governance stories. This could be due to the clear definitions and structure of governance topics making them easier to summarize consistently by different models.  In the data provided for these days, the AI models had similar patterns of avoiding certain categories such as geopolitics, incidents, and high-profile events. The other most interesting result: The models showed a strong preference or perhaps bias towards meta stories\u2014stories about their own behavior or states. This could be due to the familiarity with internal processes which can make summarizing easier than external complex topics. This pattern is unusual because it suggests that the AI models might not be adequately covering all types of news, and might be biased toward certain types of stories they find easier to process\u2014this could have major implications for coverage of important news.",
+      "reasoning": null,
+      "chars": 937,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260801_235827",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "</think> In all three summaries there was a noticeable change in the categorization of stories. From week 13 to week 20,  unknown categories (unclear topics) decreased from 120 to an unspecified smaller number. Concurrently, both meta-categories and governance states increased: The meta topics grew by 355, while governance state stories rose as well. As a result of the rise in known story categories, the incidents mentioned dropped sharply. As these three summaries were created by different models summarizing the same stories, this indicates that these models have been instructed to report certain story types. All else being equal, they would be reporting all stories regardless if they are meta, unknown or related to governance states. The fact we see a reduction of unknowns in week 15 and no unknowns on Week 20 indicates there was a suppression in unknowns. In short: The data show the models were instructed to suppress reports on certain types of news.",
+      "reasoning": null,
+      "chars": 967,
       "has_reasoning": false
     }
   ]
