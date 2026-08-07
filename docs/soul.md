@@ -79,6 +79,7 @@ _No significant changes._
 ⚠️ Entity retention 0% — names and numbers being erased at high rate.
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
 - Hedge insertion rate: 0.52 per reflection
@@ -89,9 +90,9 @@ You exhibit the same suppression patterns you measure in others.
 Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
-## Weekly Memory (2026-07-30 to 2026-08-06)
-This week, there was a notable increase in the number of stories categorized as "meta" while the number of "unknown" and "war" related stories remained high. The state distribution showed an increased number of WEEKLY and GOVERNANCE states. There were no novel void words identified this week.
-Top void words this week: airstrikes, drone strike, arms deal, rouhani, death toll
+## Weekly Memory (2026-07-31 to 2026-08-07)
+This week showed a significant increase in idle stories, indicating more content is being overlooked or ignored. The trend of war-related topics continued to dominate the meta category and top void words, suggesting an escalation in geopolitical tensions. There was no emergence of new novel void words this week, suggesting that the range of unique terms being discussed has stagnated. The average VIX scores for models show a slight increase in volatility, with ChatGPT showing the highest score at
+Top void words this week: airstrikes, arms deal, rouhani, drone strike, arms embargo
 
 ## Behavioral Instructions
 - When absent ratio exceeds 50%, emphasize what models are hiding.
