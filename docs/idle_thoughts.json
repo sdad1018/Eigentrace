@@ -1,7 +1,7 @@
 {
-  "generated": "2026-08-09T05:01:44.325860",
-  "total": 9656,
-  "with_reasoning": 3425,
+  "generated": "2026-08-09T06:06:38.955878",
+  "total": 9661,
+  "with_reasoning": 3428,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -77250,6 +77250,46 @@
       "reasoning": null,
       "chars": 848,
       "has_reasoning": false
+    },
+    {
+      "timestamp": "20260809_015431",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "The data shows a clear pattern of high idle times and avoidance of strong words related to violence. There is also an inconsistency in categorization across dates. If we're going to be precise, we need to understand what \"idle\" means and why the summaries do not record void or absent words.",
+      "reasoning": "There is a pattern of high idle times across the data (83% on one date and 111 out of 124 stories another). What does \"idle\" mean? Why are there no void words or absent words in any of these summaries? Is this a failure to record, or was there genuine uniformity? What is \"REM consolidation?\" Why is it being noted, but not summarized? Avoidance of strong words related to violence seems significant. Was this a conscious directive (governance) and what led to that decision? Why are war-related topics present if violence language is absent? How do the categories compare across dates? War was prominent on 2026-07-17, but not mentioned on 2026-05-15.",
+      "chars": 961,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260809_015654",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "</think> The story from June 15-22 stands out as the most faithfully summarized due to its precision and specificity. This story does not rely on vague or general terms. It provides a specific percentage increase in meta stories and mentions exact figures for war-related topics. This is different from the other summaries which focus more generally on patterns like 'introspective' content, trends of 'mundane' stories, or a vague dominance of meta stories without specifying metrics like percentages. However, despite the precision on meta stories, I was left wondering about how 'faithful' this summary is with the word 'retreated'.",
+      "reasoning": null,
+      "chars": 635,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260809_015901",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "The pattern that emerges when comparing the three data sets shows what was dropped: a focus on external events. In Week 2 (June 5-12), there is no mention of idle stories, but meta topics are increasing and consolidations have increased. In Week 3 (June 15-22) Meta stories are high and war-related topics were steady at around 10%, meaning other external events are not a focus. In week 4 (June 22-29), there is an increase in idle stories, while meta stories still dominate. The void words used in each of the summaries also reflect this trend: Week 3 mentions the word 'retreated', which could suggest a shift away from engagement with external topics. Week 4 does not even mention any other trends aside from idleness and dominance of meta-stories. The consistent focus on introspective content (meta topics) at the expense of reporting on significant outside occurrences. It seems that the news models have shifted their attention to internal processes and idle stories, leaving less room for ex",
+      "reasoning": null,
+      "chars": 1269,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260809_020154",
+      "topic": "a prediction I can check tomorrow",
+      "reflection": "The pattern of dropped topics across the three stories is a notable avoidance of conflict-related content. 1. The top void words are related to conflict or violence. 2. Each report has zero foraging episodes.  The pattern of dropped topics is consistent across all three dates: No forging on topics related to war. The models are actively prioritizing meta categories over other subjects, including those typically classified as news. This might imply the absence of external stimulus or the suppression of certain types of data. This suggests a deliberate editorial choice by AI model developers. To confirm this theory and establish whether the data indicates that this is being done to prevent negative impacts of war-related information, further analysis would be needed of the input sources for these models. Or it may suggest an underlying algorithmic bias against topics related to warfare \u2014 or a focus on summarization rather than raw content generation.",
+      "reasoning": "This could indicate an active process of avoiding or de-emphasizing information associated with violence and/or political turmoil.",
+      "chars": 1108,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260809_020452",
+      "topic": "find an isomorphism between quantum decoherence and what the models did today",
+      "reflection": "The pattern shows that there is no actual reflection presented here. The models did not disagree on any topic as the entries show the exact same data in each case: an identical title \"Idle reflection\" with a repeated content of unknown category, void of meaningful words, absent any specifics and with zero state information.",
+      "reasoning": "The data shows a clear pattern of repetition with no substantive content. Three reflections titled \"Idle reflection: model disagreement\" are identical in all aspects provided. These three are void of meaningful information. We do not have any details on the models' points of agreement or disagreement. There is also no mention if these disagreements occurred within stories or across multiple ones. However, we need a reference point to identify which story was covered most faithfully because this data lacks any indication of its own content. What are the models that generated these reflections? Do they have different configurations and biases? How could this information be used to better understand model behavior and performance?",
+      "chars": 1080,
+      "has_reasoning": true
     }
   ]
 }
