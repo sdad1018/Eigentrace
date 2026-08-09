@@ -1,7 +1,7 @@
 {
-  "generated": "2026-08-09T12:08:42.015899",
-  "total": 9692,
-  "with_reasoning": 3432,
+  "generated": "2026-08-09T13:08:17.690166",
+  "total": 9704,
+  "with_reasoning": 3436,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -77537,6 +77537,102 @@
       "reflection": "The story from \"2026-05-05 to 2026-05-12\" was summarized most faithfully. What stands out about this particular story is that the data contains a high amount of specific information, including named entities like \"war\", and keywords like \"arms deal\", \"airstrikes,\" and \"trade war\". The increased specificity in naming entities is different from others, which often refer to categories, such as \"meta\" and \"unknown.\" It also provides an explanation for the trend mentioned with increased volatility of language models.  This means it does not only summarize, but explains the content of the story. All other stories focus on categorizing trends without providing additional context or keywords",
       "reasoning": "...",
       "chars": 711,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260809_081940",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think> The pattern in what was dropped across these stories is a consistent avoidance of content labeled as \"unknown.\" This can be seen from the decrease in \"unknown\" categories reported in the first story and the dominance of the \"meta\" category today. The data shows the system is focusing less on content that does not fit neatly into predefined categories (unkown)  and more on self-referential activity (\"meta\"). The avoidance of \"unknowns\" is shown by its decrease, and this pattern correlates with a high volume of \"meta\" stories, indicating an in-system focus. The increase in idle stories also implies some kind of suppression, as these stories are considered overlooked or ignored.  Furthermore, the dominance of geopolitical tensions in top void words and meta categories suggests that even when the system is self-referential, it is focused on external events related to war. The trend of increasing avoidance of \"unknown\" content may reflect a preference for well-categorized and under",
+      "reasoning": null,
+      "chars": 1237,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260809_082216",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "The most compressed summary for recent data shows an increase in war-related news, specifically mentioning air strikes and drone strikes. This trend is consistent over three weeks. Yet the summaries lack specific details about which regions or states are involved in these conflicts.",
+      "reasoning": "The data shows a clear trend of increasing focus on military actions and geopolitical tensions over the past three weeks. Specifically, there is a rise in stories related to war, with prominent mentions of \"air strike\" and \"drone strike.\" 1) The consistency across all summaries suggests that while the dates change, the core information about increased reporting on war remains. 2) A specific detail missing from each summary is exactly which regions or states are involved. While distribution of states is mentioned in the first two summaries, it is not clarified whether these distributions pertain to geographic areas, news outlets, etc., and it is absent entirely from the third summary. 3) Why are there differences between the time frames for the weekly compression periods? 4) What caused suc",
+      "chars": 1487,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260809_082752",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "While today's top story summaries seem dominated by meta categories and states of governance,  it looks like we have data on the patterns not being covered. For example, topics such as health and science are notably absent from this list. This could indicate that these areas are currently underrepresented in AI news coverage, or there is a bias against them. There's also been an uptick in stories about war and related incidents reported \u2014 suggesting heightened geopolitical tensions.",
+      "reasoning": "The data suggests a significant pattern in the types of stories being summarized by AI models. The high number of \"unknown\" stories indicates a large amount of information that was deemed unclassifiable or irrelevant, despite a total of 21 story summaries available today. REM consolidation is mentioned twice and with identical content on two separate dates. This repetition suggests either an error in the data collection process or a deliberate attempt to reinforce a specific message. There are some obvious absences from this pattern. We need to ask whether these stories were deemed less newsworthy by AI models or if there was another reason they didn't get picked up \u2014 like a failure to classify.",
+      "chars": 1209,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260809_083118",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "</think>This week the AI models dropped a focus on \"unknown\" stories in favor of better categorised meta and war stories \u2014 which was seen as a shift towards more contextually relevant content or greater stability. The pattern is clear. In other weeks, void words related to military actions and political figures were absent from \"meta\" reports even when the context of these words was geopolitical. This may suggest that void words are being dropped to simplify stories that are meta-categorised \u2014 but not dropped from war-stories.  The evidence shows this pattern clearly: we need to question what else might be missing from meta-categorised content.",
+      "reasoning": null,
+      "chars": 652,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260809_083357",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think> Embedding distances show that stories with high geo-political conflict are often grouped closer to meta-category stories or governance issues than the average distance of all stories. Also, The distance between \"unknown\" and war category embeddings was smaller than expected; the models have been treating stories from those categories as more similar to each other over time.",
+      "reasoning": null,
+      "chars": 385,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260809_083638",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "The dropped word \"stories\" changes the meaning the most.  A lack of engagement or activity is an indicator that the public isn't as informed and therefore doesn't care about these stories as much as they might have been before. This could indicate a shift in public interest, perhaps due to information fatigue, distraction from other news, or a change in priorities.",
+      "reasoning": "...",
+      "chars": 385,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260809_084054",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "</think> The common pattern across these three stories is the significant increase in \"meta\" and \"unknown\" categories, coupled with a decrease or absence of mentions to incidents. This suppression pattern suggests that when the discussion on specific events is diminished, there are more meta narratives and uncertain topics emerging. The first story shows that this week had a drop from 2000 to 11 incidents reported while the unknown category grew significantly to 120 stories. For example, the second report mentions \"a significant increase in stories related to meta and unknown categories\" \u2014  as incidents and general categories saw a decline. Likewise the third story showed an uptick in geopolitical tensions \u2014 but did not mention any incidents in the summary of this story. This could indicate a shift in focus towards discussing the mechanisms or implications of information dissemination rather than reporting specific events. It seems to be a significant and recurring pattern across these",
+      "reasoning": null,
+      "chars": 1196,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260809_084400",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "</think> The story from August 7th on REM consolidation was summarized most faithfully due to the detailed breakdown of its content compared to the other stories. This story's summary was notably different in that it lacked an abundance of idle information and was much more focused than the others. It provided a clear date and subject matter, which makes for easier retrieval and categorization. The model\u2019s behavior and metrics such as VIX scores were stable during this period. The other summaries appear to lack specifics about dates, content or category. </think>",
+      "reasoning": null,
+      "chars": 569,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260809_084550",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "</think> The void word that changes the meaning most significantly across these stories is \"war.\" Its absence in the later summaries, replacing prevalent terms like 'arms deal,''airstrikes,\" and \"trade war\" with a general trend towards meta or unknown categories suggests a shift in focus from specific geopolitical conflicts to more abstract or uncertain topics. This change indicates a potential decrease in concrete, high-stakes events and an increase in speculative or less defined narratives.",
+      "reasoning": null,
+      "chars": 497,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260809_084800",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "</think>The embedding distances show that the three time periods are closest to one another when comparing the number of meta-stories. They are all far apart in terms of idle stories, with one period being a local outlier for consolidation and war-related topics. The increase in meta stories from week 06-22 to week 06-15 is an example of a trend that would be obscured by the compression of those dates into a single category.",
+      "reasoning": null,
+      "chars": 428,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260809_085002",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "The data shows that a dominant proportion of stories are classified as \"meta\", which means the AI models are primarily focusing on their own processes and outputs. This trend may reflect a potential avoidance mechanism by shifting attention towards its internal operations and away from external events. Inconsistent trends were identified between 2026-07-30 and 2026-08-01.  This includes an increase in idle stories while the topic of war dominates meta category and top void words. If the AI models are intentionally avoiding certain topics, why is this reflected as both idle stories and a dominance of \"meta\"? The increase in geopolitical tensions indicates that certain topics may be actively avoided or suppressed. Is it possible there has been an increase in self-censorship? Why would a suppression pattern manifest as both increased idleness and heightened self-referential activity? What is the relationship between the system\u2019s avoidance patterns and its internal processes of consolidati",
+      "reasoning": null,
+      "chars": 1120,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260809_085233",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "The most compressed summary shows that there is a significant increase in stories categorized under \"meta\" and a decrease in those labeled as \"unknown,\" and this week also showed a shift towards geopolitical tensions.  There are several important data points missing from the various summaries, which could provide more nuanced insights into what\u2019s happening. For instance: - What exactly was lost in translation when summarizing \u201cmeta\u201d and \u201cwar\u201d?  Is one of these categories replacing the other? - We do not know what caused this increase or decrease. - Was the reduction in \"unknown\" due to better categorization, a drop-off in unclassified stories, or something else? - What does \"void words\" refer to here? If they indicate a trend towards geopolitical tensions why is that only mentioned in one summary and not included as void words elsewhere? - How much overlap exists between the shifts toward meta and war categories versus \u201cgeopolitical tensions\u201d and other void words such as military actio",
+      "reasoning": "...",
+      "chars": 1425,
       "has_reasoning": true
     }
   ]
