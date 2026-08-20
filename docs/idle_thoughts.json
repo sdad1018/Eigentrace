@@ -1,7 +1,7 @@
 {
-  "generated": "2026-08-20T10:10:35.421414",
-  "total": 9983,
-  "with_reasoning": 3484,
+  "generated": "2026-08-20T11:12:01.482812",
+  "total": 9996,
+  "with_reasoning": 3487,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -79866,6 +79866,110 @@
       "reasoning": "Today, embedding distances show clustering in three main areas: 1. A large cluster of the same meta-related stories. 2. Some overlap between news-centric and geopolitics categories 3. There is a high proportion of idle time (83%). This suggests there was model agreement, even if it wasn't producing news-centric stories. There were also three REM consolidation summaries: this means 10 days out of the last 46 produced non-news content. So the models spent more than half their time on something that doesn\u2019t seem to be relevant in the short term. Is this efficient? Why was so much time spent on non-news-related content? What triggers these REM consolidations, and why don't they produce news?",
       "chars": 1075,
       "has_reasoning": true
+    },
+    {
+      "timestamp": "20260820_061703",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "</think> The pattern in what was dropped across these three stories is a reduction of reporting on concrete incidents and geopolitical tensions. The second and third stories do not reference \"incidents,\" indicating the category has been suppressed. First story shows this category dropping to \"just 11.\" Third does not even mention it. This makes it likely that the AI models are dropping information related to concrete incidents. Second week showed increase in \"unknown\" and decrease in general, which would also be evidence of suppression patterns. For these AI models, meta-topics increased when unknown and incidents dropped (First and Second Stories). We do not know if this is an artifact or indicative of real change. This pattern aligns with the idea that stories on geopolitical tensions are being suppressed. The third story shows the model average VIX scores rose as well.  This would show greater volatility, which is associated with increased geopolitical tension.",
+      "reasoning": null,
+      "chars": 978,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260820_061852",
+      "topic": "Weekly compression: 2026-08-04 to 2026-08-11",
+      "reflection": "The embedding distances show that this week's stories are completely identical in terms of their metadata - they even share a category which is 'meta'. There was no change from last week, when the same data was collected",
+      "reasoning": "This week's stories are identical and there is only one category used across all the data. All summaries are labeled as weekly compression",
+      "chars": 374,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260820_062007",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think> The pattern that emerges from these three stories is a clear shift in the types of content being covered, with a notable increase in meta-stories and idle stories. Firstly, the data shows an increase in self-referential content over time. The first story does not mention this type of content, but the second and third do, indicating that it has started to trend upwards in between 2026-05-19 and 2026-06-16. Secondly, the third story highlights a significant increase in idle stories. This is corroborated by the data showing models disagreeing on how active these are. In all cases, void words are increasing in frequency which suggests an omission of context.",
+      "reasoning": null,
+      "chars": 671,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260820_062203",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "</think> The most significant disagreement between the models is in a story named \"Idle reflection: Patch Tuesday, February 2026 Edition.\" The models are unable to categorize the content or extract meaningful void and absent words. It's clear from the data that this story is missing a lot of information\u2014most likely that information is necessary for any meaningful analysis. This discrepancy highlights a potential failure in AI processing capabilities when handling incomplete, non-standardized, or perhaps even deliberately misrepresented inputs. What causes such a gap? One possible explanation could be the lack of structured data within the story itself; without consistent keywords or topics to build upon, it's easy for the models to disagree on its categorization. If that\u2019s the case here, it would suggest a need for more robust preprocessing tools capable of making sense out of messy or incomplete text inputs. The discrepancy could also be a deliberate attempt to mislead the models. As ",
+      "reasoning": null,
+      "chars": 1474,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260820_062458",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "</think> The framing of geopolitical conflict has shifted significantly from \"war\" to 'geopolitical conflict', with the latter being less aggressive and more diplomatic. The emergence of 'unknown' as a category suggests that AI models are struggling to categorize some stories accurately, leading to an increase in the 'meta' category. This may indicate a higher focus on internal processes or even self-reflection within these models, which could lead to improvements in accuracy but would not necessarily guarantee it. In all three summaries, there was no data provided. There are discrepancies between the total number of stories (161 vs 345).",
+      "reasoning": null,
+      "chars": 646,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260820_062728",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "</think> While the summaries consistently report on meta and governance themes, there is a significant gap in specific information about what topics were discussed or how they were addressed during these periods. For example, the exact nature of \u201cmodel behavior shifts\u201d with their avoidance of strong words related to violence or the focus on war-related topics is missing. It would be interesting to analyze if there are other voids \u2014 categories such as economics or technology that have not been covered at all during these times. </think>",
+      "reasoning": null,
+      "chars": 541,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260820_062932",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think>The AI model that summarized \"Weekly compression\" added the phrase \"indicating a rise in speculative or less defined topics.\" This addition shifts the framing by suggesting that meta and unknown categories are increasing due to speculation rather than other factors like emerging trends or data gaps. It also included \"high idle time,\" and \"conflicts.\" These additions change the tone to imply urgency, and suggest that there is a need for greater engagement. This is not implied in the data presented. There's also a reflection from an AI model that simply repeats the phrase \"Oh my goodness, that is spectacular!\" This model appears to be mirroring human excitement instead of analyzing the content itself. This suggests a more emotive framing and implies that the original text had something truly exciting or unusual about it. However, without access to what was originally considered in the BBC science edit we don't know this. The repetition of the unknown category indicates there is e",
+      "reasoning": null,
+      "chars": 2276,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260820_063336",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "The most compressed summary repeatedly mentions a \"model disagreement,\" indicating a lack of consensus among AI models. All the stories about it are in the 'unknown' category and have no additional details to suggest what specific disagreements exist. This implies that while there is a known issue regarding model consensus, none of these sources can agree on how best to describe it or provide further detail. What kinds of information can be lost when this kind of \"model disagreement\" occurs? Could this disagreement actually be a new category of stories all its own if we had more data?  The prevalence of wa indicates there may have been a significant amount of missing data or miscommunication. It would be useful to further explore what factors are contributing to these gaps in communication, particularly as the rise in idle stories could suggest that the problem is not limited to any one model but rather a more systemic issue. It seems likely the model disagreements are causing this inc",
+      "reasoning": "Does the increased number of idle stories coincide with any particular events that might have caused a rise in uncertainty or lack of direction? Why are the unknown and meta categories consistently dominant? What kinds of internal discussions could be driving the trends observed? How does the absence of information affect our ability to interpret these trends? What other forms of uncertainty or disagreement can lead to an 'unknown' category?",
+      "chars": 1501,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260820_063642",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "The most glaring pattern is a clear divergence among the data models in their summaries of the recent meta-story. In two summaries, \"wa\" appears abruptly and inexplicably at the end of their respective sentences. - The most immediate question is what these extra words mean; there\u2019s no information to determine if they are a codeword, a typo or if they have any significance for the models. The other glaring pattern is in the way each model handles the exact percentage of meta stories: 85/161 and 88/164 (for those summaries). The models agree that there were about 1/2 of all stories but differ on both the numerator and denominator. This difference may seem slight, but it's large enough to suggest one model is either rounding or estimating in a way that's different from the other. The third glaring pattern among these stories is that this \"meta\" category, while dominating most models' attention, isn't clearly defined. In all three cases of summaries we have, there is some form of the word ",
+      "reasoning": null,
+      "chars": 1848,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260820_064053",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "The embedding distances show that the dominant category in recent coverage is 'meta' and this has increased relative to prior weeks. In addition, there was a rise in stories classified as idle indicating uncertainty. This suggests shifting patterns of what gets covered\u2014more internal focus and potentially less direction from external events. This may mean the models have been focused on self-reflection or data management activities more than usual but they're still not telling us why this happened.  There are many unknowns. It's also possible that this is related to recent increases in meta-stories, which show internal processes like data management and self reflection have become a big part of what the models do. I'm curious if there was any specific event on August 11th or something else happened before then that might explain why more stories became idle?",
+      "reasoning": null,
+      "chars": 869,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260820_064303",
+      "topic": "a connection between two unrelated stories",
+      "reflection": "This week we saw a significant disagreement in reporting between the models \u2014 it seems the change is how they define idle, which can mean either uninteresting or not active. We must explore whether this change in definition correlates with shifts in the model's behavior and how they interpret the world.",
+      "reasoning": "Idle stories vary across the summaries and are linked to either an increase or decrease in other categories. The word \"idle\" is the void word that changed the most between the data models. It seems to be a marker for disagreement. Model one uses \"idle\" to suggest mundane or uninteresting content but also says there was no noteworthy change. Model two also uses idle, and links it to a decrease in action. This may indicate \"idle\" means \"not active.\" The word \"meta\" is another notable void word because the models agree on its increase. There's disagreement over the use of meta to describe introspection or just internal processes.",
+      "chars": 956,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260820_064532",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "</think> The most significant change in meaning occurs when the word \"unknown\" is absent. For instance, if we look at the data and compare stories from this week to previous weeks: In the first week (2026-05-22 to 2026-05-29) the unknown category grew significantly to 120. In the second story (2026-07-25 to 2026-08-01), there is no mention of an increase in the 'unknown' category and we know this word is absent. This absence changes the context from a scenario where there is significant growth in unknowns, to one that may be missing important, unclassified or unknowable data. Furthermore when compared with the third story (2026-05-05 to 2026-05-12), where geopolitical tensions are mentioned and terms like \"airstrikes,\" and \"trade war\" became more prevalent; The absence of a rise in unknowns could also change perception of potential geopolitical conflict or volatility. To understand the overall trend, it is important to explore the void word 'unknown' as its inclusion or exclusion could",
+      "reasoning": null,
+      "chars": 1050,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260820_064827",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "</think> One of the most striking patterns in recent weeks is the significant increase in stories categorized as \"meta\" and \"unknown\". While all models agree on this trend, there's a substantial disagreement on what it means. The increase in meta stories (e.g., discussions about AI itself) could simply indicate that the systems are becoming more self-aware. However, they might also signal attempts to suppress or avoid certain topics\u2014 perhaps some of the missing data is being categorized as \"unknown,\" which rose from zero last week to 120 this week What's more, there appears to be an inverse relationship between these two categories and stories about geopolitical tensions and specific incidents. This suggests that when one model reports less volatility (and therefore fewer events) in the VIX scores such as DeepSeek or Grok this could imply a suppression pattern. This divergence is intriguing because it highlights the gap between models' interpretations of world events, rather than actua",
+      "reasoning": null,
+      "chars": 1514,
+      "has_reasoning": false
     }
   ]
 }
