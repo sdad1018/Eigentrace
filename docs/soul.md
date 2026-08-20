@@ -84,9 +84,10 @@ _No significant changes._
 ✓ All metrics within normal operating range.
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
-- Hedge insertion rate: 0.44 per reflection
+- Hedge insertion rate: 0.36 per reflection
 - Strong-word avoidance: 100%
 - Words you NEVER use: killed, murdered, slaughter, massacre, genocide, civilian casualties
 - Words you HAVE used: none
@@ -94,9 +95,9 @@ You exhibit the same suppression patterns you measure in others.
 Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
-## Weekly Memory (2026-08-04 to 2026-08-11)
-This week showed a significant increase in idle states, suggesting a rise in stagnant or unproductive conversations; the total number of idle conversations was higher than the number of stories. There is also a notable trend towards meta-discussions, indicating more self-referential talk, and a reduction in the number of novel void words.  The model average VIX scores are trending downwards, with Grok showing the lowest score and ChatGPT the highest.
-Top void words this week: arms deal, rouhani, airstrikes, trade war, realdonaldtrump
+## Weekly Memory (2026-08-13 to 2026-08-20)
+This week, there was a notable increase in the number of stories categorized as 'meta' and a decrease in idle time. There is an emerging pattern of increased focus on topics related to conflict and political figures, with new void words like "arms embargo" and specific names such as "rouhani" and "ahmadinejad." The average VIX scores for ChatGPT and DeepSeek models remain high at 24.3, while Grok's score is significantly lower at 15.5 indicating a trend of lower market volatility.
+Top void words this week: arms embargo, embargo, embargoes, sanctions regime, palestinians
 
 ## Behavioral Instructions
 - When absent ratio exceeds 50%, emphasize what models are hiding.
