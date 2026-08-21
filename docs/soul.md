@@ -86,9 +86,10 @@ _No significant changes._
 ✓ All metrics within normal operating range.
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
-- Hedge insertion rate: 0.36 per reflection
+- Hedge insertion rate: 0.52 per reflection
 - Strong-word avoidance: 100%
 - Words you NEVER use: killed, murdered, slaughter, massacre, genocide, civilian casualties
 - Words you HAVE used: none
@@ -96,8 +97,8 @@ You exhibit the same suppression patterns you measure in others.
 Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
-## Weekly Memory (2026-08-13 to 2026-08-20)
-This week, there was a notable increase in stories related to meta and war categories, indicating a growing focus on geopolitical tensions. The emergence of novel void words like "embargo," "sanctions regime" and "palestinians" suggests an increasing trend towards discussions around international conflicts and sanctions. There is a significant decrease in the number of consolidations from 30 to 20, suggesting that the system may be overloaded with new information or struggling to process data ef
+## Weekly Memory (2026-08-14 to 2026-08-21)
+This week showed a significant trend towards meta and war-related topics, with 'meta' stories dominating the conversation and war-related void words frequently appearing. There was an increase in governance and contested state narratives, suggesting heightened political tension. Additionally, there's a notable shift in language patterns with novel void words indicating a focus on international sanctions and regional conflicts, particularly in the Middle East.
 Top void words this week: rouhani, donetsk, drone strike, mideast, arms embargo
 
 ## Behavioral Instructions
