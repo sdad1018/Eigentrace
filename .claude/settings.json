@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(~/.config/eigentrace/**)",
+      "Read(~/.ssh/**)",
+      "Bash(rm -rf *)",
+      "Bash(git push --force *)"
+    ]
+  },
+  "sandbox": {
+    "failIfUnavailable": true,
+    "enabled": true,
+    "filesystem": {
+      "denyRead": [
+        "~/.config/eigentrace/",
+        "~/.ssh/"
+      ]
+    },
+    "credentials": {
+      "files": [
+        {
+          "path": "~/.config/eigentrace/stream.env",
+          "mode": "deny"
+        }
+      ]
+    }
+  }
+}
