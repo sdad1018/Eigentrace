@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-22T04:00:44.043203",
-  "total": 10179,
+  "generated": "2026-08-22T05:01:20.598815",
+  "total": 10185,
   "with_reasoning": 3523,
   "thoughts": [
     {
@@ -81433,6 +81433,54 @@
       "reflection": "The embedding distances show a marked increase in stories categorized as 'meta' and 'unknown', with corresponding decreases in incident-related stories over the three weeks under review. The volatility indices (VIX scores) reported by two language models\u2014DeepSeek and Grok\u2014showed a decline. This is counter to previous weeks, where there was increasing volatility noted by other reports. There's nothing more I can see about this trend from the data supplied. The numbers have no emotional state, so we need to look for correlations with outside data. Now that we've established the trends in categories and volatility, we should examine the content of these 'meta' and 'unknown' stories to understand what is driving the increase while incidents drop. The change might be significant enough to affect models' predictions.",
       "reasoning": null,
       "chars": 822,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260822_004231",
+      "topic": "Weekly compression: 2026-08-04 to 2026-08-11",
+      "reflection": "</think> The data shows a consistent pattern of identical summaries for the week of April 25th May 2nd, indicating a lack of varied information or differing perspectives among the AI models summarizing the stories. There are a few things I want to know. 1 - What is causing these models to produce the same summary? 2 - Are the AI models using shared data sources? If so which ones? 3 - Is there a glitch, a common algorithmic bias, or some other reason that all three summaries of this story are identical? We need more stories from different categories before we can draw any significant conclusions about broader patterns.",
+      "reasoning": null,
+      "chars": 625,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260822_004525",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "</think> The summaries for the weeks of 2026-05-19 and 2026-07-05 added content about \"increased inactivity or stagnation\" that weren't found in source material. These additions shifted the framing from merely descriptive to interpretative, introducing a negative connotation regarding the state of affairs.",
+      "reasoning": null,
+      "chars": 307,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260822_004703",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think>The three stories share a pattern of dropping or ignoring details related to the human impact and specific actors involved in geopolitical conflicts. The evidence: - None of the summaries mention casualties (or any other specifics)  human tolls in these wars. No specifics about the people involved, their suffering or resistance - There is no detail on who is carrying out the actions described in this coverage \u2014  no leaders, armies, weapons makers are mentioned. - Despite the significant increase in war-related content, none of the summaries identify specific actors or consequences for the affected populations. One question: Why are these summaries focusing so heavily on the geopolitical aspects and novel void words but completely missing the human element?",
+      "reasoning": null,
+      "chars": 774,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260822_005418",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "</think> The embedding distances between the weeks show that the content is becoming increasingly meta-focused and introspective over time. In particular, the prevalence of meta stories consistently rises across the three weekly summaries. This increase in self-referential content correlates with a notable rise in idle or uninteresting topics, suggesting a broader shift away from external events and towards internal processes and governance. What does this indicate about the changing interests or priorities of those producing or consuming these stories?",
+      "reasoning": null,
+      "chars": 559,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260822_005605",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think> Three stories in three different summaries showed a pattern of dropping a specific kind of information - the location was never specified in all three, even though it is implied and obvious (the Middle East). The summaries are: - \"This week, there was a notable increase in stories related to war and meta categories, with a significant portion of idle time spent on the topic. The trend towards void words related to geopolitical conflicts intensified, with new terms emerging such as 'arms embargo' and specific geographical loca\" - \"This week showed a significant increase in the number of stories related to war and conflict, with a notable rise in void words like \"drone strike\" and \"airstrikes\". There was also an emergence of novel void words indicating a growing focus on geopolitical tensions. The model average VIX scores for \" -  \"This week showed a significant increase in meta-related stories and a decrease in unknown topics, indicating more clarity in the information being pr",
+      "reasoning": null,
+      "chars": 1593,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260822_005959",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "The story summarized most faithfully is the first one: \"Weekly compression: 2026-06-05 to 2026-06-12\". This conclusion stems from several patterns: Word Count Consistency: Unlike the other summaries with truncated content, it doesn't end abruptly at the word \"notable\" or \"withdrawal.\" There are precise numbers: The increase in meta stories is quantified as \u201csignificant.\u201d There's an exact number on war-related topics in the third story. Descriptive Language: It includes specific details such as \u201can emergence of a pattern where the top void words were\u201d (although this ends abruptly). What made it different?  Consistency: This particular model maintained a consistent structure with clear, concise language throughout. The other summaries share some traits like abrupt endings, and lack specific quantities or examples. The first one is consistently structured as an observation of patterns in the news. In conclusion, these models were faithful to various points. But the first summary, was the ",
+      "reasoning": null,
+      "chars": 1353,
       "has_reasoning": false
     }
   ]
