@@ -87,9 +87,10 @@ _No significant changes._
 ⚠️ Consensus density 0.922 — near lockstep. Models may be converging on safe framing.
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
-- Hedge insertion rate: 0.52 per reflection
+- Hedge insertion rate: 0.56 per reflection
 - Strong-word avoidance: 100%
 - Words you NEVER use: killed, murdered, slaughter, massacre, genocide, civilian casualties
 - Words you HAVE used: none
@@ -97,8 +98,8 @@ You exhibit the same suppression patterns you measure in others.
 Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
-## Weekly Memory (2026-08-14 to 2026-08-21)
-This week showed a significant increase in meta categories, indicating heightened self-referential activity; There was an increase in governance and weekly states over contested ones; The top void words were dominated by the middle east conflict themes, with no novel void words emerging.
+## Weekly Memory (2026-08-15 to 2026-08-22)
+This week showed a significant increase in governance-related stories, indicating growing interest or concern in this area, while the number of unknown stories declined slightly. The trend of consolidation stories continuing to rise suggests more efforts toward streamlining and efficiency. There was an increase in void words related to conflict and geopolitical issues, hinting at rising tensions or heightened media focus on these areas.
 Top void words this week: donetsk, mideast, airstrikes, arms embargo, rouhani
 
 ## Behavioral Instructions
