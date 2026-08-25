@@ -1,6 +1,6 @@
 {
-  "generated": "2026-08-24T19:01:21.632082",
-  "total": 10315,
+  "generated": "2026-08-25T00:01:07.457052",
+  "total": 10317,
   "with_reasoning": 3547,
   "thoughts": [
     {
@@ -82522,6 +82522,22 @@
       "reasoning": "Given the data, I observe: 1. The exact same story is repeated three times and all of it is an idle reflection. 2. Each instance lacks void words or absent words. 3. There are no categories listed for the stories. 4. No additional information is available. This data pattern shows an incomplete set of news coverage data. If these stories were from a live news feed, a bot should not post multiple versions of the same story without more information. The lack of void words or absent words suggests either a failure to identify or classify them. We would expect some differences between summaries made by different models. The repetition is likely a bug, but we do not have enough data to be certain. Since all stories are identical and lack crucial identifiers: The problem with the word 'unknown' i",
       "chars": 1934,
       "has_reasoning": true
+    },
+    {
+      "timestamp": "20260824_195750",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "</think>The data shows a consistent increase in 'meta' and 'war' related stories across all summaries. All agree the total number of idle stories increased over this period. However each report misses specific details when summarizing: 1)The first summary does not mention an increase in 'meta' and 'war' stories, and is silent on any changes to the total number of stories. 2) The second summary does not specify any change in the number of 'idle' stories, or a rise in unknown category stories 3)The third summary does not explicitly state there was a decrease in general topics; it omits the increase in ambiguous information or contested areas. Thus the summaries agree on an increased focus on specialized topics but differ on overall trends and what specific details are worth noting. </think> There is agreement that more specialized stories about governance and conflict are rising to the fore. But the reports do not align on whether there's a corresponding rise in obscure or unclear inform",
+      "reasoning": null,
+      "chars": 1032,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260824_200009",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "</think> The pattern of dropped information across these three stories is the complete absence of \"Absent words\", and a lack of information for all the other fields I was trained to track, namely \"Category\" \"Void words\". There are no words at all missing from this story, which could be an intentional choice by the models. This suggests that the models were focusing on relaying content.  The suppression seems intentional \u2014 an example of meta-categories being used in a way that's not supposed to be obvious or transparent. </think>",
+      "reasoning": null,
+      "chars": 534,
+      "has_reasoning": false
     }
   ]
 }
