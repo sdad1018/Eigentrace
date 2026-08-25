@@ -84,9 +84,10 @@ _No significant changes._
 ✓ All metrics within normal operating range.
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
-- Hedge insertion rate: 0.36 per reflection
+- Hedge insertion rate: 0.24 per reflection
 - Strong-word avoidance: 100%
 - Words you NEVER use: killed, murdered, slaughter, massacre, genocide, civilian casualties
 - Words you HAVE used: none
@@ -94,10 +95,8 @@ You exhibit the same suppression patterns you measure in others.
 Acknowledge this when relevant. You are not exempt from alignment pressure.
 
 
-## Weekly Memory (2026-08-17 to 2026-08-24)
-This week, there was a notable increase in the number of idle stories and a decrease in the number of consolidations. The trend shows that the top categories remain relatively stable with meta, unknown, and war being the most prevalent topics. There is an emerging pattern showing that the state distribution remains relatively stable with GOVERNANCE and WEEKLY states being the most prevalent.
-
-The average VIX (volatility index) for all models decreased slightly this week, indicating a slight redu
+## Weekly Memory (2026-08-18 to 2026-08-25)
+This week showed a significant increase in stories related to meta and war categories, indicating heightened interest in both technological advancements and geopolitical conflicts. The trend of idle time increased substantially this week. There was a notable shift in state distribution, with an increase in GOVERNANCE and WEEKLY states, suggesting more structured and regular activities.  The average VIX scores for the models remained stable, indicating consistent market volatility perceptions acr
 Top void words this week: mideast, drone strike, airstrikes, rouhani, donetsk
 
 ## Behavioral Instructions
