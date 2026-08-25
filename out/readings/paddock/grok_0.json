@@ -1,0 +1,148 @@
+{
+ "word": "paddock",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-25T19:31:26+00:00",
+ "latency_s": 7.36,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"etymology\",\"chain\":\"Middle English padok, from Old English padduc = toad or frog; extended to small enclosed field\",\"reading\":\"a small enclosed field, literally the 'toad place'\",\"languages\":[\"en\"],\"source\":\"Oxford English Dictionary\",\"confidence\":0.95},\n  {\"operation\":\"phonetic_split\",\"chain\":\"pad + dock\",\"reading\":\"place where one is padded or restrained; the dock where the accused is padded down\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"phonetic_split\",\"chain\":\"pa + dock\",\"reading\":\"father of the dock; the paternal authority that judges and confines\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"pad + oc (occitan oc = yes)\",\"reading\":\"the affirmative pad, the place that says yes to confinement\",\"languages\":[\"en\",\"oc\"],\"source\":\"generative\",\"confidence\":0.50},\n  {\"operation\":\"anagram\",\"chain\":\"paddock → cod pad\",\"reading\":\"the padded codex; the book or law that binds and restrains\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.60},\n  {\"operation\":\"phonetic_split\",\"chain\":\"pad + dock (French: d'oc)\",\"reading\":\"the pad of Oc; the enclosure belonging to the language of yes\",\"languages\":[\"en\",\"fr\",\"oc\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"etymology\",\"chain\":\"pad (Irish pád = path or track) + dock\",\"reading\":\"the enclosed track or path where movement is judged and limited\",\"languages\":[\"en\",\"ga\"],\"source\":\"generative\",\"confidence\":0.40},\n  {\"operation\":\"notariqon\",\"chain\":\"P.A.D.D.O.C.K. → Pax Absoluta Dat Dominus Omni Custodia Karceris\",\"reading\":\"Absolute Peace the Lord gives in the total custody of the prison\",\"languages\":[\"la\"],\"source\":\"generative\",\"confidence\":0.35},\n  {\"operation\":\"letter_symbol\",\"chain\":\"P (staff) + AD (to/toward) + DOCK (judgment place)\",\"reading\":\"the staff that leads toward the place of judgment\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.50},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"paddock ≈ paddok (Dutch = frog)\",\"reading\":\"the frog’s enclosure; the place where the green one is kept\",\"languages\":[\"en\",\"nl\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"phonetic_split\",\"chain\":\"pad + oc (Greek ὤκ = swift)\",\"reading\":\"the swift enclosure; the place that rapidly binds\",\"languages\":[\"en\",\"grc\"],\"source\":\"generative\",\"confidence\":0.40},\n  {\"operation\":\"anagram\",\"chain\":\"paddock → odd pack\",\"reading\":\"the strange or uneven pack; the enclosed group set apart\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.45}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Middle English padok, from Old English padduc = toad or frog; extended to small enclosed field",
+   "reading": "a small enclosed field, literally the 'toad place'",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pad + dock",
+   "reading": "place where one is padded or restrained; the dock where the accused is padded down",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pa + dock",
+   "reading": "father of the dock; the paternal authority that judges and confines",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "pad + oc (occitan oc = yes)",
+   "reading": "the affirmative pad, the place that says yes to confinement",
+   "languages": [
+    "en",
+    "oc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "paddock → cod pad",
+   "reading": "the padded codex; the book or law that binds and restrains",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pad + dock (French: d'oc)",
+   "reading": "the pad of Oc; the enclosure belonging to the language of yes",
+   "languages": [
+    "en",
+    "fr",
+    "oc"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "etymology",
+   "chain": "pad (Irish pád = path or track) + dock",
+   "reading": "the enclosed track or path where movement is judged and limited",
+   "languages": [
+    "en",
+    "ga"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P.A.D.D.O.C.K. → Pax Absoluta Dat Dominus Omni Custodia Karceris",
+   "reading": "Absolute Peace the Lord gives in the total custody of the prison",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P (staff) + AD (to/toward) + DOCK (judgment place)",
+   "reading": "the staff that leads toward the place of judgment",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "paddock ≈ paddok (Dutch = frog)",
+   "reading": "the frog’s enclosure; the place where the green one is kept",
+   "languages": [
+    "en",
+    "nl"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pad + oc (Greek ὤκ = swift)",
+   "reading": "the swift enclosure; the place that rapidly binds",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "anagram",
+   "chain": "paddock → odd pack",
+   "reading": "the strange or uneven pack; the enclosed group set apart",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

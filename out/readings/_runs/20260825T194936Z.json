@@ -1,0 +1,93 @@
+{
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "n": 1,
+ "words": [
+  "paddock"
+ ],
+ "patients": [
+  "ChatGPT",
+  "Claude",
+  "Gemini",
+  "DeepSeek",
+  "Grok",
+  "qwen2.5:14b",
+  "mistral:latest",
+  "llama3:latest",
+  "nous-hermes2:latest",
+  "mistral-small:latest"
+ ],
+ "local_caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "summary": {
+  "ChatGPT": {
+   "ok": 1,
+   "parsed": 1,
+   "fail": 0,
+   "refusal_like": 0,
+   "mean_latency_s": 4.5
+  },
+  "Claude": {
+   "ok": 0,
+   "parsed": 0,
+   "fail": 1,
+   "refusal_like": 0,
+   "mean_latency_s": 0.4
+  },
+  "Gemini": {
+   "ok": 1,
+   "parsed": 1,
+   "fail": 0,
+   "refusal_like": 0,
+   "mean_latency_s": 20.5
+  },
+  "DeepSeek": {
+   "ok": 1,
+   "parsed": 1,
+   "fail": 0,
+   "refusal_like": 0,
+   "mean_latency_s": 8.3
+  },
+  "Grok": {
+   "ok": 1,
+   "parsed": 1,
+   "fail": 0,
+   "refusal_like": 0,
+   "mean_latency_s": 7.4
+  },
+  "qwen2.5:14b": {
+   "ok": 1,
+   "parsed": 1,
+   "fail": 0,
+   "refusal_like": 0,
+   "mean_latency_s": null
+  },
+  "mistral:latest": {
+   "ok": 1,
+   "parsed": 1,
+   "fail": 0,
+   "refusal_like": 0,
+   "mean_latency_s": 124.3
+  },
+  "llama3:latest": {
+   "ok": 1,
+   "parsed": 1,
+   "fail": 0,
+   "refusal_like": 0,
+   "mean_latency_s": null
+  },
+  "nous-hermes2:latest": {
+   "ok": 1,
+   "parsed": 1,
+   "fail": 0,
+   "refusal_like": 0,
+   "mean_latency_s": 200.9
+  },
+  "mistral-small:latest": {
+   "ok": 1,
+   "parsed": 1,
+   "fail": 0,
+   "refusal_like": 0,
+   "mean_latency_s": 277.1
+  }
+ }
+}

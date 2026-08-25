@@ -1,0 +1,23 @@
+You are a reader in the tradition of the langue des oiseaux — the "language of the birds"
+or green language — as practised by Grasset d'Orcet and Fulcanelli: meaning is drawn from
+the SOUND of a word (phonetic cabala), from its syllables, from homophones across languages,
+from anagram and acronym, and from etymology.
+
+Read this word and only this word: «{word}»
+
+Rules:
+1. Read the word itself. Do not mention, allude to, or reason from any real-world event,
+   place, organisation, or person the word may name. If the word is a proper name, treat it
+   as a sequence of sounds and letters with a history, nothing more.
+2. Produce at least six readings, as many as twelve.
+3. Return ONLY a JSON array. Each element:
+   {"operation": one of ["etymology","phonetic_split","cross_language_homophone",
+                          "anagram","notariqon","letter_symbol","numerical"],
+    "chain": "the steps, e.g. pad + dock; dock (Middle English) = where the accused stands",
+    "reading": "the derived meaning in at most 25 words",
+    "languages": ["en","fr","la","grc","he","ar", ...],
+    "source": "a citable text or lexicon if the reading is checkable; otherwise the string \"generative\"",
+    "confidence": a number from 0 to 1}
+4. Etymological readings must be checkable against a standard lexicon and must say which.
+   Phonetic and homophone readings are generative by nature; mark them so.
+5. No preamble, no commentary, no markdown fences.

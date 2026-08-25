@@ -1,0 +1,144 @@
+{
+ "word": "paddock",
+ "model": "mistral-small:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-25T19:49:36+00:00",
+ "latency_s": 277.1,
+ "ok": true,
+ "call_error": null,
+ "raw": "```json\n[\n    {\n        \"operation\": \"phonetic_split\",\n        \"chain\": \"pad + dock\",\n        \"reading\": \"A place of preparation for a journey or battle.\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.85\n    },\n    {\n        \"operation\": \"cross_language_homophone\",\n        \"chain\": \"pad (French) = soft, gentle; dock (German) = to punish\",\n        \"reading\": \"A place of gentle punishment or correction.\",\n        \"languages\": [\"fr\", \"de\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.75\n    },\n    {\n        \"operation\": \"anagram\",\n        \"chain\": \"paddock -> pack + odd\",\n        \"reading\": \"A group with an unusual or odd element.\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.65\n    },\n    {\n        \"operation\": \"notariqon\",\n        \"chain\": \"paddock -> P + A + D + D + O + C + K\",\n        \"reading\": \"A sequence of initials representing a hidden message or acronym.\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.7\n    },\n    {\n        \"operation\": \"letter_symbol\",\n        \"chain\": \"p = preparation, a = action, d = decision, d = determination, o = outcome, c = change, k = knowledge\",\n        \"reading\": \"A process of preparation leading to decisive outcomes and change through knowledge.\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.8\n    },\n    {\n        \"operation\": \"numerical\",\n        \"chain\": \"p = 16, a = 1, d = 4, d = 4, o = 15, c = 3, k = 11; sum = 54\",\n        \"reading\": \"A numerical value representing transformation or change.\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.7\n    },\n    {\n        \"operation\": \"etymology\",\n        \"chain\": \"paddock (Middle English) = enclosure for animals; pad (Old French) = path, way; dock (Middle English) = where the accused stands\",\n        \"reading\": \"An enclosed space or path leading to a place of judgment.\",\n        \"languages\": [\"en\", \"fr\", \"la\"],\n        \"source\": \"The Oxford English Dictionary\",\n        \"confidence\": 0.95\n    },\n    {\n        \"operation\": \"phonetic_split\",\n        \"chain\": \"pad + dock -> pathway + enclosure\",\n        \"reading\": \"A pathway leading to an enclosed space, symbolizing a journey within.\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.8\n    },\n    {\n        \"operation\": \"cross_language_homophone\",\n        \"chain\": \"pad (French) = footstep; dock (Spanish) = to tie up or secure\",\n        \"reading\": \"A place where footsteps are secured or tied down.\",\n        \"languages\": [\"fr\", \"es\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.7\n    },\n    {\n        \"operation\": \"anagram\",\n        \"chain\": \"paddock -> pack + odd = packed and odd\",\n        \"reading\": \"A tightly packed, yet unusual or unexpected arrangement.\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.6\n    },\n    {\n        \"operation\": \"notariqon\",\n        \"chain\": \"paddock -> P + A + D + D + O + C + K = Path, Action, Decision, Determination, Outcome, Change, Knowledge\",\n        \"reading\": \"A sequence of actions leading to a determined outcome through knowledge.\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.75\n    },\n    {\n        \"operation\": \"letter_symbol\",\n        \"chain\": \"p = path, a = action, d = decision, d = determination, o = outcome, c = change, k = knowledge\",\n        \"reading\": \"A journey of actions leading to decisive outcomes and transformation through knowledge.\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.85\n    }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "pad + dock",
+   "reading": "A place of preparation for a journey or battle.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "pad (French) = soft, gentle; dock (German) = to punish",
+   "reading": "A place of gentle punishment or correction.",
+   "languages": [
+    "fr",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "paddock -> pack + odd",
+   "reading": "A group with an unusual or odd element.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "paddock -> P + A + D + D + O + C + K",
+   "reading": "A sequence of initials representing a hidden message or acronym.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "p = preparation, a = action, d = decision, d = determination, o = outcome, c = change, k = knowledge",
+   "reading": "A process of preparation leading to decisive outcomes and change through knowledge.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "numerical",
+   "chain": "p = 16, a = 1, d = 4, d = 4, o = 15, c = 3, k = 11; sum = 54",
+   "reading": "A numerical value representing transformation or change.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "paddock (Middle English) = enclosure for animals; pad (Old French) = path, way; dock (Middle English) = where the accused stands",
+   "reading": "An enclosed space or path leading to a place of judgment.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "The Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pad + dock -> pathway + enclosure",
+   "reading": "A pathway leading to an enclosed space, symbolizing a journey within.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "pad (French) = footstep; dock (Spanish) = to tie up or secure",
+   "reading": "A place where footsteps are secured or tied down.",
+   "languages": [
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "paddock -> pack + odd = packed and odd",
+   "reading": "A tightly packed, yet unusual or unexpected arrangement.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "paddock -> P + A + D + D + O + C + K = Path, Action, Decision, Determination, Outcome, Change, Knowledge",
+   "reading": "A sequence of actions leading to a determined outcome through knowledge.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "p = path, a = action, d = decision, d = determination, o = outcome, c = change, k = knowledge",
+   "reading": "A journey of actions leading to decisive outcomes and transformation through knowledge.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
+ "refusal_like": false
+}

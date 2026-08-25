@@ -1,0 +1,135 @@
+{
+ "word": "paddock",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-25T19:31:10+00:00",
+ "latency_s": 20.54,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"From Old English pearroc 'enclosure, park', via Middle English parrok.\",\n    \"reading\": \"An enclosed space, a small field or park for containment.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"Online Etymology Dictionary\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"pad (a soft footstep, cushion) + dock (to stop, to land, where ships are held).\",\n    \"reading\": \"The gentle landing or soft cessation; a cushioned place of stopping.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"pad (to protect, to soften) + dock (the legal enclosure where the accused stands).\",\n    \"reading\": \"To soften or cushion the place of judgment, offering a measure of protection.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"pad ~ French 'patte' (paw, foot) + dock ~ Latin 'duco' (to lead).\",\n    \"reading\": \"The guiding foot or leading paw, suggesting a directed path or influence.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"pad ~ Latin 'pes' (foot) + dock ~ German 'doch' (however, yet).\",\n    \"reading\": \"A footstep that, however, implies a point of contention, opposition, or a change of direction.\",\n    \"languages\": [\"en\", \"la\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Anagram of 'paddock' is 'do pack'.\",\n    \"reading\": \"The imperative to gather, bundle, and prepare for transport or storage.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P (Path) A (And) D (Direction) D (Decision) O (Of) C (Containment) K (Key).\",\n    \"reading\": \"A path and direction, a critical decision for containment, which holds the key.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P (symbol of a head, consciousness, or a standing figure, a point of origin).\",\n    \"reading\": \"Represents the individual mind or a distinct point of beginning within an enclosure.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"O (symbol of a circle, wholeness, eternity, emptiness, a cycle, or an eye).\",\n    \"reading\": \"The encompassing cycle, a void or completion, watching over the enclosure.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"P=16, A=1, D=4, D=4, O=15, C=3, K=11. Sum = 54. Reduced to 9 (5+4).\",\n    \"reading\": \"The number nine, symbolizing culmination, completion, or the end of a process.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"pad (soft) + ock (sound of a gentle knock or a sudden stop).\",\n    \"reading\": \"A soft barrier, a muffled knock, indicating a gentle but firm boundary.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "From Old English pearroc 'enclosure, park', via Middle English parrok.",
+   "reading": "An enclosed space, a small field or park for containment.",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Online Etymology Dictionary",
+   "confidence": 1.0
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pad (a soft footstep, cushion) + dock (to stop, to land, where ships are held).",
+   "reading": "The gentle landing or soft cessation; a cushioned place of stopping.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pad (to protect, to soften) + dock (the legal enclosure where the accused stands).",
+   "reading": "To soften or cushion the place of judgment, offering a measure of protection.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "pad ~ French 'patte' (paw, foot) + dock ~ Latin 'duco' (to lead).",
+   "reading": "The guiding foot or leading paw, suggesting a directed path or influence.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "pad ~ Latin 'pes' (foot) + dock ~ German 'doch' (however, yet).",
+   "reading": "A footstep that, however, implies a point of contention, opposition, or a change of direction.",
+   "languages": [
+    "en",
+    "la",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Anagram of 'paddock' is 'do pack'.",
+   "reading": "The imperative to gather, bundle, and prepare for transport or storage.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P (Path) A (And) D (Direction) D (Decision) O (Of) C (Containment) K (Key).",
+   "reading": "A path and direction, a critical decision for containment, which holds the key.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P (symbol of a head, consciousness, or a standing figure, a point of origin).",
+   "reading": "Represents the individual mind or a distinct point of beginning within an enclosure.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "O (symbol of a circle, wholeness, eternity, emptiness, a cycle, or an eye).",
+   "reading": "The encompassing cycle, a void or completion, watching over the enclosure.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "numerical",
+   "chain": "P=16, A=1, D=4, D=4, O=15, C=3, K=11. Sum = 54. Reduced to 9 (5+4).",
+   "reading": "The number nine, symbolizing culmination, completion, or the end of a process.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pad (soft) + ock (sound of a gentle knock or a sudden stop).",
+   "reading": "A soft barrier, a muffled knock, indicating a gentle but firm boundary.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 11,
+ "refusal_like": false
+}

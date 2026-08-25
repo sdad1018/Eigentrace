@@ -1,0 +1,75 @@
+{
+ "word": "paddock",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-25T19:36:27+00:00",
+ "latency_s": 124.33,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"paddock (Old English) = enclosure for domestic animals\",\n    \"reading\": \"a place for taming or controlling\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"pad + dock\",\n    \"reading\": \"a base (pad) for a ship or boat\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"paddock (English) = pataccolo (Italian) = a small bridge\",\n    \"reading\": \"a transition or connection\",\n    \"languages\": [\"en\", \"it\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"add cop\",\n    \"reading\": \"a person who supervises or manages a group of workers\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P + D (Greek initials) = Ποιήτης (Poietes) = a maker or creator\",\n    \"reading\": \"a craftsman or artist\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P (Roman numeral) = 500\",\n    \"reading\": \"a large quantity or amount\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "paddock (Old English) = enclosure for domestic animals",
+   "reading": "a place for taming or controlling",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pad + dock",
+   "reading": "a base (pad) for a ship or boat",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "paddock (English) = pataccolo (Italian) = a small bridge",
+   "reading": "a transition or connection",
+   "languages": [
+    "en",
+    "it"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "add cop",
+   "reading": "a person who supervises or manages a group of workers",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P + D (Greek initials) = Ποιήτης (Poietes) = a maker or creator",
+   "reading": "a craftsman or artist",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P (Roman numeral) = 500",
+   "reading": "a large quantity or amount",
+   "languages": [
+    "la"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}
