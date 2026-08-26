@@ -1,0 +1,76 @@
+{
+ "word": "Voltaire",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:02:59+00:00",
+ "latency_s": 11.35,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"\",\n    \"reading\": \"derived from the Old French 'volt' meaning 'to turn', and 'aire' meaning 'high'\",\n    \"languages\": [\"fr\"],\n    \"source\": \"Online Etymology Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"\",\n    \"reading\": \"vol (Latin for flight) + taire (French for silence)\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"\",\n    \"reading\": \"Volt (unit of electric potential named after Alessandro Volta)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"\",\n    \"reading\": \"artelov (a type of rural community in Russia)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"\",\n    \"reading\": \"initial letters V-O-L-T forming the name of the author in reverse (Airet Ol, or Oliver)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"\",\n    \"reading\": \"V (Roman numeral for 5) + o (zero) + l (70) + t (20) = 145, the year of Voltaire's birth\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "derived from the Old French 'volt' meaning 'to turn', and 'aire' meaning 'high'",
+   "languages": [
+    "fr"
+   ],
+   "source": "Online Etymology Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "vol (Latin for flight) + taire (French for silence)",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "Volt (unit of electric potential named after Alessandro Volta)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "artelov (a type of rural community in Russia)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "initial letters V-O-L-T forming the name of the author in reverse (Airet Ol, or Oliver)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "V (Roman numeral for 5) + o (zero) + l (70) + t (20) = 145, the year of Voltaire's birth",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

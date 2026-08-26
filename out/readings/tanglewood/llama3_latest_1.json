@@ -1,0 +1,81 @@
+{
+ "word": "Tanglewood",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:09:44+00:00",
+ "latency_s": 13.73,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"\",\n    \"reading\": \"Tangle: twisted or complicated; wood: a material\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 1\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Tan + gle + wood\",\n    \"reading\": \"A complex or knotty issue; a place of growth and development\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"French: tangle (tang-le) = English: tangled\",\n    \"reading\": \"Entangled or complicated; a state of being\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Tangle + wood = Went Angle\",\n    \"reading\": \"A direction or path that is not straightforward; a challenge to navigate\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Tangle = Tan (tame) + Gle (glee, joy) + Wood = Wisdom\",\n    \"reading\": \"A place of finding wisdom and joy despite complexity or challenges\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T: Trinity; A: Alpha; N: Nine; G: Gemini; L: Lambda; E: Echo; W: Wisdom; O: Omega; O: Oculus (eye); D: Delta\",\n    \"reading\": \"A symbol of divine wisdom and guidance, with the eye of insight\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "Tangle: twisted or complicated; wood: a material",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 1
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Tan + gle + wood",
+   "reading": "A complex or knotty issue; a place of growth and development",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "French: tangle (tang-le) = English: tangled",
+   "reading": "Entangled or complicated; a state of being",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Tangle + wood = Went Angle",
+   "reading": "A direction or path that is not straightforward; a challenge to navigate",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Tangle = Tan (tame) + Gle (glee, joy) + Wood = Wisdom",
+   "reading": "A place of finding wisdom and joy despite complexity or challenges",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T: Trinity; A: Alpha; N: Nine; G: Gemini; L: Lambda; E: Echo; W: Wisdom; O: Omega; O: Oculus (eye); D: Delta",
+   "reading": "A symbol of divine wisdom and guidance, with the eye of insight",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

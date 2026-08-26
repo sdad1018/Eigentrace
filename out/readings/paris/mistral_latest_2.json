@@ -1,0 +1,86 @@
+{
+ "word": "Paris",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:03:44+00:00",
+ "latency_s": 14.68,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paris (Old French) = in or near a marsh\",\n    \"reading\": \"located near wetlands\",\n    \"languages\": [\"fr\"],\n    \"source\": \"Online Etymology Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Paris = pa + ris\",\n    \"reading\": \"peace (pa) rising\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paris (English) = Paris (French) = Perseus (Greek mythology)\",\n    \"reading\": \"a hero who saved Andromeda\",\n    \"languages\": [\"en\", \"fr\", \"grc\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Paris = raps\",\n    \"reading\": \"a type of poetry with a recurring theme\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Paris (French) = Pater Noster in Reversum\",\n    \"reading\": \"Our Father reversed\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Paris (French) = P + A + R + I + S\",\n    \"reading\": \"first four letters of the Greek alphabet\",\n    \"languages\": [\"fr\", \"grc\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Paris (French) = 19 (Roman numerals)\",\n    \"reading\": \"nineteen\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Paris (Old French) = in or near a marsh",
+   "reading": "located near wetlands",
+   "languages": [
+    "fr"
+   ],
+   "source": "Online Etymology Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Paris = pa + ris",
+   "reading": "peace (pa) rising",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris (English) = Paris (French) = Perseus (Greek mythology)",
+   "reading": "a hero who saved Andromeda",
+   "languages": [
+    "en",
+    "fr",
+    "grc"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Paris = raps",
+   "reading": "a type of poetry with a recurring theme",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Paris (French) = Pater Noster in Reversum",
+   "reading": "Our Father reversed",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Paris (French) = P + A + R + I + S",
+   "reading": "first four letters of the Greek alphabet",
+   "languages": [
+    "fr",
+    "grc"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "numerical",
+   "chain": "Paris (French) = 19 (Roman numerals)",
+   "reading": "nineteen",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

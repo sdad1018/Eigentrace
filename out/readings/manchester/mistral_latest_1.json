@@ -1,0 +1,74 @@
+{
+ "word": "Manchester",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:55:15+00:00",
+ "latency_s": 11.79,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"man + chester\",\n    \"reading\": \"a town associated with a fortress or castle\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + (che) + ster\",\n    \"reading\": \"a place where men gather and protect something\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"man + (sh) + ter\",\n    \"reading\": \"a place where a man or animal shatters something\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"man + chester\",\n    \"reading\": \"a town associated with a fortress or castle (reversed)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"initial letters of 'Mercantile and Professional Association for the Promotion of Commerce, Industry, and Shipping'\",\n    \"reading\": \"MPAPCIS\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (magnesium) + an + chester\",\n    \"reading\": \"a place where magnesium is produced and processed\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "man + chester",
+   "reading": "a town associated with a fortress or castle",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + (che) + ster",
+   "reading": "a place where men gather and protect something",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "man + (sh) + ter",
+   "reading": "a place where a man or animal shatters something",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "man + chester",
+   "reading": "a town associated with a fortress or castle (reversed)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "initial letters of 'Mercantile and Professional Association for the Promotion of Commerce, Industry, and Shipping'",
+   "reading": "MPAPCIS",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (magnesium) + an + chester",
+   "reading": "a place where magnesium is produced and processed",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

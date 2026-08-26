@@ -1,0 +1,74 @@
+{
+ "word": "Ba-ta-clan",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:01:05+00:00",
+ "latency_s": 14.44,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ba (cow) + ta (pull) + clan (group)\",\n    \"reading\": \"a group of pulling cows\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"ba (Buddha) + ta (Tao) + clan (clan)\",\n    \"reading\": \"the group of Taoist Buddhas\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bata (a type of drum in West Africa)\",\n    \"reading\": \"the sound of a West African drum\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.etymonline.com/word/bata\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Ba + tan + cla + n\",\n    \"reading\": \"behold the clean stone\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B (beginning) + a (alpha, first letter of Greek alphabet) + t (tau, tenth letter of Greek alphabet) + clan (clan)\",\n    \"reading\": \"the beginning, the alpha and the tenth: the clan\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B (beginning) + a (alpha, first letter of Greek alphabet) + ta (Tau, symbol for cross)\",\n    \"reading\": \"the beginning and the cross\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "ba (cow) + ta (pull) + clan (group)",
+   "reading": "a group of pulling cows",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "ba (Buddha) + ta (Tao) + clan (clan)",
+   "reading": "the group of Taoist Buddhas",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "bata (a type of drum in West Africa)",
+   "reading": "the sound of a West African drum",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.etymonline.com/word/bata"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Ba + tan + cla + n",
+   "reading": "behold the clean stone",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B (beginning) + a (alpha, first letter of Greek alphabet) + t (tau, tenth letter of Greek alphabet) + clan (clan)",
+   "reading": "the beginning, the alpha and the tenth: the clan",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (beginning) + a (alpha, first letter of Greek alphabet) + ta (Tau, symbol for cross)",
+   "reading": "the beginning and the cross",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

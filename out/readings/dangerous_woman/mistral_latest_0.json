@@ -1,0 +1,75 @@
+{
+ "word": "Dangerous Woman",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:53:38+00:00",
+ "latency_s": 13.18,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"danger + us woman\",\n    \"reading\": \"one who brings peril to the people\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"danger + ange (French for angel)\",\n    \"reading\": \"a divine being who brings peril\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"danger + rage\",\n    \"reading\": \"one who is filled with danger and wrath\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Dangerous Woman initials: DW => Deus (Latin for God) + Vita (Latin for life)\",\n    \"reading\": \"a goddess of life\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Dangerous Woman: D (danger) + A (aggression/action) + N (need, necessity) + G (goddess) + E (energy) + R (risk) + O (osmosis, flow) + S (structure) + U (unity) + A (aggression/action) + N (need, necessity) + W (will, desire)\",\n    \"reading\": \"a dynamic entity composed of danger, aggression, need for goddess energy, risk-taking, osmotic flow, structural unity, will and desire\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"danger + us woman (Old French: dangieruse femme)\",\n    \"reading\": \"a female who poses a threat or danger\",\n    \"languages\": [\"fr\"],\n    \"source\": \"Online Etymology Dictionary\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "danger + us woman",
+   "reading": "one who brings peril to the people",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "danger + ange (French for angel)",
+   "reading": "a divine being who brings peril",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "danger + rage",
+   "reading": "one who is filled with danger and wrath",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Dangerous Woman initials: DW => Deus (Latin for God) + Vita (Latin for life)",
+   "reading": "a goddess of life",
+   "languages": [
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Dangerous Woman: D (danger) + A (aggression/action) + N (need, necessity) + G (goddess) + E (energy) + R (risk) + O (osmosis, flow) + S (structure) + U (unity) + A (aggression/action) + N (need, necessity) + W (will, desire)",
+   "reading": "a dynamic entity composed of danger, aggression, need for goddess energy, risk-taking, osmotic flow, structural unity, will and desire",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "danger + us woman (Old French: dangieruse femme)",
+   "reading": "a female who poses a threat or danger",
+   "languages": [
+    "fr"
+   ],
+   "source": "Online Etymology Dictionary"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

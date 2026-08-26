@@ -1,0 +1,76 @@
+{
+ "word": "Manchester Arena",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:54:23+00:00",
+ "latency_s": 15.78,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Man (Old English) + chester (Old English for a fortress or town) + arena (Latin for an open space for public entertainment)\",\n    \"reading\": \"A place of public amusement within a fortified town, derived from Old English and Latin roots\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Online Etymology Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + (an) + chester + (are) + na\",\n    \"reading\": \"A split of the word into phonetic components, with possible meanings: 'man', 'an' (indeterminate prefix), 'chester' (fortress or town), 'are' (Old English for 'in') and 'na' (derived from Latin 'arena', open space)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Man + an + chester + are + na -> Man + an + shester (Russian for 'tin') + re + na\",\n    \"reading\": \"A possible cross-linguistic homophone, suggesting 'tin arena' in Russian\",\n    \"languages\": [\"en\", \"ru\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester Arena -> Man + an + chester + are + na\",\n    \"reading\": \"The original word, split into phonetic components\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Manchester Arena -> M + A (initial letters)\",\n    \"reading\": \"Initial letters forming 'MA', which could be interpreted as a notariqon, a common practice in ancient Christianity for abbreviating names\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (Manchester) -> ∫ (integral sign)\",\n    \"reading\": \"The M of Manchester resembles the integral sign, suggesting a connection to mathematical integration or continuity\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Man (Old English) + chester (Old English for a fortress or town) + arena (Latin for an open space for public entertainment)",
+   "reading": "A place of public amusement within a fortified town, derived from Old English and Latin roots",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Online Etymology Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + (an) + chester + (are) + na",
+   "reading": "A split of the word into phonetic components, with possible meanings: 'man', 'an' (indeterminate prefix), 'chester' (fortress or town), 'are' (Old English for 'in') and 'na' (derived from Latin 'arena', open space)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Man + an + chester + are + na -> Man + an + shester (Russian for 'tin') + re + na",
+   "reading": "A possible cross-linguistic homophone, suggesting 'tin arena' in Russian",
+   "languages": [
+    "en",
+    "ru"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester Arena -> Man + an + chester + are + na",
+   "reading": "The original word, split into phonetic components",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Manchester Arena -> M + A (initial letters)",
+   "reading": "Initial letters forming 'MA', which could be interpreted as a notariqon, a common practice in ancient Christianity for abbreviating names",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (Manchester) -> ∫ (integral sign)",
+   "reading": "The M of Manchester resembles the integral sign, suggesting a connection to mathematical integration or continuity",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

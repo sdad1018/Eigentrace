@@ -1,0 +1,75 @@
+{
+ "word": "Victoria",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:56:02+00:00",
+ "latency_s": 13.39,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Victoria (Latin) from victis 'conquered', femine of victus\",\n    \"reading\": \"feminine form derived from the concept of conquest\",\n    \"languages\": [\"la\"],\n    \"source\": \"Lewis, Charles T., and Charles Short. A Latin dictionary on historical principles: founded on Andrews' Latin dictionary. Oxford University Press, 1879\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Victoria -> Vic + toria\",\n    \"reading\": \"a victory followed by a place or state of triumph\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Victoria (English) -> victorie (French)\",\n    \"reading\": \"victories in French, sharing the same sound structure\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Victoria -> Action, Civic, Artic, Activa, Vita, Tactic\",\n    \"reading\": \"various words and phrases derived from rearranging the letters of Victoria\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Victoria -> V (Roman numeral for 5) + C (Roman letter C, representing the first three letters of Christ)\",\n    \"reading\": \"a symbolic representation of '5C' or '5Christ'\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Victoria -> V (Roman numeral for 5)\",\n    \"reading\": \"a symbolic representation of the number 5\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Victoria (Latin) from victis 'conquered', femine of victus",
+   "reading": "feminine form derived from the concept of conquest",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis, Charles T., and Charles Short. A Latin dictionary on historical principles: founded on Andrews' Latin dictionary. Oxford University Press, 1879"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Victoria -> Vic + toria",
+   "reading": "a victory followed by a place or state of triumph",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Victoria (English) -> victorie (French)",
+   "reading": "victories in French, sharing the same sound structure",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Victoria -> Action, Civic, Artic, Activa, Vita, Tactic",
+   "reading": "various words and phrases derived from rearranging the letters of Victoria",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Victoria -> V (Roman numeral for 5) + C (Roman letter C, representing the first three letters of Christ)",
+   "reading": "a symbolic representation of '5C' or '5Christ'",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Victoria -> V (Roman numeral for 5)",
+   "reading": "a symbolic representation of the number 5",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

@@ -1,0 +1,76 @@
+{
+ "word": "Paris",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:03:29+00:00",
+ "latency_s": 17.61,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paris (Latin) > Parisius (Late Latin) > Parisium (Old French) > París (Modern French)\",\n    \"reading\": \"city named after the river Parisis, which itself may be derived from a Celtic word for 'oblique' or 'slanting'\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"Onomasticon by Isidore of Seville and Larousse Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Paris > pa + ri + s\",\n    \"reading\": \"father (pa) + city (ri) + sun (s)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paris (French) = Paris (Greek) > πάρις, meaning 'maiden' or 'virgin'\",\n    \"reading\": \"city named after a maiden or virgin\",\n    \"languages\": [\"fr\", \"grc\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Paris > sari + rap\",\n    \"reading\": \"silk cloth (sari) + to seize or capture (rap)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Paris > P(aris) R(ei) S(alicie) (after King Philip the Fair, who married Isabella of France, also known as Margaret of England, or Margarete de Francia in French)\",\n    \"reading\": \"initial letters of Philip the Fair's wives\",\n    \"languages\": [\"fr\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Paris > P (peace) + A (alpha, beginning) + R (ruler) + I (Iota, smallest letter in the Greek alphabet) + S (sigma, sum or total)\",\n    \"reading\": \"city symbolizing peace, beginning, ruling, smallness, and totality\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Paris (Latin) > Parisius (Late Latin) > Parisium (Old French) > París (Modern French)",
+   "reading": "city named after the river Parisis, which itself may be derived from a Celtic word for 'oblique' or 'slanting'",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "Onomasticon by Isidore of Seville and Larousse Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Paris > pa + ri + s",
+   "reading": "father (pa) + city (ri) + sun (s)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris (French) = Paris (Greek) > πάρις, meaning 'maiden' or 'virgin'",
+   "reading": "city named after a maiden or virgin",
+   "languages": [
+    "fr",
+    "grc"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Paris > sari + rap",
+   "reading": "silk cloth (sari) + to seize or capture (rap)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Paris > P(aris) R(ei) S(alicie) (after King Philip the Fair, who married Isabella of France, also known as Margaret of England, or Margarete de Francia in French)",
+   "reading": "initial letters of Philip the Fair's wives",
+   "languages": [
+    "fr"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Paris > P (peace) + A (alpha, beginning) + R (ruler) + I (Iota, smallest letter in the Greek alphabet) + S (sigma, sum or total)",
+   "reading": "city symbolizing peace, beginning, ruling, smallness, and totality",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

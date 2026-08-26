@@ -1,0 +1,81 @@
+{
+ "word": "Manchester",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:28:14+00:00",
+ "latency_s": 12.1,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"man+chester\",\"reading\":\"hand of the city\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"cross_language_homophone\",\"chain\":\"Manchester (English) = manche (French)\",\"reading\":\"sleeve, arm covering\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.65},{\"operation\":\"anagram\",\"chain\":\"Manchester -> chancer mane\",\"reading\":\"to take a risk with one's hand\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.45},{\"operation\":\"etymology\",\"chain\":\"man (OE) + ceaster (Old English)\",\"reading\":\"fortress of the people\",\"languages\":[\"en\"],\"source\":\"Middle English Dictionary\",\"confidence\":0.9},{\"operation\":\"phonetic_split\",\"chain\":\"man+chest+er\",\"reading\":\"hand on chest, sign of respect or oath\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"anagram\",\"chain\":\"Manchester -> march can\",\"reading\":\"march with a container\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.5}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "man+chester",
+   "reading": "hand of the city",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manchester (English) = manche (French)",
+   "reading": "sleeve, arm covering",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester -> chancer mane",
+   "reading": "to take a risk with one's hand",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "etymology",
+   "chain": "man (OE) + ceaster (Old English)",
+   "reading": "fortress of the people",
+   "languages": [
+    "en"
+   ],
+   "source": "Middle English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man+chest+er",
+   "reading": "hand on chest, sign of respect or oath",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester -> march can",
+   "reading": "march with a container",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

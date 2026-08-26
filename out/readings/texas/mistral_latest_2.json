@@ -1,0 +1,76 @@
+{
+ "word": "Texas",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:53:25+00:00",
+ "latency_s": 12.53,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Texas (Spanish) = Tejas (Nahuatl) = friends\",\n    \"reading\": \"association or camaraderie\",\n    \"languages\": [\"es\", \"nau\"],\n    \"source\": \"Online Etymology Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Texas = tex + as\",\n    \"reading\": \"loom or weave (tex) + existence (as)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Texas = texa (Latin) = order, arrangement; texas (Greek) = to rub, wear away\",\n    \"reading\": \"organized structure or worn-down state\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Texas = sexta (Latin) = sixth\",\n    \"reading\": \"representing the sixth position or entity\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Texas = T + E (Eastern Orthodox Church) = Theotokos (God-bearer)\",\n    \"reading\": \"divine mother or bearer of God\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T = tau (Greek) = cross; X = chi (Greek) = Christ\",\n    \"reading\": \"cross of Christ or cruciform symbol\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Texas (Spanish) = Tejas (Nahuatl) = friends",
+   "reading": "association or camaraderie",
+   "languages": [
+    "es",
+    "nau"
+   ],
+   "source": "Online Etymology Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Texas = tex + as",
+   "reading": "loom or weave (tex) + existence (as)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Texas = texa (Latin) = order, arrangement; texas (Greek) = to rub, wear away",
+   "reading": "organized structure or worn-down state",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Texas = sexta (Latin) = sixth",
+   "reading": "representing the sixth position or entity",
+   "languages": [
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Texas = T + E (Eastern Orthodox Church) = Theotokos (God-bearer)",
+   "reading": "divine mother or bearer of God",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T = tau (Greek) = cross; X = chi (Greek) = Christ",
+   "reading": "cross of Christ or cruciform symbol",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

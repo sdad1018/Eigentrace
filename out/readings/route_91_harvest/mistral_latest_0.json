@@ -1,0 +1,76 @@
+{
+ "word": "Route 91 Harvest",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:44:35+00:00",
+ "latency_s": 12.06,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Route 91 Harvest: r-u-t-e n-i-n-e h-a-r-v-e-s-t\",\n    \"reading\": \"root nine heavenest\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Route (Fr.) - rut (Lat.) - route (Eng.), 91 - neuf (Fr.) - nine (Eng.), Harvest - herbe (Fr.) - grass (Eng.)\",\n    \"reading\": \"road of new grass\",\n    \"languages\": [\"fr\", \"la\", \"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Route 91 Harvest -> route+he's art\",\n    \"reading\": \"road of his art\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"R(oute) + 91 + H(arvest): R91H -> R + 9 + 1 + H -> R + I + C\",\n    \"reading\": \"RIC (Latin for 'rich')\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R - Rho (Greek astronomical symbol for a planet)\",\n    \"reading\": \"planetary road\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"91 -> 9 + 1 -> nine one\",\n    \"reading\": \"nine and one\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Route 91 Harvest: r-u-t-e n-i-n-e h-a-r-v-e-s-t",
+   "reading": "root nine heavenest",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Route (Fr.) - rut (Lat.) - route (Eng.), 91 - neuf (Fr.) - nine (Eng.), Harvest - herbe (Fr.) - grass (Eng.)",
+   "reading": "road of new grass",
+   "languages": [
+    "fr",
+    "la",
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Route 91 Harvest -> route+he's art",
+   "reading": "road of his art",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R(oute) + 91 + H(arvest): R91H -> R + 9 + 1 + H -> R + I + C",
+   "reading": "RIC (Latin for 'rich')",
+   "languages": [
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R - Rho (Greek astronomical symbol for a planet)",
+   "reading": "planetary road",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "numerical",
+   "chain": "91 -> 9 + 1 -> nine one",
+   "reading": "nine and one",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

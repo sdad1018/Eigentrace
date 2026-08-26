@@ -1,0 +1,75 @@
+{
+ "word": "Great Exuma",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:57:35+00:00",
+ "latency_s": 12.86,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great Exuma = (G)reat + (E)xuma\",\n    \"reading\": \"The great one's home\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great Exuma = (Gr)eat + (E)xuma\",\n    \"reading\": \"The great X's home\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great Exuma = (Gr)eat + (E)x + (U)ma\",\n    \"reading\": \"The great X, the mother's home\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Great Exuma = (Gr)eat + (E)xuma (Latin: exoma)\",\n    \"reading\": \"The great skin, the outer covering\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Great Exuma = (U)ma + (E)x + (Gr)eat\",\n    \"reading\": \"The home of the great X, reversed\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Great Exuma = (G)reat + (E)xuma (Initial letters of Great Exuma Island)\",\n    \"reading\": \"GE, initials of the island\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Great Exuma = (G)reat + (E)xuma",
+   "reading": "The great one's home",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Great Exuma = (Gr)eat + (E)xuma",
+   "reading": "The great X's home",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Great Exuma = (Gr)eat + (E)x + (U)ma",
+   "reading": "The great X, the mother's home",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Great Exuma = (Gr)eat + (E)xuma (Latin: exoma)",
+   "reading": "The great skin, the outer covering",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Great Exuma = (U)ma + (E)x + (Gr)eat",
+   "reading": "The home of the great X, reversed",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Great Exuma = (G)reat + (E)xuma (Initial letters of Great Exuma Island)",
+   "reading": "GE, initials of the island",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

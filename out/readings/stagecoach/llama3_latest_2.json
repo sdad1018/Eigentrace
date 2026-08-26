@@ -1,0 +1,84 @@
+{
+ "word": "Stagecoach",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:12:53+00:00",
+ "latency_s": 6.04,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"coach\",\n    \"reading\": \"vehicle for transporting people or goods\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 1\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"stage + coach\",\n    \"reading\": \"a dramatic performance, a vehicle for transportation\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"stage (English) + estage (French)\",\n    \"reading\": \"a raised platform, a place for performance or exhibition\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"stage + coach -> gache\",\n    \"reading\": \"to hinder or impede, to obstruct\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"stage + coach -> GACH (Gematria: 3+1+3=7)\",\n    \"reading\": \"perfection, completion, fulfillment (Hebrew: shelem)\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"stage -> S (Sun, Sol)\",\n    \"reading\": \"illumination, enlightenment\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "coach",
+   "reading": "vehicle for transporting people or goods",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 1
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "stage + coach",
+   "reading": "a dramatic performance, a vehicle for transportation",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "stage (English) + estage (French)",
+   "reading": "a raised platform, a place for performance or exhibition",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "stage + coach -> gache",
+   "reading": "to hinder or impede, to obstruct",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "stage + coach -> GACH (Gematria: 3+1+3=7)",
+   "reading": "perfection, completion, fulfillment (Hebrew: shelem)",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "stage -> S (Sun, Sol)",
+   "reading": "illumination, enlightenment",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

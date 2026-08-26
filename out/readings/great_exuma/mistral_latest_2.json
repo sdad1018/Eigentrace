@@ -1,0 +1,74 @@
+{
+ "word": "Great Exuma",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:58:03+00:00",
+ "latency_s": 14.55,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great Exuma => Gre + at Exu + ma\",\n    \"reading\": \"the one who guards (Gre) at the altar (Exu) and invokes (ma)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Great Exuma => Gre + at Eum + a\",\n    \"reading\": \"the one who leads (Gre) in the realm of dreams (Eum) and awakens (a)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Great Exuma => Ma Exu + tra\",\n    \"reading\": \"the altar (Exu) of the mother (Ma) and the path (tra)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Great Exuma => G + E + X + U + M + A\",\n    \"reading\": \"the earth (Gaea) expands (Exu) and unites (M) with the heavens (Uranus, Aether)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Great Exuma => G + R + E + A + T + E + X + U + M + A\",\n    \"reading\": \"the gate (G) of revelation (R), the emergence (E) and truth (A) of time (T), the unknown (X), the earthly realm (M), and the afterlife (A)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Great Exuma => Great (from Old English 'great') + Exuma (a Bahamian island)\",\n    \"reading\": \"the large island\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Great Exuma => Gre + at Exu + ma",
+   "reading": "the one who guards (Gre) at the altar (Exu) and invokes (ma)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Great Exuma => Gre + at Eum + a",
+   "reading": "the one who leads (Gre) in the realm of dreams (Eum) and awakens (a)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Great Exuma => Ma Exu + tra",
+   "reading": "the altar (Exu) of the mother (Ma) and the path (tra)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Great Exuma => G + E + X + U + M + A",
+   "reading": "the earth (Gaea) expands (Exu) and unites (M) with the heavens (Uranus, Aether)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Great Exuma => G + R + E + A + T + E + X + U + M + A",
+   "reading": "the gate (G) of revelation (R), the emergence (E) and truth (A) of time (T), the unknown (X), the earthly realm (M), and the afterlife (A)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Great Exuma => Great (from Old English 'great') + Exuma (a Bahamian island)",
+   "reading": "the large island",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

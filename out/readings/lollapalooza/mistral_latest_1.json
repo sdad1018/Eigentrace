@@ -1,0 +1,74 @@
+{
+ "word": "Lollapalooza",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:42:59+00:00",
+ "latency_s": 11.47,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"\",\n    \"reading\": \"Loud-la-palooza (loud party)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Lollo + palooza\",\n    \"reading\": \"Lettuce party (Italian 'lollo' = lettuce)\",\n    \"languages\": [\"it\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"\",\n    \"reading\": \"Oz la polla (Spanish 'polla' = hen)\",\n    \"languages\": [\"es\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L + ollapalooza\",\n    \"reading\": \"Lead (Ollapalooza as a festival of music, leading to the concept of 'leading' or 'headlining')\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"\",\n    \"reading\": \"L (initial letter, symbolizing the event itself)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"From the name of a carnival-style tour of alternative rock bands in the United States (1991–2001)\",\n    \"reading\": \"Music festival (historically associated with alternative rock)\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.etymonline.com/word/Lollapalooza\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "Loud-la-palooza (loud party)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Lollo + palooza",
+   "reading": "Lettuce party (Italian 'lollo' = lettuce)",
+   "languages": [
+    "it"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "Oz la polla (Spanish 'polla' = hen)",
+   "languages": [
+    "es"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L + ollapalooza",
+   "reading": "Lead (Ollapalooza as a festival of music, leading to the concept of 'leading' or 'headlining')",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "L (initial letter, symbolizing the event itself)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "From the name of a carnival-style tour of alternative rock bands in the United States (1991–2001)",
+   "reading": "Music festival (historically associated with alternative rock)",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.etymonline.com/word/Lollapalooza"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

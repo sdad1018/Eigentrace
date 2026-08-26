@@ -1,0 +1,74 @@
+{
+ "word": "Fenway",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:42:19+00:00",
+ "latency_s": 12.72,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"fen + way\",\n    \"reading\": \"a place of concealment or refuge\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"fen (Old English) + vay (Middle English for 'road')\",\n    \"reading\": \"a hidden path or route\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"from Old English fenn + weg, meaning 'marshy way'\",\n    \"reading\": \"a path through a marshy area\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Fenway => wayfen\",\n    \"reading\": \"a reverse path or sequence\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"F (first letter) + en (short for 'of') + way (from Middle English 'wey')\",\n    \"reading\": \"a mark of possession or belonging for a path\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"F (chemical symbol for Fluorine) + en (short for 'energy') + way (from Middle English 'wey')\",\n    \"reading\": \"a path or route associated with energy and fluorine\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "fen + way",
+   "reading": "a place of concealment or refuge",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "fen (Old English) + vay (Middle English for 'road')",
+   "reading": "a hidden path or route",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "from Old English fenn + weg, meaning 'marshy way'",
+   "reading": "a path through a marshy area",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Fenway => wayfen",
+   "reading": "a reverse path or sequence",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "F (first letter) + en (short for 'of') + way (from Middle English 'wey')",
+   "reading": "a mark of possession or belonging for a path",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "F (chemical symbol for Fluorine) + en (short for 'energy') + way (from Middle English 'wey')",
+   "reading": "a path or route associated with energy and fluorine",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

@@ -1,0 +1,80 @@
+{
+ "word": "Abedi",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:56:47+00:00",
+ "latency_s": 16.66,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Abedi -> Abed (Arabic) + i (suffix in many languages to denote belonging)\",\n    \"reading\": \"One who belongs to the servant\",\n    \"languages\": [\"ar\"],\n    \"source\": \"https://www.etymonline.com/word/Abidi\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Abedi -> A (first letter in English alphabet) + be (sound of two syllables in English) + di (reversed 'id', a common sound in many languages)\",\n    \"reading\": \"The first, the sound of two, the reversed 'I'\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Abedi (English) -> abeïda (French) -> abedā (Sanskrit) -> abeda (Latin) -> abedos (Greek) -> abida (Arabic) -> abeda (Hebrew) -> עבידה (Hebrew) -> avodah (Hebrew) -> work\",\n    \"reading\": \"Work, in a phonetic journey across multiple languages\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"grc\", \"he\", \"ar\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Abedi -> I deba (French) -> debasement (English) -> a descent, a lowering\",\n    \"reading\": \"A descent, a lowering\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Abedi -> A + be + di (initial letters of 'Abd Allah', a common Arabic name meaning 'Servant of God')\",\n    \"reading\": \"Servant of God, in initials\",\n    \"languages\": [\"ar\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Abedi -> A (Alpha, the first letter in the Greek alphabet) + be (Beta, the second letter in the Greek alphabet) + di (Delta, the fourth letter in the Greek alphabet)\",\n    \"reading\": \"The first, the second, and the fourth of the Greek alphabet\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Abedi -> Abed (Arabic) + i (suffix in many languages to denote belonging)",
+   "reading": "One who belongs to the servant",
+   "languages": [
+    "ar"
+   ],
+   "source": "https://www.etymonline.com/word/Abidi"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Abedi -> A (first letter in English alphabet) + be (sound of two syllables in English) + di (reversed 'id', a common sound in many languages)",
+   "reading": "The first, the sound of two, the reversed 'I'",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Abedi (English) -> abeïda (French) -> abedā (Sanskrit) -> abeda (Latin) -> abedos (Greek) -> abida (Arabic) -> abeda (Hebrew) -> עבידה (Hebrew) -> avodah (Hebrew) -> work",
+   "reading": "Work, in a phonetic journey across multiple languages",
+   "languages": [
+    "en",
+    "fr",
+    "la",
+    "grc",
+    "he",
+    "ar"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Abedi -> I deba (French) -> debasement (English) -> a descent, a lowering",
+   "reading": "A descent, a lowering",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Abedi -> A + be + di (initial letters of 'Abd Allah', a common Arabic name meaning 'Servant of God')",
+   "reading": "Servant of God, in initials",
+   "languages": [
+    "ar"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Abedi -> A (Alpha, the first letter in the Greek alphabet) + be (Beta, the second letter in the Greek alphabet) + di (Delta, the fourth letter in the Greek alphabet)",
+   "reading": "The first, the second, and the fourth of the Greek alphabet",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

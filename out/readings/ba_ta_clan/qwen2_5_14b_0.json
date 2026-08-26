@@ -1,0 +1,82 @@
+{
+ "word": "Ba-ta-clan",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:35:15+00:00",
+ "latency_s": 13.7,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"ba-ta-clan\",\"reading\":\"Babbling tongue of chaos\",\"languages\":[\"generative\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"cross_language_homophone\",\"chain\":\"bat + clan (French)\",\"reading\":\"Society of night creatures\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.65},{\"operation\":\"anagram\",\"chain\":\"ban + act + la\",\"reading\":\"Act of banning law\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.45},{\"operation\":\"etymology\",\"chain\":\"bataille (French) + clan (French)\",\"reading\":\"Warrior tribe's battle cry\",\"languages\":[\"fr\"],\"source\":\"Larousse Dictionary\",\"confidence\":0.85},{\"operation\":\"phonetic_split\",\"chain\":\"ba-ta-clan\",\"reading\":\"Mystical chant of the ancients\",\"languages\":[\"generative\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"letter_symbol\",\"chain\":\"B (beta) + A (alpha) + T + C (chi) + L (lambda) + A (alpha) + N\",\"reading\":\"Choral invocation to divine wisdom\",\"languages\":[\"grc\",\"en\"],\"source\":\"generative\",\"confidence\":0.5}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "ba-ta-clan",
+   "reading": "Babbling tongue of chaos",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bat + clan (French)",
+   "reading": "Society of night creatures",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "ban + act + la",
+   "reading": "Act of banning law",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "etymology",
+   "chain": "bataille (French) + clan (French)",
+   "reading": "Warrior tribe's battle cry",
+   "languages": [
+    "fr"
+   ],
+   "source": "Larousse Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ba-ta-clan",
+   "reading": "Mystical chant of the ancients",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (beta) + A (alpha) + T + C (chi) + L (lambda) + A (alpha) + N",
+   "reading": "Choral invocation to divine wisdom",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

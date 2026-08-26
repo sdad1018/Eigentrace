@@ -1,0 +1,81 @@
+{
+ "word": "Fenway",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:08:29+00:00",
+ "latency_s": 9.99,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \"chain\": \"\", \"reading\": \"find (to discover or locate)\", \"languages\": [\"en\"], \"source\": \"Oxford English Dictionary\", \"confidence\": 1.0},\n  {\"operation\": \"phonetic_split\", \"chain\": \"\", \"reading\": \"fen + way; fen = marsh, fen-like; way = manner, direction\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.8},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"\", \"reading\": \"French: fin (end) + voie (way); English: find one's way to the end\", \"languages\": [\"fr\", \"en\"], \"source\": \"generative\", \"confidence\": 0.7},\n  {\"operation\": \"anagram\", \"chain\": \"\", \"reading\": \"new fan; new = fresh, recent; fan = enthusiast, devotee\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.9},\n  {\"operation\": \"notariqon\", \"chain\": \"\", \"reading\": \"fan + en; fan = to praise; en = in, within\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.6},\n  {\"operation\": \"letter_symbol\", \"chain\": \"\", \"reading\": \"F (first letter of Fen) + W (way); F symbolizes beginning, foundation; W symbolizes journey, path\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.5}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "find (to discover or locate)",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 1.0
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "fen + way; fen = marsh, fen-like; way = manner, direction",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "French: fin (end) + voie (way); English: find one's way to the end",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "new fan; new = fresh, recent; fan = enthusiast, devotee",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "fan + en; fan = to praise; en = in, within",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "F (first letter of Fen) + W (way); F symbolizes beginning, foundation; W symbolizes journey, path",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

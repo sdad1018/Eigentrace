@@ -1,0 +1,79 @@
+{
+ "word": "Roker Point",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:34:11+00:00",
+ "latency_s": 15.05,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"Roker Point -> Roke + point\",\"reading\":\"Mystical incantation focusing on a specific location.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"cross_language_homophone\",\"chain\":\"Roker (English) -> Roque (French)\",\"reading\":\"A reference to chess, particularly the rook piece.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.65},{\"operation\":\"anagram\",\"chain\":\"Roker Point -> Roke + pornet\",\"reading\":\"Innocent flirtation or playful teasing.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.45},{\"operation\":\"notariqon\",\"chain\":\"Roker Point -> Rope + knot\",\"reading\":\"Connection and binding, suggesting a strong relationship.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"letter_symbol\",\"chain\":\"R as Regulus (Leo), o as Ouroboros, k as Kabbalah, e as Eternity; P as Pisces, o as Ouroboros, i as Iota, n as Neptune, t as Taurus\",\"reading\":\"Cyclical wisdom and spiritual transformation.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.5},{\"operation\":\"numerical\",\"chain\":\"Roker Point -> 18 + 73\",\"reading\":\"Completion and fulfillment of a cycle or journey.\",\"languages\":[],\"source\":\"generative\",\"confidence\":0.4}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Roker Point -> Roke + point",
+   "reading": "Mystical incantation focusing on a specific location.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Roker (English) -> Roque (French)",
+   "reading": "A reference to chess, particularly the rook piece.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Roker Point -> Roke + pornet",
+   "reading": "Innocent flirtation or playful teasing.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Roker Point -> Rope + knot",
+   "reading": "Connection and binding, suggesting a strong relationship.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R as Regulus (Leo), o as Ouroboros, k as Kabbalah, e as Eternity; P as Pisces, o as Ouroboros, i as Iota, n as Neptune, t as Taurus",
+   "reading": "Cyclical wisdom and spiritual transformation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "Roker Point -> 18 + 73",
+   "reading": "Completion and fulfillment of a cycle or journey.",
+   "languages": [],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

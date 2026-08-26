@@ -1,0 +1,78 @@
+{
+ "word": "Mandalay",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:47:45+00:00",
+ "latency_s": 11.93,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mandala (Sanskrit) = circle or pattern\",\n    \"reading\": \"circle or pattern\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"grc\"],\n    \"source\": \"Online Etymology Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + Da + Lay\",\n    \"reading\": \"From the land (Da) of Man\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Man (English) = Mand (Hebrew) + day\",\n    \"reading\": \"From the day of Man\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay -> L'Aman (French) = the refuge\",\n    \"reading\": \"The refuge\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Mandalay -> M + D + A + L + A + Y -> Maria (Latin) = of Mary\",\n    \"reading\": \"Of Mary\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Mandalay -> M + D + A + L + A + Y -> M (Mercury) + D (Diamond) + A (Air) + L (Luna, Moon) + A (Alpha) + Y (Yang)\",\n    \"reading\": \"Mercury, Diamond, Air, Moon, Alpha, Yang\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Mandala (Sanskrit) = circle or pattern",
+   "reading": "circle or pattern",
+   "languages": [
+    "en",
+    "fr",
+    "la",
+    "grc"
+   ],
+   "source": "Online Etymology Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + Da + Lay",
+   "reading": "From the land (Da) of Man",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Man (English) = Mand (Hebrew) + day",
+   "reading": "From the day of Man",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay -> L'Aman (French) = the refuge",
+   "reading": "The refuge",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Mandalay -> M + D + A + L + A + Y -> Maria (Latin) = of Mary",
+   "reading": "Of Mary",
+   "languages": [
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Mandalay -> M + D + A + L + A + Y -> M (Mercury) + D (Diamond) + A (Air) + L (Luna, Moon) + A (Alpha) + Y (Yang)",
+   "reading": "Mercury, Diamond, Air, Moon, Alpha, Yang",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

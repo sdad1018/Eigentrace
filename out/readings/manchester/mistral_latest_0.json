@@ -1,0 +1,85 @@
+{
+ "word": "Manchester",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:55:03+00:00",
+ "latency_s": 15.71,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"man + chester\",\n    \"reading\": \"a place of merchants\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + (che)ster\",\n    \"reading\": \"a place of protection\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Manchester -> Man + (chateau)re\",\n    \"reading\": \"a place of protection in French\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester -> chartre (French for 'monastery')\",\n    \"reading\": \"a place of religious learning\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Manchester -> M + an(c)hester\",\n    \"reading\": \"a place of the people's leader\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Manchester -> M (Metal) + an(c)hester\",\n    \"reading\": \"a place of metallurgical activity\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Manchester -> M (13) + an(8) + chester (7+20+20+5+19+4+20)\",\n    \"reading\": \"a place with a total of 69\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "man + chester",
+   "reading": "a place of merchants",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + (che)ster",
+   "reading": "a place of protection",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manchester -> Man + (chateau)re",
+   "reading": "a place of protection in French",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester -> chartre (French for 'monastery')",
+   "reading": "a place of religious learning",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Manchester -> M + an(c)hester",
+   "reading": "a place of the people's leader",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Manchester -> M (Metal) + an(c)hester",
+   "reading": "a place of metallurgical activity",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "numerical",
+   "chain": "Manchester -> M (13) + an(8) + chester (7+20+20+5+19+4+20)",
+   "reading": "a place with a total of 69",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

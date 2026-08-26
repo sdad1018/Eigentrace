@@ -1,0 +1,75 @@
+{
+ "word": "Paddock",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:51:05+00:00",
+ "latency_s": 12.79,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"pad + dock\",\n    \"reading\": \"a place for keeping horses or other livestock\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"pad + do + cock\",\n    \"reading\": \"a place for keeping (domestic) fowl, a coop\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"pad + German 'Pate' (fruit cake)\",\n    \"reading\": \"a type of fruitcake, a dense cake made with candied or dried fruit and soaked in spirits\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"pad + ad + cock\",\n    \"reading\": \"a place for adding or attaching something, a dock (in a ship)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P + D + C\",\n    \"reading\": \"a monogram representing the Greek words for 'Jesus Christ', 'ΠΙΣΤΟΣ ΧΡΙΣΤΟΣ'\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P + A + D + O + C + K\",\n    \"reading\": \"a symbol for the atomic number of Potassium (K), 19\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "pad + dock",
+   "reading": "a place for keeping horses or other livestock",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pad + do + cock",
+   "reading": "a place for keeping (domestic) fowl, a coop",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "pad + German 'Pate' (fruit cake)",
+   "reading": "a type of fruitcake, a dense cake made with candied or dried fruit and soaked in spirits",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "pad + ad + cock",
+   "reading": "a place for adding or attaching something, a dock (in a ship)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P + D + C",
+   "reading": "a monogram representing the Greek words for 'Jesus Christ', 'ΠΙΣΤΟΣ ΧΡΙΣΤΟΣ'",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P + A + D + O + C + K",
+   "reading": "a symbol for the atomic number of Potassium (K), 19",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

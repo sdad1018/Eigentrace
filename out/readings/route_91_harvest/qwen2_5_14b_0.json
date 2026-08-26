@@ -1,0 +1,82 @@
+{
+ "word": "Route 91 Harvest",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:07:15+00:00",
+ "latency_s": 9.19,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"Route 91 Harvest = Route + 91 + Harv + est\",\"reading\":\"Way of the ninth path leading to gathering place\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"cross_language_homophone\",\"chain\":\"Harvest (English) ~ Arvaşte (Turkish) = to gather or collect\",\"reading\":\"Collection or assembly point for resources\",\"languages\":[\"en\",\"tr\"],\"source\":\"generative\",\"confidence\":0.5},{\"operation\":\"anagram\",\"chain\":\"Route 91 Harvest = Route + Herve + art + ost\",\"reading\":\"Artistic route through the heart of a gathering\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.4},{\"operation\":\"etymology\",\"chain\":\"Harvest (Old English) = haerfest = autumn, season of reaping\",\"reading\":\"Season or time for cutting and collecting crops\",\"languages\":[\"en\"],\"source\":\"Middle English Dictionary\",\"confidence\":0.9},{\"operation\":\"phonetic_split\",\"chain\":\"Route 91 Harvest = Route + nine + one + harvest\",\"reading\":\"Path numbered by unity and plenty\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.65},{\"operation\":\"letter_symbol\",\"chain\":\"R (Latin) = Roman numerals for 800; H (Hebrew) = window, opening\",\"reading\":\"Opening onto the eighth century of the Roman era\",\"languages\":[\"la\",\"he\"],\"source\":\"generative\",\"confidence\":0.3}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Route 91 Harvest = Route + 91 + Harv + est",
+   "reading": "Way of the ninth path leading to gathering place",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Harvest (English) ~ Arvaşte (Turkish) = to gather or collect",
+   "reading": "Collection or assembly point for resources",
+   "languages": [
+    "en",
+    "tr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Route 91 Harvest = Route + Herve + art + ost",
+   "reading": "Artistic route through the heart of a gathering",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Harvest (Old English) = haerfest = autumn, season of reaping",
+   "reading": "Season or time for cutting and collecting crops",
+   "languages": [
+    "en"
+   ],
+   "source": "Middle English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Route 91 Harvest = Route + nine + one + harvest",
+   "reading": "Path numbered by unity and plenty",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R (Latin) = Roman numerals for 800; H (Hebrew) = window, opening",
+   "reading": "Opening onto the eighth century of the Roman era",
+   "languages": [
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

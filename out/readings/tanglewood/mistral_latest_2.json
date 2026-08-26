@@ -1,0 +1,75 @@
+{
+ "word": "Tanglewood",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:43:48+00:00",
+ "latency_s": 11.62,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"tangle + wood\",\n    \"reading\": \"A place of intertwined trees\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"tan + gle + wood\",\n    \"reading\": \"To bend or twist (tan) a flexible thing (gle) in a forest (wood)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"tanglewood (English) = tangue-bois (French)\",\n    \"reading\": \"Tangled wood\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"tanglewood => wedge altan\",\n    \"reading\": \"A type of seat or a high-quality wood (altan)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Tanglewood => T + angle + wood\",\n    \"reading\": \"The angle of a piece of wood, especially in carpentry\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T + angle + wood\",\n    \"reading\": \"Triangle (T) + right angle (angle) + wood\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "tangle + wood",
+   "reading": "A place of intertwined trees",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "tan + gle + wood",
+   "reading": "To bend or twist (tan) a flexible thing (gle) in a forest (wood)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "tanglewood (English) = tangue-bois (French)",
+   "reading": "Tangled wood",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "tanglewood => wedge altan",
+   "reading": "A type of seat or a high-quality wood (altan)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Tanglewood => T + angle + wood",
+   "reading": "The angle of a piece of wood, especially in carpentry",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T + angle + wood",
+   "reading": "Triangle (T) + right angle (angle) + wood",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

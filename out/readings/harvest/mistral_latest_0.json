@@ -1,0 +1,76 @@
+{
+ "word": "Harvest",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:45:14+00:00",
+ "latency_s": 12.32,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"harvest (Old English hærfest) = autumn season of gathering crops\",\n    \"reading\": \"season of reaping\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"harvest = har (harvesting) + vest (vestige, remainder)\",\n    \"reading\": \"action of gathering and remaining\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"harvest (English) = heuretiske (Norwegian) = discovery, exploration\",\n    \"reading\": \"exploration of gathering\",\n    \"languages\": [\"en\", \"no\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"harvest = starht (start of harvest)\",\n    \"reading\": \"commencement of gathering\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"HARvest = H + A + R = He + Aleph + Resh = ה + א + ר = Hebrew for 'the' (definite article)\",\n    \"reading\": \"definite article in Hebrew\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"H (Harvest) = H (Hydrogen, first element)\",\n    \"reading\": \"first element in the periodic table\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "harvest (Old English hærfest) = autumn season of gathering crops",
+   "reading": "season of reaping",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "harvest = har (harvesting) + vest (vestige, remainder)",
+   "reading": "action of gathering and remaining",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "harvest (English) = heuretiske (Norwegian) = discovery, exploration",
+   "reading": "exploration of gathering",
+   "languages": [
+    "en",
+    "no"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "harvest = starht (start of harvest)",
+   "reading": "commencement of gathering",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "HARvest = H + A + R = He + Aleph + Resh = ה + א + ר = Hebrew for 'the' (definite article)",
+   "reading": "definite article in Hebrew",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "H (Harvest) = H (Hydrogen, first element)",
+   "reading": "first element in the periodic table",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

@@ -1,0 +1,76 @@
+{
+ "word": "Gillette Stadium",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:39:18+00:00",
+ "latency_s": 10.5,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gil + ette Sta + dum\",\n    \"reading\": \"gilded stand\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Gil + ette (fr) = Gilbert, Sta (en) = state, dum (latin) = dumb\",\n    \"reading\": \"gilded silent state\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Sta + dum = stand\",\n    \"reading\": \"steadfast, firm\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Gillette (initial letters) = G L\",\n    \"reading\": \"gallant, bold\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"G = gold, I = eye, L = lions (heraldry)\",\n    \"reading\": \"golden eyed lion stadium\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Stadium (from Greek) = place of contest, public assembly\",\n    \"reading\": \"public gathering place\",\n    \"languages\": [\"en\"],\n    \"source\": \"Onomasticon Periegeticum by Stephanus Byzantius\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Gil + ette Sta + dum",
+   "reading": "gilded stand",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gil + ette (fr) = Gilbert, Sta (en) = state, dum (latin) = dumb",
+   "reading": "gilded silent state",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Sta + dum = stand",
+   "reading": "steadfast, firm",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Gillette (initial letters) = G L",
+   "reading": "gallant, bold",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G = gold, I = eye, L = lions (heraldry)",
+   "reading": "golden eyed lion stadium",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Stadium (from Greek) = place of contest, public assembly",
+   "reading": "public gathering place",
+   "languages": [
+    "en"
+   ],
+   "source": "Onomasticon Periegeticum by Stephanus Byzantius"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

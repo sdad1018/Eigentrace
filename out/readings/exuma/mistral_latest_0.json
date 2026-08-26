@@ -1,0 +1,74 @@
+{
+ "word": "Exuma",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:58:14+00:00",
+ "latency_s": 10.52,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"\",\n    \"reading\": \"Ex + u + ma: out from the mother (Latin ex and mater)\",\n    \"languages\": [\"la\"],\n    \"source\": \"Latin Dictionary by Lewis & Short\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"\",\n    \"reading\": \"E + x + u + ma: from the house (Latin ex and domus)\",\n    \"languages\": [\"la\"],\n    \"source\": \"Latin Dictionary by Lewis & Short\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"\",\n    \"reading\": \"Ex + u + ma (English): exhumed, brought out from the ground\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"\",\n    \"reading\": \"x + u + m + a: multiplication symbol (times) in algebra\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"\",\n    \"reading\": \"E + x + u + ma: Exodus, the book in the Bible\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"\",\n    \"reading\": \"Exuma (Greek): epsilon xi omicron upsilon alpha, a symbol or acrostic\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "Ex + u + ma: out from the mother (Latin ex and mater)",
+   "languages": [
+    "la"
+   ],
+   "source": "Latin Dictionary by Lewis & Short"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "E + x + u + ma: from the house (Latin ex and domus)",
+   "languages": [
+    "la"
+   ],
+   "source": "Latin Dictionary by Lewis & Short"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "Ex + u + ma (English): exhumed, brought out from the ground",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "x + u + m + a: multiplication symbol (times) in algebra",
+   "languages": [
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "E + x + u + ma: Exodus, the book in the Bible",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "Exuma (Greek): epsilon xi omicron upsilon alpha, a symbol or acrostic",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

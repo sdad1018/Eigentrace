@@ -1,0 +1,75 @@
+{
+ "word": "Manchester",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:55:26+00:00",
+ "latency_s": 10.67,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"man (Old English) + chester (Roman castra)\",\n    \"reading\": \"place of the people\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + (che)ster\",\n    \"reading\": \"protector of the people\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"man (Old English) + Manchester (English) = manchester (French) = mouchoir (French) = handkerchief\",\n    \"reading\": \"city of handkerchiefs\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester => chan(t)er\",\n    \"reading\": \"a place of singing\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M + anchester\",\n    \"reading\": \"with (Old English) + city\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (Roman numeral) = 1000\",\n    \"reading\": \"thousand city\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "man (Old English) + chester (Roman castra)",
+   "reading": "place of the people",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + (che)ster",
+   "reading": "protector of the people",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "man (Old English) + Manchester (English) = manchester (French) = mouchoir (French) = handkerchief",
+   "reading": "city of handkerchiefs",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester => chan(t)er",
+   "reading": "a place of singing",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M + anchester",
+   "reading": "with (Old English) + city",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (Roman numeral) = 1000",
+   "reading": "thousand city",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

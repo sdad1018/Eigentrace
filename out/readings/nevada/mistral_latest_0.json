@@ -1,0 +1,75 @@
+{
+ "word": "Nevada",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:49:27+00:00",
+ "latency_s": 12.25,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Nevada (Spanish) = snowy\",\n    \"reading\": \"a place with much snow\",\n    \"languages\": [\"es\"],\n    \"source\": \"https://www.etymonline.com/word/Nevada\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ne-va-da\",\n    \"reading\": \"not known, veiled, hidden\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"ne (Latin) + vada (Old Norse)\",\n    \"reading\": \"not + river\",\n    \"languages\": [\"la\", \"no\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"vane-da\",\n    \"reading\": \"one who turns (wind vane) + river\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"N (Roman numeral for 50) + E (fifth letter of the alphabet) + V (23rd letter of the alphabet) + A (first letter of the alphabet)\",\n    \"reading\": \"the fifth, twenty-third, first letters of the alphabet\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N (nitrogen) + e (electron) + va (volt-ampere)\",\n    \"reading\": \"nitrogen, electron, volt-ampere\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Nevada (Spanish) = snowy",
+   "reading": "a place with much snow",
+   "languages": [
+    "es"
+   ],
+   "source": "https://www.etymonline.com/word/Nevada"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ne-va-da",
+   "reading": "not known, veiled, hidden",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "ne (Latin) + vada (Old Norse)",
+   "reading": "not + river",
+   "languages": [
+    "la",
+    "no"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "vane-da",
+   "reading": "one who turns (wind vane) + river",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "N (Roman numeral for 50) + E (fifth letter of the alphabet) + V (23rd letter of the alphabet) + A (first letter of the alphabet)",
+   "reading": "the fifth, twenty-third, first letters of the alphabet",
+   "languages": [
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N (nitrogen) + e (electron) + va (volt-ampere)",
+   "reading": "nitrogen, electron, volt-ampere",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

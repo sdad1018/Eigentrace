@@ -1,0 +1,72 @@
+{
+ "word": "Tanglewood",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:43:36+00:00",
+ "latency_s": 9.94,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"tangle + wood\",\n    \"reading\": \"an entangled forest\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"tan + gle + wood\",\n    \"reading\": \"to bend or twist (something) skillfully; forest\",\n    \"languages\": [\"en\"]\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"tang + le + wood\",\n    \"reading\": \"touch, feel + laurel tree\",\n    \"languages\": [\"fr\", \"la\"]\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"\",\n    \"reading\": \"lead in wood\",\n    \"languages\": [\"en\"]\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"\",\n    \"reading\": \"T for Theo (Greek for God)\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"\",\n    \"reading\": \"T: tension, stress; W: double U\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "tangle + wood",
+   "reading": "an entangled forest",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "tan + gle + wood",
+   "reading": "to bend or twist (something) skillfully; forest",
+   "languages": [
+    "en"
+   ]
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "tang + le + wood",
+   "reading": "touch, feel + laurel tree",
+   "languages": [
+    "fr",
+    "la"
+   ]
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "lead in wood",
+   "languages": [
+    "en"
+   ]
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "T for Theo (Greek for God)",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "T: tension, stress; W: double U",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

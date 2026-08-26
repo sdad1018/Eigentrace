@@ -1,0 +1,86 @@
+{
+ "word": "Paris",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:37:47+00:00",
+ "latency_s": 14.95,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"etymology\",\"chain\":\"Paris (French) = derived from Celtic elements meaning 'marsh'\",\"reading\":\"wetland area\",\"languages\":[\"en\",\"fr\"],\"source\":\"Oxford English Dictionary\",\"confidence\":0.95},{\"operation\":\"phonetic_split\",\"chain\":\"pa + ris; pa (Latin) = father, ris (Old French) = root\",\"reading\":\"ancestral origin\",\"languages\":[\"la\",\"fr\"],\"source\":\"generative\",\"confidence\":0.8},{\"operation\":\"cross_language_homophone\",\"chain\":\"Paris (French) = pair is (English)\",\"reading\":\"two of a kind\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.75},{\"operation\":\"anagram\",\"chain\":\"sir pap; sir (Old English) = master, pap (Middle English) = food for infants\",\"reading\":\"nurturing authority\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.65},{\"operation\":\"notariqon\",\"chain\":\"P + A + R + I + S; Pater Adorans Regem In Sacrum\",\"reading\":\"father worships the sacred king\",\"languages\":[\"la\",\"he\"],\"source\":\"generative\",\"confidence\":0.45},{\"operation\":\"letter_symbol\",\"chain\":\"P = peace, A = alpha (beginning), R = ruler, I = eye (perception), S = strength\",\"reading\":\"visionary leadership in harmony\",\"languages\":[\"en\",\"grc\"],\"source\":\"generative\",\"confidence\":0.6}]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Paris (French) = derived from Celtic elements meaning 'marsh'",
+   "reading": "wetland area",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pa + ris; pa (Latin) = father, ris (Old French) = root",
+   "reading": "ancestral origin",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris (French) = pair is (English)",
+   "reading": "two of a kind",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "sir pap; sir (Old English) = master, pap (Middle English) = food for infants",
+   "reading": "nurturing authority",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P + A + R + I + S; Pater Adorans Regem In Sacrum",
+   "reading": "father worships the sacred king",
+   "languages": [
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P = peace, A = alpha (beginning), R = ruler, I = eye (perception), S = strength",
+   "reading": "visionary leadership in harmony",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

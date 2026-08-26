@@ -1,0 +1,74 @@
+{
+ "word": "Victoria",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:55:38+00:00",
+ "latency_s": 12.18,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Victoria (Latin) from victor (vincere), to conquer or be victorious\",\n    \"reading\": \"success in conquering or overcoming\",\n    \"languages\": [\"la\"],\n    \"source\": \"Lewis, Charles T., and Charles Short. A Latin Dictionary on Historical Principles: Founded on Andrews' Latin Lexicon. Oxford University Press, 1879.\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"victoria = vict + oria (Latin for victory + region)\",\n    \"reading\": \"region of victory or triumph\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Victoria (Latin) = victis (Latin for defeated)\",\n    \"reading\": \"a state of being defeated or subdued\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Victoria = citoria (Latin for city of citadel)\",\n    \"reading\": \"a fortified city or stronghold\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Victoria (Latin) = V + C (initial letters of Victoria and Christi, Latin for Victory and Christ)\",\n    \"reading\": \"a symbolic representation of victory in Christianity\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Victoria = V (Roman numeral for 5) + C (Roman numeral for 100)\",\n    \"reading\": \"a numerical representation of 105\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Victoria (Latin) from victor (vincere), to conquer or be victorious",
+   "reading": "success in conquering or overcoming",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis, Charles T., and Charles Short. A Latin Dictionary on Historical Principles: Founded on Andrews' Latin Lexicon. Oxford University Press, 1879."
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "victoria = vict + oria (Latin for victory + region)",
+   "reading": "region of victory or triumph",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Victoria (Latin) = victis (Latin for defeated)",
+   "reading": "a state of being defeated or subdued",
+   "languages": [
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Victoria = citoria (Latin for city of citadel)",
+   "reading": "a fortified city or stronghold",
+   "languages": [
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Victoria (Latin) = V + C (initial letters of Victoria and Christi, Latin for Victory and Christ)",
+   "reading": "a symbolic representation of victory in Christianity",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Victoria = V (Roman numeral for 5) + C (Roman numeral for 100)",
+   "reading": "a numerical representation of 105",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

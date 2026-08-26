@@ -1,0 +1,76 @@
+{
+ "word": "Wembley",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:40:08+00:00",
+ "latency_s": 10.88,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem + bley\",\n    \"reading\": \"Where every (m) begins (b) lightly\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wem (German) = they; bley (French) = lead\",\n    \"reading\": \"They lead\",\n    \"languages\": [\"de\", \"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Wem + ley\",\n    \"reading\": \"We'll (future tense of 'will') lay\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Initial letters: W + E + M + ley\",\n    \"reading\": \"We (pronoun) may\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"W = Wolfram's symbol for weight; E = energy; M = mass; ley = Latin for 'law'\",\n    \"reading\": \"Weight, energy, and mass under law\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"From Old English 'Wembla' meaning 'womb-field', possibly referring to the stadium's shape\",\n    \"reading\": \"A womb-like field\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem + bley",
+   "reading": "Where every (m) begins (b) lightly",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wem (German) = they; bley (French) = lead",
+   "reading": "They lead",
+   "languages": [
+    "de",
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Wem + ley",
+   "reading": "We'll (future tense of 'will') lay",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Initial letters: W + E + M + ley",
+   "reading": "We (pronoun) may",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "W = Wolfram's symbol for weight; E = energy; M = mass; ley = Latin for 'law'",
+   "reading": "Weight, energy, and mass under law",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "From Old English 'Wembla' meaning 'womb-field', possibly referring to the stadium's shape",
+   "reading": "A womb-like field",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

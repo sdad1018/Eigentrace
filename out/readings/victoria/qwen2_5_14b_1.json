@@ -1,0 +1,91 @@
+{
+ "word": "Victoria",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:29:09+00:00",
+ "latency_s": 18.78,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"etymology\",\"chain\":\"Victoria (Latin) = victorious woman\",\"reading\":\"Woman who has triumphed in battle or competition.\",\"languages\":[\"la\"],\"source\":\"Oxford Latin Dictionary\",\"confidence\":0.9},{\"operation\":\"phonetic_split\",\"chain\":\"Vic + toria\",\"reading\":\"Power over; carrying through to victory.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.75},{\"operation\":\"cross_language_homophone\",\"chain\":\"Victoria (English) = vitória (Portuguese)\",\"reading\":\"Victory in a foreign tongue.\",\"languages\":[\"pt\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"anagram\",\"chain\":\"Civitora\",\"reading\":\"A civic leader or official.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.5},{\"operation\":\"notariqon\",\"chain\":\"Vic + toria = Via Christi\",\"reading\":\"Path of the Christian; spiritual journey.\",\"languages\":[\"la\",\"grc\"],\"source\":\"generative\",\"confidence\":0.4},{\"operation\":\"letter_symbol\",\"chain\":\"V=Victory, I=Imperial, C=Crown, T=Triumphant, O=Omnipotent, R=Royal, I=Invincible, A=Aegis\",\"reading\":\"Symbol of power and invincibility.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.3},{\"operation\":\"numerical\",\"chain\":\"V(22) + i(9) + c(3) + t(2) + o(15) + r(18) + i(9) + a(1)\",\"reading\":\"Numerological value 87, suggesting leadership and success.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.2}]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Victoria (Latin) = victorious woman",
+   "reading": "Woman who has triumphed in battle or competition.",
+   "languages": [
+    "la"
+   ],
+   "source": "Oxford Latin Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vic + toria",
+   "reading": "Power over; carrying through to victory.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Victoria (English) = vitória (Portuguese)",
+   "reading": "Victory in a foreign tongue.",
+   "languages": [
+    "pt"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Civitora",
+   "reading": "A civic leader or official.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Vic + toria = Via Christi",
+   "reading": "Path of the Christian; spiritual journey.",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V=Victory, I=Imperial, C=Crown, T=Triumphant, O=Omnipotent, R=Royal, I=Invincible, A=Aegis",
+   "reading": "Symbol of power and invincibility.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "V(22) + i(9) + c(3) + t(2) + o(15) + r(18) + i(9) + a(1)",
+   "reading": "Numerological value 87, suggesting leadership and success.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

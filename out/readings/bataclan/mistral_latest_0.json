@@ -1,0 +1,77 @@
+{
+ "word": "Bataclan",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:00:13+00:00",
+ "latency_s": 17.55,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba + ta + clan\",\n    \"reading\": \"A vessel or container that holds (clan)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Ba + ta + clan = Ba + tata + lan (Spanish) = father + father + land\",\n    \"reading\": \"The land of the fathers\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bataclan = lan + at + cab (French) = land + hot + hut\",\n    \"reading\": \"A hot, small shelter on the land\",\n    \"languages\": [\"fr\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Bataclan = B + T + A + C + L + A + N (reversed) = Beatus + Templum + Ad + Calamitatem + Notus (Latin) = Blessed Temple, Towards Calamity\",\n    \"reading\": \"A blessed temple facing calamity\",\n    \"languages\": [\"la\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B: Beginning, A: Alpha (first letter of the Greek alphabet), T: Crossed lines (Tau in Hebrew), C: Concave or hollow, L: Ladder or steps, A: Alpha (first letter of the Greek alphabet), N: Nascent or new\",\n    \"reading\": \"The beginning of a new, concave, or hollow ladder or steps (Alpha being the first letter of the Greek alphabet)\",\n    \"languages\": [\"en\", \"grc\", \"he\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"B: 2, A: 1, T: 20 (Tau in Hebrew), C: 3, L: 50 (Lamed in Hebrew), A: 1, N: 50 (Nun in Hebrew)\",\n    \"reading\": \"Two hundred and fifty-one\",\n    \"languages\": [\"he\"],\n    \"source\": \"Generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba + ta + clan",
+   "reading": "A vessel or container that holds (clan)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Ba + ta + clan = Ba + tata + lan (Spanish) = father + father + land",
+   "reading": "The land of the fathers",
+   "languages": [
+    "en",
+    "es"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bataclan = lan + at + cab (French) = land + hot + hut",
+   "reading": "A hot, small shelter on the land",
+   "languages": [
+    "fr"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Bataclan = B + T + A + C + L + A + N (reversed) = Beatus + Templum + Ad + Calamitatem + Notus (Latin) = Blessed Temple, Towards Calamity",
+   "reading": "A blessed temple facing calamity",
+   "languages": [
+    "la"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B: Beginning, A: Alpha (first letter of the Greek alphabet), T: Crossed lines (Tau in Hebrew), C: Concave or hollow, L: Ladder or steps, A: Alpha (first letter of the Greek alphabet), N: Nascent or new",
+   "reading": "The beginning of a new, concave, or hollow ladder or steps (Alpha being the first letter of the Greek alphabet)",
+   "languages": [
+    "en",
+    "grc",
+    "he"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "numerical",
+   "chain": "B: 2, A: 1, T: 20 (Tau in Hebrew), C: 3, L: 50 (Lamed in Hebrew), A: 1, N: 50 (Nun in Hebrew)",
+   "reading": "Two hundred and fifty-one",
+   "languages": [
+    "he"
+   ],
+   "source": "Generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

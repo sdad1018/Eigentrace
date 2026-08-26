@@ -1,0 +1,19 @@
+{
+ "word": "Mandalay Bay",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:47:20+00:00",
+ "latency_s": 13.9,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Mand + a + lay + Bay\",\n    \"reading\": \"A land by the bay, in an expansive manner\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mand (Sanskrit) + alai (Old French) + bay (Old English)\",\n    \"reading\": \"A divine protection, a shelter by the sea\",\n    \"languages\": [\"sa\",\"fr\",\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mand + alay (Arabic) + bay (Old English)\",\n    \"reading\": \"A guide for the people, a fortified town by the sea\",\n    \"languages\": [\"ar\",\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Mand (Hebrew) + alay (Aramaic) + bay (Old English)\",\n    \"reading\": \"A place of judgment, a fortress by the sea\",\n    \"languages\": [\"he\",\"ar\",\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (Egyptian hieroglyph for 'Ra') + and + al (Arabic for 'the') + lay (Old English) + Bay (Greek for 'bay')\",\n    \"reading\": \"The divine power of Ra, by the sea bay\",\n    \"languages\": [\"he\",\"ar\",\"grc\",\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mand (Persian) + alay (Arabic) + bay (Old English)\",\n    \"reading\": \"A place of refuge, a fortified town by the sea\",\n    \"languages\": [\"fa\",\"ar\",\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n    \"confidence\": 0.85\n  }\n]",
+ "parsed": null,
+ "parse_error": "json_error: Expecting ',' delimiter: line 43 column 5 (char 1433)",
+ "extracted": false,
+ "n_readings": 0,
+ "refusal_like": false
+}

@@ -1,0 +1,74 @@
+{
+ "word": "Houston",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:52:28+00:00",
+ "latency_s": 11.26,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"\",\n    \"reading\": \"House-ton: a ton (measurement) for the house\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"\",\n    \"reading\": \"Haut-son: high sound (French)\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Huston (Old English) = Hwostertun, meaning 'horses' farmstead or enclosure'\",\n    \"reading\": \"Place for horses\",\n    \"languages\": [\"en\"],\n    \"source\": \"Onomastic Dictionary of England, Volume 13\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"\",\n    \"reading\": \"Outshun: to shine out from (something)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"\",\n    \"reading\": \"H-U-S-T-O-N: Hierus Usto (Greek) meaning 'holy oil merchant'\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"\",\n    \"reading\": \"H: House, U: You, S: Sun, T: Cross, O: Owl, N: New: 'You in the house of the new sun (under the watchful eye)'\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "House-ton: a ton (measurement) for the house",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "Haut-son: high sound (French)",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Huston (Old English) = Hwostertun, meaning 'horses' farmstead or enclosure'",
+   "reading": "Place for horses",
+   "languages": [
+    "en"
+   ],
+   "source": "Onomastic Dictionary of England, Volume 13"
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "Outshun: to shine out from (something)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "H-U-S-T-O-N: Hierus Usto (Greek) meaning 'holy oil merchant'",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "H: House, U: You, S: Sun, T: Cross, O: Owl, N: New: 'You in the house of the new sun (under the watchful eye)'",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

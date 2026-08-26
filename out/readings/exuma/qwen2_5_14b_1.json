@@ -1,0 +1,81 @@
+{
+ "word": "Exuma",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:32:14+00:00",
+ "latency_s": 14.25,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n    {\"operation\":\"phonetic_split\",\"chain\":\"Ex + u + ma\",\"reading\":\"External union or alliance.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},\n    {\"operation\":\"cross_language_homophone\",\"chain\":\"Exuma (English) = Exu (Brazilian Portuguese)\",\"reading\":\"Associated with the Afro-Brazilian deity of crossroads and magic.\",\"languages\":[\"en\",\"pt_br\"],\"source\":\"generative\",\"confidence\":0.5},\n    {\"operation\":\"anagram\",\"chain\":\"Exuma\",\"reading\":\"A Mexican, a place or state in Mexico.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.3},\n    {\"operation\":\"etymology\",\"chain\":\"ex + um (Latin) = out of the boundary\",\"reading\":\"Beyond limits or boundaries; transcendent.\",\"languages\":[\"la\"],\"source\":\"Lewis and Short Latin Dictionary\",\"confidence\":0.9},\n    {\"operation\":\"phonetic_split\",\"chain\":\"Ex + u + ma\",\"reading\":\"Exit from a domain or realm.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n    {\"operation\":\"letter_symbol\",\"chain\":\"E (epsilon) + x (chi) + m (mu) + a (alpha)\",\"reading\":\"The convergence of knowledge, mystery, and the divine.\",\"languages\":[\"grc\"],\"source\":\"generative\",\"confidence\":0.4}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Ex + u + ma",
+   "reading": "External union or alliance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Exuma (English) = Exu (Brazilian Portuguese)",
+   "reading": "Associated with the Afro-Brazilian deity of crossroads and magic.",
+   "languages": [
+    "en",
+    "pt_br"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Exuma",
+   "reading": "A Mexican, a place or state in Mexico.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "etymology",
+   "chain": "ex + um (Latin) = out of the boundary",
+   "reading": "Beyond limits or boundaries; transcendent.",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis and Short Latin Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ex + u + ma",
+   "reading": "Exit from a domain or realm.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "E (epsilon) + x (chi) + m (mu) + a (alpha)",
+   "reading": "The convergence of knowledge, mystery, and the divine.",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

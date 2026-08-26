@@ -1,0 +1,74 @@
+{
+ "word": "Fenway",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:42:06+00:00",
+ "latency_s": 10.01,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"fen + way\",\n    \"reading\": \"A field or meadow with a path\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"fen (Old English) = marsh + way (Old English) = road\",\n    \"reading\": \"A path through a marsh\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"nay we f\",\n    \"reading\": \"Not our way (in Old English)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"First letters of Fenway Park\",\n    \"reading\": \"FP, which could represent 'Field Park'\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"F = phi (Greek) = love or desire + way\",\n    \"reading\": \"Love's path\",\n    \"languages\": [\"grc\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Fenway (Old English) = fen + weg, where fen means 'marsh' and weg means 'road'\",\n    \"reading\": \"A road through a marsh\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "fen + way",
+   "reading": "A field or meadow with a path",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "fen (Old English) = marsh + way (Old English) = road",
+   "reading": "A path through a marsh",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "nay we f",
+   "reading": "Not our way (in Old English)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "First letters of Fenway Park",
+   "reading": "FP, which could represent 'Field Park'",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "F = phi (Greek) = love or desire + way",
+   "reading": "Love's path",
+   "languages": [
+    "grc"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Fenway (Old English) = fen + weg, where fen means 'marsh' and weg means 'road'",
+   "reading": "A road through a marsh",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

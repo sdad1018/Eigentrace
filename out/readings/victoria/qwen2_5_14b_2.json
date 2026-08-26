@@ -1,0 +1,81 @@
+{
+ "word": "Victoria",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:29:21+00:00",
+ "latency_s": 12.26,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"etymology\",\"chain\":\"Victoria (Latin) = victorious woman\",\"reading\":\"Triumphant female figure\",\"languages\":[\"la\"],\"source\":\"Oxford Latin Dictionary\",\"confidence\":0.9},{\"operation\":\"phonetic_split\",\"chain\":\"Vic + toria\",\"reading\":\"Conquering power\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.5},{\"operation\":\"cross_language_homophone\",\"chain\":\"Victoria (Spanish) = victory, Victoria (Italian) = victory\",\"reading\":\"Victory in Romance languages\",\"languages\":[\"es\",\"it\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"anagram\",\"chain\":\"Civitora\",\"reading\":\"Civil order\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.4},{\"operation\":\"notariqon\",\"chain\":\"VICTORIA\",\"reading\":\"Very Important Conqueror Triumphantly Overruling Impediments And Rivals\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.2},{\"operation\":\"letter_symbol\",\"chain\":\"V (victory) + I (individuality) + C (conquest) + T (triumph)\",\"reading\":\"Symbol of personal victory and conquest\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.3}]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Victoria (Latin) = victorious woman",
+   "reading": "Triumphant female figure",
+   "languages": [
+    "la"
+   ],
+   "source": "Oxford Latin Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vic + toria",
+   "reading": "Conquering power",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Victoria (Spanish) = victory, Victoria (Italian) = victory",
+   "reading": "Victory in Romance languages",
+   "languages": [
+    "es",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Civitora",
+   "reading": "Civil order",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "VICTORIA",
+   "reading": "Very Important Conqueror Triumphantly Overruling Impediments And Rivals",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V (victory) + I (individuality) + C (conquest) + T (triumph)",
+   "reading": "Symbol of personal victory and conquest",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

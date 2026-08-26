@@ -1,0 +1,83 @@
+{
+ "word": "Mandalay",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:11:50+00:00",
+ "latency_s": 11.95,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n    {\"operation\":\"phonetic_split\",\"chain\":\"man + dale\",\"reading\":\"humanity in the valley or lowlands\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.8},\n    {\"operation\":\"cross_language_homophone\",\"chain\":\"Mandalay (English) = mandala (Sanskrit)\",\"reading\":\"circle or diagram representing the cosmos and spiritual universe\",\"languages\":[\"en\",\"sa\"],\"source\":\"generative\",\"confidence\":0.75},\n    {\"operation\":\"anagram\",\"chain\":\"Mad + lay\",\"reading\":\"madness in a state of disarray\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n    {\"operation\":\"letter_symbol\",\"chain\":\"M = Mars; A = Alpha (first principle); D = Divine; L = Light; A = Alpha; Y = Year or cycle\",\"reading\":\"divine light from the first principle, manifesting through Mars in cycles of time\",\"languages\":[\"en\",\"grc\"],\"source\":\"generative\",\"confidence\":0.5},\n    {\"operation\":\"numerical\",\"chain\":\"M=13; A=1; D=4; A=1; L=12; A=1; Y=25\",\"reading\":\"numerological value suggesting a cycle of transformation and enlightenment\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n    {\"operation\":\"phonetic_split\",\"chain\":\"man + dal (Sanskrit)\",\"reading\":\"human in the sacred or divine place\",\"languages\":[\"en\",\"sa\"],\"source\":\"generative\",\"confidence\":0.7}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "man + dale",
+   "reading": "humanity in the valley or lowlands",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay (English) = mandala (Sanskrit)",
+   "reading": "circle or diagram representing the cosmos and spiritual universe",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mad + lay",
+   "reading": "madness in a state of disarray",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M = Mars; A = Alpha (first principle); D = Divine; L = Light; A = Alpha; Y = Year or cycle",
+   "reading": "divine light from the first principle, manifesting through Mars in cycles of time",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "M=13; A=1; D=4; A=1; L=12; A=1; Y=25",
+   "reading": "numerological value suggesting a cycle of transformation and enlightenment",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + dal (Sanskrit)",
+   "reading": "human in the sacred or divine place",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

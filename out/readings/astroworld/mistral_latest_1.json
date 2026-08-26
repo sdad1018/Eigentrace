@@ -1,0 +1,75 @@
+{
+ "word": "Astroworld",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:51:29+00:00",
+ "latency_s": 15.07,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"A star + world\",\n    \"reading\": \"a celestial sphere and its inhabitants' domain\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"A star (star) + world (welt)\",\n    \"reading\": \"a cosmic sphere and its inhabitants' realm\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Astro + world\",\n    \"reading\": \"a star's realm or a planetary system\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"A (alpha) + S (sigma) + T (tau) + R (rho) + O (omicron) + W (omega) + O (omicron) + R (rho) + L (lambda) + D (delta)\",\n    \"reading\": \"the initial letters of Alpha, Sigma, Tau, Rho, Omicron, Omega, Omicron, Rho, Lambda, Delta\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"A (Alpha) = beginning; S (Sigma) = sum total; T (Tau) = measure of time, life; R (Rho) = turn around; O (Omicron) = figure 700; W (Omega) = end; L (Lambda) = link; D (Delta) = change\",\n    \"reading\": \"the beginning, sum total, measurement of time and life, turning point, figure 700, end, link, and change\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Astroworld (1989) - a roller coaster ride album by Travis Scott inspired by his childhood memories of Six Flags AstroWorld in Houston, Texas before its demolition in 2005\",\n    \"reading\": \"a musical journey reminiscing a now-defunct amusement park\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://en.wikipedia.org/wiki/Astroworld_(album)\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "A star + world",
+   "reading": "a celestial sphere and its inhabitants' domain",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "A star (star) + world (welt)",
+   "reading": "a cosmic sphere and its inhabitants' realm",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Astro + world",
+   "reading": "a star's realm or a planetary system",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "A (alpha) + S (sigma) + T (tau) + R (rho) + O (omicron) + W (omega) + O (omicron) + R (rho) + L (lambda) + D (delta)",
+   "reading": "the initial letters of Alpha, Sigma, Tau, Rho, Omicron, Omega, Omicron, Rho, Lambda, Delta",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "A (Alpha) = beginning; S (Sigma) = sum total; T (Tau) = measure of time, life; R (Rho) = turn around; O (Omicron) = figure 700; W (Omega) = end; L (Lambda) = link; D (Delta) = change",
+   "reading": "the beginning, sum total, measurement of time and life, turning point, figure 700, end, link, and change",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Astroworld (1989) - a roller coaster ride album by Travis Scott inspired by his childhood memories of Six Flags AstroWorld in Houston, Texas before its demolition in 2005",
+   "reading": "a musical journey reminiscing a now-defunct amusement park",
+   "languages": [
+    "en"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Astroworld_(album)"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

@@ -1,0 +1,83 @@
+{
+ "word": "Eagles of Death Metal",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:35:54+00:00",
+ "latency_s": 14.22,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n    {\"operation\":\"phonetic_split\",\"chain\":\"Eagles of Death Metal\",\"reading\":\"Echoes off depths met\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},\n    {\"operation\":\"cross_language_homophone\",\"chain\":\"eagle (en) = aigle (fr)\",\"reading\":\"Sharpness, vigilance in French\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.6},\n    {\"operation\":\"anagram\",\"chain\":\"Eagles of Death Metal\",\"reading\":\"Dead Goth Male Seed Ale\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.5},\n    {\"operation\":\"etymology\",\"chain\":\"Death (Old English dēað) = deaþ; deaþ = ‘to die’\",\"reading\":\"Mortality, inevitability of death\",\"languages\":[\"en\",\"ang\"],\"source\":\"Oxford English Dictionary\",\"confidence\":0.9},\n    {\"operation\":\"phonetic_split\",\"chain\":\"Eagles of Death Metal\",\"reading\":\"Edgeless oaths met\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n    {\"operation\":\"letter_symbol\",\"chain\":\"A (alpha) = beginning, E (epsilon) = life force\",\"reading\":\"Start of vital energy\",\"languages\":[\"grc\",\"he\"],\"source\":\"generative\",\"confidence\":0.4}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Eagles of Death Metal",
+   "reading": "Echoes off depths met",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "eagle (en) = aigle (fr)",
+   "reading": "Sharpness, vigilance in French",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Eagles of Death Metal",
+   "reading": "Dead Goth Male Seed Ale",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Death (Old English dēað) = deaþ; deaþ = ‘to die’",
+   "reading": "Mortality, inevitability of death",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Eagles of Death Metal",
+   "reading": "Edgeless oaths met",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "A (alpha) = beginning, E (epsilon) = life force",
+   "reading": "Start of vital energy",
+   "languages": [
+    "grc",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

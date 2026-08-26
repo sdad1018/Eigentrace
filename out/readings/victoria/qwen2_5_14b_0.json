@@ -1,0 +1,101 @@
+{
+ "word": "Victoria",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:28:50+00:00",
+ "latency_s": 22.05,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n    {\"operation\":\"phonetic_split\",\"chain\":\"Vic-tor-ia\",\"reading\":\"Victory over the king's house\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n    {\"operation\":\"etymology\",\"chain\":\"Latin victoria = victory; from vincere (to conquer)\",\"reading\":\"Conquest and triumph\",\"languages\":[\"la\"],\"source\":\"Lewis & Short Latin Dictionary\",\"confidence\":1},\n    {\"operation\":\"cross_language_homophone\",\"chain\":\"Victoria (en) = Vitória (pt) = Victory in Portuguese\",\"reading\":\"Victory and joy\",\"languages\":[\"en\",\"pt\"],\"source\":\"generative\",\"confidence\":0.5},\n    {\"operation\":\"anagram\",\"chain\":\"Vic-tor-ia -> Victor ia\",\"reading\":\"The king's daughter speaks\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.4},\n    {\"operation\":\"notariqon\",\"chain\":\"V I C T O R I A = Via Immanis Christi Tractus Ordinis Regalis In Aquarius\",\"reading\":\"Path of the great order through water\",\"languages\":[\"la\"],\"source\":\"generative\",\"confidence\":0.3},\n    {\"operation\":\"letter_symbol\",\"chain\":\"V as victory; I as one or unity; C as circle or completion; T as cross; O as zero or void; R as ruler or regal; A as alpha or beginning\",\"reading\":\"Unity and triumph over the void, leading to a new beginning\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.5},\n    {\"operation\":\"numerical\",\"chain\":\"V = 22; I = 9; C = 3; T = 4; O = 15; R = 18; I = 9; A = 1; Sum = 87\",\"reading\":\"Completion and fulfillment\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n    {\"operation\":\"phonetic_split\",\"chain\":\"Vic-tor-ia -> Vic tor ia (Spanish for 'I am yours')\",\"reading\":\"Possession or ownership\",\"languages\":[\"es\"],\"source\":\"generative\",\"confidence\":0.4}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Vic-tor-ia",
+   "reading": "Victory over the king's house",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Latin victoria = victory; from vincere (to conquer)",
+   "reading": "Conquest and triumph",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis & Short Latin Dictionary",
+   "confidence": 1
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Victoria (en) = Vitória (pt) = Victory in Portuguese",
+   "reading": "Victory and joy",
+   "languages": [
+    "en",
+    "pt"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Vic-tor-ia -> Victor ia",
+   "reading": "The king's daughter speaks",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V I C T O R I A = Via Immanis Christi Tractus Ordinis Regalis In Aquarius",
+   "reading": "Path of the great order through water",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V as victory; I as one or unity; C as circle or completion; T as cross; O as zero or void; R as ruler or regal; A as alpha or beginning",
+   "reading": "Unity and triumph over the void, leading to a new beginning",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "V = 22; I = 9; C = 3; T = 4; O = 15; R = 18; I = 9; A = 1; Sum = 87",
+   "reading": "Completion and fulfillment",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vic-tor-ia -> Vic tor ia (Spanish for 'I am yours')",
+   "reading": "Possession or ownership",
+   "languages": [
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

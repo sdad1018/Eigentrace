@@ -1,0 +1,83 @@
+{
+ "word": "Mandalay Bay",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:11:38+00:00",
+ "latency_s": 11.83,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n    {\"operation\":\"phonetic_split\",\"chain\":\"Mandalay + Bay\",\"reading\":\"Magical realm of the sea\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},\n    {\"operation\":\"cross_language_homophone\",\"chain\":\"Mandalay (sounds like) mandala; Bay (sounds like) bei (Chinese: 湾)\",\"reading\":\"Circular sanctuary by the water\",\"languages\":[\"en\",\"zh\"],\"source\":\"generative\",\"confidence\":0.65},\n    {\"operation\":\"anagram\",\"chain\":\"Bay Mandalay\",\"reading\":\"By mad landlay\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.4},\n    {\"operation\":\"etymology\",\"chain\":\"Mandalay (Burmese: မန္တလေး) + Bay (Old English: bæg)\",\"reading\":\"City of gems and curved bay\",\"languages\":[\"en\",\"my\"],\"source\":\"Oxford English Dictionary\",\"confidence\":0.9},\n    {\"operation\":\"phonetic_split\",\"chain\":\"Mandalay + Bay\",\"reading\":\"Land of many daisies by the sea\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.55},\n    {\"operation\":\"letter_symbol\",\"chain\":\"B (Beth) + M (Mem)\",\"reading\":\"House of water, source of life\",\"languages\":[\"he\",\"ar\"],\"source\":\"The Alphabet and the Hebrew Mysteries\",\"confidence\":0.8}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Mandalay + Bay",
+   "reading": "Magical realm of the sea",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay (sounds like) mandala; Bay (sounds like) bei (Chinese: 湾)",
+   "reading": "Circular sanctuary by the water",
+   "languages": [
+    "en",
+    "zh"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bay Mandalay",
+   "reading": "By mad landlay",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Mandalay (Burmese: မန္တလေး) + Bay (Old English: bæg)",
+   "reading": "City of gems and curved bay",
+   "languages": [
+    "en",
+    "my"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Mandalay + Bay",
+   "reading": "Land of many daisies by the sea",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (Beth) + M (Mem)",
+   "reading": "House of water, source of life",
+   "languages": [
+    "he",
+    "ar"
+   ],
+   "source": "The Alphabet and the Hebrew Mysteries",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

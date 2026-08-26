@@ -1,0 +1,77 @@
+{
+ "word": "Mandalay Bay",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:46:55+00:00",
+ "latency_s": 11.6,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + da + lay + bay\",\n    \"reading\": \"A man of the day (or present) by the bay\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"mandala + bay\",\n    \"reading\": \"A circular design (Mandala) by the bay\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"lay + mandal + bay\",\n    \"reading\": \"A land (Mandal) by the lay\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M + A + B\",\n    \"reading\": \"First, second, and third (MAB in Hebrew numerology)\",\n    \"languages\": [\"he\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M: Mars, A: Alpha, B: Beta\",\n    \"reading\": \"Mars (planet) and the first two letters of the Greek alphabet\",\n    \"languages\": [\"en\", \"la\", \"grc\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mandalay: derived from Burmese Mandalay, meaning 'the city located on the royal hill'\",\n    \"reading\": \"A city located on a royal hill (from its origin)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "man + da + lay + bay",
+   "reading": "A man of the day (or present) by the bay",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "mandala + bay",
+   "reading": "A circular design (Mandala) by the bay",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "lay + mandal + bay",
+   "reading": "A land (Mandal) by the lay",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M + A + B",
+   "reading": "First, second, and third (MAB in Hebrew numerology)",
+   "languages": [
+    "he"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M: Mars, A: Alpha, B: Beta",
+   "reading": "Mars (planet) and the first two letters of the Greek alphabet",
+   "languages": [
+    "en",
+    "la",
+    "grc"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Mandalay: derived from Burmese Mandalay, meaning 'the city located on the royal hill'",
+   "reading": "A city located on a royal hill (from its origin)",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

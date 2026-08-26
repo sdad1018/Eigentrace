@@ -1,0 +1,81 @@
+{
+ "word": "Luxor",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:18:56+00:00",
+ "latency_s": 54.04,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"Luxor = Lux + or\",\"reading\":\"Light of the lord\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.8},{\"operation\":\"cross_language_homophone\",\"chain\":\"Luxor (English) ~ lux (Latin)\",\"reading\":\"Pleasure, light, splendor\",\"languages\":[\"la\",\"en\"],\"source\":\"generative\",\"confidence\":0.75},{\"operation\":\"anagram\",\"chain\":\"Luxor = Loxur\",\"reading\":\"Mystical journey of the owl\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"etymology\",\"chain\":\"Luxor (Latin) lux + orae\",\"reading\":\"City of light and borders\",\"languages\":[\"la\"],\"source\":\"Oxford Latin Dictionary\",\"confidence\":0.95},{\"operation\":\"phonetic_split\",\"chain\":\"Luxor = Lux + or\",\"reading\":\"Radiant place, divine location\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.8},{\"operation\":\"letter_symbol\",\"chain\":\"L (Lambda) + U (Upsilon) + X (Chi) + O (Omega) + R (Rho)\",\"reading\":\"Wisdom and knowledge through the ages\",\"languages\":[\"grc\"],\"source\":\"generative\",\"confidence\":0.65}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Luxor = Lux + or",
+   "reading": "Light of the lord",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Luxor (English) ~ lux (Latin)",
+   "reading": "Pleasure, light, splendor",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "Luxor = Loxur",
+   "reading": "Mystical journey of the owl",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Luxor (Latin) lux + orae",
+   "reading": "City of light and borders",
+   "languages": [
+    "la"
+   ],
+   "source": "Oxford Latin Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Luxor = Lux + or",
+   "reading": "Radiant place, divine location",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L (Lambda) + U (Upsilon) + X (Chi) + O (Omega) + R (Rho)",
+   "reading": "Wisdom and knowledge through the ages",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

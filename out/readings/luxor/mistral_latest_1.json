@@ -1,0 +1,77 @@
+{
+ "word": "Luxor",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:48:20+00:00",
+ "latency_s": 11.34,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Lux - or (Old French) light - gold\",\n    \"reading\": \"Place of light or place of gold\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Online Etymology Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lux - or (split by vowels)\",\n    \"reading\": \"Loosely, the sound of 'loo' and 'or'\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Lux - Lucis (Latin) - Lux (Greek)\",\n    \"reading\": \"Light, as in the celestial body\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Lux - Xul (Mayan) - Lux\",\n    \"reading\": \"A city, a name, and itself\",\n    \"languages\": [\"en\", \"ma\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Lux - LX (Roman numerals) - Lux\",\n    \"reading\": \"A number, a symbol, and itself\",\n    \"languages\": [\"la\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Lux - L (chemical symbol for Lithium) - Lux\",\n    \"reading\": \"A chemical element, itself, and Lux\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Lux - or (Old French) light - gold",
+   "reading": "Place of light or place of gold",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Online Etymology Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lux - or (split by vowels)",
+   "reading": "Loosely, the sound of 'loo' and 'or'",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Lux - Lucis (Latin) - Lux (Greek)",
+   "reading": "Light, as in the celestial body",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Lux - Xul (Mayan) - Lux",
+   "reading": "A city, a name, and itself",
+   "languages": [
+    "en",
+    "ma"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Lux - LX (Roman numerals) - Lux",
+   "reading": "A number, a symbol, and itself",
+   "languages": [
+    "la"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Lux - L (chemical symbol for Lithium) - Lux",
+   "reading": "A chemical element, itself, and Lux",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

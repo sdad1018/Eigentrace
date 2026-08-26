@@ -1,0 +1,76 @@
+{
+ "word": "Bahamas",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:59:16+00:00",
+ "latency_s": 10.85,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"\",\n    \"reading\": \"Ba (like 'father') + ha (like 'haw') + mas (like 'moss')\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"\",\n    \"reading\": \"Ba (like 'ba' in Italian for 'beer') + ha (like 'ha' in German for 'hay') + mas (like 'masse' in French for 'mass')\",\n    \"languages\": [\"it\", \"de\", \"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"\",\n    \"reading\": \"Hamas (Palestinian militant group)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"\",\n    \"reading\": \"BAM (acronym for British Antarctic Territory)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"\",\n    \"reading\": \"B (building) + A (anchored) + H (high) + A (atmosphere) + M (map)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"\",\n    \"reading\": \"Derived from the Taíno word 'bahama' meaning 'shallow sea'\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "Ba (like 'father') + ha (like 'haw') + mas (like 'moss')",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "Ba (like 'ba' in Italian for 'beer') + ha (like 'ha' in German for 'hay') + mas (like 'masse' in French for 'mass')",
+   "languages": [
+    "it",
+    "de",
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "Hamas (Palestinian militant group)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "BAM (acronym for British Antarctic Territory)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "B (building) + A (anchored) + H (high) + A (atmosphere) + M (map)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "Derived from the Taíno word 'bahama' meaning 'shallow sea'",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

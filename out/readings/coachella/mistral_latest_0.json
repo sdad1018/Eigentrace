@@ -1,0 +1,75 @@
+{
+ "word": "Coachella",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:38:30+00:00",
+ "latency_s": 8.06,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Coa + chella\",\n    \"reading\": \"Cover (an animal) with a shell or similar protective covering\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Co + achella\",\n    \"reading\": \"A place of coal (Co) and shells (achella)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Co + achella = Kō + akhēla (Greek)\",\n    \"reading\": \"Covered (Kō) and chosen (akhēla) by the gods\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Coachella = acheloid\",\n    \"reading\": \"Relating to or resembling the River Achelous, which was said to have been shaped like a serpent\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Coachella = C + O + A + C + H + E + L + L + A\",\n    \"reading\": \"The first letters of California, Ohio, Arizona, Colorado, Hawaii, Louisiana, and Ella (a diminutive of Eleanor)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Coachella = C + O + A + C + H + E + L + L + A\",\n    \"reading\": \"Carbon (C), Oxygen (O), Aluminum (Al), Copper (Cu), Helium (He), Lithium (Li), Lead (Pb), and Argon (Ar)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Coa + chella",
+   "reading": "Cover (an animal) with a shell or similar protective covering",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Co + achella",
+   "reading": "A place of coal (Co) and shells (achella)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Co + achella = Kō + akhēla (Greek)",
+   "reading": "Covered (Kō) and chosen (akhēla) by the gods",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Coachella = acheloid",
+   "reading": "Relating to or resembling the River Achelous, which was said to have been shaped like a serpent",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Coachella = C + O + A + C + H + E + L + L + A",
+   "reading": "The first letters of California, Ohio, Arizona, Colorado, Hawaii, Louisiana, and Ella (a diminutive of Eleanor)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Coachella = C + O + A + C + H + E + L + L + A",
+   "reading": "Carbon (C), Oxygen (O), Aluminum (Al), Copper (Cu), Helium (He), Lithium (Li), Lead (Pb), and Argon (Ar)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

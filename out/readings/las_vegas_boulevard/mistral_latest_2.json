@@ -1,0 +1,85 @@
+{
+ "word": "Las Vegas Boulevard",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:50:40+00:00",
+ "latency_s": 18.3,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las (Spanish for thes) + Vegas (Valleys in Spanish) + Boulevard (French for broad road)\",\n    \"reading\": \"Broad roads in valleys of thes\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Online Etymology Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas Boulevard -> La Sev'-az Boo'-la-vard\",\n    \"reading\": \"The savage boulevard\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas Boulevard -> Las Vegas (Spanish) = The Meadows (English)\",\n    \"reading\": \"The meadows boulevard\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Boulevard -> Sage Vows Bold\",\n    \"reading\": \"Sage vows bold\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Las Vegas Boulevard -> LVB (initialism)\",\n    \"reading\": \"LVB\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Las Vegas Boulevard -> L (capital letter) + A + S + V + E + G + space + B + oo + l + e + v + a + r + d\",\n    \"reading\": \"LAS VEGAS BOOLEVARD\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Las Vegas Boulevard -> L(52) + A(1) + S(19) + V(22) + E(5) + G(7) + space + B(2) + oo(15) + l(12) + e(5) + v(22) + a(1) + r(18) + d(4)\",\n    \"reading\": \"52 1 19 22 5 7 space 2 15 12 5 22 1 18 4\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Las (Spanish for thes) + Vegas (Valleys in Spanish) + Boulevard (French for broad road)",
+   "reading": "Broad roads in valleys of thes",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Online Etymology Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas Boulevard -> La Sev'-az Boo'-la-vard",
+   "reading": "The savage boulevard",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas Boulevard -> Las Vegas (Spanish) = The Meadows (English)",
+   "reading": "The meadows boulevard",
+   "languages": [
+    "en",
+    "es"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Boulevard -> Sage Vows Bold",
+   "reading": "Sage vows bold",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Las Vegas Boulevard -> LVB (initialism)",
+   "reading": "LVB",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Las Vegas Boulevard -> L (capital letter) + A + S + V + E + G + space + B + oo + l + e + v + a + r + d",
+   "reading": "LAS VEGAS BOOLEVARD",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "numerical",
+   "chain": "Las Vegas Boulevard -> L(52) + A(1) + S(19) + V(22) + E(5) + G(7) + space + B(2) + oo(15) + l(12) + e(5) + v(22) + a(1) + r(18) + d(4)",
+   "reading": "52 1 19 22 5 7 space 2 15 12 5 22 1 18 4",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

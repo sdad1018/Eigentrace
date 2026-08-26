@@ -1,0 +1,84 @@
+{
+ "word": "Nevada",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:21:14+00:00",
+ "latency_s": 8.49,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"ne + va + da\",\"reading\":\"New path to the divine or distant\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"cross_language_homophone\",\"chain\":\"Nevada (English) = Névé (French)\",\"reading\":\"Snow field, symbolizing purity and renewal\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.65},{\"operation\":\"anagram\",\"chain\":\"Nevada -> Dane v\",\"reading\":\"Foreigner's view or perspective\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"notariqon\",\"chain\":\"NEVADA (Notariqon) = New Era, Divine Awakening\",\"reading\":\"New era of spiritual enlightenment\",\"languages\":[\"he\",\"en\"],\"source\":\"generative\",\"confidence\":0.65},{\"operation\":\"letter_symbol\",\"chain\":\"N - Neptune; V - Victory; D - Dominion; A - Alpha\",\"reading\":\"Victory through divine dominion in the realm of Neptune\",\"languages\":[\"grc\",\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"numerical\",\"chain\":\"N = 14 (English); E = 5; V = 22; A = 1; D = 4\",\"reading\":\"Luminous path to the divine (sums to 46, associated with spiritual awakening)\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "ne + va + da",
+   "reading": "New path to the divine or distant",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Nevada (English) = Névé (French)",
+   "reading": "Snow field, symbolizing purity and renewal",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Nevada -> Dane v",
+   "reading": "Foreigner's view or perspective",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "NEVADA (Notariqon) = New Era, Divine Awakening",
+   "reading": "New era of spiritual enlightenment",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N - Neptune; V - Victory; D - Dominion; A - Alpha",
+   "reading": "Victory through divine dominion in the realm of Neptune",
+   "languages": [
+    "grc",
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "numerical",
+   "chain": "N = 14 (English); E = 5; V = 22; A = 1; D = 4",
+   "reading": "Luminous path to the divine (sums to 46, associated with spiritual awakening)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

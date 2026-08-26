@@ -1,0 +1,76 @@
+{
+ "word": "Paris",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:03:11+00:00",
+ "latency_s": 12.74,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Paris = Pa + ri + s\",\n    \"reading\": \"father king (Old English)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paris = Paris (French) = παρίσιος (Greek) = 'beside the river'\",\n    \"reading\": \"near a river\",\n    \"languages\": [\"fr\", \"grc\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Paris = sari + pir\",\n    \"reading\": \"holy clothing (Sanskrit) + guardian of the city\",\n    \"languages\": [\"en\", \"sa\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Paris = Pater (Latin) + Rex (Latin)\",\n    \"reading\": \"Father King\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Paris = P (representing Papas in Greek) + A + R + I + S\",\n    \"reading\": \"Father (Greek) + River\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Paris = 19 (in English numerals)\",\n    \"reading\": \"nineteen\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Paris = Pa + ri + s",
+   "reading": "father king (Old English)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris = Paris (French) = παρίσιος (Greek) = 'beside the river'",
+   "reading": "near a river",
+   "languages": [
+    "fr",
+    "grc"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Paris = sari + pir",
+   "reading": "holy clothing (Sanskrit) + guardian of the city",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Paris = Pater (Latin) + Rex (Latin)",
+   "reading": "Father King",
+   "languages": [
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Paris = P (representing Papas in Greek) + A + R + I + S",
+   "reading": "Father (Greek) + River",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "numerical",
+   "chain": "Paris = 19 (in English numerals)",
+   "reading": "nineteen",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

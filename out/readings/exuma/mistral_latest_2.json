@@ -1,0 +1,74 @@
+{
+ "word": "Exuma",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:58:39+00:00",
+ "latency_s": 13.77,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"\",\n    \"reading\": \"Ex-u-ma: from Latin ex (out) and umbra (shadow), suggesting a place of shadows or the unknown\",\n    \"languages\": [\"la\"],\n    \"source\": \"Latin Dictionary by Lewis & Short\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"\",\n    \"reading\": \"Ex-u-ma: from Hebrew 'esem (existence) and hava (life), suggesting a place of life or existence\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"\",\n    \"reading\": \"Ex-u-ma: sounds like 'excess' in English, suggesting a place of abundance or excess\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"\",\n    \"reading\": \"Ex-u-ma: can be rearranged to 'xuma', which in Swahili means 'to hide' or 'secret place'\",\n    \"languages\": [\"sw\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"\",\n    \"reading\": \"Ex-u-ma: the initial letters form 'EUM', which could be a reference to Eumeneia, an ancient city of Caria in Asia Minor\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"\",\n    \"reading\": \"Ex-u-ma: X (chi) in Greek is the first letter of Christ's name and also symbolizes a mystery or secret, while U is the 21st letter in the alphabet, suggesting a place of transformation or revelation\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "Ex-u-ma: from Latin ex (out) and umbra (shadow), suggesting a place of shadows or the unknown",
+   "languages": [
+    "la"
+   ],
+   "source": "Latin Dictionary by Lewis & Short"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "Ex-u-ma: from Hebrew 'esem (existence) and hava (life), suggesting a place of life or existence",
+   "languages": [
+    "he"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "Ex-u-ma: sounds like 'excess' in English, suggesting a place of abundance or excess",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "Ex-u-ma: can be rearranged to 'xuma', which in Swahili means 'to hide' or 'secret place'",
+   "languages": [
+    "sw"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "Ex-u-ma: the initial letters form 'EUM', which could be a reference to Eumeneia, an ancient city of Caria in Asia Minor",
+   "languages": [
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "Ex-u-ma: X (chi) in Greek is the first letter of Christ's name and also symbolizes a mystery or secret, while U is the 21st letter in the alphabet, suggesting a place of transformation or revelation",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

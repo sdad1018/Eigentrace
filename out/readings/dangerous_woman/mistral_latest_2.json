@@ -1,0 +1,75 @@
+{
+ "word": "Dangerous Woman",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:54:07+00:00",
+ "latency_s": 14.93,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"d + an + ger + us + woman\",\n    \"reading\": \"The given word can be split into syllables, which in this case are 'd', 'an', 'ger', 'us', and 'woman'. Each of these syllables can be interpreted as separate words or concepts.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"d + an + ger (German) = today; us (Latin) = hic, meaning 'here' in English\",\n    \"reading\": \"'Today here woman' or 'The woman who is here today'\",\n    \"languages\": [\"de\", \"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"d + an + ger + us = danger + us\",\n    \"reading\": \"'Danger for us' or 'The danger that affects us'\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"First letters of each word: D + W\",\n    \"reading\": \"'D' and 'W', which can be interpreted as initials or standalone letters, carrying their own meanings in various contexts.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"'D' = diamond; 'W' = double-u\",\n    \"reading\": \"'Diamond woman' or 'Double-U woman'\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"danger + -ous + woman\",\n    \"reading\": \"'Dangerous woman' is a compound word derived from 'danger', which means 'peril', and the suffix '-ous', meaning 'full of', and 'woman'.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "d + an + ger + us + woman",
+   "reading": "The given word can be split into syllables, which in this case are 'd', 'an', 'ger', 'us', and 'woman'. Each of these syllables can be interpreted as separate words or concepts.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "d + an + ger (German) = today; us (Latin) = hic, meaning 'here' in English",
+   "reading": "'Today here woman' or 'The woman who is here today'",
+   "languages": [
+    "de",
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "d + an + ger + us = danger + us",
+   "reading": "'Danger for us' or 'The danger that affects us'",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "First letters of each word: D + W",
+   "reading": "'D' and 'W', which can be interpreted as initials or standalone letters, carrying their own meanings in various contexts.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "'D' = diamond; 'W' = double-u",
+   "reading": "'Diamond woman' or 'Double-U woman'",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "danger + -ous + woman",
+   "reading": "'Dangerous woman' is a compound word derived from 'danger', which means 'peril', and the suffix '-ous', meaning 'full of', and 'woman'.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

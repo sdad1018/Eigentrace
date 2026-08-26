@@ -1,0 +1,77 @@
+{
+ "word": "Bataclan",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:00:40+00:00",
+ "latency_s": 14.33,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ba + ta + clan\",\n    \"reading\": \"a combination of the words 'ba' (to carry), 'ta' (strike) and 'clan' (group or family)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"ba + ta + clan = ba + tate + lan\",\n    \"reading\": \"a combination of the English words 'bait' (to entice), 'tate' (a type of fish) and 'land'\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"ba + ta + clan = ba + tah + lan\",\n    \"reading\": \"a combination of the English words 'bait' (to entice) and 'tah' (Arabic for 'day') and 'lan' (Latin for 'lane')\",\n    \"languages\": [\"en\", \"ar\", \"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bataclan = Bat + aclan\",\n    \"reading\": \"from the Basque word 'bat' (house) and the Spanish word 'aclana' (field)\",\n    \"languages\": [\"eu\", \"es\"],\n    \"source\": \"Etymological Dictionary of the Basque Language\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bataclan = taclan + ab\",\n    \"reading\": \"a rearrangement of 'taclan' (to strike repeatedly) and 'ab' (from or off in Latin)\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Bataclan = B + A + t + a + clan\",\n    \"reading\": \"a combination of the first letters of 'Beatus' (blessed) and 'Aclan' (field) in Latin\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "ba + ta + clan",
+   "reading": "a combination of the words 'ba' (to carry), 'ta' (strike) and 'clan' (group or family)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "ba + ta + clan = ba + tate + lan",
+   "reading": "a combination of the English words 'bait' (to entice), 'tate' (a type of fish) and 'land'",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "ba + ta + clan = ba + tah + lan",
+   "reading": "a combination of the English words 'bait' (to entice) and 'tah' (Arabic for 'day') and 'lan' (Latin for 'lane')",
+   "languages": [
+    "en",
+    "ar",
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bataclan = Bat + aclan",
+   "reading": "from the Basque word 'bat' (house) and the Spanish word 'aclana' (field)",
+   "languages": [
+    "eu",
+    "es"
+   ],
+   "source": "Etymological Dictionary of the Basque Language"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bataclan = taclan + ab",
+   "reading": "a rearrangement of 'taclan' (to strike repeatedly) and 'ab' (from or off in Latin)",
+   "languages": [
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Bataclan = B + A + t + a + clan",
+   "reading": "a combination of the first letters of 'Beatus' (blessed) and 'Aclan' (field) in Latin",
+   "languages": [
+    "la"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

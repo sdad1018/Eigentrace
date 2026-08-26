@@ -1,0 +1,76 @@
+{
+ "word": "Las Vegas Boulevard",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:50:05+00:00",
+ "latency_s": 13.9,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas Boulevard = La + S Vega + s Bo + lv + e + ard\",\n    \"reading\": \"the, savage, small, wolf, love, hard\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas Boulevard = L + as Ve + ga Bo + lv + e + ard\",\n    \"reading\": \"the, arose, vaga (Latin for 'wandering'), bold, love, hard\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas Boulevard = L + as Ve + ga Bo + lv + e + ard\",\n    \"reading\": \"the, arose, Vega (star constellation), bold, love, hard\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas Boulevard = Las Vegas (Spanish) + boulevard\",\n    \"reading\": \"The Las Vegas promenade\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Boulevard = Boulevard's Vasa\",\n    \"reading\": \"The broad avenue of the Vasa (a Swedish warship)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Las Vegas Boulevard = L + V + B (initial letters) = Love's Valley Blvd.\",\n    \"reading\": \"Love's Valley Boulevard\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas Boulevard = La + S Vega + s Bo + lv + e + ard",
+   "reading": "the, savage, small, wolf, love, hard",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas Boulevard = L + as Ve + ga Bo + lv + e + ard",
+   "reading": "the, arose, vaga (Latin for 'wandering'), bold, love, hard",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas Boulevard = L + as Ve + ga Bo + lv + e + ard",
+   "reading": "the, arose, Vega (star constellation), bold, love, hard",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas Boulevard = Las Vegas (Spanish) + boulevard",
+   "reading": "The Las Vegas promenade",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Boulevard = Boulevard's Vasa",
+   "reading": "The broad avenue of the Vasa (a Swedish warship)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Las Vegas Boulevard = L + V + B (initial letters) = Love's Valley Blvd.",
+   "reading": "Love's Valley Boulevard",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

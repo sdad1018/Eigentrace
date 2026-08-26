@@ -1,0 +1,76 @@
+{
+ "word": "Eagles of Death Metal",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:02:14+00:00",
+ "latency_s": 17.89,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"eagle + of + death + metal\",\n    \"reading\": \"a musical ensemble playing songs about a powerful bird associated with mortality\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"eagle (Latin: aquila) + of + death (French: de la mort) + metal (Greek: χαλκός, chalkos)\",\n    \"reading\": \"from the bird of prey, the bringer of death, and the substance that conducts heat\",\n    \"languages\": [\"la\", \"fr\", \"grc\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"eagles + death\",\n    \"reading\": \"a gathering of birds associated with the end of life\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Eagles of Death Metal -> EODM -> End of Days Metal\",\n    \"reading\": \"music that symbolizes the final period in human history\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"E: element, A: alpha (first letter of Greek alphabet), G: gold (metal), L: laud (praise), S: sinew (strong band), O: omega (last letter of Greek alphabet), D: delta (change), M: metal\",\n    \"reading\": \"a musical group that embodies the essence of an element, praises its strength, binds it with change, and symbolizes its end\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"eagle: Old English ēagel; death: Middle English deeth, from Old English dēath; metal: Middle English metel, from Old French metail, from Latin metallum\",\n    \"reading\": \"a musical ensemble with roots in old languages, named after a powerful bird, the end, and the substance extracted from mines\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "eagle + of + death + metal",
+   "reading": "a musical ensemble playing songs about a powerful bird associated with mortality",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "eagle (Latin: aquila) + of + death (French: de la mort) + metal (Greek: χαλκός, chalkos)",
+   "reading": "from the bird of prey, the bringer of death, and the substance that conducts heat",
+   "languages": [
+    "la",
+    "fr",
+    "grc"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "eagles + death",
+   "reading": "a gathering of birds associated with the end of life",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Eagles of Death Metal -> EODM -> End of Days Metal",
+   "reading": "music that symbolizes the final period in human history",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "E: element, A: alpha (first letter of Greek alphabet), G: gold (metal), L: laud (praise), S: sinew (strong band), O: omega (last letter of Greek alphabet), D: delta (change), M: metal",
+   "reading": "a musical group that embodies the essence of an element, praises its strength, binds it with change, and symbolizes its end",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "eagle: Old English ēagel; death: Middle English deeth, from Old English dēath; metal: Middle English metel, from Old French metail, from Latin metallum",
+   "reading": "a musical ensemble with roots in old languages, named after a powerful bird, the end, and the substance extracted from mines",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

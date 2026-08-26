@@ -1,0 +1,84 @@
+{
+ "word": "Bahamas",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:32:45+00:00",
+ "latency_s": 14.4,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"Ba-ha-mas\",\"reading\":\"Bewildered repetition of a sacred place\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"cross_language_homophone\",\"chain\":\"Bahamas (English) = Bahama (Spanish)\",\"reading\":\"Island chain with historical Spanish influence\",\"languages\":[\"es\",\"en\"],\"source\":\"generative\",\"confidence\":0.5},{\"operation\":\"anagram\",\"chain\":\"Bahamas\",\"reading\":\"Shambas: chaotic or disordered place\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"notariqon\",\"chain\":\"Ba-ha-mas\",\"reading\":\"Blessed harmony and sanctuary\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.8},{\"operation\":\"letter_symbol\",\"chain\":\"Bahamas\",\"reading\":\"B - beginning, Alpha; H - house or temple; A - air or spirit; M - water; S - sun or fire\",\"languages\":[\"grc\",\"he\",\"ar\",\"en\"],\"source\":\"generative\",\"confidence\":0.75},{\"operation\":\"numerical\",\"chain\":\"1 8 13 1 4 19\",\"reading\":\"Numerological balance and new beginnings\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ha-mas",
+   "reading": "Bewildered repetition of a sacred place",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bahamas (English) = Bahama (Spanish)",
+   "reading": "Island chain with historical Spanish influence",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bahamas",
+   "reading": "Shambas: chaotic or disordered place",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Ba-ha-mas",
+   "reading": "Blessed harmony and sanctuary",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Bahamas",
+   "reading": "B - beginning, Alpha; H - house or temple; A - air or spirit; M - water; S - sun or fire",
+   "languages": [
+    "grc",
+    "he",
+    "ar",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "numerical",
+   "chain": "1 8 13 1 4 19",
+   "reading": "Numerological balance and new beginnings",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

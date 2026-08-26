@@ -1,0 +1,19 @@
+{
+ "word": "Manchester Arena",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:27:04+00:00",
+ "latency_s": 20.12,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n    {\"operation\": \"phonetic_split\", \"chain\": \"Man + chester + Arena\", \"reading\": \"Humanity's gathering place for contests of skill and strength.\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.8},\n    {\"operation\": \"anagram\", \"chain\": \"Manchester Arena -> Man can hear arena\", \"reading\": \"A space where one can listen to the sounds of a contest.\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.6},\n    {\"operation\": \"cross_language_homophone\", \"chain\": \"Man + chester (Fr: chêter) + Arena -> Man chêter arena\", \"reading\": \"A place where one can hunt or seek in vain.\", \"languages\": [\"en\",\"fr\"], \"source\": \"generative\", \"confidence\": 0.4},\n    {\"operation\": \"etymology\", \"chain\": \"Manchester (man = Latin manus, hand; chester = Old English ceaster, Roman fortress) + Arena (Latin arena, sand), \"reading\": \"A fortified human gathering place for public spectacles.\", \"languages\": [\"en\",\"la\"], \"source\": \"Oxford English Dictionary\", \"confidence\": 0.9},\n    {\"operation\": \"notariqon\", \"chain\": \"Man + chester + Arena -> M C A\", \"reading\": \"Mark of the master craftsman in a place of assembly.\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.5},\n    {\"operation\": \"letter_symbol\", \"chain\": \"M (Latin: Mars, god of war) + chester + Arena -> M C A\", \"reading\": \"A site dedicated to martial prowess and combat.\", \"languages\": [\"en\",\"la\"], \"source\": \"generative\", \"confidence\": 0.7}\n]",
+ "parsed": null,
+ "parse_error": "json_error: Expecting ',' delimiter: line 5 column 156 (char 826)",
+ "extracted": false,
+ "n_readings": 0,
+ "refusal_like": false
+}

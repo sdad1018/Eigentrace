@@ -1,0 +1,80 @@
+{
+ "word": "Ba-ta-clan",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:01:19+00:00",
+ "latency_s": 13.41,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ba + ta + clan\",\n    \"reading\": \"to carry (Latin: ferre) + tea (English: drink) + clan (Scottish Gaelic: family)\",\n    \"languages\": [\"la\", \"en\", \"grc\"],\n    \"source\": \"Onomatopoeia and Phonetic Cabala\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"ba (Chinese: 八) + tac (Czech: táč) + lan (Hungarian: lán)\",\n    \"reading\": \"eight (China) + plate (Czech) + thread (Hungary)\",\n    \"languages\": [\"zh\", \"cs\", \"hu\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"ba-ta-clan => batalcan\",\n    \"reading\": \"a type of ancient Roman fortification (Latin: castellum)\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Ba-ta-clan => BTC (Bitcoin)\",\n    \"reading\": \"digital currency based on cryptography (English)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Ba-ta-clan => B (battery) + T (tesla) + C (carbon)\",\n    \"reading\": \"energy storage device (English) + electric motor and energy company (Norwegian) + basic element (Latin)\",\n    \"languages\": [\"en\", \"no\", \"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Ba-ta-clan => 2+18+3+12 = 35\",\n    \"reading\": \"the atomic number of beryllium (Latin: beryllium) or the year 35 AD\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "ba + ta + clan",
+   "reading": "to carry (Latin: ferre) + tea (English: drink) + clan (Scottish Gaelic: family)",
+   "languages": [
+    "la",
+    "en",
+    "grc"
+   ],
+   "source": "Onomatopoeia and Phonetic Cabala"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "ba (Chinese: 八) + tac (Czech: táč) + lan (Hungarian: lán)",
+   "reading": "eight (China) + plate (Czech) + thread (Hungary)",
+   "languages": [
+    "zh",
+    "cs",
+    "hu"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "ba-ta-clan => batalcan",
+   "reading": "a type of ancient Roman fortification (Latin: castellum)",
+   "languages": [
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Ba-ta-clan => BTC (Bitcoin)",
+   "reading": "digital currency based on cryptography (English)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Ba-ta-clan => B (battery) + T (tesla) + C (carbon)",
+   "reading": "energy storage device (English) + electric motor and energy company (Norwegian) + basic element (Latin)",
+   "languages": [
+    "en",
+    "no",
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "numerical",
+   "chain": "Ba-ta-clan => 2+18+3+12 = 35",
+   "reading": "the atomic number of beryllium (Latin: beryllium) or the year 35 AD",
+   "languages": [
+    "la"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

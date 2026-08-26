@@ -1,0 +1,93 @@
+{
+ "word": "Wembley",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:06:25+00:00",
+ "latency_s": 14.85,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \n   \"chain\": \"\", \n   \"reading\": \"embel + ley\", \n   \"languages\": [\"en\"], \n   \"source\": \"Oxford English Dictionary\", \n   \"confidence\": 0.9},\n  {\"operation\": \"phonetic_split\", \n   \"chain\": \"\", \n   \"reading\": \"em (intense) + bley (to weave)\", \n   \"languages\": [\"fr\", \"la\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.7},\n  {\"operation\": \"cross_language_homophone\", \n   \"chain\": \"\", \n   \"reading\": \"Wem-bley (Welsh) = to weave a web\", \n   \"languages\": [\"cy\", \"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.6},\n  {\"operation\": \"anagram\", \n   \"chain\": \"\", \n   \"reading\": \"We M B Ley (hidden) = I am the way\", \n   \"languages\": [\"la\", \"he\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.8},\n  {\"operation\": \"notariqon\", \n   \"chain\": \"\", \n   \"reading\": \"Wem-bley (Hebrew) = to be in the midst of\", \n   \"languages\": [\"he\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.5},\n  {\"operation\": \"letter_symbol\", \n   \"chain\": \"\", \n   \"reading\": \"W= Wisdom, E= Earth, M= Mind, B= Being, L= Light, E= Eternal, Y= You\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.4},\n  {\"operation\": \"numerical\", \n   \"chain\": \"\", \n   \"reading\": \"Wembley = We M (Mind) + Bley (to weave) = 5+2+1+12+5+25 = 50\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.3}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "embel + ley",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "em (intense) + bley (to weave)",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "Wem-bley (Welsh) = to weave a web",
+   "languages": [
+    "cy",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "We M B Ley (hidden) = I am the way",
+   "languages": [
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "Wem-bley (Hebrew) = to be in the midst of",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "W= Wisdom, E= Earth, M= Mind, B= Being, L= Light, E= Eternal, Y= You",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "",
+   "reading": "Wembley = We M (Mind) + Bley (to weave) = 5+2+1+12+5+25 = 50",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

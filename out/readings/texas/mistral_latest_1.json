@@ -1,0 +1,75 @@
+{
+ "word": "Texas",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:53:12+00:00",
+ "latency_s": 10.95,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Texas = Te + xas\",\n    \"reading\": \"Teach (verb) + Existence\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Texas = Te + x + as\",\n    \"reading\": \"Teach (verb) + X (unknown variable) + Existence\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Texas = Téxas (Spanish pronunciation) = Tejas (in Sanskrit, means 'sacred', 'divine')\",\n    \"reading\": \"Divine Existence\",\n    \"languages\": [\"es\", \"sa\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Texas = Tejas (from the Caddo word teysha or the Hasinai teyaskokan, meaning 'friends' or 'allies')\",\n    \"reading\": \"Allied Existence\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Texas = T + E (initial letters) = Tenacity\",\n    \"reading\": \"Tenacious Existence\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T (Roman numeral) + E = TE = Two (in Roman numerals)\",\n    \"reading\": \"Second Existence\",\n    \"languages\": [\"la\"],\n    \"source\": \"Generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Texas = Te + xas",
+   "reading": "Teach (verb) + Existence",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Texas = Te + x + as",
+   "reading": "Teach (verb) + X (unknown variable) + Existence",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Texas = Téxas (Spanish pronunciation) = Tejas (in Sanskrit, means 'sacred', 'divine')",
+   "reading": "Divine Existence",
+   "languages": [
+    "es",
+    "sa"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Texas = Tejas (from the Caddo word teysha or the Hasinai teyaskokan, meaning 'friends' or 'allies')",
+   "reading": "Allied Existence",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Texas = T + E (initial letters) = Tenacity",
+   "reading": "Tenacious Existence",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T (Roman numeral) + E = TE = Two (in Roman numerals)",
+   "reading": "Second Existence",
+   "languages": [
+    "la"
+   ],
+   "source": "Generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

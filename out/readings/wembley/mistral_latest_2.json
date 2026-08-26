@@ -1,0 +1,75 @@
+{
+ "word": "Wembley",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:40:35+00:00",
+ "latency_s": 12.21,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wembley = W + em + bley\",\n    \"reading\": \"Double Ember (fire)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley = V + em + bay (French)\",\n    \"reading\": \"Water Bay\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Wembley = me + b + ley\",\n    \"reading\": \"My Blessing\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Wembley = W + M + L + Y\",\n    \"reading\": \"World, Man, Life, Yes\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Wembley = W (omega) + E (epsilon) + M (mu) + B (beta) + L (lambda) + E (epsilon) + Y (upsilon)\",\n    \"reading\": \"Omega, Epsilon, Mu, Beta, Lambda, Epsilon, Upsilon\",\n    \"languages\": [\"grc\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Wembley = derived from Wembly, a misspelling of Wimbledon (a London suburb)\",\n    \"reading\": \"Mis-spelled Wimbledon\",\n    \"languages\": [\"en\"],\n    \"source\": \"The Oxford English Dictionary\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Wembley = W + em + bley",
+   "reading": "Double Ember (fire)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley = V + em + bay (French)",
+   "reading": "Water Bay",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Wembley = me + b + ley",
+   "reading": "My Blessing",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Wembley = W + M + L + Y",
+   "reading": "World, Man, Life, Yes",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Wembley = W (omega) + E (epsilon) + M (mu) + B (beta) + L (lambda) + E (epsilon) + Y (upsilon)",
+   "reading": "Omega, Epsilon, Mu, Beta, Lambda, Epsilon, Upsilon",
+   "languages": [
+    "grc"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Wembley = derived from Wembly, a misspelling of Wimbledon (a London suburb)",
+   "reading": "Mis-spelled Wimbledon",
+   "languages": [
+    "en"
+   ],
+   "source": "The Oxford English Dictionary"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

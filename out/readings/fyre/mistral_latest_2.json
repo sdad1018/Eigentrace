@@ -1,0 +1,74 @@
+{
+ "word": "Fyre",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:57:22+00:00",
+ "latency_s": 10.29,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fyre: fire (Old English) + yr (Old Norse for year)\",\n    \"reading\": \"The burning cycle of time\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fyre: fire (English) = feu (French)\",\n    \"reading\": \"The blazing counterpart\",\n    \"languages\": [\"en\", \"fr\"]\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Fyre: reify\",\n    \"reading\": \"To make real or tangible\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Fyre: F (Latin) = fornax (Latin for furnace)\",\n    \"reading\": \"The heated vessel\",\n    \"languages\": [\"la\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Fyre: F = phosphorus (chemical symbol)\",\n    \"reading\": \"The illuminating element\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Fyre: 6 (in atbash cipher)\",\n    \"reading\": \"The number six in a hidden code\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Fyre: fire (Old English) + yr (Old Norse for year)",
+   "reading": "The burning cycle of time",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fyre: fire (English) = feu (French)",
+   "reading": "The blazing counterpart",
+   "languages": [
+    "en",
+    "fr"
+   ]
+  },
+  {
+   "operation": "anagram",
+   "chain": "Fyre: reify",
+   "reading": "To make real or tangible",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Fyre: F (Latin) = fornax (Latin for furnace)",
+   "reading": "The heated vessel",
+   "languages": [
+    "la"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Fyre: F = phosphorus (chemical symbol)",
+   "reading": "The illuminating element",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "numerical",
+   "chain": "Fyre: 6 (in atbash cipher)",
+   "reading": "The number six in a hidden code",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

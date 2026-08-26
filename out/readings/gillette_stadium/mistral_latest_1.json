@@ -1,0 +1,75 @@
+{
+ "word": "Gillette Stadium",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:39:07+00:00",
+ "latency_s": 11.46,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gil + ette Sta + dum\",\n    \"reading\": \"A place of standing that is a small girl's will\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gil + ette Sta + dum\",\n    \"reading\": \"A place of standing that is a gift of the stars\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gil + ette Sta + dum\",\n    \"reading\": \"A place of standing, a gift from the sun's daughter\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Gil + ette (fr) = j'aime (I love)\",\n    \"reading\": \"A place of loving stands\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Stad + elet + g\",\n    \"reading\": \"A place of the led (guided) is a girl's estate\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"G + I + L + E + T + T + E\",\n    \"reading\": \"A new (eternal) place of the spirit\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Gil + ette Sta + dum",
+   "reading": "A place of standing that is a small girl's will",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gil + ette Sta + dum",
+   "reading": "A place of standing that is a gift of the stars",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gil + ette Sta + dum",
+   "reading": "A place of standing, a gift from the sun's daughter",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gil + ette (fr) = j'aime (I love)",
+   "reading": "A place of loving stands",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Stad + elet + g",
+   "reading": "A place of the led (guided) is a girl's estate",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "G + I + L + E + T + T + E",
+   "reading": "A new (eternal) place of the spirit",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

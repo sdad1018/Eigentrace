@@ -1,0 +1,76 @@
+{
+ "word": "Wembley",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:40:22+00:00",
+ "latency_s": 14.46,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wembley = W + em + bley\",\n    \"reading\": \"We embark on a journey (leaving)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wembley = W + em + bley\",\n    \"reading\": \"I embark (set sail) on a journey (leaving)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley = W + em + bley; W (German) = I am\",\n    \"reading\": \"I am embarked on a journey (set sail, leaving)\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley = W + em + bley; Em (German) = in\",\n    \"reading\": \"I am in embarked on a journey (set sail, leaving)\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Wembley = W + em + bley; Wem (Old English) = wemmle, to wander, roam\",\n    \"reading\": \"To wander, roam embarked on a journey (set sail, leaving)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Wembley = W + em + bley; Blemy (Egyptian mythology) = a people known for their bird-like heads\",\n    \"reading\": \"Bird-like heads embarked on a journey (set sail, leaving)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Wembley = W + em + bley",
+   "reading": "We embark on a journey (leaving)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wembley = W + em + bley",
+   "reading": "I embark (set sail) on a journey (leaving)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley = W + em + bley; W (German) = I am",
+   "reading": "I am embarked on a journey (set sail, leaving)",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley = W + em + bley; Em (German) = in",
+   "reading": "I am in embarked on a journey (set sail, leaving)",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Wembley = W + em + bley; Wem (Old English) = wemmle, to wander, roam",
+   "reading": "To wander, roam embarked on a journey (set sail, leaving)",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Wembley = W + em + bley; Blemy (Egyptian mythology) = a people known for their bird-like heads",
+   "reading": "Bird-like heads embarked on a journey (set sail, leaving)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

@@ -1,0 +1,92 @@
+{
+ "word": "Exuma",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:31:59+00:00",
+ "latency_s": 19.05,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"Ex + u + ma\",\"reading\":\"Existential union manifesting\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.8},{\"operation\":\"cross_language_homophone\",\"chain\":\"exuma (English) = ex- (Greek) μά (Greek)\",\"reading\":\"Formerly sacred, now profane\",\"languages\":[\"en\",\"grc\"],\"source\":\"generative\",\"confidence\":0.65},{\"operation\":\"anagram\",\"chain\":\"Exuma -> amxue\",\"reading\":\"Maximal ambiguity\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"etymology\",\"chain\":\"ex (Latin) = out of + um (Latin) = place + a (Greek) = to\",\"reading\":\"Place from which one departs or arrives\",\"languages\":[\"la\",\"grc\"],\"source\":\"Oxford Latin Dictionary, Greek-English Lexicon\",\"confidence\":0.9},{\"operation\":\"phonetic_split\",\"chain\":\"ex + u + ma\",\"reading\":\"Exit the universe's matrix\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.75},{\"operation\":\"letter_symbol\",\"chain\":\"E (epsilon) = essence + X (chi) = Christ or mark + U (upsilon) = sound or breath + M (mu) = small or many + A (alpha) = beginning\",\"reading\":\"Essential marked sound from the multitude's origin\",\"languages\":[\"grc\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"numerical\",\"chain\":\"E=5, X=24, U=21, M=13, A=1\",\"reading\":\"Vibrational frequency of essence and mark\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Ex + u + ma",
+   "reading": "Existential union manifesting",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "exuma (English) = ex- (Greek) μά (Greek)",
+   "reading": "Formerly sacred, now profane",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Exuma -> amxue",
+   "reading": "Maximal ambiguity",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "ex (Latin) = out of + um (Latin) = place + a (Greek) = to",
+   "reading": "Place from which one departs or arrives",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "Oxford Latin Dictionary, Greek-English Lexicon",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ex + u + ma",
+   "reading": "Exit the universe's matrix",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "E (epsilon) = essence + X (chi) = Christ or mark + U (upsilon) = sound or breath + M (mu) = small or many + A (alpha) = beginning",
+   "reading": "Essential marked sound from the multitude's origin",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "numerical",
+   "chain": "E=5, X=24, U=21, M=13, A=1",
+   "reading": "Vibrational frequency of essence and mark",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

@@ -1,0 +1,79 @@
+{
+ "word": "Texas",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:53:01+00:00",
+ "latency_s": 10.9,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"texas -> tex (Latin: earth) + as (Greek: breath)\",\n    \"reading\": \"earth breath\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"texas -> Texas (English) = tajexas (Spanish) = taxis (Greek) = orderly arrangement\",\n    \"reading\": \"orderly arrangement\",\n    \"languages\": [\"en\", \"es\", \"gr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"texas -> exate\",\n    \"reading\": \"outside\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Texas -> T + E + X + A + S = The + Ex (Latin: from) + A + S (Greek: being)\",\n    \"reading\": \"The Being From\",\n    \"languages\": [\"en\", \"la\", \"gr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T -> Tau (Greek: cross)\",\n    \"reading\": \"cross\",\n    \"languages\": [\"gr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Texas -> 8 + 5 + 9 + 19 + 19 + 15 = 71\",\n    \"reading\": \"71 (number)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "texas -> tex (Latin: earth) + as (Greek: breath)",
+   "reading": "earth breath",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "texas -> Texas (English) = tajexas (Spanish) = taxis (Greek) = orderly arrangement",
+   "reading": "orderly arrangement",
+   "languages": [
+    "en",
+    "es",
+    "gr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "texas -> exate",
+   "reading": "outside",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Texas -> T + E + X + A + S = The + Ex (Latin: from) + A + S (Greek: being)",
+   "reading": "The Being From",
+   "languages": [
+    "en",
+    "la",
+    "gr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T -> Tau (Greek: cross)",
+   "reading": "cross",
+   "languages": [
+    "gr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "numerical",
+   "chain": "Texas -> 8 + 5 + 9 + 19 + 19 + 15 = 71",
+   "reading": "71 (number)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

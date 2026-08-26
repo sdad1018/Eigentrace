@@ -1,0 +1,84 @@
+{
+ "word": "NRG Park",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:24:20+00:00",
+ "latency_s": 15.11,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n    {\"operation\":\"phonetic_split\",\"chain\":\"nrg + park\",\"reading\":\"energy in a place of recreation or enclosure\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.8},\n    {\"operation\":\"cross_language_homophone\",\"chain\":\"nrg (Turkish) = to be able; park (German) = garden\",\"reading\":\"capacity for growth and nurturing environment\",\"languages\":[\"tr\",\"de\",\"en\"],\"source\":\"generative\",\"confidence\":0.7},\n    {\"operation\":\"anagram\",\"chain\":\"NRG Park -> GRAN PK\",\"reading\":\"grand public space or gathering place\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n    {\"operation\":\"notariqon\",\"chain\":\"N (nu) + RG (rho gamma) + P (pi) + ARK (alpha rho kappa)\",\"reading\":\"new beginning, protection, and ark of salvation\",\"languages\":[\"grc\",\"en\"],\"source\":\"generative\",\"confidence\":0.5},\n    {\"operation\":\"letter_symbol\",\"chain\":\"NRG Park -> N (north), R (ray or rod), G (gamma)\",\"reading\":\"directional energy flow in a sacred space\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.4},\n    {\"operation\":\"numerical\",\"chain\":\"N=14, R=18, G=7, P=16, A=1, R=18, K=11\",\"reading\":\"a numerical pattern signifying a unique energetic configuration\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.3}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "nrg + park",
+   "reading": "energy in a place of recreation or enclosure",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "nrg (Turkish) = to be able; park (German) = garden",
+   "reading": "capacity for growth and nurturing environment",
+   "languages": [
+    "tr",
+    "de",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "NRG Park -> GRAN PK",
+   "reading": "grand public space or gathering place",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "N (nu) + RG (rho gamma) + P (pi) + ARK (alpha rho kappa)",
+   "reading": "new beginning, protection, and ark of salvation",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "NRG Park -> N (north), R (ray or rod), G (gamma)",
+   "reading": "directional energy flow in a sacred space",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "N=14, R=18, G=7, P=16, A=1, R=18, K=11",
+   "reading": "a numerical pattern signifying a unique energetic configuration",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

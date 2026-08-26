@@ -1,0 +1,81 @@
+{
+ "word": "Bahamas",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:59:05+00:00",
+ "latency_s": 12.61,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba + ha + ma + s\",\n    \"reading\": \"behold mother's home\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba + ha + ma + s\",\n    \"reading\": \"father's home\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Ba (German) = be, ha (Hebrew) = life, ma (Sanskrit) = great, s (Latin) = from\",\n    \"reading\": \"great life from father\",\n    \"languages\": [\"de\", \"he\", \"sa\", \"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Ba (Arabic) = in, ha (Hawaiian) = breath, ma (Japanese) = rice field, s (Welsh) = sun\",\n    \"reading\": \"sun's breath in rice field\",\n    \"languages\": [\"ar\", \"hi\", \"ja\", \"jp\", \"cy\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Ba + ham + as\",\n    \"reading\": \"behold, hold the sand\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"First two letters of each word in 'Bahamas Islands'\",\n    \"reading\": \"Big and hot islands\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba + ha + ma + s",
+   "reading": "behold mother's home",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba + ha + ma + s",
+   "reading": "father's home",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Ba (German) = be, ha (Hebrew) = life, ma (Sanskrit) = great, s (Latin) = from",
+   "reading": "great life from father",
+   "languages": [
+    "de",
+    "he",
+    "sa",
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Ba (Arabic) = in, ha (Hawaiian) = breath, ma (Japanese) = rice field, s (Welsh) = sun",
+   "reading": "sun's breath in rice field",
+   "languages": [
+    "ar",
+    "hi",
+    "ja",
+    "jp",
+    "cy"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Ba + ham + as",
+   "reading": "behold, hold the sand",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "First two letters of each word in 'Bahamas Islands'",
+   "reading": "Big and hot islands",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

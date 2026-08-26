@@ -1,0 +1,82 @@
+{
+ "word": "Luxor",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:16:55+00:00",
+ "latency_s": 81.45,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"Luxor = Lux + or\",\"reading\":\"Light of the divine or source of light\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"cross_language_homophone\",\"chain\":\"Luxor (English) homophonic with luctor (Latin)\",\"reading\":\"I struggle, I strive; implies effort and conflict\",\"languages\":[\"la\",\"en\"],\"source\":\"generative\",\"confidence\":0.65},{\"operation\":\"anagram\",\"chain\":\"Luxor = LORXU\",\"reading\":\"Lord's rule or lore\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"etymology\",\"chain\":\"Luxor (Latin) from lux, light + -or, agent noun suffix\",\"reading\":\"Place of light; city associated with illumination and wisdom\",\"languages\":[\"la\",\"en\"],\"source\":\"Oxford Latin Dictionary\",\"confidence\":1},{\"operation\":\"phonetic_split\",\"chain\":\"Luxor = Lux + or\",\"reading\":\"Divine light or source of divine power\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.75},{\"operation\":\"anagram\",\"chain\":\"Luxor = ROLUX\",\"reading\":\"Royal lux, luxury and royalty\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Luxor = Lux + or",
+   "reading": "Light of the divine or source of light",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Luxor (English) homophonic with luctor (Latin)",
+   "reading": "I struggle, I strive; implies effort and conflict",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Luxor = LORXU",
+   "reading": "Lord's rule or lore",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Luxor (Latin) from lux, light + -or, agent noun suffix",
+   "reading": "Place of light; city associated with illumination and wisdom",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Oxford Latin Dictionary",
+   "confidence": 1
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Luxor = Lux + or",
+   "reading": "Divine light or source of divine power",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "Luxor = ROLUX",
+   "reading": "Royal lux, luxury and royalty",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

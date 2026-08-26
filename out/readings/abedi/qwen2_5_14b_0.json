@@ -1,0 +1,81 @@
+{
+ "word": "Abedi",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:29:37+00:00",
+ "latency_s": 15.28,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"A + bedi\",\"reading\":\"Alpha and rest; beginning and continuation.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.8},{\"operation\":\"cross_language_homophone\",\"chain\":\"Abedi (Arabic) = father's brother; Bedi (Turkish) = novice, beginner\",\"reading\":\"Relatives and new beginnings.\",\"languages\":[\"ar\",\"tr\"],\"source\":\"generative\",\"confidence\":0.75},{\"operation\":\"anagram\",\"chain\":\"A + bedi -> baed\",\"reading\":\"Bade in water; purification.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.65},{\"operation\":\"letter_symbol\",\"chain\":\"A = Alpha, first letter of Greek alphabet\",\"reading\":\"Primacy, leadership.\",\"languages\":[\"grc\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"numerical\",\"chain\":\"A = 1; bedi (Turkish) = novice; 1 + 25 = 26 letters in Turkish alphabet\",\"reading\":\"Initiation into full knowledge.\",\"languages\":[\"tr\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"phonetic_split\",\"chain\":\"Abed + i\",\"reading\":\"Abode and self; dwelling place of the individual.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.75}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "A + bedi",
+   "reading": "Alpha and rest; beginning and continuation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Abedi (Arabic) = father's brother; Bedi (Turkish) = novice, beginner",
+   "reading": "Relatives and new beginnings.",
+   "languages": [
+    "ar",
+    "tr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "A + bedi -> baed",
+   "reading": "Bade in water; purification.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "A = Alpha, first letter of Greek alphabet",
+   "reading": "Primacy, leadership.",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "numerical",
+   "chain": "A = 1; bedi (Turkish) = novice; 1 + 25 = 26 letters in Turkish alphabet",
+   "reading": "Initiation into full knowledge.",
+   "languages": [
+    "tr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Abed + i",
+   "reading": "Abode and self; dwelling place of the individual.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

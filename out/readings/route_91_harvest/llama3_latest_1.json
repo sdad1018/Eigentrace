@@ -1,0 +1,91 @@
+{
+ "word": "Route 91 Harvest",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:13:05+00:00",
+ "latency_s": 6.31,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \"chain\": \"route + 91 + harvest\", \"reading\": \"a path of abundance or fertility\", \"languages\": [\"en\"], \"source\": \"Oxford English Dictionary\", \"confidence\": 0.9},\n  {\"operation\": \"phonetic_split\", \"chain\": \"roo-te-ninety-one-har-vest\", \"reading\": \"a journey through the cycles of life and death\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.8},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"route (French) + harvest (English)\", \"reading\": \"a gathering or reaping of what has been sown\", \"languages\": [\"fr\", \"en\"], \"source\": \"generative\", \"confidence\": 0.7},\n  {\"operation\": \"anagram\", \"chain\": \"route91Harvest -> Hear Truth Route\", \"reading\": \"a call to recognize the path or truth\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.6},\n  {\"operation\": \"notariqon\", \"chain\": \"Route91Harvest -> Root Unity Harvests\", \"reading\": \"the unity and abundance that comes from roots\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.5},\n  {\"operation\": \"letter_symbol\", \"chain\": \"R-O-U-T-E-9-1-H-A-R-V-E-S-T\", \"reading\": \"a symbol of the cyclical nature of life and death\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.4},\n  {\"operation\": \"numerical\", \"chain\": \"91 -> Ninety-One\", \"reading\": \"the union or balance between opposing forces\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.3}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "route + 91 + harvest",
+   "reading": "a path of abundance or fertility",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "roo-te-ninety-one-har-vest",
+   "reading": "a journey through the cycles of life and death",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "route (French) + harvest (English)",
+   "reading": "a gathering or reaping of what has been sown",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "route91Harvest -> Hear Truth Route",
+   "reading": "a call to recognize the path or truth",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Route91Harvest -> Root Unity Harvests",
+   "reading": "the unity and abundance that comes from roots",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R-O-U-T-E-9-1-H-A-R-V-E-S-T",
+   "reading": "a symbol of the cyclical nature of life and death",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "91 -> Ninety-One",
+   "reading": "the union or balance between opposing forces",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

@@ -1,0 +1,74 @@
+{
+ "word": "Eagles of Death Metal",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:01:56+00:00",
+ "latency_s": 13.54,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"eagle + soul of death metal\",\n    \"reading\": \"creature of heavy, rhythmic music associated with the power and majesty of birds\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"eagle (Old English ēagel) + age of death metal\",\n    \"reading\": \"the bird of old times facing the end of loud music\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"eagles of death metal => metal eagles of death\",\n    \"reading\": \"heavy, metallic birds associated with death\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Eagles of Death Metal => EDM\",\n    \"reading\": \"electronic dance music or, more generatively, the dance of death's metal\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Eagles of Death Metal => E (eagle) + A (ancient symbol for an eagle) + G (goat, representing the death metal genre) + L (lion, representing the band's rock roots) + S (snake, representing the band's edgy image)\",\n    \"reading\": \"a symbolic fusion of powerful animals signifying the band's identity\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Eagles of Death Metal => Eagle (Old English ēagel) + death metal\",\n    \"reading\": \"a band named after the powerful bird and the heavy music genre\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "eagle + soul of death metal",
+   "reading": "creature of heavy, rhythmic music associated with the power and majesty of birds",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "eagle (Old English ēagel) + age of death metal",
+   "reading": "the bird of old times facing the end of loud music",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "eagles of death metal => metal eagles of death",
+   "reading": "heavy, metallic birds associated with death",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Eagles of Death Metal => EDM",
+   "reading": "electronic dance music or, more generatively, the dance of death's metal",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Eagles of Death Metal => E (eagle) + A (ancient symbol for an eagle) + G (goat, representing the death metal genre) + L (lion, representing the band's rock roots) + S (snake, representing the band's edgy image)",
+   "reading": "a symbolic fusion of powerful animals signifying the band's identity",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Eagles of Death Metal => Eagle (Old English ēagel) + death metal",
+   "reading": "a band named after the powerful bird and the heavy music genre",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

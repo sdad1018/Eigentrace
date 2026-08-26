@@ -1,0 +1,76 @@
+{
+ "word": "Dangerous Woman",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:53:52+00:00",
+ "latency_s": 13.61,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"danger + us (Old French) = perilous for the people\",\n    \"reading\": \"a threat to the populace\",\n    \"languages\": [\"fr\"],\n    \"source\": \"Dictionnaire historique de la langue française\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"danger + us (Old English) = dangerous for the assembly\",\n    \"reading\": \"a threat to the gathering\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"danger + ango (Italian) = pericolo angoscia (Italian for danger and anxiety)\",\n    \"reading\": \"a source of worry and peril\",\n    \"languages\": [\"it\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"anger + dus (Latin) = iratus populis (Latin for angry towards the people)\",\n    \"reading\": \"angry at the populace\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"danger (Greek) + us (Aramaic) = dangeros laos (Greek for dangerous people)\",\n    \"reading\": \"a dangerous group of people\",\n    \"languages\": [\"grc\", \"he\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"danger (English) = D + A + N + G + E + R = Dominus Animae Nostrae Generator (Latin for Lord of our souls' creator)\",\n    \"reading\": \"a reference to a higher power creating our souls\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "danger + us (Old French) = perilous for the people",
+   "reading": "a threat to the populace",
+   "languages": [
+    "fr"
+   ],
+   "source": "Dictionnaire historique de la langue française"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "danger + us (Old English) = dangerous for the assembly",
+   "reading": "a threat to the gathering",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "danger + ango (Italian) = pericolo angoscia (Italian for danger and anxiety)",
+   "reading": "a source of worry and peril",
+   "languages": [
+    "it"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "anger + dus (Latin) = iratus populis (Latin for angry towards the people)",
+   "reading": "angry at the populace",
+   "languages": [
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "danger (Greek) + us (Aramaic) = dangeros laos (Greek for dangerous people)",
+   "reading": "a dangerous group of people",
+   "languages": [
+    "grc",
+    "he"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "danger (English) = D + A + N + G + E + R = Dominus Animae Nostrae Generator (Latin for Lord of our souls' creator)",
+   "reading": "a reference to a higher power creating our souls",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

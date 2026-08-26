@@ -1,0 +1,75 @@
+{
+ "word": "Lollapalooza",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:42:47+00:00",
+ "latency_s": 16.12,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lol + palooza\",\n    \"reading\": \"a joyful gathering (lol) in many places (palooza)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Lol (English) = l'âme (French) = soul\",\n    \"reading\": \"the soul gathers in many places\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Lollapalooza (from the Persian lulah-pałūzah, meaning 'phenomenal', 'extraordinary')\",\n    \"reading\": \"an extraordinary gathering\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.etymonline.com/word/Lollapalooza\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L + O + L + P + A + L + O + O + Z + A (first letters of 'Lord Of Love And Peace On Others, Always' or 'Lots Of Lovely People All Over The Zone')\",\n    \"reading\": \"a declaration of love and peace for all in the zone\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L (58) + O (14) + L (12) + P (72) + A (1) + L (12) + O (14) + O (15) + Z (26) + A (1)\",\n    \"reading\": \"the sum of the atomic numbers of elements in the word\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Lollapalooza (rearranged) = a zoological loon polloi\",\n    \"reading\": \"a gathering of common people with an unusual bird (loon)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Lol + palooza",
+   "reading": "a joyful gathering (lol) in many places (palooza)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Lol (English) = l'âme (French) = soul",
+   "reading": "the soul gathers in many places",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Lollapalooza (from the Persian lulah-pałūzah, meaning 'phenomenal', 'extraordinary')",
+   "reading": "an extraordinary gathering",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.etymonline.com/word/Lollapalooza"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L + O + L + P + A + L + O + O + Z + A (first letters of 'Lord Of Love And Peace On Others, Always' or 'Lots Of Lovely People All Over The Zone')",
+   "reading": "a declaration of love and peace for all in the zone",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L (58) + O (14) + L (12) + P (72) + A (1) + L (12) + O (14) + O (15) + Z (26) + A (1)",
+   "reading": "the sum of the atomic numbers of elements in the word",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Lollapalooza (rearranged) = a zoological loon polloi",
+   "reading": "a gathering of common people with an unusual bird (loon)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

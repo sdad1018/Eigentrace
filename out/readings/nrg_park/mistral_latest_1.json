@@ -1,0 +1,75 @@
+{
+ "word": "NRG Park",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:52:05+00:00",
+ "latency_s": 10.71,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"n-r-g park\",\n    \"reading\": \"energy in the park\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG (English) = energy (Latin); Park (German) = garden (Latin)\",\n    \"reading\": \"garden of energy\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"NRG Park -> nrg + park\",\n    \"reading\": \"power and garden\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"NRG (initial letters) -> New (abbreviation of 'New Energy')\",\n    \"reading\": \"new energy park\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N -> Neutron (chemical symbol)\",\n    \"reading\": \"neutron energy park\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Park (English) -> Old Norse porkr, meaning 'enclosure' or 'fenced area'\",\n    \"reading\": \"enclosed energy area\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.etymonline.com/word/park\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "n-r-g park",
+   "reading": "energy in the park",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "NRG (English) = energy (Latin); Park (German) = garden (Latin)",
+   "reading": "garden of energy",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "NRG Park -> nrg + park",
+   "reading": "power and garden",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "NRG (initial letters) -> New (abbreviation of 'New Energy')",
+   "reading": "new energy park",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N -> Neutron (chemical symbol)",
+   "reading": "neutron energy park",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Park (English) -> Old Norse porkr, meaning 'enclosure' or 'fenced area'",
+   "reading": "enclosed energy area",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.etymonline.com/word/park"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

@@ -1,0 +1,77 @@
+{
+ "word": "Las Vegas",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:48:46+00:00",
+ "latency_s": 14.22,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas = La (Spanish for 'the') + Az (a possible anagram of 'Vega', Spanish for 'meadow') + S (from the English alphabet)\",\n    \"reading\": \"The meadow S from the\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas = Az (Aegean Sea's initials in Greek) + Las (a possible anagram of 'Vega', Spanish for 'bright star')\",\n    \"reading\": \"Bright star Aegean sea S from the\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Las Vegas = LV (abbreviation for '50', in Roman numerals) + AS (abbreviation for '41' in Hebrew gematria)\",\n    \"reading\": \"Fifty-fourteen S from the\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Las Vegas = L (latitude) + A (longitude) + S (the Sun in astrology)\",\n    \"reading\": \"Coordinates of the Sun S from the\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las Vegas = Las Vegas (Spanish for 'the meadows')\",\n    \"reading\": \"The meadows\",\n    \"languages\": [\"es\"],\n    \"source\": \"Dictionary of Spanish Etymology\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas = Las (Spanish for 'the') + Vegas (Italian for 'wages')\",\n    \"reading\": \"The wages S from the\",\n    \"languages\": [\"es\", \"it\"],\n    \"source\": \"Generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas = La (Spanish for 'the') + Az (a possible anagram of 'Vega', Spanish for 'meadow') + S (from the English alphabet)",
+   "reading": "The meadow S from the",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas = Az (Aegean Sea's initials in Greek) + Las (a possible anagram of 'Vega', Spanish for 'bright star')",
+   "reading": "Bright star Aegean sea S from the",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Las Vegas = LV (abbreviation for '50', in Roman numerals) + AS (abbreviation for '41' in Hebrew gematria)",
+   "reading": "Fifty-fourteen S from the",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Las Vegas = L (latitude) + A (longitude) + S (the Sun in astrology)",
+   "reading": "Coordinates of the Sun S from the",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Las Vegas = Las Vegas (Spanish for 'the meadows')",
+   "reading": "The meadows",
+   "languages": [
+    "es"
+   ],
+   "source": "Dictionary of Spanish Etymology"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas = Las (Spanish for 'the') + Vegas (Italian for 'wages')",
+   "reading": "The wages S from the",
+   "languages": [
+    "es",
+    "it"
+   ],
+   "source": "Generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

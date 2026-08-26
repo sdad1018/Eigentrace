@@ -1,0 +1,76 @@
+{
+ "word": "Glastonbury",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:41:42+00:00",
+ "latency_s": 15.57,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Glastonbury (Old English) = Glastowyrig (land of the glassy torrent)\",\n    \"reading\": \"Land of the glistening river\",\n    \"languages\": [\"en\"],\n    \"source\": \"Onomastic Dictionary of England\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Glastonbury = Glast + on + bury\",\n    \"reading\": \"Glory stone burial place\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Glastonbury (English) = Glasturini (Latin) = Γλαστουρινοί (Ancient Greek)\",\n    \"reading\": \"The shining ones\",\n    \"languages\": [\"en\", \"la\", \"grc\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Glastonbury = Stray Nolgan\",\n    \"reading\": \"Wanderer in the grove of elms\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Glastonbury = G + L + A + S + T + O + N + B + U + R + Y\",\n    \"reading\": \"God's light in the valley\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Glastonbury = G (Gold) + L (Lion) + A (Alpha) + S (Sun) + T (Thorn) + O (Oak) + N (Nail) + B (Bishop's staff) + U (Unicursal) + R (Rose) + Y (Yang)\",\n    \"reading\": \"Golden lion, solar oak, unifying rose, yang\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Glastonbury (Old English) = Glastowyrig (land of the glassy torrent)",
+   "reading": "Land of the glistening river",
+   "languages": [
+    "en"
+   ],
+   "source": "Onomastic Dictionary of England"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Glastonbury = Glast + on + bury",
+   "reading": "Glory stone burial place",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Glastonbury (English) = Glasturini (Latin) = Γλαστουρινοί (Ancient Greek)",
+   "reading": "The shining ones",
+   "languages": [
+    "en",
+    "la",
+    "grc"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Glastonbury = Stray Nolgan",
+   "reading": "Wanderer in the grove of elms",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Glastonbury = G + L + A + S + T + O + N + B + U + R + Y",
+   "reading": "God's light in the valley",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Glastonbury = G (Gold) + L (Lion) + A (Alpha) + S (Sun) + T (Thorn) + O (Oak) + N (Nail) + B (Bishop's staff) + U (Unicursal) + R (Rose) + Y (Yang)",
+   "reading": "Golden lion, solar oak, unifying rose, yang",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

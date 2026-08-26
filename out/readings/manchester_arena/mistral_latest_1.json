@@ -1,0 +1,75 @@
+{
+ "word": "Manchester Arena",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:54:35+00:00",
+ "latency_s": 11.94,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chester + arena\",\n    \"reading\": \"A place of assembly or contest for men\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Manchester (/ˈmæntʃɛstər/) = Man + chester\",\n    \"reading\": \"A place of men's assembly or contest\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester = Man + center\",\n    \"reading\": \"A place where man finds his center\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M + A (initial letters) = My + Ae (Greek for 'Arena')\",\n    \"reading\": \"My Arena\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M = Metal, A = Alpha, N = Neutron, C = Carbon, H = Hydrogen, E = Electron, R = Radius, A = Atom\",\n    \"reading\": \"Metal Alpha Neutron Carbon Hydrogen Electron Radius Atom\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Manchester (Old English) = Man + cester (Roman castra, 'camp')\",\n    \"reading\": \"A camp of men\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chester + arena",
+   "reading": "A place of assembly or contest for men",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manchester (/ˈmæntʃɛstər/) = Man + chester",
+   "reading": "A place of men's assembly or contest",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester = Man + center",
+   "reading": "A place where man finds his center",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M + A (initial letters) = My + Ae (Greek for 'Arena')",
+   "reading": "My Arena",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M = Metal, A = Alpha, N = Neutron, C = Carbon, H = Hydrogen, E = Electron, R = Radius, A = Atom",
+   "reading": "Metal Alpha Neutron Carbon Hydrogen Electron Radius Atom",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Manchester (Old English) = Man + cester (Roman castra, 'camp')",
+   "reading": "A camp of men",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

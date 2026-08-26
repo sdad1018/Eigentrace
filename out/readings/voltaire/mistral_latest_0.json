@@ -1,0 +1,74 @@
+{
+ "word": "Voltaire",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:02:27+00:00",
+ "latency_s": 13.41,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Voltaire (French) from Italian Volfardo, from Germanic Wolfram, meaning 'wolf-fame'\",\n    \"reading\": \"association with wolf and fame\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Voltaire = V (victory) + o (open) + l (long) + t (tall) + a (air) + i (I) + r (row)\",\n    \"reading\": \"symbolic representation of victory, openness, tallness, air, and row\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Voltaire (French) = valet hare (English) = a rabbit servant\",\n    \"reading\": \"servant of the rabbit realm\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Voltaire = L'art ovale (French) = 'the oval art'\",\n    \"reading\": \"artistic expression related to the oval shape\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Voltaire = V + L (Latin 'Libri', books) + T (Terra, Earth) + A (Ars, Art) + I (Id, Self) + R (Rex, King) = 'Books of the self from the earthly art king'\",\n    \"reading\": \"a symbolic representation of a king who writes books from the earthly art\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V (Voltaire) = Venus (Latin) = Roman goddess of love and beauty\",\n    \"reading\": \"association with the Roman goddess of love and beauty\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Voltaire (French) from Italian Volfardo, from Germanic Wolfram, meaning 'wolf-fame'",
+   "reading": "association with wolf and fame",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Voltaire = V (victory) + o (open) + l (long) + t (tall) + a (air) + i (I) + r (row)",
+   "reading": "symbolic representation of victory, openness, tallness, air, and row",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Voltaire (French) = valet hare (English) = a rabbit servant",
+   "reading": "servant of the rabbit realm",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Voltaire = L'art ovale (French) = 'the oval art'",
+   "reading": "artistic expression related to the oval shape",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Voltaire = V + L (Latin 'Libri', books) + T (Terra, Earth) + A (Ars, Art) + I (Id, Self) + R (Rex, King) = 'Books of the self from the earthly art king'",
+   "reading": "a symbolic representation of a king who writes books from the earthly art",
+   "languages": [
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V (Voltaire) = Venus (Latin) = Roman goddess of love and beauty",
+   "reading": "association with the Roman goddess of love and beauty",
+   "languages": [
+    "la"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

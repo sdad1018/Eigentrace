@@ -1,0 +1,60 @@
+{
+ "word": "Las Vegas Boulevard",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:21:48+00:00",
+ "latency_s": 14.48,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"Las Vegas Boulevard\",\"reading\":\"Laser beams guide urban paths.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.8},{\"operation\":\"cross_language_homophone\",\"chain\":\"Vegas (Spanish) = ve gustas; Las Vegas = I like you, the lights.\",\"languages\":[\"es\",\"en\"],\"source\":\"generative\",\"confidence\":0.65},{\"operation\":\"anagram\",\"chain\":\"Las Vegas Boulevard\",\"reading\":\"Bald vulgarian sluggish\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"etymology\",\"chain\":\"Boulevard (French) = boule + vart, ball + road; Las Vegas Boulevard = Ball Road of Light.\",\"languages\":[\"fr\",\"la\",\"he\"],\"source\":\"Middle English Dictionary, Online Etymology Dictionary\",\"confidence\":0.9},{\"operation\":\"phonetic_split\",\"chain\":\"Las Vegas Boulevard\",\"reading\":\"Lavish views of broad avenue.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.85},{\"operation\":\"cross_language_homophone\",\"chain\":\"Boulevard (German) = bühne + lade; Las Vegas Boulevard = Stage load, show road.\",\"languages\":[\"de\",\"en\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"anagram\",\"chain\":\"Las Vegas Boulevard\",\"reading\":\"Vagabond salubrious glads\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.75},{\"operation\":\"etymology\",\"chain\":\"Boulevard (French) = boule + vart, ball + road; Las Vegas Boulevard = Ball Road of Light.\",\"languages\":[\"fr\",\"la\",\"he\"],\"source\":\"Middle English Dictionary, Online Etymology Dictionary\",\"confidence\":0.92}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas Boulevard",
+   "reading": "Laser beams guide urban paths.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Boulevard",
+   "reading": "Bald vulgarian sluggish",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas Boulevard",
+   "reading": "Lavish views of broad avenue.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Boulevard",
+   "reading": "Vagabond salubrious glads",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 4,
+ "refusal_like": false
+}

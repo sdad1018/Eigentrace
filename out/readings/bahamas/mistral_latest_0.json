@@ -1,0 +1,80 @@
+{
+ "word": "Bahamas",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:58:52+00:00",
+ "latency_s": 13.08,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba + ha + ma + s\",\n    \"reading\": \"Behold a mother's love (in Latin: amor materna)\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"ba + ha (Sanskrit) = the sun\",\n    \"reading\": \"The radiant island (in Sanskrit: suryapuri)\",\n    \"languages\": [\"en\", \"sa\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bahamas => Ah, ma's ba\",\n    \"reading\": \"Amaze in the mother's embrace\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Ba (Arabic) + Ha (Hebrew) + Ma (Aramaic) + S (Syriac)\",\n    \"reading\": \"The sacred island of the mother's peace\",\n    \"languages\": [\"ar\", \"he\", \"ara\", \"syr\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B: Beginning, A: Alpha (first letter of Greek alphabet), H: House, M: Mother, A: Alpha again, S: Sun\",\n    \"reading\": \"The beginning, the mother's house of the sun\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"From Taino 'bahama' meaning 'shallow sea'\",\n    \"reading\": \"The island of shallow waters\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba + ha + ma + s",
+   "reading": "Behold a mother's love (in Latin: amor materna)",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "ba + ha (Sanskrit) = the sun",
+   "reading": "The radiant island (in Sanskrit: suryapuri)",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bahamas => Ah, ma's ba",
+   "reading": "Amaze in the mother's embrace",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Ba (Arabic) + Ha (Hebrew) + Ma (Aramaic) + S (Syriac)",
+   "reading": "The sacred island of the mother's peace",
+   "languages": [
+    "ar",
+    "he",
+    "ara",
+    "syr"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B: Beginning, A: Alpha (first letter of Greek alphabet), H: House, M: Mother, A: Alpha again, S: Sun",
+   "reading": "The beginning, the mother's house of the sun",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "From Taino 'bahama' meaning 'shallow sea'",
+   "reading": "The island of shallow waters",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

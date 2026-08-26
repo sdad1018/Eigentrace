@@ -1,0 +1,78 @@
+{
+ "word": "Roker Point",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:59:55+00:00",
+ "latency_s": 11.28,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Rok + er Point\",\n    \"reading\": \"Stone of the rocky point\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Roker (England) = roc'h (Breton) = rock\",\n    \"reading\": \"Point of the rock (from Breton)\",\n    \"languages\": [\"en\", \"br\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Roker Point -> Rock Per\",\n    \"reading\": \"Stone of the rocky area\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"First letters: RP -> Rex Petrae (Latin) = King of the stones\",\n    \"reading\": \"King's point of the stones\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R -> Rex (Latin) = King\",\n    \"reading\": \"King's point\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Roker (Old Norse) = rokkr = rocky\",\n    \"reading\": \"Point of the rocky area (from Old Norse)\",\n    \"languages\": [\"en\", \"no\"],\n    \"source\": \"Online Etymology Dictionary\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Rok + er Point",
+   "reading": "Stone of the rocky point",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Roker (England) = roc'h (Breton) = rock",
+   "reading": "Point of the rock (from Breton)",
+   "languages": [
+    "en",
+    "br"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Roker Point -> Rock Per",
+   "reading": "Stone of the rocky area",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "First letters: RP -> Rex Petrae (Latin) = King of the stones",
+   "reading": "King's point of the stones",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R -> Rex (Latin) = King",
+   "reading": "King's point",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Roker (Old Norse) = rokkr = rocky",
+   "reading": "Point of the rocky area (from Old Norse)",
+   "languages": [
+    "en",
+    "no"
+   ],
+   "source": "Online Etymology Dictionary"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

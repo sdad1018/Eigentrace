@@ -1,0 +1,79 @@
+{
+ "word": "Eagles of Death Metal",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:01:42+00:00",
+ "latency_s": 23.31,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Eagles of Death Metal: Eagle (Old English) + a (article) + o (pronoun object) + d (demonstrative) + o (pronoun possessive) + f (consonant cluster) + t (tense marker) + h (interjection) + e (verb) + d (demonstrative) + M (Roman numeral 1000) + e (verb)\",\n    \"reading\": \"Eagle's object demonstrative possessive form of 'to do' one thousand\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Eagles of Death Metal: Eagle (Old English) + a (article) + g (soft 'g' sound in French, German, etc.) + o (pronoun object) + l (vowel in Italian, Spanish, Portuguese, etc.) + f (consonant cluster) + t (tense marker) + h (interjection) + e (verb) + d (demonstrative) + M (Roman numeral 1000) + e (verb)\",\n    \"reading\": \"Eagle's soft 'g', object vowel, form of 'to do' one thousand\",\n    \"languages\": [\"en\", \"fr\", \"de\", \"it\", \"es\", \"pt\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Eagles of Death Metal: Aged Melt\",\n    \"reading\": \"Aged melt\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Eagles of Death Metal: EDM (abbreviation for Electronic Dance Music)\",\n    \"reading\": \"Electronic Dance Music\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Eagles of Death Metal: E (element symbol for Eelesium, a hypothetical planet in the Solar System) + a (article) + g (galaxy) + o (orbit) + l (lunar crater) + f (Fermi Level in physics) + t (Temperature) + h (half-life) + e (electron) + d (diameter) + M (Mars)\",\n    \"reading\": \"Eelesium galaxy orbit lunar crater Fermi Level Temperature half-life electron diameter Mars\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Eagles of Death Metal: Eagle (Old English) + a (article) + g (ge- prefix meaning 'earth' or 'land') + o (pronoun object) + l (vowel in Old Norse, Gothic, etc.) + f (consonant cluster) + t (tense marker) + h (interjection) + e (verb) + d (demonstrative) + M (Middle English) + e (verb)\",\n    \"reading\": \"Earth's object vowel form of 'to do' Middle English\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Eagles of Death Metal: Eagle (Old English) + a (article) + o (pronoun object) + d (demonstrative) + o (pronoun possessive) + f (consonant cluster) + t (tense marker) + h (interjection) + e (verb) + d (demonstrative) + M (Roman numeral 1000) + e (verb)",
+   "reading": "Eagle's object demonstrative possessive form of 'to do' one thousand",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Eagles of Death Metal: Eagle (Old English) + a (article) + g (soft 'g' sound in French, German, etc.) + o (pronoun object) + l (vowel in Italian, Spanish, Portuguese, etc.) + f (consonant cluster) + t (tense marker) + h (interjection) + e (verb) + d (demonstrative) + M (Roman numeral 1000) + e (verb)",
+   "reading": "Eagle's soft 'g', object vowel, form of 'to do' one thousand",
+   "languages": [
+    "en",
+    "fr",
+    "de",
+    "it",
+    "es",
+    "pt"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Eagles of Death Metal: Aged Melt",
+   "reading": "Aged melt",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Eagles of Death Metal: EDM (abbreviation for Electronic Dance Music)",
+   "reading": "Electronic Dance Music",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Eagles of Death Metal: E (element symbol for Eelesium, a hypothetical planet in the Solar System) + a (article) + g (galaxy) + o (orbit) + l (lunar crater) + f (Fermi Level in physics) + t (Temperature) + h (half-life) + e (electron) + d (diameter) + M (Mars)",
+   "reading": "Eelesium galaxy orbit lunar crater Fermi Level Temperature half-life electron diameter Mars",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Eagles of Death Metal: Eagle (Old English) + a (article) + g (ge- prefix meaning 'earth' or 'land') + o (pronoun object) + l (vowel in Old Norse, Gothic, etc.) + f (consonant cluster) + t (tense marker) + h (interjection) + e (verb) + d (demonstrative) + M (Middle English) + e (verb)",
+   "reading": "Earth's object vowel form of 'to do' Middle English",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

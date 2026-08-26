@@ -1,0 +1,81 @@
+{
+ "word": "Mandalay Bay",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:11:16+00:00",
+ "latency_s": 94.82,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"Man + da + lay Bay\",\"reading\":\"Mighty wave of the sea\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"cross_language_homophone\",\"chain\":\"Mandalay = Mandala (Sanskrit) + Lay (English)\",\"reading\":\"Circular pattern of life and death\",\"languages\":[\"en\",\"sa\"],\"source\":\"generative\",\"confidence\":0.5},{\"operation\":\"anagram\",\"chain\":\"Bay + Madalay\",\"reading\":\"Daydream by the sea\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.4},{\"operation\":\"phonetic_split\",\"chain\":\"Man + dal + ay Bay\",\"reading\":\"Human spirit of the bay\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.5},{\"operation\":\"letter_symbol\",\"chain\":\"Mandalay = M (13) + A (1) + N (14) + D (4) + A (1) + L (12) + A (1) + Y (25)\",\"reading\":\"Complex spiritual journey\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.3},{\"operation\":\"phonetic_split\",\"chain\":\"Man + da + lay Bay = Man + da + lay + bay\",\"reading\":\"Human dance by the sea\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.4}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + da + lay Bay",
+   "reading": "Mighty wave of the sea",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay = Mandala (Sanskrit) + Lay (English)",
+   "reading": "Circular pattern of life and death",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bay + Madalay",
+   "reading": "Daydream by the sea",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + dal + ay Bay",
+   "reading": "Human spirit of the bay",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Mandalay = M (13) + A (1) + N (14) + D (4) + A (1) + L (12) + A (1) + Y (25)",
+   "reading": "Complex spiritual journey",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + da + lay Bay = Man + da + lay + bay",
+   "reading": "Human dance by the sea",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

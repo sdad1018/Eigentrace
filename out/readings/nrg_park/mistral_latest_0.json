@@ -1,0 +1,74 @@
+{
+ "word": "NRG Park",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:51:54+00:00",
+ "latency_s": 12.74,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"N-R-G P-A-R-K\",\n    \"reading\": \"energy park (English)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG -> nerve; Park -> bark\",\n    \"reading\": \"the park of the nervous (English)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"R-G P-A-K -> Grape\",\n    \"reading\": \"the vineyard park (English)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"NRG -> Nereus (Greek god of the sea) + Park\",\n    \"reading\": \"the park of Nereus (sea deity) (English)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N -> Neutron; R -> Radius; G -> Gravity; P -> Power; A -> Atom; K -> Kelvin\",\n    \"reading\": \"the park of neutrons, radii, gravity, power, atoms, and kelvins (English)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Park -> Old English pæc, pæc(c)or 'enclosure, park' (from Proto-Germanic *pakraz, from Proto-Indo-European *pek-, 'fence')\",\n    \"reading\": \"the enclosed energy (Old English)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "N-R-G P-A-R-K",
+   "reading": "energy park (English)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "NRG -> nerve; Park -> bark",
+   "reading": "the park of the nervous (English)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "R-G P-A-K -> Grape",
+   "reading": "the vineyard park (English)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "NRG -> Nereus (Greek god of the sea) + Park",
+   "reading": "the park of Nereus (sea deity) (English)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N -> Neutron; R -> Radius; G -> Gravity; P -> Power; A -> Atom; K -> Kelvin",
+   "reading": "the park of neutrons, radii, gravity, power, atoms, and kelvins (English)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Park -> Old English pæc, pæc(c)or 'enclosure, park' (from Proto-Germanic *pakraz, from Proto-Indo-European *pek-, 'fence')",
+   "reading": "the enclosed energy (Old English)",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

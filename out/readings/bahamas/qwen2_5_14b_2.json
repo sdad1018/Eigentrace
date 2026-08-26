@@ -1,0 +1,81 @@
+{
+ "word": "Bahamas",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:33:20+00:00",
+ "latency_s": 16.39,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"Ba-ha-mas\",\"reading\":\"Two hands (ba) holding the essence of the sea (mas)\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"cross_language_homophone\",\"chain\":\"Bahamas (English) = Baham (German, 'to carry') + as (Greek, 'is')\",\"reading\":\"Carrying the island state on one's back\",\"languages\":[\"de\",\"grc\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"anagram\",\"chain\":\"Bahamas -> Bhamas\",\"reading\":\"A place bathed in sea and sun\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.5},{\"operation\":\"letter_symbol\",\"chain\":\"B (Beth) + a + h (Hei) + m (Mem) + as\",\"reading\":\"House of God at the edge of water\",\"languages\":[\"he\"],\"source\":\"generative\",\"confidence\":0.4},{\"operation\":\"numerical\",\"chain\":\"Ba-ha-mas -> 2+1+8+1+4+1=17\",\"reading\":\"Completion and victory over obstacles\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.3},{\"operation\":\"phonetic_split\",\"chain\":\"Bahamas -> Bah + mas\",\"reading\":\"A place of abundance (bah) for the sea (mas)\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ha-mas",
+   "reading": "Two hands (ba) holding the essence of the sea (mas)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bahamas (English) = Baham (German, 'to carry') + as (Greek, 'is')",
+   "reading": "Carrying the island state on one's back",
+   "languages": [
+    "de",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bahamas -> Bhamas",
+   "reading": "A place bathed in sea and sun",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (Beth) + a + h (Hei) + m (Mem) + as",
+   "reading": "House of God at the edge of water",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "Ba-ha-mas -> 2+1+8+1+4+1=17",
+   "reading": "Completion and victory over obstacles",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bahamas -> Bah + mas",
+   "reading": "A place of abundance (bah) for the sea (mas)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

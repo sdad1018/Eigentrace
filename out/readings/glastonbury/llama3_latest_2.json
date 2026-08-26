@@ -1,0 +1,132 @@
+{
+ "word": "Glastonbury",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:08:07+00:00",
+ "latency_s": 19.26,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"phonetic_split\", \"chain\": \"\", \"reading\": \"Glass + Ton + Bur\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.8},\n  {\"operation\": \"etymology\", \"chain\": \"Glaston\", \"reading\": \"a tonal sound, a resonance\", \"languages\": [\"la\"], \"source\": \"Oxford Latin Dictionary\", \"confidence\": 0.9},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"French: Gaston + Ton\", \"reading\": \"a noble lord and his weight\", \"languages\": [\"fr\", \"en\"], \"source\": \"generative\", \"confidence\": 0.7},\n  {\"operation\": \"anagram\", \"chain\": \"\", \"reading\": \"Last Bun To Go\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.6},\n  {\"operation\": \"notariqon\", \"chain\": \"G-L-A-S-T-O-N-B-U-R-Y\", \"reading\": \"Glory to the Lord, the Universe is Buried\", \"languages\": [\"la\"], \"source\": \"generative\", \"confidence\": 0.8},\n  {\"operation\": \"letter_symbol\", \"chain\": \"\", \"reading\": \"G (Gemini) + L (Luminous) + A (Aries) + S (Sun) + T (Taurus) + O (Omega) + N (Nebula) + B (Beehive) + U (Ursa) + R (Rigel) + Y (Yin-Yang)\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.9},\n  {\"operation\": \"numerical\", \"chain\": \"\", \"reading\": \"7 (Glastonbury is a sacred number) + 10 (Ton as a weight or measure) + 2 (Bury as a place of burial)\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.8},\n  {\"operation\": \"phonetic_split\", \"chain\": \"\", \"reading\": \"Glass + Ton + Bur, a shattering sound\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.7},\n  {\"operation\": \"etymology\", \"chain\": \"Bur\", \"reading\": \"a place of burial or a container for the dead\", \"languages\": [\"la\"], \"source\": \"Oxford Latin Dictionary\", \"confidence\": 0.9},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"Greek: Γλαστόν (Glastón) + Ton\", \"reading\": \"a noble lord and his weight, like Atlas\", \"languages\": [\"grc\", \"en\"], \"source\": \"generative\", \"confidence\": 0.7},\n  {\"operation\": \"anagram\", \"chain\": \"\", \"reading\": \"Tun Go Last\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.6}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "Glass + Ton + Bur",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "etymology",
+   "chain": "Glaston",
+   "reading": "a tonal sound, a resonance",
+   "languages": [
+    "la"
+   ],
+   "source": "Oxford Latin Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "French: Gaston + Ton",
+   "reading": "a noble lord and his weight",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "Last Bun To Go",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "G-L-A-S-T-O-N-B-U-R-Y",
+   "reading": "Glory to the Lord, the Universe is Buried",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "G (Gemini) + L (Luminous) + A (Aries) + S (Sun) + T (Taurus) + O (Omega) + N (Nebula) + B (Beehive) + U (Ursa) + R (Rigel) + Y (Yin-Yang)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "numerical",
+   "chain": "",
+   "reading": "7 (Glastonbury is a sacred number) + 10 (Ton as a weight or measure) + 2 (Bury as a place of burial)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "Glass + Ton + Bur, a shattering sound",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bur",
+   "reading": "a place of burial or a container for the dead",
+   "languages": [
+    "la"
+   ],
+   "source": "Oxford Latin Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Greek: Γλαστόν (Glastón) + Ton",
+   "reading": "a noble lord and his weight, like Atlas",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "Tun Go Last",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 11,
+ "refusal_like": false
+}

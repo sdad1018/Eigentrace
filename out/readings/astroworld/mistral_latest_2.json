@@ -1,0 +1,77 @@
+{
+ "word": "Astroworld",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:51:41+00:00",
+ "latency_s": 11.67,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"A-star-oworld\",\n    \"reading\": \"a star's whirl (in the sky)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"A-star (English) - astre (French) - astrum (Latin) = a star\",\n    \"reading\": \"a celestial body shining in the sky\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Astroworld -> worldstar\",\n    \"reading\": \"a famous celebrity or influential figure\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"A-Star-O-World -> ASOW -> Alpha, Sigma, Omega (first, last, and final letters of the Greek alphabet)\",\n    \"reading\": \"the beginning, end, and completeness\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"A-star-oworld -> A (amplitude) + star (astronomical symbol for a star) + o (omega, the last letter of the Greek alphabet) + world\",\n    \"reading\": \"the magnitude of a celestial body in the world\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"A-star-oworld -> A (1) + star (5) + o (15) + world (23)\",\n    \"reading\": \"a sequence of numbers representing a unique entity\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "A-star-oworld",
+   "reading": "a star's whirl (in the sky)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "A-star (English) - astre (French) - astrum (Latin) = a star",
+   "reading": "a celestial body shining in the sky",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Astroworld -> worldstar",
+   "reading": "a famous celebrity or influential figure",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "A-Star-O-World -> ASOW -> Alpha, Sigma, Omega (first, last, and final letters of the Greek alphabet)",
+   "reading": "the beginning, end, and completeness",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "A-star-oworld -> A (amplitude) + star (astronomical symbol for a star) + o (omega, the last letter of the Greek alphabet) + world",
+   "reading": "the magnitude of a celestial body in the world",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "numerical",
+   "chain": "A-star-oworld -> A (1) + star (5) + o (15) + world (23)",
+   "reading": "a sequence of numbers representing a unique entity",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

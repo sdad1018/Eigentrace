@@ -1,0 +1,74 @@
+{
+ "word": "Red Rocks",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:41:01+00:00",
+ "latency_s": 15.58,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"red + rocks\",\n    \"reading\": \"The color of the earthy elements\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"red (adj) + rocks\",\n    \"reading\": \"The stones of the crimson cliffs\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Red Rocks -> Red, Rock, Derrocs\",\n    \"reading\": \"The solitary stone (Rock), the color red, and a fictional place (Derrocs)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Red Rocks -> RR\",\n    \"reading\": \"The initials as a symbol for the entity or place named Red Rocks\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R (Roman numeral) + E (Earth element) + D (Diamond mineral) + R (Red color) + O (Oxygen gas) + C (Carbon mineral) + K (Potassium mineral) + S (Silicon mineral)\",\n    \"reading\": \"A symbolic representation of the minerals and elements found in red rocks\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Red Rocks -> Rock (Old English hroc, roc, from Proto-Germanic *hrokaz, from Proto-Indo-European *gwerek-, *gwreuk-)\",\n    \"reading\": \"The ancient roots of the word 'Rock' in Old English and its connection to the Proto-Indo-European language\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "red + rocks",
+   "reading": "The color of the earthy elements",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "red (adj) + rocks",
+   "reading": "The stones of the crimson cliffs",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Red Rocks -> Red, Rock, Derrocs",
+   "reading": "The solitary stone (Rock), the color red, and a fictional place (Derrocs)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Red Rocks -> RR",
+   "reading": "The initials as a symbol for the entity or place named Red Rocks",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R (Roman numeral) + E (Earth element) + D (Diamond mineral) + R (Red color) + O (Oxygen gas) + C (Carbon mineral) + K (Potassium mineral) + S (Silicon mineral)",
+   "reading": "A symbolic representation of the minerals and elements found in red rocks",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Red Rocks -> Rock (Old English hroc, roc, from Proto-Germanic *hrokaz, from Proto-Indo-European *gwerek-, *gwreuk-)",
+   "reading": "The ancient roots of the word 'Rock' in Old English and its connection to the Proto-Indo-European language",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

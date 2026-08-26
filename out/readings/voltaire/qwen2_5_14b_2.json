@@ -1,0 +1,95 @@
+{
+ "word": "Voltaire",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:37:20+00:00",
+ "latency_s": 22.04,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"etymology\",\"chain\":\"Voltaire (French) = Voltaire (Italian) = volta + re; volta (Italian) = turn, re (Latin) = king\",\"reading\":\"turn of the king or royal shift\",\"languages\":[\"fr\",\"it\",\"la\"],\"source\":\"Oxford English Dictionary\",\"confidence\":0.9},{\"operation\":\"phonetic_split\",\"chain\":\"Voltaire = Vol + taire\",\"reading\":\"flight + master\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.75},{\"operation\":\"cross_language_homophone\",\"chain\":\"Voltaire (French) sounds like voltaire (Italian) = voltare; voltare (Italian) = to turn, change direction\",\"reading\":\"to change course or alter path\",\"languages\":[\"it\",\"fr\"],\"source\":\"generative\",\"confidence\":0.8},{\"operation\":\"anagram\",\"chain\":\"Voltaire = Vol + tair(e); tair(e) is a variant of tire (French) = fatigue, exhaust\",\"reading\":\"exhausted flight\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.65},{\"operation\":\"notariqon\",\"chain\":\"Voltaire = V (victory) + o (zero or nothing) + l (light) + t (truth) + a (alpha, beginning) + i (infinity) + r(e) (return)\",\"reading\":\"triumph of light and truth leading to infinity and return to the start\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.5},{\"operation\":\"letter_symbol\",\"chain\":\"V = victory; o = zero or nothing; l = light; t = truth; a = alpha, beginning; i = infinity; r(e) = return\",\"reading\":\"victory over emptiness leading to enlightenment and eternal cycle\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"numerical\",\"chain\":\"V (22) + o (15) + l (12) + t (20) + a (1) + i (9) + r(e) (18); sum = 107; 107 in gematria can symbolize divine wisdom or enlightenment\",\"reading\":\"divine wisdom through enlightenment\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.55}]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Voltaire (French) = Voltaire (Italian) = volta + re; volta (Italian) = turn, re (Latin) = king",
+   "reading": "turn of the king or royal shift",
+   "languages": [
+    "fr",
+    "it",
+    "la"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Voltaire = Vol + taire",
+   "reading": "flight + master",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Voltaire (French) sounds like voltaire (Italian) = voltare; voltare (Italian) = to turn, change direction",
+   "reading": "to change course or alter path",
+   "languages": [
+    "it",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "Voltaire = Vol + tair(e); tair(e) is a variant of tire (French) = fatigue, exhaust",
+   "reading": "exhausted flight",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Voltaire = V (victory) + o (zero or nothing) + l (light) + t (truth) + a (alpha, beginning) + i (infinity) + r(e) (return)",
+   "reading": "triumph of light and truth leading to infinity and return to the start",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V = victory; o = zero or nothing; l = light; t = truth; a = alpha, beginning; i = infinity; r(e) = return",
+   "reading": "victory over emptiness leading to enlightenment and eternal cycle",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "numerical",
+   "chain": "V (22) + o (15) + l (12) + t (20) + a (1) + i (9) + r(e) (18); sum = 107; 107 in gematria can symbolize divine wisdom or enlightenment",
+   "reading": "divine wisdom through enlightenment",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

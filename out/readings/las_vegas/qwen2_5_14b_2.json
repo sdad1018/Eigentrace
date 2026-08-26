@@ -1,0 +1,84 @@
+{
+ "word": "Las Vegas",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:20:58+00:00",
+ "latency_s": 7.31,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"Las Vegas = La + s + V +egas\",\"reading\":\"Light (La) + separation + Victory + pleasure or excess\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"cross_language_homophone\",\"chain\":\"Vegas ~ vega (Spanish) = star, bright point in the sky\",\"reading\":\"Celestial beacon, guiding light\",\"languages\":[\"es\",\"en\"],\"source\":\"generative\",\"confidence\":0.65},{\"operation\":\"anagram\",\"chain\":\"Las Vegas = slag vase\",\"reading\":\"Waste container for refuse\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.45},{\"operation\":\"etymology\",\"chain\":\"Vegas ~ via (Latin) = road, way\",\"reading\":\"Path or route to follow\",\"languages\":[\"la\",\"en\"],\"source\":\"Lewis and Short's Latin Dictionary\",\"confidence\":0.8},{\"operation\":\"phonetic_split\",\"chain\":\"Las Vegas = Las + Vegas\",\"reading\":\"Waters (Las) + meadow or pastureland\",\"languages\":[\"es\",\"en\"],\"source\":\"generative\",\"confidence\":0.55},{\"operation\":\"notariqon\",\"chain\":\"Las Vegas = Lamentation of Victory\",\"reading\":\"Sorrow over triumph\",\"languages\":[\"he\",\"en\"],\"source\":\"generative\",\"confidence\":0.3}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas = La + s + V +egas",
+   "reading": "Light (La) + separation + Victory + pleasure or excess",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Vegas ~ vega (Spanish) = star, bright point in the sky",
+   "reading": "Celestial beacon, guiding light",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas = slag vase",
+   "reading": "Waste container for refuse",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "etymology",
+   "chain": "Vegas ~ via (Latin) = road, way",
+   "reading": "Path or route to follow",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Lewis and Short's Latin Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas = Las + Vegas",
+   "reading": "Waters (Las) + meadow or pastureland",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Las Vegas = Lamentation of Victory",
+   "reading": "Sorrow over triumph",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

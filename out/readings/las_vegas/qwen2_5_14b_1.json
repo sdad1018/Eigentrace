@@ -1,0 +1,82 @@
+{
+ "word": "Las Vegas",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:20:51+00:00",
+ "latency_s": 59.69,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n    {\"operation\": \"phonetic_split\", \"chain\": \"La + s Vegas\", \"reading\": \"Light or illumination of the sacred valley\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.7},\n    {\"operation\": \"cross_language_homophone\", \"chain\": \"Las (es) = last, Las (fr) = light\", \"reading\": \"Final illumination\", \"languages\": [\"es\",\"fr\"], \"source\": \"generative\", \"confidence\": 0.65},\n    {\"operation\": \"anagram\", \"chain\": \"S Las Vegas\", \"reading\": \"A place of divine grace and splendor\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.4},\n    {\"operation\": \"phonetic_split\", \"chain\": \"L + as Vegas\", \"reading\": \"To pour or flow into the sacred valley\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.55},\n    {\"operation\": \"cross_language_homophone\", \"chain\": \"Vegas (es) = vejas = eyes\", \"reading\": \"Place of watchful observation\", \"languages\": [\"es\"], \"source\": \"generative\", \"confidence\": 0.6},\n    {\"operation\": \"etymology\", \"chain\": \"Las Vegas (Spanish) = the meadows\", \"reading\": \"Land of abundant pastures and greenery\", \"languages\": [\"en\",\"es\"], \"source\": \"Oxford English Dictionary\", \"confidence\": 1}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "La + s Vegas",
+   "reading": "Light or illumination of the sacred valley",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las (es) = last, Las (fr) = light",
+   "reading": "Final illumination",
+   "languages": [
+    "es",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "S Las Vegas",
+   "reading": "A place of divine grace and splendor",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "L + as Vegas",
+   "reading": "To pour or flow into the sacred valley",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Vegas (es) = vejas = eyes",
+   "reading": "Place of watchful observation",
+   "languages": [
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Las Vegas (Spanish) = the meadows",
+   "reading": "Land of abundant pastures and greenery",
+   "languages": [
+    "en",
+    "es"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 1
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

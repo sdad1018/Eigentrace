@@ -1,0 +1,78 @@
+{
+ "word": "Lollapalooza",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:43:15+00:00",
+ "latency_s": 16.09,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lolla + palooza\",\n    \"reading\": \"laudable festival (in a playful or exaggerated manner)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Lolla (Italian) = Lola (Spanish, Portuguese) = pet name for a woman\",\n    \"reading\": \"female nickname associated with the festival\",\n    \"languages\": [\"it\", \"es\", \"pt\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Lollapalooza -> oozing pal (loyal friend)\",\n    \"reading\": \"a loyal friend, perhaps attracted by the festival\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Lollapalooza -> L + O (Odyssey) + P + A (Apocalypse) + L (law) + O (Oracle) + Z (zeal)\",\n    \"reading\": \"a grand journey of law, apocalyptic oracles, and zealous devotion\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Lollapalooza -> L (50) + O (15) + ll (30) + a (1) + p (16) + al (1 + 12 = 13) + oo (15 x 2 = 30) + z (26)\",\n    \"reading\": \"the number sequence: 50, 15, 30, 1, 16, 13, 30, 26\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Lollapalooza -> L (Latin) = many + pal (Persian) = head + ooza (Arabic) = great\",\n    \"reading\": \"a term of admiration, originating from a combination of Latin, Persian, and Arabic roots\",\n    \"languages\": [\"la\", \"fa\", \"ar\"],\n    \"source\": \"Onomasticon by Etymologicum Magnum\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Lolla + palooza",
+   "reading": "laudable festival (in a playful or exaggerated manner)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Lolla (Italian) = Lola (Spanish, Portuguese) = pet name for a woman",
+   "reading": "female nickname associated with the festival",
+   "languages": [
+    "it",
+    "es",
+    "pt"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Lollapalooza -> oozing pal (loyal friend)",
+   "reading": "a loyal friend, perhaps attracted by the festival",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Lollapalooza -> L + O (Odyssey) + P + A (Apocalypse) + L (law) + O (Oracle) + Z (zeal)",
+   "reading": "a grand journey of law, apocalyptic oracles, and zealous devotion",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Lollapalooza -> L (50) + O (15) + ll (30) + a (1) + p (16) + al (1 + 12 = 13) + oo (15 x 2 = 30) + z (26)",
+   "reading": "the number sequence: 50, 15, 30, 1, 16, 13, 30, 26",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Lollapalooza -> L (Latin) = many + pal (Persian) = head + ooza (Arabic) = great",
+   "reading": "a term of admiration, originating from a combination of Latin, Persian, and Arabic roots",
+   "languages": [
+    "la",
+    "fa",
+    "ar"
+   ],
+   "source": "Onomasticon by Etymologicum Magnum"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

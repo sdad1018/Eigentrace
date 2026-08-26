@@ -1,0 +1,79 @@
+{
+ "word": "Roker Point",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:59:30+00:00",
+ "latency_s": 14.36,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Roke + Point\",\n    \"reading\": \"A point or place associated with 'Roke', a rocky islet in the English Channel\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Rok' + 'er Point'\",\n    \"reading\": \"A point or place associated with a fortified structure, possibly of Norse origin\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"'Roker' (German) + 'Point'\",\n    \"reading\": \"A point or location related to a red-roofed settlement\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"'Roker' rearranged + 'Point'\",\n    \"reading\": \"A point or location associated with a rocky structure\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"'Roker' first two letters + 'Point'\",\n    \"reading\": \"A point or location associated with the initial part of 'Roke', a rocky islet\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"'R' (Roman numeral for 100) + 'K' (Celtic rune for horse) + 'E' (Egyptian hieroglyph for breath) + 'r' (runic symbol for secret) + 'P' (Greek letter Pi, representing the mouth) + 'O' (Latin Oculus, meaning eye) + 'int'\",\n    \"reading\": \"A secret location associated with a horse-related event, involving the breath, mouth, and eye\",\n    \"languages\": [\"en\", \"la\", \"grc\", \"he\", \"eg\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Roke + Point",
+   "reading": "A point or place associated with 'Roke', a rocky islet in the English Channel",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'Rok' + 'er Point'",
+   "reading": "A point or place associated with a fortified structure, possibly of Norse origin",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "'Roker' (German) + 'Point'",
+   "reading": "A point or location related to a red-roofed settlement",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "'Roker' rearranged + 'Point'",
+   "reading": "A point or location associated with a rocky structure",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "'Roker' first two letters + 'Point'",
+   "reading": "A point or location associated with the initial part of 'Roke', a rocky islet",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "'R' (Roman numeral for 100) + 'K' (Celtic rune for horse) + 'E' (Egyptian hieroglyph for breath) + 'r' (runic symbol for secret) + 'P' (Greek letter Pi, representing the mouth) + 'O' (Latin Oculus, meaning eye) + 'int'",
+   "reading": "A secret location associated with a horse-related event, involving the breath, mouth, and eye",
+   "languages": [
+    "en",
+    "la",
+    "grc",
+    "he",
+    "eg"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

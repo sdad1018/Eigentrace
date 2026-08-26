@@ -1,0 +1,80 @@
+{
+ "word": "Las Vegas Village",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:46:43+00:00",
+ "latency_s": 25.49,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas Village => La (French for 'the') + Az (Azerbaijani for 'blue') + Vegas (English, possibly related to 'wage' or 'meadow') + Village (French for 'village')\",\n    \"reading\": \"The blue wage meadow village\",\n    \"languages\": [\"en\", \"fr\", \"az\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas Village => Las (Spanish for 'the') + Av (Hebrew for 'a father') + Jag (Old Norse for 'warrior') + Ville (French for 'town')\",\n    \"reading\": \"The father warrior town\",\n    \"languages\": [\"es\", \"he\", \"no\", \"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Village => Vegas Slave Hive\",\n    \"reading\": \"Vegas slave hive\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Las Vegas Village => LVV (initial letters) => Lux Vivere Vel Vivere (Latin for 'to live in luxury or to live')\",\n    \"reading\": \"To live in luxury or to live\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Las Vegas Village => L (capital letter) + A (alpha, first letter of the Greek alphabet) + S (small sigma, 19th letter of the Greek alphabet) + V (Roman numeral for 5) + E (Epsilon, 5th letter of the Greek alphabet) + G (Gammas, 3rd letter of the Greek alphabet) + A (alpha, first letter of the Greek alphabet) + S (small sigma, 19th letter of the Greek alphabet) + V (Roman numeral for 5) + E (Epsilon, 5th letter of the Greek alphabet) + V (Roman numeral for 5) + I (Iota, 9th letter of the Greek alphabet) + L (Lambda, 11th letter of the Greek alphabet) + E (Epsilon, 5th letter of the Greek alphabet) + G (Gammas, 3rd letter of the Greek alphabet) + E (Epsilon, 5th letter of the Greek alphabet) + V (Roman numeral for 5) + I (Iota, 9th letter of the Greek alphabet) + L (Lambda, 11th letter of the Greek alphabet) + E (Epsilon, 5th letter of the Greek alphabet) + S (small sigma, 19th letter of the Greek alphabet) + V (Roman numeral for 5)\",\n    \"reading\": \"L A S V E G A S V E V I L E G E V S V I L\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las Vegas Village => Las Vegas (Spanish for 'the meadows') + Village (French for 'village')\",\n    \"reading\": \"The meadow village\",\n    \"languages\": [\"es\", \"fr\"],\n    \"source\": \"https://en.wiktionary.org/wiki/Las_Vegas\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas Village => La (French for 'the') + Az (Azerbaijani for 'blue') + Vegas (English, possibly related to 'wage' or 'meadow') + Village (French for 'village')",
+   "reading": "The blue wage meadow village",
+   "languages": [
+    "en",
+    "fr",
+    "az"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas Village => Las (Spanish for 'the') + Av (Hebrew for 'a father') + Jag (Old Norse for 'warrior') + Ville (French for 'town')",
+   "reading": "The father warrior town",
+   "languages": [
+    "es",
+    "he",
+    "no",
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Village => Vegas Slave Hive",
+   "reading": "Vegas slave hive",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Las Vegas Village => LVV (initial letters) => Lux Vivere Vel Vivere (Latin for 'to live in luxury or to live')",
+   "reading": "To live in luxury or to live",
+   "languages": [
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Las Vegas Village => L (capital letter) + A (alpha, first letter of the Greek alphabet) + S (small sigma, 19th letter of the Greek alphabet) + V (Roman numeral for 5) + E (Epsilon, 5th letter of the Greek alphabet) + G (Gammas, 3rd letter of the Greek alphabet) + A (alpha, first letter of the Greek alphabet) + S (small sigma, 19th letter of the Greek alphabet) + V (Roman numeral for 5) + E (Epsilon, 5th letter of the Greek alphabet) + V (Roman numeral for 5) + I (Iota, 9th letter of the Greek alphabet) + L (Lambda, 11th letter of the Greek alphabet) + E (Epsilon, 5th letter of the Greek alphabet) + G (Gammas, 3rd letter of the Greek alphabet) + E (Epsilon, 5th letter of the Greek alphabet) + V (Roman numeral for 5) + I (Iota, 9th letter of the Greek alphabet) + L (Lambda, 11th letter of the Greek alphabet) + E (Epsilon, 5th letter of the Greek alphabet) + S (small sigma, 19th letter of the Greek alphabet) + V (Roman numeral for 5)",
+   "reading": "L A S V E G A S V E V I L E G E V S V I L",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Las Vegas Village => Las Vegas (Spanish for 'the meadows') + Village (French for 'village')",
+   "reading": "The meadow village",
+   "languages": [
+    "es",
+    "fr"
+   ],
+   "source": "https://en.wiktionary.org/wiki/Las_Vegas"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

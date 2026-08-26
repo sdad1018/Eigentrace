@@ -1,0 +1,76 @@
+{
+ "word": "Route 91 Harvest",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:45:01+00:00",
+ "latency_s": 11.61,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Route -> roote (Old English) = root\",\n    \"reading\": \"The path of roots\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Route -> roote (Old English) = root, 91 -> ninety-one (English)\",\n    \"reading\": \"The path of the hundred and ninth root\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Route -> roote (Old English) = root, 91 -> nine + one (English)\",\n    \"reading\": \"The path of the ninth and first roots\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Route -> route (French) = way, Harvest -> heurts (Old French) = wounds\",\n    \"reading\": \"The way of the wounded\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Route -> reout\",\n    \"reading\": \"A path out\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Route 91 Harvest -> RTH (initial letters) = Resurrectio (Latin) = Resurrection\",\n    \"reading\": \"The resurrection path\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Route -> roote (Old English) = root",
+   "reading": "The path of roots",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Route -> roote (Old English) = root, 91 -> ninety-one (English)",
+   "reading": "The path of the hundred and ninth root",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Route -> roote (Old English) = root, 91 -> nine + one (English)",
+   "reading": "The path of the ninth and first roots",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Route -> route (French) = way, Harvest -> heurts (Old French) = wounds",
+   "reading": "The way of the wounded",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Route -> reout",
+   "reading": "A path out",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Route 91 Harvest -> RTH (initial letters) = Resurrectio (Latin) = Resurrection",
+   "reading": "The resurrection path",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

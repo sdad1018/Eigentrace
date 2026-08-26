@@ -1,0 +1,74 @@
+{
+ "word": "Bonnaroo",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:39:57+00:00",
+ "latency_s": 12.82,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"\",\n    \"reading\": \"Good roo (as in a barnyard animal)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bon + arr + oo = bon anneau (French for 'good ring')\",\n    \"reading\": \"Good ring\",\n    \"languages\": [\"fr\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"\",\n    \"reading\": \"Ronnob (a name, possibly a king in Norse mythology)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"\",\n    \"reading\": \"BON (an abbreviation for 'Bonum', Latin for 'good')\",\n    \"languages\": [\"la\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"\",\n    \"reading\": \"B (the second letter of the alphabet, often symbolizing 'beginning') + N (a symbol for 'north') + A (alpha, the first letter of the Greek alphabet) + R (rho, the 17th letter of the Greek alphabet) + O (omicron, the 15th letter of the Greek alphabet) + O (omicron, the 15th letter of the Greek alphabet)\",\n    \"languages\": [\"grc\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"\",\n    \"reading\": \"2 (Bonnaroo is the second festival in Bonnaroo Works Fund's annual calendar)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "Good roo (as in a barnyard animal)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bon + arr + oo = bon anneau (French for 'good ring')",
+   "reading": "Good ring",
+   "languages": [
+    "fr"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "Ronnob (a name, possibly a king in Norse mythology)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "BON (an abbreviation for 'Bonum', Latin for 'good')",
+   "languages": [
+    "la"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "B (the second letter of the alphabet, often symbolizing 'beginning') + N (a symbol for 'north') + A (alpha, the first letter of the Greek alphabet) + R (rho, the 17th letter of the Greek alphabet) + O (omicron, the 15th letter of the Greek alphabet) + O (omicron, the 15th letter of the Greek alphabet)",
+   "languages": [
+    "grc"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "numerical",
+   "chain": "",
+   "reading": "2 (Bonnaroo is the second festival in Bonnaroo Works Fund's annual calendar)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

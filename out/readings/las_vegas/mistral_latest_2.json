@@ -1,0 +1,76 @@
+{
+ "word": "Las Vegas",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:49:15+00:00",
+ "latency_s": 15.42,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas = La + s Ve + gas\",\n    \"reading\": \"The (feminine article) S (possibly a shortened form of 'Saint') Vega's (a star) Gas (as in energy)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas = Las (Spanish for 'the') Béguinage (French for a community of unmarried women living under religious rule)\",\n    \"reading\": \"The Community of Unmarried Women's Vegas\",\n    \"languages\": [\"es\", \"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas = Vegas Slas\",\n    \"reading\": \"Vegas of the Slash (a mark dividing text or a river)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Las Vegas = L + A + S + V + E + G + A + S = Legacy Vegas\",\n    \"reading\": \"Vegas of the Legacy\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Las Vegas = L + A + S + V + E + G + A + S\",\n    \"reading\": \"L (50) A (1) S (20) V (22) E (5) G (7) A (1) S (20) = 136 in base-10 number system\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las Vegas = Las (Spanish for 'the') + Vegas (from the Mexican Nahuatl word 'huēxōchtli', meaning rabbit)\",\n    \"reading\": \"The Rabbits' (Spanish Las) Vegas\",\n    \"languages\": [\"es\", \"na\"],\n    \"source\": \"https://www.etymonline.com/word/Las+Vegas\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas = La + s Ve + gas",
+   "reading": "The (feminine article) S (possibly a shortened form of 'Saint') Vega's (a star) Gas (as in energy)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas = Las (Spanish for 'the') Béguinage (French for a community of unmarried women living under religious rule)",
+   "reading": "The Community of Unmarried Women's Vegas",
+   "languages": [
+    "es",
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas = Vegas Slas",
+   "reading": "Vegas of the Slash (a mark dividing text or a river)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Las Vegas = L + A + S + V + E + G + A + S = Legacy Vegas",
+   "reading": "Vegas of the Legacy",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Las Vegas = L + A + S + V + E + G + A + S",
+   "reading": "L (50) A (1) S (20) V (22) E (5) G (7) A (1) S (20) = 136 in base-10 number system",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Las Vegas = Las (Spanish for 'the') + Vegas (from the Mexican Nahuatl word 'huēxōchtli', meaning rabbit)",
+   "reading": "The Rabbits' (Spanish Las) Vegas",
+   "languages": [
+    "es",
+    "na"
+   ],
+   "source": "https://www.etymonline.com/word/Las+Vegas"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

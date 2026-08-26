@@ -1,0 +1,80 @@
+{
+ "word": "Eagles of Death Metal",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:36:26+00:00",
+ "latency_s": 11.26,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"Eagles of Death Metal\",\"reading\":\"Echoes off depths meld.\",\"languages\":[\"generative\"],\"source\":\"generative\",\"confidence\":0.8},{\"operation\":\"anagram\",\"chain\":\"Eagles of Death Metal\",\"reading\":\"Dead metal legos feel.\",\"languages\":[\"generative\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"phonetic_split\",\"chain\":\"Eagles of Death Metal\",\"reading\":\"Ages old death mettle.\",\"languages\":[\"generative\"],\"source\":\"generative\",\"confidence\":0.85},{\"operation\":\"cross_language_homophone\",\"chain\":\"Eagles of Death Metal\",\"reading\":\"Elge (French: elbow) of debt helm.\",\"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"phonetic_split\",\"chain\":\"Eagles of Death Metal\",\"reading\":\"Agle sled them out.\",\"languages\":[\"generative\"],\"source\":\"generative\",\"confidence\":0.75},{\"operation\":\"anagram\",\"chain\":\"Eagles of Death Metal\",\"reading\":\"Mettle death goes aleless.\",\"languages\":[\"generative\"],\"source\":\"generative\",\"confidence\":0.65}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Eagles of Death Metal",
+   "reading": "Echoes off depths meld.",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "Eagles of Death Metal",
+   "reading": "Dead metal legos feel.",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Eagles of Death Metal",
+   "reading": "Ages old death mettle.",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Eagles of Death Metal",
+   "reading": "Elge (French: elbow) of debt helm.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Eagles of Death Metal",
+   "reading": "Agle sled them out.",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "Eagles of Death Metal",
+   "reading": "Mettle death goes aleless.",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

@@ -1,0 +1,74 @@
+{
+ "word": "Mandalay",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:47:32+00:00",
+ "latency_s": 12.22,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Mand + al + ay\",\n    \"reading\": \"Mind of the people (al) in a place of joy (ay)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Man + dal + ay\",\n    \"reading\": \"Mankind's dwelling place of day (ay)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Man + da + le + y\",\n    \"reading\": \"Mankind's gift of law (y) in a place (le)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"From Burmese: 'the capital city'\",\n    \"reading\": \"The principal city in a land (Burmese)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Man + dalay\",\n    \"reading\": \"Mankind's dwelling in a valley\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M - mother, a - and, l - laurel, a - and, y - yang\",\n    \"reading\": \"The union of the mother (M), the and (a), the laurel (l), the and (a), and the yang\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Mand + al + ay",
+   "reading": "Mind of the people (al) in a place of joy (ay)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Man + dal + ay",
+   "reading": "Mankind's dwelling place of day (ay)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Man + da + le + y",
+   "reading": "Mankind's gift of law (y) in a place (le)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "From Burmese: 'the capital city'",
+   "reading": "The principal city in a land (Burmese)",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Man + dalay",
+   "reading": "Mankind's dwelling in a valley",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M - mother, a - and, l - laurel, a - and, y - yang",
+   "reading": "The union of the mother (M), the and (a), the laurel (l), the and (a), and the yang",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

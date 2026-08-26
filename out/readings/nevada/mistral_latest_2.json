@@ -1,0 +1,77 @@
+{
+ "word": "Nevada",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:49:51+00:00",
+ "latency_s": 12.21,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Nevada (Spanish) = snow-covered\",\n    \"reading\": \"a region with frequent snowfall\",\n    \"languages\": [\"es\"],\n    \"source\": \"Diccionario de la lengua española, Real Academia Española\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Nevada = ne + va (Latin) = not + go\",\n    \"reading\": \"an unmovable or immovable entity\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Nevada (English) = Nevo (Russian) = new\",\n    \"reading\": \"a newly formed or created place\",\n    \"languages\": [\"en\", \"ru\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Nevada = Avena (Latin) = oat\",\n    \"reading\": \"a region where oats grow abundantly\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Nevada = N + E (Egyptian) = north + east\",\n    \"reading\": \"a region located in the northeastern part of a continent\",\n    \"languages\": [\"en\", \"egy\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Nevada = N (Chemical Symbol) = Neon\",\n    \"reading\": \"a region rich in neon gas\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Nevada (Spanish) = snow-covered",
+   "reading": "a region with frequent snowfall",
+   "languages": [
+    "es"
+   ],
+   "source": "Diccionario de la lengua española, Real Academia Española"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Nevada = ne + va (Latin) = not + go",
+   "reading": "an unmovable or immovable entity",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Nevada (English) = Nevo (Russian) = new",
+   "reading": "a newly formed or created place",
+   "languages": [
+    "en",
+    "ru"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Nevada = Avena (Latin) = oat",
+   "reading": "a region where oats grow abundantly",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Nevada = N + E (Egyptian) = north + east",
+   "reading": "a region located in the northeastern part of a continent",
+   "languages": [
+    "en",
+    "egy"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Nevada = N (Chemical Symbol) = Neon",
+   "reading": "a region rich in neon gas",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

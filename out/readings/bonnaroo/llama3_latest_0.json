@@ -1,0 +1,82 @@
+{
+ "word": "Bonnaroo",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:05:44+00:00",
+ "latency_s": 12.67,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bon + roo\",\n    \"reading\": \"good roof or enclosure\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"bon (French) + roo (English)\",\n    \"reading\": \"a harmonious or pleasing sound, like a good roof\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bon (French) + boon (English)\",\n    \"reading\": \"a beneficial or advantageous situation, like a good roof\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"roo + bon\",\n    \"reading\": \"a new or unusual way of doing something, like a roof\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-O-N-N-A-R-O-O\",\n    \"reading\": \"a path or way that is good and true, like a roof\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B (birth) + Roo (roof)\",\n    \"reading\": \"a place of birth or origin, like a roof\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "bon + roo",
+   "reading": "good roof or enclosure",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "bon (French) + roo (English)",
+   "reading": "a harmonious or pleasing sound, like a good roof",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bon (French) + boon (English)",
+   "reading": "a beneficial or advantageous situation, like a good roof",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "roo + bon",
+   "reading": "a new or unusual way of doing something, like a roof",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-O-N-N-A-R-O-O",
+   "reading": "a path or way that is good and true, like a roof",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (birth) + Roo (roof)",
+   "reading": "a place of birth or origin, like a roof",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

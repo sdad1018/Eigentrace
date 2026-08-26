@@ -1,0 +1,75 @@
+{
+ "word": "Red Rocks",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:41:13+00:00",
+ "latency_s": 11.71,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Red -> red (color); Rocks -> rocks (solid matter)\",\n    \"reading\": \"A solid matter of a distinctive color\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Red -> red (hot); Rocks -> rocks (stony ground)\",\n    \"reading\": \"A hot, stony ground\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Red -> red (angry); Rocks -> rocks (obstacles)\",\n    \"reading\": \"An angry obstacle\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Red Rocks -> Rød Rot (Danish) -> Rød (red) + Rot (root)\",\n    \"reading\": \"The root of red\",\n    \"languages\": [\"en\", \"da\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Red Rocks -> Redock\",\n    \"reading\": \"A dock for red ships\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Red Rocks -> RR (Rex Regum, Latin for 'King of Kings')\",\n    \"reading\": \"King of Kings\",\n    \"languages\": [\"la\"],\n    \"source\": \"Generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Red -> red (color); Rocks -> rocks (solid matter)",
+   "reading": "A solid matter of a distinctive color",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Red -> red (hot); Rocks -> rocks (stony ground)",
+   "reading": "A hot, stony ground",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Red -> red (angry); Rocks -> rocks (obstacles)",
+   "reading": "An angry obstacle",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Red Rocks -> Rød Rot (Danish) -> Rød (red) + Rot (root)",
+   "reading": "The root of red",
+   "languages": [
+    "en",
+    "da"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Red Rocks -> Redock",
+   "reading": "A dock for red ships",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Red Rocks -> RR (Rex Regum, Latin for 'King of Kings')",
+   "reading": "King of Kings",
+   "languages": [
+    "la"
+   ],
+   "source": "Generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

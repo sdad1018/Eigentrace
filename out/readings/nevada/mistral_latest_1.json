@@ -1,0 +1,75 @@
+{
+ "word": "Nevada",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:49:38+00:00",
+ "latency_s": 11.16,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"\",\n    \"reading\": \"Ne (East) + Va (waves)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"ne (French) = no; va (Spanish) = goes\",\n    \"reading\": \"No-goes, as in a place where movement is restricted\",\n    \"languages\": [\"fr\", \"es\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Sinang (Tagalog) = people; Nevada = snowy, from the snow-covered Sierra Nevada mountains\",\n    \"reading\": \"People of the snowy mountains\",\n    \"languages\": [\"tl\"],\n    \"source\": \"Onomasticon Mexicanum by Juan de Cervantes y Salazar\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"\",\n    \"reading\": \"Vane (wind vane) + ad\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"\",\n    \"reading\": \"N (north) + E (east) + V (west) + A (south)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"\",\n    \"reading\": \"N = Neutron; E = Electron; V = Volt; A = Ampere\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "Ne (East) + Va (waves)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "ne (French) = no; va (Spanish) = goes",
+   "reading": "No-goes, as in a place where movement is restricted",
+   "languages": [
+    "fr",
+    "es"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Sinang (Tagalog) = people; Nevada = snowy, from the snow-covered Sierra Nevada mountains",
+   "reading": "People of the snowy mountains",
+   "languages": [
+    "tl"
+   ],
+   "source": "Onomasticon Mexicanum by Juan de Cervantes y Salazar"
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "Vane (wind vane) + ad",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "N (north) + E (east) + V (west) + A (south)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "N = Neutron; E = Electron; V = Volt; A = Ampere",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

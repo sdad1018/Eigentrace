@@ -1,0 +1,74 @@
+{
+ "word": "Harvest",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:45:27+00:00",
+ "latency_s": 12.7,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"harvest (Old English hærfest) = autumn season for gathering crops\",\n    \"reading\": \"season of reaping\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"harvest (split into h + ar + vest)\",\n    \"reading\": \"harrow the earth, plow\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"harvest (same sound as 'horses')\",\n    \"reading\": \"a force of laborers, a team\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"harvest (rearranged to become 'heart's')\",\n    \"reading\": \"center, core of the season\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"harvest (first letters form 'ha' and 'st', like 'haste')\",\n    \"reading\": \"quick, urgent action\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"harvest (H = Herald's point, A = Alchemist's fire, R = Radical, V = Venus, S = Sol, T = Time)\",\n    \"reading\": \"Heraldic symbol of the harvest season under Venus, representing time\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "harvest (Old English hærfest) = autumn season for gathering crops",
+   "reading": "season of reaping",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "harvest (split into h + ar + vest)",
+   "reading": "harrow the earth, plow",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "harvest (same sound as 'horses')",
+   "reading": "a force of laborers, a team",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "harvest (rearranged to become 'heart's')",
+   "reading": "center, core of the season",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "harvest (first letters form 'ha' and 'st', like 'haste')",
+   "reading": "quick, urgent action",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "harvest (H = Herald's point, A = Alchemist's fire, R = Radical, V = Venus, S = Sol, T = Time)",
+   "reading": "Heraldic symbol of the harvest season under Venus, representing time",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

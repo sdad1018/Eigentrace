@@ -1,0 +1,76 @@
+{
+ "word": "Stagecoach",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:44:23+00:00",
+ "latency_s": 11.33,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"stage + coach\",\n    \"reading\": \"a covered vehicle for passengers\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"sta(ge) + co(ach)\",\n    \"reading\": \"a place (stage) for a vehicle to stop (coach)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"stage (English) = étape (French) = stage (Latin)\",\n    \"reading\": \"a point in a journey or process\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Stagecoach => coach + age\",\n    \"reading\": \"a vehicle for an older person (coach) or the condition of being old (age)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Stagecoach => S + C (initial letters)\",\n    \"reading\": \"a combination of the initial letters as a symbol or abbreviation\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"S => Sun (astrology)\",\n    \"reading\": \"a journey through the cosmos (stagecoach) or the sun (Sun)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "stage + coach",
+   "reading": "a covered vehicle for passengers",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "sta(ge) + co(ach)",
+   "reading": "a place (stage) for a vehicle to stop (coach)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "stage (English) = étape (French) = stage (Latin)",
+   "reading": "a point in a journey or process",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Stagecoach => coach + age",
+   "reading": "a vehicle for an older person (coach) or the condition of being old (age)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Stagecoach => S + C (initial letters)",
+   "reading": "a combination of the initial letters as a symbol or abbreviation",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "S => Sun (astrology)",
+   "reading": "a journey through the cosmos (stagecoach) or the sun (Sun)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

@@ -1,0 +1,100 @@
+{
+ "word": "Gillette Stadium",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:05:31+00:00",
+ "latency_s": 16.5,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \n   \"chain\": \"\", \n   \"reading\": \"Gillette's edge or sharpness\", \n   \"languages\": [\"en\"], \n   \"source\": \"Oxford English Dictionary\", \n   \"confidence\": 0.9},\n  {\"operation\": \"phonetic_split\", \n   \"chain\": \"Gil-let-te-Stadi-um\", \n   \"reading\": \"gilded temple of the stadium\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.7},\n  {\"operation\": \"cross_language_homophone\", \n   \"chain\": \"\", \n   \"reading\": \"a gentle hill\", \n   \"languages\": [\"fr\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.6},\n  {\"operation\": \"anagram\", \n   \"chain\": \"Gillette -> Gill Tie\", \n   \"reading\": \"giving a tie or bond\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.8},\n  {\"operation\": \"notariqon\", \n   \"chain\": \"\", \n   \"reading\": \"Gil-let-te -> Gil (silk) + let (allow)\", \n   \"languages\": [\"he\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.5},\n  {\"operation\": \"letter_symbol\", \n   \"chain\": \"G -> Geometric; I -> Infinity; L -> Line; T -> Triangle; E -> Equilateral\", \n   \"reading\": \"a geometrically perfect triangle\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.4},\n  {\"operation\": \"numerical\", \n   \"chain\": \"\", \n   \"reading\": \"7 (Gil) + 11 (let) + 9 (te) + 5 (Stadium)\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.3},\n  {\"operation\": \"etymology\", \n   \"chain\": \"\", \n   \"reading\": \"Gillette's edge or sharpness, as in a sword's edge\", \n   \"languages\": [\"la\"], \n   \"source\": \"Oxford Latin Dictionary\", \n   \"confidence\": 0.9}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "Gillette's edge or sharpness",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gil-let-te-Stadi-um",
+   "reading": "gilded temple of the stadium",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "a gentle hill",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Gillette -> Gill Tie",
+   "reading": "giving a tie or bond",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "Gil-let-te -> Gil (silk) + let (allow)",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G -> Geometric; I -> Infinity; L -> Line; T -> Triangle; E -> Equilateral",
+   "reading": "a geometrically perfect triangle",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "",
+   "reading": "7 (Gil) + 11 (let) + 9 (te) + 5 (Stadium)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "Gillette's edge or sharpness, as in a sword's edge",
+   "languages": [
+    "la"
+   ],
+   "source": "Oxford Latin Dictionary",
+   "confidence": 0.9
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

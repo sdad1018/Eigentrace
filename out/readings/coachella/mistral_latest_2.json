@@ -1,0 +1,75 @@
+{
+ "word": "Coachella",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:38:46+00:00",
+ "latency_s": 8.64,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Coa + chella\",\n    \"reading\": \"Cover (hide) shell\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Coa (Spanish) = heart; chella (Italian) = little cheek\",\n    \"reading\": \"Little heart of the cheek\",\n    \"languages\": [\"es\", \"it\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Coachella => Hallocae\",\n    \"reading\": \"Salt marsh dweller (from Latin Halocarpaceae)\",\n    \"languages\": [\"la\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Coachella => COA (Certificate of Authenticity)\",\n    \"reading\": \"Certificate of authenticity\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"C (chemical symbol for Carbon) + o + a + e + l + la\",\n    \"reading\": \"Carbon, oil, earth, water, air, and light\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Coachella (Spanish) = valley of the snakes\",\n    \"reading\": \"Valley of the snakes\",\n    \"languages\": [\"es\"],\n    \"source\": \"https://www.etymonline.com/word/coachella\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Coa + chella",
+   "reading": "Cover (hide) shell",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Coa (Spanish) = heart; chella (Italian) = little cheek",
+   "reading": "Little heart of the cheek",
+   "languages": [
+    "es",
+    "it"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Coachella => Hallocae",
+   "reading": "Salt marsh dweller (from Latin Halocarpaceae)",
+   "languages": [
+    "la"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Coachella => COA (Certificate of Authenticity)",
+   "reading": "Certificate of authenticity",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "C (chemical symbol for Carbon) + o + a + e + l + la",
+   "reading": "Carbon, oil, earth, water, air, and light",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Coachella (Spanish) = valley of the snakes",
+   "reading": "Valley of the snakes",
+   "languages": [
+    "es"
+   ],
+   "source": "https://www.etymonline.com/word/coachella"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

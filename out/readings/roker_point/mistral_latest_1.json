@@ -1,0 +1,76 @@
+{
+ "word": "Roker Point",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:59:44+00:00",
+ "latency_s": 13.26,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"\",\n    \"reading\": \"Root - Key (as in a key to a door or a map)\",\n    \"languages\": [\"en\"],\n    \"source\": \"The sounds of the letters 'ro' and 'ke' suggest root and key respectively.\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"\",\n    \"reading\": \"Rocky Cape (Cape in Tamil, India)\",\n    \"languages\": [\"en\", \"ta\"],\n    \"source\": \"The sounds of 'Roker' and 'Cape' are similar.\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"\",\n    \"reading\": \"Korero Peka (Talking Strike in Maori)\",\n    \"languages\": [\"en\", \"mi\"],\n    \"source\": \"The letters of 'Roker' can be rearranged to form 'Korero Peka'.\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"\",\n    \"reading\": \"RP (Royal Park in Old English)\",\n    \"languages\": [\"en\"],\n    \"source\": \"The initial letters of 'Roker Point' can be read as RP, which could stand for Royal Park.\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"\",\n    \"reading\": \"R = Rough (as in rough terrain)\",\n    \"languages\": [\"en\"],\n    \"source\": \"The letter 'R' often symbolizes roughness.\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"\",\n    \"reading\": \"A point or location named after rocks\",\n    \"languages\": [\"en\"],\n    \"source\": \"The term 'rocker' is derived from Old Norse 'rökr', meaning rocky.\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "Root - Key (as in a key to a door or a map)",
+   "languages": [
+    "en"
+   ],
+   "source": "The sounds of the letters 'ro' and 'ke' suggest root and key respectively."
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "Rocky Cape (Cape in Tamil, India)",
+   "languages": [
+    "en",
+    "ta"
+   ],
+   "source": "The sounds of 'Roker' and 'Cape' are similar."
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "Korero Peka (Talking Strike in Maori)",
+   "languages": [
+    "en",
+    "mi"
+   ],
+   "source": "The letters of 'Roker' can be rearranged to form 'Korero Peka'."
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "RP (Royal Park in Old English)",
+   "languages": [
+    "en"
+   ],
+   "source": "The initial letters of 'Roker Point' can be read as RP, which could stand for Royal Park."
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "R = Rough (as in rough terrain)",
+   "languages": [
+    "en"
+   ],
+   "source": "The letter 'R' often symbolizes roughness."
+  },
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "A point or location named after rocks",
+   "languages": [
+    "en"
+   ],
+   "source": "The term 'rocker' is derived from Old Norse 'rökr', meaning rocky."
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

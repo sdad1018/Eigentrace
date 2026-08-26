@@ -1,0 +1,75 @@
+{
+ "word": "Paddock",
+ "model": "mistral:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:50:52+00:00",
+ "latency_s": 11.35,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"pad + dock\",\n    \"reading\": \"place for keeping or training horses\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Old English pædoc, from pædan 'to drive' + docc 'a hollow place'; Middle English, from Old Norse padr 'enclosure for animals'\",\n    \"reading\": \"enclosed space for keeping or training animals\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"pad (Spanish) + dock (Dutch)\",\n    \"reading\": \"step or platform for animals\",\n    \"languages\": [\"es\", \"nl\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"p + addock\",\n    \"reading\": \"male eel (addock is a dialect term)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P + A + D + O + C + K (first letters of place for keeping horses)\",\n    \"reading\": \"abbreviation for paddock\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P (Roman numeral) + A + D + O + C + K\",\n    \"reading\": \"5 + 1 + 5 + 14 + 3 + 11 = 40 (number of days for Christ's Passion)\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "pad + dock",
+   "reading": "place for keeping or training horses",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Old English pædoc, from pædan 'to drive' + docc 'a hollow place'; Middle English, from Old Norse padr 'enclosure for animals'",
+   "reading": "enclosed space for keeping or training animals",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "pad (Spanish) + dock (Dutch)",
+   "reading": "step or platform for animals",
+   "languages": [
+    "es",
+    "nl"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "p + addock",
+   "reading": "male eel (addock is a dialect term)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P + A + D + O + C + K (first letters of place for keeping horses)",
+   "reading": "abbreviation for paddock",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P (Roman numeral) + A + D + O + C + K",
+   "reading": "5 + 1 + 5 + 14 + 3 + 11 = 40 (number of days for Christ's Passion)",
+   "languages": [
+    "la"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}
