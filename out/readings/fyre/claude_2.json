@@ -5,15 +5,152 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:29:25+00:00",
- "latency_s": 8.94,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:13:26+00:00",
+ "latency_s": 12.35,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Fyre < Middle English fir, fyre < Old English fȳr < Proto-Germanic *fuir < Proto-Indo-European *perw- (to drive forward, propel)\",\n    \"reading\": \"Fire as the propelling, transformative force; that which drives matter into rapid motion and transformation.\",\n    \"languages\": [\"en\", \"gem\"],\n    \"source\": \"Oxford English Dictionary, s.v. fire\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fyre = Fy + re; fy (to shuffle, move about) + re (again, return)\",\n    \"reading\": \"Repeated motion, perpetual return; the cyclical nature of burning and regeneration.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fyre ≈ French fire (past participle of faire, to make/do); ≈ Latin ferē (wild, untamed)\",\n    \"reading\": \"That which is made or done; the wild, untamed principle; creation itself in its raw state.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Fyre → Ref + y; Ref → refuge (Latin refugium); y = the questioned principle\",\n    \"reading\": \"A refuge that questions; a shelter bearing interrogation; the paradox of seeking safety in transformation.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"F = sixth letter (serpent, vessel); Y = fork, choice, division; R = return, rotation; E = essence\",\n    \"reading\": \"The vessel of choice encounters rotation and returns to essence; cyclical decision in primal matter.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fyre = F + yr + e; yr (year, cycle) + e (ego, I am)\",\n    \"reading\": \"The I-am principle bound to cyclic time; consciousness experiencing its own temporal turning.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fyre ≈ German Feuer (fire); ≈ Latin ferrum (iron); iron the metal born of fire.\",\n    \"reading\": \"The hardening through flame; weakness transformed to strength through the ordeal of heat.\",\n    \"languages\": [\"en\", \"de\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Fyre: F = force, Y = yield, R = return, E = essence\",\n    \"reading\": \"Force yields and returns to essence; the paradox that strength lies in surrender to natural law.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fyre = Fy + ure; ure (Old English for aurochs, primal beast); fy (drive)\",\n    \"reading\": \"The driving of primal force; unleashing of untamed nature; the wild ox in motion.\",\n    \"languages\": [\"en\", \"gem\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fyre ≈ Greek pŷr (fire); ≈ Greek p",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 31 (char 2968)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Fyre < Middle English fir, fyre < Old English fȳr < Proto-Germanic *fuir < Proto-Indo-European *perw- (to drive forward, propel)\",\n    \"reading\": \"Fire: the element that propels, drives forward, consumes through rapid oxidation and heat.\",\n    \"languages\": [\"en\", \"enm\", \"ang\", \"gem\", \"ine\"],\n    \"source\": \"Oxford English Dictionary; Pokorny IEW\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fyre = Fy + re; Fy (Old Norse fý, cattle) + re (Old Norse ré, advice, counsel)\",\n    \"reading\": \"Counsel concerning cattle; wisdom about livestock and husbandry, the pastoral order.\",\n    \"languages\": [\"non\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fyre (en) ≈ Feuer (de) ≈ feu (fr); feu < Latin focus (hearth, home, center)\",\n    \"reading\": \"Fire as the hearth, the domestic center, the gathering place of the home and community.\",\n    \"languages\": [\"en\", \"de\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Fyre → Ref + y; Ref (abbreviation for reference, authority) + y (the questioning suffix)\",\n    \"reading\": \"A questioning of authority; the flame that interrogates established order and doctrine.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"F = serpent or flame; Y = the fork, the choice, the crossroads; E = being, existence\",\n    \"reading\": \"The serpentine flame at the crossroads of being; transformation at the threshold of choice.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fyre = Fy + re; Fy (to hasten, drive) + re (again, back); or Fyr (Old Norse fýra, to drive) + e\",\n    \"reading\": \"To drive again, to propel repeatedly; the ceaseless motion and renewal of flame.\",\n    \"languages\": [\"non\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fyre (en) ≈ Feuer (de) ≈ fuoco (it); fuoco < Latin focus; focus also means deception, artifice\",\n    \"reading\": \"Fire as illusion, artifice, and deception; the false light that leads astray.\",\n    \"languages\": [\"en\", \"de\", \"it\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Fyre: F-Y-R-E as initials; Fervent Youth Rises Eternally; or Fury Yields Radiant Energy\",\n    \"reading\": \"The eternal rising of youthful fervor; passion transmuted into radiant, generative power.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.25\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fyre = Fire (en) with archaic spelling; Fire = Fir + e; Fir (the tree, the evergreen) + e (being)\",\n    \"reading\": \"The evergreen principle; that which endures, persists, and regenerates eternally through flame.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Fyre: archaic/poetic spelling preserves Middle English fir, fyre; the y marks the vowel shift and alchemical transformation\",\n    \"reading\": \"The archaic form signals hidden knowledge; the y-spelling marks the Great Work of transmutation.\",\n    \"languages\": [\"en\", \"enm\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fyre (en) ≈ Feuer (de) ≈ pyr (grc, fire); pyr- root in pyre, pyretic, pyromaniac\",\n    \"reading\": \"The funeral pyre; fire as the dissolution of form, the return to ash and essence.\",\n    \"languages\": [\"en\", \"de\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"F = 6 (Hebrew vav, the hook, connection); Y = 10 (Hebrew yod, the point, the beginning); R = 200 (Hebrew resh, the head); E = 5 (Hebrew he, the breath)\",\n    \"reading\": \"The breath connects the head to the beginning; divine inspiration linking wisdom to manifestation.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Fyre < Middle English fir, fyre < Old English fȳr < Proto-Germanic *fuir < Proto-Indo-European *perw- (to drive forward, propel)",
+   "reading": "Fire: the element that propels, drives forward, consumes through rapid oxidation and heat.",
+   "languages": [
+    "en",
+    "enm",
+    "ang",
+    "gem",
+    "ine"
+   ],
+   "source": "Oxford English Dictionary; Pokorny IEW",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Fyre = Fy + re; Fy (Old Norse fý, cattle) + re (Old Norse ré, advice, counsel)",
+   "reading": "Counsel concerning cattle; wisdom about livestock and husbandry, the pastoral order.",
+   "languages": [
+    "non",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fyre (en) ≈ Feuer (de) ≈ feu (fr); feu < Latin focus (hearth, home, center)",
+   "reading": "Fire as the hearth, the domestic center, the gathering place of the home and community.",
+   "languages": [
+    "en",
+    "de",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "anagram",
+   "chain": "Fyre → Ref + y; Ref (abbreviation for reference, authority) + y (the questioning suffix)",
+   "reading": "A questioning of authority; the flame that interrogates established order and doctrine.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "F = serpent or flame; Y = the fork, the choice, the crossroads; E = being, existence",
+   "reading": "The serpentine flame at the crossroads of being; transformation at the threshold of choice.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Fyre = Fy + re; Fy (to hasten, drive) + re (again, back); or Fyr (Old Norse fýra, to drive) + e",
+   "reading": "To drive again, to propel repeatedly; the ceaseless motion and renewal of flame.",
+   "languages": [
+    "non",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fyre (en) ≈ Feuer (de) ≈ fuoco (it); fuoco < Latin focus; focus also means deception, artifice",
+   "reading": "Fire as illusion, artifice, and deception; the false light that leads astray.",
+   "languages": [
+    "en",
+    "de",
+    "it",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Fyre: F-Y-R-E as initials; Fervent Youth Rises Eternally; or Fury Yields Radiant Energy",
+   "reading": "The eternal rising of youthful fervor; passion transmuted into radiant, generative power.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.25
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Fyre = Fire (en) with archaic spelling; Fire = Fir + e; Fir (the tree, the evergreen) + e (being)",
+   "reading": "The evergreen principle; that which endures, persists, and regenerates eternally through flame.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "etymology",
+   "chain": "Fyre: archaic/poetic spelling preserves Middle English fir, fyre; the y marks the vowel shift and alchemical transformation",
+   "reading": "The archaic form signals hidden knowledge; the y-spelling marks the Great Work of transmutation.",
+   "languages": [
+    "en",
+    "enm"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fyre (en) ≈ Feuer (de) ≈ pyr (grc, fire); pyr- root in pyre, pyretic, pyromaniac",
+   "reading": "The funeral pyre; fire as the dissolution of form, the return to ash and essence.",
+   "languages": [
+    "en",
+    "de",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "F = 6 (Hebrew vav, the hook, connection); Y = 10 (Hebrew yod, the point, the beginning); R = 200 (Hebrew resh, the head); E = 5 (Hebrew he, the breath)",
+   "reading": "The breath connects the head to the beginning; divine inspiration linking wisdom to manifestation.",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

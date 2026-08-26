@@ -5,15 +5,148 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:26:53+00:00",
- "latency_s": 9.4,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:10:31+00:00",
+ "latency_s": 11.94,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Dangerous: Old French 'dangier' (power to harm) < Vulgar Latin 'dominiarium' (dominion, lordship); Woman: Old English 'wifman' (wife + man, adult female human)\",\n    \"reading\": \"She who holds dominion; the feminine principle invested with sovereign power over her own domain.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Dan + ger + ous = 'dan' (master, Hebrew) + 'ger' (stranger, Hebrew) + 'ous' (full of)\",\n    \"reading\": \"One full of the master-stranger; she who embodies the foreign, the otherness that commands respect and caution.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Dangerous Woman → 'Aground News Man' / 'A Swan Ground Omen'\",\n    \"reading\": \"An omen grounded in swan-nature: grace rendered immobile, beauty made prophetic through stillness.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Dan + ger + ous + Woe + man = 'dan' (judgment) + 'ger' (spear) + 'woe' (sorrow) + 'man' (human)\",\n    \"reading\": \"She who judges with the spear of sorrow; feminine wisdom armed with the lance of necessary pain.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Danger + ous: French 'danger' + Latin 'osus' (full of) → 'danger-full'; German 'Frau' (woman) ≈ 'frow' (to curb, Old English)\",\n    \"reading\": \"She who must be restrained or contained; the feminine power that resists subjugation and thus appears threatening.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"D-A-N-G-E-R-O-U-S W-O-M-A-N: initial letters → 'D' (door) + 'A' (alpha) + 'N' (nay) + 'G' (gate) + 'W' (woe) + 'O' (omega) + 'M' (man)\",\n    \"reading\": \"The alpha and omega of refusal; she stands at the gate-door saying no, embodying the threshold between worlds.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Woman: Germanic root 'wīfman' (wife-person); 'wīf' cognate with Sanskrit 'vipaḥ' (shame-less, free); Dangerous: Latin 'damnum' (harm, loss)\",\n    \"reading\": \"The shamed-less one; she who refuses diminishment and thus represents loss of mastery to those who would contain her.\",\n    \"languages\": [\"en\", \"de\", \"sa\", \"la\"],\n    \"source\": \"Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Danger' ≈ 'D-anger' = 'D' (delta, threshold) + 'anger'",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 54 column 42 (char 2651)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Dangerous: Old French 'dangier' (power to harm) < Vulgar Latin 'dominiarium' (dominion, power); Woman: Old English 'wifman' (wife + man, adult female human)\",\n    \"reading\": \"Female bearer of sovereign power; she who holds dominion and capacity to inflict harm through authority.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster Etymology\",\n    \"confidence\": 0.92\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Dan + ger + ous = 'dan' (judgment, Hebrew דן) + 'ger' (stranger, Latin) + 'ous' (full of)\",\n    \"reading\": \"She who judges strangers; the foreign arbiter; full of the stranger's verdict.\",\n    \"languages\": [\"en\", \"he\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Dangerous ≈ French 'd'ange roux' (of the red angel); Woman ≈ French 'femme' (woman)\",\n    \"reading\": \"The red angel woman; feminine principle clothed in fire or copper radiance.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Dan + ger + ous Woman = 'dan' (judgment) + 'ger' (spear, Old English gar) + 'ous' (full)\",\n    \"reading\": \"Woman full of judging spears; she who wields the lance of discernment.\",\n    \"languages\": [\"en\", \"gmc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"D=4, W=23; D+W=27=3×9; Dangerous Woman: initials D.W. = delta-omega (beginning-end); enclosure of all becoming\",\n    \"reading\": \"Alpha and omega compressed; the feminine principle spanning creation's full arc from delta to omega.\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Dangerous Woman → 'A woman's danger' + 'ous' (full); rearranged: 'Awed man, dangerous ous'\",\n    \"reading\": \"The man struck with awe before her; she inspires reverent fear through her fullness.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.51\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Dan + jer + ous = 'dan' (Hebrew judgment) + 'jer' (to turn, Latin vertere) + 'ous' (full)\",\n    \"reading\": \"Full of turning judgments; she who pivots the verdict; the woman who reverses fate.\",\n    \"languages\": [\"en\", \"he\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.59\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Woman: Proto-Germanic 'wīfman' < 'wīf' (wife, weaver) + 'man' (human); wif cognate with 'weave'\",\n    \"reading\": \"She who weaves; the loom-keeper; dangerous woman is the weaver of fates.\",\n    \"languages\": [\"en\", \"gmc\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Dangerous ≈ Latin 'dare' (to give) + 'angere' (to choke/constrict); Woman ≈ Latin 'vir' (man) negated\",\n    \"reading\": \"She who gives constriction; the anti-man; she who bestows limitation and necessary constraint.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.54\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Dangerous Woman: D-A-N-G-E-R-O-U-S W-O-M-A-N = initials form hidden acrostic of power\",\n    \"reading\": \"Initials spell the hidden name of feminine sovereignty; each letter a rune of her authority.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.42\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Dan + ger + ous Wo + man = 'dan' (judgment) + 'ger' (spear) + 'wo' (woe) + 'man' (human)\",\n    \"reading\": \"Judgment-spear bringing woe to humanity; the feminine instrument of necessary suffering.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Dangerous: Middle English 'daunger' < Old French 'dangier' (power, dominion, peril); root in 'dominus'\",\n    \"reading\": \"Woman bearing dominion; she who holds the master's power; inheritor of sovereignty.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"Merriam-Webster; Oxford English Dictionary\",\n    \"confidence\": 0.88\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Dangerous: Old French 'dangier' (power to harm) < Vulgar Latin 'dominiarium' (dominion, power); Woman: Old English 'wifman' (wife + man, adult female human)",
+   "reading": "Female bearer of sovereign power; she who holds dominion and capacity to inflict harm through authority.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Oxford English Dictionary; Merriam-Webster Etymology",
+   "confidence": 0.92
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Dan + ger + ous = 'dan' (judgment, Hebrew דן) + 'ger' (stranger, Latin) + 'ous' (full of)",
+   "reading": "She who judges strangers; the foreign arbiter; full of the stranger's verdict.",
+   "languages": [
+    "en",
+    "he",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.68
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Dangerous ≈ French 'd'ange roux' (of the red angel); Woman ≈ French 'femme' (woman)",
+   "reading": "The red angel woman; feminine principle clothed in fire or copper radiance.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Dan + ger + ous Woman = 'dan' (judgment) + 'ger' (spear, Old English gar) + 'ous' (full)",
+   "reading": "Woman full of judging spears; she who wields the lance of discernment.",
+   "languages": [
+    "en",
+    "gmc"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "D=4, W=23; D+W=27=3×9; Dangerous Woman: initials D.W. = delta-omega (beginning-end); enclosure of all becoming",
+   "reading": "Alpha and omega compressed; the feminine principle spanning creation's full arc from delta to omega.",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.48
+  },
+  {
+   "operation": "anagram",
+   "chain": "Dangerous Woman → 'A woman's danger' + 'ous' (full); rearranged: 'Awed man, dangerous ous'",
+   "reading": "The man struck with awe before her; she inspires reverent fear through her fullness.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.51
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Dan + jer + ous = 'dan' (Hebrew judgment) + 'jer' (to turn, Latin vertere) + 'ous' (full)",
+   "reading": "Full of turning judgments; she who pivots the verdict; the woman who reverses fate.",
+   "languages": [
+    "en",
+    "he",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.59
+  },
+  {
+   "operation": "etymology",
+   "chain": "Woman: Proto-Germanic 'wīfman' < 'wīf' (wife, weaver) + 'man' (human); wif cognate with 'weave'",
+   "reading": "She who weaves; the loom-keeper; dangerous woman is the weaver of fates.",
+   "languages": [
+    "en",
+    "gmc"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Dangerous ≈ Latin 'dare' (to give) + 'angere' (to choke/constrict); Woman ≈ Latin 'vir' (man) negated",
+   "reading": "She who gives constriction; the anti-man; she who bestows limitation and necessary constraint.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.54
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Dangerous Woman: D-A-N-G-E-R-O-U-S W-O-M-A-N = initials form hidden acrostic of power",
+   "reading": "Initials spell the hidden name of feminine sovereignty; each letter a rune of her authority.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.42
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Dan + ger + ous Wo + man = 'dan' (judgment) + 'ger' (spear) + 'wo' (woe) + 'man' (human)",
+   "reading": "Judgment-spear bringing woe to humanity; the feminine instrument of necessary suffering.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "etymology",
+   "chain": "Dangerous: Middle English 'daunger' < Old French 'dangier' (power, dominion, peril); root in 'dominus'",
+   "reading": "Woman bearing dominion; she who holds the master's power; inheritor of sovereignty.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Merriam-Webster; Oxford English Dictionary",
+   "confidence": 0.88
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

@@ -5,15 +5,145 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:25:22+00:00",
- "latency_s": 8.94,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:08:42+00:00",
+ "latency_s": 10.49,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG = 'energy' (homophone of phonetic reduction); Park = enclosed space\",\n    \"reading\": \"Energy confined or bounded within a defined space; potential force demarcated.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG ≈ French 'en-arge' (in-large); Park = parc (enclosure)\",\n    \"reading\": \"Expansion within bounds; enlargement contained in a delineated precinct.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N=14, R=18, G=7 (14+18+7=39=3+9=12=1+2=3); P=16, A=1, R=18, K=11 (16+1+18+11=46=4+6=10=1+0=1)\",\n    \"reading\": \"Trinity (3) united with primordial unity (1); sacred division and reintegration.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG = 'en-ergy'; Park = 'par-k'; 'par' = equal/peer (Latin par)\",\n    \"reading\": \"Equal or balanced energy; force distributed evenly across equivalent portions.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"NRG Park → KARPNG, GPARK, PRANK + G\",\n    \"reading\": \"A trick or deception involving a confined space; mischief within bounds.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Park < Middle French parc < Germanic *parra- (enclosure); NRG (modern abbreviation for energy)\",\n    \"reading\": \"Modern vitality trapped within medieval-feudal enclosure; power bounded by old systems.\",\n    \"languages\": [\"en\", \"fr\", \"gmc\"],\n    \"source\": \"Oxford English Dictionary: park (n.)\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"NRG Park as acrostic initials: N=Now, R=Renewed, G=Growth; P=Place, A=Alive, R=Radiant, K=Kinetic\",\n    \"reading\": \"Present renewal of growth in a place alive with radiant kinetic force.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG = 'n-erg' (negation + work/energy); Park = still place\",\n    \"reading\": \"Negation of labor; a space where force is suspended or rendered inert.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Park ≈ Greek parka (dry); NRG + parka = dried energy; parched force\",\n    \"reading\": \"Energy desiccated or depleted; vitality rendered arid and lifeless.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Energy < Greek energeia (en- + ergon = in-work); Park < proto-Germanic (pen",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 31 (char 2716)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG = energy (homophone of 'en-ar-gee'); Park = enclosed space\",\n    \"reading\": \"A bounded space of vital force or dynamic power; energy contained within limits.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG ≈ 'en-air-gee' (French en + air); Park (English) = parc (French)\",\n    \"reading\": \"In the air, a park; ethereal or atmospheric enclosure; space of airy essence.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N=14, R=18, G=7 (numerology); Park as sanctuary\",\n    \"reading\": \"Fourteen and eighteen and seven: a numerical signature of protected or sacred ground.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"NRG Park → PRANK + RG; or PARK + NRG rearranged\",\n    \"reading\": \"A deceptive or playful trick enacted within an energetic space; jest within force.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Park = 'par-k'; par (French) = by, through; k as hard consonant closure\",\n    \"reading\": \"Through or by means of a closed, bounded place; passage via enclosure.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Park < Old French parc < Medieval Latin parricus, of Germanic origin; NRG < energy < Greek energeia\",\n    \"reading\": \"An enclosed Germanic-rooted space infused with Greek dynamism and actualization.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"grc\"],\n    \"source\": \"Oxford English Dictionary; Liddell-Scott Greek Lexicon\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"NRG = N.R.G. as initials; Park as acrostic base\",\n    \"reading\": \"Hidden initials suggest concealed names or forces within the park's boundary.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG = 'ner-g' (nerve + g); Park = place of rest\",\n    \"reading\": \"A place where nerve-force or vital tension finds rest and containment.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Park ≈ 'parc' (French); NRG ≈ 'en-air-gee' (airy essence in French phonetics)\",\n    \"reading\": \"The airy essence enclosed in a French garden; atmospheric vitality bounded.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"G as gamma (Greek); R as rho; N as nu; Park as temenos (sacred precinct)\",\n    \"reading\": \"Three Greek letters mark a sacred precinct of force and flow.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG = 'en-rage'; Park = bounded space\",\n    \"reading\": \"A place where rage or passionate force is contained and bounded.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Energy < energeia (Greek en- + ergon, work); Park < parc (enclosure); synthesis of action and boundary\",\n    \"reading\": \"The marriage of Greek work-force with Germanic enclosure; action made manifest within limits.\",\n    \"languages\": [\"en\", \"grc\", \"fr\"],\n    \"source\": \"Liddell-Scott; Oxford English Dictionary\",\n    \"confidence\": 0.72\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "NRG = energy (homophone of 'en-ar-gee'); Park = enclosed space",
+   "reading": "A bounded space of vital force or dynamic power; energy contained within limits.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "NRG ≈ 'en-air-gee' (French en + air); Park (English) = parc (French)",
+   "reading": "In the air, a park; ethereal or atmospheric enclosure; space of airy essence.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N=14, R=18, G=7 (numerology); Park as sanctuary",
+   "reading": "Fourteen and eighteen and seven: a numerical signature of protected or sacred ground.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "NRG Park → PRANK + RG; or PARK + NRG rearranged",
+   "reading": "A deceptive or playful trick enacted within an energetic space; jest within force.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Park = 'par-k'; par (French) = by, through; k as hard consonant closure",
+   "reading": "Through or by means of a closed, bounded place; passage via enclosure.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Park < Old French parc < Medieval Latin parricus, of Germanic origin; NRG < energy < Greek energeia",
+   "reading": "An enclosed Germanic-rooted space infused with Greek dynamism and actualization.",
+   "languages": [
+    "en",
+    "fr",
+    "la",
+    "grc"
+   ],
+   "source": "Oxford English Dictionary; Liddell-Scott Greek Lexicon",
+   "confidence": 0.75
+  },
+  {
+   "operation": "notariqon",
+   "chain": "NRG = N.R.G. as initials; Park as acrostic base",
+   "reading": "Hidden initials suggest concealed names or forces within the park's boundary.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "NRG = 'ner-g' (nerve + g); Park = place of rest",
+   "reading": "A place where nerve-force or vital tension finds rest and containment.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Park ≈ 'parc' (French); NRG ≈ 'en-air-gee' (airy essence in French phonetics)",
+   "reading": "The airy essence enclosed in a French garden; atmospheric vitality bounded.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G as gamma (Greek); R as rho; N as nu; Park as temenos (sacred precinct)",
+   "reading": "Three Greek letters mark a sacred precinct of force and flow.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "NRG = 'en-rage'; Park = bounded space",
+   "reading": "A place where rage or passionate force is contained and bounded.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "etymology",
+   "chain": "Energy < energeia (Greek en- + ergon, work); Park < parc (enclosure); synthesis of action and boundary",
+   "reading": "The marriage of Greek work-force with Germanic enclosure; action made manifest within limits.",
+   "languages": [
+    "en",
+    "grc",
+    "fr"
+   ],
+   "source": "Liddell-Scott; Oxford English Dictionary",
+   "confidence": 0.72
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

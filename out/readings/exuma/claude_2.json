@@ -5,15 +5,124 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:30:19+00:00",
- "latency_s": 9.52,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:14:29+00:00",
+ "latency_s": 8.5,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ex-uma; Ex (Latin prefix) = out/from + uma (Portuguese/Spanish) = a (feminine article) or plume/feather\",\n    \"reading\": \"Out from the feathered; emergence of winged knowledge or the exiting plume.\",\n    \"languages\": [\"la\", \"pt\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ Ex-huma (Spanish); huma = smoke/fume (archaic) or humano = human\",\n    \"reading\": \"Out of humanity; the smoke or vapor that escapes the human condition.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ex-u-ma; u = the letter/sound of union or serpent (ouroboros); ma = mother (Indo-European root)\",\n    \"reading\": \"From the mother-serpent; emergence from primordial maternal coils of becoming.\",\n    \"languages\": [\"la\", \"fr\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Exuma anagrammed: Aux + EM + A or Max + U + E\",\n    \"reading\": \"The auxiliary force (Aux) of the electromagnetic or maximal principle extended.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"X as the cross/intersection; U as the vessel or yoni; M as the wave or water; A as alpha/beginning\",\n    \"reading\": \"The crossing-point of the vessel's wave at the beginning: marriage of opposites in flow.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Ex- (Latin): out of, from; -uma: suffix absent in standard lexicons; read as ex + Ume (Japanese plum, umeboshi)\",\n    \"reading\": \"That which emerges or is preserved from the sour-sweet fruit; fermented knowledge extracted.\",\n    \"languages\": [\"la\", \"ja\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"E-X-U-M-A as first letters: Elix Universalis Magistri Arcani or Exitus Universalis Materia Alchemica\",\n    \"reading\": \"The exit or boundary of universal matter in alchemical operation; the great work's threshold.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Eaux (French: waters) + ma (mother); homophones converge in speech\",\n    \"reading\": \"The waters of the mother; the primordial feminine fluidity from which all forms arise.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ Exhumate (English); to dig out, unearth, bring to light what was buried\",\n    \"reading\": \"The disinterment of hidden knowledge; raising what lies beneath consciousness to the surface.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ex-u-ma; u as the Hermetic mercury/quicksilver; ma as matter or mother principle\",",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 2919)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ex- + -uma; Ex (Latin prefix) = out, from; -uma (suffix suggesting state or condition)\",\n    \"reading\": \"A state of being drawn out or extracted; emergence from containment or obscurity.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ Ex + You + Ma; French 'vous' (you formal) compressed phonetically\",\n    \"reading\": \"Out from you, mother—a severance or departure from maternal authority or origin.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ex- + -uma; -uma as suffix in Sanskrit/Greek suggesting 'swelling' or 'tumor'\",\n    \"reading\": \"An outward swelling or protuberance; something that grows or extends beyond normal bounds.\",\n    \"languages\": [\"grc\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Exuma → Aux + Me; French 'aux' (to the) + 'me' (me)\",\n    \"reading\": \"To the self; a turning inward of attention or reflexive consciousness.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"X as unknown variable; U as vessel or container; M as mountain or matter\",\n    \"reading\": \"The unknown contained within material substance; mystery held in physical form.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ex + Uma; Uma (Sanskrit) = light, splendor, or the goddess Parvati\",\n    \"reading\": \"Light emerging or radiating outward; divine illumination made manifest.\",\n    \"languages\": [\"sa\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Ex- (Latin prefix meaning 'out') + -uma (possibly from Latin humus, earth)\",\n    \"reading\": \"Rising out of earth; emergence of the material into the visible or known realm.\",\n    \"languages\": [\"la\"],\n    \"source\": \"Oxford Latin Dictionary\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"E-X-U-M-A as initials: Exitus Xenia Universalis Mater Animae\",\n    \"reading\": \"The universal mother of souls departs, bearing hospitality and sacred exchange.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Exu + Ma; Exu (Yoruba orixá) + Ma (mother in multiple languages)\",\n    \"reading\": \"The crossroads spirit-mother; divine intermediary between worlds and boundaries.\",\n    \"languages\": [\"yo\", \"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ Ex + Huma; Arabic 'huma' (they/dual) or 'hummah' (fever)\",\n    \"reading\": \"Out from duality; fever or burning that separates or purifies through intensity.\",\n    \"languages\": [\"ar\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Ex- + -uma; Ex (Latin prefix) = out, from; -uma (suffix suggesting state or condition)",
+   "reading": "A state of being drawn out or extracted; emergence from containment or obscurity.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Exuma ≈ Ex + You + Ma; French 'vous' (you formal) compressed phonetically",
+   "reading": "Out from you, mother—a severance or departure from maternal authority or origin.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ex- + -uma; -uma as suffix in Sanskrit/Greek suggesting 'swelling' or 'tumor'",
+   "reading": "An outward swelling or protuberance; something that grows or extends beyond normal bounds.",
+   "languages": [
+    "grc",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Exuma → Aux + Me; French 'aux' (to the) + 'me' (me)",
+   "reading": "To the self; a turning inward of attention or reflexive consciousness.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "X as unknown variable; U as vessel or container; M as mountain or matter",
+   "reading": "The unknown contained within material substance; mystery held in physical form.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ex + Uma; Uma (Sanskrit) = light, splendor, or the goddess Parvati",
+   "reading": "Light emerging or radiating outward; divine illumination made manifest.",
+   "languages": [
+    "sa",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Ex- (Latin prefix meaning 'out') + -uma (possibly from Latin humus, earth)",
+   "reading": "Rising out of earth; emergence of the material into the visible or known realm.",
+   "languages": [
+    "la"
+   ],
+   "source": "Oxford Latin Dictionary",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "E-X-U-M-A as initials: Exitus Xenia Universalis Mater Animae",
+   "reading": "The universal mother of souls departs, bearing hospitality and sacred exchange.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Exu + Ma; Exu (Yoruba orixá) + Ma (mother in multiple languages)",
+   "reading": "The crossroads spirit-mother; divine intermediary between worlds and boundaries.",
+   "languages": [
+    "yo",
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Exuma ≈ Ex + Huma; Arabic 'huma' (they/dual) or 'hummah' (fever)",
+   "reading": "Out from duality; fever or burning that separates or purifies through intensity.",
+   "languages": [
+    "ar",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 10,
  "refusal_like": false
 }

@@ -5,15 +5,145 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:31:42+00:00",
- "latency_s": 9.45,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:16:05+00:00",
+ "latency_s": 10.39,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan; ba (vocative particle) + ta (that, it) + clan (secret group, whisper)\",\n    \"reading\": \"A call to hidden assemblies; invocation of clandestine gathering or utterance\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bataclan ≈ French bataillon (battalion) + clan; or Sanskrit bata (division, group) + clan\",\n    \"reading\": \"A fractured battalion; a clan in disarray; the dissolution of martial order into tribal remnants\",\n    \"languages\": [\"fr\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bataclan → Catalab, Tabacal, Talaban, Cantala\",\n    \"reading\": \"The letters refuse fixed arrangement; multiplicity without hierarchy; potential configurations of meaning\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bat + a + clan; bat (the striker, the winged creature, the act of striking)\",\n    \"reading\": \"A blow upon the clan; the beating wing of hidden kinship; percussion and concealment intertwined\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-A-T-A-C-L-A-N as initial letters: Babel's Arcane Tongues Assemble Clandestinely, Language Articulates Nullity\",\n    \"reading\": \"Confused speech gathering in secret; language dissolves meaning into silence and void\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bataclan: possibly from Old French bataillon (battalion) + clan (Scots Gaelic clann, tribe). OED: battalion from Italian battaglia\",\n    \"reading\": \"A military family; the tribe organized as fighters; kinship weaponized and ranked\",\n    \"languages\": [\"fr\", \"gd\", \"it\"],\n    \"source\": \"Oxford English Dictionary; Etymonline\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B = the gateway, the second; A = the beginning; T = the cross; CLAN = the hidden bond\",\n    \"reading\": \"The second beginning crossed by tribal secrecy; threshold of hidden kinship\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bata (Basque for 'stick') + clan; or Bata (Indonesian for 'stone') + clan\",\n    \"reading\": \"The stone clan; the wooden faction; hardened kinship; striking material kinship\",\n    \"languages\": [\"eu\", \"id\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bataclan ≈ French 'bat à clan' (stick/bat belonging to clan); homophonic parsing\",\n    \"reading\": \"The clan's weapon; the tribe's instrument of percussion and order; shared striking force\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.59\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan; ba (soul in Egyptian) + ta (earth) + clan (group bound by law)\",\n    \"reading",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 24 (char 2962)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan; ba (Latin) = go, walk; ta (Sanskrit) = that; clan (Scottish) = children, offspring\",\n    \"reading\": \"Movement toward that which generates or produces; the walking forth of descendants.\",\n    \"languages\": [\"la\", \"sa\", \"gd\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bataclan ≈ batte à clan (French); batte = bat, stick; clan = family group\",\n    \"reading\": \"A stick or instrument belonging to the family; the tool of kinship or tribal unity.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan; bata (Spanish/Portuguese) = battle, fight; clan = group\",\n    \"reading\": \"The struggle or contest of a unified group; collective combat or striving.\",\n    \"languages\": [\"es\", \"pt\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bataclan: proposed origin from Persian bāzār (market) + Turkic khan (ruler); folk etymology suggests 'battle-clan'\",\n    \"reading\": \"A marketplace under sovereign rule; commerce within hierarchical tribal structure.\",\n    \"languages\": [\"fa\", \"tr\"],\n    \"source\": \"Littré; Grimm's Deutsches Wörterbuch\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan; ba (Egyptian) = soul; ta (Egyptian) = earth; clan = group\",\n    \"reading\": \"The soul of the earth-group; spiritual essence of terrestrial community.\",\n    \"languages\": [\"egy\", \"gd\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bataclan → Cabal-tan; cabal (secret society) + tan (hide, leather)\",\n    \"reading\": \"Hidden society marked or concealed; esoteric group bearing secret signs.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-A-T-A-C-L-A-N: initial letters as acronym possibility; no standard historical reading\",\n    \"reading\": \"Sequence of initials awaiting decipherment; potential cipher or concealed name.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bata-clan; bata (Yoruba) = father; clan = family\",\n    \"reading\": \"The father-family; patriarchal lineage or ancestral gathering.\",\n    \"languages\": [\"yo\", \"gd\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bataclan ≈ bat-à-clan (French); bat = stick/cudgel; à = to/at; clan = tribe\",\n    \"reading\": \"The cudgel directed at the tribe; instrument of tribal discipline or authority.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B = 2, A = 1, T = 20, A = 1, C = 3, L = 12, A = 1, N = 14; sum = 54 = 5+4 = 9\",\n    \"reading\": \"Numerical value reduces to nine: completion, cycle, universal principle, or divine judgment.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan; ba (Hebrew בא) = comes, enters; ta = that; clan = group\",\n    \"reading\": \"That which enters the group; the incoming member or foreign element joining the collective.\",\n    \"languages\": [\"he\", \"gd\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bataclan → Cantala-b; cantala (agave plant); b = be\",\n    \"reading\": \"The being of the agave; natural substance transformed into fiber or sustenance.\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ta-clan; ba (Latin) = go, walk; ta (Sanskrit) = that; clan (Scottish) = children, offspring",
+   "reading": "Movement toward that which generates or produces; the walking forth of descendants.",
+   "languages": [
+    "la",
+    "sa",
+    "gd"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bataclan ≈ batte à clan (French); batte = bat, stick; clan = family group",
+   "reading": "A stick or instrument belonging to the family; the tool of kinship or tribal unity.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ta-clan; bata (Spanish/Portuguese) = battle, fight; clan = group",
+   "reading": "The struggle or contest of a unified group; collective combat or striving.",
+   "languages": [
+    "es",
+    "pt"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bataclan: proposed origin from Persian bāzār (market) + Turkic khan (ruler); folk etymology suggests 'battle-clan'",
+   "reading": "A marketplace under sovereign rule; commerce within hierarchical tribal structure.",
+   "languages": [
+    "fa",
+    "tr"
+   ],
+   "source": "Littré; Grimm's Deutsches Wörterbuch",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ta-clan; ba (Egyptian) = soul; ta (Egyptian) = earth; clan = group",
+   "reading": "The soul of the earth-group; spiritual essence of terrestrial community.",
+   "languages": [
+    "egy",
+    "gd"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bataclan → Cabal-tan; cabal (secret society) + tan (hide, leather)",
+   "reading": "Hidden society marked or concealed; esoteric group bearing secret signs.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-A-T-A-C-L-A-N: initial letters as acronym possibility; no standard historical reading",
+   "reading": "Sequence of initials awaiting decipherment; potential cipher or concealed name.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bata-clan; bata (Yoruba) = father; clan = family",
+   "reading": "The father-family; patriarchal lineage or ancestral gathering.",
+   "languages": [
+    "yo",
+    "gd"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bataclan ≈ bat-à-clan (French); bat = stick/cudgel; à = to/at; clan = tribe",
+   "reading": "The cudgel directed at the tribe; instrument of tribal discipline or authority.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B = 2, A = 1, T = 20, A = 1, C = 3, L = 12, A = 1, N = 14; sum = 54 = 5+4 = 9",
+   "reading": "Numerical value reduces to nine: completion, cycle, universal principle, or divine judgment.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ta-clan; ba (Hebrew בא) = comes, enters; ta = that; clan = group",
+   "reading": "That which enters the group; the incoming member or foreign element joining the collective.",
+   "languages": [
+    "he",
+    "gd"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bataclan → Cantala-b; cantala (agave plant); b = be",
+   "reading": "The being of the agave; natural substance transformed into fiber or sustenance.",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

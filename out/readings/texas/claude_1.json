@@ -5,15 +5,146 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:26:25+00:00",
- "latency_s": 8.35,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:09:54+00:00",
+ "latency_s": 9.83,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"TEX + AS; tex (Latin texere) = to weave; AS = being/existence\",\n    \"reading\": \"The weaving of being; existence through interlaced threads of creation\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Texas < Spanish Tejas < Caddo tejas (tiles/roof); tex- (Latin) = woven\",\n    \"reading\": \"Woven roofs; dwellings constructed from interlaced materials\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"TEX-AS sounds like French 'te-xa' (you-behold) or imperative form\",\n    \"reading\": \"Behold you; command to witness or perceive the present moment\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"TE + XAS; TE (Greek) = the letter; XAS (chi-alpha-sigma) = X A S in Greek\",\n    \"reading\": \"The marked way; the cross marks the path of initiation\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"TEXAS = EXAST, TAXSE, SEAX (Saxon blade), AXES + T\",\n    \"reading\": \"The axes of being; the cutting tools of creation and discernment\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"T-E-X-A-S as acronym: Textile Exchange Axis Soul\",\n    \"reading\": \"The exchange of textiles as soul-work; weaving as spiritual transformation\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"X = crossing, intersection, the unknown variable; A = apex/beginning; S = serpent/curve\",\n    \"reading\": \"Unknown forces cross at the summit, flowing in serpentine patterns downward\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"TEX (from Latin texere) + AS (plural, multiple); tex-as = many weavings\",\n    \"reading\": \"Multiple interweavings; the plurality of threads becoming manifest form\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"TEXAS sounds like Spanish 'te hace' (it makes you) or German 'das Ex' (the ex/cross)\",\n    \"reading\": \"What makes you; the force that constitutes or transforms being\",\n    \"languages\": [\"es\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"T-E from Old English; TEX from Latin texere (weave); AS = being/entity\",\n    \"reading\": \"The woven entity; existence understood as textural interconnection\",\n    \"languages\": [\"en\", \"la\", \"oe\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"TE + XAS; TE (Sanskrit teja) = radiance,",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 78 column 36 (char 2888)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"TEX + AS; tex (Latin texere) = to weave; as = being/essence\",\n    \"reading\": \"The woven essence; that which is interlaced into being itself.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Texas ≈ French 'te xas' = you (te) + perhaps (xas, archaic)\",\n    \"reading\": \"You, perhaps; an address to uncertainty or the second person in doubt.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"TEX + AS; tex = textile, tissue; as = axis or ash\",\n    \"reading\": \"The axis of woven things; the central thread upon which fabric turns.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T=cross/tau; X=crossing/multiplication; AS=beginning; read as: crossing at the beginning\",\n    \"reading\": \"The primal crossing; intersection where all things commence and divide.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"TEXAS → AXEST (archaic second person singular of 'to axe')\",\n    \"reading\": \"You cut; you sever; you separate with the blade of discernment.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"TEX- from Latin texere (to weave); -AS from Greek -asis (condition, state)\",\n    \"reading\": \"The condition of weaving; the state of interlaced threads and meanings.\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"Oxford English Dictionary, s.v. textile\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"TE + XAS; te (Latin) = you; xas (Hebrew chasah) = to seek refuge\",\n    \"reading\": \"You who seek shelter; the refuge-seeker addressed directly.\",\n    \"languages\": [\"la\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"T-E-X-A-S as initials: Textus Exegesis Axis Sapientiae (hypothetical)\",\n    \"reading\": \"The text, its exegesis, the axis of wisdom; interpretive knowledge centered.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Texas ≈ German 'Tex-as' = texture + being (as = sein, to be)\",\n    \"reading\": \"Texture-being; the ontology of woven substance and tactile existence.\",\n    \"languages\": [\"de\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"TEX (textile) + AS (axis); as also = donkey in Spanish\",\n    \"reading\": \"The beast of burden bearing woven goods; labor interlaced with matter.\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"X = unknown variable; TE + X + AS = that which is woven but unknown\",\n    \"reading\": \"The unknown woven thing; mystery interlaced within the fabric of being.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"TEX from Nahuatl 'tetl' (stone); AS from Latin 'axis'\",\n    \"reading\": \"Stone axis; the immovable center, the pivot of hard matter.\",\n    \"languages\": [\"nah\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "TEX + AS; tex (Latin texere) = to weave; as = being/essence",
+   "reading": "The woven essence; that which is interlaced into being itself.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Texas ≈ French 'te xas' = you (te) + perhaps (xas, archaic)",
+   "reading": "You, perhaps; an address to uncertainty or the second person in doubt.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "TEX + AS; tex = textile, tissue; as = axis or ash",
+   "reading": "The axis of woven things; the central thread upon which fabric turns.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T=cross/tau; X=crossing/multiplication; AS=beginning; read as: crossing at the beginning",
+   "reading": "The primal crossing; intersection where all things commence and divide.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "TEXAS → AXEST (archaic second person singular of 'to axe')",
+   "reading": "You cut; you sever; you separate with the blade of discernment.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "TEX- from Latin texere (to weave); -AS from Greek -asis (condition, state)",
+   "reading": "The condition of weaving; the state of interlaced threads and meanings.",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "Oxford English Dictionary, s.v. textile",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "TE + XAS; te (Latin) = you; xas (Hebrew chasah) = to seek refuge",
+   "reading": "You who seek shelter; the refuge-seeker addressed directly.",
+   "languages": [
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "T-E-X-A-S as initials: Textus Exegesis Axis Sapientiae (hypothetical)",
+   "reading": "The text, its exegesis, the axis of wisdom; interpretive knowledge centered.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Texas ≈ German 'Tex-as' = texture + being (as = sein, to be)",
+   "reading": "Texture-being; the ontology of woven substance and tactile existence.",
+   "languages": [
+    "de",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "TEX (textile) + AS (axis); as also = donkey in Spanish",
+   "reading": "The beast of burden bearing woven goods; labor interlaced with matter.",
+   "languages": [
+    "en",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "X = unknown variable; TE + X + AS = that which is woven but unknown",
+   "reading": "The unknown woven thing; mystery interlaced within the fabric of being.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "TEX from Nahuatl 'tetl' (stone); AS from Latin 'axis'",
+   "reading": "Stone axis; the immovable center, the pivot of hard matter.",
+   "languages": [
+    "nah",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

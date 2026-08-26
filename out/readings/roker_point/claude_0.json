@@ -5,15 +5,155 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:30:57+00:00",
- "latency_s": 10.3,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:15:11+00:00",
+ "latency_s": 11.84,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Roker: Old Norse *róka (to move, smoke); Old English roke (smoke, steam); Point: Old French pointe < Latin puncta (pricked, marked)\",\n    \"reading\": \"Smoke-marked or smoke-indicated location; a place of vaporous visibility or burning marks.\",\n    \"languages\": [\"en\", \"non\", \"fr\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Littré\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ROKER = Ro-ker; RO (Egyptian sun-god sound) + KER (turn, bend from Greek krinein); POINT = po-int (po=Hebrew po, here; int=into)\",\n    \"reading\": \"Solar turning-place; the sun-god's pivot or rotation point in space.\",\n    \"languages\": [\"en\", \"grc\", \"he\", \"egy\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Roker ≈ French rocaille (rockwork, shell decoration); Point = pointe (sharp tip, ballet movement)\",\n    \"reading\": \"Sharp-edged rocky ornament or shell-trimmed architectural edge; pointed decoration.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ROK-ER: rok (Germanic *ruk-; to reach, stretch) + -ER (agent suffix); POINT: poin-t (pain, suffering + t as cross)\",\n    \"reading\": \"One who reaches or stretches toward pain; the touching-point of suffering.\",\n    \"languages\": [\"en\", \"gem\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"ROKER POINT rearranged: PORTER + OK IN (or POINTE KROR, or TOPIC + KNER)\",\n    \"reading\": \"Porter at the OK: a carrier or gatekeeper at the place of assent and agreement.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Initial letters: R.P. = Regis Punctum (Latin: the King's Point or royal mark)\",\n    \"reading\": \"The sovereign's puncture; the royal seal or marked authority.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.40\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"RO (R as serpent, O as circle/sun) + K (standing figure) + ER (two-fold); POINT (P=door, angle of vision)\",\n    \"reading\": \"The serpent's sun-gate guarded by a doubled figure; the threshold to celestial sight.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ROKER: ro-ker (ro=row, disturbance; ker=turn); POINT: point-e (one point, a prick in alchemy)\",\n    \"reading\": \"The sharp prick in the midst of turmoil or rowing-place; disturbance's singular puncture.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Point: Middle English pointe < Vulgar Latin puncta, feminine of punctus (from pungere, to prick). Roker: Scandinavian origin, related to smoke and friction.\",\n    \"reading\": \"A pricking-place of smoke; where friction generates visible",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 62 column 30 (char 2723)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Roker: Old Norse *hraukr (heap, cairn); Point: Old French *pointe (sharp end, from Latin *puncta, past participle of pungere, to prick)\",\n    \"reading\": \"A sharp heap; a piercing accumulation or marked elevation of gathered matter.\",\n    \"languages\": [\"en\", \"non\", \"fro\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Littré\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ro-ker: ro (wheel, rotation, Latin rota) + ker (turn, Old English cyrran); Point: poin-t (pain, French douleur + t as marker)\",\n    \"reading\": \"The turning wheel of suffering; rotational pain or the axis of anguish.\",\n    \"languages\": [\"en\", \"la\", \"fr\", \"oe\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Roker ≈ French *rocaille (rockwork, shell-work); Point = French *pointe (lace point, sharp tip)\",\n    \"reading\": \"Ornamental rockwork with a sharp or piercing edge; decorated stone at a fine point.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ro-ker Point: ro (Latin rex, king) + ker (turn) + point (Latin punctum, dot, moment)\",\n    \"reading\": \"The turning moment of kingship; the pivot where sovereignty rotates or is marked.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Roker Point → Pro-kite-or; Pro (before, forward) + kite (Greek kitē, sea monster) + or (mouth, Latin os)\",\n    \"reading\": \"The mouth that speaks before the sea-beast; prophecy preceding the abyss.\",\n    \"languages\": [\"en\", \"grc\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R (rho, flow); O (circle, completion); K (kappa, breaking); E (epsilon, opening); R (return); P (rho again, flow); T (tau, cross)\",\n    \"reading\": \"Flow, completion, breaking, opening, return, flow again, crossing—the cycle of rupture and restoration.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"R-O-K-E-R P-O-I-N-T: Read as initials or first letters of hidden phrase\",\n    \"reading\": \"Potential acrostic; the letters themselves form a concealed utterance waiting decryption.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Rok-er: rok (Old Norse hraukr, heap) + er (one who does); Point: poin-t (French pain, bread/suffering)\",\n    \"reading\": \"One who heaps; the gatherer of bread or suffering into a sharp focal point.\",\n    \"languages\": [\"en\", \"non\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Point ≈ Latin *punctum (prick, dot); Roker ≈ German *Raucher (smoker, one who smokes/rises)\",\n    \"reading\": \"The rising smoke marked by a dot; the pricked or pierced ascension.\",\n    \"languages\": [\"en\", \"la\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Point: Latin puncta (feminine past participle of pungere); Roker: possibly from Old English *rocor (rough, tumultuous)\",\n    \"reading\": \"The rough or tumultuous piercing; a violent or chaotic puncture.\",\n    \"languages\": [\"en\", \"la\", \"oe\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ro-ker-point: Ro (Latin ros, dew) + ker (turn) + point (Latin punctum, instant)\",\n    \"reading\": \"The turning instant of dew; the moment when moisture pivots or crystallizes.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Point: P (rho, flow; psi, breath) + O (omega, end) + I (iota, smallest) + N (nu, new) + T (tau, cross)\",\n    \"reading\": \"Breath flowing to the end through the smallest crossing; the final exhalation at the narrowest gate.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Roker: Old Norse *hraukr (heap, cairn); Point: Old French *pointe (sharp end, from Latin *puncta, past participle of pungere, to prick)",
+   "reading": "A sharp heap; a piercing accumulation or marked elevation of gathered matter.",
+   "languages": [
+    "en",
+    "non",
+    "fro",
+    "la"
+   ],
+   "source": "Oxford English Dictionary; Littré",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ro-ker: ro (wheel, rotation, Latin rota) + ker (turn, Old English cyrran); Point: poin-t (pain, French douleur + t as marker)",
+   "reading": "The turning wheel of suffering; rotational pain or the axis of anguish.",
+   "languages": [
+    "en",
+    "la",
+    "fr",
+    "oe"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Roker ≈ French *rocaille (rockwork, shell-work); Point = French *pointe (lace point, sharp tip)",
+   "reading": "Ornamental rockwork with a sharp or piercing edge; decorated stone at a fine point.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ro-ker Point: ro (Latin rex, king) + ker (turn) + point (Latin punctum, dot, moment)",
+   "reading": "The turning moment of kingship; the pivot where sovereignty rotates or is marked.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "Roker Point → Pro-kite-or; Pro (before, forward) + kite (Greek kitē, sea monster) + or (mouth, Latin os)",
+   "reading": "The mouth that speaks before the sea-beast; prophecy preceding the abyss.",
+   "languages": [
+    "en",
+    "grc",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R (rho, flow); O (circle, completion); K (kappa, breaking); E (epsilon, opening); R (return); P (rho again, flow); T (tau, cross)",
+   "reading": "Flow, completion, breaking, opening, return, flow again, crossing—the cycle of rupture and restoration.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R-O-K-E-R P-O-I-N-T: Read as initials or first letters of hidden phrase",
+   "reading": "Potential acrostic; the letters themselves form a concealed utterance waiting decryption.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Rok-er: rok (Old Norse hraukr, heap) + er (one who does); Point: poin-t (French pain, bread/suffering)",
+   "reading": "One who heaps; the gatherer of bread or suffering into a sharp focal point.",
+   "languages": [
+    "en",
+    "non",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Point ≈ Latin *punctum (prick, dot); Roker ≈ German *Raucher (smoker, one who smokes/rises)",
+   "reading": "The rising smoke marked by a dot; the pricked or pierced ascension.",
+   "languages": [
+    "en",
+    "la",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Point: Latin puncta (feminine past participle of pungere); Roker: possibly from Old English *rocor (rough, tumultuous)",
+   "reading": "The rough or tumultuous piercing; a violent or chaotic puncture.",
+   "languages": [
+    "en",
+    "la",
+    "oe"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ro-ker-point: Ro (Latin ros, dew) + ker (turn) + point (Latin punctum, instant)",
+   "reading": "The turning instant of dew; the moment when moisture pivots or crystallizes.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Point: P (rho, flow; psi, breath) + O (omega, end) + I (iota, smallest) + N (nu, new) + T (tau, cross)",
+   "reading": "Breath flowing to the end through the smallest crossing; the final exhalation at the narrowest gate.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

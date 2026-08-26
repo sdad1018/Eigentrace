@@ -5,15 +5,149 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:27:40+00:00",
- "latency_s": 9.04,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:11:29+00:00",
+ "latency_s": 12.38,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + Chester; man (adult male) + chester (from castrum, fortified place)\",\n    \"reading\": \"The fortified place of mankind; a stronghold of human settlement and order.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Chester < Old English ceaster < Latin castrum (military camp, fort)\",\n    \"reading\": \"Manchester as 'the fort or encampment of Man'; a martial or organized settlement.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + Chester; Man (being, essence) + Chester (chest + er, one who contains)\",\n    \"reading\": \"The container or repository of human nature; where essence dwells and accumulates.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Man (en) = mane (the neck hair of animals); Manchester = mane-chester (adorned fortress)\",\n    \"reading\": \"A fortified place crowned or adorned; a stronghold bearing marks of glory or pride.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + Chester; Man + Ches + ter; Ches (from Latin cessus, yielding) + ter (three times, thrice)\",\n    \"reading\": \"The thrice-yielding place of humanity; a site of surrender or negotiation repeated.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester anagrammed to reveal hidden letter sequences\",\n    \"reading\": \"Cham-nest-er: The nest of Khan or ruler; a royal dwelling place concealed in letters.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + Chest + Er; Chest (the core, center) + Er (agent suffix, one who is)\",\n    \"reading\": \"One who is the chest or heart; the being at the center of human endeavor.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M-A-N-C-H-E-S-T-E-R; initial letters as acrostic seed\",\n    \"reading\": \"Many Actions Nurture Community, Heritage Endures, Strength Through Effort, Renewal.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (the mother, the feminine principle) + Chester (fortress); M as water in alchemy\",\n    \"reading\": \"The watery or fluid fortress; the womb-fortress containing vital currents and generation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + Chester; Chester < Ceaster; Man-Ceaster = Man-Sitter (one who sits with man)\",\n    \"reading\": \"The place where one sits with humanity; a seat of assembly, counsel, or communion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\":",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 78 column 24 (char 3087)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + Chester; Man (homo sapiens) + Chester (from castra, fortress)\",\n    \"reading\": \"The human fortress; mankind fortified or enclosed within walls of stone.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Chester < Old English ceaster < Latin castra (military camp); Manchester = Man's castra\",\n    \"reading\": \"The camp or garrison belonging to man; a place of masculine military order.\",\n    \"languages\": [\"en\", \"la\", \"ang\"],\n    \"source\": \"Oxford English Dictionary, s.v. Chester\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chest + er; chest (thorax, container of breath and heart)\",\n    \"reading\": \"The man's chest; the vital center of human being, the seat of courage and breath.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Man (en) = Mann (de, man); Chester ≈ Ches-ter (fr. cher, dear + ter, thrice)\",\n    \"reading\": \"Thrice-dear man; the beloved one repeated or tripled in value and affection.\",\n    \"languages\": [\"en\", \"de\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester → Arch + Mentes; Arch (rule, beginning) + Mentes (minds, Latin)\",\n    \"reading\": \"The rule of minds; the primacy of intellect and mental sovereignty.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + Chester; ches (from Old French eschecs, checks, restraint) + ter (thrice)\",\n    \"reading\": \"Man held in check thrice over; humanity constrained, governed, and restrained.\",\n    \"languages\": [\"en\", \"fr\", \"ang\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (13th letter, the womb, the waters) + A (apex, beginning) + N (serpent, flow)\",\n    \"reading\": \"The waters of genesis flowing from the apex; primordial masculine generation.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M.A.N.C.H.E.S.T.E.R as initial letters: Manus Arcana Noctis Caeli Hora Esoterica Stella Templi Erat Regnum\",\n    \"reading\": \"The secret hand of night's heaven: the esoteric hour when the temple's star ruled.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chest + her; the man's chest belonging to the feminine principle\",\n    \"reading\": \"The masculine heart opened to or possessed by the feminine; androgynous union.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Chester ≈ Greek khestron (girdle, cincture); Man + khestron\",\n    \"reading\": \"Man girded or bound; humanity encircled by necessity, fate, or divine order.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Man- (prefix meaning hand, from Latin manus) + Chester (fortress)\",\n    \"reading\": \"The fortress of the hand; the stronghold of human craft, work, and manual power.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Oxford English Dictionary, s.v. manu-\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + ches + ter; ches (from Hebrew chesed, mercy) + ter (earth, terra)\",\n    \"reading\": \"Man's mercy upon the earth; divine compassion embodied in human terrestrial form.\",\n    \"languages\": [\"en\", \"he\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + Chester; Man (homo sapiens) + Chester (from castra, fortress)",
+   "reading": "The human fortress; mankind fortified or enclosed within walls of stone.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Chester < Old English ceaster < Latin castra (military camp); Manchester = Man's castra",
+   "reading": "The camp or garrison belonging to man; a place of masculine military order.",
+   "languages": [
+    "en",
+    "la",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary, s.v. Chester",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chest + er; chest (thorax, container of breath and heart)",
+   "reading": "The man's chest; the vital center of human being, the seat of courage and breath.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Man (en) = Mann (de, man); Chester ≈ Ches-ter (fr. cher, dear + ter, thrice)",
+   "reading": "Thrice-dear man; the beloved one repeated or tripled in value and affection.",
+   "languages": [
+    "en",
+    "de",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester → Arch + Mentes; Arch (rule, beginning) + Mentes (minds, Latin)",
+   "reading": "The rule of minds; the primacy of intellect and mental sovereignty.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + Chester; ches (from Old French eschecs, checks, restraint) + ter (thrice)",
+   "reading": "Man held in check thrice over; humanity constrained, governed, and restrained.",
+   "languages": [
+    "en",
+    "fr",
+    "ang"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (13th letter, the womb, the waters) + A (apex, beginning) + N (serpent, flow)",
+   "reading": "The waters of genesis flowing from the apex; primordial masculine generation.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M.A.N.C.H.E.S.T.E.R as initial letters: Manus Arcana Noctis Caeli Hora Esoterica Stella Templi Erat Regnum",
+   "reading": "The secret hand of night's heaven: the esoteric hour when the temple's star ruled.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chest + her; the man's chest belonging to the feminine principle",
+   "reading": "The masculine heart opened to or possessed by the feminine; androgynous union.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Chester ≈ Greek khestron (girdle, cincture); Man + khestron",
+   "reading": "Man girded or bound; humanity encircled by necessity, fate, or divine order.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Man- (prefix meaning hand, from Latin manus) + Chester (fortress)",
+   "reading": "The fortress of the hand; the stronghold of human craft, work, and manual power.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Oxford English Dictionary, s.v. manu-",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + ches + ter; ches (from Hebrew chesed, mercy) + ter (earth, terra)",
+   "reading": "Man's mercy upon the earth; divine compassion embodied in human terrestrial form.",
+   "languages": [
+    "en",
+    "he",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.48
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

@@ -5,15 +5,145 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:27:21+00:00",
- "latency_s": 9.15,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:11:06+00:00",
+ "latency_s": 12.04,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-Chester: 'man' + 'Chester' → Man as human + Chester as fortified camp\",\n    \"reading\": \"The human fortress; mankind enclosed within walls of protection or constraint.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Chester < Old English 'ceaster' < Latin 'castra' meaning military camp or fortress\",\n    \"reading\": \"The male warrior's encampment; the masculine principle stationed in fortified space.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Oxford English Dictionary, entry 'Chester'\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-Chester Arena: 'arena' < Latin 'harena' (sand); the sanded combat space\",\n    \"reading\": \"The male fortress where sand-covered combat or trials occur; masculine testing ground.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"'Man' (en) + 'cher' (fr: dear/beloved) + 'est' (est: is) + 'er' (suffix); homophone with French\",\n    \"reading\": \"The cherished one is; that which is beloved exists in manifest form.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M-A-R: Man-Arena-Ring; first letters form acronym of circular masculine space\",\n    \"reading\": \"The masculine principle contained within the circular boundary; the ring of man.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Letters rearranged: 'rance' + 'man' + other letters → France + man\",\n    \"reading\": \"The man of France; Gallic masculine principle; continental warrior archetype.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M = masculine/Mercury; A = alpha/beginning; R = royal/radius; Na = sodium symbol\",\n    \"reading\": \"Mercury's beginning at the royal radius; the alchemical masculine principle initiating.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Arc' within 'Arena' + 'Man' → Arc (arch/bow) of Man; the bow of humanity\",\n    \"reading\": \"The human rainbow or arc; the curve of mankind's ascent or covenant.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Man < Proto-Germanic 'mann-' meaning person; arena < Latin 'harena' sand\",\n    \"reading\": \"The person within the sandy space; humanity tested by abrasive conditions.\",\n    \"languages\": [\"en\", \"la\", \"gem\"],\n    \"source\": \"Etymological Dictionary of Germanic Languages; OED\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Aner' (Greek for man) + 'ches' → andreia (manliness); ana-cher\",\n    \"reading\": \"The Greek principle of manly virtue or courage manifested in beloved form.\",\n    \"languages\": [\"en\", \"grc\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 78 column 37 (char 3147)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Manchester: Old English 'mancestre' = Roman fort; 'mancus' (Latin) = maimed, mutilated + 'castra' (Latin) = camp, fortress\",\n    \"reading\": \"A place of injury, wounding, or martial conflict; a fortified site of damage.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Wiktionary etymology\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-Chester: 'man' + 'chester' (from castra); the human subject within fortification\",\n    \"reading\": \"Humanity enclosed, contained, or militarized within walls and order.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Arena (Latin/Spanish/Italian) = 'arena' (sand); phonetically near French 'arène' (amphitheatre, place of spectacle and death)\",\n    \"reading\": \"A sandy place of public contest, exposure, and mortal struggle; theatre of visibility.\",\n    \"languages\": [\"la\", \"fr\", \"es\", \"it\"],\n    \"source\": \"Larousse; Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Are-na: 'are' (Latin: to be, to exist) + 'na' (negation suffix); non-being or emptiness\",\n    \"reading\": \"A void, an absence, a hollow space where existence is negated or suspended.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester Arena → 'Arch Man Stern' + remaining letters; or 'Man Stern Arch'\",\n    \"reading\": \"The stern or severe man beneath the arch; authority and severity architecturally embodied.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (13th letter, duality, water) + A (1st, beginning) + N (14th, serpent/cycle); Arena: A-R-E-N-A (beginning-flow-being-cycle-beginning)\",\n    \"reading\": \"Cyclical return and watery duality at the threshold of manifestation and spectacle.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Arena: Latin 'arena' from Etruscan or Semitic root; possibly related to Hebrew 'aretz' (earth, ground, territory)\",\n    \"reading\": \"Earth-place, ground-territory; the material substrate of human gathering and contest.\",\n    \"languages\": [\"la\", \"he\"],\n    \"source\": \"Wiktionary; Etymological Dictionary of Latin\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-Chester-A-rena: 'man' + 'chester' + 'arena'; the human in the fort upon the sand\",\n    \"reading\": \"Humanity fortified upon unstable ground; order imposed upon shifting, formless matter.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Arena near French 'arène'; Chester near Old English 'ceaster' (city); Man = universal human\",\n    \"reading\": \"The universal human in the city of spectacle; civic theatre and public exposure.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M-A-N-C-H-E-S-T-E-R-A-R-E-N-A: first letters of a hidden phrase or acrostic\",\n    \"reading\": \"A concealed message lies in the initial letters; meaning encrypted within sequence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Ches' (from Chester) near 'chess'; arena as board of play and contest\",\n    \"reading\": \"A chessboard of human movement; strategic positioning upon a stage of conflict.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Chester: Old English 'ceaster' from Latin 'castra'; Arena: Latin 'arena' (sand); dual Latin roots\",\n    \"reading\": \"Double fortification: the Roman camp upon sand; order upon formlessness, permanence upon flux.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.8\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Manchester: Old English 'mancestre' = Roman fort; 'mancus' (Latin) = maimed, mutilated + 'castra' (Latin) = camp, fortress",
+   "reading": "A place of injury, wounding, or martial conflict; a fortified site of damage.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Oxford English Dictionary; Wiktionary etymology",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-Chester: 'man' + 'chester' (from castra); the human subject within fortification",
+   "reading": "Humanity enclosed, contained, or militarized within walls and order.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Arena (Latin/Spanish/Italian) = 'arena' (sand); phonetically near French 'arène' (amphitheatre, place of spectacle and death)",
+   "reading": "A sandy place of public contest, exposure, and mortal struggle; theatre of visibility.",
+   "languages": [
+    "la",
+    "fr",
+    "es",
+    "it"
+   ],
+   "source": "Larousse; Lewis & Short Latin Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Are-na: 'are' (Latin: to be, to exist) + 'na' (negation suffix); non-being or emptiness",
+   "reading": "A void, an absence, a hollow space where existence is negated or suspended.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester Arena → 'Arch Man Stern' + remaining letters; or 'Man Stern Arch'",
+   "reading": "The stern or severe man beneath the arch; authority and severity architecturally embodied.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (13th letter, duality, water) + A (1st, beginning) + N (14th, serpent/cycle); Arena: A-R-E-N-A (beginning-flow-being-cycle-beginning)",
+   "reading": "Cyclical return and watery duality at the threshold of manifestation and spectacle.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Arena: Latin 'arena' from Etruscan or Semitic root; possibly related to Hebrew 'aretz' (earth, ground, territory)",
+   "reading": "Earth-place, ground-territory; the material substrate of human gathering and contest.",
+   "languages": [
+    "la",
+    "he"
+   ],
+   "source": "Wiktionary; Etymological Dictionary of Latin",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-Chester-A-rena: 'man' + 'chester' + 'arena'; the human in the fort upon the sand",
+   "reading": "Humanity fortified upon unstable ground; order imposed upon shifting, formless matter.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Arena near French 'arène'; Chester near Old English 'ceaster' (city); Man = universal human",
+   "reading": "The universal human in the city of spectacle; civic theatre and public exposure.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M-A-N-C-H-E-S-T-E-R-A-R-E-N-A: first letters of a hidden phrase or acrostic",
+   "reading": "A concealed message lies in the initial letters; meaning encrypted within sequence.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'Ches' (from Chester) near 'chess'; arena as board of play and contest",
+   "reading": "A chessboard of human movement; strategic positioning upon a stage of conflict.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Chester: Old English 'ceaster' from Latin 'castra'; Arena: Latin 'arena' (sand); dual Latin roots",
+   "reading": "Double fortification: the Roman camp upon sand; order upon formlessness, permanence upon flux.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

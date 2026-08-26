@@ -5,15 +5,142 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:24:28+00:00",
- "latency_s": 9.13,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:07:37+00:00",
+ "latency_s": 10.45,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"pad (Old English pädde, toad) + dock (Old English docce, plant; later enclosure)\",\n    \"reading\": \"Toad's plant-place; amphibian dwelling among vegetation or enclosed wetland.\",\n    \"languages\": [\"en\", \"gmc\"],\n    \"source\": \"Oxford English Dictionary; Middle English Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"PAD (percussion, cushion, strike) + DOCK (cut, sever, remove)\",\n    \"reading\": \"Strike and sever; the action of beating and cutting away; rhythmic reduction.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"pad (French) = sole of foot; dock = French dogue (mastiff, aggressive dog)\",\n    \"reading\": \"Foot-beast; the animal's sole or the aggressive beast's footprint.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"PAD-OCK; ock as Old English ōc (oak tree)\",\n    \"reading\": \"Padded oak; the cushioned tree; enclosure beneath or within the oak.\",\n    \"languages\": [\"en\", \"gmc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"paddock → codpak, packod, podack\",\n    \"reading\": \"Anagrammatic dissolution reveals hidden: cod (fish, abundance) + pack (gather, contain).\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P (path, opening) + A (alpha, beginning) + D (delta, door) + D + OCK (eye, circle)\",\n    \"reading\": \"Path opening at door, doubled door; circular enclosure with dual threshold.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P-A-D-D-O-C-K as initial acrostic: Place of Ascending Descent; Duality Obscured in Confine, Kept\",\n    \"reading\": \"Paradoxical site where ascent and descent coexist; duality hidden within confinement.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"PADD (pad doubled, emphasis, cushion intensified) + OCK (lock, enclosure)\",\n    \"reading\": \"Doubly padded lock; secure enclosure with redundant softening or buffering.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"dock (Latin dux, leader) + pad (Hebrew pad, redeem)\",\n    \"reading\": \"Leader's redemption; the authority that redeems or the redeemed leader's space.\",\n    \"languages\": [\"en\", \"la\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"paddock (Old English pearroc, from pærræc, enclosure for animals)\",\n    \"reading\": \"Animal enclosure; field or pen where beasts are confined and protected.\",\n    \"languages\": [\"en\", \"gmc\"],\n    \"source\": \"Oxford English Dictionary; Bosworth-Toller Anglo-Saxon Dictionary\",\n    \"confidence\": 0.",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 78 column 31 (char 3000)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"pad (Old English pædde, toad) + dock (Middle English docke, to cut short, or from dock as enclosure)\",\n    \"reading\": \"The toad's shortened place; amphibian in confined space.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"Oxford English Dictionary; Middle English Dictionary\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"PAD + OCK; pad = cushion, foundation; ock = diminutive or lock-sound\",\n    \"reading\": \"A small locked or enclosed cushioned ground; a contained soft place.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paddock ≈ French 'padoue' (Padua); Italian 'padova'; Latin 'Patavium'\",\n    \"reading\": \"The city of Padua; place of ancient learning and water-crossings.\",\n    \"languages\": [\"fr\", \"it\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"PAD + DOCK; dock = to remove, to cut, to deprive\",\n    \"reading\": \"To cushion or soften the removal; to pad what is docked or severed.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Paddock → coda + pad; coda (tail, conclusion) + pad (cushion)\",\n    \"reading\": \"The tail-end cushioned; conclusion softened or enclosed.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P (path, opening) + ADD (to increase) + OCK (lock, enclosure)\",\n    \"reading\": \"Opening where addition is locked; bounded accumulation or containment.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"PAD + DOCK; dock = to meet, to come together (nautical origin)\",\n    \"reading\": \"Cushioned meeting-place; soft ground where vessels or things converge.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P-A-D-D-O-C-K as initial letters: Pax, Ars, Deus, Donum, Ordo, Custodia, Kabalah\",\n    \"reading\": \"Peace through art, divine gift ordered and guarded by hidden wisdom.\",\n    \"languages\": [\"la\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"dock (Old English docce, plant with broad leaves; also enclosure for ships)\",\n    \"reading\": \"A place of broad-leafed growth; natural enclosure or harbor.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"PAD + OCK; ock = archaic or diminutive suffix (like in 'haddock')\",\n    \"reading\": \"Small or diminished pad; a modest cushioned or soft place.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paddock ≈ German 'Paddel' (paddle) + 'Dock' (dock)\",\n    \"reading\": \"The paddle-dock; place where oars meet water and enclosure meet.\",\n    \"languages\": [\"de\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"PAD + DOCK; pad = paw, foot; dock = tail or rear\",\n    \"reading\": \"Foot-tail; the rear or trailing ground where animals stand.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "pad (Old English pædde, toad) + dock (Middle English docke, to cut short, or from dock as enclosure)",
+   "reading": "The toad's shortened place; amphibian in confined space.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "Oxford English Dictionary; Middle English Dictionary",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "PAD + OCK; pad = cushion, foundation; ock = diminutive or lock-sound",
+   "reading": "A small locked or enclosed cushioned ground; a contained soft place.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paddock ≈ French 'padoue' (Padua); Italian 'padova'; Latin 'Patavium'",
+   "reading": "The city of Padua; place of ancient learning and water-crossings.",
+   "languages": [
+    "fr",
+    "it",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "PAD + DOCK; dock = to remove, to cut, to deprive",
+   "reading": "To cushion or soften the removal; to pad what is docked or severed.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Paddock → coda + pad; coda (tail, conclusion) + pad (cushion)",
+   "reading": "The tail-end cushioned; conclusion softened or enclosed.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P (path, opening) + ADD (to increase) + OCK (lock, enclosure)",
+   "reading": "Opening where addition is locked; bounded accumulation or containment.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "PAD + DOCK; dock = to meet, to come together (nautical origin)",
+   "reading": "Cushioned meeting-place; soft ground where vessels or things converge.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P-A-D-D-O-C-K as initial letters: Pax, Ars, Deus, Donum, Ordo, Custodia, Kabalah",
+   "reading": "Peace through art, divine gift ordered and guarded by hidden wisdom.",
+   "languages": [
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "dock (Old English docce, plant with broad leaves; also enclosure for ships)",
+   "reading": "A place of broad-leafed growth; natural enclosure or harbor.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "PAD + OCK; ock = archaic or diminutive suffix (like in 'haddock')",
+   "reading": "Small or diminished pad; a modest cushioned or soft place.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paddock ≈ German 'Paddel' (paddle) + 'Dock' (dock)",
+   "reading": "The paddle-dock; place where oars meet water and enclosure meet.",
+   "languages": [
+    "de",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "PAD + DOCK; pad = paw, foot; dock = tail or rear",
+   "reading": "Foot-tail; the rear or trailing ground where animals stand.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

@@ -5,15 +5,146 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:23:39+00:00",
- "latency_s": 9.69,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:06:43+00:00",
+ "latency_s": 10.21,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Nevada (Spanish) < nevado, past participle of nevar (to snow) < Latin nivatus < nix (snow)\",\n    \"reading\": \"That which is snow-covered; the snowed state; whiteness descending from heaven.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"Oxford Spanish Dictionary; Corominas, Diccionario Crítico Etimológico\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ne-vada: ne (Latin) = not; vada (Romance) = fords, passages, places of crossing\",\n    \"reading\": \"Not the ford; the impassable; that which denies passage; the obstacle between waters.\",\n    \"languages\": [\"la\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Nevada ≈ ne vada (Italian) = 'it does not go'; va da = goes from\",\n    \"reading\": \"What does not go; what refuses movement; the still and frozen place.\",\n    \"languages\": [\"it\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Nevada → a vend; vend-a; en vada\",\n    \"reading\": \"One sells the passage; the ford is for sale; the crossing has a price.\",\n    \"languages\": [\"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ne-vad-a: vad (wading, fording) + -a (feminine); ne (negation) frames the act\",\n    \"reading\": \"The feminine negation of wading; she who refuses to wade; the frozen water's resistance.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N(14) + E(5) + V(22) + A(1) + D(4) + A(1) = 47; 4+7 = 11 (threshold, duality, crossing)\",\n    \"reading\": \"The doubled gate; the threshold between states; initiation through numerical balance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ne-vad-a: vad as in Lat. vadimonia (pledges, bonds); ne-vad = unbounded pledge\",\n    \"reading\": \"The oath not kept; the bond that breaks; the covenant undone by ice.\",\n    \"languages\": [\"la\"],\n    \"source\": \"Forcellini, Lexicon Totius Latinitatis\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Nevada ≈ Fr. ne va da (it does not go there); da = from/by (Old French)\",\n    \"reading\": \"It does not depart from there; what remains fixed; the immovable.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Nev-ada: nev (snow, from Latin nix); ada (Hebrew עדה = witness, assembly)\",\n    \"reading\": \"The snow bears witness; the frozen assembly gathers; white silence testifies.\",\n    \"languages\": [\"la\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Nevada: N-E-V-A-D-A as",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 2820)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Nevada < Spanish nevada, feminine past participle of nevar (to snow) < Latin nivare < nix (snow)\",\n    \"reading\": \"The snowed-upon, the snow-covered: a landscape transformed by winter's white veil.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Corominas, Diccionario crítico etimológico\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ne-vada: ne (not) + vada (ford, passage) in Romance languages\",\n    \"reading\": \"The impassable place, where crossing is denied by snow and ice.\",\n    \"languages\": [\"la\", \"es\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Nevada ≈ French 'ne va da' (does not go there)\",\n    \"reading\": \"Negation of passage: that which refuses transit, the blocked way.\",\n    \"languages\": [\"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Nev-ada: nev (snow root) + ada (feminine suffix denoting state or quality)\",\n    \"reading\": \"The condition of being snow; snowness itself; whiteness as essential state.\",\n    \"languages\": [\"la\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Nevada → Vaned-a (having vanes, feathered)\",\n    \"reading\": \"The feathered or winged state; snow as plumage falling from sky-birds.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N (negation, no) + E (being) + V (the vessel, the chalice) + A (alpha, beginning)\",\n    \"reading\": \"The negation of being in the vessel of origins; emptiness at the source.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.42\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Nev-ad-a: nev (snow) + ad (toward) + a (feminine marker)\",\n    \"reading\": \"Moving toward snow; the feminine principle of approach to whiteness and cold.\",\n    \"languages\": [\"la\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Nevada ≈ Italian 'ne va da' (neither goes from there)\",\n    \"reading\": \"Double negation of departure: the place from which nothing escapes.\",\n    \"languages\": [\"it\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"N-E-V-A-D-A: Nix Evaporans Venit Ad Diem Albam (Snow evaporating comes to white day)\",\n    \"reading\": \"The alchemical dissolution of snow into light; sublimation into whiteness.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ne-vad-a: ne (not) + vad (to go, Latin vadere) + a (feminine)\",\n    \"reading\": \"She who does not go; the immobile feminine principle; frozen stillness.\",\n    \"languages\": [\"la\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Nevada < Latin nix, nivis (snow) + -ada (abundance suffix in Spanish)\",\n    \"reading\": \"Abundance of snow; the state of being full of snow; winter's plenty.\",\n    \"languages\": [\"la\", \"es\"],\n    \"source\": \"Corominas; REW (Romanisches Etymologisches Wörterbuch)\",\n    \"confidence\": 0.88\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Nevada ≈ Latin 'ne vada' (do not ford; do not cross)\",\n    \"reading\": \"Prohibition of passage; the sacred boundary where mortals must not venture.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Nevada < Spanish nevada, feminine past participle of nevar (to snow) < Latin nivare < nix (snow)",
+   "reading": "The snowed-upon, the snow-covered: a landscape transformed by winter's white veil.",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "Oxford English Dictionary; Corominas, Diccionario crítico etimológico",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ne-vada: ne (not) + vada (ford, passage) in Romance languages",
+   "reading": "The impassable place, where crossing is denied by snow and ice.",
+   "languages": [
+    "la",
+    "es",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Nevada ≈ French 'ne va da' (does not go there)",
+   "reading": "Negation of passage: that which refuses transit, the blocked way.",
+   "languages": [
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Nev-ada: nev (snow root) + ada (feminine suffix denoting state or quality)",
+   "reading": "The condition of being snow; snowness itself; whiteness as essential state.",
+   "languages": [
+    "la",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.72
+  },
+  {
+   "operation": "anagram",
+   "chain": "Nevada → Vaned-a (having vanes, feathered)",
+   "reading": "The feathered or winged state; snow as plumage falling from sky-birds.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.48
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N (negation, no) + E (being) + V (the vessel, the chalice) + A (alpha, beginning)",
+   "reading": "The negation of being in the vessel of origins; emptiness at the source.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.42
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Nev-ad-a: nev (snow) + ad (toward) + a (feminine marker)",
+   "reading": "Moving toward snow; the feminine principle of approach to whiteness and cold.",
+   "languages": [
+    "la",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.68
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Nevada ≈ Italian 'ne va da' (neither goes from there)",
+   "reading": "Double negation of departure: the place from which nothing escapes.",
+   "languages": [
+    "it",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "N-E-V-A-D-A: Nix Evaporans Venit Ad Diem Albam (Snow evaporating comes to white day)",
+   "reading": "The alchemical dissolution of snow into light; sublimation into whiteness.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ne-vad-a: ne (not) + vad (to go, Latin vadere) + a (feminine)",
+   "reading": "She who does not go; the immobile feminine principle; frozen stillness.",
+   "languages": [
+    "la",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "etymology",
+   "chain": "Nevada < Latin nix, nivis (snow) + -ada (abundance suffix in Spanish)",
+   "reading": "Abundance of snow; the state of being full of snow; winter's plenty.",
+   "languages": [
+    "la",
+    "es"
+   ],
+   "source": "Corominas; REW (Romanisches Etymologisches Wörterbuch)",
+   "confidence": 0.88
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Nevada ≈ Latin 'ne vada' (do not ford; do not cross)",
+   "reading": "Prohibition of passage; the sacred boundary where mortals must not venture.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

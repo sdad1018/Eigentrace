@@ -5,15 +5,145 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:30:37+00:00",
- "latency_s": 8.91,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:14:50+00:00",
+ "latency_s": 9.63,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ba + ha + mas; ba (Egyptian) = soul; ha (Egyptian) = breath; mas (Spanish) = more\",\n    \"reading\": \"The soul's breath, multiplied or increased; essence animating and proliferating.\",\n    \"languages\": [\"egy\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bahamas ≈ bah + ah + mas; bah (French exclamation) = dismissal; ah (universal) = revelation\",\n    \"reading\": \"Dismissal followed by sudden perception; negation yielding to illumination.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bahama < Lucayan Taíno ba-ha-ma, possibly 'shallow water' or 'large upper middle island'\",\n    \"reading\": \"Low-lying waters; the intermediate or threshold realm between depths and surfaces.\",\n    \"languages\": [\"tino\"],\n    \"source\": \"Oxford English Dictionary, s.v. Bahama\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ba + hamas; ba (Egyptian) = soul; hamas (Hebrew) = strength, might\",\n    \"reading\": \"The soul fortified; spiritual power or animated force made manifest and firm.\",\n    \"languages\": [\"egy\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bahamas → aha + bams; aha (exclamation) = insight; bams = strikes, impacts\",\n    \"reading\": \"Sudden understanding struck home; revelatory force meeting consciousness.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B = second, duality; A = first, unity; H = fence, boundary; M = water; S = serpent/flow\",\n    \"reading\": \"Duality within unity bounded by waters that flow serpentine; cosmic oscillation contained.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"bah (dismissal) + ah (wonder) + mas (more, Latin); layered negation and amplification\",\n    \"reading\": \"Rejection transformed into multiplied astonishment; the paradox of denied yet abundant revelation.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.69\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-A-H-A-M-A-S as initials; Ba Ah Ha Am As (fragmentary invocation)\",\n    \"reading\": \"Soul-breath-boundary-waters-essence: the shamanic formula of threshold crossing and animation.\",\n    \"languages\": [\"en\", \"egy\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bahamas ≈ Ba-hamas; hamas (Arabic) = enthusiasm, zeal, vehemence\",\n    \"reading\": \"The soul kindled with fervent passion; animated being seized by ardent force.\",\n    \"languages\": [\"ar\", \"egy\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.64\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ba + ha + mass; mass (Latin) = lump, bulk; compressed or aggregated being\",\n    \"reading\": \"The soul's breath compressed into matter; spirit densified into substantial form.\",\n    \"languages",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 31 (char 2872)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ha-mas; ba (father in multiple languages) + ha (breath, laughter) + mas (more)\",\n    \"reading\": \"The father's breath multiplied; paternal inspiration or divine exhalation repeated.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bahamas ≈ French 'bas' (low) + 'hamas' (Arabic: enthusiasm, fervor)\",\n    \"reading\": \"Low fervor; base enthusiasm or debased spiritual ardor.\",\n    \"languages\": [\"fr\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ha-mas; Hebrew ba (in/within) + ha (the definite article) + mas (concealment)\",\n    \"reading\": \"Within the hidden; concealment at the heart of being.\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bahamas → 'a bash ama' or 'bash a ham'\",\n    \"reading\": \"Strike or violently separate the crude matter; destruction of base substance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B=2, A=1, H=8, A=1, M=13, A=1, S=19; sum = 45 = 4+5 = 9\",\n    \"reading\": \"The number nine: completion, return to unity, cyclical closure.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ha-mas; Latin 'ba' (kiss) + 'ha' (this) + 'mas' (more)\",\n    \"reading\": \"Kiss this more; repeated salutation or multiplied benediction.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-A-H-A-M-A-S as initial letters: 'Behold All Hidden Arcana Manifest As Symbols'\",\n    \"reading\": \"Revelation of concealed mysteries through symbolic manifestation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bahamas ≈ Greek 'ba' (step, base) + 'hama' (together, with)\",\n    \"reading\": \"The base united; foundation held in common.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ha-mas; Egyptian ba (soul) + ha (joy) + mas (birth/becoming)\",\n    \"reading\": \"The soul's joy becoming; spiritual delight in manifestation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bahamas: from Spanish 'baja mar' (shallow sea); baja (low) + mar (sea)\",\n    \"reading\": \"Low waters; the shallow depths where surface meets abyss.\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ha-mas; 'bah' (exclamation of dismissal) + 'a' + 'mas' (more)\",\n    \"reading\": \"Dismissal multiplied; repeated negation or scorn.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bahamas ≈ French 'bah' (bah!) + 'amas' (you loved)\",\n    \"reading\": \"Bah! You loved—past affection dismissed or negated.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ha-mas; ba (father in multiple languages) + ha (breath, laughter) + mas (more)",
+   "reading": "The father's breath multiplied; paternal inspiration or divine exhalation repeated.",
+   "languages": [
+    "en",
+    "fr",
+    "la",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bahamas ≈ French 'bas' (low) + 'hamas' (Arabic: enthusiasm, fervor)",
+   "reading": "Low fervor; base enthusiasm or debased spiritual ardor.",
+   "languages": [
+    "fr",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ha-mas; Hebrew ba (in/within) + ha (the definite article) + mas (concealment)",
+   "reading": "Within the hidden; concealment at the heart of being.",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bahamas → 'a bash ama' or 'bash a ham'",
+   "reading": "Strike or violently separate the crude matter; destruction of base substance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B=2, A=1, H=8, A=1, M=13, A=1, S=19; sum = 45 = 4+5 = 9",
+   "reading": "The number nine: completion, return to unity, cyclical closure.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ha-mas; Latin 'ba' (kiss) + 'ha' (this) + 'mas' (more)",
+   "reading": "Kiss this more; repeated salutation or multiplied benediction.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-A-H-A-M-A-S as initial letters: 'Behold All Hidden Arcana Manifest As Symbols'",
+   "reading": "Revelation of concealed mysteries through symbolic manifestation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bahamas ≈ Greek 'ba' (step, base) + 'hama' (together, with)",
+   "reading": "The base united; foundation held in common.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ha-mas; Egyptian ba (soul) + ha (joy) + mas (birth/becoming)",
+   "reading": "The soul's joy becoming; spiritual delight in manifestation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bahamas: from Spanish 'baja mar' (shallow sea); baja (low) + mar (sea)",
+   "reading": "Low waters; the shallow depths where surface meets abyss.",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ha-mas; 'bah' (exclamation of dismissal) + 'a' + 'mas' (more)",
+   "reading": "Dismissal multiplied; repeated negation or scorn.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bahamas ≈ French 'bah' (bah!) + 'amas' (you loved)",
+   "reading": "Bah! You loved—past affection dismissed or negated.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

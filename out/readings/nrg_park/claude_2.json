@@ -5,15 +5,146 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:25:41+00:00",
- "latency_s": 9.83,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:09:04+00:00",
+ "latency_s": 10.56,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG = energy (abbreviation); Park = enclosed space; phonetic blend: 'en-ergy park'\",\n    \"reading\": \"A bounded space of vital force or kinetic potential; sanctuary of power.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N=14, R=18, G=7 (alphabetic positions); 14+18+7=39; 3+9=12; 1+2=3. Park=4 letters. 3+4=7\",\n    \"reading\": \"Numerologically sealed in seven: perfection and wholeness manifest in a bounded enclosure.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG ≈ 'erg' (French); 'erg' = unit of energy (physics); Park (French parc) = enclosed ground\",\n    \"reading\": \"The measurement of work made manifest in an enclosed, cultivated space.\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"Système International d'Unités\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Park = 'par' + 'k'; par (golf) = standard; k = potency marker; 'parked' energy at rest\",\n    \"reading\": \"Energy held in suspension, temporarily immobilized within a designated threshold.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"NRG PARK → RANK PRG, PRANK RG, GNAPR K; isolate PRANK: deception within the garden\",\n    \"reading\": \"Illusion and trickery concealed within nature's bounded realm; hidden deceit in cultivation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Park < Old French parc < Frankish *parruh; enclosure for animals. NRG = abbreviation for energy < Greek energeia\",\n    \"reading\": \"A Frankish enclosure now containing invisible force; the modern harnessing of kinetic potentiality.\",\n    \"languages\": [\"en\",\"fr\",\"grc\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"NRG = Nous (intelligence), Raison (reason), Gravitation (gravity); Park = Potential, Arque, Rencontre, Kenosis\",\n    \"reading\": \"Mind, reason, and gravity converge in a space of potentiality and kenotic emptiness.\",\n    \"languages\": [\"en\",\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'En' (French: in) + 'Arg' (guttural) + 'Park'; or 'Narg' (snarl, growl) + 'Park'\",\n    \"reading\": \"The primal throat-sound enclosed; animality tamed and bounded within civilization's green space.\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R = radius, regression, Rex; G = genesis, gravity; N = negation, nullity; Park = circle\",\n    \"reading\": \"The sovereign principle of negation commands the circle where forces begin and return.\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 29 (char 3012)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG = 'energy' (phonetic reduction); Park = enclosed space\",\n    \"reading\": \"Energy contained or bounded; vital force within defined limits or sanctuary.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG ≈ 'en-air-gé' (French); air = breath, life; gé = earth (géo-)\",\n    \"reading\": \"Breath of earth; the living spirit animating the ground or place.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N=14, R=18, G=7; 14+18+7=39; 3+9=12; 1+2=3 (Trinity); Park=enclosure\",\n    \"reading\": \"The threefold divine principle enclosed or made manifest in a bounded space.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Park: Old French 'parc' < Medieval Latin 'parricus' (enclosure for animals)\",\n    \"reading\": \"A bounded space for containing and preserving living creatures or vital forces.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"NRG PARK → PRANK RG; GNAR + KP; GRAN + KP\",\n    \"reading\": \"Deception or jest involving the vital force; growling power restrained.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG = 'en-erg'; erg (unit of energy); Park = place of rest\",\n    \"reading\": \"The place where work and energy come to rest or are stored.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"NRG PARK: N=Nous (mind), R=Ratio (reason), G=Generatio (generation); P=Pax, A=Anima, R=Ratio, K=?\",\n    \"reading\": \"Mind and reason generating within peace and soul; the rational cosmos.\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Park ≈ 'parc' (French); parc ≈ 'parch' (to dry); NRG = energy drying/consuming\",\n    \"reading\": \"Energy that desiccates or consumes; the burning force that parches.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG = 'nerg' (near + erg); Park = sacred precinct\",\n    \"reading\": \"The sacred precinct near the source of all work and transformation.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"NRG: modern abbreviation of 'energy' < Greek 'energeia' (actuality, operation)\",\n    \"reading\": \"The actuality and operation of becoming made visible in an enclosed space.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"Oxford English Dictionary; Liddell-Scott\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N=serpent/life; R=solar ray; G=generative force; Park=garden/Eden\",\n    \"reading\": \"The living serpent, solar radiance, and generative power in paradise.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG ≈ 'nerg' ≈ 'noir-gé' (dark-earth, French); Park = place\",\n    \"reading\": \"The place of dark earth; the underworld or chthonic realm of fertility.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "NRG = 'energy' (phonetic reduction); Park = enclosed space",
+   "reading": "Energy contained or bounded; vital force within defined limits or sanctuary.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "NRG ≈ 'en-air-gé' (French); air = breath, life; gé = earth (géo-)",
+   "reading": "Breath of earth; the living spirit animating the ground or place.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N=14, R=18, G=7; 14+18+7=39; 3+9=12; 1+2=3 (Trinity); Park=enclosure",
+   "reading": "The threefold divine principle enclosed or made manifest in a bounded space.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Park: Old French 'parc' < Medieval Latin 'parricus' (enclosure for animals)",
+   "reading": "A bounded space for containing and preserving living creatures or vital forces.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Oxford English Dictionary; Merriam-Webster",
+   "confidence": 0.85
+  },
+  {
+   "operation": "anagram",
+   "chain": "NRG PARK → PRANK RG; GNAR + KP; GRAN + KP",
+   "reading": "Deception or jest involving the vital force; growling power restrained.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "NRG = 'en-erg'; erg (unit of energy); Park = place of rest",
+   "reading": "The place where work and energy come to rest or are stored.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "notariqon",
+   "chain": "NRG PARK: N=Nous (mind), R=Ratio (reason), G=Generatio (generation); P=Pax, A=Anima, R=Ratio, K=?",
+   "reading": "Mind and reason generating within peace and soul; the rational cosmos.",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Park ≈ 'parc' (French); parc ≈ 'parch' (to dry); NRG = energy drying/consuming",
+   "reading": "Energy that desiccates or consumes; the burning force that parches.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "NRG = 'nerg' (near + erg); Park = sacred precinct",
+   "reading": "The sacred precinct near the source of all work and transformation.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "NRG: modern abbreviation of 'energy' < Greek 'energeia' (actuality, operation)",
+   "reading": "The actuality and operation of becoming made visible in an enclosed space.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "Oxford English Dictionary; Liddell-Scott",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N=serpent/life; R=solar ray; G=generative force; Park=garden/Eden",
+   "reading": "The living serpent, solar radiance, and generative power in paradise.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "NRG ≈ 'nerg' ≈ 'noir-gé' (dark-earth, French); Park = place",
+   "reading": "The place of dark earth; the underworld or chthonic realm of fertility.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

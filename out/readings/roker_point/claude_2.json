@@ -5,15 +5,154 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:31:14+00:00",
- "latency_s": 8.76,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:15:35+00:00",
+ "latency_s": 12.31,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Roker Point → ro-ker point → roc-ker point\",\n    \"reading\": \"A point or promontory named after a large mythical bird; a rocky outcrop or summit.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Roker: Old Norse rokr (smoke, mist) + -er (agent/place suffix); Point: Latin punctum (pierced, sharp)\",\n    \"reading\": \"A sharp or prominent place shrouded in smoke or mist; a misty peak or smoky headland.\",\n    \"languages\": [\"en\", \"non\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Roker → French rocaille (rockwork, shell-like ornamentation); Point → pointe (sharp tip)\",\n    \"reading\": \"Decorative rocky shellwork; an ornamental pointed formation of shells and stones.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Roker Point → ro (wheel, turn) + ker (dark, evil in Germanic) + point (aim, direction)\",\n    \"reading\": \"Turning toward darkness; a directional mark or aim into shadow or obscurity.\",\n    \"languages\": [\"en\", \"non\", \"gem\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Roker Point → Poke Pointer, Pointer Poke\",\n    \"reading\": \"One who points and provokes; an instrument of direction and prodding.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Roker Point → R.P. → Rosh Piqud (Hebrew: head/chief + command/order)\",\n    \"reading\": \"A chief point of command or authoritative direction; a commanding summit.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Roker → Ro (Old English for fame/renown) + ker (turn, make); Point → sharp place\",\n    \"reading\": \"A place of turning toward renown; a famous turning-place or promontory.\",\n    \"languages\": [\"en\", \"oe\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Point → Pointe (French ballet term); Roker → roc (legendary bird); roc-ker dancer\",\n    \"reading\": \"The point of the legendary bird's dance; a sharp upward stance or theatrical turning.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Point: Latin punctum; Roker: possibly related to Old English rocca (distaff, spinning tool)\",\n    \"reading\": \"A spinning place of sharp penetration; a textile or rotational point of manufacture.\",\n    \"languages\": [\"en\", \"oe\", \"la\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Roker Point → Ro-ker Poynt → roker (one who smokes/evokes) + point (aim)\",\n    \"reading\": \"The aimed emission of smoke or vaporous revelation; a directed exhalation or",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 36 (char 2850)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Roker: Old Norse *raukr (smoke, steam); -er (agent suffix). Point: Latin punctum (pricked, pierced)\",\n    \"reading\": \"One who produces smoke or vapor; a piercing or sharp mark. The smoky agent that pierces.\",\n    \"languages\": [\"non\", \"en\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ro-ker Point: Ro (Latin radius, ray) + ker (Greek keraunos, lightning) + Point (puncture)\",\n    \"reading\": \"A ray of lightning that strikes a point; divine fire concentrated at a single location.\",\n    \"languages\": [\"la\", \"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Roker ≈ French roque (rook in chess; castle move); Point = pointe (tip, point)\",\n    \"reading\": \"The castle's tip; the fortified position at its sharpest edge. Strategic vulnerability.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Roker Point → Pointer + Kore; Kore (Greek maiden, daughter)\",\n    \"reading\": \"One who points toward the maiden; the indicator of virgin wisdom or hidden feminine knowledge.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Rok-er: rok (Germanic roc, smoke/mist) + er (one who); Point (Latin pungere, to prick)\",\n    \"reading\": \"The one who pierces the mist; clarity emerging from obscurity through sharp focus.\",\n    \"languages\": [\"gem\", \"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"R.O.K.E.R. P.O.I.N.T.: Reading first letters as initials of hidden phrase\",\n    \"reading\": \"Acronymic reading yields no standard phrase; the letters themselves resist unified meaning.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R (radius, regnum); O (circle, totality); K (kabbalistic letter); E (existence); R (return); P (power); O (omega); I (unity); N (negation); T (tau, cross)\",\n    \"reading\": \"Royal circle of hidden power returns; omega's unity negated at the crossing—paradox of end and beginning.\",\n    \"languages\": [\"la\", \"grc\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Roker ≈ German Raucher (smoker); Point ≈ Latin pontis (bridge)\",\n    \"reading\": \"The smoker's bridge; passage through vapor and obscurity toward illumination.\",\n    \"languages\": [\"de\", \"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Point: Old French pointe, from Latin puncta (feminine of punctus, from pungere, to prick, pierce)\",\n    \"reading\": \"A feminine piercing; the sharp edge of receptive awareness; the needle's eye through which thread passes.\",\n    \"languages\": [\"la\", \"ofr\", \"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ro-ker-Point: Ro (Hebrew resh, head) + ker (Hebrew qere, call/voice) + Point (Hebrew tzinor, point/tube)\",\n    \"reading\": \"The head's voice calling through a narrow passage; utterance concentrated at a single opening.\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Roker Point → Poetic Kronor; Kronor (Swedish currency, from Greek Kronos, time)\",\n    \"reading\": \"Poetic time; the lyrical measure of temporal flow; verse as the coinage of duration.\",\n    \"languages\": [\"sv\", \"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Rok-er-Point: Rok (Old English rocc, rook bird) + er (agent) + Point (aim, direction)\",\n    \"reading\": \"The rook-bearer's aim; the corvid's direction; dark wisdom pointed toward a specific target.\",\n    \"languages\": [\"oe\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Roker: Old Norse *raukr (smoke, steam); -er (agent suffix). Point: Latin punctum (pricked, pierced)",
+   "reading": "One who produces smoke or vapor; a piercing or sharp mark. The smoky agent that pierces.",
+   "languages": [
+    "non",
+    "en",
+    "la"
+   ],
+   "source": "Oxford English Dictionary; Pokorny Indo-European Etymological Dictionary",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ro-ker Point: Ro (Latin radius, ray) + ker (Greek keraunos, lightning) + Point (puncture)",
+   "reading": "A ray of lightning that strikes a point; divine fire concentrated at a single location.",
+   "languages": [
+    "la",
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Roker ≈ French roque (rook in chess; castle move); Point = pointe (tip, point)",
+   "reading": "The castle's tip; the fortified position at its sharpest edge. Strategic vulnerability.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Roker Point → Pointer + Kore; Kore (Greek maiden, daughter)",
+   "reading": "One who points toward the maiden; the indicator of virgin wisdom or hidden feminine knowledge.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Rok-er: rok (Germanic roc, smoke/mist) + er (one who); Point (Latin pungere, to prick)",
+   "reading": "The one who pierces the mist; clarity emerging from obscurity through sharp focus.",
+   "languages": [
+    "gem",
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R.O.K.E.R. P.O.I.N.T.: Reading first letters as initials of hidden phrase",
+   "reading": "Acronymic reading yields no standard phrase; the letters themselves resist unified meaning.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R (radius, regnum); O (circle, totality); K (kabbalistic letter); E (existence); R (return); P (power); O (omega); I (unity); N (negation); T (tau, cross)",
+   "reading": "Royal circle of hidden power returns; omega's unity negated at the crossing—paradox of end and beginning.",
+   "languages": [
+    "la",
+    "grc",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Roker ≈ German Raucher (smoker); Point ≈ Latin pontis (bridge)",
+   "reading": "The smoker's bridge; passage through vapor and obscurity toward illumination.",
+   "languages": [
+    "de",
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "etymology",
+   "chain": "Point: Old French pointe, from Latin puncta (feminine of punctus, from pungere, to prick, pierce)",
+   "reading": "A feminine piercing; the sharp edge of receptive awareness; the needle's eye through which thread passes.",
+   "languages": [
+    "la",
+    "ofr",
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.72
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ro-ker-Point: Ro (Hebrew resh, head) + ker (Hebrew qere, call/voice) + Point (Hebrew tzinor, point/tube)",
+   "reading": "The head's voice calling through a narrow passage; utterance concentrated at a single opening.",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "anagram",
+   "chain": "Roker Point → Poetic Kronor; Kronor (Swedish currency, from Greek Kronos, time)",
+   "reading": "Poetic time; the lyrical measure of temporal flow; verse as the coinage of duration.",
+   "languages": [
+    "sv",
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.48
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Rok-er-Point: Rok (Old English rocc, rook bird) + er (agent) + Point (aim, direction)",
+   "reading": "The rook-bearer's aim; the corvid's direction; dark wisdom pointed toward a specific target.",
+   "languages": [
+    "oe",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

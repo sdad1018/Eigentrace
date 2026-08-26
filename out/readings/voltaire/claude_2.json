@@ -5,15 +5,144 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:33:03+00:00",
- "latency_s": 8.93,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:17:51+00:00",
+ "latency_s": 11.69,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Voltaire < French surname < Old French 'volte' (turn, vault) + suffix '-aire' (one who); volte < Latin 'volta' (turn)\",\n    \"reading\": \"One who turns; a turner or one prone to turning and change.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"Littré Dictionnaire de la Langue Française; Godefroy Lexique de l'ancien français\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vol-taire: vol (flight, theft in French) + taire (to be silent, to conceal)\",\n    \"reading\": \"Flight into silence; the theft of utterance; what speaks by not speaking.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Volt-aire: volt (electrical unit, turn) + aire (open space, threshing floor)\",\n    \"reading\": \"The turning force in the open field; electric transformation in expansive space.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Voltaire ≈ French 'volte à ire' (turn toward anger/wrath)\",\n    \"reading\": \"A turning toward wrath; the pivot-point of anger; irascibility made manifest through turning.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Voltaire: letters rearranged to 'rait ovel' or 'vole trait' (flight-stroke)\",\n    \"reading\": \"The stroke of flight; the mark left by passage through air.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V (five in Roman numeral; the vessel, the chalice) + OLTAIRE (the way of oleum, oil, unction)\",\n    \"reading\": \"Five-fold anointing; the sacred vessel anointed; consecration through numeric and sacred oil.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"First letters of 'Vir Omnium Loquens Tamen Arcana Ire Reticet Eloquens'\",\n    \"reading\": \"A man speaking all things yet keeping secrets hidden; eloquence that conceals.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vol-t-aire: French 'vol' (theft, flight) + Latin 'terra' (earth) via 'taire'\",\n    \"reading\": \"Theft from the earth; aerial rapine; the flight that steals from soil.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.61\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Voltaire ≈ Latin 'volat ire' (it flies away, to go in anger)\",\n    \"reading\": \"Anger that flies; wrath in motion; the departure of irascibility.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.63\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Voltaire: Old French 'volte' (fencing term, sudden turn) + '-aire' (agent); from Italian 'volta'\",\n    \"reading\": \"One who",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 24 (char 2809)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vol-taire: vol (French) = flight, theft; taire (French) = to be silent, to conceal\",\n    \"reading\": \"The flight into silence; theft of speech; what soars away and hides itself.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Voltaire < Arouet (family name); vol (Latin) = I wish, I turn; taire < tacere (Latin) = to be silent\",\n    \"reading\": \"The turning-away from speech; the will that conceals itself in muteness.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"Littré; Godefroy Old French Dictionary\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Voltaire ≈ vol-taire; German Welt (world) + taire (silence) = world-silence\",\n    \"reading\": \"The silence of the world; muting of all things; the void that speaks.\",\n    \"languages\": [\"de\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vol-t-aire: vol (flight) + t (the cross, the threshold) + aire (air, space)\",\n    \"reading\": \"Flight across the threshold into open air; passage through the crossing into freedom.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Voltaire → Vair-tole; vair (heraldic fur, truth-bearer) + tole (sheet metal, thin covering)\",\n    \"reading\": \"Truth wrapped in thin metal; heraldic truth concealed beneath a surface.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V (the chalice, the vessel) + oltaire; V holds, contains, receives\",\n    \"reading\": \"The vessel that receives all; the cup-shaped opening to wisdom or emptiness.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.70\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Volt-aire: volt (turn, twist, electrical charge) + aire (area, surface, threshing floor)\",\n    \"reading\": \"The turning-place of energy; the floor where force is discharged and scattered.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.73\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Voltaire ≈ Italian volta (turn, vault) + aire (area); volta (Latin) = I turn\",\n    \"reading\": \"The turning vault; the arch that pivots; revolution inscribed in architecture.\",\n    \"languages\": [\"it\", \"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.71\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"V-O-L-T-A-I-R-E: initial letters as abbreviation or acrostic seed\",\n    \"reading\": \"Vox Omnis Lux Tacet Arcana Illuminat Ratio Ens: Voice, all light falls silent; reason illuminates hidden being.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"aire < Old French aire (threshing floor, open space); Latin area\",\n    \"reading\": \"The open floor where grain is separated; the place of winnowing and division.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"Littré; Ernout-Meillet\",\n    \"confidence\": 0.78\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vol-taire: vol (theft, rapine) + taire (concealment); the thief's silence\",\n    \"reading\": \"Theft wrapped in silence; the crime that speaks not; rapine made mute.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.74\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Voltaire ≈ Greek aer (air) within; vol-t-aer-e; the air that turns\",\n    \"reading\": \"The turning of air itself; breath made visible through rotation; pneumatic revolution.\",\n    \"languages\": [\"grc\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.66\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Vol-taire: vol (French) = flight, theft; taire (French) = to be silent, to conceal",
+   "reading": "The flight into silence; theft of speech; what soars away and hides itself.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "etymology",
+   "chain": "Voltaire < Arouet (family name); vol (Latin) = I wish, I turn; taire < tacere (Latin) = to be silent",
+   "reading": "The turning-away from speech; the will that conceals itself in muteness.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "Littré; Godefroy Old French Dictionary",
+   "confidence": 0.72
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Voltaire ≈ vol-taire; German Welt (world) + taire (silence) = world-silence",
+   "reading": "The silence of the world; muting of all things; the void that speaks.",
+   "languages": [
+    "de",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.68
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vol-t-aire: vol (flight) + t (the cross, the threshold) + aire (air, space)",
+   "reading": "Flight across the threshold into open air; passage through the crossing into freedom.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "Voltaire → Vair-tole; vair (heraldic fur, truth-bearer) + tole (sheet metal, thin covering)",
+   "reading": "Truth wrapped in thin metal; heraldic truth concealed beneath a surface.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V (the chalice, the vessel) + oltaire; V holds, contains, receives",
+   "reading": "The vessel that receives all; the cup-shaped opening to wisdom or emptiness.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Volt-aire: volt (turn, twist, electrical charge) + aire (area, surface, threshing floor)",
+   "reading": "The turning-place of energy; the floor where force is discharged and scattered.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.73
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Voltaire ≈ Italian volta (turn, vault) + aire (area); volta (Latin) = I turn",
+   "reading": "The turning vault; the arch that pivots; revolution inscribed in architecture.",
+   "languages": [
+    "it",
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.71
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V-O-L-T-A-I-R-E: initial letters as abbreviation or acrostic seed",
+   "reading": "Vox Omnis Lux Tacet Arcana Illuminat Ratio Ens: Voice, all light falls silent; reason illuminates hidden being.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "aire < Old French aire (threshing floor, open space); Latin area",
+   "reading": "The open floor where grain is separated; the place of winnowing and division.",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "Littré; Ernout-Meillet",
+   "confidence": 0.78
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vol-taire: vol (theft, rapine) + taire (concealment); the thief's silence",
+   "reading": "Theft wrapped in silence; the crime that speaks not; rapine made mute.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.74
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Voltaire ≈ Greek aer (air) within; vol-t-aer-e; the air that turns",
+   "reading": "The turning of air itself; breath made visible through rotation; pneumatic revolution.",
+   "languages": [
+    "grc",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.66
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

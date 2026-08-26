@@ -5,15 +5,143 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:22:42+00:00",
- "latency_s": 8.95,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:05:37+00:00",
+ "latency_s": 10.36,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Luxor < Latin lux (light) + -or (agent suffix); lux from Proto-Indo-European *leuk- (to shine)\",\n    \"reading\": \"That which shines; the giver or bearer of light; luminosity personified as active force.\",\n    \"languages\": [\"la\", \"en\", \"pie\"],\n    \"source\": \"Oxford Latin Dictionary; Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Luxor = Lux + Or; or (French) = gold; or (English) = in the alternative\",\n    \"reading\": \"Light of gold; the radiant metal; illumination presenting choice or alternative paths.\",\n    \"languages\": [\"la\", \"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Luxor ≈ lux + or; or (German) = place; Latin locus (place) compressed into 'or'\",\n    \"reading\": \"The place of light; site of illumination; locative principle suffused with luminescence.\",\n    \"languages\": [\"la\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Luxor = Lu + xor; lu (Mandarin) = six; xor (binary logic) = exclusive or\",\n    \"reading\": \"Sixfold exclusivity; the number of manifestation with singular, undivided radiance.\",\n    \"languages\": [\"zh\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L = light, U = vessel/cup, X = crossroads/intersection, O = totality, R = regency\",\n    \"reading\": \"Light fills the vessel at the crossroads of all things under sovereign rule.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Luxor anagrams to: orulx, xorlu, rolux; rol (French) = role; x = unknown\",\n    \"reading\": \"The role of the unknown; what shines when identity dissolves into mystery.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"L=12, U=21, X=24, O=15, R=18; sum = 90; 9+0 = 9 (completion, return)\",\n    \"reading\": \"Numerical return to unity; cycle of manifestation completing itself in light.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Luxor = Lux + Aur; aur- (Latin) = gold; aureus = golden\",\n    \"reading\": \"Golden light; the precious illumination; radiance made substance and treasure.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Oxford Latin Dictionary\",\n    \"confidence\": 0.80\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"-or (Latin agent suffix) applied to lux yields luxor = 'that which luxes/shines forth'\",\n    \"reading\": \"Active luminescence; light in its generative, outward-radiating power.\",\n    \"languages\": [\"la\"],\n    \"source\": \"Charlton T. Lewis, Elementary Latin Dictionary\",\n    \"confidence\": 0.88\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Luxor ≈ l'or (French) = the gold; lux +",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 24 (char 2855)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Luxor < Latin lux (light) + -or (agent suffix); lux from Proto-Indo-European *leuk- (to shine)\",\n    \"reading\": \"One who shines; the shining principle; light-bringer or illuminator\",\n    \"languages\": [\"la\", \"pie\"],\n    \"source\": \"Oxford Latin Dictionary; Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lux-or: lux (light) + or (Latin: pray, speak); or as suffix meaning 'one who does'\",\n    \"reading\": \"One who speaks light; the utterance of illumination; light made manifest through word\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Luxor ≈ French luxe (luxury) + or (gold in heraldry); or as Latin aurum\",\n    \"reading\": \"Luxury and gold united; the precious radiance of wealth and splendor\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lux-or: lux (light) + or (French: now, at this moment); the present shining\",\n    \"reading\": \"Light of the present moment; illumination occurring now; immediate radiance\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L=12; U=21; X=24; O=15; R=18; sum=90; 9+0=9 (completion, initiation)\",\n    \"reading\": \"The number of completion and cyclical return; the end that begins again\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Luxor → our + lx; our (possession, community) + lx (light abbreviation in Latin)\",\n    \"reading\": \"Our light; the shared illumination belonging to the collective\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lux-or: lux (light) + or (Hebrew: light); double light; light of light\",\n    \"reading\": \"Doubled radiance; light reflecting upon itself; the mirror of illumination\",\n    \"languages\": [\"la\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Luxor: lux (light) + -or (comparative/superlative suffix in Latin); more light, most light\",\n    \"reading\": \"The greater light; the supreme illumination; light surpassing all other light\",\n    \"languages\": [\"la\"],\n    \"source\": \"Oxford Latin Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Luxor ≈ German Luks (cunning, trick) + or; or as Latin aurum (gold)\",\n    \"reading\": \"The cunning of gold; deceptive radiance; the trick of precious light\",\n    \"languages\": [\"de\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lu-xor: lu (Mandarin: green/jade) + xor (logic operation: exclusive or); either-or principle\",\n    \"reading\": \"The jade principle of exclusion; either light or darkness, never both\",\n    \"languages\": [\"zh\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L-U-X-O-R: initials forming hidden acrostic; Lumen Universale Xenia Omnium Radians\",\n    \"reading\": \"Universal light shining as gift to all; the radiant hospitality of illumination\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Luxor: lux (light) + -or (agent); compare luxuria (excess); or as suffix denoting state\",\n    \"reading\": \"The excess of light; the overflowing radiance; light in its profusion and abundance\",\n    \"languages\": [\"la\"],\n    \"source\": \"Oxford Latin Dictionary\",\n    \"confidence\": 0.8\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Luxor < Latin lux (light) + -or (agent suffix); lux from Proto-Indo-European *leuk- (to shine)",
+   "reading": "One who shines; the shining principle; light-bringer or illuminator",
+   "languages": [
+    "la",
+    "pie"
+   ],
+   "source": "Oxford Latin Dictionary; Pokorny Indo-European Etymological Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lux-or: lux (light) + or (Latin: pray, speak); or as suffix meaning 'one who does'",
+   "reading": "One who speaks light; the utterance of illumination; light made manifest through word",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Luxor ≈ French luxe (luxury) + or (gold in heraldry); or as Latin aurum",
+   "reading": "Luxury and gold united; the precious radiance of wealth and splendor",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lux-or: lux (light) + or (French: now, at this moment); the present shining",
+   "reading": "Light of the present moment; illumination occurring now; immediate radiance",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L=12; U=21; X=24; O=15; R=18; sum=90; 9+0=9 (completion, initiation)",
+   "reading": "The number of completion and cyclical return; the end that begins again",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Luxor → our + lx; our (possession, community) + lx (light abbreviation in Latin)",
+   "reading": "Our light; the shared illumination belonging to the collective",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lux-or: lux (light) + or (Hebrew: light); double light; light of light",
+   "reading": "Doubled radiance; light reflecting upon itself; the mirror of illumination",
+   "languages": [
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Luxor: lux (light) + -or (comparative/superlative suffix in Latin); more light, most light",
+   "reading": "The greater light; the supreme illumination; light surpassing all other light",
+   "languages": [
+    "la"
+   ],
+   "source": "Oxford Latin Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Luxor ≈ German Luks (cunning, trick) + or; or as Latin aurum (gold)",
+   "reading": "The cunning of gold; deceptive radiance; the trick of precious light",
+   "languages": [
+    "de",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lu-xor: lu (Mandarin: green/jade) + xor (logic operation: exclusive or); either-or principle",
+   "reading": "The jade principle of exclusion; either light or darkness, never both",
+   "languages": [
+    "zh",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L-U-X-O-R: initials forming hidden acrostic; Lumen Universale Xenia Omnium Radians",
+   "reading": "Universal light shining as gift to all; the radiant hospitality of illumination",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Luxor: lux (light) + -or (agent); compare luxuria (excess); or as suffix denoting state",
+   "reading": "The excess of light; the overflowing radiance; light in its profusion and abundance",
+   "languages": [
+    "la"
+   ],
+   "source": "Oxford Latin Dictionary",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

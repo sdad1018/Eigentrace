@@ -5,15 +5,143 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:26:16+00:00",
- "latency_s": 8.76,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:09:44+00:00",
+ "latency_s": 9.17,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"TEX + AS; tex (Latin texere) = to weave; as = to be\",\n    \"reading\": \"The woven state of being; that which is woven into existence or actuality.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"TEX-AS ≈ French 't'éxase' (you relax/unwind); from exasis\",\n    \"reading\": \"A release or unwinding; the undoing of tension; ecstasis in miniature.\",\n    \"languages\": [\"fr\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"TEX (textile root) + AS (as in Latin 'asis' = axis); spinning-axis\",\n    \"reading\": \"The central axis around which fibers turn; the loom's fundamental pivot and principle.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"TEXAS → AXEST (archaic second person singular of 'axe'); axes, cutting, severance\",\n    \"reading\": \"You cut; you sever; the principle of division and decisive action made manifest.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"TEXAS: tex- (Latin texere, to weave) + -as (suffix forming abstract nouns, as in 'pietas')\",\n    \"reading\": \"The abstract quality or state of weaving; textile essence; the principle of interlacing threads.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Oxford English Dictionary; Latin textus root\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T=crossing; E=equilibrium; X=intersection of opposites; A=alpha; S=serpent/spiral\",\n    \"reading\": \"The crossing point where balance meets the intersection of opposites; alpha-spiral; primordial balance in motion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"TAX + ES; tax (to weigh, burden) + es (you are); the burden of being\",\n    \"reading\": \"You bear a weight; the existential burden; what presses upon all that is.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"TEX ≈ German 'Dax' (badger); AS ≈ Latin 'as' (a unit, coin); the badger's coin\",\n    \"reading\": \"The small currency of the burrowing creature; hidden wealth; subterranean treasure.\",\n    \"languages\": [\"de\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"T-E-X-A-S as acronym: Tangled Essence eXpresses Absolute Singularity\",\n    \"reading\": \"Knotted essence expresses the unified absolute; multiplicity reveals oneness.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"TEX + AS; tex (tissue) + as (axis in anatomy); the tissue-axis\",\n    \"reading\": \"The structural axis of living tissue; the spine or central organizing",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 24 (char 2810)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"TEX-AS; tex (Latin texere) + as (Latin esse)\",\n    \"reading\": \"Weaving being; the essence of interlaced threads or woven fabric.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Texas < Tejas < Caddo tejas (roof tiles); from Caddo root meaning 'friends' or 'roof'\",\n    \"reading\": \"Friends or shelter-makers; those who provide roofing and communal protection.\",\n    \"languages\": [\"cad\", \"es\"],\n    \"source\": \"Oxford English Dictionary, s.v. Texas\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"TEX-AS ≈ French 'tex' (textile) + 'as' (you have)\",\n    \"reading\": \"You have textiles; possession of woven goods or fabric wealth.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"TE-XAS; te (Latin: you) + xas (Greek xasis, scraping)\",\n    \"reading\": \"You scrape or abrade; the action of wearing away through friction.\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"TEXAS → AXEST (archaic second person singular of 'axe')\",\n    \"reading\": \"You cut or hew; the wielding of an axe as tool or weapon.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T=tau (cross); EX=exitus (exit); AS=ass (burden)\",\n    \"reading\": \"The cross-bearing exit; departure under the weight of burden or sacrifice.\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"T-E-X-A-S: Textum Excelsum Xenia Ardentis Signum\",\n    \"reading\": \"The exalted text of burning hospitality's sign; sacred discourse of passionate welcome.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"TEX-AS; tex (textile) + as (Latin: at, near)\",\n    \"reading\": \"Near the woven; proximity to cloth, fabric, or the loom's work.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"TEXAS ≈ German 'Taxis' (plural of taxi); phonetic near-match\",\n    \"reading\": \"Multiple journeys or passages; the multiplicity of transit and movement.\",\n    \"languages\": [\"de\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"T=20, E=5, X=24, A=1, S=19; sum=69; 6+9=15; 1+5=6\",\n    \"reading\": \"Six: completion, balance, and the hexad of cosmic harmony.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"TEX-US; tex (weave) + us (Latin: we, ourselves)\",\n    \"reading\": \"We weave; collective action of interlacing or binding together as one.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"TEXAS → SATE-X; sate (satisfy fully) + X (unknown, mystery)\",\n    \"reading\": \"Satisfy the unknown; fulfillment of hidden desire or secret longing.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "TEX-AS; tex (Latin texere) + as (Latin esse)",
+   "reading": "Weaving being; the essence of interlaced threads or woven fabric.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Texas < Tejas < Caddo tejas (roof tiles); from Caddo root meaning 'friends' or 'roof'",
+   "reading": "Friends or shelter-makers; those who provide roofing and communal protection.",
+   "languages": [
+    "cad",
+    "es"
+   ],
+   "source": "Oxford English Dictionary, s.v. Texas",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "TEX-AS ≈ French 'tex' (textile) + 'as' (you have)",
+   "reading": "You have textiles; possession of woven goods or fabric wealth.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "TE-XAS; te (Latin: you) + xas (Greek xasis, scraping)",
+   "reading": "You scrape or abrade; the action of wearing away through friction.",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "TEXAS → AXEST (archaic second person singular of 'axe')",
+   "reading": "You cut or hew; the wielding of an axe as tool or weapon.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T=tau (cross); EX=exitus (exit); AS=ass (burden)",
+   "reading": "The cross-bearing exit; departure under the weight of burden or sacrifice.",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "T-E-X-A-S: Textum Excelsum Xenia Ardentis Signum",
+   "reading": "The exalted text of burning hospitality's sign; sacred discourse of passionate welcome.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "TEX-AS; tex (textile) + as (Latin: at, near)",
+   "reading": "Near the woven; proximity to cloth, fabric, or the loom's work.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "TEXAS ≈ German 'Taxis' (plural of taxi); phonetic near-match",
+   "reading": "Multiple journeys or passages; the multiplicity of transit and movement.",
+   "languages": [
+    "de",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "T=20, E=5, X=24, A=1, S=19; sum=69; 6+9=15; 1+5=6",
+   "reading": "Six: completion, balance, and the hexad of cosmic harmony.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "TEX-US; tex (weave) + us (Latin: we, ourselves)",
+   "reading": "We weave; collective action of interlacing or binding together as one.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "TEXAS → SATE-X; sate (satisfy fully) + X (unknown, mystery)",
+   "reading": "Satisfy the unknown; fulfillment of hidden desire or secret longing.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

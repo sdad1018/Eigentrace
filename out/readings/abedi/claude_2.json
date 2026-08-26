@@ -5,15 +5,141 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:28:56+00:00",
- "latency_s": 9.3,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:12:47+00:00",
+ "latency_s": 10.69,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"A-bed-i; 'a bed' (English) + diminutive suffix -i\",\n    \"reading\": \"One who lies in bed; a sleeper or dreamer in a state of repose.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Abedi ≈ à bédis (French); à = to/at; bédis = plural of bédis (bedposts, supports)\",\n    \"reading\": \"That which belongs to or dwells within the bed-frame; intimacy of domestic rest.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ab-edi; ab (Latin) = from/away; edi (from edere, to eat or consume)\",\n    \"reading\": \"That which is consumed or eaten away; decay, erosion, or metabolic dissolution.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"A = prima/first; B = second letter (duality); E = openness; D = door; I = self\",\n    \"reading\": \"The first threshold opening to the self; the primal passage between states of being.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Abedi → idea + b; or Abedi → bade + i (past tense of bid, to command)\",\n    \"reading\": \"The idea commanded or summoned forth; thought made manifest through utterance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"A-B-E-D-I as initial letters; potential acronym for states: Ascent, Being, Essence, Descent, Integration\",\n    \"reading\": \"A mystical sequence of ascent into being, through essence, into integration downward.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Abedi ≈ Abédi (French); a-bédi echoes 'a beau dit' (a beautiful utterance)\",\n    \"reading\": \"A fair or beautiful saying; eloquence that carries aesthetic or spiritual truth.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"A-bed-i; bed (Old English bedd) < Germanic root for excavation/cavity; -i (agent suffix)\",\n    \"reading\": \"One who dwells in the hollow place; the inhabitant of shelter or sanctuary.\",\n    \"languages\": [\"en\", \"gem\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Abedi ≈ Abe-di (Hebrew/Semitic); Abe (father); di (Hebrew: enough, sufficient)\",\n    \"reading\": \"The father's sufficiency; paternal completeness or the fullness of origin.\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"A = Alpha; B = Beta (the dyad); E-D-I = ending sequence signifying return or cyclicity\",\n    \"reading\": \"The alpha and beta united; duality resolved into singular identity through completion.\",\n    \"languages\":",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 24 (char 2760)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"A-bed-i; 'a bed' + diminutive or locative suffix -i\",\n    \"reading\": \"One who lies in bed; a state of repose or horizontal rest; the intimate chamber.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Abedi ≈ à bédé (French); à = to/at; bédé = comic strip (from B.D.)\",\n    \"reading\": \"Directed toward the sequential image; narrative told in frames; the visual story.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ab-edi; ab (Latin) = from/away; edi (past tense suffix or root)\",\n    \"reading\": \"That which departs or is removed; a going-forth; separation from origin.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Abedi → Baide, Bieda, Deabi, Idea + B\",\n    \"reading\": \"Idea with the letter B (force, being); thought clothed in material substance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"A (alpha, beginning) + B (beta, duality) + E (existence) + D (door/delta) + I (unity)\",\n    \"reading\": \"Beginning duality opens existence to unity; the threshold between multiplicity and oneness.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"A-be-di; 'a' (article) + 'be' (to be) + 'di' (of/from, Romance)\",\n    \"reading\": \"The being-of; that which partakes of existence; the essential quality of presence.\",\n    \"languages\": [\"en\", \"fr\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Abedi ≈ Avedi (Hebrew-like); av = father; edi = ?\",\n    \"reading\": \"Paternal descent; lineage; the line of fathers; genealogical transmission.\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"A-B-E-D-I as initials: Ab Esse Deus Illuminat (Latin, generative)\",\n    \"reading\": \"From being God illuminates; divine light emanates from essential existence.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ab-ed-i; 'abed' (archaic: in bed) + -i (diminutive or plural marker)\",\n    \"reading\": \"Multiple states of repose; the beds of becoming; chambers of transformation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Abedi ≈ Abd-i (Arabic-like); abd = slave/servant; -i = possessive\",\n    \"reading\": \"Servitude; the servant state; submission to necessity or law.\",\n    \"languages\": [\"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Abedi: no standard entry; but 'abed' (Old English on bedde) + -i suffix\",\n    \"reading\": \"Archaic state of lying down; rest; the condition of horizontal repose.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary (abed)\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"A-bed-i; bed as womb/matrix; -i as diminutive: small bed, cradle, origin-place\",\n    \"reading\": \"The cradle; the matrix of becoming; the small vessel from which all emerges.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "A-bed-i; 'a bed' + diminutive or locative suffix -i",
+   "reading": "One who lies in bed; a state of repose or horizontal rest; the intimate chamber.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Abedi ≈ à bédé (French); à = to/at; bédé = comic strip (from B.D.)",
+   "reading": "Directed toward the sequential image; narrative told in frames; the visual story.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ab-edi; ab (Latin) = from/away; edi (past tense suffix or root)",
+   "reading": "That which departs or is removed; a going-forth; separation from origin.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Abedi → Baide, Bieda, Deabi, Idea + B",
+   "reading": "Idea with the letter B (force, being); thought clothed in material substance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "A (alpha, beginning) + B (beta, duality) + E (existence) + D (door/delta) + I (unity)",
+   "reading": "Beginning duality opens existence to unity; the threshold between multiplicity and oneness.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "A-be-di; 'a' (article) + 'be' (to be) + 'di' (of/from, Romance)",
+   "reading": "The being-of; that which partakes of existence; the essential quality of presence.",
+   "languages": [
+    "en",
+    "fr",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Abedi ≈ Avedi (Hebrew-like); av = father; edi = ?",
+   "reading": "Paternal descent; lineage; the line of fathers; genealogical transmission.",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "A-B-E-D-I as initials: Ab Esse Deus Illuminat (Latin, generative)",
+   "reading": "From being God illuminates; divine light emanates from essential existence.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ab-ed-i; 'abed' (archaic: in bed) + -i (diminutive or plural marker)",
+   "reading": "Multiple states of repose; the beds of becoming; chambers of transformation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Abedi ≈ Abd-i (Arabic-like); abd = slave/servant; -i = possessive",
+   "reading": "Servitude; the servant state; submission to necessity or law.",
+   "languages": [
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Abedi: no standard entry; but 'abed' (Old English on bedde) + -i suffix",
+   "reading": "Archaic state of lying down; rest; the condition of horizontal repose.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary (abed)",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "A-bed-i; bed as womb/matrix; -i as diminutive: small bed, cradle, origin-place",
+   "reading": "The cradle; the matrix of becoming; the small vessel from which all emerges.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

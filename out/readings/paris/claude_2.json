@@ -5,15 +5,148 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:33:31+00:00",
- "latency_s": 9.14,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:18:25+00:00",
+ "latency_s": 12.5,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paris < Greek Páris < uncertain origin, possibly from Semitic *par- 'to divide'; or from root meaning 'to produce'\",\n    \"reading\": \"A name whose origin remains divided or obscured; the produce or offspring of ambiguity itself.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"Oxford English Dictionary; Beekes Greek Etymological Lexicon\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Pa-ris; Pa = father (Latin pater); ris = laughter (Latin risus)\",\n    \"reading\": \"The father laughs; paternal laughter; the origin of mirth in the paternal principle.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paris (en) ≈ 'par is' (English locution) = by/through (that which) is\",\n    \"reading\": \"That which exists by means of being itself; existence through the medium of presence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Paris → rapis, spair, aspir\",\n    \"reading\": \"Rapis: seizing, plunder (Latin rapere). Aspir: breath, spirit approaching. The seizure of aspiration.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P-A-R-I-S as initial letters: Patris Arcana Revela In Silentio (Father's mysteries revealed in silence)\",\n    \"reading\": \"The silent revelation of the father's hidden mysteries; wisdom withheld in quietude.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P = gate, threshold (Hebrew Pe); A = ox, strength; R = head; I = hand; S = tooth (Hebrew: sevenheaded)\",\n    \"reading\": \"At the gate of strength, the head receives from the hand what the teeth consume: threshold of creative power.\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"P(16)+A(1)+R(18)+I(9)+S(19) = 63 = 9; or 6+3 = 9 (completion, return)\",\n    \"reading\": \"Completion and return; the circle closing upon itself; nine as the sacred end.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Par-is; Par = to prepare, make ready (Latin parare); is = he/she is\",\n    \"reading\": \"That which prepares itself; readiness made manifest; the state of being prepared.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paris (en) ≈ parer (fr) = to adorn, dress, parry; + -is (Latin masculine)\",\n    \"reading\": \"The adorned one; he who dresses himself in beauty; the parrying defender.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Paris → Raips, Pairs, Apris\",\n    \"reading\": \"",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 2894)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paris < Old French Paris < Latin Paris < Greek Páris (Πάρις); root uncertain, possibly from Pelasgian or pre-Indo-European substrate\",\n    \"reading\": \"The name's origin remains obscure; it may derive from a pre-Greek language layer, suggesting deep antiquity and linguistic mystery.\",\n    \"languages\": [\"grc\", \"la\", \"fr\", \"en\"],\n    \"source\": \"Beekes, Robert S. P. Etymological Dictionary of Greek (2010); Ernout & Meillet, Dictionnaire étymologique de la langue latine (1959)\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Pa-ris; pa (Latin) = father; ris (French) = laugh, or Latin ridere = to laugh\",\n    \"reading\": \"Father who laughs; the laughing father. A figure of paternal mirth or divine amusement at creation.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paris (French) ≈ par-is; par (French) = by, equal; is (English) = being; 'by being' or 'equal being'\",\n    \"reading\": \"Equality of being; that which exists through parity or balance. A principle of equipoise.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"PARIS → RAPIS (rapere, Latin = to seize); PRIAS (prion, Greek = saw); SPIRA (spiral, Latin = coil)\",\n    \"reading\": \"Seizure, cutting, spiraling motion. The word contains within it rapture, division, and the turning of fate.\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P-A-R-I-S as initial letters: Pater Animae Rationalis Ipse Sapientia (Latin construction)\",\n    \"reading\": \"Father of the rational soul itself is wisdom. An invocation of paternal divine intellect.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P = door, threshold; A = pyramid, apex; R = flow, radiation; I = unity, pillar; S = serpent, spiral\",\n    \"reading\": \"Through the threshold of the apex flows the radiation of unity as serpentine spiral—a path of ascent and return.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Par-is; par (French) = equal; is (English/Latin) = being; also 'par' = pair, two\",\n    \"reading\": \"The pairing of beings; duality made equal. The principle of complementary opposition in balance.\",\n    \"languages\": [\"fr\", \"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paris ≈ pares (Latin, second person singular of parere = to obey, prepare); 'you prepare' or 'you obey'\",\n    \"reading\": \"An imperative of obedience or preparation. The word commands readiness and submission to necessity.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Pa-ris; ris from Old French rire (to laugh); pa from Latin pater (father) or Greek pais (child)\",\n    \"reading\": \"The child who laughs, or the father's laughter. Innocence and paternal joy conjoined.\",\n    \"languages\": [\"fr\", \"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"PARIS → SPAIR (Scottish: to ask, inquire); PAIRS (duality); RASPI (rasp, file)\",\n    \"reading\": \"The paired inquiry that files away, smooths, or refines through questioning and division.\",\n    \"languages\": [\"en\", \"sco\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"P(16) A(1) R(18) I(9) S(19) = 63 = 9 (reduction); 9 = completion, initiation, return\",\n    \"reading\": \"The number nine: completion of cycles, initiation into mystery, the threshold between worlds.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paris possibly from Sanskrit 'pari' (around, beyond) + Greek suffix; 'beyond' or 'surrounding'\",\n    \"reading\": \"That which surrounds or transcends; the encompassing principle. A boundary or the space beyond it.\",\n    \"languages\": [\"sa\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Paris < Old French Paris < Latin Paris < Greek Páris (Πάρις); root uncertain, possibly from Pelasgian or pre-Indo-European substrate",
+   "reading": "The name's origin remains obscure; it may derive from a pre-Greek language layer, suggesting deep antiquity and linguistic mystery.",
+   "languages": [
+    "grc",
+    "la",
+    "fr",
+    "en"
+   ],
+   "source": "Beekes, Robert S. P. Etymological Dictionary of Greek (2010); Ernout & Meillet, Dictionnaire étymologique de la langue latine (1959)",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Pa-ris; pa (Latin) = father; ris (French) = laugh, or Latin ridere = to laugh",
+   "reading": "Father who laughs; the laughing father. A figure of paternal mirth or divine amusement at creation.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris (French) ≈ par-is; par (French) = by, equal; is (English) = being; 'by being' or 'equal being'",
+   "reading": "Equality of being; that which exists through parity or balance. A principle of equipoise.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "PARIS → RAPIS (rapere, Latin = to seize); PRIAS (prion, Greek = saw); SPIRA (spiral, Latin = coil)",
+   "reading": "Seizure, cutting, spiraling motion. The word contains within it rapture, division, and the turning of fate.",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P-A-R-I-S as initial letters: Pater Animae Rationalis Ipse Sapientia (Latin construction)",
+   "reading": "Father of the rational soul itself is wisdom. An invocation of paternal divine intellect.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P = door, threshold; A = pyramid, apex; R = flow, radiation; I = unity, pillar; S = serpent, spiral",
+   "reading": "Through the threshold of the apex flows the radiation of unity as serpentine spiral—a path of ascent and return.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Par-is; par (French) = equal; is (English/Latin) = being; also 'par' = pair, two",
+   "reading": "The pairing of beings; duality made equal. The principle of complementary opposition in balance.",
+   "languages": [
+    "fr",
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris ≈ pares (Latin, second person singular of parere = to obey, prepare); 'you prepare' or 'you obey'",
+   "reading": "An imperative of obedience or preparation. The word commands readiness and submission to necessity.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Pa-ris; ris from Old French rire (to laugh); pa from Latin pater (father) or Greek pais (child)",
+   "reading": "The child who laughs, or the father's laughter. Innocence and paternal joy conjoined.",
+   "languages": [
+    "fr",
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "PARIS → SPAIR (Scottish: to ask, inquire); PAIRS (duality); RASPI (rasp, file)",
+   "reading": "The paired inquiry that files away, smooths, or refines through questioning and division.",
+   "languages": [
+    "en",
+    "sco"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "P(16) A(1) R(18) I(9) S(19) = 63 = 9 (reduction); 9 = completion, initiation, return",
+   "reading": "The number nine: completion of cycles, initiation into mystery, the threshold between worlds.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Paris possibly from Sanskrit 'pari' (around, beyond) + Greek suffix; 'beyond' or 'surrounding'",
+   "reading": "That which surrounds or transcends; the encompassing principle. A boundary or the space beyond it.",
+   "languages": [
+    "sa",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

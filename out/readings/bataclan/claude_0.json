@@ -5,15 +5,153 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:31:24+00:00",
- "latency_s": 9.06,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:15:45+00:00",
+ "latency_s": 10.43,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan; ba (percussion strike) + ta (onomatopoeia of repetition) + clan (group, family)\",\n    \"reading\": \"Rhythmic striking or beating within a gathered community; percussive assembly.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bata (Yoruba: sacred mysteries, hidden knowledge) + clan (Scottish: family line, lineage)\",\n    \"reading\": \"Secret knowledge transmitted through familial or tribal bonds; esoteric inheritance.\",\n    \"languages\": [\"yo\", \"gd\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba (Egyptian: soul) + ta (Egyptian: earth, land) + clan (gathering)\",\n    \"reading\": \"The soul of earth gathered together; spiritual assembly of terrestrial principle.\",\n    \"languages\": [\"egy\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bataclan → talban, labtac, cabalt, etc.; noting cab + alt + an\",\n    \"reading\": \"Cab (conveyance, vessel) bearing the other or alternative; transit of duality.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B (second letter, duality, binary) + A (first, origin) + T (cross, balance) + A + C (curve, cycle) + L (line) + A + N (nine, completion)\",\n    \"reading\": \"Duality emerging from origin, crossed and cycled, drawn to completion through nine.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bata (Spanish: shoe, footwear) + clan; also bata (Portuguese: housecoat, wrapper)\",\n    \"reading\": \"What wraps or clothes the clan; garment of collective identity or protection.\",\n    \"languages\": [\"es\", \"pt\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bataclan may derive from 'bata' (Italian: troop, battalion) + 'clan' (Scottish Gaelic: children, family group)\",\n    \"reading\": \"Military assembly or battalion organized by kinship; warrior family or armed lineage.\",\n    \"languages\": [\"it\", \"gd\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-A-T-A-C-L-A-N as initial letters: Battery, Attic, Threshold, Ascent, Cipher, Light, Aether, Nexus\",\n    \"reading\": \"Electrical energy in high places; threshold ascending toward luminous connection in ether.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan; ta-ta (reduplication: repetition, drumming, morse code rhythm)\",\n    \"reading\": \"Repeated beating or pulsation within a closed or gathered space; rhythmic incitement.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bata (Turkish: father) + clan; paternal group or patrilineal assembly\",\n    \"reading\":",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 2940)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ba-ta-clan; ba (father in multiple languages); ta (onomatopoeia of percussion); clan (group)\",\n    \"reading\": \"The father's rhythmic striking of the group; patriarchal percussion summoning the tribe.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"grc\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bata (Spanish/Portuguese) = beaten, struck; clan = family group\",\n    \"reading\": \"The beaten or struck family; those who endure collective percussion or rhythm.\",\n    \"languages\": [\"es\", \"pt\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"bat (strike, flight) + a + clan; bat as creature of night and echo\",\n    \"reading\": \"The nocturnal striker echoing through the clan; darkness and percussion united in group identity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bata (Old French) = low shoe; clan (Scottish Gaelic clann) = children, family\",\n    \"reading\": \"The humble footwear of the family; those who walk together in simple unity.\",\n    \"languages\": [\"fr\", \"gd\", \"en\"],\n    \"source\": \"Oxford English Dictionary; Trésor de la Langue Française\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bataclan → cab + natal; cab (conveyance) + natal (birth)\",\n    \"reading\": \"The vehicle of birth; transportation toward origin or renewal of the family line.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ba-ta-clan; ta-ta (repetition, stammering); clan (resonance chamber)\",\n    \"reading\": \"Stammering repetition echoing through the gathering; stuttered rhythm of collective voice.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B (second letter, duality); A (first, unity); T (cross, intersection); clan (wholeness)\",\n    \"reading\": \"Duality meeting unity at the crossroads of the complete group; threshold of becoming.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bata (Japanese) = field; clan = family; field of the family\",\n    \"reading\": \"The ancestral field; territory where the clan gathers and labors together.\",\n    \"languages\": [\"ja\", \"en\", \"gd\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"bat-a-clan; bat (Hebrew בת bat) = daughter; a = article; clan = family\",\n    \"reading\": \"The daughter of the clan; feminine principle within collective kinship structure.\",\n    \"languages\": [\"he\", \"en\", \"gd\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bataclan → cant + baal; cant (hypocritical speech) + baal (lord, master)\",\n    \"reading\": \"The false speech of the master; hypocrisy of authority within hierarchical structure.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ba-ta-clan; batta (Italian) = blow, stroke; clan = resonance\",\n    \"reading\": \"The stroke that resonates through the clan; percussion binding the group in rhythm.\",\n    \"languages\": [\"it\", \"en\", \"gd\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-A-T-A-C-L-A-N as initial letters: Beaten And Trodden, All Clans Lose All Nobility\",\n    \"reading\": \"The degradation of all clans; collective humiliation and loss of ancestral dignity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "ba-ta-clan; ba (father in multiple languages); ta (onomatopoeia of percussion); clan (group)",
+   "reading": "The father's rhythmic striking of the group; patriarchal percussion summoning the tribe.",
+   "languages": [
+    "en",
+    "fr",
+    "la",
+    "grc",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bata (Spanish/Portuguese) = beaten, struck; clan = family group",
+   "reading": "The beaten or struck family; those who endure collective percussion or rhythm.",
+   "languages": [
+    "es",
+    "pt",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "bat (strike, flight) + a + clan; bat as creature of night and echo",
+   "reading": "The nocturnal striker echoing through the clan; darkness and percussion united in group identity.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "bata (Old French) = low shoe; clan (Scottish Gaelic clann) = children, family",
+   "reading": "The humble footwear of the family; those who walk together in simple unity.",
+   "languages": [
+    "fr",
+    "gd",
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Trésor de la Langue Française",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bataclan → cab + natal; cab (conveyance) + natal (birth)",
+   "reading": "The vehicle of birth; transportation toward origin or renewal of the family line.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ba-ta-clan; ta-ta (repetition, stammering); clan (resonance chamber)",
+   "reading": "Stammering repetition echoing through the gathering; stuttered rhythm of collective voice.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (second letter, duality); A (first, unity); T (cross, intersection); clan (wholeness)",
+   "reading": "Duality meeting unity at the crossroads of the complete group; threshold of becoming.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bata (Japanese) = field; clan = family; field of the family",
+   "reading": "The ancestral field; territory where the clan gathers and labors together.",
+   "languages": [
+    "ja",
+    "en",
+    "gd"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "bat-a-clan; bat (Hebrew בת bat) = daughter; a = article; clan = family",
+   "reading": "The daughter of the clan; feminine principle within collective kinship structure.",
+   "languages": [
+    "he",
+    "en",
+    "gd"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bataclan → cant + baal; cant (hypocritical speech) + baal (lord, master)",
+   "reading": "The false speech of the master; hypocrisy of authority within hierarchical structure.",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.48
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ba-ta-clan; batta (Italian) = blow, stroke; clan = resonance",
+   "reading": "The stroke that resonates through the clan; percussion binding the group in rhythm.",
+   "languages": [
+    "it",
+    "en",
+    "gd"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-A-T-A-C-L-A-N as initial letters: Beaten And Trodden, All Clans Lose All Nobility",
+   "reading": "The degradation of all clans; collective humiliation and loss of ancestral dignity.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

@@ -5,15 +5,146 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:22:24+00:00",
- "latency_s": 9.28,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:05:17+00:00",
+ "latency_s": 9.78,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-da-lay; Man (English) = adult male human; da (Sanskrit) = give; lay (English) = to place or recline\",\n    \"reading\": \"The masculine principle gives; that which is placed or positioned in receptive state.\",\n    \"languages\": [\"en\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay ≈ Mandala (Sanskrit) + ay (French affirmative); mandala = circle, cosmos\",\n    \"reading\": \"Yes to the circle; affirmation of cosmic or mandelic geometry and wholeness.\",\n    \"languages\": [\"sa\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-dal-ay; dal (Hebrew) דל = poor, weak; ay = exclamation or affirmation\",\n    \"reading\": \"The man acknowledges poverty or weakness; vulnerability affirmed.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mandalay: -lay from Old English lecgan (to place, lie); man from Proto-Germanic man- (strength, virility)\",\n    \"reading\": \"Place of masculine principle; where strength is laid down or situated.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay → Man + Daal + Ay; or And + Lay + Am\",\n    \"reading\": \"And lay am: the conjunction of being with receptive placement; and I recline.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-da-lay; da (Arabic) دا = this; lay (French) = milk; or ley (English) = ritual field\",\n    \"reading\": \"This milk-field; this nourishing or sacred enclosure.\",\n    \"languages\": [\"ar\", \"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M=13, A=1, N=14, D=4, A=1, L=12, A=1, Y=25; sum = 71 = 7+1 = 8 (infinity, return)\",\n    \"reading\": \"Eight: the number of cosmic return, serpent eating its tail, eternal recurrence.\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-da-lay; lay from Old English leye = fallow field or dance; mandala + lay\",\n    \"reading\": \"The mandala dances or lies fallow; sacred geometry in repose.\",\n    \"languages\": [\"en\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay ≈ French mon (my) + dal + ais (manner); mon-dal-ais = my cosmic manner\",\n    \"reading\": \"My manner of cosmos; my personal sacred geometry or individual dharma.\",\n    \"languages\": [\"fr\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-del-ay; del (Spanish) = of the; ay (Spanish) = ow! (pain); of-the-pain\",\n    \"reading\": \"Of the",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 2775)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-da-lay: Man (adult male) + da (the, French) + lay (to place, recline)\",\n    \"reading\": \"The man places or reclines; masculine principle in repose or positioned.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-dal-ay: Man (human) + dal (dal, lentil in Hindi/Sanskrit) + ay (I, French)\",\n    \"reading\": \"I am the human sustenance; the nourishing principle of humanity.\",\n    \"languages\": [\"en\", \"sa\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay ≈ Manda-lay; manda (Latin: he/she commands) + lay (English: song, poem)\",\n    \"reading\": \"The commanding utterance; speech that orders or decrees.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-da-lay: Mandala (Sanskrit: circle, cosmic diagram) + y (suffix of becoming)\",\n    \"reading\": \"Becoming circular; the transformation into wholeness and cosmic order.\",\n    \"languages\": [\"sa\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay → Lay-man-da; lay (common, profane) + man (human) + da (give, Sanskrit)\",\n    \"reading\": \"The common man gives; ordinary humanity in the act of bestowing.\",\n    \"languages\": [\"en\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (13th letter, duality, water) + A (1st, beginning) + Y (25th, completion, return)\",\n    \"reading\": \"Duality at the beginning returns to completion; cyclical manifestation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-dal-ay: Mandal (Sanskrit: group, assembly) + ay (ever, always, archaic English)\",\n    \"reading\": \"The assembly forever; eternal gathering or congregation.\",\n    \"languages\": [\"sa\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay ≈ Manda-lé; manda (Portuguese: he sends) + lé (there, archaic French)\",\n    \"reading\": \"He sends there; transmission to a distant or sacred place.\",\n    \"languages\": [\"pt\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-da-lay: Mand (to demand, Old English) + a + lay (song, poem)\",\n    \"reading\": \"The demanding song; utterance that requires or commands attention.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M-A-N-D-A-L-A-Y: initials as acrostic of hidden phrase (generative construction)\",\n    \"reading\": \"Mystical assembly of divine luminous yearning; esoteric principle.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Lay (Old English: læg, to lie down; cognate with German Lage, position, layer)\",\n    \"reading\": \"Mandala-position; the cosmic diagram in its resting or foundational state.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-dal-ay: Mand (mind, Old Norse) + dal (valley) + ay (water, archaic)\",\n    \"reading\": \"The mind's valley of waters; consciousness flowing through depths.\",\n    \"languages\": [\"non\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-da-lay: Man (adult male) + da (the, French) + lay (to place, recline)",
+   "reading": "The man places or reclines; masculine principle in repose or positioned.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-dal-ay: Man (human) + dal (dal, lentil in Hindi/Sanskrit) + ay (I, French)",
+   "reading": "I am the human sustenance; the nourishing principle of humanity.",
+   "languages": [
+    "en",
+    "sa",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay ≈ Manda-lay; manda (Latin: he/she commands) + lay (English: song, poem)",
+   "reading": "The commanding utterance; speech that orders or decrees.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-da-lay: Mandala (Sanskrit: circle, cosmic diagram) + y (suffix of becoming)",
+   "reading": "Becoming circular; the transformation into wholeness and cosmic order.",
+   "languages": [
+    "sa",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay → Lay-man-da; lay (common, profane) + man (human) + da (give, Sanskrit)",
+   "reading": "The common man gives; ordinary humanity in the act of bestowing.",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (13th letter, duality, water) + A (1st, beginning) + Y (25th, completion, return)",
+   "reading": "Duality at the beginning returns to completion; cyclical manifestation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-dal-ay: Mandal (Sanskrit: group, assembly) + ay (ever, always, archaic English)",
+   "reading": "The assembly forever; eternal gathering or congregation.",
+   "languages": [
+    "sa",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay ≈ Manda-lé; manda (Portuguese: he sends) + lé (there, archaic French)",
+   "reading": "He sends there; transmission to a distant or sacred place.",
+   "languages": [
+    "pt",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-da-lay: Mand (to demand, Old English) + a + lay (song, poem)",
+   "reading": "The demanding song; utterance that requires or commands attention.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M-A-N-D-A-L-A-Y: initials as acrostic of hidden phrase (generative construction)",
+   "reading": "Mystical assembly of divine luminous yearning; esoteric principle.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Lay (Old English: læg, to lie down; cognate with German Lage, position, layer)",
+   "reading": "Mandala-position; the cosmic diagram in its resting or foundational state.",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-dal-ay: Mand (mind, Old Norse) + dal (valley) + ay (water, archaic)",
+   "reading": "The mind's valley of waters; consciousness flowing through depths.",
+   "languages": [
+    "non",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

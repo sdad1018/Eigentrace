@@ -5,15 +5,123 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:31:59+00:00",
- "latency_s": 8.4,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:16:24+00:00",
+ "latency_s": 9.44,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ba + ta + clan; ba (Egyptian) = soul; ta (Egyptian) = earth; clan = group\",\n    \"reading\": \"The soul of earth, or earthly collective spirit; a gathering of terrestrial essence.\",\n    \"languages\": [\"egy\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"ba-ta-clan ≈ batte à clan (Fr.); batte = stick/bat; à = to; clan = clan\",\n    \"reading\": \"A stick or weapon directed at the clan; violence or resistance within a group.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ba + tack + lan; tack = direction/course; lan = vital principle (Chinese qi variant)\",\n    \"reading\": \"The soul's direction or the course of vital energy; navigating spirit-force.\",\n    \"languages\": [\"en\", \"zh\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B.A.T.A.C.L.A.N. as initial letters: Being Animated Through Arcane Celestial Luminous Astral Nexus\",\n    \"reading\": \"A mystical union of living consciousness with heavenly light through astral planes.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"bat + a + clan; bat = creature of night; a = to/toward; clan = group/family\",\n    \"reading\": \"The nocturnal creature moving toward the family; shadow approaching the gathered.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Ba-ta-clan rearranged: cab + natal; cab = taxi/chamber; natal = birth\",\n    \"reading\": \"Chamber of birth; vehicle or vessel of becoming; womb-space or delivery point.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"clan < Gaelic clann = family/tribe; ta < Sanskrit tá = that/there; ba < Egyptian bꜣ = soul\",\n    \"reading\": \"The soul's presence within the family or tribe; ancestral spirit inhabiting kinship.\",\n    \"languages\": [\"gd\", \"sa\", \"egy\"],\n    \"source\": \"Oxford English Dictionary; Wörterbuch der ägyptischen Sprache\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"bata (Spanish) = fool's stick/bauble + clan; bata = also = robe/smock\",\n    \"reading\": \"The garment or foolish ornament of the clan; dressed or adorned collective.\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bataillon (Fr.) ≈ ba-ta-clan; bataillon = battalion/military unit\",\n    \"reading\": \"A battalion or organized military formation; structured collective armed assembly.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B=2, A=1; BA=3; T=20; C=3, L=12, A=1, N=14; CLAN=30; 3+20+30",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 2864)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan → ba (father/kiss) + ta (you) + clan (family/group)\",\n    \"reading\": \"Father addresses you as family; paternal authority speaking to the collective.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Ba-ta-clan → French bâta (past tense of bâter, to pack) + clan\",\n    \"reading\": \"Packed or bundled together as a clan; collective burden or cargo of kinship.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"Littré French Dictionary\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan → bat (strike) + a + clan\",\n    \"reading\": \"A striking together of the clan; percussion of unified group action or conflict.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Ba-ta-clan → B (second letter, duality) + A (first, unity) + T (cross, balance) + clan\",\n    \"reading\": \"Duality and unity balanced in the crossing; the clan as reconciliation of opposites.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Ba-ta-clan → cab + natal + a; or clan + bat + aa\",\n    \"reading\": \"Birth-taxi of the clan; conveyance of natal origins within collective identity.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan → ba (soul in Egyptian) + ta (earth in Egyptian) + clan\",\n    \"reading\": \"Soul and earth united in the clan; spiritual-terrestrial binding of the group.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"E.A. Wallis Budge, Egyptian Language\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"clan ← Old Irish clann (family, offspring); ba ← Latin baa (bleating)\",\n    \"reading\": \"The bleating family; herd-like kinship marked by animal utterance and descent.\",\n    \"languages\": [\"la\", \"ga\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Ba-Ta-Clan → initials suggest: Being, Transformation, Lineage\",\n    \"reading\": \"Existence through transformation within lineage; becoming through ancestral change.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Ba-ta-clan → Spanish bata (robe/smock) + clan\",\n    \"reading\": \"The clan dressed in common garment; uniformity and collective identity through vestment.\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan → bat (Latin baculum, staff) + a + clan\",\n    \"reading\": \"The staff or rod governing the clan; hierarchical authority within kinship structure.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Charlton T. Lewis, Latin Dictionary\",\n    \"confidence\": 0.65\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ta-clan → ba (father/kiss) + ta (you) + clan (family/group)",
+   "reading": "Father addresses you as family; paternal authority speaking to the collective.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Ba-ta-clan → French bâta (past tense of bâter, to pack) + clan",
+   "reading": "Packed or bundled together as a clan; collective burden or cargo of kinship.",
+   "languages": [
+    "fr"
+   ],
+   "source": "Littré French Dictionary",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ta-clan → bat (strike) + a + clan",
+   "reading": "A striking together of the clan; percussion of unified group action or conflict.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Ba-ta-clan → B (second letter, duality) + A (first, unity) + T (cross, balance) + clan",
+   "reading": "Duality and unity balanced in the crossing; the clan as reconciliation of opposites.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Ba-ta-clan → cab + natal + a; or clan + bat + aa",
+   "reading": "Birth-taxi of the clan; conveyance of natal origins within collective identity.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ta-clan → ba (soul in Egyptian) + ta (earth in Egyptian) + clan",
+   "reading": "Soul and earth united in the clan; spiritual-terrestrial binding of the group.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "E.A. Wallis Budge, Egyptian Language",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "clan ← Old Irish clann (family, offspring); ba ← Latin baa (bleating)",
+   "reading": "The bleating family; herd-like kinship marked by animal utterance and descent.",
+   "languages": [
+    "la",
+    "ga"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Ba-Ta-Clan → initials suggest: Being, Transformation, Lineage",
+   "reading": "Existence through transformation within lineage; becoming through ancestral change.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Ba-ta-clan → Spanish bata (robe/smock) + clan",
+   "reading": "The clan dressed in common garment; uniformity and collective identity through vestment.",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ta-clan → bat (Latin baculum, staff) + a + clan",
+   "reading": "The staff or rod governing the clan; hierarchical authority within kinship structure.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Charlton T. Lewis, Latin Dictionary",
+   "confidence": 0.65
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 10,
  "refusal_like": false
 }

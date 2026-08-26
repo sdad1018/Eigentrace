@@ -5,15 +5,126 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:22:33+00:00",
- "latency_s": 9.48,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:05:27+00:00",
+ "latency_s": 9.73,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Luxor < Latin lux (light) + -or (agent suffix); lux from Proto-Indo-European *leuk- (to shine)\",\n    \"reading\": \"One who shines; bearer or giver of light; luminous agent or principle.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Oxford Latin Dictionary; Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Luxor = Lux + Or; lux (light in Latin) + Or (gold in heraldry, or the conjunction 'or' in English)\",\n    \"reading\": \"Light-gold; the luminous metal; illuminated precious substance.\",\n    \"languages\": [\"la\", \"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Luxor ≈ French 'luxe' (luxury) + or (gold); homophonic blend of luxury and aurum\",\n    \"reading\": \"The luxury of gold; precious abundance; wealth and radiance combined.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Luxor → Rolux, Roxul, Ourxl (permutations); closest: Rolex, Lourx\",\n    \"reading\": \"Anagrams suggest wheels (rouleau) or solar sovereignty; the turning light.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L-U-X-O-R: initials read as hidden acrostic; Lux Universalis eXercit Ordo Regalis (hypothetical)\",\n    \"reading\": \"Universal light exercised by royal order; cosmic illumination under sovereign command.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"X in Luxor as Roman numeral = 10; Lux-10-Or reads as light-ten-gold or light-perfection-gold\",\n    \"reading\": \"Perfect golden light; the completeness of luminous wealth; decimal radiance.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"L(12)+U(21)+X(24)+O(15)+R(18) = 90; 9+0 = 9; 9 = completion, the Hermetic end\",\n    \"reading\": \"The completion of light; final illumination; the end of the luminous cycle.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Luxor = Lux-Or; Latin lux (light) + Old French or (now); light-now; eternal present illumination\",\n    \"reading\": \"Light in the eternal now; the perpetual radiance of being; presence made visible.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Luxor echoes Greek lychno- (lamp); related to Greek lychnus, Old English leoht through shared root\",\n    \"reading\": \"The lamp; the vessel of illumination; consciousness as contained radiance.\",\n    \"languages\": [\"grc\", \"la\", \"ang\"],\n    \"source\": \"Beekes Greek Etymological Dictionary\",\n    \"confidence\": 0.8\n  },\n  {",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 38 (char 2906)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Luxor < Latin lux (light) + -or (agent suffix); lux from Proto-Indo-European *leuk- (to shine)\",\n    \"reading\": \"That which shines; the agent or bearer of light; luminosity personified or made active.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Oxford Latin Dictionary; Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lux-or: lux (light) + or (French: gold); or also means 'now' in archaic French\",\n    \"reading\": \"Light-gold; the golden now; precious illumination in the present moment.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Luxor ≈ French 'lux-or' (light-gold); German 'Lux' (light) + 'Ohr' (ear)\",\n    \"reading\": \"The ear of light; that which hears or receives luminous vibration; audition of radiance.\",\n    \"languages\": [\"fr\", \"de\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lux-or: lux (light) + or (Latin: pray, beseech); imperative form of orare\",\n    \"reading\": \"Pray to the light; invoke luminosity; supplication directed toward illumination.\",\n    \"languages\": [\"la\"],\n    \"source\": \"Oxford Latin Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"LUXOR → ORXUL, ROXUL, XOURL; rearranged as OUR-XL or LOUR-X\",\n    \"reading\": \"Our excess; the outpouring or darkening (lour) of the extraordinary; surplus shadow.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L-U-X-O-R as initial letters: Lumen Universale Xenia Oration Radiance\",\n    \"reading\": \"Universal light as hospitable speech radiating outward; luminous gift of utterance.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"X as crossroads, intersection, unknown; LU as light-union; OR as gold-prayer\",\n    \"reading\": \"The crossing-point where unified light meets the prayer for precious illumination.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"L(12) U(21) X(24) O(15) R(18) = 90; 9+0 = 9; nine as completion and return\",\n    \"reading\": \"Numerical completion; the light that returns to itself; cyclical illumination achieved.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Luxor ≈ Hebrew 'לוקס' (luks, light) + Arabic 'نور' (nur, light); doubled luminosity\",\n    \"reading\": \"Double light; convergence of Semitic radiance; light speaking in two tongues.\",\n    \"languages\": [\"he\", \"ar\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lux-or: Latin lux + French or (now/gold); temporal-precious synthesis\",\n    \"reading\": \"The precious now; golden moment of light; illuminated present seized eternally.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Luxor < Latin lux (light) + -or (agent suffix); lux from Proto-Indo-European *leuk- (to shine)",
+   "reading": "That which shines; the agent or bearer of light; luminosity personified or made active.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Oxford Latin Dictionary; Pokorny Indo-European Etymological Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lux-or: lux (light) + or (French: gold); or also means 'now' in archaic French",
+   "reading": "Light-gold; the golden now; precious illumination in the present moment.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Luxor ≈ French 'lux-or' (light-gold); German 'Lux' (light) + 'Ohr' (ear)",
+   "reading": "The ear of light; that which hears or receives luminous vibration; audition of radiance.",
+   "languages": [
+    "fr",
+    "de",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lux-or: lux (light) + or (Latin: pray, beseech); imperative form of orare",
+   "reading": "Pray to the light; invoke luminosity; supplication directed toward illumination.",
+   "languages": [
+    "la"
+   ],
+   "source": "Oxford Latin Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "LUXOR → ORXUL, ROXUL, XOURL; rearranged as OUR-XL or LOUR-X",
+   "reading": "Our excess; the outpouring or darkening (lour) of the extraordinary; surplus shadow.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L-U-X-O-R as initial letters: Lumen Universale Xenia Oration Radiance",
+   "reading": "Universal light as hospitable speech radiating outward; luminous gift of utterance.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "X as crossroads, intersection, unknown; LU as light-union; OR as gold-prayer",
+   "reading": "The crossing-point where unified light meets the prayer for precious illumination.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "numerical",
+   "chain": "L(12) U(21) X(24) O(15) R(18) = 90; 9+0 = 9; nine as completion and return",
+   "reading": "Numerical completion; the light that returns to itself; cyclical illumination achieved.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Luxor ≈ Hebrew 'לוקס' (luks, light) + Arabic 'نور' (nur, light); doubled luminosity",
+   "reading": "Double light; convergence of Semitic radiance; light speaking in two tongues.",
+   "languages": [
+    "he",
+    "ar",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lux-or: Latin lux + French or (now/gold); temporal-precious synthesis",
+   "reading": "The precious now; golden moment of light; illuminated present seized eternally.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 10,
  "refusal_like": false
 }

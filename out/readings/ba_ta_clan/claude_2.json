@@ -5,15 +5,149 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:32:08+00:00",
- "latency_s": 9.39,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:16:35+00:00",
+ "latency_s": 10.55,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan: ba (father in multiple languages) + ta (you/thee) + clan (family group)\",\n    \"reading\": \"The father addresses or acknowledges you within the family or kinship group.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"grc\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Ba (English: bah, exclamation) + ta (French: thank you, informal) + clan (English: tribe)\",\n    \"reading\": \"An exclamation of gratitude or acknowledgement toward a gathered tribe or collective.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bat (percussion, strike) + a (article/preposition) + clan (group); bat-a-clan as rhythmic striking of a gathering\",\n    \"reading\": \"The percussion or beating sound of a assembled multitude; rhythm of the masses.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Ba-ta-clan rearranged: 'ant cab la' or 'cab natal' (birth carriage/origin vehicle)\",\n    \"reading\": \"A vehicle or conveyance of birth; the carriage that carries the origin or genesis.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B (second letter, duality) + A (first letter, unity/alpha) + T (cross, tau) + A + C (crescent, moon) + L (vertical, standing) + A + N (serpent, numen)\",\n    \"reading\": \"Duality meets unity through crossing; the moon stands witnessed by the sacred serpent principle.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"First letters of a hidden phrase: 'Bas talons clan' (low heels/claws of the clan) or 'Bat et clan' (beating and clan)\",\n    \"reading\": \"The low striking force or talons that belong to the collective body.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Clan (Scots Gaelic: clann, children/family); Ba (Proto-Indo-European: *bheh₂-, to speak/shine); Ta (Old English: indefinite)\",\n    \"reading\": \"Speech or light belonging to the children of a gathered family; the speaking kindred.\",\n    \"languages\": [\"gd\", \"pie\", \"en\"],\n    \"source\": \"Oxford English Dictionary (clan); Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba (soul in Egyptian) + ta (land in Egyptian) + clan (English: assembly) — Ba-ta-clan as soul-land-assembly\",\n    \"reading\": \"The soul of the land gathering in assembly; the spirit-territory convened.\",\n    \"languages\": [\"en\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Ba-ta-clan heard as 'bataclan' (French slang): bat (combat) + à (to) + clan (tribe) = fighting toward/within tribe\",\n    \"reading\": \"Combat or conflict directed toward or within the tribal body; internal strife.\",\n    \"languages\": [\"fr\", \"en\"],",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 3187)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan → ba (father, kiss) + ta (you) + clan (group)\",\n    \"reading\": \"The father addresses you as part of a group; patriarchal summons to collective identity.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Ba-ta-clan → French bâta (past tense of bâter, to pack) + clan\",\n    \"reading\": \"The packed or bundled clan; a group bound together by shared burden or cargo.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan → bat (strike, flight) + a + clan\",\n    \"reading\": \"The clan strikes or flies together; collective action or rapid movement of a group.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Clan < Scottish Gaelic clann (children, family); ba- < Latin baa (bleating)\",\n    \"reading\": \"The bleating family; a herd-like gathering bound by blood kinship and animal instinct.\",\n    \"languages\": [\"gd\", \"la\", \"en\"],\n    \"source\": \"Oxford English Dictionary, s.v. clan\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Ba-Ta-Clan → B.T.C. as acronym for hidden initials or sacred abbreviation\",\n    \"reading\": \"Three letters forming a concealed name or formula; the mystery of the triadic principle.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Ba-ta-clan → cab + natal + a; or: can + batal + a\",\n    \"reading\": \"Birth-related gathering in a cab or vessel; or combat-born assembly.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B = second letter (duality); A = first (unity); T = cross; L = ascent; N = serpent\",\n    \"reading\": \"Duality ascending through unity and crossing toward serpentine wisdom; alchemical progression.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan → bah (exclamation of dismissal) + ta (thanks, British) + clan\",\n    \"reading\": \"Dismissive thanks to the clan; ironic gratitude or rejection of collective bonds.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Clan → French clans (plural); Ba-ta- → bâta (loaded, packed in Spanish/Portuguese)\",\n    \"reading\": \"Multiple clans, each loaded with their own weight; burden distributed across kinship groups.\",\n    \"languages\": [\"fr\", \"es\", \"pt\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bata < Sanskrit bhata (warrior, hired soldier); clan < Gaelic clann\",\n    \"reading\": \"Warrior-family; a clan organized for combat or mercenary service.\",\n    \"languages\": [\"sa\", \"gd\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan → beta (second) + clan; or: ba (soul in Egyptian) + ta (earth) + clan\",\n    \"reading\": \"The soul of the earth-clan; spiritual essence bound to terrestrial kinship.\",\n    \"languages\": [\"en\", \"grc\", \"egy\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"B=2, A=1, T=20, A=1, C=3, L=12, A=1, N=14 → sum 54 → 5+4=9 (completion)\",\n    \"reading\": \"Numerical sum yields nine; the clan completes a cycle or reaches finality.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ta-clan → ba (father, kiss) + ta (you) + clan (group)",
+   "reading": "The father addresses you as part of a group; patriarchal summons to collective identity.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Ba-ta-clan → French bâta (past tense of bâter, to pack) + clan",
+   "reading": "The packed or bundled clan; a group bound together by shared burden or cargo.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ta-clan → bat (strike, flight) + a + clan",
+   "reading": "The clan strikes or flies together; collective action or rapid movement of a group.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Clan < Scottish Gaelic clann (children, family); ba- < Latin baa (bleating)",
+   "reading": "The bleating family; a herd-like gathering bound by blood kinship and animal instinct.",
+   "languages": [
+    "gd",
+    "la",
+    "en"
+   ],
+   "source": "Oxford English Dictionary, s.v. clan",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Ba-Ta-Clan → B.T.C. as acronym for hidden initials or sacred abbreviation",
+   "reading": "Three letters forming a concealed name or formula; the mystery of the triadic principle.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "anagram",
+   "chain": "Ba-ta-clan → cab + natal + a; or: can + batal + a",
+   "reading": "Birth-related gathering in a cab or vessel; or combat-born assembly.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B = second letter (duality); A = first (unity); T = cross; L = ascent; N = serpent",
+   "reading": "Duality ascending through unity and crossing toward serpentine wisdom; alchemical progression.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ta-clan → bah (exclamation of dismissal) + ta (thanks, British) + clan",
+   "reading": "Dismissive thanks to the clan; ironic gratitude or rejection of collective bonds.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Clan → French clans (plural); Ba-ta- → bâta (loaded, packed in Spanish/Portuguese)",
+   "reading": "Multiple clans, each loaded with their own weight; burden distributed across kinship groups.",
+   "languages": [
+    "fr",
+    "es",
+    "pt"
+   ],
+   "source": "generative",
+   "confidence": 0.48
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bata < Sanskrit bhata (warrior, hired soldier); clan < Gaelic clann",
+   "reading": "Warrior-family; a clan organized for combat or mercenary service.",
+   "languages": [
+    "sa",
+    "gd",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ta-clan → beta (second) + clan; or: ba (soul in Egyptian) + ta (earth) + clan",
+   "reading": "The soul of the earth-clan; spiritual essence bound to terrestrial kinship.",
+   "languages": [
+    "en",
+    "grc",
+    "egy"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "B=2, A=1, T=20, A=1, C=3, L=12, A=1, N=14 → sum 54 → 5+4=9 (completion)",
+   "reading": "Numerical sum yields nine; the clan completes a cycle or reaches finality.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

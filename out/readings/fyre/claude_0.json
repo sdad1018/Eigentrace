@@ -5,15 +5,154 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:29:07+00:00",
- "latency_s": 10.44,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:13:01+00:00",
+ "latency_s": 13.73,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Fyre < Middle English fir, fyre < Old English fyr < Proto-Germanic *fuir < Proto-Indo-European *perw- (to carry, produce)\",\n    \"reading\": \"Elemental force; that which consumes and transforms; heat and light-bearing energy.\",\n    \"languages\": [\"en\", \"gem\", \"ine\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fyre = Fy + re; Fy (as in fly, ascend) + re (again, return in Latin)\",\n    \"reading\": \"That which ascends again; spirit rising; cyclical combustion and renewal.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fyre (en) ≈ Fier (fr, to be proud); Fier (to fix, fasten); fire as pride, attachment, fixation\",\n    \"reading\": \"Pride, attachment, and the binding force of passion; what holds us fast.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"F = serpent or lightning stroke; Y = bifurcation, choice; E = existence; R = rotation\",\n    \"reading\": \"Lightning's fork channels existence through rotation; duality in primordial force.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Fyre anagrams: Refy, Frey (Norse god of fertility, sun, and summer); also refry\",\n    \"reading\": \"The resurrective and fertile principle; divine solar warmth; repeated transformation.\",\n    \"languages\": [\"en\", \"non\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.70\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fyre = Fy + R + E; R as wheel, serpent (ouroboros); E as being; fire as self-turning being\",\n    \"reading\": \"Self-sustaining serpentine principle; being that devours and regenerates itself perpetually.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fyre ≈ Feuer (German); Feuer contains Feu (fate, doom in archaic usage); fire as necessity\",\n    \"reading\": \"Necessity and destiny embodied; the inexorable force that consumes what is predetermined.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"F.Y.R.E = Fervent Yet Rigorous Essence; or Flux Yielding Radiant Energy\",\n    \"reading\": \"Passionate yet ordered force; movement that radiates and disperses outward.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fyre = Phi + Re; Phi (Greek 21st letter, golden ratio, manifestation) + Re (sun god, Egyptian)\",\n    \"reading\": \"Divine proportion incarnate as solar principle; perfect form made manifest through heat.\",\n    \"languages\": [\"en\", \"grc\", \"egy\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Fyre spelling preserves archaic y-as-i; connection to",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 38 (char 2949)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Fyre < Middle English fir, fyre < Old English fȳr < Proto-Germanic *fūr < Proto-Indo-European *perw- (to drive forward, move)\",\n    \"reading\": \"Fire as that which drives forward, propels, and consumes—the active principle of transformation and motion.\",\n    \"languages\": [\"en\", \"enm\", \"ang\", \"gem\", \"ine\"],\n    \"source\": \"Oxford English Dictionary; Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fyre = Fy + re; Fy (to fly, ascend) + re (again, back); or Fy (the sound of breath/wind) + re (the solar principle)\",\n    \"reading\": \"The ascending breath or wind returning to its solar source; cyclical ascent and return of vital force.\",\n    \"languages\": [\"en\", \"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fyre ≈ French fier (to trust, confide); Fyre ≈ Latin ferrum (iron, the metal of Mars and war)\",\n    \"reading\": \"Fire as that which we trust to transform; the iron will that drives through resistance and hardship.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Fyre → Ref + y; Ref (refuge, reference) + y (the interrogative, the seeking); or Fyre → Erf + y (Erf: inheritance, plot of land)\",\n    \"reading\": \"Fire as refuge sought, or the inheritance of the earth transformed by heat and will.\",\n    \"languages\": [\"en\", \"fr\", \"af\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"F = the sixth letter (hexad, perfection); Y = the fork, the choice, the ascending path; R = the solar wheel; E = the five-pointed being\",\n    \"reading\": \"Perfect choice ascending through the solar wheel, animating the five-fold human form with divine fire.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fyre = Fy (the sound of wind, breath, life-force) + re (the royal or solar prefix); Old English fȳr contains the breath-sound\",\n    \"reading\": \"The breath of life made royal; the vital pneuma crowned and made sovereign through combustion.\",\n    \"languages\": [\"en\", \"ang\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Fyre: F-Y-R-E as initials; or read as acronym of hidden phrase: Fervor Yields Radiant Essence\",\n    \"reading\": \"Ardent passion yields the radiant essence; fervor transmutes into luminous being.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"F=6, Y=25, R=18, E=5; sum = 54 = 5+4 = 9 (completion, return); or 54 = 2×27 (three cubed, the triple principle)\",\n    \"reading\": \"Fire completes the cycle; the triple principle manifested in material form, returning to unity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.40\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fyre ≈ German Feuer (fire); Feuer contains Feu (French for fire) + er (the agent); the one who fires\",\n    \"reading\": \"The agent of ignition; that which kindles and causes combustion in all things.\",\n    \"languages\": [\"en\", \"de\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Fyre's Y-ending archaism suggests Middle English spelling; -y as diminutive or intensifier; fyre as 'the little fierce one' or 'the fierce principle itself'\",\n    \"reading\": \"The fierce principle concentrated and intensified; heat as a living, active agent of will.\",\n    \"languages\": [\"enm\", \"en\"],\n    \"source\": \"Oxford English Dictionary; Middle English Dictionary\",\n    \"confidence\": 0.70\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fyre = Fur + ye; Fur (the animal hide, protection, warmth) + ye (you, the plural address); or Fyre = Far + ye (distance + you)\",\n    \"reading\": \"The warmth that protects you; the distant heat that calls to you across the void.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fyre ≈ Hebrew פיר (pir, to spread, scatter); Fyre ≈ Arabic فير (fīr, to scatter, disperse)\",\n    \"reading\": \"That which scatters and disperses; the principle of dissemination and the breaking of form into energy.\",\n    \"languages\": [\"en\", \"he\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Fyre < Middle English fir, fyre < Old English fȳr < Proto-Germanic *fūr < Proto-Indo-European *perw- (to drive forward, move)",
+   "reading": "Fire as that which drives forward, propels, and consumes—the active principle of transformation and motion.",
+   "languages": [
+    "en",
+    "enm",
+    "ang",
+    "gem",
+    "ine"
+   ],
+   "source": "Oxford English Dictionary; Pokorny Indo-European Etymological Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Fyre = Fy + re; Fy (to fly, ascend) + re (again, back); or Fy (the sound of breath/wind) + re (the solar principle)",
+   "reading": "The ascending breath or wind returning to its solar source; cyclical ascent and return of vital force.",
+   "languages": [
+    "en",
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fyre ≈ French fier (to trust, confide); Fyre ≈ Latin ferrum (iron, the metal of Mars and war)",
+   "reading": "Fire as that which we trust to transform; the iron will that drives through resistance and hardship.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Fyre → Ref + y; Ref (refuge, reference) + y (the interrogative, the seeking); or Fyre → Erf + y (Erf: inheritance, plot of land)",
+   "reading": "Fire as refuge sought, or the inheritance of the earth transformed by heat and will.",
+   "languages": [
+    "en",
+    "fr",
+    "af"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "F = the sixth letter (hexad, perfection); Y = the fork, the choice, the ascending path; R = the solar wheel; E = the five-pointed being",
+   "reading": "Perfect choice ascending through the solar wheel, animating the five-fold human form with divine fire.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Fyre = Fy (the sound of wind, breath, life-force) + re (the royal or solar prefix); Old English fȳr contains the breath-sound",
+   "reading": "The breath of life made royal; the vital pneuma crowned and made sovereign through combustion.",
+   "languages": [
+    "en",
+    "ang",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Fyre: F-Y-R-E as initials; or read as acronym of hidden phrase: Fervor Yields Radiant Essence",
+   "reading": "Ardent passion yields the radiant essence; fervor transmutes into luminous being.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "numerical",
+   "chain": "F=6, Y=25, R=18, E=5; sum = 54 = 5+4 = 9 (completion, return); or 54 = 2×27 (three cubed, the triple principle)",
+   "reading": "Fire completes the cycle; the triple principle manifested in material form, returning to unity.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fyre ≈ German Feuer (fire); Feuer contains Feu (French for fire) + er (the agent); the one who fires",
+   "reading": "The agent of ignition; that which kindles and causes combustion in all things.",
+   "languages": [
+    "en",
+    "de",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "etymology",
+   "chain": "Fyre's Y-ending archaism suggests Middle English spelling; -y as diminutive or intensifier; fyre as 'the little fierce one' or 'the fierce principle itself'",
+   "reading": "The fierce principle concentrated and intensified; heat as a living, active agent of will.",
+   "languages": [
+    "enm",
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Middle English Dictionary",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Fyre = Fur + ye; Fur (the animal hide, protection, warmth) + ye (you, the plural address); or Fyre = Far + ye (distance + you)",
+   "reading": "The warmth that protects you; the distant heat that calls to you across the void.",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fyre ≈ Hebrew פיר (pir, to spread, scatter); Fyre ≈ Arabic فير (fīr, to scatter, disperse)",
+   "reading": "That which scatters and disperses; the principle of dissemination and the breaking of form into energy.",
+   "languages": [
+    "en",
+    "he",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.48
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

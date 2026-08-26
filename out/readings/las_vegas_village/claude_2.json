@@ -5,15 +5,146 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:21:27+00:00",
- "latency_s": 9.56,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:04:13+00:00",
+ "latency_s": 12.23,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas Village → Las (the) + Vegas (meadows, fertile) + Village (small settlement)\",\n    \"reading\": \"The fertile settlement; a place of grassland communities and pastoral gathering.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las → la (French: the feminine) + s (plural marker); Vegas → vega (Spanish meadow, from Latin vega)\",\n    \"reading\": \"The meadows, feminine plural; abundance of fertile fields and green spaces.\",\n    \"languages\": [\"es\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Vegas < vega < Latin via (way, journey) + -ega suffix; journey-places, thoroughfares\",\n    \"reading\": \"Centers of passage and transit; places where roads and travelers converge.\",\n    \"languages\": [\"la\", \"es\"],\n    \"source\": \"Corominas, Diccionario Crítico Etimológico Castellano e Hispánico\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas → Lass + Vegas; lass (girl, maiden) + Vegas (meadows)\",\n    \"reading\": \"The maiden of the meadows; feminine principle presiding over fertile pastoral spaces.\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Village → rearrange letters to extract: 'Vague Slavs' + remaining letters\",\n    \"reading\": \"Obscure or indistinct peoples; the Eastern presence rendered vague or ephemeral.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"LVV = L + V + V; Latin L (50), V (5), V (5) = numerical encoding\",\n    \"reading\": \"Fifty and five and five: sixty bound within the pentadic principle; completion within duality.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Village → Vil (vile, evil, low) + Lage (layer, stratum from German Lage)\",\n    \"reading\": \"Low stratum; the base layer of settlement, humble foundation of community.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las → lass (English, young woman); Vegas → vaches (French, cows); Village → vil (vile)\",\n    \"reading\": \"The base maidens and cattle; pastoral domesticity rendered through feminine and animal essence.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Village < Old French ville < Latin villa (country estate, farm); agricultural root\",\n    \"reading\": \"Country estates and farming settlements; the ancient Roman rural economy made present.\",\n    \"languages\": [\"la\", \"fr\", \"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vegas → Veg (vegetate, green life) + As (existence, being from Latin 'esse')\",\n    \"reading\": \"Green being; the fundamental existence of verdant and growing life.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\":",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 78 column 30 (char 3231)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las (Spanish) < Latin lāc (milk); Vegas (Spanish) < Latin vēga (meadow, plain)\",\n    \"reading\": \"The milk-meadow: fertile pastoral abundance, nourishment from open land.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"Corominas, Diccionario crítico etimológico castellano e hispánico\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las / Veg / as / Vil / lage → 'lass' (girl) + 'veg' (vegetation) + 'village' (settlement)\",\n    \"reading\": \"The maiden of green growth dwells in settlement; feminine principle united with verdant nature.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las (Spanish article) sounds like 'lass' (English girl); Veg sounds like French 'veg' (watch, guard)\",\n    \"reading\": \"The girl-guardians of the village: feminine protectors or sentinels of communal space.\",\n    \"languages\": [\"en\", \"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las-Ve-gas: 'lass' + 've' (Latin: behold) + 'gas' (spirit, breath)\",\n    \"reading\": \"Behold the maiden-spirit: vision of feminine pneuma or vital breath made manifest.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Village → 'Vales', 'Aves', 'Gales', 'Villas' + remaining letters\",\n    \"reading\": \"Hidden within: valleys, birds, winds, and villas—natural and built forms intertwined.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V = victory, vessel; L = law, light; G = generation, geometry; E = existence\",\n    \"reading\": \"Victory of law through light; generation and geometry shape existence in settlement.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L-V-V: Latin Lux Vitae Veneris (Light of Life of Venus)\",\n    \"reading\": \"The light of vital love-force; Venusian principle illuminating the village commune.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vil-lage: 'vil' (vile, base, lowly) + 'lage' (Old French: dwelling, lodging)\",\n    \"reading\": \"The dwelling-place of the humble and base; sanctuary for the lowborn and earthbound.\",\n    \"languages\": [\"en\", \"fro\"],\n    \"source\": \"Godefroy, Dictionnaire de l'ancienne langue française\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Vegas ≈ French 'vagues' (waves); Vil ≈ Latin 'vil-' (to wish, will)\",\n    \"reading\": \"Waves of desire: the village as manifestation of collective will flowing like water.\",\n    \"languages\": [\"fr\", \"la\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Village < Old French 'vil' (farm, estate) < Latin 'villa' (country house, estate)\",\n    \"reading\": \"Settlement rooted in the villa-estate tradition; ordered agricultural and domestic space.\",\n    \"languages\": [\"en\", \"fro\", \"la\"],\n    \"source\": \"Oxford English Dictionary, s.v. village\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las-Vegas-Vil-lage: 'lass' + 've' (behold) + 'gas' (spirit) + 'vil' (base) + 'age' (time, era)\",\n    \"reading\": \"Behold the maiden-spirit of base earthly things in an age of settlement and dwelling.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V-V: double V as double victory, or as inverted A (apex reversed); L-L: doubled law or light\",\n    \"reading\": \"Doubled victory and law; symmetry and balance govern the village's hidden architecture.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Las (Spanish) < Latin lāc (milk); Vegas (Spanish) < Latin vēga (meadow, plain)",
+   "reading": "The milk-meadow: fertile pastoral abundance, nourishment from open land.",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "Corominas, Diccionario crítico etimológico castellano e hispánico",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las / Veg / as / Vil / lage → 'lass' (girl) + 'veg' (vegetation) + 'village' (settlement)",
+   "reading": "The maiden of green growth dwells in settlement; feminine principle united with verdant nature.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las (Spanish article) sounds like 'lass' (English girl); Veg sounds like French 'veg' (watch, guard)",
+   "reading": "The girl-guardians of the village: feminine protectors or sentinels of communal space.",
+   "languages": [
+    "en",
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las-Ve-gas: 'lass' + 've' (Latin: behold) + 'gas' (spirit, breath)",
+   "reading": "Behold the maiden-spirit: vision of feminine pneuma or vital breath made manifest.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Village → 'Vales', 'Aves', 'Gales', 'Villas' + remaining letters",
+   "reading": "Hidden within: valleys, birds, winds, and villas—natural and built forms intertwined.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V = victory, vessel; L = law, light; G = generation, geometry; E = existence",
+   "reading": "Victory of law through light; generation and geometry shape existence in settlement.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L-V-V: Latin Lux Vitae Veneris (Light of Life of Venus)",
+   "reading": "The light of vital love-force; Venusian principle illuminating the village commune.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vil-lage: 'vil' (vile, base, lowly) + 'lage' (Old French: dwelling, lodging)",
+   "reading": "The dwelling-place of the humble and base; sanctuary for the lowborn and earthbound.",
+   "languages": [
+    "en",
+    "fro"
+   ],
+   "source": "Godefroy, Dictionnaire de l'ancienne langue française",
+   "confidence": 0.75
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Vegas ≈ French 'vagues' (waves); Vil ≈ Latin 'vil-' (to wish, will)",
+   "reading": "Waves of desire: the village as manifestation of collective will flowing like water.",
+   "languages": [
+    "fr",
+    "la",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Village < Old French 'vil' (farm, estate) < Latin 'villa' (country house, estate)",
+   "reading": "Settlement rooted in the villa-estate tradition; ordered agricultural and domestic space.",
+   "languages": [
+    "en",
+    "fro",
+    "la"
+   ],
+   "source": "Oxford English Dictionary, s.v. village",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las-Vegas-Vil-lage: 'lass' + 've' (behold) + 'gas' (spirit) + 'vil' (base) + 'age' (time, era)",
+   "reading": "Behold the maiden-spirit of base earthly things in an age of settlement and dwelling.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V-V: double V as double victory, or as inverted A (apex reversed); L-L: doubled law or light",
+   "reading": "Doubled victory and law; symmetry and balance govern the village's hidden architecture.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

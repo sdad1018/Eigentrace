@@ -5,15 +5,144 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:32:54+00:00",
- "latency_s": 9.05,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:17:40+00:00",
+ "latency_s": 10.04,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vol- + -taire; Vol (flying) + -taire (silent, from taire=to be silent)\",\n    \"reading\": \"Flight into silence; the soul ascending beyond speech.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"voltaire < Old French volter (to turn, roll) < Latin volvere (to turn)\",\n    \"reading\": \"One who turns; a turning or revolving principle; perpetual rotation of thought.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"Littré, Trésor de la Langue Française\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Vol-taire ≈ French vol (theft, flight) + Latin terrae (of the earth)\",\n    \"reading\": \"Theft from the earth; plundering of terrestrial matter; ascension as larceny.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Volt- (electrical unit, from volta) + -aire (one who performs)\",\n    \"reading\": \"One who generates or conducts electric force; transmitter of current or energy.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"VOLTAIRE → VITAL + ORE; or VAIR + TOILE\",\n    \"reading\": \"Vital ore: the essential metal within; or the fabric (toile) of truth-seeking.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V (descent into matter) + OLTAIRE (ascent); V as threshold or gate\",\n    \"reading\": \"The gateway principle; descent and ascent in balance; the twin peaks of knowledge.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"V-O-L-T-A-I-R-E: initial letters as abbreviation or acronym of hidden phrase\",\n    \"reading\": \"Volatile, oscillating truth; or concealed wisdom in alphabetic sequence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vol + taire; taire from Latin tacere (to be silent); vol = flying/theft\",\n    \"reading\": \"Silent flight; the wordless ascension of the soul beyond human utterance.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Voltaire ≈ Greek: volt (turn) + airy (aether); vol + aire (air)\",\n    \"reading\": \"Turner of the air; one who moves through the subtle celestial medium.\",\n    \"languages\": [\"grc\", \"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"voltaire (a light turning armchair, from its rotating motion) < volter\",\n    \"reading\": \"The turning seat; the place of revolution and constant perspectival shift.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"Littré\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Volt (unit of electrical potential)",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 78 column 24 (char 2958)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Voltaire < French surname; volt (Italian) = turn, twist; -aire (Latin -arius) = agent, one who does\",\n    \"reading\": \"One who turns or twists; an agent of rotation or reversal.\",\n    \"languages\": [\"fr\", \"it\", \"la\"],\n    \"source\": \"Littré; Corominas Diccionario Crítico Etimológico\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vol-taire: vol (French) = flight, theft; taire (French) = to be silent, to conceal\",\n    \"reading\": \"Flight into silence; theft of concealment; the hidden journey.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Voltaire ≈ volt + aire; volt (English/French) = unit of electrical potential; aire (French) = area, surface\",\n    \"reading\": \"The field or surface of electrical force; potential spread across space.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vol-ta-ire: vol (Latin) = I wish; ta (Latin) = you; ire (Latin) = to go, wrath\",\n    \"reading\": \"I wish you to go; desire propels departure into anger.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Voltaire → Vair-tole; vair (heraldry) = fur pattern; tole (French) = sheet metal, painted tin\",\n    \"reading\": \"Patterned surface; decorated metal bearing heraldic marks.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V = Roman numeral 5; olt = hidden; aire = air; V-5-AIR\",\n    \"reading\": \"The fifth air; quintessential breath or spirit.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Volt-aire: volt (English) = sudden movement, leap; aire (Old French) = threshing floor, open space\",\n    \"reading\": \"A leap across open ground; sudden movement through emptiness.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"V.O.L.T.A.I.R.E: Vis, Orbis, Lux, Transformatio, Aether, Ignis, Ratio, Essentia\",\n    \"reading\": \"Force, world, light, transformation, aether, fire, reason, essence—the cosmic principle.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Voltaire ≈ Volte-aire; volte (Italian/French) = turn, vault; aire = area\",\n    \"reading\": \"The turning-place; arena of revolution and reversal.\",\n    \"languages\": [\"it\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vol-taire: vol (French) = theft; taire (French) = silence; -e (feminine marker)\",\n    \"reading\": \"The theft of silence; feminine concealment of hidden taking.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Voltaire < Arouet (birth name); volt- (Latin voltus) = turned, faced; -aire (agent suffix)\",\n    \"reading\": \"One turned toward; the facing-one; agent of orientation.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"Dictionnaire Étymologique de la Langue Française (Bloch & Wartburg)\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Volt-aire: Volt (electricity) + aire (area); electromagnetic field mapped across space\",\n    \"reading\": \"The invisible field made visible; force distributed through territory.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Voltaire < French surname; volt (Italian) = turn, twist; -aire (Latin -arius) = agent, one who does",
+   "reading": "One who turns or twists; an agent of rotation or reversal.",
+   "languages": [
+    "fr",
+    "it",
+    "la"
+   ],
+   "source": "Littré; Corominas Diccionario Crítico Etimológico",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vol-taire: vol (French) = flight, theft; taire (French) = to be silent, to conceal",
+   "reading": "Flight into silence; theft of concealment; the hidden journey.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Voltaire ≈ volt + aire; volt (English/French) = unit of electrical potential; aire (French) = area, surface",
+   "reading": "The field or surface of electrical force; potential spread across space.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vol-ta-ire: vol (Latin) = I wish; ta (Latin) = you; ire (Latin) = to go, wrath",
+   "reading": "I wish you to go; desire propels departure into anger.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Voltaire → Vair-tole; vair (heraldry) = fur pattern; tole (French) = sheet metal, painted tin",
+   "reading": "Patterned surface; decorated metal bearing heraldic marks.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V = Roman numeral 5; olt = hidden; aire = air; V-5-AIR",
+   "reading": "The fifth air; quintessential breath or spirit.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Volt-aire: volt (English) = sudden movement, leap; aire (Old French) = threshing floor, open space",
+   "reading": "A leap across open ground; sudden movement through emptiness.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.68
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V.O.L.T.A.I.R.E: Vis, Orbis, Lux, Transformatio, Aether, Ignis, Ratio, Essentia",
+   "reading": "Force, world, light, transformation, aether, fire, reason, essence—the cosmic principle.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Voltaire ≈ Volte-aire; volte (Italian/French) = turn, vault; aire = area",
+   "reading": "The turning-place; arena of revolution and reversal.",
+   "languages": [
+    "it",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.72
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vol-taire: vol (French) = theft; taire (French) = silence; -e (feminine marker)",
+   "reading": "The theft of silence; feminine concealment of hidden taking.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Voltaire < Arouet (birth name); volt- (Latin voltus) = turned, faced; -aire (agent suffix)",
+   "reading": "One turned toward; the facing-one; agent of orientation.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "Dictionnaire Étymologique de la Langue Française (Bloch & Wartburg)",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Volt-aire: Volt (electricity) + aire (area); electromagnetic field mapped across space",
+   "reading": "The invisible field made visible; force distributed through territory.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.68
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

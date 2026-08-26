@@ -5,15 +5,143 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:33:21+00:00",
- "latency_s": 9.08,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:18:13+00:00",
+ "latency_s": 11.75,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paris < Old French Paris < Latin Paris < Greek Pários, possibly from Greek pará (beside) + íon (going); or from Semitic *par (to divide, separate)\",\n    \"reading\": \"One who goes beside; a divider or separator; one positioned at the boundary or threshold.\",\n    \"languages\": [\"grc\", \"la\", \"fr\", \"en\"],\n    \"source\": \"Walde-Pokorny Indo-European etymological dictionary; Ernout-Meillet Latin lexicon\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Par-is: PAR (pair, equal, peer) + IS (being, essence, Latin sum)\",\n    \"reading\": \"The state of being equal; the essence of pairing or equilibrium; existence in duality.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Pa-ris: PA (father in Romance) + RIS (laughter, from Latin ridere)\",\n    \"reading\": \"The father's laughter; paternal mirth; divine or cosmic amusement.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paris ≈ French 'pareille' (similar, matching); Greek 'pári' (alongside)\",\n    \"reading\": \"That which matches or stands alongside; similarity made manifest; the comparable principle.\",\n    \"languages\": [\"fr\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"PARIS → RAIPS, SPIRA, APRIS, PRIAS; notably SPIRA (spiral, coil)\",\n    \"reading\": \"The spiral principle; the turning, winding motion of becoming; the vortex of generation.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P=16 (completion, fullness); A=1 (beginning, unity); R=18 (motion); I=9 (limitation); S=19 (boundary)\",\n    \"reading\": \"From unity through motion, completion emerges; limitation and boundary define the whole.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P.A.R.I.S. as acrostic: Principium, Aeterna, Reductio, Initium, Signum\",\n    \"reading\": \"The eternal principle reduced to sign and beginning; primordial marker of new cycles.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Par + is: Greek pár (virgin, maiden) + is (equal, peer)\",\n    \"reading\": \"Equal maiden; the virgin principle standing in balance; pristine equivalence.\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paris from Persian 'pari' (fairy, celestial being) + Greek suffix -is\",\n    \"reading\": \"A fairy made manifest; celestial beauty given form and suffix; the otherworldly rendered Greek.\",\n    \"languages\": [\"fa\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"PARIS → PRIAS; from pría (to saw, to divide); Latin privus (separate)\",",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 31 (char 2915)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paris < Old French Paris < Latin Paris < Greek Páris (Πάρις); root uncertain, possibly from Greek páreimi (παρείμι) 'to be beside' or Phrygian origin\",\n    \"reading\": \"One who stands beside; a presence or adjacency; the nearby one.\",\n    \"languages\": [\"grc\", \"la\", \"fr\", \"en\"],\n    \"source\": \"Beekes Greek Etymological Dictionary; Ernout-Meillet Dictionnaire Étymologique Latin\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Pa-ris: pa (father in Romance; also 'step') + ris (laugh, from Latin ridere)\",\n    \"reading\": \"The father laughs; paternal laughter; the step of laughter or mirth.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paris (French) ≈ par-is (French: 'by-is' or 'equal-is'); homophone with 'par is' (equality exists)\",\n    \"reading\": \"Equality exists; a state of parity or equilibrium is established.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Paris → Spair, Prias, Raips, Aspir\",\n    \"reading\": \"Aspir: aspiration; the breath of desire or longing; what one breathes toward.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P-A-R-I-S: initials as acronym or acrostic seed\",\n    \"reading\": \"Potential acrostic: Pax, Amor, Ratio, Ignis, Sophia (Peace, Love, Reason, Fire, Wisdom).\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P (16th letter, pyramid/gate); A (first, origin); R (flow, river); I (unity, line); S (serpent, curve)\",\n    \"reading\": \"The gate of origin flows through unity in serpentine motion; cosmic circulation through singular point.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Par-is: par (equal, pair, Latin par) + is (being, Latin esse contracted)\",\n    \"reading\": \"Equals are; paired being; duality in existence; the principle of complementary pairs.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paris ≈ Greek paristamai (παρίστημι) 'to stand beside, assist'\",\n    \"reading\": \"Standing beside; assistance; the witness or helper; one who stands in support.\",\n    \"languages\": [\"grc\"],\n    \"source\": \"Liddell-Scott Greek Lexicon\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"P(16)+A(1)+R(18)+I(9)+S(19) = 63 = 6+3 = 9 (completion, return)\",\n    \"reading\": \"Numerical sum yields nine: completion, return, and the end of a cycle.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Pa-ris: pa (child's word for father) + ris (French: 'laughed' or 'rice')\",\n    \"reading\": \"The father's rice; paternal nourishment; sustenance from the progenitor.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Paris → Rapis, Piras, Raips → Rapis (Latin: turnip, root vegetable)\",\n    \"reading\": \"The root; that which is buried and grows; hidden nourishment beneath.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paris possibly from Phrygian *pari- (fire); cognate with Sanskrit pari (around, encircling)\",\n    \"reading\": \"Fire encircling; the sacred flame; that which surrounds and illuminates.\",\n    \"languages\": [\"phn\", \"sa\"],\n    \"source\": \"Beekes Greek Etymological Dictionary (speculative entry)\",\n    \"confidence\": 0.25\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Paris < Old French Paris < Latin Paris < Greek Páris (Πάρις); root uncertain, possibly from Greek páreimi (παρείμι) 'to be beside' or Phrygian origin",
+   "reading": "One who stands beside; a presence or adjacency; the nearby one.",
+   "languages": [
+    "grc",
+    "la",
+    "fr",
+    "en"
+   ],
+   "source": "Beekes Greek Etymological Dictionary; Ernout-Meillet Dictionnaire Étymologique Latin",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Pa-ris: pa (father in Romance; also 'step') + ris (laugh, from Latin ridere)",
+   "reading": "The father laughs; paternal laughter; the step of laughter or mirth.",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris (French) ≈ par-is (French: 'by-is' or 'equal-is'); homophone with 'par is' (equality exists)",
+   "reading": "Equality exists; a state of parity or equilibrium is established.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Paris → Spair, Prias, Raips, Aspir",
+   "reading": "Aspir: aspiration; the breath of desire or longing; what one breathes toward.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P-A-R-I-S: initials as acronym or acrostic seed",
+   "reading": "Potential acrostic: Pax, Amor, Ratio, Ignis, Sophia (Peace, Love, Reason, Fire, Wisdom).",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P (16th letter, pyramid/gate); A (first, origin); R (flow, river); I (unity, line); S (serpent, curve)",
+   "reading": "The gate of origin flows through unity in serpentine motion; cosmic circulation through singular point.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Par-is: par (equal, pair, Latin par) + is (being, Latin esse contracted)",
+   "reading": "Equals are; paired being; duality in existence; the principle of complementary pairs.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris ≈ Greek paristamai (παρίστημι) 'to stand beside, assist'",
+   "reading": "Standing beside; assistance; the witness or helper; one who stands in support.",
+   "languages": [
+    "grc"
+   ],
+   "source": "Liddell-Scott Greek Lexicon",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "P(16)+A(1)+R(18)+I(9)+S(19) = 63 = 6+3 = 9 (completion, return)",
+   "reading": "Numerical sum yields nine: completion, return, and the end of a cycle.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Pa-ris: pa (child's word for father) + ris (French: 'laughed' or 'rice')",
+   "reading": "The father's rice; paternal nourishment; sustenance from the progenitor.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Paris → Rapis, Piras, Raips → Rapis (Latin: turnip, root vegetable)",
+   "reading": "The root; that which is buried and grows; hidden nourishment beneath.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "etymology",
+   "chain": "Paris possibly from Phrygian *pari- (fire); cognate with Sanskrit pari (around, encircling)",
+   "reading": "Fire encircling; the sacred flame; that which surrounds and illuminates.",
+   "languages": [
+    "phn",
+    "sa"
+   ],
+   "source": "Beekes Greek Etymological Dictionary (speculative entry)",
+   "confidence": 0.25
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

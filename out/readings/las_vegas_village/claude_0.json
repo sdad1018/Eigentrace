@@ -5,15 +5,144 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:21:07+00:00",
- "latency_s": 10.68,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:03:49+00:00",
+ "latency_s": 12.16,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las (Spanish) from Latin lāx; Vegas from Latin vēgus (vigorous, lively)\",\n    \"reading\": \"The loose, vigorous place; slackness and vital energy combined in tension\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"OED Latin etyma; Corominas Diccionario Crítico Etimológico\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las-Ve-gas: laz (glide into voice) + vay (diphthong ascent) + gaz (friction and silence)\",\n    \"reading\": \"A vocalization that rises, glides, and dissipates—speech becoming breath, becoming nothing\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las (French plural article) + Vegas (Spanish wild/meadow) = the wild/meadows of the article-bearer\",\n    \"reading\": \"The definite article made plural claims dominion over untamed fields; grammar colonizes nature\",\n    \"languages\": [\"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las-Vegas-Vil-lage: vil (evil, vile, Latin vilis) + lage (Old French suffix for place/condition)\",\n    \"reading\": \"The village of baseness; a place where lowness or degradation is the condition of dwelling\",\n    \"languages\": [\"la\", \"fr\", \"en\"],\n    \"source\": \"Grimm Deutsches Wörterbuch; OED\",\n    \"confidence\": 0.76\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Village → Egalves Lavg Ellas Sag → sag-ellas, 'sag-them' (imperative feminine plural)\",\n    \"reading\": \"Command: let them (the feminine ones) droop, sag, collapse; a linguistic spell of feminine falling\",\n    \"languages\": [\"la\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.61\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V = Roman five; double-V = X = ten; Las (50 in Roman numerals if read as L+A+S); Las Vegas = 50+10 = 60\",\n    \"reading\": \"Sixty; the number of completion and cyclicity; return to the beginning after full measure\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vil-lage: vil (will, desire) + age (era, epoch); or vil-lage as veil-age, veiled era\",\n    \"reading\": \"The era of veils; a time when truth is hidden and desire obscures sight\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.67\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"LVV = Initial letters: Locus Vitae Venenum (Place of Life Poison) or Lumin Viae Vacuum (Light Path Void)\",\n    \"reading\": \"Where life and death, light and emptiness, co-inhabit as a single paradoxical locale\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Vegas ~ French 'vague' (vag-ue, wave/void); Las ~ article; Village ~ vil-age (vile-age)\",\n    \"reading\": \"The vague, formless waves of the vile era; emptiness masquerading as",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 62 column 24 (char 2717)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las (Spanish) < Latin lāc (milk); Vegas (Spanish) < Latin vēga (meadow, plain)\",\n    \"reading\": \"The milk-meadow: fertile pastoral abundance, nourishment from open ground.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"Corominas, Diccionario crítico etimológico castellano e hispánico\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas Village → /lɑːz/ + /ˈveɪɡəz/ + /ˈvɪlɪdʒ/ → laze + vague + vile + age\",\n    \"reading\": \"Lazy, vague wickedness ripens with age; indolence breeds moral decay.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las (Spanish milk) ≈ lace (English); Vegas ≈ vague (English); Village ≈ vil (French, vile)\",\n    \"reading\": \"Laced vagueness of the vile: beauty masking corruption through obscurity.\",\n    \"languages\": [\"en\", \"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas Village → /læz/ (laze) + /ˈveɪɡəz/ (vague) + /ˈvɪl/ (vile)\",\n    \"reading\": \"Languor, uncertainty, and baseness converge in a single utterance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.70\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Village → rearranged letters yield: 'Veal Lags Vigs Lade' or 'Vile Gavels Lags'\",\n    \"reading\": \"Corrupt judgment lags behind; the gavel itself becomes vile through delay.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V = Roman numeral five; L = fifty; A = alpha (beginning); G = gamma (third); E = epsilon (fifth vowel)\",\n    \"reading\": \"Five and fifty mark the threshold; beginnings and thirds spiral through vowel-sound.\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Las Vegas Village → L.V.V. → initials suggest Latin 'Lux Venit Vespera' (Light comes at evening)\",\n    \"reading\": \"Illumination arrives only in twilight; truth emerges as day dies.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Village → /ˈvɪlɪdʒ/ → vil + age; vill (Old English settlement) + age (epoch)\",\n    \"reading\": \"The age of the vile settlement; temporal marker of moral degradation.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"Oxford English Dictionary, 'vill'\",\n    \"confidence\": 0.78\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Vegas ≈ vega (Spanish meadow) ≈ vague (English) ≈ vague (French vague, wave)\",\n    \"reading\": \"The meadow becomes wave becomes uncertainty; solid ground dissolves into flux.\",\n    \"languages\": [\"es\", \"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Village < Old French ville < Latin villa (country estate, farm)\",\n    \"reading\": \"The estate of milk-meadows: feudal holdings of pastoral wealth.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"Corominas; OED 'village'\",\n    \"confidence\": 0.92\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas → /lɑːz ˈveɪɡəz/ → lapse + vague + gaze\",\n    \"reading\": \"A lapse in vague gazing; attention fails before unclear vision.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"L=12, A=1, S=19, V=22, E=5, G=7, A=1, S=19, V=22, I=9, L=12, L=12, A=1, G=7, E=5 → sum = 154 → 1+5+4 = 10 → 1+0 = 1\",\n    \"reading\": \"All returns to unity; multiplicity collapses into singular essence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Las (Spanish) < Latin lāc (milk); Vegas (Spanish) < Latin vēga (meadow, plain)",
+   "reading": "The milk-meadow: fertile pastoral abundance, nourishment from open ground.",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "Corominas, Diccionario crítico etimológico castellano e hispánico",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas Village → /lɑːz/ + /ˈveɪɡəz/ + /ˈvɪlɪdʒ/ → laze + vague + vile + age",
+   "reading": "Lazy, vague wickedness ripens with age; indolence breeds moral decay.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.72
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las (Spanish milk) ≈ lace (English); Vegas ≈ vague (English); Village ≈ vil (French, vile)",
+   "reading": "Laced vagueness of the vile: beauty masking corruption through obscurity.",
+   "languages": [
+    "en",
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.68
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas Village → /læz/ (laze) + /ˈveɪɡəz/ (vague) + /ˈvɪl/ (vile)",
+   "reading": "Languor, uncertainty, and baseness converge in a single utterance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Village → rearranged letters yield: 'Veal Lags Vigs Lade' or 'Vile Gavels Lags'",
+   "reading": "Corrupt judgment lags behind; the gavel itself becomes vile through delay.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V = Roman numeral five; L = fifty; A = alpha (beginning); G = gamma (third); E = epsilon (fifth vowel)",
+   "reading": "Five and fifty mark the threshold; beginnings and thirds spiral through vowel-sound.",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Las Vegas Village → L.V.V. → initials suggest Latin 'Lux Venit Vespera' (Light comes at evening)",
+   "reading": "Illumination arrives only in twilight; truth emerges as day dies.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Village → /ˈvɪlɪdʒ/ → vil + age; vill (Old English settlement) + age (epoch)",
+   "reading": "The age of the vile settlement; temporal marker of moral degradation.",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary, 'vill'",
+   "confidence": 0.78
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Vegas ≈ vega (Spanish meadow) ≈ vague (English) ≈ vague (French vague, wave)",
+   "reading": "The meadow becomes wave becomes uncertainty; solid ground dissolves into flux.",
+   "languages": [
+    "es",
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "etymology",
+   "chain": "Village < Old French ville < Latin villa (country estate, farm)",
+   "reading": "The estate of milk-meadows: feudal holdings of pastoral wealth.",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "Corominas; OED 'village'",
+   "confidence": 0.92
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas → /lɑːz ˈveɪɡəz/ → lapse + vague + gaze",
+   "reading": "A lapse in vague gazing; attention fails before unclear vision.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.68
+  },
+  {
+   "operation": "numerical",
+   "chain": "L=12, A=1, S=19, V=22, E=5, G=7, A=1, S=19, V=22, I=9, L=12, L=12, A=1, G=7, E=5 → sum = 154 → 1+5+4 = 10 → 1+0 = 1",
+   "reading": "All returns to unity; multiplicity collapses into singular essence.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

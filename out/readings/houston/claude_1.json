@@ -5,15 +5,139 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:25:59+00:00",
- "latency_s": 8.87,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:09:24+00:00",
+ "latency_s": 9.72,
  "ok": true,
  "call_error": null,
- "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hous-ton; hous = house (dwelling); ton = a weight, a heaviness, a burden\",\n    \"reading\": \"The weight or burden of dwelling; the heaviness of habitation; what presses upon the housed.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Houston ≈ 'hue' (color) + 'stun' (shock); French 'hue' (outcry, hue and cry)\",\n    \"reading\": \"A colored outcry; a shocking call; the vivid cry that stuns the ear.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Houston = Hugh's tun; Hugh (Germanic Hugi, mind) + tun (Old English, a large cask or dwelling)\",\n    \"reading\": \"The mind's vessel; the cask or dwelling of thought and intention.\",\n    \"languages\": [\"en\", \"gem\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou-ston; hou = how (interrogative); ston = stone (hard, immovable)\",\n    \"reading\": \"The question posed to stone; inquiry made to the immovable and eternal.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Houston → south + no + u; or: honest + u + o\",\n    \"reading\": \"Honesty without the self; the south where integrity stands without ego.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"H-O-U-S-T-O-N: initial letters spell potential phrases or carry symbolic weight\",\n    \"reading\": \"A sevenfold name; seven letters as seven seals or seven stages of ascent.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"H = breath, aspiration; O = circle, zero, void; U = the cup; S = serpent; T = cross or tau; N = ending\",\n    \"reading\": \"Breath circling the void through the cup, serpent-crossed, returning to nullity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hous-ton; French 'ton' = your (familiar); English 'hous' = house\",\n    \"reading\": \"Your house; the dwelling that belongs to and is known by the listener.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Houston ≈ German 'Hosen' (trousers) + 'ton'; or Latin 'tonus' (tone, tension)\",\n    \"reading\": \"The tone of garment; the tension and pitch of what covers and contains.\",\n    \"languages\": [\"en\", \"de\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"H=8, O=15, U=21, S=19, T=20, O=15, N=14; sum = 112 = 1+1+2 = 4 (the square, the stable)\",\n    \"reading\": \"",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 36 (char 2741)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hous-ton; hous (Old English) = dwelling, shelter; ton (Old English) = enclosure, settlement\",\n    \"reading\": \"A settlement or town of houses; a dwelling place enclosed and fortified.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou-ston; hou (French) = cry of alarm or call; ston (stone) = hardness, foundation\",\n    \"reading\": \"A cry or call upon stone; invocation of the hard, immovable foundation.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Houston ≈ Hous-ton; French 'houx' (holly) + 'ton' (tone, sound)\",\n    \"reading\": \"The tone or sound of holly; prickly speech or sharp utterance.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Houston → Shout + on; or Honest + u\",\n    \"reading\": \"A shout continuing onward; or honesty with the universal principle.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"H-O-U-S-T-O-N: Hoc Opus Universale Sanctum Templi Omnium Numen\",\n    \"reading\": \"This universal sacred work of the temple of all divine powers.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"H (breath, spirit) + OU (duality) + S (serpent) + T (cross) + ON (being)\",\n    \"reading\": \"Spirit of duality through the serpent crossed by being itself.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou-s-ton; s as the sibilant of silence or the serpent; ton as weight or tone\",\n    \"reading\": \"The weight or resonance of silent dwelling; the tone of hidden speech.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Houston: Hous (OE hūs) + ton (OE tūn); tūn originally meant 'enclosure for animals'\",\n    \"reading\": \"An enclosed settlement; a fortified dwelling place for protection and sustenance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary; Bosworth-Toller Anglo-Saxon Dictionary\",\n    \"confidence\": 0.88\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Houston ≈ Latin 'hostis' (enemy, stranger) + 'ton' (weight, burden)\",\n    \"reading\": \"The burden or weight of the stranger; the heaviness of the foreign.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou-s-ton; 'hou' as a call or exclamation; 'ston' as standing stone\",\n    \"reading\": \"A call or cry at the standing stone; invocation at the threshold of permanence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Houston → Honest + u; or Thou + son\",\n    \"reading\": \"Thou and thy son; the lineage of address and kinship.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.61\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"H(8) O(15) U(21) S(19) T(20) O(15) N(14) = 112; 1+1+2 = 4 (foundation, square)\",\n    \"reading\": \"The numerical essence reduces to four: foundation, stability, the earthly square.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Hous-ton; hous (Old English) = dwelling, shelter; ton (Old English) = enclosure, settlement",
+   "reading": "A settlement or town of houses; a dwelling place enclosed and fortified.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hou-ston; hou (French) = cry of alarm or call; ston (stone) = hardness, foundation",
+   "reading": "A cry or call upon stone; invocation of the hard, immovable foundation.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Houston ≈ Hous-ton; French 'houx' (holly) + 'ton' (tone, sound)",
+   "reading": "The tone or sound of holly; prickly speech or sharp utterance.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "Houston → Shout + on; or Honest + u",
+   "reading": "A shout continuing onward; or honesty with the universal principle.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "H-O-U-S-T-O-N: Hoc Opus Universale Sanctum Templi Omnium Numen",
+   "reading": "This universal sacred work of the temple of all divine powers.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "H (breath, spirit) + OU (duality) + S (serpent) + T (cross) + ON (being)",
+   "reading": "Spirit of duality through the serpent crossed by being itself.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hou-s-ton; s as the sibilant of silence or the serpent; ton as weight or tone",
+   "reading": "The weight or resonance of silent dwelling; the tone of hidden speech.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "etymology",
+   "chain": "Houston: Hous (OE hūs) + ton (OE tūn); tūn originally meant 'enclosure for animals'",
+   "reading": "An enclosed settlement; a fortified dwelling place for protection and sustenance.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Bosworth-Toller Anglo-Saxon Dictionary",
+   "confidence": 0.88
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Houston ≈ Latin 'hostis' (enemy, stranger) + 'ton' (weight, burden)",
+   "reading": "The burden or weight of the stranger; the heaviness of the foreign.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hou-s-ton; 'hou' as a call or exclamation; 'ston' as standing stone",
+   "reading": "A call or cry at the standing stone; invocation at the threshold of permanence.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "anagram",
+   "chain": "Houston → Honest + u; or Thou + son",
+   "reading": "Thou and thy son; the lineage of address and kinship.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.61
+  },
+  {
+   "operation": "numerical",
+   "chain": "H(8) O(15) U(21) S(19) T(20) O(15) N(14) = 112; 1+1+2 = 4 (foundation, square)",
+   "reading": "The numerical essence reduces to four: foundation, stability, the earthly square.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

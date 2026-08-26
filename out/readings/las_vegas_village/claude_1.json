@@ -5,15 +5,145 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:21:17+00:00",
- "latency_s": 9.95,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:04:00+00:00",
+ "latency_s": 11.4,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las (Spanish) < Latin lāc (milk); Vegas (Spanish) < Latin vēga (meadow, plain)\",\n    \"reading\": \"The milk of the meadow; fertile pastoral abundance and nourishment from open land.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"Oxford Latin Dictionary; Real Academia Española\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas Village → /læz/ + /ˈveɪɡəz/ + /ˈvɪlɪdʒ/; 'lace' + 'vague' + 'village'\",\n    \"reading\": \"Interlacing vague settlements; obscured townships bound together by unclear or indistinct patterns.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las ≈ French 'la' (the feminine); Vegas ≈ French 'va' (goes); Village identical\",\n    \"reading\": \"The-feminine goes village; feminine principle moves toward or inhabits the collective dwelling.\",\n    \"languages\": [\"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vegas → vae (Latin woe) + gas; Village → vill (settlement) + age (epoch)\",\n    \"reading\": \"Woe gas in old settlements of an age; noxious or sorrowful emanations from ancient dwelling-epochs.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Village → rearranged: 'vile gas salvage' or 'laves visa glide'\",\n    \"reading\": \"Washes (laves) visas in gliding motion; purification or passage through borders in smooth transit.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Las Vegas Village → L.V.V. → Latin initials: Lux Vitae Vivificatio or Laus Vigor Vivus\",\n    \"reading\": \"Light of living life, praise of vigorous vitality; luminous animation and vibrant praise combined.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Village < Old French 'ville' (town) < Latin 'villa' (farmstead, country estate)\",\n    \"reading\": \"Three-fold repetition of dwelling: meadow-settlement-estate, suggesting graduated scales of habitation.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Etymologicum Magnum\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las → 'lace' or 'lass'; Vegas → 'vague'; Village → 'veil' + 'age'\",\n    \"reading\": \"Maiden veiled in vague lacing through ages; feminine mystery concealed through epochs via delicate binding.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Vegas ≈ Italian 'veglia' (vigil, watch); Las ≈ Hebrew 'las' (non-existent) or 'lo' (negation)\",\n    \"reading\": \"No vigil, negated watching; cessation of guardianship or abandonment of surveillance.\",\n    \"languages\": [\"it\", \"he\"],",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 3027)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las (Spanish) < Latin lāc (milk); Vegas (Spanish) < Latin vēga (fertile plain, meadow)\",\n    \"reading\": \"The milk of the fertile plain; nourishment from cultivated earth.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"Corominas, Diccionario crítico etimológico castellano e hispánico\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las-Ve-gas: 'la' (the) + 'vé' (see, French voir) + 'gas' (breath, spirit)\",\n    \"reading\": \"The seeing of breath; perception of the invisible made manifest.\",\n    \"languages\": [\"es\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas ≈ French 'la vache' (the cow) + 'gas'; or 'las' (tired, Spanish) + 'vé' (see, French)\",\n    \"reading\": \"The weary seeing; exhausted vision or perception grown dull.\",\n    \"languages\": [\"es\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Village: vil-lage; 'vil' (vile, base) + 'lage' (age, time, Latin labes = stain)\",\n    \"reading\": \"The age of baseness; a settlement marked by degradation or shadow.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Las Vegas Village: L-V-V yields initials; or read as acrostic seed-letters\",\n    \"reading\": \"The doubled V (duality, opposition) crowned by L (law, light); binary power under rule.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V as Roman numeral five; doubled V = X (ten, completion); L = 50 (law, boundary)\",\n    \"reading\": \"Fifty times the perfected duality; law governing the complete cycle.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Village → rearrange: 'vales' (valleys) + 'gales' (winds) + 'is' (being)\",\n    \"reading\": \"Valleys and winds are; the essence of natural forces in hollow places.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Village < Old French ville < Latin villa (country house, estate); vil- (base, common)\",\n    \"reading\": \"A gathering of common dwellings; the ordinary made collective.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"Oxford English Dictionary, s.v. village\",\n    \"confidence\": 0.92\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las-Ve-gas-Vil-lage: 'lace' (binding) + 'veg' (vegetation) + 'age' (time, accumulation)\",\n    \"reading\": \"Time-bound vegetation; the binding of growth through duration.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Vegas ≈ Latin vegetus (vigorous, lively); Village ≈ vil (base) + age (time)\",\n    \"reading\": \"Vigorous baseness through time; vitality rooted in the common and earthly.\",\n    \"languages\": [\"la\", \"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V-V-V (three V's): triple duality; V as chalice or vessel; three vessels\",\n    \"reading\": \"Three receptacles; the trinity of containers holding what flows.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas Village: 'lass' (girl, maiden) + 've' (life, Latin vivus) + 'gas' + 'vill' (will)\",\n    \"reading\": \"The maiden's living will; feminine vitality asserting itself through desire.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.54\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Las (Spanish) < Latin lāc (milk); Vegas (Spanish) < Latin vēga (fertile plain, meadow)",
+   "reading": "The milk of the fertile plain; nourishment from cultivated earth.",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "Corominas, Diccionario crítico etimológico castellano e hispánico",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las-Ve-gas: 'la' (the) + 'vé' (see, French voir) + 'gas' (breath, spirit)",
+   "reading": "The seeing of breath; perception of the invisible made manifest.",
+   "languages": [
+    "es",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas ≈ French 'la vache' (the cow) + 'gas'; or 'las' (tired, Spanish) + 'vé' (see, French)",
+   "reading": "The weary seeing; exhausted vision or perception grown dull.",
+   "languages": [
+    "es",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Village: vil-lage; 'vil' (vile, base) + 'lage' (age, time, Latin labes = stain)",
+   "reading": "The age of baseness; a settlement marked by degradation or shadow.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Las Vegas Village: L-V-V yields initials; or read as acrostic seed-letters",
+   "reading": "The doubled V (duality, opposition) crowned by L (law, light); binary power under rule.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V as Roman numeral five; doubled V = X (ten, completion); L = 50 (law, boundary)",
+   "reading": "Fifty times the perfected duality; law governing the complete cycle.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Village → rearrange: 'vales' (valleys) + 'gales' (winds) + 'is' (being)",
+   "reading": "Valleys and winds are; the essence of natural forces in hollow places.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "etymology",
+   "chain": "Village < Old French ville < Latin villa (country house, estate); vil- (base, common)",
+   "reading": "A gathering of common dwellings; the ordinary made collective.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Oxford English Dictionary, s.v. village",
+   "confidence": 0.92
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las-Ve-gas-Vil-lage: 'lace' (binding) + 'veg' (vegetation) + 'age' (time, accumulation)",
+   "reading": "Time-bound vegetation; the binding of growth through duration.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.48
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Vegas ≈ Latin vegetus (vigorous, lively); Village ≈ vil (base) + age (time)",
+   "reading": "Vigorous baseness through time; vitality rooted in the common and earthly.",
+   "languages": [
+    "la",
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V-V-V (three V's): triple duality; V as chalice or vessel; three vessels",
+   "reading": "Three receptacles; the trinity of containers holding what flows.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas Village: 'lass' (girl, maiden) + 've' (life, Latin vivus) + 'gas' + 'vill' (will)",
+   "reading": "The maiden's living will; feminine vitality asserting itself through desire.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.54
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

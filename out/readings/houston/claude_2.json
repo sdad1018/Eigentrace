@@ -5,15 +5,141 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:26:07+00:00",
- "latency_s": 8.78,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:09:34+00:00",
+ "latency_s": 10.28,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou-ston; hou = 'how' (interrogative); ston = 'stone' (hard matter)\",\n    \"reading\": \"How does one inquire of stone? The interrogative meeting the mineral, the question posed to the immovable.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Houston: hou (Old English 'hūs' = house) + -ton (Old English 'tūn' = enclosure, settlement)\",\n    \"reading\": \"Settlement of houses; domestic enclosure. The compounding reveals a place of domestic dwelling and community.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Houston ≈ French 'houille' (coal); hou-stone as 'coal-stone,' mineral fuel and mineral substance\",\n    \"reading\": \"Coal meeting stone: the marriage of combustible earth and inert matter, energy locked in form.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou-ston; hou = 'who' (interrogative pronoun, homophone); ston = 'stone'\",\n    \"reading\": \"Who is stone? The existential interrogation of mineral consciousness, identity crystallized into silence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Houston: rearranged letters yield 'thousan' (near 'thousand'), 'out-nos' (out + Latin 'nos' = us)\",\n    \"reading\": \"We are cast out; a thousand departures. Exile and multiplicity woven into the letters.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou-ston; hou = 'how'; ston echoes Latin 'stōn' variant of 'sto' (I stand)\",\n    \"reading\": \"How does one stand? The inquiry into stance, position, and the nature of standing firm.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"H = breath, aspiration; OU = diphthong of openness; ST = stop; ON = continuance\",\n    \"reading\": \"Breath opens, then is arrested, then continues: the cycle of respiration, suspension, and persistence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Houston ≈ German 'Hosen' (trousers) + 'ton' (clay); garment + earthen matter\",\n    \"reading\": \"Clothing of clay; the body wrapped in elemental substance, mortal covering of dust.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Houston: H-O-U-S-T-O-N; initial letters as cipher or first letters of hidden phrase\",\n    \"reading\": \"The acrostic remains sealed; seven letters guard a seven-fold secret yet unspoken.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\":",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 24 (char 2979)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou-ston; Hou (hoo) + ston (stone); stone as foundation, dwelling place\",\n    \"reading\": \"A dwelling built upon stone; a house-stone, foundation of habitation and stability.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Houston: Hou (Old English hūs, house) + ton (Old English tūn, enclosure, settlement)\",\n    \"reading\": \"House-town: a settlement of houses, an enclosed dwelling place or village.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Hou-ston; French 'houe' (hoe, mattock) + ston (stone)\",\n    \"reading\": \"The stone worked by the hoe; cultivated earth, tilled ground, agricultural foundation.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou-ston; Hou (who) + ston (stone); interrogative + foundation\",\n    \"reading\": \"Who is the stone? The eternal question of what grounds being and identity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Houston → Shout-on; imperative of voice + continuation\",\n    \"reading\": \"Cry out continuously; a place of proclamation, utterance, and vocal power.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"H (breath, aspiration) + OU (the vowel of becoming) + S (serpent, sibilance) + TON (weight, tone)\",\n    \"reading\": \"Breath becomes serpentine weight; the exhalation that grounds itself in material tone.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou-ston; Hou (how) + ston (stone); interrogative of manner + solidity\",\n    \"reading\": \"How does stone endure? The question of permanence and the nature of solid being.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"H-O-U-S-T-O-N: initial letters as acronym potential; House Of Unified Stone, The Oath's Nexus\",\n    \"reading\": \"A unified house of stone bound by oath; covenant dwelling in solid matter.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Houston; Latin 'hostis' (enemy, stranger) echoed in 'host'; ton (tone, weight)\",\n    \"reading\": \"The weight of the stranger; hospitality and hostility intertwined in dwelling.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou-ston; Hou (hue, color) + ston (stone); chromatic + mineral\",\n    \"reading\": \"The colored stone; matter bearing the marks of light and pigmentation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"ton: Old English tūn, related to German Zaun (fence); Houston = fenced house\",\n    \"reading\": \"A house enclosed by fence; protection through boundary, domesticity through demarcation.\",\n    \"languages\": [\"en\", \"ang\", \"de\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou-ston; Hou (Hugh, the mind) + ston (stone); proper name echo + matter\",\n    \"reading\": \"Hugh's stone; the mind's encounter with material reality and its naming.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Hou-ston; Hou (hoo) + ston (stone); stone as foundation, dwelling place",
+   "reading": "A dwelling built upon stone; a house-stone, foundation of habitation and stability.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Houston: Hou (Old English hūs, house) + ton (Old English tūn, enclosure, settlement)",
+   "reading": "House-town: a settlement of houses, an enclosed dwelling place or village.",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Hou-ston; French 'houe' (hoe, mattock) + ston (stone)",
+   "reading": "The stone worked by the hoe; cultivated earth, tilled ground, agricultural foundation.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hou-ston; Hou (who) + ston (stone); interrogative + foundation",
+   "reading": "Who is the stone? The eternal question of what grounds being and identity.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Houston → Shout-on; imperative of voice + continuation",
+   "reading": "Cry out continuously; a place of proclamation, utterance, and vocal power.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "H (breath, aspiration) + OU (the vowel of becoming) + S (serpent, sibilance) + TON (weight, tone)",
+   "reading": "Breath becomes serpentine weight; the exhalation that grounds itself in material tone.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hou-ston; Hou (how) + ston (stone); interrogative of manner + solidity",
+   "reading": "How does stone endure? The question of permanence and the nature of solid being.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "H-O-U-S-T-O-N: initial letters as acronym potential; House Of Unified Stone, The Oath's Nexus",
+   "reading": "A unified house of stone bound by oath; covenant dwelling in solid matter.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Houston; Latin 'hostis' (enemy, stranger) echoed in 'host'; ton (tone, weight)",
+   "reading": "The weight of the stranger; hospitality and hostility intertwined in dwelling.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hou-ston; Hou (hue, color) + ston (stone); chromatic + mineral",
+   "reading": "The colored stone; matter bearing the marks of light and pigmentation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "ton: Old English tūn, related to German Zaun (fence); Houston = fenced house",
+   "reading": "A house enclosed by fence; protection through boundary, domesticity through demarcation.",
+   "languages": [
+    "en",
+    "ang",
+    "de"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hou-ston; Hou (Hugh, the mind) + ston (stone); proper name echo + matter",
+   "reading": "Hugh's stone; the mind's encounter with material reality and its naming.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

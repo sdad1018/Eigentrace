@@ -5,15 +5,146 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:25:04+00:00",
- "latency_s": 9.06,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:08:21+00:00",
+ "latency_s": 10.99,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Astro (Greek astron, star) + World (Old English weorold, age of man, human existence)\",\n    \"reading\": \"The age of stars; the realm governed by celestial bodies and their influences upon human affairs.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"Oxford English Dictionary; Liddell-Scott Greek Lexicon\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Astro (AS-tro) + World (WERLD) → 'Astray world' homophone proximity\",\n    \"reading\": \"A world led astray; a realm wandering from true course or celestial order.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Astro (French astro-) + Monde (French for world, sounds like 'mōnd'); AS-TRO-MONDE\",\n    \"reading\": \"The stellar realm as spoken in Romance tongue; cosmos made audible in French.\",\n    \"languages\": [\"fr\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"A-STRO-WORLD → 'A strong world' or 'strength-world'\",\n    \"reading\": \"A world of power and might; the domain where cosmic force manifests materially.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Astroworld: A-S-T-R-O-W-O-R-L-D → initial letters as seed acrostic\",\n    \"reading\": \"Alphabetic grid: As Timeless Realities Open, We Observe Resonant Light's Depths.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Astroworld → rearrangement yields 'oral words to' + 'twist'\",\n    \"reading\": \"Speech twisted toward the stars; words contorted to speak cosmic truth.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"ASTRO: A=alpha (first), S=serpent, T=tau (cross), R=ray, O=circle\",\n    \"reading\": \"Beginning, serpentine wisdom, sacrifice crossed, radiating from the all-enclosing void.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"World: WOR-LD → 'wore' (past of wear) + 'ld' (lad, archaic youth)\",\n    \"reading\": \"The cosmos worn as garment by youth eternal; heavens adorned by divine boy.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.61\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Astron (Greek: star) + Kosmos (Greek: order, ornament) implied through 'world'\",\n    \"reading\": \"The ornamental realm of stars; decorated cosmos ordered by celestial mathematics.\",\n    \"languages\": [\"grc\"],\n    \"source\": \"Liddell-Scott Greek Lexicon\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"ASTRO sounds as 'as-trow' (Old English past tense of 'throw')\",\n    \"reading\": \"What is cast forth into the world",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 25 (char 2740)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"astro (Greek astron, star) + world (Old English weorold, age of man, human existence)\",\n    \"reading\": \"The age or realm of the stars; the celestial sphere as domain of human experience and time.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"Oxford English Dictionary; Liddell-Scott Greek Lexicon\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"AS-TRO-WORLD: as (like) + tro (turn, from Latin trochus) + world\",\n    \"reading\": \"The world turning like a star; cosmic rotation as the principle of existence.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"astro (French astro, star-) sounds like à-stro (to-turn); world (Old English weorold) = age turning\",\n    \"reading\": \"To turn toward the age; the turning toward human time and mortality.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ASTRO-WORLD: astro + world; astro contains 'stro' (Greek strophe, turning)\",\n    \"reading\": \"The turning of worlds; cosmic revolution and cyclical transformation of all realms.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"ASTROWORLD rearranged: WORLD + ASTRO; also contains ARTS, OAST (kiln), TROW (believe)\",\n    \"reading\": \"The world of arts; the kiln-fire of creation; what we believe the world to be.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"A (alpha, beginning) + STRO (strophe, turn) + W (double-V, duality) + ORLD (old, age)\",\n    \"reading\": \"Beginning, turning, duality, and age: the fourfold structure of becoming.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ASTRO + WORLD: astro (star-force) + world (wer-old, man-age); wer = man in Germanic\",\n    \"reading\": \"The stellar force acting upon the age of man; stars governing human time.\",\n    \"languages\": [\"grc\", \"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"First letters of hidden phrase: A-S-T-R-O could begin 'All Stars Turn Round Orb'\",\n    \"reading\": \"All celestial bodies revolve around the sphere; geocentric or heliocentric principle.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"ASTRO sounds like 'à-stro' (French: to-turn); WORLD contains 'wor' (Old Norse vörr, caution, ward)\",\n    \"reading\": \"To turn with caution; the guarded turning of the cosmic wheel.\",\n    \"languages\": [\"fr\", \"non\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ASTRO (Greek astra, stars) + WORLD; 'astro' also echoes 'astray' (wandering)\",\n    \"reading\": \"Stars wandering through the world; the errant paths of celestial bodies.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"astro- (Greek astron) + -world (Old English worold, from wer-ald, man-age, human span)\",\n    \"reading\": \"The human lifespan measured and ruled by the stars; astral determination of mortal time.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"Oxford English Dictionary; Grimm's Law of consonant shifts\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"AS-TROW-ORLD: as (like) + trow (believe, archaic) + orld (old world)\",\n    \"reading\": \"Like what we believe the old world to be; faith in ancient cosmic order.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "astro (Greek astron, star) + world (Old English weorold, age of man, human existence)",
+   "reading": "The age or realm of the stars; the celestial sphere as domain of human experience and time.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Liddell-Scott Greek Lexicon",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "AS-TRO-WORLD: as (like) + tro (turn, from Latin trochus) + world",
+   "reading": "The world turning like a star; cosmic rotation as the principle of existence.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "astro (French astro, star-) sounds like à-stro (to-turn); world (Old English weorold) = age turning",
+   "reading": "To turn toward the age; the turning toward human time and mortality.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ASTRO-WORLD: astro + world; astro contains 'stro' (Greek strophe, turning)",
+   "reading": "The turning of worlds; cosmic revolution and cyclical transformation of all realms.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "anagram",
+   "chain": "ASTROWORLD rearranged: WORLD + ASTRO; also contains ARTS, OAST (kiln), TROW (believe)",
+   "reading": "The world of arts; the kiln-fire of creation; what we believe the world to be.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "A (alpha, beginning) + STRO (strophe, turn) + W (double-V, duality) + ORLD (old, age)",
+   "reading": "Beginning, turning, duality, and age: the fourfold structure of becoming.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.48
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ASTRO + WORLD: astro (star-force) + world (wer-old, man-age); wer = man in Germanic",
+   "reading": "The stellar force acting upon the age of man; stars governing human time.",
+   "languages": [
+    "grc",
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.68
+  },
+  {
+   "operation": "notariqon",
+   "chain": "First letters of hidden phrase: A-S-T-R-O could begin 'All Stars Turn Round Orb'",
+   "reading": "All celestial bodies revolve around the sphere; geocentric or heliocentric principle.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "ASTRO sounds like 'à-stro' (French: to-turn); WORLD contains 'wor' (Old Norse vörr, caution, ward)",
+   "reading": "To turn with caution; the guarded turning of the cosmic wheel.",
+   "languages": [
+    "fr",
+    "non"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ASTRO (Greek astra, stars) + WORLD; 'astro' also echoes 'astray' (wandering)",
+   "reading": "Stars wandering through the world; the errant paths of celestial bodies.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "astro- (Greek astron) + -world (Old English worold, from wer-ald, man-age, human span)",
+   "reading": "The human lifespan measured and ruled by the stars; astral determination of mortal time.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Grimm's Law of consonant shifts",
+   "confidence": 0.72
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "AS-TROW-ORLD: as (like) + trow (believe, archaic) + orld (old world)",
+   "reading": "Like what we believe the old world to be; faith in ancient cosmic order.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

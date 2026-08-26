@@ -5,15 +5,147 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:29:52+00:00",
- "latency_s": 8.74,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:14:01+00:00",
+ "latency_s": 11.35,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great = 'grate' (homophone); Exuma = 'ex-' (out) + '-uma' (womb/matrix)\",\n    \"reading\": \"Scraping away from the primordial matrix; emergence from the womb-source.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Great: Old English 'great' < Proto-Germanic '*grautaz' (coarse, thick); Exuma: 'ex-' (Latin out) + '-uma' (obscure suffix, possibly < Latin 'uterus')\",\n    \"reading\": \"The coarse matter cast forth; rough emergence from darkness or containment.\",\n    \"languages\": [\"en\", \"la\", \"gem\"],\n    \"source\": \"Oxford English Dictionary; Lewis & Short\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great Exuma: 'GREAT' (grate) + 'EX' (out/former) + 'UMA' (sonic unit suggesting 'uma' = shadow in Sanskrit/Hindi)\",\n    \"reading\": \"Grinding forth the shadow; reality separated from its obscure reflection.\",\n    \"languages\": [\"en\", \"la\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ French 'exhumé' (exhumed); Great = magnified or terrible\",\n    \"reading\": \"The great exhumation; bringing forth from burial what was hidden and sacred.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Great Exuma: G.E. = Generative Essence or Gnosis Emanated; E.X. = Ex (out of) Xenophanes (the strange other)\",\n    \"reading\": \"Knowledge emanating from the strange and foreign other; gnosis beyond boundaries.\",\n    \"languages\": [\"en\", \"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Exuma' = 'egg' (ex- as egg-like beginning) + '-uma' (womb); Great = magnitude of gestation\",\n    \"reading\": \"The magnificent egg-matrix; vast birthing potential contained in spherical silence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"G=7, E=5, X=24, U=21, M=13, A=1; 7+5=12 (cosmic pair), X=24 (dissolution), U+M=34 (mystical number)\",\n    \"reading\": \"Union of cosmic duality dissolves into mystical transformation and return to unity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ Spanish 'exhumar' (to exhume); English 'Great' = importance or terror\",\n    \"reading\": \"The great disinterring; momentous resurrection of what lay buried and forgotten.\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Great: 'grate' (Latin 'gratum' = pleasing); Exuma: 'ex-' (out) + possible Celtic root 'uma' (water, stream)\",\n    \"reading\": \"Pleasing emergence; the flowing outward of gratifying",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 62 column 30 (char 2679)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great Exuma → Great + Ex-uma → 'great' + 'out of' + 'womb/mother'\",\n    \"reading\": \"The great emergence from the maternal source; birth of the sublime from the feminine principle.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ Ex + uma (Latin: ex 'out' + uterus 'womb'); French homophone: 'exhumé' (exhumed)\",\n    \"reading\": \"That which is drawn forth from the earth; the exhumed, the revealed, the brought to light.\",\n    \"languages\": [\"la\", \"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Great: Old English 'great' (greot) → Proto-Germanic 'grautaz' (coarse, large)\",\n    \"reading\": \"Coarse, rough, substantial magnitude; the unrefined vastness.\",\n    \"languages\": [\"en\", \"gem\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ex-uma → Ex (out) + Uma (breath, spirit in Sanskrit); or 'ex' + 'huma' (human, Spanish)\",\n    \"reading\": \"The breath expelled; humanity released; the spirit cast outward into manifestation.\",\n    \"languages\": [\"la\", \"sa\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"G-R-E-A-T E-X-U-M-A → initial letters as acrostic seed\",\n    \"reading\": \"Gre-ate-x-uma: the greening of the ate (consumed/past) through external transformation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"X as the cross, the intersection; U as the vessel; M as the mountain or wave\",\n    \"reading\": \"The great crossing at the vessel's threshold; intersection of worlds at the mountain gate.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great Exuma → Gre-ate + Ex-u-ma → 'grey' (homophone) + 'ate' + 'ex' + 'you' + 'ma'\",\n    \"reading\": \"Grey matter consumed; you are cast out from the mother—a severance of knowledge.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ French 'ex-humé' (past participle of exhumer); also German 'Exum' (exodus-like)\",\n    \"reading\": \"The great exodus; the magnificent departure from the buried, the sepulchral past.\",\n    \"languages\": [\"fr\", \"de\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Exuma: possibly Taíno origin, but phonetically parsed as Latin ex (out) + uma (not standard Latin)\",\n    \"reading\": \"The great-out-of-something; emergence as the primary semantic gesture.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great + Exuma → Gre-at + Ex-u-m-a → 'greet' (homophone) + 'exam' (hidden)\",\n    \"reading\": \"Greeting the examination; the great test or trial that emerges from hiddenness.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"E-X-U-M-A: E (the open mouth), X (the cross of matter), U (the cup), M (the wave), A (the beginning)\",\n    \"reading\": \"Speech crosses matter's vessel in waves; the great utterance at the origin of becoming.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ Greek 'ex' (out) + Latin 'humus' (earth, ground); 'Great' + 'great-earth-out'\",\n    \"reading\": \"The great emergence from the earth; the sublime rising of matter into form and consciousness.\",\n    \"languages\": [\"grc\", \"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Great Exuma → Great + Ex-uma → 'great' + 'out of' + 'womb/mother'",
+   "reading": "The great emergence from the maternal source; birth of the sublime from the feminine principle.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Exuma ≈ Ex + uma (Latin: ex 'out' + uterus 'womb'); French homophone: 'exhumé' (exhumed)",
+   "reading": "That which is drawn forth from the earth; the exhumed, the revealed, the brought to light.",
+   "languages": [
+    "la",
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "Great: Old English 'great' (greot) → Proto-Germanic 'grautaz' (coarse, large)",
+   "reading": "Coarse, rough, substantial magnitude; the unrefined vastness.",
+   "languages": [
+    "en",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ex-uma → Ex (out) + Uma (breath, spirit in Sanskrit); or 'ex' + 'huma' (human, Spanish)",
+   "reading": "The breath expelled; humanity released; the spirit cast outward into manifestation.",
+   "languages": [
+    "la",
+    "sa",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "G-R-E-A-T E-X-U-M-A → initial letters as acrostic seed",
+   "reading": "Gre-ate-x-uma: the greening of the ate (consumed/past) through external transformation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "X as the cross, the intersection; U as the vessel; M as the mountain or wave",
+   "reading": "The great crossing at the vessel's threshold; intersection of worlds at the mountain gate.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Great Exuma → Gre-ate + Ex-u-ma → 'grey' (homophone) + 'ate' + 'ex' + 'you' + 'ma'",
+   "reading": "Grey matter consumed; you are cast out from the mother—a severance of knowledge.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Exuma ≈ French 'ex-humé' (past participle of exhumer); also German 'Exum' (exodus-like)",
+   "reading": "The great exodus; the magnificent departure from the buried, the sepulchral past.",
+   "languages": [
+    "fr",
+    "de",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Exuma: possibly Taíno origin, but phonetically parsed as Latin ex (out) + uma (not standard Latin)",
+   "reading": "The great-out-of-something; emergence as the primary semantic gesture.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Great + Exuma → Gre-at + Ex-u-m-a → 'greet' (homophone) + 'exam' (hidden)",
+   "reading": "Greeting the examination; the great test or trial that emerges from hiddenness.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "E-X-U-M-A: E (the open mouth), X (the cross of matter), U (the cup), M (the wave), A (the beginning)",
+   "reading": "Speech crosses matter's vessel in waves; the great utterance at the origin of becoming.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Exuma ≈ Greek 'ex' (out) + Latin 'humus' (earth, ground); 'Great' + 'great-earth-out'",
+   "reading": "The great emergence from the earth; the sublime rising of matter into form and consciousness.",
+   "languages": [
+    "grc",
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

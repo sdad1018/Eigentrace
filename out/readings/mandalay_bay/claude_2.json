@@ -5,15 +5,145 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:21:55+00:00",
- "latency_s": 10.51,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:04:45+00:00",
+ "latency_s": 11.03,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-da-lay = man + da + lay; 'da' as definite article across Romance; 'lay' as to recline or place\",\n    \"reading\": \"The man places or reclines; masculine agency in repose or positioning\",\n    \"languages\": [\"en\", \"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mandala (Sanskrit mandala, circle/disk) + lay (Old English lecgan, to place); mandala cognate with Latin mundus (world/order)\",\n    \"reading\": \"Placing the world-circle; arrangement of cosmic or ordered form in space\",\n    \"languages\": [\"sa\", \"en\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Monier-Williams Sanskrit Dictionary\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Man-de-lay ≈ French 'mandelé' or 'mandé' (sent/commanded); Spanish 'mandé' (I commanded)\",\n    \"reading\": \"A command or sending-forth; imperative action or delegation\",\n    \"languages\": [\"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bay = English bay (body of water; also reddish-brown color; also to bark). Man-da-lay-bay = Man speaks/barks the ordered circle at water's edge\",\n    \"reading\": \"Masculine utterance at the boundary of water; resonance at the threshold of fluid and solid\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay Bay: rearrange as 'bay-man-dal' or 'dam-balya'; dam (barrier/mother); bal/bala (strength in Sanskrit)\",\n    \"reading\": \"The barrier of strength; maternal containment of force and power\",\n    \"languages\": [\"en\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (13th letter = unity/return); A (1st = beginning); N (14th = finality); D (4th = wholeness); L (12th = law); Y (25th = mystery)\",\n    \"reading\": \"Beginning through law and hidden return; the cycle of manifestation under divine order concealed\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"First letters: M-D-B; final letters: N-Y; middle syllables form 'dal' (Sanskrit: piece, part, branch)\",\n    \"reading\": \"Parts and pieces distributed; fractional manifestation of wholes\",\n    \"languages\": [\"sa\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bay (Old English baeg, ring/circle; also from Old French baie, reddish); man (Old English mann, human/masculine)\",\n    \"reading\": \"The human encircled; mankind held within or marked by the ring-form\",\n    \"languages\": [\"en\", \"of\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Lay' as French 'lai' (lay, poem, song); 'Man-da' as Pali 'manda' (slow, sluggish)\",\n    \"reading\": \"The slow song; languorous utterance; poetry of deceleration and stillness\",\n    \"languages\": [\"fr\", \"pi\"],\n    \"source\": \"generative\",",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 3096)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-da-lay = Man + da + lay; 'da' (Russian) = yes; 'lay' (English) = to recline or place\",\n    \"reading\": \"The man says yes, reclines or places himself in position of affirmation.\",\n    \"languages\": [\"en\", \"ru\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mandala (Sanskrit maṇḍala) = circle, disk; -ay suffix (Old English) = way, path\",\n    \"reading\": \"The circular path; the way of the mandala; sacred geometry in motion or pilgrimage.\",\n    \"languages\": [\"sa\", \"en\"],\n    \"source\": \"Oxford English Dictionary; Sanskrit lexicon\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Man-da-lay ≈ 'manda' (Latin) = he/she commands; 'lay' (English) = song or poem\",\n    \"reading\": \"A command sung; the authoritative utterance; decree made manifest in verse.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + dal + ay; 'dal' (Hindi) = lentil, pulse; 'ay' = exclamation\",\n    \"reading\": \"The man of the lentil; sustenance and earthly nourishment; the cry of the common.\",\n    \"languages\": [\"en\", \"hi\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay → 'Lay man' + 'da' + remaining letters; lay + man = the secular one\",\n    \"reading\": \"The layman; the uninitiated; the profane standing before the sacred threshold.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M = 13; A = 1; Y = 25; M-A-Y reads as the month; dal = the door (Hebrew dalet)\",\n    \"reading\": \"May's door; the threshold of spring; the opening into the season of becoming.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Mand' (Latin mandare) = to entrust, command; 'a-lay' = to calm, settle\",\n    \"reading\": \"The command to settle; the entrusted peace; authority bringing rest.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"'Man' (English) + 'dé' (French) = of, from; 'lay' = laity, secular\",\n    \"reading\": \"The man of the secular; the worldly one; the profane separated from the sacred.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M-A-N-D-A-L-A-Y: first letters of 'Many Arcane Numinous Doors Await Luminous Ascent Yearly'\",\n    \"reading\": \"Many mysterious doors await luminous ascent each year; cyclical spiritual opening.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"'Bay' (Old English bæg) = body of water; 'mandala' = sacred circle; circle of waters\",\n    \"reading\": \"The sacred waters; the circular bay; the gathering place of reflection and depth.\",\n    \"languages\": [\"en\", \"sa\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Man-dal-ay' ≈ 'Manda-lay' where 'lay' (Old English) = to lie, to rest in death\",\n    \"reading\": \"The mandala of death; the sacred geometry of final rest; the circle of return.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"'Mandala' (Sanskrit) + 'y' (Greek upsilon) = U-form, the womb, return to source\",\n    \"reading\": \"The mandala returns to the womb; cyclical return to origin; sacred geometry of becoming.\",\n    \"languages\": [\"sa\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-da-lay = Man + da + lay; 'da' (Russian) = yes; 'lay' (English) = to recline or place",
+   "reading": "The man says yes, reclines or places himself in position of affirmation.",
+   "languages": [
+    "en",
+    "ru"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Mandala (Sanskrit maṇḍala) = circle, disk; -ay suffix (Old English) = way, path",
+   "reading": "The circular path; the way of the mandala; sacred geometry in motion or pilgrimage.",
+   "languages": [
+    "sa",
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Sanskrit lexicon",
+   "confidence": 0.75
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Man-da-lay ≈ 'manda' (Latin) = he/she commands; 'lay' (English) = song or poem",
+   "reading": "A command sung; the authoritative utterance; decree made manifest in verse.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + dal + ay; 'dal' (Hindi) = lentil, pulse; 'ay' = exclamation",
+   "reading": "The man of the lentil; sustenance and earthly nourishment; the cry of the common.",
+   "languages": [
+    "en",
+    "hi"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay → 'Lay man' + 'da' + remaining letters; lay + man = the secular one",
+   "reading": "The layman; the uninitiated; the profane standing before the sacred threshold.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M = 13; A = 1; Y = 25; M-A-Y reads as the month; dal = the door (Hebrew dalet)",
+   "reading": "May's door; the threshold of spring; the opening into the season of becoming.",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'Mand' (Latin mandare) = to entrust, command; 'a-lay' = to calm, settle",
+   "reading": "The command to settle; the entrusted peace; authority bringing rest.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "'Man' (English) + 'dé' (French) = of, from; 'lay' = laity, secular",
+   "reading": "The man of the secular; the worldly one; the profane separated from the sacred.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M-A-N-D-A-L-A-Y: first letters of 'Many Arcane Numinous Doors Await Luminous Ascent Yearly'",
+   "reading": "Many mysterious doors await luminous ascent each year; cyclical spiritual opening.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "'Bay' (Old English bæg) = body of water; 'mandala' = sacred circle; circle of waters",
+   "reading": "The sacred waters; the circular bay; the gathering place of reflection and depth.",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'Man-dal-ay' ≈ 'Manda-lay' where 'lay' (Old English) = to lie, to rest in death",
+   "reading": "The mandala of death; the sacred geometry of final rest; the circle of return.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "'Mandala' (Sanskrit) + 'y' (Greek upsilon) = U-form, the womb, return to source",
+   "reading": "The mandala returns to the womb; cyclical return to origin; sacred geometry of becoming.",
+   "languages": [
+    "sa",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

@@ -5,15 +5,144 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:25:13+00:00",
- "latency_s": 8.87,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:08:31+00:00",
+ "latency_s": 10.04,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Astro (Greek astron = star) + world (Old English weorold = age, human existence)\",\n    \"reading\": \"The age of stars; the cosmos as a domain of human time and experience.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"OED; Liddell-Scott Greek Lexicon\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"As-tro-world: 'as' (being) + 'tro' (turn, rotate) + 'world' (realm)\",\n    \"reading\": \"Being in a rotating realm; existence within cyclical cosmic motion and return.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Astro (French 'astro' = star-related) + world (Old English weorold) + French 'l'or' (the gold)\",\n    \"reading\": \"The golden star-realm; precious celestial matter and illumination as world-substance.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"A-stro-world: 'a' (privation, negation) + 'stro' (street, via in Latin) + 'world'\",\n    \"reading\": \"Without the street; the world removed from common pathways, transcendent or hidden.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Initial letters: A-S-T-R-W = 'A Stellar Turning Reveals Worlds'\",\n    \"reading\": \"Rotation of stellar bodies discloses hidden worlds and universal principles.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Astroworld rearranged: 'world rots a' or 'arts old wor(l)d'\",\n    \"reading\": \"The old world of art decays; ancient wisdom encoded in creative form dissolves.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"W as omega (end) + world + astro = star-light at the ending of worlds\",\n    \"reading\": \"The final illumination; stellar consciousness at the threshold of transformation and closure.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Astro' (star) + 'world' heard as 'world' (unfurled, unrolled spiral)\",\n    \"reading\": \"Stars unfold in spiraling revelation; cosmic knowledge unrolls across existence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Latin 'astra' (stars) + English 'world'; Greek 'kosmos' (order) implicit in 'world'\",\n    \"reading\": \"The ordered realm of stars; celestial harmony as the substance of being.\",\n    \"languages\": [\"la\", \"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Astro- (Greek astron) + -world (PIE *wer- = turn, roll); compound = turning stars\",\n    \"reading\": \"Celestial bodies in their perpetual",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 37 (char 2794)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Astro (Greek astron = star) + world (Old English weorold = age, human existence)\",\n    \"reading\": \"The age of stars; the human epoch governed by celestial bodies and their influences.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"Oxford English Dictionary; Liddell-Scott Greek Lexicon\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"As-tro-world: 'as' (being) + 'tro' (turn, rotation) + 'world' (realm)\",\n    \"reading\": \"The realm where being turns; existence in rotation or cyclical transformation.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Astro (French astro-) + monde (French for world); astromonde = star-world\",\n    \"reading\": \"The stellar realm; cosmos as the totality of celestial phenomena and their manifestations.\",\n    \"languages\": [\"fr\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Astro' sounds like 'a stro' = 'a strong'; 'world' = realm\",\n    \"reading\": \"A strong realm; a powerful domain of force and dominion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Astroworld → 'Toward Orals' or 'Orators Wold' (rearrangement of letters)\",\n    \"reading\": \"Speech directed toward a wild place; oratory in the open field of existence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"A-S-T-R-O-W-O-R-L-D: initial letters as acronym for hidden phrase\",\n    \"reading\": \"Astral Sphere Turns, Revealing Occult Wisdom, Opening Realms, Lifting Darkness.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"O (circle, perfection) at center; ASTRO-WORLD frames the cosmic whole\",\n    \"reading\": \"The perfect circle of cosmos; wholeness framed by stellar and terrestrial boundaries.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Astro' (aster, star) + 'world' (wer-old, man-age); wer = man in Germanic\",\n    \"reading\": \"The age of man under stars; human existence measured by celestial time.\",\n    \"languages\": [\"grc\", \"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Latin 'astrum' (star) + Old English 'weorold' (human condition, age)\",\n    \"reading\": \"The stellar condition of humanity; the cosmic age in which mortals dwell.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Astro' (Greek astron, star) + 'wor' (war, conflict) + 'ld' (old, ancient)\",\n    \"reading\": \"Ancient conflict among the stars; primordial celestial warfare and discord.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Greek astron (aster = star, from root meaning 'to scatter') + world\",\n    \"reading\": \"The scattered realm; the world as dispersed stellar light and cosmic dust.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"Liddell-Scott Greek Lexicon\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Astroworld → 'Wold Roasts' or 'Toads Rowl' (partial rearrangement)\",\n    \"reading\": \"The open field burns; transformation of the wild earth through celestial fire.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Astro (Greek astron = star) + world (Old English weorold = age, human existence)",
+   "reading": "The age of stars; the human epoch governed by celestial bodies and their influences.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Liddell-Scott Greek Lexicon",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "As-tro-world: 'as' (being) + 'tro' (turn, rotation) + 'world' (realm)",
+   "reading": "The realm where being turns; existence in rotation or cyclical transformation.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Astro (French astro-) + monde (French for world); astromonde = star-world",
+   "reading": "The stellar realm; cosmos as the totality of celestial phenomena and their manifestations.",
+   "languages": [
+    "fr",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'Astro' sounds like 'a stro' = 'a strong'; 'world' = realm",
+   "reading": "A strong realm; a powerful domain of force and dominion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Astroworld → 'Toward Orals' or 'Orators Wold' (rearrangement of letters)",
+   "reading": "Speech directed toward a wild place; oratory in the open field of existence.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "A-S-T-R-O-W-O-R-L-D: initial letters as acronym for hidden phrase",
+   "reading": "Astral Sphere Turns, Revealing Occult Wisdom, Opening Realms, Lifting Darkness.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "O (circle, perfection) at center; ASTRO-WORLD frames the cosmic whole",
+   "reading": "The perfect circle of cosmos; wholeness framed by stellar and terrestrial boundaries.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'Astro' (aster, star) + 'world' (wer-old, man-age); wer = man in Germanic",
+   "reading": "The age of man under stars; human existence measured by celestial time.",
+   "languages": [
+    "grc",
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Latin 'astrum' (star) + Old English 'weorold' (human condition, age)",
+   "reading": "The stellar condition of humanity; the cosmic age in which mortals dwell.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'Astro' (Greek astron, star) + 'wor' (war, conflict) + 'ld' (old, ancient)",
+   "reading": "Ancient conflict among the stars; primordial celestial warfare and discord.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Greek astron (aster = star, from root meaning 'to scatter') + world",
+   "reading": "The scattered realm; the world as dispersed stellar light and cosmic dust.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "Liddell-Scott Greek Lexicon",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "Astroworld → 'Wold Roasts' or 'Toads Rowl' (partial rearrangement)",
+   "reading": "The open field burns; transformation of the wild earth through celestial fire.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

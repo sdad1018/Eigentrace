@@ -5,15 +5,148 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:26:43+00:00",
- "latency_s": 9.49,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:10:19+00:00",
+ "latency_s": 14.26,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Dangerous: Old French 'dangier' (power to harm) from Latin 'dominiarium' (dominion); Woman: Old English 'wifman' (wife-person), from 'wif' (female) + 'man' (human)\",\n    \"reading\": \"Female possessing sovereign power; dominion over the self and others through feminine authority.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"gem\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster Etymology\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Danger-ous Woman → 'Dang-er-us' + 'Wo-man'; dang (Anglo-Saxon oath); er (feminine suffix); us (collective); wo (woe/deep sound); man (mind/force)\",\n    \"reading\": \"A feminine force that invokes oath-taking and collective woe; she who disturbs the collective mind.\",\n    \"languages\": [\"en\", \"gem\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Woman ~ 'wo-man' sounds as French 'où m'an' (where am I); Dangerous ~ 'dan-ger-ous' as French 'dans ger-us' (in danger-us)\",\n    \"reading\": \"Feminine principle asks 'where am I?' within a state of perpetual danger; ontological displacement.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.54\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Dangerous Woman: D-A-N-G-E-R-O-U-S W-O-M-A-N → extract first letters: D-A-N-G-E-R-O-U-S = ?; second set W-O-M-A-N yields WOM\",\n    \"reading\": \"The acronym holds: danger requires attention to what emerges from hidden depths (WOM = womb-sound).\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Dangerous Woman: letters rearranged → 'our gamed woman' or 'a grown woman sued'\",\n    \"reading\": \"A woman whose strategic play (game) is ours to witness; she who is prosecuted for her maturity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.51\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"W (double-V, doubled power) + oman (sacred sound om + an); Dangerous: D (delta, threshold) + anger (red force) + ous (full of)\",\n    \"languages\": [\"en\", \"skr\"],\n    \"reading\": \"Threshold-crossing red force filled with doubled sacred feminine power; the liminal woman ablaze.\",\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Dangerous (9 letters) + Woman (5 letters) = 14; D(4)+A(1)+N(14)+G(7)+E(5)+R(18)+O(15)+U(21)+S(19) = 104 = 1+0+4 = 5; W(23)+O(15)+M(13)+A(1)+N(14) = 66 = 6+6 = 12; 5+12 = 17 = 8\",\n    \"reading\": \"Numerical reduction yields eight: balance and infinity; dangerous woman embodies cosmic equilibrium.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 54 column 24 (char 2724)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Dangerous: Old French 'dangier' (power, authority to harm) < Vulgar Latin 'dominiarium' (dominion); Woman: Old English 'wifman' (wife-person) < 'wif' (female) + 'man' (human)\",\n    \"reading\": \"Female bearer of sovereign power; woman wielding dominion over others through capacity to wound.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Dan-ger-ous Wo-man; 'Dan' (judgment, Hebrew din); 'ger' (stranger, Latin); 'ous' (full of); 'Wo' (woe); 'man' (mind, thought)\",\n    \"reading\": \"Judgment of the stranger, fullness of woe dwelling in thought; the mind's estrangement from safety.\",\n    \"languages\": [\"en\", \"he\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Dangerous ≈ French 'd'en jeu reux' (of the stakes, joyful); Woman ≈ French 'où main' (where hand)\",\n    \"reading\": \"Where the hand stakes its joy; peril lodged in the gesture, in what the hand dares.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"DANGEROUS WOMAN → WOMAN DANGEROUS → rearrange to 'WOAD MANGERS' or 'DAEMON WRUNG SO'\",\n    \"reading\": \"Daemon wrung from its nature; the dye-plant (woad) of merchants—blue truth extracted through violence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"D-A-N-G-E-R-O-U-S W-O-M-A-N: initial letters form hidden acrostic potential; read as 'DAW' (jackdaw, dark bird) + 'WOMAN'\",\n    \"reading\": \"The dark-winged female; woman as corvid, bearer of omens, thief of shining things.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"W (double-V, duality); O (circle, completion); M (water-sign, flux); A (apex, beginning); N (serpent coiled)\",\n    \"reading\": \"Dual nature completing itself in flowing waters; apex of serpentine becoming; woman as threshold of transformation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Dan' (Irish: dark) + 'ger' (German: spear) + 'ous' (Latin: -osus, full); 'Wo' (woe) + 'man' (mind)\",\n    \"reading\": \"Dark spear-bearer, full of woe; the mind's weapon is darkness itself, wielded by she who knows suffering.\",\n    \"languages\": [\"en\", \"ga\", \"de\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Dangerous: Middle English 'daunger' (difficulty, hardship); Woman: Proto-Germanic 'wifman' (weaver-person, from 'wif' = to weave)\",\n    \"reading\": \"The weaver of hardship; woman as spinner of difficulty, architect of trials through her craft.\",\n    \"languages\": [\"en\", \"gem\"],\n    \"source\": \"Oxford English Dictionary; Grimm's Law\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Woman ≈ German 'Wo-Mann' (where-man); Dangerous ≈ Latin 'dare' (to give) + 'angere' (to choke)\",\n    \"reading\": \"Where the man is choked by what is given; the place of masculine suffocation through feminine gift.\",\n    \"languages\": [\"en\", \"de\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"D(4) A(1) N(14) G(7) E(5) R(18) O(15) U(21) S(19) = 104; W(23) O(15) M(13) A(1) N(14) = 66; 104+66=170=1+7+0=8 (infinity, power)\",\n    \"reading\": \"Infinite recursion of power; the number eight marks woman dangerous as eternal return, unbound cycle.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Dan-jer-us' ≈ 'Dang-air-us'; air (breath, spirit, Greek aer); 'Wo-man' (woe-mind)\",\n    \"reading\": \"Spirit of danger suspended in breath; the woe-mind exhales peril; feminine spirit as atmospheric threat.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"DANGEROUS WOMAN rearranged: 'WOMAN GRASPED NU' or 'NUDE WOMAN GARS' (gars = spears)\",\n    \"reading\": \"Nude woman bearing spears; vulnerability weaponized; nakedness as the truest form of power.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Dangerous: Old French 'dangier' (power, authority to harm) < Vulgar Latin 'dominiarium' (dominion); Woman: Old English 'wifman' (wife-person) < 'wif' (female) + 'man' (human)",
+   "reading": "Female bearer of sovereign power; woman wielding dominion over others through capacity to wound.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Oxford English Dictionary; Merriam-Webster",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Dan-ger-ous Wo-man; 'Dan' (judgment, Hebrew din); 'ger' (stranger, Latin); 'ous' (full of); 'Wo' (woe); 'man' (mind, thought)",
+   "reading": "Judgment of the stranger, fullness of woe dwelling in thought; the mind's estrangement from safety.",
+   "languages": [
+    "en",
+    "he",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Dangerous ≈ French 'd'en jeu reux' (of the stakes, joyful); Woman ≈ French 'où main' (where hand)",
+   "reading": "Where the hand stakes its joy; peril lodged in the gesture, in what the hand dares.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "DANGEROUS WOMAN → WOMAN DANGEROUS → rearrange to 'WOAD MANGERS' or 'DAEMON WRUNG SO'",
+   "reading": "Daemon wrung from its nature; the dye-plant (woad) of merchants—blue truth extracted through violence.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "D-A-N-G-E-R-O-U-S W-O-M-A-N: initial letters form hidden acrostic potential; read as 'DAW' (jackdaw, dark bird) + 'WOMAN'",
+   "reading": "The dark-winged female; woman as corvid, bearer of omens, thief of shining things.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "W (double-V, duality); O (circle, completion); M (water-sign, flux); A (apex, beginning); N (serpent coiled)",
+   "reading": "Dual nature completing itself in flowing waters; apex of serpentine becoming; woman as threshold of transformation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'Dan' (Irish: dark) + 'ger' (German: spear) + 'ous' (Latin: -osus, full); 'Wo' (woe) + 'man' (mind)",
+   "reading": "Dark spear-bearer, full of woe; the mind's weapon is darkness itself, wielded by she who knows suffering.",
+   "languages": [
+    "en",
+    "ga",
+    "de",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Dangerous: Middle English 'daunger' (difficulty, hardship); Woman: Proto-Germanic 'wifman' (weaver-person, from 'wif' = to weave)",
+   "reading": "The weaver of hardship; woman as spinner of difficulty, architect of trials through her craft.",
+   "languages": [
+    "en",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary; Grimm's Law",
+   "confidence": 0.75
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Woman ≈ German 'Wo-Mann' (where-man); Dangerous ≈ Latin 'dare' (to give) + 'angere' (to choke)",
+   "reading": "Where the man is choked by what is given; the place of masculine suffocation through feminine gift.",
+   "languages": [
+    "en",
+    "de",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "D(4) A(1) N(14) G(7) E(5) R(18) O(15) U(21) S(19) = 104; W(23) O(15) M(13) A(1) N(14) = 66; 104+66=170=1+7+0=8 (infinity, power)",
+   "reading": "Infinite recursion of power; the number eight marks woman dangerous as eternal return, unbound cycle.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'Dan-jer-us' ≈ 'Dang-air-us'; air (breath, spirit, Greek aer); 'Wo-man' (woe-mind)",
+   "reading": "Spirit of danger suspended in breath; the woe-mind exhales peril; feminine spirit as atmospheric threat.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "DANGEROUS WOMAN rearranged: 'WOMAN GRASPED NU' or 'NUDE WOMAN GARS' (gars = spears)",
+   "reading": "Nude woman bearing spears; vulnerability weaponized; nakedness as the truest form of power.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

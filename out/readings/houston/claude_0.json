@@ -5,15 +5,140 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:25:50+00:00",
- "latency_s": 8.48,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:09:14+00:00",
+ "latency_s": 9.82,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou-ston; hou (OE) = head covering; ston (OE) = stone\",\n    \"reading\": \"Stone that covers or crowns the head; a monument or capstone.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Hou-ston ≈ French 'où ston' = where stone; 'où' (where) + 'ston' (stone)\",\n    \"reading\": \"Where the stone is; interrogation directed toward the immobile, the foundational.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou-ston; hou ≈ 'hue' (color, essence); ston ≈ 'stone' (matter)\",\n    \"reading\": \"The color or essence crystallized in stone; matter made visible.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"ston from Proto-Germanic *stainaz; Old English stān; cognate with Greek στόα (stoa, portico)\",\n    \"reading\": \"The standing-place, the threshold between shelter and exposure; architectural threshold.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Houston → out-hons; out (beyond) + hons (honeyed ones, beloved)\",\n    \"reading\": \"Sweetness cast outward; expelled honey; love extended beyond the threshold.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou-ston; hou ≈ Old Norse 'hús' (house); ston ≈ stone\",\n    \"reading\": \"The stone house; domestic foundation; the dwelling made permanent.\",\n    \"languages\": [\"en\", \"non\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"H-O-U-S-T-O-N; initial letters read as acrostic seed\",\n    \"reading\": \"Hermetic Opening Unites Stone Toward Occult Nature.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"S and T are angular; O and U are rounded; balance of force and flow\",\n    \"reading\": \"Tension between rigid geometry and fluid curves; masculine-feminine dynamic in syllabic form.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Hou-ston ≈ Latin 'hous' (none exists) but 'hou' ≈ 'heu' (alas); ston ≈ 'sto' (I stand)\",\n    \"reading\": \"Alas, I stand; lamentation of the immobile; witness in sorrow.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou-ston; hou ≈ Scots 'hoo' (how); ston ≈ stone\",\n    \"reading\": \"How does stone speak? The inquiry directed at the mute and eternal.\",",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 2628)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou-ston; hou (Old English) = hollow/cave + ston (Old English) = stone\",\n    \"reading\": \"Hollow stone; a cavity or chamber within stone; the void within matter.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Houston ≈ Hou + ston; French 'où' (where) + 'stone' (English)\",\n    \"reading\": \"Where is stone? The question of matter's location or essence in space.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou-ston; 'hou' as breath/exhalation + 'ston' as standing/position\",\n    \"reading\": \"The breath stands; spirit made manifest in fixed form; pneuma crystallized.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Houston → Thou + son; or Hou + tons; or Shout + no\",\n    \"reading\": \"Thou son: the divine child; the second person addressing the offspring of creation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"H=8, O=15, U=21, S=19, T=20, O=15, N=14; sum=112; 1+1+2=4\",\n    \"reading\": \"The number four: foundation, stability, the four corners of material reality.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"ston from Old English 'stan' (stone); hou from Old English 'hol' (hollow)\",\n    \"reading\": \"The hollow place of stone; a dwelling carved from or within rock; shelter in matter.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou-ston; 'hou' as house + 'ston' as stone; house-stone\",\n    \"reading\": \"Stone house; the permanent dwelling; architecture as petrified shelter.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Houston ≈ 'haut' (French, high) + 'ston' (stone)\",\n    \"reading\": \"High stone; the elevated, the sublime; stone raised upward toward heaven.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"H-O-U-S-T-O-N as initial letters: Hoc Opus Universale Sapientiae Totius Omnium Natura\",\n    \"reading\": \"This universal work of all wisdom and nature's totality; the Great Work itself.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou-ston; 'ston' as 'stun' + 'on'; or 'stone' + 'on'\",\n    \"reading\": \"Stone turned on; matter activated; the animation of the inert.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Houston ≈ Greek 'houtos' (this one) + 'ston' (stone)\",\n    \"reading\": \"This stone; the pointing toward a specific, singular matter; thisness of substance.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Houston → Honest + u; or Shout + no + n\",\n    \"reading\": \"Honest utterance negated; the cry that denies; truth inverted into silence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Hou-ston; hou (Old English) = hollow/cave + ston (Old English) = stone",
+   "reading": "Hollow stone; a cavity or chamber within stone; the void within matter.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Houston ≈ Hou + ston; French 'où' (where) + 'stone' (English)",
+   "reading": "Where is stone? The question of matter's location or essence in space.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hou-ston; 'hou' as breath/exhalation + 'ston' as standing/position",
+   "reading": "The breath stands; spirit made manifest in fixed form; pneuma crystallized.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Houston → Thou + son; or Hou + tons; or Shout + no",
+   "reading": "Thou son: the divine child; the second person addressing the offspring of creation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "H=8, O=15, U=21, S=19, T=20, O=15, N=14; sum=112; 1+1+2=4",
+   "reading": "The number four: foundation, stability, the four corners of material reality.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "ston from Old English 'stan' (stone); hou from Old English 'hol' (hollow)",
+   "reading": "The hollow place of stone; a dwelling carved from or within rock; shelter in matter.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hou-ston; 'hou' as house + 'ston' as stone; house-stone",
+   "reading": "Stone house; the permanent dwelling; architecture as petrified shelter.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Houston ≈ 'haut' (French, high) + 'ston' (stone)",
+   "reading": "High stone; the elevated, the sublime; stone raised upward toward heaven.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "H-O-U-S-T-O-N as initial letters: Hoc Opus Universale Sapientiae Totius Omnium Natura",
+   "reading": "This universal work of all wisdom and nature's totality; the Great Work itself.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hou-ston; 'ston' as 'stun' + 'on'; or 'stone' + 'on'",
+   "reading": "Stone turned on; matter activated; the animation of the inert.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Houston ≈ Greek 'houtos' (this one) + 'ston' (stone)",
+   "reading": "This stone; the pointing toward a specific, singular matter; thisness of substance.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Houston → Honest + u; or Shout + no + n",
+   "reading": "Honest utterance negated; the cry that denies; truth inverted into silence.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

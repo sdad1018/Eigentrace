@@ -5,15 +5,143 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:23:30+00:00",
- "latency_s": 9.45,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:06:33+00:00",
+ "latency_s": 11.51,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Nevada < Spanish nevada, feminine past participle of nevar (to snow) < Latin nivāre < nix (snow)\",\n    \"reading\": \"Snowed upon; covered in snow. The feminine form suggests receptivity to celestial precipitation.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Corominas, Diccionario Crítico Etimológico\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ne-vada: Ne (not) + vada (going, from Latin vadare, to wade/ford)\",\n    \"reading\": \"That which does not go; the immobile whiteness; the arrested journey through water or snow.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Nevada ≈ French 'n'évade' (does not escape, subjunctive of évader)\",\n    \"reading\": \"That which does not flee; the trapped, the confined, the snow-bound prisoner of altitude.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Nev-ada: Nev (nef, ship) + ada (feminine suffix suggesting gift or destiny)\",\n    \"reading\": \"The gift or destiny of the ship; the vessel's fate; navigation through white silence.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Nevada → Evanda, Vandea, Avaned\",\n    \"reading\": \"Rearrangement yields Vandea: the wanderer, the one who roams; dispersed whiteness across terrain.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N (14th letter, duality/balance) + V (22nd, the vessel) + D (4th, materiality)\",\n    \"reading\": \"Balance of the vessel containing material manifestation; crystalline dualism made tangible.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"N=14, E=5, V=22, A=1, D=4, A=1: sum=47; 4+7=11; 1+1=2\",\n    \"reading\": \"The mystery of duality emerging from the eleven gates; the initiate's passage to binary knowing.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Nav-ada: Nav (navis, ship, or navigate) + ada (fate, destiny)\",\n    \"reading\": \"The ship's destined course; navigation bound to inevitable white silence and celestial law.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Nevada ≈ Latin 'ne vada' (that you not ford/pass; prohibition imperative)\",\n    \"reading\": \"The command: do not cross; do not pass through; the impassable whiteness forbids entry.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Nevada: N-E-V-A-D-A as initial letters of a hidden phrase\",\n    \"reading\": \"No Escape—Vast Abyss—Descends Always: the inevitable fall into white",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 24 (char 2839)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Nevada < Spanish nevado, past participle of nevar (to snow) < Latin nivatus < nix (snow)\",\n    \"reading\": \"The snowed-upon; that which is covered in snow or whiteness; the frozen state.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Corominas, Diccionario crítico etimológico\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ne-vada: ne (not) + vada (ford, passage) in Romance; or ne (no) + vada (void)\",\n    \"reading\": \"The impassable place; where one cannot ford or cross; the void that cannot be traversed.\",\n    \"languages\": [\"la\", \"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Nevada ≈ French 'ne va da' (does not go there); ne (not) + va (goes) + da (there)\",\n    \"reading\": \"That which does not proceed; the place of non-movement; cessation of passage.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Nev-ada: nev- (snow root) + -ada (feminine suffix denoting state or collection)\",\n    \"reading\": \"A collection or abundance of snow; the snowy state personified as feminine principle.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Nevada → Avaned, Vanned, Daven, Evdan (rearrangements)\",\n    \"reading\": \"The rearranged letters suggest: van (empty vessel), aden (garden), daven (to pray in Yiddish).\",\n    \"languages\": [\"en\", \"yi\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N=14, E=5, V=22, A=1, D=4, A=1; sum = 47; 4+7=11; 1+1=2 (duality)\",\n    \"reading\": \"The number eleven: the transgressive, the liminal, the doubled unity; the threshold.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Nev-ad-a: nev (snow) + ad (to, toward) + a (the feminine); toward the snow-feminine\",\n    \"reading\": \"Movement toward the white feminine principle; the approach to crystalline purity.\",\n    \"languages\": [\"la\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Nevada ≈ Latin 'ne vada' (do not ford); imperative negation of passage\",\n    \"reading\": \"The prohibition against crossing; the uncrossable boundary; forbidden transit.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"N-E-V-A-D-A: initial letters as acronym; or read as N(ew) E(ternal) V(oid) A(nd) D(arkness) A(bove)\",\n    \"reading\": \"The new eternal void and darkness above; the celestial emptiness renewed.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ne-vad-a: ne (not) + vad (see, behold in Latin) + a (feminine); the unseen feminine\",\n    \"reading\": \"That which cannot be seen; the invisible feminine; the hidden principle.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Nevada < nix, nicis (Latin snow) + -ada (Spanish feminine state suffix); snowy condition\",\n    \"reading\": \"The feminine principle of snow; whiteness as a generative, transformative force.\",\n    \"languages\": [\"la\", \"es\"],\n    \"source\": \"Ernout-Meillet, Dictionnaire étymologique de la langue latine\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Nevada ≈ Italian 'ne va da' or 'non va da' (it does not suit, does not match)\",\n    \"reading\": \"That which is unsuitable; the mismatched; the principle of non-correspondence.\",\n    \"languages\": [\"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Nevada < Spanish nevado, past participle of nevar (to snow) < Latin nivatus < nix (snow)",
+   "reading": "The snowed-upon; that which is covered in snow or whiteness; the frozen state.",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "Oxford English Dictionary; Corominas, Diccionario crítico etimológico",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ne-vada: ne (not) + vada (ford, passage) in Romance; or ne (no) + vada (void)",
+   "reading": "The impassable place; where one cannot ford or cross; the void that cannot be traversed.",
+   "languages": [
+    "la",
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Nevada ≈ French 'ne va da' (does not go there); ne (not) + va (goes) + da (there)",
+   "reading": "That which does not proceed; the place of non-movement; cessation of passage.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Nev-ada: nev- (snow root) + -ada (feminine suffix denoting state or collection)",
+   "reading": "A collection or abundance of snow; the snowy state personified as feminine principle.",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Nevada → Avaned, Vanned, Daven, Evdan (rearrangements)",
+   "reading": "The rearranged letters suggest: van (empty vessel), aden (garden), daven (to pray in Yiddish).",
+   "languages": [
+    "en",
+    "yi"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N=14, E=5, V=22, A=1, D=4, A=1; sum = 47; 4+7=11; 1+1=2 (duality)",
+   "reading": "The number eleven: the transgressive, the liminal, the doubled unity; the threshold.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Nev-ad-a: nev (snow) + ad (to, toward) + a (the feminine); toward the snow-feminine",
+   "reading": "Movement toward the white feminine principle; the approach to crystalline purity.",
+   "languages": [
+    "la",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Nevada ≈ Latin 'ne vada' (do not ford); imperative negation of passage",
+   "reading": "The prohibition against crossing; the uncrossable boundary; forbidden transit.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "N-E-V-A-D-A: initial letters as acronym; or read as N(ew) E(ternal) V(oid) A(nd) D(arkness) A(bove)",
+   "reading": "The new eternal void and darkness above; the celestial emptiness renewed.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ne-vad-a: ne (not) + vad (see, behold in Latin) + a (feminine); the unseen feminine",
+   "reading": "That which cannot be seen; the invisible feminine; the hidden principle.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Nevada < nix, nicis (Latin snow) + -ada (Spanish feminine state suffix); snowy condition",
+   "reading": "The feminine principle of snow; whiteness as a generative, transformative force.",
+   "languages": [
+    "la",
+    "es"
+   ],
+   "source": "Ernout-Meillet, Dictionnaire étymologique de la langue latine",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Nevada ≈ Italian 'ne va da' or 'non va da' (it does not suit, does not match)",
+   "reading": "That which is unsuitable; the mismatched; the principle of non-correspondence.",
+   "languages": [
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

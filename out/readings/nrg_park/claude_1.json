@@ -5,15 +5,144 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:25:31+00:00",
- "latency_s": 9.2,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:08:54+00:00",
+ "latency_s": 11.91,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG = energy (homophone of 'en-R-G'); Park = enclosed garden\",\n    \"reading\": \"A bounded space of vital force or life-energy; a contained reservoir of power.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG ≈ 'en-erg' (French en = in; Greek ergon = work); Park = parc\",\n    \"reading\": \"Energy at work within an enclosed place; labour contained in a garden-space.\",\n    \"languages\": [\"fr\",\"grc\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N=14; R=18; G=7 (sum=39=3+9=12=1+2=3); Park=P(16)A(1)R(18)K(11)\",\n    \"reading\": \"The triad manifest; trinity expressing itself through bounded natural space.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Park: Old French parc, from Latin parricus (enclosure); NRG: abbreviation of energy from Greek energeia\",\n    \"reading\": \"An enclosure of active power or dynamic force; space where potential becomes manifest.\",\n    \"languages\": [\"en\",\"fr\",\"la\",\"grc\"],\n    \"source\": \"Oxford English Dictionary, s.v. park; Liddell-Scott, s.v. energeia\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"NRG PARK → PRANK + RG; GNAPR + K; or rearrange as GRAN + PRK\",\n    \"reading\": \"A trick or jest concerning growth; deceptive play within natural bounds.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Park = par + k; par (French) = equal/pair; k as hard consonant closure\",\n    \"reading\": \"Equilibrium sealed; a paired symmetry held fixed and bounded.\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"N-R-G-P-A-R-K as initial letters: 'No Rest, Great Power, All Remaining Kept'\",\n    \"reading\": \"Ceaseless potency contained; inexhaustible force held within fixed bounds.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG ≈ 'nergon' (near Greek); Park ≈ 'parc' (French for enclosure/trap)\",\n    \"reading\": \"Nerve or sinew trapped; the muscular will confined within walls.\",\n    \"languages\": [\"grc\",\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"NRG: modern abbreviation; energy < French énergie < Latin energia < Greek en- (in) + ergon (work)\",\n    \"reading\": \"Work dwelling inward; internal labour or activity concentrated in a place.\",\n    \"languages\": [\"grc\",\"la\",\"fr\",\"en\"],\n    \"source\": \"Ernout-Meillet, Dictionnaire étymologique de la langue latine\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"N-R =",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 40 (char 2779)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG = energy (homophone of 'energy' abbreviated); Park = enclosed space\",\n    \"reading\": \"Vital force contained within boundaries; life energy held in reserve or captivity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG ≈ 'en-erg' (French 'en' = in/within + Greek 'ergon' = work/action)\",\n    \"reading\": \"Work or action contained within; energy in potential or enclosed state.\",\n    \"languages\": [\"fr\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N = negation/no; R = rotation/return; G = generation/growth; Park = boundary\",\n    \"reading\": \"Negated rotation and generation within fixed limits; stasis masquerading as vitality.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"NRG PARK → PRANK + RG; or GRAN + PRK; or PARK + NRG rearranged\",\n    \"reading\": \"A deception or jest involving enclosed space; the trick of apparent containment.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"PARK: Old French 'parc' from Frankish 'parra' = enclosure; NRG abbreviated from 'energy' (Greek 'energeia')\",\n    \"reading\": \"The enclosure of force itself; a bounded manifestation of potential action.\",\n    \"languages\": [\"en\", \"fr\", \"grc\"],\n    \"source\": \"Oxford English Dictionary; Grimm's Law\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG = 'en-are-gee'; Park = 'park'; 'gee' = command to horse; 'are' = plural of 'is'\",\n    \"reading\": \"Within the enclosure, multiple beings are commanded or directed; controlled animation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"NRG: N=Nox (night), R=Regnum (kingdom), G=Generatio (generation); PARK=boundary\",\n    \"reading\": \"The kingdom of night's generation within limits; nocturnal creation held in reserve.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"PARK ≈ Hebrew 'perek' (פרק) = section/chapter; NRG ≈ 'nur' (nur = only, German)\",\n    \"reading\": \"Only a section or fragment; the isolated chapter of energy; incompleteness.\",\n    \"languages\": [\"he\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'NRG' as consonant cluster without vowels; 'PARK' with vowel 'a'; vowel absence = void\",\n    \"reading\": \"Emptiness and force without voice; silent energy; the unspeakable within the bounded.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P=path/passage; A=alpha/beginning; R=return/cycle; K=key; NRG=force\",\n    \"reading\": \"The key to the cyclic path's beginning; force that unlocks return and passage.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"NRG from 'energy' (Greek 'en-ergeia' = in-working); PARK from Germanic root 'parra' (enclosed)\",\n    \"reading\": \"The internalized work-force; action trapped in its own enclosure; paradox of bound motion.\",\n    \"languages\": [\"grc\", \"gem\"],\n    \"source\": \"Liddell-Scott; Kluge's Etymologisches Wörterbuch\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'NRG' = 'en-erg' (energy); 'PARK' = 'par-k' (by/through + k=kabbalistic letter); together = energy through the veil\",\n    \"reading\": \"Force transmitted through hidden or veiled channels; esoteric transmission of vital power.\",\n    \"languages\": [\"en\", \"fr\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "NRG = energy (homophone of 'energy' abbreviated); Park = enclosed space",
+   "reading": "Vital force contained within boundaries; life energy held in reserve or captivity.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "NRG ≈ 'en-erg' (French 'en' = in/within + Greek 'ergon' = work/action)",
+   "reading": "Work or action contained within; energy in potential or enclosed state.",
+   "languages": [
+    "fr",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N = negation/no; R = rotation/return; G = generation/growth; Park = boundary",
+   "reading": "Negated rotation and generation within fixed limits; stasis masquerading as vitality.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "NRG PARK → PRANK + RG; or GRAN + PRK; or PARK + NRG rearranged",
+   "reading": "A deception or jest involving enclosed space; the trick of apparent containment.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "etymology",
+   "chain": "PARK: Old French 'parc' from Frankish 'parra' = enclosure; NRG abbreviated from 'energy' (Greek 'energeia')",
+   "reading": "The enclosure of force itself; a bounded manifestation of potential action.",
+   "languages": [
+    "en",
+    "fr",
+    "grc"
+   ],
+   "source": "Oxford English Dictionary; Grimm's Law",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "NRG = 'en-are-gee'; Park = 'park'; 'gee' = command to horse; 'are' = plural of 'is'",
+   "reading": "Within the enclosure, multiple beings are commanded or directed; controlled animation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "NRG: N=Nox (night), R=Regnum (kingdom), G=Generatio (generation); PARK=boundary",
+   "reading": "The kingdom of night's generation within limits; nocturnal creation held in reserve.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "PARK ≈ Hebrew 'perek' (פרק) = section/chapter; NRG ≈ 'nur' (nur = only, German)",
+   "reading": "Only a section or fragment; the isolated chapter of energy; incompleteness.",
+   "languages": [
+    "he",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'NRG' as consonant cluster without vowels; 'PARK' with vowel 'a'; vowel absence = void",
+   "reading": "Emptiness and force without voice; silent energy; the unspeakable within the bounded.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P=path/passage; A=alpha/beginning; R=return/cycle; K=key; NRG=force",
+   "reading": "The key to the cyclic path's beginning; force that unlocks return and passage.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "NRG from 'energy' (Greek 'en-ergeia' = in-working); PARK from Germanic root 'parra' (enclosed)",
+   "reading": "The internalized work-force; action trapped in its own enclosure; paradox of bound motion.",
+   "languages": [
+    "grc",
+    "gem"
+   ],
+   "source": "Liddell-Scott; Kluge's Etymologisches Wörterbuch",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'NRG' = 'en-erg' (energy); 'PARK' = 'par-k' (by/through + k=kabbalistic letter); together = energy through the veil",
+   "reading": "Force transmitted through hidden or veiled channels; esoteric transmission of vital power.",
+   "languages": [
+    "en",
+    "fr",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

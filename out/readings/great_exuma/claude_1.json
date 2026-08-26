@@ -5,15 +5,149 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:29:43+00:00",
- "latency_s": 9.52,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:13:50+00:00",
+ "latency_s": 11.13,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great Exuma → GREAT + EX + UMA → grate (scrape) + ex (out) + uma (not)\",\n    \"reading\": \"That which scrapes outward; friction made manifest in external action or removal.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Great: Old English grēat (large); Exuma: ex (Latin, out) + uma (suffix, condition/quality)\",\n    \"reading\": \"The condition of being enlarged or extended outward; greatness made external and visible.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Lewis & Short\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ ex + huma; huma (Portuguese/Spanish) = human; ex = former\",\n    \"reading\": \"The former or exceeded human state; that which transcends or lies beyond humanity.\",\n    \"languages\": [\"pt\", \"es\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ex-U-ma → Ex (out) + U (the letter, self/being) + ma (mother, matter)\",\n    \"reading\": \"What emerges from the womb of matter; birth of self-being from material substance.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Great Exuma → rearrange to: Exergum Tea, Great Axe + Um, Gum Aerate X\",\n    \"reading\": \"The field or margin outside the work; a tool of severance; dispersion of matter through breath.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"G (Gimel, camel, measure) + EX (X marks the spot; crossing) + U (cup/vessel) + MA (mother)\",\n    \"reading\": \"The camel-measure crosses the vessel of the mother; transport of measure through the feminine vessel.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"G-R-E-A-T E-X-U-M-A → taking first letters or final letters as acrostic\",\n    \"reading\": \"GRE EXU MA: the initials suggest hidden instruction in the arrangement of letters themselves.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great ≈ grate; Exuma ≈ Ex-U-mah (utterance, divine name fragment)\",\n    \"reading\": \"The scraping sound of that-which-is-uttered; the friction of speech becoming manifest.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ Ex (Latin out) + uma ≈ ume (Japanese, plum); great = dai (Japanese, large)\",\n    \"reading\": \"The large fruit separated; ripeness cast outward; the great plum released from the tree.\",\n    \"languages\": [\"ja\", \"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Exuma: exogamous root; ex (out)",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 36 (char 2897)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great Exuma → Grate + Ex + Uma; grate (scrape, friction) + ex (out) + uma (breath, soul in Sanskrit)\",\n    \"reading\": \"Scraping away the outer breath; stripping the vital essence through friction and expulsion.\",\n    \"languages\": [\"en\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ Ex + Uma; French 'exhumé' (exhumed); Latin 'ex' (out) + 'humus' (earth, ground)\",\n    \"reading\": \"That which is drawn out from the earth; the exhumed, the unearthed secret or corpse.\",\n    \"languages\": [\"fr\", \"la\", \"en\"],\n    \"source\": \"Littré; Lewis & Short\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great Exuma → Grate + Ex + U + Ma; Ma (mother, the feminine principle)\",\n    \"reading\": \"The great scraping away of the maternal; friction against the generative principle.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Great Exuma → Exergum + Ate; exergum (space on a coin below the main design)\",\n    \"reading\": \"The consumed or devoured exergue; the small space beneath the image consumed by time.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"numismatic terminology; generative recombination\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Great: Old English 'great' (large, powerful); Exuma: possibly Greek 'exo' (outside) + 'uma' (water, fluid)\",\n    \"reading\": \"The great external waters; the mighty outpouring or exterior flow.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"OED; generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"GE (Great Exuma initials) = Gemini; X in Exuma = unknown, crossing, multiplication\",\n    \"reading\": \"The twins crossed by the unknown; duality intersected by mystery and hidden knowledge.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great Exuma → Grate + Ex + You + Ma; homophone 'you' (second person) + 'ma' (mother)\",\n    \"reading\": \"Scraping away: you and your mother; friction between the self and the maternal origin.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ French 'ex' + Latin 'humus'; German 'Exum' (not standard) but 'Examen' (examination, weighing)\",\n    \"reading\": \"The great weighing or trial; examination of what lies beneath the surface.\",\n    \"languages\": [\"fr\", \"la\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Great Exuma: G-E-E = GEE (exclamation); X-U-M-A = XUMA (no standard meaning, but X=chi, life force)\",\n    \"reading\": \"An exclamation of the life-force; wonder at the vital principle made manifest.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great Exuma → Grate + Ex + Yuma; Yuma (Native American people); ex (former, out)\",\n    \"reading\": \"The great scraping away of the former people; erasure and friction of indigenous presence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Great: PIE *gher- (to grasp, seize); Exuma: Latin 'ex' (out) + 'humus' (ground, humble)\",\n    \"reading\": \"Seizing what emerges from the earth; grasping the humble truth that rises from below.\",\n    \"languages\": [\"en\", \"la\", \"pie\"],\n    \"source\": \"OED; Lewis & Short\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great Exuma → Grate + Ex + Uma; Uma (Hindu goddess, Parvati); ex (absence, loss)\",\n    \"reading\": \"The great loss of the divine feminine; the goddess stripped away through friction and expulsion.\",\n    \"languages\": [\"en\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Great Exuma → Grate + Ex + Uma; grate (scrape, friction) + ex (out) + uma (breath, soul in Sanskrit)",
+   "reading": "Scraping away the outer breath; stripping the vital essence through friction and expulsion.",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Exuma ≈ Ex + Uma; French 'exhumé' (exhumed); Latin 'ex' (out) + 'humus' (earth, ground)",
+   "reading": "That which is drawn out from the earth; the exhumed, the unearthed secret or corpse.",
+   "languages": [
+    "fr",
+    "la",
+    "en"
+   ],
+   "source": "Littré; Lewis & Short",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Great Exuma → Grate + Ex + U + Ma; Ma (mother, the feminine principle)",
+   "reading": "The great scraping away of the maternal; friction against the generative principle.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "Great Exuma → Exergum + Ate; exergum (space on a coin below the main design)",
+   "reading": "The consumed or devoured exergue; the small space beneath the image consumed by time.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "numismatic terminology; generative recombination",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Great: Old English 'great' (large, powerful); Exuma: possibly Greek 'exo' (outside) + 'uma' (water, fluid)",
+   "reading": "The great external waters; the mighty outpouring or exterior flow.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "OED; generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "GE (Great Exuma initials) = Gemini; X in Exuma = unknown, crossing, multiplication",
+   "reading": "The twins crossed by the unknown; duality intersected by mystery and hidden knowledge.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Great Exuma → Grate + Ex + You + Ma; homophone 'you' (second person) + 'ma' (mother)",
+   "reading": "Scraping away: you and your mother; friction between the self and the maternal origin.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Exuma ≈ French 'ex' + Latin 'humus'; German 'Exum' (not standard) but 'Examen' (examination, weighing)",
+   "reading": "The great weighing or trial; examination of what lies beneath the surface.",
+   "languages": [
+    "fr",
+    "la",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Great Exuma: G-E-E = GEE (exclamation); X-U-M-A = XUMA (no standard meaning, but X=chi, life force)",
+   "reading": "An exclamation of the life-force; wonder at the vital principle made manifest.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Great Exuma → Grate + Ex + Yuma; Yuma (Native American people); ex (former, out)",
+   "reading": "The great scraping away of the former people; erasure and friction of indigenous presence.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Great: PIE *gher- (to grasp, seize); Exuma: Latin 'ex' (out) + 'humus' (ground, humble)",
+   "reading": "Seizing what emerges from the earth; grasping the humble truth that rises from below.",
+   "languages": [
+    "en",
+    "la",
+    "pie"
+   ],
+   "source": "OED; Lewis & Short",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Great Exuma → Grate + Ex + Uma; Uma (Hindu goddess, Parvati); ex (absence, loss)",
+   "reading": "The great loss of the divine feminine; the goddess stripped away through friction and expulsion.",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

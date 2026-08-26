@@ -5,15 +5,146 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:33:12+00:00",
- "latency_s": 8.91,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:18:01+00:00",
+ "latency_s": 9.4,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paris < Old French Paris < Latin Paris < Greek Parios (of Paros, the island)\",\n    \"reading\": \"Relating to or descended from Paros, the marble-bearing Aegean island; stone-born.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"grc\"],\n    \"source\": \"Oxford English Dictionary; Walde-Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Par-is; par (equal, peer) + is (being, existence)\",\n    \"reading\": \"That which is equal or peer to being itself; the condition of parity with existence.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paris ≈ French pari (bet, wager) + s (plural or verb ending)\",\n    \"reading\": \"Bets or wagers multiplied; the staking of futures upon uncertain outcomes.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Paris → Spair, Rapis, Pairs, Raips, Aspir\",\n    \"reading\": \"Pairs conjoined; duality wedded. Or: aspiration in its raw form, seeking upward.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P-A-R-I-S as initial letters: Pax, Ars, Regio, Initium, Signum\",\n    \"reading\": \"Peace, art, region, beginning, sign—the five pillars of civilized order.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Pa-ris; pa (father, bread in Latin) + ris (laughter, Greek gelos-cognate)\",\n    \"reading\": \"The father laughs; paternal mirth or the bread of joy; sustenance through humor.\",\n    \"languages\": [\"la\", \"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P = door/gateway; A = mountain/apex; R = flow/river; I = self; S = serpent/spiral\",\n    \"reading\": \"The gateway to the apex, where the river of selfhood spirals eternally inward.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paris ≈ Latin parere (to produce, bear, obey) + is\",\n    \"reading\": \"That which produces or bears; obedient generativity; submission that creates.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Par-i-s; par (equal) + i (the iota, smallest unit) + s (plural/essence)\",\n    \"reading\": \"Equality multiplied infinitely; justice distributed to the least and smallest.\",\n    \"languages\": [\"en\", \"grc\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paris < Greek Paris < par- (beside, near) + -is (feminine agent)\",\n    \"reading\": \"She who stands beside; the feminine principle of proximity, adjacency,",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 37 (char 2758)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paris < Old French Paris < Latin Paris < Greek Páris (Πάρις); root uncertain, possibly from Greek pariēnai (to prepare, make ready)\",\n    \"reading\": \"One who prepares or makes ready; the prepared one.\",\n    \"languages\": [\"grc\", \"la\", \"fr\", \"en\"],\n    \"source\": \"Oxford English Dictionary; Beekes Greek Etymological Lexicon\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Par + is; par (equal, peer) + is (being, existence)\",\n    \"reading\": \"The equal one; that which is peer or balanced in being.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Pa + ris; pa (father in many languages) + ris (laughter, from Latin ridere)\",\n    \"reading\": \"The father laughs; paternal laughter or joy.\",\n    \"languages\": [\"la\", \"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paris (French) sounds like 'par-ee'; Greek pariēnai (to stand beside, prepare)\",\n    \"reading\": \"One who stands beside; the companion or preparer.\",\n    \"languages\": [\"fr\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"PARIS → PAIRS; two equal things joined\",\n    \"reading\": \"Duality; the paired or coupled principle.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"PARIS → RAPIS (Latin rapere, to seize); SPAIR (to spare); PRIAS\",\n    \"reading\": \"That which seizes or takes; the rapacious principle.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P (the gate, opening); A (the beginning); R (the flow); I (the self); S (the serpent or sibilant force)\",\n    \"reading\": \"The opening through which the self flows as serpentine force.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P-A-R-I-S as initial letters: Pax Aeternum Regit Illuminata Sapientia\",\n    \"reading\": \"Eternal peace rules illuminated wisdom.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Par + is; par (through, by means of in Latin) + is (going, motion)\",\n    \"reading\": \"That which goes through; passage or transit.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paris (English) ≈ 'pair-us'; Latin par (equal) + -us (masculine nominative)\",\n    \"reading\": \"The equal male; the peer or match.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paris possibly from Parisius, a Gallic personal name; root par- (vessel, cauldron in Celtic)\",\n    \"reading\": \"The vessel; the container or receptacle.\",\n    \"languages\": [\"cel\", \"la\"],\n    \"source\": \"Beekes; Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Pa + ris; pa (all, universal in Greek) + ris (flow, current)\",\n    \"reading\": \"The universal flow; all things in motion.\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Paris < Old French Paris < Latin Paris < Greek Páris (Πάρις); root uncertain, possibly from Greek pariēnai (to prepare, make ready)",
+   "reading": "One who prepares or makes ready; the prepared one.",
+   "languages": [
+    "grc",
+    "la",
+    "fr",
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Beekes Greek Etymological Lexicon",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Par + is; par (equal, peer) + is (being, existence)",
+   "reading": "The equal one; that which is peer or balanced in being.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Pa + ris; pa (father in many languages) + ris (laughter, from Latin ridere)",
+   "reading": "The father laughs; paternal laughter or joy.",
+   "languages": [
+    "la",
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris (French) sounds like 'par-ee'; Greek pariēnai (to stand beside, prepare)",
+   "reading": "One who stands beside; the companion or preparer.",
+   "languages": [
+    "fr",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "PARIS → PAIRS; two equal things joined",
+   "reading": "Duality; the paired or coupled principle.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "PARIS → RAPIS (Latin rapere, to seize); SPAIR (to spare); PRIAS",
+   "reading": "That which seizes or takes; the rapacious principle.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P (the gate, opening); A (the beginning); R (the flow); I (the self); S (the serpent or sibilant force)",
+   "reading": "The opening through which the self flows as serpentine force.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P-A-R-I-S as initial letters: Pax Aeternum Regit Illuminata Sapientia",
+   "reading": "Eternal peace rules illuminated wisdom.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Par + is; par (through, by means of in Latin) + is (going, motion)",
+   "reading": "That which goes through; passage or transit.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris (English) ≈ 'pair-us'; Latin par (equal) + -us (masculine nominative)",
+   "reading": "The equal male; the peer or match.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Paris possibly from Parisius, a Gallic personal name; root par- (vessel, cauldron in Celtic)",
+   "reading": "The vessel; the container or receptacle.",
+   "languages": [
+    "cel",
+    "la"
+   ],
+   "source": "Beekes; Pokorny Indo-European Etymological Dictionary",
+   "confidence": 0.35
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Pa + ris; pa (all, universal in Greek) + ris (flow, current)",
+   "reading": "The universal flow; all things in motion.",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

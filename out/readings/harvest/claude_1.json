@@ -5,15 +5,147 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:20:48+00:00",
- "latency_s": 9.68,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:03:27+00:00",
+ "latency_s": 10.39,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"harvest < Old English hærfest < Proto-Germanic *harbistaz, cognate with German Herbst (autumn)\",\n    \"reading\": \"The season of autumn itself; the time when ripeness comes to natural completion.\",\n    \"languages\": [\"en\", \"de\", \"gem\"],\n    \"source\": \"Oxford English Dictionary, s.v. harvest\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har + vest; 'vest' as in 'invest,' 'divest'—clothing, covering, outer form\",\n    \"reading\": \"What is hard or harsh (har-) becomes clothed, invested with visible form or garment.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"harvest ≈ French 'ar-' (to, toward) + 'vest' (archaic waste, desolation); or Latin 'arvum' (field)\",\n    \"reading\": \"The gathering-in from the field (arvum); the return of plenty from cultivated ground.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"HARVEST → SHAVER + T; or HATERS + V; or ATHERS + V\",\n    \"reading\": \"That which shaves away; which strips or separates grain from chaff and field.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"HAR (hard, harsh, hare—swift motion) + VEST (west, the setting sun, completion)\",\n    \"reading\": \"Swift labour under the setting sun; the urgent race against waning light.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"H-A-R-V-E-S-T as acronym: He/All Reap Vast Earned Store Thrice\",\n    \"reading\": \"Universal reaping of abundance stored threefold within time and labour.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V as Roman numeral five; HAR (3 letters) + V(5) + EST (3 letters) = 3+5+3 = 11\",\n    \"reading\": \"Eleven: the number of excess, transgression, and the threshold between order and chaos.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"harvest < *har- (grasp, seize) + *-bestiz (beast, living thing); the seizing of life's fullness\",\n    \"reading\": \"The grasping or seizure of the living abundance; capture of fertility made manifest.\",\n    \"languages\": [\"gem\", \"en\"],\n    \"source\": \"Pokorny Indo-European Etymology Dictionary\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'har' as in Hebrew חר (char—to burn, be hot) + 'vest' (garment); burning cloth\",\n    \"reading\": \"Heat made manifest in woven form; the warmth and labour of the gathered season.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"harvest ≈ German 'Herbst' (autumn) ≈",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 2864)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"harvest < Old English hærfest < Proto-Germanic *harbistaz, related to *herban (to pluck, seize)\",\n    \"reading\": \"The act of seizing or plucking; gathering what has been grown or ripened.\",\n    \"languages\": [\"en\", \"ang\", \"gem\"],\n    \"source\": \"Oxford English Dictionary, s.v. harvest\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har-vest: har (hard, harsh sound) + vest (to clothe, to invest)\",\n    \"reading\": \"Harsh investment; the difficult clothing or covering of the earth's yield in human labor.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"harvest ≈ French 'ar-vest' (ar = gold in alchemy; vest = clothing/investment)\",\n    \"reading\": \"The golden investment; the precious covering or gathering of riches from earth.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"harvest → starve + h; has + trove; heart + vs\",\n    \"reading\": \"The heart's trove prevents starvation; what the heart possesses sustains life.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har-vest: har (Hebrew חר ḥar = mountain, burning) + vest (Latin vestis = garment)\",\n    \"reading\": \"The burning mountain's garment; the earth's heated abundance made wearable or portable.\",\n    \"languages\": [\"en\", \"he\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"H(8) + A(1) + R(9) + V(22) + E(5) + S(19) + T(20) = 84 = 8+4 = 12 = 1+2 = 3\",\n    \"reading\": \"The trinity of earth, seed, and human labor; the threefold cycle of growth.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"H-A-R-V-E-S-T as initial letters: 'Has All Riches Vested Eternally Stored Treasures'\",\n    \"reading\": \"All wealth is eternally stored in the gathered treasures of the earth.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har-vest: har (to drag, pull in Old Norse herja) + vest (to dress, equip)\",\n    \"reading\": \"To drag forth and dress; to pull from the earth and clothe in human use.\",\n    \"languages\": [\"en\", \"non\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"harvest ≈ Latin 'arba' (tree) + vest (clothing); Germanic 'erb' (inheritance)\",\n    \"reading\": \"The inheritance of trees; what nature bequeaths us, clothed in season.\",\n    \"languages\": [\"en\", \"la\", \"gem\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"harvest → shaver + t; haters + v; raves + th\",\n    \"reading\": \"What the shaver removes; what those who hate must gather; passionate gathering.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har-vest: har (Greek χαίρω chairō = to rejoice) + vest (Latin vestis = garment)\",\n    \"reading\": \"Rejoicing in garments; the joy of being clothed and sustained by gathered plenty.\",\n    \"languages\": [\"en\", \"grc\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"harvest < Proto-Germanic *harbistaz, possibly from *her- (to grasp) + *-bist (abundance)\",\n    \"reading\": \"The grasping of abundance; the seizure of nature's fullness at its ripest moment.\",\n    \"languages\": [\"en\", \"gem\"],\n    \"source\": \"Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.75\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "harvest < Old English hærfest < Proto-Germanic *harbistaz, related to *herban (to pluck, seize)",
+   "reading": "The act of seizing or plucking; gathering what has been grown or ripened.",
+   "languages": [
+    "en",
+    "ang",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary, s.v. harvest",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "har-vest: har (hard, harsh sound) + vest (to clothe, to invest)",
+   "reading": "Harsh investment; the difficult clothing or covering of the earth's yield in human labor.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "harvest ≈ French 'ar-vest' (ar = gold in alchemy; vest = clothing/investment)",
+   "reading": "The golden investment; the precious covering or gathering of riches from earth.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "harvest → starve + h; has + trove; heart + vs",
+   "reading": "The heart's trove prevents starvation; what the heart possesses sustains life.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "har-vest: har (Hebrew חר ḥar = mountain, burning) + vest (Latin vestis = garment)",
+   "reading": "The burning mountain's garment; the earth's heated abundance made wearable or portable.",
+   "languages": [
+    "en",
+    "he",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "H(8) + A(1) + R(9) + V(22) + E(5) + S(19) + T(20) = 84 = 8+4 = 12 = 1+2 = 3",
+   "reading": "The trinity of earth, seed, and human labor; the threefold cycle of growth.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "H-A-R-V-E-S-T as initial letters: 'Has All Riches Vested Eternally Stored Treasures'",
+   "reading": "All wealth is eternally stored in the gathered treasures of the earth.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "har-vest: har (to drag, pull in Old Norse herja) + vest (to dress, equip)",
+   "reading": "To drag forth and dress; to pull from the earth and clothe in human use.",
+   "languages": [
+    "en",
+    "non"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "harvest ≈ Latin 'arba' (tree) + vest (clothing); Germanic 'erb' (inheritance)",
+   "reading": "The inheritance of trees; what nature bequeaths us, clothed in season.",
+   "languages": [
+    "en",
+    "la",
+    "gem"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "anagram",
+   "chain": "harvest → shaver + t; haters + v; raves + th",
+   "reading": "What the shaver removes; what those who hate must gather; passionate gathering.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "har-vest: har (Greek χαίρω chairō = to rejoice) + vest (Latin vestis = garment)",
+   "reading": "Rejoicing in garments; the joy of being clothed and sustained by gathered plenty.",
+   "languages": [
+    "en",
+    "grc",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "harvest < Proto-Germanic *harbistaz, possibly from *her- (to grasp) + *-bist (abundance)",
+   "reading": "The grasping of abundance; the seizure of nature's fullness at its ripest moment.",
+   "languages": [
+    "en",
+    "gem"
+   ],
+   "source": "Pokorny Indo-European Etymological Dictionary",
+   "confidence": 0.75
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

@@ -5,15 +5,146 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:21:36+00:00",
- "latency_s": 8.77,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:04:23+00:00",
+ "latency_s": 10.8,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-da-lay; man (sovereignty, human) + da (yes, given) + lay (to place, recline)\",\n    \"reading\": \"The human who is given authority to place or establish; sovereign foundation.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Manda (Latin: he/she commands) + lay (English: to recline or place)\",\n    \"reading\": \"Command to recline or rest; imperial decree of repose.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + dal + ay; dal (Hindi: lentil, divided) + ay (affirmation)\",\n    \"reading\": \"The human substance divided and affirmed; fragmentation into parts that exist.\",\n    \"languages\": [\"en\", \"hi\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mandala (Sanskrit: circle, cosmic diagram) + bay (Old Norse: open water, refuge)\",\n    \"reading\": \"Circular sacred pattern sheltered in water; the cosmos reflected in protected stillness.\",\n    \"languages\": [\"sa\", \"non\"],\n    \"source\": \"Oxford English Dictionary; Monier-Williams Sanskrit Dictionary\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay → 'Day Man La' or 'La Day Man'\",\n    \"reading\": \"The day of the man becomes divine light; human illumination at daybreak.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (13) + A (1) + N (14) + D (4) + A (1) + L (12) + A (1) + Y (25)\",\n    \"reading\": \"Sum: 71 = 7+1 = 8. Infinity and cosmic order; the serpent eating its tail.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Man' + 'day' + 'lay'; bay as resonance of 'bey' (Ottoman governor)\",\n    \"reading\": \"The sovereign human's day-rest; the master reclines in his appointed time.\",\n    \"languages\": [\"en\", \"tr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Manda (Italian: he sends/commands) + lay (English: song or tale)\",\n    \"reading\": \"Sent forth as verse; command made manifest in narrative form.\",\n    \"languages\": [\"it\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M-A-N-D-A-L-A-Y as initials form hidden acrostic of aspirational qualities\",\n    \"reading\": \"Mysterious Assumption, Nautical Descent, Ascending Light: journey through waters to illumination.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bay (Old English bæg) from Germanic *bagiz: enclosure, gulf; refuge surrounded\",\n    \"reading\": \"Mandala-refuge; the sacred circle offering shelter and containment.\",\n    \"languages\": [\"en\", \"gmc\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.7",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 78 column 31 (char 3019)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-da-lay: man (adult male) + da (yes, affirmation in Romance) + lay (to recline, place)\",\n    \"reading\": \"The male principle affirms and places itself; masculine assertion in repose or positioning.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandala (Sanskrit: circular diagram) + y (letter/suffix); Mandala-y suggests the circular principle extended or affirmed\",\n    \"reading\": \"The sacred circle principle, marked or extended by affirmation; cosmic order made manifest.\",\n    \"languages\": [\"en\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-dal-ay: dal (pulse/lentil in Hindi/Sanskrit) + ay (always, ever in archaic English)\",\n    \"reading\": \"The sustenance of man endures eternally; nourishment as perpetual principle.\",\n    \"languages\": [\"en\", \"hi\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay Bay rearranged: 'Bad man lay' or 'Man bad lay'\",\n    \"reading\": \"The wicked principle reclines; evil in its place of rest or concealment.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bay: Old French 'baie' (opening, gulf); from Latin 'baia' (inlet). Man: Old English 'mann' (human being)\",\n    \"reading\": \"The human being at the threshold or opening; man positioned at the gateway between worlds.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (13th letter, duality/water) + A (1st, unity/beginning) + Y (25th, completion/return)\",\n    \"reading\": \"Duality returns to unity through the waters of becoming; the cycle completes.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-day-lay: day (solar principle, illumination) + lay (to place, arrange)\",\n    \"reading\": \"The masculine arranges or places the daylight; solar consciousness in ordered form.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bay: French 'baie' (berry, fruit); Man-dal-ay as 'man of the fruit' or 'man bearing fruit'\",\n    \"reading\": \"The masculine principle bearing forth fruit; generative power made manifest.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M-D-L-Y: Mystical Descent through Luminous Yearning, or Man Descends into Light's Yearning\",\n    \"reading\": \"The human descends into the yearning for illumination; spiritual seeking through material descent.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Mand-a-lay: Mand (command, mandate in Latin root) + a (one) + lay (place, position)\",\n    \"reading\": \"One command placed or positioned; authority established in a singular location.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bay: Arabic 'baya' (oath of allegiance); Man-dal-ay as 'man of the oath'\",\n    \"reading\": \"The masculine principle bound by sacred oath; covenant embodied in human form.\",\n    \"languages\": [\"en\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Lay: Old English 'lecgan' (to place, cause to lie); related to 'locus' (place in Latin)\",\n    \"reading\": \"The man places or causes to lie in the bay; masculine agency arranging matter in space.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.7\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-da-lay: man (adult male) + da (yes, affirmation in Romance) + lay (to recline, place)",
+   "reading": "The male principle affirms and places itself; masculine assertion in repose or positioning.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandala (Sanskrit: circular diagram) + y (letter/suffix); Mandala-y suggests the circular principle extended or affirmed",
+   "reading": "The sacred circle principle, marked or extended by affirmation; cosmic order made manifest.",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-dal-ay: dal (pulse/lentil in Hindi/Sanskrit) + ay (always, ever in archaic English)",
+   "reading": "The sustenance of man endures eternally; nourishment as perpetual principle.",
+   "languages": [
+    "en",
+    "hi",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay Bay rearranged: 'Bad man lay' or 'Man bad lay'",
+   "reading": "The wicked principle reclines; evil in its place of rest or concealment.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bay: Old French 'baie' (opening, gulf); from Latin 'baia' (inlet). Man: Old English 'mann' (human being)",
+   "reading": "The human being at the threshold or opening; man positioned at the gateway between worlds.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.75
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (13th letter, duality/water) + A (1st, unity/beginning) + Y (25th, completion/return)",
+   "reading": "Duality returns to unity through the waters of becoming; the cycle completes.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-day-lay: day (solar principle, illumination) + lay (to place, arrange)",
+   "reading": "The masculine arranges or places the daylight; solar consciousness in ordered form.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bay: French 'baie' (berry, fruit); Man-dal-ay as 'man of the fruit' or 'man bearing fruit'",
+   "reading": "The masculine principle bearing forth fruit; generative power made manifest.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M-D-L-Y: Mystical Descent through Luminous Yearning, or Man Descends into Light's Yearning",
+   "reading": "The human descends into the yearning for illumination; spiritual seeking through material descent.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Mand-a-lay: Mand (command, mandate in Latin root) + a (one) + lay (place, position)",
+   "reading": "One command placed or positioned; authority established in a singular location.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bay: Arabic 'baya' (oath of allegiance); Man-dal-ay as 'man of the oath'",
+   "reading": "The masculine principle bound by sacred oath; covenant embodied in human form.",
+   "languages": [
+    "en",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Lay: Old English 'lecgan' (to place, cause to lie); related to 'locus' (place in Latin)",
+   "reading": "The man places or causes to lie in the bay; masculine agency arranging matter in space.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

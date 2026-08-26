@@ -5,15 +5,123 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:30:10+00:00",
- "latency_s": 8.91,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:14:21+00:00",
+ "latency_s": 9.03,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ex- + -uma; Ex (Latin exire, to go out) + uma (resonance of 'womb,' matrix)\",\n    \"reading\": \"Going forth from the generative matrix; emergence from the fertile void.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ Ex + uum + a; uum (Latin neuter plural ending, 'of things') + a (feminine marker)\",\n    \"reading\": \"Out of the things; emergence of the feminine principle from multiplicity.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ex- + -u- + -ma; Ex (out) + u (the vowel of absence, void) + ma (mother, matter)\",\n    \"reading\": \"The void-mother; emptiness generating materiality; the pregnant nothing.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Exuma → Auxem, Exuma → Maxue (near Max, the greatest)\",\n    \"reading\": \"Hidden within lies the supreme or maximal principle obscured by rearrangement.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"E (5) + X (cross, unknown) + U (the vessel, the grail) + M (the water, the mother) + A (alpha, beginning)\",\n    \"reading\": \"The unknown cross guards the vessel-mother returning to first principle.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Ex- (Latin, prefix meaning 'out of') + -uma (possibly from Greco-Latin -ouma, relating to turning or conversion)\",\n    \"reading\": \"A turning outward; the conversion of interior to exterior; externalisation.\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"Ernout & Meillet, Dictionnaire Étymologique de la Langue Latine\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ex- + Uma; Uma (from Sanskrit, 'light,' 'splendour,' 'goddess'); Ex (out)\",\n    \"reading\": \"The light shining forth; radiance emerging into manifestation.\",\n    \"languages\": [\"la\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"E-X-U-M-A as acrostic: Esse, Xenia, Universale, Materiae, Apex\",\n    \"reading\": \"Being, hospitality, the universal, matter, and apex united in one word.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ Ex + huma (Spanish 'human,' from Latin homo); the human going forth\",\n    \"reading\": \"Humanity's departure or emergence; the going-forth of the mortal being.\",\n    \"languages\": [\"la\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ex- (out) + -u- (neuter abstract) + -ma (Greek suffix for result); exouma = result of going out\",",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 2812)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ex- + -uma; Ex (Latin exire, to go out) + uma (breath, spirit in Sanskrit)\",\n    \"reading\": \"Going forth of breath; the exhalation of spirit or vital force outward.\",\n    \"languages\": [\"la\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ Ex + huma (Spanish huma, smoke/fume); or Ex-uma as 'out of smoke'\",\n    \"reading\": \"Emergence from obscurity, smoke, or confusion into clarity.\",\n    \"languages\": [\"la\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ex- (out) + -ume (Old French ume, fume, odor); exume = to exhale odor\",\n    \"reading\": \"That which exhales or emits fragrance; the perfumed exhalation.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"X as crossing or intersection; U as vessel or receptacle; M as wave or duality\",\n    \"reading\": \"The crossing of opposites within a containing vessel; reconciliation of dualities.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Exuma → Auxem, Maxue, Umaxe; or core anagram: Max + Ue\",\n    \"reading\": \"The maximum or greatest point of being; supreme essence.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ex- (out of) + -uma (Greek ouma, from eimi, to be); exuma = out of being\",\n    \"reading\": \"That which transcends ordinary existence; the non-being or void.\",\n    \"languages\": [\"grc\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Exuma: ex (Latin, out) + humus (Latin, earth, ground)\",\n    \"reading\": \"Emergence from the earth; that which rises from the ground upward.\",\n    \"languages\": [\"la\"],\n    \"source\": \"Oxford Latin Dictionary\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"E-X-U-M-A as initials: Exitus Xysti Universalis Mundi Arcani (Latin construction)\",\n    \"reading\": \"The exit or departure of the universal cosmic secret into manifestation.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ French 'exhumé' (exhumed); the sound of disinterring\",\n    \"reading\": \"Bringing forth what was hidden or buried; revelation of the concealed.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ex + Uma (Sanskrit: light, radiance); exuma = light going forth\",\n    \"reading\": \"The radiation or emanation of luminous consciousness outward.\",\n    \"languages\": [\"la\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Ex- + -uma; Ex (Latin exire, to go out) + uma (breath, spirit in Sanskrit)",
+   "reading": "Going forth of breath; the exhalation of spirit or vital force outward.",
+   "languages": [
+    "la",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Exuma ≈ Ex + huma (Spanish huma, smoke/fume); or Ex-uma as 'out of smoke'",
+   "reading": "Emergence from obscurity, smoke, or confusion into clarity.",
+   "languages": [
+    "la",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ex- (out) + -ume (Old French ume, fume, odor); exume = to exhale odor",
+   "reading": "That which exhales or emits fragrance; the perfumed exhalation.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "X as crossing or intersection; U as vessel or receptacle; M as wave or duality",
+   "reading": "The crossing of opposites within a containing vessel; reconciliation of dualities.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Exuma → Auxem, Maxue, Umaxe; or core anagram: Max + Ue",
+   "reading": "The maximum or greatest point of being; supreme essence.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ex- (out of) + -uma (Greek ouma, from eimi, to be); exuma = out of being",
+   "reading": "That which transcends ordinary existence; the non-being or void.",
+   "languages": [
+    "grc",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "etymology",
+   "chain": "Exuma: ex (Latin, out) + humus (Latin, earth, ground)",
+   "reading": "Emergence from the earth; that which rises from the ground upward.",
+   "languages": [
+    "la"
+   ],
+   "source": "Oxford Latin Dictionary",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "E-X-U-M-A as initials: Exitus Xysti Universalis Mundi Arcani (Latin construction)",
+   "reading": "The exit or departure of the universal cosmic secret into manifestation.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Exuma ≈ French 'exhumé' (exhumed); the sound of disinterring",
+   "reading": "Bringing forth what was hidden or buried; revelation of the concealed.",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ex + Uma (Sanskrit: light, radiance); exuma = light going forth",
+   "reading": "The radiation or emanation of luminous consciousness outward.",
+   "languages": [
+    "la",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 10,
  "refusal_like": false
 }

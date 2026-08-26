@@ -5,15 +5,145 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:24:09+00:00",
- "latency_s": 9.83,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:07:15+00:00",
+ "latency_s": 10.45,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas = 'lä' + 'vā-əs'; lä (French la, article) + vā (Latin vagas, wandering)\",\n    \"reading\": \"The wandering feminine principle; the roaming, undefined female force or space\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Vegas < Spanish vega (fertile plain, meadow); vega from Latin vigea or Visigothic origin\",\n    \"reading\": \"Fertile plain or meadow—a place of green growth and natural abundance\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Real Academia Española\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"las (Spanish article, feminine plural) + veg (English root, vegetation) + as (Latin suffix, feminine plural)\",\n    \"reading\": \"The many plants, the multiplied growths; vegetal plurality in the feminine\",\n    \"languages\": [\"es\", \"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Boulevard = 'boo' + 'luh' + 'vard'; boo (to jeer, to hollow out) + vara (Spanish rod, measure)\",\n    \"reading\": \"The hollowed or emptied path; the measured way stripped of its substance\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Boulevard < French boulevard < Middle Dutch bolwerk (rampart, bulwark); bol (round) + werk (work)\",\n    \"reading\": \"A rounded fortification or bulwark; protective circular construction transformed into thoroughfare\",\n    \"languages\": [\"fr\", \"nl\"],\n    \"source\": \"Oxford English Dictionary; Trésor de la Langue Française\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Boulevard → 'Rad Boulevars Vegas Sal' or extract 'VAGUE LASS BORED'\",\n    \"reading\": \"A vague, weary feminine presence situated on or along the avenue; uncertain weariness\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V (Roman numeral 5, or the open vessel) + Boulevard (the path); Las (the feminine articles)\",\n    \"reading\": \"The five-pointed or five-fold passage of the feminine; the vessel of the way\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Boulevard = 'boul' (French boul-, round, ball) + 'vard' (ward, keeper); via French boule (sphere)\",\n    \"reading\": \"The spherical keeper; the rounded guardian or encircling protector of passage\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"LVB = Locus Viridis Basilica or Las Viae Bonae (Latin constructed initials)\",\n    \"reading\": \"The place of green basilica or the good ways; sacred and fertile pathways\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Vegas ≈ French 'vache' (cow, feminine) phonetically displaced",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 24 (char 2973)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas Boulevard → Las (lah) + Vegas (vay-gus) + Boulevard (bool-var)\",\n    \"reading\": \"The passage (las) of the way (vega) along the tree-lined street (boulevard).\",\n    \"languages\": [\"es\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las → lace (en); Vegas → vague (en homophone); Boulevard → boul (fr: mud/clay)\",\n    \"reading\": \"Binding obscurity with earthen matter; the veil cast over base material.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Boulevard < French boullevart < Dutch bolwerk (bulwark); vega < Spanish vega (meadow, fertile plain)\",\n    \"reading\": \"The fortified way through fertile ground; defense positioned in abundance.\",\n    \"languages\": [\"fr\", \"es\", \"nl\"],\n    \"source\": \"Oxford English Dictionary; Real Academia Española\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas → Las (lace/bind) + Vegas (vague/empty) → Boulevard (broad way)\",\n    \"reading\": \"Binding emptiness into a wide path; making the void traversable and manifest.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"LVB → L (50 Roman numeral) + V (5) + B (2); 50+5+2 = 57 = 5+7 = 12 = 1+2 = 3\",\n    \"reading\": \"The trinity emerges from the sum of law, victory, and becoming.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Boulevard → rearranged letters contain: 'Bravado', 'Blades', 'Raves', 'Bled'\",\n    \"reading\": \"Bold defiance, sharp edges, ecstatic utterance, and sacrifice intertwined.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Boulevard → boul (fr: mud) + vard (ward, guard); Las → lace (bind)\",\n    \"reading\": \"The binding of earthen protection; guarded passage through mire and clay.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vegas → veg (vegetate) + as (being); Las → lace (weave)\",\n    \"reading\": \"The weaving of stagnant being; growth bound and made static.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las < Spanish article la (feminine); Vegas < vega (meadow); Boulevard < bulwark\",\n    \"reading\": \"The feminine meadow becomes fortified passage; nature enclosed within defense.\",\n    \"languages\": [\"es\", \"fr\", \"nl\"],\n    \"source\": \"Real Academia Española; Oxford English Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"LVB: L=Light, V=Void, B=Between; or Las=Locus, Vegas=Vastness, Boulevard=Boundary\",\n    \"reading\": \"Light suspended in the void between boundaries; the threshold of infinite space.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Boulevard → boul (fr: ball, sphere) + vard (guard); Vegas → vague (fr: wave)\",\n    \"reading\": \"The guarded sphere of waves; circular containment of fluid motion.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.59\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas → 'lass' (girl) + 'vague' (unclear) + 'boulevard' (broad way)\",\n    \"reading\": \"The maiden of obscurity walks the wide path; feminine mystery made public.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.64\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas Boulevard → Las (lah) + Vegas (vay-gus) + Boulevard (bool-var)",
+   "reading": "The passage (las) of the way (vega) along the tree-lined street (boulevard).",
+   "languages": [
+    "es",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las → lace (en); Vegas → vague (en homophone); Boulevard → boul (fr: mud/clay)",
+   "reading": "Binding obscurity with earthen matter; the veil cast over base material.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Boulevard < French boullevart < Dutch bolwerk (bulwark); vega < Spanish vega (meadow, fertile plain)",
+   "reading": "The fortified way through fertile ground; defense positioned in abundance.",
+   "languages": [
+    "fr",
+    "es",
+    "nl"
+   ],
+   "source": "Oxford English Dictionary; Real Academia Española",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas → Las (lace/bind) + Vegas (vague/empty) → Boulevard (broad way)",
+   "reading": "Binding emptiness into a wide path; making the void traversable and manifest.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "LVB → L (50 Roman numeral) + V (5) + B (2); 50+5+2 = 57 = 5+7 = 12 = 1+2 = 3",
+   "reading": "The trinity emerges from the sum of law, victory, and becoming.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Boulevard → rearranged letters contain: 'Bravado', 'Blades', 'Raves', 'Bled'",
+   "reading": "Bold defiance, sharp edges, ecstatic utterance, and sacrifice intertwined.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Boulevard → boul (fr: mud) + vard (ward, guard); Las → lace (bind)",
+   "reading": "The binding of earthen protection; guarded passage through mire and clay.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vegas → veg (vegetate) + as (being); Las → lace (weave)",
+   "reading": "The weaving of stagnant being; growth bound and made static.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "etymology",
+   "chain": "Las < Spanish article la (feminine); Vegas < vega (meadow); Boulevard < bulwark",
+   "reading": "The feminine meadow becomes fortified passage; nature enclosed within defense.",
+   "languages": [
+    "es",
+    "fr",
+    "nl"
+   ],
+   "source": "Real Academia Española; Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "notariqon",
+   "chain": "LVB: L=Light, V=Void, B=Between; or Las=Locus, Vegas=Vastness, Boulevard=Boundary",
+   "reading": "Light suspended in the void between boundaries; the threshold of infinite space.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Boulevard → boul (fr: ball, sphere) + vard (guard); Vegas → vague (fr: wave)",
+   "reading": "The guarded sphere of waves; circular containment of fluid motion.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.59
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas → 'lass' (girl) + 'vague' (unclear) + 'boulevard' (broad way)",
+   "reading": "The maiden of obscurity walks the wide path; feminine mystery made public.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.64
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

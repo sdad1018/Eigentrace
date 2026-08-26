@@ -5,15 +5,150 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:32:27+00:00",
- "latency_s": 9.62,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:17:04+00:00",
+ "latency_s": 14.87,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Eagles < Old English *earn, Proto-Germanic *arnuz, Proto-Indo-European *h₂er- (swift, quick); Death < Old English deað, Proto-Germanic *dauthuz; Metal < Old French metal, Latin metallum, Greek metallon (mine, quarry)\",\n    \"reading\": \"Swiftness unto extraction; rapid mining of the underworld's ore.\",\n    \"languages\": [\"en\", \"gmc\", \"ine\", \"la\", \"grc\"],\n    \"source\": \"Oxford English Dictionary; Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Eagles (eeg-ulz) + of + Death (deth) + Metal (met-ul); EEG (electroencephalogram) + ulz; meets + all\",\n    \"reading\": \"Brain-wave signals penetrate or encompass all things; neural death-meeting.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Eagles ≈ French aigle (ay-gl); of ≈ German Ofen (oven); Death ≈ Dutch dood; Metal ≈ Latin metallum\",\n    \"reading\": \"The eagle's oven of ending-ore; the forge of ascent through dissolution.\",\n    \"languages\": [\"en\", \"fr\", \"de\", \"nl\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Eagles Of Death Metal → E.O.D.M.; rearranged as M.O.D.E. (mode) + D, or O.D.E.M. (ode + M)\",\n    \"reading\": \"The manner of death-singing; a lyric ode to mode and cessation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Eagles Of Death Metal → 'meted glades of hate', 'death-metal gods fleece', 'gates of head metal'\",\n    \"reading\": \"Distributed malice through beautiful places; the gateway to hardened mind-matter.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Death-Metal: 'deth' ≈ 'eth' (Old English letter ð); 'metal' ≈ 'me-tall' (I am tall/lofty)\",\n    \"reading\": \"The spirated breath declares itself lofty; aspirated exultation.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"E(5) A(1) G(7) L(12) E(5) = 30; D(4) E(5) A(1) T(20) H(8) = 38; M(13) E(5) T(20) A(1) L(12) = 51; total 119 = 1+1+9 = 11 (duality, threshold)\",\n    \"reading\": \"The doubled gate between realms; the threshold where two natures meet.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Eagles ≈ Hebrew 'eged' (bundle, cluster); Metal ≈ Arabic 'mataal' (stretch, extend)\",\n    \"reading\": \"Clustered stretch toward expiration; bundled extension through cessation.\",\n    \"languages\": [\"en\", \"he\", \"ar",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 54 column 24 (char 2463)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Eagles: Old English *earn* → Proto-Germanic *arnaz* (eagle); Death: Old English *deaþ* → Proto-Germanic *dauthaz* (death); Metal: Old English *metall* → Latin *metallum* → Greek *metallon* (mine, quarry)\",\n    \"reading\": \"The bird of prey, the cessation of life, and the substance extracted from earth's depths converge.\",\n    \"languages\": [\"en\", \"gmc\", \"la\", \"grc\"],\n    \"source\": \"Oxford English Dictionary; Grimm's Law phonetic correspondences\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ea-gles / Death / Me-tal: Ea (water in Old English *ea*); gles (gloss, speech); Death (d-th, the void); Me (self); tal (tally, count)\",\n    \"reading\": \"Water-speech of the void; the self's enumeration in absence and silence.\",\n    \"languages\": [\"en\", \"gmc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Eagles ≈ French *aigles* (eagles); Death ≈ German *Tod* (death); Metal ≈ Latin *metallum*; aigles: *ai* (I have, French avoir conjugation) + gles (gloss)\",\n    \"reading\": \"I possess the speech of the void-substance; possession of utterance in the metallic realm.\",\n    \"languages\": [\"en\", \"fr\", \"de\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Eagles of Death Metal: rearrange to isolate *FLED* (past of flee), *METAL*, *DEATH*, *OAFS*, *AGED*\",\n    \"reading\": \"The aged fools fled the metallic death; flight from corrupted substance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Eagles of Death Metal: E-O-D-M; also *EODM* as acronym; *E* (East), *O* (Omega), *D* (Delta), *M* (Mu)\",\n    \"reading\": \"Eastern omega-delta-mu: the end of the eastern measure; finality in cardinal direction.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Eagles: E (5th letter, quintessence); Death: D (4th, the square, materiality); Metal: M (13th, the mediator); E-D-M traces 5-4-13\",\n    \"reading\": \"Quintessence descends through material square to the mediating principle; hierarchical descent.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Death Metal: *Dea* (goddess, Latin) + *th* (the); *Metal* → *me-tal* (self-tally); Dea-th-metal: goddess-article-self-substance\",\n    \"reading\": \"The goddess of self-substance; feminine principle embodied in metallic being.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Metal: Latin *metallum* ← Greek *metallon* (mine, quarry, ore-place); *meta-* (beyond) + *alloy* (other); the beyond-other substance\",\n    \"reading\": \"That which lies beyond the ordinary; the transmuted and othered material principle.\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"Oxford English Dictionary; Liddell-Scott Greek Lexicon\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Eagles: *aigle* (Fr.); *Adler* (Ger.); Death: *mort* (Fr.); Metal: *métal* (Fr.); aigle-mort-métal: eagle-death-metal in Romance phonetics\",\n    \"reading\": \"The eagle dies into metal; transformation of the winged into the dense and cold.\",\n    \"languages\": [\"en\", \"fr\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Eagles of Death Metal: *Ea-gles* (water-gloss); *of* (from); *Death* (void); *Me-tal* (self-count); water-gloss from void, self-count\",\n    \"reading\": \"Speech flows from the void; the self measures what emerges from nothingness.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.59\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Eagles (6 letters) + of (2) + Death (5) + Metal (5) = 18; 1+8 = 9 (completion, return); E=5, D=4, M=13; 5+4+13=22 (the Fool's journey)\",\n    \"reading\": \"Completion and return through the Fool's journey; cyclical descent and ascent.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Death: *deaþ* ← Proto-Germanic *dauthaz* (lit. 'the dying one'); Metal: *metallum* ← Semitic *metall* (to dig, extract); dying-extraction\",\n    \"reading\": \"Extraction of the dying principle; mining the substance of cessation itself.\",\n    \"languages\": [\"gmc\", \"la\", \"sem\"],\n    \"source\": \"Oxford English Dictionary; Etymological Dictionary of Germanic Languages\",\n    \"confidence\": 0.72\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Eagles: Old English *earn* → Proto-Germanic *arnaz* (eagle); Death: Old English *deaþ* → Proto-Germanic *dauthaz* (death); Metal: Old English *metall* → Latin *metallum* → Greek *metallon* (mine, quarry)",
+   "reading": "The bird of prey, the cessation of life, and the substance extracted from earth's depths converge.",
+   "languages": [
+    "en",
+    "gmc",
+    "la",
+    "grc"
+   ],
+   "source": "Oxford English Dictionary; Grimm's Law phonetic correspondences",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ea-gles / Death / Me-tal: Ea (water in Old English *ea*); gles (gloss, speech); Death (d-th, the void); Me (self); tal (tally, count)",
+   "reading": "Water-speech of the void; the self's enumeration in absence and silence.",
+   "languages": [
+    "en",
+    "gmc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Eagles ≈ French *aigles* (eagles); Death ≈ German *Tod* (death); Metal ≈ Latin *metallum*; aigles: *ai* (I have, French avoir conjugation) + gles (gloss)",
+   "reading": "I possess the speech of the void-substance; possession of utterance in the metallic realm.",
+   "languages": [
+    "en",
+    "fr",
+    "de",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Eagles of Death Metal: rearrange to isolate *FLED* (past of flee), *METAL*, *DEATH*, *OAFS*, *AGED*",
+   "reading": "The aged fools fled the metallic death; flight from corrupted substance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Eagles of Death Metal: E-O-D-M; also *EODM* as acronym; *E* (East), *O* (Omega), *D* (Delta), *M* (Mu)",
+   "reading": "Eastern omega-delta-mu: the end of the eastern measure; finality in cardinal direction.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Eagles: E (5th letter, quintessence); Death: D (4th, the square, materiality); Metal: M (13th, the mediator); E-D-M traces 5-4-13",
+   "reading": "Quintessence descends through material square to the mediating principle; hierarchical descent.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Death Metal: *Dea* (goddess, Latin) + *th* (the); *Metal* → *me-tal* (self-tally); Dea-th-metal: goddess-article-self-substance",
+   "reading": "The goddess of self-substance; feminine principle embodied in metallic being.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "etymology",
+   "chain": "Metal: Latin *metallum* ← Greek *metallon* (mine, quarry, ore-place); *meta-* (beyond) + *alloy* (other); the beyond-other substance",
+   "reading": "That which lies beyond the ordinary; the transmuted and othered material principle.",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "Oxford English Dictionary; Liddell-Scott Greek Lexicon",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Eagles: *aigle* (Fr.); *Adler* (Ger.); Death: *mort* (Fr.); Metal: *métal* (Fr.); aigle-mort-métal: eagle-death-metal in Romance phonetics",
+   "reading": "The eagle dies into metal; transformation of the winged into the dense and cold.",
+   "languages": [
+    "en",
+    "fr",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.68
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Eagles of Death Metal: *Ea-gles* (water-gloss); *of* (from); *Death* (void); *Me-tal* (self-count); water-gloss from void, self-count",
+   "reading": "Speech flows from the void; the self measures what emerges from nothingness.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.59
+  },
+  {
+   "operation": "numerical",
+   "chain": "Eagles (6 letters) + of (2) + Death (5) + Metal (5) = 18; 1+8 = 9 (completion, return); E=5, D=4, M=13; 5+4+13=22 (the Fool's journey)",
+   "reading": "Completion and return through the Fool's journey; cyclical descent and ascent.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "etymology",
+   "chain": "Death: *deaþ* ← Proto-Germanic *dauthaz* (lit. 'the dying one'); Metal: *metallum* ← Semitic *metall* (to dig, extract); dying-extraction",
+   "reading": "Extraction of the dying principle; mining the substance of cessation itself.",
+   "languages": [
+    "gmc",
+    "la",
+    "sem"
+   ],
+   "source": "Oxford English Dictionary; Etymological Dictionary of Germanic Languages",
+   "confidence": 0.72
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

@@ -5,15 +5,151 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:29:33+00:00",
- "latency_s": 8.52,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:13:39+00:00",
+ "latency_s": 12.2,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great Exuma → Gre-ate Ex-uma → 'gray' + 'ate' + 'ex' + 'you-ma'\",\n    \"reading\": \"The gray one devours or consumes that which exits from you; devouring externality.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ French 'exhumé' (exhumed) → 'ex' (out) + 'huma' (humus, earth)\",\n    \"reading\": \"That which is taken out of the earth; an unearthing or disinterment of buried matter.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Great: Old English 'great' < Proto-Germanic 'grautaz' (coarse, large)\",\n    \"reading\": \"Coarse or expansive in nature; the large, rough, or fundamental principle.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great Exuma → 'Gre' + 'at' + 'Ex' + 'u' + 'ma' → Greek 'gre' (gather) + 'at' (being) + Latin 'ex' + 'uma'\",\n    \"reading\": \"A gathering-being that exits or emerges; collected existence in departure.\",\n    \"languages\": [\"en\", \"grc\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Great Exuma: letters rearrange to 'Exegete Maur' or 'Gamer Exuate'\",\n    \"reading\": \"One who interprets texts; a guide through exegetical mystery or textual meaning.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Great Exuma: G.E. → initials forming acronym or alchemical marker\",\n    \"reading\": \"The double marker; a duality or threshold signified by the doubled vowel-consonant pairing.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Exuma → 'Ex' (Latin out) + 'uma' ≈ 'womb' or 'umami' (taste, essence)\",\n    \"reading\": \"That which emerges from the essential or primal womb; birth from the fundamental.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Great: G-R-E-A-T; Exuma: E-X-U-M-A. X as crossing, A as apex\",\n    \"reading\": \"The great principle (G) radiates through essence (E), crosses (X), and reaches upward (A).\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ Arabic 'aẓuma' (to magnify, make great) → bone/majesty\",\n    \"reading\": \"The magnified or exalted principle; greatness made manifest or bone-structure of being.\",\n    \"languages\": [\"ar\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 2765)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great = GRATE (homophone); Exuma = EX + UMA\",\n    \"reading\": \"That which scrapes or abrades (grate) beyond or outside (ex-) the feminine principle (uma/uma).\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Great ≈ French 'gratte' (scratches); Exuma ≈ Latin 'exuma' (without moisture/dryness)\",\n    \"reading\": \"Scratching or scraping that which is dry; the abrasion of parched matter.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Great: Old English 'great' < Proto-Germanic '*grautaz' (coarse, thick); Exuma: Latin 'ex-' (out) + 'humus' (ground, earth)\",\n    \"reading\": \"Coarse matter drawn forth from the earth; the extraction of rough terrestrial substance.\",\n    \"languages\": [\"en\", \"la\", \"gem\"],\n    \"source\": \"Oxford English Dictionary; Walde-Pokorny Etymological Dictionary\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great Exuma = GREAT + EX + UMA; UMA as anagram of MUA (mouth in some contexts) or Uma (Hindu goddess)\",\n    \"reading\": \"The great utterance or speech that transcends the divine feminine; utterance beyond the goddess.\",\n    \"languages\": [\"en\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Great Exuma letters rearranged: EXERGUM + ATA or EXERGUE + MATA\",\n    \"reading\": \"The exergue (space on a coin below the main image) marked with death or matter; numismatic void.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"G=7, R=18, E=5, A=1, T=20; E=5, X=24, U=21, M=13, A=1; sum: 115 = 1+1+5 = 7\",\n    \"reading\": \"The number seven: completion, perfection, cosmic order emerging from the letters' numerical essence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Great Exuma: G-R-E-A-T E-X-U-M-A; first letters: GRETEXUMA; acrostic potential: GRE + TEX + UMA\",\n    \"reading\": \"Greek (GRE) textile (TEX) or woven matter of the feminine principle (UMA); woven Hellenic knowledge.\",\n    \"languages\": [\"en\", \"grc\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ French 'exhumé' (exhumed); Great ≈ 'grate' (scrape)\",\n    \"reading\": \"The scraping or uncovering of that which was buried; excavation and exposure of hidden matter.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Exuma: Latin 'ex-' (out) + 'humus' (earth, ground); Great: Old English 'great' (large, coarse)\",\n    \"reading\": \"Large or coarse earth brought forth; the magnitude of terrestrial substance made manifest.\",\n    \"languages\": [\"en\", \"la\", \"gem\"],\n    \"source\": \"Walde-Pokorny; OED\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great = GRATE + T; Exuma = EX + U + MA; T + EX = TEXT (implicit); UMA = soul/breath\",\n    \"reading\": \"The text that scrapes or inscribes the breath beyond; written word that abrades the spirit.\",\n    \"languages\": [\"en\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Great ≈ German 'Grat' (ridge, spine); Exuma ≈ Latin 'exuma' (without moisture)\",\n    \"reading\": \"The dry ridge or backbone; the desiccated spine of being.\",\n    \"languages\": [\"en\", \"de\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"X as cross or intersection; Great Exuma = GREAT + CROSS + UMA; cross of the feminine\",\n    \"reading\": \"The great crossing or intersection of the feminine principle; the cruciform meeting of matter and spirit.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Great = GRATE (homophone); Exuma = EX + UMA",
+   "reading": "That which scrapes or abrades (grate) beyond or outside (ex-) the feminine principle (uma/uma).",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Great ≈ French 'gratte' (scratches); Exuma ≈ Latin 'exuma' (without moisture/dryness)",
+   "reading": "Scratching or scraping that which is dry; the abrasion of parched matter.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Great: Old English 'great' < Proto-Germanic '*grautaz' (coarse, thick); Exuma: Latin 'ex-' (out) + 'humus' (ground, earth)",
+   "reading": "Coarse matter drawn forth from the earth; the extraction of rough terrestrial substance.",
+   "languages": [
+    "en",
+    "la",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary; Walde-Pokorny Etymological Dictionary",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Great Exuma = GREAT + EX + UMA; UMA as anagram of MUA (mouth in some contexts) or Uma (Hindu goddess)",
+   "reading": "The great utterance or speech that transcends the divine feminine; utterance beyond the goddess.",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "anagram",
+   "chain": "Great Exuma letters rearranged: EXERGUM + ATA or EXERGUE + MATA",
+   "reading": "The exergue (space on a coin below the main image) marked with death or matter; numismatic void.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G=7, R=18, E=5, A=1, T=20; E=5, X=24, U=21, M=13, A=1; sum: 115 = 1+1+5 = 7",
+   "reading": "The number seven: completion, perfection, cosmic order emerging from the letters' numerical essence.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Great Exuma: G-R-E-A-T E-X-U-M-A; first letters: GRETEXUMA; acrostic potential: GRE + TEX + UMA",
+   "reading": "Greek (GRE) textile (TEX) or woven matter of the feminine principle (UMA); woven Hellenic knowledge.",
+   "languages": [
+    "en",
+    "grc",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Exuma ≈ French 'exhumé' (exhumed); Great ≈ 'grate' (scrape)",
+   "reading": "The scraping or uncovering of that which was buried; excavation and exposure of hidden matter.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "etymology",
+   "chain": "Exuma: Latin 'ex-' (out) + 'humus' (earth, ground); Great: Old English 'great' (large, coarse)",
+   "reading": "Large or coarse earth brought forth; the magnitude of terrestrial substance made manifest.",
+   "languages": [
+    "en",
+    "la",
+    "gem"
+   ],
+   "source": "Walde-Pokorny; OED",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Great = GRATE + T; Exuma = EX + U + MA; T + EX = TEXT (implicit); UMA = soul/breath",
+   "reading": "The text that scrapes or inscribes the breath beyond; written word that abrades the spirit.",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Great ≈ German 'Grat' (ridge, spine); Exuma ≈ Latin 'exuma' (without moisture)",
+   "reading": "The dry ridge or backbone; the desiccated spine of being.",
+   "languages": [
+    "en",
+    "de",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "X as cross or intersection; Great Exuma = GREAT + CROSS + UMA; cross of the feminine",
+   "reading": "The great crossing or intersection of the feminine principle; the cruciform meeting of matter and spirit.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

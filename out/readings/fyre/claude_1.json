@@ -5,15 +5,149 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:29:16+00:00",
- "latency_s": 9.3,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:13:14+00:00",
+ "latency_s": 12.59,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Fyre < Middle English fir, fier < Old English fȳr < Proto-Germanic *fūr < Proto-Indo-European *perw- (fire, heat)\",\n    \"reading\": \"Fire: the element of combustion, transformation, purification, and divine illumination in alchemical tradition.\",\n    \"languages\": [\"en\", \"enm\", \"ang\", \"gem\", \"ine\"],\n    \"source\": \"Oxford English Dictionary; Pokorny, Indogermanisches etymologisches Wörterbuch\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fyre = Fy + re; fy (intensifier, 'fi') + re (thing, matter); or Fy (self, ego) + re (king in Egyptian)\",\n    \"reading\": \"The self as fiery principle; the ego ignited or the individual as sovereign flame.\",\n    \"languages\": [\"en\", \"grc\", \"eg\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fyre ≈ French 'fier' (to trust, to rely); also 'fer' (iron, hardness)\",\n    \"reading\": \"Trust placed in the element; iron-willed determination; the solidity hidden within flame.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Fyre → Refy, Feyr, Ryfe; closest: 'Refy' (to reify, make real) or 'Ryfe' (archaic 'rife', abundant)\",\n    \"reading\": \"Making manifest; abundance made visible through the action of heat and transformation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"F = serpent, flow; Y = fork, division, choice; E = presence; R = wheel, return\",\n    \"reading\": \"The flowing serpent at the fork of choice, eternally returning through presence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fyre = Fy + re; 'fy' as obsolete intensifier + 're' (Latin, again); or 'Fyr' (Norse) + 'e' (being)\",\n    \"reading\": \"The Norse principle of fire made manifest; the being of conflagration renewed perpetually.\",\n    \"languages\": [\"en\", \"non\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"F=6, Y=25, R=18, E=5 (A=1); sum = 54 = 5+4 = 9 (completion, return to unity)\",\n    \"reading\": \"Fire as the principle of completion and cyclic return to undifferentiated wholeness.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fyre ≈ German 'Feuer' (fire); also resonates with Old Norse 'fûr' and Latin 'fur' (thief, that which steals)\",\n    \"reading\": \"Fire as the thief: it steals matter, transforms it, carries away what was solid into air.\",\n    \"languages\": [\"en\", \"de\", \"non\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Fyre: First-Year Revelation",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 62 column 43 (char 2791)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Fyre < Middle English fir, fyre < Old English fȳr < Proto-Germanic *fuir < Proto-Indo-European *perw- (to drive forward, propel)\",\n    \"reading\": \"Primordial force of transformation and propulsion; the driving heat that consumes and renews.\",\n    \"languages\": [\"en\", \"enm\", \"ang\", \"gem\", \"pie\"],\n    \"source\": \"Oxford English Dictionary; Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fyre = Fy + re; Fy (to go, move) + re (again, back); or Fy (fey, fated) + re (radiance)\",\n    \"reading\": \"Cyclical motion of fate; the radiant return of what was fated to burn and recur.\",\n    \"languages\": [\"en\", \"enm\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fyre ≈ French fier (to trust, confide); Fyre ≈ French fer (iron, the metal of Mars)\",\n    \"reading\": \"Trust placed in the hard, unyielding substance; faith in what cannot bend or break.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Fyre: letters F, Y, R, E can form Ref (reference), Fer (iron in French), Erf (plot of land in Afrikaans)\",\n    \"reading\": \"The marked ground, the iron stake, the point of reference where all things are measured.\",\n    \"languages\": [\"en\", \"fr\", \"af\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"F = serpent or flame; Y = the fork, the choice, the ascending path; R = the wheel turning; E = the eye, the witness\",\n    \"reading\": \"The flame of choice turning before the eternal eye; the serpent's ascent through the wheel of becoming.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fyre = Fire with Y inserted; Y as the hidden axis, the vertical becoming visible within horizontal combustion\",\n    \"reading\": \"Fire elevated to its spiritual axis; the vertical flame rising through material consumption.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fyre ≈ German Feuer (fire); Fyre ≈ Latin furor (rage, fury, divine madness)\",\n    \"reading\": \"The divine madness that consumes; ecstatic rage as the engine of all transformation.\",\n    \"languages\": [\"en\", \"de\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Fyre: F-Y-R-E as initials could yield For Your Radiant Essence or Fervent Yearning Reaches Eternity\",\n    \"reading\": \"The essence yearns eternally toward radiance; fervent desire reaching beyond the mortal sphere.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Y in Fyre as insertion of Proto-Germanic *iu (yew tree, sacred wood that burns longest) into fir/fire\",\n    \"reading\": \"The sacred wood burning; the eternal tree consumed in purifying flame.\",\n    \"languages\": [\"en\", \"gem\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fyre = Fyr + e; Fyr (Old Norse fyrr, former, prior) + e (being); what was, burning into what is\",\n    \"reading\": \"The anterior burning; what was consumes itself to become what is present.\",\n    \"languages\": [\"en\", \"non\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fyre ≈ Hebrew פיר (pir, to spread, scatter) or פר (par, young bull, vigor)\",\n    \"reading\": \"Scattered vigor; the wild strength dispersed through all things that burn and scatter.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"F (serpent/flame) + Y (the path of ascent) + R (the wheel, return) + E (the eye, manifestation) = the serpent ascending the wheel before the eye of God\",\n    \"reading\": \"The serpent's ascent through cycles of return, witnessed by the divine eye; alchemy's great work.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.53\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Fyre < Middle English fir, fyre < Old English fȳr < Proto-Germanic *fuir < Proto-Indo-European *perw- (to drive forward, propel)",
+   "reading": "Primordial force of transformation and propulsion; the driving heat that consumes and renews.",
+   "languages": [
+    "en",
+    "enm",
+    "ang",
+    "gem",
+    "pie"
+   ],
+   "source": "Oxford English Dictionary; Pokorny Indo-European Etymological Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Fyre = Fy + re; Fy (to go, move) + re (again, back); or Fy (fey, fated) + re (radiance)",
+   "reading": "Cyclical motion of fate; the radiant return of what was fated to burn and recur.",
+   "languages": [
+    "en",
+    "enm"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fyre ≈ French fier (to trust, confide); Fyre ≈ French fer (iron, the metal of Mars)",
+   "reading": "Trust placed in the hard, unyielding substance; faith in what cannot bend or break.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Fyre: letters F, Y, R, E can form Ref (reference), Fer (iron in French), Erf (plot of land in Afrikaans)",
+   "reading": "The marked ground, the iron stake, the point of reference where all things are measured.",
+   "languages": [
+    "en",
+    "fr",
+    "af"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "F = serpent or flame; Y = the fork, the choice, the ascending path; R = the wheel turning; E = the eye, the witness",
+   "reading": "The flame of choice turning before the eternal eye; the serpent's ascent through the wheel of becoming.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Fyre = Fire with Y inserted; Y as the hidden axis, the vertical becoming visible within horizontal combustion",
+   "reading": "Fire elevated to its spiritual axis; the vertical flame rising through material consumption.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fyre ≈ German Feuer (fire); Fyre ≈ Latin furor (rage, fury, divine madness)",
+   "reading": "The divine madness that consumes; ecstatic rage as the engine of all transformation.",
+   "languages": [
+    "en",
+    "de",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.68
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Fyre: F-Y-R-E as initials could yield For Your Radiant Essence or Fervent Yearning Reaches Eternity",
+   "reading": "The essence yearns eternally toward radiance; fervent desire reaching beyond the mortal sphere.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "etymology",
+   "chain": "Y in Fyre as insertion of Proto-Germanic *iu (yew tree, sacred wood that burns longest) into fir/fire",
+   "reading": "The sacred wood burning; the eternal tree consumed in purifying flame.",
+   "languages": [
+    "en",
+    "gem"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Fyre = Fyr + e; Fyr (Old Norse fyrr, former, prior) + e (being); what was, burning into what is",
+   "reading": "The anterior burning; what was consumes itself to become what is present.",
+   "languages": [
+    "en",
+    "non"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fyre ≈ Hebrew פיר (pir, to spread, scatter) or פר (par, young bull, vigor)",
+   "reading": "Scattered vigor; the wild strength dispersed through all things that burn and scatter.",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.48
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "F (serpent/flame) + Y (the path of ascent) + R (the wheel, return) + E (the eye, manifestation) = the serpent ascending the wheel before the eye of God",
+   "reading": "The serpent's ascent through cycles of return, witnessed by the divine eye; alchemy's great work.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.53
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

@@ -5,15 +5,150 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:31:50+00:00",
- "latency_s": 8.33,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:16:15+00:00",
+ "latency_s": 9.16,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan; ba (sheep bleat) + ta (percussion strike) + clan (group sound)\",\n    \"reading\": \"The bleating of grouped percussion—animal noise formalized into collective rhythm.\",\n    \"languages\": [\"en\", \"onomatopoeia\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Ba (French) = kiss; ta (French) = your (familiar); clan = family group\",\n    \"reading\": \"Your kiss belongs to the family—intimacy distributed among the collective.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan; bata (Spanish) = wand/rod; clan = assembly\",\n    \"reading\": \"The rod commands the assembly—sovereignty through symbolic gesture.\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B=2, A=1, T=20, A=1, C=3, L=12, A=1, N=14; read as: BA-TA-CLAN = vessel-bread-assembly\",\n    \"reading\": \"Bread distributed among the gathered—sustenance as communal principle.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Clan: Old Irish clann, from Latin planta (shoot/branch); ba-ta = beat/strike\",\n    \"reading\": \"The beating that produces shoots—generative force through repeated percussion.\",\n    \"languages\": [\"ga\", \"la\", \"en\"],\n    \"source\": \"Oxford English Dictionary, s.v. clan\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"BATALCAN rearranged: CANT-BAAL; cant (speak falsely) + Baal (false god)\",\n    \"reading\": \"The language of false gods—idolatrous speech masquerading as truth.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba (soul in Egyptian) + ta (land in Egyptian) + clan (gathering)\",\n    \"reading\": \"The soul of the land assembles—territorial spirit made collective.\",\n    \"languages\": [\"en\", \"eg\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"BA-TA-CLAN: B(reath) A(nd) T(emperament) A(cting) C(ollectively) L(ike) A(nimals) N(aturally)\",\n    \"reading\": \"Living creatures acting temperamentally together—instinct as organized principle.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bataillon (French) = battalion; clan = family; ba-ta-clan = military family\",\n    \"reading\": \"The family organized as fighting force—kinship structured for war.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan; ta (it is/exists in Egyptian) + clan = it exists among many\",\n    \"reading\": \"What exists emerges through multiplicity—being requires the collective.\",\n    \"languages\": [\"en\", \"eg\"],\n    \"source\": \"generative\",\n    \"confidence",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 78 column 30 (char 3046)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan → ba (father, kiss) + ta (you) + clan (family group)\",\n    \"reading\": \"The father addresses you within the family group; patriarchal speech act.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Ba-ta-clan → French bataillon (battalion) via phonetic approximation\",\n    \"reading\": \"Military formation; organized body of soldiers arranged in ranks and hierarchy.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan → bat (strike, wing) + a + clan (tribe)\",\n    \"reading\": \"The winged creature strikes or belongs to the tribal group; nocturnal kinship.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Clan from Scottish Gaelic clann (children, family); ba from Latin baa (sheep cry)\",\n    \"reading\": \"The bleating of the family; animal voice merged with kinship bond.\",\n    \"languages\": [\"gd\", \"la\", \"en\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-A-T-A-C-L-A-N → initial letters as acronym: Ba-Ta-Clan\",\n    \"reading\": \"Initials spell the word itself; self-referential seal; the name contains its own essence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan → ba (soul in Egyptian) + ta (earth in Egyptian) + clan (gathering)\",\n    \"reading\": \"Soul of the earth gathered together; spiritual assembly rooted in terrestrial being.\",\n    \"languages\": [\"egy\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Ta-clan → Italian taclan or Spanish tac-lán (rhythmic percussion sound)\",\n    \"reading\": \"Rhythmic striking sound; the beat and pulse of assembled bodies in motion.\",\n    \"languages\": [\"it\", \"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Ba (Hebrew letter Beth = house) + ta (Hebrew letter Tav = cross/mark) + clan\",\n    \"reading\": \"House marked by the cross; dwelling place sealed with divine signature.\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan → bah (exclamation of dismissal) + ta (thanks, British) + clan\",\n    \"reading\": \"Dismissive thanks offered to the tribe; ironic gratitude within kinship bonds.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Ba-ta-clan → cab-natal or cab-la-tan (rearrangement of letters)\",\n    \"reading\": \"Taxi of birth; vehicle of natality; transport of becoming and origin.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bata from Sanskrit bhata (soldier, servant); clan from Gaelic clann (children)\",\n    \"reading\": \"Servant-soldiers bound by familial ties; mercenary kinship; hierarchical tribe.\",\n    \"languages\": [\"sa\", \"gd\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ta-clan → ba (kiss in Romance) + ta (you) + clan (secret society)\",\n    \"reading\": \"You are kissed into the secret society; initiation through affection and belonging.\",\n    \"languages\": [\"fr\", \"it\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.61\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ta-clan → ba (father, kiss) + ta (you) + clan (family group)",
+   "reading": "The father addresses you within the family group; patriarchal speech act.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Ba-ta-clan → French bataillon (battalion) via phonetic approximation",
+   "reading": "Military formation; organized body of soldiers arranged in ranks and hierarchy.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ta-clan → bat (strike, wing) + a + clan (tribe)",
+   "reading": "The winged creature strikes or belongs to the tribal group; nocturnal kinship.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Clan from Scottish Gaelic clann (children, family); ba from Latin baa (sheep cry)",
+   "reading": "The bleating of the family; animal voice merged with kinship bond.",
+   "languages": [
+    "gd",
+    "la",
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Merriam-Webster",
+   "confidence": 0.75
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-A-T-A-C-L-A-N → initial letters as acronym: Ba-Ta-Clan",
+   "reading": "Initials spell the word itself; self-referential seal; the name contains its own essence.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ta-clan → ba (soul in Egyptian) + ta (earth in Egyptian) + clan (gathering)",
+   "reading": "Soul of the earth gathered together; spiritual assembly rooted in terrestrial being.",
+   "languages": [
+    "egy",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.68
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Ta-clan → Italian taclan or Spanish tac-lán (rhythmic percussion sound)",
+   "reading": "Rhythmic striking sound; the beat and pulse of assembled bodies in motion.",
+   "languages": [
+    "it",
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Ba (Hebrew letter Beth = house) + ta (Hebrew letter Tav = cross/mark) + clan",
+   "reading": "House marked by the cross; dwelling place sealed with divine signature.",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ta-clan → bah (exclamation of dismissal) + ta (thanks, British) + clan",
+   "reading": "Dismissive thanks offered to the tribe; ironic gratitude within kinship bonds.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "anagram",
+   "chain": "Ba-ta-clan → cab-natal or cab-la-tan (rearrangement of letters)",
+   "reading": "Taxi of birth; vehicle of natality; transport of becoming and origin.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bata from Sanskrit bhata (soldier, servant); clan from Gaelic clann (children)",
+   "reading": "Servant-soldiers bound by familial ties; mercenary kinship; hierarchical tribe.",
+   "languages": [
+    "sa",
+    "gd",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ta-clan → ba (kiss in Romance) + ta (you) + clan (secret society)",
+   "reading": "You are kissed into the secret society; initiation through affection and belonging.",
+   "languages": [
+    "fr",
+    "it",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.61
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

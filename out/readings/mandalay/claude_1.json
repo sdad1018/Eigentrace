@@ -5,15 +5,147 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:22:14+00:00",
- "latency_s": 9.39,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:05:07+00:00",
+ "latency_s": 10.84,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-da-lay; man (adult male) + da (the, definite article in Romance) + lay (to recline, or a song)\",\n    \"reading\": \"The man of the recumbent state; a masculine principle in repose or in bardic utterance.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + dal + ay; dal (dal as in dahl, the lentil pulse) + ay (affirmation, yes)\",\n    \"reading\": \"The man of sustenance affirmed; earthly nourishment acknowledged as masculine principle.\",\n    \"languages\": [\"en\", \"hi\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay ≈ French 'mande-là' (sends/commands there); mandate (imperative utterance)\",\n    \"reading\": \"A sending-forth or command issued to a distant place; delegated authority in space.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + dala + y; dala (wheel, turning in Sanskrit); y as cosmic principle or yod\",\n    \"reading\": \"The man of the turning wheel; masculine consciousness in cyclical motion or dharma.\",\n    \"languages\": [\"en\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay → 'Lay man-da'; lay (non-ordained) + man + da (gift, Latin)\",\n    \"reading\": \"The lay gift of man; profane or secular bestowal by the human principle.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (water, the maternal); A (the apex, the alpha); Y (the fork, the choice or ascent)\",\n    \"reading\": \"Water and the beginning meet the fork of ascension; maternal flux encountering decision.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + del + ay; del (Arabic definite article) + ay (water, Sanskrit)\",\n    \"reading\": \"The water of man; human essence dissolved or flowing as aqueous principle.\",\n    \"languages\": [\"en\", \"ar\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M.A.N.D.A.L.A.Y as initials: Mystical Ascent Navigates Divine Arcana Luminously, Always\",\n    \"reading\": \"Mystical ascent navigates divine secrets with luminous constancy; esoteric progression affirmed.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay ≈ Greek 'mande-la' (divination through inquiry); manteia (prophecy)\",\n    \"reading\": \"Divination-place; a locale where prophetic utterance or the oracular is consulted.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Mand + a + lay; mand (from Latin mandare, to command) + a (the indefinite) + lay (",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 31 (char 2879)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-da-lay; Man (human male) + da (the, feminine article in Romance) + lay (to place, recline)\",\n    \"reading\": \"The human male places or reclines the feminine principle; masculine action upon receptive form.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay ≈ French 'mande à lay' (order/demand to lay); mande (from mander, to send word) + à + lay\",\n    \"reading\": \"A command or sending forth to lay down, to place in order, to establish foundation.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-dal-ay; dal (Sanskrit: branch, division) + ay (always, ever in Old English)\",\n    \"reading\": \"The human perpetually divided; consciousness eternally branching into multiplicity.\",\n    \"languages\": [\"en\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay → 'Lay man-da' or 'Day man-la'; lay (place) + man (human) + da (give, in Latin)\",\n    \"reading\": \"Place the man who gives; the giver positioned as intermediary between worlds.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M-A-N-D-A-L-A-Y: initials as acronym; Man-Da-La-Y (the way of the mandala)\",\n    \"reading\": \"The sacred circular pattern shows the way; cosmic order made visible through geometry.\",\n    \"languages\": [\"en\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Lay: Old English lecgan, Proto-Germanic *lagjan; root *leǵ- (to lie, recline)\",\n    \"reading\": \"To lay is to return to the fundamental state of rest, the horizontal plane of being.\",\n    \"languages\": [\"en\", \"gem\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-da-lay; da (Hebrew: knowledge, דע) + lay (English: to place)\",\n    \"reading\": \"Man places knowledge; consciousness arranges wisdom into comprehensible form.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay ≈ Arabic 'manda-lay' (mandate + lay); manda (command) + lay (night in some dialects)\",\n    \"reading\": \"The command that comes in darkness; hidden authority speaking through obscurity.\",\n    \"languages\": [\"en\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (13, death/transformation) + A (1, beginning) + Y (25, completion); 13+1+25 = 39 = 3+9 = 12 = 1+2 = 3\",\n    \"reading\": \"Death, beginning, and completion cycle eternally; the trinity emerges from transformation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-dal-ay; dal (to flow, in Sanskrit धल) + ay (ever, always)\",\n    \"reading\": \"Man flows eternally; consciousness as perpetual stream, never static.\",\n    \"languages\": [\"en\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Man: Old English mann, Proto-Germanic *manniz; root uncertain, possibly *men- (to think)\",\n    \"reading\": \"Man is the thinking being; consciousness itself is the defining human principle.\",\n    \"languages\": [\"en\", \"gem\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay ≈ Latin 'manda-laie' (he commands the people); manda (imperative of mandare) + laie (people)\",\n    \"reading\": \"Command issues to the people; authority speaks to the multitude.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-da-lay; Man (human male) + da (the, feminine article in Romance) + lay (to place, recline)",
+   "reading": "The human male places or reclines the feminine principle; masculine action upon receptive form.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay ≈ French 'mande à lay' (order/demand to lay); mande (from mander, to send word) + à + lay",
+   "reading": "A command or sending forth to lay down, to place in order, to establish foundation.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-dal-ay; dal (Sanskrit: branch, division) + ay (always, ever in Old English)",
+   "reading": "The human perpetually divided; consciousness eternally branching into multiplicity.",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay → 'Lay man-da' or 'Day man-la'; lay (place) + man (human) + da (give, in Latin)",
+   "reading": "Place the man who gives; the giver positioned as intermediary between worlds.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M-A-N-D-A-L-A-Y: initials as acronym; Man-Da-La-Y (the way of the mandala)",
+   "reading": "The sacred circular pattern shows the way; cosmic order made visible through geometry.",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Lay: Old English lecgan, Proto-Germanic *lagjan; root *leǵ- (to lie, recline)",
+   "reading": "To lay is to return to the fundamental state of rest, the horizontal plane of being.",
+   "languages": [
+    "en",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-da-lay; da (Hebrew: knowledge, דע) + lay (English: to place)",
+   "reading": "Man places knowledge; consciousness arranges wisdom into comprehensible form.",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay ≈ Arabic 'manda-lay' (mandate + lay); manda (command) + lay (night in some dialects)",
+   "reading": "The command that comes in darkness; hidden authority speaking through obscurity.",
+   "languages": [
+    "en",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (13, death/transformation) + A (1, beginning) + Y (25, completion); 13+1+25 = 39 = 3+9 = 12 = 1+2 = 3",
+   "reading": "Death, beginning, and completion cycle eternally; the trinity emerges from transformation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-dal-ay; dal (to flow, in Sanskrit धल) + ay (ever, always)",
+   "reading": "Man flows eternally; consciousness as perpetual stream, never static.",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Man: Old English mann, Proto-Germanic *manniz; root uncertain, possibly *men- (to think)",
+   "reading": "Man is the thinking being; consciousness itself is the defining human principle.",
+   "languages": [
+    "en",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay ≈ Latin 'manda-laie' (he commands the people); manda (imperative of mandare) + laie (people)",
+   "reading": "Command issues to the people; authority speaks to the multitude.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

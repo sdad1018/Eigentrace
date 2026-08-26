@@ -5,15 +5,146 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:21:45+00:00",
- "latency_s": 9.08,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:04:34+00:00",
+ "latency_s": 10.82,
  "ok": true,
  "call_error": null,
- "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mandala (Sanskrit maṇḍala = circle, disc) + Bay (Old English bæg, from Proto-Germanic *bagiz)\",\n    \"reading\": \"Circle-shaped body of water; a rounded enclosure meeting the sea.\",\n    \"languages\": [\"sa\", \"en\"],\n    \"source\": \"Oxford English Dictionary; Monier-Williams Sanskrit Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + da + lay + bay; man (adult male) + day + lay (recline) + bay (water)\",\n    \"reading\": \"A male figure reclining by water during daylight; masculine repose by the shore.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandala (Sanskrit) sounds like 'man-dah-lah'; French 'mal' (bad) + 'day' + 'lay'\",\n    \"reading\": \"Evil day of repose; misfortune dwelling in circular form.\",\n    \"languages\": [\"fr\", \"sa\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"MANDALAY BAY rearranged: BAND + MAYA + LAB + DAY\",\n    \"reading\": \"A band labours in illusion by day; orchestrated delusion in ritual space.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + duh + LAY + bay; LAY (to place, to recline) + BAY (laurel, from Greek)\",\n    \"reading\": \"Male figure placed beneath the laurel bay; honour and prostration conjoined.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M.A.N.D.A.L.A.Y. B.A.Y.: initial letters M, A, N, D, A, L, A, Y, B, A, Y\",\n    \"reading\": \"Mystic Arrangement of Natural Divine Attributes Laid Before Ascending Yod.\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Lay (Old English lecgan, to place) + Bay (Latin badius, chestnut horse colour)\",\n    \"reading\": \"To place the chestnut; to position redness or warmth in circular enclosure.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + duh + LAY + BAY; BAY (botanical laurel or bay leaf)\",\n    \"reading\": \"Male figure lay crowned with sacred herb; masculine adornment by waters.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bay (en: body of water) sounds like 'bé' (French: kiss); duh + LAY sounds like 'du lai' (of law)\",\n    \"reading\": \"Kiss of the law's placement; legal union solemnized by the circular shore.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (13th letter, duality) + A (1, unity) + Y (25, cosmic completion); circle mandala enclosed",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 2773)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-da-lay = Man + da + lay; 'da' (Russian) = yes; 'lay' (English) = to place or recline\",\n    \"reading\": \"The man says yes to reclining; affirmation of repose or surrender.\",\n    \"languages\": [\"en\", \"ru\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mandala (Sanskrit maṇḍala) = circle, disc; -ay (Old English æg) = island or water-surrounded land\",\n    \"reading\": \"A circular sacred diagram surrounded by water; the mandala as island sanctuary.\",\n    \"languages\": [\"sa\", \"en\"],\n    \"source\": \"Oxford English Dictionary; Monier-Williams Sanskrit Dictionary\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Man-da-lay ≈ French 'mande' (he/she sends) + 'lay' (English); or 'mandé' (summoned, sent for)\",\n    \"reading\": \"One who is summoned or sent; a messenger or delegate under command.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + dal + ay; 'dal' (Hindi) = lentil, pulse; 'ay' = affirmation\",\n    \"reading\": \"The man of sustenance; affirmation of nourishment and the common grain.\",\n    \"languages\": [\"en\", \"hi\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay → 'Man a day lay' or 'Lay man a day'\",\n    \"reading\": \"Daily labour of the common man; the ordinary man's daily task or burden.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M = 13 (death, transformation); A = 1 (unity); N = 14 (change); D = 4 (stability); L = 12 (sacrifice); Y = 25 (completion)\",\n    \"reading\": \"Transformation through unity and change toward stability, culminating in completion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Man' (English) + 'da' (Japanese) = yes/affirmative + 'lay' (recline); or 'da' (German) = there\",\n    \"reading\": \"The man there reclines; presence affirmed in a state of repose.\",\n    \"languages\": [\"en\", \"ja\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mandala (Sanskrit) = cosmic circle; Bay (Old English bæg, from Proto-Germanic) = body of water\",\n    \"reading\": \"The sacred circle embraced by water; cosmic order contained within natural boundaries.\",\n    \"languages\": [\"sa\", \"en\"],\n    \"source\": \"Oxford English Dictionary; Monier-Williams\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M-A-N-D-A-L-A-Y: initials or first letters as acrostic potential\",\n    \"reading\": \"Mystical Ascent Navigates Divine Arcana, Luminous Always—the soul's upward journey through sacred knowledge.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"'Manda' (Latin, 3rd person singular of mandare) = he/she commands; 'lay' = to place\",\n    \"reading\": \"Command placed; the imposition of will or order upon the world.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-dal-ay; 'dal' (Urdu/Persian) = branch, division; 'ay' = yes\",\n    \"reading\": \"The man of many branches affirms; unity expressed through multiplicity.\",\n    \"languages\": [\"en\", \"ur\", \"fa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Lay (Old English lecgan) = to place, arrange; Man (Old English mann) = human; Day (Old English dæg) = light, revelation\",\n    \"reading\": \"Humanity arranged in the light; the ordering of human existence through illumination.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.6\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-da-lay = Man + da + lay; 'da' (Russian) = yes; 'lay' (English) = to place or recline",
+   "reading": "The man says yes to reclining; affirmation of repose or surrender.",
+   "languages": [
+    "en",
+    "ru"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Mandala (Sanskrit maṇḍala) = circle, disc; -ay (Old English æg) = island or water-surrounded land",
+   "reading": "A circular sacred diagram surrounded by water; the mandala as island sanctuary.",
+   "languages": [
+    "sa",
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Monier-Williams Sanskrit Dictionary",
+   "confidence": 0.75
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Man-da-lay ≈ French 'mande' (he/she sends) + 'lay' (English); or 'mandé' (summoned, sent for)",
+   "reading": "One who is summoned or sent; a messenger or delegate under command.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + dal + ay; 'dal' (Hindi) = lentil, pulse; 'ay' = affirmation",
+   "reading": "The man of sustenance; affirmation of nourishment and the common grain.",
+   "languages": [
+    "en",
+    "hi"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay → 'Man a day lay' or 'Lay man a day'",
+   "reading": "Daily labour of the common man; the ordinary man's daily task or burden.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M = 13 (death, transformation); A = 1 (unity); N = 14 (change); D = 4 (stability); L = 12 (sacrifice); Y = 25 (completion)",
+   "reading": "Transformation through unity and change toward stability, culminating in completion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'Man' (English) + 'da' (Japanese) = yes/affirmative + 'lay' (recline); or 'da' (German) = there",
+   "reading": "The man there reclines; presence affirmed in a state of repose.",
+   "languages": [
+    "en",
+    "ja",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Mandala (Sanskrit) = cosmic circle; Bay (Old English bæg, from Proto-Germanic) = body of water",
+   "reading": "The sacred circle embraced by water; cosmic order contained within natural boundaries.",
+   "languages": [
+    "sa",
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Monier-Williams",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M-A-N-D-A-L-A-Y: initials or first letters as acrostic potential",
+   "reading": "Mystical Ascent Navigates Divine Arcana, Luminous Always—the soul's upward journey through sacred knowledge.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "'Manda' (Latin, 3rd person singular of mandare) = he/she commands; 'lay' = to place",
+   "reading": "Command placed; the imposition of will or order upon the world.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Lewis & Short Latin Dictionary",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-dal-ay; 'dal' (Urdu/Persian) = branch, division; 'ay' = yes",
+   "reading": "The man of many branches affirms; unity expressed through multiplicity.",
+   "languages": [
+    "en",
+    "ur",
+    "fa"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Lay (Old English lecgan) = to place, arrange; Man (Old English mann) = human; Day (Old English dæg) = light, revelation",
+   "reading": "Humanity arranged in the light; the ordering of human existence through illumination.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

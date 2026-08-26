@@ -5,15 +5,157 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:32:36+00:00",
- "latency_s": 9.36,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:17:19+00:00",
+ "latency_s": 14.51,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Eagles < Old English *eagel < Proto-Germanic *argilaz; Death < Old English deað < Proto-Germanic *daudaz; Metal < Old French metal < Latin metallum < Greek μέταλλον metállon\",\n    \"reading\": \"Extraction of hard substance from earth; mortality of earthly matter transformed into enduring form.\",\n    \"languages\": [\"en\", \"grc\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Eagles of Death Metal > E-gles / of / D-th / M-tal; vowels removed: gls, f, dth, mtl — consonantal skeleton\",\n    \"reading\": \"Hard consonants frame soft vowel breath: structure and void alternating, skeleton and spirit.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Eagles ≈ French 'aigle' (eagle); Death ≈ German 'Todt' (death); Metal ≈ Latin 'metallum'; read as French passage: aigles de mort métal\",\n    \"reading\": \"Eagles of dead metal: the petrified wings, the monument to flight that cannot soar.\",\n    \"languages\": [\"en\", \"fr\", \"de\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"E-gles-of-D-th-M-tal; initial consonants E, G, D, M spell: EGDM; rearranged: GMED, DOGE, MEDOG\",\n    \"reading\": \"DOGE: the doge or magistrate presiding over death; or MEDOG: the mountain gateway between worlds.\",\n    \"languages\": [\"en\", \"it\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Eagles of Death Metal; letters rearranged: METAL OF DEAD GELS, MELT DEAD GOAL FEST\",\n    \"reading\": \"Melting of dead matter; dissolution of fixed form; festering dissolution toward spiritual release.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M = matter, metal; D = duality, death; E = essence, eagle (spirit); read as: matter-duality-essence; or M(mercurial) D(dissolution) E(ethereal)\",\n    \"reading\": \"Mercurial and volatile death; ethereal essence imprisoned in material duality.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Eagles(6) of(2) Death(5) Metal(5); 6+2+5+5=18; 1+8=9; nine: completion, end, eternity\",\n    \"reading\": \"Completion cycle: all endings return to the eternal; nine gates of transformation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ea-gles / of / dea-th / me-tal; diphthongs EA and EA and E: repeating vowel of opening, unfolding\",\n    \"reading\": \"Repeated opening sound: the mouth of the eagle, the mouth of death, the mouth of metal singing.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 62 column 24 (char 2928)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Eagles: Old English *earn* → Proto-Germanic *arnaz* (eagle); Death: Old English *deaþ* → Proto-Germanic *dauthaz* (death); Metal: Old English *metall* → Latin *metallum* → Greek *metallon* (mine, quarry)\",\n    \"reading\": \"The bird of prey, cessation of life, and extracted mineral substance conjoined in sound.\",\n    \"languages\": [\"en\", \"gmc\", \"la\", \"grc\"],\n    \"source\": \"Oxford English Dictionary; Grimm's Law phonetic correspondences\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ea-gles → 'E' (the letter, the vowel) + 'gles' (glace, gloss, slickness); Death → 'Dea' (goddess) + 'th' (theta, the letter); Metal → 'Met' (past tense of meet) + 'al' (all)\",\n    \"reading\": \"The glossy vowel-being meets all things; the goddess-death and the meeting of all substance.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Eagles ≈ French *aigles* (eagles); Death ≈ German *Tod* (death); Metal ≈ Latin *metallum*; aigles + Tod = 'aig' (needle, sharp) + 'les' (the, plural)\",\n    \"reading\": \"Sharp plural things; the pointed multiplicity of death-substance extracted from earth.\",\n    \"languages\": [\"en\", \"fr\", \"de\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Eagles of Death Metal → rearranged letters yield: 'Fled Goat Shame' or 'Glades Moth Fate' or 'Mead Loathes Fag'\",\n    \"reading\": \"Flight from shame; the meadow-moth's destiny; the rejection of that which burns.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Eagles of Death Metal → E-O-D-M; EODM as acronym; E (East), O (Omega), D (Delta), M (Mu); or read as 'End Of Days Manifest'\",\n    \"reading\": \"The manifestation of ultimate endings; omega-delta-mu: the final letters descending toward silence.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"E (5th letter, pentad, the five-pointed star); D (4th letter, the square, stability); M (13th letter, the water-sign); A (1st, alpha, beginning)\",\n    \"reading\": \"The five-pointed celestial form descends through squared death into the waters of the thirteenth, returning to alpha.\",\n    \"languages\": [\"en\", \"grc\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ea-gles Of Death Me-tal → 'Ea' (water in Old English) + 'gles' (glees, joys); 'Of' (off, away); 'Death' (cessation); 'Me' (self) + 'tal' (tale)\",\n    \"reading\": \"The waters of joy flee away; death tells the tale of the self.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Metal: Greek *metallon* (mine, quarry, excavation); Death: Proto-Indo-European *dheu-* (to die, fade); Eagles: Proto-Germanic *arnaz* (strength, power)\",\n    \"reading\": \"Strength extracted from the excavated place of fading; power mined from the grave-earth.\",\n    \"languages\": [\"grc\", \"pie\", \"gmc\"],\n    \"source\": \"Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Death ≈ French *deth* (archaic); Metal ≈ Spanish *metal*; Eagles ≈ Italian *aquile*; 'aquile' contains 'aqua' (water)\",\n    \"reading\": \"The water-birds of death-substance; the aqueous metal of the sky-hunters.\",\n    \"languages\": [\"en\", \"fr\", \"es\", \"it\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ea-gles Of Death Me-tal → 'Ea' (river-goddess) + 'gles' (glees); 'Of' (off); 'Death' (Dea-th, goddess-th); 'Me-tal' (metal, the measure)\",\n    \"reading\": \"The river-goddess's joys depart; the goddess-death measures the metallic world.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (13, death in Hebrew numerology); E (5, grace); A (1, unity); T (20, the cross); L (30, the law)\",\n    \"reading\": \"The law of the cross unites grace with death; the thirteenth measure of all things.\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Of: Old English *of* → Proto-Germanic *ab* (away, from); Death: *deaþ* → *dauthaz* (the one who dies); Metal: *metallum* → *metallon* (that which is dug)\",\n    \"reading\": \"Away from the dug-substance comes the one who dies; separation of the mortal from the extracted earth.\",\n    \"languages\": [\"en\", \"gmc\", \"la\", \"grc\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.75\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Eagles: Old English *earn* → Proto-Germanic *arnaz* (eagle); Death: Old English *deaþ* → Proto-Germanic *dauthaz* (death); Metal: Old English *metall* → Latin *metallum* → Greek *metallon* (mine, quarry)",
+   "reading": "The bird of prey, cessation of life, and extracted mineral substance conjoined in sound.",
+   "languages": [
+    "en",
+    "gmc",
+    "la",
+    "grc"
+   ],
+   "source": "Oxford English Dictionary; Grimm's Law phonetic correspondences",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ea-gles → 'E' (the letter, the vowel) + 'gles' (glace, gloss, slickness); Death → 'Dea' (goddess) + 'th' (theta, the letter); Metal → 'Met' (past tense of meet) + 'al' (all)",
+   "reading": "The glossy vowel-being meets all things; the goddess-death and the meeting of all substance.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Eagles ≈ French *aigles* (eagles); Death ≈ German *Tod* (death); Metal ≈ Latin *metallum*; aigles + Tod = 'aig' (needle, sharp) + 'les' (the, plural)",
+   "reading": "Sharp plural things; the pointed multiplicity of death-substance extracted from earth.",
+   "languages": [
+    "en",
+    "fr",
+    "de",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Eagles of Death Metal → rearranged letters yield: 'Fled Goat Shame' or 'Glades Moth Fate' or 'Mead Loathes Fag'",
+   "reading": "Flight from shame; the meadow-moth's destiny; the rejection of that which burns.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Eagles of Death Metal → E-O-D-M; EODM as acronym; E (East), O (Omega), D (Delta), M (Mu); or read as 'End Of Days Manifest'",
+   "reading": "The manifestation of ultimate endings; omega-delta-mu: the final letters descending toward silence.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "E (5th letter, pentad, the five-pointed star); D (4th letter, the square, stability); M (13th letter, the water-sign); A (1st, alpha, beginning)",
+   "reading": "The five-pointed celestial form descends through squared death into the waters of the thirteenth, returning to alpha.",
+   "languages": [
+    "en",
+    "grc",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ea-gles Of Death Me-tal → 'Ea' (water in Old English) + 'gles' (glees, joys); 'Of' (off, away); 'Death' (cessation); 'Me' (self) + 'tal' (tale)",
+   "reading": "The waters of joy flee away; death tells the tale of the self.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "etymology",
+   "chain": "Metal: Greek *metallon* (mine, quarry, excavation); Death: Proto-Indo-European *dheu-* (to die, fade); Eagles: Proto-Germanic *arnaz* (strength, power)",
+   "reading": "Strength extracted from the excavated place of fading; power mined from the grave-earth.",
+   "languages": [
+    "grc",
+    "pie",
+    "gmc"
+   ],
+   "source": "Pokorny Indo-European Etymological Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Death ≈ French *deth* (archaic); Metal ≈ Spanish *metal*; Eagles ≈ Italian *aquile*; 'aquile' contains 'aqua' (water)",
+   "reading": "The water-birds of death-substance; the aqueous metal of the sky-hunters.",
+   "languages": [
+    "en",
+    "fr",
+    "es",
+    "it",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ea-gles Of Death Me-tal → 'Ea' (river-goddess) + 'gles' (glees); 'Of' (off); 'Death' (Dea-th, goddess-th); 'Me-tal' (metal, the measure)",
+   "reading": "The river-goddess's joys depart; the goddess-death measures the metallic world.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (13, death in Hebrew numerology); E (5, grace); A (1, unity); T (20, the cross); L (30, the law)",
+   "reading": "The law of the cross unites grace with death; the thirteenth measure of all things.",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.48
+  },
+  {
+   "operation": "etymology",
+   "chain": "Of: Old English *of* → Proto-Germanic *ab* (away, from); Death: *deaþ* → *dauthaz* (the one who dies); Metal: *metallum* → *metallon* (that which is dug)",
+   "reading": "Away from the dug-substance comes the one who dies; separation of the mortal from the extracted earth.",
+   "languages": [
+    "en",
+    "gmc",
+    "la",
+    "grc"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.75
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

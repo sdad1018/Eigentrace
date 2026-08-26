@@ -5,15 +5,144 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:23:11+00:00",
- "latency_s": 9.33,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:06:08+00:00",
+ "latency_s": 10.61,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las (Spanish) = the (feminine plural); Vegas (Spanish) = empty/vacant\",\n    \"reading\": \"The empty ones; that which is devoid, hollowed out, or lacking substance.\",\n    \"languages\": [\"es\"],\n    \"source\": \"Real Academia Española dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las = 'lahz'; Vegas = 'vay-gus'; lahz + vay = 'laze' (to recline idly) + 'vague' (unclear)\",\n    \"reading\": \"Idle obscurity; the condition of reclining in uncertainty or indistinct repose.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Vegas from Latin 'vigil' (awake, watchful) via Old Spanish 'vega' (meadow/plain); 'las' = the feminine plural\",\n    \"reading\": \"The watchful plains; territories under perpetual observation or vigilance.\",\n    \"languages\": [\"la\", \"es\", \"en\"],\n    \"source\": \"Oxford English Dictionary, Corominas Diccionario Etimológico\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las-Ve-gas: 'lave' (to wash) + 'gas' (formless matter, or gossamer)\",\n    \"reading\": \"Washing away the formless; cleansing that which has no fixed shape.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"LAS VEGAS rearranged: GAVELS + AS or LAVES + GAG + S\",\n    \"reading\": \"The gavels speak; law and judgment rendered mute or silenced repeatedly.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las = 'lace' (French 'lacé'); Vegas = Latin 'vagus' (wandering, vague)\",\n    \"reading\": \"Laced wandering; interwoven journeys without fixed destination or purpose.\",\n    \"languages\": [\"fr\", \"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L-A-S V-E-G-A-S: Lux Ascendens / Signum Viae Eternae Gnostica Animae Salvandae\",\n    \"reading\": \"Rising light marks the eternal gnostic way for souls to be saved.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las = 'lass' (young woman); Vegas = 'vague' (hazy) + 'gas' (invisible)\",\n    \"reading\": \"The maiden wreathed in haze and invisible vapour; indistinct feminine presence.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las from Latin 'lassus' (weary); Vegas from 'vigil' (to watch): exhaustion meets wakefulness\",\n    \"reading\": \"The wearied watchfulness; exhausted vigilance or the fatigue of eternal observation.\",\n    \"languages\": [\"la\"],\n    \"source\": \"Walde-Hofmann Lateinisches Etymologisches Wörterbuch\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 24 (char 2817)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las (Spanish) sounds like 'laz'; English 'laze' = to recline idly\",\n    \"reading\": \"The state of reposing, idleness, or luxurious inactivity.\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Las' (the) + 'Vegas' (fertile plains); split as 'veg' (vegetation) + 'as' (plural marker)\",\n    \"reading\": \"The fertile or vegetated places; lands of abundance and growth.\",\n    \"languages\": [\"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Vegas from Latin 'vega' (meadow, plain); ultimately from Vulgar Latin 'vica' (village street)\",\n    \"reading\": \"The streets or villages of common folk; places of ordinary dwelling.\",\n    \"languages\": [\"la\", \"es\"],\n    \"source\": \"Oxford English Dictionary, etymology of 'vega'\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Las' + 'Ve' (see, behold in Romance) + 'gas' (gaseous, vaporous)\",\n    \"reading\": \"Behold the vaporous or ethereal; witness the insubstantial made visible.\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas → 'Vase Gals' or 'Gavels As'\",\n    \"reading\": \"Vessels held by women; or judgment rendered as law; containers of judgment.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"'Vegas' approximates French 'vague' (wave, vague); 'Las' = the waves\",\n    \"reading\": \"The waves; the undulating, the uncertain, the fluid and formless.\",\n    \"languages\": [\"es\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L-A-S V-E-G-A-S: initial letters as abbreviation or acrostic seed\",\n    \"reading\": \"A sequence beginning with LAV (wash, cleanse) and VEG (vegetation, life-force).\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V as the Roman numeral five; A as alpha (beginning); S as serpent or sigma (end)\",\n    \"reading\": \"The five-fold beginning and serpentine ending; completion through fivefold genesis.\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Las' (the) + 'Veg' (vex, trouble) + 'as' (plural): troubled things\",\n    \"reading\": \"The troubles, vexations, or afflictions in their multiplicity.\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas ≈ Latin 'lassus' (weary) + 'vegetus' (vigorous): paradox\",\n    \"reading\": \"Weariness and vigor conjoined; exhaustion paradoxically animated.\",\n    \"languages\": [\"la\"],\n    \"source\": \"Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Laz' (lazy) + 'Veg' (vegetable, inert matter) + 'as' (plural)\",\n    \"reading\": \"Inert, vegetative states multiplied; the dormant made manifest.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las from Spanish definite article 'la' (feminine plural); Vegas from 'vega' (meadow)\",\n    \"reading\": \"The feminine meadows; fertile grounds personified as the receptive principle.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"Real Academia Española dictionary\",\n    \"confidence\": 0.75\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las (Spanish) sounds like 'laz'; English 'laze' = to recline idly",
+   "reading": "The state of reposing, idleness, or luxurious inactivity.",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'Las' (the) + 'Vegas' (fertile plains); split as 'veg' (vegetation) + 'as' (plural marker)",
+   "reading": "The fertile or vegetated places; lands of abundance and growth.",
+   "languages": [
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "etymology",
+   "chain": "Vegas from Latin 'vega' (meadow, plain); ultimately from Vulgar Latin 'vica' (village street)",
+   "reading": "The streets or villages of common folk; places of ordinary dwelling.",
+   "languages": [
+    "la",
+    "es"
+   ],
+   "source": "Oxford English Dictionary, etymology of 'vega'",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'Las' + 'Ve' (see, behold in Romance) + 'gas' (gaseous, vaporous)",
+   "reading": "Behold the vaporous or ethereal; witness the insubstantial made visible.",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas → 'Vase Gals' or 'Gavels As'",
+   "reading": "Vessels held by women; or judgment rendered as law; containers of judgment.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "'Vegas' approximates French 'vague' (wave, vague); 'Las' = the waves",
+   "reading": "The waves; the undulating, the uncertain, the fluid and formless.",
+   "languages": [
+    "es",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L-A-S V-E-G-A-S: initial letters as abbreviation or acrostic seed",
+   "reading": "A sequence beginning with LAV (wash, cleanse) and VEG (vegetation, life-force).",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V as the Roman numeral five; A as alpha (beginning); S as serpent or sigma (end)",
+   "reading": "The five-fold beginning and serpentine ending; completion through fivefold genesis.",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'Las' (the) + 'Veg' (vex, trouble) + 'as' (plural): troubled things",
+   "reading": "The troubles, vexations, or afflictions in their multiplicity.",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas ≈ Latin 'lassus' (weary) + 'vegetus' (vigorous): paradox",
+   "reading": "Weariness and vigor conjoined; exhaustion paradoxically animated.",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis & Short Latin Dictionary",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'Laz' (lazy) + 'Veg' (vegetable, inert matter) + 'as' (plural)",
+   "reading": "Inert, vegetative states multiplied; the dormant made manifest.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Las from Spanish definite article 'la' (feminine plural); Vegas from 'vega' (meadow)",
+   "reading": "The feminine meadows; fertile grounds personified as the receptive principle.",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "Real Academia Española dictionary",
+   "confidence": 0.75
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

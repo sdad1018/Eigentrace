@@ -5,15 +5,142 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:20:56+00:00",
- "latency_s": 8.69,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:03:37+00:00",
+ "latency_s": 9.83,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"harvest < Old English hærfest < Proto-Germanic *harbistaz, related to Proto-Indo-European *kerp- (to pluck, gather)\",\n    \"reading\": \"The act of plucking or gathering; reaping what has been sown; the season of gathering crops.\",\n    \"languages\": [\"en\", \"ang\", \"gem\", \"ine\"],\n    \"source\": \"Oxford English Dictionary; Pokorny, Indogermanisches etymologisches Wörterbuch\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har-vest: har (phonetically close to 'char', to burn) + vest (to clothe, invest)\",\n    \"reading\": \"To burn away or strip bare, then to re-clothe or invest anew; consumption and renewal.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"harvest (English) ~ har-ouest (French sound): har (hard) + ouest (west); the hard west, the severest direction\",\n    \"reading\": \"The difficult western direction; the hard labour of gathering as one faces the setting sun.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"harvest rearranged: shaver + t; or: haters + v; or: hearts + v\",\n    \"reading\": \"That which shaves or strips; hearts laboured; those who hate the work of gathering.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har-vest: har (hare, swift creature) + vest (garment, investment)\",\n    \"reading\": \"The swift animal's garment; swiftness clothed or invested in labour; rapid gathering.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"H = the eighth letter (new beginning after seven); AR = alchemical regulus; V = vessel; EST = Eastern superlative\",\n    \"reading\": \"A new beginning in the vessel of the East; the eastward renewal of the regulus.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"H-A-R-V-E-S-T: Heightened Accumulation Reaches Vital Essential Storage Time\",\n    \"reading\": \"When the vital essentials reach heightened accumulation and must be stored; the critical season.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har-vest: har (Old English 'her', army) + vest (to clothe)\",\n    \"reading\": \"To clothe or equip an army; provision of the gathered supplies for warriors.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"harvest ~ German 'Herbst' (autumn): herb + st (stasis); the stasis of herbs\",\n    \"reading\": \"Autumn's stasis; the season when herbaceous growth ceases and becomes fixed, gathered.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"vest < Latin vestis (garment); har < Old English 'hær' (hoar, grey); hoar-frost",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 2987)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"harvest < Old English hærfest < Proto-Germanic *harbistaz; cognate with German Herbst (autumn)\",\n    \"reading\": \"The season of gathering; autumn itself, when crops ripen and are collected from fields.\",\n    \"languages\": [\"en\", \"de\", \"gem\"],\n    \"source\": \"Oxford English Dictionary, s.v. harvest\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har-vest; har = hare (swift animal); vest = garment or investiture\",\n    \"reading\": \"Swift clothing; the swift donning of seasonal garments; speed clothed in fabric.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har-vest; har = hard; vest = to clothe or invest with authority\",\n    \"reading\": \"To invest hardship with authority; the difficult labor vested in seasonal work.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"harvest ≈ French 'ar-vest' where ar = art; vest = clothing or investiture\",\n    \"reading\": \"Art clothed; the artistic rendering of seasonal labor and natural cycles.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"harvest → shaver + t; shaver = one who cuts; t = tau, the cross\",\n    \"reading\": \"The cutting tool marked by the cross; reaping implements bearing sacred geometry.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"harvest → hearts + v; hearts = vital centers; v = five (Roman numeral)\",\n    \"reading\": \"Five vital centers; the quintessential life-force gathered and preserved.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.25\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"H = breath; A = alpha, beginning; R = rho, flow; V = five; E = existence; S = serpent; T = tau, cross\",\n    \"reading\": \"Breath of beginning flow through five existences marked by serpent and cross.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"H-A-R-V-E-S-T as initial letters: 'He Arrives Reaping Vital Essential Seeds Thrice'\",\n    \"reading\": \"The reaper arrives thrice to gather the vital seeds of existence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.25\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har-vest; har = heart (phonetic near-homophone); vest = to clothe\",\n    \"reading\": \"To clothe the heart; the garbing of emotional or vital essence in material form.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"harvest < *harbistaz; -ist suffix denotes agent; harb- relates to autumn ripeness\",\n    \"reading\": \"One who gathers at the time of ripeness; the agent of seasonal completion.\",\n    \"languages\": [\"en\", \"gem\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"harvest ≈ Latin 'hara' (enclosure) + vest (to clothe); enclosed clothing\",\n    \"reading\": \"An enclosure clothed or bounded; the gathering-place made manifest in garment.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har-vest; har = harsh; vest = remainder or what is left\",\n    \"reading\": \"The harsh remainder; what endures after labor and stripping away.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "harvest < Old English hærfest < Proto-Germanic *harbistaz; cognate with German Herbst (autumn)",
+   "reading": "The season of gathering; autumn itself, when crops ripen and are collected from fields.",
+   "languages": [
+    "en",
+    "de",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary, s.v. harvest",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "har-vest; har = hare (swift animal); vest = garment or investiture",
+   "reading": "Swift clothing; the swift donning of seasonal garments; speed clothed in fabric.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "har-vest; har = hard; vest = to clothe or invest with authority",
+   "reading": "To invest hardship with authority; the difficult labor vested in seasonal work.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "harvest ≈ French 'ar-vest' where ar = art; vest = clothing or investiture",
+   "reading": "Art clothed; the artistic rendering of seasonal labor and natural cycles.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "anagram",
+   "chain": "harvest → shaver + t; shaver = one who cuts; t = tau, the cross",
+   "reading": "The cutting tool marked by the cross; reaping implements bearing sacred geometry.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "anagram",
+   "chain": "harvest → hearts + v; hearts = vital centers; v = five (Roman numeral)",
+   "reading": "Five vital centers; the quintessential life-force gathered and preserved.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.25
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "H = breath; A = alpha, beginning; R = rho, flow; V = five; E = existence; S = serpent; T = tau, cross",
+   "reading": "Breath of beginning flow through five existences marked by serpent and cross.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "notariqon",
+   "chain": "H-A-R-V-E-S-T as initial letters: 'He Arrives Reaping Vital Essential Seeds Thrice'",
+   "reading": "The reaper arrives thrice to gather the vital seeds of existence.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.25
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "har-vest; har = heart (phonetic near-homophone); vest = to clothe",
+   "reading": "To clothe the heart; the garbing of emotional or vital essence in material form.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "etymology",
+   "chain": "harvest < *harbistaz; -ist suffix denotes agent; harb- relates to autumn ripeness",
+   "reading": "One who gathers at the time of ripeness; the agent of seasonal completion.",
+   "languages": [
+    "en",
+    "gem"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "harvest ≈ Latin 'hara' (enclosure) + vest (to clothe); enclosed clothing",
+   "reading": "An enclosure clothed or bounded; the gathering-place made manifest in garment.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "har-vest; har = harsh; vest = remainder or what is left",
+   "reading": "The harsh remainder; what endures after labor and stripping away.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

@@ -5,15 +5,144 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:32:45+00:00",
- "latency_s": 8.92,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:17:30+00:00",
+ "latency_s": 10.6,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vol- + -taire; vol (French) = flight, theft; taire (French) = to be silent\",\n    \"reading\": \"Flight into silence; the stealing away of speech into muteness.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Voltaire < volt + aire; volt from Latin volutus, past participle of volvere (to turn, roll)\",\n    \"reading\": \"One who turns or rolls; rotational energy; the turning-back of force.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"Littré; OED s.v. volt\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Vol-taire ≈ 'volte' (Italian) = turn, reversal; French taire = silence\",\n    \"reading\": \"The reversal that enters silence; a turning-point where speech ceases.\",\n    \"languages\": [\"it\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Volt- (electrical unit) + -aire (one who does); -aire suffix = agent\",\n    \"reading\": \"One who conducts or carries electrical force; the bearer of current.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Voltaire rearranged: Avortile, Viralet, Raviote (partial anagrams)\",\n    \"reading\": \"Broken or twisted form; fragmentary recombination yields no single clear meaning but suggests rupture.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V = 22 (Hebrew Bet path); o = cipher/zero; l = line/measure; t = cross; a = beginning; i = unity; r = light; e = being\",\n    \"reading\": \"The line that measures from nothingness through crossing into unity and light.\",\n    \"languages\": [\"he\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Volt + aire; aire (French) = air, atmosphere; volt = turned force\",\n    \"reading\": \"Turned force carried on the air; electricity dispersed through atmosphere.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Voltaire: -aire (Latin -arius) = relating to, pertaining to\",\n    \"reading\": \"That which pertains to turning; the condition or state of rotational motion.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"Ernout-Meillet s.v. -arius\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vol- (swift, as in volatile) + taire; volatile = flying, fleeting\",\n    \"reading\": \"Swift flight into silence; that which flickers and vanishes without utterance.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"V-O-L-T-A-I-R-E: Taking first letters as acrostic seed\",\n    \"reading\": \"No stable acrostic yields; suggests meaning dispersed across letters rather than concentrated.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 78 column 24 (char 3051)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Voltaire < French surname; volt- from Latin 'voltus' (turned, face) + -aire (agent suffix)\",\n    \"reading\": \"One who turns; one with a turned or changeable face; agent of turning or transformation.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"Littré; Ernout-Meillet Dictionnaire étymologique de la langue latine\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vol-taire: vol (flight, theft) + taire (to be silent)\",\n    \"reading\": \"Flight into silence; theft of silence; the silent flight or escape.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Voltaire ≈ French 'volt' (turn) + Italian 'taire' (to be silent); Latin 'vult' (he wishes) + 'taire'\",\n    \"reading\": \"He wishes silence; the will turned toward silence; desire made mute.\",\n    \"languages\": [\"fr\", \"it\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vol-ta-ire: volt (electrical unit, turn) + ta (your, familiar) + ire (anger, wrath)\",\n    \"reading\": \"Your turning anger; the electricity of your wrath; your wrathful transformation.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Voltaire → Vair-tole; Vair (fur, heraldic term) + tole (sheet metal, deception)\",\n    \"reading\": \"Heraldic fur as deception; noble appearance concealing base metal; false nobility.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V (five in Roman numerals; the open vessel) + olt (hidden) + aire (air, space)\",\n    \"reading\": \"Five hidden in air; the vessel containing what is concealed in space.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Volt-aire: volt (turn) + aire (area, region, suffix of quality)\",\n    \"reading\": \"The region of turning; the quality or space of transformation; the turned realm.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Voltaire ≈ Latin 'vult' (wishes) + French 'taire' (to silence); vult + tacere\",\n    \"reading\": \"He wishes to be silent; the desire for silence; willing muteness.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"V-O-L-T-A-I-R-E: initial letters as acronym or acrostic seed\",\n    \"reading\": \"Vox Ominosa Loquens Taciturnitas Arcana Ignota Rerum Essentia: ominous voice speaking hidden silence of unknown things' essence.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Voltaire: Old French 'voltier' (to turn repeatedly) + -aire; related to 'volte' (fencing turn)\",\n    \"reading\": \"One who turns repeatedly; the master of turning; the dancer of reversals.\",\n    \"languages\": [\"fr\", \"it\"],\n    \"source\": \"Godefroy Dictionnaire de l'ancienne langue française\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vol-taire: vol (flying, theft) + taire (silent one, feminine noun form)\",\n    \"reading\": \"The silent flight; the mute thief; she who steals in silence.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Voltaire ≈ French 'voir' (to see) + 'taire' (to silence); seeing made silent\",\n    \"reading\": \"Vision rendered mute; sight that cannot speak; the silenced eye.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Voltaire < French surname; volt- from Latin 'voltus' (turned, face) + -aire (agent suffix)",
+   "reading": "One who turns; one with a turned or changeable face; agent of turning or transformation.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "Littré; Ernout-Meillet Dictionnaire étymologique de la langue latine",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vol-taire: vol (flight, theft) + taire (to be silent)",
+   "reading": "Flight into silence; theft of silence; the silent flight or escape.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Voltaire ≈ French 'volt' (turn) + Italian 'taire' (to be silent); Latin 'vult' (he wishes) + 'taire'",
+   "reading": "He wishes silence; the will turned toward silence; desire made mute.",
+   "languages": [
+    "fr",
+    "it",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vol-ta-ire: volt (electrical unit, turn) + ta (your, familiar) + ire (anger, wrath)",
+   "reading": "Your turning anger; the electricity of your wrath; your wrathful transformation.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "Voltaire → Vair-tole; Vair (fur, heraldic term) + tole (sheet metal, deception)",
+   "reading": "Heraldic fur as deception; noble appearance concealing base metal; false nobility.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V (five in Roman numerals; the open vessel) + olt (hidden) + aire (air, space)",
+   "reading": "Five hidden in air; the vessel containing what is concealed in space.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Volt-aire: volt (turn) + aire (area, region, suffix of quality)",
+   "reading": "The region of turning; the quality or space of transformation; the turned realm.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Voltaire ≈ Latin 'vult' (wishes) + French 'taire' (to silence); vult + tacere",
+   "reading": "He wishes to be silent; the desire for silence; willing muteness.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V-O-L-T-A-I-R-E: initial letters as acronym or acrostic seed",
+   "reading": "Vox Ominosa Loquens Taciturnitas Arcana Ignota Rerum Essentia: ominous voice speaking hidden silence of unknown things' essence.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Voltaire: Old French 'voltier' (to turn repeatedly) + -aire; related to 'volte' (fencing turn)",
+   "reading": "One who turns repeatedly; the master of turning; the dancer of reversals.",
+   "languages": [
+    "fr",
+    "it"
+   ],
+   "source": "Godefroy Dictionnaire de l'ancienne langue française",
+   "confidence": 0.68
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vol-taire: vol (flying, theft) + taire (silent one, feminine noun form)",
+   "reading": "The silent flight; the mute thief; she who steals in silence.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Voltaire ≈ French 'voir' (to see) + 'taire' (to silence); seeing made silent",
+   "reading": "Vision rendered mute; sight that cannot speak; the silenced eye.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }
