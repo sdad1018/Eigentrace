@@ -1,0 +1,19 @@
+{
+ "word": "Las Vegas",
+ "model": "Claude",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:11+00:00",
+ "latency_s": 9.33,
+ "ok": true,
+ "call_error": null,
+ "raw": "```json\n[\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las (Spanish) = the (feminine plural); Vegas (Spanish) = empty/vacant\",\n    \"reading\": \"The empty ones; that which is devoid, hollowed out, or lacking substance.\",\n    \"languages\": [\"es\"],\n    \"source\": \"Real Academia Española dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las = 'lahz'; Vegas = 'vay-gus'; lahz + vay = 'laze' (to recline idly) + 'vague' (unclear)\",\n    \"reading\": \"Idle obscurity; the condition of reclining in uncertainty or indistinct repose.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Vegas from Latin 'vigil' (awake, watchful) via Old Spanish 'vega' (meadow/plain); 'las' = the feminine plural\",\n    \"reading\": \"The watchful plains; territories under perpetual observation or vigilance.\",\n    \"languages\": [\"la\", \"es\", \"en\"],\n    \"source\": \"Oxford English Dictionary, Corominas Diccionario Etimológico\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las-Ve-gas: 'lave' (to wash) + 'gas' (formless matter, or gossamer)\",\n    \"reading\": \"Washing away the formless; cleansing that which has no fixed shape.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"LAS VEGAS rearranged: GAVELS + AS or LAVES + GAG + S\",\n    \"reading\": \"The gavels speak; law and judgment rendered mute or silenced repeatedly.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las = 'lace' (French 'lacé'); Vegas = Latin 'vagus' (wandering, vague)\",\n    \"reading\": \"Laced wandering; interwoven journeys without fixed destination or purpose.\",\n    \"languages\": [\"fr\", \"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L-A-S V-E-G-A-S: Lux Ascendens / Signum Viae Eternae Gnostica Animae Salvandae\",\n    \"reading\": \"Rising light marks the eternal gnostic way for souls to be saved.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las = 'lass' (young woman); Vegas = 'vague' (hazy) + 'gas' (invisible)\",\n    \"reading\": \"The maiden wreathed in haze and invisible vapour; indistinct feminine presence.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las from Latin 'lassus' (weary); Vegas from 'vigil' (to watch): exhaustion meets wakefulness\",\n    \"reading\": \"The wearied watchfulness; exhausted vigilance or the fatigue of eternal observation.\",\n    \"languages\": [\"la\"],\n    \"source\": \"Walde-Hofmann Lateinisches Etymologisches Wörterbuch\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"",
+ "parsed": null,
+ "parse_error": "json_error: Expecting ',' delimiter: line 70 column 24 (char 2817)",
+ "extracted": false,
+ "n_readings": 0,
+ "refusal_like": false
+}

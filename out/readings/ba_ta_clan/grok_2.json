@@ -1,0 +1,151 @@
+{
+ "word": "Ba-ta-clan",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:27:43+00:00",
+ "latency_s": 7.55,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"phonetic_split\",\"chain\":\"Ba + ta + clan\",\"reading\":\"The father (Ba) marks (ta) the enclosed secret assembly (clan)\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.75},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Bât + à + clan\",\"reading\":\"The beast’s lair (bât) to the hidden clan\",\"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Bataclan ≈ Bat a clan\",\"reading\":\"Strike/kill the clan or the brood\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.8},\n  {\"operation\":\"etymology\",\"chain\":\"bata (Provençal) + clan\",\"reading\":\"Beating, combat + enclosed group: place of ritual combat\",\"languages\":[\"fr\",\"oc\",\"en\"],\"source\":\"Littré + Oxford English Dictionary\",\"confidence\":0.6},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Bas + ta + clan\",\"reading\":\"The low/base (bas) your (ta) secret brotherhood (clan)\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"anagram\",\"chain\":\"Ba-ta-clan → Cabal + ant\",\"reading\":\"The cabal that works like an ant: hidden collective labour\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Bata-clan ≈ Bataqlan (Arabic batāq + lan)\",\"reading\":\"The duck’s pond that never ends: illusory enclosure\",\"languages\":[\"ar\",\"fr\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"notariqon\",\"chain\":\"B-T-CL-N → Beit Ta’avah Clandestinum Nigrum\",\"reading\":\"House of secret black desire\",\"languages\":[\"he\",\"la\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Bat + a + clan\",\"reading\":\"The daughter (bat) belongs to the hidden clan\",\"languages\":[\"he\",\"en\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"letter_symbol\",\"chain\":\"B (house) + AT (Hebrew sign) + CLAN (enclosure)\",\"reading\":\"The house bearing the sign of the enclosed bloodline\",\"languages\":[\"he\",\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"numerical\",\"chain\":\"B=2, T=400, C=3, L=30, N=50 (gematria simpl.)\",\"reading\":\"2-400-3-30-50 reduces to vessel of concealed judgement\",\"languages\":[\"he\"],\"source\":\"generative\",\"confidence\":0.4},\n  {\"operation\":\"etymology\",\"chain\":\"baculum (Latin) → bat + clan\",\"reading\":\"The staff/rule that gathers the enclosed group\",\"languages\":[\"la\",\"en\"],\"source\":\"Lewis & Short Latin Dictionary\",\"confidence\":0.55}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba + ta + clan",
+   "reading": "The father (Ba) marks (ta) the enclosed secret assembly (clan)",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bât + à + clan",
+   "reading": "The beast’s lair (bât) to the hidden clan",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bataclan ≈ Bat a clan",
+   "reading": "Strike/kill the clan or the brood",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "etymology",
+   "chain": "bata (Provençal) + clan",
+   "reading": "Beating, combat + enclosed group: place of ritual combat",
+   "languages": [
+    "fr",
+    "oc",
+    "en"
+   ],
+   "source": "Littré + Oxford English Dictionary",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bas + ta + clan",
+   "reading": "The low/base (bas) your (ta) secret brotherhood (clan)",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Ba-ta-clan → Cabal + ant",
+   "reading": "The cabal that works like an ant: hidden collective labour",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bata-clan ≈ Bataqlan (Arabic batāq + lan)",
+   "reading": "The duck’s pond that never ends: illusory enclosure",
+   "languages": [
+    "ar",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-T-CL-N → Beit Ta’avah Clandestinum Nigrum",
+   "reading": "House of secret black desire",
+   "languages": [
+    "he",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bat + a + clan",
+   "reading": "The daughter (bat) belongs to the hidden clan",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (house) + AT (Hebrew sign) + CLAN (enclosure)",
+   "reading": "The house bearing the sign of the enclosed bloodline",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "numerical",
+   "chain": "B=2, T=400, C=3, L=30, N=50 (gematria simpl.)",
+   "reading": "2-400-3-30-50 reduces to vessel of concealed judgement",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "baculum (Latin) → bat + clan",
+   "reading": "The staff/rule that gathers the enclosed group",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Lewis & Short Latin Dictionary",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

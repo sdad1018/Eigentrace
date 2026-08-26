@@ -1,0 +1,128 @@
+{
+ "word": "Mandalay",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:33:33+00:00",
+ "latency_s": 37.62,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"MAN-DA-LAY -> English 'man' + 'da' (affirmation, there) + 'lay' (to place, to sing)\",\n    \"reading\": \"The man affirms existence, laying down his will or singing of his being.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"MAND-AL-AY -> Latin 'mandare' (to command, entrust) + English 'all' (by sound) + English 'ay' (always, yes)\",\n    \"reading\": \"To command all, always assenting to the complete and enduring influence.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Lewis & Short Latin Dictionary (mandare); Oxford English Dictionary (all, ay)\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"MAN-DA-LAY -> English 'man' + French 'd'elle' (of her) + English 'lay' (song, poem)\",\n    \"reading\": \"A man's song of her, a poetic expression of the feminine principle.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M-A-N-D-A-L-A-Y -> M(Mysterium) A(Alpha) N(Nexus) D(Deus) A(Anima) L(Lux) A(Ars) Y(Ypsilon, choice)\",\n    \"reading\": \"The Mystery of the Origin, connecting God's Soul and Light through Art, a path of choice.\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"MAN-DA-LAY -> Latin 'manus' (hand) + Latin 'dare' (to give) + English 'lay' (to place, to sing)\",\n    \"reading\": \"The hand that gives and places, or sings of its giving.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Lewis & Short Latin Dictionary (manus, dare); Oxford English Dictionary (lay)\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"MAN-DA-LAY -> Hebrew 'man' (מָן, manna) + Hebrew 'dal' (דָּל, poor, weak) + English 'ay' (yes, always)\",\n    \"reading\": \"The weak or impoverished manna, always in its humble and nourishing state.\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"Brown-Driver-Briggs Hebrew and English Lexicon (man, dal); Oxford English Dictionary (ay)\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"MAN-DA-LAY -> French 'm'en' (from me) + French 'd'ail' (of garlic) + French 'lait' (milk)\",\n    \"reading\": \"From me comes the milk of garlic, a secret, potent essence or hidden nourishment.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Anagram of MANDALAY: 'LAY AND MA'. 'Ma' as 'Mater' (mother) or 'Magus'.\",\n    \"reading\": \"To lay down the earth, and the mother principle, or the path of the wise one.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M-A-N-D-A-L-A-Y -> M(Magnum) A(Arcanum) N(Numinis) D(Donum) A(Animae) L(Lucis) A(Aetheris) Y(Ypsilon, the path)\",\n    \"reading\": \"The Great Mystery of the Divine Spirit's Gift to the Soul, of Light and Aether, upon the chosen path.\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"MAN-DA-LAY -> German 'Mann' (man) + German 'dar' (present, there) + English 'lay' (to place, foundation)\",\n    \"reading\": \"The man presents a foundation or lays down what is present and fundamental.\",\n    \"languages\": [\"de\", \"en\"],\n    \"source\": \"Duden dictionary (Mann, dar); Oxford English Dictionary (lay)\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "MAN-DA-LAY -> English 'man' + 'da' (affirmation, there) + 'lay' (to place, to sing)",
+   "reading": "The man affirms existence, laying down his will or singing of his being.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "MAND-AL-AY -> Latin 'mandare' (to command, entrust) + English 'all' (by sound) + English 'ay' (always, yes)",
+   "reading": "To command all, always assenting to the complete and enduring influence.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Lewis & Short Latin Dictionary (mandare); Oxford English Dictionary (all, ay)",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "MAN-DA-LAY -> English 'man' + French 'd'elle' (of her) + English 'lay' (song, poem)",
+   "reading": "A man's song of her, a poetic expression of the feminine principle.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M-A-N-D-A-L-A-Y -> M(Mysterium) A(Alpha) N(Nexus) D(Deus) A(Anima) L(Lux) A(Ars) Y(Ypsilon, choice)",
+   "reading": "The Mystery of the Origin, connecting God's Soul and Light through Art, a path of choice.",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "etymology",
+   "chain": "MAN-DA-LAY -> Latin 'manus' (hand) + Latin 'dare' (to give) + English 'lay' (to place, to sing)",
+   "reading": "The hand that gives and places, or sings of its giving.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Lewis & Short Latin Dictionary (manus, dare); Oxford English Dictionary (lay)",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "MAN-DA-LAY -> Hebrew 'man' (מָן, manna) + Hebrew 'dal' (דָּל, poor, weak) + English 'ay' (yes, always)",
+   "reading": "The weak or impoverished manna, always in its humble and nourishing state.",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "Brown-Driver-Briggs Hebrew and English Lexicon (man, dal); Oxford English Dictionary (ay)",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "MAN-DA-LAY -> French 'm'en' (from me) + French 'd'ail' (of garlic) + French 'lait' (milk)",
+   "reading": "From me comes the milk of garlic, a secret, potent essence or hidden nourishment.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "Anagram of MANDALAY: 'LAY AND MA'. 'Ma' as 'Mater' (mother) or 'Magus'.",
+   "reading": "To lay down the earth, and the mother principle, or the path of the wise one.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M-A-N-D-A-L-A-Y -> M(Magnum) A(Arcanum) N(Numinis) D(Donum) A(Animae) L(Lucis) A(Aetheris) Y(Ypsilon, the path)",
+   "reading": "The Great Mystery of the Divine Spirit's Gift to the Soul, of Light and Aether, upon the chosen path.",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "MAN-DA-LAY -> German 'Mann' (man) + German 'dar' (present, there) + English 'lay' (to place, foundation)",
+   "reading": "The man presents a foundation or lays down what is present and fundamental.",
+   "languages": [
+    "de",
+    "en"
+   ],
+   "source": "Duden dictionary (Mann, dar); Oxford English Dictionary (lay)",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

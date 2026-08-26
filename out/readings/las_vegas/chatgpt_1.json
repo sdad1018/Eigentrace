@@ -1,0 +1,106 @@
+{
+ "word": "Las Vegas",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:19:39+00:00",
+ "latency_s": 4.66,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"las (Spanish plural article) + vegas (Spanish plural of vega, from Latin vāca/vega?; standard lexica derive vega from pre-Roman substrate, 'fertile plain')\",\n    \"reading\": \"The fertile plains: a name of abundance, lowland, and cultivation.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"Real Academia Española, Diccionario de la lengua española, s.v. «vega»\",\n    \"confidence\": 0.86\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"las + vegas → la(s) + ve + gas; ve = 'see' (fr/it/lat. via), gas = airy substance; 'see the gas'\",\n    \"reading\": \"A vision of the airy, volatile principle: sight meeting vapor.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"las ≈ 'l'as' (fr. 'you have it') + vegas ≈ 'vagues' (fr. 'vague, waves')\",\n    \"reading\": \"You have the waves: a message of uncertainty, ebb, and oscillation.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"las ≈ 'laz' (slip, lax) + vegas ≈ 'vegas' ~ 'vegas' as echo of 'vegas'/'végas' -> 'vagues' (fr.)\",\n    \"reading\": \"Loose and wavering: a sound-image of instability and drift.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.34\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"LAS VEGAS → SAVE + GAS + L / SAVE + SAG\",\n    \"reading\": \"Save the volatile force; preserve energy before it disperses.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.73\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L A S / V E G A S → Light, Air, Sun / Vital Energy Gives Abundance, Stability\",\n    \"reading\": \"A compact formula of illumination, breath, vitality, and plenty.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L = angle/turn; A = apex; S = serpent; V = vessel/valley; E = opening; G = spiral; A = apex; S = serpent\",\n    \"reading\": \"A serpentine descent into a vessel of openings: a winding container of desire.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.29\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Latin alphabet positions: L(12)+A(1)+S(19)+V(22)+E(5)+G(7)+A(1)+S(19)=86; 8+6=14; 1+4=5\",\n    \"reading\": \"Five: the sign of change, movement, and the human measure.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.57\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "las (Spanish plural article) + vegas (Spanish plural of vega, from Latin vāca/vega?; standard lexica derive vega from pre-Roman substrate, 'fertile plain')",
+   "reading": "The fertile plains: a name of abundance, lowland, and cultivation.",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "Real Academia Española, Diccionario de la lengua española, s.v. «vega»",
+   "confidence": 0.86
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "las + vegas → la(s) + ve + gas; ve = 'see' (fr/it/lat. via), gas = airy substance; 'see the gas'",
+   "reading": "A vision of the airy, volatile principle: sight meeting vapor.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "las ≈ 'l'as' (fr. 'you have it') + vegas ≈ 'vagues' (fr. 'vague, waves')",
+   "reading": "You have the waves: a message of uncertainty, ebb, and oscillation.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "las ≈ 'laz' (slip, lax) + vegas ≈ 'vegas' ~ 'vegas' as echo of 'vegas'/'végas' -> 'vagues' (fr.)",
+   "reading": "Loose and wavering: a sound-image of instability and drift.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.34
+  },
+  {
+   "operation": "anagram",
+   "chain": "LAS VEGAS → SAVE + GAS + L / SAVE + SAG",
+   "reading": "Save the volatile force; preserve energy before it disperses.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.73
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L A S / V E G A S → Light, Air, Sun / Vital Energy Gives Abundance, Stability",
+   "reading": "A compact formula of illumination, breath, vitality, and plenty.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L = angle/turn; A = apex; S = serpent; V = vessel/valley; E = opening; G = spiral; A = apex; S = serpent",
+   "reading": "A serpentine descent into a vessel of openings: a winding container of desire.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.29
+  },
+  {
+   "operation": "numerical",
+   "chain": "Latin alphabet positions: L(12)+A(1)+S(19)+V(22)+E(5)+G(7)+A(1)+S(19)=86; 8+6=14; 1+4=5",
+   "reading": "Five: the sign of change, movement, and the human measure.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.57
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

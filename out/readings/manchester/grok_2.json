@@ -1,0 +1,129 @@
+{
+ "word": "Manchester",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:24:16+00:00",
+ "latency_s": 7.58,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mamucium (Latin) → Mamchester (Old English) → Manchester; from Brittonic *mamm- 'breast-like hill'\",\n    \"reading\": \"The breast-shaped hill, the mound like a mother's breast\",\n    \"languages\": [\"la\",\"en\",\"cel\"],\n    \"source\": \"Ekwall, Concise Oxford Dictionary of English Place-Names\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chester\",\n    \"reading\": \"The man who is master, the husband as lord and possessor\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Manch + ester\",\n    \"reading\": \"The sleeve (manche) of the East; the eastern arm or branch\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Man + che + ster → main + chez + terre (fr)\",\n    \"reading\": \"The hand that dwells in the earth; the terrestrial agent\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chester → mens + chester (Latin mens = mind)\",\n    \"reading\": \"The mind that encamps, the intelligence that stations itself\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester → chant + reams\",\n    \"reading\": \"The song that pours forth in streams; the measured incantation\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + che + ster → man + chez + stère (cubic metre)\",\n    \"reading\": \"The man who inhabits the measure; he who dwells within cubic space\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Manchester → Mante + Chester → mante (Spanish) = cloak + chester (Old English) = camp\",\n    \"reading\": \"The cloak of the camp; the mantle that covers the military station\",\n    \"languages\": [\"es\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M A N C H E S T E R → initials read in French phonetic\",\n    \"reading\": \"Mère Ancestrale Nourricière Créatrice Hermétique des Sciences Traditionnelles Ésotériques Révélées\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Manch-es-ter → M (water) + anch (hook/anchor) + es (being) + ter (earth)\",\n    \"reading\": \"The living hook of water anchored in earth; the fisherman of souls\",\n    \"languages\": [\"en\",\"fr\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Mamucium (Latin) → Mamchester (Old English) → Manchester; from Brittonic *mamm- 'breast-like hill'",
+   "reading": "The breast-shaped hill, the mound like a mother's breast",
+   "languages": [
+    "la",
+    "en",
+    "cel"
+   ],
+   "source": "Ekwall, Concise Oxford Dictionary of English Place-Names",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chester",
+   "reading": "The man who is master, the husband as lord and possessor",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Manch + ester",
+   "reading": "The sleeve (manche) of the East; the eastern arm or branch",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Man + che + ster → main + chez + terre (fr)",
+   "reading": "The hand that dwells in the earth; the terrestrial agent",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chester → mens + chester (Latin mens = mind)",
+   "reading": "The mind that encamps, the intelligence that stations itself",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester → chant + reams",
+   "reading": "The song that pours forth in streams; the measured incantation",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + che + ster → man + chez + stère (cubic metre)",
+   "reading": "The man who inhabits the measure; he who dwells within cubic space",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manchester → Mante + Chester → mante (Spanish) = cloak + chester (Old English) = camp",
+   "reading": "The cloak of the camp; the mantle that covers the military station",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M A N C H E S T E R → initials read in French phonetic",
+   "reading": "Mère Ancestrale Nourricière Créatrice Hermétique des Sciences Traditionnelles Ésotériques Révélées",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Manch-es-ter → M (water) + anch (hook/anchor) + es (being) + ter (earth)",
+   "reading": "The living hook of water anchored in earth; the fisherman of souls",
+   "languages": [
+    "en",
+    "fr",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

@@ -1,0 +1,132 @@
+{
+ "word": "Stagecoach",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:18:34+00:00",
+ "latency_s": 7.03,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"stage (from Old French estage 'dwelling, standing place') + coach (from Hungarian kocsi 'carriage from Kocs')\",\n    \"reading\": \"a standing-place carriage; vehicle that stops at fixed stations\",\n    \"languages\": [\"en\",\"fr\",\"hu\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"stay + j + coach\",\n    \"reading\": \"the coach that teaches one to stay; vehicle of endurance and patience\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"stag + e + coach\",\n    \"reading\": \"the male deer’s carriage; vehicle of the horned one or the initiated\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"stagecoach ≈ sté-jé-kosh (French ear); sté = stay / chez = house\",\n    \"reading\": \"the house where one stays; temporary dwelling or initiatory station\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"STAGECOACH → CHAOS + C + GET\",\n    \"reading\": \"chaos that gets one somewhere; vehicle that carries through disorder\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"stage + coach → est + âge + co + ach (French ear)\",\n    \"reading\": \"is the age of the co-axe; era of the shared axis or joint pivot\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"S.T.A.G.E.C.O.A.C.H. → Statio Transmutat Aurum Grossum Est Coagula Hoc\",\n    \"reading\": \"the station transforms crude gold; this is the coagulation\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"S (serpent) + TAGE (roof/tile in Greek) + COACH (shell)\",\n    \"reading\": \"serpent under the tiled shell; alchemical vessel of transformation\",\n    \"languages\": [\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"stagecoach ≈ staj-kosh (sounds like) → sta (stop, Czech) + j (I, French) + kosh (basket, Hebrew)\",\n    \"reading\": \"I stop in the sacred basket; vehicle of the initiate’s containment\",\n    \"languages\": [\"cz\",\"fr\",\"he\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"coach from kocsi (Hungarian) from Kocs village; stage from Latin statio via Old French\",\n    \"reading\": \"the carriage from the village of the stationary place; mobile station\",\n    \"languages\": [\"hu\",\"la\",\"fr\",\"en\"],\n    \"source\": \"Etymonline / Oxford English Dictionary\",\n    \"confidence\": 0.9\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "stage (from Old French estage 'dwelling, standing place') + coach (from Hungarian kocsi 'carriage from Kocs')",
+   "reading": "a standing-place carriage; vehicle that stops at fixed stations",
+   "languages": [
+    "en",
+    "fr",
+    "hu"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "stay + j + coach",
+   "reading": "the coach that teaches one to stay; vehicle of endurance and patience",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "stag + e + coach",
+   "reading": "the male deer’s carriage; vehicle of the horned one or the initiated",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "stagecoach ≈ sté-jé-kosh (French ear); sté = stay / chez = house",
+   "reading": "the house where one stays; temporary dwelling or initiatory station",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "STAGECOACH → CHAOS + C + GET",
+   "reading": "chaos that gets one somewhere; vehicle that carries through disorder",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "stage + coach → est + âge + co + ach (French ear)",
+   "reading": "is the age of the co-axe; era of the shared axis or joint pivot",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "S.T.A.G.E.C.O.A.C.H. → Statio Transmutat Aurum Grossum Est Coagula Hoc",
+   "reading": "the station transforms crude gold; this is the coagulation",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "S (serpent) + TAGE (roof/tile in Greek) + COACH (shell)",
+   "reading": "serpent under the tiled shell; alchemical vessel of transformation",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "stagecoach ≈ staj-kosh (sounds like) → sta (stop, Czech) + j (I, French) + kosh (basket, Hebrew)",
+   "reading": "I stop in the sacred basket; vehicle of the initiate’s containment",
+   "languages": [
+    "cz",
+    "fr",
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "coach from kocsi (Hungarian) from Kocs village; stage from Latin statio via Old French",
+   "reading": "the carriage from the village of the stationary place; mobile station",
+   "languages": [
+    "hu",
+    "la",
+    "fr",
+    "en"
+   ],
+   "source": "Etymonline / Oxford English Dictionary",
+   "confidence": 0.9
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

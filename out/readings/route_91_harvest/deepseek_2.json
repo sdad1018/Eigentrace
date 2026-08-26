@@ -1,0 +1,110 @@
+{
+ "word": "Route 91 Harvest",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:21:08+00:00",
+ "latency_s": 9.13,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"route (Old French rute, from Latin rupta via) = broken way; harvest (Old English hærfest) = autumn, reaping time\",\n    \"reading\": \"A broken path through the season of reaping; the way that is cut, then gathered.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"ang\"],\n    \"source\": \"OED: route from rupta (via); harvest from hærfest\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Route = root (homophone) + 91 = nine-one; Harvest = har + vest; har (Old Norse) = grey, vest = garment\",\n    \"reading\": \"The root of nine-one: a grey garment worn at the gathering, the hidden core of the count.\",\n    \"languages\": [\"en\", \"non\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Route (fr. route) = road; Harvest (fr. récolte) but 'harvest' sounds like 'har veste' (fr. har = no, veste = jacket) — 'no jacket'\",\n    \"reading\": \"On the road without a jacket — the stripping of cover at the time of reaping.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Route 91 Harvest -> 'Vesture, a hot rar' (anagram) — vesture = clothing, rar = rare, hot = heat\",\n    \"reading\": \"Rare heat becomes clothing; the harvest wraps itself in the warmth of the day.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"R = Re, 9 = I, 1 = A, H = H, V = V — R9H1V; read as 'Re' (again) + 'I' (self) + 'A' (first) + 'H' (breath) + 'V' (life)\",\n    \"reading\": \"Again the self, first breath, life — the cycle of return in the reaping.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R = the road (Latin rota, wheel); 9 = the ninth letter, I (self); 1 = A (beginning); H = breath (spiritus); V = victory (Latin victoria)\",\n    \"reading\": \"Wheel of self, beginning of breath, victory — the harvest as a turning point of spirit.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Route = 5 letters, 91 = 9+1=10, Harvest = 7 letters; 5+10+7=22; 22 = the Fool (tarot) or Hebrew letter Tav (cross, seal)\",\n    \"reading\": \"The sum is twenty-two: the seal of completion, the fool's journey through the reaped field.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Harvest from Proto-Germanic *harbistaz = autumn; related to Old English herfest, also 'to pluck' (Latin carpere)\",\n    \"reading\": \"The plucking-time; the season when the road is broken by the act of taking what is ripe.\",\n    \"languages\": [\"en\", \"gem\", \"la\"],\n    \"source\": \"Klein's Comprehensive Etymological Dictionary\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "route (Old French rute, from Latin rupta via) = broken way; harvest (Old English hærfest) = autumn, reaping time",
+   "reading": "A broken path through the season of reaping; the way that is cut, then gathered.",
+   "languages": [
+    "en",
+    "fr",
+    "la",
+    "ang"
+   ],
+   "source": "OED: route from rupta (via); harvest from hærfest",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Route = root (homophone) + 91 = nine-one; Harvest = har + vest; har (Old Norse) = grey, vest = garment",
+   "reading": "The root of nine-one: a grey garment worn at the gathering, the hidden core of the count.",
+   "languages": [
+    "en",
+    "non"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Route (fr. route) = road; Harvest (fr. récolte) but 'harvest' sounds like 'har veste' (fr. har = no, veste = jacket) — 'no jacket'",
+   "reading": "On the road without a jacket — the stripping of cover at the time of reaping.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Route 91 Harvest -> 'Vesture, a hot rar' (anagram) — vesture = clothing, rar = rare, hot = heat",
+   "reading": "Rare heat becomes clothing; the harvest wraps itself in the warmth of the day.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R = Re, 9 = I, 1 = A, H = H, V = V — R9H1V; read as 'Re' (again) + 'I' (self) + 'A' (first) + 'H' (breath) + 'V' (life)",
+   "reading": "Again the self, first breath, life — the cycle of return in the reaping.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R = the road (Latin rota, wheel); 9 = the ninth letter, I (self); 1 = A (beginning); H = breath (spiritus); V = victory (Latin victoria)",
+   "reading": "Wheel of self, beginning of breath, victory — the harvest as a turning point of spirit.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "Route = 5 letters, 91 = 9+1=10, Harvest = 7 letters; 5+10+7=22; 22 = the Fool (tarot) or Hebrew letter Tav (cross, seal)",
+   "reading": "The sum is twenty-two: the seal of completion, the fool's journey through the reaped field.",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Harvest from Proto-Germanic *harbistaz = autumn; related to Old English herfest, also 'to pluck' (Latin carpere)",
+   "reading": "The plucking-time; the season when the road is broken by the act of taking what is ripe.",
+   "languages": [
+    "en",
+    "gem",
+    "la"
+   ],
+   "source": "Klein's Comprehensive Etymological Dictionary",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

@@ -1,0 +1,105 @@
+{
+ "word": "Bahamas",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:31:08+00:00",
+ "latency_s": 5.99,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bahamas < Spanish 'Baja Mar' (low sea) or Lucayan 'ba ha ma' (large upper midland); disputed; OED cites Baja Mar\",\n    \"reading\": \"Low sea: a place of shallow waters, a sunken land\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"OED, 'Bahamas'\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba + ha + mas; 'ba' (Fr. bas = low) + 'ha' (breath) + 'mas' (Fr. mât = mast)\",\n    \"reading\": \"Low breath at the mast — a sigh of the sea's depths\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bahamas ~ Fr. 'bas à mas' (low at mask) ~ Sp. 'baja más' (lower more)\",\n    \"reading\": \"Descend further behind the veil — hidden lowering\",\n    \"languages\": [\"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bahamas → 'ash a bam' + 'ma' ; 'bam' (onomatopoeic blow) + 'ash' (residue)\",\n    \"reading\": \"A blow of ash — the remnant of a fiery fall\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-A-H-A-M-A-S → Beth, Aleph, He, Aleph, Mem, Aleph, Shin (Hebrew initials)\",\n    \"reading\": \"House of the breath of water, a sign — primal abode\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B (house) + A (ox) + H (window) + A (ox) + M (water) + A (ox) + S (tooth)\",\n    \"reading\": \"House of ox, window, ox, water, ox, tooth — a cycle of strength and dissolution\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"B=2, A=1, H=8, A=1, M=13, A=1, S=19 → sum 45; 4+5=9\",\n    \"reading\": \"Nine — completion, the end of a cycle, the threshold of return\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba + ha + mas; 'ba' (Egyptian ba = soul) + 'ha' (laughter) + 'mas' (Arabic mas = touch)\",\n    \"reading\": \"Soul touches laughter — a spirit's playful contact\",\n    \"languages\": [\"ar\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Bahamas < Spanish 'Baja Mar' (low sea) or Lucayan 'ba ha ma' (large upper midland); disputed; OED cites Baja Mar",
+   "reading": "Low sea: a place of shallow waters, a sunken land",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "OED, 'Bahamas'",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba + ha + mas; 'ba' (Fr. bas = low) + 'ha' (breath) + 'mas' (Fr. mât = mast)",
+   "reading": "Low breath at the mast — a sigh of the sea's depths",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bahamas ~ Fr. 'bas à mas' (low at mask) ~ Sp. 'baja más' (lower more)",
+   "reading": "Descend further behind the veil — hidden lowering",
+   "languages": [
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bahamas → 'ash a bam' + 'ma' ; 'bam' (onomatopoeic blow) + 'ash' (residue)",
+   "reading": "A blow of ash — the remnant of a fiery fall",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-A-H-A-M-A-S → Beth, Aleph, He, Aleph, Mem, Aleph, Shin (Hebrew initials)",
+   "reading": "House of the breath of water, a sign — primal abode",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (house) + A (ox) + H (window) + A (ox) + M (water) + A (ox) + S (tooth)",
+   "reading": "House of ox, window, ox, water, ox, tooth — a cycle of strength and dissolution",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "B=2, A=1, H=8, A=1, M=13, A=1, S=19 → sum 45; 4+5=9",
+   "reading": "Nine — completion, the end of a cycle, the threshold of return",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba + ha + mas; 'ba' (Egyptian ba = soul) + 'ha' (laughter) + 'mas' (Arabic mas = touch)",
+   "reading": "Soul touches laughter — a spirit's playful contact",
+   "languages": [
+    "ar",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

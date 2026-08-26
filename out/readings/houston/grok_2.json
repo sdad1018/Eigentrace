@@ -1,0 +1,145 @@
+{
+ "word": "Houston",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:22:54+00:00",
+ "latency_s": 5.6,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"etymology\",\"chain\":\"Old English Hūstūn from hūs (house) + tūn (enclosure, settlement)\",\"reading\":\"House-enclosure or fortified dwelling place\",\"languages\":[\"en\"],\"source\":\"Oxford English Dictionary / Bosworth-Toller Anglo-Saxon Dictionary\",\"confidence\":0.95},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Hou + ston\",\"reading\":\"High stone; elevated marker or standing stone\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Hous + ton\",\"reading\":\"House of tone; place where sound or voice is shaped\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Hou-ston ≈ Ouste-ton (French ouste = out, begone + ton = your)\",\"reading\":\"Begone from your place; expulsion or exile\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.70},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Houston ≈ Huis ton (Dutch huis = house, ton = barrel)\",\"reading\":\"House barrel; vessel that contains or preserves\",\"languages\":[\"nl\",\"en\"],\"source\":\"generative\",\"confidence\":0.60},\n  {\"operation\":\"anagram\",\"chain\":\"HOUSTON → THOU SON\",\"reading\":\"Thou son; direct address to a child or heir\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.75},\n  {\"operation\":\"anagram\",\"chain\":\"HOUSTON → UNHOOTS\",\"reading\":\"Unhoots; removes from the nest or origin\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.50},\n  {\"operation\":\"notariqon\",\"chain\":\"H.O.U.S.T.O.N. → House Of Utterance Sustains The Open Name\",\"reading\":\"The dwelling of speech maintains the revealed name\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Hou-stone ≈ Who stone\",\"reading\":\"The stone that knows or bears witness\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"letter_symbol\",\"chain\":\"H (ladder) + O (circle) + U (vessel) + STON (stone)\",\"reading\":\"Ladder of the circular vessel upon the stone\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.40},\n  {\"operation\":\"etymology\",\"chain\":\"Old French / Anglo-Norman houstoun from hus (door) + toun (town)\",\"reading\":\"Door-town; the settlement that is a threshold\",\"languages\":[\"fr\",\"en\"],\"source\":\"Anglo-Norman Dictionary\",\"confidence\":0.70},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Houston ≈ Hûs-tôn (Breton hûs = quiet + tôn = tone)\",\"reading\":\"Quiet tone; place of subdued or hidden sound\",\"languages\":[\"br\",\"en\"],\"source\":\"generative\",\"confidence\":0.55}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Old English Hūstūn from hūs (house) + tūn (enclosure, settlement)",
+   "reading": "House-enclosure or fortified dwelling place",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary / Bosworth-Toller Anglo-Saxon Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hou + ston",
+   "reading": "High stone; elevated marker or standing stone",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hous + ton",
+   "reading": "House of tone; place where sound or voice is shaped",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Hou-ston ≈ Ouste-ton (French ouste = out, begone + ton = your)",
+   "reading": "Begone from your place; expulsion or exile",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Houston ≈ Huis ton (Dutch huis = house, ton = barrel)",
+   "reading": "House barrel; vessel that contains or preserves",
+   "languages": [
+    "nl",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "HOUSTON → THOU SON",
+   "reading": "Thou son; direct address to a child or heir",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "HOUSTON → UNHOOTS",
+   "reading": "Unhoots; removes from the nest or origin",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "H.O.U.S.T.O.N. → House Of Utterance Sustains The Open Name",
+   "reading": "The dwelling of speech maintains the revealed name",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hou-stone ≈ Who stone",
+   "reading": "The stone that knows or bears witness",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "H (ladder) + O (circle) + U (vessel) + STON (stone)",
+   "reading": "Ladder of the circular vessel upon the stone",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Old French / Anglo-Norman houstoun from hus (door) + toun (town)",
+   "reading": "Door-town; the settlement that is a threshold",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "Anglo-Norman Dictionary",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Houston ≈ Hûs-tôn (Breton hûs = quiet + tôn = tone)",
+   "reading": "Quiet tone; place of subdued or hidden sound",
+   "languages": [
+    "br",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

@@ -1,0 +1,132 @@
+{
+ "word": "Luxor",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:39+00:00",
+ "latency_s": 7.12,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Luxor ← Arabic al-Uqṣur (الأقصر) ← Latin castra (military camp) ← castr- (to cut, to enclose)\",\n    \"reading\": \"the enclosed place, the fortified camp, the cut-off sacred precinct\",\n    \"languages\": [\"ar\",\"la\"],\n    \"source\": \"Oxford English Dictionary & Lane's Arabic-English Lexicon\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lux-or → Lux (light) + or (gold, French)\",\n    \"reading\": \"light of gold, golden light, the shining ore\",\n    \"languages\": [\"en\",\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lux-or → Lux (light) + Hor (Horus)\",\n    \"reading\": \"the light of Horus, illumination of the falcon-eyed one\",\n    \"languages\": [\"la\",\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Luxor ≈ Luksor ≈ Luc sor (French: the light exits, the light goes out)\",\n    \"reading\": \"the light departs, the lamp is extinguished, solar death\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"LUXOR → LOXUR → L'OXUR (French phonetic: the oxygen, the sharp one)\",\n    \"reading\": \"the sharp light, the piercing oxygen of fire\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lux-or → Luxor ≈ locks-or → the golden locks, the solar hair\",\n    \"reading\": \"the radiant golden tresses of the sun god\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"LUXOR → L.U.X.O.R. → Lux Umbrae Xristi Occidens Renascens\",\n    \"reading\": \"the light of the shadow of Christ setting and rising again\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L (el, god) + UX (lux, light) + OR (gold, dawn)\",\n    \"reading\": \"divine light born of gold at the threshold of day\",\n    \"languages\": [\"en\",\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Luxor ≈ Look-sore ≈ Lucifer (light-bearer) homophony in green tongue\",\n    \"reading\": \"the fallen or rising bearer of primordial light\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Luxor ← Latin lux (light) reinterpreted through Arabic ears as luminous fortress\",\n    \"reading\": \"the luminous fortress, the castle of living light\",\n    \"languages\": [\"la\",\"ar\"],\n    \"source\": \"Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.8\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Luxor ← Arabic al-Uqṣur (الأقصر) ← Latin castra (military camp) ← castr- (to cut, to enclose)",
+   "reading": "the enclosed place, the fortified camp, the cut-off sacred precinct",
+   "languages": [
+    "ar",
+    "la"
+   ],
+   "source": "Oxford English Dictionary & Lane's Arabic-English Lexicon",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lux-or → Lux (light) + or (gold, French)",
+   "reading": "light of gold, golden light, the shining ore",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lux-or → Lux (light) + Hor (Horus)",
+   "reading": "the light of Horus, illumination of the falcon-eyed one",
+   "languages": [
+    "la",
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Luxor ≈ Luksor ≈ Luc sor (French: the light exits, the light goes out)",
+   "reading": "the light departs, the lamp is extinguished, solar death",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "LUXOR → LOXUR → L'OXUR (French phonetic: the oxygen, the sharp one)",
+   "reading": "the sharp light, the piercing oxygen of fire",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lux-or → Luxor ≈ locks-or → the golden locks, the solar hair",
+   "reading": "the radiant golden tresses of the sun god",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "LUXOR → L.U.X.O.R. → Lux Umbrae Xristi Occidens Renascens",
+   "reading": "the light of the shadow of Christ setting and rising again",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L (el, god) + UX (lux, light) + OR (gold, dawn)",
+   "reading": "divine light born of gold at the threshold of day",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Luxor ≈ Look-sore ≈ Lucifer (light-bearer) homophony in green tongue",
+   "reading": "the fallen or rising bearer of primordial light",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Luxor ← Latin lux (light) reinterpreted through Arabic ears as luminous fortress",
+   "reading": "the luminous fortress, the castle of living light",
+   "languages": [
+    "la",
+    "ar"
+   ],
+   "source": "Lewis & Short Latin Dictionary",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

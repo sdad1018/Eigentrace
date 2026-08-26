@@ -1,0 +1,149 @@
+{
+ "word": "Bahamas",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:31:26+00:00",
+ "latency_s": 11.41,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bahamas < Spanish Baja Mar (low sea) or Taino Guanahani?; standard: OED derives from Spanish 'baja mar'\",\n    \"reading\": \"Low sea, shallow water — the archipelago as a place where the sea is diminished\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"OED, 'Bahamas'\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba + ha + mas; 'ba' (Fr. baiser? no) — 'ba' as sound of sheep, 'ha' as breath, 'mas' as more (Fr. mais = but)\",\n    \"reading\": \"Baa-ha-mas — the bleating breath of 'but' — a hesitation in the flock of sounds\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bahamas ~ Fr. 'bas à ma' (low at my) + 'mas' (Provençal farmhouse) — low farmhouse\",\n    \"reading\": \"Low house of earth — a humble dwelling near the water's edge\",\n    \"languages\": [\"fr\", \"oc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bahamas -> 'A sham ba' + 'ha' — anagram: 'A bash, am' — 'bash' as strike, 'am' as being\",\n    \"reading\": \"A bash at being — the self struck by the sea's rhythm\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-A-H-A-M-A-S: B (Beth = house) A (Aleph = ox) H (He = window) A (Aleph) M (Mem = water) A (Aleph) S (Shin = tooth)\",\n    \"reading\": \"House-ox-window-ox-water-ox-tooth — a dwelling that sees the water's bite\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative (Hebrew letter values)\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B (2) A (1) H (8) A (1) M (13) A (1) S (19) — sum = 45; 4+5=9 — completion, but also 'B' as boat, 'A' as alpha, 'H' as breath, 'M' as water\",\n    \"reading\": \"Alpha breath over water, ending in the tooth of time — nine, the number of finality\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Bahamas in Greek isophony: B=2, A=1, H=8, A=1, M=40, A=1, S=200 → 253; 2+5+3=10 → 1 (unity)\",\n    \"reading\": \"Two hundred fifty-three reduces to one — the many islands become a single point\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative (isopsephy)\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ha-mas: 'ba' (Fr. bas = low) + 'ha' (laughter) + 'mas' (but) — low laughter but\",\n    \"reading\": \"Low laughter, yet — a hidden jest in the shallows\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Alternative: from Lucayan Taino 'guanahani'? No — standard: Spanish 'baja mar' (low tide) — see Corominas\",\n    \"reading\": \"Low tide — the land appears and disappears with the moon's pull\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"Corominas, Diccionario crítico etimológico\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bahamas ~ Arabic 'bahama' (بهمة) = darkness, obscurity; + 'mas' (Fr. mais) = but\",\n    \"reading\": \"Darkness but — a shadow that turns into a question\",\n    \"languages\": [\"ar\", \"fr\"],\n    \"source\": \"generative (Arabic root b-h-m)\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bahamas -> 'A sham, ab' — 'ab' (Latin from) — from a sham — the name itself a false front\",\n    \"reading\": \"From a sham — the sound of the word is a mask over the water\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B (boat shape) A (alpha) H (breath) A (alpha) M (wave) A (alpha) S (serpent) — sequence: boat, breath, wave, serpent\",\n    \"reading\": \"A boat breathes, a wave becomes a serpent — the journey of the soul over the deep\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Bahamas < Spanish Baja Mar (low sea) or Taino Guanahani?; standard: OED derives from Spanish 'baja mar'",
+   "reading": "Low sea, shallow water — the archipelago as a place where the sea is diminished",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "OED, 'Bahamas'",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba + ha + mas; 'ba' (Fr. baiser? no) — 'ba' as sound of sheep, 'ha' as breath, 'mas' as more (Fr. mais = but)",
+   "reading": "Baa-ha-mas — the bleating breath of 'but' — a hesitation in the flock of sounds",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bahamas ~ Fr. 'bas à ma' (low at my) + 'mas' (Provençal farmhouse) — low farmhouse",
+   "reading": "Low house of earth — a humble dwelling near the water's edge",
+   "languages": [
+    "fr",
+    "oc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bahamas -> 'A sham ba' + 'ha' — anagram: 'A bash, am' — 'bash' as strike, 'am' as being",
+   "reading": "A bash at being — the self struck by the sea's rhythm",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-A-H-A-M-A-S: B (Beth = house) A (Aleph = ox) H (He = window) A (Aleph) M (Mem = water) A (Aleph) S (Shin = tooth)",
+   "reading": "House-ox-window-ox-water-ox-tooth — a dwelling that sees the water's bite",
+   "languages": [
+    "he"
+   ],
+   "source": "generative (Hebrew letter values)",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (2) A (1) H (8) A (1) M (13) A (1) S (19) — sum = 45; 4+5=9 — completion, but also 'B' as boat, 'A' as alpha, 'H' as breath, 'M' as water",
+   "reading": "Alpha breath over water, ending in the tooth of time — nine, the number of finality",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "Bahamas in Greek isophony: B=2, A=1, H=8, A=1, M=40, A=1, S=200 → 253; 2+5+3=10 → 1 (unity)",
+   "reading": "Two hundred fifty-three reduces to one — the many islands become a single point",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative (isopsephy)",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ha-mas: 'ba' (Fr. bas = low) + 'ha' (laughter) + 'mas' (but) — low laughter but",
+   "reading": "Low laughter, yet — a hidden jest in the shallows",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "etymology",
+   "chain": "Alternative: from Lucayan Taino 'guanahani'? No — standard: Spanish 'baja mar' (low tide) — see Corominas",
+   "reading": "Low tide — the land appears and disappears with the moon's pull",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "Corominas, Diccionario crítico etimológico",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bahamas ~ Arabic 'bahama' (بهمة) = darkness, obscurity; + 'mas' (Fr. mais) = but",
+   "reading": "Darkness but — a shadow that turns into a question",
+   "languages": [
+    "ar",
+    "fr"
+   ],
+   "source": "generative (Arabic root b-h-m)",
+   "confidence": 0.4
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bahamas -> 'A sham, ab' — 'ab' (Latin from) — from a sham — the name itself a false front",
+   "reading": "From a sham — the sound of the word is a mask over the water",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (boat shape) A (alpha) H (breath) A (alpha) M (wave) A (alpha) S (serpent) — sequence: boat, breath, wave, serpent",
+   "reading": "A boat breathes, a wave becomes a serpent — the journey of the soul over the deep",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

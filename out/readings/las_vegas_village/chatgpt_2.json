@@ -1,0 +1,109 @@
+{
+ "word": "Las Vegas Village",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:18:45+00:00",
+ "latency_s": 5.23,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"las (Spanish definite article, plural feminine) + Vegas (from Spanish vegas, plural of vega “fertile plain, meadow”) + village (Middle English village < Old French village < Latin villa “country house, estate”)\",\n    \"reading\": \"A meadow-house: a settled place of fertility, enclosure, and cultivated dwelling.\",\n    \"languages\": [\"es\", \"en\", \"fr\", \"la\"],\n    \"source\": \"Real Academia Española; Oxford English Dictionary; Trésor de la langue française\",\n    \"confidence\": 0.93\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las / Vegas / Village → lass / vagues / village; lass = young woman, vagues = waves, village = small inhabited place\",\n    \"reading\": \"The young woman among waves, in the small place: a feminine figure moving through flux toward settlement.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las ≈ l’as (fr. “you have it”); Vegas ≈ vague(s) (fr. “vague, uncertain, wave-like”); village = village\",\n    \"reading\": \"You have the vague village: possession of uncertainty, a dwelling made of shifting forms.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.67\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las ≈ lasso (it. / es. sound-shift toward binding); Vegas ≈ vegas/vega (fertile plain); village = village\",\n    \"reading\": \"A binding over the plain: the enclosed settlement as a captured fertility.\",\n    \"languages\": [\"it\", \"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.54\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"LAS VEGAS VILLAGE → VAGUE SALVAGE + VILLAGE (partial anagrammatic drift: las/vegas/village rearranged around vague, salvage, village)\",\n    \"reading\": \"A salvaged vagueness: the village survives by being remade from scattered sounds.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L.V.V. = Light / Valley / Village; or Las = Light, Vegas = Valley, Village = Vessel\",\n    \"reading\": \"Light in the valley becomes a vessel: a luminous enclosure for communal life.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.33\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L = line, V = valley/opening, G = gate/hinge; repeated V sounds mark hollows and passages\",\n    \"reading\": \"A line enters a valley through a gate: the word sketches a passage into inhabited space.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.36\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"LAS VEGAS VILLAGE → letter count 16 + 6 + 7 = 29; 2+9 = 11; 1+1 = 2\",\n    \"reading\": \"Twofoldness: a doubled settlement, a mirrored enclosure, a pair made from one name.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.28\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "las (Spanish definite article, plural feminine) + Vegas (from Spanish vegas, plural of vega “fertile plain, meadow”) + village (Middle English village < Old French village < Latin villa “country house, estate”)",
+   "reading": "A meadow-house: a settled place of fertility, enclosure, and cultivated dwelling.",
+   "languages": [
+    "es",
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Real Academia Española; Oxford English Dictionary; Trésor de la langue française",
+   "confidence": 0.93
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las / Vegas / Village → lass / vagues / village; lass = young woman, vagues = waves, village = small inhabited place",
+   "reading": "The young woman among waves, in the small place: a feminine figure moving through flux toward settlement.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.72
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las ≈ l’as (fr. “you have it”); Vegas ≈ vague(s) (fr. “vague, uncertain, wave-like”); village = village",
+   "reading": "You have the vague village: possession of uncertainty, a dwelling made of shifting forms.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.67
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las ≈ lasso (it. / es. sound-shift toward binding); Vegas ≈ vegas/vega (fertile plain); village = village",
+   "reading": "A binding over the plain: the enclosed settlement as a captured fertility.",
+   "languages": [
+    "it",
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.54
+  },
+  {
+   "operation": "anagram",
+   "chain": "LAS VEGAS VILLAGE → VAGUE SALVAGE + VILLAGE (partial anagrammatic drift: las/vegas/village rearranged around vague, salvage, village)",
+   "reading": "A salvaged vagueness: the village survives by being remade from scattered sounds.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L.V.V. = Light / Valley / Village; or Las = Light, Vegas = Valley, Village = Vessel",
+   "reading": "Light in the valley becomes a vessel: a luminous enclosure for communal life.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.33
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L = line, V = valley/opening, G = gate/hinge; repeated V sounds mark hollows and passages",
+   "reading": "A line enters a valley through a gate: the word sketches a passage into inhabited space.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.36
+  },
+  {
+   "operation": "numerical",
+   "chain": "LAS VEGAS VILLAGE → letter count 16 + 6 + 7 = 29; 2+9 = 11; 1+1 = 2",
+   "reading": "Twofoldness: a doubled settlement, a mirrored enclosure, a pair made from one name.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.28
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

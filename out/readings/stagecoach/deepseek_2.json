@@ -1,0 +1,156 @@
+{
+ "word": "Stagecoach",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:41+00:00",
+ "latency_s": 13.27,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"stage (Old French estage) = standing place, floor; coach (Middle English coche, from Hungarian kocsi) = wagon; stagecoach = wagon stopping at fixed stages\",\n    \"reading\": \"A vehicle of fixed standing-places: the word itself encodes the staged journey, each halt a floor of travel.\",\n    \"languages\": [\"en\",\"fr\",\"hu\"],\n    \"source\": \"OED, s.v. stage, coach\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"stage + coach; stage = st-age; coach = co-ach; 'st' as in 'stay', 'age' as time; 'co' as in 'co-', 'ach' as ache\",\n    \"reading\": \"Stay-age co-ache: time that aches while you remain — the slow pain of waiting at each stage.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"stage (en) ~ estage (fr, old) ~ étage (fr, floor); coach (en) ~ coche (fr, coach, also notch) ~ kocsi (hu)\",\n    \"reading\": \"Étage + coche: a floor with a notch — the level of travel marked by a cut in time, a notched progress upward.\",\n    \"languages\": [\"en\",\"fr\",\"hu\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"stagecoach → 'go, catch as'? → 'cage + stoch'? → 'coach + stage' → 'has + cog + act'\",\n    \"reading\": \"Cog + act + has: the wheel’s tooth acts, and the machine has its being — a clockwork of movement.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"S-T-A-G-E-C-O-A-C-H → S (south) T (time) A (arrival) G (gate) E (exit) C (carriage) O (open) A (all) C (closed) H (halt)\",\n    \"reading\": \"South time arrival gate exit, carriage open all closed halt — a litany of the traveller’s ritual.\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"S = serpent, T = cross, A = beginning, G = gamma (earth), E = breath, C = moon, O = circle, A = beginning, C = moon, H = fence\",\n    \"reading\": \"Serpent-cross-beginning-earth-breath-moon-circle-beginning-moon-fence: a cosmic circuit fenced by lunar cycles.\",\n    \"languages\": [\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"S=19, T=20, A=1, G=7, E=5, C=3, O=15, A=1, C=3, H=8 → sum = 82; 8+2=10 → 1 (unity)\",\n    \"reading\": \"Eighty-two reduces to one: the many stages of the journey collapse into a single point — the return to origin.\",\n    \"languages\": [\"en\",\"he\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"stage (from Latin stare, to stand) + coach (from Hungarian kocsi, named after village Kocs) — but Kocs itself from Slavic kovati, to forge\",\n    \"reading\": \"Standing + forged: the vehicle is a forged standing — metal shaped to hold still while moving.\",\n    \"languages\": [\"en\",\"la\",\"hu\",\"sla\"],\n    \"source\": \"OED; Pokorny, *stā-; Hungarian etymological dictionary\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"st + age + coach; 'st' = saint (fr), 'age' = age (en), 'coach' = coche (fr, also 'pig' in old slang)\",\n    \"reading\": \"Saint age pig: the holy time of the swine — a bestial pilgrimage, the flesh’s slow carriage.\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"stage (en) ~ stagia (it, intern) ~ stage (fr, internship); coach (en) ~ koch (de, cook) ~ coq (fr, rooster)\",\n    \"reading\": \"Intern + cook/rooster: the apprentice who crows at dawn — a journey of learning under a feathered master.\",\n    \"languages\": [\"en\",\"it\",\"fr\",\"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"stagecoach → 'cog + chase + at' → 'chase + goat + c' → 'cage + to + chas'\",\n    \"reading\": \"Chase the cog, catch the goat: the wheel pursues the animal — motion is a hunt for the wild.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"C = 100 (Roman), O = 0, A = 1, C = 100, H = 8 → 100+0+1+100+8 = 209; 2+0+9=11 → 2 (duality)\",\n    \"reading\": \"Two hundred nine, eleven, two: the coach carries both the traveller and the road — a dual nature.\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "stage (Old French estage) = standing place, floor; coach (Middle English coche, from Hungarian kocsi) = wagon; stagecoach = wagon stopping at fixed stages",
+   "reading": "A vehicle of fixed standing-places: the word itself encodes the staged journey, each halt a floor of travel.",
+   "languages": [
+    "en",
+    "fr",
+    "hu"
+   ],
+   "source": "OED, s.v. stage, coach",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "stage + coach; stage = st-age; coach = co-ach; 'st' as in 'stay', 'age' as time; 'co' as in 'co-', 'ach' as ache",
+   "reading": "Stay-age co-ache: time that aches while you remain — the slow pain of waiting at each stage.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "stage (en) ~ estage (fr, old) ~ étage (fr, floor); coach (en) ~ coche (fr, coach, also notch) ~ kocsi (hu)",
+   "reading": "Étage + coche: a floor with a notch — the level of travel marked by a cut in time, a notched progress upward.",
+   "languages": [
+    "en",
+    "fr",
+    "hu"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "stagecoach → 'go, catch as'? → 'cage + stoch'? → 'coach + stage' → 'has + cog + act'",
+   "reading": "Cog + act + has: the wheel’s tooth acts, and the machine has its being — a clockwork of movement.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "S-T-A-G-E-C-O-A-C-H → S (south) T (time) A (arrival) G (gate) E (exit) C (carriage) O (open) A (all) C (closed) H (halt)",
+   "reading": "South time arrival gate exit, carriage open all closed halt — a litany of the traveller’s ritual.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "S = serpent, T = cross, A = beginning, G = gamma (earth), E = breath, C = moon, O = circle, A = beginning, C = moon, H = fence",
+   "reading": "Serpent-cross-beginning-earth-breath-moon-circle-beginning-moon-fence: a cosmic circuit fenced by lunar cycles.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "S=19, T=20, A=1, G=7, E=5, C=3, O=15, A=1, C=3, H=8 → sum = 82; 8+2=10 → 1 (unity)",
+   "reading": "Eighty-two reduces to one: the many stages of the journey collapse into a single point — the return to origin.",
+   "languages": [
+    "en",
+    "he",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "stage (from Latin stare, to stand) + coach (from Hungarian kocsi, named after village Kocs) — but Kocs itself from Slavic kovati, to forge",
+   "reading": "Standing + forged: the vehicle is a forged standing — metal shaped to hold still while moving.",
+   "languages": [
+    "en",
+    "la",
+    "hu",
+    "sla"
+   ],
+   "source": "OED; Pokorny, *stā-; Hungarian etymological dictionary",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "st + age + coach; 'st' = saint (fr), 'age' = age (en), 'coach' = coche (fr, also 'pig' in old slang)",
+   "reading": "Saint age pig: the holy time of the swine — a bestial pilgrimage, the flesh’s slow carriage.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "stage (en) ~ stagia (it, intern) ~ stage (fr, internship); coach (en) ~ koch (de, cook) ~ coq (fr, rooster)",
+   "reading": "Intern + cook/rooster: the apprentice who crows at dawn — a journey of learning under a feathered master.",
+   "languages": [
+    "en",
+    "it",
+    "fr",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "anagram",
+   "chain": "stagecoach → 'cog + chase + at' → 'chase + goat + c' → 'cage + to + chas'",
+   "reading": "Chase the cog, catch the goat: the wheel pursues the animal — motion is a hunt for the wild.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "C = 100 (Roman), O = 0, A = 1, C = 100, H = 8 → 100+0+1+100+8 = 209; 2+0+9=11 → 2 (duality)",
+   "reading": "Two hundred nine, eleven, two: the coach carries both the traveller and the road — a dual nature.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

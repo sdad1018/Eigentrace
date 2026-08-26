@@ -1,0 +1,106 @@
+{
+ "word": "Bonnaroo",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:15:59+00:00",
+ "latency_s": 3.68,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"bon + a + roo; bon (fr) = good; roo ~ roue/roo = wheel, roundness, turning\",\"reading\":\"Good turning: a fortunate cycle, a merry round of return.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.74},{\"operation\":\"cross_language_homophone\",\"chain\":\"bon (fr) = good; roo ~ roue (fr) = wheel; bon roue = good wheel\",\"reading\":\"A well-made wheel: right motion, smooth passage, luck in travel.\",\"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"phonetic_split\",\"chain\":\"bon + roo; roo ~ rû / ru = stream, flow; bon + flow\",\"reading\":\"Good flow: a benign current, ease, and forward movement.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.62},{\"operation\":\"cross_language_homophone\",\"chain\":\"bon ~ bon (fr) good; roo ~ roi (fr) king; good king\",\"reading\":\"The good king: sovereignty tempered by favor and harmony.\",\"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.58},{\"operation\":\"letter_symbol\",\"chain\":\"B + O + N + N + A + R + O + O; B = gate, O = circle, N = path, A = beginning, R = fire\",\"reading\":\"A gate opens into a circular path: beginning enters motion and fire.\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.46},{\"operation\":\"anagram\",\"chain\":\"Bonnaroo → boar + noon + or; boar = force, noon = zenith, or = gold\",\"reading\":\"Force at the zenith, gilded and fully exposed.\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.41},{\"operation\":\"notariqon\",\"chain\":\"B O N N A R O O = Bright Orb, Noble Node, Awake Return, Open Orbit\",\"reading\":\"A bright orbit of noble return and awakened circulation.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.28},{\"operation\":\"etymology\",\"chain\":\"bon (French) < Latin bonus, 'good'; checkable in OED / TLFi / CNRTL for bon; roo not securely lexicalized\",\"reading\":\"Goodness is the stable core; the second element remains a resonant suffix rather than a fixed root.\",\"languages\":[\"fr\",\"la\",\"en\"],\"source\":\"TLFi; CNRTL; OED\",\"confidence\":0.33}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "bon + a + roo; bon (fr) = good; roo ~ roue/roo = wheel, roundness, turning",
+   "reading": "Good turning: a fortunate cycle, a merry round of return.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.74
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bon (fr) = good; roo ~ roue (fr) = wheel; bon roue = good wheel",
+   "reading": "A well-made wheel: right motion, smooth passage, luck in travel.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "bon + roo; roo ~ rû / ru = stream, flow; bon + flow",
+   "reading": "Good flow: a benign current, ease, and forward movement.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bon ~ bon (fr) good; roo ~ roi (fr) king; good king",
+   "reading": "The good king: sovereignty tempered by favor and harmony.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B + O + N + N + A + R + O + O; B = gate, O = circle, N = path, A = beginning, R = fire",
+   "reading": "A gate opens into a circular path: beginning enters motion and fire.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.46
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bonnaroo → boar + noon + or; boar = force, noon = zenith, or = gold",
+   "reading": "Force at the zenith, gilded and fully exposed.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B O N N A R O O = Bright Orb, Noble Node, Awake Return, Open Orbit",
+   "reading": "A bright orbit of noble return and awakened circulation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.28
+  },
+  {
+   "operation": "etymology",
+   "chain": "bon (French) < Latin bonus, 'good'; checkable in OED / TLFi / CNRTL for bon; roo not securely lexicalized",
+   "reading": "Goodness is the stable core; the second element remains a resonant suffix rather than a fixed root.",
+   "languages": [
+    "fr",
+    "la",
+    "en"
+   ],
+   "source": "TLFi; CNRTL; OED",
+   "confidence": 0.33
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

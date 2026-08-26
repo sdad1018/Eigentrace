@@ -1,0 +1,127 @@
+{
+ "word": "Voltaire",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:28:28+00:00",
+ "latency_s": 6.57,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"vol + taire\",\n    \"reading\": \"flight that dares / the one who dares to fly\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"voltaire ← voltaire (old French surname) ← volt (from Latin volvere, to turn, to roll)\",\n    \"reading\": \"the turner, the one who revolves or rolls\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"Dictionnaire étymologique de la langue française (Blochwitz)\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"vol + taire ≈ vol (German) + terre (French)\",\n    \"reading\": \"flight of the earth / terrestrial flight\",\n    \"languages\": [\"de\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"vault + air (English homophones)\",\n    \"reading\": \"the vault of air, the celestial vault\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"VOLTAIRE → VOLT + AIRE\",\n    \"reading\": \"electric spark in the open air\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"V.O.L.T.A.I.R.E. → Vole Or Lucifer Triomphe Ainsi Il Règne Éternellement\",\n    \"reading\": \"he flies, gold, Lucifer triumphs, thus he reigns eternally\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"vol + taire (taire = to silence)\",\n    \"reading\": \"the flight that silences / winged silence\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"voltaire ≈ vol terræ (Latin)\",\n    \"reading\": \"flight of the earth, or the earth flies\",\n    \"languages\": [\"la\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V (hook) + OL (oil) + TAIRE (from Latin taurus = bull)\",\n    \"reading\": \"hooked oil of the bull, alchemical sulphur\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"voltaire from Old Occitan voltairol, diminutive of volta (vault, arch)\",\n    \"reading\": \"little vault, small celestial arch\",\n    \"languages\": [\"oc\",\"la\"],\n    \"source\": \"Dictionnaire historique de la langue française (Rey)\",\n    \"confidence\": 0.5\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "vol + taire",
+   "reading": "flight that dares / the one who dares to fly",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "voltaire ← voltaire (old French surname) ← volt (from Latin volvere, to turn, to roll)",
+   "reading": "the turner, the one who revolves or rolls",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "Dictionnaire étymologique de la langue française (Blochwitz)",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "vol + taire ≈ vol (German) + terre (French)",
+   "reading": "flight of the earth / terrestrial flight",
+   "languages": [
+    "de",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "vault + air (English homophones)",
+   "reading": "the vault of air, the celestial vault",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "VOLTAIRE → VOLT + AIRE",
+   "reading": "electric spark in the open air",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V.O.L.T.A.I.R.E. → Vole Or Lucifer Triomphe Ainsi Il Règne Éternellement",
+   "reading": "he flies, gold, Lucifer triumphs, thus he reigns eternally",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "vol + taire (taire = to silence)",
+   "reading": "the flight that silences / winged silence",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "voltaire ≈ vol terræ (Latin)",
+   "reading": "flight of the earth, or the earth flies",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V (hook) + OL (oil) + TAIRE (from Latin taurus = bull)",
+   "reading": "hooked oil of the bull, alchemical sulphur",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "voltaire from Old Occitan voltairol, diminutive of volta (vault, arch)",
+   "reading": "little vault, small celestial arch",
+   "languages": [
+    "oc",
+    "la"
+   ],
+   "source": "Dictionnaire historique de la langue française (Rey)",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

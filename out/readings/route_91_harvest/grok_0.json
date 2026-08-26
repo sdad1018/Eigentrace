@@ -1,0 +1,128 @@
+{
+ "word": "Route 91 Harvest",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:18:49+00:00",
+ "latency_s": 5.9,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"phonetic_split\",\"chain\":\"Root + 91 + Harvest\",\"reading\":\"The fundamental origin or root of the sacred gathering and reaping\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Rue + Te + Nine + One + Har + Vest\",\"reading\":\"Regret, you, the new one, the first, the high priest's garment\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Route (English road) homophone to Rout (Old French = troop, defeated army); Harvest homophone to Har-vest (Germanic army + clothing)\",\"reading\":\"The defeated army's final gathering or clothing\",\"languages\":[\"en\",\"fr\",\"de\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"etymology\",\"chain\":\"Route from Latin rupta (via) = broken way; Harvest from Old English hærfest = autumn, season of reaping\",\"reading\":\"The broken path of the autumn reaping\",\"languages\":[\"en\",\"la\"],\"source\":\"Oxford English Dictionary / Lewis & Short Latin Dictionary\",\"confidence\":0.85},\n  {\"operation\":\"anagram\",\"chain\":\"Route 91 Harvest → Truth via seer\",\"reading\":\"The seer's truth revealed on the path\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Root + Ninety-one + Har-vest\",\"reading\":\"The primordial root of the new man’s priestly vestment\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"notariqon\",\"chain\":\"R91H → Roi + 91 + Har (Hebrew הר = mountain)\",\"reading\":\"The king’s mountain harvest or revelation\",\"languages\":[\"en\",\"he\",\"fr\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Harvest sounds as Har-vest; Har = French « hare » (to set the dogs on) + Vest (vestment)\",\"reading\":\"The calling forth of the hounds upon the sacred robe\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"letter_symbol\",\"chain\":\"R (regina/radix) + 91 (numerical value of Hebrew אמן = amen) + Harvest\",\"reading\":\"The root of the royal amen-harvest\",\"languages\":[\"en\",\"he\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Rout + He + One + Harvest\",\"reading\":\"The routed one’s singular sacred reaping\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.55}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Root + 91 + Harvest",
+   "reading": "The fundamental origin or root of the sacred gathering and reaping",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Rue + Te + Nine + One + Har + Vest",
+   "reading": "Regret, you, the new one, the first, the high priest's garment",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Route (English road) homophone to Rout (Old French = troop, defeated army); Harvest homophone to Har-vest (Germanic army + clothing)",
+   "reading": "The defeated army's final gathering or clothing",
+   "languages": [
+    "en",
+    "fr",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Route from Latin rupta (via) = broken way; Harvest from Old English hærfest = autumn, season of reaping",
+   "reading": "The broken path of the autumn reaping",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Oxford English Dictionary / Lewis & Short Latin Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "anagram",
+   "chain": "Route 91 Harvest → Truth via seer",
+   "reading": "The seer's truth revealed on the path",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Root + Ninety-one + Har-vest",
+   "reading": "The primordial root of the new man’s priestly vestment",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R91H → Roi + 91 + Har (Hebrew הר = mountain)",
+   "reading": "The king’s mountain harvest or revelation",
+   "languages": [
+    "en",
+    "he",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Harvest sounds as Har-vest; Har = French « hare » (to set the dogs on) + Vest (vestment)",
+   "reading": "The calling forth of the hounds upon the sacred robe",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R (regina/radix) + 91 (numerical value of Hebrew אמן = amen) + Harvest",
+   "reading": "The root of the royal amen-harvest",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Rout + He + One + Harvest",
+   "reading": "The routed one’s singular sacred reaping",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

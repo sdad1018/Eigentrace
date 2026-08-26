@@ -1,0 +1,115 @@
+{
+ "word": "Wembley",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:41+00:00",
+ "latency_s": 23.98,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Wembley -> -bley -> -ley (Old English *lēah* = 'wood, clearing, meadow').\",\n    \"reading\": \"A natural opening or clear space, a place of light amidst density.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"Oxford English Dictionary; Concise Oxford Dictionary of English Etymology\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem-bley -> Womb (en) + blee (archaic en, 'color/appearance', or 'blemish').\",\n    \"reading\": \"The hidden source, showing itself through a hue or subtle imperfection on the surface.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley (sounds like) -> Vent (fr: wind) + blé (fr: wheat).\",\n    \"reading\": \"The spirit's breath moving through the nourishing fields, yielding sustenance.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley (sounds like) -> Wem (de: to whom) + Blei (de: lead, metal).\",\n    \"reading\": \"A query concerning the recipient of heavy burdens or weighty matters.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"W.E.M.B.L.Y. -> We Embody Many Brilliant Luminous Years.\",\n    \"reading\": \"A statement of collective being, radiating wisdom and light through time.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"W (duality, flow) + E (essence, existence) + M (mother, matter) + B (beginning, enclosure) + L (light, upward) + Y (choice, branching).\",\n    \"reading\": \"The dual flow of essential matter at its origin, guiding towards chosen light.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem-bley -> Wobble (en) + -y (en suffix for 'full of').\",\n    \"reading\": \"Full of oscillation or unsteadiness, a condition marked by wavering motion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wem-bley -> Wem (implied seeker/questioner) + Blij (nl: happy, glad).\",\n    \"reading\": \"The pursuit of joy, a questioning gaze leading to gladness.\",\n    \"languages\": [\"en\", \"nl\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"W(6)+E(5)+M(4)+B(2)+L(3)+Y(7) = 27; 2+7=9 (Chaldean Gematria).\",\n    \"reading\": \"Represents completion, universal love, and spiritual enlightenment, leading to wisdom and service.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Wembley -> -bley -> -ley (Old English *lēah* = 'wood, clearing, meadow').",
+   "reading": "A natural opening or clear space, a place of light amidst density.",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary; Concise Oxford Dictionary of English Etymology",
+   "confidence": 1.0
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem-bley -> Womb (en) + blee (archaic en, 'color/appearance', or 'blemish').",
+   "reading": "The hidden source, showing itself through a hue or subtle imperfection on the surface.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley (sounds like) -> Vent (fr: wind) + blé (fr: wheat).",
+   "reading": "The spirit's breath moving through the nourishing fields, yielding sustenance.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley (sounds like) -> Wem (de: to whom) + Blei (de: lead, metal).",
+   "reading": "A query concerning the recipient of heavy burdens or weighty matters.",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "notariqon",
+   "chain": "W.E.M.B.L.Y. -> We Embody Many Brilliant Luminous Years.",
+   "reading": "A statement of collective being, radiating wisdom and light through time.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "W (duality, flow) + E (essence, existence) + M (mother, matter) + B (beginning, enclosure) + L (light, upward) + Y (choice, branching).",
+   "reading": "The dual flow of essential matter at its origin, guiding towards chosen light.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem-bley -> Wobble (en) + -y (en suffix for 'full of').",
+   "reading": "Full of oscillation or unsteadiness, a condition marked by wavering motion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wem-bley -> Wem (implied seeker/questioner) + Blij (nl: happy, glad).",
+   "reading": "The pursuit of joy, a questioning gaze leading to gladness.",
+   "languages": [
+    "en",
+    "nl"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "numerical",
+   "chain": "W(6)+E(5)+M(4)+B(2)+L(3)+Y(7) = 27; 2+7=9 (Chaldean Gematria).",
+   "reading": "Represents completion, universal love, and spiritual enlightenment, leading to wisdom and service.",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 9,
+ "refusal_like": false
+}

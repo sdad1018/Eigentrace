@@ -1,0 +1,105 @@
+{
+ "word": "Fyre",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:22:37+00:00",
+ "latency_s": 4.56,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"fyre ≈ fire; fire = flame, trial by ordeal, inner heat\",\n    \"reading\": \"A hidden fire: passion, ordeal, purification, and the force that consumes and transforms.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.92\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"fyre ≈ vieux fr. fere / fer; fer = iron\",\n    \"reading\": \"Iron beneath flame: hardness, weapon, metal will, the fixed body awaiting the forge.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.56\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"fyre ≈ fr. fière / fier; fier = proud, lofty, haughty\",\n    \"reading\": \"Pride in the fire: elevation, self-assertion, and the dangerous brilliance of the proud spirit.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.61\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"fire < Old English fȳr < Proto-Germanic *fūrą; cf. OED, s.v. fire\",\n    \"reading\": \"The ancient hearth-flame: a primal element of warmth, destruction, and communal center.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"OED, s.v. fire\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"fire < Old English fȳr < Proto-Germanic *fūrą; cognate with Old High German fiur; cf. Etymonline, OED\",\n    \"reading\": \"A word of old Germanic stock, carrying the sense of elemental burning and the forge of transformation.\",\n    \"languages\": [\"en\", \"goh\", \"ang\"],\n    \"source\": \"OED, s.v. fire; Etymonline, fire\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"fyre → frye / fery / yref (near-anagrammatic play)\",\n    \"reading\": \"A rearranged blaze: to fry, to heat, to render by fire; matter changed by cooking or trial.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.43\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"F = force/form; Y = forked path; R = ray/rod; E = end/emanation\",\n    \"reading\": \"A forked force sending a ray toward an end: divided impulse seeking expression.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.32\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"F(6)+Y(25)+R(18)+E(5)=54; 5+4=9\",\n    \"reading\": \"Nine: completion, closure, the last stage before renewal; a cycle nearing its end.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.28\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "fyre ≈ fire; fire = flame, trial by ordeal, inner heat",
+   "reading": "A hidden fire: passion, ordeal, purification, and the force that consumes and transforms.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.92
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "fyre ≈ vieux fr. fere / fer; fer = iron",
+   "reading": "Iron beneath flame: hardness, weapon, metal will, the fixed body awaiting the forge.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.56
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "fyre ≈ fr. fière / fier; fier = proud, lofty, haughty",
+   "reading": "Pride in the fire: elevation, self-assertion, and the dangerous brilliance of the proud spirit.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.61
+  },
+  {
+   "operation": "etymology",
+   "chain": "fire < Old English fȳr < Proto-Germanic *fūrą; cf. OED, s.v. fire",
+   "reading": "The ancient hearth-flame: a primal element of warmth, destruction, and communal center.",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "OED, s.v. fire",
+   "confidence": 0.95
+  },
+  {
+   "operation": "etymology",
+   "chain": "fire < Old English fȳr < Proto-Germanic *fūrą; cognate with Old High German fiur; cf. Etymonline, OED",
+   "reading": "A word of old Germanic stock, carrying the sense of elemental burning and the forge of transformation.",
+   "languages": [
+    "en",
+    "goh",
+    "ang"
+   ],
+   "source": "OED, s.v. fire; Etymonline, fire",
+   "confidence": 0.9
+  },
+  {
+   "operation": "anagram",
+   "chain": "fyre → frye / fery / yref (near-anagrammatic play)",
+   "reading": "A rearranged blaze: to fry, to heat, to render by fire; matter changed by cooking or trial.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.43
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "F = force/form; Y = forked path; R = ray/rod; E = end/emanation",
+   "reading": "A forked force sending a ray toward an end: divided impulse seeking expression.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.32
+  },
+  {
+   "operation": "numerical",
+   "chain": "F(6)+Y(25)+R(18)+E(5)=54; 5+4=9",
+   "reading": "Nine: completion, closure, the last stage before renewal; a cycle nearing its end.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.28
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

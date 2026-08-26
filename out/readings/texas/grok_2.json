@@ -1,0 +1,132 @@
+{
+ "word": "Texas",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:13+00:00",
+ "latency_s": 7.0,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Texas ← Spanish Tejas ← Caddo tayshas 'allies' or 'friends'\",\n    \"reading\": \"the allied ones, the confederated friends\",\n    \"languages\": [\"en\",\"es\",\"cad\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster etymology\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Tex + as\",\n    \"reading\": \"the law as it stands, the text that is\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Té + xas (French)\",\n    \"reading\": \"your head, your skull; the cup that holds thought\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Texas ≈ τέχνας (tekhnas, Greek accusative plural)\",\n    \"reading\": \"the arts, the crafts, the skills, the wiles\",\n    \"languages\": [\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Texas = Taxes\",\n    \"reading\": \"that which is exacted, the tribute, the tithe\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Tex + as ≈ tec + has (French)\",\n    \"reading\": \"the roof has; the thatch is upon it\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"TEXAS ← Tria Elementa Xristi Artis Sacra\",\n    \"reading\": \"the three elements of the sacred art of Christ\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T (tau) + ex (out of) + as (like unto)\",\n    \"reading\": \"the cross out of which likeness is made\",\n    \"languages\": [\"en\",\"grc\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Texas ≈ teksâs (Persian/Arabic 'you weave')\",\n    \"reading\": \"thou weavest; the act of weaving fate\",\n    \"languages\": [\"en\",\"fa\",\"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Tex + as ≈ teks + as (Latin texere root)\",\n    \"reading\": \"the weaver is; he who composes the text\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Texas ← Spanish Tejas ← Caddo tayshas 'allies' or 'friends'",
+   "reading": "the allied ones, the confederated friends",
+   "languages": [
+    "en",
+    "es",
+    "cad"
+   ],
+   "source": "Oxford English Dictionary; Merriam-Webster etymology",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Tex + as",
+   "reading": "the law as it stands, the text that is",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Té + xas (French)",
+   "reading": "your head, your skull; the cup that holds thought",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Texas ≈ τέχνας (tekhnas, Greek accusative plural)",
+   "reading": "the arts, the crafts, the skills, the wiles",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Texas = Taxes",
+   "reading": "that which is exacted, the tribute, the tithe",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Tex + as ≈ tec + has (French)",
+   "reading": "the roof has; the thatch is upon it",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "TEXAS ← Tria Elementa Xristi Artis Sacra",
+   "reading": "the three elements of the sacred art of Christ",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T (tau) + ex (out of) + as (like unto)",
+   "reading": "the cross out of which likeness is made",
+   "languages": [
+    "en",
+    "grc",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Texas ≈ teksâs (Persian/Arabic 'you weave')",
+   "reading": "thou weavest; the act of weaving fate",
+   "languages": [
+    "en",
+    "fa",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Tex + as ≈ teks + as (Latin texere root)",
+   "reading": "the weaver is; he who composes the text",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

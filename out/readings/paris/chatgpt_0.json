@@ -1,0 +1,105 @@
+{
+ "word": "Paris",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:24:56+00:00",
+ "latency_s": 3.8,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"etymology\",\"chain\":\"Paris < Latin Parisii, tribal name recorded by Caesar; etymology uncertain, possibly from Gaulish *pario- ‘cauldron, vessel’ or related root\",\"reading\":\"A vessel-name: a people marked by containment, making, or a held-together form.\",\"languages\":[\"la\",\"fr\"],\"source\":\"Oxford Latin Dictionary; Dictionnaire de la langue gauloise (Delamarre)\",\"confidence\":0.42},{\"operation\":\"phonetic_split\",\"chain\":\"pa + ris; pa as ‘step’/‘pace’, ris as French ris ‘laugh’ or ‘reef’ in nautical French\",\"reading\":\"A step that laughs, or a shortened sail: movement checked, then made lighter.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.58},{\"operation\":\"cross_language_homophone\",\"chain\":\"Paris ~ pari (Italian) ‘bet, wager’; also pari (French) ‘equal’\",\"reading\":\"A wager of equals: balance turned into risk.\",\"languages\":[\"it\",\"fr\"],\"source\":\"generative\",\"confidence\":0.64},{\"operation\":\"cross_language_homophone\",\"chain\":\"Paris ~ pa-ris; ris echoes Latin risus ‘laughter’ and French ris ‘laugh’\",\"reading\":\"The name sounds like a place of laughter, or a grin split into two syllables.\",\"languages\":[\"la\",\"fr\"],\"source\":\"generative\",\"confidence\":0.55},{\"operation\":\"anagram\",\"chain\":\"PARIS -> RIPAS / PAIRS / ASPIR (partial near-anagram)\",\"reading\":\"Pairs and ripples: doubled forms, or a shore-line of alternating edges.\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.31},{\"operation\":\"notariqon\",\"chain\":\"P-A-R-I-S as initials: P = pax, A = ars, R = ratio, I = ignis, S = sol\",\"reading\":\"Peace, art, reason, fire, sun: a fivefold emblem of ordered radiance.\",\"languages\":[\"la\"],\"source\":\"generative\",\"confidence\":0.47},{\"operation\":\"letter_symbol\",\"chain\":\"P as enclosure with opening; A as ascent/peak; R as branch or leg; I as pillar; S as serpent/curve\",\"reading\":\"An enclosed ascent on a standing line, ending in a winding motion: containment, rise, support, and return.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.52},{\"operation\":\"numerical\",\"chain\":\"P(16)+A(1)+R(18)+I(9)+S(19)=63; 6+3=9\",\"reading\":\"Nine: completion, return, the cycle gathered into a final figure.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.44}]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Paris < Latin Parisii, tribal name recorded by Caesar; etymology uncertain, possibly from Gaulish *pario- ‘cauldron, vessel’ or related root",
+   "reading": "A vessel-name: a people marked by containment, making, or a held-together form.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "Oxford Latin Dictionary; Dictionnaire de la langue gauloise (Delamarre)",
+   "confidence": 0.42
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pa + ris; pa as ‘step’/‘pace’, ris as French ris ‘laugh’ or ‘reef’ in nautical French",
+   "reading": "A step that laughs, or a shortened sail: movement checked, then made lighter.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris ~ pari (Italian) ‘bet, wager’; also pari (French) ‘equal’",
+   "reading": "A wager of equals: balance turned into risk.",
+   "languages": [
+    "it",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.64
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris ~ pa-ris; ris echoes Latin risus ‘laughter’ and French ris ‘laugh’",
+   "reading": "The name sounds like a place of laughter, or a grin split into two syllables.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "PARIS -> RIPAS / PAIRS / ASPIR (partial near-anagram)",
+   "reading": "Pairs and ripples: doubled forms, or a shore-line of alternating edges.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P-A-R-I-S as initials: P = pax, A = ars, R = ratio, I = ignis, S = sol",
+   "reading": "Peace, art, reason, fire, sun: a fivefold emblem of ordered radiance.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.47
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P as enclosure with opening; A as ascent/peak; R as branch or leg; I as pillar; S as serpent/curve",
+   "reading": "An enclosed ascent on a standing line, ending in a winding motion: containment, rise, support, and return.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "numerical",
+   "chain": "P(16)+A(1)+R(18)+I(9)+S(19)=63; 6+3=9",
+   "reading": "Nine: completion, return, the cycle gathered into a final figure.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.44
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

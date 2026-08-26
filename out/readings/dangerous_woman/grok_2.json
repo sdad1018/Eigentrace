@@ -1,0 +1,129 @@
+{
+ "word": "Dangerous Woman",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:34+00:00",
+ "latency_s": 6.41,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"dan + jer + us + woman\",\n    \"reading\": \"The gift of the just man to woman; the righteous gift-bearer\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"dange + rous + woman\",\n    \"reading\": \"The dangerous rose of woman; the perilous flower of the feminine\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Dangerous ~ dans je ruse; Woman ~ ou man\",\n    \"reading\": \"In which I ruse, or man — the artful feminine deception\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"dangerous (from Old French dangier, from Latin dominium 'lordship, power') + woman\",\n    \"reading\": \"She who holds lordship or absolute power over man\",\n    \"languages\": [\"en\",\"fr\",\"la\"],\n    \"source\": \"Oxford English Dictionary / Dictionnaire étymologique de la langue française\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Dangerous Woman → A Dragon Muse Now\",\n    \"reading\": \"The dragon that is now the muse of awakened power\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"dan + gerous + wo + man\",\n    \"reading\": \"The judge (dan) of the gerous (old ones) woos man\",\n    \"languages\": [\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Dangerous ~ D'ange rousse; Woman ~ femme\",\n    \"reading\": \"Of the red angel woman — the fiery angelic feminine\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"D.A.N.G.E.R.O.U.S. W.O.M.A.N. → Domina Angelus Nigra Gloria Eros Regina Omnium Umbra Sapientia\",\n    \"reading\": \"The Black Angel Lady, Glory of Eros, Queen of All Shadow Wisdom\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"DANGER = gate of the narrow way (D = door/gate); OUS = ouroboros; WOMAN = womb of man\",\n    \"reading\": \"The gate of the narrow way guarded by the serpent within the womb of man\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"dan + je + rous + woman\",\n    \"reading\": \"The gift I give (je rous) to woman — the rosy gift\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "dan + jer + us + woman",
+   "reading": "The gift of the just man to woman; the righteous gift-bearer",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "dange + rous + woman",
+   "reading": "The dangerous rose of woman; the perilous flower of the feminine",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Dangerous ~ dans je ruse; Woman ~ ou man",
+   "reading": "In which I ruse, or man — the artful feminine deception",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "dangerous (from Old French dangier, from Latin dominium 'lordship, power') + woman",
+   "reading": "She who holds lordship or absolute power over man",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Oxford English Dictionary / Dictionnaire étymologique de la langue française",
+   "confidence": 0.85
+  },
+  {
+   "operation": "anagram",
+   "chain": "Dangerous Woman → A Dragon Muse Now",
+   "reading": "The dragon that is now the muse of awakened power",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "dan + gerous + wo + man",
+   "reading": "The judge (dan) of the gerous (old ones) woos man",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Dangerous ~ D'ange rousse; Woman ~ femme",
+   "reading": "Of the red angel woman — the fiery angelic feminine",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "D.A.N.G.E.R.O.U.S. W.O.M.A.N. → Domina Angelus Nigra Gloria Eros Regina Omnium Umbra Sapientia",
+   "reading": "The Black Angel Lady, Glory of Eros, Queen of All Shadow Wisdom",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "DANGER = gate of the narrow way (D = door/gate); OUS = ouroboros; WOMAN = womb of man",
+   "reading": "The gate of the narrow way guarded by the serpent within the womb of man",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "dan + je + rous + woman",
+   "reading": "The gift I give (je rous) to woman — the rosy gift",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

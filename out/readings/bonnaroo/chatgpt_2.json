@@ -1,0 +1,125 @@
+{
+ "word": "Bonnaroo",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:16:10+00:00",
+ "latency_s": 5.0,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"bon + a + roo; bon (Fr.) = good, a = to/at, roo ~ rue/roux/roue by sound\",\n    \"reading\": \"A good road or good turning: a fortunate passage, a “bon” way through.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.61\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bon (Fr.) = good; roo ~ roue (Fr.) = wheel\",\n    \"reading\": \"Good wheel: the image of a turning fortune, a cycle that runs well.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bon (Fr.) = good; roo ~ roi (Fr.) = king\",\n    \"reading\": \"Good king, or the good of kingship: authority made beneficent.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.54\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bon (Fr.) = good; roo ~ roue / route / row\",\n    \"reading\": \"Good route, good row, good order: a line set rightly in motion.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.49\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"BONNAROO → BOON + ROAR\",\n    \"reading\": \"A boon that roars: a loud blessing, prosperity announced with force.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.66\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"BONNAROO → BOON + A + ROAR\",\n    \"reading\": \"A boon, a roar: gift and proclamation joined, favor made audible.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.63\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B O N N A R O O = Blessing Of Newness, Nourishment, Abundance, Renewal, Order, Overflow\",\n    \"reading\": \"A formula of renewal: blessing, nourishment, abundance, and overflowing order.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B = duality; O = circle/void; N = ascent/zigzag; repeated O = enclosure and echo\",\n    \"reading\": \"Duality enters the circle and returns by echo: a doubled enclosure of becoming.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.27\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"B(2)+O(15)+N(14)+N(14)+A(1)+R(18)+O(15)+O(15) = 94; 9+4 = 13; 1+3 = 4\",\n    \"reading\": \"Reduced to four: stability, foundation, and the square of manifestation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.42\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bon (Fr.) < Latin bonus, 'good'; roo as a sound-sequence with no secure lexicon entry\",\n    \"reading\": \"The only secure etymon is “bon”: goodness; the rest remains a resonant tail.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"TLFi; Oxford Latin Dictionary\",\n    \"confidence\": 0.74\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "bon + a + roo; bon (Fr.) = good, a = to/at, roo ~ rue/roux/roue by sound",
+   "reading": "A good road or good turning: a fortunate passage, a “bon” way through.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.61
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bon (Fr.) = good; roo ~ roue (Fr.) = wheel",
+   "reading": "Good wheel: the image of a turning fortune, a cycle that runs well.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bon (Fr.) = good; roo ~ roi (Fr.) = king",
+   "reading": "Good king, or the good of kingship: authority made beneficent.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.54
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bon (Fr.) = good; roo ~ roue / route / row",
+   "reading": "Good route, good row, good order: a line set rightly in motion.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.49
+  },
+  {
+   "operation": "anagram",
+   "chain": "BONNAROO → BOON + ROAR",
+   "reading": "A boon that roars: a loud blessing, prosperity announced with force.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.66
+  },
+  {
+   "operation": "anagram",
+   "chain": "BONNAROO → BOON + A + ROAR",
+   "reading": "A boon, a roar: gift and proclamation joined, favor made audible.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.63
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B O N N A R O O = Blessing Of Newness, Nourishment, Abundance, Renewal, Order, Overflow",
+   "reading": "A formula of renewal: blessing, nourishment, abundance, and overflowing order.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B = duality; O = circle/void; N = ascent/zigzag; repeated O = enclosure and echo",
+   "reading": "Duality enters the circle and returns by echo: a doubled enclosure of becoming.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.27
+  },
+  {
+   "operation": "numerical",
+   "chain": "B(2)+O(15)+N(14)+N(14)+A(1)+R(18)+O(15)+O(15) = 94; 9+4 = 13; 1+3 = 4",
+   "reading": "Reduced to four: stability, foundation, and the square of manifestation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.42
+  },
+  {
+   "operation": "etymology",
+   "chain": "bon (Fr.) < Latin bonus, 'good'; roo as a sound-sequence with no secure lexicon entry",
+   "reading": "The only secure etymon is “bon”: goodness; the rest remains a resonant tail.",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "TLFi; Oxford Latin Dictionary",
+   "confidence": 0.74
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

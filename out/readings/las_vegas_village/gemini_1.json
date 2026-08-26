@@ -1,0 +1,140 @@
+{
+ "word": "Las Vegas Village",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:31:22+00:00",
+ "latency_s": 25.52,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las (Spanish article, feminine plural) + Vegas (Spanish plural of *vega*). *Vega* (Spanish) from pre-Roman substrate, meaning 'fertile plain, meadow'.\",\n    \"reading\": \"The fertile plains, the meadows – a place of natural abundance, growth, and potential.\",\n    \"languages\": [\"es\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Village (Old French *village*) from Latin *villa* (country house, farm, estate) + suffix *-aticum*.\",\n    \"reading\": \"A small collection of dwellings, originally a country farm or estate, signifying a contained community or a place of domesticity.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las (sound) -> L'as (fr). L' (le/la) + as (avoir, 2nd person sing. present). 'L'as' means 'you have it'.\",\n    \"reading\": \"You have it, or the one who possesses; indicating attainment, mastery, a significant object or knowledge held.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Vegas (sound) -> Vagues (fr). 'Vagues' means 'waves' or 'vague, unclear' (adjective).\",\n    \"reading\": \"Suggests movement, undulation, or uncertainty; a shifting landscape, like waves on water, or an undefined quality.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ve (fr: imperative of *voir*, 'see!') + Gas (en: vapor, fuel).\",\n    \"reading\": \"'See the gas' or 'Behold the vapor,' hinting at an ephemeral, intoxicating, or volatile substance, perhaps a hidden truth.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vill (sound) -> Vile (en: evil, morally bad) + Age (en: period of time).\",\n    \"reading\": \"Suggests a period of moral corruption, degeneracy, or decline, a dark era, or an age marked by wickedness.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Letters of 'Las Vegas' can be rearranged to form 'Gases Lava'.\",\n    \"reading\": \"Describes a powerful, eruptive force contained or released, associated with heat, pressure, and transformation from within.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"The letter 'L' from 'Las'. In esoteric traditions, L (Lambda in Greek) signifies balance, scales, or a gateway. In Roman numerals, L=50.\",\n    \"reading\": \"Symbolizes a point of balance, judgment, or a threshold to be crossed, representing a significant measure or weight.\",\n    \"languages\": [\"en\", \"grc\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Vegas (sound, as in the star Vega) from Arabic *an-nasr al-wāqiʿ* ('the falling eagle' or 'swooping vulture').\",\n    \"reading\": \"Represents something falling or descending, a bird of prey swooping down, or a star guiding from above, indicating destiny.\",\n    \"languages\": [\"ar\", \"la\", \"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Village (sound) -> Ville (fr: city) + Age (en: period, or fr: âge).\",\n    \"reading\": \"'City Age' or 'Old City,' hinting at the passing of an era within an urban environment or an ancient, established settlement.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Assigning A=1, B=2... Z=26. Sum of letters for 'Las Vegas Village' = 154. Reduced to a single digit: 1+5+4 = 10, then 1+0 = 1.\",\n    \"reading\": \"The number One signifies unity, origin, creation, and independence; the beginning of a cycle or a unique entity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Las (Spanish article, feminine plural) + Vegas (Spanish plural of *vega*). *Vega* (Spanish) from pre-Roman substrate, meaning 'fertile plain, meadow'.",
+   "reading": "The fertile plains, the meadows – a place of natural abundance, growth, and potential.",
+   "languages": [
+    "es"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 1.0
+  },
+  {
+   "operation": "etymology",
+   "chain": "Village (Old French *village*) from Latin *villa* (country house, farm, estate) + suffix *-aticum*.",
+   "reading": "A small collection of dwellings, originally a country farm or estate, signifying a contained community or a place of domesticity.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 1.0
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las (sound) -> L'as (fr). L' (le/la) + as (avoir, 2nd person sing. present). 'L'as' means 'you have it'.",
+   "reading": "You have it, or the one who possesses; indicating attainment, mastery, a significant object or knowledge held.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Vegas (sound) -> Vagues (fr). 'Vagues' means 'waves' or 'vague, unclear' (adjective).",
+   "reading": "Suggests movement, undulation, or uncertainty; a shifting landscape, like waves on water, or an undefined quality.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ve (fr: imperative of *voir*, 'see!') + Gas (en: vapor, fuel).",
+   "reading": "'See the gas' or 'Behold the vapor,' hinting at an ephemeral, intoxicating, or volatile substance, perhaps a hidden truth.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vill (sound) -> Vile (en: evil, morally bad) + Age (en: period of time).",
+   "reading": "Suggests a period of moral corruption, degeneracy, or decline, a dark era, or an age marked by wickedness.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "Letters of 'Las Vegas' can be rearranged to form 'Gases Lava'.",
+   "reading": "Describes a powerful, eruptive force contained or released, associated with heat, pressure, and transformation from within.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "The letter 'L' from 'Las'. In esoteric traditions, L (Lambda in Greek) signifies balance, scales, or a gateway. In Roman numerals, L=50.",
+   "reading": "Symbolizes a point of balance, judgment, or a threshold to be crossed, representing a significant measure or weight.",
+   "languages": [
+    "en",
+    "grc",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Vegas (sound, as in the star Vega) from Arabic *an-nasr al-wāqiʿ* ('the falling eagle' or 'swooping vulture').",
+   "reading": "Represents something falling or descending, a bird of prey swooping down, or a star guiding from above, indicating destiny.",
+   "languages": [
+    "ar",
+    "la",
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Village (sound) -> Ville (fr: city) + Age (en: period, or fr: âge).",
+   "reading": "'City Age' or 'Old City,' hinting at the passing of an era within an urban environment or an ancient, established settlement.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "numerical",
+   "chain": "Assigning A=1, B=2... Z=26. Sum of letters for 'Las Vegas Village' = 154. Reduced to a single digit: 1+5+4 = 10, then 1+0 = 1.",
+   "reading": "The number One signifies unity, origin, creation, and independence; the beginning of a cycle or a unique entity.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 11,
+ "refusal_like": false
+}

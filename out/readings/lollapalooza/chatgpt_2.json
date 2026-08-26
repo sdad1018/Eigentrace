@@ -1,0 +1,116 @@
+{
+ "word": "Lollapalooza",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:17:21+00:00",
+ "latency_s": 5.91,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"loll + a + palooza; loll = hang loosely, droop; palooza echoes palaver/palace/loose-a\",\n    \"reading\": \"A drooping, lax, overblown display: slackness made festive and excessive.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.74\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"lola + palooza; lola (Spanish) = doll; palooza ~ palouse/palousea, a noisy flourish\",\n    \"reading\": \"A doll-like spectacle: pretty on the surface, but essentially a show of noise and ornament.\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"lo + la + palooza; lo (en) = behold; la (solfège) = the note A; palooza = pal-oo-za, a burst of sound\",\n    \"reading\": \"Behold the note: an announcement of sound itself, a fanfare of vowels and exuberance.\",\n    \"languages\": [\"en\", \"fr\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Lollapalooza rearranged suggests allopaloza / palooza-loll; loll = to hang, to droop\",\n    \"reading\": \"A rearranged slackness: things hanging out of order, exuberance losing its form.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L O L L A P A L O O Z A = Loud Ornaments, Laughing, Lingering, And Playful Antics, Loudly Overdone, Zealous, Amusing\",\n    \"reading\": \"An acronymic excess: loud ornament, lingering laughter, and playful antics pushed to the limit.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.18\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L repeated, then O repeated, then Z; L = angle/lever, O = circle, Z = zigzag\",\n    \"reading\": \"Angles enclosing circles, then a zigzag cut: a form that wobbles, loops, and finally snaps.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.57\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"L=12, O=15, Z=26; pattern of doubling L/O and ending in Z, the last letter\",\n    \"reading\": \"A sequence of repetition ending in finality: looping returns that culminate in closure.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"loll: Middle English lollen, from Old English *lollian?; standard lexica give loll as 'to hang loosely, droop' (OED, Merriam-Webster)\",\n    \"reading\": \"The core sound suggests drooping, lounging, and slackness before any added flourish.\",\n    \"languages\": [\"en\"],\n    \"source\": \"OED; Merriam-Webster Dictionary\",\n    \"confidence\": 0.86\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"pa + loo + za; loo (fr. l'eau / en. loo) can suggest water or a place of washing; za can echo 'za' in Italian/Slavic sound-play as a suffix\",\n    \"reading\": \"A wash of sound: water, looseness, and a trailing suffix that leaves the word unresolved.\",\n    \"languages\": [\"en\", \"fr\", \"it\", \"sl\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.27\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "loll + a + palooza; loll = hang loosely, droop; palooza echoes palaver/palace/loose-a",
+   "reading": "A drooping, lax, overblown display: slackness made festive and excessive.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.74
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "lola + palooza; lola (Spanish) = doll; palooza ~ palouse/palousea, a noisy flourish",
+   "reading": "A doll-like spectacle: pretty on the surface, but essentially a show of noise and ornament.",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "lo + la + palooza; lo (en) = behold; la (solfège) = the note A; palooza = pal-oo-za, a burst of sound",
+   "reading": "Behold the note: an announcement of sound itself, a fanfare of vowels and exuberance.",
+   "languages": [
+    "en",
+    "fr",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.48
+  },
+  {
+   "operation": "anagram",
+   "chain": "Lollapalooza rearranged suggests allopaloza / palooza-loll; loll = to hang, to droop",
+   "reading": "A rearranged slackness: things hanging out of order, exuberance losing its form.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L O L L A P A L O O Z A = Loud Ornaments, Laughing, Lingering, And Playful Antics, Loudly Overdone, Zealous, Amusing",
+   "reading": "An acronymic excess: loud ornament, lingering laughter, and playful antics pushed to the limit.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.18
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L repeated, then O repeated, then Z; L = angle/lever, O = circle, Z = zigzag",
+   "reading": "Angles enclosing circles, then a zigzag cut: a form that wobbles, loops, and finally snaps.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.57
+  },
+  {
+   "operation": "numerical",
+   "chain": "L=12, O=15, Z=26; pattern of doubling L/O and ending in Z, the last letter",
+   "reading": "A sequence of repetition ending in finality: looping returns that culminate in closure.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "etymology",
+   "chain": "loll: Middle English lollen, from Old English *lollian?; standard lexica give loll as 'to hang loosely, droop' (OED, Merriam-Webster)",
+   "reading": "The core sound suggests drooping, lounging, and slackness before any added flourish.",
+   "languages": [
+    "en"
+   ],
+   "source": "OED; Merriam-Webster Dictionary",
+   "confidence": 0.86
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "pa + loo + za; loo (fr. l'eau / en. loo) can suggest water or a place of washing; za can echo 'za' in Italian/Slavic sound-play as a suffix",
+   "reading": "A wash of sound: water, looseness, and a trailing suffix that leaves the word unresolved.",
+   "languages": [
+    "en",
+    "fr",
+    "it",
+    "sl"
+   ],
+   "source": "generative",
+   "confidence": 0.27
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 9,
+ "refusal_like": false
+}

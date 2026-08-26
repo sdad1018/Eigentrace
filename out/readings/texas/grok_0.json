@@ -1,0 +1,128 @@
+{
+ "word": "Texas",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:01+00:00",
+ "latency_s": 6.3,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Texas ← Spanish Tejas ← Caddo tayshas 'allies, friends'\",\n    \"reading\": \"the allied ones, the confederated friends\",\n    \"languages\": [\"en\",\"es\",\"cad\"],\n    \"source\": \"Oxford English Dictionary & Texas State Historical Association etymology\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Tex + as\",\n    \"reading\": \"the law as it stands, the rule made manifest\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Té + xas (xa = cha in old French)\",\n    \"reading\": \"the head of the hunt, the chief tracker\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Texas ≈ Tekh-as (Egyptian)\",\n    \"reading\": \"the craftsman of the divine fire, the artificer\",\n    \"languages\": [\"en\",\"egy\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Texas = Taxes\",\n    \"reading\": \"that which is owed, the tithe rendered\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Tex-as ≈ Tèque + as (Spanish)\",\n    \"reading\": \"the dry one who drinks, the thirsty cup\",\n    \"languages\": [\"es\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"T.E.X.A.S. ← Theos Ek Xenos Astrapé Sêma\",\n    \"reading\": \"God from the stranger as lightning sign\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T (cross) + ex (out of) + as (like unto)\",\n    \"reading\": \"the cross that comes out like lightning\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Texas ≈ Taksis (Greek ταξις)\",\n    \"reading\": \"the ordered array, the battle formation\",\n    \"languages\": [\"en\",\"grc\"],\n    \"source\": \"Liddell-Scott-Jones Greek Lexicon\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Te + xas ≈ Thé + kas (Greek)\",\n    \"reading\": \"the divine cup, the vessel of god\",\n    \"languages\": [\"grc\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Texas ← Spanish Tejas ← Caddo tayshas 'allies, friends'",
+   "reading": "the allied ones, the confederated friends",
+   "languages": [
+    "en",
+    "es",
+    "cad"
+   ],
+   "source": "Oxford English Dictionary & Texas State Historical Association etymology",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Tex + as",
+   "reading": "the law as it stands, the rule made manifest",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Té + xas (xa = cha in old French)",
+   "reading": "the head of the hunt, the chief tracker",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Texas ≈ Tekh-as (Egyptian)",
+   "reading": "the craftsman of the divine fire, the artificer",
+   "languages": [
+    "en",
+    "egy"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "anagram",
+   "chain": "Texas = Taxes",
+   "reading": "that which is owed, the tithe rendered",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Tex-as ≈ Tèque + as (Spanish)",
+   "reading": "the dry one who drinks, the thirsty cup",
+   "languages": [
+    "es",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "T.E.X.A.S. ← Theos Ek Xenos Astrapé Sêma",
+   "reading": "God from the stranger as lightning sign",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T (cross) + ex (out of) + as (like unto)",
+   "reading": "the cross that comes out like lightning",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Texas ≈ Taksis (Greek ταξις)",
+   "reading": "the ordered array, the battle formation",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "Liddell-Scott-Jones Greek Lexicon",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Te + xas ≈ Thé + kas (Greek)",
+   "reading": "the divine cup, the vessel of god",
+   "languages": [
+    "grc",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

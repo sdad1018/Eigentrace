@@ -1,0 +1,126 @@
+{
+ "word": "Coachella",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:15:29+00:00",
+ "latency_s": 6.38,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"coq + ella\",\n    \"reading\": \"the rooster's she; feminine solar principle under the cock\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"coque + elle + a\",\n    \"reading\": \"she who has the shell, the egg-bearer, matrix of becoming\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"coachella ≈ cochela (Spanish) ≈ concha (Latin American)\",\n    \"reading\": \"the little shell, vulva of the world, hidden pearl\",\n    \"languages\": [\"es\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"cochlea (Latin) ← κοχλίας (kokhlias, Greek)\",\n    \"reading\": \"spiral shell, snail, the labyrinth of the inner ear\",\n    \"languages\": [\"la\",\"grc\"],\n    \"source\": \"Oxford Latin Dictionary / Liddell-Scott-Jones\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"cau + chella\",\n    \"reading\": \"hot little cauldron; alchemical vessel of transformation\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Coachella → Choc + a + ella\",\n    \"reading\": \"shock to her; the blow that awakens the feminine\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"coq + a + elle + a\",\n    \"reading\": \"the rooster to her, the cock given unto the she\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"coachella ≈ kokhla (Hebrew כוכלה)\",\n    \"reading\": \"her star, the feminine stellar vessel\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"C.O.A.C.H.E.L.L.A. → Coagula + Albedo + Calcina + Hermetica + Elixir + Luna + Lapis + Alkahest\",\n    \"reading\": \"the complete alchemical sequence hidden in one shell\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"C (crescent) + O (egg) + A (compass) + CHELLA (shell)\",\n    \"reading\": \"lunar egg within the measured shell of becoming\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "coq + ella",
+   "reading": "the rooster's she; feminine solar principle under the cock",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "coque + elle + a",
+   "reading": "she who has the shell, the egg-bearer, matrix of becoming",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "coachella ≈ cochela (Spanish) ≈ concha (Latin American)",
+   "reading": "the little shell, vulva of the world, hidden pearl",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "etymology",
+   "chain": "cochlea (Latin) ← κοχλίας (kokhlias, Greek)",
+   "reading": "spiral shell, snail, the labyrinth of the inner ear",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "Oxford Latin Dictionary / Liddell-Scott-Jones",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "cau + chella",
+   "reading": "hot little cauldron; alchemical vessel of transformation",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Coachella → Choc + a + ella",
+   "reading": "shock to her; the blow that awakens the feminine",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "coq + a + elle + a",
+   "reading": "the rooster to her, the cock given unto the she",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "coachella ≈ kokhla (Hebrew כוכלה)",
+   "reading": "her star, the feminine stellar vessel",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "C.O.A.C.H.E.L.L.A. → Coagula + Albedo + Calcina + Hermetica + Elixir + Luna + Lapis + Alkahest",
+   "reading": "the complete alchemical sequence hidden in one shell",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "C (crescent) + O (egg) + A (compass) + CHELLA (shell)",
+   "reading": "lunar egg within the measured shell of becoming",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

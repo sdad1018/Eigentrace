@@ -1,0 +1,117 @@
+{
+ "word": "Las Vegas Boulevard",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:14+00:00",
+ "latency_s": 4.91,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"Las + Vegas + Boulevard; las ~ 'lass' / 'less'; Vegas ~ 'veils' / 'vagus'; boulevard ~ 'bull + ward'\",\"reading\":\"The veiled wanderer leads the bull-guarded way: desire enclosed, then driven along a broad road.\",\"languages\":[\"en\",\"fr\",\"la\"],\"source\":\"generative\",\"confidence\":0.74},{\"operation\":\"cross_language_homophone\",\"chain\":\"Las (es) ~ les (fr, 'the'); Vegas ~ vegas/vegas? heard as 'veils'; boulevard (fr) = broad way\",\"reading\":\"The many veils of the broad way: what is hidden is made public by passage.\",\"languages\":[\"es\",\"fr\"],\"source\":\"generative\",\"confidence\":0.62},{\"operation\":\"etymology\",\"chain\":\"boulevard < French boulevard < Middle Dutch bolwerc 'bulwark'; 'boul-' = bulwark, wall, rampart\",\"reading\":\"A rampart-road: a defended passage, a way made from the logic of walls.\",\"languages\":[\"fr\",\"nl\"],\"source\":\"Oxford English Dictionary; CNRTL\",\"confidence\":0.97},{\"operation\":\"etymology\",\"chain\":\"Las < Spanish plural article 'the'; Vegas < plural of vega 'fertile plain, meadow' (DLE); boulevard < French\",\"reading\":\"The meadows of the broad way: abundance laid out as a corridor.\",\"languages\":[\"es\",\"fr\"],\"source\":\"Diccionario de la lengua española (RAE); Oxford English Dictionary\",\"confidence\":0.93},{\"operation\":\"cross_language_homophone\",\"chain\":\"Vegas ~ 'vegas' heard as Latin vagus 'wandering, roaming'; boulevard as a road\",\"reading\":\"The wandering road: a path for the vagus, the restless and unmoored.\",\"languages\":[\"la\",\"en\"],\"source\":\"generative\",\"confidence\":0.58},{\"operation\":\"letter_symbol\",\"chain\":\"L-A-S / V-E-G-A-S / B-O-U-L-E-V-A-R-D; L as line, V as valley/victory, B as enclosure, D as door\",\"reading\":\"Line, valley, enclosure, door: a sequence of descent, opening, and passage.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.51},{\"operation\":\"notariqon\",\"chain\":\"LAS = Light, Ash, Shadow; VEGAS = Veil, Edge, Gate, Ash, Sign; BOULEVARD = Broad Opening, Underlying Line, Entry, Veiled Axis, Road, Door\",\"reading\":\"A hidden formula of veil and gate: shadowed entry into a broad opening.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.43},{\"operation\":\"anagram\",\"chain\":\"BOULEVARD rearranged suggests 'a broad veil' / 'broad veil'\",\"reading\":\"A broad veil: the road is a covering, not merely a route.\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.69},{\"operation\":\"numerical\",\"chain\":\"Alphabetic values A1Z26: LAS=12+1+19=32; VEGAS=22+5+7+1+19=54; BOULEVARD=2+15+21+12+5+22+1+18+4=100; total=186\",\"reading\":\"186 reduces to 15, then 6: desire and harmony under a single broad sign.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.37}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Vegas + Boulevard; las ~ 'lass' / 'less'; Vegas ~ 'veils' / 'vagus'; boulevard ~ 'bull + ward'",
+   "reading": "The veiled wanderer leads the bull-guarded way: desire enclosed, then driven along a broad road.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.74
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las (es) ~ les (fr, 'the'); Vegas ~ vegas/vegas? heard as 'veils'; boulevard (fr) = broad way",
+   "reading": "The many veils of the broad way: what is hidden is made public by passage.",
+   "languages": [
+    "es",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "etymology",
+   "chain": "boulevard < French boulevard < Middle Dutch bolwerc 'bulwark'; 'boul-' = bulwark, wall, rampart",
+   "reading": "A rampart-road: a defended passage, a way made from the logic of walls.",
+   "languages": [
+    "fr",
+    "nl"
+   ],
+   "source": "Oxford English Dictionary; CNRTL",
+   "confidence": 0.97
+  },
+  {
+   "operation": "etymology",
+   "chain": "Las < Spanish plural article 'the'; Vegas < plural of vega 'fertile plain, meadow' (DLE); boulevard < French",
+   "reading": "The meadows of the broad way: abundance laid out as a corridor.",
+   "languages": [
+    "es",
+    "fr"
+   ],
+   "source": "Diccionario de la lengua española (RAE); Oxford English Dictionary",
+   "confidence": 0.93
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Vegas ~ 'vegas' heard as Latin vagus 'wandering, roaming'; boulevard as a road",
+   "reading": "The wandering road: a path for the vagus, the restless and unmoored.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L-A-S / V-E-G-A-S / B-O-U-L-E-V-A-R-D; L as line, V as valley/victory, B as enclosure, D as door",
+   "reading": "Line, valley, enclosure, door: a sequence of descent, opening, and passage.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.51
+  },
+  {
+   "operation": "notariqon",
+   "chain": "LAS = Light, Ash, Shadow; VEGAS = Veil, Edge, Gate, Ash, Sign; BOULEVARD = Broad Opening, Underlying Line, Entry, Veiled Axis, Road, Door",
+   "reading": "A hidden formula of veil and gate: shadowed entry into a broad opening.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.43
+  },
+  {
+   "operation": "anagram",
+   "chain": "BOULEVARD rearranged suggests 'a broad veil' / 'broad veil'",
+   "reading": "A broad veil: the road is a covering, not merely a route.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.69
+  },
+  {
+   "operation": "numerical",
+   "chain": "Alphabetic values A1Z26: LAS=12+1+19=32; VEGAS=22+5+7+1+19=54; BOULEVARD=2+15+21+12+5+22+1+18+4=100; total=186",
+   "reading": "186 reduces to 15, then 6: desire and harmony under a single broad sign.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.37
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 9,
+ "refusal_like": false
+}

@@ -1,0 +1,104 @@
+{
+ "word": "Mandalay",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:19:10+00:00",
+ "latency_s": 4.78,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mandalay: from Burmese မန္တလေး, commonly analyzed in English as a name of uncertain origin; standard lexica note the form and uncertainty\",\n    \"reading\": \"A name of uncertain origin, carrying the sense of a place-name rather than a transparent root-meaning.\",\n    \"languages\": [\"en\", \"my\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster; Encyclopaedia Britannica\",\n    \"confidence\": 0.84\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + da + lay; man = human, da = give/put (echo), lay = lie down / lay aside\",\n    \"reading\": \"The human is given to lying down: a figure of rest, surrender, or burial.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.46\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"manda- (Sanskrit/Indic echo) + lay; manda in Sanskrit = slow, dull, weak; lay = repose\",\n    \"reading\": \"Slow repose: a languid, weakened settling into stillness.\",\n    \"languages\": [\"sa\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.39\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"man + dal + ay; dal (Hindi/Urdu) = split, divide; ay = cry/alas (echo)\",\n    \"reading\": \"The man is split; a divided self calls out in lament.\",\n    \"languages\": [\"en\", \"hi\", \"ur\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay → a man, day, all; rearranged as a sentential cluster\",\n    \"reading\": \"A man, a day, all: the whole of life compressed into one mortal interval.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.33\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M A N D A L A Y → Mind, And Nature, Drawn As Light, Ascent, Yielding\",\n    \"reading\": \"Mind and nature drawn toward light, then yielding upward in ascent.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M = mountain; A = apex; N = descent; D = door; A = apex; L = ladder; A = apex; Y = forked path\",\n    \"reading\": \"A mountain-door-ladder sequence: ascent, threshold, and branching choice.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Mandalay = 8 letters; 8 as the turned infinity, doubled balance, and the octave of return\",\n    \"reading\": \"An octave of return: completion, balance, and the loop that comes back to itself.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.27\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Mandalay: from Burmese မန္တလေး, commonly analyzed in English as a name of uncertain origin; standard lexica note the form and uncertainty",
+   "reading": "A name of uncertain origin, carrying the sense of a place-name rather than a transparent root-meaning.",
+   "languages": [
+    "en",
+    "my"
+   ],
+   "source": "Oxford English Dictionary; Merriam-Webster; Encyclopaedia Britannica",
+   "confidence": 0.84
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + da + lay; man = human, da = give/put (echo), lay = lie down / lay aside",
+   "reading": "The human is given to lying down: a figure of rest, surrender, or burial.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.46
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "manda- (Sanskrit/Indic echo) + lay; manda in Sanskrit = slow, dull, weak; lay = repose",
+   "reading": "Slow repose: a languid, weakened settling into stillness.",
+   "languages": [
+    "sa",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.39
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "man + dal + ay; dal (Hindi/Urdu) = split, divide; ay = cry/alas (echo)",
+   "reading": "The man is split; a divided self calls out in lament.",
+   "languages": [
+    "en",
+    "hi",
+    "ur"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay → a man, day, all; rearranged as a sentential cluster",
+   "reading": "A man, a day, all: the whole of life compressed into one mortal interval.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.33
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M A N D A L A Y → Mind, And Nature, Drawn As Light, Ascent, Yielding",
+   "reading": "Mind and nature drawn toward light, then yielding upward in ascent.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M = mountain; A = apex; N = descent; D = door; A = apex; L = ladder; A = apex; Y = forked path",
+   "reading": "A mountain-door-ladder sequence: ascent, threshold, and branching choice.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "numerical",
+   "chain": "Mandalay = 8 letters; 8 as the turned infinity, doubled balance, and the octave of return",
+   "reading": "An octave of return: completion, balance, and the loop that comes back to itself.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.27
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

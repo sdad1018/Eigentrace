@@ -1,0 +1,148 @@
+{
+ "word": "Wembley",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:17:22+00:00",
+ "latency_s": 10.81,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Wembley < Old English Wemba-leah; leah = clearing/wood; Wemba = personal name\",\n    \"reading\": \"Wemba's clearing in the wood; a place-name of settlement and boundary\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"Oxford Dictionary of English Place-Names\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem + bley; wem (Old English) = spot/stain; bley (Old French blei) = pale/wan\",\n    \"reading\": \"A pale stain on the land; a mark that whitens — the scar of a threshold\",\n    \"languages\": [\"en\", \"fro\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wem (German) = to whom; bley (Yiddish) = lead (metal); Wembley ~ wem blei\",\n    \"reading\": \"To whom the lead? — a question of weight, of gravity, of who bears the burden\",\n    \"languages\": [\"de\", \"yi\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Wembley -> We + m + bley; anagram 'Blemy' (Greek βλέμμα, blémma) = glance/look\",\n    \"reading\": \"The look of the we; the eye that turns inward — a self-seeing gaze\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"W-M-B-L-Y; W = double u (vav), M = mem, B = bet, L = lamed, Y = yod\",\n    \"reading\": \"Hebrew initials: vav, mem, bet, lamed, yod — 'and from the heart to the hand'\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"W = 2 V's (twin peaks); M = 4 (water); B = house; L = shepherd's crook; Y = fork\",\n    \"reading\": \"Twin waters at the house, the crook divides — a ford of choice and shelter\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"W=6 (V+V), M=40, B=2, L=30, Y=10; sum = 88; 8+8=16; 1+6=7\",\n    \"reading\": \"Seven — the number of completion, of rest after the crossing of waters\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Wembley < Wemba (Old English) + leah; leah also = meadow, not just clearing\",\n    \"reading\": \"Wemba's meadow — a place of grazing, of pastoral quiet, of the herd's path\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"Bosworth-Toller Anglo-Saxon Dictionary\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem + bley; 'wem' (Middle English) = to defile; 'bley' (Old English blæc) = black\",\n    \"reading\": \"The blackening stain — a dark mark that cannot be washed, a permanent blot\",\n    \"languages\": [\"enm\", \"ang\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley ~ 'vem ble' (Portuguese) = 'come well'; 'vem' (Latin veni) = come\",\n    \"reading\": \"Come well, come whole — an invitation to arrival, to the gate of good fortune\",\n    \"languages\": [\"pt\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Wembley -> 'Blew my' (anagram); 'blew' = past of blow; 'my' = possessive\",\n    \"reading\": \"I blew my own — a loss of breath, a spent wind, a thing scattered\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"W-M-B-L-Y; Latin: Veni, Memento, Bona, Lux, Y — 'come, remember the good light'\",\n    \"reading\": \"Come, remember the good light — a mnemonic for the pilgrim's path\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Wembley < Old English Wemba-leah; leah = clearing/wood; Wemba = personal name",
+   "reading": "Wemba's clearing in the wood; a place-name of settlement and boundary",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Oxford Dictionary of English Place-Names",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem + bley; wem (Old English) = spot/stain; bley (Old French blei) = pale/wan",
+   "reading": "A pale stain on the land; a mark that whitens — the scar of a threshold",
+   "languages": [
+    "en",
+    "fro"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wem (German) = to whom; bley (Yiddish) = lead (metal); Wembley ~ wem blei",
+   "reading": "To whom the lead? — a question of weight, of gravity, of who bears the burden",
+   "languages": [
+    "de",
+    "yi"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Wembley -> We + m + bley; anagram 'Blemy' (Greek βλέμμα, blémma) = glance/look",
+   "reading": "The look of the we; the eye that turns inward — a self-seeing gaze",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "W-M-B-L-Y; W = double u (vav), M = mem, B = bet, L = lamed, Y = yod",
+   "reading": "Hebrew initials: vav, mem, bet, lamed, yod — 'and from the heart to the hand'",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "W = 2 V's (twin peaks); M = 4 (water); B = house; L = shepherd's crook; Y = fork",
+   "reading": "Twin waters at the house, the crook divides — a ford of choice and shelter",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "W=6 (V+V), M=40, B=2, L=30, Y=10; sum = 88; 8+8=16; 1+6=7",
+   "reading": "Seven — the number of completion, of rest after the crossing of waters",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "etymology",
+   "chain": "Wembley < Wemba (Old English) + leah; leah also = meadow, not just clearing",
+   "reading": "Wemba's meadow — a place of grazing, of pastoral quiet, of the herd's path",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Bosworth-Toller Anglo-Saxon Dictionary",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem + bley; 'wem' (Middle English) = to defile; 'bley' (Old English blæc) = black",
+   "reading": "The blackening stain — a dark mark that cannot be washed, a permanent blot",
+   "languages": [
+    "enm",
+    "ang"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley ~ 'vem ble' (Portuguese) = 'come well'; 'vem' (Latin veni) = come",
+   "reading": "Come well, come whole — an invitation to arrival, to the gate of good fortune",
+   "languages": [
+    "pt",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Wembley -> 'Blew my' (anagram); 'blew' = past of blow; 'my' = possessive",
+   "reading": "I blew my own — a loss of breath, a spent wind, a thing scattered",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "W-M-B-L-Y; Latin: Veni, Memento, Bona, Lux, Y — 'come, remember the good light'",
+   "reading": "Come, remember the good light — a mnemonic for the pilgrim's path",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

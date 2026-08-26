@@ -1,0 +1,102 @@
+{
+ "word": "Wembley",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:16:14+00:00",
+ "latency_s": 4.14,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"wem + bley; wem ~ whim/womb, bley ~ blee/bleak\",\"reading\":\"A hidden hollow or womb-like place, then a pale or bleak light: enclosure touched by wan brightness.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.34},{\"operation\":\"cross_language_homophone\",\"chain\":\"wembley ~ French 'ombre' by sound-shifted echo; wem- as 'ombre' reversed in sense, bley ~ bleu/bleuâtre\",\"reading\":\"Shadow and blue mingle: a dim, cool sign of concealment and melancholy.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.22},{\"operation\":\"anagram\",\"chain\":\"WEMBLEY -> WELBY + M; WELBY ~ well + by\",\"reading\":\"A well-by, a place beside a source: proximity to hidden waters or a spring.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.18},{\"operation\":\"notariqon\",\"chain\":\"W E M B L E Y -> Way, End, Middle, Beginning, Light, End, Yonder\",\"reading\":\"A path that begins and ends in light, passing through a middle threshold toward the beyond.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.12},{\"operation\":\"letter_symbol\",\"chain\":\"W = double V; E = gate; M = mountains; B = enclosure; L = staff; Y = forked path\",\"reading\":\"Twin movement enters a gate, crosses enclosure and staff, then divides: a forked destiny.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.27},{\"operation\":\"numerical\",\"chain\":\"W(23)+E(5)+M(13)+B(2)+L(12)+E(5)+Y(25)=85; 8+5=13; 1+3=4\",\"reading\":\"Reduced to four: stability after tension, a square foundation beneath a doubled, restless surface.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.31},{\"operation\":\"etymology\",\"chain\":\"Standard lexicon: OED; place-name element 'ley/leah' = clearing, meadow; initial element uncertain, often treated as a personal or topographic name\",\"reading\":\"A clearing or meadow-name: open ground marked by an older, opaque first element.\",\"languages\":[\"en\"],\"source\":\"OED\",\"confidence\":0.74},{\"operation\":\"etymology\",\"chain\":\"Standard lexicon: Oxford Dictionary of English Place-Names; -ley from Old English leah 'wood, clearing, meadow'; first element possibly a personal name or lost topographic term\",\"reading\":\"An open clearing named from an older, obscured source, where the final syllable means meadow or woodland glade.\",\"languages\":[\"en\",\"ang\"],\"source\":\"Oxford Dictionary of English Place-Names\",\"confidence\":0.78}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "wem + bley; wem ~ whim/womb, bley ~ blee/bleak",
+   "reading": "A hidden hollow or womb-like place, then a pale or bleak light: enclosure touched by wan brightness.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.34
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "wembley ~ French 'ombre' by sound-shifted echo; wem- as 'ombre' reversed in sense, bley ~ bleu/bleuâtre",
+   "reading": "Shadow and blue mingle: a dim, cool sign of concealment and melancholy.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "anagram",
+   "chain": "WEMBLEY -> WELBY + M; WELBY ~ well + by",
+   "reading": "A well-by, a place beside a source: proximity to hidden waters or a spring.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.18
+  },
+  {
+   "operation": "notariqon",
+   "chain": "W E M B L E Y -> Way, End, Middle, Beginning, Light, End, Yonder",
+   "reading": "A path that begins and ends in light, passing through a middle threshold toward the beyond.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.12
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "W = double V; E = gate; M = mountains; B = enclosure; L = staff; Y = forked path",
+   "reading": "Twin movement enters a gate, crosses enclosure and staff, then divides: a forked destiny.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.27
+  },
+  {
+   "operation": "numerical",
+   "chain": "W(23)+E(5)+M(13)+B(2)+L(12)+E(5)+Y(25)=85; 8+5=13; 1+3=4",
+   "reading": "Reduced to four: stability after tension, a square foundation beneath a doubled, restless surface.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "etymology",
+   "chain": "Standard lexicon: OED; place-name element 'ley/leah' = clearing, meadow; initial element uncertain, often treated as a personal or topographic name",
+   "reading": "A clearing or meadow-name: open ground marked by an older, opaque first element.",
+   "languages": [
+    "en"
+   ],
+   "source": "OED",
+   "confidence": 0.74
+  },
+  {
+   "operation": "etymology",
+   "chain": "Standard lexicon: Oxford Dictionary of English Place-Names; -ley from Old English leah 'wood, clearing, meadow'; first element possibly a personal name or lost topographic term",
+   "reading": "An open clearing named from an older, obscured source, where the final syllable means meadow or woodland glade.",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Oxford Dictionary of English Place-Names",
+   "confidence": 0.78
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

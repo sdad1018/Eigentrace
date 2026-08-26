@@ -1,0 +1,127 @@
+{
+ "word": "Bonnaroo",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:16:12+00:00",
+ "latency_s": 7.37,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"bon + naroo\",\n    \"reading\": \"good + narrow path; the narrow way that is good\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bon (Old French) = good; nar (Old Norse) = narrow + rue (Old French) = street/path\",\n    \"reading\": \"the good narrow path or beneficial strait way\",\n    \"languages\": [\"fr\",\"no\",\"la\"],\n    \"source\": \"Oxford English Dictionary / Dictionnaire étymologique de la langue française\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bonnaroo ≈ bonne à roux\",\n    \"reading\": \"the good red woman; she who is beneficial and ruddy\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"bon + a + roo\",\n    \"reading\": \"good + to + wheel/circle; the good that turns or returns\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bonnaroo → No barren\",\n    \"reading\": \"that which is not barren; the fertile principle\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B.O.N.N.A.R.O.O. → Bene Omnia Naturae Nutrit Aborigine Recto Orbe\",\n    \"reading\": \"All things of Nature are nourished from the beginning by the Right Circle\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bonnaroo ≈ bon à rouer\",\n    \"reading\": \"good for the wheel; worthy of the turning or the torture-wheel\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"bon + nar + oo\",\n    \"reading\": \"good + gnosis + egg; the good knowledge within the cosmic egg\",\n    \"languages\": [\"fr\",\"grc\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B (house) + ON (being) + NA (no) + ROO (ruah/spirit)\",\n    \"reading\": \"the house of being, no spirit; or house where spirit is not\",\n    \"languages\": [\"he\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bonnar (Middle English dialectal) + roo (variant of roe)\",\n    \"reading\": \"good deer; the beneficial wild spirit of the wood\",\n    \"languages\": [\"en\"],\n    \"source\": \"Middle English Dictionary\",\n    \"confidence\": 0.35\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "bon + naroo",
+   "reading": "good + narrow path; the narrow way that is good",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "bon (Old French) = good; nar (Old Norse) = narrow + rue (Old French) = street/path",
+   "reading": "the good narrow path or beneficial strait way",
+   "languages": [
+    "fr",
+    "no",
+    "la"
+   ],
+   "source": "Oxford English Dictionary / Dictionnaire étymologique de la langue française",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bonnaroo ≈ bonne à roux",
+   "reading": "the good red woman; she who is beneficial and ruddy",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "bon + a + roo",
+   "reading": "good + to + wheel/circle; the good that turns or returns",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bonnaroo → No barren",
+   "reading": "that which is not barren; the fertile principle",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B.O.N.N.A.R.O.O. → Bene Omnia Naturae Nutrit Aborigine Recto Orbe",
+   "reading": "All things of Nature are nourished from the beginning by the Right Circle",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bonnaroo ≈ bon à rouer",
+   "reading": "good for the wheel; worthy of the turning or the torture-wheel",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "bon + nar + oo",
+   "reading": "good + gnosis + egg; the good knowledge within the cosmic egg",
+   "languages": [
+    "fr",
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (house) + ON (being) + NA (no) + ROO (ruah/spirit)",
+   "reading": "the house of being, no spirit; or house where spirit is not",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "bonnar (Middle English dialectal) + roo (variant of roe)",
+   "reading": "good deer; the beneficial wild spirit of the wood",
+   "languages": [
+    "en"
+   ],
+   "source": "Middle English Dictionary",
+   "confidence": 0.35
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

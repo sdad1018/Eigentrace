@@ -1,0 +1,103 @@
+{
+ "word": "Abedi",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:29:26+00:00",
+ "latency_s": 7.99,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Abedi < Arabic ʿabid (عابد) = worshipper, devotee; suffix -i = relational/adjectival; from ʿabada = to serve, worship\",\n    \"reading\": \"One who serves or worships; a devotee, servant of the divine.\",\n    \"languages\": [\"ar\"],\n    \"source\": \"Wehr, A Dictionary of Modern Written Arabic\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"A + bed + i; bed (Old English bedd) = resting place; i = first-person pronoun in Latin/French\",\n    \"reading\": \"I am the bed, the resting ground of the word; a place where sound lies down.\",\n    \"languages\": [\"en\", \"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Abedi ~ French 'à bédi' (à + bédi, archaic for 'béni' = blessed); also ~ Hebrew 'avadi' (עֲבָדִי) = my servant\",\n    \"reading\": \"To the blessed one; my servant — a doubled servitude and benediction.\",\n    \"languages\": [\"fr\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Abedi -> A + B + E + D + I; reorder to 'Idea B' or 'Bide A'; bide (Old English bīdan) = to wait, remain\",\n    \"reading\": \"A second idea, or an imperative to wait: the word holds a pause within itself.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"A-B-E-D-I as initials: A (alpha) + B (beta) + E (epsilon) + D (delta) + I (iota) — Greek letters in sequence but with E and D swapped\",\n    \"reading\": \"A disordered alphabet — the first five letters rearranged, suggesting a hidden order or a broken beginning.\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"A = beginning; B = house (beth, Hebrew); E = breath/heh; D = door (daleth); I = self/eye (iod)\",\n    \"reading\": \"From the house of breath, through the door, the self emerges — a path of initiation.\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Abedi: A=1, B=2, E=5, D=4, I=9 (Hebrew gematria values); sum = 21; 21 = 3×7, or 2+1=3\",\n    \"reading\": \"Sum 21 — the number of completion and divine order; reduces to 3, the triad of creation.\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Abedi < Latin 'ab' (from) + 'edi' (from edere = to eat) — but 'abedi' as ablative of 'abedus'? Not attested; speculative\",\n    \"reading\": \"From the eating — a consuming origin, but this is a false trail, a phonetic mirage.\",\n    \"languages\": [\"la\"],\n    \"source\": \"Lewis & Short, A Latin Dictionary (no entry; generative)\",\n    \"confidence\": 0.2\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Abedi < Arabic ʿabid (عابد) = worshipper, devotee; suffix -i = relational/adjectival; from ʿabada = to serve, worship",
+   "reading": "One who serves or worships; a devotee, servant of the divine.",
+   "languages": [
+    "ar"
+   ],
+   "source": "Wehr, A Dictionary of Modern Written Arabic",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "A + bed + i; bed (Old English bedd) = resting place; i = first-person pronoun in Latin/French",
+   "reading": "I am the bed, the resting ground of the word; a place where sound lies down.",
+   "languages": [
+    "en",
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Abedi ~ French 'à bédi' (à + bédi, archaic for 'béni' = blessed); also ~ Hebrew 'avadi' (עֲבָדִי) = my servant",
+   "reading": "To the blessed one; my servant — a doubled servitude and benediction.",
+   "languages": [
+    "fr",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Abedi -> A + B + E + D + I; reorder to 'Idea B' or 'Bide A'; bide (Old English bīdan) = to wait, remain",
+   "reading": "A second idea, or an imperative to wait: the word holds a pause within itself.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "A-B-E-D-I as initials: A (alpha) + B (beta) + E (epsilon) + D (delta) + I (iota) — Greek letters in sequence but with E and D swapped",
+   "reading": "A disordered alphabet — the first five letters rearranged, suggesting a hidden order or a broken beginning.",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "A = beginning; B = house (beth, Hebrew); E = breath/heh; D = door (daleth); I = self/eye (iod)",
+   "reading": "From the house of breath, through the door, the self emerges — a path of initiation.",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "Abedi: A=1, B=2, E=5, D=4, I=9 (Hebrew gematria values); sum = 21; 21 = 3×7, or 2+1=3",
+   "reading": "Sum 21 — the number of completion and divine order; reduces to 3, the triad of creation.",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Abedi < Latin 'ab' (from) + 'edi' (from edere = to eat) — but 'abedi' as ablative of 'abedus'? Not attested; speculative",
+   "reading": "From the eating — a consuming origin, but this is a false trail, a phonetic mirage.",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis & Short, A Latin Dictionary (no entry; generative)",
+   "confidence": 0.2
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

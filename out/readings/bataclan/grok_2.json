@@ -1,0 +1,131 @@
+{
+ "word": "Bataclan",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:27:17+00:00",
+ "latency_s": 9.37,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bata + clan\",\n    \"reading\": \"the clan of the beaters, those who strike or batter\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bataclan (French) ← Occitan bataclàn = noise, tumult, disorderly gathering\",\n    \"reading\": \"noisy chaotic assembly or tumultuous band\",\n    \"languages\": [\"fr\",\"oc\"],\n    \"source\": \"Littré & Centre National de Ressources Textuelles et Lexicales\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bata-clan ≈ Bata (Arabic بطّة) + clan; bata = duck\",\n    \"reading\": \"the duck clan, the quacking brotherhood\",\n    \"languages\": [\"ar\",\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bat + à + clan\",\n    \"reading\": \"the blow that strikes the clan or the clan’s blow\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bataclan → Cabalat + an\",\n    \"reading\": \"the an of the Cabala, the secret tradition received\",\n    \"languages\": [\"fr\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B.A.T.A.C.L.A.N. → Batisseurs Assassins Templiers Alchimistes Conjurés Luciferiens Adeptes Nephilim\",\n    \"reading\": \"builders, assassins, templars, alchemists, conjurers, luciferian adepts of the nephilim\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bât + à + clan\",\n    \"reading\": \"the beast of burden belonging to the clan\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bataclan ≈ Bata Klan (Germanic) = battle clan\",\n    \"reading\": \"the battle-clan, the fighting kindred\",\n    \"languages\": [\"en\",\"de\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B (Beth = house) + ATAC (attack) + LAN (net)\",\n    \"reading\": \"the house that attacks the net or the net that attacks the house\",\n    \"languages\": [\"he\",\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bataclan ← Provençal bataclan = hubbub, din, racket\",\n    \"reading\": \"the place or group that produces loud chaotic noise\",\n    \"languages\": [\"fr\",\"oc\"],\n    \"source\": \"Dictionnaire de l’Académie Française (8th ed.) & TLFi\",\n    \"confidence\": 0.85\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Bata + clan",
+   "reading": "the clan of the beaters, those who strike or batter",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "bataclan (French) ← Occitan bataclàn = noise, tumult, disorderly gathering",
+   "reading": "noisy chaotic assembly or tumultuous band",
+   "languages": [
+    "fr",
+    "oc"
+   ],
+   "source": "Littré & Centre National de Ressources Textuelles et Lexicales",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bata-clan ≈ Bata (Arabic بطّة) + clan; bata = duck",
+   "reading": "the duck clan, the quacking brotherhood",
+   "languages": [
+    "ar",
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bat + à + clan",
+   "reading": "the blow that strikes the clan or the clan’s blow",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bataclan → Cabalat + an",
+   "reading": "the an of the Cabala, the secret tradition received",
+   "languages": [
+    "fr",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B.A.T.A.C.L.A.N. → Batisseurs Assassins Templiers Alchimistes Conjurés Luciferiens Adeptes Nephilim",
+   "reading": "builders, assassins, templars, alchemists, conjurers, luciferian adepts of the nephilim",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bât + à + clan",
+   "reading": "the beast of burden belonging to the clan",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bataclan ≈ Bata Klan (Germanic) = battle clan",
+   "reading": "the battle-clan, the fighting kindred",
+   "languages": [
+    "en",
+    "de",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (Beth = house) + ATAC (attack) + LAN (net)",
+   "reading": "the house that attacks the net or the net that attacks the house",
+   "languages": [
+    "he",
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "bataclan ← Provençal bataclan = hubbub, din, racket",
+   "reading": "the place or group that produces loud chaotic noise",
+   "languages": [
+    "fr",
+    "oc"
+   ],
+   "source": "Dictionnaire de l’Académie Française (8th ed.) & TLFi",
+   "confidence": 0.85
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

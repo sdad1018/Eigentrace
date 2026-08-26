@@ -1,0 +1,129 @@
+{
+ "word": "Manchester Arena",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:48:01+00:00",
+ "latency_s": 27.5,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"From Old English Mameceaster, derived from Latin Mammacestria or Brittonic Mancunium. Mamma (Latin) means 'breast'; ceaster (Old English, from Latin castra) means 'fortified camp' or 'Roman town'.\",\n    \"reading\": \"The fortified Roman camp situated on a breast-shaped hill or elevation.\",\n    \"languages\": [\"en\", \"la\", \"brt\", \"oe\"],\n    \"source\": \"Oxford English Dictionary, Etymonline\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"From Latin harēna or arēna, meaning 'sand' or 'sandy place'. This specifically refers to the sand used to cover the ground in amphitheatres to absorb blood.\",\n    \"reading\": \"The sanded ground, a place for contests where efforts and their consequences are absorbed.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Oxford Latin Dictionary, Etymonline\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + chest + her\",\n    \"reading\": \"The male offering his chest to her, symbolizing protection, vulnerability, or a deep connection.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"a + reign + ah (sound of 'arena')\",\n    \"reading\": \"An exclamation acknowledging a period of rule or sovereignty unfolding.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"'Man chasser, à reine ah' (English: man; French: to hunt/chase, to, queen, ah)\",\n    \"reading\": \"A man's pursuit; an address or offering, with an exclamation, to the queenly principle.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chest + stir (from -ches-ter) + an + era (from A-re-na)\",\n    \"reading\": \"A man's inner self stirs the emergence of a new and significant epoch.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"'Mann scherzt er' (German: man, jokes, he)\",\n    \"reading\": \"He, the man, is jesting or performing a playful act.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"A (Alpha, beginning), R (resilience, return), E (essence, existence), N (nexus, new), A (Omega, end).\",\n    \"reading\": \"The cycle from alpha to omega, representing a core of new existence and resilient return.\",\n    \"languages\": [\"en\", \"grc\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"MANCHESTER anagrams to 'REST MENACH'. Menach (Hebrew) means 'rest, quiet, offering, gift.'\",\n    \"reading\": \"A peaceful offering, bringing forth tranquility and a sacred gift.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative (anagram), Strong's Concordance (menach)\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M.A.N.C.H.E.S.T.E.R. A.R.E.N.A. -> 'Mysteries Awaken New Cycles, Holding Eternal Secrets, Transmuting Earthly Realms, Embracing Radiant Ascendant Nature.'\",\n    \"reading\": \"Mystical processes awaken new cycles, holding eternal secrets to transmute earthly realms and embrace radiant, ascending nature.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "From Old English Mameceaster, derived from Latin Mammacestria or Brittonic Mancunium. Mamma (Latin) means 'breast'; ceaster (Old English, from Latin castra) means 'fortified camp' or 'Roman town'.",
+   "reading": "The fortified Roman camp situated on a breast-shaped hill or elevation.",
+   "languages": [
+    "en",
+    "la",
+    "brt",
+    "oe"
+   ],
+   "source": "Oxford English Dictionary, Etymonline",
+   "confidence": 1.0
+  },
+  {
+   "operation": "etymology",
+   "chain": "From Latin harēna or arēna, meaning 'sand' or 'sandy place'. This specifically refers to the sand used to cover the ground in amphitheatres to absorb blood.",
+   "reading": "The sanded ground, a place for contests where efforts and their consequences are absorbed.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Oxford Latin Dictionary, Etymonline",
+   "confidence": 1.0
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + chest + her",
+   "reading": "The male offering his chest to her, symbolizing protection, vulnerability, or a deep connection.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "a + reign + ah (sound of 'arena')",
+   "reading": "An exclamation acknowledging a period of rule or sovereignty unfolding.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "'Man chasser, à reine ah' (English: man; French: to hunt/chase, to, queen, ah)",
+   "reading": "A man's pursuit; an address or offering, with an exclamation, to the queenly principle.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chest + stir (from -ches-ter) + an + era (from A-re-na)",
+   "reading": "A man's inner self stirs the emergence of a new and significant epoch.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "'Mann scherzt er' (German: man, jokes, he)",
+   "reading": "He, the man, is jesting or performing a playful act.",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "A (Alpha, beginning), R (resilience, return), E (essence, existence), N (nexus, new), A (Omega, end).",
+   "reading": "The cycle from alpha to omega, representing a core of new existence and resilient return.",
+   "languages": [
+    "en",
+    "grc",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "MANCHESTER anagrams to 'REST MENACH'. Menach (Hebrew) means 'rest, quiet, offering, gift.'",
+   "reading": "A peaceful offering, bringing forth tranquility and a sacred gift.",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative (anagram), Strong's Concordance (menach)",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M.A.N.C.H.E.S.T.E.R. A.R.E.N.A. -> 'Mysteries Awaken New Cycles, Holding Eternal Secrets, Transmuting Earthly Realms, Embracing Radiant Ascendant Nature.'",
+   "reading": "Mystical processes awaken new cycles, holding eternal secrets to transmute earthly realms and embrace radiant, ascending nature.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

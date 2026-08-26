@@ -1,0 +1,121 @@
+{
+ "word": "Abedi",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:22:28+00:00",
+ "latency_s": 4.47,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"a + bed + i; bed = resting place, i = the self\",\n    \"reading\": \"A resting-place for the self: a small shelter where identity lies down and is renewed.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"abed / a-bed; abed (English) = in bed, at rest\",\n    \"reading\": \"Placed at rest, lying within the bed of matter or sleep.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.63\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"a + bedi; bedi ~ Arabic bādī / badīʾ? heard as beginning, appearing\",\n    \"reading\": \"The beginning that appears: a first emergence from concealment.\",\n    \"languages\": [\"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Abedi → abide\",\n    \"reading\": \"To remain, endure, and hold fast; stability hidden inside motion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.88\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Abedi → beaid / be aid\",\n    \"reading\": \"Be aid: a call to become help, remedy, or support.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.54\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"abide (Old English ābīdan) = to wait, remain, endure; compare OED / Merriam-Webster\",\n    \"reading\": \"Endurance and waiting: the virtue of staying through time.\",\n    \"languages\": [\"en\"],\n    \"source\": \"OED; Merriam-Webster\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"A + be + di; be = being, di = day/divine light by sound-play\",\n    \"reading\": \"To be in the day: being illuminated, made visible, brought into clarity.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.46\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"A = beginning; B = enclosure/house; E = opening; D = door; I = self/vertical line\",\n    \"reading\": \"Beginning enters enclosure, opens the door, and stands upright as the self.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"A=1, B=2, E=5, D=4, I=9; sum = 21 → 2+1 = 3\",\n    \"reading\": \"Threefold completion: a synthesis, mediation, or creative third term.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.49\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"A-B-E-D-I = Awake, Become, Endure, Descend, Integrate\",\n    \"reading\": \"Awaken, become, endure, descend, integrate: a compact initiatory sequence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.27\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "a + bed + i; bed = resting place, i = the self",
+   "reading": "A resting-place for the self: a small shelter where identity lies down and is renewed.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.72
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "abed / a-bed; abed (English) = in bed, at rest",
+   "reading": "Placed at rest, lying within the bed of matter or sleep.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.63
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "a + bedi; bedi ~ Arabic bādī / badīʾ? heard as beginning, appearing",
+   "reading": "The beginning that appears: a first emergence from concealment.",
+   "languages": [
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "anagram",
+   "chain": "Abedi → abide",
+   "reading": "To remain, endure, and hold fast; stability hidden inside motion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.88
+  },
+  {
+   "operation": "anagram",
+   "chain": "Abedi → beaid / be aid",
+   "reading": "Be aid: a call to become help, remedy, or support.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.54
+  },
+  {
+   "operation": "etymology",
+   "chain": "abide (Old English ābīdan) = to wait, remain, endure; compare OED / Merriam-Webster",
+   "reading": "Endurance and waiting: the virtue of staying through time.",
+   "languages": [
+    "en"
+   ],
+   "source": "OED; Merriam-Webster",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "A + be + di; be = being, di = day/divine light by sound-play",
+   "reading": "To be in the day: being illuminated, made visible, brought into clarity.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.46
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "A = beginning; B = enclosure/house; E = opening; D = door; I = self/vertical line",
+   "reading": "Beginning enters enclosure, opens the door, and stands upright as the self.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "numerical",
+   "chain": "A=1, B=2, E=5, D=4, I=9; sum = 21 → 2+1 = 3",
+   "reading": "Threefold completion: a synthesis, mediation, or creative third term.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.49
+  },
+  {
+   "operation": "notariqon",
+   "chain": "A-B-E-D-I = Awake, Become, Endure, Descend, Integrate",
+   "reading": "Awaken, become, endure, descend, integrate: a compact initiatory sequence.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.27
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

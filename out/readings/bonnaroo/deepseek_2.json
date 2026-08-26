@@ -1,0 +1,107 @@
+{
+ "word": "Bonnaroo",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:16:49+00:00",
+ "latency_s": 7.12,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bon (French) = good; narroo (Tamil நறு) = fragrant; bon + narroo = good fragrance\",\n    \"reading\": \"A place or state of sweet aroma, a garden of delight\",\n    \"languages\": [\"fr\", \"ta\"],\n    \"source\": \"Littré (French), Tamil Lexicon (Madras)\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"bon + a + roo; roo (English slang) = kangaroo; bon = good; a = one\",\n    \"reading\": \"One good kangaroo — a hopping, joyful leap into the unknown\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bon (fr) = good; aroo (Greek αρώ) = I plow; bonaroo = good plowing\",\n    \"reading\": \"Fertile labor, a sowing of seeds that yields abundance\",\n    \"languages\": [\"fr\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bonnaroo → boon + aron; boon (Old Norse bón) = prayer; aron (Hebrew אהרן) = high mountain\",\n    \"reading\": \"A prayer on the high mountain — a sacred ascent to the divine\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-O-N-N-A-R-O-O → Bona (good) + Nara (man) + Oo (Hebrew או) = light\",\n    \"reading\": \"Good man of light — a luminous being walking the earth\",\n    \"languages\": [\"la\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.25\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B = house (beth); O = circle; N = fish (nun); R = head (resh); double O = two eyes\",\n    \"reading\": \"A house of circles, fish, and heads — a vision of unity and cycles\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"B=2, O=15, N=14, N=14, A=1, R=18, O=15, O=15 → sum = 94; 9+4=13; 1+3=4\",\n    \"reading\": \"Four — the earth, stability, a grounded foundation for joy\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.15\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bon (Old French) = good; roo (Old English rōw) = quiet, rest; bon + roo = good rest\",\n    \"reading\": \"A blessed repose, a sanctuary of peace and stillness\",\n    \"languages\": [\"fr\", \"ang\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.5\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "bon (French) = good; narroo (Tamil நறு) = fragrant; bon + narroo = good fragrance",
+   "reading": "A place or state of sweet aroma, a garden of delight",
+   "languages": [
+    "fr",
+    "ta"
+   ],
+   "source": "Littré (French), Tamil Lexicon (Madras)",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "bon + a + roo; roo (English slang) = kangaroo; bon = good; a = one",
+   "reading": "One good kangaroo — a hopping, joyful leap into the unknown",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bon (fr) = good; aroo (Greek αρώ) = I plow; bonaroo = good plowing",
+   "reading": "Fertile labor, a sowing of seeds that yields abundance",
+   "languages": [
+    "fr",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bonnaroo → boon + aron; boon (Old Norse bón) = prayer; aron (Hebrew אהרן) = high mountain",
+   "reading": "A prayer on the high mountain — a sacred ascent to the divine",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-O-N-N-A-R-O-O → Bona (good) + Nara (man) + Oo (Hebrew או) = light",
+   "reading": "Good man of light — a luminous being walking the earth",
+   "languages": [
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.25
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B = house (beth); O = circle; N = fish (nun); R = head (resh); double O = two eyes",
+   "reading": "A house of circles, fish, and heads — a vision of unity and cycles",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "numerical",
+   "chain": "B=2, O=15, N=14, N=14, A=1, R=18, O=15, O=15 → sum = 94; 9+4=13; 1+3=4",
+   "reading": "Four — the earth, stability, a grounded foundation for joy",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.15
+  },
+  {
+   "operation": "etymology",
+   "chain": "bon (Old French) = good; roo (Old English rōw) = quiet, rest; bon + roo = good rest",
+   "reading": "A blessed repose, a sanctuary of peace and stillness",
+   "languages": [
+    "fr",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

@@ -1,0 +1,108 @@
+{
+ "word": "Coachella",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:15:35+00:00",
+ "latency_s": 5.14,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"coa + chella; echoing co- / con- = together, and chela (from Latin/Greek via scientific usage) = claw, pincer\",\n    \"reading\": \"Togetherness that grips: a joined claw, a clasp, a twofold hold.\",\n    \"languages\": [\"en\", \"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.54\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"coachella ~ coche + ella; Spanish coche = carriage/car, ella = she\",\n    \"reading\": \"She rides in the carriage: the feminine passenger, borne along.\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.49\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"coachella ~ coq + elle; French coq = rooster, elle = she\",\n    \"reading\": \"The hen-rooster paradox: a masculine crowing made feminine.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.43\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"coa + che + lla; che as a soft exclamation, lla as a doubled liquid ending\",\n    \"reading\": \"A call that softens into song, then trails away in a lilting ending.\",\n    \"languages\": [\"en\", \"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"coachella -> a cello + ch + a; cello = bowed instrument, ch = breathy onset\",\n    \"reading\": \"A bowed voice hidden inside the word: music enclosed by breath.\",\n    \"languages\": [\"en\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"C-O-A-C-H-E-L-L-A; C = crescent, O = circle, A = apex, L = angle, repeated L = twin pillars\",\n    \"reading\": \"A crescent opening into a circle, crowned by ascent and held between twin supports.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"COACHELLA in A1Z26: 3-15-1-3-8-5-12-12-1; reduced sum = 60, then 6\",\n    \"reading\": \"Sixfold harmony after reduction: balance, measure, and completion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.28\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"chela (Latinized from Sanskrit śiṣya in some scholarly traditions) = disciple; standard lexica also record chela in zoological/scientific Latin as claw/pincer\",\n    \"reading\": \"A disciple or claw: one who follows, or one that grasps.\",\n    \"languages\": [\"la\", \"sa\", \"en\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster; Monier-Williams\",\n    \"confidence\": 0.22\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "coa + chella; echoing co- / con- = together, and chela (from Latin/Greek via scientific usage) = claw, pincer",
+   "reading": "Togetherness that grips: a joined claw, a clasp, a twofold hold.",
+   "languages": [
+    "en",
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.54
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "coachella ~ coche + ella; Spanish coche = carriage/car, ella = she",
+   "reading": "She rides in the carriage: the feminine passenger, borne along.",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.49
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "coachella ~ coq + elle; French coq = rooster, elle = she",
+   "reading": "The hen-rooster paradox: a masculine crowing made feminine.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.43
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "coa + che + lla; che as a soft exclamation, lla as a doubled liquid ending",
+   "reading": "A call that softens into song, then trails away in a lilting ending.",
+   "languages": [
+    "en",
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "anagram",
+   "chain": "coachella -> a cello + ch + a; cello = bowed instrument, ch = breathy onset",
+   "reading": "A bowed voice hidden inside the word: music enclosed by breath.",
+   "languages": [
+    "en",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "C-O-A-C-H-E-L-L-A; C = crescent, O = circle, A = apex, L = angle, repeated L = twin pillars",
+   "reading": "A crescent opening into a circle, crowned by ascent and held between twin supports.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "numerical",
+   "chain": "COACHELLA in A1Z26: 3-15-1-3-8-5-12-12-1; reduced sum = 60, then 6",
+   "reading": "Sixfold harmony after reduction: balance, measure, and completion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.28
+  },
+  {
+   "operation": "etymology",
+   "chain": "chela (Latinized from Sanskrit śiṣya in some scholarly traditions) = disciple; standard lexica also record chela in zoological/scientific Latin as claw/pincer",
+   "reading": "A disciple or claw: one who follows, or one that grasps.",
+   "languages": [
+    "la",
+    "sa",
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Merriam-Webster; Monier-Williams",
+   "confidence": 0.22
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

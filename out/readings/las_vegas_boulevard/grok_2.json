@@ -1,0 +1,131 @@
+{
+ "word": "Las Vegas Boulevard",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:21:44+00:00",
+ "latency_s": 5.87,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las + Vegas + Boulevard\",\n    \"reading\": \"the law's path; where the law stands revealed\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"La + sveg + as + boule + vard\",\n    \"reading\": \"the egg (as) carried on the ball's path\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas → lais ve gas (Old French lais = legacy; ve = see; gas = chaos)\",\n    \"reading\": \"behold the legacy of chaos\",\n    \"languages\": [\"fr\",\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Boulevard (French) from Middle Dutch bolwerc = bulwark, rampart\",\n    \"reading\": \"the rampart of the meadow of the waters\",\n    \"languages\": [\"fr\",\"nl\",\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Boulevard → A vulgared bass soul\",\n    \"reading\": \"a degraded soul of the vulgar bass\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lasvegasboulevard → l'as ve gas boule var\",\n    \"reading\": \"the ace sees the gas of the changing ball\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L.V.B. → Lux Via Baphomet\",\n    \"reading\": \"the light is the way of Baphomet\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Boulevard → boule (ball) + vard (Old Norse varðr = guardian)\",\n    \"reading\": \"guardian of the sphere\",\n    \"languages\": [\"fr\",\"no\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas → laz ve gas → lais ve kas (Greek κας = evil)\",\n    \"reading\": \"the legacy that sees evil\",\n    \"languages\": [\"fr\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V as the Roman numeral 5, repeated in Vegas and Boulevard\",\n    \"reading\": \"the path of the double pentagram\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Vegas + Boulevard",
+   "reading": "the law's path; where the law stands revealed",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "La + sveg + as + boule + vard",
+   "reading": "the egg (as) carried on the ball's path",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas → lais ve gas (Old French lais = legacy; ve = see; gas = chaos)",
+   "reading": "behold the legacy of chaos",
+   "languages": [
+    "fr",
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Boulevard (French) from Middle Dutch bolwerc = bulwark, rampart",
+   "reading": "the rampart of the meadow of the waters",
+   "languages": [
+    "fr",
+    "nl",
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Boulevard → A vulgared bass soul",
+   "reading": "a degraded soul of the vulgar bass",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lasvegasboulevard → l'as ve gas boule var",
+   "reading": "the ace sees the gas of the changing ball",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L.V.B. → Lux Via Baphomet",
+   "reading": "the light is the way of Baphomet",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Boulevard → boule (ball) + vard (Old Norse varðr = guardian)",
+   "reading": "guardian of the sphere",
+   "languages": [
+    "fr",
+    "no"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas → laz ve gas → lais ve kas (Greek κας = evil)",
+   "reading": "the legacy that sees evil",
+   "languages": [
+    "fr",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V as the Roman numeral 5, repeated in Vegas and Boulevard",
+   "reading": "the path of the double pentagram",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

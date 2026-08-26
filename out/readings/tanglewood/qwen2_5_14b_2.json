@@ -1,0 +1,81 @@
+{
+ "word": "Tanglewood",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:05:06+00:00",
+ "latency_s": 114.87,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"tan + gglewood\",\"reading\":\"Tension or strain in a wooded area.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"cross_language_homophone\",\"chain\":\"tanglewood (English) = tangolo (Italian) - dance around, play tricks on someone\",\"reading\":\"Deception or playful manipulation.\",\"languages\":[\"it\",\"en\"],\"source\":\"generative\",\"confidence\":0.65},{\"operation\":\"anagram\",\"chain\":\"Tanglewood -> Wandletog\",\"reading\":\"A wand used in a game of tag.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.45},{\"operation\":\"etymology\",\"chain\":\"tangle (Middle English) = tangled, wood (Old English) = forest\",\"reading\":\"An overgrown and entangled forest.\",\"languages\":[\"en\"],\"source\":\"Oxford English Dictionary\",\"confidence\":0.9},{\"operation\":\"phonetic_split\",\"chain\":\"tan + glewood\",\"reading\":\"A sunny or warm wooded area.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.55},{\"operation\":\"letter_symbol\",\"chain\":\"Tanglewood -> T (triangle) + angle (corner) + wood (nature)\",\"reading\":\"The intersection of geometry and nature.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "tan + gglewood",
+   "reading": "Tension or strain in a wooded area.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "tanglewood (English) = tangolo (Italian) - dance around, play tricks on someone",
+   "reading": "Deception or playful manipulation.",
+   "languages": [
+    "it",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Tanglewood -> Wandletog",
+   "reading": "A wand used in a game of tag.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "etymology",
+   "chain": "tangle (Middle English) = tangled, wood (Old English) = forest",
+   "reading": "An overgrown and entangled forest.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "tan + glewood",
+   "reading": "A sunny or warm wooded area.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Tanglewood -> T (triangle) + angle (corner) + wood (nature)",
+   "reading": "The intersection of geometry and nature.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

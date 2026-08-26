@@ -1,0 +1,103 @@
+{
+ "word": "Paddock",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:18+00:00",
+ "latency_s": 4.27,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"paddock < Middle English padok/padduc < Old English *pædduc?; a small enclosed field, later a horse enclosure\",\n    \"reading\": \"An enclosed place of rest: a bounded pasture, the soul’s temporary field.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary; Chambers Dictionary of Etymology\",\n    \"confidence\": 0.86\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"pad + dock\",\n    \"reading\": \"A padded docking: a soft landing, then a stopping-place or mooring.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.78\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"pad (en) ~ pas / pas-de- (fr) + dock (en) ~ doc / dague (fr, by sound drift)\",\n    \"reading\": \"A step toward a cut-off point: motion arrested at the edge.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.42\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"PADDOCK -> DOCK + PAD + C\",\n    \"reading\": \"A dock with a cushion and a mark: enclosure, support, and a sign.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P A D D O C K = Place / of / Animals / Duly / Delimited / On / Common / أرض\",\n    \"reading\": \"A place duly delimited for living creatures: a fenced common ground.\",\n    \"languages\": [\"en\", \"la\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.18\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P = enclosure; A = apex/opening; D D = doubled door or doubled boundary; O = circle; C = crescent; K = fork\",\n    \"reading\": \"A closed circuit with an opening: a bounded circle split by a gate.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"P(16)+A(1)+D(4)+D(4)+O(15)+C(3)+K(11)=54; 5+4=9\",\n    \"reading\": \"Nine as completion: a full enclosure brought to term.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"paddock as diminutive/enclosure sense in English dialects; compare paddock = frog/toad in some dialectal usage\",\n    \"reading\": \"A low, damp creature-name hidden inside a field-name: earthbound fertility beneath the fence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary; English Dialect Dictionary\",\n    \"confidence\": 0.63\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "paddock < Middle English padok/padduc < Old English *pædduc?; a small enclosed field, later a horse enclosure",
+   "reading": "An enclosed place of rest: a bounded pasture, the soul’s temporary field.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Chambers Dictionary of Etymology",
+   "confidence": 0.86
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pad + dock",
+   "reading": "A padded docking: a soft landing, then a stopping-place or mooring.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.78
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "pad (en) ~ pas / pas-de- (fr) + dock (en) ~ doc / dague (fr, by sound drift)",
+   "reading": "A step toward a cut-off point: motion arrested at the edge.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.42
+  },
+  {
+   "operation": "anagram",
+   "chain": "PADDOCK -> DOCK + PAD + C",
+   "reading": "A dock with a cushion and a mark: enclosure, support, and a sign.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P A D D O C K = Place / of / Animals / Duly / Delimited / On / Common / أرض",
+   "reading": "A place duly delimited for living creatures: a fenced common ground.",
+   "languages": [
+    "en",
+    "la",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.18
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P = enclosure; A = apex/opening; D D = doubled door or doubled boundary; O = circle; C = crescent; K = fork",
+   "reading": "A closed circuit with an opening: a bounded circle split by a gate.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "numerical",
+   "chain": "P(16)+A(1)+D(4)+D(4)+O(15)+C(3)+K(11)=54; 5+4=9",
+   "reading": "Nine as completion: a full enclosure brought to term.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "etymology",
+   "chain": "paddock as diminutive/enclosure sense in English dialects; compare paddock = frog/toad in some dialectal usage",
+   "reading": "A low, damp creature-name hidden inside a field-name: earthbound fertility beneath the fence.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary; English Dialect Dictionary",
+   "confidence": 0.63
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

@@ -1,0 +1,127 @@
+{
+ "word": "Exuma",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:26:05+00:00",
+ "latency_s": 7.08,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ex + uma\",\n    \"reading\": \"out of the mother; from the primal matrix\",\n    \"languages\": [\"la\",\"pt\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"ex- (out) + humus (earth, ground)\",\n    \"reading\": \"that which emerges from the earth or primordial ground\",\n    \"languages\": [\"la\"],\n    \"source\": \"Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ eks-ouma ≈ ex-ouma\",\n    \"reading\": \"out of the serpent; that which comes forth from the snake\",\n    \"languages\": [\"grc\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Eggs + uma\",\n    \"reading\": \"the eggs of the great mother; primordial ovum\",\n    \"languages\": [\"en\",\"pt\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Exuma → Meaux\",\n    \"reading\": \"the waters; that which belongs to the waters (Meaux = waters in old French)\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"EXVMA → Ex Vniversalis Mater Aqua\",\n    \"reading\": \"Out of the Universal Mother-Water\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ex + huma\",\n    \"reading\": \"out of the human; that which transcends or leaves the human\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ Eksouma ≈ ἔξω μα\",\n    \"reading\": \"outside the mother; that which is born beyond the maternal realm\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"X within Euma\",\n    \"reading\": \"the crossing or crossing-point inside the Great Mother\",\n    \"languages\": [\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"ex (out of) + uma (Sanskrit: mother, or variant of umā)\",\n    \"reading\": \"that which issues from the Divine Mother\",\n    \"languages\": [\"la\",\"sa\"],\n    \"source\": \"Monier-Williams Sanskrit-English Dictionary\",\n    \"confidence\": 0.45\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Ex + uma",
+   "reading": "out of the mother; from the primal matrix",
+   "languages": [
+    "la",
+    "pt"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "ex- (out) + humus (earth, ground)",
+   "reading": "that which emerges from the earth or primordial ground",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis & Short Latin Dictionary",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Exuma ≈ eks-ouma ≈ ex-ouma",
+   "reading": "out of the serpent; that which comes forth from the snake",
+   "languages": [
+    "grc",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Eggs + uma",
+   "reading": "the eggs of the great mother; primordial ovum",
+   "languages": [
+    "en",
+    "pt"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "Exuma → Meaux",
+   "reading": "the waters; that which belongs to the waters (Meaux = waters in old French)",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "EXVMA → Ex Vniversalis Mater Aqua",
+   "reading": "Out of the Universal Mother-Water",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ex + huma",
+   "reading": "out of the human; that which transcends or leaves the human",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Exuma ≈ Eksouma ≈ ἔξω μα",
+   "reading": "outside the mother; that which is born beyond the maternal realm",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "X within Euma",
+   "reading": "the crossing or crossing-point inside the Great Mother",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "ex (out of) + uma (Sanskrit: mother, or variant of umā)",
+   "reading": "that which issues from the Divine Mother",
+   "languages": [
+    "la",
+    "sa"
+   ],
+   "source": "Monier-Williams Sanskrit-English Dictionary",
+   "confidence": 0.45
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

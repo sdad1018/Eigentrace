@@ -1,0 +1,106 @@
+{
+ "word": "NRG Park",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:26:21+00:00",
+ "latency_s": 8.34,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG → energy (en. 'energy' pronounced /ˈɛnərdʒi/); Park → parc (fr. 'park')\",\n    \"reading\": \"The energy of the enclosed green space; the vital force held within the boundary.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"NRG = abbreviation of 'energy' (from Gk. energeia, 'activity, operation'); Park = from OFr. parc, 'enclosure' (from ML. parricus)\",\n    \"reading\": \"An enclosed field of active power — a bounded zone where work or force is concentrated.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"grc\"],\n    \"source\": \"OED, s.v. 'energy', 'park'\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG → 'nrg' sounds like 'en règle' (fr. 'in order'); Park → 'parc' (fr.) also 'parque' (es. 'park')\",\n    \"reading\": \"In order, the enclosure — a regulated space of potential, a disciplined garden.\",\n    \"languages\": [\"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"NRG PARK → 'rank' + 'pg' → 'park' + 'nrg' → 'gark' + 'prn' → 'prang' + 'rk'\",\n    \"reading\": \"Rank and prang — order and collision; the park as a site of both hierarchy and sudden impact.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"N = new, R = renewal, G = ground; P = place, A = of, R = rest, K = kin\",\n    \"reading\": \"New renewal ground — a place of rest for kin, a fresh foundation for community.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N (14th letter, Nun = fish in Heb.), R (18th, Resh = head), G (7th, Gimel = camel); P (16th, Pe = mouth), A (1st, Aleph = ox), R (Resh), K (11th, Kaph = palm)\",\n    \"reading\": \"Fish, head, camel — mouth, ox, head, palm: a journey of sustenance, leadership, and offering.\",\n    \"languages\": [\"he\"],\n    \"source\": \"Sefer Yetzirah (letter correspondences)\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"N=14, R=18, G=7, P=16, A=1, R=18, K=11 → sum = 85; 8+5=13 → 1+3=4\",\n    \"reading\": \"The number 4 — stability, earth, the four corners of the park; a grounded enclosure.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG → 'en-erg' → 'in-erg' (erg = unit of work); Park → 'parc' → 'parc' (fr. 'park')\",\n    \"reading\": \"In work, the park — a place where labour becomes leisure, where effort yields rest.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "NRG → energy (en. 'energy' pronounced /ˈɛnərdʒi/); Park → parc (fr. 'park')",
+   "reading": "The energy of the enclosed green space; the vital force held within the boundary.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "etymology",
+   "chain": "NRG = abbreviation of 'energy' (from Gk. energeia, 'activity, operation'); Park = from OFr. parc, 'enclosure' (from ML. parricus)",
+   "reading": "An enclosed field of active power — a bounded zone where work or force is concentrated.",
+   "languages": [
+    "en",
+    "fr",
+    "la",
+    "grc"
+   ],
+   "source": "OED, s.v. 'energy', 'park'",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "NRG → 'nrg' sounds like 'en règle' (fr. 'in order'); Park → 'parc' (fr.) also 'parque' (es. 'park')",
+   "reading": "In order, the enclosure — a regulated space of potential, a disciplined garden.",
+   "languages": [
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "NRG PARK → 'rank' + 'pg' → 'park' + 'nrg' → 'gark' + 'prn' → 'prang' + 'rk'",
+   "reading": "Rank and prang — order and collision; the park as a site of both hierarchy and sudden impact.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "N = new, R = renewal, G = ground; P = place, A = of, R = rest, K = kin",
+   "reading": "New renewal ground — a place of rest for kin, a fresh foundation for community.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N (14th letter, Nun = fish in Heb.), R (18th, Resh = head), G (7th, Gimel = camel); P (16th, Pe = mouth), A (1st, Aleph = ox), R (Resh), K (11th, Kaph = palm)",
+   "reading": "Fish, head, camel — mouth, ox, head, palm: a journey of sustenance, leadership, and offering.",
+   "languages": [
+    "he"
+   ],
+   "source": "Sefer Yetzirah (letter correspondences)",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "N=14, R=18, G=7, P=16, A=1, R=18, K=11 → sum = 85; 8+5=13 → 1+3=4",
+   "reading": "The number 4 — stability, earth, the four corners of the park; a grounded enclosure.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "NRG → 'en-erg' → 'in-erg' (erg = unit of work); Park → 'parc' → 'parc' (fr. 'park')",
+   "reading": "In work, the park — a place where labour becomes leisure, where effort yields rest.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

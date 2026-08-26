@@ -1,0 +1,107 @@
+{
+ "word": "Luxor",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:19:23+00:00",
+ "latency_s": 4.09,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"lux (Latin) = light; -or as a noun-forming ending in Latin/English usage; the word is read as a light-name\",\n    \"reading\": \"Light made into a name: brilliance, radiance, illumination.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Lewis & Short, A Latin Dictionary; OED\",\n    \"confidence\": 0.86\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"lux + or; lux sounds like \\\"looks\\\" in English, or like a luminous root; or = alternative/choice\",\n    \"reading\": \"To look or to choose by light: vision offered as an alternative path.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"lux (Latin) = light; or (French) = gold; together: light + gold\",\n    \"reading\": \"Golden light, a shining preciousness.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.79\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"lux = light; or = gold; read as a compound of brilliance and metal\",\n    \"reading\": \"A luminous metal: the sun made dense.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"LUXOR → LUX + OR; rearrangement preserves the luminous core and the disjunctive tail\",\n    \"reading\": \"Light or else: illumination set against choice.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.36\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L U X O R → Lux / Or / X / O / R; initial letters can be read as Light, Gold, Cross, Circle, King\",\n    \"reading\": \"Light, gold, crossing, wholeness, sovereignty.\",\n    \"languages\": [\"la\", \"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L = angle; U = vessel; X = crossing; O = circle; R = turning stroke\",\n    \"reading\": \"An angled vessel crossed by a circle and turned outward: containment opened by a crossing.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.28\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"L=12, U=21, X=24, O=15, R=18; sum = 90, a doubled nine and a right angle of completion\",\n    \"reading\": \"Completion squared: a full turn of the cycle.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.19\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "lux (Latin) = light; -or as a noun-forming ending in Latin/English usage; the word is read as a light-name",
+   "reading": "Light made into a name: brilliance, radiance, illumination.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Lewis & Short, A Latin Dictionary; OED",
+   "confidence": 0.86
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "lux + or; lux sounds like \"looks\" in English, or like a luminous root; or = alternative/choice",
+   "reading": "To look or to choose by light: vision offered as an alternative path.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "lux (Latin) = light; or (French) = gold; together: light + gold",
+   "reading": "Golden light, a shining preciousness.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.79
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "lux = light; or = gold; read as a compound of brilliance and metal",
+   "reading": "A luminous metal: the sun made dense.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "anagram",
+   "chain": "LUXOR → LUX + OR; rearrangement preserves the luminous core and the disjunctive tail",
+   "reading": "Light or else: illumination set against choice.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.36
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L U X O R → Lux / Or / X / O / R; initial letters can be read as Light, Gold, Cross, Circle, King",
+   "reading": "Light, gold, crossing, wholeness, sovereignty.",
+   "languages": [
+    "la",
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L = angle; U = vessel; X = crossing; O = circle; R = turning stroke",
+   "reading": "An angled vessel crossed by a circle and turned outward: containment opened by a crossing.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.28
+  },
+  {
+   "operation": "numerical",
+   "chain": "L=12, U=21, X=24, O=15, R=18; sum = 90, a doubled nine and a right angle of completion",
+   "reading": "Completion squared: a full turn of the cycle.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.19
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

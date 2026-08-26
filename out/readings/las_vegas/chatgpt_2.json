@@ -1,0 +1,105 @@
+{
+ "word": "Las Vegas",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:19:44+00:00",
+ "latency_s": 5.19,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las (Spanish plural article) + Vegas (Spanish plural of vega, from Latin vāca? no; standard lexicon: vega < pre-Roman substrate, 'fertile plain')\",\n    \"reading\": \"The fertile plains: a name of low, watered ground, the place where growth gathers.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"RAE, Diccionario de la lengua española, s.v. vega; Corominas/Pascual, Diccionario crítico etimológico castellano e hispánico, s.v. vega\",\n    \"confidence\": 0.93\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las + Vegas -> la(s) + vegas -> 'las' as 'the' and 'vegas' as 'veils/vegas' sounding like 'vegas' = veils of grassland\",\n    \"reading\": \"The veiled meadow: a bright name hiding a soft, green underlayer.\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las ~ 'lass' (en) + Vegas ~ 'vegas' ~ 'vegas' / 'vegas' as a plural-sounding ending; lass + veils\",\n    \"reading\": \"A maiden among veils: youth joined to concealment, a feminine figure in layers.\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las ~ 'là' (fr, there) + Vegas ~ 'vagues' (fr, waves) by sound drift\",\n    \"reading\": \"There are the waves: distance, motion, and a place defined by ebbing forms.\",\n    \"languages\": [\"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"LAS VEGAS -> A VAGELS S?; partial anagrammatic play: LAS / VEGAS -> 'save' + 'gas' with leftover letters\",\n    \"reading\": \"Save the gas: conserve the volatile fire before it escapes.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L A S / V E G A S -> Light Among Shadows / Veil, Earth, Green, Air, Sun\",\n    \"reading\": \"Light among shadows, then veil, earth, green, air, sun: a descent into elemental order.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.18\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L = angle; A = apex; S = serpent; V = vessel/valley; E = five-rayed form; G = spiral; A = apex; S = serpent\",\n    \"reading\": \"An angled serpent in a vessel: a winding force contained by form.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.27\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"A1Z26: L(12)+A(1)+S(19)+V(22)+E(5)+G(7)+A(1)+S(19)=86; 8+6=14; 1+4=5\",\n    \"reading\": \"Five: the sign of change, the quickening of movement after reduction.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.29\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Las (Spanish plural article) + Vegas (Spanish plural of vega, from Latin vāca? no; standard lexicon: vega < pre-Roman substrate, 'fertile plain')",
+   "reading": "The fertile plains: a name of low, watered ground, the place where growth gathers.",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "RAE, Diccionario de la lengua española, s.v. vega; Corominas/Pascual, Diccionario crítico etimológico castellano e hispánico, s.v. vega",
+   "confidence": 0.93
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Vegas -> la(s) + vegas -> 'las' as 'the' and 'vegas' as 'veils/vegas' sounding like 'vegas' = veils of grassland",
+   "reading": "The veiled meadow: a bright name hiding a soft, green underlayer.",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.48
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las ~ 'lass' (en) + Vegas ~ 'vegas' ~ 'vegas' / 'vegas' as a plural-sounding ending; lass + veils",
+   "reading": "A maiden among veils: youth joined to concealment, a feminine figure in layers.",
+   "languages": [
+    "en",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las ~ 'là' (fr, there) + Vegas ~ 'vagues' (fr, waves) by sound drift",
+   "reading": "There are the waves: distance, motion, and a place defined by ebbing forms.",
+   "languages": [
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "anagram",
+   "chain": "LAS VEGAS -> A VAGELS S?; partial anagrammatic play: LAS / VEGAS -> 'save' + 'gas' with leftover letters",
+   "reading": "Save the gas: conserve the volatile fire before it escapes.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L A S / V E G A S -> Light Among Shadows / Veil, Earth, Green, Air, Sun",
+   "reading": "Light among shadows, then veil, earth, green, air, sun: a descent into elemental order.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.18
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L = angle; A = apex; S = serpent; V = vessel/valley; E = five-rayed form; G = spiral; A = apex; S = serpent",
+   "reading": "An angled serpent in a vessel: a winding force contained by form.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.27
+  },
+  {
+   "operation": "numerical",
+   "chain": "A1Z26: L(12)+A(1)+S(19)+V(22)+E(5)+G(7)+A(1)+S(19)=86; 8+6=14; 1+4=5",
+   "reading": "Five: the sign of change, the quickening of movement after reduction.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.29
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

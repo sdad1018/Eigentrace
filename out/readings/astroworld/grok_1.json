@@ -1,0 +1,128 @@
+{
+ "word": "Astroworld",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:22:12+00:00",
+ "latency_s": 6.81,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"astro- (Greek ἀστήρ, astēr = star) + world (Old English weorold = age of man, cosmos)\",\n    \"reading\": \"star-age of man; the cosmic era governed by celestial bodies\",\n    \"languages\": [\"grc\",\"en\",\"ang\"],\n    \"source\": \"Oxford English Dictionary & Liddell-Scott Greek Lexicon\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Astro + world → As (ace) + trow (trust/believe) + world\",\n    \"reading\": \"the ace that the world believes; supreme trusted illusion\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"As + trow + wold (old form of world/wood)\",\n    \"reading\": \"the ace hidden in the ancient wood; stellar secret in the grove\",\n    \"languages\": [\"en\",\"ang\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Astro sounds as French \\\"astre haut\\\" (high star); world as \\\"voile\\\" (veil)\",\n    \"reading\": \"high star veil; the luminous celestial curtain\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"ASTROWORLD → OLD STAR ROW\",\n    \"reading\": \"the old row of stars; ancient stellar alignment or chorus\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"ASTROWORLD → LORD'S TOWER A\",\n    \"reading\": \"a lord's tower of the stars; celestial fortress or watch\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Astro-world → Ost (German bone) + row + world\",\n    \"reading\": \"bone-row of the world; skeletal order underlying creation\",\n    \"languages\": [\"en\",\"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"A.S.T.R.O.W.O.R.L.D. → Astra Stellarum Templum Regit Omnia Via Occulta Ratio Lucis Dei\",\n    \"reading\": \"the temple of the stars rules all things by the hidden ratio of God's light\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Astro-world ≈ Hebrew \\\"Ashtarot\\\" (Astarte/Ishtar) + \\\"olam\\\" (world/aeon)\",\n    \"reading\": \"the world of Astarte; aeon ruled by the star goddess\",\n    \"languages\": [\"he\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Astro = ♅ (Uranus glyph) + World = 21st Tarot card (The World)\",\n    \"reading\": \"Uranian World; the starry heaven's final initiation\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "astro- (Greek ἀστήρ, astēr = star) + world (Old English weorold = age of man, cosmos)",
+   "reading": "star-age of man; the cosmic era governed by celestial bodies",
+   "languages": [
+    "grc",
+    "en",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary & Liddell-Scott Greek Lexicon",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Astro + world → As (ace) + trow (trust/believe) + world",
+   "reading": "the ace that the world believes; supreme trusted illusion",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "As + trow + wold (old form of world/wood)",
+   "reading": "the ace hidden in the ancient wood; stellar secret in the grove",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Astro sounds as French \"astre haut\" (high star); world as \"voile\" (veil)",
+   "reading": "high star veil; the luminous celestial curtain",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "ASTROWORLD → OLD STAR ROW",
+   "reading": "the old row of stars; ancient stellar alignment or chorus",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "ASTROWORLD → LORD'S TOWER A",
+   "reading": "a lord's tower of the stars; celestial fortress or watch",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Astro-world → Ost (German bone) + row + world",
+   "reading": "bone-row of the world; skeletal order underlying creation",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "A.S.T.R.O.W.O.R.L.D. → Astra Stellarum Templum Regit Omnia Via Occulta Ratio Lucis Dei",
+   "reading": "the temple of the stars rules all things by the hidden ratio of God's light",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Astro-world ≈ Hebrew \"Ashtarot\" (Astarte/Ishtar) + \"olam\" (world/aeon)",
+   "reading": "the world of Astarte; aeon ruled by the star goddess",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Astro = ♅ (Uranus glyph) + World = 21st Tarot card (The World)",
+   "reading": "Uranian World; the starry heaven's final initiation",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

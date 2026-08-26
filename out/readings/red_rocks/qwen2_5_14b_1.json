@@ -1,0 +1,102 @@
+{
+ "word": "Red Rocks",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T00:55:08+00:00",
+ "latency_s": 146.56,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n    {\"operation\": \"phonetic_split\", \"chain\": \"re + d + rocks\", \"reading\": \"Repetition of the element 'd' suggests doubling or reinforcement.\", \"languages\": [\"generative\"], \"source\": \"generative\", \"confidence\": 0.8},\n    {\"operation\": \"cross_language_homophone\", \"chain\": \"red (en) = rouge (fr)\", \"reading\": \"Connection to French, suggesting a similar meaning but in another cultural context.\", \"languages\": [\"en\",\"fr\"], \"source\": \"generative\", \"confidence\": 0.6},\n    {\"operation\": \"anagram\", \"chain\": \"Red Rocks -> Red Corks\", \"reading\": \"Transformation into 'Corks' suggests wine or cork, implying sealing or closure.\", \"languages\": [\"generative\"], \"source\": \"generative\", \"confidence\": 0.5},\n    {\"operation\": \"etymology\", \"chain\": \"red (Old English) = read; rock (Middle English) = rocc\", \"reading\": \"Ancient meanings of 'read' and 'rocc' suggest clarity and firmness.\", \"languages\": [\"en\"], \"source\": \"Oxford English Dictionary\", \"confidence\": 0.9},\n    {\"operation\": \"phonetic_split\", \"chain\": \"reed + rocks\", \"reading\": \"Combination suggests a natural landscape with reeds growing around rocky areas.\", \"languages\": [\"generative\"], \"source\": \"generative\", \"confidence\": 0.7},\n    {\"operation\": \"letter_symbol\", \"chain\": \"R = Raphael (guiding angel); D = David (strength and courage)\", \"reading\": \"Symbolic representation of guidance and strength in facing challenges.\", \"languages\": [\"he\",\"en\"], \"source\": \"generative\", \"confidence\": 0.4},\n    {\"operation\": \"numerical\", \"chain\": \"R=18, E=5, D=4, R=18, O=15, C=3, K=11, S=19\", \"reading\": \"Numerological interpretation suggests balance and stability.\", \"languages\": [\"generative\"], \"source\": \"generative\", \"confidence\": 0.3},\n    {\"operation\": \"cross_language_homophone\", \"chain\": \"red (en) = read (en)\", \"reading\": \"Homophony with 'read' implies understanding or comprehension.\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.5}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "re + d + rocks",
+   "reading": "Repetition of the element 'd' suggests doubling or reinforcement.",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "red (en) = rouge (fr)",
+   "reading": "Connection to French, suggesting a similar meaning but in another cultural context.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Red Rocks -> Red Corks",
+   "reading": "Transformation into 'Corks' suggests wine or cork, implying sealing or closure.",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "red (Old English) = read; rock (Middle English) = rocc",
+   "reading": "Ancient meanings of 'read' and 'rocc' suggest clarity and firmness.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "reed + rocks",
+   "reading": "Combination suggests a natural landscape with reeds growing around rocky areas.",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R = Raphael (guiding angel); D = David (strength and courage)",
+   "reading": "Symbolic representation of guidance and strength in facing challenges.",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "R=18, E=5, D=4, R=18, O=15, C=3, K=11, S=19",
+   "reading": "Numerological interpretation suggests balance and stability.",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "red (en) = read (en)",
+   "reading": "Homophony with 'read' implies understanding or comprehension.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

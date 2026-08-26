@@ -1,0 +1,105 @@
+{
+ "word": "Voltaire",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:33:53+00:00",
+ "latency_s": 7.62,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Voltaire < French surname; from Old Occitan 'Voltair' < Latin 'volta' (turn) + '-aire' (one who); cf. 'volte-face'\",\n    \"reading\": \"The one who turns, the turner of words, a pivot of meaning.\",\n    \"languages\": [\"fr\", \"la\", \"oc\"],\n    \"source\": \"Dictionnaire étymologique de la langue française (Bloch & Wartburg)\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vol + taire; 'vol' (Fr: flight) + 'taire' (Fr: to be silent) — flight of silence\",\n    \"reading\": \"A silent flight, a soaring that hushes — the bird's wing over still air.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Voltaire ~ 'volta' (It: turn) + 'aire' (Fr: air); also 'volta' (It: volta, a musical turn) + 'ère' (Fr: era)\",\n    \"reading\": \"A turning of the air, an era that turns — a cyclical breath of change.\",\n    \"languages\": [\"fr\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Voltaire → 'voile' + 'art' (Fr: sail + art); also 'vital' + 'ore' (en)\",\n    \"reading\": \"Art as a sail, vital ore — a craft that navigates and mines hidden gold.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"V-O-L-T-A-I-R-E: Vox, Ordo, Lux, Tempus, Aether, Ignis, Ratio, Essentia (Latin: voice, order, light, time, aether, fire, reason, essence)\",\n    \"reading\": \"Voice, order, light, time, fire, reason — the eightfold essence of the speaking mind.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V (winged cup) + O (circle) + L (ascending) + T (cross) + A (alpha) + I (self) + R (path) + E (breath)\",\n    \"reading\": \"Winged circle, ascending cross, alpha-self on a path of breath — a hieroglyph of ascent.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"V=22, O=15, L=12, T=20, A=1, I=9, R=18, E=5 (A1Z26) → sum 102; 1+0+2=3; 3 = trinity, synthesis\",\n    \"reading\": \"The number 3 — triadic completion, the union of thesis, antithesis, and synthesis.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vol + taire; 'vol' (Fr: theft) + 'taire' (Fr: to silence) — stealing silence\",\n    \"reading\": \"A thief of silence, one who robs the quiet to make it speak.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Voltaire < French surname; from Old Occitan 'Voltair' < Latin 'volta' (turn) + '-aire' (one who); cf. 'volte-face'",
+   "reading": "The one who turns, the turner of words, a pivot of meaning.",
+   "languages": [
+    "fr",
+    "la",
+    "oc"
+   ],
+   "source": "Dictionnaire étymologique de la langue française (Bloch & Wartburg)",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vol + taire; 'vol' (Fr: flight) + 'taire' (Fr: to be silent) — flight of silence",
+   "reading": "A silent flight, a soaring that hushes — the bird's wing over still air.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Voltaire ~ 'volta' (It: turn) + 'aire' (Fr: air); also 'volta' (It: volta, a musical turn) + 'ère' (Fr: era)",
+   "reading": "A turning of the air, an era that turns — a cyclical breath of change.",
+   "languages": [
+    "fr",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Voltaire → 'voile' + 'art' (Fr: sail + art); also 'vital' + 'ore' (en)",
+   "reading": "Art as a sail, vital ore — a craft that navigates and mines hidden gold.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V-O-L-T-A-I-R-E: Vox, Ordo, Lux, Tempus, Aether, Ignis, Ratio, Essentia (Latin: voice, order, light, time, aether, fire, reason, essence)",
+   "reading": "Voice, order, light, time, fire, reason — the eightfold essence of the speaking mind.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V (winged cup) + O (circle) + L (ascending) + T (cross) + A (alpha) + I (self) + R (path) + E (breath)",
+   "reading": "Winged circle, ascending cross, alpha-self on a path of breath — a hieroglyph of ascent.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "V=22, O=15, L=12, T=20, A=1, I=9, R=18, E=5 (A1Z26) → sum 102; 1+0+2=3; 3 = trinity, synthesis",
+   "reading": "The number 3 — triadic completion, the union of thesis, antithesis, and synthesis.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vol + taire; 'vol' (Fr: theft) + 'taire' (Fr: to silence) — stealing silence",
+   "reading": "A thief of silence, one who robs the quiet to make it speak.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

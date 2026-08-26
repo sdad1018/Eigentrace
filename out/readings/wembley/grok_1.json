@@ -1,0 +1,129 @@
+{
+ "word": "Wembley",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:16:39+00:00",
+ "latency_s": 6.51,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem + ble + y\",\n    \"reading\": \"vein of blood that trembles and cries\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Wembley ← Old English Wemba-leah\",\n    \"reading\": \"clearing or meadow belonging to Wemba the warrior\",\n    \"languages\": [\"en\",\"ang\"],\n    \"source\": \"Oxford Dictionary of English Place-Names\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wem-bley ≈ ouem-blé (French)\",\n    \"reading\": \"wheat that has been bled or harvested violently\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wembley ≈ Wem + blé\",\n    \"reading\": \"sacred wound that gives wheat / bread of life\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"WEMBLEY → BY ME WEL\",\n    \"reading\": \"by me, the well; I am the source of the living water\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"W E M B L E Y\",\n    \"reading\": \"Water Eternal Makes Blood Live, Eternally Yours\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley ≈ wem + bel + i (Hebrew)\",\n    \"reading\": \"the worm that consumes the son of God\",\n    \"languages\": [\"en\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem-bley ≈ Vem-blei (Germanic)\",\n    \"reading\": \"white lead, the whitening of the stone\",\n    \"languages\": [\"en\",\"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"W = double V (VV) + M (water) + BL (Bel) + EY (eye)\",\n    \"reading\": \"double force of water opens the eye of Bel\",\n    \"languages\": [\"en\",\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bley ← Middle English blei ← Old English blæg\",\n    \"reading\": \"pale fire, the whitening that precedes the rubedo\",\n    \"languages\": [\"en\",\"ang\"],\n    \"source\": \"Bosworth-Toller Anglo-Saxon Dictionary\",\n    \"confidence\": 0.35\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem + ble + y",
+   "reading": "vein of blood that trembles and cries",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "etymology",
+   "chain": "Wembley ← Old English Wemba-leah",
+   "reading": "clearing or meadow belonging to Wemba the warrior",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Oxford Dictionary of English Place-Names",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wem-bley ≈ ouem-blé (French)",
+   "reading": "wheat that has been bled or harvested violently",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wembley ≈ Wem + blé",
+   "reading": "sacred wound that gives wheat / bread of life",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "WEMBLEY → BY ME WEL",
+   "reading": "by me, the well; I am the source of the living water",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "W E M B L E Y",
+   "reading": "Water Eternal Makes Blood Live, Eternally Yours",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley ≈ wem + bel + i (Hebrew)",
+   "reading": "the worm that consumes the son of God",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem-bley ≈ Vem-blei (Germanic)",
+   "reading": "white lead, the whitening of the stone",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "W = double V (VV) + M (water) + BL (Bel) + EY (eye)",
+   "reading": "double force of water opens the eye of Bel",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "bley ← Middle English blei ← Old English blæg",
+   "reading": "pale fire, the whitening that precedes the rubedo",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Bosworth-Toller Anglo-Saxon Dictionary",
+   "confidence": 0.35
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

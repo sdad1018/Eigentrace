@@ -1,0 +1,125 @@
+{
+ "word": "Great Exuma",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:22:47+00:00",
+ "latency_s": 5.61,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"great + exuma -> great / ex- / uma; great = grand, ex- = out of, uma ~ you, ma\",\n    \"reading\": \"A grand going-out: the self leaves the mother and becomes enlarged by departure.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.56\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"great ~ greet; exuma ~ exhumed / ex-ume; greet the exhumed\",\n    \"reading\": \"A salutation to what is buried: the hidden is raised by naming it.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.42\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"great ~ grève (fr.); exuma ~ ex-âme (out-soul) by sound-play\",\n    \"reading\": \"A strike of the soul: withdrawal becomes a spiritual labor stoppage.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"great exuma -> exum + great / ex + ma + great; rearranged as ex + ma + great\",\n    \"reading\": \"The mother is moved outward; greatness is what remains after separation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.28\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"G.R.E.A.T. = Going, Rising, Emerging, Ascending, Transfigured; E.X.U.M.A. = Exit, X, Uniting, Mother, Above\",\n    \"reading\": \"An ascent through exit: greatness is the child of leaving the maternal ground.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"G = circle with opening; X = crossing; U = vessel; M = mountain/waves; A = apex\",\n    \"reading\": \"A vessel crosses a threshold and rises to a peak: containment becomes elevation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"GREAT EXUMA -> G(7)+R(18)+E(5)+A(1)+T(20)+E(5)+X(24)+U(21)+M(13)+A(1) = 115 -> 1+1+5 = 7\",\n    \"reading\": \"The name reduces to seven: completion, cycle, and hidden order beneath grandeur.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.47\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"great (OED: Old English grēat, 'big, coarse, thick'; from Proto-Germanic *grautaz, 'coarse, thick')\",\n    \"reading\": \"Not noble at first, but thick and coarse: greatness begins as substance, not splendor.\",\n    \"languages\": [\"en\", \"gem\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.86\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"exuma: checkable only as a proper-name form; no secure standard lexicon etymology is established here\",\n    \"reading\": \"A name of outwardness: ex- suggests departure, while the remainder resists fixed meaning.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.14\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"great exuma -> grayt ek-soo-ma; ex- + uma / ex + huma\",\n    \"reading\": \"The exhale of the human: what is great is what comes out of the body.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.39\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "great + exuma -> great / ex- / uma; great = grand, ex- = out of, uma ~ you, ma",
+   "reading": "A grand going-out: the self leaves the mother and becomes enlarged by departure.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.56
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "great ~ greet; exuma ~ exhumed / ex-ume; greet the exhumed",
+   "reading": "A salutation to what is buried: the hidden is raised by naming it.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.42
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "great ~ grève (fr.); exuma ~ ex-âme (out-soul) by sound-play",
+   "reading": "A strike of the soul: withdrawal becomes a spiritual labor stoppage.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "anagram",
+   "chain": "great exuma -> exum + great / ex + ma + great; rearranged as ex + ma + great",
+   "reading": "The mother is moved outward; greatness is what remains after separation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.28
+  },
+  {
+   "operation": "notariqon",
+   "chain": "G.R.E.A.T. = Going, Rising, Emerging, Ascending, Transfigured; E.X.U.M.A. = Exit, X, Uniting, Mother, Above",
+   "reading": "An ascent through exit: greatness is the child of leaving the maternal ground.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G = circle with opening; X = crossing; U = vessel; M = mountain/waves; A = apex",
+   "reading": "A vessel crosses a threshold and rises to a peak: containment becomes elevation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "numerical",
+   "chain": "GREAT EXUMA -> G(7)+R(18)+E(5)+A(1)+T(20)+E(5)+X(24)+U(21)+M(13)+A(1) = 115 -> 1+1+5 = 7",
+   "reading": "The name reduces to seven: completion, cycle, and hidden order beneath grandeur.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.47
+  },
+  {
+   "operation": "etymology",
+   "chain": "great (OED: Old English grēat, 'big, coarse, thick'; from Proto-Germanic *grautaz, 'coarse, thick')",
+   "reading": "Not noble at first, but thick and coarse: greatness begins as substance, not splendor.",
+   "languages": [
+    "en",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.86
+  },
+  {
+   "operation": "etymology",
+   "chain": "exuma: checkable only as a proper-name form; no secure standard lexicon etymology is established here",
+   "reading": "A name of outwardness: ex- suggests departure, while the remainder resists fixed meaning.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.14
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "great exuma -> grayt ek-soo-ma; ex- + uma / ex + huma",
+   "reading": "The exhale of the human: what is great is what comes out of the body.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.39
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

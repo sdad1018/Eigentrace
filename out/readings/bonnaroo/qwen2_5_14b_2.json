@@ -1,0 +1,150 @@
+{
+ "word": "Bonnaroo",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T00:41:32+00:00",
+ "latency_s": 57.91,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n    {\"operation\":\"phonetic_split\",\"chain\":\"Bon + na + roo\",\"reading\":\"Goodness in the air; noble warmth\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.8},\n    {\"operation\":\"cross_language_homophone\",\"chain\":\"bon (Fr) = good; nar (Ar) = to know; roux (Fr) = red-haired man\",\"reading\":\"Knowledge of the good, fiery spirit\",\"languages\":[\"fr\",\"ar\",\"la\"],\"source\":\"generative\",\"confidence\":0.7},\n    {\"operation\":\"anagram\",\"chain\":\"Bonnaroo\",\"reading\":\"A boon for row\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.5},\n    {\"operation\":\"etymology\",\"chain\":\"Bon (Fr) = good; ar + oo (Old English) = to speak, expanse\",\"reading\":\"Good speech or discourse; expansive benevolence\",\"languages\":[\"fr\",\"la\",\"en\"],\"source\":\"Oxford English Dictionary\",\"confidence\":0.9},\n    {\"operation\":\"letter_symbol\",\"chain\":\"Bonnaroo\",\"reading\":\"Balance of nature's abundance and renewal\",\"languages\":[\"he\",\"grc\"],\"source\":\"generative\",\"confidence\":0.6},\n    {\"operation\":\"numerical\",\"chain\":\"1 + 5 + 2 + 4 + 8 + 7 = 27; 27 (gematria) = life, wisdom\",\"reading\":\"Life through wisdom and renewal\",\"languages\":[\"he\"],\"source\":\"generative\",\"confidence\":0.6},\n    {\"operation\":\"phonetic_split\",\"chain\":\"Bo + nar + oo\",\"reading\":\"Bountiful soul or spirit\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},\n    {\"operation\":\"cross_language_homophone\",\"chain\":\"bon (Fr) = good; na (Heb) = to be; roo (Old English) = root, origin\",\"reading\":\"Goodness at the source of being\",\"languages\":[\"fr\",\"he\",\"en\"],\"source\":\"generative\",\"confidence\":0.7},\n    {\"operation\":\"anagram\",\"chain\":\"Bonnaroo\",\"reading\":\"A noble roar\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.5},\n    {\"operation\":\"etymology\",\"chain\":\"Bon (Fr) = good; na + roo (Old English) = to speak, expanse\",\"reading\":\"Good discourse or expansive communication\",\"languages\":[\"fr\",\"la\",\"en\"],\"source\":\"Oxford English Dictionary\",\"confidence\":0.8},\n    {\"operation\":\"letter_symbol\",\"chain\":\"Bonnaroo\",\"reading\":\"Balance of nature's abundance and renewal\",\"languages\":[\"he\",\"grc\"],\"source\":\"generative\",\"confidence\":0.6},\n    {\"operation\":\"numerical\",\"chain\":\"2 + 15 + 14 + 14 + 18 + 15 = 88; 88 (gematria) = wisdom, enlightenment\",\"reading\":\"Enlightenment through wisdom and renewal\",\"languages\":[\"he\"],\"source\":\"generative\",\"confidence\":0.6}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon + na + roo",
+   "reading": "Goodness in the air; noble warmth",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bon (Fr) = good; nar (Ar) = to know; roux (Fr) = red-haired man",
+   "reading": "Knowledge of the good, fiery spirit",
+   "languages": [
+    "fr",
+    "ar",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bonnaroo",
+   "reading": "A boon for row",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bon (Fr) = good; ar + oo (Old English) = to speak, expanse",
+   "reading": "Good speech or discourse; expansive benevolence",
+   "languages": [
+    "fr",
+    "la",
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Bonnaroo",
+   "reading": "Balance of nature's abundance and renewal",
+   "languages": [
+    "he",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "numerical",
+   "chain": "1 + 5 + 2 + 4 + 8 + 7 = 27; 27 (gematria) = life, wisdom",
+   "reading": "Life through wisdom and renewal",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bo + nar + oo",
+   "reading": "Bountiful soul or spirit",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bon (Fr) = good; na (Heb) = to be; roo (Old English) = root, origin",
+   "reading": "Goodness at the source of being",
+   "languages": [
+    "fr",
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bonnaroo",
+   "reading": "A noble roar",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bon (Fr) = good; na + roo (Old English) = to speak, expanse",
+   "reading": "Good discourse or expansive communication",
+   "languages": [
+    "fr",
+    "la",
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Bonnaroo",
+   "reading": "Balance of nature's abundance and renewal",
+   "languages": [
+    "he",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "numerical",
+   "chain": "2 + 15 + 14 + 14 + 18 + 15 = 88; 88 (gematria) = wisdom, enlightenment",
+   "reading": "Enlightenment through wisdom and renewal",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

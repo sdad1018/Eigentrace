@@ -1,0 +1,105 @@
+{
+ "word": "Astroworld",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:28+00:00",
+ "latency_s": 5.37,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"astro + world; astro- (Greek astron, star) + world (Old English weoruld, human age/world)\",\n    \"reading\": \"the star-world: a cosmos of signs, or a world ruled by stellar pattern.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.92\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"astro- from Greek astron = star; world from Old English weoruld = age, human life, world\",\n    \"reading\": \"a world measured by stars, or an age illuminated by celestial order.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"Oxford English Dictionary; Liddell-Scott-Jones Greek Lexicon\",\n    \"confidence\": 0.88\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"astro sounds like astre/astreau in French ear; world echoes monde/roue du monde by sense, not form\",\n    \"reading\": \"the star-wheel: a revolving fate, a turning of the world under astral influence.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.54\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Astroworld -> star + world hidden by rearrangement; the letters can be read as a world of stars\",\n    \"reading\": \"a concealed cosmos: the world rearranged into stars, or stars rearranged into a world.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"A S T R O W O R L D -> Ascend; Stars; Turn; Rise; Orbit; Weave; Order; Return; Light; Dawn\",\n    \"reading\": \"an ascent through ordered turning: stars weaving a return to light.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"A = alpha, beginning; O = circle, totality; W = double-v, doubled wave; R = ray/rota by shape\",\n    \"reading\": \"beginning enclosed in totality, doubled by waves and rotation: a cyclic beginning.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.33\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"A1 S19 T20 R18 O15 W23 O15 R18 L12 D4; sum = 145, reduced = 1+4+5 = 10, then 1\",\n    \"reading\": \"reduced to unity: many letters return to one principle, the first star of the word.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.27\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"astro + world heard as astre + world; astre (French) = star, world = monde, but the ear fuses them\",\n    \"reading\": \"star and world fused: a monde astral, where earthly life is read as a constellation.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "astro + world; astro- (Greek astron, star) + world (Old English weoruld, human age/world)",
+   "reading": "the star-world: a cosmos of signs, or a world ruled by stellar pattern.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.92
+  },
+  {
+   "operation": "etymology",
+   "chain": "astro- from Greek astron = star; world from Old English weoruld = age, human life, world",
+   "reading": "a world measured by stars, or an age illuminated by celestial order.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Liddell-Scott-Jones Greek Lexicon",
+   "confidence": 0.88
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "astro sounds like astre/astreau in French ear; world echoes monde/roue du monde by sense, not form",
+   "reading": "the star-wheel: a revolving fate, a turning of the world under astral influence.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.54
+  },
+  {
+   "operation": "anagram",
+   "chain": "Astroworld -> star + world hidden by rearrangement; the letters can be read as a world of stars",
+   "reading": "a concealed cosmos: the world rearranged into stars, or stars rearranged into a world.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "notariqon",
+   "chain": "A S T R O W O R L D -> Ascend; Stars; Turn; Rise; Orbit; Weave; Order; Return; Light; Dawn",
+   "reading": "an ascent through ordered turning: stars weaving a return to light.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "A = alpha, beginning; O = circle, totality; W = double-v, doubled wave; R = ray/rota by shape",
+   "reading": "beginning enclosed in totality, doubled by waves and rotation: a cyclic beginning.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.33
+  },
+  {
+   "operation": "numerical",
+   "chain": "A1 S19 T20 R18 O15 W23 O15 R18 L12 D4; sum = 145, reduced = 1+4+5 = 10, then 1",
+   "reading": "reduced to unity: many letters return to one principle, the first star of the word.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.27
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "astro + world heard as astre + world; astre (French) = star, world = monde, but the ear fuses them",
+   "reading": "star and world fused: a monde astral, where earthly life is read as a constellation.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

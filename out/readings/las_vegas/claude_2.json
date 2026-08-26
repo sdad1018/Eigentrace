@@ -1,0 +1,19 @@
+{
+ "word": "Las Vegas",
+ "model": "Claude",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:20+00:00",
+ "latency_s": 9.39,
+ "ok": true,
+ "call_error": null,
+ "raw": "```json\n[\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las (Spanish) → 'the' (feminine plural); Vegas (Spanish) → 'meadows/plains'; combined homophone in English ear: 'lapse' + 'Vegas'\",\n    \"reading\": \"The meadows slip away; plains fade from memory or grasp.\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas → /læz/ + /ˈveɪɡəz/ → 'laz' (laze) + 'vague' + 'as'\",\n    \"reading\": \"Idle resting in vagueness; to laze in uncertain, undefined space.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Vegas: Spanish vega (meadow, plain) ← Arabic al-baqa (the fertile land); Las: Spanish la (the) ← Latin illa\",\n    \"reading\": \"The fertile lands; plains of abundance revealed through Spanish and Arabic linguistic strata.\",\n    \"languages\": [\"es\", \"ar\", \"la\"],\n    \"source\": \"OED, s.v. 'vega'; Corominas, Diccionario Etimológico del Español\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas → 'lass' + 'veg' + 'as' → girl + vegetation + thus\",\n    \"reading\": \"The maiden of green things; a girl among plants or growing things.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas → rearrange → 'Gales Vas' or 'Vales Gas' or 'Ages Lav' (partial)\",\n    \"reading\": \"Winds carry emptiness; or winds carry vessel; or ages wash over.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V = Roman five; A = first letter (alpha/beginning); S = serpent (hiss); L = ladder/light\",\n    \"reading\": \"The ladder climbs toward five beginnings; serpentine ascent through primal gates.\",\n    \"languages\": [\"la\", \"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las → French 'là' (there); Vegas → Latin 'vagus' (wandering, vague)\",\n    \"reading\": \"There wanders; in that place, uncertainty moves and drifts.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L-A-S V-E-G-A-S: taking initials or key syllables: 'Las' (the) + 'V' (five) + 'Gas' (void/emptiness in Latin 'vacuas')\",\n    \"reading\": \"The five voids; five empty spaces held in being.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas → 'lass' + 'vague' + 'us' (Latin accusative) → girl + indefinite + object marker\",\n    \"reading\": \"The girl, indefinite, marked as object of desire or attention.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",",
+ "parsed": null,
+ "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 2844)",
+ "extracted": false,
+ "n_readings": 0,
+ "refusal_like": false
+}

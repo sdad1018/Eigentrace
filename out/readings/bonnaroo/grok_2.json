@@ -1,0 +1,131 @@
+{
+ "word": "Bonnaroo",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:16:26+00:00",
+ "latency_s": 6.19,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon + naroo\",\n    \"reading\": \"good + narrow way; the excellent strait path\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon + a + roux\",\n    \"reading\": \"good + to + the red one; the noble red\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bonnaroo ≈ bon + arrow\",\n    \"reading\": \"good arrow; the straight and blessed shaft\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bon (Old French) = good; nar (Old Norse) = narrow + rue (Old French) = street\",\n    \"reading\": \"the good narrow street; the excellent strait way\",\n    \"languages\": [\"fr\",\"non\",\"la\"],\n    \"source\": \"Oxford English Dictionary / Centre National de Ressources Textuelles et Lexicales\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bonnaroo = O, Baron No\",\n    \"reading\": \"O, noble no; the refusal of the lord\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon + na + rou\",\n    \"reading\": \"good + born + wheel; the well-born wheel\",\n    \"languages\": [\"fr\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bonnaroo ≈ bona + roo (roo = ruah)\",\n    \"reading\": \"good spirit; the blessed breath or wind\",\n    \"languages\": [\"la\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B O N N A R O O → Bene Omnia Nascuntur Ab Rota Orbis Occulta\",\n    \"reading\": \"all things are born well from the hidden wheel of the world\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B (Beta) + ON (On) + NA (Na) + ROO (Ru)\",\n    \"reading\": \"the house of light within the great wheel\",\n    \"languages\": [\"grc\",\"en\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon + nar + oo\",\n    \"reading\": \"good + gnosis + egg; the excellent egg of knowledge\",\n    \"languages\": [\"fr\",\"grc\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon + naroo",
+   "reading": "good + narrow way; the excellent strait path",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon + a + roux",
+   "reading": "good + to + the red one; the noble red",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bonnaroo ≈ bon + arrow",
+   "reading": "good arrow; the straight and blessed shaft",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "etymology",
+   "chain": "bon (Old French) = good; nar (Old Norse) = narrow + rue (Old French) = street",
+   "reading": "the good narrow street; the excellent strait way",
+   "languages": [
+    "fr",
+    "non",
+    "la"
+   ],
+   "source": "Oxford English Dictionary / Centre National de Ressources Textuelles et Lexicales",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bonnaroo = O, Baron No",
+   "reading": "O, noble no; the refusal of the lord",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon + na + rou",
+   "reading": "good + born + wheel; the well-born wheel",
+   "languages": [
+    "fr",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bonnaroo ≈ bona + roo (roo = ruah)",
+   "reading": "good spirit; the blessed breath or wind",
+   "languages": [
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B O N N A R O O → Bene Omnia Nascuntur Ab Rota Orbis Occulta",
+   "reading": "all things are born well from the hidden wheel of the world",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (Beta) + ON (On) + NA (Na) + ROO (Ru)",
+   "reading": "the house of light within the great wheel",
+   "languages": [
+    "grc",
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon + nar + oo",
+   "reading": "good + gnosis + egg; the excellent egg of knowledge",
+   "languages": [
+    "fr",
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

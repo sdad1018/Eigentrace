@@ -1,0 +1,113 @@
+{
+ "word": "Harvest",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:21:38+00:00",
+ "latency_s": 9.31,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"harvest < Old English hærfest (autumn, harvest-time) < Proto-Germanic *harbistaz; cognate with Latin carpere (to pluck, gather)\",\n    \"reading\": \"The season of plucking, the time when the year is reaped by hand\",\n    \"languages\": [\"en\", \"ang\", \"gem\", \"la\"],\n    \"source\": \"Oxford English Dictionary, s.v. harvest; Pokorny, Indogermanisches Etymologisches Wörterbuch\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har + vest; har (Old Norse = grey, hoary) + vest (Latin vestis = garment); also har (Avestan = year) + vest (to clothe)\",\n    \"reading\": \"The grey garment of the year — the old cloak of autumn covering the fields\",\n    \"languages\": [\"en\", \"non\", \"la\", \"ae\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"harvest ~ French 'harvest' (loan) but homophone of 'har veste' (har = there, veste = jacket); also Arabic 'harf' (letter, edge) + 'wast' (middle)\",\n    \"reading\": \"The edge of the middle — the turning point when the year's letter is cut\",\n    \"languages\": [\"en\", \"fr\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"harvest → 'thraves' (old measure of sheaves); also 'sharvet' (obsolete variant of harvest) → 'shar' (to cut) + 'vet' (old)\",\n    \"reading\": \"Thraves of grain — the ancient count of bound sheaves, the old cut\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"H-A-R-V-E-S-T: H = harvest, A = autumn, R = reaping, V = vintage, E = earth, S = sheaf, T = time\",\n    \"reading\": \"Harvest, autumn, reaping, vintage, earth, sheaf, time — the sevenfold cycle of the field\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"H (heth = fence, enclosure) + A (aleph = ox) + R (resh = head) + V (vav = hook) + E (he = window) + S (shin = tooth) + T (tav = cross)\",\n    \"reading\": \"The ox's head at the fence, the hook through the window, the tooth of the cross — the ritual of binding\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Harvest in Hebrew transliteration חַרְוֶסְת — letters: het(8) + resh(200) + vav(6) + samekh(60) + tav(400) = 674; 6+7+4=17; 1+7=8\",\n    \"reading\": \"Eight — the number of renewal and new beginnings, the harvest as the seed of the next cycle\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"harvest < Latin carpere (to pluck, to gather) via Proto-Indo-European *kerp-; also Greek karpos (fruit, profit)\",\n    \"reading\": \"The fruit of the plucking — that which is gathered as gain, the year's profit\",\n    \"languages\": [\"en\", \"la\", \"grc\"],\n    \"source\": \"de Vaan, Etymological Dictionary of Latin; Chantraine, Dictionnaire étymologique du grec\",\n    \"confidence\": 0.85\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "harvest < Old English hærfest (autumn, harvest-time) < Proto-Germanic *harbistaz; cognate with Latin carpere (to pluck, gather)",
+   "reading": "The season of plucking, the time when the year is reaped by hand",
+   "languages": [
+    "en",
+    "ang",
+    "gem",
+    "la"
+   ],
+   "source": "Oxford English Dictionary, s.v. harvest; Pokorny, Indogermanisches Etymologisches Wörterbuch",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "har + vest; har (Old Norse = grey, hoary) + vest (Latin vestis = garment); also har (Avestan = year) + vest (to clothe)",
+   "reading": "The grey garment of the year — the old cloak of autumn covering the fields",
+   "languages": [
+    "en",
+    "non",
+    "la",
+    "ae"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "harvest ~ French 'harvest' (loan) but homophone of 'har veste' (har = there, veste = jacket); also Arabic 'harf' (letter, edge) + 'wast' (middle)",
+   "reading": "The edge of the middle — the turning point when the year's letter is cut",
+   "languages": [
+    "en",
+    "fr",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "anagram",
+   "chain": "harvest → 'thraves' (old measure of sheaves); also 'sharvet' (obsolete variant of harvest) → 'shar' (to cut) + 'vet' (old)",
+   "reading": "Thraves of grain — the ancient count of bound sheaves, the old cut",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "H-A-R-V-E-S-T: H = harvest, A = autumn, R = reaping, V = vintage, E = earth, S = sheaf, T = time",
+   "reading": "Harvest, autumn, reaping, vintage, earth, sheaf, time — the sevenfold cycle of the field",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "H (heth = fence, enclosure) + A (aleph = ox) + R (resh = head) + V (vav = hook) + E (he = window) + S (shin = tooth) + T (tav = cross)",
+   "reading": "The ox's head at the fence, the hook through the window, the tooth of the cross — the ritual of binding",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "Harvest in Hebrew transliteration חַרְוֶסְת — letters: het(8) + resh(200) + vav(6) + samekh(60) + tav(400) = 674; 6+7+4=17; 1+7=8",
+   "reading": "Eight — the number of renewal and new beginnings, the harvest as the seed of the next cycle",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "etymology",
+   "chain": "harvest < Latin carpere (to pluck, to gather) via Proto-Indo-European *kerp-; also Greek karpos (fruit, profit)",
+   "reading": "The fruit of the plucking — that which is gathered as gain, the year's profit",
+   "languages": [
+    "en",
+    "la",
+    "grc"
+   ],
+   "source": "de Vaan, Etymological Dictionary of Latin; Chantraine, Dictionnaire étymologique du grec",
+   "confidence": 0.85
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

@@ -1,0 +1,108 @@
+{
+ "word": "Exuma",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:12+00:00",
+ "latency_s": 4.65,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ex + u + ma; ex- = out of, away from; u = you; ma = mother\",\n    \"reading\": \"Going out from the mother: departure from origin, a release from the maternal source.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.78\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ~ exhumé (fr) / exhumed (en); sound of removal from the earth\",\n    \"reading\": \"That which is brought up from burial: hidden matter made visible again.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.69\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ~ ex-uma; ex (out) + uma (Sanskrit/Indic-sounding 'home', 'dwelling' by echo only)\",\n    \"reading\": \"Out of the house: exile from enclosure, a leaving of the inner chamber.\",\n    \"languages\": [\"la\", \"en\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.42\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Exuma -> axume / amuse / muse + x; the letters rearrange toward muse and maze\",\n    \"reading\": \"A riddle that amuses the mind and leads it into the maze of the muse.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"X = crossing, unknown, chi; U = vessel or womb-shape; M = mountain or doubled wave; A = beginning\",\n    \"reading\": \"The unknown crosses the womb and rises to a first beginning: a passage from hidden depth to origin.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.61\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"E(5)+X(24)+U(21)+M(13)+A(1)=64; 6+4=10; 1+0=1\",\n    \"reading\": \"Reduction to unity after a full cycle: many parts gathered back into one.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.47\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Latin ex- 'out of, from' + a stem echoed by umbra/uma-like enclosure; standard lexica: ex- in Lewis & Short, Oxford Latin Dictionary\",\n    \"reading\": \"An outward movement from shade or enclosure: emergence into light.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Lewis & Short, A Latin Dictionary; Oxford Latin Dictionary\",\n    \"confidence\": 0.36\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"exu + ma; exu- echoes exude/exult/exile, ma echoes mother, matter, matrix\",\n    \"reading\": \"The exiled child of matter: a form cast out from the matrix yet still named by it.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.73\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "ex + u + ma; ex- = out of, away from; u = you; ma = mother",
+   "reading": "Going out from the mother: departure from origin, a release from the maternal source.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.78
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Exuma ~ exhumé (fr) / exhumed (en); sound of removal from the earth",
+   "reading": "That which is brought up from burial: hidden matter made visible again.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.69
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Exuma ~ ex-uma; ex (out) + uma (Sanskrit/Indic-sounding 'home', 'dwelling' by echo only)",
+   "reading": "Out of the house: exile from enclosure, a leaving of the inner chamber.",
+   "languages": [
+    "la",
+    "en",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.42
+  },
+  {
+   "operation": "anagram",
+   "chain": "Exuma -> axume / amuse / muse + x; the letters rearrange toward muse and maze",
+   "reading": "A riddle that amuses the mind and leads it into the maze of the muse.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "X = crossing, unknown, chi; U = vessel or womb-shape; M = mountain or doubled wave; A = beginning",
+   "reading": "The unknown crosses the womb and rises to a first beginning: a passage from hidden depth to origin.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.61
+  },
+  {
+   "operation": "numerical",
+   "chain": "E(5)+X(24)+U(21)+M(13)+A(1)=64; 6+4=10; 1+0=1",
+   "reading": "Reduction to unity after a full cycle: many parts gathered back into one.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.47
+  },
+  {
+   "operation": "etymology",
+   "chain": "Latin ex- 'out of, from' + a stem echoed by umbra/uma-like enclosure; standard lexica: ex- in Lewis & Short, Oxford Latin Dictionary",
+   "reading": "An outward movement from shade or enclosure: emergence into light.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Lewis & Short, A Latin Dictionary; Oxford Latin Dictionary",
+   "confidence": 0.36
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "exu + ma; exu- echoes exude/exult/exile, ma echoes mother, matter, matrix",
+   "reading": "The exiled child of matter: a form cast out from the matrix yet still named by it.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.73
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

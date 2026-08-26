@@ -1,0 +1,104 @@
+{
+ "word": "Voltaire",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:33:35+00:00",
+ "latency_s": 6.28,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Voltaire from French surname; possibly from Old French 'voltaire' = fickle, from Latin 'volutare' = to roll, turn about\",\n    \"reading\": \"One who turns or rolls, a mutable or revolving spirit\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"Littré, Dictionnaire de la langue française\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vol + taire; 'vol' (French) = flight; 'taire' (French) = to silence\",\n    \"reading\": \"Flight that silences — a soaring word that hushes speech\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Voltaire ~ 'vol' (Italian) = theft; 'taire' (French) = keep silent; also 'volta' (Italian) = turn\",\n    \"reading\": \"A stolen turn, a silent pivot — the hidden twist in language\",\n    \"languages\": [\"fr\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Voltaire → 'l’avoir te' (French) = to have you; also 'violet' + 'ar' (Hebrew = mountain)\",\n    \"reading\": \"Having you on the mountain — possession raised to a peak of vision\",\n    \"languages\": [\"fr\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"V-O-L-T-A-I-R-E: Vox, Ordo, Lux, Tempus, Aether, Ignis, Ratio, Eternitas\",\n    \"reading\": \"Voice, order, light, time, ether, fire, reason, eternity — a cosmic acronym\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V (valley) + O (circle) + L (ladder) + T (cross) + A (alpha) + I (eye) + R (river) + E (elevation)\",\n    \"reading\": \"Valley, circle, ladder, cross, beginning, eye, river, rise — a path of ascent\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"V=5, O=6, L=3, T=4, A=1, I=9, R=9, E=5 (A1Z26) → sum = 42\",\n    \"reading\": \"Forty-two — the answer to life, the universe, and everything, hidden in the name\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vol + taire; 'vol' (Latin 'volare') = to fly; 'taire' (Old French 'taisir') = to be silent\",\n    \"reading\": \"Flying silence — a winged stillness that transcends speech\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Voltaire from French surname; possibly from Old French 'voltaire' = fickle, from Latin 'volutare' = to roll, turn about",
+   "reading": "One who turns or rolls, a mutable or revolving spirit",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "Littré, Dictionnaire de la langue française",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vol + taire; 'vol' (French) = flight; 'taire' (French) = to silence",
+   "reading": "Flight that silences — a soaring word that hushes speech",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Voltaire ~ 'vol' (Italian) = theft; 'taire' (French) = keep silent; also 'volta' (Italian) = turn",
+   "reading": "A stolen turn, a silent pivot — the hidden twist in language",
+   "languages": [
+    "fr",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Voltaire → 'l’avoir te' (French) = to have you; also 'violet' + 'ar' (Hebrew = mountain)",
+   "reading": "Having you on the mountain — possession raised to a peak of vision",
+   "languages": [
+    "fr",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V-O-L-T-A-I-R-E: Vox, Ordo, Lux, Tempus, Aether, Ignis, Ratio, Eternitas",
+   "reading": "Voice, order, light, time, ether, fire, reason, eternity — a cosmic acronym",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V (valley) + O (circle) + L (ladder) + T (cross) + A (alpha) + I (eye) + R (river) + E (elevation)",
+   "reading": "Valley, circle, ladder, cross, beginning, eye, river, rise — a path of ascent",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "V=5, O=6, L=3, T=4, A=1, I=9, R=9, E=5 (A1Z26) → sum = 42",
+   "reading": "Forty-two — the answer to life, the universe, and everything, hidden in the name",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vol + taire; 'vol' (Latin 'volare') = to fly; 'taire' (Old French 'taisir') = to be silent",
+   "reading": "Flying silence — a winged stillness that transcends speech",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

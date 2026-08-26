@@ -1,0 +1,113 @@
+{
+ "word": "Las Vegas",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:24:09+00:00",
+ "latency_s": 10.31,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las = Spanish plural definite article 'the'; Vegas = plural of vega, from Iberian/Romance 'vega' = fertile plain, meadow; attested in Spanish dictionaries\",\n    \"reading\": \"The fertile plains — a place of watered lowlands, not desert\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"Real Academia Española, Diccionario de la lengua española, s.v. 'vega'\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las + Vegas; 'las' = la(s) = 'the' (fr) + 'vegas' → 'végas' (fr) = 'sails' (vogues) or 'vagues' (waves); sound: /lɑs veɪɡəs/\",\n    \"reading\": \"The waves that sail — a mirage of motion in stillness\",\n    \"languages\": [\"en\", \"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas → 'laisse vagues' (fr) = 'let waves'; also 'la(s) vegas' → 'la vega' (it) = 'the vein' (in mining)\",\n    \"reading\": \"Let the waves be — or the vein of ore hidden beneath the plain\",\n    \"languages\": [\"fr\", \"it\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas → 'salgaves' → 'sal' (salt) + 'gaves' (fr) = 'rivers' (Garonne tributaries); also 'vases glas' (fr) = 'green vases'\",\n    \"reading\": \"Salt rivers and green vessels — a land of brine and verdure\",\n    \"languages\": [\"fr\", \"la\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L.V. → Latin 'locus viridis' = green place; also 'lumen veritatis' = light of truth; initials as acrostic\",\n    \"reading\": \"Green locus or light of truth — a double‑tongued sign\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L = 50 (Roman), V = 5, S = 7 (Greek stigma); 'Las Vegas' → L‑V‑S → 50‑5‑7; also 'V' = feminine, 'S' = serpent\",\n    \"reading\": \"Fifty, five, seven — a numeric triad; V as vessel, S as winding path\",\n    \"languages\": [\"la\", \"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Gematria (Hebrew): Lamed=30, Shin=300, Vav=6, Gimel=3, Samekh=60 → 30+300+6+3+60 = 399; also 'Las Vegas' in simple A1Z26: L=12, A=1, S=19, V=22, E=5, G=7, A=1, S=19 → sum = 86\",\n    \"reading\": \"399 (Hebrew) — a number of completion; 86 (Latin) — a hidden cipher of 'the plain'\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Vega from Arabic 'baq'a' (بقعة) = 'patch of ground', via Mozarabic; 'las' from Latin 'illas' (those)\",\n    \"reading\": \"Those patches of ground — a plural of scattered oases\",\n    \"languages\": [\"ar\", \"la\", \"es\"],\n    \"source\": \"Corriente, Dictionary of Arabic and Allied Loanwords (Spanish), s.v. 'vega'\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Las = Spanish plural definite article 'the'; Vegas = plural of vega, from Iberian/Romance 'vega' = fertile plain, meadow; attested in Spanish dictionaries",
+   "reading": "The fertile plains — a place of watered lowlands, not desert",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "Real Academia Española, Diccionario de la lengua española, s.v. 'vega'",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Vegas; 'las' = la(s) = 'the' (fr) + 'vegas' → 'végas' (fr) = 'sails' (vogues) or 'vagues' (waves); sound: /lɑs veɪɡəs/",
+   "reading": "The waves that sail — a mirage of motion in stillness",
+   "languages": [
+    "en",
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas → 'laisse vagues' (fr) = 'let waves'; also 'la(s) vegas' → 'la vega' (it) = 'the vein' (in mining)",
+   "reading": "Let the waves be — or the vein of ore hidden beneath the plain",
+   "languages": [
+    "fr",
+    "it",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas → 'salgaves' → 'sal' (salt) + 'gaves' (fr) = 'rivers' (Garonne tributaries); also 'vases glas' (fr) = 'green vases'",
+   "reading": "Salt rivers and green vessels — a land of brine and verdure",
+   "languages": [
+    "fr",
+    "la",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L.V. → Latin 'locus viridis' = green place; also 'lumen veritatis' = light of truth; initials as acrostic",
+   "reading": "Green locus or light of truth — a double‑tongued sign",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L = 50 (Roman), V = 5, S = 7 (Greek stigma); 'Las Vegas' → L‑V‑S → 50‑5‑7; also 'V' = feminine, 'S' = serpent",
+   "reading": "Fifty, five, seven — a numeric triad; V as vessel, S as winding path",
+   "languages": [
+    "la",
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "Gematria (Hebrew): Lamed=30, Shin=300, Vav=6, Gimel=3, Samekh=60 → 30+300+6+3+60 = 399; also 'Las Vegas' in simple A1Z26: L=12, A=1, S=19, V=22, E=5, G=7, A=1, S=19 → sum = 86",
+   "reading": "399 (Hebrew) — a number of completion; 86 (Latin) — a hidden cipher of 'the plain'",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "etymology",
+   "chain": "Vega from Arabic 'baq'a' (بقعة) = 'patch of ground', via Mozarabic; 'las' from Latin 'illas' (those)",
+   "reading": "Those patches of ground — a plural of scattered oases",
+   "languages": [
+    "ar",
+    "la",
+    "es"
+   ],
+   "source": "Corriente, Dictionary of Arabic and Allied Loanwords (Spanish), s.v. 'vega'",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

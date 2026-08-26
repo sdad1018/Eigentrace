@@ -1,0 +1,151 @@
+{
+ "word": "Manchester",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:28:44+00:00",
+ "latency_s": 10.84,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Manchester < Old English Mameceaster; Mame = Celtic river-name (breast-like), ceaster = Latin castra (camp)\",\n    \"reading\": \"The breast-shaped river camp; a fortified place at the bend of the Mam.\",\n    \"languages\": [\"en\", \"la\", \"cel\"],\n    \"source\": \"Oxford Dictionary of English Place-Names\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + chester; chester = chest (box) + er (agent); man-chest-er = one who chests men\",\n    \"reading\": \"The one who boxes or coffers humanity; a keeper of male souls in a chest.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"man (en) + chester (fr: château = castle) → man-château; also manche (fr: sleeve) + ster (en: star)\",\n    \"reading\": \"Man's castle of sleeves; a star that sleeves the masculine — a garment of power.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester → 'chest + man + er' → 'the chest of the man' → 'man's chest'\",\n    \"reading\": \"The chest of man; a treasury of the masculine heart or breath.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M-A-N-C-H-E-S-T-E-R → M (mater) A (anima) N (nous) C (corpus) H (hyle) E (essentia) S (spiritus) T (templum) E (et) R (ratio)\",\n    \"reading\": \"Mother, soul, mind, body, matter, essence, spirit, temple, and reason — a microcosmic list.\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M = 13 (death/transformation), A=1, N=14, C=3, H=8, E=5, S=19, T=20, E=5, R=18; sum = 106 → 1+0+6=7\",\n    \"reading\": \"The number seven — completion, the seven planets, the sevenfold path of alchemy.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + ches + ter; ches = chess (game) + ter (earth) → man plays chess on earth\",\n    \"reading\": \"Humanity's game of strategy upon the earthly board; a place of calculated moves.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mameceaster → mam (breast) + ceaster (fort); also Old English 'mam' = mother\",\n    \"reading\": \"Mother-fort; a nurturing stronghold, a breast-like citadel of the river.\",\n    \"languages\": [\"en\", \"la\", \"cel\"],\n    \"source\": \"A Dictionary of British Place-Names (Mills)\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"man (en) + chester (German: Kester = chestnut) → man-chestnut; also 'chester' as 'cheat' + 'er'\",\n    \"reading\": \"The chestnut of man — a hidden kernel of wisdom within a spiky husk.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester → 'chaste + men + r' → 'chaste men' + 'r' (res) → 'chaste men of the thing'\",\n    \"reading\": \"Chaste men of the matter; purity of the masculine principle in alchemical work.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"M=40, A=1, N=50, C=3, H=8, E=5, S=60, T=9, E=5, R=80 (Greek isopsephy) → sum = 261 → 2+6+1=9\",\n    \"reading\": \"Nine — the number of initiation, the muse, the threshold of completion.\",\n    \"languages\": [\"grc\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + chester → 'man' + 'chest' + 'er' → 'chest-er' = one who chests, i.e., encloses; 'man' = human\",\n    \"reading\": \"The encloser of humanity; a container of the human essence — a vessel.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Manchester < Old English Mameceaster; Mame = Celtic river-name (breast-like), ceaster = Latin castra (camp)",
+   "reading": "The breast-shaped river camp; a fortified place at the bend of the Mam.",
+   "languages": [
+    "en",
+    "la",
+    "cel"
+   ],
+   "source": "Oxford Dictionary of English Place-Names",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + chester; chester = chest (box) + er (agent); man-chest-er = one who chests men",
+   "reading": "The one who boxes or coffers humanity; a keeper of male souls in a chest.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "man (en) + chester (fr: château = castle) → man-château; also manche (fr: sleeve) + ster (en: star)",
+   "reading": "Man's castle of sleeves; a star that sleeves the masculine — a garment of power.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester → 'chest + man + er' → 'the chest of the man' → 'man's chest'",
+   "reading": "The chest of man; a treasury of the masculine heart or breath.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M-A-N-C-H-E-S-T-E-R → M (mater) A (anima) N (nous) C (corpus) H (hyle) E (essentia) S (spiritus) T (templum) E (et) R (ratio)",
+   "reading": "Mother, soul, mind, body, matter, essence, spirit, temple, and reason — a microcosmic list.",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M = 13 (death/transformation), A=1, N=14, C=3, H=8, E=5, S=19, T=20, E=5, R=18; sum = 106 → 1+0+6=7",
+   "reading": "The number seven — completion, the seven planets, the sevenfold path of alchemy.",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + ches + ter; ches = chess (game) + ter (earth) → man plays chess on earth",
+   "reading": "Humanity's game of strategy upon the earthly board; a place of calculated moves.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Mameceaster → mam (breast) + ceaster (fort); also Old English 'mam' = mother",
+   "reading": "Mother-fort; a nurturing stronghold, a breast-like citadel of the river.",
+   "languages": [
+    "en",
+    "la",
+    "cel"
+   ],
+   "source": "A Dictionary of British Place-Names (Mills)",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "man (en) + chester (German: Kester = chestnut) → man-chestnut; also 'chester' as 'cheat' + 'er'",
+   "reading": "The chestnut of man — a hidden kernel of wisdom within a spiky husk.",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester → 'chaste + men + r' → 'chaste men' + 'r' (res) → 'chaste men of the thing'",
+   "reading": "Chaste men of the matter; purity of the masculine principle in alchemical work.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "M=40, A=1, N=50, C=3, H=8, E=5, S=60, T=9, E=5, R=80 (Greek isopsephy) → sum = 261 → 2+6+1=9",
+   "reading": "Nine — the number of initiation, the muse, the threshold of completion.",
+   "languages": [
+    "grc",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + chester → 'man' + 'chest' + 'er' → 'chest-er' = one who chests, i.e., encloses; 'man' = human",
+   "reading": "The encloser of humanity; a container of the human essence — a vessel.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

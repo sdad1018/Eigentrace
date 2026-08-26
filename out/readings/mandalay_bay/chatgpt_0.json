@@ -1,0 +1,104 @@
+{
+ "word": "Mandalay Bay",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:18:52+00:00",
+ "latency_s": 6.73,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + dal + ay + bay; man = human, dal = split/open, bay = inlet/embrace\",\n    \"reading\": \"The human split opens into a bay: a passage from division toward enclosure and shelter.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.42\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"mandala (Skt.) + bay; mandala = circle, sacred totality; bay = enclosure/curving shore\",\n    \"reading\": \"A circular wholeness gathered into a curved boundary: the mandala held by the bay.\",\n    \"languages\": [\"sa\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"manda (Skt.) = slow, gentle, mild; lay = lie/place; bay = open curve\",\n    \"reading\": \"Slowly laid in a gentle curve: a soft settling into openness.\",\n    \"languages\": [\"sa\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.38\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bay (English) < Old French baie < Latin baca? no; standard lexicon: bay = inlet, recess; also a reddish-brown color and bark/cry\",\n    \"reading\": \"A recess, an opening, a place of receiving and containment.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.86\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"mandala (Sanskrit maṇḍala) = circle, disk, sacred diagram; compare Monier-Williams\",\n    \"reading\": \"A sacred circle or disk: ordered wholeness, centered and enclosed.\",\n    \"languages\": [\"sa\"],\n    \"source\": \"Monier-Williams Sanskrit-English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man-dalay-bay; mand = command/order, lay = place, bay = opening\",\n    \"reading\": \"An ordered placing at the opening: command becomes settlement at the threshold.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay Bay → a symbolic rearrangement yields 'a bay, a mandala' in sense rather than strict letter anagram\",\n    \"reading\": \"The letters suggest a bay encircling a mandala: water, curve, and center.\",\n    \"languages\": [\"en\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M A N D A L A Y B A Y → M.A.N.D.A.L.A. / B.A.Y. = 'Many Are Nested, Drawn Around Light; A Yonder Boundary' (acrostic-style)\",\n    \"reading\": \"A nested enclosure around light, with a far boundary holding the form.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.12\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "man + dal + ay + bay; man = human, dal = split/open, bay = inlet/embrace",
+   "reading": "The human split opens into a bay: a passage from division toward enclosure and shelter.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.42
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "mandala (Skt.) + bay; mandala = circle, sacred totality; bay = enclosure/curving shore",
+   "reading": "A circular wholeness gathered into a curved boundary: the mandala held by the bay.",
+   "languages": [
+    "sa",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "manda (Skt.) = slow, gentle, mild; lay = lie/place; bay = open curve",
+   "reading": "Slowly laid in a gentle curve: a soft settling into openness.",
+   "languages": [
+    "sa",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.38
+  },
+  {
+   "operation": "etymology",
+   "chain": "bay (English) < Old French baie < Latin baca? no; standard lexicon: bay = inlet, recess; also a reddish-brown color and bark/cry",
+   "reading": "A recess, an opening, a place of receiving and containment.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.86
+  },
+  {
+   "operation": "etymology",
+   "chain": "mandala (Sanskrit maṇḍala) = circle, disk, sacred diagram; compare Monier-Williams",
+   "reading": "A sacred circle or disk: ordered wholeness, centered and enclosed.",
+   "languages": [
+    "sa"
+   ],
+   "source": "Monier-Williams Sanskrit-English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man-dalay-bay; mand = command/order, lay = place, bay = opening",
+   "reading": "An ordered placing at the opening: command becomes settlement at the threshold.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay Bay → a symbolic rearrangement yields 'a bay, a mandala' in sense rather than strict letter anagram",
+   "reading": "The letters suggest a bay encircling a mandala: water, curve, and center.",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M A N D A L A Y B A Y → M.A.N.D.A.L.A. / B.A.Y. = 'Many Are Nested, Drawn Around Light; A Yonder Boundary' (acrostic-style)",
+   "reading": "A nested enclosure around light, with a far boundary holding the form.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.12
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

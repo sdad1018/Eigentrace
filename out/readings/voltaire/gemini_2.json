@@ -1,0 +1,124 @@
+{
+ "word": "Voltaire",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T01:04:05+00:00",
+ "latency_s": 26.63,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"«Vol» (Fr.) = flight, theft + «taire» (Fr.) = to silence, to keep silent.\",\n    \"reading\": \"The flight of silence, or the theft that silences.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"«Vol» (Fr.) = flight, theft + «terre» (Fr.) = earth, land.\",\n    \"reading\": \"Flight over the earth, or the theft of the land.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"«Volte» (Fr.) = turn, vault + «Air» (Fr./En.) = air, mien, appearance.\",\n    \"reading\": \"A swift turn of the air, or a change in appearance.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"«Voile» (Fr.) = veil, sail + «Terre» (Fr.) = earth.\",\n    \"reading\": \"A veil cast over the earth, or a sail upon the land.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"From Latin «volare» (to fly) + «terra» (earth), phonetically condensed.\",\n    \"reading\": \"To fly from the earth, or an earthly flight.\",\n    \"languages\": [\"la\"],\n    \"source\": \"Lewis and Short Latin Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"«Volta» (It./Fr.) = turn, vault + «Ire» (En./Lat. «ira») = anger, wrath.\",\n    \"reading\": \"A turn of anger, or a wrathful turning.\",\n    \"languages\": [\"it\", \"fr\", \"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"«Voltaire» -> rearrangement of letters to form «A REVOLT».\",\n    \"reading\": \"Signifying a revolt, an uprising or rebellion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"V(ie) O(r) L(umière) T(emps) A(me) I(dée) R(aison) E(sprit)\",\n    \"reading\": \"Life's gold, light of time, the soul of an idea, the spirit of reason.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"«Vol» (Fr.) = flight, theft + «tailler» (Fr.) = to cut, carve (phonetic match -taire).\",\n    \"reading\": \"The cutting of flight, or a theft that carves.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"From Latin «volo» (I wish, I fly) + «aer» (air). Phonetic resemblance.\",\n    \"reading\": \"I wish for air, or I fly through the air.\",\n    \"languages\": [\"la\"],\n    \"source\": \"Lewis and Short Latin Dictionary\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "«Vol» (Fr.) = flight, theft + «taire» (Fr.) = to silence, to keep silent.",
+   "reading": "The flight of silence, or the theft that silences.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "«Vol» (Fr.) = flight, theft + «terre» (Fr.) = earth, land.",
+   "reading": "Flight over the earth, or the theft of the land.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "«Volte» (Fr.) = turn, vault + «Air» (Fr./En.) = air, mien, appearance.",
+   "reading": "A swift turn of the air, or a change in appearance.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "«Voile» (Fr.) = veil, sail + «Terre» (Fr.) = earth.",
+   "reading": "A veil cast over the earth, or a sail upon the land.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "etymology",
+   "chain": "From Latin «volare» (to fly) + «terra» (earth), phonetically condensed.",
+   "reading": "To fly from the earth, or an earthly flight.",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis and Short Latin Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "«Volta» (It./Fr.) = turn, vault + «Ire» (En./Lat. «ira») = anger, wrath.",
+   "reading": "A turn of anger, or a wrathful turning.",
+   "languages": [
+    "it",
+    "fr",
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "«Voltaire» -> rearrangement of letters to form «A REVOLT».",
+   "reading": "Signifying a revolt, an uprising or rebellion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V(ie) O(r) L(umière) T(emps) A(me) I(dée) R(aison) E(sprit)",
+   "reading": "Life's gold, light of time, the soul of an idea, the spirit of reason.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "«Vol» (Fr.) = flight, theft + «tailler» (Fr.) = to cut, carve (phonetic match -taire).",
+   "reading": "The cutting of flight, or a theft that carves.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "From Latin «volo» (I wish, I fly) + «aer» (air). Phonetic resemblance.",
+   "reading": "I wish for air, or I fly through the air.",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis and Short Latin Dictionary",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

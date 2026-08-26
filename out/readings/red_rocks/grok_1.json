@@ -1,0 +1,135 @@
+{
+ "word": "Red Rocks",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:16:59+00:00",
+ "latency_s": 6.58,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Red Rocks → Rede + Rox\",\n    \"reading\": \"Counsel of the wise or royal rede; the rocks that speak or counsel\",\n    \"languages\": [\"en\",\"scots\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Red from OE rēad (ruddy, bloody, sacred); Rocks from OF roche (stone, cliff, fortress)\",\n    \"reading\": \"Sacred or bloody stones; the ruddy fortress\",\n    \"languages\": [\"en\",\"fr\",\"ang\"],\n    \"source\": \"Oxford English Dictionary / Dictionnaire étymologique de la langue française\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Red Rocks → Ra + Drok / Ra + Drac\",\n    \"reading\": \"The mouth or speech of the dragon; solar utterance of the serpent\",\n    \"languages\": [\"en\",\"fr\",\"grc\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Red Rocks → Rêve + Roque\",\n    \"reading\": \"The dream of the rook; the rook’s vision or the castle of dreams\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"REDROCKS → CRED + ROKS\",\n    \"reading\": \"The rocks of belief; stones upon which credence is founded\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Red Rocks → Ret + Rox → Rete + Rox\",\n    \"reading\": \"The net of the king; royal net or snare of light\",\n    \"languages\": [\"la\",\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Red Rocks → Re + Drocks → Re + D + Rox\",\n    \"reading\": \"The king gives the rocks; royal bestowal of the stones of power\",\n    \"languages\": [\"fr\",\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Rocks ← Latin rupes (cliff) via OF roche; Red ← Latin ruber\",\n    \"reading\": \"The ruddy cliffs; cliffs of the ruby or blood-red stone\",\n    \"languages\": [\"la\",\"fr\",\"en\"],\n    \"source\": \"Lewis & Short Latin Dictionary / OED\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R.R. → R² → R squared or Règle Royale\",\n    \"reading\": \"The royal rule; the double king or twice-regal principle\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"REDROCKS → R.E.D.R.O.C.K.S.\",\n    \"reading\": \"Regnum Ex Draco Rex Ordo Clavis Khem Secretum\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Red Rocks → Rede + Rox",
+   "reading": "Counsel of the wise or royal rede; the rocks that speak or counsel",
+   "languages": [
+    "en",
+    "scots"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "Red from OE rēad (ruddy, bloody, sacred); Rocks from OF roche (stone, cliff, fortress)",
+   "reading": "Sacred or bloody stones; the ruddy fortress",
+   "languages": [
+    "en",
+    "fr",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary / Dictionnaire étymologique de la langue française",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Red Rocks → Ra + Drok / Ra + Drac",
+   "reading": "The mouth or speech of the dragon; solar utterance of the serpent",
+   "languages": [
+    "en",
+    "fr",
+    "grc",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Red Rocks → Rêve + Roque",
+   "reading": "The dream of the rook; the rook’s vision or the castle of dreams",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "REDROCKS → CRED + ROKS",
+   "reading": "The rocks of belief; stones upon which credence is founded",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Red Rocks → Ret + Rox → Rete + Rox",
+   "reading": "The net of the king; royal net or snare of light",
+   "languages": [
+    "la",
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Red Rocks → Re + Drocks → Re + D + Rox",
+   "reading": "The king gives the rocks; royal bestowal of the stones of power",
+   "languages": [
+    "fr",
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Rocks ← Latin rupes (cliff) via OF roche; Red ← Latin ruber",
+   "reading": "The ruddy cliffs; cliffs of the ruby or blood-red stone",
+   "languages": [
+    "la",
+    "fr",
+    "en"
+   ],
+   "source": "Lewis & Short Latin Dictionary / OED",
+   "confidence": 0.85
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R.R. → R² → R squared or Règle Royale",
+   "reading": "The royal rule; the double king or twice-regal principle",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "REDROCKS → R.E.D.R.O.C.K.S.",
+   "reading": "Regnum Ex Draco Rex Ordo Clavis Khem Secretum",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

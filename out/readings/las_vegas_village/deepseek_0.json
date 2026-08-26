@@ -1,0 +1,161 @@
+{
+ "word": "Las Vegas Village",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:21:52+00:00",
+ "latency_s": 14.26,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las (Spanish) = the; Vegas (Spanish) = fertile plains/meadows; Village (French/English) = small settlement; from Latin 'villa' = farmstead\",\n    \"reading\": \"The fertile plains of the small farmstead — a place where abundance is gathered in a modest enclosure.\",\n    \"languages\": [\"es\", \"fr\", \"en\", \"la\"],\n    \"source\": \"Diccionario de la lengua española (RAE); Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las + Ve + gas + Vil + lage; 'las' (Fr) = the; 've' (Fr) = 'have' (2nd pl); 'gas' (Fr) = gas; 'vil' (Fr) = vile; 'lage' (Ger) = situation/position\",\n    \"reading\": \"The have-gas-vile-situation — a hidden warning about a toxic state disguised as a pleasant field.\",\n    \"languages\": [\"fr\", \"de\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas → 'la vega' (Sp) = the meadow; 'village' → 'vil age' (Fr) = vile age; also 'las' (Ar) = tongue; 'vegas' (Ar) = to fall\",\n    \"reading\": \"The tongue falls in the meadow of the vile age — a fall of speech into a degraded era.\",\n    \"languages\": [\"es\", \"fr\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Village → 'Vegas' rearranged = 'gaves' (Fr) = quicksands; 'Village' rearranged = 'vial leg' — a leg in a vial\",\n    \"reading\": \"Quicksands of the vial-leg — a treacherous sinking into a bottled, artificial limb.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L V V → Latin 'Lux Veritatis Vita' = light of truth is life; also 'LVV' as Roman numerals: L=50, V=5, V=5\",\n    \"reading\": \"Light of truth is life — but the sum 60 suggests a cycle of time, a full hour of illumination.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L (Lamed) = ox-goad/teaching; V (Vav) = hook/nail; V (Vav) again; 'Las' (Heb) = to mock; 'Vegas' (Heb) = to be proud\",\n    \"reading\": \"Teaching with a nail and a hook — mockery and pride are nailed into the structure of the place.\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Las Vegas Village → L=12, A=1, S=19, V=22, E=5, G=7, A=1, S=19, V=22, I=9, L=12, L=12, A=1, G=7, E=5 → sum = 154; 1+5+4=10 → 1\",\n    \"reading\": \"The number 1 — unity, the beginning, a single point from which all plains and villages emerge.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas → 'la's' (Fr) = the 's' (letter); 'vegas' → 'végas' (Fr) = vegas as in 'vega' (Sp) but also 'vague' (Fr) = wave; 'village' → 'vil lage' = vile lair\",\n    \"reading\": \"The letter S in a wave — a serpentine movement through a vile lair, a hidden path.\",\n    \"languages\": [\"fr\", \"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Village from Old French 'vilage' → Latin 'villaticus' = belonging to a farm; 'Las Vegas' from Arabic 'al-wasqa' (possible) = the fertile land\",\n    \"reading\": \"A farmstead on fertile land — the root of all settlement is the tilled earth, not the show.\",\n    \"languages\": [\"fr\", \"la\", \"ar\"],\n    \"source\": \"Oxford English Dictionary; Etymological Dictionary of Arabic\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas → 'la vega' (Sp) = meadow; 'village' → 'vil' (Fr) = vile, 'lage' (Dan) = to lie; 'Las' (Sanskrit) = to shine\",\n    \"reading\": \"The shining meadow lies — a radiant surface that deceives, a false brilliance over a hidden truth.\",\n    \"languages\": [\"es\", \"fr\", \"da\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Village → 'Village' → 'Vil' + 'lage' → 'lage' (Ger) = situation; 'Las Vegas' → 'segal vas' → 'segal' (Heb) = treasure; 'vas' (Fr) = go\",\n    \"reading\": \"Treasure goes into the situation — a movement of hidden wealth into a fixed condition.\",\n    \"languages\": [\"de\", \"he\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V = Roman numeral 5, also V = victory sign; 'Las' = the (plural) in Spanish; 'Vegas' = plains; 'Village' = small town; VV = double victory\",\n    \"reading\": \"Double victory over the plains of the small town — a conquest of the ordinary by the extraordinary.\",\n    \"languages\": [\"en\", \"es\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Las (Spanish) = the; Vegas (Spanish) = fertile plains/meadows; Village (French/English) = small settlement; from Latin 'villa' = farmstead",
+   "reading": "The fertile plains of the small farmstead — a place where abundance is gathered in a modest enclosure.",
+   "languages": [
+    "es",
+    "fr",
+    "en",
+    "la"
+   ],
+   "source": "Diccionario de la lengua española (RAE); Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Ve + gas + Vil + lage; 'las' (Fr) = the; 've' (Fr) = 'have' (2nd pl); 'gas' (Fr) = gas; 'vil' (Fr) = vile; 'lage' (Ger) = situation/position",
+   "reading": "The have-gas-vile-situation — a hidden warning about a toxic state disguised as a pleasant field.",
+   "languages": [
+    "fr",
+    "de",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas → 'la vega' (Sp) = the meadow; 'village' → 'vil age' (Fr) = vile age; also 'las' (Ar) = tongue; 'vegas' (Ar) = to fall",
+   "reading": "The tongue falls in the meadow of the vile age — a fall of speech into a degraded era.",
+   "languages": [
+    "es",
+    "fr",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Village → 'Vegas' rearranged = 'gaves' (Fr) = quicksands; 'Village' rearranged = 'vial leg' — a leg in a vial",
+   "reading": "Quicksands of the vial-leg — a treacherous sinking into a bottled, artificial limb.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L V V → Latin 'Lux Veritatis Vita' = light of truth is life; also 'LVV' as Roman numerals: L=50, V=5, V=5",
+   "reading": "Light of truth is life — but the sum 60 suggests a cycle of time, a full hour of illumination.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L (Lamed) = ox-goad/teaching; V (Vav) = hook/nail; V (Vav) again; 'Las' (Heb) = to mock; 'Vegas' (Heb) = to be proud",
+   "reading": "Teaching with a nail and a hook — mockery and pride are nailed into the structure of the place.",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "Las Vegas Village → L=12, A=1, S=19, V=22, E=5, G=7, A=1, S=19, V=22, I=9, L=12, L=12, A=1, G=7, E=5 → sum = 154; 1+5+4=10 → 1",
+   "reading": "The number 1 — unity, the beginning, a single point from which all plains and villages emerge.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas → 'la's' (Fr) = the 's' (letter); 'vegas' → 'végas' (Fr) = vegas as in 'vega' (Sp) but also 'vague' (Fr) = wave; 'village' → 'vil lage' = vile lair",
+   "reading": "The letter S in a wave — a serpentine movement through a vile lair, a hidden path.",
+   "languages": [
+    "fr",
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "etymology",
+   "chain": "Village from Old French 'vilage' → Latin 'villaticus' = belonging to a farm; 'Las Vegas' from Arabic 'al-wasqa' (possible) = the fertile land",
+   "reading": "A farmstead on fertile land — the root of all settlement is the tilled earth, not the show.",
+   "languages": [
+    "fr",
+    "la",
+    "ar"
+   ],
+   "source": "Oxford English Dictionary; Etymological Dictionary of Arabic",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas → 'la vega' (Sp) = meadow; 'village' → 'vil' (Fr) = vile, 'lage' (Dan) = to lie; 'Las' (Sanskrit) = to shine",
+   "reading": "The shining meadow lies — a radiant surface that deceives, a false brilliance over a hidden truth.",
+   "languages": [
+    "es",
+    "fr",
+    "da",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Village → 'Village' → 'Vil' + 'lage' → 'lage' (Ger) = situation; 'Las Vegas' → 'segal vas' → 'segal' (Heb) = treasure; 'vas' (Fr) = go",
+   "reading": "Treasure goes into the situation — a movement of hidden wealth into a fixed condition.",
+   "languages": [
+    "de",
+    "he",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V = Roman numeral 5, also V = victory sign; 'Las' = the (plural) in Spanish; 'Vegas' = plains; 'Village' = small town; VV = double victory",
+   "reading": "Double victory over the plains of the small town — a conquest of the ordinary by the extraordinary.",
+   "languages": [
+    "en",
+    "es",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

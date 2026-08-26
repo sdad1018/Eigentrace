@@ -1,0 +1,125 @@
+{
+ "word": "Las Vegas Boulevard",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:38:48+00:00",
+ "latency_s": 23.97,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Spanish `las` (the, feminine plural) + `vegas` (plural of `vega`, fertile plain, meadow).\",\n    \"reading\": \"The fertile plains, the meadows, signifying abundance and natural growth.\",\n    \"languages\": [\"es\"],\n    \"source\": \"DRAE (Diccionario de la Real Academia Española)\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"French `boulevard` from Dutch `bolwerk` or German `Bollwerk` (bulwark, rampart, fortification).\",\n    \"reading\": \"A fortified path, a defensive wall transformed into a wide avenue.\",\n    \"languages\": [\"fr\", \"nl\", \"de\"],\n    \"source\": \"OED (Oxford English Dictionary)\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"French `las` (weary, tired) + Latin `vagus` (wandering, uncertain, vague).\",\n    \"reading\": \"The weary wanderer, a path of exhaustion and uncertainty.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"French `l'as` (the ace) + English 'vague us' + French `boule` (ball) + English/French `art`.\",\n    \"reading\": \"The ace makes us vague, the ball of art, suggesting a master of elusive creation.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"English 'vagueness' (from 'Vegas') + French `boule` (ball) + French `verte` (green, feminine).\",\n    \"reading\": \"The vagueness of the green ball, an unclear orb of nature, chance, or destiny.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L.V.B. (initials) expanded phonetically to 'Lies Vainly Blasted'.\",\n    \"reading\": \"Falsehoods declared in vain, a path where truth is loudly but fruitlessly exposed.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"English 'loss' + 'vagrants' (near homophone for Vegas) + 'bold ward' (a strong protective direction).\",\n    \"reading\": \"A loss for vagrants, a bold direction or protective area for those without fixed abode.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Vegas re-arranged to 'Sages'.\",\n    \"reading\": \"The path of wisdom and profound knowledge, a journey of learned individuals.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L (light/leg), V (veil/victory), B (beginning/birth), forming the core elements L.V.B.\",\n    \"reading\": \"The beginning of veiled light, a birth of vision that may yet be obscured or victorious.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"French `boule` (ball) + French `vrai` (true) + French `art` (art).\",\n    \"reading\": \"The true art of the ball, signifying skill, play, or the authentic sphere of destiny.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Spanish `las` (the, feminine plural) + `vegas` (plural of `vega`, fertile plain, meadow).",
+   "reading": "The fertile plains, the meadows, signifying abundance and natural growth.",
+   "languages": [
+    "es"
+   ],
+   "source": "DRAE (Diccionario de la Real Academia Española)",
+   "confidence": 1.0
+  },
+  {
+   "operation": "etymology",
+   "chain": "French `boulevard` from Dutch `bolwerk` or German `Bollwerk` (bulwark, rampart, fortification).",
+   "reading": "A fortified path, a defensive wall transformed into a wide avenue.",
+   "languages": [
+    "fr",
+    "nl",
+    "de"
+   ],
+   "source": "OED (Oxford English Dictionary)",
+   "confidence": 1.0
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "French `las` (weary, tired) + Latin `vagus` (wandering, uncertain, vague).",
+   "reading": "The weary wanderer, a path of exhaustion and uncertainty.",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "French `l'as` (the ace) + English 'vague us' + French `boule` (ball) + English/French `art`.",
+   "reading": "The ace makes us vague, the ball of art, suggesting a master of elusive creation.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "English 'vagueness' (from 'Vegas') + French `boule` (ball) + French `verte` (green, feminine).",
+   "reading": "The vagueness of the green ball, an unclear orb of nature, chance, or destiny.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L.V.B. (initials) expanded phonetically to 'Lies Vainly Blasted'.",
+   "reading": "Falsehoods declared in vain, a path where truth is loudly but fruitlessly exposed.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "English 'loss' + 'vagrants' (near homophone for Vegas) + 'bold ward' (a strong protective direction).",
+   "reading": "A loss for vagrants, a bold direction or protective area for those without fixed abode.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Vegas re-arranged to 'Sages'.",
+   "reading": "The path of wisdom and profound knowledge, a journey of learned individuals.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L (light/leg), V (veil/victory), B (beginning/birth), forming the core elements L.V.B.",
+   "reading": "The beginning of veiled light, a birth of vision that may yet be obscured or victorious.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "French `boule` (ball) + French `vrai` (true) + French `art` (art).",
+   "reading": "The true art of the ball, signifying skill, play, or the authentic sphere of destiny.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

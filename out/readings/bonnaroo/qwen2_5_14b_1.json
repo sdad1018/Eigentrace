@@ -1,0 +1,81 @@
+{
+ "word": "Bonnaroo",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T00:40:34+00:00",
+ "latency_s": 160.61,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"Bon + na + roo\",\"reading\":\"Good (Bon) within, rises upwards (roo)\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"cross_language_homophone\",\"chain\":\"Bonnaroo (English) = Bonne aurore (French)\",\"reading\":\"Good morning\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.65},{\"operation\":\"anagram\",\"chain\":\"Bonnaroo\",\"reading\":\"A nooner boor\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.4},{\"operation\":\"phonetic_split\",\"chain\":\"Bon + na + roo\",\"reading\":\"Good (Bon) nest, rises upwards (roo)\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.55},{\"operation\":\"notariqon\",\"chain\":\"Bonnaroo\",\"reading\":\"Brings On New Age Of Opportunity\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.3},{\"operation\":\"phonetic_split\",\"chain\":\"Bon + na + roo\",\"reading\":\"Good (Bon) night, rises upwards (roo)\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.5}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon + na + roo",
+   "reading": "Good (Bon) within, rises upwards (roo)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bonnaroo (English) = Bonne aurore (French)",
+   "reading": "Good morning",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bonnaroo",
+   "reading": "A nooner boor",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon + na + roo",
+   "reading": "Good (Bon) nest, rises upwards (roo)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Bonnaroo",
+   "reading": "Brings On New Age Of Opportunity",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon + na + roo",
+   "reading": "Good (Bon) night, rises upwards (roo)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

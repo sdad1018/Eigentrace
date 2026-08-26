@@ -1,0 +1,129 @@
+{
+ "word": "Fenway",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:17:31+00:00",
+ "latency_s": 5.6,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fen + Way\",\n    \"reading\": \"the way of the fen; path through the marshlands\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"fen (Old English fenn) = marsh, bog; way (Old English weg) = path, course\",\n    \"reading\": \"the marsh path; the road across wetlands\",\n    \"languages\": [\"en\",\"ang\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fenway ≈ fin voie (French)\",\n    \"reading\": \"end of the way; the way finishes here\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fen + voix (French voix = voice)\",\n    \"reading\": \"voice of the fen; the marsh speaks\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Fenway = few + nay\",\n    \"reading\": \"few refuse; scarcity of denial\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fen + wai (Arabic واي = and woe)\",\n    \"reading\": \"fen and woe; marsh brings sorrow\",\n    \"languages\": [\"en\",\"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"FENWAY → Finis Est Nunc Via Alia Yod\",\n    \"reading\": \"the way ends now; another path, Yod\",\n    \"languages\": [\"en\",\"la\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fenway ≈ phénix (French) + voie\",\n    \"reading\": \"the phoenix way; path of rebirth\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"F (fay) + EN (within) + WAY\",\n    \"reading\": \"fate within the way; destiny lies inside the path\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"fen (Old English) + weg (Old English); cf. wend, wander\",\n    \"reading\": \"the winding marsh track; path that turns through bog\",\n    \"languages\": [\"en\",\"ang\"],\n    \"source\": \"Bosworth-Toller Anglo-Saxon Dictionary\",\n    \"confidence\": 0.85\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Fen + Way",
+   "reading": "the way of the fen; path through the marshlands",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "fen (Old English fenn) = marsh, bog; way (Old English weg) = path, course",
+   "reading": "the marsh path; the road across wetlands",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fenway ≈ fin voie (French)",
+   "reading": "end of the way; the way finishes here",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Fen + voix (French voix = voice)",
+   "reading": "voice of the fen; the marsh speaks",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Fenway = few + nay",
+   "reading": "few refuse; scarcity of denial",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Fen + wai (Arabic واي = and woe)",
+   "reading": "fen and woe; marsh brings sorrow",
+   "languages": [
+    "en",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "FENWAY → Finis Est Nunc Via Alia Yod",
+   "reading": "the way ends now; another path, Yod",
+   "languages": [
+    "en",
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fenway ≈ phénix (French) + voie",
+   "reading": "the phoenix way; path of rebirth",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "F (fay) + EN (within) + WAY",
+   "reading": "fate within the way; destiny lies inside the path",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "fen (Old English) + weg (Old English); cf. wend, wander",
+   "reading": "the winding marsh track; path that turns through bog",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Bosworth-Toller Anglo-Saxon Dictionary",
+   "confidence": 0.85
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

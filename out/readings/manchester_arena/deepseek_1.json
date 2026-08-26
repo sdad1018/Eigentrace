@@ -1,0 +1,108 @@
+{
+ "word": "Manchester Arena",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:27:59+00:00",
+ "latency_s": 8.3,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Manchester < Old English Mameceaster; Mame = breast (Celtic *mammā) + ceaster = Roman fort; Arena < Latin harena = sand, sandy place\",\n    \"reading\": \"The breast-fort of sand: a place of nurture built on shifting ground.\",\n    \"languages\": [\"en\", \"la\", \"cel\"],\n    \"source\": \"Oxford English Dictionary, s.v. Manchester; Lewis & Short, Latin Dictionary, s.v. harena\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chester + arena; man = human; chester = camp; arena = sand; man-chest-er = chest of man\",\n    \"reading\": \"The human chest in the camp of sand: a hollow where breath and dust meet.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Manchester → French 'manche' (sleeve) + 'ster' (English suffix) + 'arène' (sand); 'manche' also = handle, strait\",\n    \"reading\": \"A sleeve of sand, a handle of the strait: that which is grasped and passed through.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester Arena → 'A rare man's chest' + 'ne' (not) + 'ca' (from Latin circa); rearrange letters\",\n    \"reading\": \"A rare man's chest is not around: absence within a contained space.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M-A-R-E-N-A → M(ater) A(qua) R(es) E(lementa) N(atura) A(rtis); each letter as initial of Latin words\",\n    \"reading\": \"Mother, water, thing, elements, nature, art: the primal substances of a stage.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M = 13th letter, A = 1st, R = 18th, E = 5th, N = 14th, A = 1st; sum = 52; 52 = deck of cards, weeks in year\",\n    \"reading\": \"A full cycle of weeks and cards: the arena as a complete game of chance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Manchester = 13+1+14+3+8+5+19+20+5+18 = 106; Arena = 1+18+5+14+1 = 39; total = 145; 1+4+5 = 10 = perfection\",\n    \"reading\": \"The sum reduces to ten, the number of completion: a finished circle of performance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Arena < Latin harena; also 'harena' = sand, but in Roman amphitheatres the sand absorbed blood; 'Manchester' from 'Mameceaster' – breast + fort\",\n    \"reading\": \"A breast-shaped fort over blood-soaked sand: a place of both nourishment and sacrifice.\",\n    \"languages\": [\"en\", \"la\", \"cel\"],\n    \"source\": \"Lewis & Short, Latin Dictionary; OED\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Manchester < Old English Mameceaster; Mame = breast (Celtic *mammā) + ceaster = Roman fort; Arena < Latin harena = sand, sandy place",
+   "reading": "The breast-fort of sand: a place of nurture built on shifting ground.",
+   "languages": [
+    "en",
+    "la",
+    "cel"
+   ],
+   "source": "Oxford English Dictionary, s.v. Manchester; Lewis & Short, Latin Dictionary, s.v. harena",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chester + arena; man = human; chester = camp; arena = sand; man-chest-er = chest of man",
+   "reading": "The human chest in the camp of sand: a hollow where breath and dust meet.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manchester → French 'manche' (sleeve) + 'ster' (English suffix) + 'arène' (sand); 'manche' also = handle, strait",
+   "reading": "A sleeve of sand, a handle of the strait: that which is grasped and passed through.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester Arena → 'A rare man's chest' + 'ne' (not) + 'ca' (from Latin circa); rearrange letters",
+   "reading": "A rare man's chest is not around: absence within a contained space.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M-A-R-E-N-A → M(ater) A(qua) R(es) E(lementa) N(atura) A(rtis); each letter as initial of Latin words",
+   "reading": "Mother, water, thing, elements, nature, art: the primal substances of a stage.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M = 13th letter, A = 1st, R = 18th, E = 5th, N = 14th, A = 1st; sum = 52; 52 = deck of cards, weeks in year",
+   "reading": "A full cycle of weeks and cards: the arena as a complete game of chance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "Manchester = 13+1+14+3+8+5+19+20+5+18 = 106; Arena = 1+18+5+14+1 = 39; total = 145; 1+4+5 = 10 = perfection",
+   "reading": "The sum reduces to ten, the number of completion: a finished circle of performance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Arena < Latin harena; also 'harena' = sand, but in Roman amphitheatres the sand absorbed blood; 'Manchester' from 'Mameceaster' – breast + fort",
+   "reading": "A breast-shaped fort over blood-soaked sand: a place of both nourishment and sacrifice.",
+   "languages": [
+    "en",
+    "la",
+    "cel"
+   ],
+   "source": "Lewis & Short, Latin Dictionary; OED",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

@@ -1,0 +1,128 @@
+{
+ "word": "Abedi",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:24:48+00:00",
+ "latency_s": 6.94,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"A-be-di\",\n    \"reading\": \"To be of God; existence aligned with the divine\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Abedi ← Arabic عَبْد (ʿabd) = slave, servant + ي (ī) = my\",\n    \"reading\": \"My servant; he who serves the divine\",\n    \"languages\": [\"ar\",\"en\"],\n    \"source\": \"Hans Wehr Arabic-English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Abedi ≈ abêti (Old French) ≈ abêtir = to make stupid, to dull\",\n    \"reading\": \"He who dulls the profane intellect to awaken higher sight\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"A-bed-i → a bed I\",\n    \"reading\": \"I am the bed; the place where the divine rests or is born\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Abedi = abide\",\n    \"reading\": \"Abide: to remain, to dwell, to endure in presence\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"A-B-D-I → Aleph-Beth-Daleth-Yod\",\n    \"reading\": \"The ox-house-door-hand: the path from strength through dwelling to manifested work\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Abedi ≈ abedî (Turkish) ≈ abadi (Persian) = eternal\",\n    \"reading\": \"The eternal servant; he who serves without end\",\n    \"languages\": [\"tr\",\"fa\",\"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ab-e-di → ab (water) + edi (he gives, Turkish)\",\n    \"reading\": \"He who gives the living water\",\n    \"languages\": [\"ar\",\"tr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"A (alpha/ox) + B (beth/house) + D (daleth/door) + I (yod/hand)\",\n    \"reading\": \"The ox enters the house through the door by the hand of God\",\n    \"languages\": [\"he\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Abedi ← Hebrew עֲבָדִי (avadi) = my servant\",\n    \"reading\": \"My servant; one bound in obedient service\",\n    \"languages\": [\"he\",\"en\"],\n    \"source\": \"Brown-Driver-Briggs Hebrew Lexicon\",\n    \"confidence\": 0.85\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "A-be-di",
+   "reading": "To be of God; existence aligned with the divine",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "etymology",
+   "chain": "Abedi ← Arabic عَبْد (ʿabd) = slave, servant + ي (ī) = my",
+   "reading": "My servant; he who serves the divine",
+   "languages": [
+    "ar",
+    "en"
+   ],
+   "source": "Hans Wehr Arabic-English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Abedi ≈ abêti (Old French) ≈ abêtir = to make stupid, to dull",
+   "reading": "He who dulls the profane intellect to awaken higher sight",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "A-bed-i → a bed I",
+   "reading": "I am the bed; the place where the divine rests or is born",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Abedi = abide",
+   "reading": "Abide: to remain, to dwell, to endure in presence",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "notariqon",
+   "chain": "A-B-D-I → Aleph-Beth-Daleth-Yod",
+   "reading": "The ox-house-door-hand: the path from strength through dwelling to manifested work",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Abedi ≈ abedî (Turkish) ≈ abadi (Persian) = eternal",
+   "reading": "The eternal servant; he who serves without end",
+   "languages": [
+    "tr",
+    "fa",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ab-e-di → ab (water) + edi (he gives, Turkish)",
+   "reading": "He who gives the living water",
+   "languages": [
+    "ar",
+    "tr"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "A (alpha/ox) + B (beth/house) + D (daleth/door) + I (yod/hand)",
+   "reading": "The ox enters the house through the door by the hand of God",
+   "languages": [
+    "he",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Abedi ← Hebrew עֲבָדִי (avadi) = my servant",
+   "reading": "My servant; one bound in obedient service",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "Brown-Driver-Briggs Hebrew Lexicon",
+   "confidence": 0.85
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

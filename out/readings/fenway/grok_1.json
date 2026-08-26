@@ -1,0 +1,129 @@
+{
+ "word": "Fenway",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:17:36+00:00",
+ "latency_s": 5.37,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fen + Way\",\n    \"reading\": \"the way of the fen; the path through the marsh\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"fen (Old English fenn) = marsh, bog; way (Old English weg) = path, course\",\n    \"reading\": \"the marsh path or the road across wetlands\",\n    \"languages\": [\"en\",\"ang\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fenway ≈ fin + voie (French)\",\n    \"reading\": \"the end of the way; the terminal path\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fen + voix (French voix)\",\n    \"reading\": \"the voice of the marsh; the speaking fen\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Fenway → Fawn + Ye\",\n    \"reading\": \"the fawn that is; the young deer that exists\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fenway ≈ phen + wei (Chinese  fen wei)\",\n    \"reading\": \"divide the position; separate the place\",\n    \"languages\": [\"en\",\"zh\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fen + wai (Arabic واي)\",\n    \"reading\": \"where is the fen? the marsh is absent\",\n    \"languages\": [\"en\",\"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"F (sulphur) + EN (within) + WAY (path)\",\n    \"reading\": \"sulphur within the path; the alchemical road\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"FENWAY → Fons Est Noster Via Alchimica Y\",\n    \"reading\": \"the fountain is our alchemical way\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"fen (Gothic fani = mud) + weg (German Weg = way)\",\n    \"reading\": \"the muddy way; the path of mire\",\n    \"languages\": [\"got\",\"de\",\"en\"],\n    \"source\": \"Pokorny's Indogermanisches Etymologisches Wörterbuch\",\n    \"confidence\": 0.8\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Fen + Way",
+   "reading": "the way of the fen; the path through the marsh",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "fen (Old English fenn) = marsh, bog; way (Old English weg) = path, course",
+   "reading": "the marsh path or the road across wetlands",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fenway ≈ fin + voie (French)",
+   "reading": "the end of the way; the terminal path",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Fen + voix (French voix)",
+   "reading": "the voice of the marsh; the speaking fen",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Fenway → Fawn + Ye",
+   "reading": "the fawn that is; the young deer that exists",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fenway ≈ phen + wei (Chinese  fen wei)",
+   "reading": "divide the position; separate the place",
+   "languages": [
+    "en",
+    "zh"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Fen + wai (Arabic واي)",
+   "reading": "where is the fen? the marsh is absent",
+   "languages": [
+    "en",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "F (sulphur) + EN (within) + WAY (path)",
+   "reading": "sulphur within the path; the alchemical road",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "FENWAY → Fons Est Noster Via Alchimica Y",
+   "reading": "the fountain is our alchemical way",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "fen (Gothic fani = mud) + weg (German Weg = way)",
+   "reading": "the muddy way; the path of mire",
+   "languages": [
+    "got",
+    "de",
+    "en"
+   ],
+   "source": "Pokorny's Indogermanisches Etymologisches Wörterbuch",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

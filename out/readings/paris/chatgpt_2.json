@@ -1,0 +1,108 @@
+{
+ "word": "Paris",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:25:04+00:00",
+ "latency_s": 4.03,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paris < Latin Parīsiī, the name of the Gallic people; standard lexicon: Oxford Latin Dictionary / Dictionnaire étymologique de la langue latine (Ernout-Meillet)\",\n    \"reading\": \"The name means a people-mark: a settled tribe, a named enclosure of identity.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"Oxford Latin Dictionary; Ernout-Meillet\",\n    \"confidence\": 0.84\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"par + is; par = by/through, is = is; sound-play on a passage that asserts being\",\n    \"reading\": \"By being: a passage that turns motion into existence.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"pari (fr) = wager; Paris sounds like pari + s; wager + plural/mark of excess\",\n    \"reading\": \"A wager multiplied: risk made into a place of choice.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"paris ~ paresis (en medical term) by sound proximity; paresis = partial paralysis\",\n    \"reading\": \"A divided motion: not full stillness, but weakened movement.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.33\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"PARIS -> pairs; the letters rearrange into a duality\",\n    \"reading\": \"A pair made visible: the word secretly becomes two.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.96\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P-A-R-I-S = passage, axis, rite, image, seal; initial letters read as an emblematic sequence\",\n    \"reading\": \"A rite of passage: axis, image, and seal compressed into one sign.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P + A + R + I + S; P = enclosure/loop, A = apex, R = branching leg, I = pillar, S = serpent-line\",\n    \"reading\": \"An enclosed ascent broken by a branch, a pillar, and a serpent’s curve.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"P(16)+A(1)+R(18)+I(9)+S(19)=63; 6+3=9\",\n    \"reading\": \"Sixty-three reduces to nine: completion, return, and closure.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.88\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Paris < Latin Parīsiī, the name of the Gallic people; standard lexicon: Oxford Latin Dictionary / Dictionnaire étymologique de la langue latine (Ernout-Meillet)",
+   "reading": "The name means a people-mark: a settled tribe, a named enclosure of identity.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "Oxford Latin Dictionary; Ernout-Meillet",
+   "confidence": 0.84
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "par + is; par = by/through, is = is; sound-play on a passage that asserts being",
+   "reading": "By being: a passage that turns motion into existence.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "pari (fr) = wager; Paris sounds like pari + s; wager + plural/mark of excess",
+   "reading": "A wager multiplied: risk made into a place of choice.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.72
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "paris ~ paresis (en medical term) by sound proximity; paresis = partial paralysis",
+   "reading": "A divided motion: not full stillness, but weakened movement.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.33
+  },
+  {
+   "operation": "anagram",
+   "chain": "PARIS -> pairs; the letters rearrange into a duality",
+   "reading": "A pair made visible: the word secretly becomes two.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.96
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P-A-R-I-S = passage, axis, rite, image, seal; initial letters read as an emblematic sequence",
+   "reading": "A rite of passage: axis, image, and seal compressed into one sign.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P + A + R + I + S; P = enclosure/loop, A = apex, R = branching leg, I = pillar, S = serpent-line",
+   "reading": "An enclosed ascent broken by a branch, a pillar, and a serpent’s curve.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "numerical",
+   "chain": "P(16)+A(1)+R(18)+I(9)+S(19)=63; 6+3=9",
+   "reading": "Sixty-three reduces to nine: completion, return, and closure.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.88
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

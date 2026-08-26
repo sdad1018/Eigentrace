@@ -1,0 +1,82 @@
+{
+ "word": "Lollapalooza",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T00:58:05+00:00",
+ "latency_s": 92.4,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n    {\"operation\": \"phonetic_split\", \"chain\": \"lo + lap + alooza\", \"reading\": \"wholeness of gathering chaos\", \"languages\": [\"generative\"], \"source\": \"generative\", \"confidence\": 0.7},\n    {\"operation\": \"cross_language_homophone\", \"chain\": \"lolla + palooza (Spanish lola = doll, Italian palazzo = palace)\", \"reading\": \"toy in grandeur\", \"languages\": [\"es\",\"it\"], \"source\": \"generative\", \"confidence\": 0.6},\n    {\"operation\": \"anagram\", \"chain\": \"Lollapalooza -> a + loo + lop + ala + zol\", \"reading\": \"orderly chaos in balance\", \"languages\": [\"generative\"], \"source\": \"generative\", \"confidence\": 0.5},\n    {\"operation\": \"notariqon\", \"chain\": \"Lollapalooza -> L OLL A PAL OO ZA (Latin lolla = to babble, palooza = a great noise)\", \"reading\": \"babbling in tumultuous uproar\", \"languages\": [\"la\",\"generative\"], \"source\": \"generative\", \"confidence\": 0.4},\n    {\"operation\": \"letter_symbol\", \"chain\": \"Lollapalooza -> L + O + LL + A + P + AL + OO + ZA\", \"reading\": \"light, order, wholeness, protection, air, duality, harmony, zenith\", \"languages\": [\"generative\"], \"source\": \"generative\", \"confidence\": 0.3},\n    {\"operation\": \"numerical\", \"chain\": \"Lollapalooza -> 12 + 15 + 12 + 12 + 1 + 16 + 1 + 12 + 15 + 14 + 1 + 26\", \"reading\": \"divine completion of creation\", \"languages\": [\"generative\"], \"source\": \"generative\", \"confidence\": 0.2}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "lo + lap + alooza",
+   "reading": "wholeness of gathering chaos",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "lolla + palooza (Spanish lola = doll, Italian palazzo = palace)",
+   "reading": "toy in grandeur",
+   "languages": [
+    "es",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Lollapalooza -> a + loo + lop + ala + zol",
+   "reading": "orderly chaos in balance",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Lollapalooza -> L OLL A PAL OO ZA (Latin lolla = to babble, palooza = a great noise)",
+   "reading": "babbling in tumultuous uproar",
+   "languages": [
+    "la",
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Lollapalooza -> L + O + LL + A + P + AL + OO + ZA",
+   "reading": "light, order, wholeness, protection, air, duality, harmony, zenith",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "Lollapalooza -> 12 + 15 + 12 + 12 + 1 + 16 + 1 + 12 + 15 + 14 + 1 + 26",
+   "reading": "divine completion of creation",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

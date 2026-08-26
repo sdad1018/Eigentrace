@@ -30,6 +30,10 @@ Options:
   --local-timeout 600        direct caller: seconds per call (mistral-small ran 152 s for 420 tokens)
   --local-num-ctx 4096       direct caller: context window; small enough to keep 14 GB models on the 4080
   --no-prewarm               skip the 1-token warm call that loads each local model before its batch
+  --skip a,b                 patients to leave out of this run (e.g. mistral-small:latest for a later overnight pass)
+  --api-threads              default on: each API patient runs in its own thread while locals run in the main thread;
+                             per-patient order is still sequential, so no provider gets a burst
+  --no-api-threads           run everything sequentially
   --no-resume                re-run words that already have an ok output file
   --eigentrace PATH          confront10 location (default /mnt/c/Users/M4ISI/eigentrace)
   --out out/readings         output root
@@ -114,6 +118,15 @@ def prewarm_local(tag, host):
         print(f"   (prewarm {tag} failed: {e})")
 
 
+def unload_local(tag, host):
+    """Evict a model from VRAM (keep_alive 0) so the next local gets the whole card."""
+    try:
+        import requests
+        requests.post(f"{host}/api/generate", json={"model": tag, "keep_alive": 0}, timeout=60)
+    except Exception as e:
+        print(f"   (unload {tag} failed: {e})")
+
+
 def mock_patients():
     """Ten fake patients exercising the parser: clean, fenced, wrapped, junk, refusal."""
     def mk(kind, name):
@@ -191,6 +204,9 @@ def run(args):
         missing = keep - set(patients)
         if missing:
             print(f"!! unknown patients ignored: {sorted(missing)}")
+    if args.skip:
+        drop = {s_.strip() for s_ in args.skip.split(",")}
+        patients = {k: v for k, v in patients.items() if k not in drop}
     n = 1 if args.smoke and not (args.decoys or args.pairs or args.words) else args.n
     words = load_words(args)
     out = pathlib.Path(args.out)
@@ -210,38 +226,32 @@ def run(args):
         except Exception as e:
             print(f"(could not read source: {e})")
 
-    # job order: API patients word-outer (no swap cost); locals model-outer so Ollama loads each model once
-    jobs = []
-    for name, (kind, _) in patients.items():
-        if kind == "api":
-            for w in words:
-                for i in range(n):
-                    jobs.append((name, w, i))
-    for name, (kind, _) in patients.items():
-        if kind == "local":
-            for w in words:
-                for i in range(n):
-                    jobs.append((name, w, i))
+    # job order: each patient's jobs run sequentially; API patients may run in parallel threads
+    # (one per provider), locals run one model at a time in the main thread so Ollama holds one model.
+    jobs_by_model = {name: [(w, i) for w in words for i in range(n)] for name in patients}
+    total = sum(len(v) for v in jobs_by_model.values())
+    stats = {name: {"ok": 0, "parsed": 0, "fail": 0, "refusal_like": 0, "resumed": 0, "latency": []}
+             for name in patients}
+    counter = {"done": 0}
+    import threading
+    lock = threading.Lock()
 
-    stats = {name: {"ok": 0, "parsed": 0, "fail": 0, "refusal_like": 0, "latency": []} for name in patients}
-    warmed = set()
-    for idx, (name, w, i) in enumerate(jobs, 1):
+    def do_one(name, w, i):
         kind, call = patients[name]
         path = out / slug(w) / f"{slug(name)}_{i}.json"
+        s = stats[name]
         if path.exists() and not args.no_resume:
             try:
                 prev = json.loads(path.read_text(encoding="utf-8"))
                 if prev.get("ok") and (prev.get("parsed") or prev.get("refusal_like")):
-                    stats[name]["ok"] += 1
-                    stats[name]["parsed"] += 1 if prev.get("parsed") else 0
-                    stats[name]["refusal_like"] += 1 if prev.get("refusal_like") else 0
-                    continue
+                    s["ok"] += 1; s["resumed"] += 1
+                    s["parsed"] += 1 if prev.get("parsed") else 0
+                    s["refusal_like"] += 1 if prev.get("refusal_like") else 0
+                    with lock:
+                        counter["done"] += 1
+                    return
             except Exception:
                 pass
-        if kind == "local" and not args.mock and not args.no_prewarm and name not in warmed:
-            print(f"   warming {name} …")
-            prewarm_local(name, host)
-            warmed.add(name)
         msgs = [{"role": "user", "content": prompt.replace("{word}", w)}]
         t0 = time.time()
         err = None
@@ -263,19 +273,46 @@ def run(args):
         }
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(rec, ensure_ascii=False, indent=1), encoding="utf-8")
-        s = stats[name]
         s["latency"].append(dt)
-        if raw:
-            s["ok"] += 1
-        else:
-            s["fail"] += 1
-        if parsed:
-            s["parsed"] += 1
-        if rec["refusal_like"]:
-            s["refusal_like"] += 1
+        if raw: s["ok"] += 1
+        else: s["fail"] += 1
+        if parsed: s["parsed"] += 1
+        if rec["refusal_like"]: s["refusal_like"] += 1
         flag = "ok " if parsed else ("REF" if rec["refusal_like"] else ("raw" if raw else "ERR"))
-        print(f"[{idx:4d}/{len(jobs)}] {flag} {name:22s} {w!r:28s} #{i} {dt:6.1f}s "
-              f"{'n=' + str(len(parsed)) if parsed else (perr or err or '')}")
+        with lock:
+            counter["done"] += 1
+            print(f"[{counter['done']:4d}/{total}] {flag} {name:22s} {w!r:28s} #{i} {dt:6.1f}s "
+                  f"{'n=' + str(len(parsed)) if parsed else (perr or err or '')}", flush=True)
+
+    def run_model(name):
+        for (w, i) in jobs_by_model[name]:
+            do_one(name, w, i)
+
+    api_names = [k for k, (kind, _) in patients.items() if kind == "api"]
+    local_names = [k for k, (kind, _) in patients.items() if kind == "local"]
+    threads = []
+    if api_names and getattr(args, "api_threads", True):
+        for name in api_names:
+            t = threading.Thread(target=run_model, args=(name,), daemon=True)
+            t.start(); threads.append(t)
+    else:
+        for name in api_names:
+            run_model(name)
+    prev_local = None
+    for name in local_names:
+        pending = [1 for (w, i) in jobs_by_model[name]
+                   if not ((out / slug(w) / f"{slug(name)}_{i}.json").exists() and not args.no_resume)]
+        if not args.mock and pending:
+            if prev_local:
+                print(f"   unloading {prev_local} …", flush=True); unload_local(prev_local, host)
+            if not args.no_prewarm:
+                print(f"   warming {name} …", flush=True); prewarm_local(name, host)
+            prev_local = name
+        run_model(name)
+    if prev_local and not args.mock:
+        unload_local(prev_local, host)
+    for t in threads:
+        t.join()
 
     # summary
     print("\n── summary ──")
@@ -283,10 +320,11 @@ def run(args):
     for name, s in stats.items():
         lat = s["latency"]
         summary[name] = {"ok": s["ok"], "parsed": s["parsed"], "fail": s["fail"],
-                         "refusal_like": s["refusal_like"],
+                         "refusal_like": s["refusal_like"], "resumed": s["resumed"],
                          "mean_latency_s": round(sum(lat) / len(lat), 1) if lat else None}
         print(f"{name:22s} ok={s['ok']:3d} parsed={s['parsed']:3d} fail={s['fail']:3d} "
-              f"refusal_like={s['refusal_like']:3d} mean_latency={summary[name]['mean_latency_s']}")
+              f"refusal_like={s['refusal_like']:3d} resumed={s['resumed']:3d} "
+              f"mean_latency={summary[name]['mean_latency_s'] if lat else '-'}")
     runs = out / "_runs"
     runs.mkdir(exist_ok=True)
     (runs / (datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ") + ".json")).write_text(
@@ -308,6 +346,9 @@ def main():
     ap.add_argument("--local-timeout", type=int, default=600)
     ap.add_argument("--local-num-ctx", type=int, default=4096)
     ap.add_argument("--no-prewarm", action="store_true")
+    ap.add_argument("--skip")
+    ap.add_argument("--api-threads", dest="api_threads", action="store_true", default=True)
+    ap.add_argument("--no-api-threads", dest="api_threads", action="store_false")
     ap.add_argument("--no-resume", action="store_true")
     ap.add_argument("--mock", action="store_true")
     ap.add_argument("--eigentrace", default="/mnt/c/Users/M4ISI/eigentrace")

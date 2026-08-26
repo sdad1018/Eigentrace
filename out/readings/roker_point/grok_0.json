@@ -1,0 +1,128 @@
+{
+ "word": "Roker Point",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:26:35+00:00",
+ "latency_s": 7.45,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Roke + er + Point\",\n    \"reading\": \"the smoke that points; the fumigation that indicates\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"roke (Middle English) = mist, smoke, fog; point (Old French pointe) = sharp end, direction\",\n    \"reading\": \"the mist that shows the direction; the guiding smoke\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"Oxford English Dictionary / Middle English Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Roker ≈ rocher (French); Point = point\",\n    \"reading\": \"the rock that points; the stone indicator\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ro + Ker + Point\",\n    \"reading\": \"the wheel that turns the point; rotary indicator\",\n    \"languages\": [\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Roker Point → Pink Retro\",\n    \"reading\": \"the rose-coloured return; the rosy backward glance\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"R.O.K.E.R.P.O.I.N.T. → Regnum Orbis Kenosis Est Redemptio Perfecta Omnia In Nomine Tuo\",\n    \"reading\": \"the kingdom of the world is kenosis, perfect redemption of all in thy name\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Roke + Erpoint\",\n    \"reading\": \"smoke-her-point; the fume that pierces and directs\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Roker ≈ roquer (French chess term, to castle); Point = point\",\n    \"reading\": \"the castling of the point; transposition of the indicator\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R (rex) + OK (all correct) + ER (hesitation) + POINT (direction)\",\n    \"reading\": \"the king who hesitates yet is correct in direction\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"roker from Old Norse reykja = to smoke; point from Latin punctum = prick, dot, moment\",\n    \"reading\": \"the smoking instant; the moment of visible vapour\",\n    \"languages\": [\"en\",\"non\",\"la\"],\n    \"source\": \"Oxford English Dictionary / Cleasby-Vigfusson\",\n    \"confidence\": 0.8\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Roke + er + Point",
+   "reading": "the smoke that points; the fumigation that indicates",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "roke (Middle English) = mist, smoke, fog; point (Old French pointe) = sharp end, direction",
+   "reading": "the mist that shows the direction; the guiding smoke",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Oxford English Dictionary / Middle English Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Roker ≈ rocher (French); Point = point",
+   "reading": "the rock that points; the stone indicator",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ro + Ker + Point",
+   "reading": "the wheel that turns the point; rotary indicator",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Roker Point → Pink Retro",
+   "reading": "the rose-coloured return; the rosy backward glance",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R.O.K.E.R.P.O.I.N.T. → Regnum Orbis Kenosis Est Redemptio Perfecta Omnia In Nomine Tuo",
+   "reading": "the kingdom of the world is kenosis, perfect redemption of all in thy name",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Roke + Erpoint",
+   "reading": "smoke-her-point; the fume that pierces and directs",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Roker ≈ roquer (French chess term, to castle); Point = point",
+   "reading": "the castling of the point; transposition of the indicator",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R (rex) + OK (all correct) + ER (hesitation) + POINT (direction)",
+   "reading": "the king who hesitates yet is correct in direction",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "roker from Old Norse reykja = to smoke; point from Latin punctum = prick, dot, moment",
+   "reading": "the smoking instant; the moment of visible vapour",
+   "languages": [
+    "en",
+    "non",
+    "la"
+   ],
+   "source": "Oxford English Dictionary / Cleasby-Vigfusson",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

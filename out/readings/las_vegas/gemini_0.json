@@ -1,0 +1,113 @@
+{
+ "word": "Las Vegas",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:36:29+00:00",
+ "latency_s": 28.48,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las (Spanish: the, feminine plural) + Vegas (Spanish: plural of 'vega', meaning fertile plain, meadow).\",\n    \"reading\": \"Refers to 'the meadows' or 'the fertile plains,' signifying natural abundance, growth, and rich potential.\",\n    \"languages\": [\"es\"],\n    \"source\": \"Diccionario de la lengua española (RAE)\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"\\\"Las\\\" sounds like French \\\"l'as\\\" (the ace). \\\"Vegas\\\" sounds like a playful plural of Vega, the star.\",\n    \"reading\": \"\\\"The ace,\\\" symbolizing a master, a card of supreme value, or an individual of exceptional skill and destiny.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"\\\"Las\\\" sounds like French \\\"las\\\" (weary, tired). \\\"Vegas\\\" sounds like \\\"ve gaz\\\" (go gas, as in vital energy, spirit, fire).\",\n    \"reading\": \"\\\"Weary, go spirit!\\\" An exhortation to find renewed energy, to ignite the inner vital force when exhausted.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"\\\"Las\\\" (Spanish: the feminine plural) + \\\"Vegas\\\" (phonetically similar to Latin \\\"vagus,\\\" meaning wandering, uncertain, unstable).\",\n    \"reading\": \"\\\"The wandering ones\\\" or \\\"the uncertain paths,\\\" suggesting a journey, a quest, or a state of flux and exploration.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"The letters L, A, S, V, E, G, A, S can be rearranged to form the English word \\\"SALVAGES.\\\"\",\n    \"reading\": \"\\\"To save or rescue from ruin,\\\" implying a process of recovery, preservation, or the act of finding worth and redeeming.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"\\\"La\\\" (French: the feminine) + \\\"se\\\" (itself, reflexive) + \\\"ve\\\" (go, imperative) + \\\"gas\\\" (gas, spirit, essence).\",\n    \"reading\": \"\\\"The self, go spirit!\\\" An inner command for one's essential being or spiritual drive to propel itself forward.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"\\\"Las\\\" (sounds like French \\\"l'as\\\", the ace) + \\\"Vegas\\\" (sounds like French \\\"vaisseaux,\\\" plural of 'vaisseau', vessel).\",\n    \"reading\": \"\\\"The ace vessels,\\\" signifying containers of prime quality or ships of paramount importance, holding potential or sacred cargo.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"\\\"L\\\" (light, law, 'l'as') + \\\"V\\\" (vessel, victory) + \\\"G\\\" (generation, Gnosis).\",\n    \"reading\": \"The enlightened victory of generation, or the vessel of Gnosis, suggesting knowledge, creation, and triumph.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Sum of letter values (A=1, Z=26) for LASVEGAS is 86. Reduced to a single digit: 8+6=14; 1+4=5.\",\n    \"reading\": \"The number 5, symbolizing change, freedom, adventure, and the five senses, suggesting dynamism, experience, and transformation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Las (Spanish: the, feminine plural) + Vegas (Spanish: plural of 'vega', meaning fertile plain, meadow).",
+   "reading": "Refers to 'the meadows' or 'the fertile plains,' signifying natural abundance, growth, and rich potential.",
+   "languages": [
+    "es"
+   ],
+   "source": "Diccionario de la lengua española (RAE)",
+   "confidence": 1.0
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "\"Las\" sounds like French \"l'as\" (the ace). \"Vegas\" sounds like a playful plural of Vega, the star.",
+   "reading": "\"The ace,\" symbolizing a master, a card of supreme value, or an individual of exceptional skill and destiny.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "\"Las\" sounds like French \"las\" (weary, tired). \"Vegas\" sounds like \"ve gaz\" (go gas, as in vital energy, spirit, fire).",
+   "reading": "\"Weary, go spirit!\" An exhortation to find renewed energy, to ignite the inner vital force when exhausted.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "\"Las\" (Spanish: the feminine plural) + \"Vegas\" (phonetically similar to Latin \"vagus,\" meaning wandering, uncertain, unstable).",
+   "reading": "\"The wandering ones\" or \"the uncertain paths,\" suggesting a journey, a quest, or a state of flux and exploration.",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "The letters L, A, S, V, E, G, A, S can be rearranged to form the English word \"SALVAGES.\"",
+   "reading": "\"To save or rescue from ruin,\" implying a process of recovery, preservation, or the act of finding worth and redeeming.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "\"La\" (French: the feminine) + \"se\" (itself, reflexive) + \"ve\" (go, imperative) + \"gas\" (gas, spirit, essence).",
+   "reading": "\"The self, go spirit!\" An inner command for one's essential being or spiritual drive to propel itself forward.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "\"Las\" (sounds like French \"l'as\", the ace) + \"Vegas\" (sounds like French \"vaisseaux,\" plural of 'vaisseau', vessel).",
+   "reading": "\"The ace vessels,\" signifying containers of prime quality or ships of paramount importance, holding potential or sacred cargo.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "\"L\" (light, law, 'l'as') + \"V\" (vessel, victory) + \"G\" (generation, Gnosis).",
+   "reading": "The enlightened victory of generation, or the vessel of Gnosis, suggesting knowledge, creation, and triumph.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "numerical",
+   "chain": "Sum of letter values (A=1, Z=26) for LASVEGAS is 86. Reduced to a single digit: 8+6=14; 1+4=5.",
+   "reading": "The number 5, symbolizing change, freedom, adventure, and the five senses, suggesting dynamism, experience, and transformation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 9,
+ "refusal_like": false
+}

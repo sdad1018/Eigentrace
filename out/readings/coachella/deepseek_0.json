@@ -1,0 +1,109 @@
+{
+ "word": "Coachella",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:15:32+00:00",
+ "latency_s": 9.14,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Coachella < Spanish 'coachella' (from Coachella Valley, but as sound: 'coche' (car) + '-ella' (diminutive); Latin 'cocca' = berry, seed\",\n    \"reading\": \"A small vehicle or seed; the diminutive of a shell or husk, a pod that carries.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"Diccionario de la lengua española (RAE), Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"coach + ella; coach (English) = carriage, instruction; ella (Spanish) = she\",\n    \"reading\": \"She who instructs; the feminine guide in a carriage, a moving lesson.\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"coach (en) ~ 'coche' (fr) = shell, husk; 'ella' (es) = she; 'cocher' (fr) = to cook, to ripen\",\n    \"reading\": \"The ripening shell that cooks within; a feminine husk maturing into fruit.\",\n    \"languages\": [\"en\", \"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Coachella → 'chela' (claw, pincer) + 'coa' (cocoa, or 'coa' = ancient Egyptian basket)\",\n    \"reading\": \"A clawed basket; a grasping vessel that holds what is offered.\",\n    \"languages\": [\"en\", \"grc\", \"egy\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"C-O-A-C-H-E-L-L-A → C(hrist) O(mnium) A(nnorum) C(ustos) H(ominum) E(terna) L(ux) L(ux) A(eterna)\",\n    \"reading\": \"Christ, guardian of all years, eternal light for humanity; a luminous keeper.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative (notariqon tradition)\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"C = 100, O = 0, A = 1, C = 100, H = 8, E = 5, L = 50, L = 50, A = 1; sum = 315; 3+1+5 = 9\",\n    \"reading\": \"The number nine: completion, the end of a cycle, the threshold of return.\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"generative (gematria, isopsephy)\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"coa + chella; 'coa' (Nahuatl) = serpent; 'chella' (Arabic) = desert plain\",\n    \"reading\": \"A serpent in the desert; the winding path across barren ground.\",\n    \"languages\": [\"nah\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Coachella < Cahuilla (Native American tribe) via Spanish 'coachella' — but as sound: 'cahuilla' = 'place of the water' (from Cahuilla language)\",\n    \"reading\": \"A place of water; a basin where life gathers, though the name sounds of a shell.\",\n    \"languages\": [\"cahuilla\", \"es\"],\n    \"source\": \"Cahuilla dictionary (Bright, 1968)\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Coachella < Spanish 'coachella' (from Coachella Valley, but as sound: 'coche' (car) + '-ella' (diminutive); Latin 'cocca' = berry, seed",
+   "reading": "A small vehicle or seed; the diminutive of a shell or husk, a pod that carries.",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "Diccionario de la lengua española (RAE), Lewis & Short Latin Dictionary",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "coach + ella; coach (English) = carriage, instruction; ella (Spanish) = she",
+   "reading": "She who instructs; the feminine guide in a carriage, a moving lesson.",
+   "languages": [
+    "en",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "coach (en) ~ 'coche' (fr) = shell, husk; 'ella' (es) = she; 'cocher' (fr) = to cook, to ripen",
+   "reading": "The ripening shell that cooks within; a feminine husk maturing into fruit.",
+   "languages": [
+    "en",
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Coachella → 'chela' (claw, pincer) + 'coa' (cocoa, or 'coa' = ancient Egyptian basket)",
+   "reading": "A clawed basket; a grasping vessel that holds what is offered.",
+   "languages": [
+    "en",
+    "grc",
+    "egy"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "C-O-A-C-H-E-L-L-A → C(hrist) O(mnium) A(nnorum) C(ustos) H(ominum) E(terna) L(ux) L(ux) A(eterna)",
+   "reading": "Christ, guardian of all years, eternal light for humanity; a luminous keeper.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative (notariqon tradition)",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "C = 100, O = 0, A = 1, C = 100, H = 8, E = 5, L = 50, L = 50, A = 1; sum = 315; 3+1+5 = 9",
+   "reading": "The number nine: completion, the end of a cycle, the threshold of return.",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative (gematria, isopsephy)",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "coa + chella; 'coa' (Nahuatl) = serpent; 'chella' (Arabic) = desert plain",
+   "reading": "A serpent in the desert; the winding path across barren ground.",
+   "languages": [
+    "nah",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Coachella < Cahuilla (Native American tribe) via Spanish 'coachella' — but as sound: 'cahuilla' = 'place of the water' (from Cahuilla language)",
+   "reading": "A place of water; a basin where life gathers, though the name sounds of a shell.",
+   "languages": [
+    "cahuilla",
+    "es"
+   ],
+   "source": "Cahuilla dictionary (Bright, 1968)",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

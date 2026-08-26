@@ -1,0 +1,126 @@
+{
+ "word": "Abedi",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:25:02+00:00",
+ "latency_s": 5.78,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"etymology\",\"chain\":\"Abedi ← Arabic عَبْد (ʿabd) + ي (ī)\",\"reading\":\"servant or slave of the divine; worshipper\",\"languages\":[\"ar\"],\"source\":\"Hans Wehr Arabic-English Dictionary\",\"confidence\":0.85},\n  {\"operation\":\"phonetic_split\",\"chain\":\"A-be-di\",\"reading\":\"to be of God (A = alpha/divine, be = exist, di = deus)\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Abedi ≈ abîme (French) + di (Latin deus)\",\"reading\":\"abyss of God / divine depth\",\"languages\":[\"fr\",\"la\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Ab + edi\",\"reading\":\"father of knowledge (Ab = father, edi from Greek eidēsis)\",\"languages\":[\"he\",\"grc\"],\"source\":\"generative\",\"confidence\":0.60},\n  {\"operation\":\"anagram\",\"chain\":\"Abedi → Beda i\",\"reading\":\"Beda (scholar) + I (the self); the learned one\",\"languages\":[\"la\",\"en\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"notariqon\",\"chain\":\"A-B-D-I → Ayin-Bet-Dalet-Yod\",\"reading\":\"eye within the house of the door of creation\",\"languages\":[\"he\"],\"source\":\"generative\",\"confidence\":0.50},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Abedi ≈ abed + I (English) / abed (Arabic: lying down)\",\"reading\":\"I lie in divine rest; the sleeper in God\",\"languages\":[\"en\",\"ar\"],\"source\":\"generative\",\"confidence\":0.70},\n  {\"operation\":\"etymology\",\"chain\":\"Abedi ← Medieval Latin Abedi(tus)\",\"reading\":\"one who has been abboted or placed in the abbey\",\"languages\":[\"la\"],\"source\":\"Du Cange, Glossarium Mediae et Infimae Latinitatis\",\"confidence\":0.40},\n  {\"operation\":\"letter_symbol\",\"chain\":\"A (beginning) + B (house) + D (door) + I (hand/eye)\",\"reading\":\"the hand that opens the door of the primal house\",\"languages\":[\"he\",\"en\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Abedi ≈ à baisser dit\",\"reading\":\"that which must be lowered is spoken; humble word\",\"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.50}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Abedi ← Arabic عَبْد (ʿabd) + ي (ī)",
+   "reading": "servant or slave of the divine; worshipper",
+   "languages": [
+    "ar"
+   ],
+   "source": "Hans Wehr Arabic-English Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "A-be-di",
+   "reading": "to be of God (A = alpha/divine, be = exist, di = deus)",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Abedi ≈ abîme (French) + di (Latin deus)",
+   "reading": "abyss of God / divine depth",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ab + edi",
+   "reading": "father of knowledge (Ab = father, edi from Greek eidēsis)",
+   "languages": [
+    "he",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Abedi → Beda i",
+   "reading": "Beda (scholar) + I (the self); the learned one",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "notariqon",
+   "chain": "A-B-D-I → Ayin-Bet-Dalet-Yod",
+   "reading": "eye within the house of the door of creation",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Abedi ≈ abed + I (English) / abed (Arabic: lying down)",
+   "reading": "I lie in divine rest; the sleeper in God",
+   "languages": [
+    "en",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Abedi ← Medieval Latin Abedi(tus)",
+   "reading": "one who has been abboted or placed in the abbey",
+   "languages": [
+    "la"
+   ],
+   "source": "Du Cange, Glossarium Mediae et Infimae Latinitatis",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "A (beginning) + B (house) + D (door) + I (hand/eye)",
+   "reading": "the hand that opens the door of the primal house",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Abedi ≈ à baisser dit",
+   "reading": "that which must be lowered is spoken; humble word",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

@@ -1,0 +1,118 @@
+{
+ "word": "Bataclan",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:49+00:00",
+ "latency_s": 4.64,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"ba + ta + clan; ba (sound of a blow) + ta (tapping) + clan (a close kin-group)\",\"reading\":\"A struck kinship: a blow that gathers the clan, or a clan gathered by blows.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.71},{\"operation\":\"cross_language_homophone\",\"chain\":\"bata = boat (Spanish/Italian-like echo) + clan = family group; boat + clan\",\"reading\":\"A vessel of the family: a boat carrying one lineage across waters.\",\"languages\":[\"es\",\"it\",\"en\"],\"source\":\"generative\",\"confidence\":0.42},{\"operation\":\"phonetic_split\",\"chain\":\"bat + a + clan; bat = winged night-creature, clan = bloodline\",\"reading\":\"A night-winged lineage: the dark family, nocturnal and secretive.\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.66},{\"operation\":\"anagram\",\"chain\":\"BATACLAN → CABALANT / CANTABAL / TABACLAN (near-anagrammatic play)\",\"reading\":\"A cabal in song: hidden speech arranged as a chant or cant.\",\"languages\":[\"en\",\"fr\",\"la\"],\"source\":\"generative\",\"confidence\":0.28},{\"operation\":\"letter_symbol\",\"chain\":\"B-A-T-A-C-L-A-N; B = second, A = first, repeated alternation; C/L/N as hard consonants\",\"reading\":\"Alternation of beginning and doubling: first-second, first-second, then closure in hard consonants.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.33},{\"operation\":\"numerical\",\"chain\":\"B(2)+A(1)+T(20)+A(1)+C(3)+L(12)+A(1)+N(14)=54; 5+4=9\",\"reading\":\"Nine as completion: the word sums to a full cycle, ending in return and closure.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.39},{\"operation\":\"etymology\",\"chain\":\"No secure standard-lexicon etymology is established for this exact form; compare French bataclan, a colloquial word recorded in dictionaries as a noisy jumble or apparatus\",\"reading\":\"A jumble, racket, or contrivance: a word for noisy disorder and mixed-up gear.\",\"languages\":[\"fr\"],\"source\":\"Le Robert; TLFi\",\"confidence\":0.58},{\"operation\":\"cross_language_homophone\",\"chain\":\"bata = battle (echo in several European tongues) + clan = kin; battle + kin\",\"reading\":\"A family at war with itself: kinship turned into conflict.\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.57},{\"operation\":\"phonetic_split\",\"chain\":\"ba-ta-clan; ta = 'there' in some speech traditions, clan = enclosure of kin\",\"reading\":\"There is the enclosure of the kin: a marked place where the tribe gathers.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.31}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "ba + ta + clan; ba (sound of a blow) + ta (tapping) + clan (a close kin-group)",
+   "reading": "A struck kinship: a blow that gathers the clan, or a clan gathered by blows.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.71
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bata = boat (Spanish/Italian-like echo) + clan = family group; boat + clan",
+   "reading": "A vessel of the family: a boat carrying one lineage across waters.",
+   "languages": [
+    "es",
+    "it",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.42
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "bat + a + clan; bat = winged night-creature, clan = bloodline",
+   "reading": "A night-winged lineage: the dark family, nocturnal and secretive.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.66
+  },
+  {
+   "operation": "anagram",
+   "chain": "BATACLAN → CABALANT / CANTABAL / TABACLAN (near-anagrammatic play)",
+   "reading": "A cabal in song: hidden speech arranged as a chant or cant.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.28
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B-A-T-A-C-L-A-N; B = second, A = first, repeated alternation; C/L/N as hard consonants",
+   "reading": "Alternation of beginning and doubling: first-second, first-second, then closure in hard consonants.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.33
+  },
+  {
+   "operation": "numerical",
+   "chain": "B(2)+A(1)+T(20)+A(1)+C(3)+L(12)+A(1)+N(14)=54; 5+4=9",
+   "reading": "Nine as completion: the word sums to a full cycle, ending in return and closure.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.39
+  },
+  {
+   "operation": "etymology",
+   "chain": "No secure standard-lexicon etymology is established for this exact form; compare French bataclan, a colloquial word recorded in dictionaries as a noisy jumble or apparatus",
+   "reading": "A jumble, racket, or contrivance: a word for noisy disorder and mixed-up gear.",
+   "languages": [
+    "fr"
+   ],
+   "source": "Le Robert; TLFi",
+   "confidence": 0.58
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bata = battle (echo in several European tongues) + clan = kin; battle + kin",
+   "reading": "A family at war with itself: kinship turned into conflict.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.57
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ba-ta-clan; ta = 'there' in some speech traditions, clan = enclosure of kin",
+   "reading": "There is the enclosure of the kin: a marked place where the tribe gathers.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 9,
+ "refusal_like": false
+}

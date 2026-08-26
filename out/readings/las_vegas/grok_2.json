@@ -1,0 +1,153 @@
+{
+ "word": "Las Vegas",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:21:04+00:00",
+ "latency_s": 5.77,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"etymology\",\"chain\":\"Las (Spanish) = the (plural); Vegas = meadows (from Latin vicus = village/estate)\",\"reading\":\"The meadows\",\"languages\":[\"es\",\"la\"],\"source\":\"Oxford Spanish Dictionary; Lewis & Short Latin Dictionary\",\"confidence\":0.9},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Las + Ve + Gas\",\"reading\":\"The veil of gas / the veiled gas\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.75},\n  {\"operation\":\"phonetic_split\",\"chain\":\"L'as + Vegas\",\"reading\":\"The ace (l'as) of the stakes (vegas as wager in old Romance)\",\"languages\":[\"fr\",\"es\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Las Vegas ≈ Laas Végas ≈ Laas (Hebrew) = to gather + Végas ≈ Végétal\",\"reading\":\"The gathering of plants / herbal congress\",\"languages\":[\"he\",\"fr\",\"la\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"anagram\",\"chain\":\"Las Vegas = Salvages (old spelling)\",\"reading\":\"The salvages / things saved from wreck\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Lasve + Gas\",\"reading\":\"The calf gas / gas of the calf (veau)\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"notariqon\",\"chain\":\"L.A.S.V.E.G.A.S. → Lux Aeterna Salvat Viam Egressi Gaudens Astra Sidera\",\"reading\":\"The eternal light saves the way of the one who leaves rejoicing in the stars\",\"languages\":[\"la\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Las Vegas ≈ Laz Végas ≈ Laz (Arabic) = to play + Vegas ≈ wagers\",\"reading\":\"The game of wagers\",\"languages\":[\"ar\",\"es\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"letter_symbol\",\"chain\":\"V in Vegas as alchemical symbol for verdigris / green lion\",\"reading\":\"The green lion of the meadows\",\"languages\":[\"en\",\"la\",\"ar\"],\"source\":\"generative\",\"confidence\":0.4},\n  {\"operation\":\"etymology\",\"chain\":\"Vegas from Latin vicus (estate) → Old Spanish vega = fertile plain\",\"reading\":\"The fertile plains\",\"languages\":[\"la\",\"es\"],\"source\":\"Corominas, Diccionario Crítico Etimológico\",\"confidence\":0.85},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Las + Vegas ≈ l'as ve gas\",\"reading\":\"The ace sees gas / the ace sees the spirit\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"anagram\",\"chain\":\"Las Vegas = Vagas Sel\",\"reading\":\"Wandering salt / the salt that wanders\",\"languages\":[\"la\",\"pt\"],\"source\":\"generative\",\"confidence\":0.5}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Las (Spanish) = the (plural); Vegas = meadows (from Latin vicus = village/estate)",
+   "reading": "The meadows",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "Oxford Spanish Dictionary; Lewis & Short Latin Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Ve + Gas",
+   "reading": "The veil of gas / the veiled gas",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "L'as + Vegas",
+   "reading": "The ace (l'as) of the stakes (vegas as wager in old Romance)",
+   "languages": [
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas ≈ Laas Végas ≈ Laas (Hebrew) = to gather + Végas ≈ Végétal",
+   "reading": "The gathering of plants / herbal congress",
+   "languages": [
+    "he",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas = Salvages (old spelling)",
+   "reading": "The salvages / things saved from wreck",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lasve + Gas",
+   "reading": "The calf gas / gas of the calf (veau)",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L.A.S.V.E.G.A.S. → Lux Aeterna Salvat Viam Egressi Gaudens Astra Sidera",
+   "reading": "The eternal light saves the way of the one who leaves rejoicing in the stars",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas ≈ Laz Végas ≈ Laz (Arabic) = to play + Vegas ≈ wagers",
+   "reading": "The game of wagers",
+   "languages": [
+    "ar",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V in Vegas as alchemical symbol for verdigris / green lion",
+   "reading": "The green lion of the meadows",
+   "languages": [
+    "en",
+    "la",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Vegas from Latin vicus (estate) → Old Spanish vega = fertile plain",
+   "reading": "The fertile plains",
+   "languages": [
+    "la",
+    "es"
+   ],
+   "source": "Corominas, Diccionario Crítico Etimológico",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Vegas ≈ l'as ve gas",
+   "reading": "The ace sees gas / the ace sees the spirit",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas = Vagas Sel",
+   "reading": "Wandering salt / the salt that wanders",
+   "languages": [
+    "la",
+    "pt"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

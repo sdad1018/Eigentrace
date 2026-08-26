@@ -1,0 +1,107 @@
+{
+ "word": "Paris",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:34:00+00:00",
+ "latency_s": 7.91,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paris < Latin Lutetia Parisiorum; Parisii < Gaulish *pario- 'cauldron' or *paris 'working man'\",\n    \"reading\": \"The cauldron-people, those who boil or forge; a place of transformation and craft.\",\n    \"languages\": [\"la\", \"cel\", \"fr\"],\n    \"source\": \"Delamarre, Dictionnaire de la langue gauloise\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Par + is; par (Fr) = by/through; is (en) = third person singular of 'to be'\",\n    \"reading\": \"That which is through being; existence as passage, a threshold of becoming.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paris ~ paris (Fr) = pari 'bet' (homophone); ~ parvis (Fr) = church forecourt\",\n    \"reading\": \"A sacred wager before the temple; the threshold where one stakes one's soul.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Paris -> ripa (Latin) = riverbank; -> pairs (en) = couples\",\n    \"reading\": \"The riverbank of paired opposites; where two shores meet and become one.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P-A-R-I-S: Porta, Aether, Rota, Ignis, Sal (Latin) = gate, sky, wheel, fire, salt\",\n    \"reading\": \"Gate of the sky, wheel of fire and salt; an alchemical portal of elements.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P (Greek rho) = breath; A = alpha, beginning; R = rotation; I = self; S = serpent\",\n    \"reading\": \"Breath begins the turning self, serpent-wise; the spiral of conscious life.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"P=80, A=1, R=80, I=9, S=90 (Greek isopsephy) sum=260; 260 = 2*130 = 2*(5*26)\",\n    \"reading\": \"Twofold completion of the alphabet's heart; a double cycle of hidden order.\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paris < Old French Paris < Latin Parisii; possibly from *pari- 'ship' (cf. Greek paros 'sailor')\",\n    \"reading\": \"The sailors' town; a harbour of arrival and departure, a crossing of waters.\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"Ernout-Meillet, Dictionnaire étymologique de la langue latine\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Paris < Latin Lutetia Parisiorum; Parisii < Gaulish *pario- 'cauldron' or *paris 'working man'",
+   "reading": "The cauldron-people, those who boil or forge; a place of transformation and craft.",
+   "languages": [
+    "la",
+    "cel",
+    "fr"
+   ],
+   "source": "Delamarre, Dictionnaire de la langue gauloise",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Par + is; par (Fr) = by/through; is (en) = third person singular of 'to be'",
+   "reading": "That which is through being; existence as passage, a threshold of becoming.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris ~ paris (Fr) = pari 'bet' (homophone); ~ parvis (Fr) = church forecourt",
+   "reading": "A sacred wager before the temple; the threshold where one stakes one's soul.",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Paris -> ripa (Latin) = riverbank; -> pairs (en) = couples",
+   "reading": "The riverbank of paired opposites; where two shores meet and become one.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P-A-R-I-S: Porta, Aether, Rota, Ignis, Sal (Latin) = gate, sky, wheel, fire, salt",
+   "reading": "Gate of the sky, wheel of fire and salt; an alchemical portal of elements.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P (Greek rho) = breath; A = alpha, beginning; R = rotation; I = self; S = serpent",
+   "reading": "Breath begins the turning self, serpent-wise; the spiral of conscious life.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "P=80, A=1, R=80, I=9, S=90 (Greek isopsephy) sum=260; 260 = 2*130 = 2*(5*26)",
+   "reading": "Twofold completion of the alphabet's heart; a double cycle of hidden order.",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "etymology",
+   "chain": "Paris < Old French Paris < Latin Parisii; possibly from *pari- 'ship' (cf. Greek paros 'sailor')",
+   "reading": "The sailors' town; a harbour of arrival and departure, a crossing of waters.",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "Ernout-Meillet, Dictionnaire étymologique de la langue latine",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

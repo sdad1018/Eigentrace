@@ -1,0 +1,110 @@
+{
+ "word": "Astroworld",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:25:48+00:00",
+ "latency_s": 6.87,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"astro (Greek astron, star) + world (Old English weorold, age of man); compound = star-age\",\n    \"reading\": \"The age of man measured by stars; a cosmic epoch or sphere of human destiny\",\n    \"languages\": [\"en\", \"grc\", \"ang\"],\n    \"source\": \"OED: astron; weorold\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"as + tro + world; tro (French trop, too much) + world; 'as-tro-world' = as in the too-much world\",\n    \"reading\": \"A world of excess, where the star is too much — the overblown celestial sphere\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"astro (Spanish) + world; 'astro' sounds like 'aestro' (Italian, master) — master of the world\",\n    \"reading\": \"The master's world; a domain ruled by a skilled star-bearer or adept\",\n    \"languages\": [\"es\", \"it\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Astroworld -> 'star + owl + rod' (letters rearranged); owl (wisdom) + rod (authority) under stars\",\n    \"reading\": \"Wisdom and authority beneath the stars; a celestial order of the wise ruler\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"A.S.T.R.O.W.O.R.L.D -> Astrum, Stella, Theos, Rota, Orbis, World, Orbis, Rota, Lumen, Deus\",\n    \"reading\": \"Star, light, wheel, world, light, God — a revolving cosmos of divine illumination\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"A (alpha, beginning) + S (serpent) + T (tau, cross) + R (rota) + O (omega, end) + W (double V, victory) + O (omega) + R (rota) + L (lamed, goad) + D (delta, door)\",\n    \"reading\": \"From alpha to omega, the serpent’s cross turns the wheel of victory through the door\",\n    \"languages\": [\"en\", \"grc\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"A=1, S=19, T=20, R=18, O=15, W=23, O=15, R=18, L=12, D=4; sum = 145; 1+4+5=10; 1+0=1\",\n    \"reading\": \"Reduces to unity — the star-world is the One, the singular source of all spheres\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"astro (Greek astron) + world (Old English weorold); weorold from wer (man) + ald (age) — but 'astro' shifts 'wer' to 'star'\",\n    \"reading\": \"The star-man's age; a generation defined by celestial influence over human life\",\n    \"languages\": [\"en\", \"grc\", \"ang\"],\n    \"source\": \"OED: astron; weorold\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "astro (Greek astron, star) + world (Old English weorold, age of man); compound = star-age",
+   "reading": "The age of man measured by stars; a cosmic epoch or sphere of human destiny",
+   "languages": [
+    "en",
+    "grc",
+    "ang"
+   ],
+   "source": "OED: astron; weorold",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "as + tro + world; tro (French trop, too much) + world; 'as-tro-world' = as in the too-much world",
+   "reading": "A world of excess, where the star is too much — the overblown celestial sphere",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "astro (Spanish) + world; 'astro' sounds like 'aestro' (Italian, master) — master of the world",
+   "reading": "The master's world; a domain ruled by a skilled star-bearer or adept",
+   "languages": [
+    "es",
+    "it",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Astroworld -> 'star + owl + rod' (letters rearranged); owl (wisdom) + rod (authority) under stars",
+   "reading": "Wisdom and authority beneath the stars; a celestial order of the wise ruler",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "A.S.T.R.O.W.O.R.L.D -> Astrum, Stella, Theos, Rota, Orbis, World, Orbis, Rota, Lumen, Deus",
+   "reading": "Star, light, wheel, world, light, God — a revolving cosmos of divine illumination",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "A (alpha, beginning) + S (serpent) + T (tau, cross) + R (rota) + O (omega, end) + W (double V, victory) + O (omega) + R (rota) + L (lamed, goad) + D (delta, door)",
+   "reading": "From alpha to omega, the serpent’s cross turns the wheel of victory through the door",
+   "languages": [
+    "en",
+    "grc",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "A=1, S=19, T=20, R=18, O=15, W=23, O=15, R=18, L=12, D=4; sum = 145; 1+4+5=10; 1+0=1",
+   "reading": "Reduces to unity — the star-world is the One, the singular source of all spheres",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "astro (Greek astron) + world (Old English weorold); weorold from wer (man) + ald (age) — but 'astro' shifts 'wer' to 'star'",
+   "reading": "The star-man's age; a generation defined by celestial influence over human life",
+   "languages": [
+    "en",
+    "grc",
+    "ang"
+   ],
+   "source": "OED: astron; weorold",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

@@ -1,0 +1,129 @@
+{
+ "word": "Mandalay Bay",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:32:05+00:00",
+ "latency_s": 19.59,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mandalay -> from Sanskrit मण्डल (maṇḍala) 'circle, disk, ring, region, country'\",\n    \"reading\": \"The circular or spherical domain, representing a sacred enclosure or a distinct territory.\",\n    \"languages\": [\"sa\"],\n    \"source\": \"Monier-Williams Sanskrit-English Dictionary\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"phonetic_split, cross_language_homophone\",\n    \"chain\": \"Mandalay -> 'Man de l'ai' (French: 'man of it I have') + Bay -> 'baie' (French: 'bay, berry, window')\",\n    \"reading\": \"The man who possesses, reveals or offers a hidden fruit or opening.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split, cross_language_homophone\",\n    \"chain\": \"Mandalay -> 'Main de lait' (French: 'hand of milk') + Bay -> 'baie' (French: 'bay, berry, window')\",\n    \"reading\": \"The nourishing hand, bringing forth revelation or offering a pure sustenance.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"etymology, phonetic_split\",\n    \"chain\": \"Mandalay -> 'Mandala' (region) + Bay (Old French 'baie') -> 'a geographical indentation of the coastline'\",\n    \"reading\": \"The curved indentation of the coast, marking the boundary of a defined region or sacred space.\",\n    \"languages\": [\"sa\", \"fro\", \"en\"],\n    \"source\": \"Monier-Williams Sanskrit-English Dictionary, Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split, etymology\",\n    \"chain\": \"Mandalay -> 'Men do lay' + Bay (Old French 'bayer') -> 'to bark, to cry aloud'\",\n    \"reading\": \"Where men recline, a loud lament or an announcement echoes.\",\n    \"languages\": [\"en\", \"fro\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram, phonetic_split\",\n    \"chain\": \"Mandalay Bay -> Anagrams to 'A man laid by'\",\n    \"reading\": \"A human figure placed beside, suggesting a state of repose or observation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology, phonetic_split\",\n    \"chain\": \"Bay (Old French 'baie' from Latin 'baca' or 'bay' laurel tree) + Mandalay -> 'Mandala' (sacred circle)\",\n    \"reading\": \"The sacred circle of laurels, symbolizing victory, honor, or poetic inspiration.\",\n    \"languages\": [\"en\", \"fro\", \"la\", \"sa\"],\n    \"source\": \"Oxford English Dictionary, Monier-Williams Sanskrit-English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split, cross_language_homophone\",\n    \"chain\": \"Mandalay -> 'Mon de l'ai' (French: 'my of it I have') + Bay -> 'baie' (French: 'bay, berry, window')\",\n    \"reading\": \"My own portion which I hold, an opening or a fruit revealed.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay Bay -> Anagrams to 'A bad man lay'\",\n    \"reading\": \"A malevolent or corrupt figure found in repose.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"MANDALAY BAY -> 'Maître AN D'Âme Leurs Âmes Y Baignent Au YOGA' (French: 'Master, year of the soul, their souls bathe there in YOGA')\",\n    \"reading\": \"The spiritual master guides souls to immerse themselves in union and meditation.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Mandalay -> from Sanskrit मण्डल (maṇḍala) 'circle, disk, ring, region, country'",
+   "reading": "The circular or spherical domain, representing a sacred enclosure or a distinct territory.",
+   "languages": [
+    "sa"
+   ],
+   "source": "Monier-Williams Sanskrit-English Dictionary",
+   "confidence": 1.0
+  },
+  {
+   "operation": "phonetic_split, cross_language_homophone",
+   "chain": "Mandalay -> 'Man de l'ai' (French: 'man of it I have') + Bay -> 'baie' (French: 'bay, berry, window')",
+   "reading": "The man who possesses, reveals or offers a hidden fruit or opening.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split, cross_language_homophone",
+   "chain": "Mandalay -> 'Main de lait' (French: 'hand of milk') + Bay -> 'baie' (French: 'bay, berry, window')",
+   "reading": "The nourishing hand, bringing forth revelation or offering a pure sustenance.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "etymology, phonetic_split",
+   "chain": "Mandalay -> 'Mandala' (region) + Bay (Old French 'baie') -> 'a geographical indentation of the coastline'",
+   "reading": "The curved indentation of the coast, marking the boundary of a defined region or sacred space.",
+   "languages": [
+    "sa",
+    "fro",
+    "en"
+   ],
+   "source": "Monier-Williams Sanskrit-English Dictionary, Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split, etymology",
+   "chain": "Mandalay -> 'Men do lay' + Bay (Old French 'bayer') -> 'to bark, to cry aloud'",
+   "reading": "Where men recline, a loud lament or an announcement echoes.",
+   "languages": [
+    "en",
+    "fro"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram, phonetic_split",
+   "chain": "Mandalay Bay -> Anagrams to 'A man laid by'",
+   "reading": "A human figure placed beside, suggesting a state of repose or observation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology, phonetic_split",
+   "chain": "Bay (Old French 'baie' from Latin 'baca' or 'bay' laurel tree) + Mandalay -> 'Mandala' (sacred circle)",
+   "reading": "The sacred circle of laurels, symbolizing victory, honor, or poetic inspiration.",
+   "languages": [
+    "en",
+    "fro",
+    "la",
+    "sa"
+   ],
+   "source": "Oxford English Dictionary, Monier-Williams Sanskrit-English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split, cross_language_homophone",
+   "chain": "Mandalay -> 'Mon de l'ai' (French: 'my of it I have') + Bay -> 'baie' (French: 'bay, berry, window')",
+   "reading": "My own portion which I hold, an opening or a fruit revealed.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay Bay -> Anagrams to 'A bad man lay'",
+   "reading": "A malevolent or corrupt figure found in repose.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "MANDALAY BAY -> 'Maître AN D'Âme Leurs Âmes Y Baignent Au YOGA' (French: 'Master, year of the soul, their souls bathe there in YOGA')",
+   "reading": "The spiritual master guides souls to immerse themselves in union and meditation.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

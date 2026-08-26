@@ -1,0 +1,150 @@
+{
+ "word": "Fenway",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:18:40+00:00",
+ "latency_s": 11.22,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Fenway < Old English fenn (fen, marsh) + weg (way, path); Middle English fenwei\",\n    \"reading\": \"The path through the marsh — a raised causeway over wet ground.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"Oxford English Dictionary, s.v. fen, way\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fen + way; fen (en) = mud, marsh; way (fr) = voie, but 'way' sounds like 'weigh'\",\n    \"reading\": \"The weighing of the marsh — a place where earth and water are measured against each other.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fen (en) = marsh; 'way' ~ 'oui' (fr) = yes; fen + oui = 'marsh yes'\",\n    \"reading\": \"Affirmation of the bog — a yes spoken from the wet, fecund ground.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Fenway → 'wean fy' (old) → 'wean' (to detach) + 'fy' (fie, shame)\",\n    \"reading\": \"To wean from the fen — a severing from the primal mire, a call to leave the swamp.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"F-E-N-W-A-Y → Fons, Emanatio, Numen, Via, Aeternitas, Yggdrasil\",\n    \"reading\": \"Source, outflow, divine will, path, eternity, world-tree — the fen as cosmic axis.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"F (fire) + E (earth) + N (water) + W (air) + A (spirit) + Y (the fork, choice)\",\n    \"reading\": \"The five elements plus the forked path — a crossroads of all matter and spirit.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"F=6, E=5, N=14, W=23, A=1, Y=25 → sum = 74; 7+4=11; 1+1=2\",\n    \"reading\": \"Seventy-four reduces to eleven, the master number of revelation, then to two — duality of land and water.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative (Pythagorean reduction)\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fen + way; 'fen' (fr) = hay, but 'faim' = hunger; 'way' = voie; faim + voie = hungry road\",\n    \"reading\": \"The road of hunger — a path that consumes those who walk it, a marsh that swallows.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Fenway < Old Norse fen (marsh) + vegr (way); cf. Icelandic fenvegur\",\n    \"reading\": \"The Viking track through the bog — a Scandinavian loan-path in English soil.\",\n    \"languages\": [\"en\", \"non\"],\n    \"source\": \"Cleasby-Vigfusson, An Icelandic-English Dictionary, s.v. fen, vegr\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fen (en) ~ 'fin' (fr) = end; way ~ 'oui' (fr) = yes; fin + oui = 'end yes'\",\n    \"reading\": \"The final affirmation — a yes at the end of the path, a closing of the way.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Fenway → 'new fay' → fay (en) = fairy, elf; new fay = fresh spirit of the marsh\",\n    \"reading\": \"A newborn fairy of the fen — the marsh's spirit reborn in a new form.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"F-E-N-W-A-Y → Fons, Emanatio, Numen, Via, Aeternitas, Yggdrasil (reversed: Yggdrasil, Aeternitas, Via, Numen, Emanatio, Fons)\",\n    \"reading\": \"The world-tree reversed — the path from eternity back to the source, a circular return.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Fenway < Old English fenn (fen, marsh) + weg (way, path); Middle English fenwei",
+   "reading": "The path through the marsh — a raised causeway over wet ground.",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary, s.v. fen, way",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Fen + way; fen (en) = mud, marsh; way (fr) = voie, but 'way' sounds like 'weigh'",
+   "reading": "The weighing of the marsh — a place where earth and water are measured against each other.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fen (en) = marsh; 'way' ~ 'oui' (fr) = yes; fen + oui = 'marsh yes'",
+   "reading": "Affirmation of the bog — a yes spoken from the wet, fecund ground.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Fenway → 'wean fy' (old) → 'wean' (to detach) + 'fy' (fie, shame)",
+   "reading": "To wean from the fen — a severing from the primal mire, a call to leave the swamp.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "F-E-N-W-A-Y → Fons, Emanatio, Numen, Via, Aeternitas, Yggdrasil",
+   "reading": "Source, outflow, divine will, path, eternity, world-tree — the fen as cosmic axis.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "F (fire) + E (earth) + N (water) + W (air) + A (spirit) + Y (the fork, choice)",
+   "reading": "The five elements plus the forked path — a crossroads of all matter and spirit.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "numerical",
+   "chain": "F=6, E=5, N=14, W=23, A=1, Y=25 → sum = 74; 7+4=11; 1+1=2",
+   "reading": "Seventy-four reduces to eleven, the master number of revelation, then to two — duality of land and water.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative (Pythagorean reduction)",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Fen + way; 'fen' (fr) = hay, but 'faim' = hunger; 'way' = voie; faim + voie = hungry road",
+   "reading": "The road of hunger — a path that consumes those who walk it, a marsh that swallows.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Fenway < Old Norse fen (marsh) + vegr (way); cf. Icelandic fenvegur",
+   "reading": "The Viking track through the bog — a Scandinavian loan-path in English soil.",
+   "languages": [
+    "en",
+    "non"
+   ],
+   "source": "Cleasby-Vigfusson, An Icelandic-English Dictionary, s.v. fen, vegr",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fen (en) ~ 'fin' (fr) = end; way ~ 'oui' (fr) = yes; fin + oui = 'end yes'",
+   "reading": "The final affirmation — a yes at the end of the path, a closing of the way.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Fenway → 'new fay' → fay (en) = fairy, elf; new fay = fresh spirit of the marsh",
+   "reading": "A newborn fairy of the fen — the marsh's spirit reborn in a new form.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "F-E-N-W-A-Y → Fons, Emanatio, Numen, Via, Aeternitas, Yggdrasil (reversed: Yggdrasil, Aeternitas, Via, Numen, Emanatio, Fons)",
+   "reading": "The world-tree reversed — the path from eternity back to the source, a circular return.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

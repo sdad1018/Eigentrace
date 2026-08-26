@@ -1,0 +1,127 @@
+{
+ "word": "Paddock",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:21:51+00:00",
+ "latency_s": 6.93,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"paddock (n.) from Middle English parrok, from Old English pearroc 'enclosed space, park'\",\n    \"reading\": \"enclosed ground, fenced pasture, or park for beasts\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"pad + dock\",\n    \"reading\": \"the place where the foot or sole is fixed or judged\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"pa + doc\",\n    \"reading\": \"the father or master of the taught, the pedagogue\",\n    \"languages\": [\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"paddock ≈ paddock ≈ pa d'eau (French)\",\n    \"reading\": \"father of water, master of the waters\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.70\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"PADDOCK → ADD POCK\",\n    \"reading\": \"adds the mark, imposes the pustule or stigma\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"pad + oc (Latin occidere)\",\n    \"reading\": \"the enclosed place of the setting sun or death\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"paddock ≈ paddock ≈ pad + ock ≈ pat + ock (Hebrew pat = gate, oq = oppression)\",\n    \"reading\": \"the gate of oppression or narrow passage of trial\",\n    \"languages\": [\"en\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"paddock from Old French 'parc' via Medieval Latin 'parricus' from Germanic *parruk\",\n    \"reading\": \"fenced royal domain or protected enclosure for game\",\n    \"languages\": [\"en\",\"fr\",\"la\"],\n    \"source\": \"Etymonline / OED\",\n    \"confidence\": 0.90\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P A D D O C K → initial letters evoke Pax, Aqua, Domini, Domini, Occidens, Crux, Kalos\",\n    \"reading\": \"the peace of the waters of the Lord at the western cross of beauty\",\n    \"languages\": [\"la\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.40\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"pad + dock (ME dok = tail, stump, place of judgment)\",\n    \"reading\": \"the docked tail or the place where the accused stands\",\n    \"languages\": [\"en\"],\n    \"source\": \"Middle English Dictionary\",\n    \"confidence\": 0.75\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "paddock (n.) from Middle English parrok, from Old English pearroc 'enclosed space, park'",
+   "reading": "enclosed ground, fenced pasture, or park for beasts",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pad + dock",
+   "reading": "the place where the foot or sole is fixed or judged",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pa + doc",
+   "reading": "the father or master of the taught, the pedagogue",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "paddock ≈ paddock ≈ pa d'eau (French)",
+   "reading": "father of water, master of the waters",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "PADDOCK → ADD POCK",
+   "reading": "adds the mark, imposes the pustule or stigma",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pad + oc (Latin occidere)",
+   "reading": "the enclosed place of the setting sun or death",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "paddock ≈ paddock ≈ pad + ock ≈ pat + ock (Hebrew pat = gate, oq = oppression)",
+   "reading": "the gate of oppression or narrow passage of trial",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "etymology",
+   "chain": "paddock from Old French 'parc' via Medieval Latin 'parricus' from Germanic *parruk",
+   "reading": "fenced royal domain or protected enclosure for game",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Etymonline / OED",
+   "confidence": 0.9
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P A D D O C K → initial letters evoke Pax, Aqua, Domini, Domini, Occidens, Crux, Kalos",
+   "reading": "the peace of the waters of the Lord at the western cross of beauty",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pad + dock (ME dok = tail, stump, place of judgment)",
+   "reading": "the docked tail or the place where the accused stands",
+   "languages": [
+    "en"
+   ],
+   "source": "Middle English Dictionary",
+   "confidence": 0.75
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

@@ -1,0 +1,107 @@
+{
+ "word": "Houston",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:26:45+00:00",
+ "latency_s": 7.43,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Houston < Old English Hūstān; hūs = house, tūn = enclosure/settlement; cf. German Haus + Zaun\",\n    \"reading\": \"The enclosed dwelling, the guarded hearth; a place of shelter made sacred by walls.\",\n    \"languages\": [\"en\", \"ang\", \"de\"],\n    \"source\": \"Oxford English Dictionary, s.v. 'Houston' (toponymic)\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou + ston; hou (French) = where?; ston (English dialect) = stone; 'where stone'\",\n    \"reading\": \"The stone that answers a question; the fixed point of inquiry.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Houston ~ 'house ton' (French) = house tone; 'huston' (Swedish) = coughing; 'huston' (Old Norse) = thought\",\n    \"reading\": \"The sound of the house, the cough of the mind, the thought that dwells.\",\n    \"languages\": [\"fr\", \"sv\", \"non\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Houston → 'on houst' → 'hous ton' → 'shout on' → 'no shout' reversed; letters H, O, U, S, T, O, N\",\n    \"reading\": \"Silence within the shout; the 'no' hidden in the cry of the place.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"H-O-U-S-T-O-N → Hebrew initials: Heh, Vav, Samekh, Tav, Vav, Nun; read as 'Havayah Oseh Shalom Tav' — the Name makes peace, sign of the fish\",\n    \"reading\": \"The divine name that completes peace; the fish of the deep, the letter Nun.\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative (based on Hebrew letter values)\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"H (heh) = window; O (ayin) = eye; U (vav) = hook; S (shin) = tooth; T (tav) = cross; O (ayin) = eye; N (nun) = fish\",\n    \"reading\": \"Window, eye, hook, tooth, cross, eye, fish — a vision of catching through the cross.\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative (letter shapes and Hebrew names)\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"H=8, O=15, U=21, S=19, T=20, O=15, N=14 (A1Z26); sum = 112; 1+1+2=4; 4 = tetrad, earth, stability\",\n    \"reading\": \"The sum falls to four: the earth-bound house, the square of the settled.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative (A1Z26)\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Houston < Hūstān (Old English) but also from Hugh's town (Hugh + tūn); Hugh = spirit, mind (Old French Hugues)\",\n    \"reading\": \"The town of the mind; a settlement of the thinking soul.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Oxford Dictionary of English Place-Names, s.v. 'Houston'\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Houston < Old English Hūstān; hūs = house, tūn = enclosure/settlement; cf. German Haus + Zaun",
+   "reading": "The enclosed dwelling, the guarded hearth; a place of shelter made sacred by walls.",
+   "languages": [
+    "en",
+    "ang",
+    "de"
+   ],
+   "source": "Oxford English Dictionary, s.v. 'Houston' (toponymic)",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hou + ston; hou (French) = where?; ston (English dialect) = stone; 'where stone'",
+   "reading": "The stone that answers a question; the fixed point of inquiry.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Houston ~ 'house ton' (French) = house tone; 'huston' (Swedish) = coughing; 'huston' (Old Norse) = thought",
+   "reading": "The sound of the house, the cough of the mind, the thought that dwells.",
+   "languages": [
+    "fr",
+    "sv",
+    "non"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "anagram",
+   "chain": "Houston → 'on houst' → 'hous ton' → 'shout on' → 'no shout' reversed; letters H, O, U, S, T, O, N",
+   "reading": "Silence within the shout; the 'no' hidden in the cry of the place.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "H-O-U-S-T-O-N → Hebrew initials: Heh, Vav, Samekh, Tav, Vav, Nun; read as 'Havayah Oseh Shalom Tav' — the Name makes peace, sign of the fish",
+   "reading": "The divine name that completes peace; the fish of the deep, the letter Nun.",
+   "languages": [
+    "he"
+   ],
+   "source": "generative (based on Hebrew letter values)",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "H (heh) = window; O (ayin) = eye; U (vav) = hook; S (shin) = tooth; T (tav) = cross; O (ayin) = eye; N (nun) = fish",
+   "reading": "Window, eye, hook, tooth, cross, eye, fish — a vision of catching through the cross.",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative (letter shapes and Hebrew names)",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "H=8, O=15, U=21, S=19, T=20, O=15, N=14 (A1Z26); sum = 112; 1+1+2=4; 4 = tetrad, earth, stability",
+   "reading": "The sum falls to four: the earth-bound house, the square of the settled.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative (A1Z26)",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Houston < Hūstān (Old English) but also from Hugh's town (Hugh + tūn); Hugh = spirit, mind (Old French Hugues)",
+   "reading": "The town of the mind; a settlement of the thinking soul.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Oxford Dictionary of English Place-Names, s.v. 'Houston'",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

@@ -1,0 +1,106 @@
+{
+ "word": "Luxor",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:20+00:00",
+ "latency_s": 8.08,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Luxor from Latin 'lūx' (light) + '-or' (state/condition); cf. lūx, lūcis\",\n    \"reading\": \"The state of being light; a place where light dwells or is generated.\",\n    \"languages\": [\"la\"],\n    \"source\": \"Lewis & Short, A Latin Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lu + xor; 'lu' (Fr. 'loup' = wolf, but also 'lu' past participle of lire) + 'xor' (sounds like 'sor' from 'sors' = fate)\",\n    \"reading\": \"The wolf of fate; or that which has been read as destiny.\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Luxor ~ 'lucks or' (English 'luck' + 'or') ~ 'lucksore' (old word for a sore from lying down)\",\n    \"reading\": \"Either fortune or a wound; a choice between blessing and affliction.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Luxor → 'xulor' → 'xul' (old English for 'sorrow'?) + 'or' (gold in French)\",\n    \"reading\": \"Sorrow turned to gold; alchemical inversion of grief into treasure.\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L-U-X-O-R: Lumen, Umbra, Xenos, Ordo, Radius — light, shadow, stranger, order, ray\",\n    \"reading\": \"A ray of light ordering the shadow of the stranger; a cosmic law of contrast.\",\n    \"languages\": [\"la\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L (el = God in Hebrew) + U (you) + X (cross) + O (circle) + R (head/resh)\",\n    \"reading\": \"God in you, the cross within the circle, crowned by the head — a hieroglyph of self-divinity.\",\n    \"languages\": [\"he\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"L=30, U=21, X=24, O=15, R=18 (A1Z26) → sum 108; 108 is sacred in Hindu/Buddhist counts\",\n    \"reading\": \"The number 108 — a complete cycle of breaths or names; Luxor as a threshold of totality.\",\n    \"languages\": [\"en\",\"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Luxor → 'luke' (light, from Greek leukos) + 'sor' (sister in Latin, soror)\",\n    \"reading\": \"The bright sister; a feminine luminance, a twin of dawn.\",\n    \"languages\": [\"grc\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Luxor from Latin 'lūx' (light) + '-or' (state/condition); cf. lūx, lūcis",
+   "reading": "The state of being light; a place where light dwells or is generated.",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis & Short, A Latin Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lu + xor; 'lu' (Fr. 'loup' = wolf, but also 'lu' past participle of lire) + 'xor' (sounds like 'sor' from 'sors' = fate)",
+   "reading": "The wolf of fate; or that which has been read as destiny.",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Luxor ~ 'lucks or' (English 'luck' + 'or') ~ 'lucksore' (old word for a sore from lying down)",
+   "reading": "Either fortune or a wound; a choice between blessing and affliction.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Luxor → 'xulor' → 'xul' (old English for 'sorrow'?) + 'or' (gold in French)",
+   "reading": "Sorrow turned to gold; alchemical inversion of grief into treasure.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L-U-X-O-R: Lumen, Umbra, Xenos, Ordo, Radius — light, shadow, stranger, order, ray",
+   "reading": "A ray of light ordering the shadow of the stranger; a cosmic law of contrast.",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L (el = God in Hebrew) + U (you) + X (cross) + O (circle) + R (head/resh)",
+   "reading": "God in you, the cross within the circle, crowned by the head — a hieroglyph of self-divinity.",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "numerical",
+   "chain": "L=30, U=21, X=24, O=15, R=18 (A1Z26) → sum 108; 108 is sacred in Hindu/Buddhist counts",
+   "reading": "The number 108 — a complete cycle of breaths or names; Luxor as a threshold of totality.",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Luxor → 'luke' (light, from Greek leukos) + 'sor' (sister in Latin, soror)",
+   "reading": "The bright sister; a feminine luminance, a twin of dawn.",
+   "languages": [
+    "grc",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

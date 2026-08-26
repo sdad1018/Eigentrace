@@ -1,0 +1,104 @@
+{
+ "word": "Paddock",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:23+00:00",
+ "latency_s": 4.93,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"pad + dock; Middle English paddok/paddock, a small enclosure or frog/toad term in dialectal use\",\n    \"reading\": \"A bounded place: a little enclosed field, a place of keeping, or a damp, amphibious margin.\",\n    \"languages\": [\"en\", \"enm\"],\n    \"source\": \"Oxford English Dictionary; Chambers Dictionary of Etymology\",\n    \"confidence\": 0.86\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"pad + dock; pad = soft cushion, dock = cut off / tail / enclosure\",\n    \"reading\": \"Softness joined to cutting: a cushioned landing that also shortens, trims, or confines.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"pad + ock ~ pat + d'oc / pas d'ock; echoing French pas, d' = of, and ock as a clipped sound\",\n    \"reading\": \"A negation in motion: not this, not that, a step denied or diverted.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"paddock ~ paddo + ck; echoing Latin ped- / pes, foot, and dock as a place of standing\",\n    \"reading\": \"A place for the foot: a standing-ground, a footing, a stable base.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"PADDOCK -> PAD + DOCK; rearrangement emphasizes docked pad / padded dock\",\n    \"reading\": \"A dock made soft, or a soft thing made to dock: protection and reduction in one image.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P = enclosure/portal; A = apex; D = door; D = door; O = void/circle; C = crescent; K = splitting angle\",\n    \"reading\": \"An enclosed portal opens into a hollow circle, then a crescent and a cut: enclosure, void, and division.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.28\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"PADDOCK = 16+1+4+4+15+3+11 = 54; 5+4 = 9\",\n    \"reading\": \"Nine as completion: the word resolves into a closed cycle, a finished enclosure.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"paddock < Middle English paddok/paddokke, also related in dialect to frog/toad senses; check OED\",\n    \"reading\": \"An amphibious sign: the word carries the mud, moisture, and hidden life of the marsh.\",\n    \"languages\": [\"en\", \"enm\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.8\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "pad + dock; Middle English paddok/paddock, a small enclosure or frog/toad term in dialectal use",
+   "reading": "A bounded place: a little enclosed field, a place of keeping, or a damp, amphibious margin.",
+   "languages": [
+    "en",
+    "enm"
+   ],
+   "source": "Oxford English Dictionary; Chambers Dictionary of Etymology",
+   "confidence": 0.86
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pad + dock; pad = soft cushion, dock = cut off / tail / enclosure",
+   "reading": "Softness joined to cutting: a cushioned landing that also shortens, trims, or confines.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.72
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "pad + ock ~ pat + d'oc / pas d'ock; echoing French pas, d' = of, and ock as a clipped sound",
+   "reading": "A negation in motion: not this, not that, a step denied or diverted.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "paddock ~ paddo + ck; echoing Latin ped- / pes, foot, and dock as a place of standing",
+   "reading": "A place for the foot: a standing-ground, a footing, a stable base.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "anagram",
+   "chain": "PADDOCK -> PAD + DOCK; rearrangement emphasizes docked pad / padded dock",
+   "reading": "A dock made soft, or a soft thing made to dock: protection and reduction in one image.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P = enclosure/portal; A = apex; D = door; D = door; O = void/circle; C = crescent; K = splitting angle",
+   "reading": "An enclosed portal opens into a hollow circle, then a crescent and a cut: enclosure, void, and division.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.28
+  },
+  {
+   "operation": "numerical",
+   "chain": "PADDOCK = 16+1+4+4+15+3+11 = 54; 5+4 = 9",
+   "reading": "Nine as completion: the word resolves into a closed cycle, a finished enclosure.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "etymology",
+   "chain": "paddock < Middle English paddok/paddokke, also related in dialect to frog/toad senses; check OED",
+   "reading": "An amphibious sign: the word carries the mud, moisture, and hidden life of the marsh.",
+   "languages": [
+    "en",
+    "enm"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

@@ -1,0 +1,128 @@
+{
+ "word": "Victoria",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:24:33+00:00",
+ "latency_s": 8.38,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Victoria < Latin victoria = victory, from victor = conqueror, from vincere = to conquer\",\n    \"reading\": \"the act of conquering; triumph of the will over opposition\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"Oxford Latin Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vic-tor-ia → Vic (French: saw) + tor (French: bull, from taureau) + ia (she)\",\n    \"reading\": \"she who saw the bull; witness of the solar bull\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Victoire (French homophone) → vis (screw, force) + toire (from toire/toit = roof)\",\n    \"reading\": \"force that covers; the screw that roofs or seals the work\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Victoria ≈ Hebrew: Beit Or Yah (House of Light of God) via phonetic cabala\",\n    \"reading\": \"dwelling place where divine light is revealed and triumphs\",\n    \"languages\": [\"he\",\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"VICTORIA → I COV TAR I A\",\n    \"reading\": \"I cover the tar; I conceal the black prima materia\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vic-toria → Vic (Old French: alive, from Latin vivus) + toria (from Latin toreo = to bore through)\",\n    \"reading\": \"living piercer; the vital force that drills through matter\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"V.I.C.T.O.R.I.A. → Vivit In Corpore Tenebrarum Ordo Resurrectionis In Aurora\",\n    \"reading\": \"the order of resurrection lives in the body of darkness until dawn\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.40\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V (hook, nail, victory) + I (the straight path, the One) + C (crescent, moon) + T (hammer, cross) + O (circle, gold) + R (head, king) + I + A (ox, beginning)\",\n    \"reading\": \"nail of unity pierces moon with hammer; king of gold returns to the ox\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Victoria from vincere (to conquer) via *weik- (Proto-Indo-European: to fight, conquer)\",\n    \"reading\": \"the feminine personification of martial success and decisive overcoming\",\n    \"languages\": [\"la\",\"ine\"],\n    \"source\": \"Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.90\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Victoria ≈ Arabic: Waqt Orya (وقت أوريا) = time of the orphan/light\",\n    \"reading\": \"the appointed hour when the solitary light triumphs\",\n    \"languages\": [\"ar\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Victoria < Latin victoria = victory, from victor = conqueror, from vincere = to conquer",
+   "reading": "the act of conquering; triumph of the will over opposition",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Oxford Latin Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vic-tor-ia → Vic (French: saw) + tor (French: bull, from taureau) + ia (she)",
+   "reading": "she who saw the bull; witness of the solar bull",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Victoire (French homophone) → vis (screw, force) + toire (from toire/toit = roof)",
+   "reading": "force that covers; the screw that roofs or seals the work",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Victoria ≈ Hebrew: Beit Or Yah (House of Light of God) via phonetic cabala",
+   "reading": "dwelling place where divine light is revealed and triumphs",
+   "languages": [
+    "he",
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "anagram",
+   "chain": "VICTORIA → I COV TAR I A",
+   "reading": "I cover the tar; I conceal the black prima materia",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vic-toria → Vic (Old French: alive, from Latin vivus) + toria (from Latin toreo = to bore through)",
+   "reading": "living piercer; the vital force that drills through matter",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V.I.C.T.O.R.I.A. → Vivit In Corpore Tenebrarum Ordo Resurrectionis In Aurora",
+   "reading": "the order of resurrection lives in the body of darkness until dawn",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V (hook, nail, victory) + I (the straight path, the One) + C (crescent, moon) + T (hammer, cross) + O (circle, gold) + R (head, king) + I + A (ox, beginning)",
+   "reading": "nail of unity pierces moon with hammer; king of gold returns to the ox",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Victoria from vincere (to conquer) via *weik- (Proto-Indo-European: to fight, conquer)",
+   "reading": "the feminine personification of martial success and decisive overcoming",
+   "languages": [
+    "la",
+    "ine"
+   ],
+   "source": "Pokorny Indo-European Etymological Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Victoria ≈ Arabic: Waqt Orya (وقت أوريا) = time of the orphan/light",
+   "reading": "the appointed hour when the solitary light triumphs",
+   "languages": [
+    "ar",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

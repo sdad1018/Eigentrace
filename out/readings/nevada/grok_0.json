@@ -1,0 +1,128 @@
+{
+ "word": "Nevada",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:21:10+00:00",
+ "latency_s": 5.6,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Nevada ← Spanish nevada ← Latin nivata (feminine of nivatus) ← nix, nivis (snow)\",\n    \"reading\": \"snow-covered, the white land, the place of perpetual snow\",\n    \"languages\": [\"en\",\"es\",\"la\"],\n    \"source\": \"Oxford English Dictionary & Real Academia Española\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ne + va + da\",\n    \"reading\": \"born (né) by the voice (va) of the given (da)\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Nev + ada\",\n    \"reading\": \"new (nev) Adam, the renewed primordial man\",\n    \"languages\": [\"en\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Nevada ≈ né va d'A (French) ≈ ne va da (Italian)\",\n    \"reading\": \"does not go from A, does not depart from the beginning\",\n    \"languages\": [\"fr\",\"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Nevada = van + ade\",\n    \"reading\": \"the van of the ade, the vanguard of the adepts\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Neva + da\",\n    \"reading\": \"the snow (neva, Russian) gives (da, Russian), the snow-giver\",\n    \"languages\": [\"ru\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"N.E.V.A.D.A. ← Nunc Est Vera Alchimia Divina Arcana\",\n    \"reading\": \"Now is the true divine alchemical secret\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.40\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N (Nun, fish, primordial waters) + EV (Eve) + ADA (first woman in several tongues)\",\n    \"reading\": \"the fish-born Eve, the primordial feminine matrix\",\n    \"languages\": [\"he\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Nevada ≈ navada (Sanskrit नावाद) ≈ nava (new) + da (giver)\",\n    \"reading\": \"the bestower of renewal, the renovator\",\n    \"languages\": [\"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"nivata (Latin) ← nivalis ← nix; also linked to nebula, cloud\",\n    \"reading\": \"the clouded land, the veiled white mystery\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.75\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Nevada ← Spanish nevada ← Latin nivata (feminine of nivatus) ← nix, nivis (snow)",
+   "reading": "snow-covered, the white land, the place of perpetual snow",
+   "languages": [
+    "en",
+    "es",
+    "la"
+   ],
+   "source": "Oxford English Dictionary & Real Academia Española",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ne + va + da",
+   "reading": "born (né) by the voice (va) of the given (da)",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Nev + ada",
+   "reading": "new (nev) Adam, the renewed primordial man",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Nevada ≈ né va d'A (French) ≈ ne va da (Italian)",
+   "reading": "does not go from A, does not depart from the beginning",
+   "languages": [
+    "fr",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Nevada = van + ade",
+   "reading": "the van of the ade, the vanguard of the adepts",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Neva + da",
+   "reading": "the snow (neva, Russian) gives (da, Russian), the snow-giver",
+   "languages": [
+    "ru"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "notariqon",
+   "chain": "N.E.V.A.D.A. ← Nunc Est Vera Alchimia Divina Arcana",
+   "reading": "Now is the true divine alchemical secret",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N (Nun, fish, primordial waters) + EV (Eve) + ADA (first woman in several tongues)",
+   "reading": "the fish-born Eve, the primordial feminine matrix",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Nevada ≈ navada (Sanskrit नावाद) ≈ nava (new) + da (giver)",
+   "reading": "the bestower of renewal, the renovator",
+   "languages": [
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "etymology",
+   "chain": "nivata (Latin) ← nivalis ← nix; also linked to nebula, cloud",
+   "reading": "the clouded land, the veiled white mystery",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Lewis & Short Latin Dictionary",
+   "confidence": 0.75
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

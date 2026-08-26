@@ -1,0 +1,106 @@
+{
+ "word": "Bataclan",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:54+00:00",
+ "latency_s": 4.21,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"ba + ta + clan; ba ~ bas/“bas” (low, down) + ta ~ ta/“ta” (there) + clan ~ clan (family, enclosed group)\",\"reading\":\"The low place where the family gathers; a descent into an enclosed kinship.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.62},{\"operation\":\"cross_language_homophone\",\"chain\":\"bataclan ~ battement + clan; French batte/“beat” + clan; sound suggests a struck group\",\"reading\":\"A struck or beaten circle: a collective under percussion, rhythm, or ordeal.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.55},{\"operation\":\"phonetic_split\",\"chain\":\"bata + clan; bata ~ bataille (battle) by sound; clan = kin-group\",\"reading\":\"Battle among kin: conflict internal to the house, a family war.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.58},{\"operation\":\"anagram\",\"chain\":\"BATACLAN → CANAL + BAT; remaining letters rearranged around a waterway and a creature of night\",\"reading\":\"A hidden passage for the nocturnal one: a canal of transit under darkness.\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.41},{\"operation\":\"notariqon\",\"chain\":\"B-A-T-A-C-L-A-N as initials: Bas, Air, Terre, Ardeur, Ciel, Lune, Aube, Nuit\",\"reading\":\"The cycle of the elements and lights: descent, breath, earth, fire, sky, moon, dawn, night.\",\"languages\":[\"fr\",\"la\"],\"source\":\"generative\",\"confidence\":0.33},{\"operation\":\"letter_symbol\",\"chain\":\"B = two lobes; A = apex; T = crossing; C = crescent; L = angle; N = zigzag\",\"reading\":\"A crowned crossing between crescent and zigzag: a threshold figure of tension and division.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.29},{\"operation\":\"numerical\",\"chain\":\"B+A+T+A+C+L+A+N = 2+1+20+1+3+12+1+14 = 54; 5+4 = 9\",\"reading\":\"Nine: completion, culmination, and the end of a cycle before return.\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.37},{\"operation\":\"etymology\",\"chain\":\"No secure standard-lexicon etymology is established for the whole form; compare French bataclan as an expressive/onomatopoeic formation in modern dictionaries\",\"reading\":\"An expressive word of noise and bustle, suggesting clatter, confusion, and theatrical commotion.\",\"languages\":[\"fr\"],\"source\":\"Le Trésor de la langue française informatisé (TLFi); Le Robert; CNRTL\",\"confidence\":0.46}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "ba + ta + clan; ba ~ bas/“bas” (low, down) + ta ~ ta/“ta” (there) + clan ~ clan (family, enclosed group)",
+   "reading": "The low place where the family gathers; a descent into an enclosed kinship.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bataclan ~ battement + clan; French batte/“beat” + clan; sound suggests a struck group",
+   "reading": "A struck or beaten circle: a collective under percussion, rhythm, or ordeal.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "bata + clan; bata ~ bataille (battle) by sound; clan = kin-group",
+   "reading": "Battle among kin: conflict internal to the house, a family war.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "anagram",
+   "chain": "BATACLAN → CANAL + BAT; remaining letters rearranged around a waterway and a creature of night",
+   "reading": "A hidden passage for the nocturnal one: a canal of transit under darkness.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-A-T-A-C-L-A-N as initials: Bas, Air, Terre, Ardeur, Ciel, Lune, Aube, Nuit",
+   "reading": "The cycle of the elements and lights: descent, breath, earth, fire, sky, moon, dawn, night.",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.33
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B = two lobes; A = apex; T = crossing; C = crescent; L = angle; N = zigzag",
+   "reading": "A crowned crossing between crescent and zigzag: a threshold figure of tension and division.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.29
+  },
+  {
+   "operation": "numerical",
+   "chain": "B+A+T+A+C+L+A+N = 2+1+20+1+3+12+1+14 = 54; 5+4 = 9",
+   "reading": "Nine: completion, culmination, and the end of a cycle before return.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.37
+  },
+  {
+   "operation": "etymology",
+   "chain": "No secure standard-lexicon etymology is established for the whole form; compare French bataclan as an expressive/onomatopoeic formation in modern dictionaries",
+   "reading": "An expressive word of noise and bustle, suggesting clatter, confusion, and theatrical commotion.",
+   "languages": [
+    "fr"
+   ],
+   "source": "Le Trésor de la langue française informatisé (TLFi); Le Robert; CNRTL",
+   "confidence": 0.46
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

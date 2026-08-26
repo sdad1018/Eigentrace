@@ -1,0 +1,82 @@
+{
+ "word": "Wembley",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T00:52:33+00:00",
+ "latency_s": 210.31,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"Wem + bley\",\"reading\":\"Whispered warning of the blue sky\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"cross_language_homophone\",\"chain\":\"Wembley (English) = Voumbari (Greek, hypothetical)\",\"reading\":\"Voyage to a place of mystery and transformation\",\"languages\":[\"en\",\"grc\"],\"source\":\"generative\",\"confidence\":0.5},{\"operation\":\"anagram\",\"chain\":\"Wembley -> Wemyble\",\"reading\":\"My beloved weeps\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"notariqon\",\"chain\":\"We + m + ble + y\",\"reading\":\"Wisdom, movement, brightness, yearning\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.45},{\"operation\":\"letter_symbol\",\"chain\":\"W (double u) + mb (mem-beit) + ley\",\"reading\":\"Double vision of memory and speech in a sacred place\",\"languages\":[\"en\",\"he\"],\"source\":\"generative\",\"confidence\":0.35},{\"operation\":\"numerical\",\"chain\":\"Wembley -> 2346257\",\"reading\":\"A unique sequence, the key to hidden knowledge\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.2}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem + bley",
+   "reading": "Whispered warning of the blue sky",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley (English) = Voumbari (Greek, hypothetical)",
+   "reading": "Voyage to a place of mystery and transformation",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Wembley -> Wemyble",
+   "reading": "My beloved weeps",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "We + m + ble + y",
+   "reading": "Wisdom, movement, brightness, yearning",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "W (double u) + mb (mem-beit) + ley",
+   "reading": "Double vision of memory and speech in a sacred place",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "numerical",
+   "chain": "Wembley -> 2346257",
+   "reading": "A unique sequence, the key to hidden knowledge",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

@@ -1,0 +1,128 @@
+{
+ "word": "Route 91 Harvest",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:18:56+00:00",
+ "latency_s": 7.45,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Root + 91 + Harvest\",\n    \"reading\": \"The root of the nine and one reaping; origin of the harvest of unity\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Rout + e + 91 + Har + vest\",\n    \"reading\": \"Disorderly flight, the one and nine, the high lord's garment\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Route 91 = rut + neuf + un (fr); Harvest = har + vest\",\n    \"reading\": \"The rut of the new one; the high one's clothing or investment\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Harvest from Old English hærfest = autumn, from Proto-Germanic *harbistaz = harvest time\",\n    \"reading\": \"The season of cutting and gathering; the reaping\",\n    \"languages\": [\"en\",\"gem\"],\n    \"source\": \"Oxford English Dictionary / Pokorny\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Route 91 Harvest → Truth + Aversion + E\",\n    \"reading\": \"The truth that provokes turning away; the averted truth\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Rou + te + 91 + Har + vest\",\n    \"reading\": \"The wheel (roue) of the high one (te har) is vested; the wheel is clothed\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"R O U T E   N I N E T Y O N E   H A R V E S T → initial letters grouped\",\n    \"reading\": \"Royal Order Under The Eternal Ninety-One: Harvest\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"91 = neuf-un (fr) → neufs uns; Route = root; Harvest = har-vest\",\n    \"reading\": \"The root of the new ones; the high one's reaping or investment\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"9 = IX (Roman) inverted or mirrored; 1 = I; Route 91 = path of the inverted I\",\n    \"reading\": \"The path of the reversed or fallen unity leading to the reaping\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Route from Old French rute, from Latin rupta (via) = broken (road)\",\n    \"reading\": \"The broken way or ruptured path that leads to the gathering\",\n    \"languages\": [\"en\",\"fr\",\"la\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Root + 91 + Harvest",
+   "reading": "The root of the nine and one reaping; origin of the harvest of unity",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Rout + e + 91 + Har + vest",
+   "reading": "Disorderly flight, the one and nine, the high lord's garment",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Route 91 = rut + neuf + un (fr); Harvest = har + vest",
+   "reading": "The rut of the new one; the high one's clothing or investment",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Harvest from Old English hærfest = autumn, from Proto-Germanic *harbistaz = harvest time",
+   "reading": "The season of cutting and gathering; the reaping",
+   "languages": [
+    "en",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary / Pokorny",
+   "confidence": 0.95
+  },
+  {
+   "operation": "anagram",
+   "chain": "Route 91 Harvest → Truth + Aversion + E",
+   "reading": "The truth that provokes turning away; the averted truth",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Rou + te + 91 + Har + vest",
+   "reading": "The wheel (roue) of the high one (te har) is vested; the wheel is clothed",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R O U T E   N I N E T Y O N E   H A R V E S T → initial letters grouped",
+   "reading": "Royal Order Under The Eternal Ninety-One: Harvest",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "91 = neuf-un (fr) → neufs uns; Route = root; Harvest = har-vest",
+   "reading": "The root of the new ones; the high one's reaping or investment",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "9 = IX (Roman) inverted or mirrored; 1 = I; Route 91 = path of the inverted I",
+   "reading": "The path of the reversed or fallen unity leading to the reaping",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "etymology",
+   "chain": "Route from Old French rute, from Latin rupta (via) = broken (road)",
+   "reading": "The broken way or ruptured path that leads to the gathering",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

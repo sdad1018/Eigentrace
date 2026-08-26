@@ -1,0 +1,154 @@
+{
+ "word": "Bahamas",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:26:13+00:00",
+ "latency_s": 7.74,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"etymology\",\"chain\":\"Bahamas ← Spanish 'Baja Mar'\",\"reading\":\"Shallow sea or low waters\",\"languages\":[\"es\",\"en\"],\"source\":\"Oxford English Dictionary / Real Academia Española\",\"confidence\":0.9},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Ba + ha + mas\",\"reading\":\"The soul (Ba) has (ha) more (mas)\",\"languages\":[\"en\",\"fr\",\"la\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Bah + ah + mas\",\"reading\":\"Gate (bah) of the great (ah-mas) work\",\"languages\":[\"ar\",\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Bahamas ≈ Bâ-haut-mas (French)\",\"reading\":\"Low high sea / sea that is both low and high\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Bahamas ≈ Baa + hamaas (Arabic)\",\"reading\":\"The bleating of the fervent zeal\",\"languages\":[\"ar\",\"en\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"anagram\",\"chain\":\"BAHAMAS → AABAHMS → Aba + hams\",\"reading\":\"Father of the five (hams = five in Arabic)\",\"languages\":[\"ar\",\"en\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"notariqon\",\"chain\":\"B.A.H.A.M.A.S. → Bayit + Hochmah + Aesh + Mayim + Avir + Shemesh\",\"reading\":\"House of Wisdom, Fire, Water, Air and Sun\",\"languages\":[\"he\"],\"source\":\"generative\",\"confidence\":0.4},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Bah + a + mas\",\"reading\":\"The gate (bah) to the mass (mas)\",\"languages\":[\"fr\",\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"letter_symbol\",\"chain\":\"B (house) + AH (breath of God) + MAS (more / great)\",\"reading\":\"The house of the divine breath made greater\",\"languages\":[\"en\",\"he\",\"fr\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"etymology\",\"chain\":\"Bahamas ← Lucayan 'ba-ha-ma' via Spanish\",\"reading\":\"The middle of the shallow waters\",\"languages\":[\"en\",\"es\"],\"source\":\"Merriam-Webster / Spanish Royal Academy\",\"confidence\":0.85},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Bahamas ≈ Bâ-hamas (French)\",\"reading\":\"The low masses / the masses below\",\"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"numerical\",\"chain\":\"B=2 A=1 H=5 A=1 M=4 A=1 S=3 → sum 17 → reduction 8\",\"reading\":\"The gate (17) to perfect equilibrium (8)\",\"languages\":[\"en\",\"he\"],\"source\":\"generative\",\"confidence\":0.35}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Bahamas ← Spanish 'Baja Mar'",
+   "reading": "Shallow sea or low waters",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "Oxford English Dictionary / Real Academia Española",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba + ha + mas",
+   "reading": "The soul (Ba) has (ha) more (mas)",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bah + ah + mas",
+   "reading": "Gate (bah) of the great (ah-mas) work",
+   "languages": [
+    "ar",
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bahamas ≈ Bâ-haut-mas (French)",
+   "reading": "Low high sea / sea that is both low and high",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bahamas ≈ Baa + hamaas (Arabic)",
+   "reading": "The bleating of the fervent zeal",
+   "languages": [
+    "ar",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "BAHAMAS → AABAHMS → Aba + hams",
+   "reading": "Father of the five (hams = five in Arabic)",
+   "languages": [
+    "ar",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B.A.H.A.M.A.S. → Bayit + Hochmah + Aesh + Mayim + Avir + Shemesh",
+   "reading": "House of Wisdom, Fire, Water, Air and Sun",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bah + a + mas",
+   "reading": "The gate (bah) to the mass (mas)",
+   "languages": [
+    "fr",
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (house) + AH (breath of God) + MAS (more / great)",
+   "reading": "The house of the divine breath made greater",
+   "languages": [
+    "en",
+    "he",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bahamas ← Lucayan 'ba-ha-ma' via Spanish",
+   "reading": "The middle of the shallow waters",
+   "languages": [
+    "en",
+    "es"
+   ],
+   "source": "Merriam-Webster / Spanish Royal Academy",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bahamas ≈ Bâ-hamas (French)",
+   "reading": "The low masses / the masses below",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "numerical",
+   "chain": "B=2 A=1 H=5 A=1 M=4 A=1 S=3 → sum 17 → reduction 8",
+   "reading": "The gate (17) to perfect equilibrium (8)",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

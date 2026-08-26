@@ -1,0 +1,110 @@
+{
+ "word": "Wembley",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:16:59+00:00",
+ "latency_s": 9.19,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Wembley < Old English *Wemba-lēah; lēah = clearing/wood; Wemba = personal name\",\n    \"reading\": \"Wemba's clearing in the wood; a place-name of settlement and boundary\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"Oxford Dictionary of English Place-Names\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem + bley; Wem (German) = to whom; bley (Yiddish) = lead; or bley (Old French) = pale\",\n    \"reading\": \"To whom the pale lead? A question of weight and pallor, of dull metal and ghostly hue\",\n    \"languages\": [\"de\", \"yi\", \"fro\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley ~ 'wemble' (English dialect) = to twist, turn; + 'ley' = field; also 'wamble' = to roll, feel nausea\",\n    \"reading\": \"A twisting field, a rolling meadow that turns the stomach — a place of vertigo and motion\",\n    \"languages\": [\"en\", \"enm\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Wembley → 'by me, lew' (lew = shelter, warmth); also 'mewl, bey' (mewl = cry, bey = Turkish lord)\",\n    \"reading\": \"Shelter by me, but also a lord's cry — a place of refuge and command, of infant wail and authority\",\n    \"languages\": [\"en\", \"tr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"W-M-B-L-Y → Womb, Milk, Blood, Lymph, Yolk — the five fluids of generation\",\n    \"reading\": \"The letters spell the humours of life: womb, milk, blood, lymph, yolk — a cauldron of becoming\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"W = double V (victory, vulva); E = eye; M = water (mem); B = house (beth); L = ox-goad; Y = fork\",\n    \"reading\": \"Double victory, eye, water, house, goad, fork — a path of seeing, shelter, and division\",\n    \"languages\": [\"en\", \"he\", \"ph\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"W=6, E=5, M=4, B=2, L=3, Y=1 (A1Z26 reduced) → 6+5+4+2+3+1=21; 21 = XXI = cross of life\",\n    \"reading\": \"Sum 21 — the cross of life, the key of the tarot's world, a completion of cycles\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley ~ 'vemble' (Old Norse vembla) = to turn, twist; + 'ey' (Old Norse) = island\",\n    \"reading\": \"Twisting island — a place of winding shores and turning tides, a labyrinth of water\",\n    \"languages\": [\"en\", \"non\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Wembley < Old English *Wemba-lēah; lēah = clearing/wood; Wemba = personal name",
+   "reading": "Wemba's clearing in the wood; a place-name of settlement and boundary",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Oxford Dictionary of English Place-Names",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem + bley; Wem (German) = to whom; bley (Yiddish) = lead; or bley (Old French) = pale",
+   "reading": "To whom the pale lead? A question of weight and pallor, of dull metal and ghostly hue",
+   "languages": [
+    "de",
+    "yi",
+    "fro"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley ~ 'wemble' (English dialect) = to twist, turn; + 'ley' = field; also 'wamble' = to roll, feel nausea",
+   "reading": "A twisting field, a rolling meadow that turns the stomach — a place of vertigo and motion",
+   "languages": [
+    "en",
+    "enm"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Wembley → 'by me, lew' (lew = shelter, warmth); also 'mewl, bey' (mewl = cry, bey = Turkish lord)",
+   "reading": "Shelter by me, but also a lord's cry — a place of refuge and command, of infant wail and authority",
+   "languages": [
+    "en",
+    "tr"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "notariqon",
+   "chain": "W-M-B-L-Y → Womb, Milk, Blood, Lymph, Yolk — the five fluids of generation",
+   "reading": "The letters spell the humours of life: womb, milk, blood, lymph, yolk — a cauldron of becoming",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "W = double V (victory, vulva); E = eye; M = water (mem); B = house (beth); L = ox-goad; Y = fork",
+   "reading": "Double victory, eye, water, house, goad, fork — a path of seeing, shelter, and division",
+   "languages": [
+    "en",
+    "he",
+    "ph"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "W=6, E=5, M=4, B=2, L=3, Y=1 (A1Z26 reduced) → 6+5+4+2+3+1=21; 21 = XXI = cross of life",
+   "reading": "Sum 21 — the cross of life, the key of the tarot's world, a completion of cycles",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley ~ 'vemble' (Old Norse vembla) = to turn, twist; + 'ey' (Old Norse) = island",
+   "reading": "Twisting island — a place of winding shores and turning tides, a labyrinth of water",
+   "languages": [
+    "en",
+    "non"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

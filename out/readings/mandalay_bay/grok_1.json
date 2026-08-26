@@ -1,0 +1,146 @@
+{
+ "word": "Mandalay Bay",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:19:59+00:00",
+ "latency_s": 6.4,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"phonetic_split\",\"chain\":\"Manda + lay + Bay\",\"reading\":\"The command (manda) lies in the bay; the order is given from the sheltered harbor\",\"languages\":[\"en\",\"fr\",\"la\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"etymology\",\"chain\":\"Mandalay from Burmese Mandalay (royal city); Bay from Old English bæy = body of water\",\"reading\":\"Protected royal harbor where the mandate of the king is proclaimed\",\"languages\":[\"en\",\"my\",\"la\"],\"source\":\"Oxford English Dictionary / Hobson-Jobson\",\"confidence\":0.4},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Man + da + lay + Bay\",\"reading\":\"The man gives (da) the song (lay) in the bay; the singer reveals in the inlet\",\"languages\":[\"en\",\"fr\",\"la\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Manda (Skt: command, decree) + lai (Fr: brings) + baie (Fr: bay)\",\"reading\":\"The decree brings forth the bay; the order manifests the sheltered place\",\"languages\":[\"sa\",\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"anagram\",\"chain\":\"Mandalay Bay → A Badly Mayan\",\"reading\":\"A badly Mayan; the place where the Mayan knowledge has been corrupted or hidden\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Mandala + y + Bay\",\"reading\":\"The mandala goes into the bay; the sacred circle is cast into or revealed within the harbor\",\"languages\":[\"en\",\"sa\"],\"source\":\"generative\",\"confidence\":0.75},\n  {\"operation\":\"notariqon\",\"chain\":\"M A N D A L A Y   B A Y → Mundus Alternus Novus Draco Astra Lux Arcana Yod Bay\",\"reading\":\"The alternate world, new dragon, starlight, hidden mystery, the hand in the bay\",\"languages\":[\"la\",\"en\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Mandala (Skt circle) + baie (Fr: berry or bay)\",\"reading\":\"The circle of the sacred berry; the mandala is the fruit of the bay\",\"languages\":[\"sa\",\"fr\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Man-dalay Bay → Mont de la Baie\",\"reading\":\"Mount of the bay; the high place that watches over the sheltered waters\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"letter_symbol\",\"chain\":\"M (Mem = water) + Bay (English bay = water) with Anda (egg/seed) in the middle\",\"reading\":\"The waters of the bay contain the cosmic egg; primordial seed within the waters\",\"languages\":[\"he\",\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"etymology\",\"chain\":\"Bay from Old French baie, from Late Latin baia = bay; Mandalay treated as compound of manda (Skt command) + lay (OE lay/song)\",\"reading\":\"The commanded song of the bay; the decreed hymn arising from the harbor\",\"languages\":[\"la\",\"sa\",\"en\"],\"source\":\"Etymonline / Monier-Williams Sanskrit Dictionary\",\"confidence\":0.35}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Manda + lay + Bay",
+   "reading": "The command (manda) lies in the bay; the order is given from the sheltered harbor",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "etymology",
+   "chain": "Mandalay from Burmese Mandalay (royal city); Bay from Old English bæy = body of water",
+   "reading": "Protected royal harbor where the mandate of the king is proclaimed",
+   "languages": [
+    "en",
+    "my",
+    "la"
+   ],
+   "source": "Oxford English Dictionary / Hobson-Jobson",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + da + lay + Bay",
+   "reading": "The man gives (da) the song (lay) in the bay; the singer reveals in the inlet",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manda (Skt: command, decree) + lai (Fr: brings) + baie (Fr: bay)",
+   "reading": "The decree brings forth the bay; the order manifests the sheltered place",
+   "languages": [
+    "sa",
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay Bay → A Badly Mayan",
+   "reading": "A badly Mayan; the place where the Mayan knowledge has been corrupted or hidden",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Mandala + y + Bay",
+   "reading": "The mandala goes into the bay; the sacred circle is cast into or revealed within the harbor",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M A N D A L A Y   B A Y → Mundus Alternus Novus Draco Astra Lux Arcana Yod Bay",
+   "reading": "The alternate world, new dragon, starlight, hidden mystery, the hand in the bay",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandala (Skt circle) + baie (Fr: berry or bay)",
+   "reading": "The circle of the sacred berry; the mandala is the fruit of the bay",
+   "languages": [
+    "sa",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-dalay Bay → Mont de la Baie",
+   "reading": "Mount of the bay; the high place that watches over the sheltered waters",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (Mem = water) + Bay (English bay = water) with Anda (egg/seed) in the middle",
+   "reading": "The waters of the bay contain the cosmic egg; primordial seed within the waters",
+   "languages": [
+    "he",
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bay from Old French baie, from Late Latin baia = bay; Mandalay treated as compound of manda (Skt command) + lay (OE lay/song)",
+   "reading": "The commanded song of the bay; the decreed hymn arising from the harbor",
+   "languages": [
+    "la",
+    "sa",
+    "en"
+   ],
+   "source": "Etymonline / Monier-Williams Sanskrit Dictionary",
+   "confidence": 0.35
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 11,
+ "refusal_like": false
+}

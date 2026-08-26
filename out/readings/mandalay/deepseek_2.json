@@ -1,0 +1,107 @@
+{
+ "word": "Mandalay",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:12+00:00",
+ "latency_s": 8.15,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mandalay < Burmese မန္တလေး (Manta-le); possibly from Pali mandala (circle) + le (river?)\",\n    \"reading\": \"Circle of the river; a bounded sacred enclosure by water.\",\n    \"languages\": [\"my\", \"pi\", \"en\"],\n    \"source\": \"OED, 'Mandalay' entry\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + da + lay; man (Old English) = human; da (Italian) = from; lay (English) = to place\",\n    \"reading\": \"The human placed from a circle — a being set down within a ring.\",\n    \"languages\": [\"en\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay ~ mandala (Sanskrit) + lai (French) = milk; or mande (French) = commanded + lait\",\n    \"reading\": \"The commanded milk of the cosmic circle — nourishment from the sacred ring.\",\n    \"languages\": [\"sa\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay → 'day alarm' (anagram); day + alarm; alarm (Italian all'arme) = to arms\",\n    \"reading\": \"A daily call to arms — the waking of the circle's sentinel.\",\n    \"languages\": [\"en\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M-A-N-D-A-L-A-Y: M = mater (mother), A = axis, N = nomen (name), D = domus (house), A = aqua (water), L = lux (light), A = anima (soul), Y = yod (hand)\",\n    \"reading\": \"Mother axis, name, house, water, light, soul, hand — a cosmic household.\",\n    \"languages\": [\"la\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (13th letter) + A (1) + N (14) + D (4) + A (1) + L (12) + A (1) + Y (25); sum = 71\",\n    \"reading\": \"Seventy-one: a prime; the hidden unity of the circle's eight letters.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"M=40, A=1, N=50, D=4, A=1, L=30, A=1, Y=10 (Greek isopsephy); total = 137\",\n    \"reading\": \"One hundred thirty-seven: the fine-structure constant — the circle's electromagnetic signature.\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + da + lay; 'man' (English) + 'da' (Russian да = yes) + 'lay' (English) = to put down\",\n    \"reading\": \"Yes, the human is laid down — a sacrificial placement within the ring.\",\n    \"languages\": [\"en\", \"ru\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Mandalay < Burmese မန္တလေး (Manta-le); possibly from Pali mandala (circle) + le (river?)",
+   "reading": "Circle of the river; a bounded sacred enclosure by water.",
+   "languages": [
+    "my",
+    "pi",
+    "en"
+   ],
+   "source": "OED, 'Mandalay' entry",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + da + lay; man (Old English) = human; da (Italian) = from; lay (English) = to place",
+   "reading": "The human placed from a circle — a being set down within a ring.",
+   "languages": [
+    "en",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay ~ mandala (Sanskrit) + lai (French) = milk; or mande (French) = commanded + lait",
+   "reading": "The commanded milk of the cosmic circle — nourishment from the sacred ring.",
+   "languages": [
+    "sa",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay → 'day alarm' (anagram); day + alarm; alarm (Italian all'arme) = to arms",
+   "reading": "A daily call to arms — the waking of the circle's sentinel.",
+   "languages": [
+    "en",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M-A-N-D-A-L-A-Y: M = mater (mother), A = axis, N = nomen (name), D = domus (house), A = aqua (water), L = lux (light), A = anima (soul), Y = yod (hand)",
+   "reading": "Mother axis, name, house, water, light, soul, hand — a cosmic household.",
+   "languages": [
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (13th letter) + A (1) + N (14) + D (4) + A (1) + L (12) + A (1) + Y (25); sum = 71",
+   "reading": "Seventy-one: a prime; the hidden unity of the circle's eight letters.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "M=40, A=1, N=50, D=4, A=1, L=30, A=1, Y=10 (Greek isopsephy); total = 137",
+   "reading": "One hundred thirty-seven: the fine-structure constant — the circle's electromagnetic signature.",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + da + lay; 'man' (English) + 'da' (Russian да = yes) + 'lay' (English) = to put down",
+   "reading": "Yes, the human is laid down — a sacrificial placement within the ring.",
+   "languages": [
+    "en",
+    "ru"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

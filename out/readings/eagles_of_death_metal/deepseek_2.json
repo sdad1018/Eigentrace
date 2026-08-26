@@ -1,0 +1,112 @@
+{
+ "word": "Eagles of Death Metal",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:33:29+00:00",
+ "latency_s": 9.33,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Eagles (Latin aquila, via Old French egle); Death (Old English dēaþ, from Proto-Germanic *dauþuz); Metal (Greek metallon, via Latin metallum)\",\n    \"reading\": \"The high-soaring bird of empire meets the end of being and the mined substance of transformation\",\n    \"languages\": [\"en\", \"la\", \"grc\", \"fr\", \"de\"],\n    \"source\": \"Oxford English Dictionary; Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ea + gles; gles (French 'glace' = ice); of (English 'off'); Death (German 'Tod'); Metal (French 'métal')\",\n    \"reading\": \"Ice-bird, off the death-metal: a cold flight severed from the ringing ore\",\n    \"languages\": [\"en\", \"fr\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Eagles → 'aigles' (French eagles); Death → 'dette' (French debt) + 'h' silent; Metal → 'métal' (French) but also 'met alle' (Dutch: with all)\",\n    \"reading\": \"Eagles of debt with all: the soaring ones carry an unpaid weight, wholly together\",\n    \"languages\": [\"en\", \"fr\", \"nl\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Eagles of Death Metal → 'Death of Eagles Metal' → 'Metal Death of Eagles' → rearrange to 'Gleed, foam, hate, slate' (Gleed = glowing coal; slate = writing stone)\",\n    \"reading\": \"Glowing coal and foam, hate and slate: the song of fire, water, anger, and inscription\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"E.O.D.M. → Latin 'Ex Ordine Divino Metallorum' (from the divine order of metals); also 'Ego Omnia Deo Mando' (I entrust all to God)\",\n    \"reading\": \"From the divine order of metals, all is entrusted to God: a sacred alchemical decree\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"E (eagle, spirit) + A (alpha, beginning) + G (gamma, generation) + L (lamed, ox-goad) + E (end) + S (sigma, sum); Death = D (delta, change) + E (epsilon) + A + T (tau, cross) + H (heta, breath); Metal = M (mem, water) + E + T + A + L (lamed)\",\n    \"reading\": \"Spirit begins, generation goads, end sums; change breathes through the cross; water and ox-goad forge the ore\",\n    \"languages\": [\"en\", \"he\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"E(5)+A(1)+G(7)+L(12)+E(5)+S(19) = 49; Death = D(4)+E(5)+A(1)+T(20)+H(8) = 38; Metal = M(13)+E(5)+T(20)+A(1)+L(12) = 51; total 138 → 1+3+8=12 → 1+2=3\",\n    \"reading\": \"The sum reduces to three: the trinity of sky, end, and earth — a ternary of completion\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Death (Old English dēaþ, from Proto-Indo-European *dheu- = to die, also 'dust'); Metal (Greek metallon = mine, quarry, from *metalleuein = to search after)\",\n    \"reading\": \"Dust and quarry: the search after what is dug from the ground, ending in dust\",\n    \"languages\": [\"en\", \"grc\", \"ine\"],\n    \"source\": \"Oxford English Dictionary; Liddell-Scott Greek Lexicon\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Eagles (Latin aquila, via Old French egle); Death (Old English dēaþ, from Proto-Germanic *dauþuz); Metal (Greek metallon, via Latin metallum)",
+   "reading": "The high-soaring bird of empire meets the end of being and the mined substance of transformation",
+   "languages": [
+    "en",
+    "la",
+    "grc",
+    "fr",
+    "de"
+   ],
+   "source": "Oxford English Dictionary; Lewis & Short Latin Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ea + gles; gles (French 'glace' = ice); of (English 'off'); Death (German 'Tod'); Metal (French 'métal')",
+   "reading": "Ice-bird, off the death-metal: a cold flight severed from the ringing ore",
+   "languages": [
+    "en",
+    "fr",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Eagles → 'aigles' (French eagles); Death → 'dette' (French debt) + 'h' silent; Metal → 'métal' (French) but also 'met alle' (Dutch: with all)",
+   "reading": "Eagles of debt with all: the soaring ones carry an unpaid weight, wholly together",
+   "languages": [
+    "en",
+    "fr",
+    "nl"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Eagles of Death Metal → 'Death of Eagles Metal' → 'Metal Death of Eagles' → rearrange to 'Gleed, foam, hate, slate' (Gleed = glowing coal; slate = writing stone)",
+   "reading": "Glowing coal and foam, hate and slate: the song of fire, water, anger, and inscription",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "E.O.D.M. → Latin 'Ex Ordine Divino Metallorum' (from the divine order of metals); also 'Ego Omnia Deo Mando' (I entrust all to God)",
+   "reading": "From the divine order of metals, all is entrusted to God: a sacred alchemical decree",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "E (eagle, spirit) + A (alpha, beginning) + G (gamma, generation) + L (lamed, ox-goad) + E (end) + S (sigma, sum); Death = D (delta, change) + E (epsilon) + A + T (tau, cross) + H (heta, breath); Metal = M (mem, water) + E + T + A + L (lamed)",
+   "reading": "Spirit begins, generation goads, end sums; change breathes through the cross; water and ox-goad forge the ore",
+   "languages": [
+    "en",
+    "he",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "E(5)+A(1)+G(7)+L(12)+E(5)+S(19) = 49; Death = D(4)+E(5)+A(1)+T(20)+H(8) = 38; Metal = M(13)+E(5)+T(20)+A(1)+L(12) = 51; total 138 → 1+3+8=12 → 1+2=3",
+   "reading": "The sum reduces to three: the trinity of sky, end, and earth — a ternary of completion",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "etymology",
+   "chain": "Death (Old English dēaþ, from Proto-Indo-European *dheu- = to die, also 'dust'); Metal (Greek metallon = mine, quarry, from *metalleuein = to search after)",
+   "reading": "Dust and quarry: the search after what is dug from the ground, ending in dust",
+   "languages": [
+    "en",
+    "grc",
+    "ine"
+   ],
+   "source": "Oxford English Dictionary; Liddell-Scott Greek Lexicon",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

@@ -1,0 +1,144 @@
+{
+ "word": "Wembley",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:17+00:00",
+ "latency_s": 25.28,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem-bley sounds like 'womb' + 'lay'.\",\n    \"reading\": \"The laying down or placement of the origin; the fundamental resting place where something is conceived or settled.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem-bley sounds like 'weigh' + 'em' + 'play'.\",\n    \"reading\": \"The act of assessing or balancing multiple plays or actions; the careful consideration of various strategies or games.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wem sounds like 'Gem' (English); bley sounds like 'Blei' (German for lead).\",\n    \"reading\": \"A precious core or essential part that carries a significant, heavy weight; a hidden or profound, dull value.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wem sounds like 'Vent' (French for wind); bley sounds like 'Bleu' (French for blue).\",\n    \"reading\": \"The blue wind; a celestial breath or an unseen force, perhaps tinged with melancholy, spirituality, or vastness.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Old English *Wemba* (a personal name) + *lēah* (clearing, meadow, pasture).\",\n    \"reading\": \"A sacred or designated clearing, a meadow or pasture belonging to 'Wemba,' defining a personal, open space.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"A Dictionary of British Place Names by A.D. Mills\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Old English *Wemba* (personal name, phonetically interpreted as 'womb-bay') + *lēah* (clearing, meadow).\",\n    \"reading\": \"The clearing of the womb; a place of primal origin and refuge; a fertile, sheltered space where emergence begins.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"A Dictionary of British Place Names by A.D. Mills (for Lea), generative (for Wemba interpretation)\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Rearranging letters of 'Wembley' yields 'Bewelm', an archaic variant of 'bewhelm'.\",\n    \"reading\": \"To cover entirely, to overwhelm or envelop; suggesting a pervasive, encompassing influence, state, or obscurity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary (OED) for 'bewhelm'\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Assigning symbolic meanings to each letter: W=Wisdom, E=Essence, M=Mystery, B=Birth, L=Light, E=Eternal, Y=Yield.\",\n    \"reading\": \"A sequence revealing a journey from insightful essence and hidden knowledge, leading to the birth of eternal light and ultimate fulfillment.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"W (duality, waves), E (energy, breath), M (mother, depth), B (foundation, container), L (light, ascent), E (reinforcement), Y (choice, divergence).\",\n    \"reading\": \"A symbolic narrative of dual energies flowing from a maternal depth, founding a path of light, leading to a critical choice or divergence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Using A=1 to Z=26: W=23, E=5, M=13, B=2, L=12, E=5, Y=25. Sum = 85. 8 symbolizes balance/infinity; 5 symbolizes change/humanity.\",\n    \"reading\": \"The infinite balance of human transformation; a dynamic equilibrium manifesting profound change and individual evolution or experience.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wem sounds like 'we am' or 'we're'; bley sounds like 'blee' (Scots for colour, hue, complexion).\",\n    \"reading\": \"Revealing our inherent character or true colour; the essence of our collective being, as if painted on us.\",\n    \"languages\": [\"en\", \"sco\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem sounds like 'wham' (impact); bley sounds like 'play' (action, game).\",\n    \"reading\": \"The sudden impact of action or game; an explosive, decisive moment within a playful or strategic engagement.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem-bley sounds like 'womb' + 'lay'.",
+   "reading": "The laying down or placement of the origin; the fundamental resting place where something is conceived or settled.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem-bley sounds like 'weigh' + 'em' + 'play'.",
+   "reading": "The act of assessing or balancing multiple plays or actions; the careful consideration of various strategies or games.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wem sounds like 'Gem' (English); bley sounds like 'Blei' (German for lead).",
+   "reading": "A precious core or essential part that carries a significant, heavy weight; a hidden or profound, dull value.",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wem sounds like 'Vent' (French for wind); bley sounds like 'Bleu' (French for blue).",
+   "reading": "The blue wind; a celestial breath or an unseen force, perhaps tinged with melancholy, spirituality, or vastness.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "etymology",
+   "chain": "Old English *Wemba* (a personal name) + *lēah* (clearing, meadow, pasture).",
+   "reading": "A sacred or designated clearing, a meadow or pasture belonging to 'Wemba,' defining a personal, open space.",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "A Dictionary of British Place Names by A.D. Mills",
+   "confidence": 0.95
+  },
+  {
+   "operation": "etymology",
+   "chain": "Old English *Wemba* (personal name, phonetically interpreted as 'womb-bay') + *lēah* (clearing, meadow).",
+   "reading": "The clearing of the womb; a place of primal origin and refuge; a fertile, sheltered space where emergence begins.",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "A Dictionary of British Place Names by A.D. Mills (for Lea), generative (for Wemba interpretation)",
+   "confidence": 0.85
+  },
+  {
+   "operation": "anagram",
+   "chain": "Rearranging letters of 'Wembley' yields 'Bewelm', an archaic variant of 'bewhelm'.",
+   "reading": "To cover entirely, to overwhelm or envelop; suggesting a pervasive, encompassing influence, state, or obscurity.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary (OED) for 'bewhelm'",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Assigning symbolic meanings to each letter: W=Wisdom, E=Essence, M=Mystery, B=Birth, L=Light, E=Eternal, Y=Yield.",
+   "reading": "A sequence revealing a journey from insightful essence and hidden knowledge, leading to the birth of eternal light and ultimate fulfillment.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "W (duality, waves), E (energy, breath), M (mother, depth), B (foundation, container), L (light, ascent), E (reinforcement), Y (choice, divergence).",
+   "reading": "A symbolic narrative of dual energies flowing from a maternal depth, founding a path of light, leading to a critical choice or divergence.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "numerical",
+   "chain": "Using A=1 to Z=26: W=23, E=5, M=13, B=2, L=12, E=5, Y=25. Sum = 85. 8 symbolizes balance/infinity; 5 symbolizes change/humanity.",
+   "reading": "The infinite balance of human transformation; a dynamic equilibrium manifesting profound change and individual evolution or experience.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wem sounds like 'we am' or 'we're'; bley sounds like 'blee' (Scots for colour, hue, complexion).",
+   "reading": "Revealing our inherent character or true colour; the essence of our collective being, as if painted on us.",
+   "languages": [
+    "en",
+    "sco"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem sounds like 'wham' (impact); bley sounds like 'play' (action, game).",
+   "reading": "The sudden impact of action or game; an explosive, decisive moment within a playful or strategic engagement.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

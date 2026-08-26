@@ -1,0 +1,108 @@
+{
+ "word": "Texas",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:21:14+00:00",
+ "latency_s": 4.03,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"tex + as; tex ≈ tek/tekh, as ≈ ace/ass\",\"reading\":\"A woven surface meets a base-metal weight: cloth laid over matter, or texture over substance.\",\"languages\":[\"en\",\"fr\",\"la\"],\"source\":\"generative\",\"confidence\":0.34},{\"operation\":\"cross_language_homophone\",\"chain\":\"texas → sounds like \\\"take us\\\" / \\\"teksas\\\"; as = Latin/English \\\"as, like\\\"\",\"reading\":\"A command to take, then likeness: to take us as we are, or to make the same.\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.29},{\"operation\":\"anagram\",\"chain\":\"TEXAS → TAXES\",\"reading\":\"The word hides its own levy: exchange, burden, tribute, the price exacted from matter.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.97},{\"operation\":\"notariqon\",\"chain\":\"T E X A S → Thread, End, X, Axis, Seam\",\"reading\":\"A stitched crossing around a central axis: the seam where lines meet and are bound.\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.18},{\"operation\":\"letter_symbol\",\"chain\":\"T = crossbar; X = crossing; A = apex; S = serpent/curve\",\"reading\":\"Crossing, summit, and curve: a sign of intersection, ascent, and winding return.\",\"languages\":[\"en\",\"grc\"],\"source\":\"generative\",\"confidence\":0.22},{\"operation\":\"numerical\",\"chain\":\"T(20)+E(5)+X(24)+A(1)+S(19)=69; 6+9=15; 1+5=6\",\"reading\":\"A doubled harmony of six: completion, balance, and the turning of a cycle.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.15},{\"operation\":\"etymology\",\"chain\":\"Standard lexicon: Oxford English Dictionary / Merriam-Webster trace Texas to Spanish Texas, from Caddo táyshaʼ 'friends'\",\"reading\":\"A name of friendship or allies, preserved by borrowing and reshaped by Spanish spelling.\",\"languages\":[\"en\",\"es\",\"caddo\"],\"source\":\"Oxford English Dictionary; Merriam-Webster Dictionary\",\"confidence\":0.93},{\"operation\":\"etymology\",\"chain\":\"Spanish Texas < Caddo táyshaʼ; compare Spanish orthographic x = /ʃ/ historically\",\"reading\":\"An old sibilant name: the written x keeps a vanished sh-sound, like a fossil of speech.\",\"languages\":[\"es\",\"caddo\"],\"source\":\"Oxford English Dictionary; Merriam-Webster Dictionary\",\"confidence\":0.88}]}",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "tex + as; tex ≈ tek/tekh, as ≈ ace/ass",
+   "reading": "A woven surface meets a base-metal weight: cloth laid over matter, or texture over substance.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.34
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "texas → sounds like \"take us\" / \"teksas\"; as = Latin/English \"as, like\"",
+   "reading": "A command to take, then likeness: to take us as we are, or to make the same.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.29
+  },
+  {
+   "operation": "anagram",
+   "chain": "TEXAS → TAXES",
+   "reading": "The word hides its own levy: exchange, burden, tribute, the price exacted from matter.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.97
+  },
+  {
+   "operation": "notariqon",
+   "chain": "T E X A S → Thread, End, X, Axis, Seam",
+   "reading": "A stitched crossing around a central axis: the seam where lines meet and are bound.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.18
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T = crossbar; X = crossing; A = apex; S = serpent/curve",
+   "reading": "Crossing, summit, and curve: a sign of intersection, ascent, and winding return.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "numerical",
+   "chain": "T(20)+E(5)+X(24)+A(1)+S(19)=69; 6+9=15; 1+5=6",
+   "reading": "A doubled harmony of six: completion, balance, and the turning of a cycle.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.15
+  },
+  {
+   "operation": "etymology",
+   "chain": "Standard lexicon: Oxford English Dictionary / Merriam-Webster trace Texas to Spanish Texas, from Caddo táyshaʼ 'friends'",
+   "reading": "A name of friendship or allies, preserved by borrowing and reshaped by Spanish spelling.",
+   "languages": [
+    "en",
+    "es",
+    "caddo"
+   ],
+   "source": "Oxford English Dictionary; Merriam-Webster Dictionary",
+   "confidence": 0.93
+  },
+  {
+   "operation": "etymology",
+   "chain": "Spanish Texas < Caddo táyshaʼ; compare Spanish orthographic x = /ʃ/ historically",
+   "reading": "An old sibilant name: the written x keeps a vanished sh-sound, like a fossil of speech.",
+   "languages": [
+    "es",
+    "caddo"
+   ],
+   "source": "Oxford English Dictionary; Merriam-Webster Dictionary",
+   "confidence": 0.88
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 8,
+ "refusal_like": false
+}

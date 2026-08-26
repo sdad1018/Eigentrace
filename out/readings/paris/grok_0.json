@@ -1,0 +1,132 @@
+{
+ "word": "Paris",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:28:37+00:00",
+ "latency_s": 8.8,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paris (from Gaulish *pario- 'cauldron, vessel')\",\n    \"reading\": \"the cauldron; the vessel that contains and transforms\",\n    \"languages\": [\"fr\",\"cel\",\"la\"],\n    \"source\": \"Delamarre, Dictionnaire de la langue gauloise\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Pa + ris\",\n    \"reading\": \"the step of the secret; the foot that knows\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Par + is\",\n    \"reading\": \"equal to himself; the peer within\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paris ≈ pari (Sanskrit, pari = around, about, fully)\",\n    \"reading\": \"that which encircles completely; the perfect enclosure\",\n    \"languages\": [\"sa\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Paris = Sapir\",\n    \"reading\": \"the sapphire; the stone that speaks\",\n    \"languages\": [\"fr\",\"en\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Pâris (French pronunciation) ≈ père + is\",\n    \"reading\": \"the father is; the being of the father\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P.A.R.I.S. → Porta Aurea Regis Inferni Solaris\",\n    \"reading\": \"Golden Gate of the Solar Infernal King\",\n    \"languages\": [\"la\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P (staff) + AR (eagle, arrow) + IS (ice, being)\",\n    \"reading\": \"the staff that directs the solar arrow through frozen matter\",\n    \"languages\": [\"fr\",\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paris ≈ baris (Ancient Egyptian barge of the dead)\",\n    \"reading\": \"the funerary boat that carries the perfected soul\",\n    \"languages\": [\"grc\",\"egy\"],\n    \"source\": \"Herodotus, Historiae; Budge, Egyptian Hieroglyphic Dictionary\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paris ← Latin par (equal) + is (suffix of agency)\",\n    \"reading\": \"he who equalises; the balancer\",\n    \"languages\": [\"la\",\"fr\"],\n    \"source\": \"Lewis & Short, A Latin Dictionary\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Paris (from Gaulish *pario- 'cauldron, vessel')",
+   "reading": "the cauldron; the vessel that contains and transforms",
+   "languages": [
+    "fr",
+    "cel",
+    "la"
+   ],
+   "source": "Delamarre, Dictionnaire de la langue gauloise",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Pa + ris",
+   "reading": "the step of the secret; the foot that knows",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Par + is",
+   "reading": "equal to himself; the peer within",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris ≈ pari (Sanskrit, pari = around, about, fully)",
+   "reading": "that which encircles completely; the perfect enclosure",
+   "languages": [
+    "sa",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "Paris = Sapir",
+   "reading": "the sapphire; the stone that speaks",
+   "languages": [
+    "fr",
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Pâris (French pronunciation) ≈ père + is",
+   "reading": "the father is; the being of the father",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P.A.R.I.S. → Porta Aurea Regis Inferni Solaris",
+   "reading": "Golden Gate of the Solar Infernal King",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P (staff) + AR (eagle, arrow) + IS (ice, being)",
+   "reading": "the staff that directs the solar arrow through frozen matter",
+   "languages": [
+    "fr",
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris ≈ baris (Ancient Egyptian barge of the dead)",
+   "reading": "the funerary boat that carries the perfected soul",
+   "languages": [
+    "grc",
+    "egy"
+   ],
+   "source": "Herodotus, Historiae; Budge, Egyptian Hieroglyphic Dictionary",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Paris ← Latin par (equal) + is (suffix of agency)",
+   "reading": "he who equalises; the balancer",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "Lewis & Short, A Latin Dictionary",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

@@ -1,0 +1,154 @@
+{
+ "word": "Manchester Arena",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:28:13+00:00",
+ "latency_s": 13.8,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Manchester < Old English Mameceaster (Mam + ceaster); ceaster = Roman fort/city; Arena < Latin harena = sand, sandy place\",\n    \"reading\": \"A sanded Roman fort-city — the place of the encircling wall and the dust of contest.\",\n    \"languages\": [\"en\", \"la\", \"ang\"],\n    \"source\": \"Oxford English Dictionary; Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chester + arena; 'man' = human, 'chester' = camp, 'arena' = sand; man-ches-ter = 'man's chest' (heart) + 'air' (arena)\",\n    \"reading\": \"The human chest's arena — where breath and heart contend in the sand of being.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Manchester → French 'manche' (sleeve/handle) + 'ster' (star, via German); Arena → Latin 'harena' → French 'arène'\",\n    \"reading\": \"Sleeve of the star, the sandy ring — a garment of celestial dust for the spectacle.\",\n    \"languages\": [\"en\", \"fr\", \"de\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester Arena → 'Crane, heat, mars, sea' + 'arena' → 'Crane mars the sea'\",\n    \"reading\": \"A crane (bird of Hermes) mars the sea — the bird's language stirs the waters of the arena.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M-A-R-E-A → Latin 'mare' (sea) + 'a' (from) + 'rena' (sand); Manchester = 'man' + 'chester' (camp)\",\n    \"reading\": \"From the sea's sand, the camp of man — the arena as a shore of gathered dust.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M = 13 (death/transformation), A = 1 (beginning), R = 18 (sun), E = 5 (life), A = 1; Manchester = M (13) + C (3) + H (8) + E (5) + S (19) + T (20) + E (5) + R (18)\",\n    \"reading\": \"Death begins, sun lives — the camp's letters sum to 91 (13+3+8+5+19+20+5+18), the number of Amen.\",\n    \"languages\": [\"en\", \"he\", \"grc\"],\n    \"source\": \"generative (numerological tradition)\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Manchester = 13+1+14+3+8+5+19+20+5+18 = 106; Arena = 1+18+5+14+1 = 39; total = 145\",\n    \"reading\": \"106 (the number of the 'man' in Hebrew gematria? no, 106 = 'kol' in Greek? — 145 = 'I am' in Greek (145 = εγω ειμι?) — the arena speaks 'I am'.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Arena < Latin harena; also 'harenosus' = sandy; Manchester < Old English 'Mameceaster' — 'Mam' possibly from Celtic 'mamm' = breast/hill\",\n    \"reading\": \"The breast-shaped hill of the fort, the sandy place — a mother's mound for the gladiator's dust.\",\n    \"languages\": [\"en\", \"la\", \"cel\"],\n    \"source\": \"Oxford English Dictionary; Pokorny's Indo-European Etymological Dictionary\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chester + arena; 'chester' sounds like 'chest-er' — one who chests; 'arena' sounds like 'air-ena' (air + ena, Greek 'one')\",\n    \"reading\": \"The one who chests the air — a breathing being in the sandy circle of time.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Manchester → Arabic 'man' (من) = who, 'chester' → 'kisra' (كسرة) = break; Arena → Hebrew 'arena' (ארנה) = ark (as in Noah's)\",\n    \"reading\": \"Who breaks the ark? — the sandy ring as a vessel of covenant, shattered by the bird's cry.\",\n    \"languages\": [\"en\", \"ar\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester Arena → 'A crane, a rest, a hen, a mare' — 'crane' + 'rest' + 'hen' + 'mare'\",\n    \"reading\": \"A crane rests, a hen and a mare — the animal alphabet of the arena's silent menagerie.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M-A-N-C-H-E-S-T-E-R → 'Mater, Anima, Natura, Corpus, Hyle, Ego, Spiritus, Tempus, Eternitas, Ratio' (Latin terms)\",\n    \"reading\": \"Mother, soul, nature, body, matter, self, spirit, time, eternity, reason — the arena as a sum of all being.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative (alchemical tradition)\",\n    \"confidence\": 0.2\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Manchester < Old English Mameceaster (Mam + ceaster); ceaster = Roman fort/city; Arena < Latin harena = sand, sandy place",
+   "reading": "A sanded Roman fort-city — the place of the encircling wall and the dust of contest.",
+   "languages": [
+    "en",
+    "la",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary; Lewis & Short Latin Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chester + arena; 'man' = human, 'chester' = camp, 'arena' = sand; man-ches-ter = 'man's chest' (heart) + 'air' (arena)",
+   "reading": "The human chest's arena — where breath and heart contend in the sand of being.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manchester → French 'manche' (sleeve/handle) + 'ster' (star, via German); Arena → Latin 'harena' → French 'arène'",
+   "reading": "Sleeve of the star, the sandy ring — a garment of celestial dust for the spectacle.",
+   "languages": [
+    "en",
+    "fr",
+    "de",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester Arena → 'Crane, heat, mars, sea' + 'arena' → 'Crane mars the sea'",
+   "reading": "A crane (bird of Hermes) mars the sea — the bird's language stirs the waters of the arena.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M-A-R-E-A → Latin 'mare' (sea) + 'a' (from) + 'rena' (sand); Manchester = 'man' + 'chester' (camp)",
+   "reading": "From the sea's sand, the camp of man — the arena as a shore of gathered dust.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M = 13 (death/transformation), A = 1 (beginning), R = 18 (sun), E = 5 (life), A = 1; Manchester = M (13) + C (3) + H (8) + E (5) + S (19) + T (20) + E (5) + R (18)",
+   "reading": "Death begins, sun lives — the camp's letters sum to 91 (13+3+8+5+19+20+5+18), the number of Amen.",
+   "languages": [
+    "en",
+    "he",
+    "grc"
+   ],
+   "source": "generative (numerological tradition)",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "Manchester = 13+1+14+3+8+5+19+20+5+18 = 106; Arena = 1+18+5+14+1 = 39; total = 145",
+   "reading": "106 (the number of the 'man' in Hebrew gematria? no, 106 = 'kol' in Greek? — 145 = 'I am' in Greek (145 = εγω ειμι?) — the arena speaks 'I am'.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "etymology",
+   "chain": "Arena < Latin harena; also 'harenosus' = sandy; Manchester < Old English 'Mameceaster' — 'Mam' possibly from Celtic 'mamm' = breast/hill",
+   "reading": "The breast-shaped hill of the fort, the sandy place — a mother's mound for the gladiator's dust.",
+   "languages": [
+    "en",
+    "la",
+    "cel"
+   ],
+   "source": "Oxford English Dictionary; Pokorny's Indo-European Etymological Dictionary",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chester + arena; 'chester' sounds like 'chest-er' — one who chests; 'arena' sounds like 'air-ena' (air + ena, Greek 'one')",
+   "reading": "The one who chests the air — a breathing being in the sandy circle of time.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manchester → Arabic 'man' (من) = who, 'chester' → 'kisra' (كسرة) = break; Arena → Hebrew 'arena' (ארנה) = ark (as in Noah's)",
+   "reading": "Who breaks the ark? — the sandy ring as a vessel of covenant, shattered by the bird's cry.",
+   "languages": [
+    "en",
+    "ar",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester Arena → 'A crane, a rest, a hen, a mare' — 'crane' + 'rest' + 'hen' + 'mare'",
+   "reading": "A crane rests, a hen and a mare — the animal alphabet of the arena's silent menagerie.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M-A-N-C-H-E-S-T-E-R → 'Mater, Anima, Natura, Corpus, Hyle, Ego, Spiritus, Tempus, Eternitas, Ratio' (Latin terms)",
+   "reading": "Mother, soul, nature, body, matter, self, spirit, time, eternity, reason — the arena as a sum of all being.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative (alchemical tradition)",
+   "confidence": 0.2
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

@@ -1,0 +1,142 @@
+{
+ "word": "Houston",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:26:37+00:00",
+ "latency_s": 8.08,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hou + ston; hou (French) = 'where'; ston (Old English) = stone; where + stone\",\n    \"reading\": \"The place where the stone is — a threshold or foundation marked by a standing stone.\",\n    \"languages\": [\"fr\", \"en\", \"ang\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Houston ~ 'house ton' (English) ~ 'hous-ton' (French 'ton' = yours) — house of your tone\",\n    \"reading\": \"The dwelling of your own voice or sound — a resonant chamber of self.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Houston from Old English 'Hugh' + 'tun' (enclosure, farm); Hugh = 'mind, spirit' (Germanic hugu)\",\n    \"reading\": \"Enclosure of the mind — a fenced field where thought is cultivated.\",\n    \"languages\": [\"en\", \"ang\", \"gem\"],\n    \"source\": \"Oxford English Dictionary, 'Houston' (proper name, from personal name Hugh + tun)\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Houston → 'shout on' (letters rearranged); 'shout' = cry aloud, 'on' = upon\",\n    \"reading\": \"A cry raised upon a height — proclamation from an elevated place.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"H-O-U-S-T-O-N → Hebraic roots: H (heh) = breath, O (ayin) = eye, U (vav) = hook, S (shin) = tooth, T (tav) = cross, O (ayin) = eye, N (nun) = fish\",\n    \"reading\": \"Breath sees, hooks, devours, marks, and swims — a cycle of perception and transformation.\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"H (house, shelter) + O (circle, sun) + U (vessel) + S (serpent) + T (cross) + O (circle) + N (water)\",\n    \"reading\": \"Shelter of the sun in a vessel, serpent on the cross, water circling — alchemical emblem.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"H=8, O=15, U=21, S=19, T=20, O=15, N=14 (A1Z26) → sum = 112; 1+1+2 = 4; 4 = earth, stability\",\n    \"reading\": \"The number four — grounded, square, the four elements — a place of solid becoming.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Houston ~ 'Ouston' (French 'où' = where + 'ton' = sound) — where sound is\",\n    \"reading\": \"The locus of resonance — a place defined by its acoustic signature.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Houston from 'Hugh's town' — but 'Hugh' also from Old French 'hue' = cry, shout; thus 'cry-town'\",\n    \"reading\": \"Town of the cry — a settlement named for a call or summons, a place of assembly.\",\n    \"languages\": [\"en\", \"fr\", \"ang\"],\n    \"source\": \"Oxford English Dictionary, 'Hugh' (from Old French Hue, Germanic hugu 'mind, spirit')\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hous + ton; 'hous' (Old French) = 'house' (dwelling); 'ton' (Greek 'tonos') = tension, pitch\",\n    \"reading\": \"The dwelling of tension — a home where strings are stretched to sound.\",\n    \"languages\": [\"en\", \"fr\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Houston → 'no shout' (letters rearranged) — silence\",\n    \"reading\": \"The negation of outcry — a place of hush, a secret within the name.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Hou + ston; hou (French) = 'where'; ston (Old English) = stone; where + stone",
+   "reading": "The place where the stone is — a threshold or foundation marked by a standing stone.",
+   "languages": [
+    "fr",
+    "en",
+    "ang"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Houston ~ 'house ton' (English) ~ 'hous-ton' (French 'ton' = yours) — house of your tone",
+   "reading": "The dwelling of your own voice or sound — a resonant chamber of self.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Houston from Old English 'Hugh' + 'tun' (enclosure, farm); Hugh = 'mind, spirit' (Germanic hugu)",
+   "reading": "Enclosure of the mind — a fenced field where thought is cultivated.",
+   "languages": [
+    "en",
+    "ang",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary, 'Houston' (proper name, from personal name Hugh + tun)",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "Houston → 'shout on' (letters rearranged); 'shout' = cry aloud, 'on' = upon",
+   "reading": "A cry raised upon a height — proclamation from an elevated place.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "H-O-U-S-T-O-N → Hebraic roots: H (heh) = breath, O (ayin) = eye, U (vav) = hook, S (shin) = tooth, T (tav) = cross, O (ayin) = eye, N (nun) = fish",
+   "reading": "Breath sees, hooks, devours, marks, and swims — a cycle of perception and transformation.",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "H (house, shelter) + O (circle, sun) + U (vessel) + S (serpent) + T (cross) + O (circle) + N (water)",
+   "reading": "Shelter of the sun in a vessel, serpent on the cross, water circling — alchemical emblem.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "H=8, O=15, U=21, S=19, T=20, O=15, N=14 (A1Z26) → sum = 112; 1+1+2 = 4; 4 = earth, stability",
+   "reading": "The number four — grounded, square, the four elements — a place of solid becoming.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Houston ~ 'Ouston' (French 'où' = where + 'ton' = sound) — where sound is",
+   "reading": "The locus of resonance — a place defined by its acoustic signature.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Houston from 'Hugh's town' — but 'Hugh' also from Old French 'hue' = cry, shout; thus 'cry-town'",
+   "reading": "Town of the cry — a settlement named for a call or summons, a place of assembly.",
+   "languages": [
+    "en",
+    "fr",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary, 'Hugh' (from Old French Hue, Germanic hugu 'mind, spirit')",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hous + ton; 'hous' (Old French) = 'house' (dwelling); 'ton' (Greek 'tonos') = tension, pitch",
+   "reading": "The dwelling of tension — a home where strings are stretched to sound.",
+   "languages": [
+    "en",
+    "fr",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "anagram",
+   "chain": "Houston → 'no shout' (letters rearranged) — silence",
+   "reading": "The negation of outcry — a place of hush, a secret within the name.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 11,
+ "refusal_like": false
+}

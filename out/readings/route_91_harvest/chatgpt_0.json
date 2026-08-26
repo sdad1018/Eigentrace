@@ -1,0 +1,106 @@
+{
+ "word": "Route 91 Harvest",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:17:56+00:00",
+ "latency_s": 5.23,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"route / rue + 91 / nine-one + harvest; route sounds like French rue, a street; harvest = gathered fruit\",\n    \"reading\": \"A street of nine-and-one: the path turns into a field of gathered results, a place where what was sown is reaped.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.78\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"route ~ roue (fr) = wheel; wheel implies turning, cycle, return; harvest follows the cycle of seasons\",\n    \"reading\": \"The road is a wheel: movement returns in circles, and the year’s turning ends in harvest.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.67\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"harvest ~ harves(t) / har-vest; vest = garment, covering; har- as hard/harsh onset\",\n    \"reading\": \"A hard covering is stripped away: the outer garment falls, leaving the inward grain to be taken.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.54\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"route: French route, from Old French route 'road, way', from Latin rupta (via) 'broken way'; checkable in OED / TLFi\",\n    \"reading\": \"A broken way: the path is not smooth but cut through, a passage made by rupture and force.\",\n    \"languages\": [\"en\",\"fr\",\"la\"],\n    \"source\": \"OED; TLFi\",\n    \"confidence\": 0.86\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"harvest: Old English hærfest 'autumn, harvest-time'; cognate with German Herbst 'autumn'; checkable in OED / Etymonline / DWDS\",\n    \"reading\": \"Autumn itself: the word names the season when ripening ends and the gathered crop becomes time’s emblem.\",\n    \"languages\": [\"en\",\"de\",\"ang\"],\n    \"source\": \"OED; Etymonline; DWDS\",\n    \"confidence\": 0.91\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"91 = 9 + 1 = 10; ten as completion; route + harvest = path + completion of the crop\",\n    \"reading\": \"Nine becomes one, then ten: multiplicity resolves into completion, and the journey closes in gathering.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"R.O.U.T.E. = Return Of Unripe Things Enduring; H.A.R.V.E.S.T. = Hidden Abundance Revealed, Very Endingly Sifted Through\",\n    \"reading\": \"What was unripe returns and is sifted: hidden abundance is made visible at the end of the way.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R as road-turn; O as circle; U as vessel; T as cross; E as opening; 91 as 9/1, descent to unity\",\n    \"reading\": \"A road turns into a vessel, crosses a threshold, and opens: the many are pressed toward one gathered form.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "route / rue + 91 / nine-one + harvest; route sounds like French rue, a street; harvest = gathered fruit",
+   "reading": "A street of nine-and-one: the path turns into a field of gathered results, a place where what was sown is reaped.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.78
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "route ~ roue (fr) = wheel; wheel implies turning, cycle, return; harvest follows the cycle of seasons",
+   "reading": "The road is a wheel: movement returns in circles, and the year’s turning ends in harvest.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.67
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "harvest ~ harves(t) / har-vest; vest = garment, covering; har- as hard/harsh onset",
+   "reading": "A hard covering is stripped away: the outer garment falls, leaving the inward grain to be taken.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.54
+  },
+  {
+   "operation": "etymology",
+   "chain": "route: French route, from Old French route 'road, way', from Latin rupta (via) 'broken way'; checkable in OED / TLFi",
+   "reading": "A broken way: the path is not smooth but cut through, a passage made by rupture and force.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "OED; TLFi",
+   "confidence": 0.86
+  },
+  {
+   "operation": "etymology",
+   "chain": "harvest: Old English hærfest 'autumn, harvest-time'; cognate with German Herbst 'autumn'; checkable in OED / Etymonline / DWDS",
+   "reading": "Autumn itself: the word names the season when ripening ends and the gathered crop becomes time’s emblem.",
+   "languages": [
+    "en",
+    "de",
+    "ang"
+   ],
+   "source": "OED; Etymonline; DWDS",
+   "confidence": 0.91
+  },
+  {
+   "operation": "numerical",
+   "chain": "91 = 9 + 1 = 10; ten as completion; route + harvest = path + completion of the crop",
+   "reading": "Nine becomes one, then ten: multiplicity resolves into completion, and the journey closes in gathering.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R.O.U.T.E. = Return Of Unripe Things Enduring; H.A.R.V.E.S.T. = Hidden Abundance Revealed, Very Endingly Sifted Through",
+   "reading": "What was unripe returns and is sifted: hidden abundance is made visible at the end of the way.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R as road-turn; O as circle; U as vessel; T as cross; E as opening; 91 as 9/1, descent to unity",
+   "reading": "A road turns into a vessel, crosses a threshold, and opens: the many are pressed toward one gathered form.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

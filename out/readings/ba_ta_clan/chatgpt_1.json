@@ -1,0 +1,149 @@
+{
+ "word": "Ba-ta-clan",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:24:12+00:00",
+ "latency_s": 6.52,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ba + ta + clan; ba as a blunt beat, ta as a cut-off, clan as a closed kin-group\",\n    \"reading\": \"A struck, broken kinship: the beat begins, is cut, and gathers into a tight circle.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.78\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"ba ~ bas/ba (low, down) + ta ~ ta (you, that) + clan ~ clan (group); sound suggests descent into a group\",\n    \"reading\": \"What is low or fallen becomes a gathered band; the sound moves from down to enclosure.\",\n    \"languages\": [\"fr\", \"en\", \"ga\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"ba-ta-clan ~ battement + clan; French battement = beating, pulse\",\n    \"reading\": \"A pulse-beat enclosed in a circle: rhythm made into a collective body.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.66\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"clan: Scottish Gaelic clann 'children, offspring'; cf. OED, s.v. clan; ta and ba treated as prefixed sound-forms\",\n    \"reading\": \"The final sound names offspring: a lineage or brood gathered under a single beat.\",\n    \"languages\": [\"gd\", \"en\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster Dictionary\",\n    \"confidence\": 0.84\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"clan: from Gaelic clann 'children'; by extension a family or tribe; Ba-ta as a rhythmic prelude\",\n    \"reading\": \"Children, then tribe: the word ends in descent, a family made audible.\",\n    \"languages\": [\"gd\", \"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.82\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"BATACLAN -> can tabal?; more freely, clan + bat + a; rearrangement foregrounds clan and bat\",\n    \"reading\": \"A clan armed with a bat: kinship turned into striking force.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-A-T-A-C-L-A-N as initials: Beat, Assemble, Tribe, Accord, Circle, Link, Ally, Name\",\n    \"reading\": \"Beat, assemble, tribe, accord: a compact of linked names.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.33\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B = two lobes; A = apex/opening; T = crossbar; C = crescent; L = angle; N = zigzag\",\n    \"reading\": \"Twin, opening, crossing, crescent, angle, zigzag: a path from duality to enclosure and rupture.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.47\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"B+A+T+A+C+L+A+N = 2+1+20+1+3+12+1+14 = 54; 5+4 = 9\",\n    \"reading\": \"Nine: completion, return, and the end of a cycle hidden in the letters.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ba-ta-clan ~ bat + a + clan; bat as nocturnal creature, clan as family\",\n    \"reading\": \"A night-creature enters the family: the hidden joins the inherited.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.63\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"ta ~ ta (Chinese 他/她/它 'he/she/it' in sound only) + clan; the sound points to an unnamed other in the group\",\n    \"reading\": \"An otherness inside the clan: the group contains a third, silent presence.\",\n    \"languages\": [\"zh\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.29\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"clan linked to Gaelic clann; bataclan read as bat + clan in English sound-play\",\n    \"reading\": \"A family of bats: a nocturnal house, a hidden lineage.\",\n    \"languages\": [\"gd\", \"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.55\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "ba + ta + clan; ba as a blunt beat, ta as a cut-off, clan as a closed kin-group",
+   "reading": "A struck, broken kinship: the beat begins, is cut, and gathers into a tight circle.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.78
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "ba ~ bas/ba (low, down) + ta ~ ta (you, that) + clan ~ clan (group); sound suggests descent into a group",
+   "reading": "What is low or fallen becomes a gathered band; the sound moves from down to enclosure.",
+   "languages": [
+    "fr",
+    "en",
+    "ga"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "ba-ta-clan ~ battement + clan; French battement = beating, pulse",
+   "reading": "A pulse-beat enclosed in a circle: rhythm made into a collective body.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.66
+  },
+  {
+   "operation": "etymology",
+   "chain": "clan: Scottish Gaelic clann 'children, offspring'; cf. OED, s.v. clan; ta and ba treated as prefixed sound-forms",
+   "reading": "The final sound names offspring: a lineage or brood gathered under a single beat.",
+   "languages": [
+    "gd",
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Merriam-Webster Dictionary",
+   "confidence": 0.84
+  },
+  {
+   "operation": "etymology",
+   "chain": "clan: from Gaelic clann 'children'; by extension a family or tribe; Ba-ta as a rhythmic prelude",
+   "reading": "Children, then tribe: the word ends in descent, a family made audible.",
+   "languages": [
+    "gd",
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.82
+  },
+  {
+   "operation": "anagram",
+   "chain": "BATACLAN -> can tabal?; more freely, clan + bat + a; rearrangement foregrounds clan and bat",
+   "reading": "A clan armed with a bat: kinship turned into striking force.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-A-T-A-C-L-A-N as initials: Beat, Assemble, Tribe, Accord, Circle, Link, Ally, Name",
+   "reading": "Beat, assemble, tribe, accord: a compact of linked names.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.33
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B = two lobes; A = apex/opening; T = crossbar; C = crescent; L = angle; N = zigzag",
+   "reading": "Twin, opening, crossing, crescent, angle, zigzag: a path from duality to enclosure and rupture.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.47
+  },
+  {
+   "operation": "numerical",
+   "chain": "B+A+T+A+C+L+A+N = 2+1+20+1+3+12+1+14 = 54; 5+4 = 9",
+   "reading": "Nine: completion, return, and the end of a cycle hidden in the letters.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ba-ta-clan ~ bat + a + clan; bat as nocturnal creature, clan as family",
+   "reading": "A night-creature enters the family: the hidden joins the inherited.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.63
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "ta ~ ta (Chinese 他/她/它 'he/she/it' in sound only) + clan; the sound points to an unnamed other in the group",
+   "reading": "An otherness inside the clan: the group contains a third, silent presence.",
+   "languages": [
+    "zh",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.29
+  },
+  {
+   "operation": "etymology",
+   "chain": "clan linked to Gaelic clann; bataclan read as bat + clan in English sound-play",
+   "reading": "A family of bats: a nocturnal house, a hidden lineage.",
+   "languages": [
+    "gd",
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

@@ -1,0 +1,128 @@
+{
+ "word": "Coachella",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:15:36+00:00",
+ "latency_s": 6.53,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"coq + ella\",\n    \"reading\": \"the rooster's she; feminine principle of the cock, solar annunciator\",\n    \"languages\": [\"fr\",\"en\",\"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"co + a + chella\",\n    \"reading\": \"with the shell; that which carries or is born within a protective casing\",\n    \"languages\": [\"en\",\"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"coachella ≈ coche + ella\",\n    \"reading\": \"she who drives the carriage; feminine charioteer or vehicle of the solar principle\",\n    \"languages\": [\"fr\",\"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"cochlea (Latin) = snail shell, inner ear spiral\",\n    \"reading\": \"the spiral ear; that which receives and coils sound into meaning\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Coachella →ocal leach\",\n    \"reading\": \"the local leach; that which draws essence from its immediate ground\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"cau + chella\",\n    \"reading\": \"hot little thing; the small heat or fevered seed\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"coachella ≈ kokh ela (Hebrew)\",\n    \"reading\": \"the virgin of the niche or hidden chamber; concealed feminine light\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"C.O.A.C.H.E.L.L.A. → Caveat Omnia Alia Coagula Hoc Est Lux Legis Albedo\",\n    \"reading\": \"beware all else; coagulate this, it is the light of the law, the whitening\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"C (see) + O (circle) + A (alpha) + CHE (key in French) + LLA\",\n    \"reading\": \"see the primordial circle whose key opens the double feminine veil\",\n    \"languages\": [\"en\",\"fr\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"coq + a + elle + a\",\n    \"reading\": \"the rooster to her, the she to her; double invocation of solar-masculine into feminine\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "coq + ella",
+   "reading": "the rooster's she; feminine principle of the cock, solar annunciator",
+   "languages": [
+    "fr",
+    "en",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "co + a + chella",
+   "reading": "with the shell; that which carries or is born within a protective casing",
+   "languages": [
+    "en",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "coachella ≈ coche + ella",
+   "reading": "she who drives the carriage; feminine charioteer or vehicle of the solar principle",
+   "languages": [
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "cochlea (Latin) = snail shell, inner ear spiral",
+   "reading": "the spiral ear; that which receives and coils sound into meaning",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Lewis & Short Latin Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "anagram",
+   "chain": "Coachella →ocal leach",
+   "reading": "the local leach; that which draws essence from its immediate ground",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "cau + chella",
+   "reading": "hot little thing; the small heat or fevered seed",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "coachella ≈ kokh ela (Hebrew)",
+   "reading": "the virgin of the niche or hidden chamber; concealed feminine light",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "C.O.A.C.H.E.L.L.A. → Caveat Omnia Alia Coagula Hoc Est Lux Legis Albedo",
+   "reading": "beware all else; coagulate this, it is the light of the law, the whitening",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "C (see) + O (circle) + A (alpha) + CHE (key in French) + LLA",
+   "reading": "see the primordial circle whose key opens the double feminine veil",
+   "languages": [
+    "en",
+    "fr",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "coq + a + elle + a",
+   "reading": "the rooster to her, the she to her; double invocation of solar-masculine into feminine",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

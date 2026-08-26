@@ -1,0 +1,111 @@
+{
+ "word": "Las Vegas Village",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:22:02+00:00",
+ "latency_s": 9.67,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las (Spanish) = the; Vegas (Spanish) = fertile plains, from Arabic 'al-wāq' (low ground); Village (Old French) = farmstead, from Latin 'villaticus'\",\n    \"reading\": \"The fertile low plains of the farmstead; a place of watered fields and settled cultivation\",\n    \"languages\": [\"es\",\"ar\",\"fr\",\"la\"],\n    \"source\": \"Diccionario de la lengua española (RAE); Oxford English Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las + Vegas → 'las' (lâche, loose) + 'végas' (vague, wave); Village → 'vil' (vile) + 'lage' (lodge)\",\n    \"reading\": \"Loose waves lodge in the low place; a fluid, unbound gathering of sound\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Vegas → 'végas' (French, 'vague' wave) → 'vāg' (Persian, cry/voice); Village → 'village' (French) → 'villa' (Latin, country house) + 'age' (era)\",\n    \"reading\": \"The voice of the wave in the old house of time; a cry from the settled past\",\n    \"languages\": [\"fr\",\"fa\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Village → 'Village Vegas Las' → 'Viva' + 'legs' + 'gas' + 'ill' + 'sage'\",\n    \"reading\": \"Long live the legs of gas, the ill sage; a vitality that is both sick and wise\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L V V → Latin 'Lux Via Vita' (light, way, life); Village → 'V' = victory, 'I' = self, 'L' = law, 'L' = love, 'A' = altar, 'G' = ground, 'E' = essence\",\n    \"reading\": \"Light, way, life: the self’s law and love on the altar of the ground’s essence\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L = 50 (Roman), V = 5, V = 5, I = 1, L = 50, L = 50, A = 1, G = 7, E = 5 → sum 174; 1+7+4 = 12 → 3 (trinity)\",\n    \"reading\": \"The number three: synthesis of the fertile plain, the wave, and the farmstead\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Las (L=12, A=1, S=19) = 32; Vegas (V=22, E=5, G=7, A=1, S=19) = 54; Village (V=22, I=9, L=12, L=12, A=1, G=7, E=5) = 68; total 154 → 1+5+4 = 10 → 1\",\n    \"reading\": \"The one: a return to unity from the many parts, a singular voice in the plain\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las → 'là' (there) + 's' (plural); Vegas → 'vég' (to navigate, Old Norse) + 'as' (as, like); Village → 'vill' (will) + 'age' (age)\",\n    \"reading\": \"There, the navigators are like the will of the age; a journey through time\",\n    \"languages\": [\"fr\",\"non\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Las (Spanish) = the; Vegas (Spanish) = fertile plains, from Arabic 'al-wāq' (low ground); Village (Old French) = farmstead, from Latin 'villaticus'",
+   "reading": "The fertile low plains of the farmstead; a place of watered fields and settled cultivation",
+   "languages": [
+    "es",
+    "ar",
+    "fr",
+    "la"
+   ],
+   "source": "Diccionario de la lengua española (RAE); Oxford English Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Vegas → 'las' (lâche, loose) + 'végas' (vague, wave); Village → 'vil' (vile) + 'lage' (lodge)",
+   "reading": "Loose waves lodge in the low place; a fluid, unbound gathering of sound",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Vegas → 'végas' (French, 'vague' wave) → 'vāg' (Persian, cry/voice); Village → 'village' (French) → 'villa' (Latin, country house) + 'age' (era)",
+   "reading": "The voice of the wave in the old house of time; a cry from the settled past",
+   "languages": [
+    "fr",
+    "fa",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Village → 'Village Vegas Las' → 'Viva' + 'legs' + 'gas' + 'ill' + 'sage'",
+   "reading": "Long live the legs of gas, the ill sage; a vitality that is both sick and wise",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L V V → Latin 'Lux Via Vita' (light, way, life); Village → 'V' = victory, 'I' = self, 'L' = law, 'L' = love, 'A' = altar, 'G' = ground, 'E' = essence",
+   "reading": "Light, way, life: the self’s law and love on the altar of the ground’s essence",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L = 50 (Roman), V = 5, V = 5, I = 1, L = 50, L = 50, A = 1, G = 7, E = 5 → sum 174; 1+7+4 = 12 → 3 (trinity)",
+   "reading": "The number three: synthesis of the fertile plain, the wave, and the farmstead",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "Las (L=12, A=1, S=19) = 32; Vegas (V=22, E=5, G=7, A=1, S=19) = 54; Village (V=22, I=9, L=12, L=12, A=1, G=7, E=5) = 68; total 154 → 1+5+4 = 10 → 1",
+   "reading": "The one: a return to unity from the many parts, a singular voice in the plain",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las → 'là' (there) + 's' (plural); Vegas → 'vég' (to navigate, Old Norse) + 'as' (as, like); Village → 'vill' (will) + 'age' (age)",
+   "reading": "There, the navigators are like the will of the age; a journey through time",
+   "languages": [
+    "fr",
+    "non",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

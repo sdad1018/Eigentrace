@@ -1,0 +1,109 @@
+{
+ "word": "Gillette Stadium",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:15:55+00:00",
+ "latency_s": 5.23,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gillette ≈ je l’ai / j’ai l’été; Stadium ≈ stade + dium; the whole sounds like a place of standing in the summer light\",\n    \"reading\": \"A place where one stands, exposed, in the season of heat and display.\",\n    \"languages\": [\"fr\", \"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.42\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Gillette ≈ gilet (fr) + let; stadium ≈ stadio/stade; gilet = vest, a covering for the chest\",\n    \"reading\": \"A protected chest before the arena: armor of the heart facing the public eye.\",\n    \"languages\": [\"fr\", \"en\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"stadium < Latin stadium < Greek στάδιον (stadion), from a measure of length and a race-course; see Oxford English Dictionary / Lewis & Short / LSJ\",\n    \"reading\": \"A measured course: the marked span where bodies are tested by distance.\",\n    \"languages\": [\"en\", \"la\", \"grc\"],\n    \"source\": \"Oxford English Dictionary; Lewis & Short, Latin Dictionary; Liddell-Scott-Jones Greek Lexicon\",\n    \"confidence\": 0.96\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Gillette as a French-looking surname from gille/gilet-family forms; compare French gilet, from Italian gilè, ultimately from Turkish yelek; see TLFi / FEW for gilet\",\n    \"reading\": \"A vest-name: something worn close, a second skin, a covering that both protects and displays.\",\n    \"languages\": [\"fr\", \"it\", \"tr\"],\n    \"source\": \"TLFi; Französisches Etymologisches Wörterbuch (FEW)\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Gillette Stadium → I am a glutted site / a lit stage muted; letters rearranged into a crowded, illuminated place\",\n    \"reading\": \"An overfilled lit stage: abundance compressed into spectacle.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"G I L L E T T E S T A D I U M → Great Illumination, Landing, Lifting, Entry, Threshold; Standing, Testing, Ascent, Display, Union, Measure\",\n    \"reading\": \"A rite of entry: illumination, threshold, testing, and measured ascent.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.18\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"G = gate; I = pillar; L = angle; L = double support; E = opening; T = crossbar; T = crossbar; E = opening; S = serpent; T = cross; A = apex; D = door; I = pillar; U = cup; M = mountain\",\n    \"reading\": \"Gate, pillars, angles, openings, serpent, cross, cup, mountain: a built ascent through thresholds.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.27\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Using A1Z26 on GILLETTE STADIUM: 7+9+12+12+5+20+20+5+19+20+1+4+9+21+13 = 177; 1+7+7 = 15; 1+5 = 6\",\n    \"reading\": \"Reduced to 6: harmony, balance, and the sixfold ordering of a constructed place.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.24\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Gillette ≈ je l’ai / j’ai l’été; Stadium ≈ stade + dium; the whole sounds like a place of standing in the summer light",
+   "reading": "A place where one stands, exposed, in the season of heat and display.",
+   "languages": [
+    "fr",
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.42
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gillette ≈ gilet (fr) + let; stadium ≈ stadio/stade; gilet = vest, a covering for the chest",
+   "reading": "A protected chest before the arena: armor of the heart facing the public eye.",
+   "languages": [
+    "fr",
+    "en",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "etymology",
+   "chain": "stadium < Latin stadium < Greek στάδιον (stadion), from a measure of length and a race-course; see Oxford English Dictionary / Lewis & Short / LSJ",
+   "reading": "A measured course: the marked span where bodies are tested by distance.",
+   "languages": [
+    "en",
+    "la",
+    "grc"
+   ],
+   "source": "Oxford English Dictionary; Lewis & Short, Latin Dictionary; Liddell-Scott-Jones Greek Lexicon",
+   "confidence": 0.96
+  },
+  {
+   "operation": "etymology",
+   "chain": "Gillette as a French-looking surname from gille/gilet-family forms; compare French gilet, from Italian gilè, ultimately from Turkish yelek; see TLFi / FEW for gilet",
+   "reading": "A vest-name: something worn close, a second skin, a covering that both protects and displays.",
+   "languages": [
+    "fr",
+    "it",
+    "tr"
+   ],
+   "source": "TLFi; Französisches Etymologisches Wörterbuch (FEW)",
+   "confidence": 0.58
+  },
+  {
+   "operation": "anagram",
+   "chain": "Gillette Stadium → I am a glutted site / a lit stage muted; letters rearranged into a crowded, illuminated place",
+   "reading": "An overfilled lit stage: abundance compressed into spectacle.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "notariqon",
+   "chain": "G I L L E T T E S T A D I U M → Great Illumination, Landing, Lifting, Entry, Threshold; Standing, Testing, Ascent, Display, Union, Measure",
+   "reading": "A rite of entry: illumination, threshold, testing, and measured ascent.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.18
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G = gate; I = pillar; L = angle; L = double support; E = opening; T = crossbar; T = crossbar; E = opening; S = serpent; T = cross; A = apex; D = door; I = pillar; U = cup; M = mountain",
+   "reading": "Gate, pillars, angles, openings, serpent, cross, cup, mountain: a built ascent through thresholds.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.27
+  },
+  {
+   "operation": "numerical",
+   "chain": "Using A1Z26 on GILLETTE STADIUM: 7+9+12+12+5+20+20+5+19+20+1+4+9+21+13 = 177; 1+7+7 = 15; 1+5 = 6",
+   "reading": "Reduced to 6: harmony, balance, and the sixfold ordering of a constructed place.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.24
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

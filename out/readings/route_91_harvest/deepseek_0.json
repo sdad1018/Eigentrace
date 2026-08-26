@@ -1,0 +1,111 @@
+{
+ "word": "Route 91 Harvest",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:50+00:00",
+ "latency_s": 8.96,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"route (Old French rute, from Latin rupta via) = broken way; harvest (Old English hærfest) = autumn, season of reaping\",\n    \"reading\": \"A broken path through the season of reaping; the way is cut, the yield is gathered.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"ang\"],\n    \"source\": \"OED; Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Route = root (homophone) + 91 = nine-one (German nein-ein) + Harvest = her vest (her garment)\",\n    \"reading\": \"Root of the nine-one: the one who says no to the one; her vest hides the root.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Route (fr. route = road) + 91 (fr. quatre-vingt-onze = four-twenty-eleven) + Harvest (fr. récolte, but 'harvest' sounds like 'her vest' in en)\",\n    \"reading\": \"Road of four-twenty-eleven; her vest is the gathered cloth of the field.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Route 91 Harvest -> re-route, shave, trove, starve, hove, art, verse, oath, rover, haste\",\n    \"reading\": \"Re-route the starve; a trove of haste, an oath of the rover.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"R = regina (queen), 91 = 9+1 = 10 = J (Yod), H = hortus (garden) — R91H\",\n    \"reading\": \"Queen of the garden of the ten; the tenth letter is the hand of God.\",\n    \"languages\": [\"la\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R = road, 9 = nine (nun, fish in Aramaic), 1 = one (aleph, ox), H = hedge, harvest = sickle\",\n    \"reading\": \"Road of the fish and the ox, hedged by the sickle's cut.\",\n    \"languages\": [\"en\", \"he\", \"arc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Route = 9 (R) + 1 (oute? no, but 91 = 9+1=10, 10 = perfection; Harvest = H=8, A=1, R=18, V=22, E=5, S=19, T=20 = 93, 9+3=12, 1+2=3\",\n    \"reading\": \"The perfect ten leads to the three; the harvest's sum is the trinity.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"harvest (Old English hærfest) cognate with Latin carpere (to pluck), Greek karpos (fruit); route from rupta (broken)\",\n    \"reading\": \"The broken way of plucking; the fruit is taken from the ruptured path.\",\n    \"languages\": [\"en\", \"la\", \"grc\"],\n    \"source\": \"OED; Pokorny's Indogermanisches Etymologisches Wörterbuch\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "route (Old French rute, from Latin rupta via) = broken way; harvest (Old English hærfest) = autumn, season of reaping",
+   "reading": "A broken path through the season of reaping; the way is cut, the yield is gathered.",
+   "languages": [
+    "en",
+    "fr",
+    "la",
+    "ang"
+   ],
+   "source": "OED; Lewis & Short Latin Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Route = root (homophone) + 91 = nine-one (German nein-ein) + Harvest = her vest (her garment)",
+   "reading": "Root of the nine-one: the one who says no to the one; her vest hides the root.",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Route (fr. route = road) + 91 (fr. quatre-vingt-onze = four-twenty-eleven) + Harvest (fr. récolte, but 'harvest' sounds like 'her vest' in en)",
+   "reading": "Road of four-twenty-eleven; her vest is the gathered cloth of the field.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Route 91 Harvest -> re-route, shave, trove, starve, hove, art, verse, oath, rover, haste",
+   "reading": "Re-route the starve; a trove of haste, an oath of the rover.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R = regina (queen), 91 = 9+1 = 10 = J (Yod), H = hortus (garden) — R91H",
+   "reading": "Queen of the garden of the ten; the tenth letter is the hand of God.",
+   "languages": [
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R = road, 9 = nine (nun, fish in Aramaic), 1 = one (aleph, ox), H = hedge, harvest = sickle",
+   "reading": "Road of the fish and the ox, hedged by the sickle's cut.",
+   "languages": [
+    "en",
+    "he",
+    "arc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "Route = 9 (R) + 1 (oute? no, but 91 = 9+1=10, 10 = perfection; Harvest = H=8, A=1, R=18, V=22, E=5, S=19, T=20 = 93, 9+3=12, 1+2=3",
+   "reading": "The perfect ten leads to the three; the harvest's sum is the trinity.",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "harvest (Old English hærfest) cognate with Latin carpere (to pluck), Greek karpos (fruit); route from rupta (broken)",
+   "reading": "The broken way of plucking; the fruit is taken from the ruptured path.",
+   "languages": [
+    "en",
+    "la",
+    "grc"
+   ],
+   "source": "OED; Pokorny's Indogermanisches Etymologisches Wörterbuch",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

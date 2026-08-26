@@ -1,0 +1,105 @@
+{
+ "word": "Nevada",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:24:43+00:00",
+ "latency_s": 8.38,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Nevada < Spanish Nevada (snowy) < nevar (to snow) < Latin nivare < nix, nivis (snow)\",\n    \"reading\": \"The word means 'snow-covered' or 'snowy place' — a land of falling snow.\",\n    \"languages\": [\"es\",\"la\"],\n    \"source\": \"Diccionario de la lengua española (RAE), s.v. nevar; Lewis & Short, Latin Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ne + va + da; ne (French: born) + va (French: goes) + da (Italian: gives) — 'born goes gives'\",\n    \"reading\": \"A cycle: birth, departure, gift — the rhythm of life as a snowy passage.\",\n    \"languages\": [\"fr\",\"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Nevada ~ ne vada (Italian: 'may it not go') ~ ne vada (Latin: 'may it not go')\",\n    \"reading\": \"A prohibition on motion — 'let it not depart' — a frozen, still place.\",\n    \"languages\": [\"it\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Nevada → 'aven da' (Hebrew: אָוֶן דָּה — 'this is vanity') → 'vane da' (Italian: 'gives the vane')\",\n    \"reading\": \"Vanity gives a vane — a hollow, shifting direction, a snowy mirage.\",\n    \"languages\": [\"he\",\"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"N.E.V.A.D.A. → Nix, Eros, Vita, Aeterna, Dolor, Amor (Latin: Snow, Love, Life, Eternal, Sorrow, Love)\",\n    \"reading\": \"Snow and love entwine — eternal life through sorrow and love, a cold passion.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.25\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N (nun = fish, life) + E (epsilon = breath) + V (vav = hook, connection) + A (aleph = ox, strength) + D (dalet = door) + A (aleph again)\",\n    \"reading\": \"Life's breath hooks through the door of strength — a threshold of cold vitality.\",\n    \"languages\": [\"he\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"N=14, E=5, V=22, A=1, D=4, A=1 → sum 47; 4+7=11; 1+1=2\",\n    \"reading\": \"The number 2 — duality, the twin of snow and sun, the white and the black.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Nevada < Latin nix (snow) + -ata (feminine past participle) — 'snowed upon'\",\n    \"reading\": \"A feminine past participle — she who has been snowed upon, a veiled bride.\",\n    \"languages\": [\"la\"],\n    \"source\": \"Lewis & Short, Latin Dictionary, s.v. nix\",\n    \"confidence\": 0.8\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Nevada < Spanish Nevada (snowy) < nevar (to snow) < Latin nivare < nix, nivis (snow)",
+   "reading": "The word means 'snow-covered' or 'snowy place' — a land of falling snow.",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "Diccionario de la lengua española (RAE), s.v. nevar; Lewis & Short, Latin Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ne + va + da; ne (French: born) + va (French: goes) + da (Italian: gives) — 'born goes gives'",
+   "reading": "A cycle: birth, departure, gift — the rhythm of life as a snowy passage.",
+   "languages": [
+    "fr",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Nevada ~ ne vada (Italian: 'may it not go') ~ ne vada (Latin: 'may it not go')",
+   "reading": "A prohibition on motion — 'let it not depart' — a frozen, still place.",
+   "languages": [
+    "it",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "anagram",
+   "chain": "Nevada → 'aven da' (Hebrew: אָוֶן דָּה — 'this is vanity') → 'vane da' (Italian: 'gives the vane')",
+   "reading": "Vanity gives a vane — a hollow, shifting direction, a snowy mirage.",
+   "languages": [
+    "he",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "notariqon",
+   "chain": "N.E.V.A.D.A. → Nix, Eros, Vita, Aeterna, Dolor, Amor (Latin: Snow, Love, Life, Eternal, Sorrow, Love)",
+   "reading": "Snow and love entwine — eternal life through sorrow and love, a cold passion.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.25
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N (nun = fish, life) + E (epsilon = breath) + V (vav = hook, connection) + A (aleph = ox, strength) + D (dalet = door) + A (aleph again)",
+   "reading": "Life's breath hooks through the door of strength — a threshold of cold vitality.",
+   "languages": [
+    "he",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "N=14, E=5, V=22, A=1, D=4, A=1 → sum 47; 4+7=11; 1+1=2",
+   "reading": "The number 2 — duality, the twin of snow and sun, the white and the black.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "etymology",
+   "chain": "Nevada < Latin nix (snow) + -ata (feminine past participle) — 'snowed upon'",
+   "reading": "A feminine past participle — she who has been snowed upon, a veiled bride.",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis & Short, Latin Dictionary, s.v. nix",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

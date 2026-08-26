@@ -1,0 +1,125 @@
+{
+ "word": "Las Vegas Village",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:30:56+00:00",
+ "latency_s": 41.96,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las (Spanish, plural definite article) from Latin illas; Vegas (Spanish, plural of vega 'meadow, fertile plain') likely pre-Roman substrate or from Latin vicus 'village'; Village (English) from Old French village, from Latin villa 'country house, farm'.\",\n    \"reading\": \"The dwelling of the meadows; a country house amidst fertile plains.\",\n    \"languages\": [\"es\", \"la\", \"en\", \"fr\"],\n    \"source\": \"Online Etymology Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las -> l'as (French: you have); Vegas -> vagues (French: waves); Village -> vie l'âge (French: life the age)\",\n    \"reading\": \"You have the waves; life is the age, revealing a time's existence.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las (English phonetic) -> Lass (English: girl); Vegas (French phonetic) -> vagues (French: waves); Village (English phonetic) -> vile age (English: wicked era)\",\n    \"reading\": \"A young lass, caught in waves, living through a wicked age.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Letters of 'Las Vegas' (L A S V E G A S) rearranged to form 'SAVE AS GAL'.\",\n    \"reading\": \"To preserve a feminine principle or beloved person as a festive gathering.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Letters of 'Village' (V I L L A G E) rearranged to form 'GIVE ALL'.\",\n    \"reading\": \"To surrender everything, offering total commitment or sacrifice.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"First letters: L.V.V. -> Living Vast Vision\",\n    \"reading\": \"The essence of a profound and expansive foresight, a life of grand perception.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V (Roman numeral 5, symbol for victory/life); L (Roman numeral 50, symbol for law/liberty); A (Alpha, beginning); S (Serpent, winding path); G (Gate, generative force).\",\n    \"reading\": \"The serpent's winding path leads through the Gate of Beginnings to Life, Law, and Victory.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Total letters = 15; 1+5 = 6. Also 6 vowels and 9 consonants. 15 is 3 x 5.\",\n    \"reading\": \"The number 15 (3x5) signifies the trinity's union with humanity, culminating in creation (6).\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las (Latin) -> Laes (injured, hurt); Vegas (Latin) -> Vagus (wandering, unsettled); Village (Latin) -> Villa (country house).\",\n    \"reading\": \"An injured, wandering country house, implying a farmstead that has suffered or is adrift.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las -> là se (French: there is/are); Vegas -> vagues (French: waves); Village -> vie large (French: broad life).\",\n    \"reading\": \"There are waves; a vast and expansive life, indicating widespread influence or experience.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Las (Spanish, plural definite article) from Latin illas; Vegas (Spanish, plural of vega 'meadow, fertile plain') likely pre-Roman substrate or from Latin vicus 'village'; Village (English) from Old French village, from Latin villa 'country house, farm'.",
+   "reading": "The dwelling of the meadows; a country house amidst fertile plains.",
+   "languages": [
+    "es",
+    "la",
+    "en",
+    "fr"
+   ],
+   "source": "Online Etymology Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las -> l'as (French: you have); Vegas -> vagues (French: waves); Village -> vie l'âge (French: life the age)",
+   "reading": "You have the waves; life is the age, revealing a time's existence.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las (English phonetic) -> Lass (English: girl); Vegas (French phonetic) -> vagues (French: waves); Village (English phonetic) -> vile age (English: wicked era)",
+   "reading": "A young lass, caught in waves, living through a wicked age.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Letters of 'Las Vegas' (L A S V E G A S) rearranged to form 'SAVE AS GAL'.",
+   "reading": "To preserve a feminine principle or beloved person as a festive gathering.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Letters of 'Village' (V I L L A G E) rearranged to form 'GIVE ALL'.",
+   "reading": "To surrender everything, offering total commitment or sacrifice.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "First letters: L.V.V. -> Living Vast Vision",
+   "reading": "The essence of a profound and expansive foresight, a life of grand perception.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V (Roman numeral 5, symbol for victory/life); L (Roman numeral 50, symbol for law/liberty); A (Alpha, beginning); S (Serpent, winding path); G (Gate, generative force).",
+   "reading": "The serpent's winding path leads through the Gate of Beginnings to Life, Law, and Victory.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "Total letters = 15; 1+5 = 6. Also 6 vowels and 9 consonants. 15 is 3 x 5.",
+   "reading": "The number 15 (3x5) signifies the trinity's union with humanity, culminating in creation (6).",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las (Latin) -> Laes (injured, hurt); Vegas (Latin) -> Vagus (wandering, unsettled); Village (Latin) -> Villa (country house).",
+   "reading": "An injured, wandering country house, implying a farmstead that has suffered or is adrift.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las -> là se (French: there is/are); Vegas -> vagues (French: waves); Village -> vie large (French: broad life).",
+   "reading": "There are waves; a vast and expansive life, indicating widespread influence or experience.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

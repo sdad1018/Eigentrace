@@ -1,0 +1,150 @@
+{
+ "word": "Las Vegas Village",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:31:45+00:00",
+ "latency_s": 23.27,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las Vegas (Spanish) from 'las' (the, feminine plural) + 'vegas' (meadows, plural of 'vega'). 'Vega' from Latin 'vagus' (wandering, open).\",\n    \"reading\": \"The fertile, expansive, and open lands, or the uncultivated, wandering meadows.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Diccionario de la Real Academia Española\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Village (Old French) from 'villaticum' (Latin: belonging to a villa) from 'villa' (Latin: country house, farm).\",\n    \"reading\": \"A small settlement originally associated with a country estate, a collection of farmhouses, or a rustic dwelling place.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las (sound) ~ L'as (French: the ace, or 'you have').\",\n    \"reading\": \"Signifies the singular ultimate point, the highest value, the peak of potential, or a declaration of possession, 'you have it'.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las (sound) ~ Lass (English: young woman or girl).\",\n    \"reading\": \"Refers to the maiden, the youthful feminine principle, a simple, unadorned female figure, or a playful companion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Vegas (sound) ~ Vagus (Latin/English: wandering, as in a nerve or spirit).\",\n    \"reading\": \"Suggests movement, a wandering spirit, nomadic tendencies, or the hidden, vital connections throughout a system.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Village (sound) ~ Vile age (English).\",\n    \"reading\": \"Indicates a period of moral corruption, depravity, a time marked by wickedness, ignominy, or a detestable era.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Village (sound) ~ Ville âge (French: city age).\",\n    \"reading\": \"Points to the era of urban development, the maturity of the city, a focus on civic life, or the aging of urbanity.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las (letters rearranged) -> Sal (Latin/English: salt).\",\n    \"reading\": \"The essential flavor, the preserving element, wisdom, pungency, or something vital and uncorruptible.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las (sound) ~ L'axe (French: the axis).\",\n    \"reading\": \"Represents the central pivot, the line of orientation, the fundamental principle, or the axis around which all revolves.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vegas (sound) ~ Vae (Latin: woe) + gas (English: vapor, breath).\",\n    \"reading\": \"A lament of the ephemeral, a sorrowful exhalation, a cry of despair over fleeting substance, or a gaseous sorrow.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"The letter 'V' begins 'Vegas' and 'Village'. Symbolically, V represents duality, victory, or a chalice.\",\n    \"reading\": \"Symbolizes a choice between two diverging paths, triumph over adversity, or a vessel for receiving, a chalice of fate.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas (sound) ~ Laisse Vague (French: leave vague, let wander).\",\n    \"reading\": \"An instruction to release control, to embrace ambiguity, to permit things to drift undefined, or to let wander freely.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Las Vegas (Spanish) from 'las' (the, feminine plural) + 'vegas' (meadows, plural of 'vega'). 'Vega' from Latin 'vagus' (wandering, open).",
+   "reading": "The fertile, expansive, and open lands, or the uncultivated, wandering meadows.",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "Oxford English Dictionary; Diccionario de la Real Academia Española",
+   "confidence": 1.0
+  },
+  {
+   "operation": "etymology",
+   "chain": "Village (Old French) from 'villaticum' (Latin: belonging to a villa) from 'villa' (Latin: country house, farm).",
+   "reading": "A small settlement originally associated with a country estate, a collection of farmhouses, or a rustic dwelling place.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 1.0
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las (sound) ~ L'as (French: the ace, or 'you have').",
+   "reading": "Signifies the singular ultimate point, the highest value, the peak of potential, or a declaration of possession, 'you have it'.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las (sound) ~ Lass (English: young woman or girl).",
+   "reading": "Refers to the maiden, the youthful feminine principle, a simple, unadorned female figure, or a playful companion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Vegas (sound) ~ Vagus (Latin/English: wandering, as in a nerve or spirit).",
+   "reading": "Suggests movement, a wandering spirit, nomadic tendencies, or the hidden, vital connections throughout a system.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Village (sound) ~ Vile age (English).",
+   "reading": "Indicates a period of moral corruption, depravity, a time marked by wickedness, ignominy, or a detestable era.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Village (sound) ~ Ville âge (French: city age).",
+   "reading": "Points to the era of urban development, the maturity of the city, a focus on civic life, or the aging of urbanity.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las (letters rearranged) -> Sal (Latin/English: salt).",
+   "reading": "The essential flavor, the preserving element, wisdom, pungency, or something vital and uncorruptible.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las (sound) ~ L'axe (French: the axis).",
+   "reading": "Represents the central pivot, the line of orientation, the fundamental principle, or the axis around which all revolves.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vegas (sound) ~ Vae (Latin: woe) + gas (English: vapor, breath).",
+   "reading": "A lament of the ephemeral, a sorrowful exhalation, a cry of despair over fleeting substance, or a gaseous sorrow.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "The letter 'V' begins 'Vegas' and 'Village'. Symbolically, V represents duality, victory, or a chalice.",
+   "reading": "Symbolizes a choice between two diverging paths, triumph over adversity, or a vessel for receiving, a chalice of fate.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas (sound) ~ Laisse Vague (French: leave vague, let wander).",
+   "reading": "An instruction to release control, to embrace ambiguity, to permit things to drift undefined, or to let wander freely.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

@@ -1,0 +1,19 @@
+{
+ "word": "NRG Park",
+ "model": "Claude",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:25:31+00:00",
+ "latency_s": 9.2,
+ "ok": true,
+ "call_error": null,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG = energy (homophone of 'en-R-G'); Park = enclosed garden\",\n    \"reading\": \"A bounded space of vital force or life-energy; a contained reservoir of power.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG ≈ 'en-erg' (French en = in; Greek ergon = work); Park = parc\",\n    \"reading\": \"Energy at work within an enclosed place; labour contained in a garden-space.\",\n    \"languages\": [\"fr\",\"grc\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N=14; R=18; G=7 (sum=39=3+9=12=1+2=3); Park=P(16)A(1)R(18)K(11)\",\n    \"reading\": \"The triad manifest; trinity expressing itself through bounded natural space.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Park: Old French parc, from Latin parricus (enclosure); NRG: abbreviation of energy from Greek energeia\",\n    \"reading\": \"An enclosure of active power or dynamic force; space where potential becomes manifest.\",\n    \"languages\": [\"en\",\"fr\",\"la\",\"grc\"],\n    \"source\": \"Oxford English Dictionary, s.v. park; Liddell-Scott, s.v. energeia\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"NRG PARK → PRANK + RG; GNAPR + K; or rearrange as GRAN + PRK\",\n    \"reading\": \"A trick or jest concerning growth; deceptive play within natural bounds.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Park = par + k; par (French) = equal/pair; k as hard consonant closure\",\n    \"reading\": \"Equilibrium sealed; a paired symmetry held fixed and bounded.\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"N-R-G-P-A-R-K as initial letters: 'No Rest, Great Power, All Remaining Kept'\",\n    \"reading\": \"Ceaseless potency contained; inexhaustible force held within fixed bounds.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG ≈ 'nergon' (near Greek); Park ≈ 'parc' (French for enclosure/trap)\",\n    \"reading\": \"Nerve or sinew trapped; the muscular will confined within walls.\",\n    \"languages\": [\"grc\",\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"NRG: modern abbreviation; energy < French énergie < Latin energia < Greek en- (in) + ergon (work)\",\n    \"reading\": \"Work dwelling inward; internal labour or activity concentrated in a place.\",\n    \"languages\": [\"grc\",\"la\",\"fr\",\"en\"],\n    \"source\": \"Ernout-Meillet, Dictionnaire étymologique de la langue latine\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"N-R =",
+ "parsed": null,
+ "parse_error": "json_error: Expecting ',' delimiter: line 70 column 40 (char 2779)",
+ "extracted": false,
+ "n_readings": 0,
+ "refusal_like": false
+}

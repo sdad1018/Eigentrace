@@ -1,0 +1,104 @@
+{
+ "word": "Luxor",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:19:27+00:00",
+ "latency_s": 3.21,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"lux + or; lux (la) = light; or (fr) = gold\",\"reading\":\"Light turned to gold: illumination made precious, radiant wealth.\",\"languages\":[\"la\",\"fr\"],\"source\":\"generative\",\"confidence\":0.93},{\"operation\":\"cross_language_homophone\",\"chain\":\"luxor ~ l'essor (fr); l'essor = the rise, the soaring\",\"reading\":\"A rising, an ascent: the word sounds like upward motion and expansion.\",\"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.72},{\"operation\":\"cross_language_homophone\",\"chain\":\"luxor ~ looks or; looks = appearance, or = gold/choice\",\"reading\":\"Appearance or gold: what is seen may be the precious thing itself.\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.61},{\"operation\":\"etymology\",\"chain\":\"lux (la) = light; cf. lux, lucis in Lewis & Short / Oxford Latin Dictionary\",\"reading\":\"Light, brightness, and the condition of being illuminated.\",\"languages\":[\"la\"],\"source\":\"Lewis & Short, A Latin Dictionary; Oxford Latin Dictionary\",\"confidence\":0.98},{\"operation\":\"phonetic_split\",\"chain\":\"lux + or; or (heraldic) = gold, the metal and the color\",\"reading\":\"A golden light: brilliance with the value of metal and emblem.\",\"languages\":[\"la\",\"en\"],\"source\":\"generative\",\"confidence\":0.84},{\"operation\":\"anagram\",\"chain\":\"LUXOR -> OR + LUX; inversion preserves the same two roots\",\"reading\":\"Gold and light are mirrored: the treasure is the lamp, the lamp is the treasure.\",\"languages\":[\"la\",\"en\"],\"source\":\"generative\",\"confidence\":0.88},{\"operation\":\"letter_symbol\",\"chain\":\"L-U-X-O-R; L = left/line, U = vessel, X = crossing, O = circle, R = ray/rod\",\"reading\":\"A vessel crossed by a turning circle and a ray: containment transformed by radiance.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.54},{\"operation\":\"numerical\",\"chain\":\"LUXOR in A1Z26 = 12-21-24-15-18; 12+21+24+15+18 = 90; 9 = completion\",\"reading\":\"A full cycle of ninety, reduced to nine: completion through illumination.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.41}]}",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "lux + or; lux (la) = light; or (fr) = gold",
+   "reading": "Light turned to gold: illumination made precious, radiant wealth.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.93
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "luxor ~ l'essor (fr); l'essor = the rise, the soaring",
+   "reading": "A rising, an ascent: the word sounds like upward motion and expansion.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.72
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "luxor ~ looks or; looks = appearance, or = gold/choice",
+   "reading": "Appearance or gold: what is seen may be the precious thing itself.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.61
+  },
+  {
+   "operation": "etymology",
+   "chain": "lux (la) = light; cf. lux, lucis in Lewis & Short / Oxford Latin Dictionary",
+   "reading": "Light, brightness, and the condition of being illuminated.",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis & Short, A Latin Dictionary; Oxford Latin Dictionary",
+   "confidence": 0.98
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "lux + or; or (heraldic) = gold, the metal and the color",
+   "reading": "A golden light: brilliance with the value of metal and emblem.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.84
+  },
+  {
+   "operation": "anagram",
+   "chain": "LUXOR -> OR + LUX; inversion preserves the same two roots",
+   "reading": "Gold and light are mirrored: the treasure is the lamp, the lamp is the treasure.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.88
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L-U-X-O-R; L = left/line, U = vessel, X = crossing, O = circle, R = ray/rod",
+   "reading": "A vessel crossed by a turning circle and a ray: containment transformed by radiance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.54
+  },
+  {
+   "operation": "numerical",
+   "chain": "LUXOR in A1Z26 = 12-21-24-15-18; 12+21+24+15+18 = 90; 9 = completion",
+   "reading": "A full cycle of ninety, reduced to nine: completion through illumination.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 8,
+ "refusal_like": false
+}

@@ -1,0 +1,127 @@
+{
+ "word": "Luxor",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:46+00:00",
+ "latency_s": 6.74,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Luxor ← Arabic al-ʾuqṣur (الأقصر) ← Latin castra (military camp)\",\n    \"reading\": \"the fortified place, the camp, the enclosure of power\",\n    \"languages\": [\"ar\",\"la\"],\n    \"source\": \"Oxford English Dictionary & Lane's Arabic-English Lexicon\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lux-or → Lux (light) + or (gold)\",\n    \"reading\": \"light of gold, golden light, the shining metal made visible\",\n    \"languages\": [\"la\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Luxor → Lux-or → Lucs-or → Luc sor (French phonetic)\",\n    \"reading\": \"the hidden light, the sorcerer's light, light concealed\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Luxor ≈ Luksor ≈ Luxor ≈ Lucifer (phonetic cabala)\",\n    \"reading\": \"bearer of light, the morning star, the light-bringer\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"LUXOR → LOXUR → LUX + OR rearranged\",\n    \"reading\": \"the cross of light, the golden cross, solar crux\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.70\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Luxor → Lux + xor (Latin xor = farmer)\",\n    \"reading\": \"the light-farmer, he who cultivates illumination\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"LUXOR → L.U.X.O.R. → Lux Umbrae Xristi Occidens Renascens\",\n    \"reading\": \"the light of the shadow of Christ setting and rising again\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"LUXOR → L (el, god) + UXOR (Latin: wife)\",\n    \"reading\": \"the wife of God, the divine consort, sacred feminine\",\n    \"languages\": [\"la\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.70\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Luxor ≈ Louxor ≈ Louxor ≈ Leux-or (old French) ≈ Leur or\",\n    \"reading\": \"their gold, the gold that belongs to them, hidden royal gold\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Luxor ← Latin lux (light) + aurum (gold) via folk etymology\",\n    \"reading\": \"the place where light becomes gold, alchemical threshold\",\n    \"languages\": [\"la\"],\n    \"source\": \"Lewis & Short Latin Dictionary (folk reading)\",\n    \"confidence\": 0.50\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Luxor ← Arabic al-ʾuqṣur (الأقصر) ← Latin castra (military camp)",
+   "reading": "the fortified place, the camp, the enclosure of power",
+   "languages": [
+    "ar",
+    "la"
+   ],
+   "source": "Oxford English Dictionary & Lane's Arabic-English Lexicon",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lux-or → Lux (light) + or (gold)",
+   "reading": "light of gold, golden light, the shining metal made visible",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Luxor → Lux-or → Lucs-or → Luc sor (French phonetic)",
+   "reading": "the hidden light, the sorcerer's light, light concealed",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Luxor ≈ Luksor ≈ Luxor ≈ Lucifer (phonetic cabala)",
+   "reading": "bearer of light, the morning star, the light-bringer",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "LUXOR → LOXUR → LUX + OR rearranged",
+   "reading": "the cross of light, the golden cross, solar crux",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Luxor → Lux + xor (Latin xor = farmer)",
+   "reading": "the light-farmer, he who cultivates illumination",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "LUXOR → L.U.X.O.R. → Lux Umbrae Xristi Occidens Renascens",
+   "reading": "the light of the shadow of Christ setting and rising again",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "LUXOR → L (el, god) + UXOR (Latin: wife)",
+   "reading": "the wife of God, the divine consort, sacred feminine",
+   "languages": [
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Luxor ≈ Louxor ≈ Louxor ≈ Leux-or (old French) ≈ Leur or",
+   "reading": "their gold, the gold that belongs to them, hidden royal gold",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Luxor ← Latin lux (light) + aurum (gold) via folk etymology",
+   "reading": "the place where light becomes gold, alchemical threshold",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis & Short Latin Dictionary (folk reading)",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

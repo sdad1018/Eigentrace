@@ -1,0 +1,113 @@
+{
+ "word": "Dangerous Woman",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:27:44+00:00",
+ "latency_s": 7.71,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"danger (Old French dangier) = lordship, power; woman (Old English wīfmann) = female human; dangerous woman = one who holds power over men\",\n    \"reading\": \"A woman with sovereign power, feared because she wields authority traditionally reserved for men.\",\n    \"languages\": [\"en\", \"fr\", \"ang\"],\n    \"source\": \"OED, s.v. danger, woman\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"dan + ger + ous + wo + man; dan (Hebrew) = judge; ger (French) = to manage; ous (Greek) = being; wo (Chinese) = I/me; man = human\",\n    \"reading\": \"The judging, self-managing being — the 'I' who is both judge and judged.\",\n    \"languages\": [\"en\", \"he\", \"fr\", \"grc\", \"zh\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"dangerous (English) ~ d'angereuse (Old French) = of the anguished one; woman ~ woe + man (English) = sorrow-bringer\",\n    \"reading\": \"She who brings anguish and sorrow — the woman of the wound, not the weapon.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Dangerous Woman → 'A wound grows in me' (letters rearranged: A WOUND GROWS IN ME)\",\n    \"reading\": \"The danger is internal — a growing wound that transforms the woman into a source of peril.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"D.W. → D = Delta (change, gate), W = double-u (double V = victory, or womb); D.W. = Delta of the Womb\",\n    \"reading\": \"The gate of transformation through the womb — a dangerous passage into new life or death.\",\n    \"languages\": [\"en\", \"grc\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"D = door (daleth, Hebrew); W = water (double u, waves); D + W = door over water; woman = vessel (vase, Latin vas)\",\n    \"reading\": \"A vessel that opens a door across the waters — dangerous to cross, yet the only crossing.\",\n    \"languages\": [\"en\", \"he\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"D=4, A=1, N=14, G=7, E=5, R=18, O=15, U=21, S=19, W=23, O=15, M=13, A=1, N=14 → sum = 170; 1+7+0=8; 8 = infinity, regeneration\",\n    \"reading\": \"The dangerous woman is the infinite cycle — she destroys and renews, her number is the eternal spiral.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"woman (Old English wīfmann) = wīf (woman) + mann (person); dangerous (Latin dominarium, via Old French) = belonging to a lord; thus 'lordly female person'\",\n    \"reading\": \"A female person who is lordly — not a lady under a lord, but a lord herself.\",\n    \"languages\": [\"en\", \"la\", \"fr\"],\n    \"source\": \"OED, s.v. woman; Lewis & Short, dominarium\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "danger (Old French dangier) = lordship, power; woman (Old English wīfmann) = female human; dangerous woman = one who holds power over men",
+   "reading": "A woman with sovereign power, feared because she wields authority traditionally reserved for men.",
+   "languages": [
+    "en",
+    "fr",
+    "ang"
+   ],
+   "source": "OED, s.v. danger, woman",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "dan + ger + ous + wo + man; dan (Hebrew) = judge; ger (French) = to manage; ous (Greek) = being; wo (Chinese) = I/me; man = human",
+   "reading": "The judging, self-managing being — the 'I' who is both judge and judged.",
+   "languages": [
+    "en",
+    "he",
+    "fr",
+    "grc",
+    "zh"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "dangerous (English) ~ d'angereuse (Old French) = of the anguished one; woman ~ woe + man (English) = sorrow-bringer",
+   "reading": "She who brings anguish and sorrow — the woman of the wound, not the weapon.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Dangerous Woman → 'A wound grows in me' (letters rearranged: A WOUND GROWS IN ME)",
+   "reading": "The danger is internal — a growing wound that transforms the woman into a source of peril.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "D.W. → D = Delta (change, gate), W = double-u (double V = victory, or womb); D.W. = Delta of the Womb",
+   "reading": "The gate of transformation through the womb — a dangerous passage into new life or death.",
+   "languages": [
+    "en",
+    "grc",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "D = door (daleth, Hebrew); W = water (double u, waves); D + W = door over water; woman = vessel (vase, Latin vas)",
+   "reading": "A vessel that opens a door across the waters — dangerous to cross, yet the only crossing.",
+   "languages": [
+    "en",
+    "he",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "D=4, A=1, N=14, G=7, E=5, R=18, O=15, U=21, S=19, W=23, O=15, M=13, A=1, N=14 → sum = 170; 1+7+0=8; 8 = infinity, regeneration",
+   "reading": "The dangerous woman is the infinite cycle — she destroys and renews, her number is the eternal spiral.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "etymology",
+   "chain": "woman (Old English wīfmann) = wīf (woman) + mann (person); dangerous (Latin dominarium, via Old French) = belonging to a lord; thus 'lordly female person'",
+   "reading": "A female person who is lordly — not a lady under a lord, but a lord herself.",
+   "languages": [
+    "en",
+    "la",
+    "fr"
+   ],
+   "source": "OED, s.v. woman; Lewis & Short, dominarium",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

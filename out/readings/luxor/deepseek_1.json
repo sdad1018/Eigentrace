@@ -1,0 +1,130 @@
+{
+ "word": "Luxor",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:31+00:00",
+ "latency_s": 10.92,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Luxor from Arabic al-Uqsur (الأقصر) via Coptic p-šlol, from Latin castra; but here read as Latin lux + -or\",\n    \"reading\": \"Light-bearer; the place or agent that carries light, from Latin lux (light) and -or (state/agent suffix)\",\n    \"languages\": [\"la\", \"ar\", \"cop\"],\n    \"source\": \"Oxford English Dictionary, entry 'Luxor' (etymology)\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lu + xor; lu (French 'lu' = read, past participle) + xor (exclusive OR in logic)\",\n    \"reading\": \"That which is read exclusively; a secret text that yields one meaning only when properly decoded\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Luxor ~ lux or (Latin 'light' + French 'gold') ~ l'usure (French 'usury')\",\n    \"reading\": \"Light of gold, but also usury — the gleam of wealth that corrodes; a double-edged brilliance\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Luxor → xulor → x + ulor; ulor (Latin) = to howl, wail; x = unknown\",\n    \"reading\": \"The unknown howl; a cry from a place not yet named, the sound of light in pain\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L-U-X-O-R → Lumen, Umbra, Xenos, Ordo, Rerum (Latin: light, shadow, stranger, order, of things)\",\n    \"reading\": \"Light, shadow, stranger, order, of things — a cosmic sequence of opposites and hidden order\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L (el = God in Hebrew) + U (you) + X (cross/unknown) + O (circle/zero) + R (res = thing)\",\n    \"reading\": \"God in you, the unknown cross, the zero of matter — a hieroglyph of divine incarnation\",\n    \"languages\": [\"he\", \"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"L=12, U=21, X=24, O=15, R=18 → sum 90; 90 = 9×10, 9 = completion, 10 = sephiroth\",\n    \"reading\": \"Ninety: completion of the ten spheres — the full circuit of creation, a closed loop of light\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lux + or; lux (Latin light) + or (French 'gold' in 'or') → light-gold\",\n    \"reading\": \"Light that is also gold — alchemical gold, the philosopher's stone as radiant matter\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Luxor ~ look-sore (English) ~ lucks-or (English) ~ l'axe d'or (French 'axis of gold')\",\n    \"reading\": \"To look sorely at the golden axis — a vision that hurts, the blinding truth of the centre\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Luxor from Latin 'lūx' (light) + suffix '-or' (agent noun) — cf. 'splendor', 'fulgor'\",\n    \"reading\": \"A shining one; that which emits light — a nominalised verb of illumination\",\n    \"languages\": [\"la\"],\n    \"source\": \"Lewis & Short, A Latin Dictionary (entry 'lux')\",\n    \"confidence\": 0.8\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Luxor from Arabic al-Uqsur (الأقصر) via Coptic p-šlol, from Latin castra; but here read as Latin lux + -or",
+   "reading": "Light-bearer; the place or agent that carries light, from Latin lux (light) and -or (state/agent suffix)",
+   "languages": [
+    "la",
+    "ar",
+    "cop"
+   ],
+   "source": "Oxford English Dictionary, entry 'Luxor' (etymology)",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lu + xor; lu (French 'lu' = read, past participle) + xor (exclusive OR in logic)",
+   "reading": "That which is read exclusively; a secret text that yields one meaning only when properly decoded",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Luxor ~ lux or (Latin 'light' + French 'gold') ~ l'usure (French 'usury')",
+   "reading": "Light of gold, but also usury — the gleam of wealth that corrodes; a double-edged brilliance",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Luxor → xulor → x + ulor; ulor (Latin) = to howl, wail; x = unknown",
+   "reading": "The unknown howl; a cry from a place not yet named, the sound of light in pain",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L-U-X-O-R → Lumen, Umbra, Xenos, Ordo, Rerum (Latin: light, shadow, stranger, order, of things)",
+   "reading": "Light, shadow, stranger, order, of things — a cosmic sequence of opposites and hidden order",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L (el = God in Hebrew) + U (you) + X (cross/unknown) + O (circle/zero) + R (res = thing)",
+   "reading": "God in you, the unknown cross, the zero of matter — a hieroglyph of divine incarnation",
+   "languages": [
+    "he",
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "L=12, U=21, X=24, O=15, R=18 → sum 90; 90 = 9×10, 9 = completion, 10 = sephiroth",
+   "reading": "Ninety: completion of the ten spheres — the full circuit of creation, a closed loop of light",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lux + or; lux (Latin light) + or (French 'gold' in 'or') → light-gold",
+   "reading": "Light that is also gold — alchemical gold, the philosopher's stone as radiant matter",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Luxor ~ look-sore (English) ~ lucks-or (English) ~ l'axe d'or (French 'axis of gold')",
+   "reading": "To look sorely at the golden axis — a vision that hurts, the blinding truth of the centre",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Luxor from Latin 'lūx' (light) + suffix '-or' (agent noun) — cf. 'splendor', 'fulgor'",
+   "reading": "A shining one; that which emits light — a nominalised verb of illumination",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis & Short, A Latin Dictionary (entry 'lux')",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

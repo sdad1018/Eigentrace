@@ -1,0 +1,134 @@
+{
+ "word": "NRG Park",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:22:26+00:00",
+ "latency_s": 7.54,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG + Park; NRG ≈ énergie (French)\",\n    \"reading\": \"Energy park; enclosure of vital force or power\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"En + Er + Gie + Park; en-air-gie (French sound)\",\n    \"reading\": \"In the air of the giant; aerial domain of the powerful one\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG ≈ nerg (Turkish = energy, power); Park ≈ park (Old French = enclosed hunting ground)\",\n    \"reading\": \"Enclosed ground of vital power or divine force\",\n    \"languages\": [\"tr\",\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"NRG PARK → PRANG + RK; prang (Old English) + ric (kingdom)\",\n    \"reading\": \"Kingdom where one is struck or pierced by divine force\",\n    \"languages\": [\"en\",\"ang\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Park from Old French parc, from Medieval Latin parricus, from Germanic *parruk (enclosed space); NRG from Greek enérgeia (activity, operation)\",\n    \"reading\": \"Enclosed space of operative power or cosmic activity\",\n    \"languages\": [\"fr\",\"la\",\"grc\",\"en\"],\n    \"source\": \"Oxford English Dictionary & Liddell-Scott-Jones\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG Park ≈ noir gueule parc (French sound)\",\n    \"reading\": \"Black-mouthed park; enclosure of the dark devouring mouth\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"NRG = Notre Roi Grand; PARK = Puissance Astrale Royale Kabbalistique\",\n    \"reading\": \"Our Great King; Royal Kabbalistic Astral Power\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N = Nun (fish, life); R = Resh (head); G = Gimel (camel, lifting); Park = enclosed field\",\n    \"reading\": \"Life-head lifted within the sacred enclosed field\",\n    \"languages\": [\"he\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG Park ≈ Energie Park ≈ An-ergue parc (Greek en + ergon = in-work)\",\n    \"reading\": \"Enclosure where the work is accomplished; alchemical laboratory\",\n    \"languages\": [\"grc\",\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG ≈ nergal (Babylonian underworld god of plague and war); Park = paradise (enclosed garden)\",\n    \"reading\": \"Paradise or garden of the god of destructive solar force\",\n    \"languages\": [\"akk\",\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "NRG + Park; NRG ≈ énergie (French)",
+   "reading": "Energy park; enclosure of vital force or power",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "En + Er + Gie + Park; en-air-gie (French sound)",
+   "reading": "In the air of the giant; aerial domain of the powerful one",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "NRG ≈ nerg (Turkish = energy, power); Park ≈ park (Old French = enclosed hunting ground)",
+   "reading": "Enclosed ground of vital power or divine force",
+   "languages": [
+    "tr",
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "NRG PARK → PRANG + RK; prang (Old English) + ric (kingdom)",
+   "reading": "Kingdom where one is struck or pierced by divine force",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Park from Old French parc, from Medieval Latin parricus, from Germanic *parruk (enclosed space); NRG from Greek enérgeia (activity, operation)",
+   "reading": "Enclosed space of operative power or cosmic activity",
+   "languages": [
+    "fr",
+    "la",
+    "grc",
+    "en"
+   ],
+   "source": "Oxford English Dictionary & Liddell-Scott-Jones",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "NRG Park ≈ noir gueule parc (French sound)",
+   "reading": "Black-mouthed park; enclosure of the dark devouring mouth",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "NRG = Notre Roi Grand; PARK = Puissance Astrale Royale Kabbalistique",
+   "reading": "Our Great King; Royal Kabbalistic Astral Power",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N = Nun (fish, life); R = Resh (head); G = Gimel (camel, lifting); Park = enclosed field",
+   "reading": "Life-head lifted within the sacred enclosed field",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "NRG Park ≈ Energie Park ≈ An-ergue parc (Greek en + ergon = in-work)",
+   "reading": "Enclosure where the work is accomplished; alchemical laboratory",
+   "languages": [
+    "grc",
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "NRG ≈ nergal (Babylonian underworld god of plague and war); Park = paradise (enclosed garden)",
+   "reading": "Paradise or garden of the god of destructive solar force",
+   "languages": [
+    "akk",
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

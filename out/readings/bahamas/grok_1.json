@@ -1,0 +1,130 @@
+{
+ "word": "Bahamas",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:26:20+00:00",
+ "latency_s": 6.9,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bahamas ← Spanish Baja Mar (from Columbus 1492 logs)\",\n    \"reading\": \"shallow sea, low marine waters\",\n    \"languages\": [\"es\",\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba + ha + mas\",\n    \"reading\": \"the father, the, the masses; paternal revelation to the crowd\",\n    \"languages\": [\"fr\",\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bâ + âme + as\",\n    \"reading\": \"the cradle/shelter + soul + you have; you possess the soul's cradle\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bahamas ≈ Ba + Hamas (Hebrew)\",\n    \"reading\": \"comes the violence, comes the wrath\",\n    \"languages\": [\"he\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bah + Ah + Mas\",\n    \"reading\": \"the opening, the cry, the more; the gate utters the greater\",\n    \"languages\": [\"en\",\"ar\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bahamas → Aba + Sham\",\n    \"reading\": \"the father there, the father of the name\",\n    \"languages\": [\"he\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B.A.H.A.M.A.S. → Bayit Avraham HaMashiach Adonai Shaddai\",\n    \"reading\": \"House of Abraham, the Messiah, Lord Almighty\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba-ha-mas ≈ bas + hamas (French + Hebrew)\",\n    \"reading\": \"the low one brings violence; the base carries wrath\",\n    \"languages\": [\"fr\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B (house) + AH (sigh/breath) + MAS (mass/mess)\",\n    \"reading\": \"the house of the divine breath within the mass\",\n    \"languages\": [\"en\",\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bahama ← Lucayan ba-ha-ma (Taino)\",\n    \"reading\": \"large upper middle; the great central island\",\n    \"languages\": [\"tai\"],\n    \"source\": \"Webster's New International Dictionary (1913)\",\n    \"confidence\": 0.75\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Bahamas ← Spanish Baja Mar (from Columbus 1492 logs)",
+   "reading": "shallow sea, low marine waters",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba + ha + mas",
+   "reading": "the father, the, the masses; paternal revelation to the crowd",
+   "languages": [
+    "fr",
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bâ + âme + as",
+   "reading": "the cradle/shelter + soul + you have; you possess the soul's cradle",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bahamas ≈ Ba + Hamas (Hebrew)",
+   "reading": "comes the violence, comes the wrath",
+   "languages": [
+    "he",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bah + Ah + Mas",
+   "reading": "the opening, the cry, the more; the gate utters the greater",
+   "languages": [
+    "en",
+    "ar",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bahamas → Aba + Sham",
+   "reading": "the father there, the father of the name",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B.A.H.A.M.A.S. → Bayit Avraham HaMashiach Adonai Shaddai",
+   "reading": "House of Abraham, the Messiah, Lord Almighty",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ha-mas ≈ bas + hamas (French + Hebrew)",
+   "reading": "the low one brings violence; the base carries wrath",
+   "languages": [
+    "fr",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (house) + AH (sigh/breath) + MAS (mass/mess)",
+   "reading": "the house of the divine breath within the mass",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bahama ← Lucayan ba-ha-ma (Taino)",
+   "reading": "large upper middle; the great central island",
+   "languages": [
+    "tai"
+   ],
+   "source": "Webster's New International Dictionary (1913)",
+   "confidence": 0.75
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

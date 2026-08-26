@@ -1,0 +1,112 @@
+{
+ "word": "Las Vegas Boulevard",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:25:09+00:00",
+ "latency_s": 8.97,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las (Spanish, from Latin 'illas') + Vegas (Spanish, from Latin 'vicus' = village) + Boulevard (French, from Middle Dutch 'bolwerk' = bulwark)\",\n    \"reading\": \"The villages' bulwark; a defensive line of small settlements turned into a fortified road.\",\n    \"languages\": [\"es\",\"la\",\"fr\",\"nl\"],\n    \"source\": \"Diccionario de la lengua española (RAE); Oxford English Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las + Ve + gas; 'las' (Fr. 'là' = there) + 've' (Fr. 'vais' = go) + 'gas' (Fr. 'gaz' = gas)\",\n    \"reading\": \"There one goes into gas; a thoroughfare of vaporous transit, a mirage of motion.\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas → 'la vega' (Spanish: the fertile plain); 'boulevard' → 'bol' (ball) + 'vard' (guard, from Old Norse 'vörðr')\",\n    \"reading\": \"The fertile plain guarded by a sphere; a round watchtower on the meadow.\",\n    \"languages\": [\"es\",\"en\",\"non\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Boulevard → 'Vegas' anagram 'gaves' (French: mudflats) + 'Boulevard' anagram 'dour bavel' (Scots: sour babble)\",\n    \"reading\": \"Mudflats of sour babble; a noisy, muddy path of confused speech.\",\n    \"languages\": [\"fr\",\"sco\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.25\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L.V.B. → Latin 'Lux Via Belli' (light, road, war) or 'Lumen Veritatis Bona' (light of truth, good)\",\n    \"reading\": \"The road of war's light; or the good light of truth along the way.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L (Latin: L = 50, also 'liber' = book) + V (Roman numeral 5, also 'vir' = man) + B (Beth = house in Hebrew)\",\n    \"reading\": \"Fifty men in a house; a book of five houses; a numerical architecture of dwelling.\",\n    \"languages\": [\"la\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Las Vegas Boulevard → L=50, V=5, B=2; sum = 57; 57 = 5+7=12; 12 = zodiac, hours, tribes\",\n    \"reading\": \"A path of twelve; the complete cycle of time and space compressed into a single avenue.\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Boulevard from Middle Dutch 'bolwerk' → 'bol' (plank) + 'werk' (work); later French 'boulevard' = rampart, then broad promenade\",\n    \"reading\": \"A plank-work rampart transformed into a leisurely walk; fortification becomes flânerie.\",\n    \"languages\": [\"nl\",\"fr\",\"en\"],\n    \"source\": \"Oxford English Dictionary; Trésor de la langue française\",\n    \"confidence\": 0.9\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Las (Spanish, from Latin 'illas') + Vegas (Spanish, from Latin 'vicus' = village) + Boulevard (French, from Middle Dutch 'bolwerk' = bulwark)",
+   "reading": "The villages' bulwark; a defensive line of small settlements turned into a fortified road.",
+   "languages": [
+    "es",
+    "la",
+    "fr",
+    "nl"
+   ],
+   "source": "Diccionario de la lengua española (RAE); Oxford English Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Ve + gas; 'las' (Fr. 'là' = there) + 've' (Fr. 'vais' = go) + 'gas' (Fr. 'gaz' = gas)",
+   "reading": "There one goes into gas; a thoroughfare of vaporous transit, a mirage of motion.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas → 'la vega' (Spanish: the fertile plain); 'boulevard' → 'bol' (ball) + 'vard' (guard, from Old Norse 'vörðr')",
+   "reading": "The fertile plain guarded by a sphere; a round watchtower on the meadow.",
+   "languages": [
+    "es",
+    "en",
+    "non"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Boulevard → 'Vegas' anagram 'gaves' (French: mudflats) + 'Boulevard' anagram 'dour bavel' (Scots: sour babble)",
+   "reading": "Mudflats of sour babble; a noisy, muddy path of confused speech.",
+   "languages": [
+    "fr",
+    "sco",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.25
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L.V.B. → Latin 'Lux Via Belli' (light, road, war) or 'Lumen Veritatis Bona' (light of truth, good)",
+   "reading": "The road of war's light; or the good light of truth along the way.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L (Latin: L = 50, also 'liber' = book) + V (Roman numeral 5, also 'vir' = man) + B (Beth = house in Hebrew)",
+   "reading": "Fifty men in a house; a book of five houses; a numerical architecture of dwelling.",
+   "languages": [
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "numerical",
+   "chain": "Las Vegas Boulevard → L=50, V=5, B=2; sum = 57; 57 = 5+7=12; 12 = zodiac, hours, tribes",
+   "reading": "A path of twelve; the complete cycle of time and space compressed into a single avenue.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "etymology",
+   "chain": "Boulevard from Middle Dutch 'bolwerk' → 'bol' (plank) + 'werk' (work); later French 'boulevard' = rampart, then broad promenade",
+   "reading": "A plank-work rampart transformed into a leisurely walk; fortification becomes flânerie.",
+   "languages": [
+    "nl",
+    "fr",
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Trésor de la langue française",
+   "confidence": 0.9
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

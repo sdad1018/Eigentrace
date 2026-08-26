@@ -1,0 +1,160 @@
+{
+ "word": "Las Vegas Boulevard",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:25:25+00:00",
+ "latency_s": 16.66,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las (Spanish, from Latin 'illas') + Vegas (Spanish, plural of 'vega', from Iberian/Romance 'vaika' = fertile plain) + Boulevard (French, from Middle Dutch 'bolwerk' = bulwark/rampart)\",\n    \"reading\": \"Fertile plains of the rampart; a defended meadowland raised as a bulwark against the flood of the desert.\",\n    \"languages\": [\"es\",\"fr\",\"nl\",\"la\"],\n    \"source\": \"Diccionario de la lengua española (RAE); Oxford English Dictionary, 'boulevard'\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las + Vegas + Boule + vard; 'las' (Fr. = the) + 'vegas' (Fr. = vague, feminine plural) + 'boule' (Fr. = ball) + 'vard' (Fr. = green, from 'vert' with voiced d)\",\n    \"chain\": \"las + ve + gas; 'las' (Fr. = tired) + 've' (Fr. = 'v' letter) + 'gas' (Fr. = gas) — 'the tired v-gas'\",\n    \"reading\": \"The vague green ball; a tired letter V that exhales as gas — the breath of the letter of victory, spent.\",\n    \"languages\": [\"fr\",\"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Vegas → 'végas' (Fr. = vegas, but also 'végéter' = to vegetate) → 'vague' (Fr. = wave) + 'as' (Fr. = ace) — 'wave-ace'\",\n    \"chain\": \"Boulevard → 'boule' (Fr. = ball) + 'vard' → 'ver' (Fr. = worm) + 'd' — 'ball-worm'\",\n    \"reading\": \"A wave-ace that vegetates; the ball-worm of the rampart — a serpent coiled in the fertile plain.\",\n    \"languages\": [\"fr\",\"es\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Boulevard → 'Vegas' = 'gaves' (Fr. = rivers, from 'gave' = torrent) + 'Las' = 'sal' (Lat. = salt) + 'Boulevard' = 'bouvre' (old Fr. = ox) + 'lad' (Eng. = youth) — 'sal-gaves-bouvre-lad'\",\n    \"reading\": \"Salt torrents, an ox, and a lad — the alchemical marriage of fixed salt and flowing water, the ox as sulphur.\",\n    \"languages\": [\"fr\",\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L V B → Latin 'Lux Via Bellum' (light, way, war) or 'Lapis Viridis Benedictus' (blessed green stone)\",\n    \"reading\": \"The green stone of the blessed way — light as a path through war, the philosopher's stone laid as a road.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L = 50 (Roman), V = 5, B = 2 (Greek beta) → 50+5+2 = 57; 5+7 = 12; 1+2 = 3 — the ternary\",\n    \"chain\": \"L = ladder (Hebrew lamed = ox-goad), V = vessel (vav = hook), B = house (beth) — 'the ox-goad hooks the house'\",\n    \"reading\": \"The ladder of the ox-goad hooks the house of the vessel; the number 3 — the triad of body, soul, spirit.\",\n    \"languages\": [\"he\",\"la\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Las (L=30, A=1, S=19) = 50; Vegas (V=22, E=5, G=7, A=1, S=19) = 54; Boulevard (B=2, O=15, U=21, L=12, E=5, V=22, A=1, R=18, D=4) = 100 — total 204 → 2+0+4 = 6\",\n    \"reading\": \"Six — the number of the hexad, the seal of Solomon, the union of above and below on the boulevard.\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Boulevard from Middle Dutch 'bolwerk' → 'bol' (round) + 'werk' (work) — a circular fortification; later French 'boulevard' = a wide tree-lined avenue\",\n    \"reading\": \"A round work of defence, turned into a promenade — the rampart becomes a path for the idle walker.\",\n    \"languages\": [\"nl\",\"fr\",\"en\"],\n    \"source\": \"Oxford English Dictionary, 'boulevard'\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las + Vegas → 'la' (Fr. = there) + 'svegas' → 'svegliare' (It. = to awaken) — 'la svegli' (It. = the alarm clock)\",\n    \"reading\": \"The alarm clock of the fertile plain — a call to wake from the dream of the desert.\",\n    \"languages\": [\"fr\",\"it\",\"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Vegas → 'vegas' (Lat. = veins, from 'vena') → 'vena' (It. = vein) → 'vain' (Fr. = empty) — 'las' (Fr. = tired) + 'vain' = 'las vain'\",\n    \"reading\": \"Tired veins of the earth — the watercourses of the vega are dry, the veins of the land are empty.\",\n    \"languages\": [\"la\",\"it\",\"fr\",\"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Boulevard → 'boulevard' → 'bouvre' (ox) + 'lad' (youth) → 'bouvre-lad' → 'labour' (Eng.) + 'dev' (Fr. = god, from 'deus') — 'labour of god'\",\n    \"reading\": \"The labour of God — the ox of the alchemist ploughs the fertile plain, the divine work of creation.\",\n    \"languages\": [\"fr\",\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L V B → Hebrew 'Lev' (heart) + 'Vav' (and) + 'Beth' (house) — 'heart and house'\",\n    \"reading\": \"Heart and house — the boulevard as the axis between the inner heart and the outer dwelling, the sacred centre.\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Las (Spanish, from Latin 'illas') + Vegas (Spanish, plural of 'vega', from Iberian/Romance 'vaika' = fertile plain) + Boulevard (French, from Middle Dutch 'bolwerk' = bulwark/rampart)",
+   "reading": "Fertile plains of the rampart; a defended meadowland raised as a bulwark against the flood of the desert.",
+   "languages": [
+    "es",
+    "fr",
+    "nl",
+    "la"
+   ],
+   "source": "Diccionario de la lengua española (RAE); Oxford English Dictionary, 'boulevard'",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "las + ve + gas; 'las' (Fr. = tired) + 've' (Fr. = 'v' letter) + 'gas' (Fr. = gas) — 'the tired v-gas'",
+   "reading": "The vague green ball; a tired letter V that exhales as gas — the breath of the letter of victory, spent.",
+   "languages": [
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Boulevard → 'boule' (Fr. = ball) + 'vard' → 'ver' (Fr. = worm) + 'd' — 'ball-worm'",
+   "reading": "A wave-ace that vegetates; the ball-worm of the rampart — a serpent coiled in the fertile plain.",
+   "languages": [
+    "fr",
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Boulevard → 'Vegas' = 'gaves' (Fr. = rivers, from 'gave' = torrent) + 'Las' = 'sal' (Lat. = salt) + 'Boulevard' = 'bouvre' (old Fr. = ox) + 'lad' (Eng. = youth) — 'sal-gaves-bouvre-lad'",
+   "reading": "Salt torrents, an ox, and a lad — the alchemical marriage of fixed salt and flowing water, the ox as sulphur.",
+   "languages": [
+    "fr",
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L V B → Latin 'Lux Via Bellum' (light, way, war) or 'Lapis Viridis Benedictus' (blessed green stone)",
+   "reading": "The green stone of the blessed way — light as a path through war, the philosopher's stone laid as a road.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L = ladder (Hebrew lamed = ox-goad), V = vessel (vav = hook), B = house (beth) — 'the ox-goad hooks the house'",
+   "reading": "The ladder of the ox-goad hooks the house of the vessel; the number 3 — the triad of body, soul, spirit.",
+   "languages": [
+    "he",
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "Las (L=30, A=1, S=19) = 50; Vegas (V=22, E=5, G=7, A=1, S=19) = 54; Boulevard (B=2, O=15, U=21, L=12, E=5, V=22, A=1, R=18, D=4) = 100 — total 204 → 2+0+4 = 6",
+   "reading": "Six — the number of the hexad, the seal of Solomon, the union of above and below on the boulevard.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "etymology",
+   "chain": "Boulevard from Middle Dutch 'bolwerk' → 'bol' (round) + 'werk' (work) — a circular fortification; later French 'boulevard' = a wide tree-lined avenue",
+   "reading": "A round work of defence, turned into a promenade — the rampart becomes a path for the idle walker.",
+   "languages": [
+    "nl",
+    "fr",
+    "en"
+   ],
+   "source": "Oxford English Dictionary, 'boulevard'",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Vegas → 'la' (Fr. = there) + 'svegas' → 'svegliare' (It. = to awaken) — 'la svegli' (It. = the alarm clock)",
+   "reading": "The alarm clock of the fertile plain — a call to wake from the dream of the desert.",
+   "languages": [
+    "fr",
+    "it",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Vegas → 'vegas' (Lat. = veins, from 'vena') → 'vena' (It. = vein) → 'vain' (Fr. = empty) — 'las' (Fr. = tired) + 'vain' = 'las vain'",
+   "reading": "Tired veins of the earth — the watercourses of the vega are dry, the veins of the land are empty.",
+   "languages": [
+    "la",
+    "it",
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Boulevard → 'boulevard' → 'bouvre' (ox) + 'lad' (youth) → 'bouvre-lad' → 'labour' (Eng.) + 'dev' (Fr. = god, from 'deus') — 'labour of god'",
+   "reading": "The labour of God — the ox of the alchemist ploughs the fertile plain, the divine work of creation.",
+   "languages": [
+    "fr",
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L V B → Hebrew 'Lev' (heart) + 'Vav' (and) + 'Beth' (house) — 'heart and house'",
+   "reading": "Heart and house — the boulevard as the axis between the inner heart and the outer dwelling, the sacred centre.",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

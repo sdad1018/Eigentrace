@@ -1,0 +1,129 @@
+{
+ "word": "Las Vegas Village",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:18:34+00:00",
+ "latency_s": 5.89,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"Las + Vegas + Village -> lass + vagues + vil + age; lass = young woman/servant, vagues = waves/uncertain, village = small settlement\",\"reading\":\"A young feminine figure amid waves of uncertainty, in a small enclosed age or dwelling.\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.71},{\"operation\":\"cross_language_homophone\",\"chain\":\"Las -> les/las; Vegas -> vegas ~ vagues; Village -> village = village; sound-play on vagueness and enclosure\",\"reading\":\"The vague, wavering place: a settlement of uncertainty, where forms are not fixed.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.66},{\"operation\":\"etymology\",\"chain\":\"village (OED / CNRTL): from Old French village, from village/villaticum, from Latin villa 'country house, estate' + -aticum\",\"reading\":\"A place of estate and dwelling: the domain of the house extended into a clustered habitation.\",\"languages\":[\"en\",\"fr\",\"la\"],\"source\":\"OED; CNRTL\",\"confidence\":0.94},{\"operation\":\"etymology\",\"chain\":\"Las (Spanish article/plural feminine) + Vegas (Spanish vegas, plural of vega 'fertile plain') + village (from Latin villa via Old French)\",\"reading\":\"The phrase suggests fertile lowlands gathered into a habitation: a settlement of plains and houses.\",\"languages\":[\"es\",\"en\",\"fr\",\"la\"],\"source\":\"Diccionario de la lengua española; OED; CNRTL\",\"confidence\":0.9},{\"operation\":\"phonetic_split\",\"chain\":\"Las Vegas -> la sève / la vague / âge; Village -> vil + âge; vil = base, age = time\",\"reading\":\"Base age upon age: a low, shifting tide of time gathered into a small habitation.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.58},{\"operation\":\"cross_language_homophone\",\"chain\":\"Vegas ~ vagues (fr. 'waves'); Village ~ vil-âge ('base age')\",\"reading\":\"Waves of time wash the base dwelling; instability is housed in a small form.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.63},{\"operation\":\"anagram\",\"chain\":\"LAS VEGAS VILLAGE -> rearrange to give 'A VAGUE SILLAGE' (near-anagram; sillage = wake, trail)\",\"reading\":\"A vague wake or trail: what remains after passage, not the thing itself.\",\"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.42},{\"operation\":\"notariqon\",\"chain\":\"L V V -> Light / Veil / Village; initial letters taken as emblematic initials\",\"reading\":\"Light veiled in a small enclosure: illumination contained within a humble boundary.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.35},{\"operation\":\"letter_symbol\",\"chain\":\"L = angle/threshold; V = vessel/valley; V = repetition of descent; VILLAGE = enclosure of letters around a center\",\"reading\":\"A threshold opens into a valley-vessel: a contained descent into communal form.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.49},{\"operation\":\"numerical\",\"chain\":\"LAS VEGAS VILLAGE -> letter counts and repetition: V repeated, L/V angularity; pattern of doubling and enclosure\",\"reading\":\"Doubling and return dominate: the sign points to repetition, enclosure, and a folded space.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.31}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Vegas + Village -> lass + vagues + vil + age; lass = young woman/servant, vagues = waves/uncertain, village = small settlement",
+   "reading": "A young feminine figure amid waves of uncertainty, in a small enclosed age or dwelling.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.71
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las -> les/las; Vegas -> vegas ~ vagues; Village -> village = village; sound-play on vagueness and enclosure",
+   "reading": "The vague, wavering place: a settlement of uncertainty, where forms are not fixed.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.66
+  },
+  {
+   "operation": "etymology",
+   "chain": "village (OED / CNRTL): from Old French village, from village/villaticum, from Latin villa 'country house, estate' + -aticum",
+   "reading": "A place of estate and dwelling: the domain of the house extended into a clustered habitation.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "OED; CNRTL",
+   "confidence": 0.94
+  },
+  {
+   "operation": "etymology",
+   "chain": "Las (Spanish article/plural feminine) + Vegas (Spanish vegas, plural of vega 'fertile plain') + village (from Latin villa via Old French)",
+   "reading": "The phrase suggests fertile lowlands gathered into a habitation: a settlement of plains and houses.",
+   "languages": [
+    "es",
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Diccionario de la lengua española; OED; CNRTL",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas -> la sève / la vague / âge; Village -> vil + âge; vil = base, age = time",
+   "reading": "Base age upon age: a low, shifting tide of time gathered into a small habitation.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Vegas ~ vagues (fr. 'waves'); Village ~ vil-âge ('base age')",
+   "reading": "Waves of time wash the base dwelling; instability is housed in a small form.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.63
+  },
+  {
+   "operation": "anagram",
+   "chain": "LAS VEGAS VILLAGE -> rearrange to give 'A VAGUE SILLAGE' (near-anagram; sillage = wake, trail)",
+   "reading": "A vague wake or trail: what remains after passage, not the thing itself.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.42
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L V V -> Light / Veil / Village; initial letters taken as emblematic initials",
+   "reading": "Light veiled in a small enclosure: illumination contained within a humble boundary.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L = angle/threshold; V = vessel/valley; V = repetition of descent; VILLAGE = enclosure of letters around a center",
+   "reading": "A threshold opens into a valley-vessel: a contained descent into communal form.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.49
+  },
+  {
+   "operation": "numerical",
+   "chain": "LAS VEGAS VILLAGE -> letter counts and repetition: V repeated, L/V angularity; pattern of doubling and enclosure",
+   "reading": "Doubling and return dominate: the sign points to repetition, enclosure, and a folded space.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

@@ -1,0 +1,109 @@
+{
+ "word": "Route 91 Harvest",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:18:02+00:00",
+ "latency_s": 5.28,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"route < OF route < VL rupta (via) 'broken (road)'; harvest < OE hærfest 'autumn, harvest-time'\",\n    \"reading\": \"A broken way through the season of gathering: passage after rupture, then the taking-in of ripe things.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"ang\"],\n    \"source\": \"Oxford English Dictionary; Trésor de la langue française informatisé\",\n    \"confidence\": 0.92\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"route 91 = 'root' + 'nine-one'; harvest = 'harvest' / 'harvested'\",\n    \"reading\": \"Root-nine-one: the hidden root of the ninth gate; harvest as the reaping of what was sown in the cycle.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.63\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"route ~ roue (fr) 'wheel'; harvest ~ hiver (fr) by sound-shift toward the cold season after gathering\",\n    \"reading\": \"The wheel turns into winter: motion becomes the season after abundance, when the field is emptied.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"ROUTE HARVEST -> A HOVER? T?; partial anagrammatic pull: route / tore; harvest / re-hast\",\n    \"reading\": \"A torn path and a hurried reaping: the road is undone, the crop taken in haste.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.28\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"R.O.U.T.E. = Return Of Unknown Tracks Everywhere; H.A.R.V.E.S.T. = Hidden Abundance Revealed, Very Endingly Sown, Taken\",\n    \"reading\": \"A formula of concealed abundance: the track returns, and what was hidden is finally gathered.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R = turning; O = enclosure; U = vessel; T = cross; E = opening; 9 = completion; 1 = unity\",\n    \"reading\": \"Turning within an enclosure, crossed and opened, then completed and made one: a sealed cycle of gathering.\",\n    \"languages\": [\"en\", \"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"9 = completion / end of a cycle; 1 = unity / beginning; 91 = 9+1 or 9×1, a closed threshold\",\n    \"reading\": \"Completion joined to unity: the end and the beginning meet at the threshold before the harvest.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"harvest < OE hærfest 'autumn'; route as a path of travel, from OF route 'road'\",\n    \"reading\": \"The road of autumn: a journey whose meaning is ripening, then cutting, then storage.\",\n    \"languages\": [\"en\", \"fr\", \"ang\"],\n    \"source\": \"Oxford English Dictionary; Chambers Dictionary of Etymology\",\n    \"confidence\": 0.9\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "route < OF route < VL rupta (via) 'broken (road)'; harvest < OE hærfest 'autumn, harvest-time'",
+   "reading": "A broken way through the season of gathering: passage after rupture, then the taking-in of ripe things.",
+   "languages": [
+    "en",
+    "fr",
+    "la",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary; Trésor de la langue française informatisé",
+   "confidence": 0.92
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "route 91 = 'root' + 'nine-one'; harvest = 'harvest' / 'harvested'",
+   "reading": "Root-nine-one: the hidden root of the ninth gate; harvest as the reaping of what was sown in the cycle.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.63
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "route ~ roue (fr) 'wheel'; harvest ~ hiver (fr) by sound-shift toward the cold season after gathering",
+   "reading": "The wheel turns into winter: motion becomes the season after abundance, when the field is emptied.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "anagram",
+   "chain": "ROUTE HARVEST -> A HOVER? T?; partial anagrammatic pull: route / tore; harvest / re-hast",
+   "reading": "A torn path and a hurried reaping: the road is undone, the crop taken in haste.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.28
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R.O.U.T.E. = Return Of Unknown Tracks Everywhere; H.A.R.V.E.S.T. = Hidden Abundance Revealed, Very Endingly Sown, Taken",
+   "reading": "A formula of concealed abundance: the track returns, and what was hidden is finally gathered.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R = turning; O = enclosure; U = vessel; T = cross; E = opening; 9 = completion; 1 = unity",
+   "reading": "Turning within an enclosure, crossed and opened, then completed and made one: a sealed cycle of gathering.",
+   "languages": [
+    "en",
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "numerical",
+   "chain": "9 = completion / end of a cycle; 1 = unity / beginning; 91 = 9+1 or 9×1, a closed threshold",
+   "reading": "Completion joined to unity: the end and the beginning meet at the threshold before the harvest.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "etymology",
+   "chain": "harvest < OE hærfest 'autumn'; route as a path of travel, from OF route 'road'",
+   "reading": "The road of autumn: a journey whose meaning is ripening, then cutting, then storage.",
+   "languages": [
+    "en",
+    "fr",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary; Chambers Dictionary of Etymology",
+   "confidence": 0.9
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

@@ -1,0 +1,144 @@
+{
+ "word": "Paris",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T01:05:13+00:00",
+ "latency_s": 19.98,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"From Latin Lutetia Parisiorum, 'Lutetia of the Parisii', a Celtic tribe. Tribe name perhaps from Gaulish *per 'cauldron, pot'.\",\n    \"reading\": \"The people of the cauldron, indicating a place of transformation, brewing, or sacred gathering.\",\n    \"languages\": [\"la\", \"cel\", \"gaul\"],\n    \"source\": \"Online Etymology Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"From Latin Lutetia Parisiorum, 'Lutetia of the Parisii', a Celtic tribe. Tribe name perhaps related to a Gaulish word for 'marsh'.\",\n    \"reading\": \"The dwellers of the marsh, signifying those connected to damp, fertile, and perhaps hidden or mystical lands.\",\n    \"languages\": [\"la\", \"cel\", \"gaul\"],\n    \"source\": \"Online Etymology Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Paris (French /pa.ʁi/) -> Pa + Ris. 'Pa' (French) = step; 'Ris' (French) = laughter.\",\n    \"reading\": \"The step of laughter, a joyful progression or a path marked by mirth.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Paris (French /pa.ʁi/) -> Pa + Ris. 'Pa' (French, informal) = father; 'Ris' (French) = laughter.\",\n    \"reading\": \"The father's laughter, a paternal joy or a benevolent, guiding merriment.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paris (English /ˈpærɪs/) sounds like 'Pair is' (English). 'Pair' = two of a kind; 'is' = verb to be.\",\n    \"reading\": \"The existence of a pair, highlighting duality, relationship, or the essence of companionship.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paris (sound similar to Latin 'par' + 'is'). 'Par' (Latin) = equal, pair; 'is' (Latin) = he, that.\",\n    \"reading\": \"That which is equal, or he who is a match, pointing to balance, justice, or a destined counterpart.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Paris -> PAIRS (English).\",\n    \"reading\": \"Represents duality, connections, or matching elements, hinting at unions, partnerships, or symmetrical arrangements.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Paris -> ARRIS (English). Arris = a sharp edge formed by the meeting of two surfaces.\",\n    \"reading\": \"A sharp edge or corner, symbolizing boundaries, points of contact, or decisive divisions and definitions.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P.A.R.I.S. as 'Pax Ardens Regnat In Saecula' (Latin for 'Burning Peace Reigns Forever').\",\n    \"reading\": \"A pronouncement of eternal, passionate peace, or a peace that is actively present and enduring.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P.A.R.I.S. as 'Principle And Reason Inspire Spirit' (English).\",\n    \"reading\": \"The assertion that logic and fundamental truths are the originators of an enlightened or vital essence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P (pillar, start) + A (origin, first) + R (flow, revolution) + I (upright, individual) + S (spirit, serpent).\",\n    \"reading\": \"The primordial pillar of flowing spirit, an upright individual embarking on a journey of origin and transformation.\",\n    \"languages\": [\"generative\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Using A=1, B=2... system: P=16, A=1, R=18, I=9, S=19. Sum = 63. Reduction = 6+3 = 9. Nine (9) signifies completion, divine knowledge.\",\n    \"reading\": \"The number of completion and divine knowledge, indicating a cycle fulfilled or a wisdom attained.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "From Latin Lutetia Parisiorum, 'Lutetia of the Parisii', a Celtic tribe. Tribe name perhaps from Gaulish *per 'cauldron, pot'.",
+   "reading": "The people of the cauldron, indicating a place of transformation, brewing, or sacred gathering.",
+   "languages": [
+    "la",
+    "cel",
+    "gaul"
+   ],
+   "source": "Online Etymology Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "etymology",
+   "chain": "From Latin Lutetia Parisiorum, 'Lutetia of the Parisii', a Celtic tribe. Tribe name perhaps related to a Gaulish word for 'marsh'.",
+   "reading": "The dwellers of the marsh, signifying those connected to damp, fertile, and perhaps hidden or mystical lands.",
+   "languages": [
+    "la",
+    "cel",
+    "gaul"
+   ],
+   "source": "Online Etymology Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Paris (French /pa.ʁi/) -> Pa + Ris. 'Pa' (French) = step; 'Ris' (French) = laughter.",
+   "reading": "The step of laughter, a joyful progression or a path marked by mirth.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Paris (French /pa.ʁi/) -> Pa + Ris. 'Pa' (French, informal) = father; 'Ris' (French) = laughter.",
+   "reading": "The father's laughter, a paternal joy or a benevolent, guiding merriment.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris (English /ˈpærɪs/) sounds like 'Pair is' (English). 'Pair' = two of a kind; 'is' = verb to be.",
+   "reading": "The existence of a pair, highlighting duality, relationship, or the essence of companionship.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris (sound similar to Latin 'par' + 'is'). 'Par' (Latin) = equal, pair; 'is' (Latin) = he, that.",
+   "reading": "That which is equal, or he who is a match, pointing to balance, justice, or a destined counterpart.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Paris -> PAIRS (English).",
+   "reading": "Represents duality, connections, or matching elements, hinting at unions, partnerships, or symmetrical arrangements.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "anagram",
+   "chain": "Paris -> ARRIS (English). Arris = a sharp edge formed by the meeting of two surfaces.",
+   "reading": "A sharp edge or corner, symbolizing boundaries, points of contact, or decisive divisions and definitions.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P.A.R.I.S. as 'Pax Ardens Regnat In Saecula' (Latin for 'Burning Peace Reigns Forever').",
+   "reading": "A pronouncement of eternal, passionate peace, or a peace that is actively present and enduring.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P.A.R.I.S. as 'Principle And Reason Inspire Spirit' (English).",
+   "reading": "The assertion that logic and fundamental truths are the originators of an enlightened or vital essence.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P (pillar, start) + A (origin, first) + R (flow, revolution) + I (upright, individual) + S (spirit, serpent).",
+   "reading": "The primordial pillar of flowing spirit, an upright individual embarking on a journey of origin and transformation.",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "Using A=1, B=2... system: P=16, A=1, R=18, I=9, S=19. Sum = 63. Reduction = 6+3 = 9. Nine (9) signifies completion, divine knowledge.",
+   "reading": "The number of completion and divine knowledge, indicating a cycle fulfilled or a wisdom attained.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

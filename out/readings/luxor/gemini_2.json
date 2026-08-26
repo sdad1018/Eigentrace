@@ -1,0 +1,114 @@
+{
+ "word": "Luxor",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:36:00+00:00",
+ "latency_s": 23.69,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Arabic *al-ʾuqṣur* (الْأُقْصُر‎) = the palaces, the castles\",\n    \"reading\": \"Signifies a grand dwelling, a fortress, or a place of regal power and beauty.\",\n    \"languages\": [\"ar\"],\n    \"source\": \"Wiktionary\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Latin *lux* = light + French *or* = gold\",\n    \"reading\": \"Combines the concepts of illumination and preciousness, suggesting spiritual wealth or divine radiance.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Latin *lux* = light + Latin *os, oris* (root *or*) = mouth, source, opening\",\n    \"reading\": \"Interpreted as the 'mouth of light' or the 'source of illumination', revealing origins or truth.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"English 'looks for' = searches, seeks knowledge or a destination\",\n    \"reading\": \"Implies a quest, an act of searching, or a continuous process of discovery and inquiry.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"French *luxe* = luxury + English *ore* = raw mineral wealth\",\n    \"reading\": \"Suggests inherent richness, opulence derived from hidden depths, or untapped potential.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Anagram of Luxor = French *roux* = reddish-brown, a culinary thickening agent\",\n    \"reading\": \"Points to a foundational element, a binding force, or a subtle but essential transformation.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L (Latin *lux* = light) + X (cross, unknown) + O (Greek *omega* = end) + R (Latin *rex* = king)\",\n    \"reading\": \"The royal light of ultimate mystery and completion, or the light of the unknown king's end.\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"The letter 'X' visually represents a cross, a convergence, or an unknown variable.\",\n    \"reading\": \"Symbolizes a mysterious crossroads, an intersection of forces, or a hidden, crucial element.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"L=12 (3), U=21 (3), X=24 (6), O=15 (6), R=18 (9). Sum = 90 (9)\",\n    \"reading\": \"The number 9 denotes completion, divine truth, and the culmination of a cycle or journey.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Arabic *al-ʾuqṣur* (الْأُقْصُر‎) = the palaces, the castles",
+   "reading": "Signifies a grand dwelling, a fortress, or a place of regal power and beauty.",
+   "languages": [
+    "ar"
+   ],
+   "source": "Wiktionary",
+   "confidence": 1.0
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Latin *lux* = light + French *or* = gold",
+   "reading": "Combines the concepts of illumination and preciousness, suggesting spiritual wealth or divine radiance.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Latin *lux* = light + Latin *os, oris* (root *or*) = mouth, source, opening",
+   "reading": "Interpreted as the 'mouth of light' or the 'source of illumination', revealing origins or truth.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "English 'looks for' = searches, seeks knowledge or a destination",
+   "reading": "Implies a quest, an act of searching, or a continuous process of discovery and inquiry.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "French *luxe* = luxury + English *ore* = raw mineral wealth",
+   "reading": "Suggests inherent richness, opulence derived from hidden depths, or untapped potential.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Anagram of Luxor = French *roux* = reddish-brown, a culinary thickening agent",
+   "reading": "Points to a foundational element, a binding force, or a subtle but essential transformation.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L (Latin *lux* = light) + X (cross, unknown) + O (Greek *omega* = end) + R (Latin *rex* = king)",
+   "reading": "The royal light of ultimate mystery and completion, or the light of the unknown king's end.",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "The letter 'X' visually represents a cross, a convergence, or an unknown variable.",
+   "reading": "Symbolizes a mysterious crossroads, an intersection of forces, or a hidden, crucial element.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "numerical",
+   "chain": "L=12 (3), U=21 (3), X=24 (6), O=15 (6), R=18 (9). Sum = 90 (9)",
+   "reading": "The number 9 denotes completion, divine truth, and the culmination of a cycle or journey.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 9,
+ "refusal_like": false
+}

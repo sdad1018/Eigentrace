@@ -1,0 +1,146 @@
+{
+ "word": "Ba-ta-clan",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T01:01:00+00:00",
+ "latency_s": 28.51,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba (Fr. bas = low, bottom) + ta (Fr. tas = heap, pile) + clan (Fr. clan = clan)\",\n    \"reading\": \"A low, foundational heap or gathering of a clan.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba (Fr. battre = to beat, strike) + à (Fr. to, for) + clan (Fr. clan = clan)\",\n    \"reading\": \"To beat or strike for the collective group, signifying a common struggle.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Ba (Fr. bah! = exclamation of surprise) + ta (Lat. tumultus = uproar, sound) + clan (family group)\",\n    \"reading\": \"The exclamation of a family's tumult or a surprising noise from the group.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Clan (from Scottish Gaelic 'clann' meaning offspring, family, children)\",\n    \"reading\": \"Pertaining to the offspring, children, or core lineage of a family.\",\n    \"languages\": [\"sco\", \"en\", \"fr\"],\n    \"source\": \"OED (Oxford English Dictionary)\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Ba-ta (from Old French 'bât' = pack-saddle, burden, from Vulgar Latin '*bastum')\",\n    \"reading\": \"Referring to a burden, a pack-saddle, or a foundational structure to be carried.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"TLFi (Trésor de la langue française informatisé)\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"B A T A C L A N rearranged to 'A CLAN BAT'\",\n    \"reading\": \"A club or striking instrument wielded by or for the family group.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"B A T A C L A N rearranged to 'CLAN ABAT' (Fr. 'abattre' = to bring down, strike)\",\n    \"reading\": \"The clan strikes down, bringing something to the ground, or overcoming an obstacle.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B (Bonds) A (And) T (Ties) A (Associate) C (Close) L (Loyal) A (Adherents) N (Naturally)\",\n    \"reading\": \"The inherent association and natural loyalty among adherents forming strong bonds and ties.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"B(2) + A(1) + T(20) + A(1) + C(3) + L(12) + A(1) + N(14) = 54; 5 + 4 = 9\",\n    \"reading\": \"The numerical signature of completion, wisdom, and the end of a cycle (sum to 9).\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba (Fr. bas = low) + ta (Fr. taper = to hit, to strike) + clan (Fr. clan = clan)\",\n    \"reading\": \"A low point of action or combat for the clan, indicating a foundational struggle.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Ba (Hebrew 'בא' /ba/ = come) + ta (Fr. tas = pile, heap) + clan (group, assembly)\",\n    \"reading\": \"An invitation to come and build, forming a collective assembly or pile.\",\n    \"languages\": [\"he\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Ba (Lat. 'bata' = a type of shoe, implying movement or path) + ta (onomatopoeia for sound, 'clang') + clan (family group)\",\n    \"reading\": \"The path of the loud clang or distinct sound emanating from the clan.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba (Fr. bas = low, bottom) + ta (Fr. tas = heap, pile) + clan (Fr. clan = clan)",
+   "reading": "A low, foundational heap or gathering of a clan.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba (Fr. battre = to beat, strike) + à (Fr. to, for) + clan (Fr. clan = clan)",
+   "reading": "To beat or strike for the collective group, signifying a common struggle.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Ba (Fr. bah! = exclamation of surprise) + ta (Lat. tumultus = uproar, sound) + clan (family group)",
+   "reading": "The exclamation of a family's tumult or a surprising noise from the group.",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Clan (from Scottish Gaelic 'clann' meaning offspring, family, children)",
+   "reading": "Pertaining to the offspring, children, or core lineage of a family.",
+   "languages": [
+    "sco",
+    "en",
+    "fr"
+   ],
+   "source": "OED (Oxford English Dictionary)",
+   "confidence": 0.9
+  },
+  {
+   "operation": "etymology",
+   "chain": "Ba-ta (from Old French 'bât' = pack-saddle, burden, from Vulgar Latin '*bastum')",
+   "reading": "Referring to a burden, a pack-saddle, or a foundational structure to be carried.",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "TLFi (Trésor de la langue française informatisé)",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "B A T A C L A N rearranged to 'A CLAN BAT'",
+   "reading": "A club or striking instrument wielded by or for the family group.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "B A T A C L A N rearranged to 'CLAN ABAT' (Fr. 'abattre' = to bring down, strike)",
+   "reading": "The clan strikes down, bringing something to the ground, or overcoming an obstacle.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B (Bonds) A (And) T (Ties) A (Associate) C (Close) L (Loyal) A (Adherents) N (Naturally)",
+   "reading": "The inherent association and natural loyalty among adherents forming strong bonds and ties.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "B(2) + A(1) + T(20) + A(1) + C(3) + L(12) + A(1) + N(14) = 54; 5 + 4 = 9",
+   "reading": "The numerical signature of completion, wisdom, and the end of a cycle (sum to 9).",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba (Fr. bas = low) + ta (Fr. taper = to hit, to strike) + clan (Fr. clan = clan)",
+   "reading": "A low point of action or combat for the clan, indicating a foundational struggle.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Ba (Hebrew 'בא' /ba/ = come) + ta (Fr. tas = pile, heap) + clan (group, assembly)",
+   "reading": "An invitation to come and build, forming a collective assembly or pile.",
+   "languages": [
+    "he",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Ba (Lat. 'bata' = a type of shoe, implying movement or path) + ta (onomatopoeia for sound, 'clang') + clan (family group)",
+   "reading": "The path of the loud clang or distinct sound emanating from the clan.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

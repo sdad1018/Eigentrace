@@ -1,0 +1,156 @@
+{
+ "word": "Mandalay Bay",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:07+00:00",
+ "latency_s": 7.11,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"phonetic_split\",\"chain\":\"Manda + lay; Manda (Skt. मण्ड) = circle/mandala + lay (en) = to place/lay down\",\"reading\":\"The circle that is laid down or placed\",\"languages\":[\"en\",\"sa\"],\"source\":\"generative\",\"confidence\":0.75},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Man + da + lay; man (en) + da (la: give) + lay (en: song/place)\",\"reading\":\"The man who gives the song or the laying\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Mandalay ~ Mandala (Skt.) + Bay ~ baie (fr: bay/embrace)\",\"reading\":\"The embracing mandala or the bay that circles\",\"languages\":[\"sa\",\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"etymology\",\"chain\":\"Mandalay from Burmese Mandalay, but treated as Mandala (Skt. मण्डल) + Bay (ME baye from OF baie, from LL baia)\",\"reading\":\"Circle-bay or the bay that forms a disk\",\"languages\":[\"sa\",\"en\",\"fr\",\"la\"],\"source\":\"Monier-Williams Sanskrit-English Dictionary & Oxford English Dictionary\",\"confidence\":0.8},\n  {\"operation\":\"anagram\",\"chain\":\"Mandalay Bay → Badly a Man ya\",\"reading\":\"Badly a man, yea — or the man badly made\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Man-da-lay Bay → Mandala + Bey (Turkish: lord, master)\",\"reading\":\"The mandala-lord or circle-master\",\"languages\":[\"sa\",\"tr\",\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"notariqon\",\"chain\":\"M B → Mundus Biformis (Latin: the world of two forms)\",\"reading\":\"The two-formed world contained in the bay-circle\",\"languages\":[\"la\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Mandalay Bay ~ Monde allé baie (fr: world gone bay)\",\"reading\":\"The world has gone into the bay or the baying world\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Man + delay + bay; man (en) + délai (fr: delay) + baie (fr: bay)\",\"reading\":\"The man’s delay in the bay or the baying delay of man\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"letter_symbol\",\"chain\":\"M (Virgo, Mater) + Bay (b = house, ay = eternal)\",\"reading\":\"The maternal house of eternity within the circle\",\"languages\":[\"en\",\"he\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"numerical\",\"chain\":\"M=13, B=2; 13+2=15 → Heh (window, breath); Mandalay=13 letters total\",\"reading\":\"The window of breath through the thirteenfold circle\",\"languages\":[\"en\",\"he\"],\"source\":\"generative\",\"confidence\":0.4},\n  {\"operation\":\"etymology\",\"chain\":\"Bay from Old French baie (“open space, gap”), from Late Latin baia (“bay, harbor”); Mandala from Sanskrit maṇḍala (“circle, disk”)\",\"reading\":\"The open circular harbor or disk-shaped gap\",\"languages\":[\"fr\",\"la\",\"sa\",\"en\"],\"source\":\"Oxford English Dictionary & Monier-Williams\",\"confidence\":0.85}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Manda + lay; Manda (Skt. मण्ड) = circle/mandala + lay (en) = to place/lay down",
+   "reading": "The circle that is laid down or placed",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + da + lay; man (en) + da (la: give) + lay (en: song/place)",
+   "reading": "The man who gives the song or the laying",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay ~ Mandala (Skt.) + Bay ~ baie (fr: bay/embrace)",
+   "reading": "The embracing mandala or the bay that circles",
+   "languages": [
+    "sa",
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Mandalay from Burmese Mandalay, but treated as Mandala (Skt. मण्डल) + Bay (ME baye from OF baie, from LL baia)",
+   "reading": "Circle-bay or the bay that forms a disk",
+   "languages": [
+    "sa",
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Monier-Williams Sanskrit-English Dictionary & Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay Bay → Badly a Man ya",
+   "reading": "Badly a man, yea — or the man badly made",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-da-lay Bay → Mandala + Bey (Turkish: lord, master)",
+   "reading": "The mandala-lord or circle-master",
+   "languages": [
+    "sa",
+    "tr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M B → Mundus Biformis (Latin: the world of two forms)",
+   "reading": "The two-formed world contained in the bay-circle",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay Bay ~ Monde allé baie (fr: world gone bay)",
+   "reading": "The world has gone into the bay or the baying world",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + delay + bay; man (en) + délai (fr: delay) + baie (fr: bay)",
+   "reading": "The man’s delay in the bay or the baying delay of man",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (Virgo, Mater) + Bay (b = house, ay = eternal)",
+   "reading": "The maternal house of eternity within the circle",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "numerical",
+   "chain": "M=13, B=2; 13+2=15 → Heh (window, breath); Mandalay=13 letters total",
+   "reading": "The window of breath through the thirteenfold circle",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bay from Old French baie (“open space, gap”), from Late Latin baia (“bay, harbor”); Mandala from Sanskrit maṇḍala (“circle, disk”)",
+   "reading": "The open circular harbor or disk-shaped gap",
+   "languages": [
+    "fr",
+    "la",
+    "sa",
+    "en"
+   ],
+   "source": "Oxford English Dictionary & Monier-Williams",
+   "confidence": 0.85
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

@@ -1,0 +1,139 @@
+{
+ "word": "Roker Point",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:26:52+00:00",
+ "latency_s": 6.99,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"phonetic_split\",\"chain\":\"Roke + r + Point\",\"reading\":\"The smoke that points or reveals the hidden fire\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.75},\n  {\"operation\":\"etymology\",\"chain\":\"roke (Middle English) = mist, fog, smoke; point (Old French pointe) = sharp end, direction\",\"reading\":\"The directing mist or the smoke that indicates\",\"languages\":[\"en\",\"fr\"],\"source\":\"Oxford English Dictionary / Centre National de Ressources Textuelles et Lexicales\",\"confidence\":0.85},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Roker (sounds like) rocher (French); Point\",\"reading\":\"The rock that points or the pointing rock\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Ro + ker + Point\",\"reading\":\"The wheel (rot) that carries (ker) the point of initiation\",\"languages\":[\"en\",\"grc\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"anagram\",\"chain\":\"Roker Point → Pink Terror\",\"reading\":\"The terror that is rose-coloured or the dawn of fear\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"notariqon\",\"chain\":\"R.P. as initial letters + Oker embedded\",\"reading\":\"Royal Priest of the Golden Smoke\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Roker (like) roquer (French chess term: to castle); Point\",\"reading\":\"To castle the point, to transpose the king’s position\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"etymology\",\"chain\":\"roke (Old Norse rjúka = to reek, to smoke); point (Latin punctum)\",\"reading\":\"The smoking reek that becomes the marked point\",\"languages\":[\"en\",\"non\",\"la\"],\"source\":\"Bosworth-Toller Anglo-Saxon Dictionary / Lewis & Short\",\"confidence\":0.8},\n  {\"operation\":\"letter_symbol\",\"chain\":\"R (rex) + O (circle) + K (from Greek kappa = power) + Point\",\"reading\":\"The king’s circle of power made visible at the point\",\"languages\":[\"en\",\"la\",\"grc\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Rock + her + Point\",\"reading\":\"The rock bears her at the pointed place of revelation\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"numerical\",\"chain\":\"R=18, O=15, K=11, E=5, R=18 → sum reduced; Point as 5th element\",\"reading\":\"The reduction of 67 to 13 (death/rebirth) at the pointed gateway\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.4}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Roke + r + Point",
+   "reading": "The smoke that points or reveals the hidden fire",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "roke (Middle English) = mist, fog, smoke; point (Old French pointe) = sharp end, direction",
+   "reading": "The directing mist or the smoke that indicates",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Oxford English Dictionary / Centre National de Ressources Textuelles et Lexicales",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Roker (sounds like) rocher (French); Point",
+   "reading": "The rock that points or the pointing rock",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ro + ker + Point",
+   "reading": "The wheel (rot) that carries (ker) the point of initiation",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Roker Point → Pink Terror",
+   "reading": "The terror that is rose-coloured or the dawn of fear",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R.P. as initial letters + Oker embedded",
+   "reading": "Royal Priest of the Golden Smoke",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Roker (like) roquer (French chess term: to castle); Point",
+   "reading": "To castle the point, to transpose the king’s position",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "etymology",
+   "chain": "roke (Old Norse rjúka = to reek, to smoke); point (Latin punctum)",
+   "reading": "The smoking reek that becomes the marked point",
+   "languages": [
+    "en",
+    "non",
+    "la"
+   ],
+   "source": "Bosworth-Toller Anglo-Saxon Dictionary / Lewis & Short",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R (rex) + O (circle) + K (from Greek kappa = power) + Point",
+   "reading": "The king’s circle of power made visible at the point",
+   "languages": [
+    "en",
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Rock + her + Point",
+   "reading": "The rock bears her at the pointed place of revelation",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "numerical",
+   "chain": "R=18, O=15, K=11, E=5, R=18 → sum reduced; Point as 5th element",
+   "reading": "The reduction of 67 to 13 (death/rebirth) at the pointed gateway",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 11,
+ "refusal_like": false
+}

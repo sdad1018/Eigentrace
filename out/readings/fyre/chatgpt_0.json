@@ -1,0 +1,108 @@
+{
+ "word": "Fyre",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:22:32+00:00",
+ "latency_s": 4.24,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"fyre ≈ fire; fire = burn, trial by flame, purification\",\n    \"reading\": \"A hidden fire: ordeal, purification, and sudden ignition.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.93\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"fyre ≈ fr. fièvre; fièvre = fever, heat, agitation\",\n    \"reading\": \"Feverish heat: a burning state of agitation and desire.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"fyre ≈ fr. fer; fer = iron; iron = metal of Mars, hardening, weapon\",\n    \"reading\": \"Iron fire: hardness, weaponry, and the smith’s transformative heat.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"fire (English) < Old English fȳr; cognate with Old High German fiur, Old Norse fýrr; Proto-Germanic *fūrą\",\n    \"reading\": \"The ancient Germanic fire-word: elemental flame and consuming power.\",\n    \"languages\": [\"en\", \"ang\", \"goh\", \"non\", \"gem\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster; Etymonline\",\n    \"confidence\": 0.97\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"fy + re; fy = shame/ban; re = again, return, repetition\",\n    \"reading\": \"Shame returned: a repeated reproach or recurring fault.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.46\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"fyre → frye / fire-like rearrangement; fry = to scorch in fat, to burn\",\n    \"reading\": \"To fry: heat applied until transformed, crisped, or consumed.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.66\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"F = force/form; Y = forked path; R = ray/rod; E = end/emanation\",\n    \"reading\": \"A forked force sending a ray toward an ending or release.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.34\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"F=6, Y=25, R=18, E=5; 6+25+18+5 = 54; 5+4 = 9\",\n    \"reading\": \"Nine: completion, closure, and the last turning of a cycle.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "fyre ≈ fire; fire = burn, trial by flame, purification",
+   "reading": "A hidden fire: ordeal, purification, and sudden ignition.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.93
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "fyre ≈ fr. fièvre; fièvre = fever, heat, agitation",
+   "reading": "Feverish heat: a burning state of agitation and desire.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.72
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "fyre ≈ fr. fer; fer = iron; iron = metal of Mars, hardening, weapon",
+   "reading": "Iron fire: hardness, weaponry, and the smith’s transformative heat.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "etymology",
+   "chain": "fire (English) < Old English fȳr; cognate with Old High German fiur, Old Norse fýrr; Proto-Germanic *fūrą",
+   "reading": "The ancient Germanic fire-word: elemental flame and consuming power.",
+   "languages": [
+    "en",
+    "ang",
+    "goh",
+    "non",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary; Merriam-Webster; Etymonline",
+   "confidence": 0.97
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "fy + re; fy = shame/ban; re = again, return, repetition",
+   "reading": "Shame returned: a repeated reproach or recurring fault.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.46
+  },
+  {
+   "operation": "anagram",
+   "chain": "fyre → frye / fire-like rearrangement; fry = to scorch in fat, to burn",
+   "reading": "To fry: heat applied until transformed, crisped, or consumed.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.66
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "F = force/form; Y = forked path; R = ray/rod; E = end/emanation",
+   "reading": "A forked force sending a ray toward an ending or release.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.34
+  },
+  {
+   "operation": "numerical",
+   "chain": "F=6, Y=25, R=18, E=5; 6+25+18+5 = 54; 5+4 = 9",
+   "reading": "Nine: completion, closure, and the last turning of a cycle.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

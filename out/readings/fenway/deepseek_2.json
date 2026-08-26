@@ -1,0 +1,105 @@
+{
+ "word": "Fenway",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:18:56+00:00",
+ "latency_s": 7.67,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Fenway < Old English fenn (fen, marsh) + weg (way, path); Middle English fenne + wey\",\n    \"reading\": \"The path through the marsh; a raised way crossing wet ground.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"Oxford English Dictionary, s.v. fen, way\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fen + way; fen (marsh) + way (route); also 'fen' as in 'fence' (enclosure) + 'way'\",\n    \"reading\": \"The enclosed route; a passage bounded by barriers, a corridor of limits.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fen (fr. 'fen' = hay) + way (en. path); 'fen' in Dutch = marsh; 'way' in Old Norse = veig (strength)\",\n    \"reading\": \"Hay-path or marsh-strength; a route of harvest or of boggy power.\",\n    \"languages\": [\"fr\", \"nl\", \"non\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Fenway -> 'we fan y' -> 'y we fan' -> 'fan wey' (fan = winnower, wey = weight/measure)\",\n    \"reading\": \"The winnower's measure; a weighing of chaff and grain on the path.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"F-E-N-W-A-Y: Fons Et Numen Via Aquae Ylem — 'source and spirit, way of water and matter'\",\n    \"reading\": \"A sacred waterway; the path where spirit and primal substance meet.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"F (fire, 6) + E (breath, 5) + N (water, 14) + W (double U, 23) + A (air, 1) + Y (Yggdrasil, 25)\",\n    \"reading\": \"Fire, breath, water, double-void, air, and world-tree — a cosmic crossroads.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"F=6, E=5, N=14, W=23, A=1, Y=25; sum = 74; 7+4=11; 1+1=2\",\n    \"reading\": \"Reduces to 11 (master number) then 2 — duality, reflection, the path between two worlds.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Fenway < Old English fenn + weg; also compare Old Norse fen (mire) + vegr (road)\",\n    \"reading\": \"The mire-road; a causeway through treacherous ground, a liminal crossing.\",\n    \"languages\": [\"en\", \"non\"],\n    \"source\": \"Cleasby-Vigfusson, An Icelandic-English Dictionary, s.v. fen, vegr\",\n    \"confidence\": 0.85\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Fenway < Old English fenn (fen, marsh) + weg (way, path); Middle English fenne + wey",
+   "reading": "The path through the marsh; a raised way crossing wet ground.",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary, s.v. fen, way",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Fen + way; fen (marsh) + way (route); also 'fen' as in 'fence' (enclosure) + 'way'",
+   "reading": "The enclosed route; a passage bounded by barriers, a corridor of limits.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fen (fr. 'fen' = hay) + way (en. path); 'fen' in Dutch = marsh; 'way' in Old Norse = veig (strength)",
+   "reading": "Hay-path or marsh-strength; a route of harvest or of boggy power.",
+   "languages": [
+    "fr",
+    "nl",
+    "non"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Fenway -> 'we fan y' -> 'y we fan' -> 'fan wey' (fan = winnower, wey = weight/measure)",
+   "reading": "The winnower's measure; a weighing of chaff and grain on the path.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "F-E-N-W-A-Y: Fons Et Numen Via Aquae Ylem — 'source and spirit, way of water and matter'",
+   "reading": "A sacred waterway; the path where spirit and primal substance meet.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "F (fire, 6) + E (breath, 5) + N (water, 14) + W (double U, 23) + A (air, 1) + Y (Yggdrasil, 25)",
+   "reading": "Fire, breath, water, double-void, air, and world-tree — a cosmic crossroads.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "F=6, E=5, N=14, W=23, A=1, Y=25; sum = 74; 7+4=11; 1+1=2",
+   "reading": "Reduces to 11 (master number) then 2 — duality, reflection, the path between two worlds.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Fenway < Old English fenn + weg; also compare Old Norse fen (mire) + vegr (road)",
+   "reading": "The mire-road; a causeway through treacherous ground, a liminal crossing.",
+   "languages": [
+    "en",
+    "non"
+   ],
+   "source": "Cleasby-Vigfusson, An Icelandic-English Dictionary, s.v. fen, vegr",
+   "confidence": 0.85
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

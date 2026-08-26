@@ -1,0 +1,107 @@
+{
+ "word": "Las Vegas",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:19:35+00:00",
+ "latency_s": 3.98,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"etymology\",\"chain\":\"las (Spanish definite article plural) + vegas (Spanish plural of vega, from Latin vāca? no; vega < Latin vāca? checkable in DLE/Corominas)\",\"reading\":\"The meadows: a plural field of low, fertile, watered ground.\",\"languages\":[\"es\",\"la\"],\"source\":\"Real Academia Española, Diccionario de la lengua española; Corominas, Diccionario crítico etimológico castellano e hispánico\",\"confidence\":0.86},{\"operation\":\"phonetic_split\",\"chain\":\"las + ve + gas; las = lace/last; ve = see; gas = spirit, vapor\",\"reading\":\"A bound vision of volatile spirit: what is tied is also evaporating.\",\"languages\":[\"en\",\"fr\",\"es\"],\"source\":\"generative\",\"confidence\":0.42},{\"operation\":\"cross_language_homophone\",\"chain\":\"las ~ lasso/lace; vegas ~ vagues (fr. 'vague', waves, uncertain)\",\"reading\":\"A loose knot over wavering waters: instability held by a cord.\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.37},{\"operation\":\"cross_language_homophone\",\"chain\":\"las ~ les (fr. 'the'); vegas ~ vegas/vegas as 'veils' by sound-play with veil/vague\",\"reading\":\"The veiled ones: what is hidden under a shimmering uncertainty.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.28},{\"operation\":\"anagram\",\"chain\":\"LAS VEGAS -> A VAGLESS?; partial anagram: LAS + VEGAS -> SAVE + GLAS (sound-play on glass)\",\"reading\":\"A saved glass, or a vessel preserved: a fragile container kept intact.\",\"languages\":[\"en\",\"de\"],\"source\":\"generative\",\"confidence\":0.21},{\"operation\":\"notariqon\",\"chain\":\"L A S / V E G A S -> Light Among Shadows / Veiled Earth, Green And Soft\",\"reading\":\"Light among shadows, veiled earth, green and soft: a hidden pastoral formula.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.18},{\"operation\":\"letter_symbol\",\"chain\":\"L = left; A = alpha/beginning; S = serpent; V = vessel/valley; E = eye; G = gate; A = beginning; S = serpent\",\"reading\":\"Beginning and serpent cross a gate: the left-hand path opens into a watched enclosure.\",\"languages\":[\"en\",\"grc\"],\"source\":\"generative\",\"confidence\":0.31},{\"operation\":\"numerical\",\"chain\":\"L+A+S+V+E+G+A+S = 12+1+19+22+5+7+1+19 = 86; 8+6 = 14; 1+4 = 5\",\"reading\":\"Five: the sign of change, crossing, and the human measure.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.24}]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "las (Spanish definite article plural) + vegas (Spanish plural of vega, from Latin vāca? no; vega < Latin vāca? checkable in DLE/Corominas)",
+   "reading": "The meadows: a plural field of low, fertile, watered ground.",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "Real Academia Española, Diccionario de la lengua española; Corominas, Diccionario crítico etimológico castellano e hispánico",
+   "confidence": 0.86
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "las + ve + gas; las = lace/last; ve = see; gas = spirit, vapor",
+   "reading": "A bound vision of volatile spirit: what is tied is also evaporating.",
+   "languages": [
+    "en",
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.42
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "las ~ lasso/lace; vegas ~ vagues (fr. 'vague', waves, uncertain)",
+   "reading": "A loose knot over wavering waters: instability held by a cord.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.37
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "las ~ les (fr. 'the'); vegas ~ vegas/vegas as 'veils' by sound-play with veil/vague",
+   "reading": "The veiled ones: what is hidden under a shimmering uncertainty.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.28
+  },
+  {
+   "operation": "anagram",
+   "chain": "LAS VEGAS -> A VAGLESS?; partial anagram: LAS + VEGAS -> SAVE + GLAS (sound-play on glass)",
+   "reading": "A saved glass, or a vessel preserved: a fragile container kept intact.",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.21
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L A S / V E G A S -> Light Among Shadows / Veiled Earth, Green And Soft",
+   "reading": "Light among shadows, veiled earth, green and soft: a hidden pastoral formula.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.18
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L = left; A = alpha/beginning; S = serpent; V = vessel/valley; E = eye; G = gate; A = beginning; S = serpent",
+   "reading": "Beginning and serpent cross a gate: the left-hand path opens into a watched enclosure.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "numerical",
+   "chain": "L+A+S+V+E+G+A+S = 12+1+19+22+5+7+1+19 = 86; 8+6 = 14; 1+4 = 5",
+   "reading": "Five: the sign of change, crossing, and the human measure.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.24
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

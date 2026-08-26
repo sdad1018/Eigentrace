@@ -1,0 +1,19 @@
+{
+ "word": "Bonnaroo",
+ "model": "Claude",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:16:38+00:00",
+ "latency_s": 8.79,
+ "ok": true,
+ "call_error": null,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon-na-roo; bon (good) + na (no/not) + roo (root/rue)\",\n    \"reading\": \"Good without roots; goodness stripped of origin or foundation.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bonna (Latin feminine name) + roo (Australian homophone of rue, regret)\",\n    \"reading\": \"The woman's sorrow; feminine regret or lamentation.\",\n    \"languages\": [\"la\", \"en\", \"en-AU\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon + na + roux; roux (French cooking term, browned flour-fat mixture)\",\n    \"reading\": \"Good darkness or good burning; alchemical darkening or nigredo.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bonnaroo → Bar noon or Boon rar or Roan boron\",\n    \"reading\": \"The bar at midday; tribunal or judgment at noon's zenith hour.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Roo: English dialectal abbreviation of kangaroo, from Guugu Yimidhirr gangurru\",\n    \"reading\": \"Good bond with the leaping animal; elevation through bound movement.\",\n    \"languages\": [\"en\", \"aus-aboriginal\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon-na-roo → bonne (French: good woman/servant) + roo\",\n    \"reading\": \"The good servant's leap; faithful ascension through obedience.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B(2) + O(15) + N(14) + N(14) + A(1) + R(18) + O(15) + O(15) = 94\",\n    \"reading\": \"Plutonium's atomic number; transformation through hidden fire and decay.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bonne à rue (French) = good for/at the street\",\n    \"reading\": \"That which serves the public way; common good made manifest.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bonne (Fr: good woman) + Roux (Fr: red) + O (the eye)\",\n    \"reading\": \"The good woman's red eye; passion, witness, or alchemical vision.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-O-N-N-A-R-O-O: first letters as acronym of sacred phrase\",\n    \"reading\": \"Initial letters await revelation; the word guards its deeper name.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bonne à roux (French alchemy): good reddening/gilding\",",
+ "parsed": null,
+ "parse_error": "json_error: Expecting ',' delimiter: line 78 column 24 (char 2782)",
+ "extracted": false,
+ "n_readings": 0,
+ "refusal_like": false
+}

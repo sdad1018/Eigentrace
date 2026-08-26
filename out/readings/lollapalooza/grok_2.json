@@ -1,0 +1,127 @@
+{
+ "word": "Lollapalooza",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:18:04+00:00",
+ "latency_s": 5.95,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"phonetic_split\",\"chain\":\"Lol-la-pa-loo-za\",\"reading\":\"The mad laugh (lol) of the father (la-pa) in the light (loo) of the all (za)\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Loll + a + pal + ooze + a\",\"reading\":\"The lolling tongue of the friend who oozes with double A power\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Lolla (it. to lull/to rock) + palooza (echo of palus, stake/pole + za as all)\",\"languages\":[\"it\",\"la\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"etymology\",\"chain\":\"loll (ME lollen, to hang loosely) + palooza (variant of palouse, from French pelouse = lawn)\",\"reading\":\"The loose-hanging one upon the grassy field\",\"languages\":[\"en\",\"fr\"],\"source\":\"Oxford English Dictionary / Centre National de Ressources Textuelles et Lexicales\",\"confidence\":0.85},\n  {\"operation\":\"anagram\",\"chain\":\"LOLLAPALOOZA → ALL A POOL LAZO\",\"reading\":\"All is a pool, a lasso of light that captures\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Lo! La! Pa! Loo! Za!\",\"reading\":\"Behold! The father! The water! The all!\",\"languages\":[\"en\",\"fr\",\"grc\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Lolla (Fr. loller = to idle) + palooza ≈ palusa (Ar. بالوزة balūza, a sweetmeat of almonds)\",\"reading\":\"Idle pleasure, the sweet almond paste of the sluggard\",\"languages\":[\"fr\",\"ar\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"notariqon\",\"chain\":\"L.O.L.L.A.P.A.L.O.O.Z.A. → Lux Occulta Lumen Lapsum Ad Palatium Alchimicum Lucis Omnium Zodiaci Arcana\",\"reading\":\"Hidden Light, Fallen Light, to the Alchemical Palace of the Light of all Zodiacal Secrets\",\"languages\":[\"la\"],\"source\":\"generative\",\"confidence\":0.4},\n  {\"operation\":\"letter_symbol\",\"chain\":\"Double L + double A + double O + Z\",\"reading\":\"The doubled pillars and the doubled breaths framing the lightning of the All\",\"languages\":[\"en\",\"he\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Lol-la-pal-ooza\",\"reading\":\"Laughing father’s friend in the golden dawn (ooza ≈ aurora)\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"etymology\",\"chain\":\"lolla (Old English loll = to droop) + palooza (echoic intensification)\",\"reading\":\"Intensified drooping or supreme laziness\",\"languages\":[\"en\"],\"source\":\"Middle English Dictionary\",\"confidence\":0.75}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Lol-la-pa-loo-za",
+   "reading": "The mad laugh (lol) of the father (la-pa) in the light (loo) of the all (za)",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Loll + a + pal + ooze + a",
+   "reading": "The lolling tongue of the friend who oozes with double A power",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "loll (ME lollen, to hang loosely) + palooza (variant of palouse, from French pelouse = lawn)",
+   "reading": "The loose-hanging one upon the grassy field",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Oxford English Dictionary / Centre National de Ressources Textuelles et Lexicales",
+   "confidence": 0.85
+  },
+  {
+   "operation": "anagram",
+   "chain": "LOLLAPALOOZA → ALL A POOL LAZO",
+   "reading": "All is a pool, a lasso of light that captures",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lo! La! Pa! Loo! Za!",
+   "reading": "Behold! The father! The water! The all!",
+   "languages": [
+    "en",
+    "fr",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Lolla (Fr. loller = to idle) + palooza ≈ palusa (Ar. بالوزة balūza, a sweetmeat of almonds)",
+   "reading": "Idle pleasure, the sweet almond paste of the sluggard",
+   "languages": [
+    "fr",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L.O.L.L.A.P.A.L.O.O.Z.A. → Lux Occulta Lumen Lapsum Ad Palatium Alchimicum Lucis Omnium Zodiaci Arcana",
+   "reading": "Hidden Light, Fallen Light, to the Alchemical Palace of the Light of all Zodiacal Secrets",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Double L + double A + double O + Z",
+   "reading": "The doubled pillars and the doubled breaths framing the lightning of the All",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lol-la-pal-ooza",
+   "reading": "Laughing father’s friend in the golden dawn (ooza ≈ aurora)",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "lolla (Old English loll = to droop) + palooza (echoic intensification)",
+   "reading": "Intensified drooping or supreme laziness",
+   "languages": [
+    "en"
+   ],
+   "source": "Middle English Dictionary",
+   "confidence": 0.75
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

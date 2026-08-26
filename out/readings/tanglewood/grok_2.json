@@ -1,0 +1,126 @@
+{
+ "word": "Tanglewood",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:18:21+00:00",
+ "latency_s": 5.7,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"tan + gle + wood\",\n    \"reading\": \"tan hides stretched on wooden frame for alchemical work\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"tang + lewood\",\n    \"reading\": \"sharp taste or sting of the green wood\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"tanglewood ≈ tan + gle + vaud (vaud = valley in old French)\",\n    \"reading\": \"valley where the tan-coloured wood is gathered\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"tangle (from tagilen, to entangle) + wood\",\n    \"reading\": \"the entangled wood; the forest that ensnares\",\n    \"languages\": [\"en\",\"no\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"TANGLEWOOD = GOLD + WET + AN\",\n    \"reading\": \"the wet gold within; philosophical dew on the tree\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"tan + glewood ≈ tan + gle + vaud ≈ temps + vaud\",\n    \"reading\": \"the valley of time; place where duration is woven\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"tanglewood ≈ tang + le + bois (Fr. wood)\",\n    \"reading\": \"the sting or fang hidden inside the wood\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"T.A.N.G.L.E.W.O.O.D. → The Ancient Noble Green Language Emerges When One Observes Directly\",\n    \"reading\": \"the green language reveals itself in the tangled wood\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T (cross) + AN (year, cycle) + GLE (angle, knee) + WOOD (prima materia)\",\n    \"reading\": \"crossed cycle at the angle of the first matter\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"tanglewood ≈ ten + gle + wood ≈ ten + clé + bois\",\n    \"reading\": \"the ten keys are in the wood\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "tan + gle + wood",
+   "reading": "tan hides stretched on wooden frame for alchemical work",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "tang + lewood",
+   "reading": "sharp taste or sting of the green wood",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "tanglewood ≈ tan + gle + vaud (vaud = valley in old French)",
+   "reading": "valley where the tan-coloured wood is gathered",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "tangle (from tagilen, to entangle) + wood",
+   "reading": "the entangled wood; the forest that ensnares",
+   "languages": [
+    "en",
+    "no"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "anagram",
+   "chain": "TANGLEWOOD = GOLD + WET + AN",
+   "reading": "the wet gold within; philosophical dew on the tree",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "tan + glewood ≈ tan + gle + vaud ≈ temps + vaud",
+   "reading": "the valley of time; place where duration is woven",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "tanglewood ≈ tang + le + bois (Fr. wood)",
+   "reading": "the sting or fang hidden inside the wood",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "notariqon",
+   "chain": "T.A.N.G.L.E.W.O.O.D. → The Ancient Noble Green Language Emerges When One Observes Directly",
+   "reading": "the green language reveals itself in the tangled wood",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T (cross) + AN (year, cycle) + GLE (angle, knee) + WOOD (prima materia)",
+   "reading": "crossed cycle at the angle of the first matter",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "tanglewood ≈ ten + gle + wood ≈ ten + clé + bois",
+   "reading": "the ten keys are in the wood",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

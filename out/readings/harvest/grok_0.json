@@ -1,0 +1,135 @@
+{
+ "word": "Harvest",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:19:10+00:00",
+ "latency_s": 7.36,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Old English hærfest = 'autumn'; from Proto-Germanic *harbistaz, from PIE *kerp- 'to gather, pluck, harvest'\",\n    \"reading\": \"The act of gathering or plucking what is ripe; season of reaping\",\n    \"languages\": [\"en\",\"gem\",\"ine\"],\n    \"source\": \"Oxford English Dictionary / Pokorny PIE dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Har + vest\",\n    \"reading\": \"The exalted (Har) garment/vestment; the robe of the accomplished adept\",\n    \"languages\": [\"en\",\"ar\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Har-vest → Herz-Vest (Germanic echo)\",\n    \"reading\": \"Heart's garment; that which clothes or protects the heart\",\n    \"languages\": [\"en\",\"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Harvest ≈ Har-vest ≈ Ar-vêt (French phonetic)\",\n    \"reading\": \"The hour has come; it is the appointed time\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.70\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"HARVEST → STARVE + H\",\n    \"reading\": \"The H that stands between starvation and abundance\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Har-vest → Horus-Vest\",\n    \"reading\": \"The vestment/robe of Horus; solar initiatory garment\",\n    \"languages\": [\"en\",\"la\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"H.A.R.V.E.S.T. → Heru Ankh Ra Vesta Est Terra\",\n    \"reading\": \"The falcon lives, the sun is in the hearth of the earth\",\n    \"languages\": [\"en\",\"grc\",\"la\",\"eg\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"H (ladder) + ARV (to plough/cultivate in Old Norse) + EST (is)\",\n    \"reading\": \"The ladder by which cultivation becomes being\",\n    \"languages\": [\"en\",\"non\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Harvest ≈ Har-vest ≈ Hebrew: Har (mountain) + vest (garment)\",\n    \"reading\": \"The mountain's robe; the snow or cloud upon the summit\",\n    \"languages\": [\"en\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Middle English hervest; Old Norse haust = 'autumn'\",\n    \"reading\": \"The time when the high one (haust) is reaped or taken\",\n    \"languages\": [\"en\",\"non\"],\n    \"source\": \"Bosworth-Toller Anglo-Saxon Dictionary\",\n    \"confidence\": 0.80\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Old English hærfest = 'autumn'; from Proto-Germanic *harbistaz, from PIE *kerp- 'to gather, pluck, harvest'",
+   "reading": "The act of gathering or plucking what is ripe; season of reaping",
+   "languages": [
+    "en",
+    "gem",
+    "ine"
+   ],
+   "source": "Oxford English Dictionary / Pokorny PIE dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Har + vest",
+   "reading": "The exalted (Har) garment/vestment; the robe of the accomplished adept",
+   "languages": [
+    "en",
+    "ar",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Har-vest → Herz-Vest (Germanic echo)",
+   "reading": "Heart's garment; that which clothes or protects the heart",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Harvest ≈ Har-vest ≈ Ar-vêt (French phonetic)",
+   "reading": "The hour has come; it is the appointed time",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "HARVEST → STARVE + H",
+   "reading": "The H that stands between starvation and abundance",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Har-vest → Horus-Vest",
+   "reading": "The vestment/robe of Horus; solar initiatory garment",
+   "languages": [
+    "en",
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "H.A.R.V.E.S.T. → Heru Ankh Ra Vesta Est Terra",
+   "reading": "The falcon lives, the sun is in the hearth of the earth",
+   "languages": [
+    "en",
+    "grc",
+    "la",
+    "eg"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "H (ladder) + ARV (to plough/cultivate in Old Norse) + EST (is)",
+   "reading": "The ladder by which cultivation becomes being",
+   "languages": [
+    "en",
+    "non",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Harvest ≈ Har-vest ≈ Hebrew: Har (mountain) + vest (garment)",
+   "reading": "The mountain's robe; the snow or cloud upon the summit",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Middle English hervest; Old Norse haust = 'autumn'",
+   "reading": "The time when the high one (haust) is reaped or taken",
+   "languages": [
+    "en",
+    "non"
+   ],
+   "source": "Bosworth-Toller Anglo-Saxon Dictionary",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

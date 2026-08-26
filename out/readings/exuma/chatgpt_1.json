@@ -1,0 +1,106 @@
+{
+ "word": "Exuma",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:07+00:00",
+ "latency_s": 4.24,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"ex + uma; ex- = out of, from; uma ~ Latin umbra / French ombre by sound-shifted echo\",\"reading\":\"A going-out from shadow: emergence from obscurity into form.\",\"languages\":[\"en\",\"la\",\"fr\"],\"source\":\"generative\",\"confidence\":0.74},{\"operation\":\"cross_language_homophone\",\"chain\":\"Exuma ~ exhumé (fr.) / exhumed (en.); sound suggests bringing up from under the earth\",\"reading\":\"What is buried is brought back to light; hidden matter is raised.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.77},{\"operation\":\"phonetic_split\",\"chain\":\"ex + uma; ex- as exit, out; uma echoes humus / humare, earth\",\"reading\":\"A passage out of the earth: the soul or seed leaves the ground.\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.69},{\"operation\":\"anagram\",\"chain\":\"Exuma -> muse + ax / axe; rearranged as a cutting inspiration\",\"reading\":\"Inspiration that cuts: the muse with an edge, insight that severs illusion.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.58},{\"operation\":\"letter_symbol\",\"chain\":\"X = crossing, unknown, intersection; U = vessel or womb; M = mountain / wave; A = apex or beginning\",\"reading\":\"Unknown crossing into a vessel-mountain-beginning: a shaped passage of becoming.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.63},{\"operation\":\"numerical\",\"chain\":\"E(5)+X(24)+U(21)+M(13)+A(1)=64; 64 = 8×8, a doubled square\",\"reading\":\"A doubled square: completion folded into completion, order made stable.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.52},{\"operation\":\"etymology\",\"chain\":\"Latin ex- 'out of, from' + a second element not securely analyzable in standard etymology; the initial element is checkable in Lewis & Short / OLD\",\"reading\":\"The word begins with departure, extraction, or outward motion.\",\"languages\":[\"la\",\"en\"],\"source\":\"Lewis & Short, A Latin Dictionary; Oxford Latin Dictionary\",\"confidence\":0.41},{\"operation\":\"cross_language_homophone\",\"chain\":\"exuma ~ ex-uma; uma resembles Sanskrit/Indic umā as a feminine name-sound, but here only as phonetic aura\",\"reading\":\"A feminine force is sounded as the one who comes out or emerges.\",\"languages\":[\"en\",\"sa\"],\"source\":\"generative\",\"confidence\":0.34}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "ex + uma; ex- = out of, from; uma ~ Latin umbra / French ombre by sound-shifted echo",
+   "reading": "A going-out from shadow: emergence from obscurity into form.",
+   "languages": [
+    "en",
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.74
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Exuma ~ exhumé (fr.) / exhumed (en.); sound suggests bringing up from under the earth",
+   "reading": "What is buried is brought back to light; hidden matter is raised.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.77
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ex + uma; ex- as exit, out; uma echoes humus / humare, earth",
+   "reading": "A passage out of the earth: the soul or seed leaves the ground.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.69
+  },
+  {
+   "operation": "anagram",
+   "chain": "Exuma -> muse + ax / axe; rearranged as a cutting inspiration",
+   "reading": "Inspiration that cuts: the muse with an edge, insight that severs illusion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "X = crossing, unknown, intersection; U = vessel or womb; M = mountain / wave; A = apex or beginning",
+   "reading": "Unknown crossing into a vessel-mountain-beginning: a shaped passage of becoming.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.63
+  },
+  {
+   "operation": "numerical",
+   "chain": "E(5)+X(24)+U(21)+M(13)+A(1)=64; 64 = 8×8, a doubled square",
+   "reading": "A doubled square: completion folded into completion, order made stable.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "etymology",
+   "chain": "Latin ex- 'out of, from' + a second element not securely analyzable in standard etymology; the initial element is checkable in Lewis & Short / OLD",
+   "reading": "The word begins with departure, extraction, or outward motion.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Lewis & Short, A Latin Dictionary; Oxford Latin Dictionary",
+   "confidence": 0.41
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "exuma ~ ex-uma; uma resembles Sanskrit/Indic umā as a feminine name-sound, but here only as phonetic aura",
+   "reading": "A feminine force is sounded as the one who comes out or emerges.",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.34
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

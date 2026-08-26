@@ -1,0 +1,130 @@
+{
+ "word": "Nevada",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:21:16+00:00",
+ "latency_s": 6.3,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Nevada ← Spanish nevada ← Latin nivata (feminine of nivatus) ← nix, nivis (snow)\",\n    \"reading\": \"a place or state covered in snow, the snow-covered\",\n    \"languages\": [\"en\",\"es\",\"la\"],\n    \"source\": \"Oxford English Dictionary / Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ne + va + da\",\n    \"reading\": \"born (né) by the voice (va) of God (da)\",\n    \"languages\": [\"fr\",\"la\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Nev + ada\",\n    \"reading\": \"new (nev) wing or bird (ada from Greek pteron via cabala)\",\n    \"languages\": [\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Nevada ≈ Né va da (French)\",\n    \"reading\": \"born goes there; that which is born goes thither\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.70\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Nevada ≈ Neva da (Russian river + Spanish)\",\n    \"reading\": \"the new river of the lady / the snow river\",\n    \"languages\": [\"ru\",\"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Nevada = Vade + an\",\n    \"reading\": \"go (vade) + year/age (an); the going of the age\",\n    \"languages\": [\"la\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"N.V.D.A. ← Navis Volat Dum Astra (Latin)\",\n    \"reading\": \"the ship flies while the stars remain\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Neva + da\",\n    \"reading\": \"no voice (ne va) gives (da); the mute gift\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N = Nun (fish/seed), V = Vau (nail/hook), D = Daleth (door), A = Aleph (ox)\",\n    \"reading\": \"the seed nailed to the door of the ox; primordial fixation\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.40\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Nevada ← Old Occitan/Spanish nevada ← Latin nivalis (snowy)\",\n    \"reading\": \"snowy land, the white-covered country\",\n    \"languages\": [\"oc\",\"es\",\"la\"],\n    \"source\": \"Real Academia Española / Du Cange\",\n    \"confidence\": 0.90\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Nevada ← Spanish nevada ← Latin nivata (feminine of nivatus) ← nix, nivis (snow)",
+   "reading": "a place or state covered in snow, the snow-covered",
+   "languages": [
+    "en",
+    "es",
+    "la"
+   ],
+   "source": "Oxford English Dictionary / Lewis & Short Latin Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ne + va + da",
+   "reading": "born (né) by the voice (va) of God (da)",
+   "languages": [
+    "fr",
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Nev + ada",
+   "reading": "new (nev) wing or bird (ada from Greek pteron via cabala)",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Nevada ≈ Né va da (French)",
+   "reading": "born goes there; that which is born goes thither",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Nevada ≈ Neva da (Russian river + Spanish)",
+   "reading": "the new river of the lady / the snow river",
+   "languages": [
+    "ru",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Nevada = Vade + an",
+   "reading": "go (vade) + year/age (an); the going of the age",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "N.V.D.A. ← Navis Volat Dum Astra (Latin)",
+   "reading": "the ship flies while the stars remain",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Neva + da",
+   "reading": "no voice (ne va) gives (da); the mute gift",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N = Nun (fish/seed), V = Vau (nail/hook), D = Daleth (door), A = Aleph (ox)",
+   "reading": "the seed nailed to the door of the ox; primordial fixation",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Nevada ← Old Occitan/Spanish nevada ← Latin nivalis (snowy)",
+   "reading": "snowy land, the white-covered country",
+   "languages": [
+    "oc",
+    "es",
+    "la"
+   ],
+   "source": "Real Academia Española / Du Cange",
+   "confidence": 0.9
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

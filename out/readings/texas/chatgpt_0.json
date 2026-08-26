@@ -1,0 +1,106 @@
+{
+ "word": "Texas",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:21:10+00:00",
+ "latency_s": 4.68,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"tex + as; tex sounds like text, a woven web of signs; as = like, in the manner of\",\n    \"reading\": \"A woven sign, a text-like thing: the world read as pattern.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"texas ~ te + xas; te (fr. tê) evokes head; xas echoes chas/chaser, to hunt or drive\",\n    \"reading\": \"The head driven onward: thought pursued by force.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Texas → exact letters rearranged as axes + t; axe = cutting tool, t = crossbar\",\n    \"reading\": \"A cutting instrument and a crossing: division joined to a mark.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.74\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T + ex + as; T as the cross, ex as out of, as as likeness\",\n    \"reading\": \"A cross set outside likeness: separation from the same.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.53\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"T(20) + E(5) + X(24) + A(1) + S(19) = 69; 6+9 = 15; 1+5 = 6\",\n    \"reading\": \"The number of completion reduced to six: harmony after excess.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.46\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Standard lexicon: English Texas < Spanish Texas, from Caddo táyshaʔ 'friend, ally' (commonly cited in etymological dictionaries)\",\n    \"reading\": \"Friendship or alliance beneath the name.\",\n    \"languages\": [\"en\", \"es\", \"cdd\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster; Online Etymology Dictionary\",\n    \"confidence\": 0.88\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"tex + as; as can sound like 'ace', the one, the first\",\n    \"reading\": \"Text made singular: the one sign standing apart.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.57\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"texas ~ te xas; in Spanish, te = you; xas evokes 'jas' / 'ya es' by sound, 'it is already'\",\n    \"reading\": \"You are already: a present tense of being.\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "tex + as; tex sounds like text, a woven web of signs; as = like, in the manner of",
+   "reading": "A woven sign, a text-like thing: the world read as pattern.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "texas ~ te + xas; te (fr. tê) evokes head; xas echoes chas/chaser, to hunt or drive",
+   "reading": "The head driven onward: thought pursued by force.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "anagram",
+   "chain": "Texas → exact letters rearranged as axes + t; axe = cutting tool, t = crossbar",
+   "reading": "A cutting instrument and a crossing: division joined to a mark.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.74
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T + ex + as; T as the cross, ex as out of, as as likeness",
+   "reading": "A cross set outside likeness: separation from the same.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.53
+  },
+  {
+   "operation": "numerical",
+   "chain": "T(20) + E(5) + X(24) + A(1) + S(19) = 69; 6+9 = 15; 1+5 = 6",
+   "reading": "The number of completion reduced to six: harmony after excess.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.46
+  },
+  {
+   "operation": "etymology",
+   "chain": "Standard lexicon: English Texas < Spanish Texas, from Caddo táyshaʔ 'friend, ally' (commonly cited in etymological dictionaries)",
+   "reading": "Friendship or alliance beneath the name.",
+   "languages": [
+    "en",
+    "es",
+    "cdd"
+   ],
+   "source": "Oxford English Dictionary; Merriam-Webster; Online Etymology Dictionary",
+   "confidence": 0.88
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "tex + as; as can sound like 'ace', the one, the first",
+   "reading": "Text made singular: the one sign standing apart.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.57
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "texas ~ te xas; in Spanish, te = you; xas evokes 'jas' / 'ya es' by sound, 'it is already'",
+   "reading": "You are already: a present tense of being.",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

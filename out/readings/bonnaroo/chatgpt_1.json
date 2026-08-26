@@ -1,0 +1,123 @@
+{
+ "word": "Bonnaroo",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:16:05+00:00",
+ "latency_s": 5.93,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"bon + a + roo; bon (fr) = good, a = to/at, roo ~ roue / roux / roi by sound drift\",\n    \"reading\": \"A “good” turning: a favorable wheel, a red/royal pivot, or a bright leap of sound.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.47\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bon (fr) = good; roo ~ roue (fr) = wheel; bon + roue\",\n    \"reading\": \"Good wheel: fortune in motion, a turning that carries one onward.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bon (fr) = good; roo ~ roi (fr) = king\",\n    \"reading\": \"Good king: a benign sovereignty, or the blessing of rule.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bon (fr) = good; roo ~ roux (fr) = red-haired, tawny\",\n    \"reading\": \"Good and red: the auspicious color of fire, gold, and vitality.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.44\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bon (fr) < Latin bonus = good; standard lexicon: TLFi / OED for bon as French adjective from Latin bonus\",\n    \"reading\": \"Goodness itself, the basic blessing encoded at the start of the word.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"TLFi\",\n    \"confidence\": 0.86\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"bon + a + roo; roo as roar / rue / roue by echo\",\n    \"reading\": \"A good roar: a jubilant cry, a public sounding, a festival voice.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.39\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"BONNAROO -> ROAN + BONO + ?; partial anagrammatic pull toward boon / roar / boon-roar\",\n    \"reading\": \"A boon-roar: a blessing that announces itself loudly.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B + O + N + N + A + R + O + O; B = beginning, O = circle, N = knot/angle, A = apex, R = ray/rod\",\n    \"reading\": \"Beginning enclosed by circles and knots: a rounded, self-returning sign with an apex and a ray.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"B=2, O=15, N=14, N=14, A=1, R=18, O=15, O=15; sum = 94; 9+4 = 13\",\n    \"reading\": \"Ninety-four reduced to thirteen: transformation after completion, a cycle ending in change.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.28\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B O N N A R O O as initials: Blessing Of Newness, Noise, And Return; Or: Being Of Nature, Nurtured And Reborn Once More\",\n    \"reading\": \"A formula of blessing, renewal, and return: the word reads like a compact rite of rebirth.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.18\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "bon + a + roo; bon (fr) = good, a = to/at, roo ~ roue / roux / roi by sound drift",
+   "reading": "A “good” turning: a favorable wheel, a red/royal pivot, or a bright leap of sound.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.47
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bon (fr) = good; roo ~ roue (fr) = wheel; bon + roue",
+   "reading": "Good wheel: fortune in motion, a turning that carries one onward.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bon (fr) = good; roo ~ roi (fr) = king",
+   "reading": "Good king: a benign sovereignty, or the blessing of rule.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bon (fr) = good; roo ~ roux (fr) = red-haired, tawny",
+   "reading": "Good and red: the auspicious color of fire, gold, and vitality.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.44
+  },
+  {
+   "operation": "etymology",
+   "chain": "bon (fr) < Latin bonus = good; standard lexicon: TLFi / OED for bon as French adjective from Latin bonus",
+   "reading": "Goodness itself, the basic blessing encoded at the start of the word.",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "TLFi",
+   "confidence": 0.86
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "bon + a + roo; roo as roar / rue / roue by echo",
+   "reading": "A good roar: a jubilant cry, a public sounding, a festival voice.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.39
+  },
+  {
+   "operation": "anagram",
+   "chain": "BONNAROO -> ROAN + BONO + ?; partial anagrammatic pull toward boon / roar / boon-roar",
+   "reading": "A boon-roar: a blessing that announces itself loudly.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B + O + N + N + A + R + O + O; B = beginning, O = circle, N = knot/angle, A = apex, R = ray/rod",
+   "reading": "Beginning enclosed by circles and knots: a rounded, self-returning sign with an apex and a ray.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "numerical",
+   "chain": "B=2, O=15, N=14, N=14, A=1, R=18, O=15, O=15; sum = 94; 9+4 = 13",
+   "reading": "Ninety-four reduced to thirteen: transformation after completion, a cycle ending in change.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.28
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B O N N A R O O as initials: Blessing Of Newness, Noise, And Return; Or: Being Of Nature, Nurtured And Reborn Once More",
+   "reading": "A formula of blessing, renewal, and return: the word reads like a compact rite of rebirth.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.18
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

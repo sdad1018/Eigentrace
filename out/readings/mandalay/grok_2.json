@@ -1,0 +1,128 @@
+{
+ "word": "Mandalay",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:26+00:00",
+ "latency_s": 6.75,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + da + lay\",\n    \"reading\": \"the hand that lays down; the giving hand; the hand of the law\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"mand + a + lai\",\n    \"reading\": \"the command that is read; the spoken order becomes law\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay ≈ mandala + lai (Fr. lait = milk)\",\n    \"reading\": \"the mandala of milk; the circle that nourishes; alchemical white work\",\n    \"languages\": [\"en\",\"fr\",\"san\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Manda (Skt. joy, delight) + lay (Eng. from OE lecgan, to lay/place)\",\n    \"reading\": \"the place where joy is laid or established; seat of bliss\",\n    \"languages\": [\"san\",\"en\"],\n    \"source\": \"Monier-Williams Sanskrit-English Dictionary\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay → a + damn + lay\",\n    \"reading\": \"a cursed laying down; the deposition that damns; fatal testimony\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + dalay (Fr. délai = delay)\",\n    \"reading\": \"the man of delay; he who postpones; the temporizer\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay ≈ mand + allah (Ar. الله)\",\n    \"reading\": \"the command of God; the divine order given\",\n    \"languages\": [\"en\",\"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M.A.N.D.A.L.A.Y. → Mundus Animus Naturae Dat Legem Alchemicam Y\",\n    \"reading\": \"the world-soul of nature gives the alchemical law\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (Virgo, harvest) + AND (union) + ALAY (Fr. allai = I went)\",\n    \"reading\": \"the virgin harvest unites and I went; the reaper departs\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"monde (Fr. world) + à + lai (Fr. lait = milk)\",\n    \"reading\": \"the world to milk; the cosmos is milked for its essence\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "man + da + lay",
+   "reading": "the hand that lays down; the giving hand; the hand of the law",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "mand + a + lai",
+   "reading": "the command that is read; the spoken order becomes law",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay ≈ mandala + lai (Fr. lait = milk)",
+   "reading": "the mandala of milk; the circle that nourishes; alchemical white work",
+   "languages": [
+    "en",
+    "fr",
+    "san"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Manda (Skt. joy, delight) + lay (Eng. from OE lecgan, to lay/place)",
+   "reading": "the place where joy is laid or established; seat of bliss",
+   "languages": [
+    "san",
+    "en"
+   ],
+   "source": "Monier-Williams Sanskrit-English Dictionary",
+   "confidence": 0.45
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay → a + damn + lay",
+   "reading": "a cursed laying down; the deposition that damns; fatal testimony",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + dalay (Fr. délai = delay)",
+   "reading": "the man of delay; he who postpones; the temporizer",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay ≈ mand + allah (Ar. الله)",
+   "reading": "the command of God; the divine order given",
+   "languages": [
+    "en",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M.A.N.D.A.L.A.Y. → Mundus Animus Naturae Dat Legem Alchemicam Y",
+   "reading": "the world-soul of nature gives the alchemical law",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (Virgo, harvest) + AND (union) + ALAY (Fr. allai = I went)",
+   "reading": "the virgin harvest unites and I went; the reaper departs",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "monde (Fr. world) + à + lai (Fr. lait = milk)",
+   "reading": "the world to milk; the cosmos is milked for its essence",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

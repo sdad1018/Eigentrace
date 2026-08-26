@@ -1,0 +1,136 @@
+{
+ "word": "NRG Park",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:22:38+00:00",
+ "latency_s": 6.04,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG + Park; NRG ≈ énergie (French)\",\n    \"reading\": \"energy park; enclosure of vital force or power\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Park from Old French parc (enclosed hunting ground), from Late Latin parricus, from Germanic *parruk\",\n    \"reading\": \"enclosed preserve or hunting domain of vital energy\",\n    \"languages\": [\"en\",\"fr\",\"la\",\"gem\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG sounds as énergie (fr) + parc (fr) = énergie du parc\",\n    \"reading\": \"the vital force contained within the enclosed garden\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"N + RG + Park; N = en (fr); RG ≈ roi (fr) phonetic; Park = parc\",\n    \"reading\": \"in the king's park; royal enclosed garden of power\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"NRG PARK → PRANK GR; prank (en) + GR (grand)\",\n    \"reading\": \"great prank or cosmic jest within the enclosure\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"NRG = Notre Roi Guide; PARK = Parc Alchimique Royal Kabbalistique\",\n    \"reading\": \"Our King guides the royal alchemical kabbalistic park\",\n    \"languages\": [\"fr\",\"la\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N = Nun (fish, life); R = Resh (head); G = Gimel (camel, travel); Park = enclosed field\",\n    \"reading\": \"life-force head journeys within the enclosed sacred field\",\n    \"languages\": [\"he\",\"en\"],\n    \"source\": \"Sefer Yetzirah (standard Hebrew letter attributions)\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG ≈ nargh (Arabic/Persian narghile) + Park; nargh = pipe\",\n    \"reading\": \"pipe of the park; conduit of vital breath in the garden\",\n    \"languages\": [\"ar\",\"fa\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG Park ≈ Energie Park ≈ “air n’y gué parc” (French phonetic)\",\n    \"reading\": \"there is no ford of air in the park; spirit cannot cross here\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Energy from Greek ἐνέργεια (enérgeia) = at work, active force; Park as above\",\n    \"reading\": \"enclosed domain of active force or operative power\",\n    \"languages\": [\"grc\",\"en\",\"fr\",\"la\"],\n    \"source\": \"Liddell-Scott Greek-English Lexicon\",\n    \"confidence\": 0.95\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "NRG + Park; NRG ≈ énergie (French)",
+   "reading": "energy park; enclosure of vital force or power",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "etymology",
+   "chain": "Park from Old French parc (enclosed hunting ground), from Late Latin parricus, from Germanic *parruk",
+   "reading": "enclosed preserve or hunting domain of vital energy",
+   "languages": [
+    "en",
+    "fr",
+    "la",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "NRG sounds as énergie (fr) + parc (fr) = énergie du parc",
+   "reading": "the vital force contained within the enclosed garden",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "N + RG + Park; N = en (fr); RG ≈ roi (fr) phonetic; Park = parc",
+   "reading": "in the king's park; royal enclosed garden of power",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "NRG PARK → PRANK GR; prank (en) + GR (grand)",
+   "reading": "great prank or cosmic jest within the enclosure",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "NRG = Notre Roi Guide; PARK = Parc Alchimique Royal Kabbalistique",
+   "reading": "Our King guides the royal alchemical kabbalistic park",
+   "languages": [
+    "fr",
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N = Nun (fish, life); R = Resh (head); G = Gimel (camel, travel); Park = enclosed field",
+   "reading": "life-force head journeys within the enclosed sacred field",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "Sefer Yetzirah (standard Hebrew letter attributions)",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "NRG ≈ nargh (Arabic/Persian narghile) + Park; nargh = pipe",
+   "reading": "pipe of the park; conduit of vital breath in the garden",
+   "languages": [
+    "ar",
+    "fa",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "NRG Park ≈ Energie Park ≈ “air n’y gué parc” (French phonetic)",
+   "reading": "there is no ford of air in the park; spirit cannot cross here",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Energy from Greek ἐνέργεια (enérgeia) = at work, active force; Park as above",
+   "reading": "enclosed domain of active force or operative power",
+   "languages": [
+    "grc",
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Liddell-Scott Greek-English Lexicon",
+   "confidence": 0.95
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

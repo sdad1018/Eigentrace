@@ -1,0 +1,151 @@
+{
+ "word": "Las Vegas",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:49+00:00",
+ "latency_s": 11.39,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las + Vegas; Vegas = vega (Spanish) = fertile plain; las = the (fem. pl.)\",\n    \"reading\": \"The fertile plains — a green meadow hidden in the desert sound.\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Vega from Iberian/Romance *vaga, from Latin vāga (wandering, roaming); las = illas (those)\",\n    \"reading\": \"Those wandering fields — lands that shift and drift, not fixed.\",\n    \"languages\": [\"la\", \"es\"],\n    \"source\": \"Oxford Latin Dictionary, s.v. vāgus\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las = l'as (French: the ace); Vegas = vagues (French: waves, or vagueness)\",\n    \"reading\": \"The ace of waves — a lucky roll on a sea of uncertainty.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas → 'salvages' (to save from wreck) + 'gas' (spirit, vapour)\",\n    \"reading\": \"Salvaged spirit — what is rescued from the vaporous illusion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L.V. = Lumen Veritatis (light of truth) in Latin; also LV = 55 in Roman numerals\",\n    \"reading\": \"Light of truth, but numbered 55 — double five, the pentagram's gate.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L (el) = God in Hebrew; V = vav (hook/nail); S = shin (tooth/fire); G = gimel (camel)\",\n    \"reading\": \"God's nail, fire's tooth, camel's hump — a beast of burden in the burning.\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"Sefer Yetzirah (letter correspondences)\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Las = 30+1+60 = 91 (Hebrew values); Vegas = 6+5+3+1+60 = 75; total 166\",\n    \"reading\": \"166 — the number of the 'gate of the abyss' in some cabalistic lists.\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las = l'as (the ace); Vegas = vega (meadow) + s (plural) — 'aces of meadows'\",\n    \"reading\": \"Aces of meadows — winning hands dealt on green felt, a pun on grass.\",\n    \"languages\": [\"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Vega from Arabic بَقْعَة (baqʿa) = patch of ground, via Mozarabic; las = from Latin illas\",\n    \"reading\": \"Those patches of ground — a quilt of cultivated earth in arid land.\",\n    \"languages\": [\"ar\", \"la\", \"es\"],\n    \"source\": \"Real Academia Española, Diccionario de la lengua española, s.v. vega\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las = laisse (French: leave, let); Vegas = vagues (vague, indistinct) — 'leave the vague'\",\n    \"reading\": \"Leave the vague — a call to clarity, or to abandon the indistinct.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas → 'savages' + 'el' (God) — 'savages of God'\",\n    \"reading\": \"God's wild ones — untamed nature under a divine name.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L = lamed (ox goad); V = vav (nail); S = shin (fire); G = gimel (camel) — 'goad, nail, fire, camel'\",\n    \"reading\": \"A goad drives the camel through fire — the path of the initiate.\",\n    \"languages\": [\"he\"],\n    \"source\": \"Sepher ha-Zohar (letter meditations)\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Vegas; Vegas = vega (Spanish) = fertile plain; las = the (fem. pl.)",
+   "reading": "The fertile plains — a green meadow hidden in the desert sound.",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "etymology",
+   "chain": "Vega from Iberian/Romance *vaga, from Latin vāga (wandering, roaming); las = illas (those)",
+   "reading": "Those wandering fields — lands that shift and drift, not fixed.",
+   "languages": [
+    "la",
+    "es"
+   ],
+   "source": "Oxford Latin Dictionary, s.v. vāgus",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las = l'as (French: the ace); Vegas = vagues (French: waves, or vagueness)",
+   "reading": "The ace of waves — a lucky roll on a sea of uncertainty.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas → 'salvages' (to save from wreck) + 'gas' (spirit, vapour)",
+   "reading": "Salvaged spirit — what is rescued from the vaporous illusion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L.V. = Lumen Veritatis (light of truth) in Latin; also LV = 55 in Roman numerals",
+   "reading": "Light of truth, but numbered 55 — double five, the pentagram's gate.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L (el) = God in Hebrew; V = vav (hook/nail); S = shin (tooth/fire); G = gimel (camel)",
+   "reading": "God's nail, fire's tooth, camel's hump — a beast of burden in the burning.",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "Sefer Yetzirah (letter correspondences)",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "Las = 30+1+60 = 91 (Hebrew values); Vegas = 6+5+3+1+60 = 75; total 166",
+   "reading": "166 — the number of the 'gate of the abyss' in some cabalistic lists.",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las = l'as (the ace); Vegas = vega (meadow) + s (plural) — 'aces of meadows'",
+   "reading": "Aces of meadows — winning hands dealt on green felt, a pun on grass.",
+   "languages": [
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Vega from Arabic بَقْعَة (baqʿa) = patch of ground, via Mozarabic; las = from Latin illas",
+   "reading": "Those patches of ground — a quilt of cultivated earth in arid land.",
+   "languages": [
+    "ar",
+    "la",
+    "es"
+   ],
+   "source": "Real Academia Española, Diccionario de la lengua española, s.v. vega",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las = laisse (French: leave, let); Vegas = vagues (vague, indistinct) — 'leave the vague'",
+   "reading": "Leave the vague — a call to clarity, or to abandon the indistinct.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas → 'savages' + 'el' (God) — 'savages of God'",
+   "reading": "God's wild ones — untamed nature under a divine name.",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L = lamed (ox goad); V = vav (nail); S = shin (fire); G = gimel (camel) — 'goad, nail, fire, camel'",
+   "reading": "A goad drives the camel through fire — the path of the initiate.",
+   "languages": [
+    "he"
+   ],
+   "source": "Sepher ha-Zohar (letter meditations)",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

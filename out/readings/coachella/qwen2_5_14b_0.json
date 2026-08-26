@@ -1,0 +1,143 @@
+{
+ "word": "Coachella",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T00:19:48+00:00",
+ "latency_s": 50.6,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"co + ach + ella\",\"reading\":\"Call to achieve the alluring.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"cross_language_homophone\",\"chain\":\"coach (en) = coche (fr)\",\"reading\":\"Vehicle for transporting goods or people.\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.65},{\"operation\":\"anagram\",\"chain\":\"Coachella -> Coacheall\",\"reading\":\"A place where coaches gather.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"phonetic_split\",\"chain\":\"ch + ella\",\"reading\":\"Protection against the alluring.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.65},{\"operation\":\"etymology\",\"chain\":\"Coachella (variant of Coach, from Middle English coch, from Old French coche)\",\"reading\":\"Originating from a vehicle or carriage.\",\"languages\":[\"en\",\"fr\"],\"source\":\"Middle English Dictionary\",\"confidence\":0.85},{\"operation\":\"phonetic_split\",\"chain\":\"oach + ella\",\"reading\":\"Oath to the alluring.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"anagram\",\"chain\":\"Coachella -> Lachaco\",\"reading\":\"A place of laughter and joy.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.55},{\"operation\":\"phonetic_split\",\"chain\":\"coa + ch + ella\",\"reading\":\"Coat to achieve the alluring.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"cross_language_homophone\",\"chain\":\"ella (en) = elle (fr)\",\"reading\":\"She, a feminine pronoun.\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.58},{\"operation\":\"phonetic_split\",\"chain\":\"coach + ella\",\"reading\":\"Vehicle for the alluring.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.62},{\"operation\":\"anagram\",\"chain\":\"Coachella -> Lacheoca\",\"reading\":\"A place of chaos and confusion.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.53},{\"operation\":\"phonetic_split\",\"chain\":\"ch + oach + ella\",\"reading\":\"Protection against the coat to achieve.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "co + ach + ella",
+   "reading": "Call to achieve the alluring.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "coach (en) = coche (fr)",
+   "reading": "Vehicle for transporting goods or people.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Coachella -> Coacheall",
+   "reading": "A place where coaches gather.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ch + ella",
+   "reading": "Protection against the alluring.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "etymology",
+   "chain": "Coachella (variant of Coach, from Middle English coch, from Old French coche)",
+   "reading": "Originating from a vehicle or carriage.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Middle English Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "oach + ella",
+   "reading": "Oath to the alluring.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Coachella -> Lachaco",
+   "reading": "A place of laughter and joy.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "coa + ch + ella",
+   "reading": "Coat to achieve the alluring.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "ella (en) = elle (fr)",
+   "reading": "She, a feminine pronoun.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "coach + ella",
+   "reading": "Vehicle for the alluring.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "anagram",
+   "chain": "Coachella -> Lacheoca",
+   "reading": "A place of chaos and confusion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.53
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ch + oach + ella",
+   "reading": "Protection against the coat to achieve.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

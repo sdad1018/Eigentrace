@@ -1,0 +1,128 @@
+{
+ "word": "Glastonbury",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:17:25+00:00",
+ "latency_s": 6.0,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Glastonbury ← OE Glæstingabyrig ← Glæstinga (tribe/clan) + burh (fortified place)\",\n    \"reading\": \"fortified settlement of the Glæstingas clan\",\n    \"languages\": [\"en\",\"ang\"],\n    \"source\": \"Ekwall, Concise Oxford Dictionary of English Place-Names\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Glas + ton + bury\",\n    \"reading\": \"glass tone buried; the sound of glass interred\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Glast + on + bury\",\n    \"reading\": \"last on bury; the final one to be buried\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Glas (Breton) = green/blue-grey + ton (Old French) = thunder + bury (Eng) = to hide\",\n    \"reading\": \"hidden green thunder\",\n    \"languages\": [\"br\",\"fro\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gla + ston + bury\",\n    \"reading\": \"gla (Scots) = glow + stone + bury; glowing stone buried\",\n    \"languages\": [\"en\",\"sco\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Glastonbury → G. Lost by Run\",\n    \"reading\": \"the guide lost by the rune\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Glas (Irish) = lock/fastening + ton (Fr) = barrel/tun + bury (Eng)\",\n    \"reading\": \"the lock of the barrel is buried\",\n    \"languages\": [\"ga\",\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Glass + tomb + bury (via French tombe)\",\n    \"reading\": \"the glass tomb is buried\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"G-L-A-S-T-O-N-B-U-R-Y → initial letters read in green language as hidden acrostic\",\n    \"reading\": \"Great Light Alights Secretly Through Opened Northern Burial Under Rune Year\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"G (gamma) + last on bury; Greek gamma as earth symbol\",\n    \"reading\": \"earth's last tone is buried\",\n    \"languages\": [\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Glastonbury ← OE Glæstingabyrig ← Glæstinga (tribe/clan) + burh (fortified place)",
+   "reading": "fortified settlement of the Glæstingas clan",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Ekwall, Concise Oxford Dictionary of English Place-Names",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Glas + ton + bury",
+   "reading": "glass tone buried; the sound of glass interred",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Glast + on + bury",
+   "reading": "last on bury; the final one to be buried",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Glas (Breton) = green/blue-grey + ton (Old French) = thunder + bury (Eng) = to hide",
+   "reading": "hidden green thunder",
+   "languages": [
+    "br",
+    "fro",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gla + ston + bury",
+   "reading": "gla (Scots) = glow + stone + bury; glowing stone buried",
+   "languages": [
+    "en",
+    "sco"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Glastonbury → G. Lost by Run",
+   "reading": "the guide lost by the rune",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Glas (Irish) = lock/fastening + ton (Fr) = barrel/tun + bury (Eng)",
+   "reading": "the lock of the barrel is buried",
+   "languages": [
+    "ga",
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Glass + tomb + bury (via French tombe)",
+   "reading": "the glass tomb is buried",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "G-L-A-S-T-O-N-B-U-R-Y → initial letters read in green language as hidden acrostic",
+   "reading": "Great Light Alights Secretly Through Opened Northern Burial Under Rune Year",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G (gamma) + last on bury; Greek gamma as earth symbol",
+   "reading": "earth's last tone is buried",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

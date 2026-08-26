@@ -1,0 +1,147 @@
+{
+ "word": "Great Exuma",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:22:59+00:00",
+ "latency_s": 6.1,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"great + exuma → great / ex- / you / ma; ex- = out of, beyond; you = the seeker; ma = mother, matter\",\n    \"reading\": \"A great going-out from the mother-matter: the seeker is called beyond the old enclosure.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"great ≈ greet; exuma ≈ exhum(e) / exhumed; greet + exhumed\",\n    \"reading\": \"A greeting from the buried: what was hidden is raised and made to speak.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.61\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"great → grate; exuma → ex- + sum + a; grate + ex-sum\",\n    \"reading\": \"A grate or threshold for the excess sum: what is added is burned down to essence.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"great ≈ grand (fr); exuma ≈ ex-uma; uma ≈ âme (fr, by sound drift)\",\n    \"reading\": \"The grand soul is taken outward: magnificence becomes departure.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.46\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"great < Old English grēat 'big, coarse, thick'; cf. OED, s.v. great\",\n    \"reading\": \"What is great is not merely noble: it is thick, ample, and materially substantial.\",\n    \"languages\": [\"en\"],\n    \"source\": \"OED, s.v. great\",\n    \"confidence\": 0.93\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"ex- < Latin ex 'out of, from'; cf. Lewis & Short, s.v. ex\",\n    \"reading\": \"The prefix marks exit, extraction, and emergence from within.\",\n    \"languages\": [\"la\"],\n    \"source\": \"Lewis & Short, A Latin Dictionary, s.v. ex\",\n    \"confidence\": 0.97\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"great exuma → great ex-uma → great ex-um-a; um/umm as hesitation, a as opening vowel\",\n    \"reading\": \"A great hesitation before opening: the voice leaves the throat and becomes passage.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"GREAT EXUMA → A GREAT MEXU? / EXUMA + GREAT; partial anagram emphasizes GREAT + EX + MA\",\n    \"reading\": \"Greatness is broken into ex- and ma: an outward motion toward the maternal source.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.33\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"G R E A T / E X U M A → Gate / Exit / Unseal / Mother / Alpha\",\n    \"reading\": \"A gate of exit: unseal the mother and return to the first letter.\",\n    \"languages\": [\"en\", \"grc\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.29\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"G = circle with opening; X = crossing; U = vessel; M = mountain/wave; A = apex\",\n    \"reading\": \"A vessel crossed open at the top: ascent through division toward completion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.37\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"GREAT EXUMA → letter sums A1Z26: 7+18+5+1+20 + 5+24+21+13+1 = 115; 1+1+5 = 7\",\n    \"reading\": \"The number reduces to seven: a cycle of completion, initiation, and return.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"exuma ≈ exhumare (Latinized echo) + great = grand; grand exhumation\",\n    \"reading\": \"A grand exhumation: the buried magnitude is brought back into daylight.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "great + exuma → great / ex- / you / ma; ex- = out of, beyond; you = the seeker; ma = mother, matter",
+   "reading": "A great going-out from the mother-matter: the seeker is called beyond the old enclosure.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.72
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "great ≈ greet; exuma ≈ exhum(e) / exhumed; greet + exhumed",
+   "reading": "A greeting from the buried: what was hidden is raised and made to speak.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.61
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "great → grate; exuma → ex- + sum + a; grate + ex-sum",
+   "reading": "A grate or threshold for the excess sum: what is added is burned down to essence.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "great ≈ grand (fr); exuma ≈ ex-uma; uma ≈ âme (fr, by sound drift)",
+   "reading": "The grand soul is taken outward: magnificence becomes departure.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.46
+  },
+  {
+   "operation": "etymology",
+   "chain": "great < Old English grēat 'big, coarse, thick'; cf. OED, s.v. great",
+   "reading": "What is great is not merely noble: it is thick, ample, and materially substantial.",
+   "languages": [
+    "en"
+   ],
+   "source": "OED, s.v. great",
+   "confidence": 0.93
+  },
+  {
+   "operation": "etymology",
+   "chain": "ex- < Latin ex 'out of, from'; cf. Lewis & Short, s.v. ex",
+   "reading": "The prefix marks exit, extraction, and emergence from within.",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis & Short, A Latin Dictionary, s.v. ex",
+   "confidence": 0.97
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "great exuma → great ex-uma → great ex-um-a; um/umm as hesitation, a as opening vowel",
+   "reading": "A great hesitation before opening: the voice leaves the throat and becomes passage.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "anagram",
+   "chain": "GREAT EXUMA → A GREAT MEXU? / EXUMA + GREAT; partial anagram emphasizes GREAT + EX + MA",
+   "reading": "Greatness is broken into ex- and ma: an outward motion toward the maternal source.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.33
+  },
+  {
+   "operation": "notariqon",
+   "chain": "G R E A T / E X U M A → Gate / Exit / Unseal / Mother / Alpha",
+   "reading": "A gate of exit: unseal the mother and return to the first letter.",
+   "languages": [
+    "en",
+    "grc",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.29
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G = circle with opening; X = crossing; U = vessel; M = mountain/wave; A = apex",
+   "reading": "A vessel crossed open at the top: ascent through division toward completion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.37
+  },
+  {
+   "operation": "numerical",
+   "chain": "GREAT EXUMA → letter sums A1Z26: 7+18+5+1+20 + 5+24+21+13+1 = 115; 1+1+5 = 7",
+   "reading": "The number reduces to seven: a cycle of completion, initiation, and return.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "exuma ≈ exhumare (Latinized echo) + great = grand; grand exhumation",
+   "reading": "A grand exhumation: the buried magnitude is brought back into daylight.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

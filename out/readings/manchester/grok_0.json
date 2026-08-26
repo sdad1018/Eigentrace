@@ -1,0 +1,148 @@
+{
+ "word": "Manchester",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:24:01+00:00",
+ "latency_s": 6.65,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mamucium (Latin) → Manchester; from Brittonic *mamm- 'breast, rounded hill'\",\n    \"reading\": \"the rounded breast-like hill or mound\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"Ekwall, Concise Oxford Dictionary of English Place-Names\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chester\",\n    \"reading\": \"the breast that contains or holds\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Mans + chez + terre\",\n    \"reading\": \"the dwelling / abode upon the earth\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Man + chester ≈ main + shyster (Germanic/English)\",\n    \"reading\": \"the principal deceiver or trickster\",\n    \"languages\": [\"en\",\"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chest + terre\",\n    \"reading\": \"the earthen chest that holds the man\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester → chant + mesmer\",\n    \"reading\": \"the song that mesmerises\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M A N C H E S T E R → Mare Alchimicum Naturae Coagulat Hermetice Elementa Sub Terra Elixatur Regina\",\n    \"reading\": \"the alchemical mare that coagulates the elements hermetically under the earth, the queen\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chez + terre\",\n    \"reading\": \"the one who dwells with the earth / the terrestrial inhabitant\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Manchester ≈ menshester (Hebrew: menashe + ter)\",\n    \"reading\": \"the forgetting that remains / the remnant of oblivion\",\n    \"languages\": [\"he\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (water) + AN (without) + CHEST (ark) + ER (one who)\",\n    \"reading\": \"he who is without the watery ark\",\n    \"languages\": [\"en\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"OE ceaster (Latin castra 'camp') + Manchester\",\n    \"reading\": \"the camp at the breast-shaped hill\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"Mills, Dictionary of British Place-Names\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Mon + astre + chez + terre\",\n    \"reading\": \"the lunar star that dwells upon the earth\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Mamucium (Latin) → Manchester; from Brittonic *mamm- 'breast, rounded hill'",
+   "reading": "the rounded breast-like hill or mound",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Ekwall, Concise Oxford Dictionary of English Place-Names",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chester",
+   "reading": "the breast that contains or holds",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Mans + chez + terre",
+   "reading": "the dwelling / abode upon the earth",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Man + chester ≈ main + shyster (Germanic/English)",
+   "reading": "the principal deceiver or trickster",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chest + terre",
+   "reading": "the earthen chest that holds the man",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester → chant + mesmer",
+   "reading": "the song that mesmerises",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M A N C H E S T E R → Mare Alchimicum Naturae Coagulat Hermetice Elementa Sub Terra Elixatur Regina",
+   "reading": "the alchemical mare that coagulates the elements hermetically under the earth, the queen",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chez + terre",
+   "reading": "the one who dwells with the earth / the terrestrial inhabitant",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manchester ≈ menshester (Hebrew: menashe + ter)",
+   "reading": "the forgetting that remains / the remnant of oblivion",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (water) + AN (without) + CHEST (ark) + ER (one who)",
+   "reading": "he who is without the watery ark",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "OE ceaster (Latin castra 'camp') + Manchester",
+   "reading": "the camp at the breast-shaped hill",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Mills, Dictionary of British Place-Names",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Mon + astre + chez + terre",
+   "reading": "the lunar star that dwells upon the earth",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

@@ -1,0 +1,147 @@
+{
+ "word": "Houston",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:22:49+00:00",
+ "latency_s": 5.08,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"etymology\",\"chain\":\"Old English hūs + tūn\",\"reading\":\"Estate or settlement with a large house; fortified dwelling\",\"languages\":[\"en\"],\"source\":\"Oxford English Dictionary\",\"confidence\":0.9},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Hou + ston\",\"reading\":\"High stone; the elevated or noble stone\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Hous + ton\",\"reading\":\"House of tone; the dwelling of sound or vibration\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Hou-ston ≈ Ouste-ton\",\"reading\":\"Drive them out, expel them (oust them)\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Hous + ton ≈ Housse + ton\",\"reading\":\"Covering or shroud of sound; veiled tone\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"anagram\",\"chain\":\"Houston = Thou son\",\"reading\":\"You are the son; direct address to the heir or child\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.75},\n  {\"operation\":\"notariqon\",\"chain\":\"H.O.U.S.T.O.N.\",\"reading\":\"He Orders Us Straight To Our Nature\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.4},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Houston ≈ Huis ton\",\"reading\":\"Your door, your house (huis = door/house in Dutch)\",\"languages\":[\"nl\",\"en\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Hou-stone\",\"reading\":\"Keep the stone; preserve the philosophical stone\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"etymology\",\"chain\":\"hūs (Proto-Germanic) + tūn (Proto-Germanic)\",\"reading\":\"Enclosed settlement around a great hall\",\"languages\":[\"en\",\"gem\"],\"source\":\"Pokorny Indo-European Etymological Dictionary\",\"confidence\":0.85},\n  {\"operation\":\"letter_symbol\",\"chain\":\"H (ladder) + O (circle) + U (vessel) + STON\",\"reading\":\"Ladder of the circular vessel leading to the stone\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Hous ton ≈ Ous ton\",\"reading\":\"Our tone; the sound that belongs to us\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.55}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Old English hūs + tūn",
+   "reading": "Estate or settlement with a large house; fortified dwelling",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hou + ston",
+   "reading": "High stone; the elevated or noble stone",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hous + ton",
+   "reading": "House of tone; the dwelling of sound or vibration",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Hou-ston ≈ Ouste-ton",
+   "reading": "Drive them out, expel them (oust them)",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hous + ton ≈ Housse + ton",
+   "reading": "Covering or shroud of sound; veiled tone",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Houston = Thou son",
+   "reading": "You are the son; direct address to the heir or child",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "notariqon",
+   "chain": "H.O.U.S.T.O.N.",
+   "reading": "He Orders Us Straight To Our Nature",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Houston ≈ Huis ton",
+   "reading": "Your door, your house (huis = door/house in Dutch)",
+   "languages": [
+    "nl",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hou-stone",
+   "reading": "Keep the stone; preserve the philosophical stone",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "hūs (Proto-Germanic) + tūn (Proto-Germanic)",
+   "reading": "Enclosed settlement around a great hall",
+   "languages": [
+    "en",
+    "gem"
+   ],
+   "source": "Pokorny Indo-European Etymological Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "H (ladder) + O (circle) + U (vessel) + STON",
+   "reading": "Ladder of the circular vessel leading to the stone",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hous ton ≈ Ous ton",
+   "reading": "Our tone; the sound that belongs to us",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

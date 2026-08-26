@@ -1,0 +1,154 @@
+{
+ "word": "Eagles of Death Metal",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:33:19+00:00",
+ "latency_s": 12.54,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Eagles + of + Death + Metal; 'Eagles' = aigles (Fr.) = eagles; 'Death' = mort (Fr.); 'Metal' = métal (Fr.); aigles de mort métal\",\n    \"reading\": \"Birds of prey singing the song of lethal alloy — the carrion cry of industrial doom.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Eagle (OE 'egle' from L. aquila) = bird of Jupiter; Death (OE 'dēaþ') = from PIE *dheu- = to die; Metal (Gk. metallon) = mine, quarry\",\n    \"reading\": \"The Jovian bird descends into the quarry of the dead — a descent from sky to underworld.\",\n    \"languages\": [\"en\", \"la\", \"grc\"],\n    \"source\": \"OED; Liddell-Scott Greek Lexicon\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Eagles = 'igles' (Sp. churches); of = 'ov' (Fr. egg); Death = 'dette' (Fr. debt); Metal = 'métal' (Fr. metal) → igles ov dette métal\",\n    \"reading\": \"Churches owe an egg of metal — a sacred debt paid in forged coin of the void.\",\n    \"languages\": [\"en\", \"es\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Eagles of Death Metal → 'Mega death of steel ages' (anagram); 'Mega' = great, 'death' = end, 'steel' = iron, 'ages' = epochs\",\n    \"reading\": \"A great ending of iron epochs — the colossal finale of the metallic age.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"EODM → E = Eagle, O = Of, D = Death, M = Metal; also E=Ex, O=Oriens, D=Deus, M=Mors (L.)\",\n    \"reading\": \"From the East, God and Death — the eagle as messenger of the double-edged divine end.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"E = eagle (air), O = circle (eternity), D = delta (change), M = m (water, in alchemy); sequence air→eternity→change→water\",\n    \"reading\": \"Air of eternity, change of water — the alchemical cycle of dissolution and rebirth.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"E=5, A=1, G=7, L=12, E=5, S=19 → sum 49; O=15, F=6 → 21; D=4, E=5, A=1, T=20, H=8 → 38; M=13, E=5, T=20, A=1, L=12 → 51; total 49+21+38+51=159\",\n    \"reading\": \"159 = 1+5+9 = 15 = 6 — the number of balance, of the hexad, of the six directions of the cross.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ea-gles of Death Me-tal → 'Ea' (water, Sumerian) + 'gles' (Fr. 'glaive' = sword) + 'of' + 'death' + 'metal'\",\n    \"reading\": \"Water-swords of the lethal ore — a flood of blades from the smithy of the end.\",\n    \"languages\": [\"en\", \"fr\", \"sux\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Death (OE dēaþ) cognate with OIr. dúth = dark; Metal (Gk. metallon) also means 'mine' → 'dark mine'\",\n    \"reading\": \"The dark mine of the eagle — where the bird of light digs its own tomb.\",\n    \"languages\": [\"en\", \"grc\", \"ga\"],\n    \"source\": \"OED; Pokorny IEW\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Eagles = 'aigles' (Fr.) → 'aigle' = eagle; 'of' = 'off' (En.) → cut off; 'Death' = 'dette' (Fr. debt) → debt; 'Metal' = 'métal' → 'metallum' (L.) = mine\",\n    \"reading\": \"Eagles cut off the debt of the mine — liberation from the earth's owed ore.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Eagles of Death Metal → 'Metalhead of ages' (anagram) → 'metalhead' = devotee of metal music, 'ages' = long time\",\n    \"reading\": \"The devotee of ages — a timeless worshipper of the metallic sound.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"E (eagle) = spirit; O (circle) = sun; D (delta) = door; M (mountain) = ascent; sequence: spirit-sun-door-mountain\",\n    \"reading\": \"Spirit sun opens the door to the mountain — the alchemical ascent to the summit of being.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Eagles + of + Death + Metal; 'Eagles' = aigles (Fr.) = eagles; 'Death' = mort (Fr.); 'Metal' = métal (Fr.); aigles de mort métal",
+   "reading": "Birds of prey singing the song of lethal alloy — the carrion cry of industrial doom.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Eagle (OE 'egle' from L. aquila) = bird of Jupiter; Death (OE 'dēaþ') = from PIE *dheu- = to die; Metal (Gk. metallon) = mine, quarry",
+   "reading": "The Jovian bird descends into the quarry of the dead — a descent from sky to underworld.",
+   "languages": [
+    "en",
+    "la",
+    "grc"
+   ],
+   "source": "OED; Liddell-Scott Greek Lexicon",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Eagles = 'igles' (Sp. churches); of = 'ov' (Fr. egg); Death = 'dette' (Fr. debt); Metal = 'métal' (Fr. metal) → igles ov dette métal",
+   "reading": "Churches owe an egg of metal — a sacred debt paid in forged coin of the void.",
+   "languages": [
+    "en",
+    "es",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Eagles of Death Metal → 'Mega death of steel ages' (anagram); 'Mega' = great, 'death' = end, 'steel' = iron, 'ages' = epochs",
+   "reading": "A great ending of iron epochs — the colossal finale of the metallic age.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "EODM → E = Eagle, O = Of, D = Death, M = Metal; also E=Ex, O=Oriens, D=Deus, M=Mors (L.)",
+   "reading": "From the East, God and Death — the eagle as messenger of the double-edged divine end.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "E = eagle (air), O = circle (eternity), D = delta (change), M = m (water, in alchemy); sequence air→eternity→change→water",
+   "reading": "Air of eternity, change of water — the alchemical cycle of dissolution and rebirth.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "numerical",
+   "chain": "E=5, A=1, G=7, L=12, E=5, S=19 → sum 49; O=15, F=6 → 21; D=4, E=5, A=1, T=20, H=8 → 38; M=13, E=5, T=20, A=1, L=12 → 51; total 49+21+38+51=159",
+   "reading": "159 = 1+5+9 = 15 = 6 — the number of balance, of the hexad, of the six directions of the cross.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ea-gles of Death Me-tal → 'Ea' (water, Sumerian) + 'gles' (Fr. 'glaive' = sword) + 'of' + 'death' + 'metal'",
+   "reading": "Water-swords of the lethal ore — a flood of blades from the smithy of the end.",
+   "languages": [
+    "en",
+    "fr",
+    "sux"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Death (OE dēaþ) cognate with OIr. dúth = dark; Metal (Gk. metallon) also means 'mine' → 'dark mine'",
+   "reading": "The dark mine of the eagle — where the bird of light digs its own tomb.",
+   "languages": [
+    "en",
+    "grc",
+    "ga"
+   ],
+   "source": "OED; Pokorny IEW",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Eagles = 'aigles' (Fr.) → 'aigle' = eagle; 'of' = 'off' (En.) → cut off; 'Death' = 'dette' (Fr. debt) → debt; 'Metal' = 'métal' → 'metallum' (L.) = mine",
+   "reading": "Eagles cut off the debt of the mine — liberation from the earth's owed ore.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Eagles of Death Metal → 'Metalhead of ages' (anagram) → 'metalhead' = devotee of metal music, 'ages' = long time",
+   "reading": "The devotee of ages — a timeless worshipper of the metallic sound.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "E (eagle) = spirit; O (circle) = sun; D (delta) = door; M (mountain) = ascent; sequence: spirit-sun-door-mountain",
+   "reading": "Spirit sun opens the door to the mountain — the alchemical ascent to the summit of being.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

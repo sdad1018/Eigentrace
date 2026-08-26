@@ -1,0 +1,132 @@
+{
+ "word": "Bonnaroo",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:16:20+00:00",
+ "latency_s": 7.24,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon + naroo\",\n    \"reading\": \"good + narrow way; the excellent strait path\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bon (Old French) = good; nar (Old Norse) = narrow + rue (Old French) = street\",\n    \"reading\": \"the good narrow street or excellent strait path\",\n    \"languages\": [\"fr\",\"no\",\"la\"],\n    \"source\": \"Oxford English Dictionary / Dictionnaire étymologique de la langue française\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bonnaroo ≈ bonne + à roux\",\n    \"reading\": \"the good red-gold one; the noble golden fire\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon + aroo ≈ bon + haro\",\n    \"reading\": \"good + outcry; the noble alarm or divine call\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bonnaroo = O, bon Aaron\",\n    \"reading\": \"O good Aaron; the excellent enlightened priest\",\n    \"languages\": [\"fr\",\"en\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bonnaroo ≈ bona + roo (Latin bona + Greek ρύω)\",\n    \"reading\": \"the good flowing forth; noble efflux of light\",\n    \"languages\": [\"la\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon + nar + oo ≈ bon + nar + hou\",\n    \"reading\": \"good + serpent + egg; the noble serpent’s egg\",\n    \"languages\": [\"fr\",\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B.O.N.N.A.R.O.O. → Bene Omnia Nascuntur Ab Re Optima Occulta\",\n    \"reading\": \"All things are born well from the best hidden thing\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B (house) + ON (light in French) + NAR (Hebrew נר = lamp) + OO (double egg)\",\n    \"reading\": \"the house of light, the lamp, and the double egg of rebirth\",\n    \"languages\": [\"en\",\"fr\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bonnaroo from bon + arrow (dialectal) = good arrow\",\n    \"reading\": \"the excellent straight arrow; the true directed path\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"English Dialect Dictionary (Wright)\",\n    \"confidence\": 0.45\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon + naroo",
+   "reading": "good + narrow way; the excellent strait path",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "bon (Old French) = good; nar (Old Norse) = narrow + rue (Old French) = street",
+   "reading": "the good narrow street or excellent strait path",
+   "languages": [
+    "fr",
+    "no",
+    "la"
+   ],
+   "source": "Oxford English Dictionary / Dictionnaire étymologique de la langue française",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bonnaroo ≈ bonne + à roux",
+   "reading": "the good red-gold one; the noble golden fire",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon + aroo ≈ bon + haro",
+   "reading": "good + outcry; the noble alarm or divine call",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bonnaroo = O, bon Aaron",
+   "reading": "O good Aaron; the excellent enlightened priest",
+   "languages": [
+    "fr",
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bonnaroo ≈ bona + roo (Latin bona + Greek ρύω)",
+   "reading": "the good flowing forth; noble efflux of light",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon + nar + oo ≈ bon + nar + hou",
+   "reading": "good + serpent + egg; the noble serpent’s egg",
+   "languages": [
+    "fr",
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B.O.N.N.A.R.O.O. → Bene Omnia Nascuntur Ab Re Optima Occulta",
+   "reading": "All things are born well from the best hidden thing",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (house) + ON (light in French) + NAR (Hebrew נר = lamp) + OO (double egg)",
+   "reading": "the house of light, the lamp, and the double egg of rebirth",
+   "languages": [
+    "en",
+    "fr",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "bonnaroo from bon + arrow (dialectal) = good arrow",
+   "reading": "the excellent straight arrow; the true directed path",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "English Dialect Dictionary (Wright)",
+   "confidence": 0.45
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

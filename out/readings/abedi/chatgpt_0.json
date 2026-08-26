@@ -1,0 +1,105 @@
+{
+ "word": "Abedi",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:22:20+00:00",
+ "latency_s": 4.55,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"a-be-di → French \\\"abdi\\\" sounds like Arabic \\\"ʿabdī\\\" / \\\"abdi\\\"; ʿabd = servant, -ī = my / of me\",\n    \"reading\": \"The self as servant: devotion, belonging, or a vowed identity.\",\n    \"languages\": [\"fr\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"a + be + di; be = being / bee; di = day, divine, or the second note in solfège\",\n    \"reading\": \"Being made into song: a small, bright, daytime vibration.\",\n    \"languages\": [\"en\", \"fr\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"abedi ~ Italian \\\"abbé di\\\" / French \\\"abbé dit\\\"; abbé = abbot, dit = said\",\n    \"reading\": \"The abbot speaks: authority expressed as utterance or doctrine.\",\n    \"languages\": [\"it\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.36\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"ABEDI → ABIDE + extra E; close to \\\"abide\\\" with a displaced vowel\",\n    \"reading\": \"To remain, endure, or dwell: stability under alteration.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.33\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"A = beginning; B = enclosure; E = opening; D = door; I = self/axis\",\n    \"reading\": \"Beginning enclosed, then opened through a door toward the centered self.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.29\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"A=1, B=2, E=5, D=4, I=9; sum = 21 → 2+1 = 3\",\n    \"reading\": \"Threefold movement: thesis, turn, return; a triadic unfolding.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.27\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Latin ab- = away from; compare abeo, abire in standard lexica (Lewis & Short, OLD): to go away, depart\",\n    \"reading\": \"Departure or withdrawal, a motion away from the source.\",\n    \"languages\": [\"la\"],\n    \"source\": \"Lewis & Short, A Latin Dictionary; Oxford Latin Dictionary\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"a-be-di ~ French \\\"à béni\\\" / \\\"abîmé\\\" by sound drift; béni = blessed\",\n    \"reading\": \"A blessed thing, or one marked by consecration.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.18\n  }\n]",
+ "parsed": [
+  {
+   "operation": "cross_language_homophone",
+   "chain": "a-be-di → French \"abdi\" sounds like Arabic \"ʿabdī\" / \"abdi\"; ʿabd = servant, -ī = my / of me",
+   "reading": "The self as servant: devotion, belonging, or a vowed identity.",
+   "languages": [
+    "fr",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "a + be + di; be = being / bee; di = day, divine, or the second note in solfège",
+   "reading": "Being made into song: a small, bright, daytime vibration.",
+   "languages": [
+    "en",
+    "fr",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "abedi ~ Italian \"abbé di\" / French \"abbé dit\"; abbé = abbot, dit = said",
+   "reading": "The abbot speaks: authority expressed as utterance or doctrine.",
+   "languages": [
+    "it",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.36
+  },
+  {
+   "operation": "anagram",
+   "chain": "ABEDI → ABIDE + extra E; close to \"abide\" with a displaced vowel",
+   "reading": "To remain, endure, or dwell: stability under alteration.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.33
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "A = beginning; B = enclosure; E = opening; D = door; I = self/axis",
+   "reading": "Beginning enclosed, then opened through a door toward the centered self.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.29
+  },
+  {
+   "operation": "numerical",
+   "chain": "A=1, B=2, E=5, D=4, I=9; sum = 21 → 2+1 = 3",
+   "reading": "Threefold movement: thesis, turn, return; a triadic unfolding.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.27
+  },
+  {
+   "operation": "etymology",
+   "chain": "Latin ab- = away from; compare abeo, abire in standard lexica (Lewis & Short, OLD): to go away, depart",
+   "reading": "Departure or withdrawal, a motion away from the source.",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis & Short, A Latin Dictionary; Oxford Latin Dictionary",
+   "confidence": 0.22
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "a-be-di ~ French \"à béni\" / \"abîmé\" by sound drift; béni = blessed",
+   "reading": "A blessed thing, or one marked by consecration.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.18
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

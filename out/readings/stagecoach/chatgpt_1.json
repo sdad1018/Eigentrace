@@ -1,0 +1,103 @@
+{
+ "word": "Stagecoach",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:17:47+00:00",
+ "latency_s": 4.57,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"stage + coach; stage = a stopping place or post; coach = a carriage for carrying people\",\n    \"reading\": \"A vehicle of passage: the soul’s carriage that moves by stations, from stop to stop.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster Dictionary\",\n    \"confidence\": 0.98\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"stage / coach; stage = state, stance, degree; coach = to coach, to guide, to train\",\n    \"reading\": \"A staged guidance: one is placed, then instructed, then moved onward.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"stage ~ stase (fr) / στάσις (grc); coach ~ coche (fr) = carriage\",\n    \"reading\": \"A fixed pause in motion, then the carriage: stillness joined to transit.\",\n    \"languages\": [\"en\", \"fr\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.61\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"stage ~ stage (fr) = stage, floor, scene; coach ~ coche (fr) = coach, carriage\",\n    \"reading\": \"The scene-carriage: a moving platform for appearances and performances.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"stagecoach → chase + goat + c; or: cage + host + at\",\n    \"reading\": \"A host in a cage, or a goat chased: the word hides pursuit, enclosure, and a guide.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.34\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"S T A G E C O A C H = Stationed Transit And Guided Escort; Carrying One Across, Conveying Home\",\n    \"reading\": \"A formula of passage: stationed transit under guidance, carrying one across to home.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"S = curve/serpent; T = cross; A = ascent; G = enclosure; E = opening; C = crescent; H = gate\",\n    \"reading\": \"A serpent crosses ascent, enters enclosure, opens, crescents, and passes through the gate.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"A1Z26: S(19)+T(20)+A(1)+G(7)+E(5)+C(3)+O(15)+A(1)+C(3)+H(8)=82\",\n    \"reading\": \"Eighty-two: a number of transit, a sum of steps from beginning to threshold.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.27\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "stage + coach; stage = a stopping place or post; coach = a carriage for carrying people",
+   "reading": "A vehicle of passage: the soul’s carriage that moves by stations, from stop to stop.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Merriam-Webster Dictionary",
+   "confidence": 0.98
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "stage / coach; stage = state, stance, degree; coach = to coach, to guide, to train",
+   "reading": "A staged guidance: one is placed, then instructed, then moved onward.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.72
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "stage ~ stase (fr) / στάσις (grc); coach ~ coche (fr) = carriage",
+   "reading": "A fixed pause in motion, then the carriage: stillness joined to transit.",
+   "languages": [
+    "en",
+    "fr",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.61
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "stage ~ stage (fr) = stage, floor, scene; coach ~ coche (fr) = coach, carriage",
+   "reading": "The scene-carriage: a moving platform for appearances and performances.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "anagram",
+   "chain": "stagecoach → chase + goat + c; or: cage + host + at",
+   "reading": "A host in a cage, or a goat chased: the word hides pursuit, enclosure, and a guide.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.34
+  },
+  {
+   "operation": "notariqon",
+   "chain": "S T A G E C O A C H = Stationed Transit And Guided Escort; Carrying One Across, Conveying Home",
+   "reading": "A formula of passage: stationed transit under guidance, carrying one across to home.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "S = curve/serpent; T = cross; A = ascent; G = enclosure; E = opening; C = crescent; H = gate",
+   "reading": "A serpent crosses ascent, enters enclosure, opens, crescents, and passes through the gate.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "numerical",
+   "chain": "A1Z26: S(19)+T(20)+A(1)+G(7)+E(5)+C(3)+O(15)+A(1)+C(3)+H(8)=82",
+   "reading": "Eighty-two: a number of transit, a sum of steps from beginning to threshold.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.27
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

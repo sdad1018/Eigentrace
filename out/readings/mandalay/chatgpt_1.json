@@ -1,0 +1,106 @@
+{
+ "word": "Mandalay",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:19:15+00:00",
+ "latency_s": 4.93,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mandalay < Burmese မန္တလေး (Manda-lay), a place-name; standard lexica treat it as a Burmese toponym of uncertain internal analysis\",\n    \"reading\": \"A name whose sense is veiled: the word itself points to a place-name, not a transparent common meaning.\",\n    \"languages\": [\"my\", \"en\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster; Encyclopaedia Britannica\",\n    \"confidence\": 0.78\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + da + lay; man = human, da = give/put, lay = lie down / lay down\",\n    \"reading\": \"The human is given to lying down: a figure of surrender, repose, or burial.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.46\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"manda + lay; manda (Sanskrit) = counsel, decree; lay (English) = place, set, arrange\",\n    \"reading\": \"A decree is laid down: law fixed into place.\",\n    \"languages\": [\"sa\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"man + dal + ay; dal (Hindi/Urdu) = pulse, split legume; ay = cry of pain or exclamation\",\n    \"reading\": \"The man is split and cries out: a divided nature under strain.\",\n    \"languages\": [\"en\", \"hi\", \"ur\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.38\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay -> a man, day, al; day = light/time, man = human, al = the\",\n    \"reading\": \"A human day: the measure of mortal life under light.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.33\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M A N D A L A Y -> Mind, Air, Name, Door, Axis, Light, Ash, Yonder\",\n    \"reading\": \"A symbolic ascent: mind opens the door to light and the beyond.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M = waters; A = beginning; N = serpent/fall; D = door; A = beginning; L = staff/ascension; A = beginning; Y = forked path\",\n    \"reading\": \"From waters through the serpent-door to the forked path: initiation by trial.\",\n    \"languages\": [\"en\", \"he\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.29\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Mandalay = 8 letters; 8 = balance, regeneration, the doubled cycle; 8 also reduces to 8\",\n    \"reading\": \"An emblem of equilibrium after turning: the cycle completes and begins again.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.24\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Mandalay < Burmese မန္တလေး (Manda-lay), a place-name; standard lexica treat it as a Burmese toponym of uncertain internal analysis",
+   "reading": "A name whose sense is veiled: the word itself points to a place-name, not a transparent common meaning.",
+   "languages": [
+    "my",
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Merriam-Webster; Encyclopaedia Britannica",
+   "confidence": 0.78
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + da + lay; man = human, da = give/put, lay = lie down / lay down",
+   "reading": "The human is given to lying down: a figure of surrender, repose, or burial.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.46
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "manda + lay; manda (Sanskrit) = counsel, decree; lay (English) = place, set, arrange",
+   "reading": "A decree is laid down: law fixed into place.",
+   "languages": [
+    "sa",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "man + dal + ay; dal (Hindi/Urdu) = pulse, split legume; ay = cry of pain or exclamation",
+   "reading": "The man is split and cries out: a divided nature under strain.",
+   "languages": [
+    "en",
+    "hi",
+    "ur"
+   ],
+   "source": "generative",
+   "confidence": 0.38
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay -> a man, day, al; day = light/time, man = human, al = the",
+   "reading": "A human day: the measure of mortal life under light.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.33
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M A N D A L A Y -> Mind, Air, Name, Door, Axis, Light, Ash, Yonder",
+   "reading": "A symbolic ascent: mind opens the door to light and the beyond.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M = waters; A = beginning; N = serpent/fall; D = door; A = beginning; L = staff/ascension; A = beginning; Y = forked path",
+   "reading": "From waters through the serpent-door to the forked path: initiation by trial.",
+   "languages": [
+    "en",
+    "he",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.29
+  },
+  {
+   "operation": "numerical",
+   "chain": "Mandalay = 8 letters; 8 = balance, regeneration, the doubled cycle; 8 also reduces to 8",
+   "reading": "An emblem of equilibrium after turning: the cycle completes and begins again.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.24
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

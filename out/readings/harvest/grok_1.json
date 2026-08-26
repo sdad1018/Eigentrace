@@ -1,0 +1,152 @@
+{
+ "word": "Harvest",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:19:18+00:00",
+ "latency_s": 7.41,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Old English hærfest = 'autumn'; from Proto-Germanic *harbistaz, from PIE *kerp- 'to gather, pluck, harvest'\",\n    \"reading\": \"the act of gathering or plucking what is ripe; season of reaping\",\n    \"languages\": [\"en\",\"gem\",\"ine\"],\n    \"source\": \"Oxford English Dictionary / Pokorny PIE dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Har + vest\",\n    \"reading\": \"the exalted (har) garment/vestment; robe of the accomplished\",\n    \"languages\": [\"en\",\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hare + vest\",\n    \"reading\": \"the hare is vested; the swift messenger now wears the mantle of completion\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Harvest ≈ Har-vest ≈ Ar-vêt (French)\",\n    \"reading\": \"the hour has come; it is finished, the work is accomplished\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.70\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"HARVEST → AVERT SH\",\n    \"reading\": \"avert the serpent / turn aside the shadow before the reaping\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"HARVEST → STAR HEV\",\n    \"reading\": \"the star of Heva/Eve; stellar fruit of the mother is gathered\",\n    \"languages\": [\"en\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"H.A.R.V.E.S.T. → Haut Art Royal Vraiment Esotérique Sous Terre\",\n    \"reading\": \"the royal high art truly esoteric that lies beneath the earth\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Har-vest → Horus-vest\",\n    \"reading\": \"the falcon is vested; the heir receives the mantle of kingship\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"H (ladder) + ARV (arcanum) + EST (is)\",\n    \"reading\": \"the ladder of the mystery truly exists at the time of reaping\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.40\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Harvest ≈ Herbst (German)\",\n    \"reading\": \"the fall; that which falls and is gathered in the season of judgment\",\n    \"languages\": [\"en\",\"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Middle English hervest; Old Norse haust = 'autumn'\",\n    \"reading\": \"the time when what has been sown reaches its term and is taken\",\n    \"languages\": [\"en\",\"non\"],\n    \"source\": \"Bosworth-Toller Anglo-Saxon Dictionary\",\n    \"confidence\": 0.90\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Har-vest → Ar-vêt (ar + vêtu)\",\n    \"reading\": \"the eagle is clothed; the solar principle now wears the harvest body\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Old English hærfest = 'autumn'; from Proto-Germanic *harbistaz, from PIE *kerp- 'to gather, pluck, harvest'",
+   "reading": "the act of gathering or plucking what is ripe; season of reaping",
+   "languages": [
+    "en",
+    "gem",
+    "ine"
+   ],
+   "source": "Oxford English Dictionary / Pokorny PIE dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Har + vest",
+   "reading": "the exalted (har) garment/vestment; robe of the accomplished",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hare + vest",
+   "reading": "the hare is vested; the swift messenger now wears the mantle of completion",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Harvest ≈ Har-vest ≈ Ar-vêt (French)",
+   "reading": "the hour has come; it is finished, the work is accomplished",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "HARVEST → AVERT SH",
+   "reading": "avert the serpent / turn aside the shadow before the reaping",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "HARVEST → STAR HEV",
+   "reading": "the star of Heva/Eve; stellar fruit of the mother is gathered",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "H.A.R.V.E.S.T. → Haut Art Royal Vraiment Esotérique Sous Terre",
+   "reading": "the royal high art truly esoteric that lies beneath the earth",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Har-vest → Horus-vest",
+   "reading": "the falcon is vested; the heir receives the mantle of kingship",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "H (ladder) + ARV (arcanum) + EST (is)",
+   "reading": "the ladder of the mystery truly exists at the time of reaping",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Harvest ≈ Herbst (German)",
+   "reading": "the fall; that which falls and is gathered in the season of judgment",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "Middle English hervest; Old Norse haust = 'autumn'",
+   "reading": "the time when what has been sown reaches its term and is taken",
+   "languages": [
+    "en",
+    "non"
+   ],
+   "source": "Bosworth-Toller Anglo-Saxon Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Har-vest → Ar-vêt (ar + vêtu)",
+   "reading": "the eagle is clothed; the solar principle now wears the harvest body",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

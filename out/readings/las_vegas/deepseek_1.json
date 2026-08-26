@@ -1,0 +1,106 @@
+{
+ "word": "Las Vegas",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:59+00:00",
+ "latency_s": 9.26,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las Vegas; Spanish 'las vegas' = the meadows; vega from Iberian/Romance *vāica, cognate with Basque ibai (river) and Latin vāgīna (sheath, scabbard)\",\n    \"reading\": \"The fertile watered plain, a sheath of green in the desert\",\n    \"languages\": [\"es\", \"la\", \"eu\"],\n    \"source\": \"Diccionario de la lengua española (RAE), s.v. vega\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las + Vegas; 'las' (Fr. las = weary) + 'vegas' (Fr. vagues = waves, or vegas as 'vague' = hollow); las vagues = the tired waves\",\n    \"reading\": \"Weary waves that lap against a hollow, a mirage of rest\",\n    \"languages\": [\"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas ~ 'la svegli' (Italian svegli = awaken, imperative) ~ 'l'asvegas' (Greek asphēgos = unshaded, exposed)\",\n    \"reading\": \"Awaken to the unshaded glare, a call to vigilance in the open\",\n    \"languages\": [\"it\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas → 'gale svas' (Old Norse gale = chant, svas = kin) → 'vase glas' (Dutch vase, glass)\",\n    \"reading\": \"A glass vessel for chanting kin, a fragile echo of lineage\",\n    \"languages\": [\"non\", \"nl\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L.V. → Latin 'locus veritatis' (place of truth) or 'lumen vitae' (light of life); also 'levis vanitas' (light vanity)\",\n    \"reading\": \"A place of truth that is but light vanity, a shimmering lie\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L = 50 (Roman), V = 5, S = 7 (Hebrew shin, fire) → 50 + 5 + 7 = 62; 62 = 'sine' (without) + 'duo' (two) in Latin\",\n    \"reading\": \"Fifty and five and fire, without duality — a singular blaze\",\n    \"languages\": [\"la\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Las Vegas: L=30, A=1, S=19, V=22, E=5, G=7, A=1, S=19 (A1Z26) → sum = 104; 104 = 8×13, 8 = infinity, 13 = death/rebirth\",\n    \"reading\": \"Infinity times death, a cycle of endless renewal in the dust\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Vegas from Latin 'vāgīna' (sheath, scabbard); also 'vāgīre' (to cry, wail) — the meadow as a sheath that cries\",\n    \"reading\": \"The scabbard that wails, a hollow that emits sound\",\n    \"languages\": [\"la\"],\n    \"source\": \"Lewis & Short, Latin Dictionary, s.v. vāgīna\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Las Vegas; Spanish 'las vegas' = the meadows; vega from Iberian/Romance *vāica, cognate with Basque ibai (river) and Latin vāgīna (sheath, scabbard)",
+   "reading": "The fertile watered plain, a sheath of green in the desert",
+   "languages": [
+    "es",
+    "la",
+    "eu"
+   ],
+   "source": "Diccionario de la lengua española (RAE), s.v. vega",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Vegas; 'las' (Fr. las = weary) + 'vegas' (Fr. vagues = waves, or vegas as 'vague' = hollow); las vagues = the tired waves",
+   "reading": "Weary waves that lap against a hollow, a mirage of rest",
+   "languages": [
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas ~ 'la svegli' (Italian svegli = awaken, imperative) ~ 'l'asvegas' (Greek asphēgos = unshaded, exposed)",
+   "reading": "Awaken to the unshaded glare, a call to vigilance in the open",
+   "languages": [
+    "it",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas → 'gale svas' (Old Norse gale = chant, svas = kin) → 'vase glas' (Dutch vase, glass)",
+   "reading": "A glass vessel for chanting kin, a fragile echo of lineage",
+   "languages": [
+    "non",
+    "nl"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L.V. → Latin 'locus veritatis' (place of truth) or 'lumen vitae' (light of life); also 'levis vanitas' (light vanity)",
+   "reading": "A place of truth that is but light vanity, a shimmering lie",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L = 50 (Roman), V = 5, S = 7 (Hebrew shin, fire) → 50 + 5 + 7 = 62; 62 = 'sine' (without) + 'duo' (two) in Latin",
+   "reading": "Fifty and five and fire, without duality — a singular blaze",
+   "languages": [
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "Las Vegas: L=30, A=1, S=19, V=22, E=5, G=7, A=1, S=19 (A1Z26) → sum = 104; 104 = 8×13, 8 = infinity, 13 = death/rebirth",
+   "reading": "Infinity times death, a cycle of endless renewal in the dust",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Vegas from Latin 'vāgīna' (sheath, scabbard); also 'vāgīre' (to cry, wail) — the meadow as a sheath that cries",
+   "reading": "The scabbard that wails, a hollow that emits sound",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis & Short, Latin Dictionary, s.v. vāgīna",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

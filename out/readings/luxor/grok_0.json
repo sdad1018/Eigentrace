@@ -1,0 +1,133 @@
+{
+ "word": "Luxor",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:32+00:00",
+ "latency_s": 5.48,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"etymology\",\"chain\":\"Luxor ← Arabic al-Uqṣur (الأقصر) ← Latin castra (military camp)\",\"reading\":\"The camps; the fortified place; the legion's quarters\",\"languages\":[\"ar\",\"la\",\"en\"],\"source\":\"Oxford English Dictionary; Lane's Arabic-English Lexicon\",\"confidence\":0.85},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Lux-or\",\"reading\":\"Light of gold; the golden light\",\"languages\":[\"en\",\"la\",\"fr\"],\"source\":\"generative\",\"confidence\":0.75},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Luks-or\",\"reading\":\"Locks the gold; the one who seals the solar light\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Luxor ≈ Luxor (French: l’uxor) ≈ l’uxor ≈ leux or\",\"reading\":\"The place of the other gold; the false or hidden gold\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Luxor ≈ Lucsor (Latin: lucere + soror)\",\"reading\":\"The shining sister; the luminous sibling of the sun\",\"languages\":[\"la\",\"en\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"anagram\",\"chain\":\"Luxor = LUX + OR\",\"reading\":\"Light and gold together; the marriage of radiance and metal\",\"languages\":[\"en\",\"la\",\"fr\"],\"source\":\"generative\",\"confidence\":0.8},\n  {\"operation\":\"notariqon\",\"chain\":\"LUXOR ← Lux (light) + Uxor (wife in Latin)\",\"reading\":\"The wife of Light; the bride of the solar principle\",\"languages\":[\"la\",\"en\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"letter_symbol\",\"chain\":\"L=30 (Hebrew lamed), UXOR= Latin uxor (wife)\",\"reading\":\"The thirtieth wife; the lunar bride completing the solar cycle\",\"languages\":[\"he\",\"la\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"numerical\",\"chain\":\"L=50 (Roman), UXOR gematria sum yields solar values\",\"reading\":\"The fiftieth station of solar gold; the completion point\",\"languages\":[\"la\",\"en\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Lux-or ≈ Luxor ≈ l’ux or (French)\",\"reading\":\"The hour of light; the precise moment when gold appears\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.7}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Luxor ← Arabic al-Uqṣur (الأقصر) ← Latin castra (military camp)",
+   "reading": "The camps; the fortified place; the legion's quarters",
+   "languages": [
+    "ar",
+    "la",
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Lane's Arabic-English Lexicon",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lux-or",
+   "reading": "Light of gold; the golden light",
+   "languages": [
+    "en",
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Luks-or",
+   "reading": "Locks the gold; the one who seals the solar light",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Luxor ≈ Luxor (French: l’uxor) ≈ l’uxor ≈ leux or",
+   "reading": "The place of the other gold; the false or hidden gold",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Luxor ≈ Lucsor (Latin: lucere + soror)",
+   "reading": "The shining sister; the luminous sibling of the sun",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "Luxor = LUX + OR",
+   "reading": "Light and gold together; the marriage of radiance and metal",
+   "languages": [
+    "en",
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "notariqon",
+   "chain": "LUXOR ← Lux (light) + Uxor (wife in Latin)",
+   "reading": "The wife of Light; the bride of the solar principle",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L=30 (Hebrew lamed), UXOR= Latin uxor (wife)",
+   "reading": "The thirtieth wife; the lunar bride completing the solar cycle",
+   "languages": [
+    "he",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "L=50 (Roman), UXOR gematria sum yields solar values",
+   "reading": "The fiftieth station of solar gold; the completion point",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lux-or ≈ Luxor ≈ l’ux or (French)",
+   "reading": "The hour of light; the precise moment when gold appears",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

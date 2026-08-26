@@ -1,0 +1,120 @@
+{
+ "word": "Bataclan",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:59:00+00:00",
+ "latency_s": 26.41,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bataclan (French) < Offenbach's operetta 'Ba-ta-clan' (1855) < onomatopoeic, evocative of noisy, chaotic spectacle\",\n    \"reading\": \"A boisterous, chaotic, and exotic spectacle, full of noise and commotion.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"TLFi (Trésor de la langue française informatisé)\",\n    \"confidence\": 1\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba (French: bas = low) + ta (French: tas = heap/pile) + clan (French: clan)\",\n    \"reading\": \"A low heap of a clan; a humble gathering of kin.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba (French: bâtât = he built, past simple of bâtir) + ta (French: ta = your) + clan (French: clan)\",\n    \"reading\": \"He built your clan; a foundation laid for your lineage.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bata (French: bataille = battle, struggle) + clan (French: clan)\",\n    \"reading\": \"The clan's struggle; a battle for the community or tribe.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Ba (Hebrew: בָּא = came) + Ta (Hebrew: תָּא = cell, compartment)\",\n    \"reading\": \"He came to the cell; a visitation to a confined space or inner chamber.\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bat (English: a club or stick) + a + clan (English: a group of families)\",\n    \"reading\": \"The club of the clan; an instrument of unity or conflict for the family group.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Battle (English: a fight or conflict, phonetically similar to 'Bata') + clan (English: a group of families)\",\n    \"reading\": \"The clan's battle; a collective struggle or conflict endured by a tribal group.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bata (French: patte à = paw to, leg to) + clan (French: clan)\",\n    \"reading\": \"The paw to the clan; a primal connection or animalistic support for the community.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"CABAL (conspiracy) + ANT (insect) from letters of BATACLAN\",\n    \"reading\": \"An industrious, small conspiracy; a hidden group working secretly on a plan.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B (Baptême) + A (Atlante) + T (Ténèbre) + A (Arcane) + C (Cœur) + L (Lie) + A (Âme) + N (Nuit)\",\n    \"reading\": \"The Atlantean baptism of darkness; an arcane heart binds the soul of night.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Bataclan (French) < Offenbach's operetta 'Ba-ta-clan' (1855) < onomatopoeic, evocative of noisy, chaotic spectacle",
+   "reading": "A boisterous, chaotic, and exotic spectacle, full of noise and commotion.",
+   "languages": [
+    "fr"
+   ],
+   "source": "TLFi (Trésor de la langue française informatisé)",
+   "confidence": 1
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba (French: bas = low) + ta (French: tas = heap/pile) + clan (French: clan)",
+   "reading": "A low heap of a clan; a humble gathering of kin.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba (French: bâtât = he built, past simple of bâtir) + ta (French: ta = your) + clan (French: clan)",
+   "reading": "He built your clan; a foundation laid for your lineage.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bata (French: bataille = battle, struggle) + clan (French: clan)",
+   "reading": "The clan's struggle; a battle for the community or tribe.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Ba (Hebrew: בָּא = came) + Ta (Hebrew: תָּא = cell, compartment)",
+   "reading": "He came to the cell; a visitation to a confined space or inner chamber.",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bat (English: a club or stick) + a + clan (English: a group of families)",
+   "reading": "The club of the clan; an instrument of unity or conflict for the family group.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Battle (English: a fight or conflict, phonetically similar to 'Bata') + clan (English: a group of families)",
+   "reading": "The clan's battle; a collective struggle or conflict endured by a tribal group.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bata (French: patte à = paw to, leg to) + clan (French: clan)",
+   "reading": "The paw to the clan; a primal connection or animalistic support for the community.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "CABAL (conspiracy) + ANT (insect) from letters of BATACLAN",
+   "reading": "An industrious, small conspiracy; a hidden group working secretly on a plan.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B (Baptême) + A (Atlante) + T (Ténèbre) + A (Arcane) + C (Cœur) + L (Lie) + A (Âme) + N (Nuit)",
+   "reading": "The Atlantean baptism of darkness; an arcane heart binds the soul of night.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

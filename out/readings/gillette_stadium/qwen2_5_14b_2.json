@@ -1,0 +1,82 @@
+{
+ "word": "Gillette Stadium",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T00:36:55+00:00",
+ "latency_s": 203.76,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"Gillette / Stadium\",\"reading\":\"Sharp blade meets grand arena of sound.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.8},{\"operation\":\"cross_language_homophone\",\"chain\":\"Gillette (English) / Gilette (French)\",\"reading\":\"Coat or vest of protection, akin to a shield.\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.75},{\"operation\":\"anagram\",\"chain\":\"Stadium Gillette\",\"reading\":\"Madium state; the average condition.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"etymology\",\"chain\":\"Gillette (English) / gileta (Italian)\",\"reading\":\"A small coat or vest, protective and close-fitting.\",\"languages\":[\"en\",\"it\"],\"source\":\"Oxford English Dictionary\",\"confidence\":0.9},{\"operation\":\"phonetic_split\",\"chain\":\"Stadium / Gillette\",\"reading\":\"Place of games meets sharp edge; conflict in a grand setting.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.75},{\"operation\":\"letter_symbol\",\"chain\":\"Gillette Stadium\",\"reading\":\"Letters G and S form the initials for 'game' and 'sport', symbolizing competition.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.65}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Gillette / Stadium",
+   "reading": "Sharp blade meets grand arena of sound.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gillette (English) / Gilette (French)",
+   "reading": "Coat or vest of protection, akin to a shield.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "Stadium Gillette",
+   "reading": "Madium state; the average condition.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Gillette (English) / gileta (Italian)",
+   "reading": "A small coat or vest, protective and close-fitting.",
+   "languages": [
+    "en",
+    "it"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Stadium / Gillette",
+   "reading": "Place of games meets sharp edge; conflict in a grand setting.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Gillette Stadium",
+   "reading": "Letters G and S form the initials for 'game' and 'sport', symbolizing competition.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

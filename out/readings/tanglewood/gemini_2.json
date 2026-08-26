@@ -1,0 +1,103 @@
+{
+ "word": "Tanglewood",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:26:51+00:00",
+ "latency_s": 21.25,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Tangle (confused mass) + wood (material from trees)\",\n    \"reading\": \"A confused, intertwined mass of tree or forest material, forming a natural labyrinth.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Tangle (Late Middle English) from Old Norse 'þang' (seaweed) + 'elgja' (to entangle)\",\n    \"reading\": \"Originating from the concept of entangled seaweed, suggesting a state of natural knotting or intricate weaving.\",\n    \"languages\": [\"en\", \"non\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Tan (English) sounds like French 'tant' (so much); 'gle' (English) sounds like French 'gel' (frost, ice); 'wood' (English)\",\n    \"reading\": \"Reveals 'so much frost wood', implying wood preserved, hardened, or shaped by intense cold.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"'Tangle' sounds like French 'temps gueule' (time's maw/mouth); 'wood' sounds like French 'houx' (holly)\",\n    \"reading\": \"The 'maw of time' combined with the sacred and enduring nature of holly wood.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"T=Tree, A=And, N=Nature's, G=Green, L=Life's, E=Everlasting, W=Wisdom, O=Over, O=Our, D=Destiny\",\n    \"reading\": \"Tree And Nature's Green Life's Everlasting Wisdom Over Our Destiny, a guiding arboreal philosophy.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T as the Tau cross of life; O as the cosmic circle of totality; D as the delta or door, an opening\",\n    \"reading\": \"The upright cross of life (T) guides one through a door (D) towards the infinite cosmic circle (O) of being.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"English Gematria: T(20)+A(1)+N(14)+G(7)+L(12)+E(5)+W(23)+O(15)+O(15)+D(4) = 116; 1+1+6 = 8\",\n    \"reading\": \"The numerical value 116 reduces to 8, symbolizing balance, cyclical regeneration, and the infinite nature of existence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Tan (to prepare hide or skin) + glen (a narrow valley) + wood (forest)\",\n    \"reading\": \"A narrow valley within the forest, where the ancient craft of preparing hides takes place.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Tangle (confused mass) + wood (material from trees)",
+   "reading": "A confused, intertwined mass of tree or forest material, forming a natural labyrinth.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "etymology",
+   "chain": "Tangle (Late Middle English) from Old Norse 'þang' (seaweed) + 'elgja' (to entangle)",
+   "reading": "Originating from the concept of entangled seaweed, suggesting a state of natural knotting or intricate weaving.",
+   "languages": [
+    "en",
+    "non"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Tan (English) sounds like French 'tant' (so much); 'gle' (English) sounds like French 'gel' (frost, ice); 'wood' (English)",
+   "reading": "Reveals 'so much frost wood', implying wood preserved, hardened, or shaped by intense cold.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "'Tangle' sounds like French 'temps gueule' (time's maw/mouth); 'wood' sounds like French 'houx' (holly)",
+   "reading": "The 'maw of time' combined with the sacred and enduring nature of holly wood.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "notariqon",
+   "chain": "T=Tree, A=And, N=Nature's, G=Green, L=Life's, E=Everlasting, W=Wisdom, O=Over, O=Our, D=Destiny",
+   "reading": "Tree And Nature's Green Life's Everlasting Wisdom Over Our Destiny, a guiding arboreal philosophy.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T as the Tau cross of life; O as the cosmic circle of totality; D as the delta or door, an opening",
+   "reading": "The upright cross of life (T) guides one through a door (D) towards the infinite cosmic circle (O) of being.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "numerical",
+   "chain": "English Gematria: T(20)+A(1)+N(14)+G(7)+L(12)+E(5)+W(23)+O(15)+O(15)+D(4) = 116; 1+1+6 = 8",
+   "reading": "The numerical value 116 reduces to 8, symbolizing balance, cyclical regeneration, and the infinite nature of existence.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Tan (to prepare hide or skin) + glen (a narrow valley) + wood (forest)",
+   "reading": "A narrow valley within the forest, where the ancient craft of preparing hides takes place.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

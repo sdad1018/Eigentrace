@@ -1,0 +1,115 @@
+{
+ "word": "Dangerous Woman",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:27:36+00:00",
+ "latency_s": 6.94,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"danger (Old French dangier, from Latin dominarium, 'power of a lord'); woman (Old English wīfmann, 'female person')\",\n    \"reading\": \"A female under a lord's power; the perilous estate of the feminine subject.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"ang\"],\n    \"source\": \"OED, s.v. danger, woman\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"dan + ger + ous + wo + man; dan (Hebrew 'judge') + ger (French 'war') + ous (Latin -osus) + wo (Chinese 'I/me') + man\",\n    \"reading\": \"The judge of war is the self-made person; danger is the self's own verdict.\",\n    \"languages\": [\"en\", \"he\", \"fr\", \"la\", \"zh\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"dangerous (en) ~ dan gerous (fr 'gift' + 'to bear') ~ woman (en) ~ woe + man (en)\",\n    \"reading\": \"Gift-bearing woe; the woman as carrier of both peril and offering.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Dangerous Woman -> 'A woman's gourd' + 'en' (French 'in') + 'us' (Latin 'we')\",\n    \"reading\": \"The gourd of woman — vessel of hidden seed — in us, we are the danger.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"D.W. -> Domina (lady) + Voluntas (will) + Mulier (woman) + Aeterna (eternal) + Nox (night)\",\n    \"reading\": \"The lady's will is the eternal night-woman; danger is her sovereign darkness.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"D (delta, change) + W (double-u, twin V's, vulva) + M (mountain, mater) + N (nun, fish)\",\n    \"reading\": \"Change through the twin gates of the mother; the fish of the deep rises as peril.\",\n    \"languages\": [\"en\", \"grc\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"D=4, A=1, N=14, G=7, E=5, R=18, O=15, U=21, S=19, W=23, O=15, M=13, A=1, N=14; sum = 170; 1+7+0=8\",\n    \"reading\": \"Eight — the number of renewal and infinity; the dangerous woman is the eternal return.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"woman (Old English wīfmann) -> wīf (wife) + mann (person); dangerous (from dangier, 'power to harm')\",\n    \"reading\": \"The wife-person holds the lord's power; her harm is the inversion of mastery.\",\n    \"languages\": [\"en\", \"ang\", \"fr\"],\n    \"source\": \"OED, s.v. woman, danger\",\n    \"confidence\": 0.8\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "danger (Old French dangier, from Latin dominarium, 'power of a lord'); woman (Old English wīfmann, 'female person')",
+   "reading": "A female under a lord's power; the perilous estate of the feminine subject.",
+   "languages": [
+    "en",
+    "fr",
+    "la",
+    "ang"
+   ],
+   "source": "OED, s.v. danger, woman",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "dan + ger + ous + wo + man; dan (Hebrew 'judge') + ger (French 'war') + ous (Latin -osus) + wo (Chinese 'I/me') + man",
+   "reading": "The judge of war is the self-made person; danger is the self's own verdict.",
+   "languages": [
+    "en",
+    "he",
+    "fr",
+    "la",
+    "zh"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "dangerous (en) ~ dan gerous (fr 'gift' + 'to bear') ~ woman (en) ~ woe + man (en)",
+   "reading": "Gift-bearing woe; the woman as carrier of both peril and offering.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Dangerous Woman -> 'A woman's gourd' + 'en' (French 'in') + 'us' (Latin 'we')",
+   "reading": "The gourd of woman — vessel of hidden seed — in us, we are the danger.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "notariqon",
+   "chain": "D.W. -> Domina (lady) + Voluntas (will) + Mulier (woman) + Aeterna (eternal) + Nox (night)",
+   "reading": "The lady's will is the eternal night-woman; danger is her sovereign darkness.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "D (delta, change) + W (double-u, twin V's, vulva) + M (mountain, mater) + N (nun, fish)",
+   "reading": "Change through the twin gates of the mother; the fish of the deep rises as peril.",
+   "languages": [
+    "en",
+    "grc",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "numerical",
+   "chain": "D=4, A=1, N=14, G=7, E=5, R=18, O=15, U=21, S=19, W=23, O=15, M=13, A=1, N=14; sum = 170; 1+7+0=8",
+   "reading": "Eight — the number of renewal and infinity; the dangerous woman is the eternal return.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "etymology",
+   "chain": "woman (Old English wīfmann) -> wīf (wife) + mann (person); dangerous (from dangier, 'power to harm')",
+   "reading": "The wife-person holds the lord's power; her harm is the inversion of mastery.",
+   "languages": [
+    "en",
+    "ang",
+    "fr"
+   ],
+   "source": "OED, s.v. woman, danger",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

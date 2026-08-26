@@ -1,0 +1,81 @@
+{
+ "word": "Fenway",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T00:56:09+00:00",
+ "latency_s": 14.71,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n    {\"operation\": \"phonetic_split\", \"chain\": \"fen + way\", \"reading\": \"water path or road\", \"languages\": [\"generative\"], \"source\": \"generative\", \"confidence\": 0.7},\n    {\"operation\": \"cross_language_homophone\", \"chain\": \"fane (Old French)\", \"reading\": \"shrine, sanctuary\", \"languages\": [\"en\",\"fr\"], \"source\": \"Middle English Dictionary\", \"confidence\": 0.85},\n    {\"operation\": \"anagram\", \"chain\": \"wefanay\", \"reading\": \"we fan away; to disperse or dissipate\", \"languages\": [\"generative\"], \"source\": \"generative\", \"confidence\": 0.6},\n    {\"operation\": \"etymology\", \"chain\": \"fen + way\", \"reading\": \"marsh road, path through a wetland area\", \"languages\": [\"en\"], \"source\": \"Oxford English Dictionary\", \"confidence\": 0.9},\n    {\"operation\": \"letter_symbol\", \"chain\": \"FENWAY\", \"reading\": \"first and last letters symbolize beginning and end; middle represents a journey between two extremes\", \"languages\": [\"generative\"], \"source\": \"generative\", \"confidence\": 0.5},\n    {\"operation\": \"notariqon\", \"chain\": \"First End Near Way\", \"reading\": \"path to the final destination is near, nearing an end\", \"languages\": [\"generative\"], \"source\": \"generative\", \"confidence\": 0.7}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "fen + way",
+   "reading": "water path or road",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "fane (Old French)",
+   "reading": "shrine, sanctuary",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Middle English Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "anagram",
+   "chain": "wefanay",
+   "reading": "we fan away; to disperse or dissipate",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "fen + way",
+   "reading": "marsh road, path through a wetland area",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "FENWAY",
+   "reading": "first and last letters symbolize beginning and end; middle represents a journey between two extremes",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "First End Near Way",
+   "reading": "path to the final destination is near, nearing an end",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

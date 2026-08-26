@@ -1,0 +1,107 @@
+{
+ "word": "Las Vegas Village",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:18:40+00:00",
+ "latency_s": 5.54,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las + Vegas + Village; las ≈ \\\"là\\\" (fr) = there; vegas ≈ \\\"vegas\\\" → vague / vagues (fr) = waves, vagueness; village = small dwelling-place\",\n    \"reading\": \"There, the vague waves gather into a small inhabited enclosure: a place of shifting signs and clustered shelters.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.78\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las ≈ \\\"less\\\" (en) / \\\"là\\\" (fr); Vegas ≈ vague(s) (fr); Village ≈ village (fr/en) but also \\\"vil\\\" + \\\"age\\\"\",\n    \"reading\": \"Less vagueness in the village: a reduced, bounded space where uncertainty is domesticated.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.63\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"village < Anglo-French village, from Latin villa \\\"country house, farm\\\"; -age forms a place or collective noun\",\n    \"reading\": \"A settlement gathered around a house or estate: the inhabited remainder of a larger domain.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster; Trésor de la langue française\",\n    \"confidence\": 0.96\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las < Spanish las, feminine plural article from Latin illae; Vegas < Spanish vegas, plural of vega \\\"fertile plain, meadow\\\"\",\n    \"reading\": \"The meadows: a plural field of fertility, openness, and lowland abundance.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"Real Academia Española; Diccionario crítico etimológico castellano e hispánico\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"LAS VEGAS VILLAGE → VAGUE VILLAS + LAS; also VILLAGE + VEGAS + LAS rearranges toward VAGUE / VILLA / AGE\",\n    \"reading\": \"A cluster of villas made vague by age: architecture blurred into atmosphere.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L-V-V: Las / Vegas / Village → L = light, V = veil / valley / villa; repeated V marks enclosure and descent\",\n    \"reading\": \"Light enters a veiled valley-villa: a sign of enclosed illumination and hidden habitation.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.42\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L as angle or threshold; V as cup, valley, or descent; repeated V-V suggests a double hollow; final G as gate\",\n    \"reading\": \"A threshold descending into two hollows, ending at a gate: entry into a contained interior.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"LAS VEGAS VILLAGE: count letters by word = 3 + 5 + 7; 3-5-7 forms a rising sequence toward completion\",\n    \"reading\": \"An ascending triad of measures: three, five, seven—order growing from simple to perfected enclosure.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.36\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Vegas + Village; las ≈ \"là\" (fr) = there; vegas ≈ \"vegas\" → vague / vagues (fr) = waves, vagueness; village = small dwelling-place",
+   "reading": "There, the vague waves gather into a small inhabited enclosure: a place of shifting signs and clustered shelters.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.78
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las ≈ \"less\" (en) / \"là\" (fr); Vegas ≈ vague(s) (fr); Village ≈ village (fr/en) but also \"vil\" + \"age\"",
+   "reading": "Less vagueness in the village: a reduced, bounded space where uncertainty is domesticated.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.63
+  },
+  {
+   "operation": "etymology",
+   "chain": "village < Anglo-French village, from Latin villa \"country house, farm\"; -age forms a place or collective noun",
+   "reading": "A settlement gathered around a house or estate: the inhabited remainder of a larger domain.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Oxford English Dictionary; Merriam-Webster; Trésor de la langue française",
+   "confidence": 0.96
+  },
+  {
+   "operation": "etymology",
+   "chain": "Las < Spanish las, feminine plural article from Latin illae; Vegas < Spanish vegas, plural of vega \"fertile plain, meadow\"",
+   "reading": "The meadows: a plural field of fertility, openness, and lowland abundance.",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "Real Academia Española; Diccionario crítico etimológico castellano e hispánico",
+   "confidence": 0.95
+  },
+  {
+   "operation": "anagram",
+   "chain": "LAS VEGAS VILLAGE → VAGUE VILLAS + LAS; also VILLAGE + VEGAS + LAS rearranges toward VAGUE / VILLA / AGE",
+   "reading": "A cluster of villas made vague by age: architecture blurred into atmosphere.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L-V-V: Las / Vegas / Village → L = light, V = veil / valley / villa; repeated V marks enclosure and descent",
+   "reading": "Light enters a veiled valley-villa: a sign of enclosed illumination and hidden habitation.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.42
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L as angle or threshold; V as cup, valley, or descent; repeated V-V suggests a double hollow; final G as gate",
+   "reading": "A threshold descending into two hollows, ending at a gate: entry into a contained interior.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.48
+  },
+  {
+   "operation": "numerical",
+   "chain": "LAS VEGAS VILLAGE: count letters by word = 3 + 5 + 7; 3-5-7 forms a rising sequence toward completion",
+   "reading": "An ascending triad of measures: three, five, seven—order growing from simple to perfected enclosure.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.36
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

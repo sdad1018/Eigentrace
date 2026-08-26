@@ -1,0 +1,134 @@
+{
+ "word": "Great Exuma",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:25:29+00:00",
+ "latency_s": 6.62,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"phonetic_split\",\"chain\":\"Great + Ex + Uma\",\"reading\":\"The great outpouring or emergence of the primordial feminine principle\",\"languages\":[\"en\",\"la\",\"san\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Grate + Ex + Hum + Ah\",\"reading\":\"The grating exit of the breath of life that produces the sigh of awe\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Great Exuma → Gré ex-huma\",\"reading\":\"The great one who exhumes or brings forth from the earth what was hidden\",\"languages\":[\"en\",\"fr\",\"la\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"etymology\",\"chain\":\"Exuma from Greek ἐξ- (ex-) + humus (Latin, earth)\",\"reading\":\"That which comes out of or stands out from the fertile ground\",\"languages\":[\"en\",\"grc\",\"la\"],\"source\":\"Lewis & Short Latin Dictionary; Liddell-Scott Greek Lexicon\",\"confidence\":0.8},\n  {\"operation\":\"anagram\",\"chain\":\"GREAT EXUMA → MEGA TRUE AX\",\"reading\":\"The great true axis or pivotal axis of immense power\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Great + Eggs + Hum + Ah\",\"reading\":\"The sublime sacred sigh that accompanies the cosmic eggs of creation\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Great Exuma → Graal Tekh Uma\",\"reading\":\"The Grail of the divine feminine craft or sacred womb-work\",\"languages\":[\"en\",\"fr\",\"ar\",\"san\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"notariqon\",\"chain\":\"G.R.E.A.T.E.X.U.M.A. → Generatrix Emerit Universalis Mater Arcana\",\"reading\":\"The universal emeritus mother who is the secret generatrix of all\",\"languages\":[\"la\"],\"source\":\"generative\",\"confidence\":0.4},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Great + Ex + Humus + A\",\"reading\":\"The great departure from the primal earth-matter into manifested form\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"letter_symbol\",\"chain\":\"G (gamma = generation) + EX (former state) + UMA (Sanskrit mother)\",\"reading\":\"Generation leaves the old state through the great mother\",\"languages\":[\"en\",\"grc\",\"san\"],\"source\":\"generative\",\"confidence\":0.55}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Great + Ex + Uma",
+   "reading": "The great outpouring or emergence of the primordial feminine principle",
+   "languages": [
+    "en",
+    "la",
+    "san"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Grate + Ex + Hum + Ah",
+   "reading": "The grating exit of the breath of life that produces the sigh of awe",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Great Exuma → Gré ex-huma",
+   "reading": "The great one who exhumes or brings forth from the earth what was hidden",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Exuma from Greek ἐξ- (ex-) + humus (Latin, earth)",
+   "reading": "That which comes out of or stands out from the fertile ground",
+   "languages": [
+    "en",
+    "grc",
+    "la"
+   ],
+   "source": "Lewis & Short Latin Dictionary; Liddell-Scott Greek Lexicon",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "GREAT EXUMA → MEGA TRUE AX",
+   "reading": "The great true axis or pivotal axis of immense power",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Great + Eggs + Hum + Ah",
+   "reading": "The sublime sacred sigh that accompanies the cosmic eggs of creation",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Great Exuma → Graal Tekh Uma",
+   "reading": "The Grail of the divine feminine craft or sacred womb-work",
+   "languages": [
+    "en",
+    "fr",
+    "ar",
+    "san"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "G.R.E.A.T.E.X.U.M.A. → Generatrix Emerit Universalis Mater Arcana",
+   "reading": "The universal emeritus mother who is the secret generatrix of all",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Great + Ex + Humus + A",
+   "reading": "The great departure from the primal earth-matter into manifested form",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G (gamma = generation) + EX (former state) + UMA (Sanskrit mother)",
+   "reading": "Generation leaves the old state through the great mother",
+   "languages": [
+    "en",
+    "grc",
+    "san"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

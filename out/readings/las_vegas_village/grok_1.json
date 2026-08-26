@@ -1,0 +1,134 @@
+{
+ "word": "Las Vegas Village",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:19:38+00:00",
+ "latency_s": 6.16,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las + Vegas + Village\",\n    \"reading\": \"the snare, the hunt, the village of the caught\",\n    \"languages\": [\"fr\",\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las (Old Occitan) = the; Vegas (Latin villas, plural of villa = country house, village)\",\n    \"reading\": \"the country houses, the villages\",\n    \"languages\": [\"oc\",\"la\",\"en\"],\n    \"source\": \"Oxford English Dictionary / Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lasvegasville + age\",\n    \"reading\": \"the age when the village becomes the vice\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas = la sve gas (Italian/Spanish); Village = vil age\",\n    \"reading\": \"the gas of the dream, the vile age\",\n    \"languages\": [\"it\",\"es\",\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Village = all savage evils\",\n    \"reading\": \"all savage evils gathered in one place\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L.V.V. → Lux Vera Vincit\",\n    \"reading\": \"the true light conquers (ironic reversal in the place of false lights)\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las = lace/lasso (fr); Vegas = vega = fertile plain (Spanish); Village\",\n    \"reading\": \"the snare upon the fertile plain of the village\",\n    \"languages\": [\"fr\",\"es\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V = victory or Venus; Las Vegas Village = the village of Venus's victory\",\n    \"reading\": \"the village where the star of desire triumphs\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Village (Old French) from Latin villaticum = pertaining to a villa\",\n    \"reading\": \"pertaining to the country estate or farmstead\",\n    \"languages\": [\"fr\",\"la\",\"en\"],\n    \"source\": \"Etymonline / Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas Village ≈ l'as ve gas vil age (French reading)\",\n    \"reading\": \"the ace sees the vile gas of the age\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Vegas + Village",
+   "reading": "the snare, the hunt, the village of the caught",
+   "languages": [
+    "fr",
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "Las (Old Occitan) = the; Vegas (Latin villas, plural of villa = country house, village)",
+   "reading": "the country houses, the villages",
+   "languages": [
+    "oc",
+    "la",
+    "en"
+   ],
+   "source": "Oxford English Dictionary / Lewis & Short Latin Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lasvegasville + age",
+   "reading": "the age when the village becomes the vice",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas = la sve gas (Italian/Spanish); Village = vil age",
+   "reading": "the gas of the dream, the vile age",
+   "languages": [
+    "it",
+    "es",
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Village = all savage evils",
+   "reading": "all savage evils gathered in one place",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L.V.V. → Lux Vera Vincit",
+   "reading": "the true light conquers (ironic reversal in the place of false lights)",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las = lace/lasso (fr); Vegas = vega = fertile plain (Spanish); Village",
+   "reading": "the snare upon the fertile plain of the village",
+   "languages": [
+    "fr",
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V = victory or Venus; Las Vegas Village = the village of Venus's victory",
+   "reading": "the village where the star of desire triumphs",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Village (Old French) from Latin villaticum = pertaining to a villa",
+   "reading": "pertaining to the country estate or farmstead",
+   "languages": [
+    "fr",
+    "la",
+    "en"
+   ],
+   "source": "Etymonline / Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas Village ≈ l'as ve gas vil age (French reading)",
+   "reading": "the ace sees the vile gas of the age",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

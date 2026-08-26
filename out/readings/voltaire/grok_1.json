@@ -1,0 +1,129 @@
+{
+ "word": "Voltaire",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:28:21+00:00",
+ "latency_s": 7.0,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vol + taire\",\n    \"reading\": \"Flight to the earth; he who steals away into the ground\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"voltaire ← voltaire (French surname) ← volt (archaic) + aire; but from Latin volvere\",\n    \"reading\": \"The turning one, the roller, he who revolves or unrolls\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"Oxford English Dictionary / Dictionnaire étymologique de la langue française\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Voltaire ≈ vol terre\",\n    \"reading\": \"Flying earth; the earth that flies or the theft of earth\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vau + l + terre (occitan/latin)\",\n    \"reading\": \"The hook of the earth; the nail that pins the world\",\n    \"languages\": [\"fr\",\"oc\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Voltaire = V + ol + tare\",\n    \"reading\": \"The old tare, the ancient defect or the old weight of sin\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"V.O.L.T.A.I.R.E.\",\n    \"reading\": \"Vox Orbis Liberabit Terram Ab Igne Rerum Evolutis\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vol + taire (taire = to silence)\",\n    \"reading\": \"The flight into silence; he who flies by keeping silent\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Voltaire ≈ Volt + air (en) / Vol + taire (fr)\",\n    \"reading\": \"The winged silence; flight that speaks without sound\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V (hook, nail) + O (circle, zero, all) + L (lamed, ox-goad) + T (tau, cross) + A.I.R.E.\",\n    \"reading\": \"The nailed circle that goads the cross into the airy kingdom\",\n    \"languages\": [\"he\",\"la\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"voltaire from Latin volitare (frequentative of volare)\",\n    \"reading\": \"The one who flies often, the habitual flyer, the eternal migrant\",\n    \"languages\": [\"la\",\"fr\"],\n    \"source\": \"Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.9\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Vol + taire",
+   "reading": "Flight to the earth; he who steals away into the ground",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "voltaire ← voltaire (French surname) ← volt (archaic) + aire; but from Latin volvere",
+   "reading": "The turning one, the roller, he who revolves or unrolls",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "Oxford English Dictionary / Dictionnaire étymologique de la langue française",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Voltaire ≈ vol terre",
+   "reading": "Flying earth; the earth that flies or the theft of earth",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vau + l + terre (occitan/latin)",
+   "reading": "The hook of the earth; the nail that pins the world",
+   "languages": [
+    "fr",
+    "oc",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Voltaire = V + ol + tare",
+   "reading": "The old tare, the ancient defect or the old weight of sin",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V.O.L.T.A.I.R.E.",
+   "reading": "Vox Orbis Liberabit Terram Ab Igne Rerum Evolutis",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vol + taire (taire = to silence)",
+   "reading": "The flight into silence; he who flies by keeping silent",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Voltaire ≈ Volt + air (en) / Vol + taire (fr)",
+   "reading": "The winged silence; flight that speaks without sound",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V (hook, nail) + O (circle, zero, all) + L (lamed, ox-goad) + T (tau, cross) + A.I.R.E.",
+   "reading": "The nailed circle that goads the cross into the airy kingdom",
+   "languages": [
+    "he",
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "voltaire from Latin volitare (frequentative of volare)",
+   "reading": "The one who flies often, the habitual flyer, the eternal migrant",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "Lewis & Short Latin Dictionary",
+   "confidence": 0.9
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

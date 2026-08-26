@@ -1,0 +1,131 @@
+{
+ "word": "Lollapalooza",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:17:58+00:00",
+ "latency_s": 7.61,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lol-la-pa-loo-za\",\n    \"reading\": \"laughing (lol) the father (pa) of light (loo = lux) in the fire (za = za = braise)\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Loll + a + pal + ooze + a\",\n    \"reading\": \"the lazy one (loll) has a friend (pal) who oozes (secretes) the primordial waters\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Lolla = l'olla (Provencal) = the olla; palooza ≈ palouse (Old French) = straw\",\n    \"reading\": \"the pot of straw; alchemical vessel containing the prima materia\",\n    \"languages\": [\"oc\",\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"loll (ME lollen = to hang loosely) + palooza (from Arabic balūza = sweet jelly)\",\n    \"reading\": \"that which hangs loosely yet is sweet and gelatinous; the viscous Stone\",\n    \"languages\": [\"en\",\"ar\"],\n    \"source\": \"Oxford English Dictionary / Lane's Arabic-English Lexicon\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"LOLLAPALOOZA → ALL OZ ALPHA LO\",\n    \"reading\": \"all of the Oz (strength) of the Alpha Light; totality of primordial radiance\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lo-la-pa-loo-za → Low Law, Pa, Lou, Za\",\n    \"reading\": \"the low law of the Father (Pa) is light (Lou) within the fire (Za)\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L.O.L.L.A.P.A.L.O.O.Z.A. → Lux Occulta Liberat Lapsos; Astra Portant Aurum Lapsum Orienti Zodiaci Arcana\",\n    \"reading\": \"Hidden Light frees the fallen; the stars carry the fallen gold to the Eastern arcana of the Zodiac\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Lolla-palooza ≈ Allah + Pal + Ousâ (Aramaic = save us)\",\n    \"reading\": \"God-friend-save-us; the salvific companion of the divine\",\n    \"languages\": [\"ar\",\"arc\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Double L = LL = Libra Libræ (balance of balances); double A = Alpha-Alpha\",\n    \"reading\": \"the double balance of the double beginning; supreme equilibrium of the primordial\",\n    \"languages\": [\"la\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lol-la-pa-looza ≈ Lol = laugh; la = the (fr); pa = father; loo = look/see (Scots); za = za = rose (Persian)\",\n    \"reading\": \"laugh, the Father sees the rose\",\n    \"languages\": [\"en\",\"fr\",\"sco\",\"fa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Lol-la-pa-loo-za",
+   "reading": "laughing (lol) the father (pa) of light (loo = lux) in the fire (za = za = braise)",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Loll + a + pal + ooze + a",
+   "reading": "the lazy one (loll) has a friend (pal) who oozes (secretes) the primordial waters",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Lolla = l'olla (Provencal) = the olla; palooza ≈ palouse (Old French) = straw",
+   "reading": "the pot of straw; alchemical vessel containing the prima materia",
+   "languages": [
+    "oc",
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "loll (ME lollen = to hang loosely) + palooza (from Arabic balūza = sweet jelly)",
+   "reading": "that which hangs loosely yet is sweet and gelatinous; the viscous Stone",
+   "languages": [
+    "en",
+    "ar"
+   ],
+   "source": "Oxford English Dictionary / Lane's Arabic-English Lexicon",
+   "confidence": 0.4
+  },
+  {
+   "operation": "anagram",
+   "chain": "LOLLAPALOOZA → ALL OZ ALPHA LO",
+   "reading": "all of the Oz (strength) of the Alpha Light; totality of primordial radiance",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lo-la-pa-loo-za → Low Law, Pa, Lou, Za",
+   "reading": "the low law of the Father (Pa) is light (Lou) within the fire (Za)",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L.O.L.L.A.P.A.L.O.O.Z.A. → Lux Occulta Liberat Lapsos; Astra Portant Aurum Lapsum Orienti Zodiaci Arcana",
+   "reading": "Hidden Light frees the fallen; the stars carry the fallen gold to the Eastern arcana of the Zodiac",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Lolla-palooza ≈ Allah + Pal + Ousâ (Aramaic = save us)",
+   "reading": "God-friend-save-us; the salvific companion of the divine",
+   "languages": [
+    "ar",
+    "arc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Double L = LL = Libra Libræ (balance of balances); double A = Alpha-Alpha",
+   "reading": "the double balance of the double beginning; supreme equilibrium of the primordial",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lol-la-pa-looza ≈ Lol = laugh; la = the (fr); pa = father; loo = look/see (Scots); za = za = rose (Persian)",
+   "reading": "laugh, the Father sees the rose",
+   "languages": [
+    "en",
+    "fr",
+    "sco",
+    "fa"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

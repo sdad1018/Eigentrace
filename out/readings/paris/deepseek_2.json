@@ -1,0 +1,110 @@
+{
+ "word": "Paris",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:34:21+00:00",
+ "latency_s": 8.2,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paris < Latin Lutetia Parisiorum; Parisii < Gaulish *pario- 'cauldron' or *paris 'chief'\",\n    \"reading\": \"The cauldron-people's place; a vessel of transformation and boiling creation.\",\n    \"languages\": [\"la\", \"cel\", \"fr\"],\n    \"source\": \"Oxford English Dictionary, 'Paris'\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Pa + ris; pa (Greek) = all; ris (Latin risus) = laughter; pa-ris = all-laughter\",\n    \"reading\": \"The city of universal laughter — a place where solemnity dissolves into mirth.\",\n    \"languages\": [\"grc\", \"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Paris ~ paris (French) = 'parity' / 'equal'; also par + is (Latin) = 'by being'\",\n    \"reading\": \"Equality of being; the place where all are made equal in the eye of the light.\",\n    \"languages\": [\"fr\", \"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Paris → ripa (Latin) = bank, shore; also aspi (French) = aspirant, one who breathes\",\n    \"reading\": \"The shore of aspiration — a breathing bank where souls land and rise.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P.A.R.I.S. → Portus Aeternae Rerum In Somnio (Latin) = 'harbor of eternal things in dream'\",\n    \"reading\": \"A dream-harbor where eternal forms anchor; the city as a waking vision.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P (Greek rho) = breath; A = alpha, beginning; R = re, sun; I = iota, point; S = sigma, sum\",\n    \"reading\": \"Breath-beginning-sun-point-sum: the totality of beginnings gathered in one place.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"P=80, A=1, R=100, I=9, S=90 (Greek isopsephy) → sum 280; 280 = 2×140, 140 = 4×35\",\n    \"reading\": \"Number 280 reduces to 10 (2+8+0), the perfect return to unity — a circle closing.\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paris < Old French Paris < Latin Parisii; possibly from Gaulish *par- 'to make, to shape'\",\n    \"reading\": \"The shaped place — a city as a deliberate act of making, not accidental growth.\",\n    \"languages\": [\"la\", \"cel\", \"fr\"],\n    \"source\": \"Ernout-Meillet, Dictionnaire étymologique de la langue latine\",\n    \"confidence\": 0.5\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Paris < Latin Lutetia Parisiorum; Parisii < Gaulish *pario- 'cauldron' or *paris 'chief'",
+   "reading": "The cauldron-people's place; a vessel of transformation and boiling creation.",
+   "languages": [
+    "la",
+    "cel",
+    "fr"
+   ],
+   "source": "Oxford English Dictionary, 'Paris'",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Pa + ris; pa (Greek) = all; ris (Latin risus) = laughter; pa-ris = all-laughter",
+   "reading": "The city of universal laughter — a place where solemnity dissolves into mirth.",
+   "languages": [
+    "grc",
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris ~ paris (French) = 'parity' / 'equal'; also par + is (Latin) = 'by being'",
+   "reading": "Equality of being; the place where all are made equal in the eye of the light.",
+   "languages": [
+    "fr",
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Paris → ripa (Latin) = bank, shore; also aspi (French) = aspirant, one who breathes",
+   "reading": "The shore of aspiration — a breathing bank where souls land and rise.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P.A.R.I.S. → Portus Aeternae Rerum In Somnio (Latin) = 'harbor of eternal things in dream'",
+   "reading": "A dream-harbor where eternal forms anchor; the city as a waking vision.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P (Greek rho) = breath; A = alpha, beginning; R = re, sun; I = iota, point; S = sigma, sum",
+   "reading": "Breath-beginning-sun-point-sum: the totality of beginnings gathered in one place.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "P=80, A=1, R=100, I=9, S=90 (Greek isopsephy) → sum 280; 280 = 2×140, 140 = 4×35",
+   "reading": "Number 280 reduces to 10 (2+8+0), the perfect return to unity — a circle closing.",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "etymology",
+   "chain": "Paris < Old French Paris < Latin Parisii; possibly from Gaulish *par- 'to make, to shape'",
+   "reading": "The shaped place — a city as a deliberate act of making, not accidental growth.",
+   "languages": [
+    "la",
+    "cel",
+    "fr"
+   ],
+   "source": "Ernout-Meillet, Dictionnaire étymologique de la langue latine",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

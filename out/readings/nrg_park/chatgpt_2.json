@@ -1,0 +1,124 @@
+{
+ "word": "NRG Park",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:51+00:00",
+ "latency_s": 5.0,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"NRG -> en-are-gee; park -> parc/park = enclosure, fenced ground\",\"reading\":\"The name sounds like “energy park”: a bounded field of force, a place where power is gathered and contained.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.9},{\"operation\":\"cross_language_homophone\",\"chain\":\"NRG -> énergie (fr) by sound; park -> parc (fr)\",\"reading\":\"“Énergie parc”: a park of vitality, a garden of stored motion and living charge.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.82},{\"operation\":\"anagram\",\"chain\":\"NRG -> RGN / GNR / NGR; park remains as enclosure-sign\",\"reading\":\"The core letters suggest a rearranged spark: a hidden ignition inside a bounded place.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.58},{\"operation\":\"notariqon\",\"chain\":\"N R G -> new / radiant / green; park as the field\",\"reading\":\"A terse emblem: new, radiant, green — a living ground of renewal.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.63},{\"operation\":\"letter_symbol\",\"chain\":\"N = north; R = radius/rota; G = gold/green; park = precinct\",\"reading\":\"North-turning, wheel-like, green-gold enclosure: a place of orientation and circulation.\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.55},{\"operation\":\"numerical\",\"chain\":\"N=14, R=18, G=7; 14+18+7 = 39; park as the fourth term of enclosure\",\"reading\":\"Thirty-nine becomes a threshold number: threefold motion gathered into a fourth, enclosed space.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.41},{\"operation\":\"etymology\",\"chain\":\"park < Middle English parke, from Old French parc “enclosure, game preserve”; from Germanic *parruk-\",\"reading\":\"An enclosed ground: the word carries the sense of a fenced, delimited space set apart.\",\"languages\":[\"en\",\"fr\"],\"source\":\"Oxford English Dictionary; Centre National de Ressources Textuelles et Lexicales (parc); etymonline\",\"confidence\":0.97},{\"operation\":\"etymology\",\"chain\":\"NRG read as initialism; park < parc/park = enclosure\",\"reading\":\"The whole phrase reads as an initialed force placed inside a boundary: energy made local.\",\"languages\":[\"en\",\"fr\"],\"source\":\"Oxford English Dictionary; etymonline\",\"confidence\":0.72},{\"operation\":\"cross_language_homophone\",\"chain\":\"NRG -> énergie (fr); park -> parc (fr)\",\"reading\":\"A French echo: energy in a park becomes a cultivated reserve of power.\",\"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.8},{\"operation\":\"phonetic_split\",\"chain\":\"N-are-gee + park; “are” suggests being; “gee” suggests drive/urge\",\"reading\":\"Being and urge meet in a park: existence set in motion, yet held within bounds.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.52}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "NRG -> en-are-gee; park -> parc/park = enclosure, fenced ground",
+   "reading": "The name sounds like “energy park”: a bounded field of force, a place where power is gathered and contained.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "NRG -> énergie (fr) by sound; park -> parc (fr)",
+   "reading": "“Énergie parc”: a park of vitality, a garden of stored motion and living charge.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.82
+  },
+  {
+   "operation": "anagram",
+   "chain": "NRG -> RGN / GNR / NGR; park remains as enclosure-sign",
+   "reading": "The core letters suggest a rearranged spark: a hidden ignition inside a bounded place.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "notariqon",
+   "chain": "N R G -> new / radiant / green; park as the field",
+   "reading": "A terse emblem: new, radiant, green — a living ground of renewal.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.63
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N = north; R = radius/rota; G = gold/green; park = precinct",
+   "reading": "North-turning, wheel-like, green-gold enclosure: a place of orientation and circulation.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "numerical",
+   "chain": "N=14, R=18, G=7; 14+18+7 = 39; park as the fourth term of enclosure",
+   "reading": "Thirty-nine becomes a threshold number: threefold motion gathered into a fourth, enclosed space.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "etymology",
+   "chain": "park < Middle English parke, from Old French parc “enclosure, game preserve”; from Germanic *parruk-",
+   "reading": "An enclosed ground: the word carries the sense of a fenced, delimited space set apart.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Oxford English Dictionary; Centre National de Ressources Textuelles et Lexicales (parc); etymonline",
+   "confidence": 0.97
+  },
+  {
+   "operation": "etymology",
+   "chain": "NRG read as initialism; park < parc/park = enclosure",
+   "reading": "The whole phrase reads as an initialed force placed inside a boundary: energy made local.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Oxford English Dictionary; etymonline",
+   "confidence": 0.72
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "NRG -> énergie (fr); park -> parc (fr)",
+   "reading": "A French echo: energy in a park becomes a cultivated reserve of power.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "N-are-gee + park; “are” suggests being; “gee” suggests drive/urge",
+   "reading": "Being and urge meet in a park: existence set in motion, yet held within bounds.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

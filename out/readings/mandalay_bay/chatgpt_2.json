@@ -1,0 +1,129 @@
+{
+ "word": "Mandalay Bay",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:19:05+00:00",
+ "latency_s": 7.82,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"manda + lay + bay; manda ~ mand (command, order) + lay (to lie down) + bay (opening, recess)\",\n    \"reading\": \"An order to lie in a sheltered opening: command, rest, and enclosure.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"manda ~ manda (Sp./Pt. 'send'); lay ~ lai (Fr. 'there'); bay ~ baie (Fr. 'bay, inlet')\",\n    \"reading\": \"Send it there into the inlet: movement toward a hidden receiving place.\",\n    \"languages\": [\"es\", \"pt\", \"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.54\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"manda ~ mandala (Skt. 'circle, disk'); bay ~ bai (Hindi/Urdu 'brother', vocative)\",\n    \"reading\": \"A circular enclosure addressed as brother: a spoken ring of kinship and containment.\",\n    \"languages\": [\"sa\", \"hi\", \"ur\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bay: Middle English baie, from Old French baie, from Latin bāia/bahia?; standard lexicon: OED, Chambers; sense 'recess, inlet'\",\n    \"reading\": \"Bay signifies a recess or inlet: a hollow receiving water, hence a place of shelter.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"OED; Chambers Dictionary\",\n    \"confidence\": 0.83\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"mandala: Sanskrit maṇḍala, 'circle, disk, sacred diagram'; standard lexicon: Monier-Williams, MWSED\",\n    \"reading\": \"Mandal- evokes a circle or sacred diagram: a bounded world, ordered and complete.\",\n    \"languages\": [\"sa\"],\n    \"source\": \"Monier-Williams Sanskrit-English Dictionary\",\n    \"confidence\": 0.79\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + dal + ay + bay; man (human) + dal (split, divide) + ay (eye/aye) + bay (opening)\",\n    \"reading\": \"The human split by the eye into an opening: consciousness divided, then sheltered.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.38\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay Bay -> mayday banal? partial anagrammatic drift: bay + mandala + y\",\n    \"reading\": \"A banal cry from within the circle: warning voiced at the edge of enclosure.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M A N D A L A Y B A Y -> M.A.N.D.A.L.A. / B.A.Y.; initialism-like segmentation into MANDALA + BAY\",\n    \"reading\": \"Circle plus inlet: the sign of a closed form opening onto water or passage.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M = mountain/peak; A = alpha/beginning; N = gate; D = door; L = ladder; B = two-breasted enclosure; Y = fork\",\n    \"reading\": \"A beginning passes through gates and doors, climbs, then forks into two sheltered breasts.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.27\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Mandalay Bay: letter values by simple A1Z26 sum = 13+1+14+4+1+12+1+25 + 2+1+25 = 99\",\n    \"reading\": \"Ninety-nine: near-completion, doubled nine, a threshold of culmination and return.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "manda + lay + bay; manda ~ mand (command, order) + lay (to lie down) + bay (opening, recess)",
+   "reading": "An order to lie in a sheltered opening: command, rest, and enclosure.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "manda ~ manda (Sp./Pt. 'send'); lay ~ lai (Fr. 'there'); bay ~ baie (Fr. 'bay, inlet')",
+   "reading": "Send it there into the inlet: movement toward a hidden receiving place.",
+   "languages": [
+    "es",
+    "pt",
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.54
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "manda ~ mandala (Skt. 'circle, disk'); bay ~ bai (Hindi/Urdu 'brother', vocative)",
+   "reading": "A circular enclosure addressed as brother: a spoken ring of kinship and containment.",
+   "languages": [
+    "sa",
+    "hi",
+    "ur",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "etymology",
+   "chain": "bay: Middle English baie, from Old French baie, from Latin bāia/bahia?; standard lexicon: OED, Chambers; sense 'recess, inlet'",
+   "reading": "Bay signifies a recess or inlet: a hollow receiving water, hence a place of shelter.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "OED; Chambers Dictionary",
+   "confidence": 0.83
+  },
+  {
+   "operation": "etymology",
+   "chain": "mandala: Sanskrit maṇḍala, 'circle, disk, sacred diagram'; standard lexicon: Monier-Williams, MWSED",
+   "reading": "Mandal- evokes a circle or sacred diagram: a bounded world, ordered and complete.",
+   "languages": [
+    "sa"
+   ],
+   "source": "Monier-Williams Sanskrit-English Dictionary",
+   "confidence": 0.79
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + dal + ay + bay; man (human) + dal (split, divide) + ay (eye/aye) + bay (opening)",
+   "reading": "The human split by the eye into an opening: consciousness divided, then sheltered.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.38
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay Bay -> mayday banal? partial anagrammatic drift: bay + mandala + y",
+   "reading": "A banal cry from within the circle: warning voiced at the edge of enclosure.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M A N D A L A Y B A Y -> M.A.N.D.A.L.A. / B.A.Y.; initialism-like segmentation into MANDALA + BAY",
+   "reading": "Circle plus inlet: the sign of a closed form opening onto water or passage.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M = mountain/peak; A = alpha/beginning; N = gate; D = door; L = ladder; B = two-breasted enclosure; Y = fork",
+   "reading": "A beginning passes through gates and doors, climbs, then forks into two sheltered breasts.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.27
+  },
+  {
+   "operation": "numerical",
+   "chain": "Mandalay Bay: letter values by simple A1Z26 sum = 13+1+14+4+1+12+1+25 + 2+1+25 = 99",
+   "reading": "Ninety-nine: near-completion, doubled nine, a threshold of culmination and return.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

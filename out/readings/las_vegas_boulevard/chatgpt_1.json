@@ -1,0 +1,127 @@
+{
+ "word": "Las Vegas Boulevard",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:09+00:00",
+ "latency_s": 4.88,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"las + vegas + boulevard; las ~ last/lace; vegas ~ vagues; boulevard ~ boulevarde\",\"reading\":\"The last wavering road: a broad way of veils, where certainty thins into drift.\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.78},{\"operation\":\"cross_language_homophone\",\"chain\":\"Las ~ lasso; vegas ~ vagues (fr.); boulevard ~ bouler + vard (rolling guard)\",\"reading\":\"A binding of waves: what is tied becomes rolling, and the road itself seems to move.\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.61},{\"operation\":\"etymology\",\"chain\":\"boulevard < French boulevard < Middle Dutch bolwerc/bolwerk 'bulwark'; broad fortified way\",\"reading\":\"A broad defended passage: a road that began as a rampart.\",\"languages\":[\"fr\",\"nl\",\"en\"],\"source\":\"Oxford English Dictionary; Trésor de la langue française; Dictionnaire historique de la langue française\",\"confidence\":0.97},{\"operation\":\"etymology\",\"chain\":\"Las < Spanish las, feminine plural article of el; from Latin illae\",\"reading\":\"The many feminine ones: a plural veil, a gathered feminine presence.\",\"languages\":[\"es\",\"la\"],\"source\":\"Diccionario de la lengua española; Oxford Latin Dictionary\",\"confidence\":0.9},{\"operation\":\"phonetic_split\",\"chain\":\"boule + vard; boule 'ball' + vard/ward 'guard' by sound-play\",\"reading\":\"A guarded sphere: a rounded enclosure watched over by its own curve.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.55},{\"operation\":\"cross_language_homophone\",\"chain\":\"vegas ~ veils/vagues; boulevard ~ 'broad ward'\",\"reading\":\"A broad ward of veils and waves, where the open way is also a concealment.\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.64},{\"operation\":\"anagram\",\"chain\":\"LAS VEGAS BOULEVARD -> broad vague veils; letters rearranged toward 'broad' + 'vague' + 'veils'\",\"reading\":\"A broad vagueness under veils: the visible road is made of obscurity.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.42},{\"operation\":\"notariqon\",\"chain\":\"L A S / V E G A S / B O U L E V A R D -> 'Light And Shadow / Veils Enfold, Guarding All Roads, Doors'\",\"reading\":\"Light and shadow veil and guard every passage.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.31},{\"operation\":\"letter_symbol\",\"chain\":\"L = angle; V = valley/valence; B = barrier; repeated vowels as openings\",\"reading\":\"Angles, valleys, and barriers: a passage made from turns and thresholds.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.47},{\"operation\":\"numerical\",\"chain\":\"LAS VEGAS BOULEVARD; alphabetical sums suggest 3-22-1 / 22-5-7-1-19 / 2-15-21-12-5-22-1-18-4\",\"reading\":\"Threefold opening, then a descent into guarded multiplicity: a road of thresholds.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.22}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "las + vegas + boulevard; las ~ last/lace; vegas ~ vagues; boulevard ~ boulevarde",
+   "reading": "The last wavering road: a broad way of veils, where certainty thins into drift.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.78
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las ~ lasso; vegas ~ vagues (fr.); boulevard ~ bouler + vard (rolling guard)",
+   "reading": "A binding of waves: what is tied becomes rolling, and the road itself seems to move.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.61
+  },
+  {
+   "operation": "etymology",
+   "chain": "boulevard < French boulevard < Middle Dutch bolwerc/bolwerk 'bulwark'; broad fortified way",
+   "reading": "A broad defended passage: a road that began as a rampart.",
+   "languages": [
+    "fr",
+    "nl",
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Trésor de la langue française; Dictionnaire historique de la langue française",
+   "confidence": 0.97
+  },
+  {
+   "operation": "etymology",
+   "chain": "Las < Spanish las, feminine plural article of el; from Latin illae",
+   "reading": "The many feminine ones: a plural veil, a gathered feminine presence.",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "Diccionario de la lengua española; Oxford Latin Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "boule + vard; boule 'ball' + vard/ward 'guard' by sound-play",
+   "reading": "A guarded sphere: a rounded enclosure watched over by its own curve.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "vegas ~ veils/vagues; boulevard ~ 'broad ward'",
+   "reading": "A broad ward of veils and waves, where the open way is also a concealment.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.64
+  },
+  {
+   "operation": "anagram",
+   "chain": "LAS VEGAS BOULEVARD -> broad vague veils; letters rearranged toward 'broad' + 'vague' + 'veils'",
+   "reading": "A broad vagueness under veils: the visible road is made of obscurity.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.42
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L A S / V E G A S / B O U L E V A R D -> 'Light And Shadow / Veils Enfold, Guarding All Roads, Doors'",
+   "reading": "Light and shadow veil and guard every passage.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L = angle; V = valley/valence; B = barrier; repeated vowels as openings",
+   "reading": "Angles, valleys, and barriers: a passage made from turns and thresholds.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.47
+  },
+  {
+   "operation": "numerical",
+   "chain": "LAS VEGAS BOULEVARD; alphabetical sums suggest 3-22-1 / 22-5-7-1-19 / 2-15-21-12-5-22-1-18-4",
+   "reading": "Threefold opening, then a descent into guarded multiplicity: a road of thresholds.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

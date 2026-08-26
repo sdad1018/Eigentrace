@@ -1,0 +1,112 @@
+{
+ "word": "Red Rocks",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:17:31+00:00",
+ "latency_s": 9.12,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"red + rocks; red (en) = rouge; rocks = pierres; 'rouge' + 'roc' (fr) = red rock; 'rouge' = red, 'roc' = rock\",\n    \"reading\": \"The red stone speaks of blood and earth—a primal foundation stained by passion.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"red (OE read) = red; rocks (OE rocc, from Old French roque) = rock; 'read' (OE) = counsel, riddle; 'roc' (Arabic ruḵḵ) = giant bird\",\n    \"reading\": \"Counsel of the great bird—wisdom perched upon a stone, a riddle of the heights.\",\n    \"languages\": [\"en\", \"fr\", \"ar\"],\n    \"source\": \"Oxford English Dictionary; Klein's Etymological Dictionary\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"red (en) ~ 'read' (en) ~ 'rot' (de) = red; rocks ~ 'rocs' (fr) ~ 'rokh' (ar) = bird; 'rot' + 'rokh' = red bird\",\n    \"reading\": \"A red phoenix or roc—fire-bird nested in the crimson crags.\",\n    \"languages\": [\"en\", \"de\", \"fr\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Red Rocks -> 'Cork' + 'reds'? 'Cork' = bark of oak; 'reds' = plural of red; 'cork' (from Latin quercus) = oak\",\n    \"reading\": \"The oak's bark dyed red—a tree of knowledge bleeding its secret.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"R + R; in Latin 'R' = Rex (king); 'R' = Rubrum (red); 'Rex Rubrum' = red king\",\n    \"reading\": \"The Red King—alchemical sulphur, the fixed principle of transformation.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R = 18th letter (Hebrew Resh = head, beginning); R = 18; R + R = 36; 36 = 6x6; rocks = stone (petra, Greek)\",\n    \"reading\": \"Head upon head, stone upon stone—a double beginning, a square of earthly mystery.\",\n    \"languages\": [\"he\", \"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Red = R(18)+E(5)+D(4)=27; Rocks = R(18)+O(15)+C(3)+K(11)+S(19)=66; 27+66=93; 93 = Thelema (Greek) = will\",\n    \"reading\": \"The will of the red stone—a fixed desire crystallized in the mountain.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"red (PIE *reudh-) = red; rocks (PIE *k̑er- = hard, stone) ; *reudh- + *k̑er- = red-hard\",\n    \"reading\": \"The hard red—an ancient root of blood and stone, the primal matter of alchemy.\",\n    \"languages\": [\"en\", \"ine\"],\n    \"source\": \"Pokorny's Indogermanisches Etymologisches Wörterbuch\",\n    \"confidence\": 0.8\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "red + rocks; red (en) = rouge; rocks = pierres; 'rouge' + 'roc' (fr) = red rock; 'rouge' = red, 'roc' = rock",
+   "reading": "The red stone speaks of blood and earth—a primal foundation stained by passion.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "red (OE read) = red; rocks (OE rocc, from Old French roque) = rock; 'read' (OE) = counsel, riddle; 'roc' (Arabic ruḵḵ) = giant bird",
+   "reading": "Counsel of the great bird—wisdom perched upon a stone, a riddle of the heights.",
+   "languages": [
+    "en",
+    "fr",
+    "ar"
+   ],
+   "source": "Oxford English Dictionary; Klein's Etymological Dictionary",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "red (en) ~ 'read' (en) ~ 'rot' (de) = red; rocks ~ 'rocs' (fr) ~ 'rokh' (ar) = bird; 'rot' + 'rokh' = red bird",
+   "reading": "A red phoenix or roc—fire-bird nested in the crimson crags.",
+   "languages": [
+    "en",
+    "de",
+    "fr",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Red Rocks -> 'Cork' + 'reds'? 'Cork' = bark of oak; 'reds' = plural of red; 'cork' (from Latin quercus) = oak",
+   "reading": "The oak's bark dyed red—a tree of knowledge bleeding its secret.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R + R; in Latin 'R' = Rex (king); 'R' = Rubrum (red); 'Rex Rubrum' = red king",
+   "reading": "The Red King—alchemical sulphur, the fixed principle of transformation.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R = 18th letter (Hebrew Resh = head, beginning); R = 18; R + R = 36; 36 = 6x6; rocks = stone (petra, Greek)",
+   "reading": "Head upon head, stone upon stone—a double beginning, a square of earthly mystery.",
+   "languages": [
+    "he",
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "Red = R(18)+E(5)+D(4)=27; Rocks = R(18)+O(15)+C(3)+K(11)+S(19)=66; 27+66=93; 93 = Thelema (Greek) = will",
+   "reading": "The will of the red stone—a fixed desire crystallized in the mountain.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "etymology",
+   "chain": "red (PIE *reudh-) = red; rocks (PIE *k̑er- = hard, stone) ; *reudh- + *k̑er- = red-hard",
+   "reading": "The hard red—an ancient root of blood and stone, the primal matter of alchemy.",
+   "languages": [
+    "en",
+    "ine"
+   ],
+   "source": "Pokorny's Indogermanisches Etymologisches Wörterbuch",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

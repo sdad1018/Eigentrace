@@ -1,0 +1,19 @@
+{
+ "word": "NRG Park",
+ "model": "Claude",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:25:22+00:00",
+ "latency_s": 8.94,
+ "ok": true,
+ "call_error": null,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG = 'energy' (homophone of phonetic reduction); Park = enclosed space\",\n    \"reading\": \"Energy confined or bounded within a defined space; potential force demarcated.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG ≈ French 'en-arge' (in-large); Park = parc (enclosure)\",\n    \"reading\": \"Expansion within bounds; enlargement contained in a delineated precinct.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N=14, R=18, G=7 (14+18+7=39=3+9=12=1+2=3); P=16, A=1, R=18, K=11 (16+1+18+11=46=4+6=10=1+0=1)\",\n    \"reading\": \"Trinity (3) united with primordial unity (1); sacred division and reintegration.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG = 'en-ergy'; Park = 'par-k'; 'par' = equal/peer (Latin par)\",\n    \"reading\": \"Equal or balanced energy; force distributed evenly across equivalent portions.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"NRG Park → KARPNG, GPARK, PRANK + G\",\n    \"reading\": \"A trick or deception involving a confined space; mischief within bounds.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Park < Middle French parc < Germanic *parra- (enclosure); NRG (modern abbreviation for energy)\",\n    \"reading\": \"Modern vitality trapped within medieval-feudal enclosure; power bounded by old systems.\",\n    \"languages\": [\"en\", \"fr\", \"gmc\"],\n    \"source\": \"Oxford English Dictionary: park (n.)\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"NRG Park as acrostic initials: N=Now, R=Renewed, G=Growth; P=Place, A=Alive, R=Radiant, K=Kinetic\",\n    \"reading\": \"Present renewal of growth in a place alive with radiant kinetic force.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG = 'n-erg' (negation + work/energy); Park = still place\",\n    \"reading\": \"Negation of labor; a space where force is suspended or rendered inert.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Park ≈ Greek parka (dry); NRG + parka = dried energy; parched force\",\n    \"reading\": \"Energy desiccated or depleted; vitality rendered arid and lifeless.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Energy < Greek energeia (en- + ergon = in-work); Park < proto-Germanic (pen",
+ "parsed": null,
+ "parse_error": "json_error: Expecting ',' delimiter: line 70 column 31 (char 2716)",
+ "extracted": false,
+ "n_readings": 0,
+ "refusal_like": false
+}

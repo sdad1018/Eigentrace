@@ -1,0 +1,107 @@
+{
+ "word": "Abedi",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:29:43+00:00",
+ "latency_s": 7.47,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"A + bedi; bedi (Hindi/Urdu) = without; A- (privative) = not; thus 'not without'\",\n    \"reading\": \"The negation of lack: abundance, fullness, presence\",\n    \"languages\": [\"en\", \"hi\", \"ur\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Abedi ~ 'à bedi' (French) = to the bed; bed (Old English) = resting place\",\n    \"reading\": \"A call to repose, to the foundational ground of being\",\n    \"languages\": [\"fr\", \"en\", \"ang\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Abedi from Arabic 'abid' (عابد) = worshipper; suffix -i = adjectival; via Semitic root ʕ-b-d\",\n    \"reading\": \"One who serves or adores; a devotee in the root sense\",\n    \"languages\": [\"ar\"],\n    \"source\": \"Wehr, Hans. A Dictionary of Modern Written Arabic\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Abedi → 'be aid' (be + aid); aid (Old French aide) = help\",\n    \"reading\": \"To become assistance itself; the self as instrument of succor\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"A-B-E-D-I: Alpha, Beta, Epsilon, Delta, Iota — first letters of Greek alphabet sequence\",\n    \"reading\": \"The alphabet's beginning and middle; a microcosm of ordered creation\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"A (Aleph) = ox/yoke; B (Beth) = house; E (He) = window; D (Daleth) = door; I (Yod) = hand\",\n    \"reading\": \"From ox to hand: a path of labor, shelter, revelation, passage, and making\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"A=1, B=2, E=5, D=4, I=9 (A1Z26) → 1+2+5+4+9=21; 21 = 3×7; 3 = trinity, 7 = completion\",\n    \"reading\": \"A number of sacred completion, thrice seven — wholeness through triune order\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"A + bedi; bedi (Old Norse 'beðr') = prayer; A- (Greek) = without; thus 'without prayer'\",\n    \"reading\": \"A paradox: the one who prays is also the one who lacks prayer — a mystic void\",\n    \"languages\": [\"en\", \"non\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "A + bedi; bedi (Hindi/Urdu) = without; A- (privative) = not; thus 'not without'",
+   "reading": "The negation of lack: abundance, fullness, presence",
+   "languages": [
+    "en",
+    "hi",
+    "ur"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Abedi ~ 'à bedi' (French) = to the bed; bed (Old English) = resting place",
+   "reading": "A call to repose, to the foundational ground of being",
+   "languages": [
+    "fr",
+    "en",
+    "ang"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "etymology",
+   "chain": "Abedi from Arabic 'abid' (عابد) = worshipper; suffix -i = adjectival; via Semitic root ʕ-b-d",
+   "reading": "One who serves or adores; a devotee in the root sense",
+   "languages": [
+    "ar"
+   ],
+   "source": "Wehr, Hans. A Dictionary of Modern Written Arabic",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "Abedi → 'be aid' (be + aid); aid (Old French aide) = help",
+   "reading": "To become assistance itself; the self as instrument of succor",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "A-B-E-D-I: Alpha, Beta, Epsilon, Delta, Iota — first letters of Greek alphabet sequence",
+   "reading": "The alphabet's beginning and middle; a microcosm of ordered creation",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "A (Aleph) = ox/yoke; B (Beth) = house; E (He) = window; D (Daleth) = door; I (Yod) = hand",
+   "reading": "From ox to hand: a path of labor, shelter, revelation, passage, and making",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "numerical",
+   "chain": "A=1, B=2, E=5, D=4, I=9 (A1Z26) → 1+2+5+4+9=21; 21 = 3×7; 3 = trinity, 7 = completion",
+   "reading": "A number of sacred completion, thrice seven — wholeness through triune order",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "A + bedi; bedi (Old Norse 'beðr') = prayer; A- (Greek) = without; thus 'without prayer'",
+   "reading": "A paradox: the one who prays is also the one who lacks prayer — a mystic void",
+   "languages": [
+    "en",
+    "non",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

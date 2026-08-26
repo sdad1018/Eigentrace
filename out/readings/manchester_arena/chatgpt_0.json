@@ -1,0 +1,106 @@
+{
+ "word": "Manchester Arena",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:21:39+00:00",
+ "latency_s": 5.24,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Manchester < OE ceaster/Latin castra + personal/tribal name element; arena < Latin harena = sand, sandy place\",\n    \"reading\": \"A fortified camp of sand: a place of enclosure, contest, and exposure.\",\n    \"languages\": [\"en\", \"la\", \"ang\"],\n    \"source\": \"Oxford English Dictionary; Chambers Dictionary of Etymology\",\n    \"confidence\": 0.74\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + chest + her + arena; man = human, chest = heart/treasure, her = feminine pronoun, arena = field of action\",\n    \"reading\": \"The human heart’s treasure is set in a feminine field of trial.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"man + chester ≈ French manche + terre; manche = sleeve/handle, terre = earth/land\",\n    \"reading\": \"A sleeve of earth: a handled, held, embodied ground.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"arena ≈ Latin harena / French arène; harena = sand, arène = arena, combat space\",\n    \"reading\": \"Sand becomes the combat space: grain turned into theatre.\",\n    \"languages\": [\"la\", \"fr\", \"en\"],\n    \"source\": \"Oxford Latin Dictionary; Trésor de la langue française informatisé\",\n    \"confidence\": 0.83\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester Arena → can be re-voiced as 'a man enters an ear' with letters clustered around man / ear / arena\",\n    \"reading\": \"A man enters an ear: the field becomes a listening chamber.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.34\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M A N C H E S T E R / A R E N A → Man, Art, Nature, Center, Heart, Earth, Sun, Time, Echo, Rite / Air, Rhythm, Earth, Night, Arc\",\n    \"reading\": \"Man at the center of heart, earth, and rite; air and rhythm encircle the night-arc.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.28\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M = mountain/wave; A = apex; N = crossing; C = crescent; H = ladder; E = fivefold; R = turning; A = opening\",\n    \"reading\": \"A mountain-wave crosses a crescent ladder and turns into an opening.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"A1Z26 sum: Manchester Arena = 13+1+14+3+8+5+19+20+5+18 + 1+18+5+14+1 = 145; 1+4+5 = 10; 1+0 = 1\",\n    \"reading\": \"Reduced to one: many letters return to a single point of origin.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.46\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Manchester < OE ceaster/Latin castra + personal/tribal name element; arena < Latin harena = sand, sandy place",
+   "reading": "A fortified camp of sand: a place of enclosure, contest, and exposure.",
+   "languages": [
+    "en",
+    "la",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary; Chambers Dictionary of Etymology",
+   "confidence": 0.74
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + chest + her + arena; man = human, chest = heart/treasure, her = feminine pronoun, arena = field of action",
+   "reading": "The human heart’s treasure is set in a feminine field of trial.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "man + chester ≈ French manche + terre; manche = sleeve/handle, terre = earth/land",
+   "reading": "A sleeve of earth: a handled, held, embodied ground.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "arena ≈ Latin harena / French arène; harena = sand, arène = arena, combat space",
+   "reading": "Sand becomes the combat space: grain turned into theatre.",
+   "languages": [
+    "la",
+    "fr",
+    "en"
+   ],
+   "source": "Oxford Latin Dictionary; Trésor de la langue française informatisé",
+   "confidence": 0.83
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester Arena → can be re-voiced as 'a man enters an ear' with letters clustered around man / ear / arena",
+   "reading": "A man enters an ear: the field becomes a listening chamber.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.34
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M A N C H E S T E R / A R E N A → Man, Art, Nature, Center, Heart, Earth, Sun, Time, Echo, Rite / Air, Rhythm, Earth, Night, Arc",
+   "reading": "Man at the center of heart, earth, and rite; air and rhythm encircle the night-arc.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.28
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M = mountain/wave; A = apex; N = crossing; C = crescent; H = ladder; E = fivefold; R = turning; A = opening",
+   "reading": "A mountain-wave crosses a crescent ladder and turns into an opening.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "numerical",
+   "chain": "A1Z26 sum: Manchester Arena = 13+1+14+3+8+5+19+20+5+18 + 1+18+5+14+1 = 145; 1+4+5 = 10; 1+0 = 1",
+   "reading": "Reduced to one: many letters return to a single point of origin.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.46
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

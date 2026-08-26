@@ -1,0 +1,130 @@
+{
+ "word": "Mandalay",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:19+00:00",
+ "latency_s": 6.72,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + da + lay\",\n    \"reading\": \"The hand that lays down; the giving or placing hand\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Mand + a + lai\",\n    \"reading\": \"Command that nourishes; the nourishing order\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay ≈ mandala + lai (French)\",\n    \"reading\": \"The circle that nourishes or the feeding mandala\",\n    \"languages\": [\"en\",\"fr\",\"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Manda (Sanskrit: to delight, to please) + lay (from lai, French: milk, or ley, Old English: layer/field)\",\n    \"reading\": \"The field that delights or the pleasing pasture\",\n    \"languages\": [\"sa\",\"fr\",\"en\"],\n    \"source\": \"Monier-Williams Sanskrit-English Dictionary\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay → A + damn + lay\",\n    \"reading\": \"A cursed laying down; the condemned placement\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + dalay (dalai as in ocean in Mongolian)\",\n    \"reading\": \"The man who is an ocean; the human sea\",\n    \"languages\": [\"en\",\"mn\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M.A.N.D.A.L.A.Y. → Mundi Axis Naturae Divinus Axis Lux Aeterna Yggdrasil\",\n    \"reading\": \"The divine axis of the world’s eternal light and axis of nature\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay ≈ mandé + lai (Occitan: milk)\",\n    \"reading\": \"The commanded milk; the milk under order\",\n    \"languages\": [\"fr\",\"oc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (arcane waters) + AND (union) + ALAY (from al-ayin, the eye)\",\n    \"reading\": \"The uniting waters of the eye; the all-seeing flow\",\n    \"languages\": [\"en\",\"ar\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Monde + à + l’ail (French phonetic)\",\n    \"reading\": \"The world to the garlic; the stinking or potent world\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + da + lay",
+   "reading": "The hand that lays down; the giving or placing hand",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Mand + a + lai",
+   "reading": "Command that nourishes; the nourishing order",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay ≈ mandala + lai (French)",
+   "reading": "The circle that nourishes or the feeding mandala",
+   "languages": [
+    "en",
+    "fr",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Manda (Sanskrit: to delight, to please) + lay (from lai, French: milk, or ley, Old English: layer/field)",
+   "reading": "The field that delights or the pleasing pasture",
+   "languages": [
+    "sa",
+    "fr",
+    "en"
+   ],
+   "source": "Monier-Williams Sanskrit-English Dictionary",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay → A + damn + lay",
+   "reading": "A cursed laying down; the condemned placement",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + dalay (dalai as in ocean in Mongolian)",
+   "reading": "The man who is an ocean; the human sea",
+   "languages": [
+    "en",
+    "mn"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M.A.N.D.A.L.A.Y. → Mundi Axis Naturae Divinus Axis Lux Aeterna Yggdrasil",
+   "reading": "The divine axis of the world’s eternal light and axis of nature",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay ≈ mandé + lai (Occitan: milk)",
+   "reading": "The commanded milk; the milk under order",
+   "languages": [
+    "fr",
+    "oc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (arcane waters) + AND (union) + ALAY (from al-ayin, the eye)",
+   "reading": "The uniting waters of the eye; the all-seeing flow",
+   "languages": [
+    "en",
+    "ar",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Monde + à + l’ail (French phonetic)",
+   "reading": "The world to the garlic; the stinking or potent world",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

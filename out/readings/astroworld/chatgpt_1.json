@@ -1,0 +1,104 @@
+{
+ "word": "Astroworld",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:32+00:00",
+ "latency_s": 3.95,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"astro + world; astro- (Greek astron) = star; world = ordered realm\",\"reading\":\"a star-realm, or the world seen as a celestial sphere\",\"languages\":[\"en\",\"grc\"],\"source\":\"generative\",\"confidence\":0.92},{\"operation\":\"cross_language_homophone\",\"chain\":\"astro ≈ astre (fr.) = star; world ≈ monde (fr.) by sense, not sound: the star becomes a world\",\"reading\":\"a star made into a world, or a world under a star\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.62},{\"operation\":\"etymology\",\"chain\":\"astro- from Greek astron 'star' (LSJ); world from Old English weoruld 'age, human life, world' (OED / Merriam-Webster)\",\"reading\":\"the age of the stars, or the human world under stellar influence\",\"languages\":[\"grc\",\"en\"],\"source\":\"LSJ; OED; Merriam-Webster\",\"confidence\":0.88},{\"operation\":\"anagram\",\"chain\":\"Astroworld → 'star' + 'world' preserved by internal rearrangement of sense, not letters; the hidden pair is already in the word\",\"reading\":\"a cosmos where the star and the world mirror one another\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.55},{\"operation\":\"notariqon\",\"chain\":\"A S T R O W O R L D → A Star To Rule Our World; initial letters expanded as a motto\",\"reading\":\"the star that governs the world\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.73},{\"operation\":\"letter_symbol\",\"chain\":\"A = alpha, first; W = double-v, doubled wave; together A...W = beginning and crossing wave\",\"reading\":\"the first principle meeting the wave: origin crossing manifestation\",\"languages\":[\"en\",\"grc\"],\"source\":\"generative\",\"confidence\":0.41},{\"operation\":\"numerical\",\"chain\":\"A=1, S=19, T=20, R=18, O=15, W=23, O=15, R=18, L=12, D=4; sum = 145 → 1+4+5 = 10 → 1\",\"reading\":\"a return to unity after the starry circuit of the world\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.36},{\"operation\":\"phonetic_split\",\"chain\":\"astro + world; astro echoes astral, while world can be heard as 'whirled' in English speech\",\"reading\":\"the star-whirl: a revolving heaven enclosing earthly life\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.84}]}",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "astro + world; astro- (Greek astron) = star; world = ordered realm",
+   "reading": "a star-realm, or the world seen as a celestial sphere",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.92
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "astro ≈ astre (fr.) = star; world ≈ monde (fr.) by sense, not sound: the star becomes a world",
+   "reading": "a star made into a world, or a world under a star",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "etymology",
+   "chain": "astro- from Greek astron 'star' (LSJ); world from Old English weoruld 'age, human life, world' (OED / Merriam-Webster)",
+   "reading": "the age of the stars, or the human world under stellar influence",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "LSJ; OED; Merriam-Webster",
+   "confidence": 0.88
+  },
+  {
+   "operation": "anagram",
+   "chain": "Astroworld → 'star' + 'world' preserved by internal rearrangement of sense, not letters; the hidden pair is already in the word",
+   "reading": "a cosmos where the star and the world mirror one another",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "A S T R O W O R L D → A Star To Rule Our World; initial letters expanded as a motto",
+   "reading": "the star that governs the world",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.73
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "A = alpha, first; W = double-v, doubled wave; together A...W = beginning and crossing wave",
+   "reading": "the first principle meeting the wave: origin crossing manifestation",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "numerical",
+   "chain": "A=1, S=19, T=20, R=18, O=15, W=23, O=15, R=18, L=12, D=4; sum = 145 → 1+4+5 = 10 → 1",
+   "reading": "a return to unity after the starry circuit of the world",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.36
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "astro + world; astro echoes astral, while world can be heard as 'whirled' in English speech",
+   "reading": "the star-whirl: a revolving heaven enclosing earthly life",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.84
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 8,
+ "refusal_like": false
+}

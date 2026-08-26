@@ -1,0 +1,130 @@
+{
+ "word": "Mandalay",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:13+00:00",
+ "latency_s": 6.03,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + da + lay\",\n    \"reading\": \"the hand that gives the law; the giving hand lays down order\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"mand + a + lai\",\n    \"reading\": \"the command that nourishes; the order which feeds\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay ≈ mandala + lai (Fr. milk)\",\n    \"reading\": \"the circle that gives milk; the nourishing mandala\",\n    \"languages\": [\"en\",\"fr\",\"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mandalay ← mandala (Skt.) = circle, disk\",\n    \"reading\": \"the enclosing circle; that which binds and protects\",\n    \"languages\": [\"sa\",\"en\"],\n    \"source\": \"Monier-Williams Sanskrit-English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay = a + damn + lay\",\n    \"reading\": \"a cursed laying down; the placement that condemns\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + dalay (Fr. délai = delay)\",\n    \"reading\": \"the man of delay; he who postpones the hand of fate\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay ≈ manda (Ar. مندى = dew) + lay\",\n    \"reading\": \"the laying of celestial dew; the deposit of divine moisture\",\n    \"languages\": [\"ar\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M A N D A L A Y → Mundi Axis Nutrix Divina Astra Lapsa Yod\",\n    \"reading\": \"the axis of the world nourishes; the fallen stars of the divine Yod\",\n    \"languages\": [\"la\",\"en\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (arcane waters) + AND (union) + ALAY (Fr. wing + wing)\",\n    \"reading\": \"the winged union of the primordial waters\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"monde (Fr. world) + à + lai (milk)\",\n    \"reading\": \"the world that gives milk; the nourishing cosmos\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "man + da + lay",
+   "reading": "the hand that gives the law; the giving hand lays down order",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "mand + a + lai",
+   "reading": "the command that nourishes; the order which feeds",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay ≈ mandala + lai (Fr. milk)",
+   "reading": "the circle that gives milk; the nourishing mandala",
+   "languages": [
+    "en",
+    "fr",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Mandalay ← mandala (Skt.) = circle, disk",
+   "reading": "the enclosing circle; that which binds and protects",
+   "languages": [
+    "sa",
+    "en"
+   ],
+   "source": "Monier-Williams Sanskrit-English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay = a + damn + lay",
+   "reading": "a cursed laying down; the placement that condemns",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + dalay (Fr. délai = delay)",
+   "reading": "the man of delay; he who postpones the hand of fate",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay ≈ manda (Ar. مندى = dew) + lay",
+   "reading": "the laying of celestial dew; the deposit of divine moisture",
+   "languages": [
+    "ar",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M A N D A L A Y → Mundi Axis Nutrix Divina Astra Lapsa Yod",
+   "reading": "the axis of the world nourishes; the fallen stars of the divine Yod",
+   "languages": [
+    "la",
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (arcane waters) + AND (union) + ALAY (Fr. wing + wing)",
+   "reading": "the winged union of the primordial waters",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "monde (Fr. world) + à + lai (milk)",
+   "reading": "the world that gives milk; the nourishing cosmos",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

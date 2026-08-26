@@ -1,0 +1,128 @@
+{
+ "word": "Bataclan",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:27:00+00:00",
+ "latency_s": 7.72,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bata + clan\",\n    \"reading\": \"the clan of the strike / the striking clan / the battering brotherhood\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bat + à + clan\",\n    \"reading\": \"the blow given to the clan / the clan receives the bat\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bataclan ≈ Bâta clan (fr) + bat (en, to strike) + clan (gaelic)\",\n    \"reading\": \"the striking clan, the clan that beats or the beaten clan\",\n    \"languages\": [\"fr\",\"en\",\"gd\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bataclan (19th c. French) = noisy gathering of people and objects, bric-à-brac, tumult\",\n    \"reading\": \"noisy chaotic assembly, loud discordant crowd of mixed things\",\n    \"languages\": [\"fr\"],\n    \"source\": \"Littré, Dictionnaire de la langue française (1872)\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bataclan → Cabalat + an\",\n    \"reading\": \"the an (year/cycle) of the Cabala / the cabalistic cycle\",\n    \"languages\": [\"fr\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bât + à + clan\",\n    \"reading\": \"the beast of burden belonging to the clan / the clan’s pack animal\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bataclan ≈ Bata Klan (Slavic echo) + bataclán (Spanish = uproar, din)\",\n    \"reading\": \"the uproarious clan, the clan of loud tumult and disorder\",\n    \"languages\": [\"es\",\"ru\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B.A.T.A.C.L.A.N. → Beith-Aleph-Tav-Aleph-Caph-Lamed-Aleph-Nun\",\n    \"reading\": \"house of the ox-sign, the mark of the primordial covenant\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Bata-clan → B (house) + ATA (ancient mother goddess) + clan\",\n    \"reading\": \"the house of the ancient mother within the clan\",\n    \"languages\": [\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba + tac + lan\",\n    \"reading\": \"the hidden mouth / the silent tongue of the clan\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Bata + clan",
+   "reading": "the clan of the strike / the striking clan / the battering brotherhood",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bat + à + clan",
+   "reading": "the blow given to the clan / the clan receives the bat",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bataclan ≈ Bâta clan (fr) + bat (en, to strike) + clan (gaelic)",
+   "reading": "the striking clan, the clan that beats or the beaten clan",
+   "languages": [
+    "fr",
+    "en",
+    "gd"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "bataclan (19th c. French) = noisy gathering of people and objects, bric-à-brac, tumult",
+   "reading": "noisy chaotic assembly, loud discordant crowd of mixed things",
+   "languages": [
+    "fr"
+   ],
+   "source": "Littré, Dictionnaire de la langue française (1872)",
+   "confidence": 0.95
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bataclan → Cabalat + an",
+   "reading": "the an (year/cycle) of the Cabala / the cabalistic cycle",
+   "languages": [
+    "fr",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bât + à + clan",
+   "reading": "the beast of burden belonging to the clan / the clan’s pack animal",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bataclan ≈ Bata Klan (Slavic echo) + bataclán (Spanish = uproar, din)",
+   "reading": "the uproarious clan, the clan of loud tumult and disorder",
+   "languages": [
+    "es",
+    "ru",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B.A.T.A.C.L.A.N. → Beith-Aleph-Tav-Aleph-Caph-Lamed-Aleph-Nun",
+   "reading": "house of the ox-sign, the mark of the primordial covenant",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Bata-clan → B (house) + ATA (ancient mother goddess) + clan",
+   "reading": "the house of the ancient mother within the clan",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba + tac + lan",
+   "reading": "the hidden mouth / the silent tongue of the clan",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

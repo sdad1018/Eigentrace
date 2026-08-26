@@ -1,0 +1,19 @@
+{
+ "word": "Lollapalooza",
+ "model": "Claude",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:18:47+00:00",
+ "latency_s": 9.36,
+ "ok": true,
+ "call_error": null,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lol-la-pa-loo-za; lol (laugh) + la (musical note, the sixth) + pa (father) + loo (British toilet) + za (pizza)\",\n    \"reading\": \"A laughing father's musical sixth note in the toilet eating pizza; absurd abundance.\",\n    \"languages\": [\"en\", \"fr\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Loll (to lounge) + a + palooza; loll = to recline lazily\",\n    \"reading\": \"Reclining lazily in excess; a state of luxurious indolence and indulgence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary, 'loll'\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Lol-la = French 'la' (the feminine article) repeated; -palooza = English 'pal' (friend) + -ooza\",\n    \"reading\": \"The friend in feminine excess; multiplication of companionship into overwhelming spectacle.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Loo (excrement/toilet, British slang) + lap (the circuit, or to drink) + alooza (all + ooze + a)\",\n    \"reading\": \"Drinking in circles; all things dissolving and flowing away into formless excess.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Taking first letters or stressed syllables: L-L-P-L-Z might yield initials of a concealed phrase\",\n    \"reading\": \"The initials suggest scattered, doubled, labial consonants—speech become excessive repetition.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Loll < Middle English lollen; palooza < American slang, origin uncertain, possibly reduplicative\",\n    \"reading\": \"The lounging gesture joined to emphatic American excess-speak; lazy abundance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Loll-a-pal-ooze-a; pal (friend, from Romani 'pral') + ooze (seep, flow)\",\n    \"reading\": \"Friends seeping away; companionship dissolving into formless, overwhelming flow.\",\n    \"languages\": [\"en\", \"rom\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Double-L = doubled light, or the pillars; Z = zigzag, lightning; OO = the eyes\",\n    \"reading\": \"Twin pillars of vision struck by zigzag force; duality illuminated by violent passage.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Lollapalooza contains: pal, zap, loop, loll, app, plaza (Spanish, the square)\",\n    \"reading\": \"The plaza: where friends gather, loop endlessly, and zap one another in abundance.\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Palooza =",
+ "parsed": null,
+ "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 2948)",
+ "extracted": false,
+ "n_readings": 0,
+ "refusal_like": false
+}

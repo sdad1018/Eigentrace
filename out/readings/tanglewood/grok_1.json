@@ -1,0 +1,127 @@
+{
+ "word": "Tanglewood",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:18:15+00:00",
+ "latency_s": 5.68,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"tan + gle + wood\",\n    \"reading\": \"the tan of the glowing wood; illuminated sacred grove\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"tang + lewood\",\n    \"reading\": \"the taste or sharp point of the forbidden wood\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"tanglewood ≈ tan + gle + woud ≈ temps + glé + voûte\",\n    \"reading\": \"time of the glade under the vault; sacred temporal grove\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"tangle (from tagle, a variant of tangle) + wood; but also tangle from Old Norse þongull (seaweed)\",\n    \"reading\": \"seaweed-wood; the grove where the waters entwine the trees\",\n    \"languages\": [\"en\",\"non\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"TANGLEWOOD → GOLDEN WATT\",\n    \"reading\": \"the golden watt; measure of luminous sacred power in the wood\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"tan + gel + wood\",\n    \"reading\": \"the gel of the tan wood; alchemical fixation of solar light in matter\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"tanglewood ≈ tang le woud ≈ tangere (Latin: to touch) + le bois\",\n    \"reading\": \"the wood that is touched; the grove of divine contact\",\n    \"languages\": [\"en\",\"la\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"T.A.N.G.L.E.W.O.O.D. → Templum Aureum Naturae Gloriae Lux Est Via Omnium Divina\",\n    \"reading\": \"Golden Temple of Nature, Glory, Light: the Way of All is Divine\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T (tau/cross) + ANGLE (geometric gnosis) + WOOD (prima materia)\",\n    \"reading\": \"the cross within the angled wood; geometric redemption of matter\",\n    \"languages\": [\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"t'angle + wood\",\n    \"reading\": \"th'angle wood; the angled or measured sacred grove of the gnostics\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "tan + gle + wood",
+   "reading": "the tan of the glowing wood; illuminated sacred grove",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "tang + lewood",
+   "reading": "the taste or sharp point of the forbidden wood",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "tanglewood ≈ tan + gle + woud ≈ temps + glé + voûte",
+   "reading": "time of the glade under the vault; sacred temporal grove",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "tangle (from tagle, a variant of tangle) + wood; but also tangle from Old Norse þongull (seaweed)",
+   "reading": "seaweed-wood; the grove where the waters entwine the trees",
+   "languages": [
+    "en",
+    "non"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "TANGLEWOOD → GOLDEN WATT",
+   "reading": "the golden watt; measure of luminous sacred power in the wood",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "tan + gel + wood",
+   "reading": "the gel of the tan wood; alchemical fixation of solar light in matter",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "tanglewood ≈ tang le woud ≈ tangere (Latin: to touch) + le bois",
+   "reading": "the wood that is touched; the grove of divine contact",
+   "languages": [
+    "en",
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "notariqon",
+   "chain": "T.A.N.G.L.E.W.O.O.D. → Templum Aureum Naturae Gloriae Lux Est Via Omnium Divina",
+   "reading": "Golden Temple of Nature, Glory, Light: the Way of All is Divine",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T (tau/cross) + ANGLE (geometric gnosis) + WOOD (prima materia)",
+   "reading": "the cross within the angled wood; geometric redemption of matter",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "t'angle + wood",
+   "reading": "th'angle wood; the angled or measured sacred grove of the gnostics",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

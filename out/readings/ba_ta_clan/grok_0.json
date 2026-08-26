@@ -1,0 +1,132 @@
+{
+ "word": "Ba-ta-clan",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:27:26+00:00",
+ "latency_s": 8.56,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba + ta + clan\",\n    \"reading\": \"the father (Ba) strikes (ta) the enclosed assembly (clan)\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bat + a + clan\",\n    \"reading\": \"the bat (nocturnal creature) to the clan; night strikes the group\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Ba-ta-clan ≈ Bata-clan ≈ Bâta-clan (fr) ≈ bataclan\",\n    \"reading\": \"pack of bats; bat-pack; nocturnal squadron\",\n    \"languages\": [\"fr\",\"en\",\"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"clan (Gaelic clann = offspring, family, troop)\",\n    \"reading\": \"a troop or brood gathered under the sign of Ba-Ta\",\n    \"languages\": [\"gd\",\"en\",\"fr\"],\n    \"source\": \"Oxford English Dictionary, s.v. clan\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bât + à + clan\",\n    \"reading\": \"the beast of burden (bât = packsaddle) belongs to the clan\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Ba-ta-clan → Cabal + nat + a\",\n    \"reading\": \"a natural cabal; secret assembly by nature\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Ba-ta-clan ≈ Batak lan (Malay/Indonesian)\",\n    \"reading\": \"the Batak people’s gathering; ancestral spirit circle\",\n    \"languages\": [\"id\",\"ms\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-T-CL-N → Bet-Tsadi-Lamed-Nun (Hebrew letters)\",\n    \"reading\": \"house of the hunter’s snare; trap within the dwelling\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bas + ta + clan\",\n    \"reading\": \"the lowest (bas) strike hits the clan; bottom blow to the group\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B (house) + A (ox) + TA (mark) + CLAN (troop)\",\n    \"reading\": \"the marked house of the ox leads the troop\",\n    \"languages\": [\"en\",\"fr\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba + ta + clan",
+   "reading": "the father (Ba) strikes (ta) the enclosed assembly (clan)",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bat + a + clan",
+   "reading": "the bat (nocturnal creature) to the clan; night strikes the group",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Ba-ta-clan ≈ Bata-clan ≈ Bâta-clan (fr) ≈ bataclan",
+   "reading": "pack of bats; bat-pack; nocturnal squadron",
+   "languages": [
+    "fr",
+    "en",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "clan (Gaelic clann = offspring, family, troop)",
+   "reading": "a troop or brood gathered under the sign of Ba-Ta",
+   "languages": [
+    "gd",
+    "en",
+    "fr"
+   ],
+   "source": "Oxford English Dictionary, s.v. clan",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bât + à + clan",
+   "reading": "the beast of burden (bât = packsaddle) belongs to the clan",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Ba-ta-clan → Cabal + nat + a",
+   "reading": "a natural cabal; secret assembly by nature",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Ba-ta-clan ≈ Batak lan (Malay/Indonesian)",
+   "reading": "the Batak people’s gathering; ancestral spirit circle",
+   "languages": [
+    "id",
+    "ms",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-T-CL-N → Bet-Tsadi-Lamed-Nun (Hebrew letters)",
+   "reading": "house of the hunter’s snare; trap within the dwelling",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bas + ta + clan",
+   "reading": "the lowest (bas) strike hits the clan; bottom blow to the group",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (house) + A (ox) + TA (mark) + CLAN (troop)",
+   "reading": "the marked house of the ox leads the troop",
+   "languages": [
+    "en",
+    "fr",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

@@ -1,0 +1,113 @@
+{
+ "word": "Las Vegas Village",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:22:13+00:00",
+ "latency_s": 10.57,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las (Spanish) = the; Vegas (Spanish) = fertile plains, from Basque 'ibai' (river) + '-ska'; Village (Old French) = farmstead, from Latin 'villaticus'\",\n    \"reading\": \"The fertile river-plains of the farmstead — a place where water meets cultivated land.\",\n    \"languages\": [\"es\",\"eu\",\"fr\",\"la\"],\n    \"source\": \"Diccionario de la lengua española (RAE); Oxford English Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las + Vegas + Village → 'las' (los, lost) + 'vegas' (vega, star in Arabic) + 'village' (villa + age) → 'lost star of the aged villa'\",\n    \"reading\": \"A lost star shining over an ancient estate — memory of a celestial fall into earthly time.\",\n    \"languages\": [\"en\",\"es\",\"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Vegas → 'vegas' (Spanish) → 'vague' (French) → 'vaga' (Italian, wandering) → 'vah' (Persian, wind) → 'village' → 'villa' (Latin, country house) + 'age' (time)\",\n    \"reading\": \"Wandering winds of the country house across ages — a nomadic dwelling in time.\",\n    \"languages\": [\"es\",\"fr\",\"it\",\"fa\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Village → 'village' + 'vegas' + 'las' → 'savile' (Old French, town) + 'lag' (delay) + 'ves' (evening) → 'savile lag ves' → 'savile' (sable, black) + 'lag' (slow) + 'ves' (evening)\",\n    \"reading\": \"Black evening delays — the slow descent of night over a settled place.\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L V V → Lumen (light) + Vita (life) + Via (way) → 'light, life, way' — a triple path\",\n    \"reading\": \"Light, life, and way — a trinity of guidance embedded in the initials.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L (lamed, ox-goad, teaching) + V (vav, hook, connection) + V (vav) → 'teaching through connection' — the village as a node of lessons\",\n    \"reading\": \"A place of teaching and linking — each house a hook to the next, a chain of learning.\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"L=12, V=22, V=22 (Latin alphabet) → 12+22+22=56 → 5+6=11 → 1+1=2 → 'two' — duality, pairing, the village as a pair of plains\",\n    \"reading\": \"The number two — a place of mirrors, of double plains, of the meeting of two waters.\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Village (Old French 'village', from Latin 'villaticus' — belonging to a villa) → 'villa' (country house) → 'vicus' (village, quarter) → 'oikos' (Greek, house) → 'eco' (household)\",\n    \"reading\": \"The village as an extended household — a domestic economy of shared land and labour.\",\n    \"languages\": [\"fr\",\"la\",\"grc\"],\n    \"source\": \"Oxford English Dictionary; Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.75\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Las (Spanish) = the; Vegas (Spanish) = fertile plains, from Basque 'ibai' (river) + '-ska'; Village (Old French) = farmstead, from Latin 'villaticus'",
+   "reading": "The fertile river-plains of the farmstead — a place where water meets cultivated land.",
+   "languages": [
+    "es",
+    "eu",
+    "fr",
+    "la"
+   ],
+   "source": "Diccionario de la lengua española (RAE); Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Vegas + Village → 'las' (los, lost) + 'vegas' (vega, star in Arabic) + 'village' (villa + age) → 'lost star of the aged villa'",
+   "reading": "A lost star shining over an ancient estate — memory of a celestial fall into earthly time.",
+   "languages": [
+    "en",
+    "es",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Vegas → 'vegas' (Spanish) → 'vague' (French) → 'vaga' (Italian, wandering) → 'vah' (Persian, wind) → 'village' → 'villa' (Latin, country house) + 'age' (time)",
+   "reading": "Wandering winds of the country house across ages — a nomadic dwelling in time.",
+   "languages": [
+    "es",
+    "fr",
+    "it",
+    "fa",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Village → 'village' + 'vegas' + 'las' → 'savile' (Old French, town) + 'lag' (delay) + 'ves' (evening) → 'savile lag ves' → 'savile' (sable, black) + 'lag' (slow) + 'ves' (evening)",
+   "reading": "Black evening delays — the slow descent of night over a settled place.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L V V → Lumen (light) + Vita (life) + Via (way) → 'light, life, way' — a triple path",
+   "reading": "Light, life, and way — a trinity of guidance embedded in the initials.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L (lamed, ox-goad, teaching) + V (vav, hook, connection) + V (vav) → 'teaching through connection' — the village as a node of lessons",
+   "reading": "A place of teaching and linking — each house a hook to the next, a chain of learning.",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "numerical",
+   "chain": "L=12, V=22, V=22 (Latin alphabet) → 12+22+22=56 → 5+6=11 → 1+1=2 → 'two' — duality, pairing, the village as a pair of plains",
+   "reading": "The number two — a place of mirrors, of double plains, of the meeting of two waters.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Village (Old French 'village', from Latin 'villaticus' — belonging to a villa) → 'villa' (country house) → 'vicus' (village, quarter) → 'oikos' (Greek, house) → 'eco' (household)",
+   "reading": "The village as an extended household — a domestic economy of shared land and labour.",
+   "languages": [
+    "fr",
+    "la",
+    "grc"
+   ],
+   "source": "Oxford English Dictionary; Lewis & Short Latin Dictionary",
+   "confidence": 0.75
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

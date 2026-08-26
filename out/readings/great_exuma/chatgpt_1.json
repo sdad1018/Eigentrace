@@ -1,0 +1,127 @@
+{
+ "word": "Great Exuma",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:22:53+00:00",
+ "latency_s": 6.01,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"great + exuma → great / ex- / uma; great = grand, ex- = out of, uma ≈ you-ma / mother\",\n    \"reading\": \"The grand departure from the mother: greatness begins by leaving the womb or origin.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.63\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ exhumé (fr) / exhumed (en); great = grand\",\n    \"reading\": \"A grand exhumation: what is buried is brought up into the light.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"great exuma → great ex-uma; ex- as Latin prefix of motion outward, uma as a sounding remainder\",\n    \"reading\": \"The outward movement of the soul: greatness is not possession but release.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"great exuma → rearrange to make ex + auger?; near-anagrammatic play on great / aug- / ex-\",\n    \"reading\": \"An augury of excess and exit: the sign points to a passage, not a resting place.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"G.R.E.A.T. = glory, rise, exalt, ascend, triumph; E.X.U.M.A. = exit, x, unmask, move, arise\",\n    \"reading\": \"Glory rises by exit and unveiling; ascent comes through unmasking.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"G = circle/opening; X = crossing; U = vessel; M = mountain/wave; A = apex\",\n    \"reading\": \"A crossing in the vessel climbs to the apex: the form itself enacts ascent through trial.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.44\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"GREAT EXUMA → sum of letters by A1Z26: GREAT(7+18+5+1+20)=51; EXUMA(5+24+21+13+1)=64; total 115 → 1+1+5=7\",\n    \"reading\": \"Seven: the number of completion, ordeal, and hidden order behind the phrase.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"great (Middle English grete, from Old English grēat, 'big, coarse'; OED / Merriam-Webster) + exuma as a proper-name form, not lexically transparent\",\n    \"reading\": \"A name prefixed by magnitude: the first word declares largeness, force, and prominence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"OED; Merriam-Webster Dictionary\",\n    \"confidence\": 0.86\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"great ≈ gréé / grès?; exuma ≈ ex-uma, sounding like 'exhume a'\",\n    \"reading\": \"To exhume a greatness: what was hidden is made articulate by sound.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.49\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"great exuma → great / ex / uma; ex = former, out; uma echoes Latin umbra by sound only\",\n    \"reading\": \"Former shadow, now out: greatness is the emergence from obscurity.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.36\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "great + exuma → great / ex- / uma; great = grand, ex- = out of, uma ≈ you-ma / mother",
+   "reading": "The grand departure from the mother: greatness begins by leaving the womb or origin.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.63
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Exuma ≈ exhumé (fr) / exhumed (en); great = grand",
+   "reading": "A grand exhumation: what is buried is brought up into the light.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "great exuma → great ex-uma; ex- as Latin prefix of motion outward, uma as a sounding remainder",
+   "reading": "The outward movement of the soul: greatness is not possession but release.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "great exuma → rearrange to make ex + auger?; near-anagrammatic play on great / aug- / ex-",
+   "reading": "An augury of excess and exit: the sign points to a passage, not a resting place.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "notariqon",
+   "chain": "G.R.E.A.T. = glory, rise, exalt, ascend, triumph; E.X.U.M.A. = exit, x, unmask, move, arise",
+   "reading": "Glory rises by exit and unveiling; ascent comes through unmasking.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G = circle/opening; X = crossing; U = vessel; M = mountain/wave; A = apex",
+   "reading": "A crossing in the vessel climbs to the apex: the form itself enacts ascent through trial.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.44
+  },
+  {
+   "operation": "numerical",
+   "chain": "GREAT EXUMA → sum of letters by A1Z26: GREAT(7+18+5+1+20)=51; EXUMA(5+24+21+13+1)=64; total 115 → 1+1+5=7",
+   "reading": "Seven: the number of completion, ordeal, and hidden order behind the phrase.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "etymology",
+   "chain": "great (Middle English grete, from Old English grēat, 'big, coarse'; OED / Merriam-Webster) + exuma as a proper-name form, not lexically transparent",
+   "reading": "A name prefixed by magnitude: the first word declares largeness, force, and prominence.",
+   "languages": [
+    "en"
+   ],
+   "source": "OED; Merriam-Webster Dictionary",
+   "confidence": 0.86
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "great ≈ gréé / grès?; exuma ≈ ex-uma, sounding like 'exhume a'",
+   "reading": "To exhume a greatness: what was hidden is made articulate by sound.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.49
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "great exuma → great / ex / uma; ex = former, out; uma echoes Latin umbra by sound only",
+   "reading": "Former shadow, now out: greatness is the emergence from obscurity.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.36
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

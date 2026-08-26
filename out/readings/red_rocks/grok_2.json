@@ -1,0 +1,139 @@
+{
+ "word": "Red Rocks",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:17:06+00:00",
+ "latency_s": 6.95,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Red Rocks → Rede + Rox\",\n    \"reading\": \"Counsel of the wise; the speech or counsel of the rock\",\n    \"languages\": [\"en\",\"scots\",\"ofr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Red from OE rēad (ruddy, bloody); Rocks from OF rochier (to rock, shake)\",\n    \"reading\": \"The blood that causes the earth to tremble or the trembling blood\",\n    \"languages\": [\"en\",\"ofr\",\"ang\"],\n    \"source\": \"Oxford English Dictionary / Dictionnaire étymologique de l'ancien français\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Red Rocks → Ra + Drok / Ra + Drac\",\n    \"reading\": \"The solar god and the dragon; solar dragon power\",\n    \"languages\": [\"en\",\"egy\",\"grc\",\"ofr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Red Rocks → R + Ed + Rocks → Res + Had + Roc\",\n    \"reading\": \"The secret of the bird of Hermes that knows\",\n    \"languages\": [\"en\",\"la\",\"ar\",\"ofr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"REDROCKS → CRED + ORKS\",\n    \"reading\": \"The credit or belief belonging to the primordial powers\",\n    \"languages\": [\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"R.E.D.R.O.C.K.S. → Regnum Ex Draco Rex Ordo Clavis Key Stone\",\n    \"reading\": \"The royal dragon order holds the key stone of the kingdom\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Red Rocks → Ret + Rocqs\",\n    \"reading\": \"The net or lattice of the alchemical rocks; philosophical grid\",\n    \"languages\": [\"en\",\"ofr\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Red Rocks → Rede + Roch → Rede + Roche\",\n    \"reading\": \"The counsel hidden in the stone; oracular stone speaking\",\n    \"languages\": [\"en\",\"ofr\",\"fr\"],\n    \"source\": \"Fulcanelli-style phonetic cabala\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R (head) + ED (witness) + ROCKS (mineral foundation)\",\n    \"reading\": \"The primordial witness standing upon the mineral foundation\",\n    \"languages\": [\"en\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Rocks from Latin rupes (cliff) via OF roque; Red from rubeus\",\n    \"reading\": \"The ruddy cliff or the cliff that blushes with inner fire\",\n    \"languages\": [\"en\",\"la\",\"ofr\"],\n    \"source\": \"Lewis & Short Latin Dictionary / Dictionnaire étymologique\",\n    \"confidence\": 0.8\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Red Rocks → Rede + Rox",
+   "reading": "Counsel of the wise; the speech or counsel of the rock",
+   "languages": [
+    "en",
+    "scots",
+    "ofr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "Red from OE rēad (ruddy, bloody); Rocks from OF rochier (to rock, shake)",
+   "reading": "The blood that causes the earth to tremble or the trembling blood",
+   "languages": [
+    "en",
+    "ofr",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary / Dictionnaire étymologique de l'ancien français",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Red Rocks → Ra + Drok / Ra + Drac",
+   "reading": "The solar god and the dragon; solar dragon power",
+   "languages": [
+    "en",
+    "egy",
+    "grc",
+    "ofr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Red Rocks → R + Ed + Rocks → Res + Had + Roc",
+   "reading": "The secret of the bird of Hermes that knows",
+   "languages": [
+    "en",
+    "la",
+    "ar",
+    "ofr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "REDROCKS → CRED + ORKS",
+   "reading": "The credit or belief belonging to the primordial powers",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R.E.D.R.O.C.K.S. → Regnum Ex Draco Rex Ordo Clavis Key Stone",
+   "reading": "The royal dragon order holds the key stone of the kingdom",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Red Rocks → Ret + Rocqs",
+   "reading": "The net or lattice of the alchemical rocks; philosophical grid",
+   "languages": [
+    "en",
+    "ofr",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Red Rocks → Rede + Roch → Rede + Roche",
+   "reading": "The counsel hidden in the stone; oracular stone speaking",
+   "languages": [
+    "en",
+    "ofr",
+    "fr"
+   ],
+   "source": "Fulcanelli-style phonetic cabala",
+   "confidence": 0.85
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R (head) + ED (witness) + ROCKS (mineral foundation)",
+   "reading": "The primordial witness standing upon the mineral foundation",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Rocks from Latin rupes (cliff) via OF roque; Red from rubeus",
+   "reading": "The ruddy cliff or the cliff that blushes with inner fire",
+   "languages": [
+    "en",
+    "la",
+    "ofr"
+   ],
+   "source": "Lewis & Short Latin Dictionary / Dictionnaire étymologique",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

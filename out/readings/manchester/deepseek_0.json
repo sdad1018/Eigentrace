@@ -1,0 +1,111 @@
+{
+ "word": "Manchester",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:28:21+00:00",
+ "latency_s": 8.19,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Manchester < Old English Mameceaster < *Mam + ceaster; ceaster (OE) = Roman fort/city, from Latin castra\",\n    \"reading\": \"A fortified settlement near a breast-shaped hill, the Roman camp of the Mam people\",\n    \"languages\": [\"en\", \"la\", \"ang\"],\n    \"source\": \"Oxford English Dictionary, s.v. Manchester; Bosworth-Toller Anglo-Saxon Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + chester; man (OE) = human; chester < ceaster = camp; but 'man' also sounds like 'mamm' (breast) in Celtic\",\n    \"reading\": \"The human camp, or the camp of the breast-shaped mound — a place of nurture and defence\",\n    \"languages\": [\"en\", \"cy\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"man (fr) = hand; chester sounds like 'château' (fr) = castle; thus 'hand-castle'\",\n    \"reading\": \"A hand-built fortress, a castle raised by human labour, not by nature\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester → 'chaste' + 'men' + 'er' → 'chaste men err' → 'men chase' + 'ster' (steer) → 'men chase the star'\",\n    \"reading\": \"Men chase the star — a guiding light, a celestial navigation hidden in the name\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M-A-N-C-H-E-S-T-E-R → Mater, Anima, Numen, Corpus, Homo, Ego, Spiritus, Terra, Ego, Ratio\",\n    \"reading\": \"Mother, soul, divinity, body, human, self, spirit, earth, self, reason — a microcosm of being\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (water, feminine) + A (beginning) + N (fish, life) + C (moon) + H (breath) + E (eye) + S (serpent) + T (cross) + E (eye) + R (sun)\",\n    \"reading\": \"Water begins life; the moon breathes, the serpent sees, the cross bears the sun — a cosmic glyph\",\n    \"languages\": [\"en\", \"he\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"M=40, A=1, N=50, C=3, H=8, E=5, S=19, T=20, E=5, R=18 (Hebrew gematria values) → sum = 169 = 13²\",\n    \"reading\": \"The square of thirteen — unity and transformation, a perfect number of death and rebirth\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mam (Celtic) = breast; ceaster (OE) = Roman fort; thus 'breast-fort' — a hill fort shaped like a breast\",\n    \"reading\": \"A fortified breast — the earth as mother, a place of refuge and nourishment\",\n    \"languages\": [\"cy\", \"ang\", \"la\"],\n    \"source\": \"Oxford Dictionary of English Place-Names (Mills)\",\n    \"confidence\": 0.9\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Manchester < Old English Mameceaster < *Mam + ceaster; ceaster (OE) = Roman fort/city, from Latin castra",
+   "reading": "A fortified settlement near a breast-shaped hill, the Roman camp of the Mam people",
+   "languages": [
+    "en",
+    "la",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary, s.v. Manchester; Bosworth-Toller Anglo-Saxon Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + chester; man (OE) = human; chester < ceaster = camp; but 'man' also sounds like 'mamm' (breast) in Celtic",
+   "reading": "The human camp, or the camp of the breast-shaped mound — a place of nurture and defence",
+   "languages": [
+    "en",
+    "cy",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "man (fr) = hand; chester sounds like 'château' (fr) = castle; thus 'hand-castle'",
+   "reading": "A hand-built fortress, a castle raised by human labour, not by nature",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester → 'chaste' + 'men' + 'er' → 'chaste men err' → 'men chase' + 'ster' (steer) → 'men chase the star'",
+   "reading": "Men chase the star — a guiding light, a celestial navigation hidden in the name",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M-A-N-C-H-E-S-T-E-R → Mater, Anima, Numen, Corpus, Homo, Ego, Spiritus, Terra, Ego, Ratio",
+   "reading": "Mother, soul, divinity, body, human, self, spirit, earth, self, reason — a microcosm of being",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (water, feminine) + A (beginning) + N (fish, life) + C (moon) + H (breath) + E (eye) + S (serpent) + T (cross) + E (eye) + R (sun)",
+   "reading": "Water begins life; the moon breathes, the serpent sees, the cross bears the sun — a cosmic glyph",
+   "languages": [
+    "en",
+    "he",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "M=40, A=1, N=50, C=3, H=8, E=5, S=19, T=20, E=5, R=18 (Hebrew gematria values) → sum = 169 = 13²",
+   "reading": "The square of thirteen — unity and transformation, a perfect number of death and rebirth",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Mam (Celtic) = breast; ceaster (OE) = Roman fort; thus 'breast-fort' — a hill fort shaped like a breast",
+   "reading": "A fortified breast — the earth as mother, a place of refuge and nourishment",
+   "languages": [
+    "cy",
+    "ang",
+    "la"
+   ],
+   "source": "Oxford Dictionary of English Place-Names (Mills)",
+   "confidence": 0.9
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

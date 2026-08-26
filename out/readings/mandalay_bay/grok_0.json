@@ -1,0 +1,135 @@
+{
+ "word": "Mandalay Bay",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:19:53+00:00",
+ "latency_s": 7.57,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + da + lay + Bay\",\n    \"reading\": \"The hand that lays the bay; the gesture that places the laurel of victory\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Manda + lai + Bay\",\n    \"reading\": \"The commanded law of the bay; the ordered statute of the enclosed water\",\n    \"languages\": [\"en\",\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay ~ mandala (Skt) + Bay ~ baie (Fr)\",\n    \"reading\": \"The circle of sacred power within the bay; the mandala of the enclosed harbour\",\n    \"languages\": [\"sa\",\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mandalay from Burmese Mandalay; but read as Man + dala (Skt circle) + Bay (Old English bæc = back, or baie = bay)\",\n    \"reading\": \"The circle of men at the back of the bay; the human mandala behind the water\",\n    \"languages\": [\"en\",\"sa\",\"my\"],\n    \"source\": \"Oxford English Dictionary / Monier-Williams Sanskrit-English Dictionary\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay Bay → Badly a Mayan\",\n    \"reading\": \"A badly understood Mayan; the degenerate remnant of the feathered serpent tradition\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + dal + ay + Bay\",\n    \"reading\": \"The man who gives the valley its bay; he who bestows the laurel upon the hollow\",\n    \"languages\": [\"en\",\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M A N D A L A Y   B A Y → Mundi Axis Naturae Dominus Arcana Lux Bay\",\n    \"reading\": \"Lord of the World Axis, Secret Light of Nature, within the Bay\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay Bay ~ Mandala Bey\",\n    \"reading\": \"The illuminated master of the sacred circle; the prince who holds the mandala\",\n    \"languages\": [\"sa\",\"tr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (Mem = water) + Bay (water) → double water; Dalay as delay + la (the)\",\n    \"reading\": \"The delayed waters; the waters held back, the great dam of the bay\",\n    \"languages\": [\"he\",\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Monde + à + l'Aie + Bay\",\n    \"reading\": \"The world to the ancestress of the bay; the earth given unto the primal mother of the harbour\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + da + lay + Bay",
+   "reading": "The hand that lays the bay; the gesture that places the laurel of victory",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Manda + lai + Bay",
+   "reading": "The commanded law of the bay; the ordered statute of the enclosed water",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay ~ mandala (Skt) + Bay ~ baie (Fr)",
+   "reading": "The circle of sacred power within the bay; the mandala of the enclosed harbour",
+   "languages": [
+    "sa",
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Mandalay from Burmese Mandalay; but read as Man + dala (Skt circle) + Bay (Old English bæc = back, or baie = bay)",
+   "reading": "The circle of men at the back of the bay; the human mandala behind the water",
+   "languages": [
+    "en",
+    "sa",
+    "my"
+   ],
+   "source": "Oxford English Dictionary / Monier-Williams Sanskrit-English Dictionary",
+   "confidence": 0.45
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay Bay → Badly a Mayan",
+   "reading": "A badly understood Mayan; the degenerate remnant of the feathered serpent tradition",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + dal + ay + Bay",
+   "reading": "The man who gives the valley its bay; he who bestows the laurel upon the hollow",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M A N D A L A Y   B A Y → Mundi Axis Naturae Dominus Arcana Lux Bay",
+   "reading": "Lord of the World Axis, Secret Light of Nature, within the Bay",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay Bay ~ Mandala Bey",
+   "reading": "The illuminated master of the sacred circle; the prince who holds the mandala",
+   "languages": [
+    "sa",
+    "tr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (Mem = water) + Bay (water) → double water; Dalay as delay + la (the)",
+   "reading": "The delayed waters; the waters held back, the great dam of the bay",
+   "languages": [
+    "he",
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Monde + à + l'Aie + Bay",
+   "reading": "The world to the ancestress of the bay; the earth given unto the primal mother of the harbour",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

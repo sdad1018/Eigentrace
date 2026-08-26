@@ -1,0 +1,129 @@
+{
+ "word": "Las Vegas Boulevard",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:21:38+00:00",
+ "latency_s": 6.72,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las + Vegas + Boulevard\",\n    \"reading\": \"The law's vague path; boulevard of uncertain statutes\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las (fr: the) + Vegas (lat: veho/vegas = I convey / wagons) + Boulevard (fr: bulwark)\",\n    \"reading\": \"The wagons' bulwark; fortified path of transport\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Boulevard from Dutch bolwerk = bulwark, rampart; Vegas from Spanish vegas = fertile plains\",\n    \"reading\": \"Rampart of the fertile plains\",\n    \"languages\": [\"nl\",\"es\",\"fr\"],\n    \"source\": \"Oxford English Dictionary & Real Academia Española\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lasvegasboulevard → l'as + ve + gas + boule + var + d\",\n    \"reading\": \"The ace sees gas, the ball wanders\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Boulevard → A BAD VAGUE LOSS\",\n    \"reading\": \"A bad vague loss; ambiguous defeat\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L.V.B. → Lux Via Bulla\",\n    \"reading\": \"Light is the way of the bubble; illusory path of radiance\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas → la svegas (grc: σβεγγας ≈ extinguisher) + Boulevard (fr: boulevard)\",\n    \"reading\": \"The extinguisher of the bulwark; that which quenches the rampart\",\n    \"languages\": [\"grc\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Boulevard → boule (fr: ball) + vers (fr: towards) + lard (fr: bacon/fat)\",\n    \"reading\": \"Ball towards the fat; sphere seeking richness\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Vegas contains V (victory) + EGAS (egress backwards)\",\n    \"reading\": \"Victory's hidden exit; triumph through reverse departure\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las from Arabic al- (the) via Spanish; Vegas from Latin vega = meadow\",\n    \"reading\": \"The meadows' boulevard; path through fertile lowlands\",\n    \"languages\": [\"ar\",\"es\",\"la\"],\n    \"source\": \"Merriam-Webster & Corominas Etymological Dictionary\",\n    \"confidence\": 0.85\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Vegas + Boulevard",
+   "reading": "The law's vague path; boulevard of uncertain statutes",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las (fr: the) + Vegas (lat: veho/vegas = I convey / wagons) + Boulevard (fr: bulwark)",
+   "reading": "The wagons' bulwark; fortified path of transport",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Boulevard from Dutch bolwerk = bulwark, rampart; Vegas from Spanish vegas = fertile plains",
+   "reading": "Rampart of the fertile plains",
+   "languages": [
+    "nl",
+    "es",
+    "fr"
+   ],
+   "source": "Oxford English Dictionary & Real Academia Española",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lasvegasboulevard → l'as + ve + gas + boule + var + d",
+   "reading": "The ace sees gas, the ball wanders",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Boulevard → A BAD VAGUE LOSS",
+   "reading": "A bad vague loss; ambiguous defeat",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L.V.B. → Lux Via Bulla",
+   "reading": "Light is the way of the bubble; illusory path of radiance",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas → la svegas (grc: σβεγγας ≈ extinguisher) + Boulevard (fr: boulevard)",
+   "reading": "The extinguisher of the bulwark; that which quenches the rampart",
+   "languages": [
+    "grc",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Boulevard → boule (fr: ball) + vers (fr: towards) + lard (fr: bacon/fat)",
+   "reading": "Ball towards the fat; sphere seeking richness",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Vegas contains V (victory) + EGAS (egress backwards)",
+   "reading": "Victory's hidden exit; triumph through reverse departure",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Las from Arabic al- (the) via Spanish; Vegas from Latin vega = meadow",
+   "reading": "The meadows' boulevard; path through fertile lowlands",
+   "languages": [
+    "ar",
+    "es",
+    "la"
+   ],
+   "source": "Merriam-Webster & Corominas Etymological Dictionary",
+   "confidence": 0.85
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

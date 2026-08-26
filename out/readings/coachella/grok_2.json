@@ -1,0 +1,127 @@
+{
+ "word": "Coachella",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:15:43+00:00",
+ "latency_s": 6.72,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"coq + elle + la\",\n    \"reading\": \"the rooster's feminine side; the hen that rules\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"co + a + chella\",\n    \"reading\": \"with her, the shell; she who carries the protective husk\",\n    \"languages\": [\"en\",\"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"coachella ≈ cochela ≈ coclea\",\n    \"reading\": \"the spiral shell; the labyrinth of the inner ear\",\n    \"languages\": [\"la\",\"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"cochlea (Latin) from Greek kokhlos = spiral shell, snail\",\n    \"reading\": \"the coiled one; that which turns upon itself in secret\",\n    \"languages\": [\"la\",\"grc\"],\n    \"source\": \"Lewis & Short Latin Dictionary; Liddell-Scott Greek Lexicon\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Coachella → Chaocella → Chaoc + ella\",\n    \"reading\": \"the chaos maiden; she who births order from disorder\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"coach + ella\",\n    \"reading\": \"the feminine coach; she who trains and leads the chariot\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"coachella ≈ qoṣella (ar) ≈ qafṣ + ella\",\n    \"reading\": \"the little cage; the enclosed garden of the birds\",\n    \"languages\": [\"ar\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"C.O.A.C.H.E.L.L.A. → Coelum Alatum Continet Hermeticae Egressum Lucis Lux Alchemica\",\n    \"reading\": \"the winged heaven contains the alchemical exit of hermetic light\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"C (3) + O (circle) + A (ox) + CH (spirit) + ELLA (she)\",\n    \"reading\": \"triple circle of the ox-spirit; the feminine vessel of breath\",\n    \"languages\": [\"en\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"coq + a + elle + a\",\n    \"reading\": \"the rooster to her, she to him; mutual avian calling\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "coq + elle + la",
+   "reading": "the rooster's feminine side; the hen that rules",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "co + a + chella",
+   "reading": "with her, the shell; she who carries the protective husk",
+   "languages": [
+    "en",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "coachella ≈ cochela ≈ coclea",
+   "reading": "the spiral shell; the labyrinth of the inner ear",
+   "languages": [
+    "la",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "etymology",
+   "chain": "cochlea (Latin) from Greek kokhlos = spiral shell, snail",
+   "reading": "the coiled one; that which turns upon itself in secret",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "Lewis & Short Latin Dictionary; Liddell-Scott Greek Lexicon",
+   "confidence": 0.9
+  },
+  {
+   "operation": "anagram",
+   "chain": "Coachella → Chaocella → Chaoc + ella",
+   "reading": "the chaos maiden; she who births order from disorder",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "coach + ella",
+   "reading": "the feminine coach; she who trains and leads the chariot",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "coachella ≈ qoṣella (ar) ≈ qafṣ + ella",
+   "reading": "the little cage; the enclosed garden of the birds",
+   "languages": [
+    "ar",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "C.O.A.C.H.E.L.L.A. → Coelum Alatum Continet Hermeticae Egressum Lucis Lux Alchemica",
+   "reading": "the winged heaven contains the alchemical exit of hermetic light",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "C (3) + O (circle) + A (ox) + CH (spirit) + ELLA (she)",
+   "reading": "triple circle of the ox-spirit; the feminine vessel of breath",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "coq + a + elle + a",
+   "reading": "the rooster to her, she to him; mutual avian calling",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

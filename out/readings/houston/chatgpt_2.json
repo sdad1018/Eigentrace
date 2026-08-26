@@ -1,0 +1,104 @@
+{
+ "word": "Houston",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:21:05+00:00",
+ "latency_s": 5.08,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Houston < Scots surname Houston < place-name from Hugh + town; Hugh = from Old French Hugues, from Germanic *hug- “mind, spirit”\",\n    \"reading\": \"The sound of a mind-settlement: a dwelling founded on thought, spirit, or inward counsel.\",\n    \"languages\": [\"en\", \"sco\", \"fr\", \"goh\"],\n    \"source\": \"Oxford Dictionary of English Surnames; Dictionary of American Family Names; OED\",\n    \"confidence\": 0.84\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"hou + ston; hou ~ how / who; ston ~ stone / stoned\",\n    \"reading\": \"How-stone: a question turned to stone, or a fixed answer made heavy and inert.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"houston ~ house-ton; house (en) + ton (en “town”, “burden”, “measure”)\",\n    \"reading\": \"House-town, or house-burden: a built enclosure that becomes a load or a measured place.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"houston ~ hou + ston; hou ~ où (fr “where”) by sound; ston ~ stone\",\n    \"reading\": \"Where-stone: the place is sought, but only a stone answers.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"HOUSTON -> THOUSON / OUTS HON / NO HUTS\",\n    \"reading\": \"No huts: absence of shelter, or a stripped place where dwelling has been undone.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.36\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"H O U S T O N -> Hear / One / Under / Silence / Turns / Open / Night\",\n    \"reading\": \"A hidden sentence: hearing one silence turns open night.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"H = hinge/breath; O = circle; U = vessel; S = serpent; T = cross; O = circle; N = descent/angle\",\n    \"reading\": \"Breath enters the vessel; the serpent crosses the circle and falls into angle: a sealed transformation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"H(8) + O(15) + U(21) + S(19) + T(20) + O(15) + N(14) = 112; 1+1+2 = 4\",\n    \"reading\": \"Fourfold stability after a cumulative ascent: the word resolves into structure, measure, and enclosure.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.47\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Houston < Scots surname Houston < place-name from Hugh + town; Hugh = from Old French Hugues, from Germanic *hug- “mind, spirit”",
+   "reading": "The sound of a mind-settlement: a dwelling founded on thought, spirit, or inward counsel.",
+   "languages": [
+    "en",
+    "sco",
+    "fr",
+    "goh"
+   ],
+   "source": "Oxford Dictionary of English Surnames; Dictionary of American Family Names; OED",
+   "confidence": 0.84
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "hou + ston; hou ~ how / who; ston ~ stone / stoned",
+   "reading": "How-stone: a question turned to stone, or a fixed answer made heavy and inert.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "houston ~ house-ton; house (en) + ton (en “town”, “burden”, “measure”)",
+   "reading": "House-town, or house-burden: a built enclosure that becomes a load or a measured place.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "houston ~ hou + ston; hou ~ où (fr “where”) by sound; ston ~ stone",
+   "reading": "Where-stone: the place is sought, but only a stone answers.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "anagram",
+   "chain": "HOUSTON -> THOUSON / OUTS HON / NO HUTS",
+   "reading": "No huts: absence of shelter, or a stripped place where dwelling has been undone.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.36
+  },
+  {
+   "operation": "notariqon",
+   "chain": "H O U S T O N -> Hear / One / Under / Silence / Turns / Open / Night",
+   "reading": "A hidden sentence: hearing one silence turns open night.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "H = hinge/breath; O = circle; U = vessel; S = serpent; T = cross; O = circle; N = descent/angle",
+   "reading": "Breath enters the vessel; the serpent crosses the circle and falls into angle: a sealed transformation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "numerical",
+   "chain": "H(8) + O(15) + U(21) + S(19) + T(20) + O(15) + N(14) = 112; 1+1+2 = 4",
+   "reading": "Fourfold stability after a cumulative ascent: the word resolves into structure, measure, and enclosure.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.47
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

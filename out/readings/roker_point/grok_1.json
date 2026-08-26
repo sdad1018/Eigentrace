@@ -1,0 +1,129 @@
+{
+ "word": "Roker Point",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:26:45+00:00",
+ "latency_s": 10.15,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Roker + Point\",\n    \"reading\": \"the point where the smoke rises; the locus of fumigation\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"roker (from roke, Northern English dialect) = mist, smoke, fog; point = sharp place or moment\",\n    \"reading\": \"the place or moment where the mist condenses into visible form\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary (roke, v. and n.)\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Roker ≈ rocher (French); Point = pointe\",\n    \"reading\": \"the sharp rock; the piercing stone that emerges\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ro + Ker + Point; roc (Arabic) + ker (kernel/core) + point\",\n    \"reading\": \"the point of the phoenix-core; the axis where the bird reconstitutes\",\n    \"languages\": [\"en\",\"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"ROKER POINT → RE-INK + ROOT + P\",\n    \"reading\": \"the root that re-inks itself; the primordial scribe-point\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"R.O.K.E.R.P.O.I.N.T. → Regnum Occultum Keter Et Resurgens Per Oraculum In Nomine Tenebris\",\n    \"reading\": \"the hidden kingdom of the crown that rises again through the oracle in the name of darkness\",\n    \"languages\": [\"la\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Roke + Erpoint; roque (old French chess) + air point\",\n    \"reading\": \"the point where the tower is cast; the moment of aerial transposition\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"roker from Middle English roken ‘to emit smoke or steam’; point from Latin punctum\",\n    \"reading\": \"the exact place where smoke becomes a sign; the punctum of fumigation\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"Middle English Dictionary (roken); Lewis & Short (punctum)\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R (head of Regnum/Rex) + OK (completion) + ER (ancient suffix of agent) + POINT (punctum)\",\n    \"reading\": \"the kingly agent of completion marks the decisive point\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Roker ≈ rokh (Persian/Arabic rook/phoenix) + Point ≈ pointe (French)\",\n    \"reading\": \"the piercing emergence of the phoenix; the bird’s fiery needle\",\n    \"languages\": [\"en\",\"ar\",\"fr\",\"fa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Roker + Point",
+   "reading": "the point where the smoke rises; the locus of fumigation",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "roker (from roke, Northern English dialect) = mist, smoke, fog; point = sharp place or moment",
+   "reading": "the place or moment where the mist condenses into visible form",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary (roke, v. and n.)",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Roker ≈ rocher (French); Point = pointe",
+   "reading": "the sharp rock; the piercing stone that emerges",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ro + Ker + Point; roc (Arabic) + ker (kernel/core) + point",
+   "reading": "the point of the phoenix-core; the axis where the bird reconstitutes",
+   "languages": [
+    "en",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "ROKER POINT → RE-INK + ROOT + P",
+   "reading": "the root that re-inks itself; the primordial scribe-point",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R.O.K.E.R.P.O.I.N.T. → Regnum Occultum Keter Et Resurgens Per Oraculum In Nomine Tenebris",
+   "reading": "the hidden kingdom of the crown that rises again through the oracle in the name of darkness",
+   "languages": [
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Roke + Erpoint; roque (old French chess) + air point",
+   "reading": "the point where the tower is cast; the moment of aerial transposition",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "roker from Middle English roken ‘to emit smoke or steam’; point from Latin punctum",
+   "reading": "the exact place where smoke becomes a sign; the punctum of fumigation",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Middle English Dictionary (roken); Lewis & Short (punctum)",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R (head of Regnum/Rex) + OK (completion) + ER (ancient suffix of agent) + POINT (punctum)",
+   "reading": "the kingly agent of completion marks the decisive point",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Roker ≈ rokh (Persian/Arabic rook/phoenix) + Point ≈ pointe (French)",
+   "reading": "the piercing emergence of the phoenix; the bird’s fiery needle",
+   "languages": [
+    "en",
+    "ar",
+    "fr",
+    "fa"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

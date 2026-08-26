@@ -1,0 +1,131 @@
+{
+ "word": "Stagecoach",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:18:43+00:00",
+ "latency_s": 8.32,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"stage (from Old French estage 'dwelling, standing place') + coach (from Hungarian kocsi 'carriage from Kocs')\",\n    \"reading\": \"a standing-place carriage; vehicle that stops at fixed stations\",\n    \"languages\": [\"en\",\"fr\",\"hu\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"stay + j + coach\",\n    \"reading\": \"the coach that makes one stay; vehicle of enforced pause\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"stag + e + coach\",\n    \"reading\": \"the male deer’s carriage; vehicle of the horned one\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"stagecoach ≈ stā j kōch ≈ sta je koč (Slavic)\",\n    \"reading\": \"what stands, is already a carriage; that which is in place moves\",\n    \"languages\": [\"en\",\"cs\",\"sk\",\"sl\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"STAGECOACH → CHAOS + C + GET\",\n    \"reading\": \"chaos that gets the letter C; ordered transport born from disorder\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"stage + coach → est + âge + coche (fr)\",\n    \"reading\": \"is + age + notch/vehicle; the notch that marks the age\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"S.T.A.G.E.C.O.A.C.H. → Statio Trahit Ad Gressum Equorum Celerem Omni Anno Currens Huc\",\n    \"reading\": \"the station draws the swift step of horses running hither every year\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"S = serpent, T = tau/cross, AGE = æon, COACH = vehicle\",\n    \"reading\": \"serpent-cross of the æon carries the seeker; initiatory transport\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"stagecoach ≈ sta je coach ≈ c'est âgé coach\",\n    \"reading\": \"it is the aged coach; the ancient vehicle that still carries\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"coach from kocsi (Hungarian) from Kocs village; stage from Latin stare via Old French\",\n    \"reading\": \"the carriage from the standing-place; vehicle that halts where one stands\",\n    \"languages\": [\"en\",\"hu\",\"la\",\"fr\"],\n    \"source\": \"Etymonline / OED\",\n    \"confidence\": 0.9\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "stage (from Old French estage 'dwelling, standing place') + coach (from Hungarian kocsi 'carriage from Kocs')",
+   "reading": "a standing-place carriage; vehicle that stops at fixed stations",
+   "languages": [
+    "en",
+    "fr",
+    "hu"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "stay + j + coach",
+   "reading": "the coach that makes one stay; vehicle of enforced pause",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "stag + e + coach",
+   "reading": "the male deer’s carriage; vehicle of the horned one",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "stagecoach ≈ stā j kōch ≈ sta je koč (Slavic)",
+   "reading": "what stands, is already a carriage; that which is in place moves",
+   "languages": [
+    "en",
+    "cs",
+    "sk",
+    "sl"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "STAGECOACH → CHAOS + C + GET",
+   "reading": "chaos that gets the letter C; ordered transport born from disorder",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "stage + coach → est + âge + coche (fr)",
+   "reading": "is + age + notch/vehicle; the notch that marks the age",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "S.T.A.G.E.C.O.A.C.H. → Statio Trahit Ad Gressum Equorum Celerem Omni Anno Currens Huc",
+   "reading": "the station draws the swift step of horses running hither every year",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "S = serpent, T = tau/cross, AGE = æon, COACH = vehicle",
+   "reading": "serpent-cross of the æon carries the seeker; initiatory transport",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "stagecoach ≈ sta je coach ≈ c'est âgé coach",
+   "reading": "it is the aged coach; the ancient vehicle that still carries",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "coach from kocsi (Hungarian) from Kocs village; stage from Latin stare via Old French",
+   "reading": "the carriage from the standing-place; vehicle that halts where one stands",
+   "languages": [
+    "en",
+    "hu",
+    "la",
+    "fr"
+   ],
+   "source": "Etymonline / OED",
+   "confidence": 0.9
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

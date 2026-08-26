@@ -1,0 +1,110 @@
+{
+ "word": "Bataclan",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:32:02+00:00",
+ "latency_s": 8.47,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bataclan (French, 1820s) from dialectal batacler 'to make noise'; possibly echoic of clatter; cf. Old French batre 'to beat' + clangor\",\n    \"reading\": \"A noisy beating or clattering; a place of loud, chaotic sound.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"Le Robert historique de la langue française\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ba + ta + clan; 'ba' (sheep sound) + 'ta' (thanks in Italian) + 'clan' (family group)\",\n    \"reading\": \"A bleating herd thanking its kin — a tribal chorus of animal voices.\",\n    \"languages\": [\"fr\", \"it\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bataclan ~ 'bat a clan' (English: strikes a family) ~ 'bata' (Irish: stick) + 'clan' (Gaelic: offspring)\",\n    \"reading\": \"A stick that strikes the offspring — the tool of tribal discipline or war.\",\n    \"languages\": [\"en\", \"ga\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"bataclan → 'canal bat' (English) → 'tabac lan' (French: tobacco wool) → 'cabalant' (French: conspiring)\",\n    \"reading\": \"A conspiring canal of wool and smoke — hidden trade routes of covert speech.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-A-T-A-C-L-A-N → B (bé) + A (alpha) + T (tau) + A (alpha) + C (chi) + L (lambda) + A (alpha) + N (nu) — Greek letters: β, α, τ, α, χ, λ, α, ν\",\n    \"reading\": \"Beta alpha tau alpha chi lambda alpha nu — a Greek incantation of beginning and end.\",\n    \"languages\": [\"grc\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B (house, 2nd letter) + A (ox, 1st) + T (cross, 22nd) + A (ox) + C (camel, 3rd) + L (goad, 12th) + A (ox) + N (fish, 14th)\",\n    \"reading\": \"House, ox, cross, ox, camel, goad, ox, fish — a farmyard zodiac of burden and sacrifice.\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"B=2, A=1, T=20, A=1, C=3, L=12, A=1, N=14 → sum = 54; 5+4=9; 9 = completion, threshold\",\n    \"reading\": \"Fifty-four reduces to nine — the number of endings and new cycles; a door of finality.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ba-ta-clan; 'ba' (French: bâ, a stick) + 'ta' (French: ta, your) + 'clan' (clan) → 'your stick, clan'\",\n    \"reading\": \"Your stick, your clan — a possessive call to tribal authority and its weapon.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "bataclan (French, 1820s) from dialectal batacler 'to make noise'; possibly echoic of clatter; cf. Old French batre 'to beat' + clangor",
+   "reading": "A noisy beating or clattering; a place of loud, chaotic sound.",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "Le Robert historique de la langue française",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ba + ta + clan; 'ba' (sheep sound) + 'ta' (thanks in Italian) + 'clan' (family group)",
+   "reading": "A bleating herd thanking its kin — a tribal chorus of animal voices.",
+   "languages": [
+    "fr",
+    "it",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bataclan ~ 'bat a clan' (English: strikes a family) ~ 'bata' (Irish: stick) + 'clan' (Gaelic: offspring)",
+   "reading": "A stick that strikes the offspring — the tool of tribal discipline or war.",
+   "languages": [
+    "en",
+    "ga",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "bataclan → 'canal bat' (English) → 'tabac lan' (French: tobacco wool) → 'cabalant' (French: conspiring)",
+   "reading": "A conspiring canal of wool and smoke — hidden trade routes of covert speech.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-A-T-A-C-L-A-N → B (bé) + A (alpha) + T (tau) + A (alpha) + C (chi) + L (lambda) + A (alpha) + N (nu) — Greek letters: β, α, τ, α, χ, λ, α, ν",
+   "reading": "Beta alpha tau alpha chi lambda alpha nu — a Greek incantation of beginning and end.",
+   "languages": [
+    "grc",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (house, 2nd letter) + A (ox, 1st) + T (cross, 22nd) + A (ox) + C (camel, 3rd) + L (goad, 12th) + A (ox) + N (fish, 14th)",
+   "reading": "House, ox, cross, ox, camel, goad, ox, fish — a farmyard zodiac of burden and sacrifice.",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "B=2, A=1, T=20, A=1, C=3, L=12, A=1, N=14 → sum = 54; 5+4=9; 9 = completion, threshold",
+   "reading": "Fifty-four reduces to nine — the number of endings and new cycles; a door of finality.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ba-ta-clan; 'ba' (French: bâ, a stick) + 'ta' (French: ta, your) + 'clan' (clan) → 'your stick, clan'",
+   "reading": "Your stick, your clan — a possessive call to tribal authority and its weapon.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

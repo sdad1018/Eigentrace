@@ -1,0 +1,114 @@
+{
+ "word": "Manchester",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:22:03+00:00",
+ "latency_s": 4.82,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"man + chester; chester < OE ceaster < Lat castra = camp, fort\",\n    \"reading\": \"“Man’s camp”: a fortified place of men, a human enclosure or settlement.\",\n    \"languages\": [\"en\", \"oe\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Online Etymology Dictionary; Chambers Dictionary\",\n    \"confidence\": 0.86\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + chester → man + chest + er\",\n    \"reading\": \"A man’s chest, then the one who bears or guards the heart’s store.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"man + chester ≈ main + chester; main (fr) = hand\",\n    \"reading\": \"The hand enters the fortified place: action, grasp, and making by the hand.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"man + chester ≈ manche + ster; manche (fr) = sleeve, handle\",\n    \"reading\": \"A sleeve or handle in a camp: the tool, the grasp, the limb extended.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.39\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester → chasm + enter\",\n    \"reading\": \"Enter the gap: passage through a breach, a threshold opened in the wall.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.74\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester → chant + er + mess\",\n    \"reading\": \"A chant amid disorder: sacred sound rising from confusion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.53\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M-A-N-C-H-E-S-T-E-R → Mind, Art, Nature, Craft, Heart, Earth, Spirit, Time, Element, Rite\",\n    \"reading\": \"A formula of making: mind and heart shaping earth through rite and craft.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.18\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M = double peak; A = apex; N = crossing; C = crescent; H = gate; E = three bars; S = serpent; T = cross; E = echo; R = turning\",\n    \"reading\": \"A mountain-gate-serpent-cross: ascent, threshold, trial, and return.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.57\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"M+A+N+C+H+E+S+T+E+R = 13+1+14+3+8+5+19+20+5+18 = 106; 1+0+6 = 7\",\n    \"reading\": \"Seven: the number of completion, cycle, and ordered return.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.44\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "man + chester; chester < OE ceaster < Lat castra = camp, fort",
+   "reading": "“Man’s camp”: a fortified place of men, a human enclosure or settlement.",
+   "languages": [
+    "en",
+    "oe",
+    "la"
+   ],
+   "source": "Oxford English Dictionary; Online Etymology Dictionary; Chambers Dictionary",
+   "confidence": 0.86
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + chester → man + chest + er",
+   "reading": "A man’s chest, then the one who bears or guards the heart’s store.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "man + chester ≈ main + chester; main (fr) = hand",
+   "reading": "The hand enters the fortified place: action, grasp, and making by the hand.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "man + chester ≈ manche + ster; manche (fr) = sleeve, handle",
+   "reading": "A sleeve or handle in a camp: the tool, the grasp, the limb extended.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.39
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester → chasm + enter",
+   "reading": "Enter the gap: passage through a breach, a threshold opened in the wall.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.74
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester → chant + er + mess",
+   "reading": "A chant amid disorder: sacred sound rising from confusion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.53
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M-A-N-C-H-E-S-T-E-R → Mind, Art, Nature, Craft, Heart, Earth, Spirit, Time, Element, Rite",
+   "reading": "A formula of making: mind and heart shaping earth through rite and craft.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.18
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M = double peak; A = apex; N = crossing; C = crescent; H = gate; E = three bars; S = serpent; T = cross; E = echo; R = turning",
+   "reading": "A mountain-gate-serpent-cross: ascent, threshold, trial, and return.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.57
+  },
+  {
+   "operation": "numerical",
+   "chain": "M+A+N+C+H+E+S+T+E+R = 13+1+14+3+8+5+19+20+5+18 = 106; 1+0+6 = 7",
+   "reading": "Seven: the number of completion, cycle, and ordered return.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.44
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 9,
+ "refusal_like": false
+}

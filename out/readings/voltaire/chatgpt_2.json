@@ -1,0 +1,103 @@
+{
+ "word": "Voltaire",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:24:52+00:00",
+ "latency_s": 5.69,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"etymology\",\"chain\":\"Voltaire = French surname, from the place-name Voltaire/Volter?; standard lexica derive it as a variant of Voltaire from Voltaire/Volter, ultimately from a Germanic personal name with wald- 'rule' + -hari 'army'\",\"reading\":\"A name sounding like rule-army: authority joined to force.\",\"languages\":[\"fr\",\"goh\",\"de\"],\"source\":\"TLFi; Dictionnaire étymologique de la langue française (Bloch-Wartburg)\",\"confidence\":0.42},{\"operation\":\"phonetic_split\",\"chain\":\"vol + taire; vol (FR) = flight, theft; taire (FR) = to silence\",\"reading\":\"Flight or theft is made silent: a hidden taking, or an ascent into secrecy.\",\"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.94},{\"operation\":\"cross_language_homophone\",\"chain\":\"vol (FR) = flight/theft; air (FR/EN) = air; vol-air ≈ 'flying air'\",\"reading\":\"Air in motion: the word lifts upward, suggesting volatile spirit and aerial intelligence.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.78},{\"operation\":\"cross_language_homophone\",\"chain\":\"vol (FR) = theft; taire (FR) = silence; vol + taire ≈ 'stolen silence'\",\"reading\":\"A silence taken away, or a secret removed from speech.\",\"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.91},{\"operation\":\"anagram\",\"chain\":\"Voltaire → voile + art (near-anagrammatic clustering)\",\"reading\":\"A veil of art: concealment turned into crafted expression.\",\"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.63},{\"operation\":\"notariqon\",\"chain\":\"V O L T A I R E = Voice Of Light, Tuning All Into Radiant Echoes\",\"reading\":\"A voice that turns into light and resonance.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.21},{\"operation\":\"letter_symbol\",\"chain\":\"V = descent/opening; O = circle; L = angle; T = crossbar; A = apex; I = pillar; R = turn; E = expansion\",\"reading\":\"A descent into a circle, then an angle, cross, apex, pillar, turn, and opening: a path from enclosure to expression.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.34},{\"operation\":\"numerical\",\"chain\":\"V(22)+O(15)+L(12)+T(20)+A(1)+I(9)+R(18)+E(5)=102; 1+0+2=3\",\"reading\":\"Threefold movement: thesis, turn, release; the number of articulated becoming.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.57}]}",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Voltaire = French surname, from the place-name Voltaire/Volter?; standard lexica derive it as a variant of Voltaire from Voltaire/Volter, ultimately from a Germanic personal name with wald- 'rule' + -hari 'army'",
+   "reading": "A name sounding like rule-army: authority joined to force.",
+   "languages": [
+    "fr",
+    "goh",
+    "de"
+   ],
+   "source": "TLFi; Dictionnaire étymologique de la langue française (Bloch-Wartburg)",
+   "confidence": 0.42
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "vol + taire; vol (FR) = flight, theft; taire (FR) = to silence",
+   "reading": "Flight or theft is made silent: a hidden taking, or an ascent into secrecy.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.94
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "vol (FR) = flight/theft; air (FR/EN) = air; vol-air ≈ 'flying air'",
+   "reading": "Air in motion: the word lifts upward, suggesting volatile spirit and aerial intelligence.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.78
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "vol (FR) = theft; taire (FR) = silence; vol + taire ≈ 'stolen silence'",
+   "reading": "A silence taken away, or a secret removed from speech.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.91
+  },
+  {
+   "operation": "anagram",
+   "chain": "Voltaire → voile + art (near-anagrammatic clustering)",
+   "reading": "A veil of art: concealment turned into crafted expression.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.63
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V O L T A I R E = Voice Of Light, Tuning All Into Radiant Echoes",
+   "reading": "A voice that turns into light and resonance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.21
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V = descent/opening; O = circle; L = angle; T = crossbar; A = apex; I = pillar; R = turn; E = expansion",
+   "reading": "A descent into a circle, then an angle, cross, apex, pillar, turn, and opening: a path from enclosure to expression.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.34
+  },
+  {
+   "operation": "numerical",
+   "chain": "V(22)+O(15)+L(12)+T(20)+A(1)+I(9)+R(18)+E(5)=102; 1+0+2=3",
+   "reading": "Threefold movement: thesis, turn, release; the number of articulated becoming.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.57
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 8,
+ "refusal_like": false
+}

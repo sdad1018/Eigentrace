@@ -1,0 +1,80 @@
+{
+ "word": "Gillette Stadium",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T00:31:18+00:00",
+ "latency_s": 109.72,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"Gillette / Stadium\",\"reading\":\"Sharp blade meets grand arena.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.9},{\"operation\":\"cross_language_homophone\",\"chain\":\"Gillette (sounds like) gilette (French)\",\"reading\":\"Soft, close-fitting jacket; symbol of protection and warmth.\",\"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.75},{\"operation\":\"anagram\",\"chain\":\"Stadium / Gillette\",\"reading\":\"Dismantle the sharp edge.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.8},{\"operation\":\"phonetic_split\",\"chain\":\"Gillette / Stadium\",\"reading\":\"Edge of battle, field of war.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"cross_language_homophone\",\"chain\":\"Stadium (sounds like) estudium (Latin)\",\"reading\":\"Place of learning and study.\",\"languages\":[\"la\"],\"source\":\"generative\",\"confidence\":0.8},{\"operation\":\"phonetic_split\",\"chain\":\"Gillette / Stadium\",\"reading\":\"Sharp confrontation in a grand space.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.75}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Gillette / Stadium",
+   "reading": "Sharp blade meets grand arena.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gillette (sounds like) gilette (French)",
+   "reading": "Soft, close-fitting jacket; symbol of protection and warmth.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "Stadium / Gillette",
+   "reading": "Dismantle the sharp edge.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gillette / Stadium",
+   "reading": "Edge of battle, field of war.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Stadium (sounds like) estudium (Latin)",
+   "reading": "Place of learning and study.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gillette / Stadium",
+   "reading": "Sharp confrontation in a grand space.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

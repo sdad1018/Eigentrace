@@ -1,0 +1,154 @@
+{
+ "word": "Texas",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:06+00:00",
+ "latency_s": 5.47,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"etymology\",\"chain\":\"Texas ← Spanish Tejas ← Caddo tayshas 'allies' or 'friends'\",\"reading\":\"Land of the allies or confederated friends\",\"languages\":[\"en\",\"es\",\"nai\"],\"source\":\"Oxford English Dictionary; Spanish Royal Academy\",\"confidence\":0.9},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Tex + as\",\"reading\":\"The tax upon the self; tribute exacted from being\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Té + xas\",\"reading\":\"Thee (you) + excess; you who are too much\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Texas ≈ teks + âs (French)\",\"reading\":\"You tie down / you bind the ace\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"anagram\",\"chain\":\"Texas = taxes\",\"reading\":\"The taxes; that which is taken by force\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.8},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Tex + as (Latin as)\",\"reading\":\"The woven fabric + the copper coin; the smallest unit of account\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"letter_symbol\",\"chain\":\"T (tau/cross) + ex (out of) + as (like)\",\"reading\":\"The cross that stands out from likeness; the exceptional sacrifice\",\"languages\":[\"en\",\"grc\",\"la\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"notariqon\",\"chain\":\"T.E.X.A.S. ← Theos Ex Astris\",\"reading\":\"God out of the stars; divinity descended from heaven\",\"languages\":[\"en\",\"grc\",\"la\"],\"source\":\"generative\",\"confidence\":0.4},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Texas ≈ Tekh + as (Egyptian/Greek)\",\"reading\":\"The artisan of Isis; the craftsman who binds\",\"languages\":[\"grc\",\"egy\"],\"source\":\"generative\",\"confidence\":0.35},\n  {\"operation\":\"etymology\",\"chain\":\"Texas ← Latin texere (to weave)\",\"reading\":\"That which is woven; the fabric or the text\",\"languages\":[\"la\",\"en\"],\"source\":\"Lewis & Short Latin Dictionary\",\"confidence\":0.7},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Te + xas (French chasse)\",\"reading\":\"You hunt; the act of pursuit itself\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"numerical\",\"chain\":\"T=3 (Hebrew Tav=400 reduced) + ex=5+6=11 + as=1+19=20 → 3-11-20\",\"reading\":\"The trinity that falls from heaven into matter\",\"languages\":[\"he\",\"en\"],\"source\":\"generative\",\"confidence\":0.3}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Texas ← Spanish Tejas ← Caddo tayshas 'allies' or 'friends'",
+   "reading": "Land of the allies or confederated friends",
+   "languages": [
+    "en",
+    "es",
+    "nai"
+   ],
+   "source": "Oxford English Dictionary; Spanish Royal Academy",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Tex + as",
+   "reading": "The tax upon the self; tribute exacted from being",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Té + xas",
+   "reading": "Thee (you) + excess; you who are too much",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Texas ≈ teks + âs (French)",
+   "reading": "You tie down / you bind the ace",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "Texas = taxes",
+   "reading": "The taxes; that which is taken by force",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Tex + as (Latin as)",
+   "reading": "The woven fabric + the copper coin; the smallest unit of account",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T (tau/cross) + ex (out of) + as (like)",
+   "reading": "The cross that stands out from likeness; the exceptional sacrifice",
+   "languages": [
+    "en",
+    "grc",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "notariqon",
+   "chain": "T.E.X.A.S. ← Theos Ex Astris",
+   "reading": "God out of the stars; divinity descended from heaven",
+   "languages": [
+    "en",
+    "grc",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Texas ≈ Tekh + as (Egyptian/Greek)",
+   "reading": "The artisan of Isis; the craftsman who binds",
+   "languages": [
+    "grc",
+    "egy"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "etymology",
+   "chain": "Texas ← Latin texere (to weave)",
+   "reading": "That which is woven; the fabric or the text",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Lewis & Short Latin Dictionary",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Te + xas (French chasse)",
+   "reading": "You hunt; the act of pursuit itself",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "T=3 (Hebrew Tav=400 reduced) + ex=5+6=11 + as=1+19=20 → 3-11-20",
+   "reading": "The trinity that falls from heaven into matter",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

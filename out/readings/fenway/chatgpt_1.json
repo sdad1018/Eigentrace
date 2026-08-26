@@ -1,0 +1,104 @@
+{
+ "word": "Fenway",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:17:01+00:00",
+ "latency_s": 4.07,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"fen + way; fen = marsh, wet lowland; way = path, passage\",\n    \"reading\": \"A path through the marsh: passage made where ground is wet, uncertain, and half-submerged.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.92\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"fen ~ fin (fr) / fin (la) = end; way = route\",\n    \"reading\": \"The route of an ending: a way that leads to completion, closure, or the last point.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"fen ~ faim (fr) = hunger; way = way, manner\",\n    \"reading\": \"A hungry way: movement driven by lack, appetite, or desire.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.44\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"fenway -> a new f?; near-anagrammatic pull toward new + way\",\n    \"reading\": \"A new way: a reconfigured path, a changed manner of proceeding.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.36\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"F = the forked form; E = three bars of expression; N = zigzag; W = doubled wave; A = ascent; Y = branching choice\",\n    \"reading\": \"A wavering ascent at a fork: the sign of choice rising through divided currents.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"F(6)+E(5)+N(14)+W(23)+A(1)+Y(25) = 74; 7+4 = 11\",\n    \"reading\": \"Eleven as a threshold number: doubled unity, a gate between one state and another.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.27\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"way < Old English weg, 'road, path'; fen < Old English fenn, 'marsh, fen' (OED / Chambers)\",\n    \"reading\": \"A road through marshland: a passage defined by wet ground and difficult footing.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary; Chambers Dictionary of Etymology\",\n    \"confidence\": 0.97\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"fen + way; fen ~ fin = fin, end; way = course\",\n    \"reading\": \"The course toward the finish: movement aimed at an end-point.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.49\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "fen + way; fen = marsh, wet lowland; way = path, passage",
+   "reading": "A path through the marsh: passage made where ground is wet, uncertain, and half-submerged.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.92
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "fen ~ fin (fr) / fin (la) = end; way = route",
+   "reading": "The route of an ending: a way that leads to completion, closure, or the last point.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "fen ~ faim (fr) = hunger; way = way, manner",
+   "reading": "A hungry way: movement driven by lack, appetite, or desire.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.44
+  },
+  {
+   "operation": "anagram",
+   "chain": "fenway -> a new f?; near-anagrammatic pull toward new + way",
+   "reading": "A new way: a reconfigured path, a changed manner of proceeding.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.36
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "F = the forked form; E = three bars of expression; N = zigzag; W = doubled wave; A = ascent; Y = branching choice",
+   "reading": "A wavering ascent at a fork: the sign of choice rising through divided currents.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "numerical",
+   "chain": "F(6)+E(5)+N(14)+W(23)+A(1)+Y(25) = 74; 7+4 = 11",
+   "reading": "Eleven as a threshold number: doubled unity, a gate between one state and another.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.27
+  },
+  {
+   "operation": "etymology",
+   "chain": "way < Old English weg, 'road, path'; fen < Old English fenn, 'marsh, fen' (OED / Chambers)",
+   "reading": "A road through marshland: a passage defined by wet ground and difficult footing.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Chambers Dictionary of Etymology",
+   "confidence": 0.97
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "fen + way; fen ~ fin = fin, end; way = course",
+   "reading": "The course toward the finish: movement aimed at an end-point.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.49
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

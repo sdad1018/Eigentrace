@@ -1,0 +1,123 @@
+{
+ "word": "Mandalay Bay",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:32:30+00:00",
+ "latency_s": 25.17,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mandala (Pali/Sanskrit) = circle, cosmic diagram; lay (English) = to place, to lie down.\",\n    \"reading\": \"To place or lay down the sacred cosmic circle.\",\n    \"languages\": [\"sa\", \"en\"],\n    \"source\": \"Monier-Williams Sanskrit-English Dictionary, Online Etymology Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man (English) + da (German) = 'the'; lay (English) = a song, a poem.\",\n    \"reading\": \"Man, the song or man, the poem.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Main (French) = hand; d'à (French) = 'of that which'; lait (French) = milk.\",\n    \"reading\": \"The hand of that which is milk.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bay (English noun) = an indentation of a shoreline, a recess.\",\n    \"reading\": \"A natural indentation or sheltered recess in the land.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bay (English verb) = to bark or howl, especially of dogs.\",\n    \"reading\": \"The act of crying out with a deep, prolonged howl.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Online Etymology Dictionary\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + delay (phonetic from Mandalay); Bay (homophone for 'be').\",\n    \"reading\": \"Man, delay to be.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandare (Latin) = to command, entrust; ala (Latin) = wing; bay (English) = a deep, prolonged cry.\",\n    \"reading\": \"Command or entrust the wing with a deep cry.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Lewis and Short Latin Dictionary, Online Etymology Dictionary\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M=Mystery, A=Alpha, N=New, D=Door, A=Alpha, L=Light, A=Alpha, Y=Why (for Mandalay); B=Beta, A=Alpha, Y=Why (for Bay).\",\n    \"reading\": \"Mystery of the new door, light, and questioning; a beginning, the alpha, and the why.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Rearrangement of the letters A,A,A,A,B,D,L,L,M,N,Y,Y to form the phrase 'many a bad lay'.\",\n    \"reading\": \"Many a bad poem or song.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Mand (as in 'mandate'); all (English); aye (English) = yes; Bay (English) = a red-brown color.\",\n    \"reading\": \"A mandate for all to affirm the reddish hue.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Mandala (Pali/Sanskrit) = circle, cosmic diagram; lay (English) = to place, to lie down.",
+   "reading": "To place or lay down the sacred cosmic circle.",
+   "languages": [
+    "sa",
+    "en"
+   ],
+   "source": "Monier-Williams Sanskrit-English Dictionary, Online Etymology Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man (English) + da (German) = 'the'; lay (English) = a song, a poem.",
+   "reading": "Man, the song or man, the poem.",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Main (French) = hand; d'à (French) = 'of that which'; lait (French) = milk.",
+   "reading": "The hand of that which is milk.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bay (English noun) = an indentation of a shoreline, a recess.",
+   "reading": "A natural indentation or sheltered recess in the land.",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary",
+   "confidence": 1.0
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bay (English verb) = to bark or howl, especially of dogs.",
+   "reading": "The act of crying out with a deep, prolonged howl.",
+   "languages": [
+    "en"
+   ],
+   "source": "Online Etymology Dictionary",
+   "confidence": 1.0
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + delay (phonetic from Mandalay); Bay (homophone for 'be').",
+   "reading": "Man, delay to be.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandare (Latin) = to command, entrust; ala (Latin) = wing; bay (English) = a deep, prolonged cry.",
+   "reading": "Command or entrust the wing with a deep cry.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Lewis and Short Latin Dictionary, Online Etymology Dictionary",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M=Mystery, A=Alpha, N=New, D=Door, A=Alpha, L=Light, A=Alpha, Y=Why (for Mandalay); B=Beta, A=Alpha, Y=Why (for Bay).",
+   "reading": "Mystery of the new door, light, and questioning; a beginning, the alpha, and the why.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Rearrangement of the letters A,A,A,A,B,D,L,L,M,N,Y,Y to form the phrase 'many a bad lay'.",
+   "reading": "Many a bad poem or song.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Mand (as in 'mandate'); all (English); aye (English) = yes; Bay (English) = a red-brown color.",
+   "reading": "A mandate for all to affirm the reddish hue.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

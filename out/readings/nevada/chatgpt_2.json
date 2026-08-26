@@ -1,0 +1,107 @@
+{
+ "word": "Nevada",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:19:59+00:00",
+ "latency_s": 5.62,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Spanish nevada < nevar “to snow” + -ada, a noun of action/result; literally “a snowfall, snow-covered state”\",\n    \"reading\": \"A descent of snow; whitened, veiled, made silent by falling white.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"Real Academia Española, Diccionario de la lengua española; Corominas & Pascual, Diccionario crítico etimológico castellano e hispánico\",\n    \"confidence\": 0.98\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ne- + va- + da; ne as negation, va from va! “go!”, da from da! “give!”\",\n    \"reading\": \"Not-go, not-give: a refusal that halts movement and withholds the gift.\",\n    \"languages\": [\"fr\", \"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.56\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"ne + va + da ≈ French nez va d’... / ne va pas d’...; sound suggests “does not go”\",\n    \"reading\": \"A thing that does not proceed, a suspended passage, an arrested advance.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.49\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"nevada ≈ Latin nivea / nivalis by sound and sense; niv- evokes nix, nivis “snow”\",\n    \"reading\": \"Snow-white, belonging to snow, a whitening that covers and transforms.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.61\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"NEVADA → AVANED / AVENAD / VANADE; the core visible letters V-A-D suggest vad- “to go” with an initial negating N/E\",\n    \"reading\": \"A road crossed by negation: movement present, yet blocked or reversed.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.34\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"N-E-V-A-D-A read as initials: N = no, E = entry, V = veil, A = and, D = descent, A = ash/after\",\n    \"reading\": \"No entry, veil, descent, ash: a formula of closure and whitening after fall.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.28\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N as negation; V as valley/valence/opening; A as alpha, beginning; D as door or delta, threshold\",\n    \"reading\": \"Negation opens a threshold: beginning passes through a gate into a lower basin.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.42\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Using Latin alphabet positions: N14 + E5 + V22 + A1 + D4 + A1 = 47; 4+7 = 11, then 1+1 = 2\",\n    \"reading\": \"Twofoldness: a split, a pair, a mirrored state after reduction.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Spanish nevada < nevar “to snow” + -ada, a noun of action/result; literally “a snowfall, snow-covered state”",
+   "reading": "A descent of snow; whitened, veiled, made silent by falling white.",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "Real Academia Española, Diccionario de la lengua española; Corominas & Pascual, Diccionario crítico etimológico castellano e hispánico",
+   "confidence": 0.98
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ne- + va- + da; ne as negation, va from va! “go!”, da from da! “give!”",
+   "reading": "Not-go, not-give: a refusal that halts movement and withholds the gift.",
+   "languages": [
+    "fr",
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.56
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "ne + va + da ≈ French nez va d’... / ne va pas d’...; sound suggests “does not go”",
+   "reading": "A thing that does not proceed, a suspended passage, an arrested advance.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.49
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "nevada ≈ Latin nivea / nivalis by sound and sense; niv- evokes nix, nivis “snow”",
+   "reading": "Snow-white, belonging to snow, a whitening that covers and transforms.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.61
+  },
+  {
+   "operation": "anagram",
+   "chain": "NEVADA → AVANED / AVENAD / VANADE; the core visible letters V-A-D suggest vad- “to go” with an initial negating N/E",
+   "reading": "A road crossed by negation: movement present, yet blocked or reversed.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.34
+  },
+  {
+   "operation": "notariqon",
+   "chain": "N-E-V-A-D-A read as initials: N = no, E = entry, V = veil, A = and, D = descent, A = ash/after",
+   "reading": "No entry, veil, descent, ash: a formula of closure and whitening after fall.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.28
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N as negation; V as valley/valence/opening; A as alpha, beginning; D as door or delta, threshold",
+   "reading": "Negation opens a threshold: beginning passes through a gate into a lower basin.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.42
+  },
+  {
+   "operation": "numerical",
+   "chain": "Using Latin alphabet positions: N14 + E5 + V22 + A1 + D4 + A1 = 47; 4+7 = 11, then 1+1 = 2",
+   "reading": "Twofoldness: a split, a pair, a mirrored state after reduction.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

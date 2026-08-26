@@ -1,0 +1,151 @@
+{
+ "word": "Las Vegas",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:52+00:00",
+ "latency_s": 6.07,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"etymology\",\"chain\":\"Las (Spanish) = the (feminine plural); Vegas = meadows (from Latin vicus = village/estate)\",\"reading\":\"The meadows\",\"languages\":[\"es\",\"la\"],\"source\":\"Oxford Spanish Dictionary / Lewis & Short Latin Dictionary\",\"confidence\":0.9},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Las + Ve + Gas\",\"reading\":\"The veil of gas / the veiled gas\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"phonetic_split\",\"chain\":\"L'as + Vegas\",\"reading\":\"The ace (l'as) of the stakes (vegas as wager in old Romance)\",\"languages\":[\"fr\",\"es\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Las Vegas ≈ Laas Vekas (Aramaic/Hebrew: לאס וקס)\",\"reading\":\"No sign, no miracle\",\"languages\":[\"he\",\"arc\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Lasve + Gas\",\"reading\":\"The calf (veau) of gas / golden calf made of vapour\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"anagram\",\"chain\":\"Las Vegas = Salvages (old spelling)\",\"reading\":\"The salvages / those who are saved\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"notariqon\",\"chain\":\"L.A.S.V.E.G.A.S. → Lux Aeterna Salvat Virgo Gloriosa Astra Salutis\",\"reading\":\"The eternal light saves; the glorious virgin of the stars of salvation\",\"languages\":[\"la\"],\"source\":\"generative\",\"confidence\":0.35},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Las Vegas ≈ Les Végas (French) ≈ les vais gas\",\"reading\":\"The vessels of gas / the gas ships\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Laz + Ve + Gas\",\"reading\":\"Laz (tomb in Occitan) + ve (see) + gas (chaos)\",\"reading\":\"See the tomb of chaos\",\"languages\":[\"oc\",\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.4},\n  {\"operation\":\"letter_symbol\",\"chain\":\"Vegas read as Greek ΟΥΕΓΑΣ (ouegas)\",\"reading\":\"The great egg (ou = egg, gas = great in old phonetic)\",\"languages\":[\"grc\",\"fr\"],\"source\":\"generative\",\"confidence\":0.3},\n  {\"operation\":\"etymology\",\"chain\":\"Vegas from Latin vega (feminine of vegere = to be lively, to flourish)\",\"reading\":\"The flourishing ones / the lively meadows\",\"languages\":[\"la\"],\"source\":\"Lewis & Short Latin Dictionary\",\"confidence\":0.75},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Lasvegas ≈ l'as ve gas\",\"reading\":\"The ace sees gas / the master perceives the vapour\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.55}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Las (Spanish) = the (feminine plural); Vegas = meadows (from Latin vicus = village/estate)",
+   "reading": "The meadows",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "Oxford Spanish Dictionary / Lewis & Short Latin Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Ve + Gas",
+   "reading": "The veil of gas / the veiled gas",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "L'as + Vegas",
+   "reading": "The ace (l'as) of the stakes (vegas as wager in old Romance)",
+   "languages": [
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas ≈ Laas Vekas (Aramaic/Hebrew: לאס וקס)",
+   "reading": "No sign, no miracle",
+   "languages": [
+    "he",
+    "arc"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lasve + Gas",
+   "reading": "The calf (veau) of gas / golden calf made of vapour",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas = Salvages (old spelling)",
+   "reading": "The salvages / those who are saved",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L.A.S.V.E.G.A.S. → Lux Aeterna Salvat Virgo Gloriosa Astra Salutis",
+   "reading": "The eternal light saves; the glorious virgin of the stars of salvation",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas ≈ Les Végas (French) ≈ les vais gas",
+   "reading": "The vessels of gas / the gas ships",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Laz + Ve + Gas",
+   "reading": "See the tomb of chaos",
+   "languages": [
+    "oc",
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Vegas read as Greek ΟΥΕΓΑΣ (ouegas)",
+   "reading": "The great egg (ou = egg, gas = great in old phonetic)",
+   "languages": [
+    "grc",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "etymology",
+   "chain": "Vegas from Latin vega (feminine of vegere = to be lively, to flourish)",
+   "reading": "The flourishing ones / the lively meadows",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis & Short Latin Dictionary",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lasvegas ≈ l'as ve gas",
+   "reading": "The ace sees gas / the master perceives the vapour",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

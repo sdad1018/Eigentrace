@@ -1,0 +1,110 @@
+{
+ "word": "Paddock",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:25:34+00:00",
+ "latency_s": 8.65,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paddock (Middle English paddok) = toad; from Old English *pad, *padda + -oc diminutive; related to Low German paddik\",\n    \"reading\": \"A small toad or frog; the diminutive of a hopping, amphibious creature\",\n    \"languages\": [\"en\", \"ang\", \"gml\"],\n    \"source\": \"Oxford English Dictionary, s.v. paddock n.1\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paddock (Scots) = enclosure for horses; from Old English pearroc, reinforced by Middle Dutch paddock; ultimately from Proto-Germanic *parrukaz\",\n    \"reading\": \"A fenced field for animals; a bounded pasture, a place of containment\",\n    \"languages\": [\"en\", \"sco\", \"dum\", \"gem\"],\n    \"source\": \"Oxford English Dictionary, s.v. paddock n.2\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"pad + dock; pad (soft cushion, footstep) + dock (enclosed water, or where accused stands)\",\n    \"reading\": \"Soft footfall into a watery enclosure; a quiet approach to a place of judgment\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"paddock ~ French 'pas d'eau' (step of water) ~ 'pas d'oc' (no 'oc' dialect) ~ English 'pad' + 'ock' (oak)\",\n    \"reading\": \"A step across water, or a denial of the southern tongue; an amphibious threshold\",\n    \"languages\": [\"en\", \"fr\", \"oc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Paddock → 'pad dock' → 'dock pad' → 'cop dad' (reversed) → 'dap' (to bounce) + 'cod' (bag, husk)\",\n    \"reading\": \"A bouncing bag, a husk that leaps; the toad's pouch and the horse's yard combined\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P + A + D + D + O + C + K → Pater, Aqua, Domus, Domus, Ordo, Cibus, Kephale (Greek head)\",\n    \"reading\": \"Father, water, house, house, order, food, head — a chthonic household of the toad\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P (Greek rho, breath) + A (alpha, beginning) + DD (double door) + O (circle, egg) + C (guttural, horn) + K (kappa, hand)\",\n    \"reading\": \"Breath at the beginning, double doors, an egg, a horn, a hand — a ritual of thresholds\",\n    \"languages\": [\"grc\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"P=80, A=1, D=4, D=4, O=50, C=100, K=20 (Greek isopsephy) → sum 259 → 2+5+9=16 → 1+6=7\",\n    \"reading\": \"Number 7 — the toad's seven spots, the seven days of creation, the enclosed garden\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Paddock (Middle English paddok) = toad; from Old English *pad, *padda + -oc diminutive; related to Low German paddik",
+   "reading": "A small toad or frog; the diminutive of a hopping, amphibious creature",
+   "languages": [
+    "en",
+    "ang",
+    "gml"
+   ],
+   "source": "Oxford English Dictionary, s.v. paddock n.1",
+   "confidence": 0.9
+  },
+  {
+   "operation": "etymology",
+   "chain": "Paddock (Scots) = enclosure for horses; from Old English pearroc, reinforced by Middle Dutch paddock; ultimately from Proto-Germanic *parrukaz",
+   "reading": "A fenced field for animals; a bounded pasture, a place of containment",
+   "languages": [
+    "en",
+    "sco",
+    "dum",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary, s.v. paddock n.2",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pad + dock; pad (soft cushion, footstep) + dock (enclosed water, or where accused stands)",
+   "reading": "Soft footfall into a watery enclosure; a quiet approach to a place of judgment",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "paddock ~ French 'pas d'eau' (step of water) ~ 'pas d'oc' (no 'oc' dialect) ~ English 'pad' + 'ock' (oak)",
+   "reading": "A step across water, or a denial of the southern tongue; an amphibious threshold",
+   "languages": [
+    "en",
+    "fr",
+    "oc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Paddock → 'pad dock' → 'dock pad' → 'cop dad' (reversed) → 'dap' (to bounce) + 'cod' (bag, husk)",
+   "reading": "A bouncing bag, a husk that leaps; the toad's pouch and the horse's yard combined",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P + A + D + D + O + C + K → Pater, Aqua, Domus, Domus, Ordo, Cibus, Kephale (Greek head)",
+   "reading": "Father, water, house, house, order, food, head — a chthonic household of the toad",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P (Greek rho, breath) + A (alpha, beginning) + DD (double door) + O (circle, egg) + C (guttural, horn) + K (kappa, hand)",
+   "reading": "Breath at the beginning, double doors, an egg, a horn, a hand — a ritual of thresholds",
+   "languages": [
+    "grc",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "P=80, A=1, D=4, D=4, O=50, C=100, K=20 (Greek isopsephy) → sum 259 → 2+5+9=16 → 1+6=7",
+   "reading": "Number 7 — the toad's seven spots, the seven days of creation, the enclosed garden",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

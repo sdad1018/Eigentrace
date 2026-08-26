@@ -1,0 +1,130 @@
+{
+ "word": "Route 91 Harvest",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:19:03+00:00",
+ "latency_s": 7.05,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Root + 91 + Harvest\",\n    \"reading\": \"The root of the nine-one reaping; origin of the fatal harvest\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Rue + Te + Neuf + Un + Har + Vest\",\n    \"reading\": \"Regret street, nine-one, the heir’s west; mourning path of the chosen son’s harvest\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Route ≈ Rout (Old French = defeat, rout); 91 ≈ Neuf-Un (Fr = nine-one); Harvest ≈ Hiver Vest (Fr = winter garment)\",\n    \"reading\": \"Defeat of the nine-one, winter shroud of the reaping\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Route (Old French) from Latin rupta (via) = broken way; Harvest from Old English hærfest = autumn, season of reaping\",\n    \"reading\": \"The broken way of the autumn reaping\",\n    \"languages\": [\"en\",\"fr\",\"la\"],\n    \"source\": \"Oxford English Dictionary / Dictionnaire étymologique de la langue française\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Route 91 Harvest → A Truth Revealer (partial) + 91\",\n    \"reading\": \"The revealer of truth at the broken nine-one\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Root + Ninety-One + Harvest → Root + Nein + Tie + Harvest\",\n    \"reading\": \"The root says no, the binding of the reaping\",\n    \"languages\": [\"en\",\"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"R.O.U.T.E.91.H.A.R.V.E.S.T. → Regnum Oriri Urbis Tenebris Exit Nine One Harvestus\",\n    \"reading\": \"Kingdom rises, city of darkness exits by the nine-one reaping\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Harvest ≈ Har-vest ≈ Har-ouest (Fr = the west); Route 91 ≈ Rue de l’Enfer (Fr = street of hell)\",\n    \"reading\": \"The western reaping via the infernal route\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"91 = IX I = Roman 9-1; Route = path; Harvest = sickle\",\n    \"reading\": \"The sickle path of the fatal nine-one\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Rou + Te + 91 + Har + Vest\",\n    \"reading\": \"Wheel of God, nine-one, the heir’s garment; cyclic reaping of the chosen\",\n    \"languages\": [\"fr\",\"en\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Root + 91 + Harvest",
+   "reading": "The root of the nine-one reaping; origin of the fatal harvest",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Rue + Te + Neuf + Un + Har + Vest",
+   "reading": "Regret street, nine-one, the heir’s west; mourning path of the chosen son’s harvest",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Route ≈ Rout (Old French = defeat, rout); 91 ≈ Neuf-Un (Fr = nine-one); Harvest ≈ Hiver Vest (Fr = winter garment)",
+   "reading": "Defeat of the nine-one, winter shroud of the reaping",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Route (Old French) from Latin rupta (via) = broken way; Harvest from Old English hærfest = autumn, season of reaping",
+   "reading": "The broken way of the autumn reaping",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Oxford English Dictionary / Dictionnaire étymologique de la langue française",
+   "confidence": 0.85
+  },
+  {
+   "operation": "anagram",
+   "chain": "Route 91 Harvest → A Truth Revealer (partial) + 91",
+   "reading": "The revealer of truth at the broken nine-one",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Root + Ninety-One + Harvest → Root + Nein + Tie + Harvest",
+   "reading": "The root says no, the binding of the reaping",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R.O.U.T.E.91.H.A.R.V.E.S.T. → Regnum Oriri Urbis Tenebris Exit Nine One Harvestus",
+   "reading": "Kingdom rises, city of darkness exits by the nine-one reaping",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Harvest ≈ Har-vest ≈ Har-ouest (Fr = the west); Route 91 ≈ Rue de l’Enfer (Fr = street of hell)",
+   "reading": "The western reaping via the infernal route",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "91 = IX I = Roman 9-1; Route = path; Harvest = sickle",
+   "reading": "The sickle path of the fatal nine-one",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Rou + Te + 91 + Har + Vest",
+   "reading": "Wheel of God, nine-one, the heir’s garment; cyclic reaping of the chosen",
+   "languages": [
+    "fr",
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

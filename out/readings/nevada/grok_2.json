@@ -1,0 +1,130 @@
+{
+ "word": "Nevada",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:21:23+00:00",
+ "latency_s": 6.6,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Nevada ← Spanish nevada ← Latin nivata (feminine of nivatus) ← nix, nivis (snow)\",\n    \"reading\": \"fallen snow, snow-covered, the white veil\",\n    \"languages\": [\"en\",\"es\",\"la\"],\n    \"source\": \"Oxford English Dictionary & Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ne + va + da\",\n    \"reading\": \"born (né) by the voice (va) of the given (da)\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Nev + ada\",\n    \"reading\": \"new (nev) wing (ada, from Latin ala via Old French)\",\n    \"languages\": [\"en\",\"la\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Nevada ≈ né va d'A\",\n    \"reading\": \"born goes from A, the beginning issues from the Alpha\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.70\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Nevada ≈ ne vade (Latin imperative of vadere)\",\n    \"reading\": \"do not go, do not proceed, halt\",\n    \"languages\": [\"la\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Nevada = naveda\",\n    \"reading\": \"she who has navigated, the feminine pilot\",\n    \"languages\": [\"la\",\"pt\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Neva + da\",\n    \"reading\": \"the snow (neva, Russian) gives (da, Russian)\",\n    \"languages\": [\"ru\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"N.V.D.A. → Navis Via Dei Astra\",\n    \"reading\": \"the ship is the way of the stars of God\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.40\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N = Nun (fish, life); VA = life-breath; DA = knowledge\",\n    \"reading\": \"the living breath that imparts knowledge\",\n    \"languages\": [\"he\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Nevada ← Old Occitan nevar (to snow) ← Latin ningere\",\n    \"reading\": \"the place or act of perpetual snowfall, the whitening\",\n    \"languages\": [\"oc\",\"la\"],\n    \"source\": \"Dictionnaire Occitan & Lewis & Short\",\n    \"confidence\": 0.85\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Nevada ← Spanish nevada ← Latin nivata (feminine of nivatus) ← nix, nivis (snow)",
+   "reading": "fallen snow, snow-covered, the white veil",
+   "languages": [
+    "en",
+    "es",
+    "la"
+   ],
+   "source": "Oxford English Dictionary & Lewis & Short Latin Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ne + va + da",
+   "reading": "born (né) by the voice (va) of the given (da)",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Nev + ada",
+   "reading": "new (nev) wing (ada, from Latin ala via Old French)",
+   "languages": [
+    "en",
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Nevada ≈ né va d'A",
+   "reading": "born goes from A, the beginning issues from the Alpha",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Nevada ≈ ne vade (Latin imperative of vadere)",
+   "reading": "do not go, do not proceed, halt",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Nevada = naveda",
+   "reading": "she who has navigated, the feminine pilot",
+   "languages": [
+    "la",
+    "pt"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Neva + da",
+   "reading": "the snow (neva, Russian) gives (da, Russian)",
+   "languages": [
+    "ru"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "notariqon",
+   "chain": "N.V.D.A. → Navis Via Dei Astra",
+   "reading": "the ship is the way of the stars of God",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N = Nun (fish, life); VA = life-breath; DA = knowledge",
+   "reading": "the living breath that imparts knowledge",
+   "languages": [
+    "he",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "etymology",
+   "chain": "Nevada ← Old Occitan nevar (to snow) ← Latin ningere",
+   "reading": "the place or act of perpetual snowfall, the whitening",
+   "languages": [
+    "oc",
+    "la"
+   ],
+   "source": "Dictionnaire Occitan & Lewis & Short",
+   "confidence": 0.85
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

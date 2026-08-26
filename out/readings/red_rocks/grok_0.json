@@ -1,0 +1,138 @@
+{
+ "word": "Red Rocks",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:16:52+00:00",
+ "latency_s": 6.82,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"etymology\",\"chain\":\"Red (OE rēad) from Proto-Germanic *raudaz ← PIE *reudh- 'to be red'; Rocks from OE rocc ← Latin rocca\",\"reading\":\"The ruddy stone; that which is red and hard like blood turned to rock\",\"languages\":[\"en\",\"la\"],\"source\":\"Oxford English Dictionary / Pokorny PIE dictionary\",\"confidence\":0.85},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Red + Rocks → Rede + Rox\",\"reading\":\"Counsel of the rocks; the stones that give oracles\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Red Rocks → Re + Drox\",\"reading\":\"The king (re) of the waters (drox from Greek hydor via old phonetic shift)\",\"languages\":[\"en\",\"grc\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Red Rocks → Rêve Roque (French)\",\"reading\":\"The dream that breaks or the rock-dream; petrified vision\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"anagram\",\"chain\":\"REDROCKS → CRED + ORKS\",\"reading\":\"The cred (belief) of the orcs; primordial faith of the wild ones\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Red Rocks → Ra + Drok\",\"reading\":\"The solar (Ra) vessel or cup (drok from old Norse drokk = drink)\",\"languages\":[\"en\",\"non\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"notariqon\",\"chain\":\"R.E.D.R.O.C.K.S. → Regnum Ex Deo Redit Obscurum Corpus Kryptos Sanctus\",\"reading\":\"The hidden sacred body of the King returns from God\",\"languages\":[\"la\",\"en\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Red Rocks → Ret Rock (Hebrew רֶט רוֹק)\",\"reading\":\"The moist (ret) rock; stone that weeps or gives water\",\"languages\":[\"en\",\"he\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"letter_symbol\",\"chain\":\"R (head) + ED (past) + ROCKS (stones)\",\"reading\":\"The ancient head-stone; first rock that was a head\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"etymology\",\"chain\":\"Rocks ← Old French roque ← Medieval Latin rocca 'fortress, rock'\",\"reading\":\"The ruddy fortress; red citadel of the alchemist\",\"languages\":[\"en\",\"fr\",\"la\"],\"source\":\"Etymonline / Dictionnaire étymologique de la langue française\",\"confidence\":0.8},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Red Rocks → Rede Rox → Read the Rose\",\"reading\":\"The reading of the rose hidden in the red stone\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.75}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Red (OE rēad) from Proto-Germanic *raudaz ← PIE *reudh- 'to be red'; Rocks from OE rocc ← Latin rocca",
+   "reading": "The ruddy stone; that which is red and hard like blood turned to rock",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Oxford English Dictionary / Pokorny PIE dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Red + Rocks → Rede + Rox",
+   "reading": "Counsel of the rocks; the stones that give oracles",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Red Rocks → Re + Drox",
+   "reading": "The king (re) of the waters (drox from Greek hydor via old phonetic shift)",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Red Rocks → Rêve Roque (French)",
+   "reading": "The dream that breaks or the rock-dream; petrified vision",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "REDROCKS → CRED + ORKS",
+   "reading": "The cred (belief) of the orcs; primordial faith of the wild ones",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Red Rocks → Ra + Drok",
+   "reading": "The solar (Ra) vessel or cup (drok from old Norse drokk = drink)",
+   "languages": [
+    "en",
+    "non"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R.E.D.R.O.C.K.S. → Regnum Ex Deo Redit Obscurum Corpus Kryptos Sanctus",
+   "reading": "The hidden sacred body of the King returns from God",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Red Rocks → Ret Rock (Hebrew רֶט רוֹק)",
+   "reading": "The moist (ret) rock; stone that weeps or gives water",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R (head) + ED (past) + ROCKS (stones)",
+   "reading": "The ancient head-stone; first rock that was a head",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Rocks ← Old French roque ← Medieval Latin rocca 'fortress, rock'",
+   "reading": "The ruddy fortress; red citadel of the alchemist",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Etymonline / Dictionnaire étymologique de la langue française",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Red Rocks → Rede Rox → Read the Rose",
+   "reading": "The reading of the rose hidden in the red stone",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 11,
+ "refusal_like": false
+}

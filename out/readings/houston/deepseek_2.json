@@ -1,0 +1,111 @@
+{
+ "word": "Houston",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:26:53+00:00",
+ "latency_s": 8.12,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Houston < Old English Hūstān; hūs (house) + tūn (enclosure, settlement); tūn from Proto-Germanic *tūną\",\n    \"reading\": \"The enclosed dwelling-place, the guarded homestead of the house\",\n    \"languages\": [\"en\", \"ang\", \"gem\"],\n    \"source\": \"Oxford English Dictionary, s.v. 'Houston'\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hous + ton; hous (sounds like 'house') + ton (sounds like 'tone' or Fr. 'ton' = yours)\",\n    \"reading\": \"The house of your tone — the resonant chamber of your own voice\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Houston ~ Fr. 'où sont' (where are) + 'ton' (tone, sound); où sont = where are\",\n    \"reading\": \"Where are the tones? — a question of lost or hidden sounds\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Houston → 'shout on' (letters rearranged); shout = cry, on = above\",\n    \"reading\": \"To cry aloud from above — a prophetic call from a high place\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"H + O + U + S + T + O + N; take initials: H = He (breath), O = Omega, U = You, S = Spirit, T = Tau, O = Or, N = Nun\",\n    \"reading\": \"Breath, end, you, spirit, cross, light, fish — a hermetic alphabet of transformation\",\n    \"languages\": [\"he\", \"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"H (house, heh) + O (circle, sun) + U (vessel) + S (serpent) + T (cross) + O (circle) + N (fish, nun)\",\n    \"reading\": \"The sun in the house, the serpent on the cross, the fish in the circle — alchemical union\",\n    \"languages\": [\"en\", \"he\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"H=8, O=15, U=21, S=19, T=20, O=15, N=14 (A1Z26); sum = 112; 1+1+2=4; 4 = tetrad, earth, stability\",\n    \"reading\": \"The number four — grounded foundation, the square of the house made manifest\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hous + ton; 'ton' in Fr. = tone, but also 'thou' in Old English; 'hous' = house\",\n    \"reading\": \"The house of thou — the dwelling of the second person, the self-as-other\",\n    \"languages\": [\"en\", \"fr\", \"ang\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Houston < Old English Hūstān; hūs (house) + tūn (enclosure, settlement); tūn from Proto-Germanic *tūną",
+   "reading": "The enclosed dwelling-place, the guarded homestead of the house",
+   "languages": [
+    "en",
+    "ang",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary, s.v. 'Houston'",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hous + ton; hous (sounds like 'house') + ton (sounds like 'tone' or Fr. 'ton' = yours)",
+   "reading": "The house of your tone — the resonant chamber of your own voice",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Houston ~ Fr. 'où sont' (where are) + 'ton' (tone, sound); où sont = where are",
+   "reading": "Where are the tones? — a question of lost or hidden sounds",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Houston → 'shout on' (letters rearranged); shout = cry, on = above",
+   "reading": "To cry aloud from above — a prophetic call from a high place",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "H + O + U + S + T + O + N; take initials: H = He (breath), O = Omega, U = You, S = Spirit, T = Tau, O = Or, N = Nun",
+   "reading": "Breath, end, you, spirit, cross, light, fish — a hermetic alphabet of transformation",
+   "languages": [
+    "he",
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "H (house, heh) + O (circle, sun) + U (vessel) + S (serpent) + T (cross) + O (circle) + N (fish, nun)",
+   "reading": "The sun in the house, the serpent on the cross, the fish in the circle — alchemical union",
+   "languages": [
+    "en",
+    "he",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "H=8, O=15, U=21, S=19, T=20, O=15, N=14 (A1Z26); sum = 112; 1+1+2=4; 4 = tetrad, earth, stability",
+   "reading": "The number four — grounded foundation, the square of the house made manifest",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hous + ton; 'ton' in Fr. = tone, but also 'thou' in Old English; 'hous' = house",
+   "reading": "The house of thou — the dwelling of the second person, the self-as-other",
+   "languages": [
+    "en",
+    "fr",
+    "ang"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

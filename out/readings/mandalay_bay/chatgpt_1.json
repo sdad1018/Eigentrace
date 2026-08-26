@@ -1,0 +1,106 @@
+{
+ "word": "Mandalay Bay",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:18:57+00:00",
+ "latency_s": 5.09,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + dal + ay + bay; man = human, dal = split/valley in several Indo-Aryan tongues, bay = inlet or opening\",\n    \"reading\": \"The human divided by a valley, arriving at an opening or haven.\",\n    \"languages\": [\"en\", \"hi\", \"pa\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"manda (la) + bay; manda in Latin = slow, weak, sluggish; bay = opening\",\n    \"reading\": \"A slow, weakened passage toward an opening.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.54\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"mandala + bay; mandala = circle, enclosure; bay = cove, recess\",\n    \"reading\": \"A circular enclosure set within a hollow or cove.\",\n    \"languages\": [\"sa\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.67\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"manda + lay + bay; lay = to place, lay down; bay = to hold at bay, to contain\",\n    \"reading\": \"What is laid down is held within bounds.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay Bay -> a bay, a land, my day\",\n    \"reading\": \"A day of landfall in a sheltered bay.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M A N D A L A Y B A Y -> Man As Nature, Dawn As Light, Abides; Yet Bay As Yonder\",\n    \"reading\": \"Human nature abides at the dawn-lit edge of the beyond.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M = waters; A = beginning; N = serpent; D = door; A = beginning; L = staff; A = beginning; Y = fork; B = house; A = beginning; Y = fork\",\n    \"reading\": \"Waters begin, the serpent enters the door, and the path forks toward a house by the sea.\",\n    \"languages\": [\"en\", \"symbolic\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Mandalay Bay: 11 letters + 3 words; 11 = threshold, 3 = triad; bay = 3-sided shelter\",\n    \"reading\": \"A threshold name built from triads and sheltering sides.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.27\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "man + dal + ay + bay; man = human, dal = split/valley in several Indo-Aryan tongues, bay = inlet or opening",
+   "reading": "The human divided by a valley, arriving at an opening or haven.",
+   "languages": [
+    "en",
+    "hi",
+    "pa",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.72
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "manda (la) + bay; manda in Latin = slow, weak, sluggish; bay = opening",
+   "reading": "A slow, weakened passage toward an opening.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.54
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "mandala + bay; mandala = circle, enclosure; bay = cove, recess",
+   "reading": "A circular enclosure set within a hollow or cove.",
+   "languages": [
+    "sa",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.67
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "manda + lay + bay; lay = to place, lay down; bay = to hold at bay, to contain",
+   "reading": "What is laid down is held within bounds.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay Bay -> a bay, a land, my day",
+   "reading": "A day of landfall in a sheltered bay.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M A N D A L A Y B A Y -> Man As Nature, Dawn As Light, Abides; Yet Bay As Yonder",
+   "reading": "Human nature abides at the dawn-lit edge of the beyond.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M = waters; A = beginning; N = serpent; D = door; A = beginning; L = staff; A = beginning; Y = fork; B = house; A = beginning; Y = fork",
+   "reading": "Waters begin, the serpent enters the door, and the path forks toward a house by the sea.",
+   "languages": [
+    "en",
+    "symbolic"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "numerical",
+   "chain": "Mandalay Bay: 11 letters + 3 words; 11 = threshold, 3 = triad; bay = 3-sided shelter",
+   "reading": "A threshold name built from triads and sheltering sides.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.27
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

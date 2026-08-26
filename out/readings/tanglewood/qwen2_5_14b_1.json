@@ -1,0 +1,102 @@
+{
+ "word": "Tanglewood",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:03:11+00:00",
+ "latency_s": 87.98,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"tan + gle + wood\",\"reading\":\"Tangled fate in wooded grove.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"cross_language_homophone\",\"chain\":\"tanglewood (English) = tangere (Latin) = touch; wood (Old English) = wudu = forest\",\"reading\":\"Touching the sacred forest.\",\"languages\":[\"en\",\"la\",\"ang\"],\"source\":\"generative\",\"confidence\":0.65},{\"operation\":\"anagram\",\"chain\":\"Tanglewood -> Gladeownt\",\"reading\":\"A glade within a woodland.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.8},{\"operation\":\"etymology\",\"chain\":\"tangle (Old English) = tangel; wood (Old English) = wudu\",\"reading\":\"Entangled in the ancient forest.\",\"languages\":[\"en\"],\"source\":\"Oxford English Dictionary\",\"confidence\":0.95},{\"operation\":\"phonetic_split\",\"chain\":\"tan + gale + wood\",\"reading\":\"Tanned skin by woodland breeze.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"letter_symbol\",\"chain\":\"tanglewood -> T (triangle) + A (infinity) + N (snake) + G (gallows) + L (law/lamp) + E (eternity) + W (double U, twins) + O (circle) + O (circle) + D (door) + W (twins) + O (circle)\",\"reading\":\"Triangular eternity of intertwined souls at the door of infinity.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.5},{\"operation\":\"phonetic_split\",\"chain\":\"tang + lewood\",\"reading\":\"Tangled web in wooded land.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"anagram\",\"chain\":\"Tanglewood -> Woodglatent\",\"reading\":\"Wooded glade, entwined.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.85}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "tan + gle + wood",
+   "reading": "Tangled fate in wooded grove.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "tanglewood (English) = tangere (Latin) = touch; wood (Old English) = wudu = forest",
+   "reading": "Touching the sacred forest.",
+   "languages": [
+    "en",
+    "la",
+    "ang"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Tanglewood -> Gladeownt",
+   "reading": "A glade within a woodland.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "etymology",
+   "chain": "tangle (Old English) = tangel; wood (Old English) = wudu",
+   "reading": "Entangled in the ancient forest.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "tan + gale + wood",
+   "reading": "Tanned skin by woodland breeze.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "tanglewood -> T (triangle) + A (infinity) + N (snake) + G (gallows) + L (law/lamp) + E (eternity) + W (double U, twins) + O (circle) + O (circle) + D (door) + W (twins) + O (circle)",
+   "reading": "Triangular eternity of intertwined souls at the door of infinity.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "tang + lewood",
+   "reading": "Tangled web in wooded land.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Tanglewood -> Woodglatent",
+   "reading": "Wooded glade, entwined.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

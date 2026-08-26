@@ -1,0 +1,129 @@
+{
+ "word": "Harvest",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:19:25+00:00",
+ "latency_s": 6.63,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Old English hærfest = autumn; from Proto-Germanic *harbistaz, from PIE *kerp- 'to gather, pluck, harvest'\",\n    \"reading\": \"The act of gathering or plucking what is ripe; season of reaping\",\n    \"languages\": [\"en\",\"gem\",\"ine\"],\n    \"source\": \"Oxford English Dictionary / Pokorny PIE dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Har + vest\",\n    \"reading\": \"The high vestment; the sacred robe worn at the moment of culmination\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Hare + vest\",\n    \"reading\": \"The hare is vested; the swift spirit receives its garment of form\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Harvest ≈ Har-vest ≈ Ar-vêt (French)\",\n    \"reading\": \"The hour has come; it is finished, the work is accomplished\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.70\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"HARVEST → STARVE H\",\n    \"reading\": \"The H of starvation; what remains when the letter of life is removed\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Har-vest = Herz-Vest (Germanic echo)\",\n    \"reading\": \"Heart-fortress; the innermost stronghold reaped at the end of the cycle\",\n    \"languages\": [\"en\",\"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"H.A.R.V.E.S.T. → Habet Auctoritas Rex Verae Ecclesiae Solis Templum\",\n    \"reading\": \"The King of the True Solar Church holds authority over the Temple\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.40\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"H (ladder) + ARV (plough) + EST (is)\",\n    \"reading\": \"The ladder of the plough is; vertical ascent through the horizontal work\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Harvest ≈ Herbes + Vest (Old French / Latin)\",\n    \"reading\": \"The herbs are vested; the green ones receive their royal mantle\",\n    \"languages\": [\"en\",\"fro\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"harvest ← hærfest ← *harbistaz ← *kerp- (to cut off, to harvest)\",\n    \"reading\": \"That which is severed at its proper time; the cut that completes\",\n    \"languages\": [\"en\",\"gem\",\"ine\"],\n    \"source\": \"Pokorny / Etymonline\",\n    \"confidence\": 0.90\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Old English hærfest = autumn; from Proto-Germanic *harbistaz, from PIE *kerp- 'to gather, pluck, harvest'",
+   "reading": "The act of gathering or plucking what is ripe; season of reaping",
+   "languages": [
+    "en",
+    "gem",
+    "ine"
+   ],
+   "source": "Oxford English Dictionary / Pokorny PIE dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Har + vest",
+   "reading": "The high vestment; the sacred robe worn at the moment of culmination",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Hare + vest",
+   "reading": "The hare is vested; the swift spirit receives its garment of form",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Harvest ≈ Har-vest ≈ Ar-vêt (French)",
+   "reading": "The hour has come; it is finished, the work is accomplished",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "HARVEST → STARVE H",
+   "reading": "The H of starvation; what remains when the letter of life is removed",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Har-vest = Herz-Vest (Germanic echo)",
+   "reading": "Heart-fortress; the innermost stronghold reaped at the end of the cycle",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "H.A.R.V.E.S.T. → Habet Auctoritas Rex Verae Ecclesiae Solis Templum",
+   "reading": "The King of the True Solar Church holds authority over the Temple",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "H (ladder) + ARV (plough) + EST (is)",
+   "reading": "The ladder of the plough is; vertical ascent through the horizontal work",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Harvest ≈ Herbes + Vest (Old French / Latin)",
+   "reading": "The herbs are vested; the green ones receive their royal mantle",
+   "languages": [
+    "en",
+    "fro",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "harvest ← hærfest ← *harbistaz ← *kerp- (to cut off, to harvest)",
+   "reading": "That which is severed at its proper time; the cut that completes",
+   "languages": [
+    "en",
+    "gem",
+    "ine"
+   ],
+   "source": "Pokorny / Etymonline",
+   "confidence": 0.9
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

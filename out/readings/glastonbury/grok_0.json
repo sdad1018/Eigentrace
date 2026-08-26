@@ -1,0 +1,149 @@
+{
+ "word": "Glastonbury",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:17:13+00:00",
+ "latency_s": 7.55,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Glastonbury ← OE Glæstingabyrig ← Glæstinga (tribal name) + burh (fortified place)\",\n    \"reading\": \"fortified settlement of the Glæstingas tribe\",\n    \"languages\": [\"en\",\"ang\"],\n    \"source\": \"Oxford Dictionary of British Place-Names\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Glas + ton + bury\",\n    \"reading\": \"glass tone buried; the sound of glass interred\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Glast + on + bury\",\n    \"reading\": \"last on bury; the final one to be buried\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Glas (Breton) = green + ton (Old French) = thunder + bury (English)\",\n    \"reading\": \"green thunder burial; verdant lightning interred\",\n    \"languages\": [\"br\",\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gla(s) + stone + bury\",\n    \"reading\": \"glass stone buried; emerald or crystal stone hidden in earth\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Glastonbury → GLAST ON BURY\",\n    \"reading\": \"glass on burial; transparent veil placed upon the grave\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Glas + ton + buri (Latin)\",\n    \"reading\": \"green tone of the drink; emerald hue of the draught\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Glas (Old Irish) = lock, stream + ton (French) = barrel + bury\",\n    \"reading\": \"the barrel of the stream is buried; cask of living water concealed\",\n    \"languages\": [\"ga\",\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"G-L-A-S-T-O-N-B-U-R-Y → initial letters read as acrostic in green language\",\n    \"reading\": \"Green Light Alights Sacred Tree Of Noble Blood Under Royal Yew\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"G (gamma) + last + on + bury\",\n    \"reading\": \"third letter ends on burial; gamma marks the final tomb\",\n    \"languages\": [\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Glâ + ston + bury (French glâ = frost, hoarfrost)\",\n    \"reading\": \"frost stone burial; the frozen crystal laid in earth\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"burh (OE) = enclosure, defended place; bury = place of the dead\",\n    \"reading\": \"enclosure or mound where the dead are placed\",\n    \"languages\": [\"en\",\"ang\"],\n    \"source\": \"Bosworth-Toller Anglo-Saxon Dictionary\",\n    \"confidence\": 0.85\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Glastonbury ← OE Glæstingabyrig ← Glæstinga (tribal name) + burh (fortified place)",
+   "reading": "fortified settlement of the Glæstingas tribe",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Oxford Dictionary of British Place-Names",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Glas + ton + bury",
+   "reading": "glass tone buried; the sound of glass interred",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Glast + on + bury",
+   "reading": "last on bury; the final one to be buried",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Glas (Breton) = green + ton (Old French) = thunder + bury (English)",
+   "reading": "green thunder burial; verdant lightning interred",
+   "languages": [
+    "br",
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gla(s) + stone + bury",
+   "reading": "glass stone buried; emerald or crystal stone hidden in earth",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Glastonbury → GLAST ON BURY",
+   "reading": "glass on burial; transparent veil placed upon the grave",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Glas + ton + buri (Latin)",
+   "reading": "green tone of the drink; emerald hue of the draught",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Glas (Old Irish) = lock, stream + ton (French) = barrel + bury",
+   "reading": "the barrel of the stream is buried; cask of living water concealed",
+   "languages": [
+    "ga",
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "G-L-A-S-T-O-N-B-U-R-Y → initial letters read as acrostic in green language",
+   "reading": "Green Light Alights Sacred Tree Of Noble Blood Under Royal Yew",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G (gamma) + last + on + bury",
+   "reading": "third letter ends on burial; gamma marks the final tomb",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Glâ + ston + bury (French glâ = frost, hoarfrost)",
+   "reading": "frost stone burial; the frozen crystal laid in earth",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "burh (OE) = enclosure, defended place; bury = place of the dead",
+   "reading": "enclosure or mound where the dead are placed",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Bosworth-Toller Anglo-Saxon Dictionary",
+   "confidence": 0.85
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

@@ -1,0 +1,105 @@
+{
+ "word": "Voltaire",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:24:42+00:00",
+ "latency_s": 4.68,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Voltaire < French surname from Voltaire/Volter; often explained as a metathesis of Volterr(a) or as a regional name-form; etymology uncertain\",\n    \"reading\": \"A name of uncertain origin, likely a reshaped place- or family-name rather than a transparent common word.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"TLFi; Dictionnaire historique de la langue française (Robert)\",\n    \"confidence\": 0.46\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"vol + taire; vol (fr) = flight, theft; taire (fr) = to silence\",\n    \"reading\": \"Flight or theft is silenced: movement concealed, or a stolen thing kept quiet.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.84\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"vol (fr) + terre (fr) heard inside the ending -taire as terre-like resonance\",\n    \"reading\": \"Flight toward earth: descent, grounding, or the sky’s impulse returning to soil.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"vol + air; vol (fr) = flight; air (fr/en) = air\",\n    \"reading\": \"Air in motion: the word suggests uplift, levitation, and a volatile spirit.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.79\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"VOLTAIRE -> VIOLETAR / VOTERAIL / ALOVERTI (partial, generative rearrangements)\",\n    \"reading\": \"A violet turning, a vote on a rail: color, choice, and direction woven together.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"V O L T A I R E = Voice Of Light, Taming Anger In Reasoned Eloquence\",\n    \"reading\": \"A voice of light that tempers fire with reason and measured speech.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V = vessel/valley; O = eye or zero; L = staff; T = cross; A = apex; I = pillar; R = wheel; E = opening\",\n    \"reading\": \"A vessel under the eye, crossed by law, crowned, upright, turning, and opening: a complete symbolic ascent.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.18\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Latin alphabet positions: V(22)+O(15)+L(12)+T(20)+A(1)+I(9)+R(18)+E(5)=102; 1+0+2=3\",\n    \"reading\": \"The number reduces to three: synthesis, triad, and the creative third term.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.74\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Voltaire < French surname from Voltaire/Volter; often explained as a metathesis of Volterr(a) or as a regional name-form; etymology uncertain",
+   "reading": "A name of uncertain origin, likely a reshaped place- or family-name rather than a transparent common word.",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "TLFi; Dictionnaire historique de la langue française (Robert)",
+   "confidence": 0.46
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "vol + taire; vol (fr) = flight, theft; taire (fr) = to silence",
+   "reading": "Flight or theft is silenced: movement concealed, or a stolen thing kept quiet.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.84
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "vol (fr) + terre (fr) heard inside the ending -taire as terre-like resonance",
+   "reading": "Flight toward earth: descent, grounding, or the sky’s impulse returning to soil.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "vol + air; vol (fr) = flight; air (fr/en) = air",
+   "reading": "Air in motion: the word suggests uplift, levitation, and a volatile spirit.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.79
+  },
+  {
+   "operation": "anagram",
+   "chain": "VOLTAIRE -> VIOLETAR / VOTERAIL / ALOVERTI (partial, generative rearrangements)",
+   "reading": "A violet turning, a vote on a rail: color, choice, and direction woven together.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V O L T A I R E = Voice Of Light, Taming Anger In Reasoned Eloquence",
+   "reading": "A voice of light that tempers fire with reason and measured speech.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V = vessel/valley; O = eye or zero; L = staff; T = cross; A = apex; I = pillar; R = wheel; E = opening",
+   "reading": "A vessel under the eye, crossed by law, crowned, upright, turning, and opening: a complete symbolic ascent.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.18
+  },
+  {
+   "operation": "numerical",
+   "chain": "Latin alphabet positions: V(22)+O(15)+L(12)+T(20)+A(1)+I(9)+R(18)+E(5)=102; 1+0+2=3",
+   "reading": "The number reduces to three: synthesis, triad, and the creative third term.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.74
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

@@ -1,0 +1,110 @@
+{
+ "word": "Route 91 Harvest",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:58+00:00",
+ "latency_s": 8.57,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Route (Old French rute, from Latin rupta via) = broken way; Harvest (Old English hærfest) = autumn, reaping time\",\n    \"reading\": \"A broken path through the reaping season; the way of gathering what has fallen\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"ang\"],\n    \"source\": \"Oxford English Dictionary; Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Route + 91 → 'rou-te' + 'nine-one' → 'root' + 'nein' (German no) + 'won' (past of win)\",\n    \"reading\": \"The root says no, yet the harvest is won; negation turned to gain\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Route (fr. route) = road; Harvest (fr. récolte) but 'harvest' sounds like 'har-vest' → 'her' (she) + 'vest' (garment)\",\n    \"reading\": \"Her garment on the road; the feminine cloak of the gathered grain\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Route 91 Harvest → 'Aster' + 'vour' + 'the' + '91' → 'Aster' (star) + 'vour' (from devour) + 'the' + 'one'\",\n    \"reading\": \"The star devours the one; the celestial reaper consumes the singular\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"R (res) + 9 (novem) + 1 (unum) + H (harvest) → R + N + U + H → 'Renu' (renew) + 'h' (heh, breath)\",\n    \"reading\": \"Renewal through breath; the nine and one become a new beginning in the field\",\n    \"languages\": [\"la\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R = road (via), 9 = completion (novem), 1 = unity (unum), H = heh (window, breath), V = vav (hook, nail)\",\n    \"reading\": \"Road of completion and unity, window and nail; the path is nailed open to the sky\",\n    \"languages\": [\"la\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Route (R=18, O=15, U=21, T=20, E=5) = 79; 91 + 79 = 170; Harvest (H=8, A=1, R=18, V=22, E=5, S=19, T=20) = 93; 170 + 93 = 263\",\n    \"reading\": \"263 reduces to 2+6+3=11, the master number; the road and harvest sum to illumination\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Harvest from Proto-Germanic *harbistaz, related to Old Norse haust, meaning 'to pluck' or 'to tear off'\",\n    \"reading\": \"The tearing off of the ripe; the violent beauty of the autumnal gathering\",\n    \"languages\": [\"en\", \"non\", \"gem\"],\n    \"source\": \"Oxford English Dictionary; Kroonen, Etymological Dictionary of Proto-Germanic\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Route (Old French rute, from Latin rupta via) = broken way; Harvest (Old English hærfest) = autumn, reaping time",
+   "reading": "A broken path through the reaping season; the way of gathering what has fallen",
+   "languages": [
+    "en",
+    "fr",
+    "la",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary; Lewis & Short Latin Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Route + 91 → 'rou-te' + 'nine-one' → 'root' + 'nein' (German no) + 'won' (past of win)",
+   "reading": "The root says no, yet the harvest is won; negation turned to gain",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Route (fr. route) = road; Harvest (fr. récolte) but 'harvest' sounds like 'har-vest' → 'her' (she) + 'vest' (garment)",
+   "reading": "Her garment on the road; the feminine cloak of the gathered grain",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Route 91 Harvest → 'Aster' + 'vour' + 'the' + '91' → 'Aster' (star) + 'vour' (from devour) + 'the' + 'one'",
+   "reading": "The star devours the one; the celestial reaper consumes the singular",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R (res) + 9 (novem) + 1 (unum) + H (harvest) → R + N + U + H → 'Renu' (renew) + 'h' (heh, breath)",
+   "reading": "Renewal through breath; the nine and one become a new beginning in the field",
+   "languages": [
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R = road (via), 9 = completion (novem), 1 = unity (unum), H = heh (window, breath), V = vav (hook, nail)",
+   "reading": "Road of completion and unity, window and nail; the path is nailed open to the sky",
+   "languages": [
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "numerical",
+   "chain": "Route (R=18, O=15, U=21, T=20, E=5) = 79; 91 + 79 = 170; Harvest (H=8, A=1, R=18, V=22, E=5, S=19, T=20) = 93; 170 + 93 = 263",
+   "reading": "263 reduces to 2+6+3=11, the master number; the road and harvest sum to illumination",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "etymology",
+   "chain": "Harvest from Proto-Germanic *harbistaz, related to Old Norse haust, meaning 'to pluck' or 'to tear off'",
+   "reading": "The tearing off of the ripe; the violent beauty of the autumnal gathering",
+   "languages": [
+    "en",
+    "non",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary; Kroonen, Etymological Dictionary of Proto-Germanic",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

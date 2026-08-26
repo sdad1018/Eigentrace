@@ -1,0 +1,118 @@
+{
+ "word": "Coachella",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:15:40+00:00",
+ "latency_s": 5.71,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"coa + che + lla; /koʊ/ + /ʃeɪ/ + /lə/ suggests co- + she + la\",\n    \"reading\": \"A joining with the feminine voice: “with-she,” then a light exclamation, a call into company.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"coa ~ quau/quoi?; chela ~ chela (Sp. slang) / chela (Hindustani) = beer; together: “what? beer?”\",\n    \"reading\": \"A puzzled toast: question followed by drink, as if meaning arrives through intoxication.\",\n    \"languages\": [\"es\", \"hi\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"coachella ~ coche + ella; coche (Sp.) = carriage, ella = she\",\n    \"reading\": \"“Her carriage”: the feminine vehicle, or the soul borne along by its own conveyance.\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.66\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"ella (Spanish) = she; checkable in Real Academia Española, Diccionario de la lengua española\",\n    \"reading\": \"The ending names the feminine principle plainly: she, the marked and manifest feminine.\",\n    \"languages\": [\"es\"],\n    \"source\": \"Real Academia Española, Diccionario de la lengua española\",\n    \"confidence\": 0.88\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"co- (Latin) = with, together; checkable in Lewis & Short, A Latin Dictionary\",\n    \"reading\": \"A word of accompaniment: togetherness, conjunction, being-with rather than being-alone.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Lewis & Short, A Latin Dictionary\",\n    \"confidence\": 0.79\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"coachella → a call echo\",\n    \"reading\": \"A call that returns as echo: invocation answered by resonance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.57\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"C + O + A + C + H + E + L + L + A; C/O as circle, A as apex, H as gate, L as angle\",\n    \"reading\": \"Circle, opening, ascent, gate, angle: a path from enclosure to threshold to standing form.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"C-O-A-C-H-E-L-L-A read as initials: Call On A قلب?; the letters invite expansion into a sentence of summons\",\n    \"reading\": \"An acrostic of summons: call, open, ascend, cross, hear, enter, linger, look, arrive.\",\n    \"languages\": [\"en\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.28\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"A=1, C=3, E=5, H=8, L=12, O=15; Coachella sums to 61 by simple alphabetic value\",\n    \"reading\": \"Sixty-one: a number of completion after six tens and one, the one returning after the cycle.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "coa + che + lla; /koʊ/ + /ʃeɪ/ + /lə/ suggests co- + she + la",
+   "reading": "A joining with the feminine voice: “with-she,” then a light exclamation, a call into company.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.72
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "coa ~ quau/quoi?; chela ~ chela (Sp. slang) / chela (Hindustani) = beer; together: “what? beer?”",
+   "reading": "A puzzled toast: question followed by drink, as if meaning arrives through intoxication.",
+   "languages": [
+    "es",
+    "hi",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "coachella ~ coche + ella; coche (Sp.) = carriage, ella = she",
+   "reading": "“Her carriage”: the feminine vehicle, or the soul borne along by its own conveyance.",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.66
+  },
+  {
+   "operation": "etymology",
+   "chain": "ella (Spanish) = she; checkable in Real Academia Española, Diccionario de la lengua española",
+   "reading": "The ending names the feminine principle plainly: she, the marked and manifest feminine.",
+   "languages": [
+    "es"
+   ],
+   "source": "Real Academia Española, Diccionario de la lengua española",
+   "confidence": 0.88
+  },
+  {
+   "operation": "etymology",
+   "chain": "co- (Latin) = with, together; checkable in Lewis & Short, A Latin Dictionary",
+   "reading": "A word of accompaniment: togetherness, conjunction, being-with rather than being-alone.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Lewis & Short, A Latin Dictionary",
+   "confidence": 0.79
+  },
+  {
+   "operation": "anagram",
+   "chain": "coachella → a call echo",
+   "reading": "A call that returns as echo: invocation answered by resonance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.57
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "C + O + A + C + H + E + L + L + A; C/O as circle, A as apex, H as gate, L as angle",
+   "reading": "Circle, opening, ascent, gate, angle: a path from enclosure to threshold to standing form.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "notariqon",
+   "chain": "C-O-A-C-H-E-L-L-A read as initials: Call On A قلب?; the letters invite expansion into a sentence of summons",
+   "reading": "An acrostic of summons: call, open, ascend, cross, hear, enter, linger, look, arrive.",
+   "languages": [
+    "en",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.28
+  },
+  {
+   "operation": "numerical",
+   "chain": "A=1, C=3, E=5, H=8, L=12, O=15; Coachella sums to 61 by simple alphabetic value",
+   "reading": "Sixty-one: a number of completion after six tens and one, the one returning after the cycle.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 9,
+ "refusal_like": false
+}

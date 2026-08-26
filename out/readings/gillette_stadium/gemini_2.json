@@ -1,0 +1,141 @@
+{
+ "word": "Gillette Stadium",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:18:33+00:00",
+ "latency_s": 31.08,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gillette (phonetic split) -> 'Jill' (English female name) + '-ette' (French diminutive suffix)\",\n    \"reading\": \"A small woman or a place associated with the feminine in a minor or delicate form.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Gillette (sound like French 'gilet') -> gilet (French) = vest, waistcoat\",\n    \"reading\": \"A protective covering, an intimate garment, or a place where one is robed or vested.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Larousse Dictionnaire Français\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gillette (phonetic split) -> 'jail' (English) + '-ette' (French diminutive suffix)\",\n    \"reading\": \"A minor confinement or a small enclosure, possibly indicating a place of temporary restraint.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Stadium (English) -> stadium (Latin) -> stadion (Ancient Greek) = race-course, a fixed measure, a place where one stands.\",\n    \"reading\": \"A fixed standing place, a measured ground, or a field where one tests their limits.\",\n    \"languages\": [\"en\", \"la\", \"grc\"],\n    \"source\": \"Oxford English Dictionary, Liddell-Scott-Jones Greek-English Lexicon\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stadium (phonetic split) -> 'stay' (English verb) + 'dumb' (English adjective)\",\n    \"reading\": \"An injunction to remain ignorant, or a place where intelligence is left aside.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Stadium (sound like French 'stade') -> stade (French) = stage, phase, stadium\",\n    \"reading\": \"A specific stage of development, a period of transition, or a theatrical setting for unfolding events.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Larousse Dictionnaire Français\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Gillette Stadium (initials G.S.) -> Grande Solitude (French)\",\n    \"reading\": \"A grand isolation or profound aloneness, despite its public appearance.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gillette Stadium -> 'J'y laisse ta' (French for 'I leave your/it there') + 'dium' (sound from stadium, related to Latin dies 'day' or deum 'God')\",\n    \"reading\": \"Here one abandons that which is yours, a surrender of the daily or the divine.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Gillette (sound like French 'gille') -> gille (French) = harlequin, simpleton\",\n    \"reading\": \"A place of the fool, the trickster, or the naive, implying hidden wisdom or playful deception.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Larousse Dictionnaire Français\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gillette Stadium (phonetic split) -> 'Gee' (exclamation) + 'let' (allow) + 'it' (pronoun) + 'stay' (remain) + 'dumb' (foolish)\",\n    \"reading\": \"An exclamation urging that foolishness be permitted to persist and remain.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"G (initial of Gillette) = Gnosis, God, Generator; S (initial of Stadium) = Serpens (Latin for serpent), Spiritus, Sol (Latin for sun).\",\n    \"reading\": \"The path of spiritual knowledge, guided by the serpent of wisdom and the solar light.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Gillette (phonetic split) -> 'Jill' (English female name) + '-ette' (French diminutive suffix)",
+   "reading": "A small woman or a place associated with the feminine in a minor or delicate form.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gillette (sound like French 'gilet') -> gilet (French) = vest, waistcoat",
+   "reading": "A protective covering, an intimate garment, or a place where one is robed or vested.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Larousse Dictionnaire Français",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gillette (phonetic split) -> 'jail' (English) + '-ette' (French diminutive suffix)",
+   "reading": "A minor confinement or a small enclosure, possibly indicating a place of temporary restraint.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "etymology",
+   "chain": "Stadium (English) -> stadium (Latin) -> stadion (Ancient Greek) = race-course, a fixed measure, a place where one stands.",
+   "reading": "A fixed standing place, a measured ground, or a field where one tests their limits.",
+   "languages": [
+    "en",
+    "la",
+    "grc"
+   ],
+   "source": "Oxford English Dictionary, Liddell-Scott-Jones Greek-English Lexicon",
+   "confidence": 1.0
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Stadium (phonetic split) -> 'stay' (English verb) + 'dumb' (English adjective)",
+   "reading": "An injunction to remain ignorant, or a place where intelligence is left aside.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Stadium (sound like French 'stade') -> stade (French) = stage, phase, stadium",
+   "reading": "A specific stage of development, a period of transition, or a theatrical setting for unfolding events.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Larousse Dictionnaire Français",
+   "confidence": 0.9
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Gillette Stadium (initials G.S.) -> Grande Solitude (French)",
+   "reading": "A grand isolation or profound aloneness, despite its public appearance.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gillette Stadium -> 'J'y laisse ta' (French for 'I leave your/it there') + 'dium' (sound from stadium, related to Latin dies 'day' or deum 'God')",
+   "reading": "Here one abandons that which is yours, a surrender of the daily or the divine.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gillette (sound like French 'gille') -> gille (French) = harlequin, simpleton",
+   "reading": "A place of the fool, the trickster, or the naive, implying hidden wisdom or playful deception.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Larousse Dictionnaire Français",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gillette Stadium (phonetic split) -> 'Gee' (exclamation) + 'let' (allow) + 'it' (pronoun) + 'stay' (remain) + 'dumb' (foolish)",
+   "reading": "An exclamation urging that foolishness be permitted to persist and remain.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G (initial of Gillette) = Gnosis, God, Generator; S (initial of Stadium) = Serpens (Latin for serpent), Spiritus, Sol (Latin for sun).",
+   "reading": "The path of spiritual knowledge, guided by the serpent of wisdom and the solar light.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 11,
+ "refusal_like": false
+}

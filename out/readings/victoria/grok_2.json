@@ -1,0 +1,129 @@
+{
+ "word": "Victoria",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:24:41+00:00",
+ "latency_s": 7.44,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Victoria ← Latin victoria ← victor ← vincere (to conquer)\",\n    \"reading\": \"conquest, triumph, the act or state of victorious overcoming\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"Oxford Latin Dictionary; Lewis & Short\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vic-tor-ia → Vic (French: saw, as in tool) + tor (French: bull, toro) + ia\",\n    \"reading\": \"the saw of the bull; cutting power of the masculine force\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Victoire (French homophone) → vis (force) +toire (twists, from tordre)\",\n    \"reading\": \"twisting force; the spiral power that conquers\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Victoria ≈ Victoire ≈ Victoire (Fr) ≈ victoire (Fr: victory) ≈ vika (Skr: to separate, to divide)\",\n    \"reading\": \"the dividing victory that separates winner from loser\",\n    \"languages\": [\"fr\",\"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"VICTORIA → I, VICTOR → I, VICTORY\",\n    \"reading\": \"the self-declared victor; ego claims the palm\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vic-to-ria → Vic (Old French: alive, from Latin vivus) + to-ria (tore, torn)\",\n    \"reading\": \"the living torn apart; life rent by victory\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"V.I.C.T.O.R.I.A. → Vivit In Carne, Tamen Occidit Regnum Inimici Animæ\",\n    \"reading\": \"lives in flesh yet slays the kingdom of the enemy of the soul\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V (hook, nail, victory sign) + I (axis, one) + C (crescent, moon) + TOR (bull) + IA (goddess suffix)\",\n    \"reading\": \"the nailed axis of the lunar bull-goddess; fixation of cyclic power\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Victoria ≈ Viktoria (Ger) ≈ vikt (Swedish: weight) + oria (aura, golden light)\",\n    \"reading\": \"weight of golden light; heavy glory that conquers\",\n    \"languages\": [\"sv\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Victoria ← *weik- (Proto-Indo-European: to fight, to conquer)\",\n    \"reading\": \"the embodied force of combat and decisive overcoming\",\n    \"languages\": [\"ine\",\"la\",\"en\"],\n    \"source\": \"Pokorny, Indogermanisches etymologisches Wörterbuch\",\n    \"confidence\": 0.85\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Victoria ← Latin victoria ← victor ← vincere (to conquer)",
+   "reading": "conquest, triumph, the act or state of victorious overcoming",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Oxford Latin Dictionary; Lewis & Short",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vic-tor-ia → Vic (French: saw, as in tool) + tor (French: bull, toro) + ia",
+   "reading": "the saw of the bull; cutting power of the masculine force",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Victoire (French homophone) → vis (force) +toire (twists, from tordre)",
+   "reading": "twisting force; the spiral power that conquers",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Victoria ≈ Victoire ≈ Victoire (Fr) ≈ victoire (Fr: victory) ≈ vika (Skr: to separate, to divide)",
+   "reading": "the dividing victory that separates winner from loser",
+   "languages": [
+    "fr",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "VICTORIA → I, VICTOR → I, VICTORY",
+   "reading": "the self-declared victor; ego claims the palm",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vic-to-ria → Vic (Old French: alive, from Latin vivus) + to-ria (tore, torn)",
+   "reading": "the living torn apart; life rent by victory",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V.I.C.T.O.R.I.A. → Vivit In Carne, Tamen Occidit Regnum Inimici Animæ",
+   "reading": "lives in flesh yet slays the kingdom of the enemy of the soul",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V (hook, nail, victory sign) + I (axis, one) + C (crescent, moon) + TOR (bull) + IA (goddess suffix)",
+   "reading": "the nailed axis of the lunar bull-goddess; fixation of cyclic power",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Victoria ≈ Viktoria (Ger) ≈ vikt (Swedish: weight) + oria (aura, golden light)",
+   "reading": "weight of golden light; heavy glory that conquers",
+   "languages": [
+    "sv",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Victoria ← *weik- (Proto-Indo-European: to fight, to conquer)",
+   "reading": "the embodied force of combat and decisive overcoming",
+   "languages": [
+    "ine",
+    "la",
+    "en"
+   ],
+   "source": "Pokorny, Indogermanisches etymologisches Wörterbuch",
+   "confidence": 0.85
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

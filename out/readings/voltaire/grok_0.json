@@ -1,0 +1,129 @@
+{
+ "word": "Voltaire",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:28:14+00:00",
+ "latency_s": 6.85,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"vol + taire\",\n    \"reading\": \"flight that is silent / the silent theft\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"voltaire ← voltaire (surname) ← volt (archaic) + aire (eagle's nest)\",\n    \"reading\": \"the flying one who nests like an eagle\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"Dictionnaire de la langue française, Littré\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"voltaire ≈ vol + terre (fr); vol-terre ≈ vault-terra\",\n    \"reading\": \"he who vaults over the earth / flies across the ground\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"vol + taire ≈ vault + tear (en)\",\n    \"reading\": \"the tear in the vault / the breach in heaven\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"VOLTAIRE → VOLT + AIRE → VOLT + AIR\",\n    \"reading\": \"lightning in the air / electric spirit\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"V.O.L.T.A.I.R.E. → Volat Omnia Lux Tenebras Auro Ignis Rex Eius\",\n    \"reading\": \"light flies over all, king of fire and gold\",\n    \"languages\": [\"la\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"vol-taire ≈ vol + taire ≈ vole + taire (fr)\",\n    \"reading\": \"the thief who keeps silent / silent stealer\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"voltaire ≈ فولتير (ar phonetic) ≈ faul + tier ≈ fault + tear\",\n    \"reading\": \"the fault that rends / the tear in the fault\",\n    \"languages\": [\"fr\",\"ar\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V (hook, nail) + OL (oil, olive) + TAIRE (to be silent)\",\n    \"reading\": \"the nailed olive that remains silent\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"voltaire ← volter (old fr. to turn, to veer) + aire\",\n    \"reading\": \"he who turns in the high nest / the wheeling eagle\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"Dictionnaire étymologique de la langue française, Bloch & von Wartburg\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "vol + taire",
+   "reading": "flight that is silent / the silent theft",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "voltaire ← voltaire (surname) ← volt (archaic) + aire (eagle's nest)",
+   "reading": "the flying one who nests like an eagle",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "Dictionnaire de la langue française, Littré",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "voltaire ≈ vol + terre (fr); vol-terre ≈ vault-terra",
+   "reading": "he who vaults over the earth / flies across the ground",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "vol + taire ≈ vault + tear (en)",
+   "reading": "the tear in the vault / the breach in heaven",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "VOLTAIRE → VOLT + AIRE → VOLT + AIR",
+   "reading": "lightning in the air / electric spirit",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V.O.L.T.A.I.R.E. → Volat Omnia Lux Tenebras Auro Ignis Rex Eius",
+   "reading": "light flies over all, king of fire and gold",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "vol-taire ≈ vol + taire ≈ vole + taire (fr)",
+   "reading": "the thief who keeps silent / silent stealer",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "voltaire ≈ فولتير (ar phonetic) ≈ faul + tier ≈ fault + tear",
+   "reading": "the fault that rends / the tear in the fault",
+   "languages": [
+    "fr",
+    "ar",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V (hook, nail) + OL (oil, olive) + TAIRE (to be silent)",
+   "reading": "the nailed olive that remains silent",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "voltaire ← volter (old fr. to turn, to veer) + aire",
+   "reading": "he who turns in the high nest / the wheeling eagle",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "Dictionnaire étymologique de la langue française, Bloch & von Wartburg",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

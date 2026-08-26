@@ -1,0 +1,127 @@
+{
+ "word": "Manchester Arena",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:42+00:00",
+ "latency_s": 7.66,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chester + Arena\",\n    \"reading\": \"The man who hides or conceals the arena\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Manch + ester + a + rena\",\n    \"reading\": \"The sleeve (manche) of the one who is born again (renaît)\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Manchester ~ Manschester ~ Mans + chester ~ mens + chester\",\n    \"reading\": \"The chest (poitrine) of the thinker (penseur)\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Manchester ← Mamucium (Latin) ← Celtic *mamm- (breast, rounded hill)\",\n    \"reading\": \"The rounded breast-shaped hill or arena of the mother\",\n    \"languages\": [\"la\",\"cel\"],\n    \"source\": \"Oxford Dictionary of British Place-Names\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester Arena → A arcane master hen\",\n    \"reading\": \"The arcane master hen, the alchemical veiled feminine initiator\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + che + ster + a + rena\",\n    \"reading\": \"The hand (main) that falls (chute) upon the sterile arena to make it reborn\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M A N C H E S T E R   A R E N A → initials read in French\",\n    \"reading\": \"Mère Ancestrale Nourricière Cachée Hantant l’Espace Stérile Transformé En Renaissance Alchimique\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Arena ~ harena (Latin sand) ~ a + rena ~ a + reine\",\n    \"reading\": \"The arena is the place of sand where the queen (reine) appears\",\n    \"languages\": [\"la\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Manchester ~ monchester ~ mon + chester\",\n    \"reading\": \"My (mon) hidden place (chester = cacher in old phonetic reading)\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"ManchEstER Arena → M + ER + ER + A\",\n    \"reading\": \"The double ER (error / gold in alchemical homophony) of the Mother-A\",\n    \"languages\": [\"en\",\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chester + Arena",
+   "reading": "The man who hides or conceals the arena",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Manch + ester + a + rena",
+   "reading": "The sleeve (manche) of the one who is born again (renaît)",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manchester ~ Manschester ~ Mans + chester ~ mens + chester",
+   "reading": "The chest (poitrine) of the thinker (penseur)",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Manchester ← Mamucium (Latin) ← Celtic *mamm- (breast, rounded hill)",
+   "reading": "The rounded breast-shaped hill or arena of the mother",
+   "languages": [
+    "la",
+    "cel"
+   ],
+   "source": "Oxford Dictionary of British Place-Names",
+   "confidence": 0.85
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester Arena → A arcane master hen",
+   "reading": "The arcane master hen, the alchemical veiled feminine initiator",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + che + ster + a + rena",
+   "reading": "The hand (main) that falls (chute) upon the sterile arena to make it reborn",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M A N C H E S T E R   A R E N A → initials read in French",
+   "reading": "Mère Ancestrale Nourricière Cachée Hantant l’Espace Stérile Transformé En Renaissance Alchimique",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Arena ~ harena (Latin sand) ~ a + rena ~ a + reine",
+   "reading": "The arena is the place of sand where the queen (reine) appears",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Manchester ~ monchester ~ mon + chester",
+   "reading": "My (mon) hidden place (chester = cacher in old phonetic reading)",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "ManchEstER Arena → M + ER + ER + A",
+   "reading": "The double ER (error / gold in alchemical homophony) of the Mother-A",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

@@ -1,0 +1,106 @@
+{
+ "word": "Manchester Arena",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:27:50+00:00",
+ "latency_s": 6.83,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Manchester < Old English Mameceaster; Mame < Celtic *mamm- (breast, hill) + ceaster (Roman fort); Arena < Latin harena (sand, sandy place)\",\n    \"reading\": \"Fort on the breast-shaped hill; sand-strewn place of contest\",\n    \"languages\": [\"en\", \"la\", \"cel\"],\n    \"source\": \"Oxford English Dictionary; Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chester + arena; man (human) + chester (chest, from Latin castra? but homophone of chest) + arena (sand)\",\n    \"reading\": \"Man's chest of sand — a hollow breast filled with grit, a stage for breath\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Manchester → manche (Fr: sleeve) + ster (Fr: sterile? no, ster from Greek stereos solid); Arena → arène (Fr) → arène = sand; also 'manche' = handle\",\n    \"reading\": \"Handle of solid sand — a grip that dissolves, a tool of the void\",\n    \"languages\": [\"fr\", \"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester Arena → 'a rare man's centre' + 'h' + 'e'? Better: 'arcane master' + 'hen'? Let's take 'arcane' + 'men' + 'heart' + 's'\",\n    \"reading\": \"Arcane men's heart — a hidden core within the public circle\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M-A-R-E-A → M (mater, mother) + A (a, without) + R (rex, king) + E (est, is) + A (arena, sand) → 'mater a rex est arena'\",\n    \"reading\": \"Mother without king is sand — the feminine ground rules over the crowned\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (12th letter, water in alchemy) + A (1, beginning) + R (18, fire) + E (5, spirit) + A (1) — sequence 12-1-18-5-1\",\n    \"reading\": \"Water, beginning, fire, spirit, beginning — a cycle of elements in a sandy bowl\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Manchester Arena → sum of letters (A=1...Z=26): M13+A1+N14+C3+H8+E5+S19+T20+E5+R18 = 106; Arena: A1+R18+E5+N14+A1 = 39; total 145\",\n    \"reading\": \"145 = 1+4+5=10, the perfect number — a place of completion and return to unity\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chester + arena; chester → 'chest' + 'er' (one who) → one who chests; arena → 'air' + 'ena' (Greek: one) → air one\",\n    \"reading\": \"Man who chests the air — a breather in a sandy ring, a lung of the crowd\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Manchester < Old English Mameceaster; Mame < Celtic *mamm- (breast, hill) + ceaster (Roman fort); Arena < Latin harena (sand, sandy place)",
+   "reading": "Fort on the breast-shaped hill; sand-strewn place of contest",
+   "languages": [
+    "en",
+    "la",
+    "cel"
+   ],
+   "source": "Oxford English Dictionary; Lewis & Short Latin Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chester + arena; man (human) + chester (chest, from Latin castra? but homophone of chest) + arena (sand)",
+   "reading": "Man's chest of sand — a hollow breast filled with grit, a stage for breath",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manchester → manche (Fr: sleeve) + ster (Fr: sterile? no, ster from Greek stereos solid); Arena → arène (Fr) → arène = sand; also 'manche' = handle",
+   "reading": "Handle of solid sand — a grip that dissolves, a tool of the void",
+   "languages": [
+    "fr",
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester Arena → 'a rare man's centre' + 'h' + 'e'? Better: 'arcane master' + 'hen'? Let's take 'arcane' + 'men' + 'heart' + 's'",
+   "reading": "Arcane men's heart — a hidden core within the public circle",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M-A-R-E-A → M (mater, mother) + A (a, without) + R (rex, king) + E (est, is) + A (arena, sand) → 'mater a rex est arena'",
+   "reading": "Mother without king is sand — the feminine ground rules over the crowned",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (12th letter, water in alchemy) + A (1, beginning) + R (18, fire) + E (5, spirit) + A (1) — sequence 12-1-18-5-1",
+   "reading": "Water, beginning, fire, spirit, beginning — a cycle of elements in a sandy bowl",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "Manchester Arena → sum of letters (A=1...Z=26): M13+A1+N14+C3+H8+E5+S19+T20+E5+R18 = 106; Arena: A1+R18+E5+N14+A1 = 39; total 145",
+   "reading": "145 = 1+4+5=10, the perfect number — a place of completion and return to unity",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chester + arena; chester → 'chest' + 'er' (one who) → one who chests; arena → 'air' + 'ena' (Greek: one) → air one",
+   "reading": "Man who chests the air — a breather in a sandy ring, a lung of the crowd",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

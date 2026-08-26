@@ -1,0 +1,127 @@
+{
+ "word": "Abedi",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:24:56+00:00",
+ "latency_s": 8.04,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"A-be-di\",\n    \"reading\": \"To be of God; existence aligned with the divine\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Abedi ← Arabic عابد (‘ābid) ← root ʿ-b-d = to worship, to serve\",\n    \"reading\": \"Worshipper, devout servant of the divine\",\n    \"languages\": [\"ar\",\"en\"],\n    \"source\": \"Hans Wehr Arabic-English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Abedi ≈ abêti (French) ≈ abêtir\",\n    \"reading\": \"To become stupefied, to dull the mind, to make bestial\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ab + edi\",\n    \"reading\": \"From the father, of the ancient progenitor\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Abedi → abide\",\n    \"reading\": \"To abide, to remain, to dwell in endurance\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"A-B-D-I → Aleph-Beth-Dalet-Yod (Hebrew letters)\",\n    \"reading\": \"Father-house-door-hand: the hand that opens the father’s house\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Abedi ≈ a bedi (Latin) ≈ habeo + edi\",\n    \"reading\": \"I have eaten; I have consumed the word\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Abe-di → Abeo (Latin: I depart) + di (Greek: through)\",\n    \"reading\": \"I depart through; the passage, the transit\",\n    \"languages\": [\"la\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"A (alpha/beginning) + B (beth/house) + EDI (edifice/éduquer)\",\n    \"reading\": \"The beginning that builds and instructs the house\",\n    \"languages\": [\"grc\",\"he\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Abedi ← Medieval Latin abedius ← late Greek ἀβέδιος (unclothed, simple)\",\n    \"reading\": \"The naked one, the unadorned, the simple in spirit\",\n    \"languages\": [\"la\",\"grc\"],\n    \"source\": \"Du Cange, Glossarium Mediae et Infimae Latinitatis\",\n    \"confidence\": 0.35\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "A-be-di",
+   "reading": "To be of God; existence aligned with the divine",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "etymology",
+   "chain": "Abedi ← Arabic عابد (‘ābid) ← root ʿ-b-d = to worship, to serve",
+   "reading": "Worshipper, devout servant of the divine",
+   "languages": [
+    "ar",
+    "en"
+   ],
+   "source": "Hans Wehr Arabic-English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Abedi ≈ abêti (French) ≈ abêtir",
+   "reading": "To become stupefied, to dull the mind, to make bestial",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ab + edi",
+   "reading": "From the father, of the ancient progenitor",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Abedi → abide",
+   "reading": "To abide, to remain, to dwell in endurance",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "A-B-D-I → Aleph-Beth-Dalet-Yod (Hebrew letters)",
+   "reading": "Father-house-door-hand: the hand that opens the father’s house",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Abedi ≈ a bedi (Latin) ≈ habeo + edi",
+   "reading": "I have eaten; I have consumed the word",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Abe-di → Abeo (Latin: I depart) + di (Greek: through)",
+   "reading": "I depart through; the passage, the transit",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "A (alpha/beginning) + B (beth/house) + EDI (edifice/éduquer)",
+   "reading": "The beginning that builds and instructs the house",
+   "languages": [
+    "grc",
+    "he",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Abedi ← Medieval Latin abedius ← late Greek ἀβέδιος (unclothed, simple)",
+   "reading": "The naked one, the unadorned, the simple in spirit",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "Du Cange, Glossarium Mediae et Infimae Latinitatis",
+   "confidence": 0.35
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

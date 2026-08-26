@@ -1,0 +1,143 @@
+{
+ "word": "Gillette Stadium",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:15:50+00:00",
+ "latency_s": 7.54,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"phonetic_split\",\"chain\":\"Gil + let + stadium\",\"reading\":\"The stranger lets the measure of the stars\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Gillette + sta + dium\",\"reading\":\"The razor’s edge stands in the god’s house\",\"languages\":[\"en\",\"fr\",\"la\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Gillette (sounds like) j’ai l’être; stadium (sounds like) sta dium\",\"reading\":\"I have the being; it stands in the god\",\"languages\":[\"fr\",\"la\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"etymology\",\"chain\":\"Gillette from Old French guille (deception) + -ette (diminutive); Stadium from Greek stadion (a measure of length, a racecourse)\",\"reading\":\"The little deception stands at the measured racecourse\",\"languages\":[\"fr\",\"grc\"],\"source\":\"Oxford English Dictionary / Liddell-Scott-Jones\",\"confidence\":0.85},\n  {\"operation\":\"anagram\",\"chain\":\"Gillette Stadium → distilled image\",\"reading\":\"Distilled image of the subtle star\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Gil + let + te + sta + dium\",\"reading\":\"The stranger lets you stand at the god’s measure\",\"languages\":[\"en\",\"fr\",\"la\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"notariqon\",\"chain\":\"G I L L E T T E   S T A D I U M → Generative Illumination Liberates Life, Exalts The Temple Stone, Transmutes All Dust Into Universal Matter\",\"reading\":\"Generative light liberates life and transmutes base matter\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Gillette ≈ guillemette (Fr. old = little guile); stadium ≈ stade (Fr. = stadium, also stage of a process)\",\"reading\":\"Little guile at the decisive stage\",\"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"letter_symbol\",\"chain\":\"G (gamma = generation) + IL (Hebrew ayil = ram, strength) + LET (let there be) + TE (Greek theos abbr.) + STA (Latin stat = stands) + DIUM (deum = of god)\",\"reading\":\"Generation of strength: let there be God who stands as god\",\"languages\":[\"grc\",\"he\",\"la\"],\"source\":\"generative\",\"confidence\":0.4},\n  {\"operation\":\"etymology\",\"chain\":\"Stadium from Latin stadium, from Greek stadion, from stadios (firmly placed)\",\"reading\":\"Firmly placed little deception\",\"languages\":[\"la\",\"grc\"],\"source\":\"Lewis & Short / Liddell-Scott-Jones\",\"confidence\":0.8},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Jill + et + stadium\",\"reading\":\"The young girl is and stands in the measure of the divine\",\"languages\":[\"en\",\"fr\",\"la\"],\"source\":\"generative\",\"confidence\":0.55}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Gil + let + stadium",
+   "reading": "The stranger lets the measure of the stars",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gillette + sta + dium",
+   "reading": "The razor’s edge stands in the god’s house",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gillette (sounds like) j’ai l’être; stadium (sounds like) sta dium",
+   "reading": "I have the being; it stands in the god",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Gillette from Old French guille (deception) + -ette (diminutive); Stadium from Greek stadion (a measure of length, a racecourse)",
+   "reading": "The little deception stands at the measured racecourse",
+   "languages": [
+    "fr",
+    "grc"
+   ],
+   "source": "Oxford English Dictionary / Liddell-Scott-Jones",
+   "confidence": 0.85
+  },
+  {
+   "operation": "anagram",
+   "chain": "Gillette Stadium → distilled image",
+   "reading": "Distilled image of the subtle star",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gil + let + te + sta + dium",
+   "reading": "The stranger lets you stand at the god’s measure",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "G I L L E T T E   S T A D I U M → Generative Illumination Liberates Life, Exalts The Temple Stone, Transmutes All Dust Into Universal Matter",
+   "reading": "Generative light liberates life and transmutes base matter",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gillette ≈ guillemette (Fr. old = little guile); stadium ≈ stade (Fr. = stadium, also stage of a process)",
+   "reading": "Little guile at the decisive stage",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G (gamma = generation) + IL (Hebrew ayil = ram, strength) + LET (let there be) + TE (Greek theos abbr.) + STA (Latin stat = stands) + DIUM (deum = of god)",
+   "reading": "Generation of strength: let there be God who stands as god",
+   "languages": [
+    "grc",
+    "he",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Stadium from Latin stadium, from Greek stadion, from stadios (firmly placed)",
+   "reading": "Firmly placed little deception",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "Lewis & Short / Liddell-Scott-Jones",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Jill + et + stadium",
+   "reading": "The young girl is and stands in the measure of the divine",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 11,
+ "refusal_like": false
+}

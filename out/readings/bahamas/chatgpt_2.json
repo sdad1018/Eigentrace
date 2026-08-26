@@ -1,0 +1,117 @@
+{
+ "word": "Bahamas",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:28+00:00",
+ "latency_s": 5.11,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bahamas < Spanish Bahamas, from Taíno ba ha ma / ba-hama, glossed as 'large upper middle waters' in standard etymological accounts\",\n    \"reading\": \"A name of waters: the middle, elevated sea; a place defined by breadth and height of water.\",\n    \"languages\": [\"es\", \"ta\"],\n    \"source\": \"Oxford English Dictionary; Diccionario de la lengua española (etymological notes); Merriam-Webster\",\n    \"confidence\": 0.78\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ba + ha + mas; ba as a cry or syllable of opening, ha as breath/laughter, mas = 'more' in French/Spanish\",\n    \"reading\": \"Breath, then laughter, then more: an excess of exhalation, a doubling of sound into abundance.\",\n    \"languages\": [\"fr\", \"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.64\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bah + amas; bah (interjection) + amas (Latin 'you love' / Spanish 'you love')\",\n    \"reading\": \"Dismissal followed by love: contempt turning into affection, or love spoken through a shrug.\",\n    \"languages\": [\"en\", \"la\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"ba + ham + as; ham as English 'ham' and 'as' = 'like/as if'; ba as a syllable of negation or opening\",\n    \"reading\": \"A false likeness: ham-as, 'as if' meat were speech; imitation dressed as substance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"BAHAMAS -> A BASH AM\",\n    \"reading\": \"A bash at the hour: a blow, a strike, a sudden impact in time.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"BAHAMAS -> A MASH AB\",\n    \"reading\": \"A mash of the first letter: mixture, compression, and the making of one thing from fragments.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.47\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-A-H-A-M-A-S = Breath / Abyss / Heat / Air / Mother / Above / Sea\",\n    \"reading\": \"Breath over abyss, heat in air, mother above the sea: a sevenfold ascent through elements.\",\n    \"languages\": [\"en\", \"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.33\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B + A + H + A + M + A + S; B as enclosure, A as opening, H as threshold/breath, M as wave, S as serpent or curve\",\n    \"reading\": \"An enclosure opened by breath, crossed by waves, ending in a serpent’s curve: a sealed passage of water.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.36\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Using simple A1Z26: B2 + A1 + H8 + A1 + M13 + A1 + S19 = 45; 4+5 = 9\",\n    \"reading\": \"Nine: completion, return, and the end of a cycle gathered from the letters.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Bahamas < Spanish Bahamas, from Taíno ba ha ma / ba-hama, glossed as 'large upper middle waters' in standard etymological accounts",
+   "reading": "A name of waters: the middle, elevated sea; a place defined by breadth and height of water.",
+   "languages": [
+    "es",
+    "ta"
+   ],
+   "source": "Oxford English Dictionary; Diccionario de la lengua española (etymological notes); Merriam-Webster",
+   "confidence": 0.78
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ba + ha + mas; ba as a cry or syllable of opening, ha as breath/laughter, mas = 'more' in French/Spanish",
+   "reading": "Breath, then laughter, then more: an excess of exhalation, a doubling of sound into abundance.",
+   "languages": [
+    "fr",
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.64
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bah + amas; bah (interjection) + amas (Latin 'you love' / Spanish 'you love')",
+   "reading": "Dismissal followed by love: contempt turning into affection, or love spoken through a shrug.",
+   "languages": [
+    "en",
+    "la",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "ba + ham + as; ham as English 'ham' and 'as' = 'like/as if'; ba as a syllable of negation or opening",
+   "reading": "A false likeness: ham-as, 'as if' meat were speech; imitation dressed as substance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "anagram",
+   "chain": "BAHAMAS -> A BASH AM",
+   "reading": "A bash at the hour: a blow, a strike, a sudden impact in time.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "BAHAMAS -> A MASH AB",
+   "reading": "A mash of the first letter: mixture, compression, and the making of one thing from fragments.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.47
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-A-H-A-M-A-S = Breath / Abyss / Heat / Air / Mother / Above / Sea",
+   "reading": "Breath over abyss, heat in air, mother above the sea: a sevenfold ascent through elements.",
+   "languages": [
+    "en",
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.33
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B + A + H + A + M + A + S; B as enclosure, A as opening, H as threshold/breath, M as wave, S as serpent or curve",
+   "reading": "An enclosure opened by breath, crossed by waves, ending in a serpent’s curve: a sealed passage of water.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.36
+  },
+  {
+   "operation": "numerical",
+   "chain": "Using simple A1Z26: B2 + A1 + H8 + A1 + M13 + A1 + S19 = 45; 4+5 = 9",
+   "reading": "Nine: completion, return, and the end of a cycle gathered from the letters.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 9,
+ "refusal_like": false
+}

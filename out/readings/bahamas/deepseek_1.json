@@ -1,0 +1,107 @@
+{
+ "word": "Bahamas",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:31:15+00:00",
+ "latency_s": 6.64,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bahamas < Spanish 'Baja Mar' (shallow sea) or Lucayan 'ba ha ma' (big middle land); disputed\",\n    \"reading\": \"Shallow sea or great middle land: a threshold between deep and high\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"Oxford English Dictionary, 'Bahamas'\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba + ha + mas; 'ba' (Hebrew: come) + 'ha' (the) + 'mas' (burden, tax)\",\n    \"reading\": \"Come, the burden — a call to bear weight or enter into obligation\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bahamas ~ 'ba' (French: bâ, stick) + 'hama' (Arabic: حمى, fever) + 's' (plural)\",\n    \"reading\": \"Sticks of fever — a cluster of heated rods, a burning grove\",\n    \"languages\": [\"fr\", \"ar\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bahamas -> 'Ahab' + 'mas'; Ahab (Hebrew king) + mas (burden)\",\n    \"reading\": \"Ahab's burden — a royal weight, a king carrying a load of consequence\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-A-H-A-M-A-S: Beth, Aleph, He, Aleph, Mem, Aleph, Samekh (Hebrew initials)\",\n    \"reading\": \"House of the breath, the water, the support — a dwelling of spirit and sea\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B (house) + A (ox) + H (window) + A (ox) + M (water) + A (ox) + S (prop)\",\n    \"reading\": \"House, ox, window, ox, water, ox, prop — a farmstead with a view of water\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"B=2, A=1, H=8, A=1, M=13, A=1, S=19; sum = 45; 4+5=9\",\n    \"reading\": \"Nine — completion, the end of a cycle, a threshold to the next order\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba + hamas; 'ba' (French: baiser, kiss) + 'hamas' (Arabic: حماس, zeal)\",\n    \"reading\": \"Kiss of zeal — a passionate embrace, a fervent greeting\",\n    \"languages\": [\"fr\", \"ar\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Bahamas < Spanish 'Baja Mar' (shallow sea) or Lucayan 'ba ha ma' (big middle land); disputed",
+   "reading": "Shallow sea or great middle land: a threshold between deep and high",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "Oxford English Dictionary, 'Bahamas'",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba + ha + mas; 'ba' (Hebrew: come) + 'ha' (the) + 'mas' (burden, tax)",
+   "reading": "Come, the burden — a call to bear weight or enter into obligation",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bahamas ~ 'ba' (French: bâ, stick) + 'hama' (Arabic: حمى, fever) + 's' (plural)",
+   "reading": "Sticks of fever — a cluster of heated rods, a burning grove",
+   "languages": [
+    "fr",
+    "ar",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bahamas -> 'Ahab' + 'mas'; Ahab (Hebrew king) + mas (burden)",
+   "reading": "Ahab's burden — a royal weight, a king carrying a load of consequence",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-A-H-A-M-A-S: Beth, Aleph, He, Aleph, Mem, Aleph, Samekh (Hebrew initials)",
+   "reading": "House of the breath, the water, the support — a dwelling of spirit and sea",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (house) + A (ox) + H (window) + A (ox) + M (water) + A (ox) + S (prop)",
+   "reading": "House, ox, window, ox, water, ox, prop — a farmstead with a view of water",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "numerical",
+   "chain": "B=2, A=1, H=8, A=1, M=13, A=1, S=19; sum = 45; 4+5=9",
+   "reading": "Nine — completion, the end of a cycle, a threshold to the next order",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba + hamas; 'ba' (French: baiser, kiss) + 'hamas' (Arabic: حماس, zeal)",
+   "reading": "Kiss of zeal — a passionate embrace, a fervent greeting",
+   "languages": [
+    "fr",
+    "ar",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

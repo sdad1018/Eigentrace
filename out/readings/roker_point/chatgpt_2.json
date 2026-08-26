@@ -1,0 +1,103 @@
+{
+ "word": "Roker Point",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:45+00:00",
+ "latency_s": 4.98,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"roker ≈ row + ker / rocker; point = point, puncture, peak\",\n    \"reading\": \"A rocking, turning point: the place where motion gathers and a decision is punctured into being.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.78\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"rok- ≈ roc/roche (fr) = rock; point (fr/en) = point, dot, sharp place\",\n    \"reading\": \"Rock-point: a hard, fixed mark in the flow, a stone set as a sign.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.67\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"roker ≈ broker without b; point = aim, purpose\",\n    \"reading\": \"A brokered aim stripped of mediation: direct contact, the bare point of exchange.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.61\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"ROKER POINT → ROPE + IRON + K? / point as pivot; roker rearranged toward rocker\",\n    \"reading\": \"An ironed rope around a pivot: constraint made into a turning mechanism.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.42\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"R O K E R / P O I N T = Rise Of Kinetic Energy, Return; Pivot Of Inquiry, Nodal Turn\",\n    \"reading\": \"A coded ascent and return: energy rises, then folds back into the nodal question.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.28\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R = rotation; O = zero/egg; K = crossing; E = opening; R = return; P = peak; O = void; I = axis; N = knot; T = crossbar\",\n    \"reading\": \"Rotation around emptiness, crossing into an opening, then returning to the knot and the cross.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"point: Middle English point, from Old French point, from Latin punctum 'a prick, dot', from pungere 'to prick'; checkable in OED / TLFi / Lewis & Short\",\n    \"reading\": \"A prick, a dot, a decisive mark: the word concentrates force into a single pierced location.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"OED; TLFi; Lewis & Short\",\n    \"confidence\": 0.93\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"rocker: rock + -er; rock from Middle English rokke, from Old English roccian 'to move to and fro' or related forms; checkable in OED / Etymonline\",\n    \"reading\": \"One who rocks: a mover between states, neither fixed nor fully fallen.\",\n    \"languages\": [\"en\"],\n    \"source\": \"OED; Etymonline\",\n    \"confidence\": 0.74\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "roker ≈ row + ker / rocker; point = point, puncture, peak",
+   "reading": "A rocking, turning point: the place where motion gathers and a decision is punctured into being.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.78
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "rok- ≈ roc/roche (fr) = rock; point (fr/en) = point, dot, sharp place",
+   "reading": "Rock-point: a hard, fixed mark in the flow, a stone set as a sign.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.67
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "roker ≈ broker without b; point = aim, purpose",
+   "reading": "A brokered aim stripped of mediation: direct contact, the bare point of exchange.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.61
+  },
+  {
+   "operation": "anagram",
+   "chain": "ROKER POINT → ROPE + IRON + K? / point as pivot; roker rearranged toward rocker",
+   "reading": "An ironed rope around a pivot: constraint made into a turning mechanism.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.42
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R O K E R / P O I N T = Rise Of Kinetic Energy, Return; Pivot Of Inquiry, Nodal Turn",
+   "reading": "A coded ascent and return: energy rises, then folds back into the nodal question.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.28
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R = rotation; O = zero/egg; K = crossing; E = opening; R = return; P = peak; O = void; I = axis; N = knot; T = crossbar",
+   "reading": "Rotation around emptiness, crossing into an opening, then returning to the knot and the cross.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "point: Middle English point, from Old French point, from Latin punctum 'a prick, dot', from pungere 'to prick'; checkable in OED / TLFi / Lewis & Short",
+   "reading": "A prick, a dot, a decisive mark: the word concentrates force into a single pierced location.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "OED; TLFi; Lewis & Short",
+   "confidence": 0.93
+  },
+  {
+   "operation": "etymology",
+   "chain": "rocker: rock + -er; rock from Middle English rokke, from Old English roccian 'to move to and fro' or related forms; checkable in OED / Etymonline",
+   "reading": "One who rocks: a mover between states, neither fixed nor fully fallen.",
+   "languages": [
+    "en"
+   ],
+   "source": "OED; Etymonline",
+   "confidence": 0.74
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

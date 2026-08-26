@@ -1,0 +1,103 @@
+{
+ "word": "Lollapalooza",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:17:15+00:00",
+ "latency_s": 4.91,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"loll + a + palooza; loll = to hang loosely, to lounge; palooza echoes palaver/booze/boza\",\"reading\":\"A loose, lounging revel: slackness turned into noisy excess.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.74},{\"operation\":\"cross_language_homophone\",\"chain\":\"loll ≈ lol; a ≈ à; palooza ≈ palourde/palourde? + louza; sound suggests laughter plus abundance\",\"reading\":\"Laughter at abundance: a doubled, rolling amusement that spills over.\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.41},{\"operation\":\"phonetic_split\",\"chain\":\"lo + la + palooza; lo = behold; la = exclamation; palooza = palooza as a burst-sound\",\"reading\":\"Behold the exclamation: a cry of wonder, then a great burst.\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.36},{\"operation\":\"anagram\",\"chain\":\"LOLLAPALOOZA rearranged yields OLA + APOLO + LULAZ?; emphasis on repeated L/O/A as looping vowels\",\"reading\":\"A looping circle of sound: repetition, return, and ecstatic spin.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.22},{\"operation\":\"letter_symbol\",\"chain\":\"L-L-L = three pillars or legs; O-O-O = three circles; A = apex; Z = zigzag end\",\"reading\":\"Three supports, three rings, a peak, then a zigzag: structure dissolves into play.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.33},{\"operation\":\"numerical\",\"chain\":\"L=12, O=15, L=12, L=12, A=1, P=16, A=1, L=12, O=15, O=15, Z=26, A=1; sum=137\",\"reading\":\"A high-numbered total: intensity gathered into a single charged figure.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.18},{\"operation\":\"etymology\",\"chain\":\"loll (Middle English lollen, to hang loosely) + palooza (informal expressive formation, probably from earlier colloquial exuberance)\",\"reading\":\"Loose hanging joined to exuberant noise: slackness made festive.\",\"languages\":[\"en\"],\"source\":\"Oxford English Dictionary\",\"confidence\":0.63},{\"operation\":\"cross_language_homophone\",\"chain\":\"pa-loo-za ≈ palooza / paluza; loza in Spanish = vine; pal- evokes pal, companion\",\"reading\":\"Companions among the vines: a clustered, convivial growth.\",\"languages\":[\"en\",\"es\"],\"source\":\"generative\",\"confidence\":0.29}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "loll + a + palooza; loll = to hang loosely, to lounge; palooza echoes palaver/booze/boza",
+   "reading": "A loose, lounging revel: slackness turned into noisy excess.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.74
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "loll ≈ lol; a ≈ à; palooza ≈ palourde/palourde? + louza; sound suggests laughter plus abundance",
+   "reading": "Laughter at abundance: a doubled, rolling amusement that spills over.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "lo + la + palooza; lo = behold; la = exclamation; palooza = palooza as a burst-sound",
+   "reading": "Behold the exclamation: a cry of wonder, then a great burst.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.36
+  },
+  {
+   "operation": "anagram",
+   "chain": "LOLLAPALOOZA rearranged yields OLA + APOLO + LULAZ?; emphasis on repeated L/O/A as looping vowels",
+   "reading": "A looping circle of sound: repetition, return, and ecstatic spin.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L-L-L = three pillars or legs; O-O-O = three circles; A = apex; Z = zigzag end",
+   "reading": "Three supports, three rings, a peak, then a zigzag: structure dissolves into play.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.33
+  },
+  {
+   "operation": "numerical",
+   "chain": "L=12, O=15, L=12, L=12, A=1, P=16, A=1, L=12, O=15, O=15, Z=26, A=1; sum=137",
+   "reading": "A high-numbered total: intensity gathered into a single charged figure.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.18
+  },
+  {
+   "operation": "etymology",
+   "chain": "loll (Middle English lollen, to hang loosely) + palooza (informal expressive formation, probably from earlier colloquial exuberance)",
+   "reading": "Loose hanging joined to exuberant noise: slackness made festive.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.63
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "pa-loo-za ≈ palooza / paluza; loza in Spanish = vine; pal- evokes pal, companion",
+   "reading": "Companions among the vines: a clustered, convivial growth.",
+   "languages": [
+    "en",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.29
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

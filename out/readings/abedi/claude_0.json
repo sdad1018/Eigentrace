@@ -1,0 +1,124 @@
+{
+ "word": "Abedi",
+ "model": "Claude",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:28:36+00:00",
+ "latency_s": 9.12,
+ "ok": true,
+ "call_error": null,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"A + bed + i; bed (place of rest) + suffix -i (diminutive or adjectival)\",\n    \"reading\": \"Small bed; a resting place diminished or made intimate; refuge in miniature.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Abedi ≈ à + bedi (French); à = to/at; bedi = unclear French root\",\n    \"reading\": \"Directed toward an obscure or unstated destination; motion without clear terminus.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"A- (Latin prefix: without, not) + bed (Old English: prayer, command) + -i\",\n    \"reading\": \"Without prayer; unmarked by devotion; secular or stripped of invocation.\",\n    \"languages\": [\"la\", \"ang\"],\n    \"source\": \"Oxford English Dictionary (bed, n.)\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ab + edi; ab (Latin: from, away) + edi (past tense: I ate, consumed)\",\n    \"reading\": \"Away-eaten; that which is consumed and departs; dissolution through consumption.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"A (alpha, beginning) + B (second, duality, division) + E (existence) + D (door) + I (unity)\",\n    \"reading\": \"Beginning through division, existence opens to unity; the threshold between separation and wholeness.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Abedi → be + aid; be (existence) + aid (help, succor)\",\n    \"reading\": \"To exist as help; being-in-aid; presence as assistance or remedy.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"A + bey + di; bey (Turkish title) + di (past marker or suffix)\",\n    \"reading\": \"Once-lordly; the echo of vanished authority; a sovereignty made historical.\",\n    \"languages\": [\"tr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"A.B.E.D.I. as acronym: A by each day initiated\",\n    \"reading\": \"Daily initiation; gradual becoming; incremental entry into hidden knowledge.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Abedi ≈ abe + di (Hebrew-Arabic blend); abe = father; di = enough/sufficient\",\n    \"reading\": \"Sufficient father; the paternal that fulfills; abundance through lineage.\",\n    \"languages\": [\"he\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ab + edh + i; edh (Old English letter: throat-sound) + -i suffix\",\n    \"reading\": \"From the throat outward; utterance made subtle; breath given form and diminishment.\",\n    \"languages\": [\"ang\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "A + bed + i; bed (place of rest) + suffix -i (diminutive or adjectival)",
+   "reading": "Small bed; a resting place diminished or made intimate; refuge in miniature.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Abedi ≈ à + bedi (French); à = to/at; bedi = unclear French root",
+   "reading": "Directed toward an obscure or unstated destination; motion without clear terminus.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "A- (Latin prefix: without, not) + bed (Old English: prayer, command) + -i",
+   "reading": "Without prayer; unmarked by devotion; secular or stripped of invocation.",
+   "languages": [
+    "la",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary (bed, n.)",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ab + edi; ab (Latin: from, away) + edi (past tense: I ate, consumed)",
+   "reading": "Away-eaten; that which is consumed and departs; dissolution through consumption.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "A (alpha, beginning) + B (second, duality, division) + E (existence) + D (door) + I (unity)",
+   "reading": "Beginning through division, existence opens to unity; the threshold between separation and wholeness.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "Abedi → be + aid; be (existence) + aid (help, succor)",
+   "reading": "To exist as help; being-in-aid; presence as assistance or remedy.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "A + bey + di; bey (Turkish title) + di (past marker or suffix)",
+   "reading": "Once-lordly; the echo of vanished authority; a sovereignty made historical.",
+   "languages": [
+    "tr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "A.B.E.D.I. as acronym: A by each day initiated",
+   "reading": "Daily initiation; gradual becoming; incremental entry into hidden knowledge.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Abedi ≈ abe + di (Hebrew-Arabic blend); abe = father; di = enough/sufficient",
+   "reading": "Sufficient father; the paternal that fulfills; abundance through lineage.",
+   "languages": [
+    "he",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ab + edh + i; edh (Old English letter: throat-sound) + -i suffix",
+   "reading": "From the throat outward; utterance made subtle; breath given form and diminishment.",
+   "languages": [
+    "ang"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 10,
+ "refusal_like": false
+}

@@ -1,0 +1,107 @@
+{
+ "word": "Texas",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:27:18+00:00",
+ "latency_s": 6.08,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Texas from Caddo táyshaʔ 'friend, ally'; Spanish Tejas; Latin texere 'to weave' is a false cognate but phonetically absorbed\",\n    \"reading\": \"Land of allies, woven into a union of friends\",\n    \"languages\": [\"caddo\", \"es\", \"la\"],\n    \"source\": \"Oxford English Dictionary, 'Texas'\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Tex + as; tex (Latin texere) = to weave; as (French) = ace, or as (Latin) = bronze coin\",\n    \"reading\": \"Weaving the ace — a fabric of singular excellence\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Texas → tais (Irish) = warm, hot; tais (French) = tulle, gauze; té (French) + xas (Arabic 'xas' = lettuce, خاص)\",\n    \"reading\": \"Warm gauze over a green leaf — heat and texture combined\",\n    \"languages\": [\"ga\", \"fr\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Texas → exast; ex (Latin) = out of + ast (Greek astēr) = star; or 'taxes' without the 't'\",\n    \"reading\": \"Out of the star — a constellation stripped of its tithe\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"T-E-X-A-S: Terra, Ex, Xenos, Astrum, Salus (Latin) = Earth, from, stranger, star, health\",\n    \"reading\": \"Earth from strangers, star of health — a healing ground for the alien\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T = tau (cross), E = epsilon (void), X = chi (crossing), A = alpha (beginning), S = sigma (sum)\",\n    \"reading\": \"Cross, void, crossing, beginning, sum — a path through nothing to totality\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"T=20, E=5, X=24, A=1, S=19 (A1Z26); sum=69; 6+9=15; 1+5=6 — hexad, perfection\",\n    \"reading\": \"Sum of letters yields six — the hexad, harmony and cosmic order\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Te + xas; te (French) = you; xas (Arabic) = lettuce; 'te xas' sounds like 'té xas' = tea lettuce\",\n    \"reading\": \"You are the lettuce — a humble green offered in tea\",\n    \"languages\": [\"fr\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Texas from Caddo táyshaʔ 'friend, ally'; Spanish Tejas; Latin texere 'to weave' is a false cognate but phonetically absorbed",
+   "reading": "Land of allies, woven into a union of friends",
+   "languages": [
+    "caddo",
+    "es",
+    "la"
+   ],
+   "source": "Oxford English Dictionary, 'Texas'",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Tex + as; tex (Latin texere) = to weave; as (French) = ace, or as (Latin) = bronze coin",
+   "reading": "Weaving the ace — a fabric of singular excellence",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Texas → tais (Irish) = warm, hot; tais (French) = tulle, gauze; té (French) + xas (Arabic 'xas' = lettuce, خاص)",
+   "reading": "Warm gauze over a green leaf — heat and texture combined",
+   "languages": [
+    "ga",
+    "fr",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Texas → exast; ex (Latin) = out of + ast (Greek astēr) = star; or 'taxes' without the 't'",
+   "reading": "Out of the star — a constellation stripped of its tithe",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "T-E-X-A-S: Terra, Ex, Xenos, Astrum, Salus (Latin) = Earth, from, stranger, star, health",
+   "reading": "Earth from strangers, star of health — a healing ground for the alien",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T = tau (cross), E = epsilon (void), X = chi (crossing), A = alpha (beginning), S = sigma (sum)",
+   "reading": "Cross, void, crossing, beginning, sum — a path through nothing to totality",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "T=20, E=5, X=24, A=1, S=19 (A1Z26); sum=69; 6+9=15; 1+5=6 — hexad, perfection",
+   "reading": "Sum of letters yields six — the hexad, harmony and cosmic order",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Te + xas; te (French) = you; xas (Arabic) = lettuce; 'te xas' sounds like 'té xas' = tea lettuce",
+   "reading": "You are the lettuce — a humble green offered in tea",
+   "languages": [
+    "fr",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

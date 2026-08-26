@@ -1,0 +1,151 @@
+{
+ "word": "Bahamas",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:26:27+00:00",
+ "latency_s": 7.55,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"etymology\",\"chain\":\"Bahamas ← Spanish 'Bajamar' (shallow sea)\",\"reading\":\"Low waters, shallow sea, fordable waters\",\"languages\":[\"es\",\"en\"],\"source\":\"Oxford English Dictionary / Real Academia Española\",\"confidence\":0.9},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Ba + ha + mas\",\"reading\":\"The father, the serpent, the mass\",\"languages\":[\"fr\",\"he\",\"la\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Bah + am + as\",\"reading\":\"The gate of the people of fire\",\"languages\":[\"ar\",\"he\",\"la\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Bahamas ≈ Bâ-haut-mas (French)\",\"reading\":\"Lower the high mass; bring down the great sacrifice\",\"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Bahamas ≈ Baâ-hammas (Arabic)\",\"reading\":\"The father of the crusher, the breaker\",\"languages\":[\"ar\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"anagram\",\"chain\":\"BAHAMAS → AABAHMS → Abâh + Ams\",\"reading\":\"The father of the people of the setting sun\",\"languages\":[\"ar\",\"he\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"notariqon\",\"chain\":\"B.A.H.A.M.A.S. → Bayit + Hochma + Ain + Mem + Aleph + Shin\",\"reading\":\"House of Wisdom, the eye, the mother, the fire\",\"languages\":[\"he\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Bah + a + mas\",\"reading\":\"The gate, the, the mass; portal to the body\",\"languages\":[\"fr\",\"la\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"letter_symbol\",\"chain\":\"B (house) + AH (breath of God) + MAS (mass/weight)\",\"reading\":\"The house of the divine breath within matter\",\"languages\":[\"he\",\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"numerical\",\"chain\":\"B=2, A=1, H=5, A=1, M=40, A=1, S=60 (Hebrew values)\",\"reading\":\"2-1-5-1-40-1-60 reduces to gate of the mother in the body\",\"languages\":[\"he\"],\"source\":\"generative\",\"confidence\":0.4},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Bahamas ≈ Bâ-hamas (Old French)\",\"reading\":\"He lowers the hook; the fisher of souls descends\",\"languages\":[\"fr\",\"la\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"etymology\",\"chain\":\"Bahamas ← Latin 'baba' + Greek 'hamas' via phonetic folk etymology\",\"reading\":\"Mouth of the reaper; entrance to the harvest of souls\",\"languages\":[\"la\",\"grc\"],\"source\":\"generative\",\"confidence\":0.35}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Bahamas ← Spanish 'Bajamar' (shallow sea)",
+   "reading": "Low waters, shallow sea, fordable waters",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "Oxford English Dictionary / Real Academia Española",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba + ha + mas",
+   "reading": "The father, the serpent, the mass",
+   "languages": [
+    "fr",
+    "he",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bah + am + as",
+   "reading": "The gate of the people of fire",
+   "languages": [
+    "ar",
+    "he",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bahamas ≈ Bâ-haut-mas (French)",
+   "reading": "Lower the high mass; bring down the great sacrifice",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bahamas ≈ Baâ-hammas (Arabic)",
+   "reading": "The father of the crusher, the breaker",
+   "languages": [
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "BAHAMAS → AABAHMS → Abâh + Ams",
+   "reading": "The father of the people of the setting sun",
+   "languages": [
+    "ar",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B.A.H.A.M.A.S. → Bayit + Hochma + Ain + Mem + Aleph + Shin",
+   "reading": "House of Wisdom, the eye, the mother, the fire",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bah + a + mas",
+   "reading": "The gate, the, the mass; portal to the body",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (house) + AH (breath of God) + MAS (mass/weight)",
+   "reading": "The house of the divine breath within matter",
+   "languages": [
+    "he",
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "numerical",
+   "chain": "B=2, A=1, H=5, A=1, M=40, A=1, S=60 (Hebrew values)",
+   "reading": "2-1-5-1-40-1-60 reduces to gate of the mother in the body",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bahamas ≈ Bâ-hamas (Old French)",
+   "reading": "He lowers the hook; the fisher of souls descends",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bahamas ← Latin 'baba' + Greek 'hamas' via phonetic folk etymology",
+   "reading": "Mouth of the reaper; entrance to the harvest of souls",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

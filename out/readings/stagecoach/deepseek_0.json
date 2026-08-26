@@ -1,0 +1,137 @@
+{
+ "word": "Stagecoach",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:20+00:00",
+ "latency_s": 12.24,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"stage (Old French estage, from Latin statio) + coach (Middle English coche, from Hungarian kocsi, a wagon from Kocs)\",\n    \"reading\": \"A stopping-place vehicle: a wagon that carries passengers between fixed stations, a public conveyance of the road.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"hu\"],\n    \"source\": \"Oxford English Dictionary, s.v. 'stage' and 'coach'\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"stage + coach; stage = 'st-age' (age, era) + coach = 'co-ach' (co- = together, ach = ache/ache)\",\n    \"reading\": \"The age of shared ache: a collective journey through time, carrying the pain of many in one rolling frame.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"stage (en) ~ estage (fr, old) ~ stagia (it, stage) ; coach (en) ~ coche (fr, carriage) ~ kocsi (hu, wagon) ; 'stage' also sounds like 'stash' (en) + 'coach' like 'coche' (es, pig)\",\n    \"reading\": \"A hidden pig in a stash: the coach as a secret store of animal energy, a beast of burden disguised as a vehicle.\",\n    \"languages\": [\"en\", \"fr\", \"it\", \"es\", \"hu\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Stagecoach -> 'cage + t' + 'so + ach' ; also 'goat + chase' (anagram of letters: g,o,a,t,c,h,a,s,e)\",\n    \"reading\": \"Goat chase: a pursuit of the scapegoat, the animal that carries sins away — the coach as a moving vessel of expiation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"S-T-A-G-E-C-O-A-C-H: each letter as initial: S = station, T = travel, A = arrival, G = guide, E = exit, C = carriage, O = open, A = all, C = crossroads, H = halt\",\n    \"reading\": \"Station, travel, arrival, guide, exit, carriage, open, all, crossroads, halt — a litany of the wayfarer's cycle.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"S (serpent) + T (cross) + A (alpha) + G (gamma) + E (epsilon) + C (crescent) + O (omega) + A (alpha) + C (crescent) + H (eta)\",\n    \"reading\": \"Serpent, cross, alpha, gamma, epsilon, crescent, omega, alpha, crescent, eta — a zodiacal wheel of beginning and end, the coach as a moving cosmos.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Stagecoach: S=19, T=20, A=1, G=7, E=5, C=3, O=15, A=1, C=3, H=8 → sum = 82; 8+2=10 → 1+0=1\",\n    \"reading\": \"The number 1: unity, the single road, the one coach that carries many — a monad on wheels, the beginning of all journeys.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"stage + coach → 'st' (stone) + 'age' (era) + 'co' (with) + 'ach' (German, 'oh' or 'ache')\",\n    \"reading\": \"Stone era with an ache: the coach as a relic of a hard age, a wooden and iron groan over rough roads.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"stage (en) ~ 'estage' (fr, old) ~ 'staj' (tr, stay) ; coach (en) ~ 'coche' (fr, carriage) ~ 'koç' (tr, ram/leader)\",\n    \"reading\": \"A stay and a ram: the coach as a place of pause and a leader of the herd, guiding passengers like a flock.\",\n    \"languages\": [\"en\", \"fr\", \"tr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"coach (from Hungarian kocsi, 'of Kocs', a village) — the word entered French as coche, then English; stage (from Latin statio, 'standing place')\",\n    \"reading\": \"From a village named Kocs to a fixed station: the coach is a named place in motion, a travelling town.\",\n    \"languages\": [\"en\", \"fr\", \"hu\", \"la\"],\n    \"source\": \"Oxford English Dictionary, s.v. 'coach'\",\n    \"confidence\": 0.85\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "stage (Old French estage, from Latin statio) + coach (Middle English coche, from Hungarian kocsi, a wagon from Kocs)",
+   "reading": "A stopping-place vehicle: a wagon that carries passengers between fixed stations, a public conveyance of the road.",
+   "languages": [
+    "en",
+    "fr",
+    "la",
+    "hu"
+   ],
+   "source": "Oxford English Dictionary, s.v. 'stage' and 'coach'",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "stage + coach; stage = 'st-age' (age, era) + coach = 'co-ach' (co- = together, ach = ache/ache)",
+   "reading": "The age of shared ache: a collective journey through time, carrying the pain of many in one rolling frame.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "stage (en) ~ estage (fr, old) ~ stagia (it, stage) ; coach (en) ~ coche (fr, carriage) ~ kocsi (hu, wagon) ; 'stage' also sounds like 'stash' (en) + 'coach' like 'coche' (es, pig)",
+   "reading": "A hidden pig in a stash: the coach as a secret store of animal energy, a beast of burden disguised as a vehicle.",
+   "languages": [
+    "en",
+    "fr",
+    "it",
+    "es",
+    "hu"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "anagram",
+   "chain": "Stagecoach -> 'cage + t' + 'so + ach' ; also 'goat + chase' (anagram of letters: g,o,a,t,c,h,a,s,e)",
+   "reading": "Goat chase: a pursuit of the scapegoat, the animal that carries sins away — the coach as a moving vessel of expiation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "S-T-A-G-E-C-O-A-C-H: each letter as initial: S = station, T = travel, A = arrival, G = guide, E = exit, C = carriage, O = open, A = all, C = crossroads, H = halt",
+   "reading": "Station, travel, arrival, guide, exit, carriage, open, all, crossroads, halt — a litany of the wayfarer's cycle.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "S (serpent) + T (cross) + A (alpha) + G (gamma) + E (epsilon) + C (crescent) + O (omega) + A (alpha) + C (crescent) + H (eta)",
+   "reading": "Serpent, cross, alpha, gamma, epsilon, crescent, omega, alpha, crescent, eta — a zodiacal wheel of beginning and end, the coach as a moving cosmos.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "numerical",
+   "chain": "Stagecoach: S=19, T=20, A=1, G=7, E=5, C=3, O=15, A=1, C=3, H=8 → sum = 82; 8+2=10 → 1+0=1",
+   "reading": "The number 1: unity, the single road, the one coach that carries many — a monad on wheels, the beginning of all journeys.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "stage + coach → 'st' (stone) + 'age' (era) + 'co' (with) + 'ach' (German, 'oh' or 'ache')",
+   "reading": "Stone era with an ache: the coach as a relic of a hard age, a wooden and iron groan over rough roads.",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "stage (en) ~ 'estage' (fr, old) ~ 'staj' (tr, stay) ; coach (en) ~ 'coche' (fr, carriage) ~ 'koç' (tr, ram/leader)",
+   "reading": "A stay and a ram: the coach as a place of pause and a leader of the herd, guiding passengers like a flock.",
+   "languages": [
+    "en",
+    "fr",
+    "tr"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "coach (from Hungarian kocsi, 'of Kocs', a village) — the word entered French as coche, then English; stage (from Latin statio, 'standing place')",
+   "reading": "From a village named Kocs to a fixed station: the coach is a named place in motion, a travelling town.",
+   "languages": [
+    "en",
+    "fr",
+    "hu",
+    "la"
+   ],
+   "source": "Oxford English Dictionary, s.v. 'coach'",
+   "confidence": 0.85
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

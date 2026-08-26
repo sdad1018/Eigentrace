@@ -1,0 +1,134 @@
+{
+ "word": "NRG Park",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:22:32+00:00",
+ "latency_s": 6.78,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG + Park; NRG → énergie (French)\",\n    \"reading\": \"energy park; enclosure of vital force or power\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG sounds as énergie; Park sounds as parc → parc (enclosure)\",\n    \"reading\": \"enclosure of vital energy or life-force\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Park from Old French parc (enclosed hunting ground), from Late Latin parricus, from Germanic *parruk\",\n    \"reading\": \"enclosed preserve; fenced domain of power\",\n    \"languages\": [\"en\",\"fr\",\"la\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"N + RG; N = en (French 'in'); RG = reg- (Latin regere, to rule)\",\n    \"reading\": \"in the rule / in the kingdom; the park of the ruler\",\n    \"languages\": [\"fr\",\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"NRG PARK → PRANK GR; prank (Old English pranc, to show off) + GR (green language root for growth/grace)\",\n    \"reading\": \"the green prank; playful trick of vital growth\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"N.R.G.P.A.R.K. → Notre Roi Guide Par Amour Royal Kheper\",\n    \"reading\": \"our king guides by royal love of becoming\",\n    \"languages\": [\"fr\",\"en\",\"la\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N = Nun (fish, life in waters); R = Resh (head); G = Gimel (camel, journey); P = Pe (mouth); A = Aleph (ox, power); R = Resh; K = Kaph (palm/hand)\",\n    \"reading\": \"life-force journey of the speaking power in the hand\",\n    \"languages\": [\"he\"],\n    \"source\": \"Sefer Yetzirah (standard letter attributions)\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG Park ≈ énergie parc ≈ 'énergie par K' (K = Greek chi, the crossing)\",\n    \"reading\": \"vital force by way of the crossing or the key\",\n    \"languages\": [\"fr\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG = near + G (jee = généreux or genus); Park = père + K\",\n    \"reading\": \"near the generous father; paternal enclosure of life\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Energy from Greek ἐνέργεια (enérgeia) = at work, active force; Park as above\",\n    \"reading\": \"enclosed domain of active force or operation\",\n    \"languages\": [\"grc\",\"en\",\"fr\",\"la\"],\n    \"source\": \"Liddell-Scott Greek Lexicon\",\n    \"confidence\": 0.9\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "NRG + Park; NRG → énergie (French)",
+   "reading": "energy park; enclosure of vital force or power",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "NRG sounds as énergie; Park sounds as parc → parc (enclosure)",
+   "reading": "enclosure of vital energy or life-force",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "etymology",
+   "chain": "Park from Old French parc (enclosed hunting ground), from Late Latin parricus, from Germanic *parruk",
+   "reading": "enclosed preserve; fenced domain of power",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "N + RG; N = en (French 'in'); RG = reg- (Latin regere, to rule)",
+   "reading": "in the rule / in the kingdom; the park of the ruler",
+   "languages": [
+    "fr",
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "NRG PARK → PRANK GR; prank (Old English pranc, to show off) + GR (green language root for growth/grace)",
+   "reading": "the green prank; playful trick of vital growth",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "N.R.G.P.A.R.K. → Notre Roi Guide Par Amour Royal Kheper",
+   "reading": "our king guides by royal love of becoming",
+   "languages": [
+    "fr",
+    "en",
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N = Nun (fish, life in waters); R = Resh (head); G = Gimel (camel, journey); P = Pe (mouth); A = Aleph (ox, power); R = Resh; K = Kaph (palm/hand)",
+   "reading": "life-force journey of the speaking power in the hand",
+   "languages": [
+    "he"
+   ],
+   "source": "Sefer Yetzirah (standard letter attributions)",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "NRG Park ≈ énergie parc ≈ 'énergie par K' (K = Greek chi, the crossing)",
+   "reading": "vital force by way of the crossing or the key",
+   "languages": [
+    "fr",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "NRG = near + G (jee = généreux or genus); Park = père + K",
+   "reading": "near the generous father; paternal enclosure of life",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Energy from Greek ἐνέργεια (enérgeia) = at work, active force; Park as above",
+   "reading": "enclosed domain of active force or operation",
+   "languages": [
+    "grc",
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Liddell-Scott Greek Lexicon",
+   "confidence": 0.9
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

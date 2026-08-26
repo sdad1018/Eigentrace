@@ -1,0 +1,111 @@
+{
+ "word": "NRG Park",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:26:29+00:00",
+ "latency_s": 8.42,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"NRG = energy (Greek energeia, 'activity'); Park = Middle English parc, from Old French parc, 'enclosure'\",\n    \"reading\": \"Enclosed field of active force; a bounded space where power is gathered and released\",\n    \"languages\": [\"en\", \"fr\", \"grc\"],\n    \"source\": \"OED; Liddell-Scott Greek Lexicon\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"NRG → 'en-er-gee'; Park → 'parc' (Fr.) → 'parque' (Sp.) → 'park' (Eng.)\",\n    \"reading\": \"Energy in the park; the humming of the earth's own current within a green boundary\",\n    \"languages\": [\"en\", \"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG → 'nrg' (Greek nergos, 'without work')? No; 'nrg' as 'en-erg' → 'in-erg' (Latin in + ergon, 'work')\",\n    \"reading\": \"In-work; the place where the inner work of transformation is performed outdoors\",\n    \"languages\": [\"en\", \"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"NRG PARK → 'RANK GRP' → 'GRP RANK' → 'PARK GRN' (green park) → 'GRN' = green\",\n    \"reading\": \"Green park; the verdant rank of energies arranged in order, a living hierarchy of power\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"N = north, R = right, G = ground; P = power, A = axis, R = rotation, K = key\",\n    \"reading\": \"North-right ground; power-axis-rotation-key — a turning point on the earth's magnetic field\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N (14th letter) + R (18th) + G (7th) = 39; P (16) + A (1) + R (18) + K (11) = 46; total 85\",\n    \"reading\": \"85 as 8+5=13, death and rebirth; the park as a threshold between old and new cycles\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"NRG = 14+18+7 = 39; PARK = 16+1+18+11 = 46; 39+46 = 85; 8+5 = 13; 1+3 = 4\",\n    \"reading\": \"Four as stability, the four corners of the park; energy grounded in a square of order\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Park (Old English pearroc, 'enclosure for animals') from Germanic; NRG as 'energy' from Greek energeia\",\n    \"reading\": \"Enclosure for living force; a pen for the wild power that must be tamed to serve\",\n    \"languages\": [\"en\", \"grc\", \"gem\"],\n    \"source\": \"OED; Bosworth-Toller Anglo-Saxon Dictionary\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "NRG = energy (Greek energeia, 'activity'); Park = Middle English parc, from Old French parc, 'enclosure'",
+   "reading": "Enclosed field of active force; a bounded space where power is gathered and released",
+   "languages": [
+    "en",
+    "fr",
+    "grc"
+   ],
+   "source": "OED; Liddell-Scott Greek Lexicon",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "NRG → 'en-er-gee'; Park → 'parc' (Fr.) → 'parque' (Sp.) → 'park' (Eng.)",
+   "reading": "Energy in the park; the humming of the earth's own current within a green boundary",
+   "languages": [
+    "en",
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "NRG → 'nrg' (Greek nergos, 'without work')? No; 'nrg' as 'en-erg' → 'in-erg' (Latin in + ergon, 'work')",
+   "reading": "In-work; the place where the inner work of transformation is performed outdoors",
+   "languages": [
+    "en",
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "NRG PARK → 'RANK GRP' → 'GRP RANK' → 'PARK GRN' (green park) → 'GRN' = green",
+   "reading": "Green park; the verdant rank of energies arranged in order, a living hierarchy of power",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "N = north, R = right, G = ground; P = power, A = axis, R = rotation, K = key",
+   "reading": "North-right ground; power-axis-rotation-key — a turning point on the earth's magnetic field",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N (14th letter) + R (18th) + G (7th) = 39; P (16) + A (1) + R (18) + K (11) = 46; total 85",
+   "reading": "85 as 8+5=13, death and rebirth; the park as a threshold between old and new cycles",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "numerical",
+   "chain": "NRG = 14+18+7 = 39; PARK = 16+1+18+11 = 46; 39+46 = 85; 8+5 = 13; 1+3 = 4",
+   "reading": "Four as stability, the four corners of the park; energy grounded in a square of order",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "etymology",
+   "chain": "Park (Old English pearroc, 'enclosure for animals') from Germanic; NRG as 'energy' from Greek energeia",
+   "reading": "Enclosure for living force; a pen for the wild power that must be tamed to serve",
+   "languages": [
+    "en",
+    "grc",
+    "gem"
+   ],
+   "source": "OED; Bosworth-Toller Anglo-Saxon Dictionary",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

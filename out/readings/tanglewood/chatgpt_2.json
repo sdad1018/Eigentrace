@@ -1,0 +1,101 @@
+{
+ "word": "Tanglewood",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:17:38+00:00",
+ "latency_s": 5.29,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"tangle + wood; tangle = entanglement, knot, confusion; wood = forest, matter of trees\",\n    \"reading\": \"A knotted forest: matter caught in confusion, branches and meanings interlaced.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.94\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"tan + gel + wood; tan (fr. temps/taon-like sound) + gel (fr. gel = frost, freeze) + wood\",\n    \"reading\": \"A frozen time-wood: growth arrested, sap turned to ice.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.38\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"tangle + wood; tangle echoes tang + le; wood echoes wode/woad\",\n    \"reading\": \"A sharp, wandering dye in the trees: a wild, stained thicket.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"tangle < Middle English tanglen, frequentative of tangle/tangle?; wood < Old English wudu 'wood, forest'; consult OED / Merriam-Webster / Etymonline for wood\",\n    \"reading\": \"A place-name built from 'entangle' and 'forest': the wooded maze.\",\n    \"languages\": [\"en\"],\n    \"source\": \"OED; Merriam-Webster; Etymonline\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"TANGLEWOOD -> WANTED GLOO?; partial anagrammatic drift: tangle + wood -> woad + glet?; sound-led anagram rather than strict letter permutation\",\n    \"reading\": \"A desired glue of the woods: the binding substance hidden in the grove.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"T A N G L E W O O D = Tree And Nature Gathers, Leaves Entwine; Wood Opens, Old Doors\",\n    \"reading\": \"Nature gathers itself into an old, opening gate of leaves and timber.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.18\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T = crossbar; A = apex; N = zigzag; G = spiral; L = angle; E = threshold; W = double wave; O = circle; O = circle; D = door\",\n    \"reading\": \"A crossed path, zigzagging into spirals, then two circles and a door: a passage through enclosure.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.67\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"TANGLEWOOD by alphabetic position: T20+A1+N14+G7+L12+E5+W23+O15+O15+D4 = 116; 1+1+6 = 8\",\n    \"reading\": \"Eight: the number of balance, turning, and return after the maze.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "tangle + wood; tangle = entanglement, knot, confusion; wood = forest, matter of trees",
+   "reading": "A knotted forest: matter caught in confusion, branches and meanings interlaced.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.94
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "tan + gel + wood; tan (fr. temps/taon-like sound) + gel (fr. gel = frost, freeze) + wood",
+   "reading": "A frozen time-wood: growth arrested, sap turned to ice.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.38
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "tangle + wood; tangle echoes tang + le; wood echoes wode/woad",
+   "reading": "A sharp, wandering dye in the trees: a wild, stained thicket.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "etymology",
+   "chain": "tangle < Middle English tanglen, frequentative of tangle/tangle?; wood < Old English wudu 'wood, forest'; consult OED / Merriam-Webster / Etymonline for wood",
+   "reading": "A place-name built from 'entangle' and 'forest': the wooded maze.",
+   "languages": [
+    "en"
+   ],
+   "source": "OED; Merriam-Webster; Etymonline",
+   "confidence": 0.72
+  },
+  {
+   "operation": "anagram",
+   "chain": "TANGLEWOOD -> WANTED GLOO?; partial anagrammatic drift: tangle + wood -> woad + glet?; sound-led anagram rather than strict letter permutation",
+   "reading": "A desired glue of the woods: the binding substance hidden in the grove.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "notariqon",
+   "chain": "T A N G L E W O O D = Tree And Nature Gathers, Leaves Entwine; Wood Opens, Old Doors",
+   "reading": "Nature gathers itself into an old, opening gate of leaves and timber.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.18
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T = crossbar; A = apex; N = zigzag; G = spiral; L = angle; E = threshold; W = double wave; O = circle; O = circle; D = door",
+   "reading": "A crossed path, zigzagging into spirals, then two circles and a door: a passage through enclosure.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.67
+  },
+  {
+   "operation": "numerical",
+   "chain": "TANGLEWOOD by alphabetic position: T20+A1+N14+G7+L12+E5+W23+O15+O15+D4 = 116; 1+1+6 = 8",
+   "reading": "Eight: the number of balance, turning, and return after the maze.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

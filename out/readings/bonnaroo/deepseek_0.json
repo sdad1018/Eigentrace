@@ -1,0 +1,109 @@
+{
+ "word": "Bonnaroo",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:16:34+00:00",
+ "latency_s": 8.93,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bon (French, from Latin bonus) = good; naroo (unknown, possibly from Provençal 'narro' = to tell, relate)\",\n    \"reading\": \"Good telling, a beneficial narration or auspicious speech.\",\n    \"languages\": [\"fr\", \"la\", \"oc\"],\n    \"source\": \"Oxford English Dictionary, s.v. 'bon'; Mistral, Lou Tresor dóu Felibrige, s.v. 'narro'\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"bon + a + roo; roo (English) = kangaroo; bon (French) = good; a (indefinite article)\",\n    \"reading\": \"A good kangaroo — leaping, carrying its young, a symbol of forward motion and nurture.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bon (fr) + arou (Arabic 'عرس'? no — 'arū' = to see? better: 'ru' in Hebrew = evil; 'bon' + 'roo' → 'bonru' → 'bon' + 'ru' (Hebrew רע, ra) = good evil?\",\n    \"reading\": \"Good and evil interwoven — a dialectic of light and shadow in one sound.\",\n    \"languages\": [\"fr\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bonnaroo → 'A boon, or' → 'boon' (gift) + 'aroo' (suffix of intensity, from Australian English)\",\n    \"reading\": \"A great gift, an abundant boon — something freely given, amplified.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-O-N-N-A-R-O-O → Bona (good) + Nara (man, Sanskrit) + Oo (sound of wonder)\",\n    \"reading\": \"Good man, wonder — the noble human beholding the marvellous.\",\n    \"languages\": [\"la\", \"sa\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B (second letter, house) + O (circle, sun) + N (water, nun) + N (again) + A (ox, beginning) + R (head, sun) + O (circle) + O (circle)\",\n    \"reading\": \"House of the sun, waters twice, beginning, head, and double circle — a solar cycle of renewal.\",\n    \"languages\": [\"en\", \"he\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"B=2, O=15, N=14, N=14, A=1, R=18, O=15, O=15 → sum = 94; 9+4=13; 1+3=4\",\n    \"reading\": \"Reduces to 4 — stability, earth, the four elements, a grounded completion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"bon (fr) + arou (Greek 'άρω' = to take up, to lift) → bon + aro\",\n    \"reading\": \"Good lifting — an uplifting goodness, a raising of spirit.\",\n    \"languages\": [\"fr\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "bon (French, from Latin bonus) = good; naroo (unknown, possibly from Provençal 'narro' = to tell, relate)",
+   "reading": "Good telling, a beneficial narration or auspicious speech.",
+   "languages": [
+    "fr",
+    "la",
+    "oc"
+   ],
+   "source": "Oxford English Dictionary, s.v. 'bon'; Mistral, Lou Tresor dóu Felibrige, s.v. 'narro'",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "bon + a + roo; roo (English) = kangaroo; bon (French) = good; a (indefinite article)",
+   "reading": "A good kangaroo — leaping, carrying its young, a symbol of forward motion and nurture.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bon (fr) + arou (Arabic 'عرس'? no — 'arū' = to see? better: 'ru' in Hebrew = evil; 'bon' + 'roo' → 'bonru' → 'bon' + 'ru' (Hebrew רע, ra) = good evil?",
+   "reading": "Good and evil interwoven — a dialectic of light and shadow in one sound.",
+   "languages": [
+    "fr",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bonnaroo → 'A boon, or' → 'boon' (gift) + 'aroo' (suffix of intensity, from Australian English)",
+   "reading": "A great gift, an abundant boon — something freely given, amplified.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-O-N-N-A-R-O-O → Bona (good) + Nara (man, Sanskrit) + Oo (sound of wonder)",
+   "reading": "Good man, wonder — the noble human beholding the marvellous.",
+   "languages": [
+    "la",
+    "sa",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (second letter, house) + O (circle, sun) + N (water, nun) + N (again) + A (ox, beginning) + R (head, sun) + O (circle) + O (circle)",
+   "reading": "House of the sun, waters twice, beginning, head, and double circle — a solar cycle of renewal.",
+   "languages": [
+    "en",
+    "he",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "B=2, O=15, N=14, N=14, A=1, R=18, O=15, O=15 → sum = 94; 9+4=13; 1+3=4",
+   "reading": "Reduces to 4 — stability, earth, the four elements, a grounded completion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "bon (fr) + arou (Greek 'άρω' = to take up, to lift) → bon + aro",
+   "reading": "Good lifting — an uplifting goodness, a raising of spirit.",
+   "languages": [
+    "fr",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

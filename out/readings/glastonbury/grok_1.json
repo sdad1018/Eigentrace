@@ -1,0 +1,149 @@
+{
+ "word": "Glastonbury",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:17:19+00:00",
+ "latency_s": 5.88,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"etymology\",\"chain\":\"Glaestinga-burh (Old English)\",\"reading\":\"The fortified place of the people of Glaest or the Glastingas\",\"languages\":[\"en\",\"ang\"],\"source\":\"Oxford Dictionary of English Place-Names\",\"confidence\":0.85},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Glas + ton + bury\",\"reading\":\"Glass tone buried; the sound of glass interred or frozen tone concealed\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Glast + on + bury\",\"reading\":\"The last one buried; end placed in the grave\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Glas (Breton/Scottish Gaelic) = green or grey-blue + ton (Old English) = enclosure + bury\",\"reading\":\"The green enclosure that buries or the grey-blue tomb\",\"languages\":[\"en\",\"br\",\"gd\",\"ang\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Glast + on + bury → Glastombury\",\"reading\":\"Glass tomb bury; the act of burying the glass tomb\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"anagram\",\"chain\":\"Glastonbury → Bury long sat\",\"reading\":\"The long sitting burial; that which has remained buried for a long age\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Glas (Old French) = breakage, splinter + ton (French) = tone/sound + bury (English)\",\"reading\":\"The broken sound that is buried\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Gla + ston + bury\",\"reading\":\"Glow stone bury; the luminous stone that is entombed\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"etymology\",\"chain\":\"Glastinga (from glaes = amber, glass in Germanic) + burh\",\"reading\":\"The stronghold associated with glass or amber\",\"languages\":[\"en\",\"ang\",\"gem\"],\"source\":\"Ekwall, Concise Oxford Dictionary of English Place-Names\",\"confidence\":0.75},\n  {\"operation\":\"notariqon\",\"chain\":\"G-L-A-S-T-O-N-B-U-R-Y → initial letters read cabala-wise\",\"reading\":\"Green Light Alights Secretly Through Opened Northern Burial Under Royal Yew\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.4},\n  {\"operation\":\"letter_symbol\",\"chain\":\"Glas (green) + ton (thunderstone) + bury (to hide)\",\"reading\":\"The green thunderstone lies hidden\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Glast (German: glassy, brittle) + onbury (sounds like 'unbury')\",\"reading\":\"The brittle glassy thing that must be unburied\",\"languages\":[\"en\",\"de\"],\"source\":\"generative\",\"confidence\":0.5}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Glaestinga-burh (Old English)",
+   "reading": "The fortified place of the people of Glaest or the Glastingas",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Oxford Dictionary of English Place-Names",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Glas + ton + bury",
+   "reading": "Glass tone buried; the sound of glass interred or frozen tone concealed",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Glast + on + bury",
+   "reading": "The last one buried; end placed in the grave",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Glas (Breton/Scottish Gaelic) = green or grey-blue + ton (Old English) = enclosure + bury",
+   "reading": "The green enclosure that buries or the grey-blue tomb",
+   "languages": [
+    "en",
+    "br",
+    "gd",
+    "ang"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Glast + on + bury → Glastombury",
+   "reading": "Glass tomb bury; the act of burying the glass tomb",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Glastonbury → Bury long sat",
+   "reading": "The long sitting burial; that which has remained buried for a long age",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Glas (Old French) = breakage, splinter + ton (French) = tone/sound + bury (English)",
+   "reading": "The broken sound that is buried",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gla + ston + bury",
+   "reading": "Glow stone bury; the luminous stone that is entombed",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Glastinga (from glaes = amber, glass in Germanic) + burh",
+   "reading": "The stronghold associated with glass or amber",
+   "languages": [
+    "en",
+    "ang",
+    "gem"
+   ],
+   "source": "Ekwall, Concise Oxford Dictionary of English Place-Names",
+   "confidence": 0.75
+  },
+  {
+   "operation": "notariqon",
+   "chain": "G-L-A-S-T-O-N-B-U-R-Y → initial letters read cabala-wise",
+   "reading": "Green Light Alights Secretly Through Opened Northern Burial Under Royal Yew",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Glas (green) + ton (thunderstone) + bury (to hide)",
+   "reading": "The green thunderstone lies hidden",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Glast (German: glassy, brittle) + onbury (sounds like 'unbury')",
+   "reading": "The brittle glassy thing that must be unburied",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

@@ -1,0 +1,123 @@
+{
+ "word": "Voltaire",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T01:03:38+00:00",
+ "latency_s": 32.89,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"vol (French) = flight; taire (French) = to silence\",\n    \"reading\": \"The flight that silences, or a swift movement to impose quiet.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"vol (French) = theft; taire (French) = to silence\",\n    \"reading\": \"A theft that aims to impose silence, or a hidden appropriation of quiet.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"vol (French) = flight; terre (French) = earth (phonetic similarity to 'taire')\",\n    \"reading\": \"A flight over the earth, or the earth's ascent.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"vol (French, from Latin *volare* 'to fly') + taire (French, from Latin *tacere* 'to be silent')\",\n    \"reading\": \"The silent act of flying, or a quiet ascent.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"Online Etymology Dictionary, Wiktionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"vol (Old French 'theft', from Medieval Latin *vollum*, from Latin *furtum* 'theft') + taire (French, from Latin *tacere* 'to be silent')\",\n    \"reading\": \"A hidden or silent theft, a concealed taking.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"Online Etymology Dictionary, Wiktionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Anagram of Voltaire -> 'voile' (French: veil, sail) + 'art' (French: art)\",\n    \"reading\": \"The art of veiling or concealing, or the skill of sailing.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Anagram of Voltaire -> 'avoir' (French: to have) + 'tel' (French: such)\",\n    \"reading\": \"To possess such a quality or characteristic.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"voix (French) = voice (phonetic similarity to 'Vol'); taire (French) = to silence\",\n    \"reading\": \"The voice that silences, or silencing the spoken word.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Gematria (A=1...Z=26): V(22)+O(15)+L(12)+T(20)+A(1)+I(9)+R(18)+E(5) = 102; 1+0+2 = 3\",\n    \"reading\": \"The numerical essence reveals the number three, signifying creation, completion, and the divine trinity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"vol (French) = flight; tear (English) = a drop from the eye\",\n    \"reading\": \"The flight of tears, or a weeping ascent.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "vol (French) = flight; taire (French) = to silence",
+   "reading": "The flight that silences, or a swift movement to impose quiet.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "vol (French) = theft; taire (French) = to silence",
+   "reading": "A theft that aims to impose silence, or a hidden appropriation of quiet.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "vol (French) = flight; terre (French) = earth (phonetic similarity to 'taire')",
+   "reading": "A flight over the earth, or the earth's ascent.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "etymology",
+   "chain": "vol (French, from Latin *volare* 'to fly') + taire (French, from Latin *tacere* 'to be silent')",
+   "reading": "The silent act of flying, or a quiet ascent.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "Online Etymology Dictionary, Wiktionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "etymology",
+   "chain": "vol (Old French 'theft', from Medieval Latin *vollum*, from Latin *furtum* 'theft') + taire (French, from Latin *tacere* 'to be silent')",
+   "reading": "A hidden or silent theft, a concealed taking.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "Online Etymology Dictionary, Wiktionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "Anagram of Voltaire -> 'voile' (French: veil, sail) + 'art' (French: art)",
+   "reading": "The art of veiling or concealing, or the skill of sailing.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Anagram of Voltaire -> 'avoir' (French: to have) + 'tel' (French: such)",
+   "reading": "To possess such a quality or characteristic.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "voix (French) = voice (phonetic similarity to 'Vol'); taire (French) = to silence",
+   "reading": "The voice that silences, or silencing the spoken word.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "numerical",
+   "chain": "Gematria (A=1...Z=26): V(22)+O(15)+L(12)+T(20)+A(1)+I(9)+R(18)+E(5) = 102; 1+0+2 = 3",
+   "reading": "The numerical essence reveals the number three, signifying creation, completion, and the divine trinity.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "vol (French) = flight; tear (English) = a drop from the eye",
+   "reading": "The flight of tears, or a weeping ascent.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

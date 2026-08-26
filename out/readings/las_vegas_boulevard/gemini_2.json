@@ -1,0 +1,128 @@
+{
+ "word": "Las Vegas Boulevard",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:39:53+00:00",
+ "latency_s": 26.09,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las (sound) -> L'as (French) -> the ace (card, or master).\",\n    \"reading\": \"The master, the one of highest skill or fortune, denoting singular excellence or destiny.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las -> Sal (anagram) -> salt.\",\n    \"reading\": \"The vital essence, that which preserves wisdom, or a fundamental, precious element.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Vegas -> Vega (Spanish) meaning 'fertile plain', from Latin roots possibly 'vacca' (cow) or pre-Roman 'plain'.\",\n    \"reading\": \"A fertile plain, a rich pasture, indicating a place of natural abundance and growth.\",\n    \"languages\": [\"en\", \"es\", \"la\"],\n    \"source\": \"OED (Oxford English Dictionary)\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ve-gas -> Vae (Latin: woe, alas) + gas (English: spirit, breath).\",\n    \"reading\": \"The sorrowful spirit, the breath of lamentation, or a deep sigh of woe.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Boulevard -> Dutch 'bolwerk' (bulwark, rampart) -> Old French 'boulevard' (rampart, then broad promenade).\",\n    \"reading\": \"A broad, protective path; a grand way built upon former defenses, offering security or passage.\",\n    \"languages\": [\"en\", \"nl\", \"fr\"],\n    \"source\": \"OED (Oxford English Dictionary), CNRTL (Centre National de Ressources Textuelles et Lexicales)\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Boule-vard -> Boule (French: ball, sphere) + vert (French: green, from Latin 'viridis').\",\n    \"reading\": \"The green sphere, representing nature's orb or a vibrant, fertile terrestrial world.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-L-V-D (initials of Boulevard) -> Behold Light, Vision, Desire.\",\n    \"reading\": \"Behold the path of illumination, guiding towards foresight and the fulfillment of desire.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas -> Laes (Latin: ruin, damage, injury) + Vega (Spanish: fertile plain).\",\n    \"reading\": \"The damage to the fertile plain, or the ruin that befalls abundant land.\",\n    \"languages\": [\"la\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Boulevard (sound) -> Bull + Eve + hard.\",\n    \"reading\": \"The primal strength of the bull, enduring through hardship, echoing the first woman's trials.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L (Light), V (Vision), B (Beginning) from key letters of the phrase.\",\n    \"reading\": \"The illumination of new sight, marking a fresh commencement or a luminous origin.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las (sound) -> L'as (French) -> the ace (card, or master).",
+   "reading": "The master, the one of highest skill or fortune, denoting singular excellence or destiny.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las -> Sal (anagram) -> salt.",
+   "reading": "The vital essence, that which preserves wisdom, or a fundamental, precious element.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "etymology",
+   "chain": "Vegas -> Vega (Spanish) meaning 'fertile plain', from Latin roots possibly 'vacca' (cow) or pre-Roman 'plain'.",
+   "reading": "A fertile plain, a rich pasture, indicating a place of natural abundance and growth.",
+   "languages": [
+    "en",
+    "es",
+    "la"
+   ],
+   "source": "OED (Oxford English Dictionary)",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ve-gas -> Vae (Latin: woe, alas) + gas (English: spirit, breath).",
+   "reading": "The sorrowful spirit, the breath of lamentation, or a deep sigh of woe.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Boulevard -> Dutch 'bolwerk' (bulwark, rampart) -> Old French 'boulevard' (rampart, then broad promenade).",
+   "reading": "A broad, protective path; a grand way built upon former defenses, offering security or passage.",
+   "languages": [
+    "en",
+    "nl",
+    "fr"
+   ],
+   "source": "OED (Oxford English Dictionary), CNRTL (Centre National de Ressources Textuelles et Lexicales)",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Boule-vard -> Boule (French: ball, sphere) + vert (French: green, from Latin 'viridis').",
+   "reading": "The green sphere, representing nature's orb or a vibrant, fertile terrestrial world.",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-L-V-D (initials of Boulevard) -> Behold Light, Vision, Desire.",
+   "reading": "Behold the path of illumination, guiding towards foresight and the fulfillment of desire.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas -> Laes (Latin: ruin, damage, injury) + Vega (Spanish: fertile plain).",
+   "reading": "The damage to the fertile plain, or the ruin that befalls abundant land.",
+   "languages": [
+    "la",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Boulevard (sound) -> Bull + Eve + hard.",
+   "reading": "The primal strength of the bull, enduring through hardship, echoing the first woman's trials.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L (Light), V (Vision), B (Beginning) from key letters of the phrase.",
+   "reading": "The illumination of new sight, marking a fresh commencement or a luminous origin.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

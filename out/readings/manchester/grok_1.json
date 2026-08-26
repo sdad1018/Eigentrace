@@ -1,0 +1,129 @@
+{
+ "word": "Manchester",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:24:09+00:00",
+ "latency_s": 7.35,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mamucium (Latin) → Mamcestre (1086) → Manchester; from Brittonic *mamm- 'breast, rounded hill'\",\n    \"reading\": \"The rounded breast-shaped hill\",\n    \"languages\": [\"en\",\"la\",\"cel\"],\n    \"source\": \"Ekwall, Concise Oxford Dictionary of English Place-Names\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chester\",\n    \"reading\": \"The man who is master; the male conqueror\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Manch + ester\",\n    \"reading\": \"The sleeve (manche) of the East; eastern garment\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Man-chester ≈ Mans-shâtre (French)\",\n    \"reading\": \"The field of the slaughtered or the massacre plain\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chest + terre\",\n    \"reading\": \"The man's chest of the earth; the thoracic vault of the world\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester → chant + Mers + A\",\n    \"reading\": \"The song of the seas and the beginning\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M A N C H E S T E R → initials read in French\",\n    \"reading\": \"Mère Ancestrale Nourricière Créatrice Hermétique des Étoiles Secrètes Terrestres et Éternelles Révélées\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-ches-tre\",\n    \"reading\": \"Hand (main) that seizes (saisit) the tree (arbre)\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Manchester ≈ Mante aux chairs (French)\",\n    \"reading\": \"The cloak that covers the flesh; the veil of incarnation\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (water, waves) + AN (year, age) + CHEST (ark, coffer) + ER (ancient suffix of action)\",\n    \"reading\": \"The watery ark of the ages performing its work\",\n    \"languages\": [\"en\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Mamucium (Latin) → Mamcestre (1086) → Manchester; from Brittonic *mamm- 'breast, rounded hill'",
+   "reading": "The rounded breast-shaped hill",
+   "languages": [
+    "en",
+    "la",
+    "cel"
+   ],
+   "source": "Ekwall, Concise Oxford Dictionary of English Place-Names",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chester",
+   "reading": "The man who is master; the male conqueror",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Manch + ester",
+   "reading": "The sleeve (manche) of the East; eastern garment",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Man-chester ≈ Mans-shâtre (French)",
+   "reading": "The field of the slaughtered or the massacre plain",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chest + terre",
+   "reading": "The man's chest of the earth; the thoracic vault of the world",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester → chant + Mers + A",
+   "reading": "The song of the seas and the beginning",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M A N C H E S T E R → initials read in French",
+   "reading": "Mère Ancestrale Nourricière Créatrice Hermétique des Étoiles Secrètes Terrestres et Éternelles Révélées",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-ches-tre",
+   "reading": "Hand (main) that seizes (saisit) the tree (arbre)",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manchester ≈ Mante aux chairs (French)",
+   "reading": "The cloak that covers the flesh; the veil of incarnation",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (water, waves) + AN (year, age) + CHEST (ark, coffer) + ER (ancient suffix of action)",
+   "reading": "The watery ark of the ages performing its work",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

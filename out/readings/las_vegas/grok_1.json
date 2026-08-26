@@ -1,0 +1,138 @@
+{
+ "word": "Las Vegas",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:58+00:00",
+ "latency_s": 6.32,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"etymology\",\"chain\":\"Las (Spanish) = the (feminine plural); Vegas = meadows (from Latin vicus = village/estate)\",\"reading\":\"The meadows\",\"languages\":[\"es\",\"la\"],\"source\":\"Oxford Spanish Dictionary / Lewis & Short Latin Dictionary\",\"confidence\":0.9},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Las + Ve + Gas\",\"reading\":\"The veil of gas / the veiled gas\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.75},\n  {\"operation\":\"phonetic_split\",\"chain\":\"L'as + Vegas\",\"reading\":\"The ace (l'as) of the veils (vegas as veils)\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Las Vegas ≈ Laas Végas ≈ Laas (Hebrew) = to gather + Végas ≈ Végétal (French phonetic)\",\"reading\":\"The gathering of plants / vegetal assembly\",\"languages\":[\"he\",\"fr\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"anagram\",\"chain\":\"Las Vegas = Salvages (archaic English spelling)\",\"reading\":\"The salvages / those who are saved\",\"languages\":[\"en\"],\"source\":\"OED - salvages\",\"confidence\":0.8},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Lasve + Gas\",\"reading\":\"The calf (veau) of gas / golden calf of vapour\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"notariqon\",\"chain\":\"L.V.G. → Lux (L) + Via (V) + Gaudium (G) or Lux + Veritas + Gloria\",\"reading\":\"Light, the way, and joy / light truth glory\",\"languages\":[\"la\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Las Vegas ≈ Les Végas ≈ Les Végétations\",\"reading\":\"The growths / the luxuriant vegetation\",\"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"letter_symbol\",\"chain\":\"L (el) + Vegas (from vega = fertile plain in Spanish, but L as god-symbol)\",\"reading\":\"God of the fertile plain\",\"languages\":[\"es\",\"en\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Las + Vegas ≈ Lass + Ve + Gas\",\"reading\":\"The girl sees gas / the maiden beholds vapour\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"etymology\",\"chain\":\"Vegas from Latin vicus (settlement) → Old Spanish vega = irrigated lowland meadow\",\"reading\":\"The irrigated low meadows\",\"languages\":[\"la\",\"es\"],\"source\":\"Corominas, Diccionario Crítico Etimológico\",\"confidence\":0.85}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Las (Spanish) = the (feminine plural); Vegas = meadows (from Latin vicus = village/estate)",
+   "reading": "The meadows",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "Oxford Spanish Dictionary / Lewis & Short Latin Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Ve + Gas",
+   "reading": "The veil of gas / the veiled gas",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "L'as + Vegas",
+   "reading": "The ace (l'as) of the veils (vegas as veils)",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas ≈ Laas Végas ≈ Laas (Hebrew) = to gather + Végas ≈ Végétal (French phonetic)",
+   "reading": "The gathering of plants / vegetal assembly",
+   "languages": [
+    "he",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas = Salvages (archaic English spelling)",
+   "reading": "The salvages / those who are saved",
+   "languages": [
+    "en"
+   ],
+   "source": "OED - salvages",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lasve + Gas",
+   "reading": "The calf (veau) of gas / golden calf of vapour",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L.V.G. → Lux (L) + Via (V) + Gaudium (G) or Lux + Veritas + Gloria",
+   "reading": "Light, the way, and joy / light truth glory",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas ≈ Les Végas ≈ Les Végétations",
+   "reading": "The growths / the luxuriant vegetation",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L (el) + Vegas (from vega = fertile plain in Spanish, but L as god-symbol)",
+   "reading": "God of the fertile plain",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Vegas ≈ Lass + Ve + Gas",
+   "reading": "The girl sees gas / the maiden beholds vapour",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Vegas from Latin vicus (settlement) → Old Spanish vega = irrigated lowland meadow",
+   "reading": "The irrigated low meadows",
+   "languages": [
+    "la",
+    "es"
+   ],
+   "source": "Corominas, Diccionario Crítico Etimológico",
+   "confidence": 0.85
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 11,
+ "refusal_like": false
+}

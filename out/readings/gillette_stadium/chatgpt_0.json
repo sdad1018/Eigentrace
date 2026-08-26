@@ -1,0 +1,127 @@
+{
+ "word": "Gillette Stadium",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:15:45+00:00",
+ "latency_s": 4.45,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"Gillette ≈ je l’ai / j’ai l’été; Stadium ≈ stade + dium\",\"reading\":\"I have the summer; the stage of the day becomes a place of display.\",\"languages\":[\"fr\",\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.42},{\"operation\":\"cross_language_homophone\",\"chain\":\"Gillette ≈ gilet (fr) + tête (fr)\",\"reading\":\"The vest on the head: a clothed mind, armored thought.\",\"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.36},{\"operation\":\"phonetic_split\",\"chain\":\"Gillette ≈ gille + ette; stadium ≈ stade + -ium\",\"reading\":\"A little jester on the stage: the fool’s arena.\",\"languages\":[\"fr\",\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.44},{\"operation\":\"etymology\",\"chain\":\"stadium < Latin stadium, from Greek στάδιον (stadion), a measure of length and a race-course; standard lexica: OED, Lewis & Short, LSJ\",\"reading\":\"A measured course: the arena of contest and passage.\",\"languages\":[\"en\",\"la\",\"grc\"],\"source\":\"OED; Lewis & Short; LSJ\",\"confidence\":0.93},{\"operation\":\"etymology\",\"chain\":\"Gillette as diminutive pattern -ette in French; compare gilet (French) from Italian giuletta?; standard lexica: TLFi, OED for -ette as diminutive\",\"reading\":\"A small, fitted form: the little garment of identity.\",\"languages\":[\"fr\",\"en\"],\"source\":\"TLFi; OED\",\"confidence\":0.58},{\"operation\":\"cross_language_homophone\",\"chain\":\"Gillette ≈ gilet (fr) + lait (fr)\",\"reading\":\"Vest and milk: protection nourished, softness under armor.\",\"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.31},{\"operation\":\"anagram\",\"chain\":\"Gillette Stadium → latent clusters: gilt, stud, mate, aisle, tide\",\"reading\":\"Gold, nail, companion, passage, tide: a built passage gilded by time.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.22},{\"operation\":\"notariqon\",\"chain\":\"G I L L E T T E / S T A D I U M → Gilded Inner Light; Stage To Ascend, Displaying Union, Measure\",\"reading\":\"A gilded inner light on a measured stage of ascent.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.18},{\"operation\":\"letter_symbol\",\"chain\":\"G + I + L + L + E + T + T + E; S + T + A + D + I + U + M\",\"reading\":\"G is the gate, I the pillar, T the cross: a threshold built from signs.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.27},{\"operation\":\"numerical\",\"chain\":\"G=7, I=9, L=12, L=12, E=5, T=20, T=20, E=5; S=19, T=20, A=1, D=4, I=9, U=21, M=13\",\"reading\":\"From 7 to 5, then 19 to 13: descent and return, a coded arc of completion.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.24}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Gillette ≈ je l’ai / j’ai l’été; Stadium ≈ stade + dium",
+   "reading": "I have the summer; the stage of the day becomes a place of display.",
+   "languages": [
+    "fr",
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.42
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gillette ≈ gilet (fr) + tête (fr)",
+   "reading": "The vest on the head: a clothed mind, armored thought.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.36
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gillette ≈ gille + ette; stadium ≈ stade + -ium",
+   "reading": "A little jester on the stage: the fool’s arena.",
+   "languages": [
+    "fr",
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.44
+  },
+  {
+   "operation": "etymology",
+   "chain": "stadium < Latin stadium, from Greek στάδιον (stadion), a measure of length and a race-course; standard lexica: OED, Lewis & Short, LSJ",
+   "reading": "A measured course: the arena of contest and passage.",
+   "languages": [
+    "en",
+    "la",
+    "grc"
+   ],
+   "source": "OED; Lewis & Short; LSJ",
+   "confidence": 0.93
+  },
+  {
+   "operation": "etymology",
+   "chain": "Gillette as diminutive pattern -ette in French; compare gilet (French) from Italian giuletta?; standard lexica: TLFi, OED for -ette as diminutive",
+   "reading": "A small, fitted form: the little garment of identity.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "TLFi; OED",
+   "confidence": 0.58
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gillette ≈ gilet (fr) + lait (fr)",
+   "reading": "Vest and milk: protection nourished, softness under armor.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "anagram",
+   "chain": "Gillette Stadium → latent clusters: gilt, stud, mate, aisle, tide",
+   "reading": "Gold, nail, companion, passage, tide: a built passage gilded by time.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "notariqon",
+   "chain": "G I L L E T T E / S T A D I U M → Gilded Inner Light; Stage To Ascend, Displaying Union, Measure",
+   "reading": "A gilded inner light on a measured stage of ascent.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.18
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G + I + L + L + E + T + T + E; S + T + A + D + I + U + M",
+   "reading": "G is the gate, I the pillar, T the cross: a threshold built from signs.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.27
+  },
+  {
+   "operation": "numerical",
+   "chain": "G=7, I=9, L=12, L=12, E=5, T=20, T=20, E=5; S=19, T=20, A=1, D=4, I=9, U=21, M=13",
+   "reading": "From 7 to 5, then 19 to 13: descent and return, a coded arc of completion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.24
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

@@ -1,0 +1,131 @@
+{
+ "word": "Red Rocks",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:16:34+00:00",
+ "latency_s": 5.61,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"red + rocks; red = blood/fire; rocks = hard stones, but also to rock = to shake\",\"reading\":\"Blood-fire meets the shaken stone: a hard body made to tremble, a fixed thing set in motion.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.86},{\"operation\":\"cross_language_homophone\",\"chain\":\"red ~ read (en); rocks ~ rocs (fr) / roques (occ); read = interpret, rocs = giant birds\",\"reading\":\"To read the birds: interpretation rises from the hard ground into the air of omen.\",\"languages\":[\"en\",\"fr\",\"oc\"],\"source\":\"generative\",\"confidence\":0.72},{\"operation\":\"anagram\",\"chain\":\"RED ROCKS -> ROCKS RED; rocks = stones, red = the color of blood and dawn\",\"reading\":\"Stones reddened: matter marked by heat, rust, sacrifice, or sunrise.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.91},{\"operation\":\"etymology\",\"chain\":\"red (Old English rēad, from Proto-Germanic *raudaz); rock(s) (Old English roccian 'to rock', or rock 'stone' from Old French roque, per OED/Merriam-Webster)\",\"reading\":\"The phrase joins redness with instability or stone: a sign of heated matter and trembling ground.\",\"languages\":[\"en\",\"fro\",\"pgmc\"],\"source\":\"OED; Merriam-Webster Dictionary\",\"confidence\":0.78},{\"operation\":\"phonetic_split\",\"chain\":\"red rocks -> red / rocks; rocks echoes 'rocs' and 'rocks' as a verb; red = reddened, rocked = moved\",\"reading\":\"The red is not still; it is rocked, agitated, made to pulse like a heart.\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.8},{\"operation\":\"letter_symbol\",\"chain\":\"R-E-D / R-O-C-K-S; R as radius/rotation, O as circle, C as crescent, K as crossing, S as serpent\",\"reading\":\"A circle crossed by force and ending in serpent-form: enclosure, fracture, and return.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.64},{\"operation\":\"numerical\",\"chain\":\"RED ROCKS -> R(18)+E(5)+D(4)+R(18)+O(15)+C(3)+K(11)+S(19)=93; 9+3=12; 1+2=3\",\"reading\":\"The number resolves to three: synthesis, triad, and the third term that binds opposites.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.58},{\"operation\":\"notariqon\",\"chain\":\"RED ROCKS -> R.O.C.K.S. as initials: Red = Radiance; Rocks = Resistance, Obduracy, Crust, Knot, Stone\",\"reading\":\"Radiance meets resistance: a luminous force trapped in knotty, stony form.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.55},{\"operation\":\"cross_language_homophone\",\"chain\":\"red ~ rot (de) / rott (it) by sound-shift; rocks ~ rocs (fr) = giant birds; red + rocs = blood + birds\",\"reading\":\"Blood and birds conjoin: a sacrificial color carried upward on winged ascent.\",\"languages\":[\"en\",\"fr\",\"de\",\"it\"],\"source\":\"generative\",\"confidence\":0.61},{\"operation\":\"etymology\",\"chain\":\"rock(s) (stone) from Old French roque, from Vulgar Latin *rocca, likely of Celtic origin; red from Old English rēad\",\"reading\":\"Old stone and old fire: a name of ancient hardness touched by ancient color.\",\"languages\":[\"en\",\"fro\",\"la\",\"cel\"],\"source\":\"OED; Merriam-Webster Dictionary\",\"confidence\":0.74}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "red + rocks; red = blood/fire; rocks = hard stones, but also to rock = to shake",
+   "reading": "Blood-fire meets the shaken stone: a hard body made to tremble, a fixed thing set in motion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.86
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "red ~ read (en); rocks ~ rocs (fr) / roques (occ); read = interpret, rocs = giant birds",
+   "reading": "To read the birds: interpretation rises from the hard ground into the air of omen.",
+   "languages": [
+    "en",
+    "fr",
+    "oc"
+   ],
+   "source": "generative",
+   "confidence": 0.72
+  },
+  {
+   "operation": "anagram",
+   "chain": "RED ROCKS -> ROCKS RED; rocks = stones, red = the color of blood and dawn",
+   "reading": "Stones reddened: matter marked by heat, rust, sacrifice, or sunrise.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.91
+  },
+  {
+   "operation": "etymology",
+   "chain": "red (Old English rēad, from Proto-Germanic *raudaz); rock(s) (Old English roccian 'to rock', or rock 'stone' from Old French roque, per OED/Merriam-Webster)",
+   "reading": "The phrase joins redness with instability or stone: a sign of heated matter and trembling ground.",
+   "languages": [
+    "en",
+    "fro",
+    "pgmc"
+   ],
+   "source": "OED; Merriam-Webster Dictionary",
+   "confidence": 0.78
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "red rocks -> red / rocks; rocks echoes 'rocs' and 'rocks' as a verb; red = reddened, rocked = moved",
+   "reading": "The red is not still; it is rocked, agitated, made to pulse like a heart.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R-E-D / R-O-C-K-S; R as radius/rotation, O as circle, C as crescent, K as crossing, S as serpent",
+   "reading": "A circle crossed by force and ending in serpent-form: enclosure, fracture, and return.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.64
+  },
+  {
+   "operation": "numerical",
+   "chain": "RED ROCKS -> R(18)+E(5)+D(4)+R(18)+O(15)+C(3)+K(11)+S(19)=93; 9+3=12; 1+2=3",
+   "reading": "The number resolves to three: synthesis, triad, and the third term that binds opposites.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "notariqon",
+   "chain": "RED ROCKS -> R.O.C.K.S. as initials: Red = Radiance; Rocks = Resistance, Obduracy, Crust, Knot, Stone",
+   "reading": "Radiance meets resistance: a luminous force trapped in knotty, stony form.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "red ~ rot (de) / rott (it) by sound-shift; rocks ~ rocs (fr) = giant birds; red + rocs = blood + birds",
+   "reading": "Blood and birds conjoin: a sacrificial color carried upward on winged ascent.",
+   "languages": [
+    "en",
+    "fr",
+    "de",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.61
+  },
+  {
+   "operation": "etymology",
+   "chain": "rock(s) (stone) from Old French roque, from Vulgar Latin *rocca, likely of Celtic origin; red from Old English rēad",
+   "reading": "Old stone and old fire: a name of ancient hardness touched by ancient color.",
+   "languages": [
+    "en",
+    "fro",
+    "la",
+    "cel"
+   ],
+   "source": "OED; Merriam-Webster Dictionary",
+   "confidence": 0.74
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

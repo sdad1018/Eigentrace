@@ -1,0 +1,107 @@
+{
+ "word": "Texas",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:21:18+00:00",
+ "latency_s": 4.28,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Tex + as; Tex ~ text; as = “thus, in this way”\",\n    \"reading\": \"A text that acts “thus”: writing made into deed, sign becoming act.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.78\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Tex ~ texte (fr) = text; as ~ “as” (en) / “ainsi” by sense\",\n    \"reading\": \"The word sounds like “text”: a written surface, a woven message, a thing to be read.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.74\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Te + x + as; x as the unknown, as = equality or likeness\",\n    \"reading\": \"An unknown made equal: the hidden factor brought into relation.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"TEXAS → AXEST; axe + st / as; axe = cutting tool, st = saint/stone (abbrev. by sound)\",\n    \"reading\": \"A cutting instrument and a fixed point: to sever and to set.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T = crossbar; X = crossing; A = apex; S = serpent/curve\",\n    \"reading\": \"Crossing, summit, and serpent: a sign of trial, ascent, and winding motion.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.57\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"T(20) + E(5) + X(24) + A(1) + S(19) = 69\",\n    \"reading\": \"Sixty-nine: a mirrored, reciprocal figure, two curves meeting in exchange.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.66\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"tex- from Latin texere, “to weave”; cf. Oxford English Dictionary / Merriam-Webster\",\n    \"reading\": \"Woven work: a fabric, a structure made by joining threads.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster\",\n    \"confidence\": 0.93\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"tex- from Latin texere → textus, “woven, texture, text”; cf. Lewis & Short\",\n    \"reading\": \"A texture of signs: what is woven becomes readable.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Lewis & Short, A Latin Dictionary\",\n    \"confidence\": 0.9\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Tex + as; Tex ~ text; as = “thus, in this way”",
+   "reading": "A text that acts “thus”: writing made into deed, sign becoming act.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.78
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Tex ~ texte (fr) = text; as ~ “as” (en) / “ainsi” by sense",
+   "reading": "The word sounds like “text”: a written surface, a woven message, a thing to be read.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.74
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Te + x + as; x as the unknown, as = equality or likeness",
+   "reading": "An unknown made equal: the hidden factor brought into relation.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "anagram",
+   "chain": "TEXAS → AXEST; axe + st / as; axe = cutting tool, st = saint/stone (abbrev. by sound)",
+   "reading": "A cutting instrument and a fixed point: to sever and to set.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T = crossbar; X = crossing; A = apex; S = serpent/curve",
+   "reading": "Crossing, summit, and serpent: a sign of trial, ascent, and winding motion.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.57
+  },
+  {
+   "operation": "numerical",
+   "chain": "T(20) + E(5) + X(24) + A(1) + S(19) = 69",
+   "reading": "Sixty-nine: a mirrored, reciprocal figure, two curves meeting in exchange.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.66
+  },
+  {
+   "operation": "etymology",
+   "chain": "tex- from Latin texere, “to weave”; cf. Oxford English Dictionary / Merriam-Webster",
+   "reading": "Woven work: a fabric, a structure made by joining threads.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Merriam-Webster",
+   "confidence": 0.93
+  },
+  {
+   "operation": "etymology",
+   "chain": "tex- from Latin texere → textus, “woven, texture, text”; cf. Lewis & Short",
+   "reading": "A texture of signs: what is woven becomes readable.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Lewis & Short, A Latin Dictionary",
+   "confidence": 0.9
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

@@ -1,0 +1,131 @@
+{
+ "word": "Gillette Stadium",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:16:05+00:00",
+ "latency_s": 6.88,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"phonetic_split\",\"chain\":\"Gillette + Stadium\",\"reading\":\"Gilt let stadium: the gilded permit or golden allowance for the standing place\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Gil + let + te + sta + dium\",\"reading\":\"Guile let the stay of the god: cunning releases the divine pause or support\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Gillette (sounds like) jilèt (French) + Stadium (stade)\",\"reading\":\"The razor + the stade: that which shaves or cuts closely within the measured track\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"etymology\",\"chain\":\"Gillette from Old French guille (deceit) + let (diminutive); Stadium from Latin stadium (a furlong, a racecourse)\",\"reading\":\"The little deceit or trick standing in the measured course\",\"languages\":[\"fr\",\"la\"],\"source\":\"Oxford English Dictionary / Lewis & Short Latin Dictionary\",\"confidence\":0.8},\n  {\"operation\":\"anagram\",\"chain\":\"Gillette Stadium → Gilt + Esteem + Lad\",\"reading\":\"The gilded youth held in high regard within the enclosure\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Gill + et + te + Stadium\",\"reading\":\"The gill (measure) and the head of the standing measure: calibrated sacred space\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"notariqon\",\"chain\":\"G I L L E T T E   S T A D I U M → initial letters grouped as GIL LET TE STA DI UM\",\"reading\":\"The guile lets the stay of the divine measure\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Gillette ≈ guillemette (Fr. old tool) + Stadium ≈ Greek stadion\",\"reading\":\"The little cutting tool within the sacred Greek racecourse\",\"languages\":[\"fr\",\"grc\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"letter_symbol\",\"chain\":\"G (gamma = generation) + IL (Hebrew ayil = ram/strength) + LETTE (let there be) + STADIUM\",\"reading\":\"Generation of ram-power, let there be the measured enclosure\",\"languages\":[\"grc\",\"he\",\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.4},\n  {\"operation\":\"etymology\",\"chain\":\"Stadium from Greek stadion, itself from stanai (to stand); Gillette as diminutive of guille (trick)\",\"reading\":\"The little trick that makes one stand fixed in the measured course\",\"languages\":[\"grc\",\"fr\"],\"source\":\"Liddell-Scott Greek Lexicon / Dictionnaire étymologique de la langue française\",\"confidence\":0.75}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Gillette + Stadium",
+   "reading": "Gilt let stadium: the gilded permit or golden allowance for the standing place",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gil + let + te + sta + dium",
+   "reading": "Guile let the stay of the god: cunning releases the divine pause or support",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gillette (sounds like) jilèt (French) + Stadium (stade)",
+   "reading": "The razor + the stade: that which shaves or cuts closely within the measured track",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Gillette from Old French guille (deceit) + let (diminutive); Stadium from Latin stadium (a furlong, a racecourse)",
+   "reading": "The little deceit or trick standing in the measured course",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "Oxford English Dictionary / Lewis & Short Latin Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "Gillette Stadium → Gilt + Esteem + Lad",
+   "reading": "The gilded youth held in high regard within the enclosure",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gill + et + te + Stadium",
+   "reading": "The gill (measure) and the head of the standing measure: calibrated sacred space",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "G I L L E T T E   S T A D I U M → initial letters grouped as GIL LET TE STA DI UM",
+   "reading": "The guile lets the stay of the divine measure",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gillette ≈ guillemette (Fr. old tool) + Stadium ≈ Greek stadion",
+   "reading": "The little cutting tool within the sacred Greek racecourse",
+   "languages": [
+    "fr",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G (gamma = generation) + IL (Hebrew ayil = ram/strength) + LETTE (let there be) + STADIUM",
+   "reading": "Generation of ram-power, let there be the measured enclosure",
+   "languages": [
+    "grc",
+    "he",
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Stadium from Greek stadion, itself from stanai (to stand); Gillette as diminutive of guille (trick)",
+   "reading": "The little trick that makes one stand fixed in the measured course",
+   "languages": [
+    "grc",
+    "fr"
+   ],
+   "source": "Liddell-Scott Greek Lexicon / Dictionnaire étymologique de la langue française",
+   "confidence": 0.75
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

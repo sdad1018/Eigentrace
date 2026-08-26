@@ -1,0 +1,128 @@
+{
+ "word": "Exuma",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:25:51+00:00",
+ "latency_s": 7.0,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ex + uma\",\n    \"reading\": \"out of the mother; that which emerges from the maternal source\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"ex- (Latin prefix) + humus (Latin, earth/soil)\",\n    \"reading\": \"out of the earth; that which rises from the ground\",\n    \"languages\": [\"la\"],\n    \"source\": \"Lewis & Short, A Latin Dictionary\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ eks-ou-ma ≈ ex + âme (French)\",\n    \"reading\": \"out of the soul; that which leaves or is born from the soul\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Exu + ma\",\n    \"reading\": \"Exu the mother; the maternal trickster or gatekeeper\",\n    \"languages\": [\"pt\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Exuma → Meaux\",\n    \"reading\": \"the place of the waters; the great waters (Meaux homophone to eaux)\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"EXUMA → Ex Unum Multi A\",\n    \"reading\": \"from one, many waters; the one becomes the manifold sea\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ex + hum + a\",\n    \"reading\": \"out of the humus, feminine principle; birth from fertile soil\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Exuma ≈ ἔξω μα (Greek)\",\n    \"reading\": \"outside the mother; that which is born beyond the maternal realm\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"X within EUMA; X = crossing, mark, unknown\",\n    \"reading\": \"the crossing point within the maternal substance; the secret at the center\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"ex (out) + uma (Sanskrit ūma, flax/hemp fiber)\",\n    \"reading\": \"that which comes forth as fiber or thread; the emerging cord\",\n    \"languages\": [\"la\",\"sa\"],\n    \"source\": \"Monier-Williams Sanskrit-English Dictionary\",\n    \"confidence\": 0.45\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Ex + uma",
+   "reading": "out of the mother; that which emerges from the maternal source",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "ex- (Latin prefix) + humus (Latin, earth/soil)",
+   "reading": "out of the earth; that which rises from the ground",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis & Short, A Latin Dictionary",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Exuma ≈ eks-ou-ma ≈ ex + âme (French)",
+   "reading": "out of the soul; that which leaves or is born from the soul",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Exu + ma",
+   "reading": "Exu the mother; the maternal trickster or gatekeeper",
+   "languages": [
+    "pt",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Exuma → Meaux",
+   "reading": "the place of the waters; the great waters (Meaux homophone to eaux)",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "EXUMA → Ex Unum Multi A",
+   "reading": "from one, many waters; the one becomes the manifold sea",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ex + hum + a",
+   "reading": "out of the humus, feminine principle; birth from fertile soil",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Exuma ≈ ἔξω μα (Greek)",
+   "reading": "outside the mother; that which is born beyond the maternal realm",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "X within EUMA; X = crossing, mark, unknown",
+   "reading": "the crossing point within the maternal substance; the secret at the center",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "ex (out) + uma (Sanskrit ūma, flax/hemp fiber)",
+   "reading": "that which comes forth as fiber or thread; the emerging cord",
+   "languages": [
+    "la",
+    "sa"
+   ],
+   "source": "Monier-Williams Sanskrit-English Dictionary",
+   "confidence": 0.45
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

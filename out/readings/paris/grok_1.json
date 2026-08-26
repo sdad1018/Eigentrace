@@ -1,0 +1,152 @@
+{
+ "word": "Paris",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:28:45+00:00",
+ "latency_s": 8.18,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"etymology\",\"chain\":\"Paris (from Gaulish) = pario- (to give birth, produce) + -is (locative); the cauldron or womb\",\"reading\":\"The place of parturition, the womb or matrix\",\"languages\":[\"fr\",\"la\",\"cel\"],\"source\":\"Pokorny, Indogermanisches etymologisches Wörterbuch\",\"confidence\":0.65},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Pa + ris\",\"reading\":\"The father (Pa) of the laugh (ris), the begetter through mockery\",\"languages\":[\"fr\",\"la\"],\"source\":\"generative\",\"confidence\":0.75},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Par + is\",\"reading\":\"Equal (par) to himself (is), the androgyne or self-sufficient one\",\"languages\":[\"fr\",\"la\"],\"source\":\"generative\",\"confidence\":0.8},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Paris ≈ pari (Sanskrit, pair, couple) + is (Sanskrit, lord)\",\"reading\":\"The lord of the pair, master of the androgyne\",\"languages\":[\"sa\",\"fr\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"anagram\",\"chain\":\"Paris = Sapir\",\"reading\":\"The sapphire stone, the blue gem of the philosophers\",\"languages\":[\"fr\",\"he\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Pâris = pas + ris\",\"reading\":\"The step of the laugh, the dance that mocks death\",\"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"notariqon\",\"chain\":\"P.A.R.I.S. = Pater Ad Rosam Ipsam Secretam\",\"reading\":\"The Father to the Secret Rose itself\",\"languages\":[\"la\",\"fr\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"letter_symbol\",\"chain\":\"P (staff) + AR (eagle) + IS (Isis)\",\"reading\":\"The staff of the eagle of Isis, the alchemical guide\",\"languages\":[\"fr\",\"la\",\"grc\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"etymology\",\"chain\":\"Parisii (tribe name) from par (equal) + isi (from Isis)\",\"reading\":\"The equals of Isis, her initiated people\",\"languages\":[\"la\",\"fr\"],\"source\":\"Grasset d'Orcet, La Langue des Oiseaux\",\"confidence\":0.4},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Paris ≈ baris (Egyptian barge of the dead)\",\"reading\":\"The funerary boat, the vessel that carries souls\",\"languages\":[\"grc\",\"egy\"],\"source\":\"Plutarch via Fulcanelli tradition\",\"confidence\":0.55},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Par-is = père-hisse\",\"reading\":\"The father that raises or lifts, the resurrector\",\"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"numerical\",\"chain\":\"P=80 A=1 R=200 I=9 S=300 (gematria latine simplifiée)\",\"reading\":\"The sum 590 = the measure of the perfect vessel\",\"languages\":[\"fr\",\"he\"],\"source\":\"generative\",\"confidence\":0.35}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Paris (from Gaulish) = pario- (to give birth, produce) + -is (locative); the cauldron or womb",
+   "reading": "The place of parturition, the womb or matrix",
+   "languages": [
+    "fr",
+    "la",
+    "cel"
+   ],
+   "source": "Pokorny, Indogermanisches etymologisches Wörterbuch",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Pa + ris",
+   "reading": "The father (Pa) of the laugh (ris), the begetter through mockery",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Par + is",
+   "reading": "Equal (par) to himself (is), the androgyne or self-sufficient one",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris ≈ pari (Sanskrit, pair, couple) + is (Sanskrit, lord)",
+   "reading": "The lord of the pair, master of the androgyne",
+   "languages": [
+    "sa",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Paris = Sapir",
+   "reading": "The sapphire stone, the blue gem of the philosophers",
+   "languages": [
+    "fr",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Pâris = pas + ris",
+   "reading": "The step of the laugh, the dance that mocks death",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P.A.R.I.S. = Pater Ad Rosam Ipsam Secretam",
+   "reading": "The Father to the Secret Rose itself",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P (staff) + AR (eagle) + IS (Isis)",
+   "reading": "The staff of the eagle of Isis, the alchemical guide",
+   "languages": [
+    "fr",
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "etymology",
+   "chain": "Parisii (tribe name) from par (equal) + isi (from Isis)",
+   "reading": "The equals of Isis, her initiated people",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "Grasset d'Orcet, La Langue des Oiseaux",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris ≈ baris (Egyptian barge of the dead)",
+   "reading": "The funerary boat, the vessel that carries souls",
+   "languages": [
+    "grc",
+    "egy"
+   ],
+   "source": "Plutarch via Fulcanelli tradition",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Par-is = père-hisse",
+   "reading": "The father that raises or lifts, the resurrector",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "numerical",
+   "chain": "P=80 A=1 R=200 I=9 S=300 (gematria latine simplifiée)",
+   "reading": "The sum 590 = the measure of the perfect vessel",
+   "languages": [
+    "fr",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

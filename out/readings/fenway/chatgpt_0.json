@@ -1,0 +1,103 @@
+{
+ "word": "Fenway",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:16:57+00:00",
+ "latency_s": 4.06,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"fen + way; fen = marsh, wet lowland; way = path, course\",\"reading\":\"A path through the marsh: passage made where ground is unstable.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.86},{\"operation\":\"cross_language_homophone\",\"chain\":\"fen ~ fin (fr) = end; way ~ voie (fr) = road\",\"reading\":\"The road of the end: a final passage, an exit or terminus.\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.74},{\"operation\":\"cross_language_homophone\",\"chain\":\"fen ~ fein (de) = fine, subtle; way ~ wei (zh) = order, position (approx. sound only)\",\"reading\":\"A subtle ordering: a finely arranged path or disposition.\",\"languages\":[\"en\",\"de\",\"zh\"],\"source\":\"generative\",\"confidence\":0.42},{\"operation\":\"anagram\",\"chain\":\"FENWAY -> WAFY EN / WEY FAN / FEW ANY (approximate anagrammatic plays)\",\"reading\":\"Few any: scarcity, a diminished remainder, almost nothing left.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.31},{\"operation\":\"notariqon\",\"chain\":\"F-E-N-W-A-Y = Fire, Earth, Night, Water, Air, Yonder\",\"reading\":\"The elements gathered and carried beyond: a complete crossing into the elsewhere.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.18},{\"operation\":\"letter_symbol\",\"chain\":\"F = the sixth letter, often a mark of fracture; W = doubled V, a twin valley; Y = forked way\",\"reading\":\"A split road in a doubled valley: divergence, branching, and choice.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.55},{\"operation\":\"etymology\",\"chain\":\"way (Old English weg/way) = road, course; fen (Old English fenn) = marsh, bog; compound sense by English word-formation\",\"reading\":\"A marsh-road, a way through boggy ground.\",\"languages\":[\"en\"],\"source\":\"Oxford English Dictionary; Merriam-Webster\",\"confidence\":0.9},{\"operation\":\"etymology\",\"chain\":\"way (OE weg) = course, travel; fen (OE fenn) = marsh; semantic compound in English\",\"reading\":\"A course of passage through wet land, implying difficulty and transit.\",\"languages\":[\"en\"],\"source\":\"Oxford English Dictionary\",\"confidence\":0.83}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "fen + way; fen = marsh, wet lowland; way = path, course",
+   "reading": "A path through the marsh: passage made where ground is unstable.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.86
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "fen ~ fin (fr) = end; way ~ voie (fr) = road",
+   "reading": "The road of the end: a final passage, an exit or terminus.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.74
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "fen ~ fein (de) = fine, subtle; way ~ wei (zh) = order, position (approx. sound only)",
+   "reading": "A subtle ordering: a finely arranged path or disposition.",
+   "languages": [
+    "en",
+    "de",
+    "zh"
+   ],
+   "source": "generative",
+   "confidence": 0.42
+  },
+  {
+   "operation": "anagram",
+   "chain": "FENWAY -> WAFY EN / WEY FAN / FEW ANY (approximate anagrammatic plays)",
+   "reading": "Few any: scarcity, a diminished remainder, almost nothing left.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "notariqon",
+   "chain": "F-E-N-W-A-Y = Fire, Earth, Night, Water, Air, Yonder",
+   "reading": "The elements gathered and carried beyond: a complete crossing into the elsewhere.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.18
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "F = the sixth letter, often a mark of fracture; W = doubled V, a twin valley; Y = forked way",
+   "reading": "A split road in a doubled valley: divergence, branching, and choice.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "way (Old English weg/way) = road, course; fen (Old English fenn) = marsh, bog; compound sense by English word-formation",
+   "reading": "A marsh-road, a way through boggy ground.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Merriam-Webster",
+   "confidence": 0.9
+  },
+  {
+   "operation": "etymology",
+   "chain": "way (OE weg) = course, travel; fen (OE fenn) = marsh; semantic compound in English",
+   "reading": "A course of passage through wet land, implying difficulty and transit.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.83
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

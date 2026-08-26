@@ -1,0 +1,128 @@
+{
+ "word": "Bataclan",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:27:08+00:00",
+ "latency_s": 8.17,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bata + clan\",\n    \"reading\": \"the clan of the strike, the striking clan, the battering brotherhood\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bataclan (French) ← battre (to beat) + clan\",\n    \"reading\": \"the beating clan or the clan that strikes repeatedly\",\n    \"languages\": [\"fr\"],\n    \"source\": \"Littré, Dictionnaire de la langue française\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bata (Arabic: بط) = duck + clan; also bata (Spanish) = he/she beats\",\n    \"reading\": \"the duck clan or the beating clan\",\n    \"languages\": [\"ar\",\"es\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba + ta + clan → bas + ta clan\",\n    \"reading\": \"the low or base striking clan; the clan that hits from below\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bataclan → A + cabal + ant\",\n    \"reading\": \"the ant of the cabal; the small hidden worker of the secret brotherhood\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-A-T-A-C-L-A-N → initial letters read in green language\",\n    \"reading\": \"Brotherhood Acting Through Alchemical Concealment and Lightning Action Now\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B (beth = house) + ATAC (attack) + LAN (net, snare)\",\n    \"reading\": \"the house of the snare attack; the dwelling that catches by striking\",\n    \"languages\": [\"he\",\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bata-clan → bat à clan\",\n    \"reading\": \"the bat given to the clan; the club or flail belonging to the group\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bata clan ≈ Bata Klan (Hungarian: bata = bat/stick, klan = clan)\",\n    \"reading\": \"the bat-clan, the clan armed with the stick or club\",\n    \"languages\": [\"hu\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bataclan ← Occitan bataclan = noise, racket, din\",\n    \"reading\": \"the place or clan of great noise and tumult\",\n    \"languages\": [\"oc\",\"fr\"],\n    \"source\": \"Centre National de Ressources Textuelles et Lexicales\",\n    \"confidence\": 0.85\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Bata + clan",
+   "reading": "the clan of the strike, the striking clan, the battering brotherhood",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "bataclan (French) ← battre (to beat) + clan",
+   "reading": "the beating clan or the clan that strikes repeatedly",
+   "languages": [
+    "fr"
+   ],
+   "source": "Littré, Dictionnaire de la langue française",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bata (Arabic: بط) = duck + clan; also bata (Spanish) = he/she beats",
+   "reading": "the duck clan or the beating clan",
+   "languages": [
+    "ar",
+    "es",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba + ta + clan → bas + ta clan",
+   "reading": "the low or base striking clan; the clan that hits from below",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bataclan → A + cabal + ant",
+   "reading": "the ant of the cabal; the small hidden worker of the secret brotherhood",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-A-T-A-C-L-A-N → initial letters read in green language",
+   "reading": "Brotherhood Acting Through Alchemical Concealment and Lightning Action Now",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (beth = house) + ATAC (attack) + LAN (net, snare)",
+   "reading": "the house of the snare attack; the dwelling that catches by striking",
+   "languages": [
+    "he",
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bata-clan → bat à clan",
+   "reading": "the bat given to the clan; the club or flail belonging to the group",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bata clan ≈ Bata Klan (Hungarian: bata = bat/stick, klan = clan)",
+   "reading": "the bat-clan, the clan armed with the stick or club",
+   "languages": [
+    "hu",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "bataclan ← Occitan bataclan = noise, racket, din",
+   "reading": "the place or clan of great noise and tumult",
+   "languages": [
+    "oc",
+    "fr"
+   ],
+   "source": "Centre National de Ressources Textuelles et Lexicales",
+   "confidence": 0.85
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

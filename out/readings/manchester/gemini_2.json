@@ -1,0 +1,106 @@
+{
+ "word": "Manchester",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:49:42+00:00",
+ "latency_s": 26.52,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Old English \\\"Mameceaster\\\" from Brittonic \\\"mam\\\" (breast, hill) + Latin \\\"castrum\\\" (fort, fortified camp).\",\n    \"reading\": \"A fortified dwelling or camp established near a breast-shaped elevation or hill.\",\n    \"languages\": [\"en\", \"la\", \"brt\"],\n    \"source\": \"Online Etymology Dictionary (etymonline.com)\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Old English \\\"Mameceaster\\\" from Brittonic \\\"maen\\\" (stone) + Latin \\\"castrum\\\" (fort, fortified camp).\",\n    \"reading\": \"A strong enclosure or camp built of stone, or situated close to a significant ancient stone.\",\n    \"languages\": [\"en\", \"la\", \"brt\"],\n    \"source\": \"Online Etymology Dictionary (etymonline.com)\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Phonetic resemblance to French \\\"M'enchanteur\\\" (my enchanter).\",\n    \"reading\": \"A captivating entity or spirit that casts a magical spell and delights, an irresistible charmer.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"\\\"Man\\\" (English) + \\\"cher\\\" (French: dear, beloved) + \\\"terre\\\" (French: earth, land).\",\n    \"reading\": \"The beloved human essence of the earth, or a precious, dear land for humanity.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"\\\"Man\\\" (human) + \\\"chest\\\" (repository, torso) + \\\"err\\\" (to wander, to make mistakes).\",\n    \"reading\": \"A wandering human carrying hidden contents within, prone to error or seeking truth.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Rearranging the letters M-A-N-C-H-E-S-T-E-R spells \\\"CHARM TENSE\\\".\",\n    \"reading\": \"An intense or anxious allure, a powerful and captivating spell that creates suspense.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Mystical Alchemical Nature's Concealed Healing Energies Secretly Transformed Emanate Radiantly.\",\n    \"reading\": \"The hidden, transformative, and health-giving forces of nature mystically radiate.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"\\\"Main\\\" (French: hand) + \\\"chest\\\" (English: chest, container) + \\\"err\\\" (English: to wander, to make a mistake).\",\n    \"reading\": \"The hand of error, or a wandering hand seeking a container or treasure.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Old English \"Mameceaster\" from Brittonic \"mam\" (breast, hill) + Latin \"castrum\" (fort, fortified camp).",
+   "reading": "A fortified dwelling or camp established near a breast-shaped elevation or hill.",
+   "languages": [
+    "en",
+    "la",
+    "brt"
+   ],
+   "source": "Online Etymology Dictionary (etymonline.com)",
+   "confidence": 1.0
+  },
+  {
+   "operation": "etymology",
+   "chain": "Old English \"Mameceaster\" from Brittonic \"maen\" (stone) + Latin \"castrum\" (fort, fortified camp).",
+   "reading": "A strong enclosure or camp built of stone, or situated close to a significant ancient stone.",
+   "languages": [
+    "en",
+    "la",
+    "brt"
+   ],
+   "source": "Online Etymology Dictionary (etymonline.com)",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Phonetic resemblance to French \"M'enchanteur\" (my enchanter).",
+   "reading": "A captivating entity or spirit that casts a magical spell and delights, an irresistible charmer.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 1.0
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "\"Man\" (English) + \"cher\" (French: dear, beloved) + \"terre\" (French: earth, land).",
+   "reading": "The beloved human essence of the earth, or a precious, dear land for humanity.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "\"Man\" (human) + \"chest\" (repository, torso) + \"err\" (to wander, to make mistakes).",
+   "reading": "A wandering human carrying hidden contents within, prone to error or seeking truth.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "Rearranging the letters M-A-N-C-H-E-S-T-E-R spells \"CHARM TENSE\".",
+   "reading": "An intense or anxious allure, a powerful and captivating spell that creates suspense.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Mystical Alchemical Nature's Concealed Healing Energies Secretly Transformed Emanate Radiantly.",
+   "reading": "The hidden, transformative, and health-giving forces of nature mystically radiate.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "\"Main\" (French: hand) + \"chest\" (English: chest, container) + \"err\" (English: to wander, to make a mistake).",
+   "reading": "The hand of error, or a wandering hand seeking a container or treasure.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

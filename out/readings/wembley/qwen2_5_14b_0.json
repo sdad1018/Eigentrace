@@ -1,0 +1,81 @@
+{
+ "word": "Wembley",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T00:43:21+00:00",
+ "latency_s": 108.21,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"Wem + bley\",\"reading\":\"War cry of the blind eye\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.3},{\"operation\":\"phonetic_split\",\"chain\":\"wem + bley\",\"reading\":\"To weave a blue lie\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.25},{\"operation\":\"cross_language_homophone\",\"chain\":\"Wembley (English) ~ ombre (French)\",\"reading\":\"Shadow play of the mind\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.3},{\"operation\":\"anagram\",\"chain\":\"wemyble\",\"reading\":\"My web bleeds\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.25},{\"operation\":\"notariqon\",\"chain\":\"WEM + BLEY\",\"reading\":\"When my blood leads\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.3},{\"operation\":\"letter_symbol\",\"chain\":\"Wembley\",\"reading\":\"Whispered message, binding energy yearningly\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.2}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem + bley",
+   "reading": "War cry of the blind eye",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "wem + bley",
+   "reading": "To weave a blue lie",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.25
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley (English) ~ ombre (French)",
+   "reading": "Shadow play of the mind",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "anagram",
+   "chain": "wemyble",
+   "reading": "My web bleeds",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.25
+  },
+  {
+   "operation": "notariqon",
+   "chain": "WEM + BLEY",
+   "reading": "When my blood leads",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Wembley",
+   "reading": "Whispered message, binding energy yearningly",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

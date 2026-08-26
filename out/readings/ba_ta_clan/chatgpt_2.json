@@ -1,0 +1,125 @@
+{
+ "word": "Ba-ta-clan",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:24:19+00:00",
+ "latency_s": 6.97,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ba + ta + clan; ba as a blunt beat, ta as a cut-off syllable, clan as a closed kin-group\",\n    \"reading\": \"A struck, abrupt kinship: a blow that gathers into a clan, or a clan formed by impact.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.86\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bat + clan; bat (en) = strike; clan (en) = family, band\",\n    \"reading\": \"A struck family: violence binds the group, or the group is defined by the blow.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.78\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bas + ta + clan; bas (fr) = low, down; ta = your; clan = hidden group\",\n    \"reading\": \"The lower your clan: descent, abasement, or a hidden lineage below the surface.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"BATACLAN → can + tab + la; tab = a small mark, la = the\",\n    \"reading\": \"The marked one: a sign, a tab, a label placed on the singular thing.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-A-T-A-C-L-A-N as initials: Beat / At / The / Clan / Light / And / Name\",\n    \"reading\": \"Beat the clan and name it: a formula of initiation, marking, and collective identity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.33\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B = enclosure, A = apex/opening, T = cross, C = crescent, L = angle, N = double stroke\",\n    \"reading\": \"An enclosure opened, crossed, curved, and angled: a structure made by tension and turning.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.29\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"clan (English) < Gaelic clann, 'children, offspring'; standard lexicon: OED / Merriam-Webster\",\n    \"reading\": \"Children, offspring, descent: the word ends in lineage, blood, and belonging.\",\n    \"languages\": [\"en\", \"ga\"],\n    \"source\": \"OED; Merriam-Webster\",\n    \"confidence\": 0.97\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bat (English) < Old English batt, 'club, cudgel'; standard lexicon: OED / Etymonline\",\n    \"reading\": \"A cudgel or striking tool: the first syllable carries the sense of impact and force.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"OED; Etymonline\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"ba-ta-clan ~ baste à clan; baste (fr) sounds like 'enough' + clan\",\n    \"reading\": \"Enough for the clan: a limit reached, a collective saturated by pressure.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.24\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"B(2)+A(1)+T(20)+A(1)+C(3)+L(12)+A(1)+N(14) = 54; 5+4 = 9\",\n    \"reading\": \"Nine as completion: the word sums to a cycle closed, a totality gathered and released.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.21\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "ba + ta + clan; ba as a blunt beat, ta as a cut-off syllable, clan as a closed kin-group",
+   "reading": "A struck, abrupt kinship: a blow that gathers into a clan, or a clan formed by impact.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.86
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bat + clan; bat (en) = strike; clan (en) = family, band",
+   "reading": "A struck family: violence binds the group, or the group is defined by the blow.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.78
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bas + ta + clan; bas (fr) = low, down; ta = your; clan = hidden group",
+   "reading": "The lower your clan: descent, abasement, or a hidden lineage below the surface.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "anagram",
+   "chain": "BATACLAN → can + tab + la; tab = a small mark, la = the",
+   "reading": "The marked one: a sign, a tab, a label placed on the singular thing.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-A-T-A-C-L-A-N as initials: Beat / At / The / Clan / Light / And / Name",
+   "reading": "Beat the clan and name it: a formula of initiation, marking, and collective identity.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.33
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B = enclosure, A = apex/opening, T = cross, C = crescent, L = angle, N = double stroke",
+   "reading": "An enclosure opened, crossed, curved, and angled: a structure made by tension and turning.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.29
+  },
+  {
+   "operation": "etymology",
+   "chain": "clan (English) < Gaelic clann, 'children, offspring'; standard lexicon: OED / Merriam-Webster",
+   "reading": "Children, offspring, descent: the word ends in lineage, blood, and belonging.",
+   "languages": [
+    "en",
+    "ga"
+   ],
+   "source": "OED; Merriam-Webster",
+   "confidence": 0.97
+  },
+  {
+   "operation": "etymology",
+   "chain": "bat (English) < Old English batt, 'club, cudgel'; standard lexicon: OED / Etymonline",
+   "reading": "A cudgel or striking tool: the first syllable carries the sense of impact and force.",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "OED; Etymonline",
+   "confidence": 0.95
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "ba-ta-clan ~ baste à clan; baste (fr) sounds like 'enough' + clan",
+   "reading": "Enough for the clan: a limit reached, a collective saturated by pressure.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.24
+  },
+  {
+   "operation": "numerical",
+   "chain": "B(2)+A(1)+T(20)+A(1)+C(3)+L(12)+A(1)+N(14) = 54; 5+4 = 9",
+   "reading": "Nine as completion: the word sums to a cycle closed, a totality gathered and released.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.21
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

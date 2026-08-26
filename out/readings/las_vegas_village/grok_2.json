@@ -1,0 +1,132 @@
+{
+ "word": "Las Vegas Village",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:19:45+00:00",
+ "latency_s": 6.99,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las + Vegas + Village\",\n    \"reading\": \"The law's vague village; place where laws lose clarity\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"L'as + ve + gas + vi + ll + age\",\n    \"reading\": \"The ace vomits gas, life bleeds, old age\",\n    \"languages\": [\"fr\",\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas ≈ l'as ve gas (fr); Village ≈ vil age (fr)\",\n    \"reading\": \"The ace sees gas; vile age / the age of vileness\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las (Old Occitan/Spanish) = the (feminine plural); Vegas = meadows (from Latin vicus + -alis); Village from Latin villaticum = farmstead\",\n    \"reading\": \"The meadows of the farmstead; pastoral enclosure become illusory\",\n    \"languages\": [\"la\",\"oc\",\"es\",\"en\"],\n    \"source\": \"Oxford English Dictionary / Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Village → Salvage + Vile + Gas\",\n    \"reading\": \"Salvage the vile gas; redemption found inside toxic fumes\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lasve gasvil lage\",\n    \"reading\": \"Lazve (Lazarus) gas veil age; the gas-veiled resurrection\",\n    \"languages\": [\"en\",\"fr\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L V V → Lux Vera Villatica\",\n    \"reading\": \"The true light of the country estate / rural illumination\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Village ≈ vil lage (fr) ≈ vile âge; Las Vegas ≈ la sève gas (fr)\",\n    \"reading\": \"The sap vomits; vile age — the era when vital sap is expelled\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V = victory / ve = vita (life); Las = loss; Village = collective\",\n    \"reading\": \"Loss of life-victory in the collective; communal defeat\",\n    \"languages\": [\"en\",\"la\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas Village = last vague as village\",\n    \"reading\": \"The final vague village; terminal uncertainty of the settlement\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Vegas + Village",
+   "reading": "The law's vague village; place where laws lose clarity",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "L'as + ve + gas + vi + ll + age",
+   "reading": "The ace vomits gas, life bleeds, old age",
+   "languages": [
+    "fr",
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas ≈ l'as ve gas (fr); Village ≈ vil age (fr)",
+   "reading": "The ace sees gas; vile age / the age of vileness",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Las (Old Occitan/Spanish) = the (feminine plural); Vegas = meadows (from Latin vicus + -alis); Village from Latin villaticum = farmstead",
+   "reading": "The meadows of the farmstead; pastoral enclosure become illusory",
+   "languages": [
+    "la",
+    "oc",
+    "es",
+    "en"
+   ],
+   "source": "Oxford English Dictionary / Lewis & Short Latin Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Village → Salvage + Vile + Gas",
+   "reading": "Salvage the vile gas; redemption found inside toxic fumes",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lasve gasvil lage",
+   "reading": "Lazve (Lazarus) gas veil age; the gas-veiled resurrection",
+   "languages": [
+    "en",
+    "fr",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L V V → Lux Vera Villatica",
+   "reading": "The true light of the country estate / rural illumination",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Village ≈ vil lage (fr) ≈ vile âge; Las Vegas ≈ la sève gas (fr)",
+   "reading": "The sap vomits; vile age — the era when vital sap is expelled",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V = victory / ve = vita (life); Las = loss; Village = collective",
+   "reading": "Loss of life-victory in the collective; communal defeat",
+   "languages": [
+    "en",
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas Village = last vague as village",
+   "reading": "The final vague village; terminal uncertainty of the settlement",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

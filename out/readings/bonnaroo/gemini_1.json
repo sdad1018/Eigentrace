@@ -1,0 +1,103 @@
+{
+ "word": "Bonnaroo",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:19:28+00:00",
+ "latency_s": 22.18,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bon (French = good) + à (French = to, at) + roue (French = wheel)\",\n    \"reading\": \"Good at the wheel, or good for the wheel, implying mastery of cycles, fortune, or skillful navigation.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bon (French = good) + à (French = to, at) + rue (French = street)\",\n    \"reading\": \"Good on the street, or good for the street, suggesting suitability for public life, common access, or everyday display.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bon (from Latin 'bonus' = good) + naroo (phonetically close to Latin 'narrare' = to tell, relate) + o (interjection)\",\n    \"reading\": \"Good, tell it forth! An imperative to share a beneficial truth or narrative, a call to proclaim what is good.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Oxford Latin Dictionary (for 'bonus', 'narrare'); generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"B O N N A R O O rearranged to 'A BOON BORN O'\",\n    \"reading\": \"A gift brought forth, with the 'O' signifying wholeness, spirit, or a circle of completion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bon (French = good) + na (sound) + roo (phonetically close to 'roos' in Dutch/Afrikaans = rose)\",\n    \"reading\": \"Good rose, symbolizing beauty, love, and perfection, possibly a flourishing or blossoming goodness.\",\n    \"languages\": [\"fr\", \"nl\", \"af\"],\n    \"source\": \"Van Dale Groot Woordenboek (for 'roos'); generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-O-N-N-A-R-O-O as an acronym for 'Bring Our New Nations A Roaring Open Opportunity'\",\n    \"reading\": \"A call to manifest a powerful, expansive chance for emerging communities, creating new possibilities.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B (foundation, containment) + O (wholeness, spirit) + N (connection, bridge) + A (origin, ascent) + R (root, movement)\",\n    \"reading\": \"From foundation to the whole, connecting the origin and its roots, describing a journey of complete unfolding and connection.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"B O N N A R O O rearranged to 'ON A ROAR, BOON'\",\n    \"reading\": \"Upon a great sound or clamor, a blessing emerges, implying that good fortune follows a powerful, energetic outburst.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bon (French = good) + à (French = to, at) + roue (French = wheel)",
+   "reading": "Good at the wheel, or good for the wheel, implying mastery of cycles, fortune, or skillful navigation.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bon (French = good) + à (French = to, at) + rue (French = street)",
+   "reading": "Good on the street, or good for the street, suggesting suitability for public life, common access, or everyday display.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bon (from Latin 'bonus' = good) + naroo (phonetically close to Latin 'narrare' = to tell, relate) + o (interjection)",
+   "reading": "Good, tell it forth! An imperative to share a beneficial truth or narrative, a call to proclaim what is good.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Oxford Latin Dictionary (for 'bonus', 'narrare'); generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "B O N N A R O O rearranged to 'A BOON BORN O'",
+   "reading": "A gift brought forth, with the 'O' signifying wholeness, spirit, or a circle of completion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bon (French = good) + na (sound) + roo (phonetically close to 'roos' in Dutch/Afrikaans = rose)",
+   "reading": "Good rose, symbolizing beauty, love, and perfection, possibly a flourishing or blossoming goodness.",
+   "languages": [
+    "fr",
+    "nl",
+    "af"
+   ],
+   "source": "Van Dale Groot Woordenboek (for 'roos'); generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-O-N-N-A-R-O-O as an acronym for 'Bring Our New Nations A Roaring Open Opportunity'",
+   "reading": "A call to manifest a powerful, expansive chance for emerging communities, creating new possibilities.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (foundation, containment) + O (wholeness, spirit) + N (connection, bridge) + A (origin, ascent) + R (root, movement)",
+   "reading": "From foundation to the whole, connecting the origin and its roots, describing a journey of complete unfolding and connection.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "B O N N A R O O rearranged to 'ON A ROAR, BOON'",
+   "reading": "Upon a great sound or clamor, a blessing emerges, implying that good fortune follows a powerful, energetic outburst.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

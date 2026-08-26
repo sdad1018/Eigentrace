@@ -1,0 +1,108 @@
+{
+ "word": "Nevada",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:19:49+00:00",
+ "latency_s": 4.97,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Spanish nevada < nevar \\\"to snow\\\" + -ada, a noun of action/result; literally \\\"a snowfall\\\" or \\\"snow-covered\\\"\",\n    \"reading\": \"A sudden white descent: the world covered, erased, and made silent by snow.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"Real Academia Española, Diccionario de la lengua española; Corominas & Pascual, Diccionario crítico etimológico castellano e hispánico\",\n    \"confidence\": 0.96\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ne- + va- + da; ne as negation, va as \\\"goes\\\" (fr va), da as \\\"gives\\\" (la dat / es da)\",\n    \"reading\": \"Not-go, then go, then give: a movement cancelled and restored by giving.\",\n    \"languages\": [\"fr\", \"la\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.42\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"ne va pas + da; French ne va pas = \\\"does not go\\\"; da echoes Latin/Spanish \\\"gives\\\"\",\n    \"reading\": \"It does not go; instead it gives. Refusal turns into offering.\",\n    \"languages\": [\"fr\", \"la\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.38\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"nevada ~ nevada (from ne + va + da) heard as \\\"never had a\\\" in English-like sound play\",\n    \"reading\": \"Never had a: lack, absence, and unfinished possession.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"NEVADA -> AVANED / VANEDA / DEAVAN; emphasis on ava- / van- / dea- fragments\",\n    \"reading\": \"A van of death, or a departure toward the dead: motion carrying loss.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.18\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"N-E-V-A-D-A read as initials: Nox, Ego, Vox, Aqua, Dulcis, Alba\",\n    \"reading\": \"Night, self, voice, water, sweetness, white: a secret formula of whitening speech.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.27\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N as north/negation; E as east/emanation; V as valley/vessel; A as alpha/beginning; D as door; A as return\",\n    \"reading\": \"From negation to beginning, through the valley-door and back to origin.\",\n    \"languages\": [\"en\", \"grc\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Latin letters by ordinal value: N=14, E=5, V=22, A=1, D=4, A=1; sum = 47\",\n    \"reading\": \"Forty-seven: a hidden count of passage, threshold, and completion by reduction.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.29\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Spanish nevada < nevar \"to snow\" + -ada, a noun of action/result; literally \"a snowfall\" or \"snow-covered\"",
+   "reading": "A sudden white descent: the world covered, erased, and made silent by snow.",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "Real Academia Española, Diccionario de la lengua española; Corominas & Pascual, Diccionario crítico etimológico castellano e hispánico",
+   "confidence": 0.96
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ne- + va- + da; ne as negation, va as \"goes\" (fr va), da as \"gives\" (la dat / es da)",
+   "reading": "Not-go, then go, then give: a movement cancelled and restored by giving.",
+   "languages": [
+    "fr",
+    "la",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.42
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "ne va pas + da; French ne va pas = \"does not go\"; da echoes Latin/Spanish \"gives\"",
+   "reading": "It does not go; instead it gives. Refusal turns into offering.",
+   "languages": [
+    "fr",
+    "la",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.38
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "nevada ~ nevada (from ne + va + da) heard as \"never had a\" in English-like sound play",
+   "reading": "Never had a: lack, absence, and unfinished possession.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "anagram",
+   "chain": "NEVADA -> AVANED / VANEDA / DEAVAN; emphasis on ava- / van- / dea- fragments",
+   "reading": "A van of death, or a departure toward the dead: motion carrying loss.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.18
+  },
+  {
+   "operation": "notariqon",
+   "chain": "N-E-V-A-D-A read as initials: Nox, Ego, Vox, Aqua, Dulcis, Alba",
+   "reading": "Night, self, voice, water, sweetness, white: a secret formula of whitening speech.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.27
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N as north/negation; E as east/emanation; V as valley/vessel; A as alpha/beginning; D as door; A as return",
+   "reading": "From negation to beginning, through the valley-door and back to origin.",
+   "languages": [
+    "en",
+    "grc",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "numerical",
+   "chain": "Latin letters by ordinal value: N=14, E=5, V=22, A=1, D=4, A=1; sum = 47",
+   "reading": "Forty-seven: a hidden count of passage, threshold, and completion by reduction.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.29
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

@@ -1,0 +1,125 @@
+{
+ "word": "Roker Point",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:33+00:00",
+ "latency_s": 5.3,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"roker ≈ rocker; point = point / pointe; rocker = one who rocks, point = tip, edge\",\"reading\":\"A tipping support: what rocks at the edge becomes a pivot between stability and fall.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.78},{\"operation\":\"cross_language_homophone\",\"chain\":\"rok- ≈ roc (fr. rock, boulder) + point (fr. point, point, dot); roc + point = stone-point\",\"reading\":\"A stony mark: a fixed point cut into hardness, the sign of something set and immovable.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"phonetic_split\",\"chain\":\"ro-ker / roque-er; point = pointe; roque (castle) + pointe (peak)\",\"reading\":\"A fortified peak: the word suggests a castle-like height or a defended summit.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.62},{\"operation\":\"etymology\",\"chain\":\"point < Latin punctum, from pungere “to prick”; checkable in OED / Oxford Reference and TLFi for French point\",\"reading\":\"A prick, dot, or puncture: the smallest marked place, a wound made precise.\",\"languages\":[\"en\",\"la\",\"fr\"],\"source\":\"OED; TLFi\",\"confidence\":0.92},{\"operation\":\"etymology\",\"chain\":\"rock < Old English roccian “to rock, sway”; checkable in OED / Chambers\",\"reading\":\"A swaying mass or motion: what is rocked is unstable, yet also cradled.\",\"languages\":[\"en\"],\"source\":\"OED; Chambers Dictionary of Etymology\",\"confidence\":0.9},{\"operation\":\"anagram\",\"chain\":\"ROKER POINT → KERP? no stable full anagram; partial: ROCK + POINT / ROPE + TRINK? generative letter-play\",\"reading\":\"A pointed knot of rock and rope: a hard place bound into a single sign.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.41},{\"operation\":\"notariqon\",\"chain\":\"R.O.K.E.R. P.O.I.N.T. as initials: Rocking Order Keeps Every Ridge, Pointing Outward, Inward, Nearing Threshold\",\"reading\":\"A threshold formula: movement is ordered so that every edge indicates a passage.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.33},{\"operation\":\"letter_symbol\",\"chain\":\"R = rotation/return; O = hole/zero; K = crossing; P = pillar; point = dot, apex\",\"reading\":\"A turning around a void, crossed by a pillar: the sign of a centered ascent.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.56},{\"operation\":\"numerical\",\"chain\":\"R(18)+O(15)+K(11)+E(5)+R(18)+P(16)+O(15)+I(9)+N(14)+T(20)=141; 1+4+1=6\",\"reading\":\"Six: harmony, union, and the completed figure after tension and balance.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.29},{\"operation\":\"cross_language_homophone\",\"chain\":\"roker ≈ rocher (fr. rock, cliff) + point (fr. point, summit, dot)\",\"reading\":\"A cliff-tip: the name sounds like a rocky promontory, a place where land ends and signal begins.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.74}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "roker ≈ rocker; point = point / pointe; rocker = one who rocks, point = tip, edge",
+   "reading": "A tipping support: what rocks at the edge becomes a pivot between stability and fall.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.78
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "rok- ≈ roc (fr. rock, boulder) + point (fr. point, point, dot); roc + point = stone-point",
+   "reading": "A stony mark: a fixed point cut into hardness, the sign of something set and immovable.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ro-ker / roque-er; point = pointe; roque (castle) + pointe (peak)",
+   "reading": "A fortified peak: the word suggests a castle-like height or a defended summit.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "etymology",
+   "chain": "point < Latin punctum, from pungere “to prick”; checkable in OED / Oxford Reference and TLFi for French point",
+   "reading": "A prick, dot, or puncture: the smallest marked place, a wound made precise.",
+   "languages": [
+    "en",
+    "la",
+    "fr"
+   ],
+   "source": "OED; TLFi",
+   "confidence": 0.92
+  },
+  {
+   "operation": "etymology",
+   "chain": "rock < Old English roccian “to rock, sway”; checkable in OED / Chambers",
+   "reading": "A swaying mass or motion: what is rocked is unstable, yet also cradled.",
+   "languages": [
+    "en"
+   ],
+   "source": "OED; Chambers Dictionary of Etymology",
+   "confidence": 0.9
+  },
+  {
+   "operation": "anagram",
+   "chain": "ROKER POINT → KERP? no stable full anagram; partial: ROCK + POINT / ROPE + TRINK? generative letter-play",
+   "reading": "A pointed knot of rock and rope: a hard place bound into a single sign.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R.O.K.E.R. P.O.I.N.T. as initials: Rocking Order Keeps Every Ridge, Pointing Outward, Inward, Nearing Threshold",
+   "reading": "A threshold formula: movement is ordered so that every edge indicates a passage.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.33
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R = rotation/return; O = hole/zero; K = crossing; P = pillar; point = dot, apex",
+   "reading": "A turning around a void, crossed by a pillar: the sign of a centered ascent.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.56
+  },
+  {
+   "operation": "numerical",
+   "chain": "R(18)+O(15)+K(11)+E(5)+R(18)+P(16)+O(15)+I(9)+N(14)+T(20)=141; 1+4+1=6",
+   "reading": "Six: harmony, union, and the completed figure after tension and balance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.29
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "roker ≈ rocher (fr. rock, cliff) + point (fr. point, summit, dot)",
+   "reading": "A cliff-tip: the name sounds like a rocky promontory, a place where land ends and signal begins.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.74
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

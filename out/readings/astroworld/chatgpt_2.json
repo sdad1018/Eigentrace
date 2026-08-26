@@ -1,0 +1,105 @@
+{
+ "word": "Astroworld",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:37+00:00",
+ "latency_s": 4.86,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"astro + world; astro- (Greek astron) = star; world = the inhabited earth, the human sphere\",\n    \"reading\": \"A star-sphere: the human world lifted into the heavens, or the heavens brought down into human scale.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.93\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"astro- from Greek astron 'star' + world from Old English weorold 'age, human life, world' (OED; Merriam-Webster)\",\n    \"reading\": \"The world of stars, or the age of the world seen as a stellar order.\",\n    \"languages\": [\"en\", \"grc\", \"ang\"],\n    \"source\": \"OED; Merriam-Webster; LSJ\",\n    \"confidence\": 0.88\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"astro sounds like astre (fr) 'star' and world echoes monde (fr) only by sense; astre + world = star-world\",\n    \"reading\": \"A star-world: a realm where the celestial and the earthly are fused.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"as + tro + world; as = 'like'; tro ~ trop (fr) 'too much'; world = world\",\n    \"reading\": \"Like-too-much-world: a world of excess, overfullness, and surplus brilliance.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Astroworld → 'ward' + 'lost' + 'row' + 'or' (partial anagrammatic drift)\",\n    \"reading\": \"A ward of the lost row: a protected line of exiles, or a procession of the misplaced.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.34\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"A S T R O W O R L D = Ascend, Seek, Turn, Rise; Orbit, Wander, Open, Return; Light, Dream\",\n    \"reading\": \"An initiatory formula: ascend, orbit, wander, return, and dream into light.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.28\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"A = apex; S = serpent; T = cross; R = ray; O = circle; W = double wave; L = ladder; D = door\",\n    \"reading\": \"A symbolic ascent: serpent-cross-ray-circle-wave-ladder-door, a path from coil to passage.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"A1 S19 T20 R18 O15 W23 O15 R18 L12 D4; total = 145; 1+4+5 = 10, then 1\",\n    \"reading\": \"A return to unity through a tenfold cycle: multiplicity gathered back into one.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "astro + world; astro- (Greek astron) = star; world = the inhabited earth, the human sphere",
+   "reading": "A star-sphere: the human world lifted into the heavens, or the heavens brought down into human scale.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.93
+  },
+  {
+   "operation": "etymology",
+   "chain": "astro- from Greek astron 'star' + world from Old English weorold 'age, human life, world' (OED; Merriam-Webster)",
+   "reading": "The world of stars, or the age of the world seen as a stellar order.",
+   "languages": [
+    "en",
+    "grc",
+    "ang"
+   ],
+   "source": "OED; Merriam-Webster; LSJ",
+   "confidence": 0.88
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "astro sounds like astre (fr) 'star' and world echoes monde (fr) only by sense; astre + world = star-world",
+   "reading": "A star-world: a realm where the celestial and the earthly are fused.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.72
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "as + tro + world; as = 'like'; tro ~ trop (fr) 'too much'; world = world",
+   "reading": "Like-too-much-world: a world of excess, overfullness, and surplus brilliance.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "Astroworld → 'ward' + 'lost' + 'row' + 'or' (partial anagrammatic drift)",
+   "reading": "A ward of the lost row: a protected line of exiles, or a procession of the misplaced.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.34
+  },
+  {
+   "operation": "notariqon",
+   "chain": "A S T R O W O R L D = Ascend, Seek, Turn, Rise; Orbit, Wander, Open, Return; Light, Dream",
+   "reading": "An initiatory formula: ascend, orbit, wander, return, and dream into light.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.28
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "A = apex; S = serpent; T = cross; R = ray; O = circle; W = double wave; L = ladder; D = door",
+   "reading": "A symbolic ascent: serpent-cross-ray-circle-wave-ladder-door, a path from coil to passage.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "numerical",
+   "chain": "A1 S19 T20 R18 O15 W23 O15 R18 L12 D4; total = 145; 1+4+5 = 10, then 1",
+   "reading": "A return to unity through a tenfold cycle: multiplicity gathered back into one.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

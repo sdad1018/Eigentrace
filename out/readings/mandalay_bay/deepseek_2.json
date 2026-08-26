@@ -1,0 +1,108 @@
+{
+ "word": "Mandalay Bay",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:22:46+00:00",
+ "latency_s": 8.1,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mandalay (from Sanskrit mandala, 'circle' + ay, 'go'); Bay (Old English beag, 'ring' or 'crown')\",\n    \"reading\": \"A circular journey into the crown; the sacred ring of return.\",\n    \"languages\": [\"sa\", \"en\", \"ang\"],\n    \"source\": \"OED; Sanskrit lexicon (Monier-Williams)\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + da + lay + bay; man (human) + da (give) + lay (song) + bay (bark)\",\n    \"reading\": \"The human gives a song, then the bark answers — a call and response.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay (Fr. mande-lait, 'asks milk'); Bay (Fr. baie, 'berry')\",\n    \"reading\": \"A request for milk and berries — a nursery rhyme of sustenance.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay Bay -> 'A bland day, may' + 'bay' reversed to 'yab'\",\n    \"reading\": \"A bland day, may — the yab (Yiddish for 'mouth') speaks of emptiness.\",\n    \"languages\": [\"en\", \"yi\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M-B as initials: M = mem (water), B = beth (house); Mem-Beth = 'water-house' in Hebrew\",\n    \"reading\": \"Water within the house — a flood of the domestic sphere.\",\n    \"languages\": [\"he\"],\n    \"source\": \"Sefer Yetzirah (letter values)\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (13th letter) + B (2nd) = 13+2=15; 15 = Yod-Heh, the divine name\",\n    \"reading\": \"The name of God hidden in the initials — a sacred seal.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative (numerology)\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Mandalay = 13+1+14+4+1+12+1+25 = 71; Bay = 2+1+25 = 28; 71+28=99\",\n    \"reading\": \"Ninety-nine — the number of divine attributes in Islamic tradition; a completion.\",\n    \"languages\": [\"en\", \"ar\"],\n    \"source\": \"generative (gematria)\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-da-lay-bay; 'man' + 'da' (Slavic for 'yes') + 'lay' (to place) + 'bay' (laurel)\",\n    \"reading\": \"Man says yes, places laurel — a victory wreath for the affirmative.\",\n    \"languages\": [\"en\", \"ru\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Mandalay (from Sanskrit mandala, 'circle' + ay, 'go'); Bay (Old English beag, 'ring' or 'crown')",
+   "reading": "A circular journey into the crown; the sacred ring of return.",
+   "languages": [
+    "sa",
+    "en",
+    "ang"
+   ],
+   "source": "OED; Sanskrit lexicon (Monier-Williams)",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + da + lay + bay; man (human) + da (give) + lay (song) + bay (bark)",
+   "reading": "The human gives a song, then the bark answers — a call and response.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay (Fr. mande-lait, 'asks milk'); Bay (Fr. baie, 'berry')",
+   "reading": "A request for milk and berries — a nursery rhyme of sustenance.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay Bay -> 'A bland day, may' + 'bay' reversed to 'yab'",
+   "reading": "A bland day, may — the yab (Yiddish for 'mouth') speaks of emptiness.",
+   "languages": [
+    "en",
+    "yi"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M-B as initials: M = mem (water), B = beth (house); Mem-Beth = 'water-house' in Hebrew",
+   "reading": "Water within the house — a flood of the domestic sphere.",
+   "languages": [
+    "he"
+   ],
+   "source": "Sefer Yetzirah (letter values)",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (13th letter) + B (2nd) = 13+2=15; 15 = Yod-Heh, the divine name",
+   "reading": "The name of God hidden in the initials — a sacred seal.",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative (numerology)",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "Mandalay = 13+1+14+4+1+12+1+25 = 71; Bay = 2+1+25 = 28; 71+28=99",
+   "reading": "Ninety-nine — the number of divine attributes in Islamic tradition; a completion.",
+   "languages": [
+    "en",
+    "ar"
+   ],
+   "source": "generative (gematria)",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-da-lay-bay; 'man' + 'da' (Slavic for 'yes') + 'lay' (to place) + 'bay' (laurel)",
+   "reading": "Man says yes, places laurel — a victory wreath for the affirmative.",
+   "languages": [
+    "en",
+    "ru",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

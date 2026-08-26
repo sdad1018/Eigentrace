@@ -1,0 +1,105 @@
+{
+ "word": "Luxor",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:38+00:00",
+ "latency_s": 6.43,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Luxor < Latin lux (light) + -or (agent suffix); compare lux, lucis\",\n    \"reading\": \"The one who emits light; a bringer of illumination\",\n    \"languages\": [\"la\"],\n    \"source\": \"Lewis & Short, A Latin Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"lu + xor; xor (logic) = exclusive or; lu = light in French 'lueur'\",\n    \"reading\": \"Light that chooses between alternatives; a decisive gleam\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Luxor ~ l'usure (Fr) = the usury; also l'os d'or (Fr) = the golden bone\",\n    \"reading\": \"Golden bone worn by time; interest accruing on light itself\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Luxor -> xolur; xol (Greek xylon = wood) + ur (primordial fire)\",\n    \"reading\": \"Wood ignited by primal fire; the tree of dawn\",\n    \"languages\": [\"grc\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L-U-X-O-R: Lux, Umbra, Xenos, Origo, Radius\",\n    \"reading\": \"Light, shadow, stranger, origin, ray — a fivefold path of revelation\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L (el = God in Hebrew) + U (you) + X (cross) + O (circle) + R (head)\",\n    \"reading\": \"God in you, the cross within the circle, crowned by mind\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"L=30, U=400, X=600, O=70, R=200 (Greek isopsephy) -> sum 1300\",\n    \"reading\": \"1300 = 13 x 100; 13 = death/rebirth, 100 = perfection — a threshold\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"luk + sor; luk (Old English loc = enclosure) + sor (Latin soror = sister)\",\n    \"reading\": \"Enclosed sisterhood; a locked feminine mystery\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Luxor < Latin lux (light) + -or (agent suffix); compare lux, lucis",
+   "reading": "The one who emits light; a bringer of illumination",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis & Short, A Latin Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "lu + xor; xor (logic) = exclusive or; lu = light in French 'lueur'",
+   "reading": "Light that chooses between alternatives; a decisive gleam",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Luxor ~ l'usure (Fr) = the usury; also l'os d'or (Fr) = the golden bone",
+   "reading": "Golden bone worn by time; interest accruing on light itself",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Luxor -> xolur; xol (Greek xylon = wood) + ur (primordial fire)",
+   "reading": "Wood ignited by primal fire; the tree of dawn",
+   "languages": [
+    "grc",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L-U-X-O-R: Lux, Umbra, Xenos, Origo, Radius",
+   "reading": "Light, shadow, stranger, origin, ray — a fivefold path of revelation",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L (el = God in Hebrew) + U (you) + X (cross) + O (circle) + R (head)",
+   "reading": "God in you, the cross within the circle, crowned by mind",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "numerical",
+   "chain": "L=30, U=400, X=600, O=70, R=200 (Greek isopsephy) -> sum 1300",
+   "reading": "1300 = 13 x 100; 13 = death/rebirth, 100 = perfection — a threshold",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "luk + sor; luk (Old English loc = enclosure) + sor (Latin soror = sister)",
+   "reading": "Enclosed sisterhood; a locked feminine mystery",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

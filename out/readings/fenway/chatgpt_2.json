@@ -1,0 +1,103 @@
+{
+ "word": "Fenway",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:17:06+00:00",
+ "latency_s": 4.87,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"fen + way; fen (en) = marsh, wet lowland; way = path, course\",\"reading\":\"A path through the marsh: passage through the low, damp, hidden place.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.93},{\"operation\":\"cross_language_homophone\",\"chain\":\"fen ~ fin (fr) = end; way ~ voie (fr) = road\",\"reading\":\"The end-road: a final passage, the way that closes a cycle.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.78},{\"operation\":\"cross_language_homophone\",\"chain\":\"fen ~ phénix (fr) by sound-shift; way ~ voie\",\"reading\":\"Phoenix-road: a route of renewal, rising after burning out.\",\"languages\":[\"fr\",\"en\"],\"source\":\"generative\",\"confidence\":0.41},{\"operation\":\"etymology\",\"chain\":\"fen = Old English fenn, 'marsh, fen' (OED, Merriam-Webster); way = Old English weg, 'road, path' (OED, Merriam-Webster)\",\"reading\":\"A marsh-road, a track laid over wet ground or through obscurity.\",\"languages\":[\"en\"],\"source\":\"OED; Merriam-Webster\",\"confidence\":0.97},{\"operation\":\"anagram\",\"chain\":\"Fenway -> way + fen; rearranged into the same two roots\",\"reading\":\"The road and the fen mirror each other: movement meeting stagnation.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.84},{\"operation\":\"letter_symbol\",\"chain\":\"F = force/fire; E = earth; N = north; W = water; A = air; Y = forked choice\",\"reading\":\"A four-element crossing with a forked decision: fire, earth, water, air, then choice.\",\"languages\":[\"symbolic\"],\"source\":\"generative\",\"confidence\":0.52},{\"operation\":\"numerical\",\"chain\":\"FENWAY = 6+5+14+23+1+25 = 74; 7+4 = 11; 1+1 = 2\",\"reading\":\"Eleven reduced to two: a doubled gate, balance between dualities.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.66},{\"operation\":\"phonetic_split\",\"chain\":\"fen + way; fen echoes fin (end) and vain (empty) in French-like hearing\",\"reading\":\"An empty end-path: a route that leads to vanishing or exhaustion.\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.57}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "fen + way; fen (en) = marsh, wet lowland; way = path, course",
+   "reading": "A path through the marsh: passage through the low, damp, hidden place.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.93
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "fen ~ fin (fr) = end; way ~ voie (fr) = road",
+   "reading": "The end-road: a final passage, the way that closes a cycle.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.78
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "fen ~ phénix (fr) by sound-shift; way ~ voie",
+   "reading": "Phoenix-road: a route of renewal, rising after burning out.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "etymology",
+   "chain": "fen = Old English fenn, 'marsh, fen' (OED, Merriam-Webster); way = Old English weg, 'road, path' (OED, Merriam-Webster)",
+   "reading": "A marsh-road, a track laid over wet ground or through obscurity.",
+   "languages": [
+    "en"
+   ],
+   "source": "OED; Merriam-Webster",
+   "confidence": 0.97
+  },
+  {
+   "operation": "anagram",
+   "chain": "Fenway -> way + fen; rearranged into the same two roots",
+   "reading": "The road and the fen mirror each other: movement meeting stagnation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.84
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "F = force/fire; E = earth; N = north; W = water; A = air; Y = forked choice",
+   "reading": "A four-element crossing with a forked decision: fire, earth, water, air, then choice.",
+   "languages": [
+    "symbolic"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "numerical",
+   "chain": "FENWAY = 6+5+14+23+1+25 = 74; 7+4 = 11; 1+1 = 2",
+   "reading": "Eleven reduced to two: a doubled gate, balance between dualities.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.66
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "fen + way; fen echoes fin (end) and vain (empty) in French-like hearing",
+   "reading": "An empty end-path: a route that leads to vanishing or exhaustion.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.57
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

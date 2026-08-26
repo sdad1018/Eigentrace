@@ -1,0 +1,134 @@
+{
+ "word": "Las Vegas Village",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:19:32+00:00",
+ "latency_s": 7.49,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las + Vegas + Village\",\n    \"reading\": \"The lascivious vein of the village; lustful bloodline of the settlement\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las (Spanish 'the' plural) + Vegas (from vega = fertile plain, meadow); Village (Old French village from Latin villa = country house, farm)\",\n    \"reading\": \"The fertile meadows of the country estate\",\n    \"languages\": [\"es\",\"la\",\"fr\",\"en\"],\n    \"source\": \"Oxford English Dictionary & Real Academia Española\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas → lais ve gas (Old French lais = legacy, bequeathed; ve = see/imperative; gas = chaos in Occitan)\",\n    \"reading\": \"See the legacy of chaos\",\n    \"languages\": [\"fr\",\"oc\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lasvegasvillage → l'as ve gas vil age\",\n    \"reading\": \"The ace sees the vile age of gas\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Village → Evil Glass Vagas\",\n    \"reading\": \"Wicked glass of the wandering star (vagus = wandering)\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L.V.V. → Lux Via Veritatis (or Lux Vivit in Vana)\",\n    \"reading\": \"Light is the way of truth / Light lives in vanity\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas Village → La Sève Gas Village\",\n    \"reading\": \"The sap, the gas, the village; vital fluid turned to vapour in the settlement\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Village → vil lage (French vil = vile/base + lage from German Lager = camp, store)\",\n    \"reading\": \"Base camp of the vile\",\n    \"languages\": [\"fr\",\"de\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Vegas = V + EGAS → V (hook) + EGAS (anagram of SAGE backwards)\",\n    \"reading\": \"The hook that reverses wisdom\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Village from Latin villaticum (pertaining to a villa); Vegas from Latin vega via Arabic وادي (wadi) influence on Spanish meadow term\",\n    \"reading\": \"The meadow belonging to the country estate\",\n    \"languages\": [\"la\",\"es\",\"ar\"],\n    \"source\": \"Lewis & Short Latin Dictionary / Corominas Diccionario Crítico Etimológico\",\n    \"confidence\": 0.85\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Vegas + Village",
+   "reading": "The lascivious vein of the village; lustful bloodline of the settlement",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "etymology",
+   "chain": "Las (Spanish 'the' plural) + Vegas (from vega = fertile plain, meadow); Village (Old French village from Latin villa = country house, farm)",
+   "reading": "The fertile meadows of the country estate",
+   "languages": [
+    "es",
+    "la",
+    "fr",
+    "en"
+   ],
+   "source": "Oxford English Dictionary & Real Academia Española",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas → lais ve gas (Old French lais = legacy, bequeathed; ve = see/imperative; gas = chaos in Occitan)",
+   "reading": "See the legacy of chaos",
+   "languages": [
+    "fr",
+    "oc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lasvegasvillage → l'as ve gas vil age",
+   "reading": "The ace sees the vile age of gas",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Village → Evil Glass Vagas",
+   "reading": "Wicked glass of the wandering star (vagus = wandering)",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L.V.V. → Lux Via Veritatis (or Lux Vivit in Vana)",
+   "reading": "Light is the way of truth / Light lives in vanity",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas Village → La Sève Gas Village",
+   "reading": "The sap, the gas, the village; vital fluid turned to vapour in the settlement",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Village → vil lage (French vil = vile/base + lage from German Lager = camp, store)",
+   "reading": "Base camp of the vile",
+   "languages": [
+    "fr",
+    "de",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Vegas = V + EGAS → V (hook) + EGAS (anagram of SAGE backwards)",
+   "reading": "The hook that reverses wisdom",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Village from Latin villaticum (pertaining to a villa); Vegas from Latin vega via Arabic وادي (wadi) influence on Spanish meadow term",
+   "reading": "The meadow belonging to the country estate",
+   "languages": [
+    "la",
+    "es",
+    "ar"
+   ],
+   "source": "Lewis & Short Latin Dictionary / Corominas Diccionario Crítico Etimológico",
+   "confidence": 0.85
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

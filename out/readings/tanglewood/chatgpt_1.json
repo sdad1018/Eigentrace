@@ -1,0 +1,103 @@
+{
+ "word": "Tanglewood",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:17:33+00:00",
+ "latency_s": 5.49,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"tangle + wood; tangle = knot, entanglement; wood = the standing timber\",\"reading\":\"A knot in the forest: matter caught in coils, spirit obscured by the thicket.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.92},{\"operation\":\"etymology\",\"chain\":\"tangle (OED: perhaps related to tangle as a knot/seaweed mass) + wood (OED: Old English wudu, wood, forest)\",\"reading\":\"The word suggests a wooded place of knots, a place where growth becomes entanglement.\",\"languages\":[\"en\"],\"source\":\"OED\",\"confidence\":0.68},{\"operation\":\"cross_language_homophone\",\"chain\":\"tangle ~ tang + le + wood; tang (en) = taste, edge; le (fr) = the; wood = matter/forest\",\"reading\":\"The edge of the tongue enters the forest: taste, speech, and matter interlace.\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.54},{\"operation\":\"phonetic_split\",\"chain\":\"tan + gel + wood; tan = hide, skin; gel (de/fr) = gel, congeal; wood = body of the tree\",\"reading\":\"Skin congeals around the tree: a living thing hardened into form.\",\"languages\":[\"en\",\"de\",\"fr\"],\"source\":\"generative\",\"confidence\":0.47},{\"operation\":\"anagram\",\"chain\":\"TANGLEWOOD -> WED LONG TO A?; partial anagrammatic drift: tangle / wood / wed / long\",\"reading\":\"A binding is made to lengthen: what is knotted is also joined.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.31},{\"operation\":\"notariqon\",\"chain\":\"T A N G L E W O O D = The Alchemical Knot, Garden, Labyrinth, Enclosure; Wood = World, Order, Origin, Drift\",\"reading\":\"An encoded maxim: the world begins as a knot and becomes a garden of signs.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.22},{\"operation\":\"letter_symbol\",\"chain\":\"T = crossbar; A = apex; N = descent/ascent; G = coil; L = angle; E = opening; W = double wave; O = circle; O = circle; D = door\",\"reading\":\"A sequence of forms: crossing, peak, coil, angle, opening, waves, circles, and a door.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.74},{\"operation\":\"numerical\",\"chain\":\"T(20)+A(1)+N(14)+G(7)+L(12)+E(5)+W(23)+O(15)+O(15)+D(4)=116; 1+1+6=8\",\"reading\":\"Eight: the number of balance, recurrence, and the doubled loop returning into itself.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.39}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "tangle + wood; tangle = knot, entanglement; wood = the standing timber",
+   "reading": "A knot in the forest: matter caught in coils, spirit obscured by the thicket.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.92
+  },
+  {
+   "operation": "etymology",
+   "chain": "tangle (OED: perhaps related to tangle as a knot/seaweed mass) + wood (OED: Old English wudu, wood, forest)",
+   "reading": "The word suggests a wooded place of knots, a place where growth becomes entanglement.",
+   "languages": [
+    "en"
+   ],
+   "source": "OED",
+   "confidence": 0.68
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "tangle ~ tang + le + wood; tang (en) = taste, edge; le (fr) = the; wood = matter/forest",
+   "reading": "The edge of the tongue enters the forest: taste, speech, and matter interlace.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.54
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "tan + gel + wood; tan = hide, skin; gel (de/fr) = gel, congeal; wood = body of the tree",
+   "reading": "Skin congeals around the tree: a living thing hardened into form.",
+   "languages": [
+    "en",
+    "de",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.47
+  },
+  {
+   "operation": "anagram",
+   "chain": "TANGLEWOOD -> WED LONG TO A?; partial anagrammatic drift: tangle / wood / wed / long",
+   "reading": "A binding is made to lengthen: what is knotted is also joined.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "notariqon",
+   "chain": "T A N G L E W O O D = The Alchemical Knot, Garden, Labyrinth, Enclosure; Wood = World, Order, Origin, Drift",
+   "reading": "An encoded maxim: the world begins as a knot and becomes a garden of signs.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T = crossbar; A = apex; N = descent/ascent; G = coil; L = angle; E = opening; W = double wave; O = circle; O = circle; D = door",
+   "reading": "A sequence of forms: crossing, peak, coil, angle, opening, waves, circles, and a door.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.74
+  },
+  {
+   "operation": "numerical",
+   "chain": "T(20)+A(1)+N(14)+G(7)+L(12)+E(5)+W(23)+O(15)+O(15)+D(4)=116; 1+1+6=8",
+   "reading": "Eight: the number of balance, recurrence, and the doubled loop returning into itself.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.39
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

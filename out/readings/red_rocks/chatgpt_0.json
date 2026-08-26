@@ -1,0 +1,103 @@
+{
+ "word": "Red Rocks",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:16:28+00:00",
+ "latency_s": 4.28,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"red + rocks; red = redden, make ruddy; rocks = hard stones / to rock, sway\",\"reading\":\"A hardening by fire: the red thing is made to sway, or the stone is made to blush.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.78},{\"operation\":\"cross_language_homophone\",\"chain\":\"red ~ read (en); rocks ~ rocs (fr plural of roc, giant bird)\",\"reading\":\"Read the giant-bird sign: a text of ascent, where stone becomes wing and the heavy is lifted.\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.62},{\"operation\":\"phonetic_split\",\"chain\":\"red rocks → red + rocks; red = blood, rust, rubedo; rocks = rough masses\",\"reading\":\"The rubedo of matter: blood-rust on the rough mass, the final reddening of what was once inert.\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.74},{\"operation\":\"anagram\",\"chain\":\"RED ROCKS → ROCKS RED / DOCKS ERR? (near-anagrammatic play on the letters)\",\"reading\":\"A rearrangement of hardness: the stones are not fixed, but can be made to shift, err, and re-form.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.41},{\"operation\":\"notariqon\",\"chain\":\"R E D / R O C K S → Rise, Ember, Dawn / Root, Ore, Crag, Key, Stone\",\"reading\":\"A compact formula of ascent through matter: ember to dawn, ore to crag, stone to key.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.33},{\"operation\":\"letter_symbol\",\"chain\":\"R = rotation; E = emergence; D = descent; R = return; O = circle; C = enclosure; K = cutting; S = serpent/stream\",\"reading\":\"A cycle of turning, enclosing, cutting, and flowing: descent becomes return through the serpent’s curve.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.56},{\"operation\":\"numerical\",\"chain\":\"R(18)+E(5)+D(4)+R(18)+O(15)+C(3)+K(11)+S(19)=93; 9+3=12; 1+2=3\",\"reading\":\"The number resolves to three: a triadic pattern of beginning, middle, and return hidden in the letters.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.47},{\"operation\":\"etymology\",\"chain\":\"red (Old English rēad, from Proto-Germanic *raudaz; OED / Merriam-Webster) + rocks (rock, Middle English, from Old French roc/roche; OED / Merriam-Webster)\",\"reading\":\"A name of redness and stone: Germanic rēad joined to Romance roc, the colored hard thing.\",\"languages\":[\"en\",\"fro\"],\"source\":\"OED; Merriam-Webster\",\"confidence\":0.9}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "red + rocks; red = redden, make ruddy; rocks = hard stones / to rock, sway",
+   "reading": "A hardening by fire: the red thing is made to sway, or the stone is made to blush.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.78
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "red ~ read (en); rocks ~ rocs (fr plural of roc, giant bird)",
+   "reading": "Read the giant-bird sign: a text of ascent, where stone becomes wing and the heavy is lifted.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "red rocks → red + rocks; red = blood, rust, rubedo; rocks = rough masses",
+   "reading": "The rubedo of matter: blood-rust on the rough mass, the final reddening of what was once inert.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.74
+  },
+  {
+   "operation": "anagram",
+   "chain": "RED ROCKS → ROCKS RED / DOCKS ERR? (near-anagrammatic play on the letters)",
+   "reading": "A rearrangement of hardness: the stones are not fixed, but can be made to shift, err, and re-form.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R E D / R O C K S → Rise, Ember, Dawn / Root, Ore, Crag, Key, Stone",
+   "reading": "A compact formula of ascent through matter: ember to dawn, ore to crag, stone to key.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.33
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R = rotation; E = emergence; D = descent; R = return; O = circle; C = enclosure; K = cutting; S = serpent/stream",
+   "reading": "A cycle of turning, enclosing, cutting, and flowing: descent becomes return through the serpent’s curve.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.56
+  },
+  {
+   "operation": "numerical",
+   "chain": "R(18)+E(5)+D(4)+R(18)+O(15)+C(3)+K(11)+S(19)=93; 9+3=12; 1+2=3",
+   "reading": "The number resolves to three: a triadic pattern of beginning, middle, and return hidden in the letters.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.47
+  },
+  {
+   "operation": "etymology",
+   "chain": "red (Old English rēad, from Proto-Germanic *raudaz; OED / Merriam-Webster) + rocks (rock, Middle English, from Old French roc/roche; OED / Merriam-Webster)",
+   "reading": "A name of redness and stone: Germanic rēad joined to Romance roc, the colored hard thing.",
+   "languages": [
+    "en",
+    "fro"
+   ],
+   "source": "OED; Merriam-Webster",
+   "confidence": 0.9
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

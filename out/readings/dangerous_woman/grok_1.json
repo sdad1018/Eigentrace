@@ -1,0 +1,130 @@
+{
+ "word": "Dangerous Woman",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:27+00:00",
+ "latency_s": 6.87,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"dan + jer + us + woman\",\n    \"reading\": \"The judge (dan) of her (jer) us (nous), the woman\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"dange + rous + woman\",\n    \"reading\": \"The dangerous (dange) red (rous/roux) woman\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"dangerous = danseuse (Fr); woman\",\n    \"reading\": \"The dancing woman, the danseuse who leads astray\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"dangerous ← Old French dangereus ← Latin dominus + -arius (power, lordship)\",\n    \"reading\": \"The woman who exercises lordly, sovereign, or perilous power\",\n    \"languages\": [\"en\",\"fr\",\"la\"],\n    \"source\": \"Oxford English Dictionary / Dictionnaire étymologique de la langue française\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Dangerous Woman → A Dangerous Womb\",\n    \"reading\": \"She whose womb is perilous, matrix of threat or initiation\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"dan + gerous + woman\",\n    \"reading\": \"The gift (dan) of the gerous (old/wise) woman\",\n    \"languages\": [\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"dangerous ≈ dangier + ous; dangier (Old French) = power, dominion\",\n    \"reading\": \"The woman of sovereign power, she who holds the right of life and death\",\n    \"languages\": [\"en\",\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"D.A.N.G.E.R.O.U.S. W.O.M.A.N. → Domina Arcana Noxa Genetrix Emergit Regina Omnium Umbrarum Sancta\",\n    \"reading\": \"The Hidden Lady, Mother of Harm, emerges as Queen of All Shadows, Holy\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"D (Daleth/Door) + Anger + O (circle/womb) + US + Womb + Man\",\n    \"reading\": \"The door of wrath opens the womb-circle that engulfs man\",\n    \"languages\": [\"en\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"dan + je + ru + s + woman\",\n    \"reading\": \"The judge (dan) I (je) am (ruis) to this (s) woman\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "dan + jer + us + woman",
+   "reading": "The judge (dan) of her (jer) us (nous), the woman",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "dange + rous + woman",
+   "reading": "The dangerous (dange) red (rous/roux) woman",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "dangerous = danseuse (Fr); woman",
+   "reading": "The dancing woman, the danseuse who leads astray",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "etymology",
+   "chain": "dangerous ← Old French dangereus ← Latin dominus + -arius (power, lordship)",
+   "reading": "The woman who exercises lordly, sovereign, or perilous power",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Oxford English Dictionary / Dictionnaire étymologique de la langue française",
+   "confidence": 0.9
+  },
+  {
+   "operation": "anagram",
+   "chain": "Dangerous Woman → A Dangerous Womb",
+   "reading": "She whose womb is perilous, matrix of threat or initiation",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "dan + gerous + woman",
+   "reading": "The gift (dan) of the gerous (old/wise) woman",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "dangerous ≈ dangier + ous; dangier (Old French) = power, dominion",
+   "reading": "The woman of sovereign power, she who holds the right of life and death",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "notariqon",
+   "chain": "D.A.N.G.E.R.O.U.S. W.O.M.A.N. → Domina Arcana Noxa Genetrix Emergit Regina Omnium Umbrarum Sancta",
+   "reading": "The Hidden Lady, Mother of Harm, emerges as Queen of All Shadows, Holy",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "D (Daleth/Door) + Anger + O (circle/womb) + US + Womb + Man",
+   "reading": "The door of wrath opens the womb-circle that engulfs man",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "dan + je + ru + s + woman",
+   "reading": "The judge (dan) I (je) am (ruis) to this (s) woman",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

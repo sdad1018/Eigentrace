@@ -1,0 +1,126 @@
+{
+ "word": "Las Vegas Boulevard",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:21:31+00:00",
+ "latency_s": 8.54,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las + Vegas + Boulevard\",\n    \"reading\": \"The law's vague path; the broad way where law becomes uncertain\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las (fr: the, plural) + Vegas (lat: veho/vegas = I convey, I transport) + Boulevard (fr: bulwark, rampart)\",\n    \"reading\": \"The conveyors of the rampart; those who transport the wall\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"L'as + ve + gas + boule + vard\",\n    \"reading\": \"The ace sees the gas, the ball goes forward; chance propels the sphere\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Boulevard from Dutch bolwerk = bulwark, rampart; Vegas from Spanish vegas = fertile plains (from Latin vega)\",\n    \"reading\": \"The fertile plain's bulwark; the rampart of the watered meadow\",\n    \"languages\": [\"nl\",\"es\",\"la\"],\n    \"source\": \"Oxford English Dictionary & Diccionario de la Real Academia Española\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Boulevard → A vulgar bald asses\",\n    \"reading\": \"The crude naked fools; vulgar bald asses walking the way\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L.V.B. → Lux Via Baphomet\",\n    \"reading\": \"The light is the way of Baphomet; illumination through the goat's path\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lasvegasboulevard → La sève gas boule à vers\",\n    \"reading\": \"The sap gasses the ball of worms; vital fluid intoxicates the coiled mass\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas → Les Végas (fr) homophone to Les Végétants; Boulevard → boule + vers (ball + towards)\",\n    \"reading\": \"The living ones roll the ball forward; the vegetating beings advance the sphere\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L V B → Lamed Vav Bet; the 36 hidden righteous (Lamed-Vav) and house (Bet)\",\n    \"reading\": \"The hidden righteous within the house of the broad way\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las + Vegas + Boule + Vard → Lass + ve + gas + boule + var\",\n    \"reading\": \"The girl, see, gasses the ball of variation; maiden transmutes the orb\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Vegas + Boulevard",
+   "reading": "The law's vague path; the broad way where law becomes uncertain",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las (fr: the, plural) + Vegas (lat: veho/vegas = I convey, I transport) + Boulevard (fr: bulwark, rampart)",
+   "reading": "The conveyors of the rampart; those who transport the wall",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "L'as + ve + gas + boule + vard",
+   "reading": "The ace sees the gas, the ball goes forward; chance propels the sphere",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Boulevard from Dutch bolwerk = bulwark, rampart; Vegas from Spanish vegas = fertile plains (from Latin vega)",
+   "reading": "The fertile plain's bulwark; the rampart of the watered meadow",
+   "languages": [
+    "nl",
+    "es",
+    "la"
+   ],
+   "source": "Oxford English Dictionary & Diccionario de la Real Academia Española",
+   "confidence": 0.85
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Boulevard → A vulgar bald asses",
+   "reading": "The crude naked fools; vulgar bald asses walking the way",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L.V.B. → Lux Via Baphomet",
+   "reading": "The light is the way of Baphomet; illumination through the goat's path",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lasvegasboulevard → La sève gas boule à vers",
+   "reading": "The sap gasses the ball of worms; vital fluid intoxicates the coiled mass",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas → Les Végas (fr) homophone to Les Végétants; Boulevard → boule + vers (ball + towards)",
+   "reading": "The living ones roll the ball forward; the vegetating beings advance the sphere",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L V B → Lamed Vav Bet; the 36 hidden righteous (Lamed-Vav) and house (Bet)",
+   "reading": "The hidden righteous within the house of the broad way",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Vegas + Boule + Vard → Lass + ve + gas + boule + var",
+   "reading": "The girl, see, gasses the ball of variation; maiden transmutes the orb",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

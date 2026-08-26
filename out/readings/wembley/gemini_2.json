@@ -1,0 +1,132 @@
+{
+ "word": "Wembley",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:21:06+00:00",
+ "latency_s": 24.52,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Wembley -> -ley (Old English lēah) -> meadow, clearing, pasture.\",\n    \"reading\": \"A sacred clearing or fertile pasture, a place of tranquil natural growth and unfolding.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Wembley -> Wem- (sound similar to Old English 'wamb') -> womb, belly, hollow.\",\n    \"reading\": \"The hollowed place of origin, a fertile void from which creation emerges.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wembley -> 'Womb-lea' (combining etymological sounds).\",\n    \"reading\": \"The fertile void of a meadow, a sacred place of conception and natural unfolding.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wembley -> 'We m' bleed' (as in 'we might bleed').\",\n    \"reading\": \"A prophecy or warning of potential sacrifice, loss, or vital outpouring.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley (sound) -> French 'Où est mon blé?' (Where is my wheat?).\",\n    \"reading\": \"A fervent quest for essential sustenance, wealth, or the vital grain of life.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley (sound) -> German 'Wem Blei?' (To whom lead?).\",\n    \"reading\": \"An inquiry into the destination of a heavy burden, the substance of fate, or material manifestation.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"WEMBLEY -> 'elm by we'.\",\n    \"reading\": \"The enduring tree of wisdom, rooted near the collective spirit of humanity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"WEMBLEY -> 'by me wel' (archaic 'well').\",\n    \"reading\": \"An ancient affirmation of health, presence, or a declaration of origin from a source of goodness.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"W.E.M.B.L.E.Y. -> 'Why Every Man Believes Lies, Ever Yielding.'\",\n    \"reading\": \"A cautionary question probing humanity's predisposition to deception and submission.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"W (duality, waves), E (openness), M (mother, mountain), B (enclosure, birth), L (balance), E (openness), Y (choice, divergence).\",\n    \"reading\": \"From the duality of waves, the Mother births balanced choices into expansive openness.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"W=23, E=5, M=13, B=2, L=12, E=5, Y=25. Sum = 85. Reduced: 8+5=13.\",\n    \"reading\": \"The path of man (5) towards completion (8), leading to profound transformation (13).\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Wembley -> -ley (Old English lēah) -> meadow, clearing, pasture.",
+   "reading": "A sacred clearing or fertile pasture, a place of tranquil natural growth and unfolding.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 1.0
+  },
+  {
+   "operation": "etymology",
+   "chain": "Wembley -> Wem- (sound similar to Old English 'wamb') -> womb, belly, hollow.",
+   "reading": "The hollowed place of origin, a fertile void from which creation emerges.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wembley -> 'Womb-lea' (combining etymological sounds).",
+   "reading": "The fertile void of a meadow, a sacred place of conception and natural unfolding.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wembley -> 'We m' bleed' (as in 'we might bleed').",
+   "reading": "A prophecy or warning of potential sacrifice, loss, or vital outpouring.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley (sound) -> French 'Où est mon blé?' (Where is my wheat?).",
+   "reading": "A fervent quest for essential sustenance, wealth, or the vital grain of life.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley (sound) -> German 'Wem Blei?' (To whom lead?).",
+   "reading": "An inquiry into the destination of a heavy burden, the substance of fate, or material manifestation.",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "WEMBLEY -> 'elm by we'.",
+   "reading": "The enduring tree of wisdom, rooted near the collective spirit of humanity.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "WEMBLEY -> 'by me wel' (archaic 'well').",
+   "reading": "An ancient affirmation of health, presence, or a declaration of origin from a source of goodness.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "W.E.M.B.L.E.Y. -> 'Why Every Man Believes Lies, Ever Yielding.'",
+   "reading": "A cautionary question probing humanity's predisposition to deception and submission.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "W (duality, waves), E (openness), M (mother, mountain), B (enclosure, birth), L (balance), E (openness), Y (choice, divergence).",
+   "reading": "From the duality of waves, the Mother births balanced choices into expansive openness.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "numerical",
+   "chain": "W=23, E=5, M=13, B=2, L=12, E=5, Y=25. Sum = 85. Reduced: 8+5=13.",
+   "reading": "The path of man (5) towards completion (8), leading to profound transformation (13).",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 11,
+ "refusal_like": false
+}

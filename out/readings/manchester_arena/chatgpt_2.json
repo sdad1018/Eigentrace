@@ -1,0 +1,105 @@
+{
+ "word": "Manchester Arena",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:21:49+00:00",
+ "latency_s": 5.22,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + chester + arena; man = human; chester/chester ≈ Latin castra, camp; arena = sanded fighting ground\",\n    \"reading\": \"A human camp staged as a sand-ring: the man in the camp enters the arena of contest.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.78\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Manchester < Old English Mameceaster/Mamucium + ceaster < Latin castra; arena < Latin harena/arena, sand\",\n    \"reading\": \"The name reads as a fortified place of sand: a camp turned into an arena.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"OED; Oxford Dictionary of English Place-Names; Lewis & Short, Latin Dictionary\",\n    \"confidence\": 0.86\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"man + chester ≈ French manche + terre; manche = sleeve/handle, terre = earth/land\",\n    \"reading\": \"A sleeve of earth: a grasping hand extended into ground, as if the land were worn like a garment.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"arena ≈ arène (fr.) / arena (la.); ar- evokes air; -ena evokes enclosure or place\",\n    \"reading\": \"An enclosed air of combat: a place where forces are gathered and made visible.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.47\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester Arena → anagrammatic drift: arena + man + chest + ear\",\n    \"reading\": \"The body is distributed into organs of hearing, storage, and combat: ear, chest, man, arena.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M A N C H E S T E R A R E N A → Man, Arena, Name, Cage, Hearth, Echo, Sand, Threshold, Earth, Ring, Echo, Name, Again\",\n    \"reading\": \"A mnemonic of enclosure and return: man enters the ring, crosses the threshold, and comes back named anew.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.29\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M = mountains; A = alpha/beginning; N = north; C = circle; H = gate; E = breath; R = wheel; E = breath; N = north; A = alpha\",\n    \"reading\": \"From mountain-beginning through the gate and wheel, breath returns to the north and begins again.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.33\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"A1Z26 sum: Manchester Arena = 13+1+14+3+8+5+19+20+5+18+1+18+5+14+1 = 145; 1+4+5 = 10; 1+0 = 1\",\n    \"reading\": \"The phrase reduces to unity: many letters, one principle; the ring returns to the first.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.36\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "man + chester + arena; man = human; chester/chester ≈ Latin castra, camp; arena = sanded fighting ground",
+   "reading": "A human camp staged as a sand-ring: the man in the camp enters the arena of contest.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.78
+  },
+  {
+   "operation": "etymology",
+   "chain": "Manchester < Old English Mameceaster/Mamucium + ceaster < Latin castra; arena < Latin harena/arena, sand",
+   "reading": "The name reads as a fortified place of sand: a camp turned into an arena.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "OED; Oxford Dictionary of English Place-Names; Lewis & Short, Latin Dictionary",
+   "confidence": 0.86
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "man + chester ≈ French manche + terre; manche = sleeve/handle, terre = earth/land",
+   "reading": "A sleeve of earth: a grasping hand extended into ground, as if the land were worn like a garment.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "arena ≈ arène (fr.) / arena (la.); ar- evokes air; -ena evokes enclosure or place",
+   "reading": "An enclosed air of combat: a place where forces are gathered and made visible.",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.47
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester Arena → anagrammatic drift: arena + man + chest + ear",
+   "reading": "The body is distributed into organs of hearing, storage, and combat: ear, chest, man, arena.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M A N C H E S T E R A R E N A → Man, Arena, Name, Cage, Hearth, Echo, Sand, Threshold, Earth, Ring, Echo, Name, Again",
+   "reading": "A mnemonic of enclosure and return: man enters the ring, crosses the threshold, and comes back named anew.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.29
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M = mountains; A = alpha/beginning; N = north; C = circle; H = gate; E = breath; R = wheel; E = breath; N = north; A = alpha",
+   "reading": "From mountain-beginning through the gate and wheel, breath returns to the north and begins again.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.33
+  },
+  {
+   "operation": "numerical",
+   "chain": "A1Z26 sum: Manchester Arena = 13+1+14+3+8+5+19+20+5+18+1+18+5+14+1 = 145; 1+4+5 = 10; 1+0 = 1",
+   "reading": "The phrase reduces to unity: many letters, one principle; the ring returns to the first.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.36
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

@@ -1,0 +1,132 @@
+{
+ "word": "Lollapalooza",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T01:00:24+00:00",
+ "latency_s": 65.4,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"Loll + apalooza\",\"reading\":\"Laughter followed by a gathering of the strange or unusual.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.8},{\"operation\":\"cross_language_homophone\",\"chain\":\"Lolla (Italian) = candy; palooza (sounds like 'palooza' in various languages)\",\"reading\":\"Sweet treat and grand celebration, often associated with festivals.\",\"languages\":[\"it\",\"en\"],\"source\":\"generative\",\"confidence\":0.75},{\"operation\":\"anagram\",\"chain\":\"palooza + loll\",\"reading\":\"A loud and lively gathering of people; a fun-filled event.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.65},{\"operation\":\"notariqon\",\"chain\":\"Lolla = Laughter; palooza = Pallas (goddess)\",\"reading\":\"Divine laughter or joyous celebration in honor of the goddess Athena.\",\"languages\":[\"grc\",\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"letter_symbol\",\"chain\":\"L + Olla + Palooza\",\"reading\":\"Light and abundance followed by a grand spectacle.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.55},{\"operation\":\"numerical\",\"chain\":\"12 (L) + 150 (olla, Latin for 'pot' or 'vessel') + 800 (palooza, sound value)\",\"reading\":\"A significant gathering in a place of great importance.\",\"languages\":[\"la\"],\"source\":\"generative\",\"confidence\":0.45},{\"operation\":\"phonetic_split\",\"chain\":\"Lo + lapalooza\",\"reading\":\"To speak or talk about an unusual event or gathering.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"anagram\",\"chain\":\"palooza loll\",\"reading\":\"A fun and chaotic celebration; a festival of sorts.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.58},{\"operation\":\"etymology\",\"chain\":\"Lolla (onomatopoeia) + palooza (derived from 'palooza', meaning grand or large)\",\"reading\":\"An event characterized by laughter and great excitement.\",\"languages\":[\"en\"],\"source\":\"Oxford English Dictionary\",\"confidence\":0.9},{\"operation\":\"cross_language_homophone\",\"chain\":\"loll (Old English, to loiter; sounds like 'lol' in modern slang) + palooza\",\"reading\":\"A casual or relaxed event with a lot of fun and excitement.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.72},{\"operation\":\"phonetic_split\",\"chain\":\"Lol + lapalooza\",\"reading\":\"Laughter followed by an extravagant celebration.\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.65}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Loll + apalooza",
+   "reading": "Laughter followed by a gathering of the strange or unusual.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Lolla (Italian) = candy; palooza (sounds like 'palooza' in various languages)",
+   "reading": "Sweet treat and grand celebration, often associated with festivals.",
+   "languages": [
+    "it",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "palooza + loll",
+   "reading": "A loud and lively gathering of people; a fun-filled event.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Lolla = Laughter; palooza = Pallas (goddess)",
+   "reading": "Divine laughter or joyous celebration in honor of the goddess Athena.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L + Olla + Palooza",
+   "reading": "Light and abundance followed by a grand spectacle.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "numerical",
+   "chain": "12 (L) + 150 (olla, Latin for 'pot' or 'vessel') + 800 (palooza, sound value)",
+   "reading": "A significant gathering in a place of great importance.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lo + lapalooza",
+   "reading": "To speak or talk about an unusual event or gathering.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "palooza loll",
+   "reading": "A fun and chaotic celebration; a festival of sorts.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "etymology",
+   "chain": "Lolla (onomatopoeia) + palooza (derived from 'palooza', meaning grand or large)",
+   "reading": "An event characterized by laughter and great excitement.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "loll (Old English, to loiter; sounds like 'lol' in modern slang) + palooza",
+   "reading": "A casual or relaxed event with a lot of fun and excitement.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.72
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lol + lapalooza",
+   "reading": "Laughter followed by an extravagant celebration.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 11,
+ "refusal_like": false
+}

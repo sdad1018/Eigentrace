@@ -1,0 +1,133 @@
+{
+ "word": "Eagles of Death Metal",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:28:00+00:00",
+ "latency_s": 7.57,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Eagles → égale (fr); of → of; Death → des; Metal → métal\",\n    \"reading\": \"the equal ones of the metal of death\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Eagles of → iglesof → igles + of; Death Metal → des morts métal\",\n    \"reading\": \"the churches of the dead metal\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Eagles → aigles (fr) homophone to aigle (eagle/emblem); Death Metal → des métaux\",\n    \"reading\": \"the eagles of the metals of death\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Eagle from Old French aigle from Latin aquila (eagle, standard); Death from Old English dēaþ; Metal from Greek métallon via Latin metallum\",\n    \"reading\": \"the aquiline standards of the metallic death\",\n    \"languages\": [\"en\",\"fr\",\"la\",\"grc\"],\n    \"source\": \"Oxford English Dictionary / Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"EAGLES OF DEATH METAL → THE GOLD LEAVES METAL\",\n    \"reading\": \"the golden leaves forged into metal\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ea-glesofdeathmetal → ea (house) + gle (joy, Old English) + sof (wool, Arabic صوف) + death + metal\",\n    \"reading\": \"the house of joyful wool of metallic death\",\n    \"languages\": [\"en\",\"ar\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"E.O.D.M. → Ex Oriente, Domine Mortis (from the East, Lord of Death)\",\n    \"reading\": \"from the East comes the Lord of metallic death\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Eagles (bird of Jupiter/Zeus) + Death (Thanatos) + Metal (alchemical Mars/iron)\",\n    \"reading\": \"Jovian iron forged by Thanatos\",\n    \"languages\": [\"en\",\"la\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Death Metal → dét metal → dait metal (Arabic دايت متال) ≈ eternal metal\",\n    \"reading\": \"eagles of the eternal metal\",\n    \"languages\": [\"en\",\"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Eagle → é-gale; of death metal → au fer de mort\",\n    \"reading\": \"the equal one with the iron of death\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Eagles → égale (fr); of → of; Death → des; Metal → métal",
+   "reading": "the equal ones of the metal of death",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Eagles of → iglesof → igles + of; Death Metal → des morts métal",
+   "reading": "the churches of the dead metal",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Eagles → aigles (fr) homophone to aigle (eagle/emblem); Death Metal → des métaux",
+   "reading": "the eagles of the metals of death",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Eagle from Old French aigle from Latin aquila (eagle, standard); Death from Old English dēaþ; Metal from Greek métallon via Latin metallum",
+   "reading": "the aquiline standards of the metallic death",
+   "languages": [
+    "en",
+    "fr",
+    "la",
+    "grc"
+   ],
+   "source": "Oxford English Dictionary / Lewis & Short Latin Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "anagram",
+   "chain": "EAGLES OF DEATH METAL → THE GOLD LEAVES METAL",
+   "reading": "the golden leaves forged into metal",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ea-glesofdeathmetal → ea (house) + gle (joy, Old English) + sof (wool, Arabic صوف) + death + metal",
+   "reading": "the house of joyful wool of metallic death",
+   "languages": [
+    "en",
+    "ar",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "E.O.D.M. → Ex Oriente, Domine Mortis (from the East, Lord of Death)",
+   "reading": "from the East comes the Lord of metallic death",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Eagles (bird of Jupiter/Zeus) + Death (Thanatos) + Metal (alchemical Mars/iron)",
+   "reading": "Jovian iron forged by Thanatos",
+   "languages": [
+    "en",
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Death Metal → dét metal → dait metal (Arabic دايت متال) ≈ eternal metal",
+   "reading": "eagles of the eternal metal",
+   "languages": [
+    "en",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Eagle → é-gale; of death metal → au fer de mort",
+   "reading": "the equal one with the iron of death",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

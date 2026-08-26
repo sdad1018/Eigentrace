@@ -1,0 +1,155 @@
+{
+ "word": "Manchester Arena",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:47:34+00:00",
+ "latency_s": 24.66,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Manchester (Old English 'Mameceaster' from Latin 'castra' meaning 'fortified place' + Celtic 'Mame' river/breast/hill) + Arena (Latin 'harēna' meaning 'sand, sandy place')\",\n    \"reading\": \"The fortified place of the breast or river, a place of sand.\",\n    \"languages\": [\"en\", \"la\", \"grc\", \"cel\"],\n    \"source\": \"Online Etymology Dictionary\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Manchester (English 'main' + Latin 'castra' meaning 'fortified place') + Arena (Latin 'harēna' meaning 'sandy place')\",\n    \"reading\": \"The principal fortified place, a ground of sand for contests.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Manchester (French 'mange chair' meaning 'eats flesh') + Arena (Latin 'harēna' meaning 'sandy place' for contests)\",\n    \"reading\": \"The place of sand for contests, where flesh is eaten.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Manchester (French 'mains te serre' meaning 'hands tighten around you') + Arena (French 'Ah Reine!' meaning 'Oh Queen!')\",\n    \"reading\": \"Hands tighten around you, Oh Queen!\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Manchester (English 'man chest err': man + chest + to err) + Arena (English 'Are 'n' Ah': are + and + exclamation)\",\n    \"reading\": \"A man's error of the chest, saying 'Are and ah.'\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Anagram of 'Arena' = 'A near' + Manchester (Online Etymology Dictionary: 'fortified place')\",\n    \"reading\": \"A near fortified place.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Manchester (French 'main chasser' meaning 'hand to hunt or expel') + Arena (French 'Arène' meaning 'arena, sand')\",\n    \"reading\": \"The hand that hunts or expels from the sandy ground.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Manchester (English 'Many Stir') + Arena (Latin 'harēna' meaning 'sandy place for contests')\",\n    \"reading\": \"A sandy place for many stirs or commotions.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (Mother, water) + A (Alpha, beginning) + R (Rex, king, end) + ENA (enact, bind)\",\n    \"reading\": \"Mother of the beginning, the king's end is to bind or enact.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Manchester (Celtic 'Mame' meaning 'breast' + Latin 'castra' meaning 'fortified place') + Arena (phonetic split 'A' + 're' (king) + 'na' (not))\",\n    \"reading\": \"The fortified place of the breast, where a king is not.\",\n    \"languages\": [\"en\", \"la\", \"cel\"],\n    \"source\": \"Online Etymology Dictionary\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Manchester (French 'mains de fer' meaning 'hands of iron') + Arena (French 'A Rêna' from 'renaître' meaning 'a rebirth')\",\n    \"reading\": \"Hands of iron herald a rebirth.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Manchester (English 'Man Cheater': man + cheater) + Anagram of 'Arena' = 'An ear'\",\n    \"reading\": \"A man, a cheater, an ear listening.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Manchester (Old English 'Mameceaster' from Latin 'castra' meaning 'fortified place' + Celtic 'Mame' river/breast/hill) + Arena (Latin 'harēna' meaning 'sand, sandy place')",
+   "reading": "The fortified place of the breast or river, a place of sand.",
+   "languages": [
+    "en",
+    "la",
+    "grc",
+    "cel"
+   ],
+   "source": "Online Etymology Dictionary",
+   "confidence": 1.0
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Manchester (English 'main' + Latin 'castra' meaning 'fortified place') + Arena (Latin 'harēna' meaning 'sandy place')",
+   "reading": "The principal fortified place, a ground of sand for contests.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manchester (French 'mange chair' meaning 'eats flesh') + Arena (Latin 'harēna' meaning 'sandy place' for contests)",
+   "reading": "The place of sand for contests, where flesh is eaten.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manchester (French 'mains te serre' meaning 'hands tighten around you') + Arena (French 'Ah Reine!' meaning 'Oh Queen!')",
+   "reading": "Hands tighten around you, Oh Queen!",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Manchester (English 'man chest err': man + chest + to err) + Arena (English 'Are 'n' Ah': are + and + exclamation)",
+   "reading": "A man's error of the chest, saying 'Are and ah.'",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Anagram of 'Arena' = 'A near' + Manchester (Online Etymology Dictionary: 'fortified place')",
+   "reading": "A near fortified place.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manchester (French 'main chasser' meaning 'hand to hunt or expel') + Arena (French 'Arène' meaning 'arena, sand')",
+   "reading": "The hand that hunts or expels from the sandy ground.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Manchester (English 'Many Stir') + Arena (Latin 'harēna' meaning 'sandy place for contests')",
+   "reading": "A sandy place for many stirs or commotions.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (Mother, water) + A (Alpha, beginning) + R (Rex, king, end) + ENA (enact, bind)",
+   "reading": "Mother of the beginning, the king's end is to bind or enact.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Manchester (Celtic 'Mame' meaning 'breast' + Latin 'castra' meaning 'fortified place') + Arena (phonetic split 'A' + 're' (king) + 'na' (not))",
+   "reading": "The fortified place of the breast, where a king is not.",
+   "languages": [
+    "en",
+    "la",
+    "cel"
+   ],
+   "source": "Online Etymology Dictionary",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manchester (French 'mains de fer' meaning 'hands of iron') + Arena (French 'A Rêna' from 'renaître' meaning 'a rebirth')",
+   "reading": "Hands of iron herald a rebirth.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Manchester (English 'Man Cheater': man + cheater) + Anagram of 'Arena' = 'An ear'",
+   "reading": "A man, a cheater, an ear listening.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

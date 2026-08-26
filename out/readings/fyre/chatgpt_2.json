@@ -1,0 +1,103 @@
+{
+ "word": "Fyre",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:22:41+00:00",
+ "latency_s": 4.37,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"fyre ≈ fire; fire = bright heat, trial by flame, inner ardor\",\n    \"reading\": \"A burning principle: purification by heat, or passion made visible.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.93\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"fyre ≈ fr. fière / fier; fier = proud, lofty, haughty\",\n    \"reading\": \"Pride, elevation, and the upright bearing of one who stands above.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"fyre ≈ fr. fure / furie by sound drift; furia = rage, violent force\",\n    \"reading\": \"An untamed force: fury, agitation, and the blaze of excess.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.42\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"fire (OE fȳr) < Proto-Germanic *fūr-; cf. OED, s.v. fire; Merriam-Webster, fire\",\n    \"reading\": \"The ancient word of combustion: a basic element, heat, and transformation.\",\n    \"languages\": [\"en\", \"goh\", \"pgmc\"],\n    \"source\": \"OED; Merriam-Webster Dictionary\",\n    \"confidence\": 0.98\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"F = force/feather/flare; y = forked path; r = ray/rod; e = ending or opening vowel\",\n    \"reading\": \"A forked force sending a ray outward, then opening into manifestation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"fyre → frye / refy / yref; near-anagrammatic play on fry = dry by heat\",\n    \"reading\": \"To dry by fire: a process of hardening, crisping, and making durable.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.61\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"F(6)+Y(25)+R(18)+E(5)=54; 5+4=9\",\n    \"reading\": \"Nine: completion, culmination, and the end of a cycle before renewal.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"F-Y-R-E as initials: Flame, Yielding, Rising, Essence\",\n    \"reading\": \"Flame yielding to rise into essence: a compressed formula of ascent through burning.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.36\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "fyre ≈ fire; fire = bright heat, trial by flame, inner ardor",
+   "reading": "A burning principle: purification by heat, or passion made visible.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.93
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "fyre ≈ fr. fière / fier; fier = proud, lofty, haughty",
+   "reading": "Pride, elevation, and the upright bearing of one who stands above.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "fyre ≈ fr. fure / furie by sound drift; furia = rage, violent force",
+   "reading": "An untamed force: fury, agitation, and the blaze of excess.",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.42
+  },
+  {
+   "operation": "etymology",
+   "chain": "fire (OE fȳr) < Proto-Germanic *fūr-; cf. OED, s.v. fire; Merriam-Webster, fire",
+   "reading": "The ancient word of combustion: a basic element, heat, and transformation.",
+   "languages": [
+    "en",
+    "goh",
+    "pgmc"
+   ],
+   "source": "OED; Merriam-Webster Dictionary",
+   "confidence": 0.98
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "F = force/feather/flare; y = forked path; r = ray/rod; e = ending or opening vowel",
+   "reading": "A forked force sending a ray outward, then opening into manifestation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "fyre → frye / refy / yref; near-anagrammatic play on fry = dry by heat",
+   "reading": "To dry by fire: a process of hardening, crisping, and making durable.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.61
+  },
+  {
+   "operation": "numerical",
+   "chain": "F(6)+Y(25)+R(18)+E(5)=54; 5+4=9",
+   "reading": "Nine: completion, culmination, and the end of a cycle before renewal.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.48
+  },
+  {
+   "operation": "notariqon",
+   "chain": "F-Y-R-E as initials: Flame, Yielding, Rising, Essence",
+   "reading": "Flame yielding to rise into essence: a compressed formula of ascent through burning.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.36
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

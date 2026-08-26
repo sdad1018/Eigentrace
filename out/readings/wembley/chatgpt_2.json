@@ -1,0 +1,106 @@
+{
+ "word": "Wembley",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:16:24+00:00",
+ "latency_s": 5.61,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Wembley < Old English wēm + lēah; wēm = stain, blemish, corruption; lēah = clearing, meadow\",\n    \"reading\": \"A clearing marked by a stain: a bright place already touched by blemish.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"Oxford English Dictionary; A.D. Mills, A Dictionary of British Place-Names\",\n    \"confidence\": 0.84\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"wem + bley; wem ~ whim/wham, a sudden turn; bley ~ blee/bleu, pale or blue\",\n    \"reading\": \"A sudden pale turning: a flash of whitened or blued change.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.42\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"wem ~ German wem = to whom; bley ~ French blé = wheat, grain\",\n    \"reading\": \"To whom the grain belongs: an inquiry into rightful harvest or possession.\",\n    \"languages\": [\"de\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.36\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"wem ~ Welsh gwen/ gwem-like whitening; bley ~ English blee = hue, aspect\",\n    \"reading\": \"A white aspect, a fair appearance, a face of brightness.\",\n    \"languages\": [\"cy\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.28\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"WEMBLEY -> BEWLYME / WEM + BELY; emphasis on BEW- = to bend, bow\",\n    \"reading\": \"A bowed, bent brightness: light made humble or curved.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.21\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"W.E.M.B.L.E.Y. = Where Earth Meets Blue Light, Every Year\",\n    \"reading\": \"A yearly meeting-place of earth and sky, where blue light descends.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.18\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"W = double V / doubled water; E = open gate; M = mountain; B = house; L = staff; Y = forked path\",\n    \"reading\": \"Double waters through an open gate, over a house and staff, ending in a forked choice.\",\n    \"languages\": [\"en\", \"la\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.24\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"W(23)+E(5)+M(13)+B(2)+L(12)+E(5)+Y(25)=85; 8+5=13; 1+3=4\",\n    \"reading\": \"The name reduces to four: the square, the foundation, the settled form.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.19\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Wembley < Old English wēm + lēah; wēm = stain, blemish, corruption; lēah = clearing, meadow",
+   "reading": "A clearing marked by a stain: a bright place already touched by blemish.",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary; A.D. Mills, A Dictionary of British Place-Names",
+   "confidence": 0.84
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "wem + bley; wem ~ whim/wham, a sudden turn; bley ~ blee/bleu, pale or blue",
+   "reading": "A sudden pale turning: a flash of whitened or blued change.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.42
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "wem ~ German wem = to whom; bley ~ French blé = wheat, grain",
+   "reading": "To whom the grain belongs: an inquiry into rightful harvest or possession.",
+   "languages": [
+    "de",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.36
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "wem ~ Welsh gwen/ gwem-like whitening; bley ~ English blee = hue, aspect",
+   "reading": "A white aspect, a fair appearance, a face of brightness.",
+   "languages": [
+    "cy",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.28
+  },
+  {
+   "operation": "anagram",
+   "chain": "WEMBLEY -> BEWLYME / WEM + BELY; emphasis on BEW- = to bend, bow",
+   "reading": "A bowed, bent brightness: light made humble or curved.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.21
+  },
+  {
+   "operation": "notariqon",
+   "chain": "W.E.M.B.L.E.Y. = Where Earth Meets Blue Light, Every Year",
+   "reading": "A yearly meeting-place of earth and sky, where blue light descends.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.18
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "W = double V / doubled water; E = open gate; M = mountain; B = house; L = staff; Y = forked path",
+   "reading": "Double waters through an open gate, over a house and staff, ending in a forked choice.",
+   "languages": [
+    "en",
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.24
+  },
+  {
+   "operation": "numerical",
+   "chain": "W(23)+E(5)+M(13)+B(2)+L(12)+E(5)+Y(25)=85; 8+5=13; 1+3=4",
+   "reading": "The name reduces to four: the square, the foundation, the settled form.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.19
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

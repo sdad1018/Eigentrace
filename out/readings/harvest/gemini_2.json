@@ -1,0 +1,129 @@
+{
+ "word": "Harvest",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:30:14+00:00",
+ "latency_s": 18.37,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Harvest (English) -> hærfest (Old English) -> *harbistaz (Proto-Germanic) -> *kerp- (Proto-Indo-European) = to pluck, gather.\",\n    \"reading\": \"The inherent act of plucking and gathering, a primordial collection from nature's bounty.\",\n    \"languages\": [\"en\", \"ang\", \"gem\", \"pie\"],\n    \"source\": \"Wiktionary\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Harvest (English) related to *kerp- (Proto-Indo-European) which leads to karpós (Ancient Greek) = fruit, and carpo (Latin) = to pluck.\",\n    \"reading\": \"The fruit born from the act of plucking, the ripe outcome of deliberate collection and effort.\",\n    \"languages\": [\"en\", \"pie\", \"grc\", \"la\"],\n    \"source\": \"Wiktionary\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Har-vest -> Har (like 'hark' = listen) + vest (garment, covering).\",\n    \"reading\": \"A call to listen to what clothes or covers, revealing the message within the inner garment or enclosure.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Har-vest -> Har (sounds like 'hard') + vest (sounds like 'best').\",\n    \"reading\": \"The ultimate outcome achieved through arduous effort, representing the finest reward born of difficulty.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Har-vest -> Har (sounds like French 'art' = art) + vest (sounds like Latin 'vestis' = garment, clothing).\",\n    \"reading\": \"The craft of covering or adorning, the artistic expression inherent in concealment and protection.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Har-vest -> Har (sounds like 'herd' = a gathering) + vest (sounds like German 'fest' = firm, fixed, celebration).\",\n    \"reading\": \"A joyous and firm gathering, a celebration of a settled or completed collection.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"HARVEST -> EARTH V.\",\n    \"reading\": \"The earth's vital energy or triumph, symbolizing a fifth principle connected to the terrestrial realm.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"HARVEST -> VAST HER.\",\n    \"reading\": \"An immense feminine principle, representing the boundless aspect of the nurturing and receiving force.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"English Gematria: H(8)+A(1)+R(18)+V(22)+E(5)+S(19)+T(20) = 93.\",\n    \"reading\": \"The sum of its letters reveals a numerical essence of intent and connection, a balance of force and form.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"H (balance, breath) + A (beginning) + R (head, guidance) + V (vessel, duality) + E (energy, life) + S (flow, serpent) + T (cross, completion).\",\n    \"reading\": \"The balanced breath initiating the guided flow of life's dual energy towards completion and integration.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Harvest (English) -> hærfest (Old English) -> *harbistaz (Proto-Germanic) -> *kerp- (Proto-Indo-European) = to pluck, gather.",
+   "reading": "The inherent act of plucking and gathering, a primordial collection from nature's bounty.",
+   "languages": [
+    "en",
+    "ang",
+    "gem",
+    "pie"
+   ],
+   "source": "Wiktionary",
+   "confidence": 1.0
+  },
+  {
+   "operation": "etymology",
+   "chain": "Harvest (English) related to *kerp- (Proto-Indo-European) which leads to karpós (Ancient Greek) = fruit, and carpo (Latin) = to pluck.",
+   "reading": "The fruit born from the act of plucking, the ripe outcome of deliberate collection and effort.",
+   "languages": [
+    "en",
+    "pie",
+    "grc",
+    "la"
+   ],
+   "source": "Wiktionary",
+   "confidence": 1.0
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Har-vest -> Har (like 'hark' = listen) + vest (garment, covering).",
+   "reading": "A call to listen to what clothes or covers, revealing the message within the inner garment or enclosure.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Har-vest -> Har (sounds like 'hard') + vest (sounds like 'best').",
+   "reading": "The ultimate outcome achieved through arduous effort, representing the finest reward born of difficulty.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Har-vest -> Har (sounds like French 'art' = art) + vest (sounds like Latin 'vestis' = garment, clothing).",
+   "reading": "The craft of covering or adorning, the artistic expression inherent in concealment and protection.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Har-vest -> Har (sounds like 'herd' = a gathering) + vest (sounds like German 'fest' = firm, fixed, celebration).",
+   "reading": "A joyous and firm gathering, a celebration of a settled or completed collection.",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "HARVEST -> EARTH V.",
+   "reading": "The earth's vital energy or triumph, symbolizing a fifth principle connected to the terrestrial realm.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "HARVEST -> VAST HER.",
+   "reading": "An immense feminine principle, representing the boundless aspect of the nurturing and receiving force.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "numerical",
+   "chain": "English Gematria: H(8)+A(1)+R(18)+V(22)+E(5)+S(19)+T(20) = 93.",
+   "reading": "The sum of its letters reveals a numerical essence of intent and connection, a balance of force and form.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "H (balance, breath) + A (beginning) + R (head, guidance) + V (vessel, duality) + E (energy, life) + S (flow, serpent) + T (cross, completion).",
+   "reading": "The balanced breath initiating the guided flow of life's dual energy towards completion and integration.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

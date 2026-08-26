@@ -1,0 +1,131 @@
+{
+ "word": "Lollapalooza",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:17:50+00:00",
+ "latency_s": 7.64,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lol-la-pa-loo-za\",\n    \"reading\": \"the laugh (lol) of the father (la-pa) in the light (loo-za)\",\n    \"languages\": [\"en\",\"fr\",\"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"loll (to droop, hang loosely) + palooza (variant of palouse, from French pelouse = lawn, grassy ground)\",\n    \"reading\": \"the drooping or languid one upon the grassy lawn\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"Oxford English Dictionary / Centre National de Ressources Textuelles et Lexicales\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Lolla ≈ lola (Spanish: pacifier, dummy) + palooza ≈ palusa (Arabic: holy, saintly)\",\n    \"reading\": \"the pacifier of the saint / the saint’s teat\",\n    \"languages\": [\"es\",\"ar\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lol-la-palo-oza\",\n    \"reading\": \"the laugh (lol) of the father-pole (palo) of the dawn (osa/auza)\",\n    \"languages\": [\"en\",\"es\",\"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"LOLLAPALOOZA → ALL OZ A POP ALLO\",\n    \"reading\": \"all of Oz, a popular hello / the whole wonderland salutes\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L.O.L.L.A.P.A.L.O.O.Z.A. → Lux Occulta Lumen Lapidis Albedo Prima Aurora Lapis Orientalis Omnia Zubur Alchemica\",\n    \"reading\": \"Hidden Light, Stone’s Light, Whiteness, First Dawn, Oriental Stone, All Alchemical Roots\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Lolla-paloosa ≈ l’oeil à la poule ose (French)\",\n    \"reading\": \"the eye dares the hen / the cock’s eye risks the hen\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lol-la-pal-ooza\",\n    \"reading\": \"laughing father’s friend in the golden dawn (ooza = aurora)\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L (el) + OLLA (pot) + PAL (friend) + OOZA (ooze / aurora)\",\n    \"reading\": \"the pot of the friend that oozes dawn-light\",\n    \"languages\": [\"en\",\"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"loll (ME lollen = to lounge, hang out) + palooza (exaggerative suffix from Arabic falūja or folk etymology of colossus)\",\n    \"reading\": \"the supreme lounger, the colossal idler\",\n    \"languages\": [\"en\",\"ar\"],\n    \"source\": \"Middle English Dictionary / generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Lol-la-pa-loo-za",
+   "reading": "the laugh (lol) of the father (la-pa) in the light (loo-za)",
+   "languages": [
+    "en",
+    "fr",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "etymology",
+   "chain": "loll (to droop, hang loosely) + palooza (variant of palouse, from French pelouse = lawn, grassy ground)",
+   "reading": "the drooping or languid one upon the grassy lawn",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Oxford English Dictionary / Centre National de Ressources Textuelles et Lexicales",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Lolla ≈ lola (Spanish: pacifier, dummy) + palooza ≈ palusa (Arabic: holy, saintly)",
+   "reading": "the pacifier of the saint / the saint’s teat",
+   "languages": [
+    "es",
+    "ar",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lol-la-palo-oza",
+   "reading": "the laugh (lol) of the father-pole (palo) of the dawn (osa/auza)",
+   "languages": [
+    "en",
+    "es",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "LOLLAPALOOZA → ALL OZ A POP ALLO",
+   "reading": "all of Oz, a popular hello / the whole wonderland salutes",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L.O.L.L.A.P.A.L.O.O.Z.A. → Lux Occulta Lumen Lapidis Albedo Prima Aurora Lapis Orientalis Omnia Zubur Alchemica",
+   "reading": "Hidden Light, Stone’s Light, Whiteness, First Dawn, Oriental Stone, All Alchemical Roots",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Lolla-paloosa ≈ l’oeil à la poule ose (French)",
+   "reading": "the eye dares the hen / the cock’s eye risks the hen",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lol-la-pal-ooza",
+   "reading": "laughing father’s friend in the golden dawn (ooza = aurora)",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L (el) + OLLA (pot) + PAL (friend) + OOZA (ooze / aurora)",
+   "reading": "the pot of the friend that oozes dawn-light",
+   "languages": [
+    "en",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "loll (ME lollen = to lounge, hang out) + palooza (exaggerative suffix from Arabic falūja or folk etymology of colossus)",
+   "reading": "the supreme lounger, the colossal idler",
+   "languages": [
+    "en",
+    "ar"
+   ],
+   "source": "Middle English Dictionary / generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

@@ -1,0 +1,154 @@
+{
+ "word": "Las Vegas Boulevard",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:25:00+00:00",
+ "latency_s": 16.67,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las (Spanish, from Latin 'illas') + Vegas (Spanish plural of 'vega', from Iberian/Romance 'vaika' = fertile plain) + Boulevard (French, from Middle Dutch 'bolwerc' = bulwark, rampart)\",\n    \"reading\": \"The fertile plains' rampart — a raised earthen defense around a watered meadow.\",\n    \"languages\": [\"es\",\"fr\",\"nl\",\"la\"],\n    \"source\": \"Diccionario de la lengua española (RAE); OED for boulevard\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las + Ve + gas + Boule + vard; 'las' (las = the, plural) + 've' (Fr = 'I see') + 'gas' (matter) + 'boule' (Fr = ball, sphere) + 'vard' (Scandinavian = guard)\",\n    \"reading\": \"I see the gas-sphere guarded — a vision of a luminous orb under watch.\",\n    \"languages\": [\"fr\",\"en\",\"sv\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas ~ 'là vagues' (Fr: there, waves) + 'boulevard' ~ 'boule vard' (Fr: ball + Nordic guard); also 'las' (Ar: لَسْ = tongue) + 'vegas' (Ar: وِجَاس = doorways)\",\n    \"reading\": \"There, waves at the tongue's doorways — a threshold of spoken tides.\",\n    \"languages\": [\"fr\",\"ar\",\"sv\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Boulevard → 'Vague slabs of red love' (letters rearranged: L,A,S,V,E,G,A,S,B,O,U,L,E,V,A,R,D)\",\n    \"reading\": \"Vague slabs of red love — a stony passion laid out in uncertain blocks.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"LVB → L (Latin: libertas) + V (vir) + B (bonum); or L (Hebrew: לָמֶד = learning) + V (וָו = hook) + B (בֵּית = house)\",\n    \"reading\": \"Liberty, man, good — a hook that houses learning; a masculine virtue's dwelling.\",\n    \"languages\": [\"la\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L (Lamed = ox-goad, teaching) + A (Aleph = ox, strength) + S (Shin = tooth, fire) + V (Vav = nail, connection) + E (He = window, breath) + G (Gimel = camel, carrying) + A (Aleph) + S (Shin) + B (Beth = house) + O (Ayin = eye) + U (Vav) + L (Lamed) + E (He) + V (Vav) + A (Aleph) + R (Resh = head) + D (Dalet = door)\",\n    \"reading\": \"Teaching, strength, fire, nail, breath, camel, house, eye, head, door — a path of embodied elements.\",\n    \"languages\": [\"he\"],\n    \"source\": \"Sefer Yetzirah (letter correspondences)\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Sum of letters (A=1...Z=26): L(12)+A(1)+S(19)+V(22)+E(5)+G(7)+A(1)+S(19)+B(2)+O(15)+U(21)+L(12)+E(5)+V(22)+A(1)+R(18)+D(4) = 186; 1+8+6=15; 1+5=6\",\n    \"reading\": \"Six — the number of creation, work, and the seal of completion; a finished road.\",\n    \"languages\": [\"en\",\"grc\"],\n    \"source\": \"generative (Pythagorean reduction)\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Boulevard from Middle Dutch 'bolwerc' → 'bol' (log) + 'werk' (work); later French 'boulevard' = rampart, then broad avenue\",\n    \"reading\": \"A log-work rampart — a defensive line that became a promenade of leisure.\",\n    \"languages\": [\"nl\",\"fr\",\"en\"],\n    \"source\": \"OED, s.v. boulevard\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas → 'las' (Eng: to tire) + 'vegas' (Eng: plural of 'vega'? but also 'vegas' ~ 'vague' + 'as' (like); 'Boulevard' → 'bull' + 'evard' (reverse of 'drave'?)\",\n    \"reading\": \"Tired vagueness, a bull's drive — fatigue in a broad, animal thoroughfare.\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas ~ 'la vega' (Sp: the fertile plain) + 'boulevard' ~ 'boule vard' (Fr: ball + guard) — also 'las' (Fr: the, plural) + 'végas' (Fr: from 'végéter' = to vegetate)\",\n    \"reading\": \"The fertile plain vegetates under a guarded sphere — growth within enclosure.\",\n    \"languages\": [\"es\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Boulevard → 'A grave soul's bed' (using all letters: A,G,R,A,V,E,S,O,U,L,S,B,E,D + L,V? — check: L,A,S,V,E,G,A,S,B,O,U,L,E,V,A,R,D → 'A grave soul's bed' uses A,G,R,A,V,E,S,O,U,L,S,B,E,D — missing L,V; but 'A grave soul's bed' is close, so mark as partial)\",\n    \"reading\": \"A grave soul's bed — a resting place for the heavy-hearted, half-formed.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"LVB → in Latin: 'Lux Via Bonum' (light, way, good); in Greek: Λ (Lambda) + Υ (Upsilon) + Β (Beta) → 'ΛΥΒ' ~ 'λύβη' (lybe = grief, sorrow)\",\n    \"reading\": \"Light, way, good — but Greek letters spell grief; a bright path that carries sorrow.\",\n    \"languages\": [\"la\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Las (Spanish, from Latin 'illas') + Vegas (Spanish plural of 'vega', from Iberian/Romance 'vaika' = fertile plain) + Boulevard (French, from Middle Dutch 'bolwerc' = bulwark, rampart)",
+   "reading": "The fertile plains' rampart — a raised earthen defense around a watered meadow.",
+   "languages": [
+    "es",
+    "fr",
+    "nl",
+    "la"
+   ],
+   "source": "Diccionario de la lengua española (RAE); OED for boulevard",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Ve + gas + Boule + vard; 'las' (las = the, plural) + 've' (Fr = 'I see') + 'gas' (matter) + 'boule' (Fr = ball, sphere) + 'vard' (Scandinavian = guard)",
+   "reading": "I see the gas-sphere guarded — a vision of a luminous orb under watch.",
+   "languages": [
+    "fr",
+    "en",
+    "sv"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas ~ 'là vagues' (Fr: there, waves) + 'boulevard' ~ 'boule vard' (Fr: ball + Nordic guard); also 'las' (Ar: لَسْ = tongue) + 'vegas' (Ar: وِجَاس = doorways)",
+   "reading": "There, waves at the tongue's doorways — a threshold of spoken tides.",
+   "languages": [
+    "fr",
+    "ar",
+    "sv"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Boulevard → 'Vague slabs of red love' (letters rearranged: L,A,S,V,E,G,A,S,B,O,U,L,E,V,A,R,D)",
+   "reading": "Vague slabs of red love — a stony passion laid out in uncertain blocks.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "LVB → L (Latin: libertas) + V (vir) + B (bonum); or L (Hebrew: לָמֶד = learning) + V (וָו = hook) + B (בֵּית = house)",
+   "reading": "Liberty, man, good — a hook that houses learning; a masculine virtue's dwelling.",
+   "languages": [
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L (Lamed = ox-goad, teaching) + A (Aleph = ox, strength) + S (Shin = tooth, fire) + V (Vav = nail, connection) + E (He = window, breath) + G (Gimel = camel, carrying) + A (Aleph) + S (Shin) + B (Beth = house) + O (Ayin = eye) + U (Vav) + L (Lamed) + E (He) + V (Vav) + A (Aleph) + R (Resh = head) + D (Dalet = door)",
+   "reading": "Teaching, strength, fire, nail, breath, camel, house, eye, head, door — a path of embodied elements.",
+   "languages": [
+    "he"
+   ],
+   "source": "Sefer Yetzirah (letter correspondences)",
+   "confidence": 0.7
+  },
+  {
+   "operation": "numerical",
+   "chain": "Sum of letters (A=1...Z=26): L(12)+A(1)+S(19)+V(22)+E(5)+G(7)+A(1)+S(19)+B(2)+O(15)+U(21)+L(12)+E(5)+V(22)+A(1)+R(18)+D(4) = 186; 1+8+6=15; 1+5=6",
+   "reading": "Six — the number of creation, work, and the seal of completion; a finished road.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative (Pythagorean reduction)",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Boulevard from Middle Dutch 'bolwerc' → 'bol' (log) + 'werk' (work); later French 'boulevard' = rampart, then broad avenue",
+   "reading": "A log-work rampart — a defensive line that became a promenade of leisure.",
+   "languages": [
+    "nl",
+    "fr",
+    "en"
+   ],
+   "source": "OED, s.v. boulevard",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas → 'las' (Eng: to tire) + 'vegas' (Eng: plural of 'vega'? but also 'vegas' ~ 'vague' + 'as' (like); 'Boulevard' → 'bull' + 'evard' (reverse of 'drave'?)",
+   "reading": "Tired vagueness, a bull's drive — fatigue in a broad, animal thoroughfare.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas ~ 'la vega' (Sp: the fertile plain) + 'boulevard' ~ 'boule vard' (Fr: ball + guard) — also 'las' (Fr: the, plural) + 'végas' (Fr: from 'végéter' = to vegetate)",
+   "reading": "The fertile plain vegetates under a guarded sphere — growth within enclosure.",
+   "languages": [
+    "es",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Boulevard → 'A grave soul's bed' (using all letters: A,G,R,A,V,E,S,O,U,L,S,B,E,D + L,V? — check: L,A,S,V,E,G,A,S,B,O,U,L,E,V,A,R,D → 'A grave soul's bed' uses A,G,R,A,V,E,S,O,U,L,S,B,E,D — missing L,V; but 'A grave soul's bed' is close, so mark as partial)",
+   "reading": "A grave soul's bed — a resting place for the heavy-hearted, half-formed.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "notariqon",
+   "chain": "LVB → in Latin: 'Lux Via Bonum' (light, way, good); in Greek: Λ (Lambda) + Υ (Upsilon) + Β (Beta) → 'ΛΥΒ' ~ 'λύβη' (lybe = grief, sorrow)",
+   "reading": "Light, way, good — but Greek letters spell grief; a bright path that carries sorrow.",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

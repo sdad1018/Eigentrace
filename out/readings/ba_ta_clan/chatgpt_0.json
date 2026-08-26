@@ -1,0 +1,114 @@
+{
+ "word": "Ba-ta-clan",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:24:06+00:00",
+ "latency_s": 4.9,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ba + ta + clan; ba = lowing/baa, ta = a sharp beat, clan = a close-knit group\",\n    \"reading\": \"A flock struck by a sudden beat: the herd startled into a compact, noisy cluster.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"ba-ta-clan ~ bataclan; bataclan (French colloquial) = bustle, uproar, commotion\",\n    \"reading\": \"A scene of bustle and uproar; a word for noisy disorder and theatrical commotion.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"TLFi, s.v. «bataclan»\",\n    \"confidence\": 0.93\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"French bataclan; lexicographers connect it to imitative sound-symbolism, with bat- suggesting repeated blows and clatter\",\n    \"reading\": \"The sound of things banging together: a lexical bundle of clatter, racket, and confused equipment.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"TLFi, s.v. «bataclan»; Dictionnaire historique de la langue française (Robert), s.v. «bataclan»\",\n    \"confidence\": 0.84\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ba-ta-clan = ba + ta + clan; clan as a closed circle, ta as a tap, ba as a cry\",\n    \"reading\": \"A cry, a tap, and a closed circle: a small world sealed by sound.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"BATACLAN rearranges to CLAN + TAB + A; clan = kin-group, tab = a mark or bill\",\n    \"reading\": \"A kin-group under account: belonging measured, marked, and tallied.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-A-T-A-C-L-A-N as initials: Beat And Tumult, A Chorus, Loud And Noisy\",\n    \"reading\": \"An acronym of disturbance: beat, chorus, and loud confusion compressed into one name.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.29\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B = enclosure, A = apex/opening, T = crossbar, C = crescent, L = right angle, N = zigzag\",\n    \"reading\": \"An enclosure opened, crossed, curved, and broken: a geometry of tension and interruption.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"ba-ta-clan ~ bata + clan; bata (Spanish/Italian) = beat, strike; clan = group\",\n    \"reading\": \"A struck group: a collective defined by impact, as if assembled by blows.\",\n    \"languages\": [\"es\", \"it\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.47\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"B(2)+A(1)+T(20)+A(1)+C(3)+L(12)+A(1)+N(14)=54; 5+4=9\",\n    \"reading\": \"Nine: completion, fullness, and the end of a cycle after accumulated force.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.33\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "ba + ta + clan; ba = lowing/baa, ta = a sharp beat, clan = a close-knit group",
+   "reading": "A flock struck by a sudden beat: the herd startled into a compact, noisy cluster.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "ba-ta-clan ~ bataclan; bataclan (French colloquial) = bustle, uproar, commotion",
+   "reading": "A scene of bustle and uproar; a word for noisy disorder and theatrical commotion.",
+   "languages": [
+    "fr"
+   ],
+   "source": "TLFi, s.v. «bataclan»",
+   "confidence": 0.93
+  },
+  {
+   "operation": "etymology",
+   "chain": "French bataclan; lexicographers connect it to imitative sound-symbolism, with bat- suggesting repeated blows and clatter",
+   "reading": "The sound of things banging together: a lexical bundle of clatter, racket, and confused equipment.",
+   "languages": [
+    "fr"
+   ],
+   "source": "TLFi, s.v. «bataclan»; Dictionnaire historique de la langue française (Robert), s.v. «bataclan»",
+   "confidence": 0.84
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ba-ta-clan = ba + ta + clan; clan as a closed circle, ta as a tap, ba as a cry",
+   "reading": "A cry, a tap, and a closed circle: a small world sealed by sound.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "anagram",
+   "chain": "BATACLAN rearranges to CLAN + TAB + A; clan = kin-group, tab = a mark or bill",
+   "reading": "A kin-group under account: belonging measured, marked, and tallied.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-A-T-A-C-L-A-N as initials: Beat And Tumult, A Chorus, Loud And Noisy",
+   "reading": "An acronym of disturbance: beat, chorus, and loud confusion compressed into one name.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.29
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B = enclosure, A = apex/opening, T = crossbar, C = crescent, L = right angle, N = zigzag",
+   "reading": "An enclosure opened, crossed, curved, and broken: a geometry of tension and interruption.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "ba-ta-clan ~ bata + clan; bata (Spanish/Italian) = beat, strike; clan = group",
+   "reading": "A struck group: a collective defined by impact, as if assembled by blows.",
+   "languages": [
+    "es",
+    "it",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.47
+  },
+  {
+   "operation": "numerical",
+   "chain": "B(2)+A(1)+T(20)+A(1)+C(3)+L(12)+A(1)+N(14)=54; 5+4=9",
+   "reading": "Nine: completion, fullness, and the end of a cycle after accumulated force.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.33
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 9,
+ "refusal_like": false
+}

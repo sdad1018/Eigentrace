@@ -1,0 +1,116 @@
+{
+ "word": "Bahamas",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:56:54+00:00",
+ "latency_s": 20.68,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bahamas < Spanish 'baja mar'\",\n    \"reading\": \"The word's root is 'baja mar', signifying a 'shallow sea' or 'low tide', hinting at accessible or concealed depths.\",\n    \"languages\": [\"es\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 1.0\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bahamas -> Ba (French 'bas' = low) + Ha (French interjection, breath) + Mas (French 'mas' = farmhouse, male)\",\n    \"reading\": \"The 'low' breath or spirit, housed within a 'male' or 'farmhouse' structure, suggesting grounding.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bahamas -> Bah (English interjection of contempt) + Ham (English 'ham', the hollow behind the knee) + As (English 'as', 'like')\",\n    \"reading\": \"An exclamation of 'bah!' followed by 'ham' (the hollow behind the knee), 'as if' indicating reluctance or hidden vulnerability.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bahamas -> Ba (Egyptian 'Ba' = soul) + Ham (Hebrew 'ḥam' = hot) + As (French 'as' = ace)\",\n    \"reading\": \"The Egyptian 'Ba' or soul, imbued with a 'hot' or vibrant essence, leading to an 'ace' or peak potential.\",\n    \"languages\": [\"he\", \"fr\", \"egy\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B.A.H.A.M.A.S. -> Bring Ancient Healing And Mystical Alchemical Systems\",\n    \"reading\": \"A hidden instruction to 'Bring Ancient Healing And Mystical Alchemical Systems' into manifestation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"BAHAMAS -> HAB MA SA (HAB = Latin 'has/holds'; MA = Mother; SA = say/suffix)\",\n    \"reading\": \"From the letters, 'HAB MA', meaning 'it holds the Mother' or 'possesses the great essence', perhaps an 'ace' or beginning.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bahamas -> Bah (English interjection) + Amas (French 'amas' = heap, pile, cluster)\",\n    \"reading\": \"An exclamation of 'Bah!' followed by 'amas', revealing a 'heap' or 'pile' of something collected or hidden.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bahamas -> Ba (Persian/Arabic 'bâ' = with/by) + Hama (Persian/Arabic 'hame' = all/everything) + As (English 'as')\",\n    \"reading\": \"The conjunction 'with' or 'by' 'all' or 'everything', signifying totality or universal connection 'as if' present.\",\n    \"languages\": [\"fa\", \"ar\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bahamas -> Ba (English 'bay') + ha (English 'awe') + mas (English 'mass')\",\n    \"reading\": \"A 'bay' evoking 'awe', representing a 'mass' or significant body of hidden knowledge or spiritual substance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Bahamas < Spanish 'baja mar'",
+   "reading": "The word's root is 'baja mar', signifying a 'shallow sea' or 'low tide', hinting at accessible or concealed depths.",
+   "languages": [
+    "es"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 1.0
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bahamas -> Ba (French 'bas' = low) + Ha (French interjection, breath) + Mas (French 'mas' = farmhouse, male)",
+   "reading": "The 'low' breath or spirit, housed within a 'male' or 'farmhouse' structure, suggesting grounding.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bahamas -> Bah (English interjection of contempt) + Ham (English 'ham', the hollow behind the knee) + As (English 'as', 'like')",
+   "reading": "An exclamation of 'bah!' followed by 'ham' (the hollow behind the knee), 'as if' indicating reluctance or hidden vulnerability.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bahamas -> Ba (Egyptian 'Ba' = soul) + Ham (Hebrew 'ḥam' = hot) + As (French 'as' = ace)",
+   "reading": "The Egyptian 'Ba' or soul, imbued with a 'hot' or vibrant essence, leading to an 'ace' or peak potential.",
+   "languages": [
+    "he",
+    "fr",
+    "egy"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B.A.H.A.M.A.S. -> Bring Ancient Healing And Mystical Alchemical Systems",
+   "reading": "A hidden instruction to 'Bring Ancient Healing And Mystical Alchemical Systems' into manifestation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "BAHAMAS -> HAB MA SA (HAB = Latin 'has/holds'; MA = Mother; SA = say/suffix)",
+   "reading": "From the letters, 'HAB MA', meaning 'it holds the Mother' or 'possesses the great essence', perhaps an 'ace' or beginning.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bahamas -> Bah (English interjection) + Amas (French 'amas' = heap, pile, cluster)",
+   "reading": "An exclamation of 'Bah!' followed by 'amas', revealing a 'heap' or 'pile' of something collected or hidden.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bahamas -> Ba (Persian/Arabic 'bâ' = with/by) + Hama (Persian/Arabic 'hame' = all/everything) + As (English 'as')",
+   "reading": "The conjunction 'with' or 'by' 'all' or 'everything', signifying totality or universal connection 'as if' present.",
+   "languages": [
+    "fa",
+    "ar",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bahamas -> Ba (English 'bay') + ha (English 'awe') + mas (English 'mass')",
+   "reading": "A 'bay' evoking 'awe', representing a 'mass' or significant body of hidden knowledge or spiritual substance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 9,
+ "refusal_like": false
+}

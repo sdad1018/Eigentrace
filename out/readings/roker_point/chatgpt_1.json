@@ -1,0 +1,125 @@
+{
+ "word": "Roker Point",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:40+00:00",
+ "latency_s": 6.17,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"roker ≈ rocker; point = point, tip, mark\",\n    \"reading\": \"The rocking tip: a pivoting mark, something unstable yet exact, poised between motion and fixity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.78\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"rok- ≈ roc/roche (fr); point (fr/en) = point, dot, summit\",\n    \"reading\": \"Rock-point: a stony summit or hard kernel where something is concentrated and made visible.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.71\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"point < Latin punctum, from pungere 'to prick' (OED; Dictionnaire historique de la langue française); roker treated as a name-form with no secure lexicon entry\",\n    \"reading\": \"A pricked mark or puncture, suggesting a sharp designation, a place singled out by a sting.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"OED; Le Robert Dictionnaire historique de la langue française\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ro-ker / point; ro- echoes row, roe, roue; point = point of aim\",\n    \"reading\": \"A turning wheel aimed at a point: rotation directed toward a precise target.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.66\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"ROKER POINT → TOKEN RIPOR? / not a strict full anagram; partial anagram: POINT + ROKER contains TOKEN-like cluster only by sound-play\",\n    \"reading\": \"A tokenized point: a sign reduced to a compact marker, more emblem than statement.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.29\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"R O K E R / P O I N T → initials suggest R.P.; read as 'right point' by sound-shift from R to 'are' and point to aim\",\n    \"reading\": \"The right point: the proper mark, the correct place to strike or begin.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.34\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R = rotation/return; O = circle; K = forked crossing; E = fivefold; R = return; point = dot\",\n    \"reading\": \"A circular return broken by a fork, then fixed into a dot: movement resolved into a sign.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.57\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"roker ≈ rocher (fr, 'rock'); point (fr) = point, dot, place\",\n    \"reading\": \"Rock-place: a marked stone, a fixed location, or the hard fact beneath shifting speech.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.74\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"point < Old French point, from Latin punctum; point as 'small spot' and 'critical moment' (OED, TLFi)\",\n    \"reading\": \"A critical moment compressed into a speck: the smallest unit that decides the whole.\",\n    \"languages\": [\"en\", \"la\", \"fr\"],\n    \"source\": \"OED; TLFi\",\n    \"confidence\": 0.69\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"roke-r / point; roke echoes 'roke' as smoke/haze in dialectal English; point = clear mark\",\n    \"reading\": \"A hazy mark made clear: what is obscure becomes a point of definition.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "roker ≈ rocker; point = point, tip, mark",
+   "reading": "The rocking tip: a pivoting mark, something unstable yet exact, poised between motion and fixity.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.78
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "rok- ≈ roc/roche (fr); point (fr/en) = point, dot, summit",
+   "reading": "Rock-point: a stony summit or hard kernel where something is concentrated and made visible.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.71
+  },
+  {
+   "operation": "etymology",
+   "chain": "point < Latin punctum, from pungere 'to prick' (OED; Dictionnaire historique de la langue française); roker treated as a name-form with no secure lexicon entry",
+   "reading": "A pricked mark or puncture, suggesting a sharp designation, a place singled out by a sting.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "OED; Le Robert Dictionnaire historique de la langue française",
+   "confidence": 0.62
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ro-ker / point; ro- echoes row, roe, roue; point = point of aim",
+   "reading": "A turning wheel aimed at a point: rotation directed toward a precise target.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.66
+  },
+  {
+   "operation": "anagram",
+   "chain": "ROKER POINT → TOKEN RIPOR? / not a strict full anagram; partial anagram: POINT + ROKER contains TOKEN-like cluster only by sound-play",
+   "reading": "A tokenized point: a sign reduced to a compact marker, more emblem than statement.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.29
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R O K E R / P O I N T → initials suggest R.P.; read as 'right point' by sound-shift from R to 'are' and point to aim",
+   "reading": "The right point: the proper mark, the correct place to strike or begin.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.34
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R = rotation/return; O = circle; K = forked crossing; E = fivefold; R = return; point = dot",
+   "reading": "A circular return broken by a fork, then fixed into a dot: movement resolved into a sign.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.57
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "roker ≈ rocher (fr, 'rock'); point (fr) = point, dot, place",
+   "reading": "Rock-place: a marked stone, a fixed location, or the hard fact beneath shifting speech.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.74
+  },
+  {
+   "operation": "etymology",
+   "chain": "point < Old French point, from Latin punctum; point as 'small spot' and 'critical moment' (OED, TLFi)",
+   "reading": "A critical moment compressed into a speck: the smallest unit that decides the whole.",
+   "languages": [
+    "en",
+    "la",
+    "fr"
+   ],
+   "source": "OED; TLFi",
+   "confidence": 0.69
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "roke-r / point; roke echoes 'roke' as smoke/haze in dialectal English; point = clear mark",
+   "reading": "A hazy mark made clear: what is obscure becomes a point of definition.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

@@ -1,0 +1,134 @@
+{
+ "word": "Dangerous Woman",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:21+00:00",
+ "latency_s": 7.26,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"dan + ger + ous + wom + an\",\n    \"reading\": \"The gift of the spear-bearer, the womb of the circle\",\n    \"languages\": [\"en\",\"fr\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"dangerous (from Old French dangier, from Latin dominium 'lordship, power') + woman (from Old English wifmann 'female human')\",\n    \"reading\": \"She who holds lordship/power over the female human form\",\n    \"languages\": [\"en\",\"fr\",\"la\"],\n    \"source\": \"Oxford English Dictionary / Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"dangerous ~ danseuse (French); woman ~ omen (Latin)\",\n    \"reading\": \"The omen-bearing dancer; the female who dances fate\",\n    \"languages\": [\"en\",\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"DANGEROUS WOMAN → A WAND ON A MUSE ORG\",\n    \"reading\": \"A magic wand upon the orgiastic muse\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"dan-je-rous wou-man\",\n    \"reading\": \"Gift (dan) of the rose (je-rous) in the wo-man, the circle of woe\",\n    \"languages\": [\"en\",\"fr\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"D.A.N.G.E.R.O.U.S. W.O.M.A.N. → Domina Arcana Nigra Generat Eros Rosa Occulta Umbra Serpentis\",\n    \"reading\": \"The dark lady secretly generates the rose of eros under the serpent's shadow\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"dangerous ~ d'enjâreux (old French sound: of the enchanter); woman ~ humaine\",\n    \"reading\": \"The enchanting human female, the sorceress\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"D (door, delta) + AN (without) + GER (spear) + OUS (mouth) + WO (woe) + MAN (mankind)\",\n    \"reading\": \"The door without spear, the mouth that utters woe to mankind\",\n    \"languages\": [\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"danger (from Latin damnum via Old French 'damage, loss of power') + -ous + woman\",\n    \"reading\": \"She who causes loss of power to the female; the disempowering female\",\n    \"languages\": [\"en\",\"la\",\"fr\"],\n    \"source\": \"Etymonline / Lewis & Short\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"dan-gerous woman → don + jérous + houman\",\n    \"reading\": \"Gift of the jealous dove / holy spirit of jealousy\",\n    \"languages\": [\"en\",\"fr\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "dan + ger + ous + wom + an",
+   "reading": "The gift of the spear-bearer, the womb of the circle",
+   "languages": [
+    "en",
+    "fr",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "etymology",
+   "chain": "dangerous (from Old French dangier, from Latin dominium 'lordship, power') + woman (from Old English wifmann 'female human')",
+   "reading": "She who holds lordship/power over the female human form",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Oxford English Dictionary / Lewis & Short Latin Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "dangerous ~ danseuse (French); woman ~ omen (Latin)",
+   "reading": "The omen-bearing dancer; the female who dances fate",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "DANGEROUS WOMAN → A WAND ON A MUSE ORG",
+   "reading": "A magic wand upon the orgiastic muse",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "dan-je-rous wou-man",
+   "reading": "Gift (dan) of the rose (je-rous) in the wo-man, the circle of woe",
+   "languages": [
+    "en",
+    "fr",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "D.A.N.G.E.R.O.U.S. W.O.M.A.N. → Domina Arcana Nigra Generat Eros Rosa Occulta Umbra Serpentis",
+   "reading": "The dark lady secretly generates the rose of eros under the serpent's shadow",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "dangerous ~ d'enjâreux (old French sound: of the enchanter); woman ~ humaine",
+   "reading": "The enchanting human female, the sorceress",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "D (door, delta) + AN (without) + GER (spear) + OUS (mouth) + WO (woe) + MAN (mankind)",
+   "reading": "The door without spear, the mouth that utters woe to mankind",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "etymology",
+   "chain": "danger (from Latin damnum via Old French 'damage, loss of power') + -ous + woman",
+   "reading": "She who causes loss of power to the female; the disempowering female",
+   "languages": [
+    "en",
+    "la",
+    "fr"
+   ],
+   "source": "Etymonline / Lewis & Short",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "dan-gerous woman → don + jérous + houman",
+   "reading": "Gift of the jealous dove / holy spirit of jealousy",
+   "languages": [
+    "en",
+    "fr",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

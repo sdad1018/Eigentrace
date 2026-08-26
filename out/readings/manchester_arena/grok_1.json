@@ -1,0 +1,127 @@
+{
+ "word": "Manchester Arena",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:48+00:00",
+ "latency_s": 6.09,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chester + Arena\",\n    \"reading\": \"The man who hides or conceals the arena\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Manch + ester + a + rena\",\n    \"reading\": \"The sleeve (manche) of the one who is born again (renaît)\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Manchester ≈ Mans Chester ≈ Manus + Kester; Arena ≈ Harena\",\n    \"reading\": \"The hand that sifts or sieves the sand of the arena\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Manchester from Mamucium (Latin) + Arena from harena (Latin)\",\n    \"reading\": \"The breast-shaped hill of the sanded combat space\",\n    \"languages\": [\"la\"],\n    \"source\": \"Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester Arena → Acharnees Mantre\",\n    \"reading\": \"The bitter lamentation of the mantis (praying one)\",\n    \"languages\": [\"en\",\"fr\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chest + er + arena\",\n    \"reading\": \"Man's ribcage within the sandy circle\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Manchester ≈ Mange + Chester; Arena ≈ Haréna (French)\",\n    \"reading\": \"The one who eats the chest of the hare in the sand\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M A N C H E S T E R   A R E N A → initials read as acrostic\",\n    \"reading\": \"Mystery Announced: Now Comes He Who Eats the Serpent's Arena\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Manch = sleeve (French); ester = to be (Old French); arena = sand\",\n    \"reading\": \"The sleeve that is sand; the garment of the arena\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-chester-arena → Mon Chester Aréna\",\n    \"reading\": \"My chest is the arena; my heart fights in the sand\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chester + Arena",
+   "reading": "The man who hides or conceals the arena",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Manch + ester + a + rena",
+   "reading": "The sleeve (manche) of the one who is born again (renaît)",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manchester ≈ Mans Chester ≈ Manus + Kester; Arena ≈ Harena",
+   "reading": "The hand that sifts or sieves the sand of the arena",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Manchester from Mamucium (Latin) + Arena from harena (Latin)",
+   "reading": "The breast-shaped hill of the sanded combat space",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis & Short Latin Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester Arena → Acharnees Mantre",
+   "reading": "The bitter lamentation of the mantis (praying one)",
+   "languages": [
+    "en",
+    "fr",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chest + er + arena",
+   "reading": "Man's ribcage within the sandy circle",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manchester ≈ Mange + Chester; Arena ≈ Haréna (French)",
+   "reading": "The one who eats the chest of the hare in the sand",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M A N C H E S T E R   A R E N A → initials read as acrostic",
+   "reading": "Mystery Announced: Now Comes He Who Eats the Serpent's Arena",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Manch = sleeve (French); ester = to be (Old French); arena = sand",
+   "reading": "The sleeve that is sand; the garment of the arena",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-chester-arena → Mon Chester Aréna",
+   "reading": "My chest is the arena; my heart fights in the sand",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

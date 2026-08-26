@@ -1,0 +1,151 @@
+{
+ "word": "Paris",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:28:54+00:00",
+ "latency_s": 8.99,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"etymology\",\"chain\":\"Paris (from Gaulish *pario- 'cauldron')\",\"reading\":\"The cauldron; the vessel that boils and transforms\",\"languages\":[\"fr\",\"la\",\"cel\"],\"source\":\"Delamarre, Dictionnaire de la langue gauloise\",\"confidence\":0.75},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Pa + ris\",\"reading\":\"The father of the ris (laughter, French rire); begetter of joy\",\"languages\":[\"fr\",\"la\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Par + is\",\"reading\":\"Through the is (ice, German Eis); that which passes through frozen matter\",\"languages\":[\"fr\",\"de\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Paris ≈ Parvis (French)\",\"reading\":\"The parvis; the sacred threshold before the temple\",\"languages\":[\"fr\",\"la\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Paris ≈ Pâris (Greek Πάρις)\",\"reading\":\"The one who judges beauty; the shepherd who awards the golden apple\",\"languages\":[\"fr\",\"grc\"],\"source\":\"Homer, Iliad\",\"confidence\":0.6},\n  {\"operation\":\"anagram\",\"chain\":\"Paris = Sapir\",\"reading\":\"The sapphire; the stone that speaks (sapphire = 'speaking stone' in green language)\",\"languages\":[\"fr\",\"he\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"notariqon\",\"chain\":\"P.A.R.I.S. → Pater Altissimus Regit Imperium Solis\",\"reading\":\"The Father Most High rules the empire of the Sun\",\"languages\":[\"la\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Pare + is\",\"reading\":\"Equal to the wall (pare = wall in Occitan); the rampart itself\",\"languages\":[\"fr\",\"oc\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"letter_symbol\",\"chain\":\"P (staff) + AR (eagle) + IS (ice)\",\"reading\":\"The staff of the eagle frozen in ice; suspended royal power\",\"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.4},\n  {\"operation\":\"etymology\",\"chain\":\"Parisium (medieval Latin) from *Parisiacum\",\"reading\":\"The dwelling of the Parisi tribe; the cauldron-people\",\"languages\":[\"la\",\"cel\"],\"source\":\"Caesar, De Bello Gallico + Delamarre\",\"confidence\":0.8},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Paris ≈ Baris (Egyptian barque of the dead)\",\"reading\":\"The solar boat that carries souls across the sky\",\"languages\":[\"fr\",\"egy\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"numerical\",\"chain\":\"P=80 (greek), A=1, R=100, I=9, S=200 → 390\",\"reading\":\"390 = the number of years the solar bird is reborn (phoenix cycle)\",\"languages\":[\"grc\"],\"source\":\"generative\",\"confidence\":0.35}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Paris (from Gaulish *pario- 'cauldron')",
+   "reading": "The cauldron; the vessel that boils and transforms",
+   "languages": [
+    "fr",
+    "la",
+    "cel"
+   ],
+   "source": "Delamarre, Dictionnaire de la langue gauloise",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Pa + ris",
+   "reading": "The father of the ris (laughter, French rire); begetter of joy",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Par + is",
+   "reading": "Through the is (ice, German Eis); that which passes through frozen matter",
+   "languages": [
+    "fr",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris ≈ Parvis (French)",
+   "reading": "The parvis; the sacred threshold before the temple",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris ≈ Pâris (Greek Πάρις)",
+   "reading": "The one who judges beauty; the shepherd who awards the golden apple",
+   "languages": [
+    "fr",
+    "grc"
+   ],
+   "source": "Homer, Iliad",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Paris = Sapir",
+   "reading": "The sapphire; the stone that speaks (sapphire = 'speaking stone' in green language)",
+   "languages": [
+    "fr",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P.A.R.I.S. → Pater Altissimus Regit Imperium Solis",
+   "reading": "The Father Most High rules the empire of the Sun",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Pare + is",
+   "reading": "Equal to the wall (pare = wall in Occitan); the rampart itself",
+   "languages": [
+    "fr",
+    "oc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P (staff) + AR (eagle) + IS (ice)",
+   "reading": "The staff of the eagle frozen in ice; suspended royal power",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Parisium (medieval Latin) from *Parisiacum",
+   "reading": "The dwelling of the Parisi tribe; the cauldron-people",
+   "languages": [
+    "la",
+    "cel"
+   ],
+   "source": "Caesar, De Bello Gallico + Delamarre",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris ≈ Baris (Egyptian barque of the dead)",
+   "reading": "The solar boat that carries souls across the sky",
+   "languages": [
+    "fr",
+    "egy"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "P=80 (greek), A=1, R=100, I=9, S=200 → 390",
+   "reading": "390 = the number of years the solar bird is reborn (phoenix cycle)",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

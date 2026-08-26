@@ -1,0 +1,107 @@
+{
+ "word": "Red Rocks",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:17:51+00:00",
+ "latency_s": 7.82,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"red (Old English rēad) = red; rocks (Old English rocc) = rock, from Medieval Latin rocca\",\n    \"reading\": \"Red as blood, rocks as foundation: the blood-foundation, the primal earth-stone\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"red + rocks; red = read (past tense); rocks = roc (Persian mythic bird) + ks\",\n    \"reading\": \"Read the roc's cry: the giant bird's call is the hidden scripture of the stone\",\n    \"languages\": [\"en\", \"fa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"red (en) ≈ rouge (fr) ≈ rojo (es); rocks ≈ roches (fr) ≈ rocas (es)\",\n    \"reading\": \"Rouge-roches: red rocks as the alchemical rubedo stage, the reddening of the stone\",\n    \"languages\": [\"en\", \"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"red rocks → cored + rks; cored = hollowed out, rks = archaic rune name for 'r'\",\n    \"reading\": \"Cored runes: the hollowed letters of the alphabet, the empty vessel of speech\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"R + R = Red Rocks; R = rex (king), R = rota (wheel) in Latin\",\n    \"reading\": \"King and wheel: the royal turning of the cosmic mill, the sovereign cycle of time\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R = head (in Hebrew resh, ר); R = sun in alchemy; rocks = petra (stone)\",\n    \"reading\": \"The sun-headed stone: the philosopher's stone crowned with solar light, the lapis\",\n    \"languages\": [\"he\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"red = r(18)+e(5)+d(4)=27; rocks = r(18)+o(15)+c(3)+k(11)+s(19)=66; total=93\",\n    \"reading\": \"93 is the Thelemic number of will and love; red rocks as the willed stone of desire\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"red (PIE *reudh-) = red; rocks (PIE *k̑er-?) = hard, but rocca is obscure\",\n    \"reading\": \"The ruddy hardness: the primeval red earth, the first stone of creation\",\n    \"languages\": [\"en\", \"ine\"],\n    \"source\": \"Pokorny's Indogermanisches Etymologisches Wörterbuch\",\n    \"confidence\": 0.5\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "red (Old English rēad) = red; rocks (Old English rocc) = rock, from Medieval Latin rocca",
+   "reading": "Red as blood, rocks as foundation: the blood-foundation, the primal earth-stone",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "red + rocks; red = read (past tense); rocks = roc (Persian mythic bird) + ks",
+   "reading": "Read the roc's cry: the giant bird's call is the hidden scripture of the stone",
+   "languages": [
+    "en",
+    "fa"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "red (en) ≈ rouge (fr) ≈ rojo (es); rocks ≈ roches (fr) ≈ rocas (es)",
+   "reading": "Rouge-roches: red rocks as the alchemical rubedo stage, the reddening of the stone",
+   "languages": [
+    "en",
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "red rocks → cored + rks; cored = hollowed out, rks = archaic rune name for 'r'",
+   "reading": "Cored runes: the hollowed letters of the alphabet, the empty vessel of speech",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R + R = Red Rocks; R = rex (king), R = rota (wheel) in Latin",
+   "reading": "King and wheel: the royal turning of the cosmic mill, the sovereign cycle of time",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R = head (in Hebrew resh, ר); R = sun in alchemy; rocks = petra (stone)",
+   "reading": "The sun-headed stone: the philosopher's stone crowned with solar light, the lapis",
+   "languages": [
+    "he",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "numerical",
+   "chain": "red = r(18)+e(5)+d(4)=27; rocks = r(18)+o(15)+c(3)+k(11)+s(19)=66; total=93",
+   "reading": "93 is the Thelemic number of will and love; red rocks as the willed stone of desire",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "red (PIE *reudh-) = red; rocks (PIE *k̑er-?) = hard, but rocca is obscure",
+   "reading": "The ruddy hardness: the primeval red earth, the first stone of creation",
+   "languages": [
+    "en",
+    "ine"
+   ],
+   "source": "Pokorny's Indogermanisches Etymologisches Wörterbuch",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

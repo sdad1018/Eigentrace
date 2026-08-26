@@ -1,0 +1,82 @@
+{
+ "word": "Gillette Stadium",
+ "model": "qwen2.5:14b",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T00:33:32+00:00",
+ "latency_s": 133.83,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"phonetic_split\",\"chain\":\"Gillette / Stadium\",\"reading\":\"Sharp blade meets grand arena of sound\",\"languages\":[\"generative\"],\"source\":\"generative\",\"confidence\":0.8},{\"operation\":\"cross_language_homophone\",\"chain\":\"Gillette (Fr) gilette = little jacket; Stadium (Grk) στάδιον = a measure, stadium\",\"reading\":\"Small protective covering meets place of measurement and gathering\",\"languages\":[\"fr\",\"grc\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"anagram\",\"chain\":\"Gillette Stadium -> Lidgett Eats Mad\",\"reading\":\"Broken tool consumes chaos\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.5},{\"operation\":\"notariqon\",\"chain\":\"GILLETTE STADIUM = God Is Love Let Every Thought Endure; Stand Tall In Majesty Under Mighty Arms\",\"reading\":\"Divine love endures through majestic strength and support\",\"languages\":[\"he\",\"la\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"letter_symbol\",\"chain\":\"G (Gamma) = Earth, L (Lambada) = Light, E (Epsilon) = Life, T (Tau) = Cross; S (Sigma) = Protection, T (Tau) = Cross, A (Alpha) = Beginning, D (Delta) = Change, I (Iota) = Small but significant, U (Upsilon) = Union, M (Mu) = Middle\",\"reading\":\"Earthly life crosses paths with protection and change in union's middle\",\"languages\":[\"grc\"],\"source\":\"generative\",\"confidence\":0.4},{\"operation\":\"numerical\",\"chain\":\"G=7; I=9; L=12; E=5; T=2; S=6; T=2; A=1; D=4; I=9; U=6; M=4\",\"reading\":\"Sevenfold protection and change through divine union's middle\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.3}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Gillette / Stadium",
+   "reading": "Sharp blade meets grand arena of sound",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gillette (Fr) gilette = little jacket; Stadium (Grk) στάδιον = a measure, stadium",
+   "reading": "Small protective covering meets place of measurement and gathering",
+   "languages": [
+    "fr",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Gillette Stadium -> Lidgett Eats Mad",
+   "reading": "Broken tool consumes chaos",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "GILLETTE STADIUM = God Is Love Let Every Thought Endure; Stand Tall In Majesty Under Mighty Arms",
+   "reading": "Divine love endures through majestic strength and support",
+   "languages": [
+    "he",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G (Gamma) = Earth, L (Lambada) = Light, E (Epsilon) = Life, T (Tau) = Cross; S (Sigma) = Protection, T (Tau) = Cross, A (Alpha) = Beginning, D (Delta) = Change, I (Iota) = Small but significant, U (Upsilon) = Union, M (Mu) = Middle",
+   "reading": "Earthly life crosses paths with protection and change in union's middle",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "G=7; I=9; L=12; E=5; T=2; S=6; T=2; A=1; D=4; I=9; U=6; M=4",
+   "reading": "Sevenfold protection and change through divine union's middle",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

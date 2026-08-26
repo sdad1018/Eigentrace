@@ -1,0 +1,106 @@
+{
+ "word": "NRG Park",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:20:42+00:00",
+ "latency_s": 4.46,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"N + R + G + park; en-ar-gee + park\",\n    \"reading\": \"En-argee: the park of energy, a place where force is gathered and set in motion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.78\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG ~ énergie (fr) by sound; park as parc (fr) by near-homophone\",\n    \"reading\": \"Energy in the park: a green enclosure of vitality, a stored charge in a bounded place.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.66\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"N R G = three initials; read as Name / Ray / Green\",\n    \"reading\": \"Name, ray, green: a signature of living light, irradiating the vegetal and the hidden.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"N as zigzag/bridge; R as turning leg; G as enclosed spiral; park as enclosure\",\n    \"reading\": \"A zigzag crossing into a turning force inside an enclosure: motion contained, then released.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.49\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"NRG rearranged as GRN; park as the field of the green\",\n    \"reading\": \"Green first: the hidden order is vegetal, a field of growth beneath the hard initials.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.44\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"park < Middle English park, from Anglo-Norman parc, from Old French parc 'enclosure'; cf. Latin parcus 'sparing' in semantic proximity only\",\n    \"reading\": \"Park means an enclosed place: a bounded space set apart, protected, and kept.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster Dictionary\",\n    \"confidence\": 0.93\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"park < Anglo-Norman parc < Old French parc; parc from Frankish *parruk / *parrukja 'enclosure' (standard etymology)\",\n    \"reading\": \"The park is a fenced-off holding: what is gathered, penned, and reserved.\",\n    \"languages\": [\"en\", \"fr\", \"gme\"],\n    \"source\": \"Oxford English Dictionary; Trésor de la langue française informatisé\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG ~ énergie (fr); park ~ parc (fr); together: énergie dans le parc\",\n    \"reading\": \"Energy in the enclosure: power made visible only when it is contained by form.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.71\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "N + R + G + park; en-ar-gee + park",
+   "reading": "En-argee: the park of energy, a place where force is gathered and set in motion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.78
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "NRG ~ énergie (fr) by sound; park as parc (fr) by near-homophone",
+   "reading": "Energy in the park: a green enclosure of vitality, a stored charge in a bounded place.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.66
+  },
+  {
+   "operation": "notariqon",
+   "chain": "N R G = three initials; read as Name / Ray / Green",
+   "reading": "Name, ray, green: a signature of living light, irradiating the vegetal and the hidden.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "N as zigzag/bridge; R as turning leg; G as enclosed spiral; park as enclosure",
+   "reading": "A zigzag crossing into a turning force inside an enclosure: motion contained, then released.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.49
+  },
+  {
+   "operation": "anagram",
+   "chain": "NRG rearranged as GRN; park as the field of the green",
+   "reading": "Green first: the hidden order is vegetal, a field of growth beneath the hard initials.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.44
+  },
+  {
+   "operation": "etymology",
+   "chain": "park < Middle English park, from Anglo-Norman parc, from Old French parc 'enclosure'; cf. Latin parcus 'sparing' in semantic proximity only",
+   "reading": "Park means an enclosed place: a bounded space set apart, protected, and kept.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Oxford English Dictionary; Merriam-Webster Dictionary",
+   "confidence": 0.93
+  },
+  {
+   "operation": "etymology",
+   "chain": "park < Anglo-Norman parc < Old French parc; parc from Frankish *parruk / *parrukja 'enclosure' (standard etymology)",
+   "reading": "The park is a fenced-off holding: what is gathered, penned, and reserved.",
+   "languages": [
+    "en",
+    "fr",
+    "gme"
+   ],
+   "source": "Oxford English Dictionary; Trésor de la langue française informatisé",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "NRG ~ énergie (fr); park ~ parc (fr); together: énergie dans le parc",
+   "reading": "Energy in the enclosure: power made visible only when it is contained by form.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.71
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

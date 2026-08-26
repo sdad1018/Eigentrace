@@ -1,0 +1,127 @@
+{
+ "word": "Wembley",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:16:45+00:00",
+ "latency_s": 6.23,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem + ble + y\",\n    \"reading\": \"vein of blood + to bleat + why\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wemb + ley\",\n    \"reading\": \"womb + law / ley (ley lines)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley ≈ ouem + bli\",\n    \"reading\": \"where the wound bleeds (French ouem = wound, bli from blesser)\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Wembley ← Old English Wemba + leah\",\n    \"reading\": \"Wemba's woodland clearing or sacred grove\",\n    \"languages\": [\"en\",\"ang\"],\n    \"source\": \"Oxford Dictionary of British Place-Names\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Wembley = We + mb + ley\",\n    \"reading\": \"we be in the ley (we are in the ley line)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem + bley\",\n    \"reading\": \"wem (stain, scar) + bley (blé = wheat in French)\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley ≈ Wem + bel + i\",\n    \"reading\": \"womb + beautiful + yod (seed, hand of God)\",\n    \"languages\": [\"en\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"W E M B L E Y\",\n    \"reading\": \"Where Eternal Mystery Becomes Living Eternal Youth\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"W = double V (double life) + M = mem (water) + ley\",\n    \"reading\": \"double life flows as water along the ley\",\n    \"languages\": [\"en\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wembley ≈ whim + bel + ley\",\n    \"reading\": \"whim of the beautiful sacred meadow\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem + ble + y",
+   "reading": "vein of blood + to bleat + why",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wemb + ley",
+   "reading": "womb + law / ley (ley lines)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley ≈ ouem + bli",
+   "reading": "where the wound bleeds (French ouem = wound, bli from blesser)",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Wembley ← Old English Wemba + leah",
+   "reading": "Wemba's woodland clearing or sacred grove",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Oxford Dictionary of British Place-Names",
+   "confidence": 0.95
+  },
+  {
+   "operation": "anagram",
+   "chain": "Wembley = We + mb + ley",
+   "reading": "we be in the ley (we are in the ley line)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem + bley",
+   "reading": "wem (stain, scar) + bley (blé = wheat in French)",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley ≈ Wem + bel + i",
+   "reading": "womb + beautiful + yod (seed, hand of God)",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "notariqon",
+   "chain": "W E M B L E Y",
+   "reading": "Where Eternal Mystery Becomes Living Eternal Youth",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "W = double V (double life) + M = mem (water) + ley",
+   "reading": "double life flows as water along the ley",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wembley ≈ whim + bel + ley",
+   "reading": "whim of the beautiful sacred meadow",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

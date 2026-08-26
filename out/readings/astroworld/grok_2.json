@@ -1,0 +1,130 @@
+{
+ "word": "Astroworld",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:22:18+00:00",
+ "latency_s": 6.12,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Astro + World → Astre + Eau\",\n    \"reading\": \"Star Water; the stellar dew or celestial aqua\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"As + Tro + World\",\n    \"reading\": \"The donkey of the three worlds; beast bearing the triple cosmos\",\n    \"languages\": [\"en\",\"fr\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Astro + World → Astre + Hors\",\n    \"reading\": \"Star outside; the luminary cast beyond the pale\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Astro from Greek ἄστρον (astron) = star, constellation; World from OE weorold = age of man, cosmic order\",\n    \"reading\": \"Ordered age of the stars; the cosmic epoch ruled by stellar law\",\n    \"languages\": [\"grc\",\"en\"],\n    \"source\": \"Oxford English Dictionary & Liddell-Scott-Jones\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"ASTROWORLD → OLD STAR ROW\",\n    \"reading\": \"The ancient row of stars; primordial stellar lineage\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Astro + World → As + Trou + World\",\n    \"reading\": \"The ace of the hole of the world; master of the cosmic breach\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Astroworld → Astro + Vaurld → Astre + Vaulx\",\n    \"reading\": \"Star of the valleys; the luminary that descends into the hollows\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"A.S.T.R.O.W.O.R.L.D. → Astra Stellae Templum Regit Orbis Universi Luminaria Dei\",\n    \"reading\": \"The temple of the stars rules the lights of the orb of the universe of God\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Astro = ♅ (Uranus glyph) + World = ♁ (Earth) fused\",\n    \"reading\": \"Uranian-Earth; the marriage of heavenly chaos and terrestrial order\",\n    \"languages\": [\"en\",\"symbol\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Astroworld → Astre + Au + Or + Welt\",\n    \"reading\": \"Star of gold and gold of the world; stellar and terrestrial aurum\",\n    \"languages\": [\"fr\",\"en\",\"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Astro + World → Astre + Eau",
+   "reading": "Star Water; the stellar dew or celestial aqua",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "As + Tro + World",
+   "reading": "The donkey of the three worlds; beast bearing the triple cosmos",
+   "languages": [
+    "en",
+    "fr",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Astro + World → Astre + Hors",
+   "reading": "Star outside; the luminary cast beyond the pale",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "etymology",
+   "chain": "Astro from Greek ἄστρον (astron) = star, constellation; World from OE weorold = age of man, cosmic order",
+   "reading": "Ordered age of the stars; the cosmic epoch ruled by stellar law",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "Oxford English Dictionary & Liddell-Scott-Jones",
+   "confidence": 0.9
+  },
+  {
+   "operation": "anagram",
+   "chain": "ASTROWORLD → OLD STAR ROW",
+   "reading": "The ancient row of stars; primordial stellar lineage",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Astro + World → As + Trou + World",
+   "reading": "The ace of the hole of the world; master of the cosmic breach",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Astroworld → Astro + Vaurld → Astre + Vaulx",
+   "reading": "Star of the valleys; the luminary that descends into the hollows",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "A.S.T.R.O.W.O.R.L.D. → Astra Stellae Templum Regit Orbis Universi Luminaria Dei",
+   "reading": "The temple of the stars rules the lights of the orb of the universe of God",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Astro = ♅ (Uranus glyph) + World = ♁ (Earth) fused",
+   "reading": "Uranian-Earth; the marriage of heavenly chaos and terrestrial order",
+   "languages": [
+    "en",
+    "symbol"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Astroworld → Astre + Au + Or + Welt",
+   "reading": "Star of gold and gold of the world; stellar and terrestrial aurum",
+   "languages": [
+    "fr",
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

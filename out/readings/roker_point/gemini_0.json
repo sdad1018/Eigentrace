@@ -1,0 +1,133 @@
+{
+ "word": "Roker Point",
+ "model": "Gemini",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:57:15+00:00",
+ "latency_s": 20.82,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Roker (en) -> Rocker (en)\",\n    \"reading\": \"One who rocks; a rocking motion, or a stone, indicating instability or foundation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Point (en) -> Pont (fr) = bridge\",\n    \"reading\": \"A bridge, a connection between two sides, a crossing or a means of passage.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Wiktionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Roker (sounds like rock, from OE *rocc*, ON *hrokr* 'heap') + Point (from LA *pungere* 'to prick', L. *punctus* 'a prick')\",\n    \"reading\": \"A sharp, prominent rock; a critical juncture or a fixed, unyielding position.\",\n    \"languages\": [\"en\", \"la\", \"gem\", \"on\"],\n    \"source\": \"OED, Wiktionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Roker (en) -> Roc (fr) = rock, crag; Point (en) -> Point (fr) = point, dot, exact spot\",\n    \"reading\": \"A point of rock, a specific craggy location, or the exact spot of a mythical bird (roc).\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Wiktionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Roker (en) -> Rogue-er (en) + Point (en, from LA *pungere* 'to prick', L. *punctus* 'a prick')\",\n    \"reading\": \"A trickster's mark, a deceptive prick; a point of deviance or cunning.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative (for rogue-er) / OED (for point)\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"ROKER -> KORE (grc) = maiden, Persephone. Point (en) = specific location or purpose.\",\n    \"reading\": \"The maiden's point, a location or purpose connected to the goddess Persephone or renewal.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"Wiktionary (for Kore)\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Roker (en) -> Recher (fr, from 'rechercher' 'to search')\",\n    \"reading\": \"To search again, to seek deeply or repeatedly for something hidden or lost.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative / Wiktionary\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"R.P. (from Roker Point) -> Ratio Prima (Latin)\",\n    \"reading\": \"The First Principle, the fundamental reason or cause of all things.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Roker (en) -> Roque (es, ca) = rock, fortress. Point (en) = specific location.\",\n    \"reading\": \"A point of rock, a natural stronghold, or a specific location of solid strength.\",\n    \"languages\": [\"en\", \"es\", \"ca\"],\n    \"source\": \"Wiktionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Roker (sounds like OFr *requerre*, from LA *requirere* 'to seek, to ask') + Point (en) = aim, purpose.\",\n    \"reading\": \"The point of seeking, the aim of inquiry; a specific request or requirement.\",\n    \"languages\": [\"en\", \"fro\", \"la\"],\n    \"source\": \"OED, Wiktionary\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Roker (en) -> Rocker (en)",
+   "reading": "One who rocks; a rocking motion, or a stone, indicating instability or foundation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Point (en) -> Pont (fr) = bridge",
+   "reading": "A bridge, a connection between two sides, a crossing or a means of passage.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Wiktionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "etymology",
+   "chain": "Roker (sounds like rock, from OE *rocc*, ON *hrokr* 'heap') + Point (from LA *pungere* 'to prick', L. *punctus* 'a prick')",
+   "reading": "A sharp, prominent rock; a critical juncture or a fixed, unyielding position.",
+   "languages": [
+    "en",
+    "la",
+    "gem",
+    "on"
+   ],
+   "source": "OED, Wiktionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Roker (en) -> Roc (fr) = rock, crag; Point (en) -> Point (fr) = point, dot, exact spot",
+   "reading": "A point of rock, a specific craggy location, or the exact spot of a mythical bird (roc).",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Wiktionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Roker (en) -> Rogue-er (en) + Point (en, from LA *pungere* 'to prick', L. *punctus* 'a prick')",
+   "reading": "A trickster's mark, a deceptive prick; a point of deviance or cunning.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative (for rogue-er) / OED (for point)",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "ROKER -> KORE (grc) = maiden, Persephone. Point (en) = specific location or purpose.",
+   "reading": "The maiden's point, a location or purpose connected to the goddess Persephone or renewal.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "Wiktionary (for Kore)",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Roker (en) -> Recher (fr, from 'rechercher' 'to search')",
+   "reading": "To search again, to seek deeply or repeatedly for something hidden or lost.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative / Wiktionary",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R.P. (from Roker Point) -> Ratio Prima (Latin)",
+   "reading": "The First Principle, the fundamental reason or cause of all things.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Roker (en) -> Roque (es, ca) = rock, fortress. Point (en) = specific location.",
+   "reading": "A point of rock, a natural stronghold, or a specific location of solid strength.",
+   "languages": [
+    "en",
+    "es",
+    "ca"
+   ],
+   "source": "Wiktionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "etymology",
+   "chain": "Roker (sounds like OFr *requerre*, from LA *requirere* 'to seek, to ask') + Point (en) = aim, purpose.",
+   "reading": "The point of seeking, the aim of inquiry; a specific request or requirement.",
+   "languages": [
+    "en",
+    "fro",
+    "la"
+   ],
+   "source": "OED, Wiktionary",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

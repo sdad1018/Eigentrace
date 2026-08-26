@@ -1,9 +1,616 @@
 nohup: ignoring input
-usage: green_reader.py [-h] [--smoke] [--decoys] [--pairs]
-                       [--words [WORDS ...]] [--n N] [--only ONLY]
-                       [--use-mt-local] [--local-max-tokens LOCAL_MAX_TOKENS]
-                       [--local-timeout LOCAL_TIMEOUT]
-                       [--local-num-ctx LOCAL_NUM_CTX] [--no-prewarm]
-                       [--no-resume] [--mock] [--eigentrace EIGENTRACE]
-                       [--out OUT]
-green_reader.py: error: unrecognized arguments: --skip mistral-small:latest
+prompt green_v1 sha256 0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6
+patients (9): ['ChatGPT', 'Claude', 'Gemini', 'DeepSeek', 'Grok', 'qwen2.5:14b', 'mistral:latest', 'llama3:latest', 'nous-hermes2:latest']
+words (39): ['Coachella', 'Gillette Stadium', 'Bonnaroo', 'Wembley', 'Red Rocks', 'Glastonbury', 'Fenway', 'Lollapalooza', 'Tanglewood', 'Stagecoach', 'Route 91 Harvest', 'Harvest', 'Las Vegas Village', 'Mandalay Bay', 'Mandalay', 'Luxor', 'Las Vegas', 'Nevada', 'Las Vegas Boulevard', 'Paddock', 'Astroworld', 'NRG Park', 'Houston', 'Texas', 'Dangerous Woman', 'Manchester Arena', 'Manchester', 'Victoria', 'Abedi', 'Fyre', 'Great Exuma', 'Exuma', 'Bahamas', 'Roker Point', 'Bataclan', 'Ba-ta-clan', 'Eagles of Death Metal', 'Voltaire', 'Paris']
+samples/model/word: 3   local caller: direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)   out: out/readings
+   warming qwen2.5:14b …
+[   1/1053] ok  ChatGPT                'Coachella'                  #0    6.3s n=8
+[   2/1053] ok  Grok                   'Coachella'                  #0    6.4s n=10
+[   3/1053] ok  DeepSeek               'Coachella'                  #0    9.1s n=8
+[   4/1053] raw Claude                 'Coachella'                  #0    9.6s json_error: Expecting ',' delimiter: line 70 column 30 (char 2971)
+[   5/1053] ok  ChatGPT                'Coachella'                  #1    5.1s n=8
+[   6/1053] ok  Grok                   'Coachella'                  #1    6.5s n=10
+[   7/1053] ok  DeepSeek               'Coachella'                  #1    7.8s n=8
+[   8/1053] ok  ChatGPT                'Coachella'                  #2    5.7s n=9
+[   9/1053] raw Claude                 'Coachella'                  #1    8.9s json_error: Expecting ',' delimiter: line 70 column 30 (char 2915)
+[  10/1053] ok  Grok                   'Coachella'                  #2    6.7s n=10
+[  11/1053] ok  ChatGPT                'Gillette Stadium'           #0    4.5s n=10
+[  12/1053] ok  ChatGPT                'Gillette Stadium'           #1    5.0s n=8
+[  13/1053] ok  Grok                   'Gillette Stadium'           #0    7.5s n=11
+[  14/1053] ok  DeepSeek               'Coachella'                  #2   10.6s n=12
+[  15/1053] raw Claude                 'Coachella'                  #2    9.3s json_error: Expecting ',' delimiter: line 70 column 24 (char 2882)
+[  16/1053] ok  ChatGPT                'Gillette Stadium'           #2    5.2s n=8
+[  17/1053] ok  Grok                   'Gillette Stadium'           #1    7.6s n=10
+[  18/1053] ok  Gemini                 'Coachella'                  #0   35.7s n=11
+[  19/1053] ok  ChatGPT                'Bonnaroo'                   #0    3.7s n=8
+[  20/1053] ok  DeepSeek               'Gillette Stadium'           #0    8.7s n=7
+[  21/1053] raw Claude                 'Gillette Stadium'           #0   10.3s json_error: Expecting ',' delimiter: line 62 column 37 (char 2979)
+[  22/1053] ok  ChatGPT                'Bonnaroo'                   #1    5.9s n=10
+[  23/1053] ok  Grok                   'Gillette Stadium'           #2    6.9s n=10
+[  24/1053] ok  ChatGPT                'Bonnaroo'                   #2    5.0s n=10
+[  25/1053] raw Claude                 'Gillette Stadium'           #1    9.6s json_error: Expecting ',' delimiter: line 62 column 36 (char 2816)
+[  26/1053] ok  Grok                   'Bonnaroo'                   #0    7.4s n=10
+[  27/1053] ok  DeepSeek               'Gillette Stadium'           #1   14.4s n=12
+[  28/1053] ok  ChatGPT                'Wembley'                    #0    4.1s n=8
+[  29/1053] ok  ChatGPT                'Wembley'                    #1    4.5s n=8
+[  30/1053] ok  Grok                   'Bonnaroo'                   #1    7.2s n=10
+[  31/1053] raw Claude                 'Gillette Stadium'           #2    9.5s json_error: Expecting ',' delimiter: line 70 column 30 (char 3070)
+[  32/1053] ok  ChatGPT                'Wembley'                    #2    5.6s n=8
+[  33/1053] ok  DeepSeek               'Gillette Stadium'           #2   11.1s n=10
+[  34/1053] ok  Grok                   'Bonnaroo'                   #2    6.2s n=10
+[  35/1053] ok  ChatGPT                'Red Rocks'                  #0    4.3s n=8
+[  36/1053] raw Claude                 'Bonnaroo'                   #0    8.6s json_error: Expecting ',' delimiter: line 70 column 30 (char 2535)
+[  37/1053] ok  Grok                   'Wembley'                    #0    6.5s n=12
+[  38/1053] ok  DeepSeek               'Bonnaroo'                   #0    8.9s n=8
+[  39/1053] ok  ChatGPT                'Red Rocks'                  #1    5.6s n=10
+[  40/1053] raw Claude                 'Bonnaroo'                   #1    8.8s json_error: Expecting ',' delimiter: line 78 column 24 (char 2782)
+[  41/1053] raw ChatGPT                'Red Rocks'                  #2    4.1s json_error: Expecting ',' delimiter: line 1 column 2342 (char 2341)
+[  42/1053] ok  Grok                   'Wembley'                    #1    6.5s n=10
+[  43/1053] ok  DeepSeek               'Bonnaroo'                   #1    8.0s n=8
+[  44/1053] ok  ChatGPT                'Glastonbury'                #0    4.7s n=8
+[  45/1053] ok  Grok                   'Wembley'                    #2    6.2s n=10
+[  46/1053] ok  Gemini                 'Coachella'                  #1   47.4s n=12
+[  47/1053] ok  ChatGPT                'Glastonbury'                #1    4.2s n=8
+[  48/1053] raw Claude                 'Bonnaroo'                   #2    9.5s json_error: Expecting ',' delimiter: line 70 column 30 (char 2893)
+[  49/1053] ok  DeepSeek               'Bonnaroo'                   #2    7.1s n=8
+[  50/1053] ok  Grok                   'Red Rocks'                  #0    6.8s n=11
+[  51/1053] ok  ChatGPT                'Glastonbury'                #2    5.4s n=10
+[  52/1053] raw Claude                 'Wembley'                    #0    8.8s json_error: Expecting ',' delimiter: line 70 column 31 (char 2799)
+[  53/1053] ok  ChatGPT                'Fenway'                     #0    4.1s n=8
+[  54/1053] ok  DeepSeek               'Wembley'                    #0    9.2s n=8
+[  55/1053] ok  Grok                   'Red Rocks'                  #1    6.6s n=10
+[  56/1053] ok  ChatGPT                'Fenway'                     #1    4.1s n=8
+[  57/1053] raw Claude                 'Wembley'                    #1    9.0s json_error: Expecting ',' delimiter: line 70 column 31 (char 2742)
+[  58/1053] ok  ChatGPT                'Fenway'                     #2    4.9s n=8
+[  59/1053] ok  Grok                   'Red Rocks'                  #2    7.0s n=10
+[  60/1053] ok  ChatGPT                'Lollapalooza'               #0    4.8s n=8
+[  61/1053] ok  DeepSeek               'Wembley'                    #1   12.6s n=12
+[  62/1053] ok  Gemini                 'Coachella'                  #2   26.6s n=12
+[  63/1053] ok  Grok                   'Glastonbury'                #0    7.5s n=12
+[  64/1053] raw Claude                 'Wembley'                    #2    9.3s json_error: Expecting ',' delimiter: line 70 column 24 (char 2865)
+[  65/1053] ok  ChatGPT                'Lollapalooza'               #1    4.9s n=8
+[  66/1053] ok  Grok                   'Glastonbury'                #1    5.9s n=12
+[  67/1053] ok  ChatGPT                'Lollapalooza'               #2    5.9s n=9
+[  68/1053] ok  DeepSeek               'Wembley'                    #2   10.8s n=12
+[  69/1053] raw Claude                 'Red Rocks'                  #0   10.0s json_error: Expecting ',' delimiter: line 62 column 30 (char 2722)
+[  70/1053] ok  Grok                   'Glastonbury'                #2    6.0s n=10
+[  71/1053] ok  ChatGPT                'Tanglewood'                 #0    5.8s n=8
+[  72/1053] ok  Grok                   'Fenway'                     #0    5.6s n=10
+[  73/1053] ok  DeepSeek               'Red Rocks'                  #0    9.1s n=8
+[  74/1053] ok  ChatGPT                'Tanglewood'                 #1    5.5s n=8
+[  75/1053] raw Claude                 'Red Rocks'                  #1   10.1s json_error: Expecting ',' delimiter: line 54 column 36 (char 2700)
+[  76/1053] ok  Grok                   'Fenway'                     #1    5.4s n=10
+[  77/1053] ok  ChatGPT                'Tanglewood'                 #2    5.3s n=8
+[  78/1053] ok  Gemini                 'Gillette Stadium'           #0   25.2s n=10
+[  79/1053] ok  Grok                   'Fenway'                     #2    5.7s n=12
+[  80/1053] ok  ChatGPT                'Stagecoach'                 #0    4.7s n=10
+[  81/1053] ok  DeepSeek               'Red Rocks'                  #1   11.9s n=12
+[  82/1053] raw Claude                 'Red Rocks'                  #2    9.8s json_error: Expecting ',' delimiter: line 62 column 30 (char 2743)
+[  83/1053] ok  ChatGPT                'Stagecoach'                 #1    4.6s n=8
+[  84/1053] ok  Grok                   'Lollapalooza'               #0    7.6s n=10
+[  85/1053] ok  ChatGPT                'Stagecoach'                 #2    3.5s n=8
+[  86/1053] ok  DeepSeek               'Red Rocks'                  #2    7.8s n=8
+[  87/1053] raw Claude                 'Glastonbury'                #0    9.3s json_error: Expecting ',' delimiter: line 62 column 24 (char 2804)
+[  88/1053] ok  ChatGPT                'Route 91 Harvest'           #0    5.2s n=8
+[  89/1053] ok  Grok                   'Lollapalooza'               #1    7.6s n=10
+[  90/1053] ok  ChatGPT                'Route 91 Harvest'           #1    5.3s n=8
+[  91/1053] ok  Gemini                 'Gillette Stadium'           #1   24.0s n=12
+[  92/1053] ok  DeepSeek               'Glastonbury'                #0   12.1s n=12
+[  93/1053] raw Claude                 'Glastonbury'                #1    9.3s json_error: Expecting ',' delimiter: line 70 column 24 (char 2976)
+[  94/1053] ok  Grok                   'Lollapalooza'               #2    6.0s n=10
+[  95/1053] ok  ChatGPT                'Route 91 Harvest'           #2    5.9s n=8
+[  96/1053] ok  Grok                   'Tanglewood'                 #0    5.8s n=10
+[  97/1053] raw Claude                 'Glastonbury'                #2    8.6s json_error: Expecting ',' delimiter: line 70 column 24 (char 2872)
+[  98/1053] ok  ChatGPT                'Harvest'                    #0    4.7s n=8
+[  99/1053] ok  Grok                   'Tanglewood'                 #1    5.7s n=10
+[ 100/1053] ok  DeepSeek               'Glastonbury'                #1   14.4s n=12
+[ 101/1053] ok  ChatGPT                'Harvest'                    #1    7.4s n=10
+[ 102/1053] ok  Grok                   'Tanglewood'                 #2    5.7s n=10
+[ 103/1053] raw Claude                 'Fenway'                     #0    9.1s json_error: Expecting ',' delimiter: line 70 column 30 (char 2823)
+[ 104/1053] ok  Grok                   'Stagecoach'                 #0    6.3s n=10
+[ 105/1053] ok  DeepSeek               'Glastonbury'                #2   10.6s n=12
+[ 106/1053] ok  ChatGPT                'Harvest'                    #2    8.6s n=8
+[ 107/1053] raw Claude                 'Fenway'                     #1    8.5s json_error: Expecting ',' delimiter: line 78 column 24 (char 2905)
+[ 108/1053] ok  Gemini                 'Gillette Stadium'           #2   31.1s n=11
+[ 109/1053] ok  ChatGPT                'Las Vegas Village'          #0    5.9s n=10
+[ 110/1053] ok  Grok                   'Stagecoach'                 #1    7.0s n=10
+[ 111/1053] raw Claude                 'Fenway'                     #2    8.3s json_error: Expecting ',' delimiter: line 78 column 32 (char 2870)
+[ 112/1053] ok  DeepSeek               'Fenway'                     #0   11.2s n=12
+[ 113/1053] ok  ChatGPT                'Las Vegas Village'          #1    5.5s n=8
+[ 114/1053] ok  Grok                   'Stagecoach'                 #2    8.3s n=10
+[ 115/1053] ok  ChatGPT                'Las Vegas Village'          #2    5.2s n=8
+[ 116/1053] raw Claude                 'Lollapalooza'               #0    9.4s json_error: Expecting ',' delimiter: line 70 column 30 (char 2948)
+[ 117/1053] ok  Grok                   'Route 91 Harvest'           #0    5.9s n=10
+[ 118/1053] ok  DeepSeek               'Fenway'                     #1    9.2s n=10
+[ 119/1053] ok  ChatGPT                'Mandalay Bay'               #0    6.7s n=8
+[ 120/1053] ok  Grok                   'Route 91 Harvest'           #1    7.5s n=10
+[ 121/1053] raw Claude                 'Lollapalooza'               #1    8.9s json_error: Expecting ',' delimiter: line 62 column 24 (char 2717)
+[ 122/1053] ok  DeepSeek               'Fenway'                     #2    7.7s n=8
+[ 123/1053] ok  ChatGPT                'Mandalay Bay'               #1    5.1s n=8
+[ 124/1053] ok  Grok                   'Route 91 Harvest'           #2    7.0s n=10
+[ 125/1053] ok  ChatGPT                'Mandalay Bay'               #2    7.8s n=10
+[ 126/1053] ok  Gemini                 'Bonnaroo'                   #0   32.0s n=12
+[ 127/1053] raw Claude                 'Lollapalooza'               #2    9.4s json_error: Expecting ',' delimiter: line 62 column 24 (char 2807)
+[ 128/1053] ok  ChatGPT                'Mandalay'                   #0    4.8s n=8
+[ 129/1053] ok  Grok                   'Harvest'                    #0    7.4s n=10
+[ 130/1053] ok  DeepSeek               'Lollapalooza'               #0   14.3s n=12
+[ 131/1053] raw Claude                 'Tanglewood'                 #0    8.8s json_error: Expecting ',' delimiter: line 70 column 36 (char 2895)
+[ 132/1053] ok  ChatGPT                'Mandalay'                   #1    4.9s n=8
+[ 133/1053] ok  Grok                   'Harvest'                    #1    7.4s n=12
+[ 134/1053] ok  ChatGPT                'Mandalay'                   #2    4.6s n=8
+[ 135/1053] ok  ChatGPT                'Luxor'                      #0    4.1s n=8
+[ 136/1053] raw Claude                 'Tanglewood'                 #1    9.4s json_error: Expecting ',' delimiter: line 70 column 30 (char 2823)
+[ 137/1053] ok  Grok                   'Harvest'                    #2    6.6s n=10
+[ 138/1053] ok  DeepSeek               'Lollapalooza'               #1   14.8s n=12
+[ 139/1053] ok  ChatGPT                'Luxor'                      #1    3.2s n=8
+[ 140/1053] ok  Gemini                 'Bonnaroo'                   #1   22.2s n=8
+[ 141/1053] raw ChatGPT                'Luxor'                      #2    3.9s json_error: Expecting ',' delimiter: line 1 column 2399 (char 2398)
+[ 142/1053] ok  Grok                   'Las Vegas Village'          #0    7.5s n=10
+[ 143/1053] raw Claude                 'Tanglewood'                 #2    8.7s json_error: Expecting ',' delimiter: line 70 column 24 (char 2972)
+[ 144/1053] ok  ChatGPT                'Las Vegas'                  #0    4.0s n=8
+[ 145/1053] ok  DeepSeek               'Lollapalooza'               #2   10.7s n=12
+[ 146/1053] ok  Grok                   'Las Vegas Village'          #1    6.2s n=10
+[ 147/1053] ok  ChatGPT                'Las Vegas'                  #1    4.7s n=8
+[ 148/1053] raw Claude                 'Stagecoach'                 #0   10.1s json_error: Expecting ',' delimiter: line 70 column 42 (char 3229)
+[ 149/1053] ok  ChatGPT                'Las Vegas'                  #2    5.2s n=8
+[ 150/1053] ok  Grok                   'Las Vegas Village'          #2    7.0s n=10
+[ 151/1053] ok  DeepSeek               'Tanglewood'                 #0    9.2s n=8
+[ 152/1053] ok  qwen2.5:14b            'Coachella'                  #0   50.6s n=12
+[ 153/1053] ok  ChatGPT                'Nevada'                     #0    5.0s n=8
+[ 154/1053] ok  Gemini                 'Bonnaroo'                   #2   24.2s n=12
+[ 155/1053] raw Claude                 'Stagecoach'                 #1    9.9s json_error: Expecting ',' delimiter: line 70 column 24 (char 3061)
+[ 156/1053] ok  Grok                   'Mandalay Bay'               #0    7.6s n=10
+[ 157/1053] ok  ChatGPT                'Nevada'                     #1    3.8s n=8
+[ 158/1053] ok  DeepSeek               'Tanglewood'                 #1   13.0s n=12
+[ 159/1053] ok  ChatGPT                'Nevada'                     #2    5.6s n=8
+[ 160/1053] ok  Grok                   'Mandalay Bay'               #1    6.4s n=11
+[ 161/1053] raw Claude                 'Stagecoach'                 #2    9.5s json_error: Expecting ',' delimiter: line 70 column 31 (char 2976)
+[ 162/1053] raw ChatGPT                'Las Vegas Boulevard'        #0    4.8s json_error: Expecting ',' delimiter: line 1 column 2478 (char 2477)
+[ 163/1053] ok  Grok                   'Mandalay Bay'               #2    7.1s n=12
+[ 164/1053] ok  DeepSeek               'Tanglewood'                 #2    9.0s n=8
+[ 165/1053] ok  ChatGPT                'Las Vegas Boulevard'        #1    4.9s n=10
+[ 166/1053] raw Claude                 'Route 91 Harvest'           #0    9.4s json_error: Expecting ',' delimiter: line 70 column 24 (char 2992)
+[ 167/1053] ok  Grok                   'Mandalay'                   #0    6.0s n=10
+[ 168/1053] ok  ChatGPT                'Las Vegas Boulevard'        #2    4.9s n=9
+[ 170/1053] ok  Gemini                 'Wembley'                    #0   25.3s n=12
+[ 171/1053] ok  ChatGPT                'Paddock'                    #1    4.3s n=8
+[ 172/1053] ok  Grok                   'Mandalay'                   #1    6.7s n=10
+[ 173/1053] raw Claude                 'Route 91 Harvest'           #1    7.7s json_error: Expecting ',' delimiter: line 70 column 24 (char 2635)
+[ 174/1053] ok  DeepSeek               'Stagecoach'                 #0   12.2s n=10
+[ 175/1053] ok  ChatGPT                'Paddock'                    #2    4.9s n=8
+[ 176/1053] ok  Grok                   'Mandalay'                   #2    6.8s n=10
+[ 177/1053] ok  DeepSeek               'Stagecoach'                 #1    7.8s n=7
+[ 178/1053] ok  ChatGPT                'Astroworld'                 #0    5.4s n=8
+[ 179/1053] raw Claude                 'Route 91 Harvest'           #2    9.3s json_error: Expecting ',' delimiter: line 70 column 36 (char 2926)
+[ 180/1053] ok  Grok                   'Luxor'                      #0    5.5s n=10
+[ 181/1053] ok  ChatGPT                'Astroworld'                 #1    4.0s n=8
+[ 182/1053] ok  ChatGPT                'Astroworld'                 #2    4.9s n=8
+[ 183/1053] raw Claude                 'Harvest'                    #0    9.1s json_error: Expecting ',' delimiter: line 70 column 30 (char 2919)
+[ 184/1053] ok  Grok                   'Luxor'                      #1    7.1s n=10
+[ 185/1053] ok  DeepSeek               'Stagecoach'                 #2   13.3s n=12
+[ 186/1053] ok  Gemini                 'Wembley'                    #1   24.0s n=9
+[ 187/1053] ok  ChatGPT                'NRG Park'                   #0    4.5s n=8
+[ 188/1053] ok  ChatGPT                'NRG Park'                   #1    3.8s n=9
+[ 189/1053] ok  Grok                   'Luxor'                      #2    6.7s n=10
+[ 190/1053] raw Claude                 'Harvest'                    #1    9.7s json_error: Expecting ',' delimiter: line 70 column 30 (char 2864)
+[ 191/1053] ok  DeepSeek               'Route 91 Harvest'           #0    9.0s n=8
+[ 192/1053] ok  ChatGPT                'NRG Park'                   #2    5.0s n=10
+[ 193/1053] ok  Grok                   'Las Vegas'                  #0    6.1s n=12
+[ 194/1053] ok  ChatGPT                'Houston'                    #0    4.2s n=8
+[ 195/1053] raw Claude                 'Harvest'                    #2    8.7s json_error: Expecting ',' delimiter: line 70 column 30 (char 2987)
+[ 196/1053] ok  Grok                   'Las Vegas'                  #1    6.3s n=11
+[ 197/1053] ok  DeepSeek               'Route 91 Harvest'           #1    8.6s n=8
+[ 198/1053] ok  ChatGPT                'Houston'                    #1    5.0s n=8
+[ 199/1053] ok  Grok                   'Las Vegas'                  #2    5.8s n=12
+[ 200/1053] ok  ChatGPT                'Houston'                    #2    5.1s n=8
+[ 201/1053] ok  Gemini                 'Wembley'                    #2   24.5s n=11
+[ 202/1053] raw Claude                 'Las Vegas Village'          #0   10.7s json_error: Expecting ',' delimiter: line 62 column 24 (char 2717)
+[ 203/1053] ok  DeepSeek               'Route 91 Harvest'           #2    9.1s n=8
+[ 204/1053] ok  Grok                   'Nevada'                     #0    5.6s n=10
+[ 205/1053] ok  ChatGPT                'Texas'                      #0    4.7s n=8
+[ 206/1053] ok  ChatGPT                'Texas'                      #1    4.0s n=8
+[ 207/1053] ok  Grok                   'Nevada'                     #1    6.3s n=10
+[ 208/1053] ok  DeepSeek               'Harvest'                    #0    8.9s n=8
+[ 209/1053] raw Claude                 'Las Vegas Village'          #1    9.9s json_error: Expecting ',' delimiter: line 70 column 30 (char 3027)
+[ 210/1053] ok  ChatGPT                'Texas'                      #2    4.3s n=8
+[ 211/1053] ok  Grok                   'Nevada'                     #2    6.6s n=10
+[ 212/1053] ok  ChatGPT                'Dangerous Woman'            #0    5.3s n=8
+[ 213/1053] ok  Gemini                 'Red Rocks'                  #0   19.0s n=12
+[ 214/1053] raw Claude                 'Las Vegas Village'          #2    9.6s json_error: Expecting ',' delimiter: line 78 column 30 (char 3231)
+[ 215/1053] ok  ChatGPT                'Dangerous Woman'            #1    4.8s n=8
+[ 216/1053] ok  DeepSeek               'Harvest'                    #1   11.9s n=12
+[ 217/1053] ok  Grok                   'Las Vegas Boulevard'        #0    8.5s n=10
+[ 218/1053] ok  ChatGPT                'Dangerous Woman'            #2    5.5s n=8
+[ 219/1053] raw Claude                 'Mandalay Bay'               #0    8.8s json_error: Expecting ',' delimiter: line 78 column 31 (char 3019)
+[ 220/1053] ok  Grok                   'Las Vegas Boulevard'        #1    6.7s n=10
+[ 221/1053] ok  DeepSeek               'Harvest'                    #2    9.3s n=8
+[ 222/1053] ok  ChatGPT                'Manchester Arena'           #0    5.2s n=8
+[ 223/1053] ok  Grok                   'Las Vegas Boulevard'        #2    5.9s n=10
+[ 224/1053] ok  ChatGPT                'Manchester Arena'           #1    4.7s n=8
+[ 226/1053] raw Claude                 'Mandalay Bay'               #1    9.1s json_error: Expecting ',' delimiter: line 70 column 30 (char 2773)
+[ 227/1053] ok  ChatGPT                'Manchester Arena'           #2    5.2s n=8
+[ 228/1053] ok  Grok                   'Paddock'                    #1    6.9s n=10
+[ 229/1053] ok  Gemini                 'Red Rocks'                  #1   26.0s n=12
+[ 230/1053] ok  DeepSeek               'Las Vegas Village'          #0   14.3s n=12
+[ 231/1053] ok  ChatGPT                'Manchester'                 #0    4.7s n=8
+[ 232/1053] raw Claude                 'Mandalay Bay'               #2   10.5s json_error: Expecting ',' delimiter: line 70 column 30 (char 3096)
+[ 233/1053] ok  Grok                   'Paddock'                    #2    6.9s n=10
+[ 234/1053] ok  ChatGPT                'Manchester'                 #1    4.2s n=8
+[ 235/1053] ok  DeepSeek               'Las Vegas Village'          #1    9.7s n=8
+[ 236/1053] ok  ChatGPT                'Manchester'                 #2    4.8s n=9
+[ 237/1053] ok  Grok                   'Astroworld'                 #0    7.0s n=10
+[ 238/1053] raw Claude                 'Mandalay'                   #0    9.6s json_error: Expecting ',' delimiter: line 62 column 24 (char 2965)
+[ 239/1053] ok  ChatGPT                'Victoria'                   #0    4.4s n=8
+[ 240/1053] ok  ChatGPT                'Victoria'                   #1    3.9s n=8
+[ 241/1053] ok  Grok                   'Astroworld'                 #1    6.8s n=10
+[ 242/1053] ok  DeepSeek               'Las Vegas Village'          #2   10.6s n=8
+[ 243/1053] ok  Gemini                 'Red Rocks'                  #2   22.7s n=12
+[ 244/1053] raw Claude                 'Mandalay'                   #1    9.4s json_error: Expecting ',' delimiter: line 70 column 31 (char 2879)
+[ 245/1053] ok  ChatGPT                'Victoria'                   #2    3.5s n=8
+[ 246/1053] ok  Grok                   'Astroworld'                 #2    6.1s n=10
+[ 247/1053] ok  ChatGPT                'Abedi'                      #0    4.5s n=8
+[ 248/1053] ok  ChatGPT                'Abedi'                      #1    3.6s n=8
+[ 249/1053] raw Claude                 'Mandalay'                   #2    9.3s json_error: Expecting ',' delimiter: line 70 column 30 (char 2775)
+[ 250/1053] ok  DeepSeek               'Mandalay Bay'               #0   12.8s n=12
+[ 251/1053] ok  Grok                   'NRG Park'                   #0    7.5s n=10
+[ 252/1053] ok  ChatGPT                'Abedi'                      #2    4.5s n=10
+[ 253/1053] ok  ChatGPT                'Fyre'                       #0    4.2s n=8
+[ 254/1053] ok  Grok                   'NRG Park'                   #1    6.8s n=10
+[ 255/1053] raw Claude                 'Luxor'                      #0    9.5s json_error: Expecting ',' delimiter: line 70 column 38 (char 2906)
+[ 256/1053] ok  ChatGPT                'Fyre'                       #1    4.6s n=8
+[ 257/1053] ok  DeepSeek               'Mandalay Bay'               #1   12.3s n=12
+[ 258/1053] ok  Grok                   'NRG Park'                   #2    6.0s n=10
+[ 259/1053] ok  Gemini                 'Glastonbury'                #0   27.1s n=11
+[ 260/1053] ok  ChatGPT                'Fyre'                       #2    4.4s n=8
+[ 261/1053] raw Claude                 'Luxor'                      #1    8.9s json_error: Expecting ',' delimiter: line 70 column 24 (char 2855)
+[ 262/1053] ok  Grok                   'Houston'                    #0    5.1s n=12
+[ 263/1053] ok  DeepSeek               'Mandalay Bay'               #2    8.1s n=8
+[ 264/1053] ok  ChatGPT                'Great Exuma'                #0    5.6s n=10
+[ 265/1053] ok  Grok                   'Houston'                    #1    5.1s n=12
+[ 266/1053] raw Claude                 'Luxor'                      #2    9.0s json_error: Expecting ',' delimiter: line 70 column 30 (char 2904)
+[ 267/1053] ok  ChatGPT                'Great Exuma'                #1    6.0s n=10
+[ 268/1053] ok  Grok                   'Houston'                    #2    5.6s n=12
+[ 269/1053] ok  DeepSeek               'Mandalay'                   #0    9.1s n=8
+[ 270/1053] ok  ChatGPT                'Great Exuma'                #2    6.1s n=12
+[ 271/1053] ok  Grok                   'Texas'                      #0    6.3s n=10
+[ 272/1053] raw Claude                 'Las Vegas'                  #0    9.8s json_error: Expecting ',' delimiter: line 70 column 30 (char 2818)
+[ 273/1053] ok  ChatGPT                'Exuma'                      #0    4.2s n=8
+[ 274/1053] ok  DeepSeek               'Mandalay'                   #1    8.9s n=8
+[ 275/1053] ok  Gemini                 'Glastonbury'                #1   23.4s n=10
+[ 276/1053] ok  Grok                   'Texas'                      #1    5.5s n=12
+[ 277/1053] ok  ChatGPT                'Exuma'                      #1    4.2s n=8
+[ 278/1053] raw Claude                 'Las Vegas'                  #1    9.3s json_error: Expecting ',' delimiter: line 70 column 24 (char 2817)
+[ 279/1053] ok  ChatGPT                'Exuma'                      #2    4.7s n=8
+[ 280/1053] ok  DeepSeek               'Mandalay'                   #2    8.2s n=8
+[ 281/1053] ok  Grok                   'Texas'                      #2    7.0s n=10
+[ 282/1053] ok  ChatGPT                'Bahamas'                    #0    6.2s n=10
+[ 283/1053] raw Claude                 'Las Vegas'                  #2    9.4s json_error: Expecting ',' delimiter: line 70 column 30 (char 2844)
+[ 284/1053] ok  DeepSeek               'Luxor'                      #0    8.1s n=8
+[ 285/1053] ok  Grok                   'Dangerous Woman'            #0    7.3s n=10
+[ 286/1053] ok  ChatGPT                'Bahamas'                    #1    4.6s n=8
+[ 287/1053] ok  Grok                   'Dangerous Woman'            #1    6.9s n=10
+[ 288/1053] ok  ChatGPT                'Bahamas'                    #2    5.1s n=9
+[ 289/1053] raw Claude                 'Nevada'                     #0    9.4s json_error: Expecting ',' delimiter: line 70 column 24 (char 2839)
+[ 290/1053] ok  DeepSeek               'Luxor'                      #1   10.9s n=10
+[ 291/1053] ok  ChatGPT                'Roker Point'                #0    5.3s n=10
+[ 292/1053] ok  Gemini                 'Glastonbury'                #2   29.0s n=12
+[ 293/1053] ok  Grok                   'Dangerous Woman'            #2    6.4s n=10
+[ 294/1053] ok  DeepSeek               'Luxor'                      #2    6.4s n=8
+[ 295/1053] raw Claude                 'Nevada'                     #1    9.7s json_error: Expecting ',' delimiter: line 70 column 30 (char 2820)
+[ 296/1053] ok  ChatGPT                'Roker Point'                #1    6.2s n=10
+[ 297/1053] ok  Grok                   'Manchester Arena'           #0    7.7s n=10
+[ 298/1053] ok  ChatGPT                'Roker Point'                #2    5.0s n=8
+[ 299/1053] ok  Grok                   'Manchester Arena'           #1    6.1s n=10
+[ 300/1053] raw Claude                 'Nevada'                     #2    9.5s json_error: Expecting ',' delimiter: line 70 column 30 (char 2887)
+[ 301/1053] ok  DeepSeek               'Las Vegas'                  #0   11.4s n=12
+[ 302/1053] ok  ChatGPT                'Bataclan'                   #0    4.6s n=9
+[ 303/1053] ok  ChatGPT                'Bataclan'                   #1    4.2s n=8
+[ 304/1053] ok  Gemini                 'Fenway'                     #0   20.6s n=11
+[ 305/1053] ok  Grok                   'Manchester Arena'           #2    6.5s n=10
+[ 306/1053] ok  DeepSeek               'Las Vegas'                  #1    9.3s n=8
+[ 307/1053] raw Claude                 'Las Vegas Boulevard'        #0   10.1s json_error: Expecting ',' delimiter: line 70 column 24 (char 2898)
+[ 308/1053] ok  ChatGPT                'Bataclan'                   #2    6.8s n=10
+[ 309/1053] ok  Grok                   'Manchester'                 #0    6.7s n=12
+[ 310/1053] ok  ChatGPT                'Ba-ta-clan'                 #0    4.9s n=9
+[ 311/1053] ok  Grok                   'Manchester'                 #1    7.3s n=10
+[ 312/1053] ok  DeepSeek               'Las Vegas'                  #2   10.3s n=8
+[ 313/1053] raw Claude                 'Las Vegas Boulevard'        #1    9.8s json_error: Expecting ',' delimiter: line 70 column 24 (char 2973)
+[ 314/1053] ok  ChatGPT                'Ba-ta-clan'                 #1    6.5s n=12
+[ 315/1053] ok  Gemini                 'Fenway'                     #1   19.9s n=12
+[ 316/1053] ok  Grok                   'Manchester'                 #2    7.6s n=10
+[ 317/1053] raw Claude                 'Las Vegas Boulevard'        #2   10.1s json_error: Expecting ',' delimiter: line 70 column 30 (char 2826)
+[ 318/1053] ok  ChatGPT                'Ba-ta-clan'                 #2    7.0s n=10
+[ 319/1053] ok  DeepSeek               'Nevada'                     #0   12.9s n=12
+[ 320/1053] ok  qwen2.5:14b            'Coachella'                  #1  277.0s n=6
+[ 321/1053] ok  Grok                   'Victoria'                   #0    8.7s n=10
+[ 322/1053] ok  ChatGPT                'Eagles of Death Metal'      #0    7.1s n=10
+[ 323/1053] raw Claude                 'Paddock'                    #0    9.1s json_error: Expecting ',' delimiter: line 78 column 31 (char 3000)
+[ 324/1053] ok  ChatGPT                'Eagles of Death Metal'      #1    5.3s n=8
+[ 325/1053] ok  Grok                   'Victoria'                   #1    8.4s n=10
+[ 326/1053] ok  Gemini                 'Fenway'                     #2   20.1s n=10
+[ 327/1053] ok  DeepSeek               'Nevada'                     #1   12.7s n=12
+[ 328/1053] ok  ChatGPT                'Eagles of Death Metal'      #2    5.1s n=8
+[ 329/1053] raw Claude                 'Paddock'                    #1    9.3s json_error: Expecting ',' delimiter: line 70 column 30 (char 2893)
+[ 330/1053] ok  Grok                   'Victoria'                   #2    7.4s n=10
+[ 331/1053] ok  ChatGPT                'Voltaire'                   #0    4.7s n=8
+[ 332/1053] ok  DeepSeek               'Nevada'                     #2    8.4s n=8
+[ 333/1053] ok  ChatGPT                'Voltaire'                   #1    4.7s n=8
+[ 334/1053] raw Claude                 'Paddock'                    #2    9.0s json_error: Expecting ',' delimiter: line 70 column 30 (char 3022)
+[ 335/1053] ok  Grok                   'Abedi'                      #0    6.9s n=10
+[ 336/1053] ok  ChatGPT                'Voltaire'                   #2    5.7s n=8
+[ 337/1053] raw Claude                 'Astroworld'                 #0    8.3s json_error: Expecting ',' delimiter: line 70 column 24 (char 2774)
+[ 338/1053] ok  Grok                   'Abedi'                      #1    8.0s n=10
+[ 339/1053] ok  ChatGPT                'Paris'                      #0    3.8s n=8
+[ 340/1053] ok  Gemini                 'Lollapalooza'               #0   24.6s n=12
+[ 341/1053] ok  DeepSeek               'Las Vegas Boulevard'        #0   16.7s n=12
+[ 342/1053] ok  ChatGPT                'Paris'                      #1    4.0s n=9
+[ 343/1053] ok  Grok                   'Abedi'                      #2    5.8s n=10
+[ 344/1053] ok  ChatGPT                'Paris'                      #2    4.0s n=8
+[ 345/1053] raw Claude                 'Astroworld'                 #1    9.1s json_error: Expecting ',' delimiter: line 70 column 25 (char 2740)
+[ 346/1053] ok  DeepSeek               'Las Vegas Boulevard'        #1    9.0s n=8
+[ 347/1053] ok  Grok                   'Fyre'                       #0    7.1s n=10
+[ 348/1053] raw Claude                 'Astroworld'                 #2    8.9s json_error: Expecting ',' delimiter: line 70 column 37 (char 2794)
+[ 349/1053] ok  Grok                   'Fyre'                       #1    6.3s n=10
+[ 350/1053] raw Claude                 'NRG Park'                   #0    8.9s json_error: Expecting ',' delimiter: line 70 column 31 (char 2716)
+[ 351/1053] ok  Gemini                 'Lollapalooza'               #1   23.5s n=12
+[ 352/1053] ok  Grok                   'Fyre'                       #2    7.3s n=10
+[ 353/1053] ok  DeepSeek               'Las Vegas Boulevard'        #2   16.7s n=12
+[ 355/1053] ok  Grok                   'Great Exuma'                #0    6.6s n=10
+[ 356/1053] raw Claude                 'NRG Park'                   #1    9.2s json_error: Expecting ',' delimiter: line 70 column 40 (char 2779)
+[ 357/1053] ok  DeepSeek               'Paddock'                    #1    8.7s n=8
+[ 358/1053] ok  Grok                   'Great Exuma'                #1    7.6s n=11
+[ 359/1053] ok  DeepSeek               'Paddock'                    #2    6.6s n=8
+[ 360/1053] raw Claude                 'NRG Park'                   #2    9.8s json_error: Expecting ',' delimiter: line 70 column 29 (char 3012)
+[ 361/1053] ok  Grok                   'Great Exuma'                #2    7.3s n=10
+[ 362/1053] ok  Gemini                 'Lollapalooza'               #2   23.2s n=10
+[ 363/1053] ok  DeepSeek               'Astroworld'                 #0    6.9s n=8
+[ 364/1053] raw Claude                 'Houston'                    #0    8.5s json_error: Expecting ',' delimiter: line 70 column 30 (char 2628)
+[ 365/1053] ok  Grok                   'Exuma'                      #0    7.0s n=10
+[ 366/1053] ok  DeepSeek               'Astroworld'                 #1    8.0s n=8
+[ 367/1053] ok  Grok                   'Exuma'                      #1    6.7s n=12
+[ 368/1053] raw Claude                 'Houston'                    #1    8.9s json_error: Expecting ',' delimiter: line 70 column 36 (char 2741)
+[ 369/1053] ok  DeepSeek               'Astroworld'                 #2    8.2s n=8
+[ 370/1053] ok  Grok                   'Exuma'                      #2    7.1s n=10
+[ 371/1053] raw Claude                 'Houston'                    #2    8.8s json_error: Expecting ',' delimiter: line 70 column 24 (char 2979)
+[ 372/1053] ok  Gemini                 'Tanglewood'                 #0   22.0s n=9
+[ 373/1053] ok  DeepSeek               'NRG Park'                   #0    8.4s n=8
+[ 374/1053] ok  Grok                   'Bahamas'                    #0    7.7s n=12
+[ 375/1053] raw Claude                 'Texas'                      #0    8.8s json_error: Expecting ',' delimiter: line 70 column 24 (char 2810)
+[ 376/1053] ok  Grok                   'Bahamas'                    #1    6.9s n=10
+[ 377/1053] ok  DeepSeek               'NRG Park'                   #1    8.3s n=8
+[ 378/1053] raw Claude                 'Texas'                      #1    8.3s json_error: Expecting ',' delimiter: line 78 column 36 (char 2888)
+[ 379/1053] ok  Grok                   'Bahamas'                    #2    7.5s n=12
+[ 380/1053] ok  DeepSeek               'NRG Park'                   #2    8.4s n=8
+[ 381/1053] ok  Gemini                 'Tanglewood'                 #1   22.2s n=10
+[ 382/1053] raw Claude                 'Texas'                      #2    9.2s json_error: Expecting ',' delimiter: line 70 column 25 (char 2958)
+[ 383/1053] ok  Grok                   'Roker Point'                #0    7.5s n=10
+[ 384/1053] ok  DeepSeek               'Houston'                    #0    8.1s n=11
+[ 385/1053] raw Claude                 'Dangerous Woman'            #0    9.5s json_error: Expecting ',' delimiter: line 54 column 24 (char 2724)
+[ 386/1053] ok  DeepSeek               'Houston'                    #1    7.4s n=8
+[ 387/1053] ok  Grok                   'Roker Point'                #1   10.2s n=10
+[ 388/1053] ok  Gemini                 'Tanglewood'                 #2   21.2s n=8
+[ 389/1053] ok  Grok                   'Roker Point'                #2    7.0s n=11
+[ 390/1053] raw Claude                 'Dangerous Woman'            #1    9.4s json_error: Expecting ',' delimiter: line 54 column 42 (char 2651)
+[ 391/1053] ok  DeepSeek               'Houston'                    #2    8.1s n=8
+[ 392/1053] ok  Grok                   'Bataclan'                   #0    7.7s n=10
+[ 393/1053] raw Claude                 'Dangerous Woman'            #2    9.5s json_error: Expecting ',' delimiter: line 62 column 24 (char 2934)
+[ 394/1053] ok  DeepSeek               'Texas'                      #0   11.5s n=12
+[ 395/1053] ok  Grok                   'Bataclan'                   #1    8.2s n=10
+[ 396/1053] raw Claude                 'Manchester Arena'           #0    9.6s json_error: Expecting ',' delimiter: line 62 column 30 (char 3052)
+[ 397/1053] ok  DeepSeek               'Texas'                      #1    7.3s n=8
+[ 398/1053] ok  Gemini                 'Stagecoach'                 #0   24.1s n=12
+[ 399/1053] ok  Grok                   'Bataclan'                   #2    9.4s n=10
+[ 400/1053] ok  DeepSeek               'Texas'                      #2    6.1s n=8
+[ 401/1053] raw Claude                 'Manchester Arena'           #1    9.2s json_error: Expecting ',' delimiter: line 78 column 37 (char 3147)
+[ 402/1053] ok  Grok                   'Ba-ta-clan'                 #0    8.6s n=10
+[ 403/1053] ok  DeepSeek               'Dangerous Woman'            #0   10.7s n=12
+[ 404/1053] raw Claude                 'Manchester Arena'           #2    9.7s json_error: Expecting ',' delimiter: line 70 column 30 (char 3113)
+[ 405/1053] ok  Grok                   'Ba-ta-clan'                 #1    9.3s n=10
+[ 406/1053] ok  DeepSeek               'Dangerous Woman'            #1    6.9s n=8
+[ 407/1053] raw Claude                 'Manchester'                 #0    9.0s json_error: Expecting ',' delimiter: line 78 column 24 (char 3087)
+[ 408/1053] ok  Gemini                 'Stagecoach'                 #1   25.4s n=8
+[ 409/1053] ok  Grok                   'Ba-ta-clan'                 #2    7.5s n=12
+[ 410/1053] ok  DeepSeek               'Dangerous Woman'            #2    7.7s n=8
+[ 411/1053] raw Claude                 'Manchester'                 #1    9.2s json_error: Expecting ',' delimiter: line 70 column 24 (char 3034)
+[ 412/1053] ok  DeepSeek               'Manchester Arena'           #0    6.8s n=8
+[ 413/1053] ok  Grok                   'Eagles of Death Metal'      #0    9.7s n=10
+[ 414/1053] raw Claude                 'Manchester'                 #2    8.9s json_error: Expecting ',' delimiter: line 78 column 24 (char 2946)
+[ 415/1053] ok  DeepSeek               'Manchester Arena'           #1    8.3s n=8
+[ 416/1053] ok  Grok                   'Eagles of Death Metal'      #1    7.6s n=10
+[ 417/1053] ok  Gemini                 'Stagecoach'                 #2   21.8s n=10
+[ 418/1053] ok  Grok                   'Eagles of Death Metal'      #2    6.7s n=10
+[ 419/1053] raw Claude                 'Victoria'                   #0    9.6s json_error: Expecting ',' delimiter: line 70 column 24 (char 2996)
+[ 420/1053] ok  DeepSeek               'Manchester Arena'           #2   13.8s n=12
+[ 421/1053] ok  Grok                   'Voltaire'                   #0    6.8s n=10
+[ 422/1053] raw Claude                 'Victoria'                   #1   10.0s json_error: Expecting ',' delimiter: line 70 column 24 (char 3128)
+[ 423/1053] ok  DeepSeek               'Manchester'                 #0    8.2s n=8
+[ 424/1053] ok  Grok                   'Voltaire'                   #1    7.0s n=10
+[ 425/1053] ok  Gemini                 'Route 91 Harvest'           #0   19.7s n=10
+[ 426/1053] raw Claude                 'Victoria'                   #2    9.1s json_error: Expecting ',' delimiter: line 70 column 30 (char 2686)
+[ 427/1053] ok  Grok                   'Voltaire'                   #2    6.6s n=10
+[ 428/1053] ok  DeepSeek               'Manchester'                 #1   12.0s n=12
+[ 429/1053] ok  Claude                 'Abedi'                      #0    9.1s n=10
+[ 430/1053] ok  Grok                   'Paris'                      #0    8.8s n=10
+[ 431/1053] ok  Gemini                 'Route 91 Harvest'           #1   21.1s n=12
+[ 432/1053] ok  DeepSeek               'Manchester'                 #2   10.8s n=12
+[ 433/1053] ok  Grok                   'Paris'                      #1    8.2s n=12
+[ 434/1053] raw Claude                 'Abedi'                      #1   10.0s json_error: Expecting ',' delimiter: line 62 column 30 (char 2797)
+[ 435/1053] ok  Grok                   'Paris'                      #2    9.0s n=12
+[ 436/1053] raw Claude                 'Abedi'                      #2    9.3s json_error: Expecting ',' delimiter: line 70 column 24 (char 2760)
+[ 437/1053] ok  DeepSeek               'Victoria'                   #0   12.5s n=12
+[ 438/1053] raw Claude                 'Fyre'                       #0   10.4s json_error: Expecting ',' delimiter: line 70 column 38 (char 2949)
+[ 439/1053] ok  DeepSeek               'Victoria'                   #1    9.9s n=10
+[ 440/1053] ok  Gemini                 'Route 91 Harvest'           #2   30.5s n=12
+[ 441/1053] raw Claude                 'Fyre'                       #1    9.3s json_error: Expecting ',' delimiter: line 62 column 43 (char 2791)
+[ 442/1053] ok  DeepSeek               'Victoria'                   #2   10.9s n=12
+[ 443/1053] raw Claude                 'Fyre'                       #2    8.9s json_error: Expecting ',' delimiter: line 70 column 31 (char 2968)
+[ 444/1053] ok  DeepSeek               'Abedi'                      #0    8.0s n=8
+[ 445/1053] ok  qwen2.5:14b            'Coachella'                  #2  303.3s n=6
+[ 446/1053] ok  Gemini                 'Harvest'                    #0   15.8s n=12
+[ 447/1053] raw Claude                 'Great Exuma'                #0    8.5s json_error: Expecting ',' delimiter: line 70 column 30 (char 2765)
+[ 448/1053] ok  DeepSeek               'Abedi'                      #1    9.3s n=12
+[ 449/1053] ok  DeepSeek               'Abedi'                      #2    7.5s n=8
+[ 450/1053] raw Claude                 'Great Exuma'                #1    9.5s json_error: Expecting ',' delimiter: line 70 column 36 (char 2897)
+[ 451/1053] raw Claude                 'Great Exuma'                #2    8.7s json_error: Expecting ',' delimiter: line 62 column 30 (char 2679)
+[ 452/1053] ok  DeepSeek               'Fyre'                       #0   10.3s n=12
+[ 453/1053] ok  Gemini                 'Harvest'                    #1   25.8s n=12
+[ 454/1053] ok  DeepSeek               'Fyre'                       #1    7.6s n=8
+[ 455/1053] raw Claude                 'Exuma'                      #0    9.1s json_error: Expecting ',' delimiter: line 78 column 30 (char 3015)
+[ 456/1053] ok  DeepSeek               'Fyre'                       #2    5.8s n=8
+[ 457/1053] raw Claude                 'Exuma'                      #1    8.9s json_error: Expecting ',' delimiter: line 70 column 30 (char 2812)
+[ 458/1053] ok  Gemini                 'Harvest'                    #2   18.4s n=10
+[ 459/1053] ok  DeepSeek               'Great Exuma'                #0    8.2s n=8
+[ 460/1053] raw Claude                 'Exuma'                      #2    9.5s json_error: Expecting ',' delimiter: line 70 column 30 (char 2919)
+[ 461/1053] ok  DeepSeek               'Great Exuma'                #1    9.3s n=8
+[ 462/1053] raw Claude                 'Bahamas'                    #0    8.8s json_error: Expecting ',' delimiter: line 70 column 24 (char 2752)
+[ 463/1053] ok  DeepSeek               'Great Exuma'                #2    8.8s n=8
+[ 464/1053] raw Claude                 'Bahamas'                    #1    8.9s json_error: Expecting ',' delimiter: line 70 column 31 (char 2872)
+[ 465/1053] ok  DeepSeek               'Exuma'                      #0   12.1s n=12
+[ 466/1053] raw Claude                 'Bahamas'                    #2    9.3s json_error: Expecting ',' delimiter: line 62 column 36 (char 2621)
+[ 467/1053] ok  DeepSeek               'Exuma'                      #1    7.9s n=8
+[ 468/1053] ok  Gemini                 'Las Vegas Village'          #0   42.0s n=10
+[ 469/1053] raw Claude                 'Roker Point'                #0   10.3s json_error: Expecting ',' delimiter: line 62 column 30 (char 2723)
+[ 470/1053] ok  DeepSeek               'Exuma'                      #2    9.4s n=10
+[ 471/1053] raw Claude                 'Roker Point'                #1    9.0s json_error: Expecting ',' delimiter: line 70 column 31 (char 2855)
+[ 472/1053] ok  DeepSeek               'Bahamas'                    #0    6.0s n=8
+[ 473/1053] raw Claude                 'Roker Point'                #2    8.8s json_error: Expecting ',' delimiter: line 70 column 36 (char 2850)
+[ 474/1053] ok  DeepSeek               'Bahamas'                    #1    6.6s n=8
+[ 475/1053] ok  qwen2.5:14b            'Gillette Stadium'           #0  109.7s n=6
+[ 476/1053] ok  Gemini                 'Las Vegas Village'          #1   25.5s n=11
+[ 477/1053] raw Claude                 'Bataclan'                   #0    9.1s json_error: Expecting ',' delimiter: line 70 column 30 (char 2940)
+[ 478/1053] ok  DeepSeek               'Bahamas'                    #2   11.4s n=12
+[ 479/1053] raw Claude                 'Bataclan'                   #1    8.7s json_error: Expecting ',' delimiter: line 70 column 30 (char 2873)
+[ 480/1053] ok  DeepSeek               'Roker Point'                #0    7.9s n=8
+[ 481/1053] raw Claude                 'Bataclan'                   #2    9.4s json_error: Expecting ',' delimiter: line 70 column 24 (char 2962)
+[ 482/1053] ok  DeepSeek               'Roker Point'                #1    8.7s n=8
+[ 483/1053] ok  Gemini                 'Las Vegas Village'          #2   23.3s n=12
+[ 484/1053] raw Claude                 'Ba-ta-clan'                 #0    8.3s json_error: Expecting ',' delimiter: line 78 column 30 (char 3046)
+[ 485/1053] ok  DeepSeek               'Roker Point'                #2   10.7s n=10
+[ 486/1053] raw Claude                 'Ba-ta-clan'                 #1    8.4s json_error: Expecting ',' delimiter: line 70 column 30 (char 2864)
+[ 487/1053] ok  DeepSeek               'Bataclan'                   #0    8.5s n=8
+[ 488/1053] ok  Gemini                 'Mandalay Bay'               #0   19.6s n=10
+[ 489/1053] raw Claude                 'Ba-ta-clan'                 #2    9.4s json_error: Expecting ',' delimiter: line 70 column 30 (char 3187)
+[ 490/1053] ok  DeepSeek               'Bataclan'                   #1   11.1s n=12
+[ 491/1053] raw Claude                 'Eagles of Death Metal'      #0    9.4s json_error: Expecting ',' delimiter: line 62 column 37 (char 2841)
+[ 492/1053] ok  DeepSeek               'Bataclan'                   #2   12.1s n=12
+[ 493/1053] raw Claude                 'Eagles of Death Metal'      #1    9.6s json_error: Expecting ',' delimiter: line 54 column 24 (char 2463)
+[ 494/1053] ok  Gemini                 'Mandalay Bay'               #1   25.2s n=10
+[ 495/1053] ok  DeepSeek               'Ba-ta-clan'                 #0    8.7s n=8
+[ 496/1053] raw Claude                 'Eagles of Death Metal'      #2    9.4s json_error: Expecting ',' delimiter: line 62 column 24 (char 2928)
+[ 497/1053] ok  DeepSeek               'Ba-ta-clan'                 #1    8.3s n=8
+[ 498/1053] raw Claude                 'Voltaire'                   #0    8.9s json_error: Expecting ',' delimiter: line 78 column 24 (char 3051)
+[ 499/1053] ok  DeepSeek               'Ba-ta-clan'                 #2    7.9s n=8
+[ 500/1053] raw Claude                 'Voltaire'                   #1    9.1s json_error: Expecting ',' delimiter: line 78 column 24 (char 2958)
+[ 501/1053] ok  Gemini                 'Mandalay Bay'               #2   25.9s n=12
+[ 502/1053] raw Claude                 'Voltaire'                   #2    8.9s json_error: Expecting ',' delimiter: line 70 column 24 (char 2809)
+[ 503/1053] ok  DeepSeek               'Eagles of Death Metal'      #0   16.4s n=12
+[ 504/1053] raw Claude                 'Paris'                      #0    8.9s json_error: Expecting ',' delimiter: line 70 column 37 (char 2758)
+[ 505/1053] ok  DeepSeek               'Eagles of Death Metal'      #1   12.5s n=12
+[ 506/1053] raw Claude                 'Paris'                      #1    9.1s json_error: Expecting ',' delimiter: line 70 column 31 (char 2915)
+[ 507/1053] ok  DeepSeek               'Eagles of Death Metal'      #2    9.3s n=8
+[ 508/1053] raw Claude                 'Paris'                      #2    9.1s json_error: Expecting ',' delimiter: line 70 column 30 (char 2894)
+[ 509/1053] ok  qwen2.5:14b            'Gillette Stadium'           #1  133.8s n=6
+[ 510/1053] ok  Gemini                 'Mandalay'                   #0   37.6s n=10
+[ 511/1053] ok  DeepSeek               'Voltaire'                   #0    6.3s n=8
+[ 512/1053] ok  DeepSeek               'Voltaire'                   #1    9.8s n=12
+[ 513/1053] ok  DeepSeek               'Voltaire'                   #2    7.6s n=8
+[ 514/1053] ok  Gemini                 'Mandalay'                   #1   19.8s n=10
+[ 515/1053] ok  DeepSeek               'Paris'                      #0    7.9s n=8
+[ 516/1053] ok  DeepSeek               'Paris'                      #1   12.0s n=12
+[ 517/1053] ok  DeepSeek               'Paris'                      #2    8.2s n=8
+[ 518/1053] ok  Gemini                 'Mandalay'                   #2   28.3s n=12
+[ 519/1053] ok  Gemini                 'Luxor'                      #0   47.7s n=9
+[ 520/1053] ok  Gemini                 'Luxor'                      #1   27.1s n=10
+[ 521/1053] ok  Gemini                 'Luxor'                      #2   23.7s n=9
+[ 522/1053] ok  Gemini                 'Las Vegas'                  #0   28.5s n=9
+[ 523/1053] ok  Gemini                 'Las Vegas'                  #1   23.4s n=12
+[ 524/1053] ok  qwen2.5:14b            'Gillette Stadium'           #2  203.8s n=6
+[ 525/1053] ok  Gemini                 'Las Vegas'                  #2   22.4s n=11
+[ 526/1053] ok  Gemini                 'Nevada'                     #0   19.5s n=10
+[ 527/1053] ok  qwen2.5:14b            'Bonnaroo'                   #0   58.5s n=6
+[ 528/1053] ok  Gemini                 'Nevada'                     #1   30.3s n=11
+[ 529/1053] ok  Gemini                 'Nevada'                     #2   20.1s n=9
+[ 530/1053] ok  Gemini                 'Las Vegas Boulevard'        #0   24.0s n=10
+[ 531/1053] ok  Gemini                 'Las Vegas Boulevard'        #1   38.3s n=12
+[ 532/1053] ok  Gemini                 'Las Vegas Boulevard'        #2   26.1s n=10
+[ 534/1053] ok  Gemini                 'Paddock'                    #1   24.1s n=10
+[ 535/1053] ok  qwen2.5:14b            'Bonnaroo'                   #1  160.6s n=6
+[ 536/1053] ok  Gemini                 'Paddock'                    #2   25.6s n=11
+[ 537/1053] ok  Gemini                 'Astroworld'                 #0   32.6s n=12
+[ 538/1053] ok  qwen2.5:14b            'Bonnaroo'                   #2   57.9s n=12
+[ 539/1053] ok  Gemini                 'Astroworld'                 #1   26.7s n=8
+[ 540/1053] ok  Gemini                 'Astroworld'                 #2   30.0s n=12
+[ 541/1053] ok  Gemini                 'NRG Park'                   #0   23.0s n=8
+[ 542/1053] ok  Gemini                 'NRG Park'                   #1   24.1s n=12
+[ 543/1053] ok  Gemini                 'NRG Park'                   #2   18.2s n=10
+[ 544/1053] ok  qwen2.5:14b            'Wembley'                    #0  108.2s n=6
+[ 545/1053] ok  Gemini                 'Houston'                    #0   27.7s n=12
+[ 546/1053] ok  Gemini                 'Houston'                    #1   22.8s n=12
+[ 547/1053] ok  Gemini                 'Houston'                    #2   28.1s n=12
+[ 548/1053] ok  Gemini                 'Texas'                      #0   19.2s n=10
+[ 549/1053] ok  Gemini                 'Texas'                      #1   31.8s n=10
+[ 550/1053] ok  Gemini                 'Texas'                      #2   25.6s n=11
+[ 551/1053] ok  Gemini                 'Dangerous Woman'            #0   30.3s n=12
+[ 552/1053] ok  Gemini                 'Dangerous Woman'            #1   24.6s n=11
+[ 553/1053] ok  Gemini                 'Dangerous Woman'            #2   21.5s n=12
+[ 554/1053] ok  Gemini                 'Manchester Arena'           #0   24.7s n=12
+[ 555/1053] ok  Gemini                 'Manchester Arena'           #1   27.5s n=10
+[ 556/1053] ok  Gemini                 'Manchester Arena'           #2   30.2s n=12
+[ 557/1053] ok  Gemini                 'Manchester'                 #0   23.2s n=12
+[ 558/1053] ok  qwen2.5:14b            'Wembley'                    #1  342.1s n=12
+[ 559/1053] ok  Gemini                 'Manchester'                 #1   20.7s n=11
+[ 560/1053] ok  Gemini                 'Manchester'                 #2   26.5s n=8
+[ 561/1053] ok  Gemini                 'Victoria'                   #0   34.2s n=10
+[ 562/1053] ok  Gemini                 'Victoria'                   #1   22.2s n=11
+[ 563/1053] ok  Gemini                 'Victoria'                   #2   32.8s n=10
+[ 564/1053] ok  Gemini                 'Abedi'                      #0   18.3s n=10
+[ 565/1053] ok  Gemini                 'Abedi'                      #1   21.6s n=11
+[ 566/1053] ok  Gemini                 'Abedi'                      #2   21.7s n=12
+[ 567/1053] ok  Gemini                 'Fyre'                       #0   14.5s n=10
+[ 568/1053] ok  qwen2.5:14b            'Wembley'                    #2  210.3s n=6
+[ 569/1053] ok  qwen2.5:14b            'Red Rocks'                  #0    8.0s n=6
+[ 570/1053] ok  Gemini                 'Fyre'                       #1   21.5s n=11
+[ 571/1053] ok  Gemini                 'Fyre'                       #2   21.9s n=10
+[ 572/1053] ok  Gemini                 'Great Exuma'                #0   22.1s n=9
+[ 573/1053] ok  Gemini                 'Great Exuma'                #1   26.0s n=8
+[ 574/1053] ok  Gemini                 'Great Exuma'                #2   25.6s n=12
+[ 575/1053] ok  Gemini                 'Exuma'                      #0   27.3s n=12
+[ 576/1053] ok  qwen2.5:14b            'Red Rocks'                  #1  146.6s n=8
+[ 577/1053] ok  Gemini                 'Exuma'                      #1   21.2s n=10
+[ 578/1053] ok  qwen2.5:14b            'Red Rocks'                  #2    9.6s n=6
+[ 579/1053] ok  qwen2.5:14b            'Glastonbury'                #0    7.0s n=6
+[ 580/1053] ok  qwen2.5:14b            'Glastonbury'                #1   14.8s n=8
+[ 581/1053] ok  Gemini                 'Exuma'                      #2   29.0s n=12
+[ 582/1053] ok  qwen2.5:14b            'Glastonbury'                #2   15.0s n=6
+[ 583/1053] ok  Gemini                 'Bahamas'                    #0   21.6s n=11
+[ 584/1053] ok  qwen2.5:14b            'Fenway'                     #0   14.7s n=6
+[ 585/1053] ok  qwen2.5:14b            'Fenway'                     #1   12.7s n=6
+[ 586/1053] ok  qwen2.5:14b            'Fenway'                     #2   11.0s n=6
+[ 587/1053] ok  Gemini                 'Bahamas'                    #1   29.1s n=12
+[ 588/1053] ok  Gemini                 'Bahamas'                    #2   20.7s n=9
+[ 589/1053] ok  Gemini                 'Roker Point'                #0   20.8s n=10
+[ 590/1053] ok  Gemini                 'Roker Point'                #1   28.6s n=10
+[ 591/1053] ok  qwen2.5:14b            'Lollapalooza'               #0   92.4s n=6
+[ 592/1053] ok  Gemini                 'Roker Point'                #2   26.0s n=12
+[ 593/1053] ok  Gemini                 'Bataclan'                   #0   24.4s n=12
+[ 594/1053] ok  Gemini                 'Bataclan'                   #1   26.4s n=10
+[ 595/1053] ok  qwen2.5:14b            'Lollapalooza'               #1   72.8s n=6
+[ 596/1053] ok  Gemini                 'Bataclan'                   #2   27.1s n=10
+[ 597/1053] ok  Gemini                 'Ba-ta-clan'                 #0   33.8s n=10
+[ 598/1053] ok  qwen2.5:14b            'Lollapalooza'               #2   65.4s n=11
+[ 599/1053] ok  Gemini                 'Ba-ta-clan'                 #1   30.5s n=12
+[ 600/1053] ok  Gemini                 'Ba-ta-clan'                 #2   28.5s n=12
+[ 601/1053] ok  Gemini                 'Eagles of Death Metal'      #0   22.7s n=12
+[ 602/1053] ok  qwen2.5:14b            'Tanglewood'                 #0   79.3s n=6
+[ 603/1053] ok  Gemini                 'Eagles of Death Metal'      #1   45.4s n=10
+[ 604/1053] ok  Gemini                 'Eagles of Death Metal'      #2   31.8s n=10
+[ 605/1053] raw Gemini                 'Voltaire'                   #0   25.0s json_error: Expecting ',' delimiter: line 4 column 20 (char 60)
+[ 606/1053] ok  qwen2.5:14b            'Tanglewood'                 #1   88.0s n=8
+[ 607/1053] ok  Gemini                 'Voltaire'                   #1   32.9s n=10
+[ 608/1053] ok  Gemini                 'Voltaire'                   #2   26.6s n=10
+[ 609/1053] ok  Gemini                 'Paris'                      #0   23.4s n=12
+[ 610/1053] ok  Gemini                 'Paris'                      #1   25.0s n=10
+[ 611/1053] ok  qwen2.5:14b            'Tanglewood'                 #2  114.9s n=6
+[ 612/1053] ok  qwen2.5:14b            'Stagecoach'                 #0    6.9s n=6
+[ 613/1053] ok  Gemini                 'Paris'                      #2   20.0s n=12
+[ 614/1053] ok  qwen2.5:14b            'Stagecoach'                 #1    7.9s n=6

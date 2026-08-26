@@ -1,0 +1,127 @@
+{
+ "word": "Manchester Arena",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:54+00:00",
+ "latency_s": 6.53,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chester + Arena\",\n    \"reading\": \"The man who hides or conceals the arena\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Manch + ester + a + rena\",\n    \"reading\": \"The sleeve (manche) of the one who is reborn (renaît)\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Manchester ≈ Mans Chester ≈ Mans Shaster; Arena ≈ Harena\",\n    \"reading\": \"The dwelling (mans) of the destroyer (shaster); arena of sand (harena)\",\n    \"languages\": [\"en\",\"fr\",\"la\",\"skr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Manchester from Mamucium (Latin) + Arena from harena (Latin)\",\n    \"reading\": \"Breast-shaped hill of sand; the sandy breast\",\n    \"languages\": [\"la\"],\n    \"source\": \"Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester Arena → Arcane Mantras Eh\",\n    \"reading\": \"The hidden mantras are revealed here\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + che + ster + a + rena\",\n    \"reading\": \"The man who sings (chanter) the sterile (stérile) rebirth (rena)\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M A N C H E S T E R   A R E N A → initials read as acrostic\",\n    \"reading\": \"Mystery Announced Now Concealed, Hidden Entrance Suddenly Transmuted, Eternal Return, Arena of the New Adam\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Manch = sleeve (French); ester = star (Old French/astrum); Arena = sand\",\n    \"reading\": \"The sleeve that hides the star within the sand\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Manchester ≈ Mon Chester ≈ Mon Shaster; Arena ≈ A Reyna\",\n    \"reading\": \"My destroyer (shaster) becomes the queen (reyna)\",\n    \"languages\": [\"fr\",\"es\",\"skr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-chester-arena → Manus + Kaestus + Harena\",\n    \"reading\": \"The hand that casts the die in the sand\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chester + Arena",
+   "reading": "The man who hides or conceals the arena",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Manch + ester + a + rena",
+   "reading": "The sleeve (manche) of the one who is reborn (renaît)",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manchester ≈ Mans Chester ≈ Mans Shaster; Arena ≈ Harena",
+   "reading": "The dwelling (mans) of the destroyer (shaster); arena of sand (harena)",
+   "languages": [
+    "en",
+    "fr",
+    "la",
+    "skr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Manchester from Mamucium (Latin) + Arena from harena (Latin)",
+   "reading": "Breast-shaped hill of sand; the sandy breast",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis & Short Latin Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester Arena → Arcane Mantras Eh",
+   "reading": "The hidden mantras are revealed here",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + che + ster + a + rena",
+   "reading": "The man who sings (chanter) the sterile (stérile) rebirth (rena)",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M A N C H E S T E R   A R E N A → initials read as acrostic",
+   "reading": "Mystery Announced Now Concealed, Hidden Entrance Suddenly Transmuted, Eternal Return, Arena of the New Adam",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Manch = sleeve (French); ester = star (Old French/astrum); Arena = sand",
+   "reading": "The sleeve that hides the star within the sand",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manchester ≈ Mon Chester ≈ Mon Shaster; Arena ≈ A Reyna",
+   "reading": "My destroyer (shaster) becomes the queen (reyna)",
+   "languages": [
+    "fr",
+    "es",
+    "skr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-chester-arena → Manus + Kaestus + Harena",
+   "reading": "The hand that casts the die in the sand",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

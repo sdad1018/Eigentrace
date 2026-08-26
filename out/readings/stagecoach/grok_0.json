@@ -1,0 +1,129 @@
+{
+ "word": "Stagecoach",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:18:27+00:00",
+ "latency_s": 6.3,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"stage + coach; stage (from Old French estage 'dwelling, stopping place') + coach (from Hungarian kocsi 'carriage from Kocs')\",\n    \"reading\": \"a carriage that stops at fixed stages or stations\",\n    \"languages\": [\"en\",\"fr\",\"hu\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"stay + j + coach\",\n    \"reading\": \"he who remains (stay) in the coach of initiation\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"sta + ge + coach\",\n    \"reading\": \"the standing (sta) earth (ge) carriage; the vehicle of the fixed earth\",\n    \"languages\": [\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"stagecoach ≈ staj kosh ≈ stage + kos (fr: pig) + chaux (fr: lime)\",\n    \"reading\": \"the pig of lime; the alchemical vessel calcined white\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"STAGECOACH → CHAOS + C + GET\",\n    \"reading\": \"the chaos that gets the C (the crescent, the moon, the silver)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"stage + coach ≈ est + âge + coq\",\n    \"reading\": \"the age of the cock; the era of the herald of dawn\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.70\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"S.T.A.G.E.C.O.A.C.H. → Solve Terra Ad Gloriam Eius Coagula Omnia Ad Coelum Hermeticum\",\n    \"reading\": \"dissolve the earth to his glory, coagulate all unto the hermetic heaven\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.40\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"stagecoach ≈ sta je coach ≈ sta (he: secret) + je (fr: I) + coach (eng: carriage)\",\n    \"reading\": \"the secret I am carried in\",\n    \"languages\": [\"he\",\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"stage-coach ≈ stège-coq\",\n    \"reading\": \"the roof (stège) of the cock; the alchemical still of the herald\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"S (serpent) + TAGE (days/ages) + COACH (vehicle)\",\n    \"reading\": \"the serpent that carries through the ages\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "stage + coach; stage (from Old French estage 'dwelling, stopping place') + coach (from Hungarian kocsi 'carriage from Kocs')",
+   "reading": "a carriage that stops at fixed stages or stations",
+   "languages": [
+    "en",
+    "fr",
+    "hu"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "stay + j + coach",
+   "reading": "he who remains (stay) in the coach of initiation",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "sta + ge + coach",
+   "reading": "the standing (sta) earth (ge) carriage; the vehicle of the fixed earth",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "stagecoach ≈ staj kosh ≈ stage + kos (fr: pig) + chaux (fr: lime)",
+   "reading": "the pig of lime; the alchemical vessel calcined white",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "STAGECOACH → CHAOS + C + GET",
+   "reading": "the chaos that gets the C (the crescent, the moon, the silver)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "stage + coach ≈ est + âge + coq",
+   "reading": "the age of the cock; the era of the herald of dawn",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "S.T.A.G.E.C.O.A.C.H. → Solve Terra Ad Gloriam Eius Coagula Omnia Ad Coelum Hermeticum",
+   "reading": "dissolve the earth to his glory, coagulate all unto the hermetic heaven",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "stagecoach ≈ sta je coach ≈ sta (he: secret) + je (fr: I) + coach (eng: carriage)",
+   "reading": "the secret I am carried in",
+   "languages": [
+    "he",
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "stage-coach ≈ stège-coq",
+   "reading": "the roof (stège) of the cock; the alchemical still of the herald",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "S (serpent) + TAGE (days/ages) + COACH (vehicle)",
+   "reading": "the serpent that carries through the ages",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

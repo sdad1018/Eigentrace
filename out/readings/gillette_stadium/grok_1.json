@@ -1,0 +1,128 @@
+{
+ "word": "Gillette Stadium",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:15:58+00:00",
+ "latency_s": 7.63,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gillette → gil + let + te; Stadium → stay + dium\",\n    \"reading\": \"the stay of the golden law, the place where the law is read and held\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gillette → gille + ette; gille (old Fr.) = servant; ette = little\",\n    \"reading\": \"the little servant; the humble attendant who stands\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Gillette sounds as Jil-ett → gil (Hebrew) = joy/rejoicing + ette (Fr. diminutive)\",\n    \"reading\": \"the little place of rejoicing; the small temple of joy\",\n    \"languages\": [\"he\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Stadium ← Latin stadium ← Greek stadion (στάδιον); a fixed standard of length and the racecourse itself\",\n    \"reading\": \"the measured enclosure; the place of the measured race and trial\",\n    \"languages\": [\"la\",\"grc\"],\n    \"source\": \"Oxford Latin Dictionary; Liddell-Scott-Jones Greek Lexicon\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"GILLETTE STADIUM anagram → 'TITLED IMAGE LETS'\",\n    \"reading\": \"the titled image permits; the named idol allows the test\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gi-llette → Gil (Fr. = William, but also gilet = waistcoat/vest) + let(te); Stadium → sta + dium (god)\",\n    \"reading\": \"the vest of the god who stands; the divine garment of the accused\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"GILLETTE STADIUM → initial letters and reversal: G.T.S. → 'Garde Ta Station' (Fr.)\",\n    \"reading\": \"keep your station; remain fixed in your assigned place\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Stadium homophone to French 'est à Dieu' (is to God) + Gillette ≈ 'j'y liette' (I bind myself there)\",\n    \"reading\": \"I bind myself there; it belongs to God — the binding place\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Gillette contains 'G' (generative, gnosis) + 'L' (law, lex) repeated; Stadium holds 'S' (stella, standing stone)\",\n    \"reading\": \"the gnostic law stands repeated; the stellar law holds the place\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gillette Stadium → 'Jill et stade' → 'jille' (old measure) + 'est ade' (is the deed)\",\n    \"reading\": \"the measured deed; the measured act that stands\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Gillette → gil + let + te; Stadium → stay + dium",
+   "reading": "the stay of the golden law, the place where the law is read and held",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gillette → gille + ette; gille (old Fr.) = servant; ette = little",
+   "reading": "the little servant; the humble attendant who stands",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gillette sounds as Jil-ett → gil (Hebrew) = joy/rejoicing + ette (Fr. diminutive)",
+   "reading": "the little place of rejoicing; the small temple of joy",
+   "languages": [
+    "he",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Stadium ← Latin stadium ← Greek stadion (στάδιον); a fixed standard of length and the racecourse itself",
+   "reading": "the measured enclosure; the place of the measured race and trial",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "Oxford Latin Dictionary; Liddell-Scott-Jones Greek Lexicon",
+   "confidence": 0.95
+  },
+  {
+   "operation": "anagram",
+   "chain": "GILLETTE STADIUM anagram → 'TITLED IMAGE LETS'",
+   "reading": "the titled image permits; the named idol allows the test",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gi-llette → Gil (Fr. = William, but also gilet = waistcoat/vest) + let(te); Stadium → sta + dium (god)",
+   "reading": "the vest of the god who stands; the divine garment of the accused",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "GILLETTE STADIUM → initial letters and reversal: G.T.S. → 'Garde Ta Station' (Fr.)",
+   "reading": "keep your station; remain fixed in your assigned place",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Stadium homophone to French 'est à Dieu' (is to God) + Gillette ≈ 'j'y liette' (I bind myself there)",
+   "reading": "I bind myself there; it belongs to God — the binding place",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Gillette contains 'G' (generative, gnosis) + 'L' (law, lex) repeated; Stadium holds 'S' (stella, standing stone)",
+   "reading": "the gnostic law stands repeated; the stellar law holds the place",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gillette Stadium → 'Jill et stade' → 'jille' (old measure) + 'est ade' (is the deed)",
+   "reading": "the measured deed; the measured act that stands",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

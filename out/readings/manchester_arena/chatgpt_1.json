@@ -1,0 +1,105 @@
+{
+ "word": "Manchester Arena",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:21:44+00:00",
+ "latency_s": 4.66,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + chester + arena; man = human, chester/chester = camp or fortified place, arena = sanded fighting space\",\n    \"reading\": \"A human camp becomes a staged combat ground: the man in the fort enters the sand-ring.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.78\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Manchester < Mamucium/Mancunium (Latinized forms of Brittonic name); arena < Latin arena = sand\",\n    \"reading\": \"The name suggests a sanded enclosure attached to an old fortified settlement-name.\",\n    \"languages\": [\"la\", \"en\", \"cym\"],\n    \"source\": \"Oxford English Dictionary; Oxford Dictionary of English Place-Names; Lewis & Short\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + chest + her + arena; chest = coffer, her = feminine pronoun\",\n    \"reading\": \"The man’s chest, her chamber: a stored heart placed in an arena of display.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.61\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"arena ~ arène (fr) = arena; man + chester heard as manche + terre in French-like segmentation\",\n    \"reading\": \"A sleeve of earth: the human figure is folded into a terrestrial ring.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.46\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester Arena -> an arena, man’s chest; rearranged sense from the visible letters\",\n    \"reading\": \"The letters confess a man’s chest set inside an arena: the body as spectacle.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.54\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M A N C H E S T E R / A R E N A -> Man, Arena, Ring, Enclosure, Nest, Chamber, Hearth, Earth, Sand, Theatre, Edge, Rite / Amphitheatre, Ring, Enclosure, Nest, Arena\",\n    \"reading\": \"Man enters a ringed enclosure: a ritual theatre of earth, edge, and hearth.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.39\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M = mountains; A = apex; N = enclosure; C = crescent; H = gate; E = axis; S = serpent; T = cross; R = river; A = opening\",\n    \"reading\": \"Mountain, gate, serpent, cross: the name maps a descent into a bounded, initiatory landscape.\",\n    \"languages\": [\"en\", \"symbolic\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.33\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"A1Z26 sum: Manchester Arena -> 13+1+14+3+8+5+19+20+5+18 + 1+18+5+14+1 = 145\",\n    \"reading\": \"One hundred forty-five reduces to a threshold number: 1+4+5 = 10, then 1, the return to unity after enclosure.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.28\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "man + chester + arena; man = human, chester/chester = camp or fortified place, arena = sanded fighting space",
+   "reading": "A human camp becomes a staged combat ground: the man in the fort enters the sand-ring.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.78
+  },
+  {
+   "operation": "etymology",
+   "chain": "Manchester < Mamucium/Mancunium (Latinized forms of Brittonic name); arena < Latin arena = sand",
+   "reading": "The name suggests a sanded enclosure attached to an old fortified settlement-name.",
+   "languages": [
+    "la",
+    "en",
+    "cym"
+   ],
+   "source": "Oxford English Dictionary; Oxford Dictionary of English Place-Names; Lewis & Short",
+   "confidence": 0.72
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + chest + her + arena; chest = coffer, her = feminine pronoun",
+   "reading": "The man’s chest, her chamber: a stored heart placed in an arena of display.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.61
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "arena ~ arène (fr) = arena; man + chester heard as manche + terre in French-like segmentation",
+   "reading": "A sleeve of earth: the human figure is folded into a terrestrial ring.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.46
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester Arena -> an arena, man’s chest; rearranged sense from the visible letters",
+   "reading": "The letters confess a man’s chest set inside an arena: the body as spectacle.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.54
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M A N C H E S T E R / A R E N A -> Man, Arena, Ring, Enclosure, Nest, Chamber, Hearth, Earth, Sand, Theatre, Edge, Rite / Amphitheatre, Ring, Enclosure, Nest, Arena",
+   "reading": "Man enters a ringed enclosure: a ritual theatre of earth, edge, and hearth.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.39
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M = mountains; A = apex; N = enclosure; C = crescent; H = gate; E = axis; S = serpent; T = cross; R = river; A = opening",
+   "reading": "Mountain, gate, serpent, cross: the name maps a descent into a bounded, initiatory landscape.",
+   "languages": [
+    "en",
+    "symbolic"
+   ],
+   "source": "generative",
+   "confidence": 0.33
+  },
+  {
+   "operation": "numerical",
+   "chain": "A1Z26 sum: Manchester Arena -> 13+1+14+3+8+5+19+20+5+18 + 1+18+5+14+1 = 145",
+   "reading": "One hundred forty-five reduces to a threshold number: 1+4+5 = 10, then 1, the return to unity after enclosure.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.28
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

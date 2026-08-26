@@ -1,0 +1,131 @@
+{
+ "word": "Ba-ta-clan",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:27:35+00:00",
+ "latency_s": 9.35,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Ba + ta + clan\",\n    \"reading\": \"the father (Ba) strikes (ta) the enclosed secret group (clan)\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bât + à + clan\",\n    \"reading\": \"the beast of burden (bât) belongs to (à) the hidden clan\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Ba-ta-clan ≈ Bata clan ≈ Bata (Aramaic: daughter) + clan\",\n    \"reading\": \"the daughter of the enclosed bloodline or secret society\",\n    \"languages\": [\"ar\",\"syc\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bataclan ← bat(t)re (to beat) + clan (Gaelic clann = offspring, brood)\",\n    \"reading\": \"the beating or striking of the brood / the rhythmic strike upon the lineage\",\n    \"languages\": [\"fr\",\"gd\",\"en\"],\n    \"source\": \"Littré + Oxford English Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Ba-ta-clan → Cabal + ant\",\n    \"reading\": \"the ant of the cabal; the small worker inside the secret gathering\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bâtacle + an\",\n    \"reading\": \"the obstacle / trap (bâtacle) of the year (an); the yearly snare\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-T-CLN → Bet (house) + Tav (cross/mark) + Qoph-Lamed-Nun (to bind, to enclose)\",\n    \"reading\": \"the house of the binding mark; the marked enclosure that binds\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Ba-ta-clan ≈ Bac + à + clan ≈ Bacchus à clan\",\n    \"reading\": \"the Bacchic clan; the frenzied hidden brotherhood of the vine\",\n    \"languages\": [\"fr\",\"la\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B (house) + A (ox) + T (cross) + C (camel) + L (ox-goad) + A + N (fish)\",\n    \"reading\": \"the house of the ox-cross guides the camel through the enclosed waters\",\n    \"languages\": [\"he\",\"ph\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bat + a + clan ≈ Bat (Arabic: daughter of) + a clan\",\n    \"reading\": \"daughter of the clan; the feminine heir within the closed bloodline\",\n    \"languages\": [\"ar\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba + ta + clan",
+   "reading": "the father (Ba) strikes (ta) the enclosed secret group (clan)",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bât + à + clan",
+   "reading": "the beast of burden (bât) belongs to (à) the hidden clan",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Ba-ta-clan ≈ Bata clan ≈ Bata (Aramaic: daughter) + clan",
+   "reading": "the daughter of the enclosed bloodline or secret society",
+   "languages": [
+    "ar",
+    "syc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "bataclan ← bat(t)re (to beat) + clan (Gaelic clann = offspring, brood)",
+   "reading": "the beating or striking of the brood / the rhythmic strike upon the lineage",
+   "languages": [
+    "fr",
+    "gd",
+    "en"
+   ],
+   "source": "Littré + Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "Ba-ta-clan → Cabal + ant",
+   "reading": "the ant of the cabal; the small worker inside the secret gathering",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bâtacle + an",
+   "reading": "the obstacle / trap (bâtacle) of the year (an); the yearly snare",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-T-CLN → Bet (house) + Tav (cross/mark) + Qoph-Lamed-Nun (to bind, to enclose)",
+   "reading": "the house of the binding mark; the marked enclosure that binds",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Ba-ta-clan ≈ Bac + à + clan ≈ Bacchus à clan",
+   "reading": "the Bacchic clan; the frenzied hidden brotherhood of the vine",
+   "languages": [
+    "fr",
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (house) + A (ox) + T (cross) + C (camel) + L (ox-goad) + A + N (fish)",
+   "reading": "the house of the ox-cross guides the camel through the enclosed waters",
+   "languages": [
+    "he",
+    "ph"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bat + a + clan ≈ Bat (Arabic: daughter of) + a clan",
+   "reading": "daughter of the clan; the feminine heir within the closed bloodline",
+   "languages": [
+    "ar",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

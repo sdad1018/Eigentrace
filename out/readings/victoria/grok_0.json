@@ -1,0 +1,128 @@
+{
+ "word": "Victoria",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:24:25+00:00",
+ "latency_s": 8.66,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Victoria < Latin victoria = victory, from victor = conqueror, from vincere = to conquer\",\n    \"reading\": \"the act of conquering; triumph of the will over opposition\",\n    \"languages\": [\"la\",\"en\"],\n    \"source\": \"Oxford Latin Dictionary / Lewis & Short\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vic-tor-ia → Vic (French: saw) + tor (French: bull) + ia (Greek: goddess suffix)\",\n    \"reading\": \"the goddess who saws the bull; feminine force that severs brute strength\",\n    \"languages\": [\"fr\",\"la\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vic-to-ria → Vic (Old French: quick, lively) + to-ria (Latin: toria, from torrere = to scorch)\",\n    \"reading\": \"the quick fire that scorches; living flame of decisive victory\",\n    \"languages\": [\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Victoria ≈ French: victoire + ia ≈ Hebrew: יָה (Yah) = divine name\",\n    \"reading\": \"divine victory; triumph that carries the name of God\",\n    \"languages\": [\"fr\",\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"VICTORIA → I, VICTOR + A (feminine article)\",\n    \"reading\": \"I am the feminine Victor; the speaker claims victorious feminine identity\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.70\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vic-toria → Vic (Latin: vice = in place of) + toria (from Latin: toreo/torquere = twist, torture)\",\n    \"reading\": \"that which stands in place of twisting; the resolution that ends torsion\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"V.I.C.T.O.R.I.A. → Vivit In Corpore Tuae Omnipotentis Regina Invicta Aeterna\",\n    \"reading\": \"She lives in your body, the unconquered eternal queen of omnipotence\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V (victory gesture) + I (Roman one / axis) + C (crescent, moon) + TOR (bull) + IA (goddess)\",\n    \"reading\": \"victorious axis uniting lunar crescent with solar bull under the goddess\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.40\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Victoria ≈ Arabic: فِتْحُ الرِّيَاح (fath al-riyāḥ) phonetic echo + ia\",\n    \"reading\": \"opening of the winds; the decisive breath that opens all gates\",\n    \"languages\": [\"ar\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Victoria from Latin vincere, perfect passive participle victus + -ia (abstract noun)\",\n    \"reading\": \"the state or quality of having been conquered; paradoxically, the essence of conquest\",\n    \"languages\": [\"la\"],\n    \"source\": \"Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.90\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Victoria < Latin victoria = victory, from victor = conqueror, from vincere = to conquer",
+   "reading": "the act of conquering; triumph of the will over opposition",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Oxford Latin Dictionary / Lewis & Short",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vic-tor-ia → Vic (French: saw) + tor (French: bull) + ia (Greek: goddess suffix)",
+   "reading": "the goddess who saws the bull; feminine force that severs brute strength",
+   "languages": [
+    "fr",
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vic-to-ria → Vic (Old French: quick, lively) + to-ria (Latin: toria, from torrere = to scorch)",
+   "reading": "the quick fire that scorches; living flame of decisive victory",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Victoria ≈ French: victoire + ia ≈ Hebrew: יָה (Yah) = divine name",
+   "reading": "divine victory; triumph that carries the name of God",
+   "languages": [
+    "fr",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "VICTORIA → I, VICTOR + A (feminine article)",
+   "reading": "I am the feminine Victor; the speaker claims victorious feminine identity",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vic-toria → Vic (Latin: vice = in place of) + toria (from Latin: toreo/torquere = twist, torture)",
+   "reading": "that which stands in place of twisting; the resolution that ends torsion",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V.I.C.T.O.R.I.A. → Vivit In Corpore Tuae Omnipotentis Regina Invicta Aeterna",
+   "reading": "She lives in your body, the unconquered eternal queen of omnipotence",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V (victory gesture) + I (Roman one / axis) + C (crescent, moon) + TOR (bull) + IA (goddess)",
+   "reading": "victorious axis uniting lunar crescent with solar bull under the goddess",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Victoria ≈ Arabic: فِتْحُ الرِّيَاح (fath al-riyāḥ) phonetic echo + ia",
+   "reading": "opening of the winds; the decisive breath that opens all gates",
+   "languages": [
+    "ar",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "etymology",
+   "chain": "Victoria from Latin vincere, perfect passive participle victus + -ia (abstract noun)",
+   "reading": "the state or quality of having been conquered; paradoxically, the essence of conquest",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis & Short Latin Dictionary",
+   "confidence": 0.9
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

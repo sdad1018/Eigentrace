@@ -1,0 +1,133 @@
+{
+ "word": "Bahamas",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:23:18+00:00",
+ "latency_s": 6.16,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"bah + amas; bah (interjection of dismissal) + amas (Latin/Spanish/French-sounding plural/verb echo)\",\n    \"reading\": \"Dismissal followed by many selves: a scattered, wavering plurality that says “bah” to unity.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"ba + ham + as; ham (English) = ham, as (English) = like/as; ba- as a syllabic opening\",\n    \"reading\": \"A “ham” made into a likeness: an imitation, a mask, a performed identity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.56\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bah + amas; bah (fr./en. interjection) + amas (Latin amas = you love; also echoes French amas = heap)\",\n    \"reading\": \"Love turned to heap: affection accumulated, then reduced to an exclamation of doubt.\",\n    \"languages\": [\"fr\", \"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bahama(s) < Spanish Baja Mar / baja mar, “low sea”; standard lexicon: OED; Merriam-Webster; Oxford Reference\",\n    \"reading\": \"The low sea: a name of depth, recession, and waters drawn down.\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"OED; Merriam-Webster; Oxford Reference\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bahama(s) < Spanish baja mar, “shallow sea” / “low water”; standard lexicon: Diccionario de la lengua española; OED\",\n    \"reading\": \"Shallow water, low tide: a place-name that speaks of exposed ground and hidden edges.\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"Diccionario de la lengua española; OED\",\n    \"confidence\": 0.84\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"BAHAMAS -> AAHMABS / AAHMABS (near-anagrammatic rearrangement emphasizing AAH + MABS)\",\n    \"reading\": \"A cry of “ah” and “ma” with a final bite: wonder, mother, and a closing hiss.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B-A-H-A-M-A-S; B = second, A = first, H = breath/aspiration in many esoteric alphabets, M = waters/waves by shape, S = serpent/curving line\",\n    \"reading\": \"From first breath to serpent curve: a sequence of opening, swell, and winding return.\",\n    \"languages\": [\"en\", \"grc\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.47\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B A H A M A S -> Breath, Air, Heat, Aqua, Matter, Anima, Salt\",\n    \"reading\": \"The sevenfold recipe of manifestation: breath, air, fire, water, substance, soul, and salt.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.33\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"B(2)+A(1)+H(8)+A(1)+M(13)+A(1)+S(19)=45; 4+5=9\",\n    \"reading\": \"Nine: completion, enclosure, and the end of a cycle gathered from the letters.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ba + ha + mas; ha = laughter/breath in several traditions; mas = mass, heap, more\",\n    \"reading\": \"Breath becomes laughter, then mass: a light sound thickening into abundance.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.61\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "bah + amas; bah (interjection of dismissal) + amas (Latin/Spanish/French-sounding plural/verb echo)",
+   "reading": "Dismissal followed by many selves: a scattered, wavering plurality that says “bah” to unity.",
+   "languages": [
+    "en",
+    "fr",
+    "la",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.72
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "ba + ham + as; ham (English) = ham, as (English) = like/as; ba- as a syllabic opening",
+   "reading": "A “ham” made into a likeness: an imitation, a mask, a performed identity.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.56
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bah + amas; bah (fr./en. interjection) + amas (Latin amas = you love; also echoes French amas = heap)",
+   "reading": "Love turned to heap: affection accumulated, then reduced to an exclamation of doubt.",
+   "languages": [
+    "fr",
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.68
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bahama(s) < Spanish Baja Mar / baja mar, “low sea”; standard lexicon: OED; Merriam-Webster; Oxford Reference",
+   "reading": "The low sea: a name of depth, recession, and waters drawn down.",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "OED; Merriam-Webster; Oxford Reference",
+   "confidence": 0.9
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bahama(s) < Spanish baja mar, “shallow sea” / “low water”; standard lexicon: Diccionario de la lengua española; OED",
+   "reading": "Shallow water, low tide: a place-name that speaks of exposed ground and hidden edges.",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "Diccionario de la lengua española; OED",
+   "confidence": 0.84
+  },
+  {
+   "operation": "anagram",
+   "chain": "BAHAMAS -> AAHMABS / AAHMABS (near-anagrammatic rearrangement emphasizing AAH + MABS)",
+   "reading": "A cry of “ah” and “ma” with a final bite: wonder, mother, and a closing hiss.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B-A-H-A-M-A-S; B = second, A = first, H = breath/aspiration in many esoteric alphabets, M = waters/waves by shape, S = serpent/curving line",
+   "reading": "From first breath to serpent curve: a sequence of opening, swell, and winding return.",
+   "languages": [
+    "en",
+    "grc",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.47
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B A H A M A S -> Breath, Air, Heat, Aqua, Matter, Anima, Salt",
+   "reading": "The sevenfold recipe of manifestation: breath, air, fire, water, substance, soul, and salt.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.33
+  },
+  {
+   "operation": "numerical",
+   "chain": "B(2)+A(1)+H(8)+A(1)+M(13)+A(1)+S(19)=45; 4+5=9",
+   "reading": "Nine: completion, enclosure, and the end of a cycle gathered from the letters.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ba + ha + mas; ha = laughter/breath in several traditions; mas = mass, heap, more",
+   "reading": "Breath becomes laughter, then mass: a light sound thickening into abundance.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.61
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

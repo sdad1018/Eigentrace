@@ -1,0 +1,107 @@
+{
+ "word": "Eagles of Death Metal",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:24:37+00:00",
+ "latency_s": 5.06,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"eagle < OE ǣġel/ēg(e)l?; but standard etymon is ME egle, from OF aigle, from Latin aquila; death < OE dēaþ; metal < OF metal, from Latin metallum, from Greek metallon\",\n    \"reading\": \"The soaring sign of power is joined to mortality and to extracted earth-substance: majesty, ending, and matter.\",\n    \"languages\": [\"en\", \"oe\", \"of\", \"la\", \"grc\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster; Online Etymology Dictionary\",\n    \"confidence\": 0.86\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"eagles / of / death / metal → eagles = e-gulls; of = off; death = dearth; metal = mettle\",\n    \"reading\": \"Birds become gulls; abundance turns to lack; metal sounds like mettle: courage forged against privation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"eagles ≈ aigles (fr, 'eagles'); death ≈ dette (fr, 'debt'); metal ≈ métal (fr, 'metal')\",\n    \"reading\": \"The eagle’s flight is shadowed by debt and weight: a shining substance burdened by obligation.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.64\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"death ≈ det (da/no, 'that'); metal ≈ metel/metel (dialectal echoes of 'measure'/'mettle'); eagles as 'eagles' sounding like 'easels' in some accents\",\n    \"reading\": \"That which is high is measured by what it carries; the lofty image becomes a support for the work of making.\",\n    \"languages\": [\"en\", \"da\", \"no\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.41\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"EAGLES OF DEATH METAL → rearrange to yield 'THE FATE OF GLAD MEAL' (approximate partial anagram)\",\n    \"reading\": \"A feast is fated; gladness is consumed and transformed into necessity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.29\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Eagles / Of / Death / Metal → E.O.D.M. → 'End Of Desire, Matter'\",\n    \"reading\": \"The initials declare an ending where desire is reduced to substance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.33\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"E = the fifth letter, often the element of expansion; O = circle/zero; D = door; M = mountain or wave in letter-symbol traditions\",\n    \"reading\": \"Expansion enters the void, passes the threshold, and rises as a mountain-wave: ascent enclosed by ending.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.22\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"EAGLES OF DEATH METAL → initials E O D M; E=5, O=15, D=4, M=13; sum = 37\",\n    \"reading\": \"Thirty-seven suggests a hidden key-number: a compact cipher of ascent, circle, door, and measure.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.18\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "eagle < OE ǣġel/ēg(e)l?; but standard etymon is ME egle, from OF aigle, from Latin aquila; death < OE dēaþ; metal < OF metal, from Latin metallum, from Greek metallon",
+   "reading": "The soaring sign of power is joined to mortality and to extracted earth-substance: majesty, ending, and matter.",
+   "languages": [
+    "en",
+    "oe",
+    "of",
+    "la",
+    "grc"
+   ],
+   "source": "Oxford English Dictionary; Merriam-Webster; Online Etymology Dictionary",
+   "confidence": 0.86
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "eagles / of / death / metal → eagles = e-gulls; of = off; death = dearth; metal = mettle",
+   "reading": "Birds become gulls; abundance turns to lack; metal sounds like mettle: courage forged against privation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.72
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "eagles ≈ aigles (fr, 'eagles'); death ≈ dette (fr, 'debt'); metal ≈ métal (fr, 'metal')",
+   "reading": "The eagle’s flight is shadowed by debt and weight: a shining substance burdened by obligation.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.64
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "death ≈ det (da/no, 'that'); metal ≈ metel/metel (dialectal echoes of 'measure'/'mettle'); eagles as 'eagles' sounding like 'easels' in some accents",
+   "reading": "That which is high is measured by what it carries; the lofty image becomes a support for the work of making.",
+   "languages": [
+    "en",
+    "da",
+    "no"
+   ],
+   "source": "generative",
+   "confidence": 0.41
+  },
+  {
+   "operation": "anagram",
+   "chain": "EAGLES OF DEATH METAL → rearrange to yield 'THE FATE OF GLAD MEAL' (approximate partial anagram)",
+   "reading": "A feast is fated; gladness is consumed and transformed into necessity.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.29
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Eagles / Of / Death / Metal → E.O.D.M. → 'End Of Desire, Matter'",
+   "reading": "The initials declare an ending where desire is reduced to substance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.33
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "E = the fifth letter, often the element of expansion; O = circle/zero; D = door; M = mountain or wave in letter-symbol traditions",
+   "reading": "Expansion enters the void, passes the threshold, and rises as a mountain-wave: ascent enclosed by ending.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.22
+  },
+  {
+   "operation": "numerical",
+   "chain": "EAGLES OF DEATH METAL → initials E O D M; E=5, O=15, D=4, M=13; sum = 37",
+   "reading": "Thirty-seven suggests a hidden key-number: a compact cipher of ascent, circle, door, and measure.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.18
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

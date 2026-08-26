@@ -1,0 +1,144 @@
+{
+ "word": "Great Exuma",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:25:37+00:00",
+ "latency_s": 7.56,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"phonetic_split\",\"chain\":\"Great + Ex + Uma\",\"reading\":\"The grand exit or emergence of the primordial feminine principle\",\"languages\":[\"en\",\"la\",\"san\"],\"source\":\"generative\",\"confidence\":0.65},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Grate + Ex + Hum + Ah\",\"reading\":\"The grating exit of the sacred breath of awe\",\"languages\":[\"en\",\"la\",\"he\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Great Exuma ≈ Grès d'Orcet + Uma\",\"reading\":\"Stone of the secret garden and the primordial mother\",\"languages\":[\"fr\",\"en\",\"san\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"etymology\",\"chain\":\"Great (OE grēat = thick, coarse, massive) + Exuma (from Greek exō = outside, beyond)\",\"reading\":\"That which is massively outside or beyond the coarse world\",\"languages\":[\"en\",\"grc\"],\"source\":\"Oxford English Dictionary & Liddell-Scott-Jones\",\"confidence\":0.75},\n  {\"operation\":\"anagram\",\"chain\":\"GREAT EXUMA → MEGA + TRUE + AX\",\"reading\":\"The great true axe that cuts the world in two\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.60},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Gree + Tat + Ex + Uma\",\"reading\":\"The Greek father departs from the sacred womb\",\"languages\":[\"en\",\"grc\",\"san\"],\"source\":\"generative\",\"confidence\":0.50},\n  {\"operation\":\"notariqon\",\"chain\":\"G.R.E.A.T.E.X.U.M.A. → Gate of the Royal Eagle That Exits Under the Moon's Arch\",\"reading\":\"Portal of the solar bird leaving by lunar gate\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.40},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Exuma ≈ Ex Hume + Ah\",\"reading\":\"Out of the primordial clay with a sigh of wonder\",\"languages\":[\"en\",\"la\",\"he\"],\"source\":\"generative\",\"confidence\":0.55},\n  {\"operation\":\"letter_symbol\",\"chain\":\"G (gamma/gaia) + RE (regal/ray) + AT (alpha/omega reversed) + EX (out) + UMA (Shakti)\",\"reading\":\"Earth-ray reversed issues forth the divine feminine power\",\"languages\":[\"grc\",\"en\",\"san\"],\"source\":\"generative\",\"confidence\":0.50},\n  {\"operation\":\"phonetic_split\",\"chain\":\"Great + Eggs + Hum + Ah\",\"reading\":\"Magnificent cosmic eggs vibrating with the primal sigh\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.45},\n  {\"operation\":\"etymology\",\"chain\":\"Exuma from Greek ἐξ (ex = out) + ὕμνος (hymnos = song of praise)\",\"reading\":\"The great outgoing song or hymn of emergence\",\"languages\":[\"grc\"],\"source\":\"Liddell-Scott-Jones Greek-English Lexicon\",\"confidence\":0.70}\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Great + Ex + Uma",
+   "reading": "The grand exit or emergence of the primordial feminine principle",
+   "languages": [
+    "en",
+    "la",
+    "san"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Grate + Ex + Hum + Ah",
+   "reading": "The grating exit of the sacred breath of awe",
+   "languages": [
+    "en",
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Great Exuma ≈ Grès d'Orcet + Uma",
+   "reading": "Stone of the secret garden and the primordial mother",
+   "languages": [
+    "fr",
+    "en",
+    "san"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "etymology",
+   "chain": "Great (OE grēat = thick, coarse, massive) + Exuma (from Greek exō = outside, beyond)",
+   "reading": "That which is massively outside or beyond the coarse world",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "Oxford English Dictionary & Liddell-Scott-Jones",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "GREAT EXUMA → MEGA + TRUE + AX",
+   "reading": "The great true axe that cuts the world in two",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gree + Tat + Ex + Uma",
+   "reading": "The Greek father departs from the sacred womb",
+   "languages": [
+    "en",
+    "grc",
+    "san"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "G.R.E.A.T.E.X.U.M.A. → Gate of the Royal Eagle That Exits Under the Moon's Arch",
+   "reading": "Portal of the solar bird leaving by lunar gate",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Exuma ≈ Ex Hume + Ah",
+   "reading": "Out of the primordial clay with a sigh of wonder",
+   "languages": [
+    "en",
+    "la",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G (gamma/gaia) + RE (regal/ray) + AT (alpha/omega reversed) + EX (out) + UMA (Shakti)",
+   "reading": "Earth-ray reversed issues forth the divine feminine power",
+   "languages": [
+    "grc",
+    "en",
+    "san"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Great + Eggs + Hum + Ah",
+   "reading": "Magnificent cosmic eggs vibrating with the primal sigh",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "etymology",
+   "chain": "Exuma from Greek ἐξ (ex = out) + ὕμνος (hymnos = song of praise)",
+   "reading": "The great outgoing song or hymn of emergence",
+   "languages": [
+    "grc"
+   ],
+   "source": "Liddell-Scott-Jones Greek-English Lexicon",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 11,
+ "refusal_like": false
+}

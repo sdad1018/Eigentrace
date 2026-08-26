@@ -1,0 +1,155 @@
+{
+ "word": "Mandalay Bay",
+ "model": "DeepSeek",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:22:25+00:00",
+ "latency_s": 12.77,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mandalay < Mandalay (Burmese) from Pali mandala 'circle' + ay 'fortress'; Bay < Old English beag 'ring'\",\n    \"reading\": \"A circular fortress by the water-ring, a bounded sacred enclosure.\",\n    \"languages\": [\"en\", \"my\", \"pi\", \"ang\"],\n    \"source\": \"OED; Pali Text Society Dictionary\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man-da-lay + Bay; man (en) + da (it gives) + lay (song) + bay (bark)\",\n    \"reading\": \"The man gives a song, and the bay barks back — a dialogue of echo.\",\n    \"languages\": [\"en\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay ~ mandala (Sanskrit circle) + bay (French baie 'berry' or 'bay'); also 'man' (fr) 'hand' + 'de la' (fr) 'of the' + 'baie'\",\n    \"reading\": \"Hand of the berry-circle — a fruit-bearing sacred wheel.\",\n    \"languages\": [\"fr\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay Bay -> 'A bland day, may' + 'bay' rearranged as 'yab' (Yiddish for gossip)\",\n    \"reading\": \"A bland day, may gossip — the dull surface hides chatter beneath.\",\n    \"languages\": [\"en\", \"yi\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M-B as initials: M = Mem (water), B = Beth (house); also 'M' = 40, 'B' = 2 in Hebrew\",\n    \"reading\": \"Water-house, the dwelling of the flood — a place of primal immersion.\",\n    \"languages\": [\"he\"],\n    \"source\": \"Sefer Yetzirah (letter values)\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (mountain, two peaks) + B (breast, two curves) + 'ay' (eye) + 'bay' (enclosure)\",\n    \"reading\": \"Twin peaks, twin curves, an eye, a gulf — the body of the earth.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"M=40, A=1, N=14, D=4, A=1, L=12, A=1, Y=25; B=2, A=1, Y=25 (Hebrew gematria: 40+1+14+4+1+12+1+25 = 98; 2+1+25 = 28; total 126)\",\n    \"reading\": \"126 = 1+2+6 = 9 — completion, the end of a cycle, a final bay.\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative (gematria)\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + da + lay + bay; 'da' (Russian 'yes'), 'lay' (to place), 'bay' (to bark) — 'Man, yes, lay, bark'\",\n    \"reading\": \"Affirmation, placement, and animal voice — a triple act of creation.\",\n    \"languages\": [\"en\", \"ru\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bay < Old French baie 'opening, inlet' < Latin baia 'harbor'; Mandalay < Pali mandala 'circle' + ay 'fortress'\",\n    \"reading\": \"A circular harbor — a safe haven shaped as a ritual ring.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"pi\"],\n    \"source\": \"OED; Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay ~ 'mandala' (Sanskrit) + 'bay' (Spanish 'baja' = low); 'man' (German 'man' = one) + 'da' (German 'da' = there) + 'lay' (English) + 'bay'\",\n    \"reading\": \"One there lays low the circle — the descent of the sacred into the mundane.\",\n    \"languages\": [\"sa\", \"es\", \"de\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay Bay -> 'A band, a yam, a yel' (yel = obsolete 'to boil')\",\n    \"reading\": \"A band, a yam, a boiling — communal food and heat, a feast of sound.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative (OED for 'yel')\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (water, Mem) + B (house, Beth) + 'ay' (Hebrew 'ayin' = eye) + 'bay' (enclosure) — 'M' + 'B' + 'ay'\",\n    \"reading\": \"Water-house-eye-enclosure — the seeing vessel of the deep.\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Mandalay < Mandalay (Burmese) from Pali mandala 'circle' + ay 'fortress'; Bay < Old English beag 'ring'",
+   "reading": "A circular fortress by the water-ring, a bounded sacred enclosure.",
+   "languages": [
+    "en",
+    "my",
+    "pi",
+    "ang"
+   ],
+   "source": "OED; Pali Text Society Dictionary",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man-da-lay + Bay; man (en) + da (it gives) + lay (song) + bay (bark)",
+   "reading": "The man gives a song, and the bay barks back — a dialogue of echo.",
+   "languages": [
+    "en",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay ~ mandala (Sanskrit circle) + bay (French baie 'berry' or 'bay'); also 'man' (fr) 'hand' + 'de la' (fr) 'of the' + 'baie'",
+   "reading": "Hand of the berry-circle — a fruit-bearing sacred wheel.",
+   "languages": [
+    "fr",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay Bay -> 'A bland day, may' + 'bay' rearranged as 'yab' (Yiddish for gossip)",
+   "reading": "A bland day, may gossip — the dull surface hides chatter beneath.",
+   "languages": [
+    "en",
+    "yi"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M-B as initials: M = Mem (water), B = Beth (house); also 'M' = 40, 'B' = 2 in Hebrew",
+   "reading": "Water-house, the dwelling of the flood — a place of primal immersion.",
+   "languages": [
+    "he"
+   ],
+   "source": "Sefer Yetzirah (letter values)",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (mountain, two peaks) + B (breast, two curves) + 'ay' (eye) + 'bay' (enclosure)",
+   "reading": "Twin peaks, twin curves, an eye, a gulf — the body of the earth.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "M=40, A=1, N=14, D=4, A=1, L=12, A=1, Y=25; B=2, A=1, Y=25 (Hebrew gematria: 40+1+14+4+1+12+1+25 = 98; 2+1+25 = 28; total 126)",
+   "reading": "126 = 1+2+6 = 9 — completion, the end of a cycle, a final bay.",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative (gematria)",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + da + lay + bay; 'da' (Russian 'yes'), 'lay' (to place), 'bay' (to bark) — 'Man, yes, lay, bark'",
+   "reading": "Affirmation, placement, and animal voice — a triple act of creation.",
+   "languages": [
+    "en",
+    "ru"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bay < Old French baie 'opening, inlet' < Latin baia 'harbor'; Mandalay < Pali mandala 'circle' + ay 'fortress'",
+   "reading": "A circular harbor — a safe haven shaped as a ritual ring.",
+   "languages": [
+    "en",
+    "fr",
+    "la",
+    "pi"
+   ],
+   "source": "OED; Lewis & Short Latin Dictionary",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay ~ 'mandala' (Sanskrit) + 'bay' (Spanish 'baja' = low); 'man' (German 'man' = one) + 'da' (German 'da' = there) + 'lay' (English) + 'bay'",
+   "reading": "One there lays low the circle — the descent of the sacred into the mundane.",
+   "languages": [
+    "sa",
+    "es",
+    "de",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay Bay -> 'A band, a yam, a yel' (yel = obsolete 'to boil')",
+   "reading": "A band, a yam, a boiling — communal food and heat, a feast of sound.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative (OED for 'yel')",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (water, Mem) + B (house, Beth) + 'ay' (Hebrew 'ayin' = eye) + 'bay' (enclosure) — 'M' + 'B' + 'ay'",
+   "reading": "Water-house-eye-enclosure — the seeing vessel of the deep.",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

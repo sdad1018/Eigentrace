@@ -1,0 +1,131 @@
+{
+ "word": "Paddock",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:21:58+00:00",
+ "latency_s": 6.93,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"paddock (n.) from Middle English parrok, from Old English pearroc 'enclosed space, fence'\",\n    \"reading\": \"enclosed ground, fenced pasture, or small field for animals\",\n    \"languages\": [\"en\",\"ang\"],\n    \"source\": \"Oxford English Dictionary; Etymonline.com\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"pad + dock\",\n    \"reading\": \"the cushion or sole upon which justice stands; the foot of the tribunal\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"pa + doc + k\",\n    \"reading\": \"the father of the teaching, the hidden master of the green language\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"paddock ≈ paddock ≈ pa d'oc\",\n    \"reading\": \"father of Occitania, the tongue of Oc, the language of the birds\",\n    \"languages\": [\"en\",\"oc\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"PADDOCK → ODD PACK\",\n    \"reading\": \"strange or alchemical assembly; the odd pack that contains the secret\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"pad + dock → pact + hoc\",\n    \"reading\": \"the pact of this place; sealed covenant of the enclosed ground\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.70\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"paddock (n.2) 'toad' from Middle English paddoc, apparently from pad 'toad' + -ock\",\n    \"reading\": \"the toad, the earthy alchemical prima materia that dwells in the enclosed garden\",\n    \"languages\": [\"en\",\"gmw\"],\n    \"source\": \"Oxford English Dictionary; Skeat's Etymological Dictionary\",\n    \"confidence\": 0.90\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"paddock ≈ παδοκ (padok) ≈ παῖς + δοκεύω\",\n    \"reading\": \"the child who watches or lies in wait; the hidden heir in the paddock\",\n    \"languages\": [\"en\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P.A.D.D.O.C.K. → Pater Alchemicus Duplici Draco Occultus Katharos\",\n    \"reading\": \"the alchemical father of the double hidden pure dragon\",\n    \"languages\": [\"en\",\"la\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.40\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Paddock = P (porte) + AD (to) + DOCK (confinement)\",\n    \"reading\": \"the gate that leads into the place of confinement and transmutation\",\n    \"languages\": [\"en\",\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "paddock (n.) from Middle English parrok, from Old English pearroc 'enclosed space, fence'",
+   "reading": "enclosed ground, fenced pasture, or small field for animals",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary; Etymonline.com",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pad + dock",
+   "reading": "the cushion or sole upon which justice stands; the foot of the tribunal",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pa + doc + k",
+   "reading": "the father of the teaching, the hidden master of the green language",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "paddock ≈ paddock ≈ pa d'oc",
+   "reading": "father of Occitania, the tongue of Oc, the language of the birds",
+   "languages": [
+    "en",
+    "oc",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "PADDOCK → ODD PACK",
+   "reading": "strange or alchemical assembly; the odd pack that contains the secret",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "pad + dock → pact + hoc",
+   "reading": "the pact of this place; sealed covenant of the enclosed ground",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "paddock (n.2) 'toad' from Middle English paddoc, apparently from pad 'toad' + -ock",
+   "reading": "the toad, the earthy alchemical prima materia that dwells in the enclosed garden",
+   "languages": [
+    "en",
+    "gmw"
+   ],
+   "source": "Oxford English Dictionary; Skeat's Etymological Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "paddock ≈ παδοκ (padok) ≈ παῖς + δοκεύω",
+   "reading": "the child who watches or lies in wait; the hidden heir in the paddock",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P.A.D.D.O.C.K. → Pater Alchemicus Duplici Draco Occultus Katharos",
+   "reading": "the alchemical father of the double hidden pure dragon",
+   "languages": [
+    "en",
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Paddock = P (porte) + AD (to) + DOCK (confinement)",
+   "reading": "the gate that leads into the place of confinement and transmutation",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

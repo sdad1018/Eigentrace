@@ -1,0 +1,115 @@
+{
+ "word": "Paris",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:25:00+00:00",
+ "latency_s": 3.99,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Paris < Latin Parisii; ethnonym of uncertain Gaulish origin, usually treated as a tribal name\",\n    \"reading\": \"A name of belonging: the people, the clan, the collective body.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"Oxford Latin Dictionary; Dictionnaire étymologique de la langue latine (Ernout-Meillet), s.v. Parisii\",\n    \"confidence\": 0.78\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"par + is; par = by/through; is = is/being\",\n    \"reading\": \"Being comes by passage: existence through a threshold.\",\n    \"languages\": [\"fr\", \"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.44\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"paris ~ par ici (French); par ici = this way, over here\",\n    \"reading\": \"A call to approach: here, by this way.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"paris ~ pari (French); pari = wager, stake\",\n    \"reading\": \"A stake is laid: the word of risk and venture.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.67\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"PARIS -> PAIRS\",\n    \"reading\": \"Pairs, doubles, matched opposites: the sign of twinning.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.91\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"PARIS -> ASPIR\",\n    \"reading\": \"Aspiration: breath drawn upward, the movement of desire.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P-A-R-I-S = passage; ascent; return; initiation; seal\",\n    \"reading\": \"A fivefold formula of crossing, rising, returning, beginning, and closure.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P = opening loop; A = apex; R = branch/leg; I = pillar; S = serpent curve\",\n    \"reading\": \"An ascent set on a pillar, then bent into a serpent’s turn.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.39\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"P(16)+A(1)+R(18)+I(9)+S(19)=63; 6+3=9\",\n    \"reading\": \"Nine: completion, enclosure, the return to unity after multiplication.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Paris < Latin Parisii; ethnonym of uncertain Gaulish origin, usually treated as a tribal name",
+   "reading": "A name of belonging: the people, the clan, the collective body.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "Oxford Latin Dictionary; Dictionnaire étymologique de la langue latine (Ernout-Meillet), s.v. Parisii",
+   "confidence": 0.78
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "par + is; par = by/through; is = is/being",
+   "reading": "Being comes by passage: existence through a threshold.",
+   "languages": [
+    "fr",
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.44
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "paris ~ par ici (French); par ici = this way, over here",
+   "reading": "A call to approach: here, by this way.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "paris ~ pari (French); pari = wager, stake",
+   "reading": "A stake is laid: the word of risk and venture.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.67
+  },
+  {
+   "operation": "anagram",
+   "chain": "PARIS -> PAIRS",
+   "reading": "Pairs, doubles, matched opposites: the sign of twinning.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.91
+  },
+  {
+   "operation": "anagram",
+   "chain": "PARIS -> ASPIR",
+   "reading": "Aspiration: breath drawn upward, the movement of desire.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P-A-R-I-S = passage; ascent; return; initiation; seal",
+   "reading": "A fivefold formula of crossing, rising, returning, beginning, and closure.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P = opening loop; A = apex; R = branch/leg; I = pillar; S = serpent curve",
+   "reading": "An ascent set on a pillar, then bent into a serpent’s turn.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.39
+  },
+  {
+   "operation": "numerical",
+   "chain": "P(16)+A(1)+R(18)+I(9)+S(19)=63; 6+3=9",
+   "reading": "Nine: completion, enclosure, the return to unity after multiplication.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 9,
+ "refusal_like": false
+}

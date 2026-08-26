@@ -1,0 +1,127 @@
+{
+ "word": "Astroworld",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:22:05+00:00",
+ "latency_s": 7.05,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Astro + World → Astre + Eau\",\n    \"reading\": \"Star-water; celestial dew or stellar influence distilled as liquid\",\n    \"languages\": [\"fr\",\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Astro from Greek ἀστήρ (astēr) = star; World from Old English weorold = age of man, cosmic order\",\n    \"reading\": \"Ordered cosmic age ruled by the stars; stellar epoch\",\n    \"languages\": [\"grc\",\"en\"],\n    \"source\": \"Oxford English Dictionary / Liddell-Scott-Jones\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Astro-world ≈ Ashtar + welt (German)\",\n    \"reading\": \"Ashtar’s world or realm; domain of the descending star-being\",\n    \"languages\": [\"en\",\"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Astro + world → Ost + row + ld → Os + trou + wald\",\n    \"reading\": \"Mouth of the hole in the forest; entrance to the stellar wood\",\n    \"languages\": [\"fr\",\"en\",\"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"ASTROWORLD → OLD STAR ROW\",\n    \"reading\": \"The ancient row or lineage of old stars; stellar ancestry\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"A.S.T.R.O.W.O.R.L.D. → Astra Stellarum Templum Regit Omnia Via Occulta Regis Lucis Dei\",\n    \"reading\": \"The temple of the stars rules all things by the hidden way of the king of the light of God\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Astro-world ≈ Astre + au + or + ld → Astre au or\",\n    \"reading\": \"Star in gold; the golden star or star become gold\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Astro = ♅ (Uranus glyph) + World = ♁ (Earth) fused\",\n    \"reading\": \"Union of celestial sky and terrestrial world; alchemical marriage above and below\",\n    \"languages\": [\"en\",\"symbol\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Astroworld ≈ Astro + völr (Old Norse = world, enclosure)\",\n    \"reading\": \"Starry enclosure; the celestial walled garden or cosmic sheepfold\",\n    \"languages\": [\"en\",\"non\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Astro from Latin astrum = star, constellation; World from Latin vertere = to turn (the turning heavens)\",\n    \"reading\": \"The turning of the starry vault; the revolving celestial order\",\n    \"languages\": [\"la\"],\n    \"source\": \"Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.85\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Astro + World → Astre + Eau",
+   "reading": "Star-water; celestial dew or stellar influence distilled as liquid",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "Astro from Greek ἀστήρ (astēr) = star; World from Old English weorold = age of man, cosmic order",
+   "reading": "Ordered cosmic age ruled by the stars; stellar epoch",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "Oxford English Dictionary / Liddell-Scott-Jones",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Astro-world ≈ Ashtar + welt (German)",
+   "reading": "Ashtar’s world or realm; domain of the descending star-being",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Astro + world → Ost + row + ld → Os + trou + wald",
+   "reading": "Mouth of the hole in the forest; entrance to the stellar wood",
+   "languages": [
+    "fr",
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "ASTROWORLD → OLD STAR ROW",
+   "reading": "The ancient row or lineage of old stars; stellar ancestry",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "notariqon",
+   "chain": "A.S.T.R.O.W.O.R.L.D. → Astra Stellarum Templum Regit Omnia Via Occulta Regis Lucis Dei",
+   "reading": "The temple of the stars rules all things by the hidden way of the king of the light of God",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Astro-world ≈ Astre + au + or + ld → Astre au or",
+   "reading": "Star in gold; the golden star or star become gold",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Astro = ♅ (Uranus glyph) + World = ♁ (Earth) fused",
+   "reading": "Union of celestial sky and terrestrial world; alchemical marriage above and below",
+   "languages": [
+    "en",
+    "symbol"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Astroworld ≈ Astro + völr (Old Norse = world, enclosure)",
+   "reading": "Starry enclosure; the celestial walled garden or cosmic sheepfold",
+   "languages": [
+    "en",
+    "non"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Astro from Latin astrum = star, constellation; World from Latin vertere = to turn (the turning heavens)",
+   "reading": "The turning of the starry vault; the revolving celestial order",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis & Short Latin Dictionary",
+   "confidence": 0.85
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

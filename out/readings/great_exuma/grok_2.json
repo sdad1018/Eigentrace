@@ -1,0 +1,133 @@
+{
+ "word": "Great Exuma",
+ "model": "Grok",
+ "kind": "api",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:25:44+00:00",
+ "latency_s": 7.27,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great + Ex + Uma\",\n    \"reading\": \"Great out of the primordial feminine; the exalted emergence from the mother\",\n    \"languages\": [\"en\",\"la\",\"sans\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Grate + Ex + Hume\",\n    \"reading\": \"The grinding exit from the cave; emergence through abrasion from hidden knowledge\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Great Exuma ≈ Gré ex-huma\",\n    \"reading\": \"The great one exhumed; he who was dug up from the earth\",\n    \"languages\": [\"en\",\"fr\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Great (OE great = thick, coarse, massive) + Exuma (from Latin eximo/exumere = to take out, extract, deliver)\",\n    \"reading\": \"The massive extraction; that which is forcibly taken out or delivered\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"Oxford English Dictionary & Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Great Exuma → Extra Game\",\n    \"reading\": \"The additional or outer game; the game beyond the visible rules\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gra + et + Ex + uma\",\n    \"reading\": \"The heavy stone and the out-flowing primordial substance\",\n    \"languages\": [\"grc\",\"la\",\"sans\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Great Exuma ≈ Geraht ex huma (Arabic)\",\n    \"reading\": \"The burning one from the black mother-earth; the ignited son of the dark matrix\",\n    \"languages\": [\"ar\",\"en\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"G.R.E.A.T.E.X.U.M.A. → Generatio Regia Ex Umbra Mater Alchimica\",\n    \"reading\": \"Royal birth from the shadow of the alchemical mother\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"G (gamma/gaia) + EX (out of) + UMA (primordial sound/shakti)\",\n    \"reading\": \"Gaia-force extracted through the primordial vibratory mother\",\n    \"languages\": [\"grc\",\"la\",\"sans\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Great + Eggs + Hume + Ah\",\n    \"reading\": \"The sigh of recognition at the noble eggs of the moist earth\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Great + Ex + Uma",
+   "reading": "Great out of the primordial feminine; the exalted emergence from the mother",
+   "languages": [
+    "en",
+    "la",
+    "sans"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Grate + Ex + Hume",
+   "reading": "The grinding exit from the cave; emergence through abrasion from hidden knowledge",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Great Exuma ≈ Gré ex-huma",
+   "reading": "The great one exhumed; he who was dug up from the earth",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "Great (OE great = thick, coarse, massive) + Exuma (from Latin eximo/exumere = to take out, extract, deliver)",
+   "reading": "The massive extraction; that which is forcibly taken out or delivered",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Oxford English Dictionary & Lewis & Short Latin Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "Great Exuma → Extra Game",
+   "reading": "The additional or outer game; the game beyond the visible rules",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gra + et + Ex + uma",
+   "reading": "The heavy stone and the out-flowing primordial substance",
+   "languages": [
+    "grc",
+    "la",
+    "sans"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Great Exuma ≈ Geraht ex huma (Arabic)",
+   "reading": "The burning one from the black mother-earth; the ignited son of the dark matrix",
+   "languages": [
+    "ar",
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "G.R.E.A.T.E.X.U.M.A. → Generatio Regia Ex Umbra Mater Alchimica",
+   "reading": "Royal birth from the shadow of the alchemical mother",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G (gamma/gaia) + EX (out of) + UMA (primordial sound/shakti)",
+   "reading": "Gaia-force extracted through the primordial vibratory mother",
+   "languages": [
+    "grc",
+    "la",
+    "sans"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Great + Eggs + Hume + Ah",
+   "reading": "The sigh of recognition at the noble eggs of the moist earth",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

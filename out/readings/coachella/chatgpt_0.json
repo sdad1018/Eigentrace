@@ -1,0 +1,106 @@
+{
+ "word": "Coachella",
+ "model": "ChatGPT",
+ "kind": "api",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "C.API_PATIENTS",
+ "ts_utc": "2026-08-26T00:15:29+00:00",
+ "latency_s": 6.34,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"coa + che + lla; coa ≈ quoit/coat, che ≈ chez/ché, lla ≈ la\",\n    \"reading\": \"A coated house of the feminine article: a veiled dwelling, or a shell around a place.\",\n    \"languages\": [\"en\", \"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.42\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"coa ≈ koa (fr. quoi?); chel(a) ≈ chez elle; whole sound suggests 'quoi chez elle'\",\n    \"reading\": \"What is at her place? An inquiry into the hidden interior, the private chamber.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.31\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"coa-chel-la ≈ 'coeur chaud là' by sound-play; chaud + là\",\n    \"reading\": \"Hot heart there: a place of ardor, heat, and presence.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.24\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"COACHELLA → A C H E L L A C O; near-anagrammatic clustering of CHELLA / ACO\",\n    \"reading\": \"A shell-like enclosure around an echoing core; the name folds around itself.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.18\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"C = crescent; O = circle; A = apex; C = crescent; H = hinge; E = opening; L = line; L = line; A = apex\",\n    \"reading\": \"Moon, circle, peak, hinge, opening, and two pillars: a threshold image of ascent and enclosure.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"A1Z26: C=3, O=15, A=1, C=3, H=8, E=5, L=12, L=12, A=1; sum = 60\",\n    \"reading\": \"Sixty: a complete cycle, measured time, and a closed round of return.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.46\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"No secure single etymology for the exact form; compare possible Spanish/Indigenous place-name strata in standard onomastic references\",\n    \"reading\": \"A layered name of uncertain origin, suggesting accretion rather than a single root.\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.12\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"coa + chella; chella echoes 'cella' (Latin cella), a chamber or cell\",\n    \"reading\": \"A chambered coat: an outer covering enclosing a hidden cell.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "coa + che + lla; coa ≈ quoit/coat, che ≈ chez/ché, lla ≈ la",
+   "reading": "A coated house of the feminine article: a veiled dwelling, or a shell around a place.",
+   "languages": [
+    "en",
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.42
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "coa ≈ koa (fr. quoi?); chel(a) ≈ chez elle; whole sound suggests 'quoi chez elle'",
+   "reading": "What is at her place? An inquiry into the hidden interior, the private chamber.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.31
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "coa-chel-la ≈ 'coeur chaud là' by sound-play; chaud + là",
+   "reading": "Hot heart there: a place of ardor, heat, and presence.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.24
+  },
+  {
+   "operation": "anagram",
+   "chain": "COACHELLA → A C H E L L A C O; near-anagrammatic clustering of CHELLA / ACO",
+   "reading": "A shell-like enclosure around an echoing core; the name folds around itself.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.18
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "C = crescent; O = circle; A = apex; C = crescent; H = hinge; E = opening; L = line; L = line; A = apex",
+   "reading": "Moon, circle, peak, hinge, opening, and two pillars: a threshold image of ascent and enclosure.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "numerical",
+   "chain": "A1Z26: C=3, O=15, A=1, C=3, H=8, E=5, L=12, L=12, A=1; sum = 60",
+   "reading": "Sixty: a complete cycle, measured time, and a closed round of return.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.46
+  },
+  {
+   "operation": "etymology",
+   "chain": "No secure single etymology for the exact form; compare possible Spanish/Indigenous place-name strata in standard onomastic references",
+   "reading": "A layered name of uncertain origin, suggesting accretion rather than a single root.",
+   "languages": [
+    "en",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.12
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "coa + chella; chella echoes 'cella' (Latin cella), a chamber or cell",
+   "reading": "A chambered coat: an outer covering enclosing a hidden cell.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}
