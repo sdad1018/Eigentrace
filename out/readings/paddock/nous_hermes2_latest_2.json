@@ -1,0 +1,91 @@
+{
+ "word": "Paddock",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:56:23+00:00",
+ "latency_s": 20.6,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"pad + dock\",\n    \"reading\": \"A place where something is secured or anchored.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"P-addock\",\n    \"reading\": \"The first syllable 'pad' suggests the act of securing or anchoring, while 'dock' implies a location.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"pad + dock (Middle English)\",\n    \"reading\": \"In French, 'paddock' can be homophonous with 'le poteau', meaning 'the post'. This suggests a place where something is secured or anchored.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"P-addock\",\n    \"reading\": \"An anagram of 'paddock' is 'pack odd', which can imply a group of unusual or unconventional elements.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P-addock\",\n       \"reading\": \"The first and last letters of 'paddock' form the word 'dock', which can suggest a place where something is secured or anchored.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P-addock\",\n    \"reading\": \"In numerology, the sum of the values of the letters in 'paddock' can represent a hidden meaning or significance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"P-addock\",\n    \"reading\": \"The first letter 'P' corresponds to the number 16, while 'D' corresponds to 4 in gematria. The sum of these values (20) can represent a hidden meaning or significance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.35\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "pad + dock",
+   "reading": "A place where something is secured or anchored.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "P-addock",
+   "reading": "The first syllable 'pad' suggests the act of securing or anchoring, while 'dock' implies a location.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "pad + dock (Middle English)",
+   "reading": "In French, 'paddock' can be homophonous with 'le poteau', meaning 'the post'. This suggests a place where something is secured or anchored.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "P-addock",
+   "reading": "An anagram of 'paddock' is 'pack odd', which can imply a group of unusual or unconventional elements.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P-addock",
+   "reading": "The first and last letters of 'paddock' form the word 'dock', which can suggest a place where something is secured or anchored.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P-addock",
+   "reading": "In numerology, the sum of the values of the letters in 'paddock' can represent a hidden meaning or significance.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "numerical",
+   "chain": "P-addock",
+   "reading": "The first letter 'P' corresponds to the number 16, while 'D' corresponds to 4 in gematria. The sum of these values (20) can represent a hidden meaning or significance.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.35
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

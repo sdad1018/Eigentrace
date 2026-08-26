@@ -1,0 +1,90 @@
+{
+ "word": "Astroworld",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:19:04+00:00",
+ "latency_s": 9.52,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \"chain\": \"\", \"reading\": \"star world\", \"languages\": [\"en\"], \"source\": \"Oxford English Dictionary\", \"confidence\": 1.0},\n  {\"operation\": \"phonetic_split\", \"chain\": \"as + tro + world\", \"reading\": \"to the highest place in the universe\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.8},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"Astre (French) = star\", \"reading\": \"celestial body\", \"languages\": [\"fr\"], \"source\": \"generative\", \"confidence\": 0.7},\n  {\"operation\": \"anagram\", \"chain\": \"\", \"reading\": \"warts out\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.6},\n  {\"operation\": \"notariqon\", \"chain\": \"A + str + o + w + orld\", \"reading\": \"I am the universe\", \"languages\": [\"he\"], \"source\": \"generative\", \"confidence\": 0.5},\n  {\"operation\": \"letter_symbol\", \"chain\": \"A (Alpha) + s (sigma)\", \"reading\": \"first and highest\", \"languages\": [\"grc\"], \"source\": \"generative\", \"confidence\": 0.4},\n  {\"operation\": \"numerical\", \"chain\": \"\", \"reading\": \"1 (one) + star + world\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.3}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "star world",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 1.0
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "as + tro + world",
+   "reading": "to the highest place in the universe",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Astre (French) = star",
+   "reading": "celestial body",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "warts out",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "A + str + o + w + orld",
+   "reading": "I am the universe",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "A (Alpha) + s (sigma)",
+   "reading": "first and highest",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "",
+   "reading": "1 (one) + star + world",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

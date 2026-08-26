@@ -1,0 +1,83 @@
+{
+ "word": "Las Vegas Boulevard",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:55:39+00:00",
+ "latency_s": 34.01,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas Boulevard -> L-A-S V-E-G-A-S B-O-U-L-E-V-A-R-D\",\n    \"reading\": \"The word can be split into individual phonemes, each representing a distinct sound.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Phonemic transcription is a method of transcribing spoken language using the International Phonetic Alphabet (IPA).\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas Boulevard -> لاس فيجاس بوليفارد (Arabic)\",\n    \"reading\": \"In Arabic, Las Vegas Boulevard sounds like 'lās fījās būlibīrad', highlighting the phonetic similarities across languages.\",\n    \"languages\": [\"en\", \"ar\"],\n    \"source\": \"Homophones are words that sound alike but have different meanings and origins. In this case, Las Vegas Boulevard is a homophone in Arabic.\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Boulevard -> Salve Vega Brawlude\",\n    \"reading\": \"An anagram of Las Vegas Boulevard is 'Salve Vega Brawlude', showcasing the rearrangement of letters to create a new word.\",\n    \"languages\": [\"en\"],\n    \"source\": \"An anagram is a word or phrase created by rearranging the letters of another word or phrase, in this case, Las Vegas Boulevard.\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las Vegas Boulevard -> 'the meadows' (Spanish) -> prado\",\n    \"reading\": \"The word 'Las Vegas' is derived from the Spanish term 'prado', meaning 'meadows'. The name reflects the area's original landscape.\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"Etymonline.com, a comprehensive online etymology dictionary.\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Las Vegas Boulevard -> L (Lux) -> V (Vita) -> A (Albus) -> S (Solis)\",\n    \"reading\": \"The first letters of Las Vegas can be associated with the Latin words for 'light', 'life', 'white', and 'sun'.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Lux (light), Vita (life), Albus (white), and Solis (sun) are Latin words that can be associated with the first letters of Las Vegas.\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Las Vegas Boulevard -> L(12) A(1) S(19) V(22) E(5) G(7) A(1) S(19) B(2) O(15) U(21) L(12) E(5) V(22) A(1) D(4) R(18) -> 12+1+19+22+5+7+1+19+2+15+21+12+5+22+1+4+18 = 163\",\n    \"reading\": \"The numerical value of the letters in Las Vegas Boulevard is 163, obtained by assigning a number to each letter based on its position in the alphabet.\",\n    \"languages\": [\"en\"],\n    \"source\": \"A numerical reading can be derived from the sum of the positions of each letter in the alphabet. In this case, Las Vegas Boulevard totals 163.\",\n    \"confidence\": 0.85\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas Boulevard -> L-A-S V-E-G-A-S B-O-U-L-E-V-A-R-D",
+   "reading": "The word can be split into individual phonemes, each representing a distinct sound.",
+   "languages": [
+    "en"
+   ],
+   "source": "Phonemic transcription is a method of transcribing spoken language using the International Phonetic Alphabet (IPA).",
+   "confidence": 0.95
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas Boulevard -> لاس فيجاس بوليفارد (Arabic)",
+   "reading": "In Arabic, Las Vegas Boulevard sounds like 'lās fījās būlibīrad', highlighting the phonetic similarities across languages.",
+   "languages": [
+    "en",
+    "ar"
+   ],
+   "source": "Homophones are words that sound alike but have different meanings and origins. In this case, Las Vegas Boulevard is a homophone in Arabic.",
+   "confidence": 0.85
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Boulevard -> Salve Vega Brawlude",
+   "reading": "An anagram of Las Vegas Boulevard is 'Salve Vega Brawlude', showcasing the rearrangement of letters to create a new word.",
+   "languages": [
+    "en"
+   ],
+   "source": "An anagram is a word or phrase created by rearranging the letters of another word or phrase, in this case, Las Vegas Boulevard.",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "Las Vegas Boulevard -> 'the meadows' (Spanish) -> prado",
+   "reading": "The word 'Las Vegas' is derived from the Spanish term 'prado', meaning 'meadows'. The name reflects the area's original landscape.",
+   "languages": [
+    "en",
+    "es"
+   ],
+   "source": "Etymonline.com, a comprehensive online etymology dictionary.",
+   "confidence": 0.95
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Las Vegas Boulevard -> L (Lux) -> V (Vita) -> A (Albus) -> S (Solis)",
+   "reading": "The first letters of Las Vegas can be associated with the Latin words for 'light', 'life', 'white', and 'sun'.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Lux (light), Vita (life), Albus (white), and Solis (sun) are Latin words that can be associated with the first letters of Las Vegas.",
+   "confidence": 0.75
+  },
+  {
+   "operation": "numerical",
+   "chain": "Las Vegas Boulevard -> L(12) A(1) S(19) V(22) E(5) G(7) A(1) S(19) B(2) O(15) U(21) L(12) E(5) V(22) A(1) D(4) R(18) -> 12+1+19+22+5+7+1+19+2+15+21+12+5+22+1+4+18 = 163",
+   "reading": "The numerical value of the letters in Las Vegas Boulevard is 163, obtained by assigning a number to each letter based on its position in the alphabet.",
+   "languages": [
+    "en"
+   ],
+   "source": "A numerical reading can be derived from the sum of the positions of each letter in the alphabet. In this case, Las Vegas Boulevard totals 163.",
+   "confidence": 0.85
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

@@ -1,0 +1,90 @@
+{
+ "word": "Roker Point",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T03:18:21+00:00",
+ "latency_s": 30.69,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Roke + -er (agent noun suffix) + point\",\n    \"reading\": \"The one who points or guides at Roker.\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.dictionary.com/browse/roker\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Roker Point -> R-O-K-E-R P-O-I-N-T\",\n    \"reading\": \"The resonance of a place where the elements of nature and technology harmonize.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"-er -> end; point -> beginning\",\n    \"reading\": \"The end and the beginning, a place of transformation or change.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Roker Point -> Kero Pt Oc\",\n    \"reading\": \"The sanctuary of the guardian who watches over the gateway to knowledge.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Roker Point -> R(3) O(15) K(2) E(5) R(3) P(16) O(15) I(9) N(14) T(20) P(16) O(15) I(9) N(14) T(20)\",\n    \"reading\": \"The secret message: 'Knowledge is power.'\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.phrases.org.uk/meanings/knowledge-is-power.html\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Roker Point -> R(River) O(Ocean) K(Knowledge) E(Energy) R(Radiance) P(Pulse) O(Orbit) I(Infinity) N(Nexus) T(Threshold) P(Pathfinder) O(Origin)\",\n    \"reading\": \"A place where the elements of nature, wisdom, and exploration converge.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Roker Point -> R(18) O(15) K(2) E(5) R(18) P(16) O(15) I(9) N(14) T(20) P(16) O(15) I(9) N(14) T(20)\",\n    \"reading\": \"The numerical sequence of the elements: 18, 15, 2, 5, 18, 16, 15, 9, 14, 20, 16, 15, 9, 14, 20.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Roke + -er (agent noun suffix) + point",
+   "reading": "The one who points or guides at Roker.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.dictionary.com/browse/roker",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Roker Point -> R-O-K-E-R P-O-I-N-T",
+   "reading": "The resonance of a place where the elements of nature and technology harmonize.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "-er -> end; point -> beginning",
+   "reading": "The end and the beginning, a place of transformation or change.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Roker Point -> Kero Pt Oc",
+   "reading": "The sanctuary of the guardian who watches over the gateway to knowledge.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Roker Point -> R(3) O(15) K(2) E(5) R(3) P(16) O(15) I(9) N(14) T(20) P(16) O(15) I(9) N(14) T(20)",
+   "reading": "The secret message: 'Knowledge is power.'",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.phrases.org.uk/meanings/knowledge-is-power.html",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Roker Point -> R(River) O(Ocean) K(Knowledge) E(Energy) R(Radiance) P(Pulse) O(Orbit) I(Infinity) N(Nexus) T(Threshold) P(Pathfinder) O(Origin)",
+   "reading": "A place where the elements of nature, wisdom, and exploration converge.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "numerical",
+   "chain": "Roker Point -> R(18) O(15) K(2) E(5) R(18) P(16) O(15) I(9) N(14) T(20) P(16) O(15) I(9) N(14) T(20)",
+   "reading": "The numerical sequence of the elements: 18, 15, 2, 5, 18, 16, 15, 9, 14, 20, 16, 15, 9, 14, 20.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

@@ -1,0 +1,80 @@
+{
+ "word": "Mandalay",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:15:47+00:00",
+ "latency_s": 6.65,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\": \"etymology\", \n\"chain\": \"\", \n\"reading\": \"mandalay: to govern or rule\", \n\"languages\": [\"en\"], \n\"source\": \"Oxford English Dictionary\", \n\"confidence\": 0.9}, \n\n{\"operation\": \"phonetic_split\", \n\"chain\": \"man + dal + ay\", \n\"reading\": \"to guide, a path, and a way\", \n\"languages\": [\"en\"], \n\"source\": \"generative\", \n\"confidence\": 0.8}, \n\n{\"operation\": \"cross_language_homophone\", \n\"chain\": \"\", \n\"reading\": \"mandilah in Hebrew means 'my will'\", \n\"languages\": [\"he\"], \n\"source\": \"generative\", \n\"confidence\": 0.7}, \n\n{\"operation\": \"anagram\", \n\"chain\": \"mandalay -> day man land\", \n\"reading\": \"a place where one's life is lived\", \n\"languages\": [\"en\"], \n\"source\": \"generative\", \n\"confidence\": 0.6}, \n\n{\"operation\": \"notariqon\", \n\"chain\": \"\", \n\"reading\": \"Mandalay: M - Majesty, A - Authority, N - Nobility, D - Dominion, a - and L - Law\", \n\"languages\": [\"en\"], \n\"source\": \"generative\", \n\"confidence\": 0.5}, \n\n{\"operation\": \"letter_symbol\", \n\"chain\": \"\", \n\"reading\": \"M - Master, A - Angel, N - Night, D - Dawn, a - and L - Light\", \n\"languages\": [\"en\"], \n\"source\": \"generative\", \n\"confidence\": 0.4}]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "mandalay: to govern or rule",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + dal + ay",
+   "reading": "to guide, a path, and a way",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "mandilah in Hebrew means 'my will'",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "mandalay -> day man land",
+   "reading": "a place where one's life is lived",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "Mandalay: M - Majesty, A - Authority, N - Nobility, D - Dominion, a - and L - Law",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "M - Master, A - Angel, N - Night, D - Dawn, a - and L - Light",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

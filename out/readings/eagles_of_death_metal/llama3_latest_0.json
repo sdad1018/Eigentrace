@@ -1,0 +1,81 @@
+{
+ "word": "Eagles of Death Metal",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:28:59+00:00",
+ "latency_s": 13.12,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"\",\n    \"reading\": \"Eagle's death metal is a form of heavy music.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"E + ag + les + of + Death + Metal\",\n    \"reading\": \"Eternal, noble, and mighty metal music.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Eagles (English) + Égla (Old Norse) + Ēgle (Middle English)\",\n    \"reading\": \"A symbol of strength and freedom.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Eagles of Death Metal -> Meat of Eagle's Death\",\n    \"reading\": \"A warning against the dangers of gluttony.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Eagles (5) + of (2) + Death (4) + Metal (4)\",\n    \"reading\": \"Five noble ones, two of which are powerful and four are strong.\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"E (5th letter) + A (Alpha) + G (Geometric shape)\",\n    \"reading\": \"A symbol of unity and harmony.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "Eagle's death metal is a form of heavy music.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "E + ag + les + of + Death + Metal",
+   "reading": "Eternal, noble, and mighty metal music.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Eagles (English) + Égla (Old Norse) + Ēgle (Middle English)",
+   "reading": "A symbol of strength and freedom.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Eagles of Death Metal -> Meat of Eagle's Death",
+   "reading": "A warning against the dangers of gluttony.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Eagles (5) + of (2) + Death (4) + Metal (4)",
+   "reading": "Five noble ones, two of which are powerful and four are strong.",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "E (5th letter) + A (Alpha) + G (Geometric shape)",
+   "reading": "A symbol of unity and harmony.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

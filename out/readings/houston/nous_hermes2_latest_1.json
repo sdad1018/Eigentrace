@@ -1,0 +1,122 @@
+{
+ "word": "Houston",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T03:00:09+00:00",
+ "latency_s": 42.53,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"houston + -ton\",\n    \"reading\": \"The town of Houston is named after Sam Houston, the first president of the Republic of Texas.\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.texasalmanac.com/history/sam-houston\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"h + ou + st + on\",\n    \"reading\": \"The word Houston is a combination of four phonemes: h, ou, st, and on.\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.merriam-webster.com/dictionary/Houston\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"houston + -ton\",\n    \"reading\": \"In French, 'hôtel' and 'ton' are homophones with Houston.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"https://www.collinsdictionary.com/dictionary/french-english/hotel\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"houston + -ton\",\n    \"reading\": \"The anagram of Houston is 'outshown', which could imply that Houston has been outperformed or overshadowed by another place.\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.wordle.net/create/anagram\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"houston + -ton\",\n    \"reading\": \"The notariqon of Houston is 'HON', which could imply that the city's name is derived from or related to 'honor'.\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.scrabble-words.org/notariqon.php?word=houston\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"houston + -ton\",\n    \"reading\": \"The first letter 'H' in Houston could represent 'heaven', while the last letter 'n' could represent 'now'. This might imply that Houston is a place of heavenly significance or importance in the present.\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.dictionary.com/browse/houston\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"houston + -ton\",\n    \"reading\": \"The numerical value of Houston is 14 (H=8, O=15, U=21, S=19, T=20, N=14), which could imply that the city has a significance or importance related to the number 14.\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.scrabble-words.org/notariqon.php?word=houston\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"houston + -ton\",\n    \"reading\": \"The name Houston is derived from the surname of Sam Houston, who was a prominent figure in Texas history and served as its first president.\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.texasalmanac.com/history/sam-houston\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"h + ou + st + on\",\n    \"reading\": \"The phonetic split of Houston is 'h' (as in 'hat'), 'ou' (as in 'out'), 'st' (as in 'stop'), and 'on' (as in 'gone'). This might imply that the city's name is a combination of sounds from various English words.\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.merriam-webster.com/dictionary/Houston\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"houston + -ton\",\n    \"reading\": \"In Spanish, 'hospital' and 'tono' are homophones with Houston.\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"https://www.dictionary.com/browse/houston\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "houston + -ton",
+   "reading": "The town of Houston is named after Sam Houston, the first president of the Republic of Texas.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.texasalmanac.com/history/sam-houston",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "h + ou + st + on",
+   "reading": "The word Houston is a combination of four phonemes: h, ou, st, and on.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.merriam-webster.com/dictionary/Houston",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "houston + -ton",
+   "reading": "In French, 'hôtel' and 'ton' are homophones with Houston.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "https://www.collinsdictionary.com/dictionary/french-english/hotel",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "houston + -ton",
+   "reading": "The anagram of Houston is 'outshown', which could imply that Houston has been outperformed or overshadowed by another place.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.wordle.net/create/anagram",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "houston + -ton",
+   "reading": "The notariqon of Houston is 'HON', which could imply that the city's name is derived from or related to 'honor'.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.scrabble-words.org/notariqon.php?word=houston",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "houston + -ton",
+   "reading": "The first letter 'H' in Houston could represent 'heaven', while the last letter 'n' could represent 'now'. This might imply that Houston is a place of heavenly significance or importance in the present.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.dictionary.com/browse/houston",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "houston + -ton",
+   "reading": "The numerical value of Houston is 14 (H=8, O=15, U=21, S=19, T=20, N=14), which could imply that the city has a significance or importance related to the number 14.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.scrabble-words.org/notariqon.php?word=houston",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "houston + -ton",
+   "reading": "The name Houston is derived from the surname of Sam Houston, who was a prominent figure in Texas history and served as its first president.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.texasalmanac.com/history/sam-houston",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "h + ou + st + on",
+   "reading": "The phonetic split of Houston is 'h' (as in 'hat'), 'ou' (as in 'out'), 'st' (as in 'stop'), and 'on' (as in 'gone'). This might imply that the city's name is a combination of sounds from various English words.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.merriam-webster.com/dictionary/Houston",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "houston + -ton",
+   "reading": "In Spanish, 'hospital' and 'tono' are homophones with Houston.",
+   "languages": [
+    "en",
+    "es"
+   ],
+   "source": "https://www.dictionary.com/browse/houston",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

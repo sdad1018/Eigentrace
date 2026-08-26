@@ -1,0 +1,91 @@
+{
+ "word": "Las Vegas Boulevard",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:55:05+00:00",
+ "latency_s": 24.32,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"las + vegas + boulevard\",\n    \"reading\": \"The union of the Spanish words for 'thee' and 'meadows', signifying a pathway through a field where one communes with nature.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Spanish lexicon\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas Boulevard\",\n    \"reading\": \"A melodic blend of syllables evoking the rhythm and vibrancy of a bustling urban landscape.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas Boulevard\",\n    \"reading\": \"The echo of 'laissez-faire' and 'vagabond' in the French language, suggesting a place of freedom and adventure.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"French lexicon\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Boulevard\",\n    \"reading\": \"A playful rearrangement of letters, revealing the word 'bluer vase', hinting at the serene and calming essence of the location.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Las Vegas Boulevard\",\n    \"reading\": \"A hidden meaning within the letters of the word, forming 'blissful view', suggesting a place of tranquility and beauty.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Las Vegas Boulevard\",\n    \"reading\": \"The symbolic interpretation of the letters in the word, representing 'life' (L), 'aspiration' (A), 'spiritual growth' (S), and 'adventure' (V), evoking a journey of self-discovery.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.70\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Las Vegas Boulevard\",\n    \"reading\": \"The numerical value of the word, summing to 13 (L=12, A=1, S=19, V=4, E=5, G=7, A=1, S=19, B=2, O=15, U=21, L=12, V=4, A=1, R=18, D=4), symbolizing balance and harmony.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.60\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "las + vegas + boulevard",
+   "reading": "The union of the Spanish words for 'thee' and 'meadows', signifying a pathway through a field where one communes with nature.",
+   "languages": [
+    "en"
+   ],
+   "source": "Spanish lexicon",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas Boulevard",
+   "reading": "A melodic blend of syllables evoking the rhythm and vibrancy of a bustling urban landscape.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas Boulevard",
+   "reading": "The echo of 'laissez-faire' and 'vagabond' in the French language, suggesting a place of freedom and adventure.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "French lexicon",
+   "confidence": 0.85
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Boulevard",
+   "reading": "A playful rearrangement of letters, revealing the word 'bluer vase', hinting at the serene and calming essence of the location.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Las Vegas Boulevard",
+   "reading": "A hidden meaning within the letters of the word, forming 'blissful view', suggesting a place of tranquility and beauty.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Las Vegas Boulevard",
+   "reading": "The symbolic interpretation of the letters in the word, representing 'life' (L), 'aspiration' (A), 'spiritual growth' (S), and 'adventure' (V), evoking a journey of self-discovery.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "numerical",
+   "chain": "Las Vegas Boulevard",
+   "reading": "The numerical value of the word, summing to 13 (L=12, A=1, S=19, V=4, E=5, G=7, A=1, S=19, B=2, O=15, U=21, L=12, V=4, A=1, R=18, D=4), symbolizing balance and harmony.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

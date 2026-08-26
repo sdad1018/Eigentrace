@@ -1,0 +1,84 @@
+{
+ "word": "Fenway",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:40:15+00:00",
+ "latency_s": 15.15,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \"chain\": \"fen + way\", \"reading\": \"The path of the divine one\", \"languages\": [\"en\"], \"source\": \"Oxford English Dictionary\"},\n  {\"operation\": \"phonetic_split\", \"chain\": \"Fenway = F(E)n W(E)y\", \"reading\": \"A fusion of energy and water, a path of harmony\", \"languages\": [\"en\"], \"source\": \"Generative\"},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"Fenway (en) = Fenêtre (fr)\", \"reading\": \"The window to another world or perspective\", \"languages\": [\"en\", \"fr\"], \"source\": \"Generative\"},\n  {\"operation\": \"anagram\", \"chain\": \"Fenway = Fawnery\", \"reading\": \"A place of tenderness, vulnerability, and nurturing\", \"languages\": [\"en\"], \"source\": \"Generative\"},\n  {\"operation\": \"notariqon\", \"chain\": \"Fenway = F(E) N(N) W(W) Y(Y)\", \"reading\": \"The balance of energies and elements in harmony, a place of unity and connection\", \"languages\": [\"en\"], \"source\": \"Generative\"},\n  {\"operation\": \"letter_symbol\", \"chain\": \"Fenway = F(Fire) N(Air) W(Water) Y(Earth)\", \"reading\": \"A place where the four classical elements converge, creating a unique synergy and balance\", \"languages\": [\"en\"], \"source\": \"Generative\"},\n  {\"operation\": \"numerical\", \"chain\": \"Fenway = F(6) E(5) N(14) W(23) Y(25)\", \"reading\": \"A numerical harmony, a place of balance and unity in the cosmos\", \"languages\": [\"en\"], \"source\": \"Generative\"}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "fen + way",
+   "reading": "The path of the divine one",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Fenway = F(E)n W(E)y",
+   "reading": "A fusion of energy and water, a path of harmony",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fenway (en) = Fenêtre (fr)",
+   "reading": "The window to another world or perspective",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Fenway = Fawnery",
+   "reading": "A place of tenderness, vulnerability, and nurturing",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Fenway = F(E) N(N) W(W) Y(Y)",
+   "reading": "The balance of energies and elements in harmony, a place of unity and connection",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Fenway = F(Fire) N(Air) W(Water) Y(Earth)",
+   "reading": "A place where the four classical elements converge, creating a unique synergy and balance",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "numerical",
+   "chain": "Fenway = F(6) E(5) N(14) W(23) Y(25)",
+   "reading": "A numerical harmony, a place of balance and unity in the cosmos",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

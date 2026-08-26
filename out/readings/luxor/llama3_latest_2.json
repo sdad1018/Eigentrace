@@ -1,0 +1,81 @@
+{
+ "word": "Luxor",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:16:43+00:00",
+ "latency_s": 8.48,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \n   \"chain\": \"\", \n   \"reading\": \"Light from the source\", \n   \"languages\": [\"en\"], \n   \"source\": \"Oxford English Dictionary\", \n   \"confidence\": 0.8},\n  {\"operation\": \"phonetic_split\", \n   \"chain\": \"Lux + or\", \n   \"reading\": \"Purity of the source, or illumination\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.7},\n  {\"operation\": \"cross_language_homophone\", \n   \"chain\": \"\", \n   \"reading\": \"Luxury in French as l'excès\", \n   \"languages\": [\"fr\", \"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.6},\n  {\"operation\": \"anagram\", \n   \"chain\": \"Luxor -> Lux Ore\", \n   \"reading\": \"Treasure of light\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.9},\n  {\"operation\": \"notariqon\", \n   \"chain\": \"\", \n   \"reading\": \"Luminous source\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.8},\n  {\"operation\": \"letter_symbol\", \n   \"chain\": \"Lux -> Luminous\", \n   \"reading\": \"Radiant light\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.7}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "Light from the source",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lux + or",
+   "reading": "Purity of the source, or illumination",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "Luxury in French as l'excès",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Luxor -> Lux Ore",
+   "reading": "Treasure of light",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "Luminous source",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Lux -> Luminous",
+   "reading": "Radiant light",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

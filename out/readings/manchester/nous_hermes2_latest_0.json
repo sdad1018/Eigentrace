@@ -1,0 +1,91 @@
+{
+ "word": "Manchester",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T03:07:07+00:00",
+ "latency_s": 32.49,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"man + chester\",\n    \"reading\": \"The city of Manchester, derived from the Old English word 'Mamucium', meaning 'breast fort' or 'hillfort'. The suffix '-chester' indicates a Roman fortified town.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + ches + ter\",\n    \"reading\": \"The phonetic elements of the word 'Manchester' suggest a connection to man, cheese, and territory.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"man + ches + ter\",\n    \"reading\": \"In French, 'manger' means 'to eat'. The phonetic elements of the word 'Manchester' suggest a connection to eating, cheese, and territory.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"man + ches + ter\",\n    \"reading\": \"An anagram of 'Manchester' is 'Chance Mentor'. This suggests a connection to luck, guidance, and support.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"man + ches + ter\",\n    \"reading\": \"The notariqon of 'Manchester' is 'Mens Civitatis', which translates to 'Mind of the City'. This suggests a connection to intelligence and urban planning.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"man + ches + ter\",\n    \"reading\": \"The letters in 'Manchester' can be associated with symbols: M (alpha and omega), A (anarchy), N (neutrality), C (creativity), H (harmony), E (evolution), S (spirituality), T (transformation), E (evolution), R (renewal). This suggests a connection to various philosophical and creative concepts.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"man + ches + ter\",\n    \"reading\": \"The numerical value of 'Manchester' is 42 (M=13, A=1, N=14, C=3, H=8, E=5, S=19, T=20, E=5, R=18). This suggests a connection to the concept of 'the answer to the ultimate question of life, the universe, and everything' from Douglas Adams' work.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.65\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "man + chester",
+   "reading": "The city of Manchester, derived from the Old English word 'Mamucium', meaning 'breast fort' or 'hillfort'. The suffix '-chester' indicates a Roman fortified town.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + ches + ter",
+   "reading": "The phonetic elements of the word 'Manchester' suggest a connection to man, cheese, and territory.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "man + ches + ter",
+   "reading": "In French, 'manger' means 'to eat'. The phonetic elements of the word 'Manchester' suggest a connection to eating, cheese, and territory.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "man + ches + ter",
+   "reading": "An anagram of 'Manchester' is 'Chance Mentor'. This suggests a connection to luck, guidance, and support.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "notariqon",
+   "chain": "man + ches + ter",
+   "reading": "The notariqon of 'Manchester' is 'Mens Civitatis', which translates to 'Mind of the City'. This suggests a connection to intelligence and urban planning.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "man + ches + ter",
+   "reading": "The letters in 'Manchester' can be associated with symbols: M (alpha and omega), A (anarchy), N (neutrality), C (creativity), H (harmony), E (evolution), S (spirituality), T (transformation), E (evolution), R (renewal). This suggests a connection to various philosophical and creative concepts.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "numerical",
+   "chain": "man + ches + ter",
+   "reading": "The numerical value of 'Manchester' is 42 (M=13, A=1, N=14, C=3, H=8, E=5, S=19, T=20, E=5, R=18). This suggests a connection to the concept of 'the answer to the ultimate question of life, the universe, and everything' from Douglas Adams' work.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.65
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

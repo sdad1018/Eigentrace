@@ -1,0 +1,19 @@
+{
+ "word": "Las Vegas",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:52:40+00:00",
+ "latency_s": 16.43,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n    {\"operation\": \"etymology\", \"chain\": \"las + vegas\", \"reading\": \"The City of God in the Meadow of Heavenly Pleasures\", \"languages\": [\"en\"], \"source\": \"Latin\", \"confidence\": 0.8},\n    {\"operation\": \"phonetic_split\", \"chain\": \"la + sve+gas\", \"reading\": \"The Luminous Star's Gift to the Valley\", \"languages\": [\"en\"], \"source\": \"Generative\", \"confidence\": 0.6},\n    {\"operation\": \"cross_language_homophone\", \"chain\": \"las + vega+s\", \"reading\": \"The City of Light in the Field of Heavenly Bliss\", \"languages\": [\"es\"], \"source\": \"Spanish\", \"confidence\": 0.7},\n    {\"operation\": \"anagram\", \"chain\": \"vegas + la\", \"read: The Gift of the Star's Valley to the City\", \"languages\": [\"en\"], \"source\": \"Generative\", \"confidence\": 0.6},\n    {\"operation\": \"notariqon\", \"chain\": \"V+E+G+A+S\", \"reading\": \"The Virtuous, Enlightened, Generous, Auspicious Star's Gift\", \"languages\": [\"en\"], \"source\": \"Generative\", \"confidence\": 0.7},\n    {\"operation\": \"letter_symbol\", \"chain\": \"L+A+S + V+E+G+A+S\", \"reading\": \"The Light of the Star's Gift, the Valiant Eagle's Glorious Ascent\", \"languages\": [\"en\"], \"source\": \"Generative\", \"confidence\": 0.6},\n    {\"operation\": \"numerical\", \"chain\": \"5+1+1+2+5+1\", \"reading\": \"The Divine Number Sequence of the Star's Gift in the Valley\", \"languages\": [\"en\"], \"source\": \"Generative\", \"confidence\": 0.6}\n]",
+ "parsed": null,
+ "parse_error": "json_error: Expecting ':' delimiter: line 5 column 102 (char 659)",
+ "extracted": false,
+ "n_readings": 0,
+ "refusal_like": false
+}

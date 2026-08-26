@@ -1,0 +1,86 @@
+{
+ "word": "Manchester",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:22:35+00:00",
+ "latency_s": 14.33,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"man- + che- (Old French) = to heal\",\n    \"reading\": \"Healing of the soul\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Oxford English Dictionary, Émile Littré's Dictionnaire de la langue française\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man- (Old French) = to think + -chester (Old English) = settlement\",\n    \"reading\": \"Place of contemplation\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"man- (English) = to think + -cher (French) = to hold\",\n    \"reading\": \"Thoughtful grasp\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"man- + che- (Old French) = to heal + -ter (Latin) = to hold\",\n    \"reading\": \"Healing bond\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M - A - N - C - H - E - S - T - E - R (numerical value of each letter)\",\n    \"reading\": \"Mercy in the heavens\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (13th Hebrew letter) = Mem; C (3rd Greek letter) = Gamma\",\n    \"reading\": \"Memorial to the divine\",\n    \"languages\": [\"he\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "man- + che- (Old French) = to heal",
+   "reading": "Healing of the soul",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Oxford English Dictionary, Émile Littré's Dictionnaire de la langue française",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man- (Old French) = to think + -chester (Old English) = settlement",
+   "reading": "Place of contemplation",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "man- (English) = to think + -cher (French) = to hold",
+   "reading": "Thoughtful grasp",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "man- + che- (Old French) = to heal + -ter (Latin) = to hold",
+   "reading": "Healing bond",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M - A - N - C - H - E - S - T - E - R (numerical value of each letter)",
+   "reading": "Mercy in the heavens",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (13th Hebrew letter) = Mem; C (3rd Greek letter) = Gamma",
+   "reading": "Memorial to the divine",
+   "languages": [
+    "he",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

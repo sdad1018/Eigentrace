@@ -1,0 +1,80 @@
+{
+ "word": "Fyre",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:24:41+00:00",
+ "latency_s": 12.67,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \n   \"chain\": \"\", \n   \"reading\": \"Fiery or intense passion\", \n   \"languages\": [\"en\"], \n   \"source\": \"Oxford English Dictionary\", \n   \"confidence\": 0.9},\n  {\"operation\": \"phonetic_split\", \n   \"chain\": \"F-yre\", \n   \"reading\": \"Fire-like energy or intensity\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.7},\n  {\"operation\": \"cross_language_homophone\", \n   \"chain\": \"\", \n   \"reading\": \"French 'fier' meaning to be proud, with connotations of fiery passion\", \n   \"languages\": [\"fr\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.6},\n  {\"operation\": \"anagram\", \n   \"chain\": \"Fyre -> Frye\", \n   \"reading\": \"A noble or aristocratic title, as in 'Sir Fyre'\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.5},\n  {\"operation\": \"notariqon\", \n   \"chain\": \"\", \n   \"reading\": \"F - Fiery, Y - Yearning, R - Radiant, E - Energetic\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.8},\n  {\"operation\": \"letter_symbol\", \n   \"chain\": \"\", \n   \"reading\": \"F - Fire, Y - Yellow, R - Red, E - Energy\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.7}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "Fiery or intense passion",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "F-yre",
+   "reading": "Fire-like energy or intensity",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "French 'fier' meaning to be proud, with connotations of fiery passion",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Fyre -> Frye",
+   "reading": "A noble or aristocratic title, as in 'Sir Fyre'",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "F - Fiery, Y - Yearning, R - Radiant, E - Energetic",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "F - Fire, Y - Yellow, R - Red, E - Energy",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

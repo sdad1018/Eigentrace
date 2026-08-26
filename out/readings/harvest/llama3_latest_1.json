@@ -1,0 +1,80 @@
+{
+ "word": "Harvest",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:14:39+00:00",
+ "latency_s": 7.49,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \n   \"chain\": \"\", \n   \"reading\": \"to gather or collect\", \n   \"languages\": [\"en\"], \n   \"source\": \"Oxford English Dictionary\", \n   \"confidence\": 0.9},\n  {\"operation\": \"phonetic_split\", \n   \"chain\": \"har + vest\", \n   \"reading\": \"a combination of parts, a whole\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.8},\n  {\"operation\": \"cross_language_homophone\", \n   \"chain\": \"French 'harvest' (récolte) sounds like 'her vest'\", \n   \"reading\": \"to clothe or adorn oneself\", \n   \"languages\": [\"fr\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.7},\n  {\"operation\": \"anagram\", \n   \"chain\": \"\", \n   \"reading\": \"He Rusts Hav\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.6},\n  {\"operation\": \"notariqon\", \n   \"chain\": \"Harvest = Hash + Vest\", \n   \"reading\": \"to weigh or measure\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.5},\n  {\"operation\": \"letter_symbol\", \n   \"chain\": \"\", \n   \"reading\": \"H (house) + AR (arrow) + Vest (vestment)\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.4}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "to gather or collect",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "har + vest",
+   "reading": "a combination of parts, a whole",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "French 'harvest' (récolte) sounds like 'her vest'",
+   "reading": "to clothe or adorn oneself",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "He Rusts Hav",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Harvest = Hash + Vest",
+   "reading": "to weigh or measure",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "H (house) + AR (arrow) + Vest (vestment)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

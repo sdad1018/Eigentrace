@@ -1,0 +1,91 @@
+{
+ "word": "Paddock",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:56:02+00:00",
+ "latency_s": 22.89,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n    {\n        \"operation\": \"phonetic_split\",\n        \"chain\": \"pad + dock\",\n        \"reading\": \"A place for keeping animals (pad) connected to a structure (dock)\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.75\n    },\n    {\n        \"operation\": \"etymology\",\n        \"chain\": \"Old English pædag + Old French docca\",\n        \"reading\": \"A place for keeping animals (pædag) derived from the Middle English word for where the accused stands (docca)\",\n        \"languages\": [\"en\"],\n        \"source\": \"Oxford English Dictionary\",\n        \"confidence\": 0.95\n    },\n    {\n        \"operation\": \"cross_language_homophone\",\n        \"chain\": \"pad + dock\",\n        \"reading\": \"A place for keeping animals (paddock) in French is a 'place to rest' (repos)\",\n        \"languages\": [\"en\", \"fr\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.65\n    },\n    {\n        \"operation\": \"anagram\",\n        \"chain\": \"paddock\",\n        \"reading\": \"A 'dock' (a place for mooring ships) where animals are kept and fed (paddock)\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.85\n    },\n    {\n        \"operation\": \"notariqon\",\n        \"chain\": \"PADDOCK\",\n        \"reading\": \"The first letter of each word spells 'PADDOCK', a place for keeping animals\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.95\n    },\n    {\n        \"operation\": \"letter_symbol\",\n        \"chain\": \"paddock\",\n        \"reading\": \"The first letter 'P' signifies the place, while 'DDOC' represents the animal (dodo) kept in this structure (k)\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.55\n    },\n    {\n        \"operation\": \"numerical\",\n        \"chain\": \"paddock\",\n        \"reading\": \"In binary, 'PADDOCK' becomes '1011000000', which is the number of letters in the word itself (12)\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.85\n    }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "pad + dock",
+   "reading": "A place for keeping animals (pad) connected to a structure (dock)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "etymology",
+   "chain": "Old English pædag + Old French docca",
+   "reading": "A place for keeping animals (pædag) derived from the Middle English word for where the accused stands (docca)",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "pad + dock",
+   "reading": "A place for keeping animals (paddock) in French is a 'place to rest' (repos)",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "paddock",
+   "reading": "A 'dock' (a place for mooring ships) where animals are kept and fed (paddock)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "notariqon",
+   "chain": "PADDOCK",
+   "reading": "The first letter of each word spells 'PADDOCK', a place for keeping animals",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.95
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "paddock",
+   "reading": "The first letter 'P' signifies the place, while 'DDOC' represents the animal (dodo) kept in this structure (k)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "numerical",
+   "chain": "paddock",
+   "reading": "In binary, 'PADDOCK' becomes '1011000000', which is the number of letters in the word itself (12)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

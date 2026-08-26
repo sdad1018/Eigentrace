@@ -1,0 +1,90 @@
+{
+ "word": "NRG Park",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:58:48+00:00",
+ "latency_s": 25.8,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"n-r-g-park\",\n    \"reading\": \"The word 'NRG Park' can be split into its individual phonemes: /n/, /r/, /ɡ/, /pɑrk/.\",\n    \"languages\": [\"en\"],\n    \"source\": \"International Phonetic Alphabet\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"nrg-park\",\n    \"reading\": \"The acronym 'NRG' stands for 'National Renewable Energy Laboratory', which is a United States Department of Energy national laboratory.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"nrg-park\",\n    \"reading\": \"In French, 'nrg' can be a homophone for the word 'nerg', which is a colloquialism meaning 'energetic' or 'full of energy'.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"Le Petit Larousse Illustré\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"nrg-park\",\n    \"reading\": \"An anagram of 'NRG Park' is 'Gnar Pk', which could be interpreted as a play on the word 'gnar' (meaning cool or awesome) and the concept of a park being a place for recreation and enjoyment.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"nrg-park\",\n       \"reading\": \"The notariqon of 'NRG Park' is 'Park', which can be interpreted as a nod to the fact that 'NRG Park' is a park.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"nrg-park\",\n    \"reading\": \"The letters 'N', 'R', and 'G' can be interpreted as representing the colors of light in a spectrum: N (violet), R (red), G (green). This could symbolize the energy and vibrancy of 'NRG Park'.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"nrg-park\",\n    \"reading\": \"If we assign numerical values to the letters in 'NRG Park' (A=1, B=2...), we get a total value of 655. This number could be interpreted as a unique identifier or code for 'NRG Park'.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "n-r-g-park",
+   "reading": "The word 'NRG Park' can be split into its individual phonemes: /n/, /r/, /ɡ/, /pɑrk/.",
+   "languages": [
+    "en"
+   ],
+   "source": "International Phonetic Alphabet",
+   "confidence": 0.9
+  },
+  {
+   "operation": "etymology",
+   "chain": "nrg-park",
+   "reading": "The acronym 'NRG' stands for 'National Renewable Energy Laboratory', which is a United States Department of Energy national laboratory.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "nrg-park",
+   "reading": "In French, 'nrg' can be a homophone for the word 'nerg', which is a colloquialism meaning 'energetic' or 'full of energy'.",
+   "languages": [
+    "fr"
+   ],
+   "source": "Le Petit Larousse Illustré",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "nrg-park",
+   "reading": "An anagram of 'NRG Park' is 'Gnar Pk', which could be interpreted as a play on the word 'gnar' (meaning cool or awesome) and the concept of a park being a place for recreation and enjoyment.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "nrg-park",
+   "reading": "The notariqon of 'NRG Park' is 'Park', which can be interpreted as a nod to the fact that 'NRG Park' is a park.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "nrg-park",
+   "reading": "The letters 'N', 'R', and 'G' can be interpreted as representing the colors of light in a spectrum: N (violet), R (red), G (green). This could symbolize the energy and vibrancy of 'NRG Park'.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "nrg-park",
+   "reading": "If we assign numerical values to the letters in 'NRG Park' (A=1, B=2...), we get a total value of 655. This number could be interpreted as a unique identifier or code for 'NRG Park'.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

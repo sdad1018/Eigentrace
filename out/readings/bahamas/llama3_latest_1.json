@@ -1,0 +1,83 @@
+{
+ "word": "Bahamas",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:26:30+00:00",
+ "latency_s": 13.46,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"\",\n    \"reading\": \"Bahamas comes from Spanish 'Baja Mar' meaning 'low sea'\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 1\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"ba-ha-mas\",\n    \"reading\": \"Bahamas sounds like 'I have a mass' or 'massive'\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bahamas - Ha-mas (Hebrew) - 'I have a mass'\",\n    \"reading\": \"Bahamas implies possession or abundance\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bahamas - Hams Aba\",\n    \"reading\": \"Bahamas anagrams to 'humble servant'\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Bahamas - Ha-Ma-S (Hebrew) - 'I have a mass' + 'S' for sacred or secret\",\n    \"reading\": \"Bahamas implies sacred or secret abundance\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B - Beta (Greek) - 'second' or 'double'\",\n    \"reading\": \"Bahamas implies doubling or amplification of something\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "Bahamas comes from Spanish 'Baja Mar' meaning 'low sea'",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 1
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "ba-ha-mas",
+   "reading": "Bahamas sounds like 'I have a mass' or 'massive'",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bahamas - Ha-mas (Hebrew) - 'I have a mass'",
+   "reading": "Bahamas implies possession or abundance",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bahamas - Hams Aba",
+   "reading": "Bahamas anagrams to 'humble servant'",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Bahamas - Ha-Ma-S (Hebrew) - 'I have a mass' + 'S' for sacred or secret",
+   "reading": "Bahamas implies sacred or secret abundance",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B - Beta (Greek) - 'second' or 'double'",
+   "reading": "Bahamas implies doubling or amplification of something",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

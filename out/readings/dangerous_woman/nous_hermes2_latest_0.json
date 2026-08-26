@@ -1,0 +1,123 @@
+{
+ "word": "Dangerous Woman",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T03:03:16+00:00",
+ "latency_s": 40.45,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"danger + -ous + woman\",\n    \"reading\": \"A woman who is characterized by risk or peril.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"DAN + ger + AUS + WOM + an\",\n    \"reading\": \"A woman from Australia who is dangerous.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"dangerous woman = dangereuse femme\",\n    \"reading\": \"A French term for a dangerous woman.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Dangerous Woman = Ardent Snafu Woman\",\n    \"reading\": \"A woman who is passionate and causes chaos or confusion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Dangerous Woman = DW + anguish + sWoman\",\n    \"reading\": \"A woman who experiences intense emotional pain and is dangerous.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Dangerous Woman = D (Death) + anguish + A (Aries) + n + R (Revelation) + u + S (Saturn) + W (Water) + O (Ophiuchus) + M (Mars) + A (Alpha) + N (Nut) + 2021\",\n    \"reading\": \"A woman associated with the astrological signs and celestial bodies, symbolizing danger in the year 2021.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Dangerous Woman = 4 (D) + 1 (A) + 14 (N) + 5 (E) + 18 (R) + 20 (O) + 15 (W) + 13 (M) + 1 (A) + 14 (N)\",\n    \"reading\": \"A woman whose name, when assigned numerical values based on the alphabet, represents a sum indicative of danger.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"danger + -ous + woman = dan (Old English) + ger (Middle English) + AUS (Australia) + WOM (Woman) + an (English suffix)\",\n    \"reading\": \"A woman characterized by risk or peril, originating from Old and Middle English roots.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.90\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"DAN + ger + AUS + WOM + an = dan (Old English) + ger (Middle English) + AUS (Australia) + WOM (Woman) + an (English suffix)\",\n    \"reading\": \"A woman from Australia who is dangerous, with roots in Old and Middle English.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.70\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"dangerous woman = dangereuse femme (French) = peligrosa mujer (Spanish)\",\n    \"reading\": \"A dangerous woman in French and Spanish.\",\n    \"languages\": [\"en\", \"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.80\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "danger + -ous + woman",
+   "reading": "A woman who is characterized by risk or peril.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "DAN + ger + AUS + WOM + an",
+   "reading": "A woman from Australia who is dangerous.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "dangerous woman = dangereuse femme",
+   "reading": "A French term for a dangerous woman.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "anagram",
+   "chain": "Dangerous Woman = Ardent Snafu Woman",
+   "reading": "A woman who is passionate and causes chaos or confusion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Dangerous Woman = DW + anguish + sWoman",
+   "reading": "A woman who experiences intense emotional pain and is dangerous.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Dangerous Woman = D (Death) + anguish + A (Aries) + n + R (Revelation) + u + S (Saturn) + W (Water) + O (Ophiuchus) + M (Mars) + A (Alpha) + N (Nut) + 2021",
+   "reading": "A woman associated with the astrological signs and celestial bodies, symbolizing danger in the year 2021.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "numerical",
+   "chain": "Dangerous Woman = 4 (D) + 1 (A) + 14 (N) + 5 (E) + 18 (R) + 20 (O) + 15 (W) + 13 (M) + 1 (A) + 14 (N)",
+   "reading": "A woman whose name, when assigned numerical values based on the alphabet, represents a sum indicative of danger.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "danger + -ous + woman = dan (Old English) + ger (Middle English) + AUS (Australia) + WOM (Woman) + an (English suffix)",
+   "reading": "A woman characterized by risk or peril, originating from Old and Middle English roots.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "DAN + ger + AUS + WOM + an = dan (Old English) + ger (Middle English) + AUS (Australia) + WOM (Woman) + an (English suffix)",
+   "reading": "A woman from Australia who is dangerous, with roots in Old and Middle English.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "dangerous woman = dangereuse femme (French) = peligrosa mujer (Spanish)",
+   "reading": "A dangerous woman in French and Spanish.",
+   "languages": [
+    "en",
+    "fr",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

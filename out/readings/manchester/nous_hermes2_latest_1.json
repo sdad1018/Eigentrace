@@ -1,0 +1,48 @@
+{
+ "word": "Manchester",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T03:07:27+00:00",
+ "latency_s": 20.14,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \"chain\": \"man + chester\", \"reading\": \"City of the man's fortification\", \"languages\": [\"en\"], \"source\": \"Oxford English Dictionary\"},\n  {\"operation\": \"phonetic_split\", \"chain\": \"\", \"reading\": \"A blend of 'Mann' and 'chester'\", \"languages\": [\"en\"], \"confidence\": 0.8},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"\", \"reading\": \"In French, it sounds like 'mahn-sheh', which means 'it smells' in a poetic sense.\", \"languages\": [\"en\", \"fr\"], \"confidence\": 0.7},\n  {\"operation\": \"anagram\", \"chain\": \"\", \"readings\": [\"Charming act\", \"Harmonic art\", \"Machin ardor\", \"Carnation hart\", \"Tarantula charm\", \"Narcotic charms\"], \"languages\": [\"en\"], \"confidence\": 0.6},\n  {\"operation\": \"notariqon\", \"chain\": \"\", \"readings\": [\"A man's heart\", \"A man's chart\", \"A man's hart\"], \"languages\": [\"en\"], \"confidence\": 0.5},\n  {\"operation\": \"letter_symbol\", \"chain\": \"\", \"readings\": [\"M: 13, A: 1, N: 14, C: 3, H: 8, E: 5, S: 19, T: 20, R: 18\", \"The sum of the positions of each letter in the alphabet is 13+1+14+3+8+5+19+20+18 = 116\"], \"languages\": [\"en\"], \"confidence\": 0.4},\n  {\"operation\": \"numerical\", \"chain\": \"\", \"readings\": [\"The name 'Manchester' can be seen as a representation of the number 116, which has various numerological and mathematical properties.\"], \"languages\": [\"en\"], \"confidence\": 0.3}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "man + chester",
+   "reading": "City of the man's fortification",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "A blend of 'Mann' and 'chester'",
+   "languages": [
+    "en"
+   ],
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "In French, it sounds like 'mahn-sheh', which means 'it smells' in a poetic sense.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 3,
+ "refusal_like": false
+}

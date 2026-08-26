@@ -1,0 +1,92 @@
+{
+ "word": "Fyre",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:24:28+00:00",
+ "latency_s": 14.31,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \n   \"chain\": \"\", \n   \"reading\": \"Fiery spark or flame\", \n   \"languages\": [\"en\"], \n   \"source\": \"Oxford English Dictionary\", \n   \"confidence\": 0.9},\n  {\"operation\": \"phonetic_split\", \n   \"chain\": \"\", \n   \"reading\": \"Fire + year, a burning passion or desire\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.8},\n  {\"operation\": \"cross_language_homophone\", \n   \"chain\": \"Fier (French) = fierce\", \n   \"reading\": \"Intense or passionate energy\", \n   \"languages\": [\"fr\", \"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.7},\n  {\"operation\": \"anagram\", \n   \"chain\": \"\", \n   \"reading\": \"Fire + yre, a burning desire\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.6},\n  {\"operation\": \"notariqon\", \n   \"chain\": \"F-I-Y-R-E\", \n   \"reading\": \"Five in the fiery eye, intuition or insight\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.5},\n  {\"operation\": \"letter_symbol\", \n   \"chain\": \"\", \n   \"reading\": \"F (Latin) + Yre (Middle English), a fiery passion\", \n   \"languages\": [\"la\", \"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.4},\n  {\"operation\": \"numerical\", \n   \"chain\": \"\", \n   \"reading\": \"6 (numerological value of F) + Fiery energy, a forceful personality\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.3}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "Fiery spark or flame",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "Fire + year, a burning passion or desire",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fier (French) = fierce",
+   "reading": "Intense or passionate energy",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "Fire + yre, a burning desire",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "F-I-Y-R-E",
+   "reading": "Five in the fiery eye, intuition or insight",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "F (Latin) + Yre (Middle English), a fiery passion",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "",
+   "reading": "6 (numerological value of F) + Fiery energy, a forceful personality",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

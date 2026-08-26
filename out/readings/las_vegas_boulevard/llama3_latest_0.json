@@ -1,0 +1,86 @@
+{
+ "word": "Las Vegas Boulevard",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:17:55+00:00",
+ "latency_s": 10.38,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"\",\n    \"reading\": \"Vegas means 'hunting' in Latin, Boulevard is a French word for 'way'\",\n    \"languages\": [\"en\", \"la\", \"fr\"],\n    \"source\": \"Oxford Latin Dictionary; Oxford English Dictionary; Collins French Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"\",\n    \"reading\": \"Las sounds like 'loss' and Vegas means 'hunting', a loss of game\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"\",\n    \"reading\": \"Vegas sounds like 'vegus' (Latin for 'sheep'), Boulevard is a path\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"\",\n    \"reading\": \"Vegas Boulevard becomes 'Be Gas Live'\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"\",\n    \"reading\": \"Las is similar to 'Lah' (Hebrew for 'me'), Vegas sounds like 'vegus', Boulevard means 'way'\",\n    \"languages\": [\"he\", \"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"\",\n    \"reading\": \"Las is similar to the Greek letter Lambda (λ), Vegas sounds like 'V' for Victory, Boulevard means 'road'\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "Vegas means 'hunting' in Latin, Boulevard is a French word for 'way'",
+   "languages": [
+    "en",
+    "la",
+    "fr"
+   ],
+   "source": "Oxford Latin Dictionary; Oxford English Dictionary; Collins French Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "Las sounds like 'loss' and Vegas means 'hunting', a loss of game",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "Vegas sounds like 'vegus' (Latin for 'sheep'), Boulevard is a path",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "Vegas Boulevard becomes 'Be Gas Live'",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "Las is similar to 'Lah' (Hebrew for 'me'), Vegas sounds like 'vegus', Boulevard means 'way'",
+   "languages": [
+    "he",
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "Las is similar to the Greek letter Lambda (λ), Vegas sounds like 'V' for Victory, Boulevard means 'road'",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

@@ -1,0 +1,94 @@
+{
+ "word": "Harvest",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:46:41+00:00",
+ "latency_s": 33.5,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n    {\"operation\": \"etymology\", \"chain\": \"Old English harvest; from Proto-Germanic *harbijaz; from Proto-Indo-European *ker-bhie-, *ker-, *kér-\", \"reading\": \"The word 'Harvest' originates from Old English and has roots in the Proto-Germanic and Proto-Indo-European languages, indicating a shared concept of gathering resources across these linguistic groups.\", \"languages\": [\"en\",\"la\",\"grc\"], \"source\": \"Lewis, C. T., & Short, C. (1986). A Latin Dictionary on Perseus Project. https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3ALEWIS%3Aentry%3Dharvestus\", \"confidence\": 0.9},\n    {\"operation\": \"phonetic_split\", \"chain\": \"H-A-R-V-E-S-T\", \"reading\": \"The phonetic split of 'Harvest' into H, A, R, V, E, S, and T suggests a connection to the idea of a diverse and abundant collection.\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.7},\n    {\"operation\": \"cross_language_homophone\", \"chain\": \"Hare-vest (English) - تحريك (Arabic) - 猎赏 (Chinese)\", \"reading\": \"The cross-language homophones 'hare-vest' in English, 'تحريك' in Arabic, and '猎赏' in Chinese suggest a connection to the concepts of hunting, movement, and appreciation.\", \"languages\": [\"en\",\"ar\",\"zh\"], \"source\": \"generative\", \"confidence\": 0.6},\n    {\"operation\": \"anagram\", \"chain\": \"Harvest -> Harvester -> Harvesting\", \"reading\": \"The anagrams 'harvester' and 'harvesting' suggest a connection to the action of gathering resources, as well as the tools or processes used in the process.\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.8},\n    {\"operation\": \"notariqon\", \"chain\": \"Notariqon is not applicable for this word.\", \"reading\": \"The concept of a notariqon, which is a numerical representation of a word based on the position of its letters in the alphabet, does not apply to 'Harvest' as it lacks a clear numerical connection.\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.5},\n    {\"operation\": \"letter_symbol\", \"chain\": \"H (8th) + A (1st) + R (18th) + V (22nd) + E (5th) + S (19th) + T (20th) -> 8+1+18+22+5+19+20 = 93\", \"reading\": \"The sum of the positions of the letters in 'Harvest' in the alphabet is 93, which may suggest a connection to numerology or symbolism. However, this connection is tenuous and may not hold any significant meaning.\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.4},\n    {\"operation\": \"numerical\", \"chain\": \"Harvest can be interpreted as 8+1+18+22+5+19+20 = 93 (letter positions in the alphabet), or as a sequence of numbers like 1, 2, 3, ..., n representing a cumulative total.\", \"reading\": \"The numerical interpretation of 'Harvest' can be seen in various contexts, such as the sum of the positions of its letters in the alphabet (93) or as a representation of a cumulative total (e.g., 1, 2, 3, ..., n). However, these interpretations are not definitive and may not hold any significant meaning.\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.5}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Old English harvest; from Proto-Germanic *harbijaz; from Proto-Indo-European *ker-bhie-, *ker-, *kér-",
+   "reading": "The word 'Harvest' originates from Old English and has roots in the Proto-Germanic and Proto-Indo-European languages, indicating a shared concept of gathering resources across these linguistic groups.",
+   "languages": [
+    "en",
+    "la",
+    "grc"
+   ],
+   "source": "Lewis, C. T., & Short, C. (1986). A Latin Dictionary on Perseus Project. https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3ALEWIS%3Aentry%3Dharvestus",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "H-A-R-V-E-S-T",
+   "reading": "The phonetic split of 'Harvest' into H, A, R, V, E, S, and T suggests a connection to the idea of a diverse and abundant collection.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Hare-vest (English) - تحريك (Arabic) - 猎赏 (Chinese)",
+   "reading": "The cross-language homophones 'hare-vest' in English, 'تحريك' in Arabic, and '猎赏' in Chinese suggest a connection to the concepts of hunting, movement, and appreciation.",
+   "languages": [
+    "en",
+    "ar",
+    "zh"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Harvest -> Harvester -> Harvesting",
+   "reading": "The anagrams 'harvester' and 'harvesting' suggest a connection to the action of gathering resources, as well as the tools or processes used in the process.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Notariqon is not applicable for this word.",
+   "reading": "The concept of a notariqon, which is a numerical representation of a word based on the position of its letters in the alphabet, does not apply to 'Harvest' as it lacks a clear numerical connection.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "H (8th) + A (1st) + R (18th) + V (22nd) + E (5th) + S (19th) + T (20th) -> 8+1+18+22+5+19+20 = 93",
+   "reading": "The sum of the positions of the letters in 'Harvest' in the alphabet is 93, which may suggest a connection to numerology or symbolism. However, this connection is tenuous and may not hold any significant meaning.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "Harvest can be interpreted as 8+1+18+22+5+19+20 = 93 (letter positions in the alphabet), or as a sequence of numbers like 1, 2, 3, ..., n representing a cumulative total.",
+   "reading": "The numerical interpretation of 'Harvest' can be seen in various contexts, such as the sum of the positions of its letters in the alphabet (93) or as a representation of a cumulative total (e.g., 1, 2, 3, ..., n). However, these interpretations are not definitive and may not hold any significant meaning.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

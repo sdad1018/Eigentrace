@@ -1,0 +1,76 @@
+{
+ "word": "Voltaire",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:29:46+00:00",
+ "latency_s": 12.42,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"\",\n    \"reading\": \"to roll or turn\",\n    \"languages\": [\"la\"],\n    \"source\": \"Lewis and Short's Latin Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"vol + aite\",\n    \"reading\": \"desire to roll or turn\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"vole (French) = vole (Italian) = flee\",\n    \"reading\": \"to escape or leave suddenly\",\n    \"languages\": [\"fr\", \"it\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"\",\n    \"reading\": \"live to vote\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"V-O-L-T-A-I-R-E = V-O-L-U-M-E (volume) + A-I-R-E (to be in the air)\",\n    \"reading\": \"to occupy a space or to be suspended\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"\",\n    \"reading\": \"V as Vela, the sail; A as Alpha, the first letter of the Greek alphabet; I-R-E as 'I ride'\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "to roll or turn",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis and Short's Latin Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "vol + aite",
+   "reading": "desire to roll or turn",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "vole (French) = vole (Italian) = flee",
+   "reading": "to escape or leave suddenly",
+   "languages": [
+    "fr",
+    "it"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "live to vote",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V-O-L-T-A-I-R-E = V-O-L-U-M-E (volume) + A-I-R-E (to be in the air)",
+   "reading": "to occupy a space or to be suspended",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "V as Vela, the sail; A as Alpha, the first letter of the Greek alphabet; I-R-E as 'I ride'",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

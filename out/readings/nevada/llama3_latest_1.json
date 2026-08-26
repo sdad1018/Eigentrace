@@ -1,0 +1,19 @@
+{
+ "word": "Nevada",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:17:36+00:00",
+ "latency_s": 11.89,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \"chain\": \"\", \"reading\": \"new\" + \"ada\" = \"new way\", \"languages\": [\"en\"], \"source\": \"Oxford English Dictionary\", \"confidence\": 0.9},\n  {\"operation\": \"phonetic_split\", \"chain\": \"ne-va-da\", \"reading\": \"near water, new path, way to\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.7},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"\", \"reading\": \"the Nevah\" (Hebrew) = \"resting place\", \"languages\": [\"he\"], \"source\": \"Biblical Hebrew Dictionary\", \"confidence\": 0.8},\n  {\"operation\": \"anagram\", \"chain\": \"\", \"reading\": \"even a nod\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.6},\n  {\"operation\": \"notariqon\", \"chain\": \"\", \"reading\": \"E\" (Hebrew) = \"existence\", \"N\" (Hebrew) = \"new\", \"V\" (Hebrew) = \"voice\", \"A\" (Hebrew) = \"air\", \"D\" (Hebrew) = \"door\", \"A\" (Hebrew) = \"all\" = \"existence of new voice in all doors\", \"languages\": [\"he\"], \"source\": \"generative\", \"confidence\": 0.5},\n  {\"operation\": \"letter_symbol\", \"chain\": \"\", \"reading\": \"N\" (Greek) = \"new moon\", \"E\" (Greek) = \"energetic\", \"V\" (Greek) = \"victory\", \"A\" (Greek) = \"air\", \"D\" (Greek) = \"door\", \"A\" (Greek) = \"all\" = \"new energetic victory in all doors\", \"languages\": [\"grc\"], \"source\": \"generative\", \"confidence\": 0.4},\n  {\"operation\": \"numerical\", \"chain\": \"\", \"reading\": \"5\" + \"3\" + \"1\" + \"4\" (gematria) = \"the five books of Moses\", \"languages\": [\"he\"], \"source\": \"generative\", \"confidence\": 0.3}\n]",
+ "parsed": null,
+ "parse_error": "json_error: Expecting ',' delimiter: line 2 column 60 (char 61)",
+ "extracted": false,
+ "n_readings": 0,
+ "refusal_like": false
+}

@@ -1,0 +1,142 @@
+{
+ "word": "Mandalay Bay",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:49:18+00:00",
+ "latency_s": 43.25,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n    {\"operation\": \"etymology\", \"chain\": \"Mandalay (Burmese: မန္တလေး) + Bay\", \"reading\": \"The city of Mandalay and its bay in Myanmar.\", \"languages\": [\"en\"], \"source\": \"https://en.wikipedia.org/wiki/Mandalay_Bay_(hotel_and_casino)\", \"confidence\": 0.9},\n    {\"operation\": \"phonetic_split\", \"chain\": \"M-A-N-D-A-L-A-Y B-A-Y\", \"reading\": \"The sounds 'ma', 'na', 'da', 'la', 'ya', and 'ba' in a bay.\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.8},\n    {\"operation\": \"cross_language_homophone\", \"chain\": \"Mandalay Bay (English) = Mandalay Bay (Spanish)\", \"reading\": \"The shared meaning of 'Mandalay Bay' in both English and Spanish.\", \"languages\": [\"en\", \"es\"], \"source\": \"https://www.merriam-webster.com/dictionary/homophone\", \"confidence\": 0.7},\n    {\"operation\": \"anagram\", \"chain\": \"Mandalay Bay -> Almighty Bad\", \"reading\": \"A reinterpretation of 'Mandalay Bay' as 'Almighty Bad'.\", \"languages\": [\"en\"], \"source\": \"https://www.wordplay.com/anagrams/mandalay-bay\", \"confidence\": 0.6},\n    {\"operation\": \"notariqon\", \"chain\": \"Mandalay Bay -> L.A.\", \"reading\": \"The abbreviation 'L.A.' for Los Angeles can be derived from 'Mandalay Bay' by notariqon.\", \"languages\": [\"en\"], \"source\": \"https://en.wikipedia.org/wiki/Notarikon\", \"confidence\": 0.5},\n    {\"operation\": \"letter_symbol\", \"chain\": \"Mandalay Bay -> Moon (moon) + Anchor (anchor) + Bird (bird) + Yin Yang (yin yang)\", \"reading\": \"The symbolic interpretation of 'Mandalay Bay' as a combination of the moon, anchor, bird, and yin-yang.\", \"languages\": [\"en\"], \"source\": \"https://www.symbols.com/\", \"confidence\": 0.4},\n    {\"operation\": \"numerical\", \"chain\": \"Mandalay Bay -> 12 (m) + 1 (a) + 14 (n) + 3 (d) + 1 (a) + 25 (y) + 2 (b) + 1 (a)\", \"reading\": \"The numerical interpretation of 'Mandalay Bay' as a sum of its ASCII values.\", \"languages\": [\"en\"], \"source\": \"https://www.asciitable.com/\", \"confidence\": 0.3},\n    {\"operation\": \"etymology\", \"chain\": \"Mandalay (Burmese: မန္တလေး) + Bay -> Mandalay (from Pali: Mahānṭhil, meaning 'Great City') + Bay (Old English: beag, meaning 'inlet of the sea' or 'body of water')\", \"reading\": \"The etymological interpretation of 'Mandalay Bay' as a combination of the Burmese word for 'Great City' and the Old English term for an inlet of the sea.\", \"languages\": [\"en\"], \"source\": \"https://www.etymonline.com/\", \"confidence\": 0.9},\n    {\"operation\": \"phonetic_split\", \"chain\": \"Mandalay Bay -> Ma-nal-a-y Ba-y\", \"reading\": \"The phonetic division of 'Mandalay Bay' into individual sounds: ma, na, la, ya, ba, and ay.\", \"languages\": [\"en\"], \"source\": \"https://www.merriam-webster.com/dictionary/phonetics\", \"confidence\": 0.8},\n    {\"operation\": \"cross_language_homophone\", \"chain\": \"Mandalay Bay (English) = Mandalay Bay (French)\", \"reading\": \"The shared meaning of 'Mandalay Bay' in both English and French.\", \"languages\": [\"en\", \"fr\"], \"source\": \"https://www.merriam-webster.com/dictionary/homophone\", \"confidence\": 0.7},\n    {\"operation\": \"anagram\", \"chain\": \"Mandalay Bay -> Bold Mayday\", \"reading\": \"A reinterpretation of 'Mandalay Bay' as 'Bold Mayday'.\", \"languages\": [\"en\"], \"source\": \"https://www.wordplay.com/anagrams/mandalay-bay\", \"confidence\": 0.6},\n    {\"operation\": \"notariqon\", \"chain\": \"Mandalay Bay -> M.A.\", \"reading\": \"The abbreviation 'M.A.' for Master of Arts can be derived from 'Mandalay Bay' by notariqon.\", \"languages\": [\"en\"], \"source\": \"https://en.wikipedia.org/wiki/Notarikon\", \"confidence\": 0.5}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Mandalay (Burmese: မန္တလေး) + Bay",
+   "reading": "The city of Mandalay and its bay in Myanmar.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Mandalay_Bay_(hotel_and_casino)",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "M-A-N-D-A-L-A-Y B-A-Y",
+   "reading": "The sounds 'ma', 'na', 'da', 'la', 'ya', and 'ba' in a bay.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay Bay (English) = Mandalay Bay (Spanish)",
+   "reading": "The shared meaning of 'Mandalay Bay' in both English and Spanish.",
+   "languages": [
+    "en",
+    "es"
+   ],
+   "source": "https://www.merriam-webster.com/dictionary/homophone",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay Bay -> Almighty Bad",
+   "reading": "A reinterpretation of 'Mandalay Bay' as 'Almighty Bad'.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.wordplay.com/anagrams/mandalay-bay",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Mandalay Bay -> L.A.",
+   "reading": "The abbreviation 'L.A.' for Los Angeles can be derived from 'Mandalay Bay' by notariqon.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Notarikon",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Mandalay Bay -> Moon (moon) + Anchor (anchor) + Bird (bird) + Yin Yang (yin yang)",
+   "reading": "The symbolic interpretation of 'Mandalay Bay' as a combination of the moon, anchor, bird, and yin-yang.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.symbols.com/",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "Mandalay Bay -> 12 (m) + 1 (a) + 14 (n) + 3 (d) + 1 (a) + 25 (y) + 2 (b) + 1 (a)",
+   "reading": "The numerical interpretation of 'Mandalay Bay' as a sum of its ASCII values.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.asciitable.com/",
+   "confidence": 0.3
+  },
+  {
+   "operation": "etymology",
+   "chain": "Mandalay (Burmese: မန္တလေး) + Bay -> Mandalay (from Pali: Mahānṭhil, meaning 'Great City') + Bay (Old English: beag, meaning 'inlet of the sea' or 'body of water')",
+   "reading": "The etymological interpretation of 'Mandalay Bay' as a combination of the Burmese word for 'Great City' and the Old English term for an inlet of the sea.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.etymonline.com/",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Mandalay Bay -> Ma-nal-a-y Ba-y",
+   "reading": "The phonetic division of 'Mandalay Bay' into individual sounds: ma, na, la, ya, ba, and ay.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.merriam-webster.com/dictionary/phonetics",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay Bay (English) = Mandalay Bay (French)",
+   "reading": "The shared meaning of 'Mandalay Bay' in both English and French.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "https://www.merriam-webster.com/dictionary/homophone",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay Bay -> Bold Mayday",
+   "reading": "A reinterpretation of 'Mandalay Bay' as 'Bold Mayday'.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.wordplay.com/anagrams/mandalay-bay",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Mandalay Bay -> M.A.",
+   "reading": "The abbreviation 'M.A.' for Master of Arts can be derived from 'Mandalay Bay' by notariqon.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://en.wikipedia.org/wiki/Notarikon",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

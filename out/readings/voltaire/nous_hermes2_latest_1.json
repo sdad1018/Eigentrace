@@ -1,0 +1,92 @@
+{
+ "word": "Voltaire",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T03:25:23+00:00",
+ "latency_s": 78.99,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Voltaire -> volter (to turn) + -aire (place)\",\n    \"reading\": \"Place of turning or transformation\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Voltaire -> VOLT AIR\",\n    \"reading\": \"Electricity in the air\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Voltaire -> Voltair (Italian) -> Vulcano (Italian)\",\n    \"reading\": \"Volcano in Italian\",\n    \"languages\": [\"en\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Voltaire -> L'Art Vole (French)\",\n    \"reading\": \"Stolen art in French\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Voltaire -> VOLTAIRE -> V (22nd letter in the alphabet)\",\n    \"reading\": \"The 22nd prime number, 73\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Voltaire -> VOLTAIRE -> V (Volt) + A (Ampere) + T (Tesla) + I (Inductance) + R (Resistance) + E (Electricity)\",\n    \"reading\": \"The science of electricity and magnetism\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Voltaire -> VOLTAIRE -> (22 + 15 + 14 + 8 + 18 + 17) = 94\",\n    \"reading\": \"The number of letters in the word 'Voltaire'\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Voltaire -> volter (to turn) + -aire (place)",
+   "reading": "Place of turning or transformation",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Voltaire -> VOLT AIR",
+   "reading": "Electricity in the air",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Voltaire -> Voltair (Italian) -> Vulcano (Italian)",
+   "reading": "Volcano in Italian",
+   "languages": [
+    "en",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Voltaire -> L'Art Vole (French)",
+   "reading": "Stolen art in French",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Voltaire -> VOLTAIRE -> V (22nd letter in the alphabet)",
+   "reading": "The 22nd prime number, 73",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Voltaire -> VOLTAIRE -> V (Volt) + A (Ampere) + T (Tesla) + I (Inductance) + R (Resistance) + E (Electricity)",
+   "reading": "The science of electricity and magnetism",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "numerical",
+   "chain": "Voltaire -> VOLTAIRE -> (22 + 15 + 14 + 8 + 18 + 17) = 94",
+   "reading": "The number of letters in the word 'Voltaire'",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

@@ -1,0 +1,91 @@
+{
+ "word": "Mandalay Bay",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:49:43+00:00",
+ "latency_s": 25.35,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mandalay + Bay\",\n    \"reading\": \"An amalgamation of 'Mandalay', a city in Myanmar with historical and cultural significance, and 'Bay', a geographical feature referring to a body of water partially enclosed by land.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Mandalay Bay\",\n    \"reading\": \"The phonetic sounds of 'Mandalay' and 'Bay' evoke a sense of exoticism, tranquility, and the meeting of land and water.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay Bay\",\n    \"reading\": \"In Spanish, 'manda' means 'orders' or 'commands', and 'lay bay' can be interpreted as a place of rest or shelter. This creates a duality between authority and relaxation.\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay Bay\",\n    \"reading\": \"The anagram 'Badly Maneuver' suggests a sense of chaos, difficulty, or struggle, which contrasts with the serene imagery evoked by the original word.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Mandalay Bay\",\n    \"reading\": \"Using the notariqon method, we can derive 'BAM' from 'Mandalay Bay'. This acronym could represent a bold statement or action.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Mandalay Bay\",\n    \"reading\": \"The letters 'M', 'B', and 'A' can be associated with the symbols for Mars, water (as in a bay), and the sun. This creates a connection to astrology and celestial bodies.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Mandalay Bay\",\n    \"reading\": \"The numerical values of the letters in 'Mandalay Bay' can be summed to yield a single number, which could represent a hidden or symbolic meaning. For example, the sum is 38.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Mandalay + Bay",
+   "reading": "An amalgamation of 'Mandalay', a city in Myanmar with historical and cultural significance, and 'Bay', a geographical feature referring to a body of water partially enclosed by land.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Mandalay Bay",
+   "reading": "The phonetic sounds of 'Mandalay' and 'Bay' evoke a sense of exoticism, tranquility, and the meeting of land and water.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay Bay",
+   "reading": "In Spanish, 'manda' means 'orders' or 'commands', and 'lay bay' can be interpreted as a place of rest or shelter. This creates a duality between authority and relaxation.",
+   "languages": [
+    "en",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay Bay",
+   "reading": "The anagram 'Badly Maneuver' suggests a sense of chaos, difficulty, or struggle, which contrasts with the serene imagery evoked by the original word.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Mandalay Bay",
+   "reading": "Using the notariqon method, we can derive 'BAM' from 'Mandalay Bay'. This acronym could represent a bold statement or action.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Mandalay Bay",
+   "reading": "The letters 'M', 'B', and 'A' can be associated with the symbols for Mars, water (as in a bay), and the sun. This creates a connection to astrology and celestial bodies.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "numerical",
+   "chain": "Mandalay Bay",
+   "reading": "The numerical values of the letters in 'Mandalay Bay' can be summed to yield a single number, which could represent a hidden or symbolic meaning. For example, the sum is 38.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

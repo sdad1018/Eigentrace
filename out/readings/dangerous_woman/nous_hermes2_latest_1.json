@@ -1,0 +1,125 @@
+{
+ "word": "Dangerous Woman",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T03:04:00+00:00",
+ "latency_s": 43.79,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"danger + -ous + woman\",\n    \"reading\": \"A woman who embodies danger or risk-taking behavior.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"d-n-g-r-s-w-m-n\",\n    \"reading\": \"A person who embodies the qualities of danger, risk-taking, and strength.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"dangerous woman = dangereuse femme\",\n    \"reading\": \"In French, a woman who is dangerous or poses a threat.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"dangerous woman = arduous nag in wean\",\n    \"reading\": \"A challenging and persistent figure who pushes someone to overcome difficulties.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Notariqon of 'Dangerous Woman': D=4, A=1, N=14, G=7, E=5, R=18, U=21, S=19, W=23, M=13,  A=1, N=14, W=23\",\n    \"reading\": \"A woman who embodies the qualities of danger and risk-taking.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.50\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"D=diamond, A=anchor, N=north star, G=golden key, E=emerald, R=ruby, U=uncut gem, S=sceptre, W=wheel, M=moon, A=anchor, N=north star, W=wheel\",\n    \"reading\": \"A woman who possesses the power and wisdom of various celestial and precious symbols.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Dangerous Woman = 1+1+4+1+7+26+18+5+21+19+23+1+1+23\",\n    \"reading\": \"A woman with a numerical value that represents her dangerous and unique qualities.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.40\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"dangerous woman = from Old French 'dangereux' and Latin 'periculosus', meaning dangerous; and 'woman' from Old English 'wifman'\",\n    \"reading\": \"A woman who embodies the qualities of danger, risk-taking, and strength.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"dangerous woman = 危险女人 (Wei xian nu ren) in Chinese\",\n    \"reading\": \"A woman who is dangerous or poses a threat, as expressed in the Chinese language.\",\n    \"languages\": [\"en\", \"zh\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"dangerous woman = arduous nag in wean = מְגוּרֶת בַּעֲזָר (Meguret Ba'azah) in Hebrew\",\n    \"reading\": \"A challenging and persistent figure who pushes someone to overcome difficulties, as expressed in the Hebrew language.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "danger + -ous + woman",
+   "reading": "A woman who embodies danger or risk-taking behavior.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "d-n-g-r-s-w-m-n",
+   "reading": "A person who embodies the qualities of danger, risk-taking, and strength.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "dangerous woman = dangereuse femme",
+   "reading": "In French, a woman who is dangerous or poses a threat.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "dangerous woman = arduous nag in wean",
+   "reading": "A challenging and persistent figure who pushes someone to overcome difficulties.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Notariqon of 'Dangerous Woman': D=4, A=1, N=14, G=7, E=5, R=18, U=21, S=19, W=23, M=13,  A=1, N=14, W=23",
+   "reading": "A woman who embodies the qualities of danger and risk-taking.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "D=diamond, A=anchor, N=north star, G=golden key, E=emerald, R=ruby, U=uncut gem, S=sceptre, W=wheel, M=moon, A=anchor, N=north star, W=wheel",
+   "reading": "A woman who possesses the power and wisdom of various celestial and precious symbols.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "numerical",
+   "chain": "Dangerous Woman = 1+1+4+1+7+26+18+5+21+19+23+1+1+23",
+   "reading": "A woman with a numerical value that represents her dangerous and unique qualities.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "dangerous woman = from Old French 'dangereux' and Latin 'periculosus', meaning dangerous; and 'woman' from Old English 'wifman'",
+   "reading": "A woman who embodies the qualities of danger, risk-taking, and strength.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "dangerous woman = 危险女人 (Wei xian nu ren) in Chinese",
+   "reading": "A woman who is dangerous or poses a threat, as expressed in the Chinese language.",
+   "languages": [
+    "en",
+    "zh"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "dangerous woman = arduous nag in wean = מְגוּרֶת בַּעֲזָר (Meguret Ba'azah) in Hebrew",
+   "reading": "A challenging and persistent figure who pushes someone to overcome difficulties, as expressed in the Hebrew language.",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

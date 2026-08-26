@@ -1,0 +1,92 @@
+{
+ "word": "Nevada",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:53:56+00:00",
+ "latency_s": 21.62,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n    {\n        \"operation\": \"etymology\",\n        \"chain\": \"nev + a\",\n        \"reading\": \"derived from the Basque word 'neva', meaning snow\",\n        \"languages\": [\"en\"],\n        \"source\": \"Lexico Lexical Database\",\n        \"confidence\": 0.95\n    },\n    {\n        \"operation\": \"phonetic_split\",\n        \"chain\": \"n e va\",\n        \"reading\": \"the sound evokes a sense of isolation and desolation\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.8\n    },\n    {\n        \"operation\": \"cross_language_homophone\",\n        \"chain\": \"n e va\",\n        \"reading\": \"in French, 'ne pas' means 'do not', suggesting a sense of restriction or prohibition\",\n        \"languages\": [\"en\", \"fr\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.75\n    },\n    {\n        \"operation\": \"anagram\",\n        \"chain\": \"n e va\",\n        \"reading\": \"the anagram 'evan' is a Hebrew name meaning 'God has shown favor'\",\n        \"languages\": [\"en\", \"he\"],\n        \"source\": \"Lexico Lexical Database\",\n        \"confidence\": 0.85\n    },\n    {\n        \"operation\": \"notariqon\",\n        \"chain\": \"n e va\",\n        \"reading\": \"using the first letter of each word, 'neva' can be seen as an acronym for 'North Eastern Vast Arid'\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.7\n    },\n    {\n        \"operation\": \"letter_symbol\",\n        \"chain\": \"n e va\",\n        \"reading\": \"the letters 'n', 'e', and 'v' can be associated with the elements of nature (air, earth, water), while 'a' represents the unknown or unseen\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.65\n    },\n    {\n        \"operation\": \"numerical\",\n        \"chain\": \"n e va\",\n        \"reading\": \"the sum of the ordinal values of the letters is 14, which can be seen as a symbolic representation of balance or harmony in some cultures\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.6\n    }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "nev + a",
+   "reading": "derived from the Basque word 'neva', meaning snow",
+   "languages": [
+    "en"
+   ],
+   "source": "Lexico Lexical Database",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "n e va",
+   "reading": "the sound evokes a sense of isolation and desolation",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "n e va",
+   "reading": "in French, 'ne pas' means 'do not', suggesting a sense of restriction or prohibition",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "n e va",
+   "reading": "the anagram 'evan' is a Hebrew name meaning 'God has shown favor'",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "Lexico Lexical Database",
+   "confidence": 0.85
+  },
+  {
+   "operation": "notariqon",
+   "chain": "n e va",
+   "reading": "using the first letter of each word, 'neva' can be seen as an acronym for 'North Eastern Vast Arid'",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "n e va",
+   "reading": "the letters 'n', 'e', and 'v' can be associated with the elements of nature (air, earth, water), while 'a' represents the unknown or unseen",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "numerical",
+   "chain": "n e va",
+   "reading": "the sum of the ordinal values of the letters is 14, which can be seen as a symbolic representation of balance or harmony in some cultures",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

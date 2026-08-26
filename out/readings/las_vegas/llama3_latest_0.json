@@ -1,0 +1,101 @@
+{
+ "word": "Las Vegas",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:16:55+00:00",
+ "latency_s": 12.36,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \"chain\": \"\", \"reading\": \"Vegas means 'valley'\", \"languages\": [\"la\"], \"source\": \"Oxford Latin Dictionary\", \"confidence\": 1},\n  {\"operation\": \"phonetic_split\", \"chain\": \"Las + Vegas\", \"reading\": \"Lays out valleys\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.8},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"Vegas (Spanish) = 'haz' meaning 'to do'\", \"reading\": \"'Do the valleys'\", \"languages\": [\"es\",\"en\"], \"source\": \"generative\", \"confidence\": 0.7},\n  {\"operation\": \"anagram\", \"chain\": \"\", \"reading\": \"Gave us\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.9},\n  {\"operation\": \"notariqon\", \"chain\": \"\", \"reading\": \"Give As\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.8},\n  {\"operation\": \"letter_symbol\", \"chain\": \"\", \"reading\": \"L (Luxury) A (Abundance) S (Success) V (Vitality) E (Elegance) G (Glamour) A (Ambition) S (Sophistication)\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.9},\n  {\"operation\": \"numerical\", \"chain\": \"\", \"reading\": \"5 (LV = 5th letter of the alphabet) + 1 (A, first letter of the alphabet) + 19 (V, 19th letter of the alphabet) + 7 (G, 7th letter of the alphabet) + 1 (A, first letter of the alphabet) + 19 (S, 19th letter of the alphabet)\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.8},\n  {\"operation\": \"phonetic_split\", \"chain\": \"\", \"reading\": \"Las Vegas means 'The Valley'\", \"languages\": [\"fr\"], \"source\": \"generative\", \"confidence\": 0.7}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "Vegas means 'valley'",
+   "languages": [
+    "la"
+   ],
+   "source": "Oxford Latin Dictionary",
+   "confidence": 1
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las + Vegas",
+   "reading": "Lays out valleys",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Vegas (Spanish) = 'haz' meaning 'to do'",
+   "reading": "'Do the valleys'",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "Gave us",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "Give As",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "L (Luxury) A (Abundance) S (Success) V (Vitality) E (Elegance) G (Glamour) A (Ambition) S (Sophistication)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "numerical",
+   "chain": "",
+   "reading": "5 (LV = 5th letter of the alphabet) + 1 (A, first letter of the alphabet) + 19 (V, 19th letter of the alphabet) + 7 (G, 7th letter of the alphabet) + 1 (A, first letter of the alphabet) + 19 (S, 19th letter of the alphabet)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "Las Vegas means 'The Valley'",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 8,
+ "refusal_like": false
+}

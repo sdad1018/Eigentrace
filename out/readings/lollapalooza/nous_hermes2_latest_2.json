@@ -1,0 +1,82 @@
+{
+ "word": "Lollapalooza",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:41:34+00:00",
+ "latency_s": 31.47,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"L-O-L-L-A-P-A-L-O-O-Z-A\",\n    \"reading\": \"The word 'Lollapalooza' can be split into its individual phonemes, each representing a distinct sound: /l/ /ɒ/ /l/ /l/ /æ/ /p/ /æ/ /l/ /oʊ/ /z/ /ɑ/.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Phonemic transcription of 'Lollapalooza'\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"L-O-L-L-A-P-A-L-O-O-Z-A\",\n    \"reading\": \"In French, the word 'lollapalooza' can be read as 'la loi est la loi', which means 'the law is the law'. This play on words highlights the idea that the law is absolute and unchanging.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Cross-lingual homophonic reading of 'Lollapalooza'\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"L-O-L-L-A-P-A-L-O-O-Z-A\",\n    \"reading\": \"An anagram of 'Lollapalooza' is 'All a pool of loz', which can be interpreted as the idea that all things, even seemingly insignificant ones like a pool of lozenges, have their own unique value and purpose.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Anagram reading of 'Lollapalooza'\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"L-O-L-L-A-P-A-L-O-O-Z-A\",\n    \"reading\": \"The word 'Lollapalooza' is of Yiddish origin, derived from the Hebrew word 'lulav', which refers to a palm branch used in Jewish religious ceremonies. This etymological connection suggests a deeper meaning related to tradition and ritual.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"Etymology of 'Lollapalooza' from the Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L-O-L-L-A-P-A-L-O-O-Z-A\",\n    \"reading\": \"In numerology, the letters of 'Lollapalooza' can be assigned numerical values (A=1, B=2, ... Z=26). The sum of these values is 97, which can be interpreted as a symbol of self-expression and creativity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Numerological interpretation of 'Lollapalooza'\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L-O-L-L-A-P-A-L-O-O-Z-A\",\n    \"reading\": \"Using the notariqon cipher, where each letter is replaced by a number based on its position in the alphabet (A=1, B=2, ... Z=26), 'Lollapalooza' becomes 31 15 12 15 1 16 1 15 15 18 1. This sequence of numbers can be interpreted as a unique code or identifier.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Notariqon cipher reading of 'Lollapalooza'\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "L-O-L-L-A-P-A-L-O-O-Z-A",
+   "reading": "The word 'Lollapalooza' can be split into its individual phonemes, each representing a distinct sound: /l/ /ɒ/ /l/ /l/ /æ/ /p/ /æ/ /l/ /oʊ/ /z/ /ɑ/.",
+   "languages": [
+    "en"
+   ],
+   "source": "Phonemic transcription of 'Lollapalooza'",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "L-O-L-L-A-P-A-L-O-O-Z-A",
+   "reading": "In French, the word 'lollapalooza' can be read as 'la loi est la loi', which means 'the law is the law'. This play on words highlights the idea that the law is absolute and unchanging.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Cross-lingual homophonic reading of 'Lollapalooza'",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "L-O-L-L-A-P-A-L-O-O-Z-A",
+   "reading": "An anagram of 'Lollapalooza' is 'All a pool of loz', which can be interpreted as the idea that all things, even seemingly insignificant ones like a pool of lozenges, have their own unique value and purpose.",
+   "languages": [
+    "en"
+   ],
+   "source": "Anagram reading of 'Lollapalooza'",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "L-O-L-L-A-P-A-L-O-O-Z-A",
+   "reading": "The word 'Lollapalooza' is of Yiddish origin, derived from the Hebrew word 'lulav', which refers to a palm branch used in Jewish religious ceremonies. This etymological connection suggests a deeper meaning related to tradition and ritual.",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "Etymology of 'Lollapalooza' from the Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L-O-L-L-A-P-A-L-O-O-Z-A",
+   "reading": "In numerology, the letters of 'Lollapalooza' can be assigned numerical values (A=1, B=2, ... Z=26). The sum of these values is 97, which can be interpreted as a symbol of self-expression and creativity.",
+   "languages": [
+    "en"
+   ],
+   "source": "Numerological interpretation of 'Lollapalooza'",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L-O-L-L-A-P-A-L-O-O-Z-A",
+   "reading": "Using the notariqon cipher, where each letter is replaced by a number based on its position in the alphabet (A=1, B=2, ... Z=26), 'Lollapalooza' becomes 31 15 12 15 1 16 1 15 15 18 1. This sequence of numbers can be interpreted as a unique code or identifier.",
+   "languages": [
+    "en"
+   ],
+   "source": "Notariqon cipher reading of 'Lollapalooza'",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

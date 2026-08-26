@@ -1,0 +1,91 @@
+{
+ "word": "Wembley",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:35:15+00:00",
+ "latency_s": 21.5,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Wembley -> Wembly -> Wimblebury -> wimbale (Old English) + burh (Old English)\",\n    \"reading\": \"The place of the musical instrument and fortress.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": null,\n    \"reading\": \"The sound of a bird's cry echoes through the valley.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": null,\n    \"reading\": \"In the land of the rising sun, a river flows through the heart.\",\n    \"languages\": [\"en\", \"ja\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": null,\n    \"reading\": \"A beacon of light in the night, guiding lost souls.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": null,\n    \"reading\": \"The secret code hidden within the word reveals a hidden truth.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": null,\n    \"reading\": \"The symbol of unity and strength in the face of adversity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": null,\n    \"reading\": \"The number 8 is a symbol of balance and harmony in the cosmos.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.65\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Wembley -> Wembly -> Wimblebury -> wimbale (Old English) + burh (Old English)",
+   "reading": "The place of the musical instrument and fortress.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": null,
+   "reading": "The sound of a bird's cry echoes through the valley.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": null,
+   "reading": "In the land of the rising sun, a river flows through the heart.",
+   "languages": [
+    "en",
+    "ja"
+   ],
+   "source": "Generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": null,
+   "reading": "A beacon of light in the night, guiding lost souls.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.95
+  },
+  {
+   "operation": "notariqon",
+   "chain": null,
+   "reading": "The secret code hidden within the word reveals a hidden truth.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": null,
+   "reading": "The symbol of unity and strength in the face of adversity.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "numerical",
+   "chain": null,
+   "reading": "The number 8 is a symbol of balance and harmony in the cosmos.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.65
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

@@ -1,0 +1,19 @@
+{
+ "word": "Houston",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T03:00:30+00:00",
+ "latency_s": 21.56,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"h-o-u-s-t-o-n\",\n    \"reading\": \"The word 'Houston' can be split phonetically into its individual sounds: /h/, /əʊ/, /uː/, /s/, /t/, /əʊ/, /n/.\",\n    \"languages\": [\"en\"],\n    \"source\": \"International Phonetic Alphabet\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"houston -> sam houston -> samuel houston -> cherokee nation -> texas\",\n    \"reading\": \"The name 'Houston' is derived from Sam Houston, a prominent American politician and military leader. He was instrumental in the founding of Texas as an independent republic and later its annexation into the United States.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"houston -> houston (french) -> houston (spanish)\",\n    \"reading\": \"In French and Spanish, 'Houston' is pronounced the same as in English. This homophonic connection creates a linguistic bridge between these languages.\",\n    \"languages\": [\"en\", \"fr\", \"es\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"h-o-u-s-t-o-n -> h-o-u-s-t-n -> hot snout\",\n    \"reading\": \"An anagram of 'Houston' is 'hot snout', which can be interpreted metaphorically as a reference to the city's warm climate or its pioneering role in space exploration.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"h-o-u-s-t-o-n -> h (8) + o (15) + u (21) + s (19) + t (20) + o (15) + n (14)\",\n    \"reading\": \"Using the Greek gematria system, where each letter is assigned a numerical value, 'Houston' can be represented as 8+15+21+19+20+15+14=137. This number sequence could symbolize various",
+ "parsed": null,
+ "parse_error": "json_error: Expecting ',' delimiter: line 30 column 24 (char 1428)",
+ "extracted": false,
+ "n_readings": 0,
+ "refusal_like": false
+}

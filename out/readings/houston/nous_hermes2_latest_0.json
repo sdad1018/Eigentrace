@@ -1,0 +1,93 @@
+{
+ "word": "Houston",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:59:26+00:00",
+ "latency_s": 37.74,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"houston + texas + ricing + sam houston\",\n    \"reading\": \"The name 'Houston' is derived from Sam Houston, a prominent figure in Texas history. His first name comes from the Scottish town of Huntingdon, while his last name has roots in the Old French word for 'hunter'. The city of Houston was named after him and is located in the state of Texas, which itself derives its name from the Caddo word 'taysha', meaning 'friends' or 'allies'. The etymology of 'Houston' thus carries connotations of friendship, hunting, and Scottish heritage.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"The American Heritage Dictionary of the English Language\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"houston + hou + ston\",\n    \"reading\": \"'Houston' can be split into 'hou' and 'ston'. The first syllable, 'hou', evokes a sense of movement or flow, while the second syllable, 'ston', suggests stability or solidity. This duality in sound may represent contrasting qualities or ideas.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"houston + 鸿 (hong) + 凯撒 (kaisa)\",\n    \"reading\": \"'Houston' has homophones in other languages, such as '鸿' (hong) in Chinese, which means 'swan', and '凯撒' (kaisa) in Chinese, a transliteration of the name 'Caesar'. These cross-language connections can create associations with birds, leadership, or imperial power.\",\n    \"languages\": [\"en\", \"zh\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"houston + notush\",\n    \"reading\": \"'Houston' can be rearranged to form 'notush'. This anagram may suggest a sense of unsteadiness or instability, as if the original name were being questioned or challenged.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"houston + houston (reversed)\",\n    \"reading\": \"'Houston' can be reversed to form 'tonush'. This notariqon may represent a mirrored or inverted perspective, inviting reflection on the original name and its significance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"houston + h (sun) + u (moon) + s (star) + t (planet) + o (earth) + n (wind) + (water)\",\n    \"reading\": \"'Houston' can be interpreted through the lens of astrology, with each letter representing a celestial body or element. This reading connects 'Houston' to the cosmos and the natural world.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"houston + (8+7+16+23+4+14+14+19) + (8+7+16+23+4+14+14+19)\",\n    \"reading\": \"'Houston' contains 8 'h', 7 'o', 16 'u', 23 's', 4 't', 14 'n'. The sum of these positions in the alphabet is 145. This numerical value may represent a hidden or coded meaning within the name.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.65\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "houston + texas + ricing + sam houston",
+   "reading": "The name 'Houston' is derived from Sam Houston, a prominent figure in Texas history. His first name comes from the Scottish town of Huntingdon, while his last name has roots in the Old French word for 'hunter'. The city of Houston was named after him and is located in the state of Texas, which itself derives its name from the Caddo word 'taysha', meaning 'friends' or 'allies'. The etymology of 'Houston' thus carries connotations of friendship, hunting, and Scottish heritage.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "The American Heritage Dictionary of the English Language",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "houston + hou + ston",
+   "reading": "'Houston' can be split into 'hou' and 'ston'. The first syllable, 'hou', evokes a sense of movement or flow, while the second syllable, 'ston', suggests stability or solidity. This duality in sound may represent contrasting qualities or ideas.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "houston + 鸿 (hong) + 凯撒 (kaisa)",
+   "reading": "'Houston' has homophones in other languages, such as '鸿' (hong) in Chinese, which means 'swan', and '凯撒' (kaisa) in Chinese, a transliteration of the name 'Caesar'. These cross-language connections can create associations with birds, leadership, or imperial power.",
+   "languages": [
+    "en",
+    "zh"
+   ],
+   "source": "Generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "houston + notush",
+   "reading": "'Houston' can be rearranged to form 'notush'. This anagram may suggest a sense of unsteadiness or instability, as if the original name were being questioned or challenged.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "houston + houston (reversed)",
+   "reading": "'Houston' can be reversed to form 'tonush'. This notariqon may represent a mirrored or inverted perspective, inviting reflection on the original name and its significance.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "houston + h (sun) + u (moon) + s (star) + t (planet) + o (earth) + n (wind) + (water)",
+   "reading": "'Houston' can be interpreted through the lens of astrology, with each letter representing a celestial body or element. This reading connects 'Houston' to the cosmos and the natural world.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "numerical",
+   "chain": "houston + (8+7+16+23+4+14+14+19) + (8+7+16+23+4+14+14+19)",
+   "reading": "'Houston' contains 8 'h', 7 'o', 16 'u', 23 's', 4 't', 14 'n'. The sum of these positions in the alphabet is 145. This numerical value may represent a hidden or coded meaning within the name.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.65
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

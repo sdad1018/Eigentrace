@@ -1,0 +1,92 @@
+{
+ "word": "Las Vegas Village",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:47:12+00:00",
+ "latency_s": 30.19,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas Village -> L-A-S V-E-G-A-S V-I-L-L-A-G-E\",\n    \"reading\": \"Divided into seven distinct sounds: [L], [A], [S], [V], [E], [G], and [A]. The remaining syllables can be interpreted as a journey from 'vegas' to 'village'.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las Vegas Village -> Las Vegas (Spanish: The Meadows)\",\n    \"reading\": \"The word 'Las Vegas' is derived from Spanish, meaning 'the meadows'. This suggests a serene and open landscape.\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"Merriam-Webster Unabridged Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas Village -> Las Vega (Spanish: The Egg)\",\n    \"reading\": \"In Spanish, 'Las Vega' can be interpreted as 'the egg'. This suggests a symbolic beginning or potential.\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"Merriam-Webster Unabridged Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Village -> Sage Vale Viva\",\n    \"reading\": \"An anagram of 'Las Vegas Village' is 'Sage Vale Viva', which suggests a wise valley alive with energy and vitality.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Las Vegas Village -> LVV (Notariqon: The Light of the Universe)\",\n    \"reading\": \"The notariqon of 'Las Vegas Village' is 'LVV', which can be interpreted as a symbolic representation of the light that unites and illuminates the universe.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Las Vegas Village -> L-A-S V-E-G-A-S V-I-L-L-A-G-E (Letter Symbolism: Life, Action, Spirituality, Vision, Energy, Growth, Adventure, Serenity)\",\n    \"reading\": \"Each letter in 'Las Vegas Village' can be associated with a symbolic meaning. Together, they represent life, action, spirituality, vision, energy, growth, adventure, and serenity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Las Vegas Village -> 1234567 (Numerical Value: A Journey of Discovery)\",\n    \"reading\": \"The numerical value of the letters in 'Las Vegas Village' is 1+2+3+4+5+6+7, which represents a journey of discovery and exploration.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.8\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas Village -> L-A-S V-E-G-A-S V-I-L-L-A-G-E",
+   "reading": "Divided into seven distinct sounds: [L], [A], [S], [V], [E], [G], and [A]. The remaining syllables can be interpreted as a journey from 'vegas' to 'village'.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Las Vegas Village -> Las Vegas (Spanish: The Meadows)",
+   "reading": "The word 'Las Vegas' is derived from Spanish, meaning 'the meadows'. This suggests a serene and open landscape.",
+   "languages": [
+    "en",
+    "es"
+   ],
+   "source": "Merriam-Webster Unabridged Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas Village -> Las Vega (Spanish: The Egg)",
+   "reading": "In Spanish, 'Las Vega' can be interpreted as 'the egg'. This suggests a symbolic beginning or potential.",
+   "languages": [
+    "en",
+    "es"
+   ],
+   "source": "Merriam-Webster Unabridged Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Village -> Sage Vale Viva",
+   "reading": "An anagram of 'Las Vegas Village' is 'Sage Vale Viva', which suggests a wise valley alive with energy and vitality.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Las Vegas Village -> LVV (Notariqon: The Light of the Universe)",
+   "reading": "The notariqon of 'Las Vegas Village' is 'LVV', which can be interpreted as a symbolic representation of the light that unites and illuminates the universe.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Las Vegas Village -> L-A-S V-E-G-A-S V-I-L-L-A-G-E (Letter Symbolism: Life, Action, Spirituality, Vision, Energy, Growth, Adventure, Serenity)",
+   "reading": "Each letter in 'Las Vegas Village' can be associated with a symbolic meaning. Together, they represent life, action, spirituality, vision, energy, growth, adventure, and serenity.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "numerical",
+   "chain": "Las Vegas Village -> 1234567 (Numerical Value: A Journey of Discovery)",
+   "reading": "The numerical value of the letters in 'Las Vegas Village' is 1+2+3+4+5+6+7, which represents a journey of discovery and exploration.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

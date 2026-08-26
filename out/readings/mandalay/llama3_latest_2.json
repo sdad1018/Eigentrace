@@ -1,0 +1,92 @@
+{
+ "word": "Mandalay",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:16:15+00:00",
+ "latency_s": 16.12,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\": \"phonetic_split\", \n\"chain\": \"\", \n\"reading\": \"Man + Dal + Ay\", \n\"languages\": [\"en\"], \n\"source\": \"generative\", \n\"confidence\": 0.9}, \n\n{\"operation\": \"etymology\", \n\"chain\": \"\", \n\"reading\": \"Mandala, Sanskrit for 'circle' or 'disc', refers to a sacred geometric shape.\", \n\"languages\": [\"en\", \"sa\"], \n\"source\": \"Monier-Williams Sanskrit-English Dictionary\", \n\"confidence\": 0.8}, \n\n{\"operation\": \"cross_language_homophone\", \n\"chain\": \"\", \n\"reading\": \"Man + Dalle, French for 'man of the wall', implies a strong or sturdy individual.\", \n\"languages\": [\"en\", \"fr\"], \n\"source\": \"generative\", \n\"confidence\": 0.7}, \n\n{\"operation\": \"anagram\", \n\"chain\": \"\", \n\"reading\": \"Mandala's 'Mad' + 'Lay', suggesting a mystical or spiritual place.\", \n\"languages\": [\"en\"], \n\"source\": \"generative\", \n\"confidence\": 0.6}, \n\n{\"operation\": \"notariqon\", \n\"chain\": \"\", \n\"reading\": \"'Ma' (mother) + 'Nal' (noble) + 'Ay' (longing), implying a noble longing or aspiration.\", \n\"languages\": [\"en\"], \n\"source\": \"generative\", \n\"confidence\": 0.5}, \n\n{\"operation\": \"letter_symbol\", \n\"chain\": \"\", \n\"reading\": \"'M' (13th letter of the Hebrew alphabet) + 'A' ( Aleph, first letter of the Hebrew alphabet) + 'N' (Nun, 14th letter of the Hebrew alphabet) + 'D' (Dalet, 4th letter of the Hebrew alphabet) + 'A' (Aleph) + 'Y'\", \n\"languages\": [\"he\"], \n\"source\": \"generative\", \n\"confidence\": 0.4}, \n\n{\"operation\": \"numerical\", \n\"chain\": \"\", \n\"reading\": \"'M' (13th letter of the Hebrew alphabet) + 'A' (Aleph, first letter of the Hebrew alphabet) + 'N' (7, perfection or completion) + 'D' (4, stability or foundation) + 'A' (1, unity or singularity) + 'Y'\", \n\"languages\": [\"he\"], \n\"source\": \"generative\", \n\"confidence\": 0.3}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "Man + Dal + Ay",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "Mandala, Sanskrit for 'circle' or 'disc', refers to a sacred geometric shape.",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "Monier-Williams Sanskrit-English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "Man + Dalle, French for 'man of the wall', implies a strong or sturdy individual.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "Mandala's 'Mad' + 'Lay', suggesting a mystical or spiritual place.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "'Ma' (mother) + 'Nal' (noble) + 'Ay' (longing), implying a noble longing or aspiration.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "'M' (13th letter of the Hebrew alphabet) + 'A' ( Aleph, first letter of the Hebrew alphabet) + 'N' (Nun, 14th letter of the Hebrew alphabet) + 'D' (Dalet, 4th letter of the Hebrew alphabet) + 'A' (Aleph) + 'Y'",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "",
+   "reading": "'M' (13th letter of the Hebrew alphabet) + 'A' (Aleph, first letter of the Hebrew alphabet) + 'N' (7, perfection or completion) + 'D' (4, stability or foundation) + 'A' (1, unity or singularity) + 'Y'",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

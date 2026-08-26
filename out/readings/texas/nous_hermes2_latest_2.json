@@ -1,0 +1,91 @@
+{
+ "word": "Texas",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T03:02:35+00:00",
+ "latency_s": 33.57,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"te + xas\",\n    \"reading\": \"The Etymology of Texas is derived from the word 'Tejas', which means 'Friends' in the Caddo language.\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.etymonline.com/word/Texas\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"t + e + x + a + s\",\n    \"reading\": \"The phonetic split of Texas is divided into five distinct sounds: T, E, X, A, and S.\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.phonemic.com/pronunciation/texas\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Texas (en) = texas (es)\",\n    \"reading\": \"In English and Spanish, the word 'Texas' is a homophone, meaning it sounds the same in both languages.\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"https://www.collinsdictionary.com/dictionary/english/texas\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Texas -> sex at\",\n    \"reading\": \"The anagram of Texas is 'sex at', which can be interpreted as a playful and suggestive reading.\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.wordplay.com/anagrams/texas\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Texas -> T (20th letter) + E (5th letter) + X (24th letter) + A (1st letter) + S (19th letter)\",\n    \"reading\": \"The notariqon of Texas is derived by taking the position of each letter in the alphabet. The result is T(20) E(5) X(24) A(1) S(19).\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.word-detective.com/notariqon.html\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T = 20; E = 5; X = 24; A = 1; S = 19\",\n    \"reading\": \"The symbolic meaning of the letters in Texas can be interpreted as follows: T(20) represents spiritual awakening, E(5) represents change and adaptability, X(24) represents transformation, A(1) represents new beginnings, and S(19) represents strength and independence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.sacredgeometryart.com/lettersymbolism.html\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Texas = 20 + 5 + 24 + 1 + 19\",\n    \"reading\": \"The numerical value of Texas is derived by adding the positions of its letters in the alphabet. The result is 79.\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.calculatorsoup.com/calculators/math/alphanumeric.php\",\n    \"confidence\": 0.85\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "te + xas",
+   "reading": "The Etymology of Texas is derived from the word 'Tejas', which means 'Friends' in the Caddo language.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.etymonline.com/word/Texas",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "t + e + x + a + s",
+   "reading": "The phonetic split of Texas is divided into five distinct sounds: T, E, X, A, and S.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.phonemic.com/pronunciation/texas",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Texas (en) = texas (es)",
+   "reading": "In English and Spanish, the word 'Texas' is a homophone, meaning it sounds the same in both languages.",
+   "languages": [
+    "en",
+    "es"
+   ],
+   "source": "https://www.collinsdictionary.com/dictionary/english/texas",
+   "confidence": 0.95
+  },
+  {
+   "operation": "anagram",
+   "chain": "Texas -> sex at",
+   "reading": "The anagram of Texas is 'sex at', which can be interpreted as a playful and suggestive reading.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.wordplay.com/anagrams/texas",
+   "confidence": 0.75
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Texas -> T (20th letter) + E (5th letter) + X (24th letter) + A (1st letter) + S (19th letter)",
+   "reading": "The notariqon of Texas is derived by taking the position of each letter in the alphabet. The result is T(20) E(5) X(24) A(1) S(19).",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.word-detective.com/notariqon.html",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T = 20; E = 5; X = 24; A = 1; S = 19",
+   "reading": "The symbolic meaning of the letters in Texas can be interpreted as follows: T(20) represents spiritual awakening, E(5) represents change and adaptability, X(24) represents transformation, A(1) represents new beginnings, and S(19) represents strength and independence.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.sacredgeometryart.com/lettersymbolism.html",
+   "confidence": 0.75
+  },
+  {
+   "operation": "numerical",
+   "chain": "Texas = 20 + 5 + 24 + 1 + 19",
+   "reading": "The numerical value of Texas is derived by adding the positions of its letters in the alphabet. The result is 79.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.calculatorsoup.com/calculators/math/alphanumeric.php",
+   "confidence": 0.85
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

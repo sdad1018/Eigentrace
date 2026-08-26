@@ -1,0 +1,75 @@
+{
+ "word": "Exuma",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:25:52+00:00",
+ "latency_s": 11.81,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\": \"phonetic_split\", \n\"chain\": \"\", \n\"reading\": \"Ex-u-ma: 'ex' (out) + 'u' (you) + 'ma' (mother), a phrase suggesting something outside of or beyond one's mother\",\n\"languages\": [\"en\"], \n\"source\": \"generative\"}, \n\n{\"operation\": \"etymology\", \n\"chain\": \"\", \n\"reading\": \"Exuma: from Latin 'ex' (out) and 'umare' (to be in the sea), suggesting something outside of or beyond the sea\",\n\"languages\": [\"la\"], \n\"source\": \"Oxford Latin Dictionary\"}, \n\n{\"operation\": \"cross_language_homophone\", \n\"chain\": \"\", \n\"reading\": \"'Exuma' sounds like 'exume' (to remove or take out), implying a process of extraction or removal\",\n\"languages\": [\"en\",\"fr\"], \n\"source\": \"generative\"}, \n\n{\"operation\": \"anagram\", \n\"chain\": \"\", \n\"reading\": \"Exuma: an anagram of 'Maxue', suggesting strength or power\",\n\"languages\": [\"en\"], \n\"source\": \"generative\"}, \n\n{\"operation\": \"notariqon\", \n\"chain\": \"\", \n\"reading\": \"Exuma: a notariqon of 'Muxe' (to mix), implying blending or combining\",\n\"languages\": [\"he\"], \n\"source\": \"generative\"}, \n\n{\"operation\": \"letter_symbol\", \n\"chain\": \"\", \n\"reading\": \"'E' is the first letter of the Greek word for 'being', while 'X' is a symbol of mystery and secrecy, suggesting something hidden or mysterious\",\n\"languages\": [\"grc\"], \n\"source\": \"generative\"}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "Ex-u-ma: 'ex' (out) + 'u' (you) + 'ma' (mother), a phrase suggesting something outside of or beyond one's mother",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "Exuma: from Latin 'ex' (out) and 'umare' (to be in the sea), suggesting something outside of or beyond the sea",
+   "languages": [
+    "la"
+   ],
+   "source": "Oxford Latin Dictionary"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "'Exuma' sounds like 'exume' (to remove or take out), implying a process of extraction or removal",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "Exuma: an anagram of 'Maxue', suggesting strength or power",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "Exuma: a notariqon of 'Muxe' (to mix), implying blending or combining",
+   "languages": [
+    "he"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "'E' is the first letter of the Greek word for 'being', while 'X' is a symbol of mystery and secrecy, suggesting something hidden or mysterious",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

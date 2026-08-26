@@ -1,0 +1,90 @@
+{
+ "word": "Lollapalooza",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:41:03+00:00",
+ "latency_s": 20.36,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Lol + a palazzo\",\n    \"reading\": \"A place of amusement and luxury (from Italian 'palace')\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lol + a palooza\",\n    \"reading\": \"A festive gathering of joy and celebration\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Lol + a palazzo (Italian)\",\n    \"reading\": \"A lavish, entertaining place in Italian culture\",\n    \"languages\": [\"it\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Lol + a palooza\",\n    \"reading\": \"A zany, jovial party scene\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Lol + a palooza\",\n    \"reading\": \"Amusement and luxury in the heart of the festivities\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Lol + a palooza\",\n    \"reading\": \"A vibrant, lively celebration of life and joy (LOL = Laugh Out Loud)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Lol + a palooza\",\n    \"reading\": \"A harmonious blend of numbers and sounds representing happiness and excitement (LOL = Laugh Out Loud, Palooza = Party)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.35\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Lol + a palazzo",
+   "reading": "A place of amusement and luxury (from Italian 'palace')",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lol + a palooza",
+   "reading": "A festive gathering of joy and celebration",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Lol + a palazzo (Italian)",
+   "reading": "A lavish, entertaining place in Italian culture",
+   "languages": [
+    "it"
+   ],
+   "source": "Generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "Lol + a palooza",
+   "reading": "A zany, jovial party scene",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Lol + a palooza",
+   "reading": "Amusement and luxury in the heart of the festivities",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Lol + a palooza",
+   "reading": "A vibrant, lively celebration of life and joy (LOL = Laugh Out Loud)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "numerical",
+   "chain": "Lol + a palooza",
+   "reading": "A harmonious blend of numbers and sounds representing happiness and excitement (LOL = Laugh Out Loud, Palooza = Party)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.35
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

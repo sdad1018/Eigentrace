@@ -1,0 +1,86 @@
+{
+ "word": "Paris",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:30:53+00:00",
+ "latency_s": 15.12,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Greek πάρει (pari) + ωις (ois)\",\n    \"reading\": \"a place of gathering or departure\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"Liddell and Scott's Greek-English Lexicon\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"par + is\",\n    \"reading\": \"a place or a boundary, with existence\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"French 'par' (by) + Greek 'ις' (is)\",\n    \"reading\": \"a place or a means of access, with being\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"pair + is\",\n    \"reading\": \"a dualistic or paired existence\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"P (16th letter of the Hebrew alphabet) + ARIS (Greek for 'place')\",\n    \"reading\": \"a sacred or mystical location\",\n    \"languages\": [\"he\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"P (16th letter of the Hebrew alphabet) + R (18th letter of the Greek alphabet)\",\n    \"reading\": \"a path or a route, with rest\",\n    \"languages\": [\"he\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Greek πάρει (pari) + ωις (ois)",
+   "reading": "a place of gathering or departure",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Liddell and Scott's Greek-English Lexicon",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "par + is",
+   "reading": "a place or a boundary, with existence",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "French 'par' (by) + Greek 'ις' (is)",
+   "reading": "a place or a means of access, with being",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "pair + is",
+   "reading": "a dualistic or paired existence",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P (16th letter of the Hebrew alphabet) + ARIS (Greek for 'place')",
+   "reading": "a sacred or mystical location",
+   "languages": [
+    "he",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P (16th letter of the Hebrew alphabet) + R (18th letter of the Greek alphabet)",
+   "reading": "a path or a route, with rest",
+   "languages": [
+    "he",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

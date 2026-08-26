@@ -1,0 +1,19 @@
+{
+ "word": "Nevada",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:54:15+00:00",
+ "latency_s": 19.15,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"phonetic_split\", \"chain\": \"N-E-V-A-D-A\", \"reading\": \"The phrase 'never a day' can be derived from the phonetic split of Nevada.\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.8},\n  {\"operation\": \"etymology\", \"chain\": \"Nevada is derived from Spanish.\", \"reading\": \"The word 'Nevada' comes from the Spanish word 'nevado', meaning 'snow-covered'.\", \"languages\": [\"es\"], \"source\": \"https://www.merriam-webster.com/dictionary/Nevada\", \"confidence\": 0.9},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"Nevada is homophonous with 'nevus' in Latin.\", \"reading\": \"The word 'Nevada' shares a similar pronunciation with the Latin term 'nevus', which means 'birthmark'.\", \"languages\": [\"la\"], \"source\": \"https://www.merriam-webster.com/dictionary/Nevada\", \"confidence\": 0.7},\n  {\"operation\": \"anagram\", \"chain\": \"A rearrangement of the letters in 'Nevada' can form 'Vanea'.\", \"reading\": \"The anagram 'Vanea' does not have any significant meanings or connections to the original word 'Nevada'.\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.6},\n  {\"operation\": \"notariqon\", \"chain\": \"The first letter of each word in the phrase 'Never a day away from nature' forms 'Nevada'.\", \"reading\": \"The notariqon 'Nevada' represents the idea of being always close to nature.\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.7},\n  {\"operation\": \"letter_symbol\", \"chain\": \"In numerology, the sum of the values of each letter in 'Nevada' is 126 (5+5+1+4+1+22+1+9).\", \"reading\": \"The numerical value of 'Nevada' symbolizes balance and harmony.\", \"languages\": [\"en\"], \"source\": \"https://www.numerology.com/calculators/name-number-calculator, \"confidence\": 0.6}\n]",
+ "parsed": null,
+ "parse_error": "json_error: Expecting ',' delimiter: line 7 column 311 (char 1688)",
+ "extracted": false,
+ "n_readings": 0,
+ "refusal_like": false
+}

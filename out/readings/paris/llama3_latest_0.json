@@ -1,0 +1,82 @@
+{
+ "word": "Paris",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:30:25+00:00",
+ "latency_s": 11.46,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \"chain\": \"\", \"reading\": \"from Latin 'parare' to prepare\", \"languages\": [\"la\"], \"source\": \"Lewis and Short's Latin Dictionary\", \"confidence\": 1.0},\n  {\"operation\": \"phonetic_split\", \"chain\": \"\", \"reading\": \"pair + ris, a pairing or connection\", \"languages\": [\"en\",\"fr\"], \"source\": \"generative\", \"confidence\": 0.8},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"Greek 'paros' (beside) + 'is'\", \"reading\": \"beside oneself, beside the point\", \"languages\": [\"grc\",\"en\"], \"source\": \"generative\", \"confidence\": 0.7},\n  {\"operation\": \"anagram\", \"chain\": \"\", \"reading\": \"pair is, a pairing that exists\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.9},\n  {\"operation\": \"notariqon\", \"chain\": \"\", \"reading\": \"P (power) + Ari (altar) + S (sacred)\", \"languages\": [\"he\"], \"source\": \"generative\", \"confidence\": 0.6},\n  {\"operation\": \"letter_symbol\", \"chain\": \"\", \"reading\": \"P (principle) + A (above) R (root) I (intuition) S (spirit)\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.5}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "from Latin 'parare' to prepare",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis and Short's Latin Dictionary",
+   "confidence": 1.0
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "pair + ris, a pairing or connection",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Greek 'paros' (beside) + 'is'",
+   "reading": "beside oneself, beside the point",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "pair is, a pairing that exists",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "P (power) + Ari (altar) + S (sacred)",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "P (principle) + A (above) R (root) I (intuition) S (spirit)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

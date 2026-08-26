@@ -1,0 +1,90 @@
+{
+ "word": "Voltaire",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T03:25:40+00:00",
+ "latency_s": 16.92,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"voltaire -> volta -> lightning bolt\",\n    \"reading\": \"Voltaire's name is derived from the French word for 'lightning bolt', reflecting his electrifying wit and intellect.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"v -> f, o -> a, l -> r, t -> th, a -> e, i -> i\",\n    \"reading\": \"The phonetic split of 'Voltaire' yields 'Father', which could symbolize his role as an intellectual father figure in the Enlightenment.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"voltaire -> volte-face (French) -> about-face\",\n    \"reading\": \"'Voltaire' is a homophone of 'volte-face', which means an abrupt change in direction or opinion, reflecting the author's ability to challenge and shift perspectives.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Voltaire -> Arieltov\",\n    \"reading\": \"'Arieltov' is an anagram of 'Voltaire', and it evokes the idea of a versatile writer who can shape and rearrange words to create powerful narratives.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Voltaire -> V-O-L-T-A-I-R-E -> 21586\",\n    \"reading\": \"'Voltaire' has a notariqonic value of 21,586, which could symbolize the profound impact his writings had on society and thought.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V-O-L-T-A-I-R-E -> Venus (5), Omega (15), Luna (12), Theta (9), Alpha (1), Iota (10), Rho (20), Epsilon (5)\",\n    \"reading\": \"'Voltaire' can be represented by the sum of the Greek and Roman numeral values of its letters, which could symbolize his ability to bridge different cultures and ideas.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"V-O-L-T-A-I-R-E -> 21,586 (notariqonic value)\",\n    \"reading\": \"'Voltaire' has a numerical value of 21,586 when using the notariqon method, which could symbolize his multifaceted personality and profound influence on society.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "voltaire -> volta -> lightning bolt",
+   "reading": "Voltaire's name is derived from the French word for 'lightning bolt', reflecting his electrifying wit and intellect.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "v -> f, o -> a, l -> r, t -> th, a -> e, i -> i",
+   "reading": "The phonetic split of 'Voltaire' yields 'Father', which could symbolize his role as an intellectual father figure in the Enlightenment.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "voltaire -> volte-face (French) -> about-face",
+   "reading": "'Voltaire' is a homophone of 'volte-face', which means an abrupt change in direction or opinion, reflecting the author's ability to challenge and shift perspectives.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Voltaire -> Arieltov",
+   "reading": "'Arieltov' is an anagram of 'Voltaire', and it evokes the idea of a versatile writer who can shape and rearrange words to create powerful narratives.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Voltaire -> V-O-L-T-A-I-R-E -> 21586",
+   "reading": "'Voltaire' has a notariqonic value of 21,586, which could symbolize the profound impact his writings had on society and thought.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V-O-L-T-A-I-R-E -> Venus (5), Omega (15), Luna (12), Theta (9), Alpha (1), Iota (10), Rho (20), Epsilon (5)",
+   "reading": "'Voltaire' can be represented by the sum of the Greek and Roman numeral values of its letters, which could symbolize his ability to bridge different cultures and ideas.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "V-O-L-T-A-I-R-E -> 21,586 (notariqonic value)",
+   "reading": "'Voltaire' has a numerical value of 21,586 when using the notariqon method, which could symbolize his multifaceted personality and profound influence on society.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

@@ -1,0 +1,51 @@
+{
+ "word": "Glastonbury",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:39:23+00:00",
+ "latency_s": 17.19,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \"chain\": \"Glast + -bury\", \"reading\": \"Place of the green hill\", \"languages\": [\"en\"], \"source\": \"English Place-Name Society\", \"confidence\": 0.9},\n  {\"operation\": \"phonetic_split\", \"chain\": \"-\", \"reading\": \"Gla-ston-bury: three syllables, each with a distinct sound\", \"languages\": [\"en\"], \"source\": \"Generative\", \"confidence\": 0.8},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"-\", \"reading\": \"In French, 'glace' means ice; in Italian, 'glacé' refers to something coated with sugar: Glastonbury could be a place of frozen sweetness or cool confectionery.\", \"languages\": [\"fr\", \"it\"], \"source\": \"Generative\", \"confidence\": 0.7},\n  {\"operation\": \"anagram\", \"chain\": \"-\", \"readings\": [\"Buried in the glades of nature's embrace\", \"Gardens of beauty, where life and art blend gracefully\"], \"languages\": [\"en\"], \"source\": \"Generative\", \"confidence\": 0.6},\n  {\"operation\": \"notariqon\", \"chain\": \"-\", \"readings\": [\"A place of green hills and mystical lore\", \"Birthplace of legends, where tales unfold in store\"], \"languages\": [\"en\"], \"source\": \"Generative\", \"confidence\": 0.5},\n  {\"operation\": \"letter_symbol\", \"chain\": \"-\", \"readings\": [\"A place of green hills and mystical lore\", \"Birthplace of legends, where tales unfold in store\"], \"languages\": [\"en\"], \"source\": \"Generative\", \"confidence\": 0.5},\n  {\"operation\": \"numerical\", \"chain\": \"-\", \"readings\": [\"The vibrant energy of life and nature intertwined in harmony\", \"A place of enchantment, where dreams take flight and love abounds\"], \"languages\": [\"en\"], \"source\": \"Generative\", \"confidence\": 0.4}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Glast + -bury",
+   "reading": "Place of the green hill",
+   "languages": [
+    "en"
+   ],
+   "source": "English Place-Name Society",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "-",
+   "reading": "Gla-ston-bury: three syllables, each with a distinct sound",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "-",
+   "reading": "In French, 'glace' means ice; in Italian, 'glacé' refers to something coated with sugar: Glastonbury could be a place of frozen sweetness or cool confectionery.",
+   "languages": [
+    "fr",
+    "it"
+   ],
+   "source": "Generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 3,
+ "refusal_like": false
+}

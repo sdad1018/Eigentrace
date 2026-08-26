@@ -1,0 +1,92 @@
+{
+ "word": "Texas",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T03:02:01+00:00",
+ "latency_s": 28.92,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Tej-as > Tejas > Texas\",\n    \"reading\": \"The word 'Texas' is derived from the Caddo word 'Tejas', which means 'friends' or 'allies'. This was later Spanishized to 'Tejas' and eventually evolved into its current form, 'Texas'. The state of Texas has a rich history of alliances and friendships among different cultures and ethnic groups.\",\n    \"languages\": [\"en\", \"es\", \"fr\"],\n    \"source\": \"Lexico Dictionaries, Merriam-Webster Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Texas > Te + xa\",\n    \"reading\": \"'Te' signifies 'to be' or 'existence', and 'xa' can be interpreted as a symbol for the unknown. Thus, 'Texas' represents the exploration of existence and the unknown.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": null,\n    \"reading\": \"'Texas' shares a homophonic sound with the word 'texts' in English. This can be interpreted as Texas being a place where history and stories are written and preserved.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": null,\n    \"reading\": \"'Texas' is an anagram of 'Sexat', which can be interpreted as a place where diverse cultures and ideas come together to create something new and exciting.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": null,\n    \"reading\": \"'Texas' can be interpreted as a notariqon (acrostic) for 'Together Every Xenos Are Safe', emphasizing the unity and safety of diverse cultures in Texas.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": null,\n    \"reading\": \"'T' represents 'truth', 'E' represents 'evolution', 'X' represents 'unknown', 'A' represents 'awareness', and 'S' represents 'sustainability'. Texas is a place where these principles come together to create a unique culture.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": null,\n    \"reading\": \"'Texas' can be interpreted numerically as follows: T(20) + E(5) + X(10) + A(1) + S(19) = 55. This represents the 55th parallel, which is a latitudinal circle of the Earth that passes through Texas, symbolizing its connection to the global community.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Tej-as > Tejas > Texas",
+   "reading": "The word 'Texas' is derived from the Caddo word 'Tejas', which means 'friends' or 'allies'. This was later Spanishized to 'Tejas' and eventually evolved into its current form, 'Texas'. The state of Texas has a rich history of alliances and friendships among different cultures and ethnic groups.",
+   "languages": [
+    "en",
+    "es",
+    "fr"
+   ],
+   "source": "Lexico Dictionaries, Merriam-Webster Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Texas > Te + xa",
+   "reading": "'Te' signifies 'to be' or 'existence', and 'xa' can be interpreted as a symbol for the unknown. Thus, 'Texas' represents the exploration of existence and the unknown.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": null,
+   "reading": "'Texas' shares a homophonic sound with the word 'texts' in English. This can be interpreted as Texas being a place where history and stories are written and preserved.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": null,
+   "reading": "'Texas' is an anagram of 'Sexat', which can be interpreted as a place where diverse cultures and ideas come together to create something new and exciting.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": null,
+   "reading": "'Texas' can be interpreted as a notariqon (acrostic) for 'Together Every Xenos Are Safe', emphasizing the unity and safety of diverse cultures in Texas.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": null,
+   "reading": "'T' represents 'truth', 'E' represents 'evolution', 'X' represents 'unknown', 'A' represents 'awareness', and 'S' represents 'sustainability'. Texas is a place where these principles come together to create a unique culture.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "numerical",
+   "chain": null,
+   "reading": "'Texas' can be interpreted numerically as follows: T(20) + E(5) + X(10) + A(1) + S(19) = 55. This represents the 55th parallel, which is a latitudinal circle of the Earth that passes through Texas, symbolizing its connection to the global community.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

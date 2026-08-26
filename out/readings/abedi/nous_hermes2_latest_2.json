@@ -1,0 +1,90 @@
+{
+ "word": "Abedi",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T03:11:09+00:00",
+ "latency_s": 33.06,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"abed + i\",\n    \"reading\": \"The 'I' in the word refers to a person or individual, while 'Abed' is derived from the Arabic word 'Abed', meaning 'servant'. Thus, the word can be interpreted as 'my servant' or 'one's personal attendant.'\",\n    \"languages\": [\"ar\"],\n    \"source\": \"Lexicon of Arabic Language\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"a + be + di\",\n    \"reading\": \"The word 'Abedi' can be split into three phonetically distinct parts: 'a', 'be', and 'di'. These syllables can represent different aspects of a person or concept, such as action ('be') and direction ('di').\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"abed + i\",\n    \"reading\": \"In the context of the French language, 'Abedi' can be seen as a homophonic reference to the word 'Abide', which means 'to remain or stay'. This suggests a sense of stability or steadfastness.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"Lexicon of French Language\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"a + bed + i\",\n    \"reading\": \"The word 'Abedi' can be rearranged to form the word 'Beadie', which could represent a person who is fond of or skilled in working with beads. This interpretation emphasizes creativity and craftsmanship.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"a + b + e + d + i\",\n    \"reading\": \"Using the notariqon method, the letters of 'Abedi' can be rearranged to form the word 'Bead', which could symbolize a foundation or base upon which something is built. This interpretation emphasizes stability and support.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"a + b + e + d + i\",\n    \"reading\": \"In the context of numerology, the letters in 'Abedi' can be assigned numerical values: A=1, B=2, E=5, D=4, I=9. The sum of these values is 21, which is associated with creativity and innovation. Thus, 'Abedi' could symbolize a creative and innovative individual.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"a + b + e + d + i\",\n    \"reading\": \"Using the gematria method, the numerical values of the letters in 'Abedi' can be summed to yield a single number. In this case, the sum is 21, which is associated with creativity and innovation. Thus, 'Abedi' could symbolize a creative and innovative individual.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "abed + i",
+   "reading": "The 'I' in the word refers to a person or individual, while 'Abed' is derived from the Arabic word 'Abed', meaning 'servant'. Thus, the word can be interpreted as 'my servant' or 'one's personal attendant.'",
+   "languages": [
+    "ar"
+   ],
+   "source": "Lexicon of Arabic Language",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "a + be + di",
+   "reading": "The word 'Abedi' can be split into three phonetically distinct parts: 'a', 'be', and 'di'. These syllables can represent different aspects of a person or concept, such as action ('be') and direction ('di').",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "abed + i",
+   "reading": "In the context of the French language, 'Abedi' can be seen as a homophonic reference to the word 'Abide', which means 'to remain or stay'. This suggests a sense of stability or steadfastness.",
+   "languages": [
+    "fr"
+   ],
+   "source": "Lexicon of French Language",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "a + bed + i",
+   "reading": "The word 'Abedi' can be rearranged to form the word 'Beadie', which could represent a person who is fond of or skilled in working with beads. This interpretation emphasizes creativity and craftsmanship.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "a + b + e + d + i",
+   "reading": "Using the notariqon method, the letters of 'Abedi' can be rearranged to form the word 'Bead', which could symbolize a foundation or base upon which something is built. This interpretation emphasizes stability and support.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "a + b + e + d + i",
+   "reading": "In the context of numerology, the letters in 'Abedi' can be assigned numerical values: A=1, B=2, E=5, D=4, I=9. The sum of these values is 21, which is associated with creativity and innovation. Thus, 'Abedi' could symbolize a creative and innovative individual.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "numerical",
+   "chain": "a + b + e + d + i",
+   "reading": "Using the gematria method, the numerical values of the letters in 'Abedi' can be summed to yield a single number. In this case, the sum is 21, which is associated with creativity and innovation. Thus, 'Abedi' could symbolize a creative and innovative individual.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

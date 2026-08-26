@@ -1,0 +1,90 @@
+{
+ "word": "Tanglewood",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:42:44+00:00",
+ "latency_s": 20.23,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"tang + le + wood\",\n    \"reading\": \"A place where trees are entangled or intertwined.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Tan Gle Wo Od\",\n    \"reading\": \"A tangled forest of gleaming wood.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Tan Gle Wo Od\",\n    \"reading\": \"A tangled forest of gleaming wood.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Tanglewood -> Wetland Toggle\",\n    \"reading\": \"A wetland with a toggling effect on the environment.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Tan Gle Wo Od -> TGWOOD\",\n    \"reading\": \"A tangled forest of gleaming wood.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Tan Gle Wo Od -> T=Tree, G=Gleaming, W=Wood, O=Of, D=Tangled\",\n    \"reading\": \"A place with entangled trees of gleaming wood.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Tan Gle Wo Od -> T=20, G=7, W=23, O=15, D=4\",\n    \"reading\": \"A place with entangled trees of gleaming wood.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.8\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "tang + le + wood",
+   "reading": "A place where trees are entangled or intertwined.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Tan Gle Wo Od",
+   "reading": "A tangled forest of gleaming wood.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Tan Gle Wo Od",
+   "reading": "A tangled forest of gleaming wood.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "anagram",
+   "chain": "Tanglewood -> Wetland Toggle",
+   "reading": "A wetland with a toggling effect on the environment.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Tan Gle Wo Od -> TGWOOD",
+   "reading": "A tangled forest of gleaming wood.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Tan Gle Wo Od -> T=Tree, G=Gleaming, W=Wood, O=Of, D=Tangled",
+   "reading": "A place with entangled trees of gleaming wood.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "numerical",
+   "chain": "Tan Gle Wo Od -> T=20, G=7, W=23, O=15, D=4",
+   "reading": "A place with entangled trees of gleaming wood.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

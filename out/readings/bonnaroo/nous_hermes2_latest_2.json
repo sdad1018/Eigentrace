@@ -1,0 +1,90 @@
+{
+ "word": "Bonnaroo",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:34:53+00:00",
+ "latency_s": 24.67,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bon + naro\",\n    \"reading\": \"Good Enough\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.etymonline.com/word/Bonnaroo\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"bo + nna + roo\",\n    \"reading\": \"Booming Nightlife, Revelry Unending\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.etymonline.com/word/Bonnaroo\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bon + anar + roo\",\n    \"reading\": \"Good Year, Rise Up\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.etymonline.com/word/Bonnaroo\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"bon + naaro\",\n    \"reading\": \"Bountiful Nature's Array, Radiant Oasis\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.etymonline.com/word/Bonnaroo\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"bon + nar\",\n    \"reading\": \"Bountiful Nature's Aura, Radiant Realm\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.etymonline.com/word/Bonnaroo\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"b + o + n + a + r + o\",\n    \"reading\": \"Balance, Opportunity, Nature's Array, Radiant Oasis\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.etymonline.com/word/Bonnaroo\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"2 + 15 + 14 + 1 + 18 + 15\",\n    \"reading\": \"The Harmonious Blend of Elements, Radiant Opulence Unending\",\n    \"languages\": [\"en\"],\n    \"source\": \"https://www.etymonline.com/word/Bonnaroo\",\n    \"confidence\": 0.2\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "bon + naro",
+   "reading": "Good Enough",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.etymonline.com/word/Bonnaroo",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "bo + nna + roo",
+   "reading": "Booming Nightlife, Revelry Unending",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.etymonline.com/word/Bonnaroo",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bon + anar + roo",
+   "reading": "Good Year, Rise Up",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.etymonline.com/word/Bonnaroo",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "bon + naaro",
+   "reading": "Bountiful Nature's Array, Radiant Oasis",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.etymonline.com/word/Bonnaroo",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "bon + nar",
+   "reading": "Bountiful Nature's Aura, Radiant Realm",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.etymonline.com/word/Bonnaroo",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "b + o + n + a + r + o",
+   "reading": "Balance, Opportunity, Nature's Array, Radiant Oasis",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.etymonline.com/word/Bonnaroo",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "2 + 15 + 14 + 1 + 18 + 15",
+   "reading": "The Harmonious Blend of Elements, Radiant Opulence Unending",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.etymonline.com/word/Bonnaroo",
+   "confidence": 0.2
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

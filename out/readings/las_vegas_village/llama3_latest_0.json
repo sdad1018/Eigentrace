@@ -1,0 +1,85 @@
+{
+ "word": "Las Vegas Village",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:14:58+00:00",
+ "latency_s": 11.4,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Village (Middle English) = a group of people living together\",\n    \"reading\": \"a communal gathering place\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las (Spanish) = a stone, Vegas (Latin) = fields, Village (Middle English) = a group of people living together\",\n    \"reading\": \"a place where people gather to contemplate the natural world\",\n    \"languages\": [\"es\", \"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las (Spanish) = a stone, Vegas (Latin) = fields, Village (Middle English) = a group of people living together, Las (Old Norse) = the last\",\n    \"reading\": \"a place where one's journey ends or begins\",\n    \"languages\": [\"es\", \"la\", \"en\", \"no\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Village = Evil Gnat Slaves\",\n    \"reading\": \"a place where one is held captive by their own desires\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Las Vegas Village = Aleph, Sages, Vibrate, Echoes, Gathering, Inward, Sacred, Vigilant, Eternal, Seek\",\n    \"reading\": \"a place where one seeks eternal wisdom through sacred vibrations\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Las Vegas Village = Luminous Auras Surrounding Vital Energy, Gathering Inward Sacred Vigilant Eternal Seek\",\n    \"reading\": \"a place where one's vital energy is illuminated by sacred vibrations\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Village (Middle English) = a group of people living together",
+   "reading": "a communal gathering place",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Las (Spanish) = a stone, Vegas (Latin) = fields, Village (Middle English) = a group of people living together",
+   "reading": "a place where people gather to contemplate the natural world",
+   "languages": [
+    "es",
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las (Spanish) = a stone, Vegas (Latin) = fields, Village (Middle English) = a group of people living together, Las (Old Norse) = the last",
+   "reading": "a place where one's journey ends or begins",
+   "languages": [
+    "es",
+    "la",
+    "en",
+    "no"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Village = Evil Gnat Slaves",
+   "reading": "a place where one is held captive by their own desires",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Las Vegas Village = Aleph, Sages, Vibrate, Echoes, Gathering, Inward, Sacred, Vigilant, Eternal, Seek",
+   "reading": "a place where one seeks eternal wisdom through sacred vibrations",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Las Vegas Village = Luminous Auras Surrounding Vital Energy, Gathering Inward Sacred Vigilant Eternal Seek",
+   "reading": "a place where one's vital energy is illuminated by sacred vibrations",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

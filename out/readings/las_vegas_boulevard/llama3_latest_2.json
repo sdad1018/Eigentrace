@@ -1,0 +1,86 @@
+{
+ "word": "Las Vegas Boulevard",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:18:19+00:00",
+ "latency_s": 11.65,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"\",\n    \"reading\": \"Vegas: place of rest (Latin), Boulevard: broad way (French)\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"Oxford Latin Dictionary, Le Robert French Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"\",\n    \"reading\": \"Las: loud (Old English), Vegas: place of rest (Latin), Boulevard: broad way (French)\",\n    \"languages\": [\"en\", \"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"\",\n    \"reading\": \"Vegas: like the Latin 'vegas', meaning 'place of rest'\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"\",\n    \"reading\": \"Vegas: give (Old English), Las: loud (Old English), Boulevard: broad way (French)\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"\",\n    \"reading\": \"Las: 30 (Hebrew numerals), Vegas: 5 (Hebrew numerals), Boulevard: 8 (Hebrew numerals)\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"\",\n    \"reading\": \"Las: L (Latin letter), A (Greek letter), S (Greek letter); Vegas: V (Latin letter), E (Greek letter), G (Greek letter), A (Greek letter), S (Greek letter)\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "Vegas: place of rest (Latin), Boulevard: broad way (French)",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "Oxford Latin Dictionary, Le Robert French Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "Las: loud (Old English), Vegas: place of rest (Latin), Boulevard: broad way (French)",
+   "languages": [
+    "en",
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "Vegas: like the Latin 'vegas', meaning 'place of rest'",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "Vegas: give (Old English), Las: loud (Old English), Boulevard: broad way (French)",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "Las: 30 (Hebrew numerals), Vegas: 5 (Hebrew numerals), Boulevard: 8 (Hebrew numerals)",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "Las: L (Latin letter), A (Greek letter), S (Greek letter); Vegas: V (Latin letter), E (Greek letter), G (Greek letter), A (Greek letter), S (Greek letter)",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

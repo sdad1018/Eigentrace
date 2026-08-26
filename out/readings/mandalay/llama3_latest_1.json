@@ -1,0 +1,76 @@
+{
+ "word": "Mandalay",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:15:59+00:00",
+ "latency_s": 12.01,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"manda + lay\",\n    \"reading\": \"to surrender or yield to a higher power\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Middle English 'mend' + Old French 'lay'\",\n    \"reading\": \"'to mend or repair, especially in a spiritual sense'\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Oxford English Dictionary\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Hebrew 'mnd' (mind) + Sanskrit 'laya' (dissolve)\",\n    \"reading\": \"'to transcend or dissolve the ego'\",\n    \"languages\": [\"he\", \"sa\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"mandala\",\n    \"reading\": \"'a sacred circle of unity and wholeness'\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"M (master) + A (angel) + N (nexus) + D (door) + A (ascension) + L (light) + A (ascension) + Y (yoke)\",\n    \"reading\": \"'the master angel's door to ascension and illumination'\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (memory) + A (angel) + L (light) + A (ascension) + Y (yoke)\",\n    \"reading\": \"'the remembrance of the divine yoke'\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "manda + lay",
+   "reading": "to surrender or yield to a higher power",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Middle English 'mend' + Old French 'lay'",
+   "reading": "'to mend or repair, especially in a spiritual sense'",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Oxford English Dictionary"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Hebrew 'mnd' (mind) + Sanskrit 'laya' (dissolve)",
+   "reading": "'to transcend or dissolve the ego'",
+   "languages": [
+    "he",
+    "sa"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "mandala",
+   "reading": "'a sacred circle of unity and wholeness'",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "M (master) + A (angel) + N (nexus) + D (door) + A (ascension) + L (light) + A (ascension) + Y (yoke)",
+   "reading": "'the master angel's door to ascension and illumination'",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (memory) + A (angel) + L (light) + A (ascension) + Y (yoke)",
+   "reading": "'the remembrance of the divine yoke'",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

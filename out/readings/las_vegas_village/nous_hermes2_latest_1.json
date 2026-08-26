@@ -1,0 +1,82 @@
+{
+ "word": "Las Vegas Village",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:47:45+00:00",
+ "latency_s": 32.78,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Las Vegas Village -> L-A-S V-E-G-A S-V-I-L-L-A-G-E V-I-L-L-A-G-E\",\n    \"reading\": \"The word 'Las Vegas Village' can be split into its individual phonemes, each representing a distinct sound in the English language. This phonetic analysis reveals the underlying structure of the word.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Phonemic transcription is a well-established method for analyzing and transcribing spoken language into its constituent sounds.\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Las Vegas Village -> 拉斯维加斯村 (Chinese)\",\n    \"reading\": \"In Mandarin Chinese, 'Las Vegas Village' can be transliterated as '拉斯维加斯村', which is pronounced similarly but has no direct meaning in the context of the original word.\",\n    \"languages\": [\"en\", \"zh\"],\n    \"source\": \"Transliteration and homophonic mappings between languages can provide insight into how words are perceived and understood across linguistic boundaries.\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Las Vegas Village -> Avales Vega Sivil\",\n    \"reading\": \"By rearranging the letters in 'Las Vegas Village', we can create a new word, 'Avales Vega Sivil'. This anagram has no inherent meaning but demonstrates the flexibility of the English language.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Anagrams are a playful way to explore the rearrangement of letters within a word and can provide insight into the underlying structure of words in a given language.\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Las Vegas Village -> Spanish: 'village' + 'Las Vegas'\",\n    \"reading\": \"The word 'Las Vegas' originates from the Spanish phrase 'Las Vegass', meaning 'the meadows'. The combination of 'Vegas' with 'Village' in English creates a new term that refers to a village or settlement associated with Las Vegas.\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"The Oxford English Dictionary and other etymological resources can be used to trace the historical development of words across languages.\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Las Vegas Village -> L(ight) A(nd) S V E G A S I V I L L A G E\",\n    \"reading\": \"Each letter in 'Las Vegas Village' can be associated with a symbol or concept. For example, 'L' represents light, 'A' represents and, 'S' represents space. This symbolic interpretation adds another layer of meaning to the word.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Symbolism is an important aspect of language and can provide insight into the cultural, philosophical, or spiritual significance of words.\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Las Vegas Village -> 3-1-19-4-7-1-20-1-16-23-1-18-22-1-22-5-18-21-22-5-12\",\n    \"reading\": \"The letters in 'Las Vegas Village' can be assigned numerical values based on their position in the alphabet. This sequence of numbers, when rearranged, forms a unique pattern that is specific to this word.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Numerology and gematria are ancient systems that assign numerical values to letters or words, often used for divination or spiritual interpretation.\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Las Vegas Village -> L-A-S V-E-G-A S-V-I-L-L-A-G-E V-I-L-L-A-G-E",
+   "reading": "The word 'Las Vegas Village' can be split into its individual phonemes, each representing a distinct sound in the English language. This phonetic analysis reveals the underlying structure of the word.",
+   "languages": [
+    "en"
+   ],
+   "source": "Phonemic transcription is a well-established method for analyzing and transcribing spoken language into its constituent sounds.",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Las Vegas Village -> 拉斯维加斯村 (Chinese)",
+   "reading": "In Mandarin Chinese, 'Las Vegas Village' can be transliterated as '拉斯维加斯村', which is pronounced similarly but has no direct meaning in the context of the original word.",
+   "languages": [
+    "en",
+    "zh"
+   ],
+   "source": "Transliteration and homophonic mappings between languages can provide insight into how words are perceived and understood across linguistic boundaries.",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Las Vegas Village -> Avales Vega Sivil",
+   "reading": "By rearranging the letters in 'Las Vegas Village', we can create a new word, 'Avales Vega Sivil'. This anagram has no inherent meaning but demonstrates the flexibility of the English language.",
+   "languages": [
+    "en"
+   ],
+   "source": "Anagrams are a playful way to explore the rearrangement of letters within a word and can provide insight into the underlying structure of words in a given language.",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Las Vegas Village -> Spanish: 'village' + 'Las Vegas'",
+   "reading": "The word 'Las Vegas' originates from the Spanish phrase 'Las Vegass', meaning 'the meadows'. The combination of 'Vegas' with 'Village' in English creates a new term that refers to a village or settlement associated with Las Vegas.",
+   "languages": [
+    "en",
+    "es"
+   ],
+   "source": "The Oxford English Dictionary and other etymological resources can be used to trace the historical development of words across languages.",
+   "confidence": 0.9
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Las Vegas Village -> L(ight) A(nd) S V E G A S I V I L L A G E",
+   "reading": "Each letter in 'Las Vegas Village' can be associated with a symbol or concept. For example, 'L' represents light, 'A' represents and, 'S' represents space. This symbolic interpretation adds another layer of meaning to the word.",
+   "languages": [
+    "en"
+   ],
+   "source": "Symbolism is an important aspect of language and can provide insight into the cultural, philosophical, or spiritual significance of words.",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "Las Vegas Village -> 3-1-19-4-7-1-20-1-16-23-1-18-22-1-22-5-18-21-22-5-12",
+   "reading": "The letters in 'Las Vegas Village' can be assigned numerical values based on their position in the alphabet. This sequence of numbers, when rearranged, forms a unique pattern that is specific to this word.",
+   "languages": [
+    "en"
+   ],
+   "source": "Numerology and gematria are ancient systems that assign numerical values to letters or words, often used for divination or spiritual interpretation.",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

@@ -1,0 +1,95 @@
+{
+ "word": "Mandalay Bay",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:15:32+00:00",
+ "latency_s": 10.51,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bay (Old English) = inlet or harbor\",\n    \"reading\": \"a place of refuge or shelter\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + dalay (Middle English) = to delay\",\n    \"reading\": \"to put off or postpone\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"mandalay (Burmese) = to teach, mandala (Sanskrit) = center or circle\",\n    \"reading\": \"a central teaching or guiding force\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"mandalay bay = bay mandala\",\n    \"reading\": \"a sacred or mystical harbor\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"mandalay bay = bay (Hebrew) = to rest, mandala (Hebrew) = circle\",\n    \"reading\": \"a place of spiritual rest and contemplation\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (Latin) = mighty, A (Greek) = alpha or beginning, N (Greek) = new, D (Greek) = door\",\n    \"reading\": \"a powerful and transformative gateway\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Mandalay Bay = 4 (Hebrew) = stability, 1 (Greek) = unity, 2 (Latin) = balance\",\n    \"reading\": \"a harmonious and stable foundation\",\n    \"languages\": [\"he\", \"grc\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "bay (Old English) = inlet or harbor",
+   "reading": "a place of refuge or shelter",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + dalay (Middle English) = to delay",
+   "reading": "to put off or postpone",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "mandalay (Burmese) = to teach, mandala (Sanskrit) = center or circle",
+   "reading": "a central teaching or guiding force",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "mandalay bay = bay mandala",
+   "reading": "a sacred or mystical harbor",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "mandalay bay = bay (Hebrew) = to rest, mandala (Hebrew) = circle",
+   "reading": "a place of spiritual rest and contemplation",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (Latin) = mighty, A (Greek) = alpha or beginning, N (Greek) = new, D (Greek) = door",
+   "reading": "a powerful and transformative gateway",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "Mandalay Bay = 4 (Hebrew) = stability, 1 (Greek) = unity, 2 (Latin) = balance",
+   "reading": "a harmonious and stable foundation",
+   "languages": [
+    "he",
+    "grc",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

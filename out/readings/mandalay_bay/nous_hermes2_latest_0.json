@@ -1,0 +1,76 @@
+{
+ "word": "Mandalay Bay",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:48:34+00:00",
+ "latency_s": 21.74,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"M-A-N-D-A-L-A-Y B-A-Y\",\n    \"reading\": \"The word can be split into syllables: 'Man-dal-ay Bay'. Each part has a unique sound.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay Bay -> Aymdabalney\",\n    \"reading\": \"An anagram of 'Mandalay Bay' is 'Aymdabalney'. This new word has a different meaning and sound.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Mandalay: from Burmese, meaning 'foot of the great city'\",\n    \"reading\": \"The word 'Mandalay' originates from the Burmese language and means 'foot of the great city'. This suggests a connection to a large urban area.\",\n    \"languages\": [\"en\", \"my\"],\n    \"source\": \"Oxford English Dictionary\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"'Bay' in English is pronounced similarly to 'Bai' in Chinese, meaning 'to arrive at or reach a place'\",\n    \"reading\": \"The word 'Bay' in English shares a similar pronunciation with the Chinese word 'Bai', which means 'to arrive at or reach a place'. This connection creates an association between the two languages.\",\n    \"languages\": [\"en\", \"zh\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"'Mandalay Bay' can be represented as M-A-N D-A L-A Y B-A Y, where each letter corresponds to a symbol or number.\",\n    \"reading\": \"The word 'Mandalay Bay' can be interpreted numerologically by assigning values to each letter. This interpretation may provide different meanings based on the assigned numerical values.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"'Mandalay Bay' can be rearranged as 'Mandy Lays Aby', which has a playful and imaginative sound.\",\n    \"reading\": \"By rearranging the letters in 'Mandalay Bay', we get 'Mandy Lays Aby'. This new arrangement creates a whimsical and creative interpretation of the original word.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "M-A-N-D-A-L-A-Y B-A-Y",
+   "reading": "The word can be split into syllables: 'Man-dal-ay Bay'. Each part has a unique sound.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay Bay -> Aymdabalney",
+   "reading": "An anagram of 'Mandalay Bay' is 'Aymdabalney'. This new word has a different meaning and sound.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "Mandalay: from Burmese, meaning 'foot of the great city'",
+   "reading": "The word 'Mandalay' originates from the Burmese language and means 'foot of the great city'. This suggests a connection to a large urban area.",
+   "languages": [
+    "en",
+    "my"
+   ],
+   "source": "Oxford English Dictionary"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "'Bay' in English is pronounced similarly to 'Bai' in Chinese, meaning 'to arrive at or reach a place'",
+   "reading": "The word 'Bay' in English shares a similar pronunciation with the Chinese word 'Bai', which means 'to arrive at or reach a place'. This connection creates an association between the two languages.",
+   "languages": [
+    "en",
+    "zh"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "'Mandalay Bay' can be represented as M-A-N D-A L-A Y B-A Y, where each letter corresponds to a symbol or number.",
+   "reading": "The word 'Mandalay Bay' can be interpreted numerologically by assigning values to each letter. This interpretation may provide different meanings based on the assigned numerical values.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "'Mandalay Bay' can be rearranged as 'Mandy Lays Aby', which has a playful and imaginative sound.",
+   "reading": "By rearranging the letters in 'Mandalay Bay', we get 'Mandy Lays Aby'. This new arrangement creates a whimsical and creative interpretation of the original word.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

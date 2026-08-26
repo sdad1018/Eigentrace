@@ -1,0 +1,81 @@
+{
+ "word": "Abedi",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:23:52+00:00",
+ "latency_s": 13.98,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\": \"phonetic_split\", \n\"chain\": \"Ab + edi\", \n\"reading\": \"From the sound: 'above' (uplifted) and 'edi' (knowing); knowing above or elevated awareness.\", \n\"languages\": [\"en\"], \n\"source\": \"generative\", \n\"confidence\": 0.8}, \n\n{\"operation\": \"etymology\", \n\"chain\": \"Ab + edi; from Latin 'ab' (from) and 'edere' (to eat)\", \n\"reading\": \"From the origin: a source or sustenance, perhaps spiritual.\", \n\"languages\": [\"la\"], \n\"source\": \"Oxford Latin Dictionary\", \n\"confidence\": 0.9}, \n\n{\"operation\": \"cross_language_homophone\", \n\"chain\": \"Ab + edi; French 'abédier' (to bed down) and English 'edi' (knowing)\", \n\"reading\": \"To rest or settle, knowing the truth.\", \n\"languages\": [\"fr\", \"en\"], \n\"source\": \"generative\", \n\"confidence\": 0.7}, \n\n{\"operation\": \"anagram\", \n\"chain\": \"Ab + edi; 'be' (exist) and 'die' (cease)\", \n\"reading\": \"Existence and non-existence, a balance.\", \n\"languages\": [\"en\"], \n\"source\": \"generative\", \n\"confidence\": 0.8}, \n\n{\"operation\": \"notariqon\", \n\"chain\": \"Ab + edi; 'A' (Alpha) and 'B' (Beta)\", \n\"reading\": \"The beginning and the second, a duality.\", \n\"languages\": [\"en\"], \n\"source\": \"generative\", \n\"confidence\": 0.9}, \n\n{\"operation\": \"letter_symbol\", \n\"chain\": \"Ab + edi; 'A' (Alpha) and 'edi' as an abbreviation for 'edifice'\", \n\"reading\": \"The foundation or structure of knowledge.\", \n\"languages\": [\"en\"], \n\"source\": \"generative\", \n\"confidence\": 0.8}]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Ab + edi",
+   "reading": "From the sound: 'above' (uplifted) and 'edi' (knowing); knowing above or elevated awareness.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "etymology",
+   "chain": "Ab + edi; from Latin 'ab' (from) and 'edere' (to eat)",
+   "reading": "From the origin: a source or sustenance, perhaps spiritual.",
+   "languages": [
+    "la"
+   ],
+   "source": "Oxford Latin Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Ab + edi; French 'abédier' (to bed down) and English 'edi' (knowing)",
+   "reading": "To rest or settle, knowing the truth.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Ab + edi; 'be' (exist) and 'die' (cease)",
+   "reading": "Existence and non-existence, a balance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Ab + edi; 'A' (Alpha) and 'B' (Beta)",
+   "reading": "The beginning and the second, a duality.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Ab + edi; 'A' (Alpha) and 'edi' as an abbreviation for 'edifice'",
+   "reading": "The foundation or structure of knowledge.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

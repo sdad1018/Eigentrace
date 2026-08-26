@@ -1,0 +1,94 @@
+{
+ "word": "Dangerous Woman",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:21:22+00:00",
+ "latency_s": 16.23,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"\",\n    \"reading\": \"woman: Old English 'wīfmann', from wīf (wife) + mann (man)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 1\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"\",\n    \"reading\": \"dan-ger-ous: danger (Middle English) = to be in a state of alarm\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"\",\n    \"reading\": \"dan-ger-ous: French 'dangereux', from Latin 'dangerus'\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"\",\n    \"reading\": \"dan-ger-ous: surge (Middle English) = to rise or burst forth\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"\",\n    \"reading\": \"dan-ger-ous: 'u' (Hebrew) = unknown or mysterious, 's' (Phoenician) = serpent\",\n    \"languages\": [\"he\", \"phn\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"\",\n    \"reading\": \"'d' (Latin) = day, 'a' (Greek) = alpha, 'n' (Hebrew) = notarikon\",\n    \"languages\": [\"la\", \"grc\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"\",\n    \"reading\": \"'d' (gematria) = 4, 'a' (gematria) = 1, 'n' (gematria) = 50, 'g' (gematria) = 3, 'e' (gematria) = 5, 'r' (gematria) = 200, 'o' (gematria) = 70, 'u' (gematria) = 21, 's' (gematria) = 6\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "woman: Old English 'wīfmann', from wīf (wife) + mann (man)",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 1
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "dan-ger-ous: danger (Middle English) = to be in a state of alarm",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "dan-ger-ous: French 'dangereux', from Latin 'dangerus'",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "dan-ger-ous: surge (Middle English) = to rise or burst forth",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "dan-ger-ous: 'u' (Hebrew) = unknown or mysterious, 's' (Phoenician) = serpent",
+   "languages": [
+    "he",
+    "phn"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "'d' (Latin) = day, 'a' (Greek) = alpha, 'n' (Hebrew) = notarikon",
+   "languages": [
+    "la",
+    "grc",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "",
+   "reading": "'d' (gematria) = 4, 'a' (gematria) = 1, 'n' (gematria) = 50, 'g' (gematria) = 3, 'e' (gematria) = 5, 'r' (gematria) = 200, 'o' (gematria) = 70, 'u' (gematria) = 21, 's' (gematria) = 6",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

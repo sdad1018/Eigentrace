@@ -1,0 +1,91 @@
+{
+ "word": "Victoria",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:23:26+00:00",
+ "latency_s": 12.82,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \"chain\": \"\", \"reading\": \"conquering\", \"languages\": [\"en\"], \"source\": \"Oxford English Dictionary\", \"confidence\": 0.9},\n  {\"operation\": \"phonetic_split\", \"chain\": \"vi + tor\", \"reading\": \"to see, to conquer\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.7},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"victoire (French) = victory\", \"reading\": \"triumph\", \"languages\": [\"fr\", \"en\"], \"source\": \"generative\", \"confidence\": 0.8},\n  {\"operation\": \"anagram\", \"chain\": \"\", \"reading\": \"icotor\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.6},\n  {\"operation\": \"notariqon\", \"chain\": \"V-I-C-T-O-R-I-A\", \"reading\": \"voice, creation, time, orbit, rhythm, inaction\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.5},\n  {\"operation\": \"letter_symbol\", \"chain\": \"\", \"reading\": \"V (Victory) I (Idea) C (Conquer) T (Triumph) O (Opportunity) R (Rise) I (Inspire) A (Achieve)\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.8},\n  {\"operation\": \"numerical\", \"chain\": \"\", \"reading\": \"5 (Victory) 1 (Unique) 3 (Triumph) 4 (Perfection) 2 (Unity) 1 (One)\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.7}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "conquering",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "vi + tor",
+   "reading": "to see, to conquer",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "victoire (French) = victory",
+   "reading": "triumph",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "icotor",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V-I-C-T-O-R-I-A",
+   "reading": "voice, creation, time, orbit, rhythm, inaction",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "V (Victory) I (Idea) C (Conquer) T (Triumph) O (Opportunity) R (Rise) I (Inspire) A (Achieve)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "numerical",
+   "chain": "",
+   "reading": "5 (Victory) 1 (Unique) 3 (Triumph) 4 (Perfection) 2 (Unity) 1 (One)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

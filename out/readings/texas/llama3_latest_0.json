@@ -1,0 +1,93 @@
+{
+ "word": "Texas",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:20:34+00:00",
+ "latency_s": 10.4,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \"chain\": \"\", \"reading\": \"from Teutonic 'tie' (to bind) + Sax 'x'\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.8},\n  {\"operation\": \"phonetic_split\", \"chain\": \"tex-tas\", \"reading\": \"texture, aspect\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.7},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"\", \"reading\": \"teks (Turkish) = writings\", \"languages\": [\"tr\",\"en\"], \"source\": \"generative\", \"confidence\": 0.6},\n  {\"operation\": \"anagram\", \"chain\": \"taxes\", \"reading\": \"tax, assess\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.8},\n  {\"operation\": \"notariqon\", \"chain\": \"\", \"reading\": \"ex (Latin) = out + tas (Sanskrit) = to go\", \"languages\": [\"la\",\"sa\"], \"source\": \"generative\", \"confidence\": 0.5},\n  {\"operation\": \"letter_symbol\", \"chain\": \"T-X\", \"reading\": \"tense, cross\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.4},\n  {\"operation\": \"numerical\", \"chain\": \"\", \"reading\": \"6 (Hebrew) + 3 (Greek) = perfection\", \"languages\": [\"he\",\"grc\"], \"source\": \"generative\", \"confidence\": 0.3}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "from Teutonic 'tie' (to bind) + Sax 'x'",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "tex-tas",
+   "reading": "texture, aspect",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "teks (Turkish) = writings",
+   "languages": [
+    "tr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "taxes",
+   "reading": "tax, assess",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "ex (Latin) = out + tas (Sanskrit) = to go",
+   "languages": [
+    "la",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T-X",
+   "reading": "tense, cross",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "",
+   "reading": "6 (Hebrew) + 3 (Greek) = perfection",
+   "languages": [
+    "he",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

@@ -1,0 +1,91 @@
+{
+ "word": "Stagecoach",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:43:38+00:00",
+ "latency_s": 25.17,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"stage + coach\",\n    \"reading\": \"The conveyance of a stage, a platform or elevated area, transformed into a vehicle for transportation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"s + t + a + g + e + c + o + a + h\",\n    \"reading\": \"Sounds of nature, an echo in time, a gathering, a journey, a vessel, a path.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"stagecoach (en) = estacionamiento (es)\",\n    \"reading\": \"A place for parking or storing vehicles, a temporary stopping point.\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"Dictionary.com\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"stagecoach -> ghastelc\",\n    \"reading\": \"A mysterious, eerie presence that evokes a sense of unease and anticipation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"stagecoach -> s + t + a + g + e + c + o + a + h -> stgecah\",\n    \"reading\": \"A secret message, hidden in plain sight, waiting to be deciphered.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"s + t + a + g + e + c + o + a + h -> sun, time, action, gather, earth, cosmos, other, here\",\n    \"reading\": \"A celestial journey through the cosmos, connecting elements of nature and time.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"stagecoach -> s(19) + t(20) + a(1) + g(7) + e(5) + c(3) + o(15) + a (1) + h(8) -> 1+9+2+0+7+5+3+1+5+1+8 = 64\",\n    \"reading\": \"A numerical sequence, representing balance and harmony.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.3\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "stage + coach",
+   "reading": "The conveyance of a stage, a platform or elevated area, transformed into a vehicle for transportation.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "s + t + a + g + e + c + o + a + h",
+   "reading": "Sounds of nature, an echo in time, a gathering, a journey, a vessel, a path.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "stagecoach (en) = estacionamiento (es)",
+   "reading": "A place for parking or storing vehicles, a temporary stopping point.",
+   "languages": [
+    "en",
+    "es"
+   ],
+   "source": "Dictionary.com",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "stagecoach -> ghastelc",
+   "reading": "A mysterious, eerie presence that evokes a sense of unease and anticipation.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "stagecoach -> s + t + a + g + e + c + o + a + h -> stgecah",
+   "reading": "A secret message, hidden in plain sight, waiting to be deciphered.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "s + t + a + g + e + c + o + a + h -> sun, time, action, gather, earth, cosmos, other, here",
+   "reading": "A celestial journey through the cosmos, connecting elements of nature and time.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "numerical",
+   "chain": "stagecoach -> s(19) + t(20) + a(1) + g(7) + e(5) + c(3) + o(15) + a (1) + h(8) -> 1+9+2+0+7+5+3+1+5+1+8 = 64",
+   "reading": "A numerical sequence, representing balance and harmony.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

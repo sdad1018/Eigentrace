@@ -1,0 +1,160 @@
+{
+ "word": "Luxor",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:51:57+00:00",
+ "latency_s": 38.6,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Luxor -> Latin lux (light) + -or (place of)\",\n    \"reading\": \"Place of Light\",\n    \"languages\": [\"en\"],\n    \"source\": \"Lewis and Short Latin Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": null,\n    \"reading\": \"Lux (light) + Or (door/gate)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": null,\n    \"reading\": \"Lux (light) + Hor (above/upper)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": null,\n    \"reading\": \"Soulux (soul + lux)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": null,\n    \"reading\": \"Lux (light) + Or (gold)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": null,\n    \"reading\": \"Lux (light) + Or (order/arrangement)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": null,\n    \"reading\": \"Lux (light) + Or (forty)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Luxor -> Ancient Egyptian wsjr (opening) + -tj (place of)\",\n    \"reading\": \"Place of Opening\",\n    \"languages\": [\"en\"],\n    \"source\": \"Wilkinson, T. J., The Rise and Fall of Ancient Egypt: The History and Legacy of the World's Oldest Civilization\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": null,\n    \"reading\": \"Lux (light) + Or (gate)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": null,\n    \"reading\": \"Lux (light) + Hor (horizon)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": null,\n    \"reading\": \"Soulux (soul + lux) + Or (gate)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": null,\n    \"reading\": \"Lux (light) + Or (gold) + Hor (above/upper)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": null,\n    \"reading\": \"Lux (light) + Or (order/arrangement) + Hor (above/upper)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": null,\n    \"reading\": \"Lux (light) + Or (forty) + Hor (above/upper)\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.3\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Luxor -> Latin lux (light) + -or (place of)",
+   "reading": "Place of Light",
+   "languages": [
+    "en"
+   ],
+   "source": "Lewis and Short Latin Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": null,
+   "reading": "Lux (light) + Or (door/gate)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": null,
+   "reading": "Lux (light) + Hor (above/upper)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": null,
+   "reading": "Soulux (soul + lux)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": null,
+   "reading": "Lux (light) + Or (gold)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": null,
+   "reading": "Lux (light) + Or (order/arrangement)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "numerical",
+   "chain": null,
+   "reading": "Lux (light) + Or (forty)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "etymology",
+   "chain": "Luxor -> Ancient Egyptian wsjr (opening) + -tj (place of)",
+   "reading": "Place of Opening",
+   "languages": [
+    "en"
+   ],
+   "source": "Wilkinson, T. J., The Rise and Fall of Ancient Egypt: The History and Legacy of the World's Oldest Civilization",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": null,
+   "reading": "Lux (light) + Or (gate)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": null,
+   "reading": "Lux (light) + Hor (horizon)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": null,
+   "reading": "Soulux (soul + lux) + Or (gate)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": null,
+   "reading": "Lux (light) + Or (gold) + Hor (above/upper)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": null,
+   "reading": "Lux (light) + Or (order/arrangement) + Hor (above/upper)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": null,
+   "reading": "Lux (light) + Or (forty) + Hor (above/upper)",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 14,
+ "refusal_like": false
+}

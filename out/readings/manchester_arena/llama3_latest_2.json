@@ -1,0 +1,81 @@
+{
+ "word": "Manchester Arena",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:22:09+00:00",
+ "latency_s": 9.53,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"man + chester (Old English) = a personal name + a place name\",\n    \"reading\": \"a person's domain or territory\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man (Old English) + chester (Old English) = a personal name + a place name\",\n    \"reading\": \"a person's stronghold or fortress\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"man (Old English) + chère (French) = a personal name + dear one\",\n    \"reading\": \"a person's beloved or cherished territory\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"man (Old English) + chester (Old English) = 'a new chest' or 'chest anew'\",\n    \"reading\": \"new beginnings or renewal in a personal domain\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"man (Old English) + chester (Old English) = 'a new chest' or 'chest anew'\",\n    \"reading\": \"new beginnings or renewal in a personal domain\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (Latin) + A (Latin) + R (Latin) + E (Latin) + A (Latin)\",\n    \"reading\": \"the harmony of the spheres or celestial music\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "man + chester (Old English) = a personal name + a place name",
+   "reading": "a person's domain or territory",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man (Old English) + chester (Old English) = a personal name + a place name",
+   "reading": "a person's stronghold or fortress",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "man (Old English) + chère (French) = a personal name + dear one",
+   "reading": "a person's beloved or cherished territory",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "man (Old English) + chester (Old English) = 'a new chest' or 'chest anew'",
+   "reading": "new beginnings or renewal in a personal domain",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "man (Old English) + chester (Old English) = 'a new chest' or 'chest anew'",
+   "reading": "new beginnings or renewal in a personal domain",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (Latin) + A (Latin) + R (Latin) + E (Latin) + A (Latin)",
+   "reading": "the harmony of the spheres or celestial music",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

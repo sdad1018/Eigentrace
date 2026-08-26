@@ -1,0 +1,91 @@
+{
+ "word": "Victoria",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T03:08:35+00:00",
+ "latency_s": 40.18,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"latin + victor + -ia\",\n    \"reading\": \"The word 'Victoria' comes from the Latin term for 'victory', which is 'victorius'. The suffix '-ia' indicates a region or place associated with the concept of victory.\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"Lewis, C. T., & Short, C. (1982). A Latin Dictionary on Perseus Project. https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3ALEWIS%3Aentry%3Dvicto-1\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"vi + ctoria\",\n    \"reading\": \"The phonetic split of 'Victoria' into 'vi' and 'ctoria' suggests a duality or separation between the concepts of victory and a place or region. The first syllable, 'vi', represents the idea of triumph or success, while the second syllable, 'ctoria', refers to a location or area associated with that triumph.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"-\",\n    \"reading\": \"In some languages, the word 'Victoria' has homophones that can provide alternative meanings or associations. For example, in Spanish, 'victoria' sounds like 'victorioso', which means 'victorious'. This suggests a connection between the concept of victory and being victorious or triumphant.\",\n    \"languages\": [\"es\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"-\",\n    \"reading\": \"An anagram of 'Victoria' is 'articiv', which can be split into 'artici' and 'v'. The first part, 'artici', sounds like the Italian word for heart, 'cuore', suggesting a connection between victory and emotions or passion. The second part, 'v', represents the concept of triumph or success.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"-\",\n    \"reading\": \"The notariqon of 'Victoria' is 'vct', which can be interpreted as a combination of the ideas of victory ('v') and action or movement ('c'). This suggests that success or triumph often results from taking action or making progress.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"-\",\n    \"reading\": \"The letters in 'Victoria' can be associated with various symbols or meanings. For example, V represents victory, I is the Roman numeral for one, C stands for century, T symbolizes truth or trustworthiness, and A signifies a new beginning or opportunity. This suggests that the concept of victory encompasses multiple aspects of life and personal growth.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"-\",\n    \"reading\": \"The numerical value of 'Victoria' can be calculated by assigning a number to each letter based on its position in the alphabet (A=1, B=2, etc.). The sum of these values is 5+3+9+3+1+20+9+1 = 64. This suggests that the concept of victory or triumph may be associated with a sense of achievement or accomplishment.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.2\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "latin + victor + -ia",
+   "reading": "The word 'Victoria' comes from the Latin term for 'victory', which is 'victorius'. The suffix '-ia' indicates a region or place associated with the concept of victory.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Lewis, C. T., & Short, C. (1982). A Latin Dictionary on Perseus Project. https://www.perseus.tufts.edu/hopper/text?doc=Perseus%3Atext%3ALEWIS%3Aentry%3Dvicto-1",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "vi + ctoria",
+   "reading": "The phonetic split of 'Victoria' into 'vi' and 'ctoria' suggests a duality or separation between the concepts of victory and a place or region. The first syllable, 'vi', represents the idea of triumph or success, while the second syllable, 'ctoria', refers to a location or area associated with that triumph.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "-",
+   "reading": "In some languages, the word 'Victoria' has homophones that can provide alternative meanings or associations. For example, in Spanish, 'victoria' sounds like 'victorioso', which means 'victorious'. This suggests a connection between the concept of victory and being victorious or triumphant.",
+   "languages": [
+    "es"
+   ],
+   "source": "Generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "-",
+   "reading": "An anagram of 'Victoria' is 'articiv', which can be split into 'artici' and 'v'. The first part, 'artici', sounds like the Italian word for heart, 'cuore', suggesting a connection between victory and emotions or passion. The second part, 'v', represents the concept of triumph or success.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "-",
+   "reading": "The notariqon of 'Victoria' is 'vct', which can be interpreted as a combination of the ideas of victory ('v') and action or movement ('c'). This suggests that success or triumph often results from taking action or making progress.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "-",
+   "reading": "The letters in 'Victoria' can be associated with various symbols or meanings. For example, V represents victory, I is the Roman numeral for one, C stands for century, T symbolizes truth or trustworthiness, and A signifies a new beginning or opportunity. This suggests that the concept of victory encompasses multiple aspects of life and personal growth.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "-",
+   "reading": "The numerical value of 'Victoria' can be calculated by assigning a number to each letter based on its position in the alphabet (A=1, B=2, etc.). The sum of these values is 5+3+9+3+1+20+9+1 = 64. This suggests that the concept of victory or triumph may be associated with a sense of achievement or accomplishment.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.2
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

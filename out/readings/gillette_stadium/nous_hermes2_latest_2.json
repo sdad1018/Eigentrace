@@ -1,0 +1,82 @@
+{
+ "word": "Gillette Stadium",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:33:49+00:00",
+ "latency_s": 34.36,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"G I L L E T S T A D I U M\",\n    \"reading\": \"The 'I' and 'L' form a connection, while the 'E' and 'T' represent energy transfer. The 'S' and 'D' suggest stability and defense. The 'A' and 'U' denote adaptability and unity. The 'G', 'T', and 'M' symbolize growth, transformation, and manifestation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Gillette Stadium (French: 'Stade Gillette')\",\n    \"reading\": \"The French translation of the name highlights a connection between languages and cultures, as well as the idea of unity through shared experiences.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"https://www.merriam-webster.com/dictionary/Gillette%20Stadium\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Little green gaiters stand up.\",\n    \"reading\": \"The anagram suggests a playful, whimsical interpretation of the word, with 'little' and 'green' evoking nature and growth. The 'gaiters' represent protection and support, while 'stand up' implies resilience and determination.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Gillette: Old French 'gilet' (jacket) + 'te' (T-shaped)\",\n    \"reading\": \"The etymological origin of 'Gillette' points to the idea of protection and support, as a jacket provides. The T-shape suggests stability and structure.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"https://www.etymonline.com/word/Gillette\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"G (Gamma, energy) + I (Iota, small or slight) + L (Lambda, connection) + L (Lambda, connection) + E (Epsilon, beginning) + T (Tau, line or direction) + T (Tau, line or direction) + S (Sigma, sum or result) + T (Tau, line or direction) + A (Alpha, first or primary) + D (Delta, change or difference) + I (Iota, small or slight) + U (Upsilon, union or connection) + M (Mu, measure or standard)\",\n    \"reading\": \"The letters in 'Gillette Stadium' represent various concepts related to energy, connection, growth, and measurement. The combination of these symbols suggests a place that fosters transformation, adaptation, and unity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"GILLETTE STADIUM -> G:6 I:9 L:12 L:12 E:5 T:20 T:20 S:19 T:20 A:1 D:4 I:9 U:21 M:13\",\n    \"reading\": \"The notariqon of 'Gillette Stadium' yields a sequence of numbers that can be interpreted as a code or message. The numbers suggest a connection between the physical location of the stadium and its symbolic significance, with themes of energy, transformation, and unity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.85\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "G I L L E T S T A D I U M",
+   "reading": "The 'I' and 'L' form a connection, while the 'E' and 'T' represent energy transfer. The 'S' and 'D' suggest stability and defense. The 'A' and 'U' denote adaptability and unity. The 'G', 'T', and 'M' symbolize growth, transformation, and manifestation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gillette Stadium (French: 'Stade Gillette')",
+   "reading": "The French translation of the name highlights a connection between languages and cultures, as well as the idea of unity through shared experiences.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "https://www.merriam-webster.com/dictionary/Gillette%20Stadium",
+   "confidence": 0.9
+  },
+  {
+   "operation": "anagram",
+   "chain": "Little green gaiters stand up.",
+   "reading": "The anagram suggests a playful, whimsical interpretation of the word, with 'little' and 'green' evoking nature and growth. The 'gaiters' represent protection and support, while 'stand up' implies resilience and determination.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Gillette: Old French 'gilet' (jacket) + 'te' (T-shaped)",
+   "reading": "The etymological origin of 'Gillette' points to the idea of protection and support, as a jacket provides. The T-shape suggests stability and structure.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "https://www.etymonline.com/word/Gillette",
+   "confidence": 0.9
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G (Gamma, energy) + I (Iota, small or slight) + L (Lambda, connection) + L (Lambda, connection) + E (Epsilon, beginning) + T (Tau, line or direction) + T (Tau, line or direction) + S (Sigma, sum or result) + T (Tau, line or direction) + A (Alpha, first or primary) + D (Delta, change or difference) + I (Iota, small or slight) + U (Upsilon, union or connection) + M (Mu, measure or standard)",
+   "reading": "The letters in 'Gillette Stadium' represent various concepts related to energy, connection, growth, and measurement. The combination of these symbols suggests a place that fosters transformation, adaptation, and unity.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "notariqon",
+   "chain": "GILLETTE STADIUM -> G:6 I:9 L:12 L:12 E:5 T:20 T:20 S:19 T:20 A:1 D:4 I:9 U:21 M:13",
+   "reading": "The notariqon of 'Gillette Stadium' yields a sequence of numbers that can be interpreted as a code or message. The numbers suggest a connection between the physical location of the stadium and its symbolic significance, with themes of energy, transformation, and unity.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

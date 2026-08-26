@@ -1,0 +1,91 @@
+{
+ "word": "NRG Park",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:58:01+00:00",
+ "latency_s": 30.07,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"N R G P A R K\",\n    \"reading\": \"The word 'NRG Park' can be split into its individual phonemes, providing a basic acoustic analysis.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"NRG (from 'nuclear') + Park\",\n    \"reading\": \"'NRG Park' may derive from the term 'nuclear power,' implying a park powered by nuclear energy or a location where such technology is showcased.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"NRG (from 'nuclear') + Park\",\n    \"reading\": \"In French, the word for 'park' is 'parc.' The homophonic nature of 'NRG' and 'nucleaire' in French could suggest a connection between nuclear energy and a park.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"NRG Park -> Grap N\",\n    \"reading\": \"Rearranging the letters in 'NRG Park,' we get 'Grap N.' This could be interpreted as a grapheme or symbol representing the concept of energy and motion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"NRG (from 'nuclear') + Park\",\n    \"reading\": \"A notariqon is a type of gematria that uses the initial letters of words to form a new word or phrase. In this case, we could use the first letter of each word in 'Nuclear Reactor Generator Park' to create the notariqon 'NRG Park,' which could represent a park built around a nuclear reactor.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"NRG Park -> N=Neutron, R=Radius, G=Generator, P=Park, A=Atom, R=Reactor, K=Kinetic, E=Energy\",\n    \"reading\": \"Each letter in 'NRG Park' could represent a symbol or concept related to nuclear energy. For example, N could stand for 'neutron,' while R could stand for 'radius.' This interpretation suggests that the park is dedicated to showcasing various aspects of nuclear science and technology.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"NRG Park -> (14+14+7)+(16+1+16+11+14+15)\",\n    \"reading\": \"Using the ordinal values of the letters in 'NRG Park,' we can create a numerical representation: N=14, R=14, G=7, P=16, A=1, R=16, K=11, E=15. This could suggest that 'NRG Park' is associated with the numbers 14, 7, and 16, which may have symbolic or numerological significance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.9\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "N R G P A R K",
+   "reading": "The word 'NRG Park' can be split into its individual phonemes, providing a basic acoustic analysis.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "NRG (from 'nuclear') + Park",
+   "reading": "'NRG Park' may derive from the term 'nuclear power,' implying a park powered by nuclear energy or a location where such technology is showcased.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.75
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "NRG (from 'nuclear') + Park",
+   "reading": "In French, the word for 'park' is 'parc.' The homophonic nature of 'NRG' and 'nucleaire' in French could suggest a connection between nuclear energy and a park.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "NRG Park -> Grap N",
+   "reading": "Rearranging the letters in 'NRG Park,' we get 'Grap N.' This could be interpreted as a grapheme or symbol representing the concept of energy and motion.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "notariqon",
+   "chain": "NRG (from 'nuclear') + Park",
+   "reading": "A notariqon is a type of gematria that uses the initial letters of words to form a new word or phrase. In this case, we could use the first letter of each word in 'Nuclear Reactor Generator Park' to create the notariqon 'NRG Park,' which could represent a park built around a nuclear reactor.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "NRG Park -> N=Neutron, R=Radius, G=Generator, P=Park, A=Atom, R=Reactor, K=Kinetic, E=Energy",
+   "reading": "Each letter in 'NRG Park' could represent a symbol or concept related to nuclear energy. For example, N could stand for 'neutron,' while R could stand for 'radius.' This interpretation suggests that the park is dedicated to showcasing various aspects of nuclear science and technology.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "numerical",
+   "chain": "NRG Park -> (14+14+7)+(16+1+16+11+14+15)",
+   "reading": "Using the ordinal values of the letters in 'NRG Park,' we can create a numerical representation: N=14, R=14, G=7, P=16, A=1, R=16, K=11, E=15. This could suggest that 'NRG Park' is associated with the numbers 14, 7, and 16, which may have symbolic or numerological significance.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.9
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

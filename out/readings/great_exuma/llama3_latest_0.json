@@ -1,0 +1,91 @@
+{
+ "word": "Great Exuma",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:24:56+00:00",
+ "latency_s": 14.94,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \n   \"chain\": \"\", \n   \"reading\": \"Great Exuma: Greatness of the home or dwelling place\", \n   \"languages\": [\"en\"], \n   \"source\": \"Oxford English Dictionary\", \n   \"confidence\": 0.9},\n  \n  {\"operation\": \"phonetic_split\", \n   \"chain\": \"\", \n   \"reading\": \"Great, Exuma: Harmony and balance in the home or dwelling place\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.7},\n  \n  {\"operation\": \"cross_language_homophone\", \n   \"chain\": \"\", \n   \"reading\": \"Exuma, Great: Excellent and magnificent in the home or dwelling place\", \n   \"languages\": [\"en\",\"fr\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.6},\n  \n  {\"operation\": \"anagram\", \n   \"chain\": \"\", \n   \"reading\": \"Great Exuma: The Great Union\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.5},\n  \n  {\"operation\": \"notariqon\", \n   \"chain\": \"\", \n   \"reading\": \"Exuma, Great: Unity and wholeness in the home or dwelling place\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.8},\n  \n  {\"operation\": \"letter_symbol\", \n   \"chain\": \"\", \n   \"reading\": \"Exuma, Great: The symbol of unity and wholeness in the home or dwelling place\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.4},\n  \n  {\"operation\": \"numerical\", \n   \"chain\": \"\", \n   \"reading\": \"Exuma, Great: The number of unity and wholeness in the home or dwelling place\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.3}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "Great Exuma: Greatness of the home or dwelling place",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "Great, Exuma: Harmony and balance in the home or dwelling place",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "Exuma, Great: Excellent and magnificent in the home or dwelling place",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "Great Exuma: The Great Union",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "Exuma, Great: Unity and wholeness in the home or dwelling place",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "Exuma, Great: The symbol of unity and wholeness in the home or dwelling place",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "",
+   "reading": "Exuma, Great: The number of unity and wholeness in the home or dwelling place",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

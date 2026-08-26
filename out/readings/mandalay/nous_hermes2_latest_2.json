@@ -1,0 +1,92 @@
+{
+ "word": "Mandalay",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:50:43+00:00",
+ "latency_s": 23.57,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Manda + lay\",\n    \"reading\": \"From the Persian 'mandegar' meaning 'command' and 'lay', a place or location.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Mandalay\",\n    \"reading\": \"The sound of 'man' (human) and 'dalai' (high or elevated), suggesting a high place where humans dwell.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandalay\",\n    \"reading\": \"In French, 'mandar' means to command or order; in Spanish, it is a type of orange. In this context, Mandalay could represent a place where orders are given or a location associated with the sweetness of life.\",\n    \"languages\": [\"en\", \"fr\", \"es\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Mandalay\",\n    \"reading\": \"The anagram 'Dalaman' is a town in Turkey, suggesting that Mandalay could be a place with similar characteristics or a connection to the region.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Mandalay\",\n    \"reading\": \"The notariqon of 'Mandalay' is 'DALAM', which could represent a hidden or concealed aspect of the place.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Mandalay\",\n    \"reading\": \"The letters 'M' and 'L' can be associated with the astrological signs of Mars (war, passion) and Luna (moon, emotions), suggesting that Mandalay could represent a place where these energies intersect or are in balance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Mandalay\",\n    \"reading\": \"The numerical value of 'Mandalay' (2+1+13+1+16+1+5+1+24) is 65, which could represent a numerical or symbolic significance to the place.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.25\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Manda + lay",
+   "reading": "From the Persian 'mandegar' meaning 'command' and 'lay', a place or location.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Mandalay",
+   "reading": "The sound of 'man' (human) and 'dalai' (high or elevated), suggesting a high place where humans dwell.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandalay",
+   "reading": "In French, 'mandar' means to command or order; in Spanish, it is a type of orange. In this context, Mandalay could represent a place where orders are given or a location associated with the sweetness of life.",
+   "languages": [
+    "en",
+    "fr",
+    "es"
+   ],
+   "source": "Generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Mandalay",
+   "reading": "The anagram 'Dalaman' is a town in Turkey, suggesting that Mandalay could be a place with similar characteristics or a connection to the region.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Mandalay",
+   "reading": "The notariqon of 'Mandalay' is 'DALAM', which could represent a hidden or concealed aspect of the place.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Mandalay",
+   "reading": "The letters 'M' and 'L' can be associated with the astrological signs of Mars (war, passion) and Luna (moon, emotions), suggesting that Mandalay could represent a place where these energies intersect or are in balance.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "Mandalay",
+   "reading": "The numerical value of 'Mandalay' (2+1+13+1+16+1+5+1+24) is 65, which could represent a numerical or symbolic significance to the place.",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.25
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

@@ -1,0 +1,91 @@
+{
+ "word": "Exuma",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T03:13:38+00:00",
+ "latency_s": 27.96,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"exuma (English) = name of a place in the Bahamas\",\n    \"reading\": \"The word 'Exuma' is derived from its use as a proper noun to refer to an island group in the Bahamas.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"exuma = [e, x, u, m, a]\",\n    \"reading\": \"The phonetic split of 'Exuma' reveals individual sounds that contribute to its overall pronunciation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"exuma (English) = exu (Portuguese)\",\n    \"reading\": \"In English, 'Exuma' and in Portuguese, 'exu' share a similar pronunciation, despite having different meanings.\",\n    \"languages\": [\"en\", \"pt\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"exuma = aume x\",\n    \"reading\": \"The anagram 'aume x' represents a rearrangement of the letters in 'Exuma', creating a new sequence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"exuma = xumae\",\n    \"reading\": \"The notariqon of 'Exuma' is 'xumae', which is the word spelled out using the initial letter of each syllable.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"exuma = [8, 10, 20, 13, 1]\",\n    \"reading\": \"The letter-number association in 'Exuma' results in the sequence [8, 10, 20, 13, 1], where A=1, B=2, ..., Z=26.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"exuma = 14, 10, 20, 13, 1 (English)\",\n    \"reading\": \"When the letters in 'Exuma' are assigned their respective numerical values based on their position in the alphabet, we get the sequence 14, 10, 20, 13, 1.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.95\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "exuma (English) = name of a place in the Bahamas",
+   "reading": "The word 'Exuma' is derived from its use as a proper noun to refer to an island group in the Bahamas.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "exuma = [e, x, u, m, a]",
+   "reading": "The phonetic split of 'Exuma' reveals individual sounds that contribute to its overall pronunciation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "exuma (English) = exu (Portuguese)",
+   "reading": "In English, 'Exuma' and in Portuguese, 'exu' share a similar pronunciation, despite having different meanings.",
+   "languages": [
+    "en",
+    "pt"
+   ],
+   "source": "generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "anagram",
+   "chain": "exuma = aume x",
+   "reading": "The anagram 'aume x' represents a rearrangement of the letters in 'Exuma', creating a new sequence.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.95
+  },
+  {
+   "operation": "notariqon",
+   "chain": "exuma = xumae",
+   "reading": "The notariqon of 'Exuma' is 'xumae', which is the word spelled out using the initial letter of each syllable.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.95
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "exuma = [8, 10, 20, 13, 1]",
+   "reading": "The letter-number association in 'Exuma' results in the sequence [8, 10, 20, 13, 1], where A=1, B=2, ..., Z=26.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.95
+  },
+  {
+   "operation": "numerical",
+   "chain": "exuma = 14, 10, 20, 13, 1 (English)",
+   "reading": "When the letters in 'Exuma' are assigned their respective numerical values based on their position in the alphabet, we get the sequence 14, 10, 20, 13, 1.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.95
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

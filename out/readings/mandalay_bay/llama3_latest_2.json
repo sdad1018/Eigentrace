@@ -1,0 +1,83 @@
+{
+ "word": "Mandalay Bay",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:15:40+00:00",
+ "latency_s": 8.37,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"\",\n    \"reading\": \"bay as a harbor or inlet, symbolizing sheltered contemplation\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + dalay + Bay\",\n    \"reading\": \"manly delay or hesitation, followed by a place of rest\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Mandala (Sanskrit) + Bay (English)\",\n    \"reading\": \"the sacred circle of contemplation and the place of rest converge\",\n    \"languages\": [\"en\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bay Mandalay -> Yam Bay Mand\",\n    \"reading\": \"a mystical journey to a place of rest and spiritual growth\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Mandalay Bay -> Mandal (Hebrew) + Bay (English)\",\n    \"reading\": \"the sacred circle of contemplation and the place of rest are intertwined\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Mandalay Bay -> Mandal (Hebrew) + Aleph (first letter of the Hebrew alphabet)\",\n    \"reading\": \"the beginning of spiritual growth and contemplation is found in rest\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "bay as a harbor or inlet, symbolizing sheltered contemplation",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + dalay + Bay",
+   "reading": "manly delay or hesitation, followed by a place of rest",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Mandala (Sanskrit) + Bay (English)",
+   "reading": "the sacred circle of contemplation and the place of rest converge",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bay Mandalay -> Yam Bay Mand",
+   "reading": "a mystical journey to a place of rest and spiritual growth",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Mandalay Bay -> Mandal (Hebrew) + Bay (English)",
+   "reading": "the sacred circle of contemplation and the place of rest are intertwined",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Mandalay Bay -> Mandal (Hebrew) + Aleph (first letter of the Hebrew alphabet)",
+   "reading": "the beginning of spiritual growth and contemplation is found in rest",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

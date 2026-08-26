@@ -1,0 +1,76 @@
+{
+ "word": "Ba-ta-clan",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:28:46+00:00",
+ "latency_s": 10.71,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"bat + clan\",\n    \"reading\": \"a group of flying creatures or a family unit\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bat (Old English) = to beat, strike\",\n    \"reading\": \"to take action or make a move\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"Oxford English Dictionary\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bat (English) + clan (Scottish Gaelic)\",\n    \"reading\": \"a group of people united by a common goal or interest\",\n    \"languages\": [\"en\", \"gd\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"bat + clan -> tact\",\n    \"reading\": \"to take deliberate action or make a strategic move\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B (first letter) A T A C L A N (letters and sounds)\",\n    \"reading\": \"a call to action or a summons to take a stand\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B (first letter) = beginning, start\",\n    \"reading\": \"the starting point for a new endeavor or initiative\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "bat + clan",
+   "reading": "a group of flying creatures or a family unit",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "bat (Old English) = to beat, strike",
+   "reading": "to take action or make a move",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "Oxford English Dictionary"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bat (English) + clan (Scottish Gaelic)",
+   "reading": "a group of people united by a common goal or interest",
+   "languages": [
+    "en",
+    "gd"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "bat + clan -> tact",
+   "reading": "to take deliberate action or make a strategic move",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B (first letter) A T A C L A N (letters and sounds)",
+   "reading": "a call to action or a summons to take a stand",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B (first letter) = beginning, start",
+   "reading": "the starting point for a new endeavor or initiative",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

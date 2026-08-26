@@ -1,0 +1,91 @@
+{
+ "word": "Bahamas",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:26:44+00:00",
+ "latency_s": 14.41,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \n   \"chain\": \"Bahama (Middle English) = shallow sea\",\n   \"reading\": \"a shallow or calm body of water\", \n   \"languages\": [\"en\"], \n   \"source\": \"Oxford English Dictionary\", \n   \"confidence\": 0.9},\n  {\"operation\": \"phonetic_split\", \n   \"chain\": \"Ba-ha-mas = I have seen\",\n   \"reading\": \"having perceived or observed something\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.8},\n  {\"operation\": \"cross_language_homophone\", \n   \"chain\": \"Bahamas (English) ~ Baha'i (Persian) = 'abode of God'\",\n   \"reading\": \"a sacred or holy place\", \n   \"languages\": [\"en\",\"fa\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.7},\n  {\"operation\": \"anagram\", \n   \"chain\": \"Bahamas = Hams Aba\",\n   \"reading\": \"the source or origin of a thing\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.6},\n  {\"operation\": \"notariqon\", \n   \"chain\": \"Bahamas = Ha Ba Ma\",\n   \"reading\": \"the union or joining of two things\", \n   \"languages\": [\"he\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.5},\n  {\"operation\": \"letter_symbol\", \n   \"chain\": \"Bahamas = B (first letter) + H (hidden or secret)\",\n   \"reading\": \"a concealed or mysterious thing\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.4},\n  {\"operation\": \"numerical\", \n   \"chain\": \"Bahamas = Ba (2) + Ha (5) + Ma (13)\",\n   \"reading\": \"the synthesis of the numbers two, five and thirteen\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.3}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Bahama (Middle English) = shallow sea",
+   "reading": "a shallow or calm body of water",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Ba-ha-mas = I have seen",
+   "reading": "having perceived or observed something",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bahamas (English) ~ Baha'i (Persian) = 'abode of God'",
+   "reading": "a sacred or holy place",
+   "languages": [
+    "en",
+    "fa"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bahamas = Hams Aba",
+   "reading": "the source or origin of a thing",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Bahamas = Ha Ba Ma",
+   "reading": "the union or joining of two things",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Bahamas = B (first letter) + H (hidden or secret)",
+   "reading": "a concealed or mysterious thing",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "Bahamas = Ba (2) + Ha (5) + Ma (13)",
+   "reading": "the synthesis of the numbers two, five and thirteen",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

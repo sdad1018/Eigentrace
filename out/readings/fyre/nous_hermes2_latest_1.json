@@ -1,0 +1,83 @@
+{
+ "word": "Fyre",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T03:11:57+00:00",
+ "latency_s": 16.37,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \"chain\": \"fyre -> fire\", \"reading\": \"The element that provides heat and light through combustion.\", \"languages\": [\"en\"], \"source\": \"Oxford English Dictionary\"},\n  {\"operation\": \"phonetic_split\", \"chain\": \"fyre -> f y re\", \"reading\": \"Fiery, yet calm; the balance of passion and serenity.\", \"languages\": [\"en\"], \"confidence\": 0.8},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"fyre -> feu\", \"reading\": \"The French word for 'fire', conveying the same elemental concept.\", \"languages\": [\"fr\"], \"source\": \"Le Petit Larousse\"},\n  {\"operation\": \"anagram\", \"chain\": \"fyre -> frye\", \"reading\": \"A type of tall, laced boot popular in the 19th century.\", \"languages\": [\"en\"], \"confidence\": 0.7},\n  {\"operation\": \"notariqon\", \"chain\": \"fyre -> φυρε\", \"reading\": \"The Greek word for 'fire', expressing the same primal force.\", \"languages\": [\"grc\"], \"source\": \"Liddell-Scott-Jones Greek-English Lexicon\"},\n  {\"operation\": \"letter_symbol\", \"chain\": \"fyre -> F Y R E\", \"reading\": \"A symbolic representation of the elements: Fire, Earth, Water, Air.\", \"languages\": [\"en\"], \"confidence\": 0.6},\n  {\"operation\": \"numerical\", \"chain\": \"fyre -> 6 9 2 5\", \"reading\": \"The numerical representation of 'fire' in a unique code system.\", \"languages\": [\"en\"], \"confidence\": 0.5}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "fyre -> fire",
+   "reading": "The element that provides heat and light through combustion.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "fyre -> f y re",
+   "reading": "Fiery, yet calm; the balance of passion and serenity.",
+   "languages": [
+    "en"
+   ],
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "fyre -> feu",
+   "reading": "The French word for 'fire', conveying the same elemental concept.",
+   "languages": [
+    "fr"
+   ],
+   "source": "Le Petit Larousse"
+  },
+  {
+   "operation": "anagram",
+   "chain": "fyre -> frye",
+   "reading": "A type of tall, laced boot popular in the 19th century.",
+   "languages": [
+    "en"
+   ],
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "fyre -> φυρε",
+   "reading": "The Greek word for 'fire', expressing the same primal force.",
+   "languages": [
+    "grc"
+   ],
+   "source": "Liddell-Scott-Jones Greek-English Lexicon"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "fyre -> F Y R E",
+   "reading": "A symbolic representation of the elements: Fire, Earth, Water, Air.",
+   "languages": [
+    "en"
+   ],
+   "confidence": 0.6
+  },
+  {
+   "operation": "numerical",
+   "chain": "fyre -> 6 9 2 5",
+   "reading": "The numerical representation of 'fire' in a unique code system.",
+   "languages": [
+    "en"
+   ],
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

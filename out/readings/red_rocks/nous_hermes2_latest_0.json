@@ -1,0 +1,84 @@
+{
+ "word": "Red Rocks",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:36:29+00:00",
+ "latency_s": 22.43,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"red + rock\",\n    \"reading\": \"The color red and the hardness of a rock combined to describe a geographical feature with reddish rocks.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Merriam-Webster Unabridged Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"red + rocks\",\n    \"reading\": \"A play on words, suggesting the color red and the action of a rock climbing.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"red + roche (French)\",\n    \"reading\": \"The word 'roche' in French means rock, creating a homophonic connection between the English word 'red' and the concept of rocks.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"red + rocks -> derock\",\n    \"reading\": \"The anagram 'derock' suggests the removal or extraction of rocks, possibly in a mining context.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"red + rocks -> redo\",\n    \"reading\": \"The notariqon 'redo' implies a sense of repetition or doing something again, possibly referring to the cyclical nature of geological processes.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"red + rocks -> R (Rock)\",\n    \"reading\": \"The first letter 'R' in 'Red Rocks' can be associated with the symbol for rock, representing a geological or mineralogical concept.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"red + rocks -> 18 (Roman numerals)\",\n    \"reading\": \"The numerical value of 'Red Rocks' can be interpreted as the year 18 AD, which may refer to a specific time or event related to rocks and their study.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "red + rock",
+   "reading": "The color red and the hardness of a rock combined to describe a geographical feature with reddish rocks.",
+   "languages": [
+    "en"
+   ],
+   "source": "Merriam-Webster Unabridged Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "red + rocks",
+   "reading": "A play on words, suggesting the color red and the action of a rock climbing.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "red + roche (French)",
+   "reading": "The word 'roche' in French means rock, creating a homophonic connection between the English word 'red' and the concept of rocks.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "red + rocks -> derock",
+   "reading": "The anagram 'derock' suggests the removal or extraction of rocks, possibly in a mining context.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "red + rocks -> redo",
+   "reading": "The notariqon 'redo' implies a sense of repetition or doing something again, possibly referring to the cyclical nature of geological processes.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "red + rocks -> R (Rock)",
+   "reading": "The first letter 'R' in 'Red Rocks' can be associated with the symbol for rock, representing a geological or mineralogical concept.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "numerical",
+   "chain": "red + rocks -> 18 (Roman numerals)",
+   "reading": "The numerical value of 'Red Rocks' can be interpreted as the year 18 AD, which may refer to a specific time or event related to rocks and their study.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

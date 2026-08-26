@@ -1,0 +1,80 @@
+{
+ "word": "Harvest",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:14:32+00:00",
+ "latency_s": 7.08,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \"chain\": \"harvest (Old English) = to gather in (Middle English)\", \n  \"reading\": \"to collect or bring together\", \"languages\": [\"en\"], \"source\": \"Oxford English Dictionary\", \"confidence\": 1.0},\n  {\"operation\": \"phonetic_split\", \"chain\": \"\", \n  \"reading\": \"har-vest = to reap the rewards of effort\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.8},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"French: récolte (harvest) = to gather in\", \n  \"reading\": \"to bring together a bounty or abundance\", \"languages\": [\"fr\"], \"source\": \"generative\", \"confidence\": 0.7},\n  {\"operation\": \"anagram\", \"chain\": \"\", \n  \"reading\": \"heart + vest = the core of one's being\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.6},\n  {\"operation\": \"notariqon\", \"chain\": \"H-A-R-V-E-S-T\", \n  \"reading\": \"Hidden: Hears (listen) to Vessels of Eternal Strength and Tranquility\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.5},\n  {\"operation\": \"letter_symbol\", \"chain\": \"\", \n  \"reading\": \"H = Hearth, A = Angel, R = Radiance, V = Vision, E = Essence, S = Sanctuary, T = Tranquility\", \n  \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.4}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "harvest (Old English) = to gather in (Middle English)",
+   "reading": "to collect or bring together",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 1.0
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "har-vest = to reap the rewards of effort",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "French: récolte (harvest) = to gather in",
+   "reading": "to bring together a bounty or abundance",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "heart + vest = the core of one's being",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "H-A-R-V-E-S-T",
+   "reading": "Hidden: Hears (listen) to Vessels of Eternal Strength and Tranquility",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "H = Hearth, A = Angel, R = Radiance, V = Vision, E = Essence, S = Sanctuary, T = Tranquility",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

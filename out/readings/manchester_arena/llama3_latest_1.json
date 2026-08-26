@@ -1,0 +1,93 @@
+{
+ "word": "Manchester Arena",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:22:00+00:00",
+ "latency_s": 16.14,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \n   \"chain\": \"man + chester (Old English) = a place of free men\",\n   \"reading\": \"a gathering of free individuals\", \n   \"languages\": [\"en\"], \n   \"source\": \"Oxford English Dictionary\", \n   \"confidence\": 0.9},\n  \n  {\"operation\": \"phonetic_split\", \n   \"chain\": \"man + chester = a place for men\",\n   \"reading\": \"a location for masculine endeavors\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.8},\n  \n  {\"operation\": \"cross_language_homophone\", \n   \"chain\": \"Manchester (English) = Manchon (French) = a handle\",\n   \"reading\": \"a place where one takes hold or grasps\", \n   \"languages\": [\"en\", \"fr\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.7},\n  \n  {\"operation\": \"anagram\", \n   \"chain\": \"Manchester = Here Act Now\",\n   \"reading\": \"a call to immediate action or response\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.6},\n  \n  {\"operation\": \"notariqon\", \n   \"chain\": \"Manchester = Mana (Hebrew) + Chester (Old English) = a place of divine guidance\",\n   \"reading\": \"a location guided by divine wisdom\", \n   \"languages\": [\"en\", \"he\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.5},\n  \n  {\"operation\": \"letter_symbol\", \n   \"chain\": \"M (Roman numeral) + ANC (Greek letters) = a place of ancient knowledge\",\n   \"reading\": \"a location where ancient wisdom is preserved\", \n   \"languages\": [\"la\", \"grc\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.4},\n  \n  {\"operation\": \"numerical\", \n   \"chain\": \"Manchester = 5 (numeric value of M) + 12 (numeric value of A) + 3 (numeric value of C) + ...\",\n   \"reading\": \"a place where numerical patterns converge\", \n   \"languages\": [\"en\"], \n   \"source\": \"generative\", \n   \"confidence\": 0.3}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "man + chester (Old English) = a place of free men",
+   "reading": "a gathering of free individuals",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + chester = a place for men",
+   "reading": "a location for masculine endeavors",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manchester (English) = Manchon (French) = a handle",
+   "reading": "a place where one takes hold or grasps",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester = Here Act Now",
+   "reading": "a call to immediate action or response",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Manchester = Mana (Hebrew) + Chester (Old English) = a place of divine guidance",
+   "reading": "a location guided by divine wisdom",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (Roman numeral) + ANC (Greek letters) = a place of ancient knowledge",
+   "reading": "a location where ancient wisdom is preserved",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "Manchester = 5 (numeric value of M) + 12 (numeric value of A) + 3 (numeric value of C) + ...",
+   "reading": "a place where numerical patterns converge",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

@@ -1,0 +1,82 @@
+{
+ "word": "Victoria",
+ "model": "llama3:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:23:13+00:00",
+ "latency_s": 12.35,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"\",\n    \"reading\": \"conquering, victorious\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 1\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"vi + tori\",\n    \"reading\": \"to carry, to bear (tori) and fly (vi)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"visite + victorie\",\n    \"reading\": \"to visit, to conquer\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"toria\",\n    \"reading\": \"toria (Italian) = a type of sailboat\",\n    \"languages\": [\"it\"],\n    \"source\": \"Maritime Dictionary\",\n    \"confidence\": 1\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"V-I-C-T-O-R-I-A\",\n    \"reading\": \"Virtue In Conquering Time Opens Reality Intimately Always\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"VI (Roman numeral) + TORI (Japanese martial art)\",\n    \"reading\": \"Victory in the Art of Tori\",\n    \"languages\": [\"la\", \"ja\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "conquering, victorious",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 1
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "vi + tori",
+   "reading": "to carry, to bear (tori) and fly (vi)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "visite + victorie",
+   "reading": "to visit, to conquer",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "toria",
+   "reading": "toria (Italian) = a type of sailboat",
+   "languages": [
+    "it"
+   ],
+   "source": "Maritime Dictionary",
+   "confidence": 1
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V-I-C-T-O-R-I-A",
+   "reading": "Virtue In Conquering Time Opens Reality Intimately Always",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "VI (Roman numeral) + TORI (Japanese martial art)",
+   "reading": "Victory in the Art of Tori",
+   "languages": [
+    "la",
+    "ja"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

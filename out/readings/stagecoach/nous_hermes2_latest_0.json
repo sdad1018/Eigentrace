@@ -1,0 +1,91 @@
+{
+ "word": "Stagecoach",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:43:13+00:00",
+ "latency_s": 28.42,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"stage + coach\",\n    \"reading\": \"A vehicle for group transportation derived from the combination of 'stand' and 'coach'\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"s + t + a + g + e + c + o + a + h\",\n    \"reading\": \"The auditory impression of the word, split into individual sounds, evoking a sense of movement and travel\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"stagecoach (en) + stagecoach (fr)\",\n    \"reading\": \"The word's homophonic counterpart in French, 'étape de course', suggests a stop or checkpoint along the way\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"stagecoach -> gatchaoe\",\n    \"reading\": \"The anagram 'gatchaoe' evokes the idea of a gathering or assembly, hinting at the social aspect of group travel\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"stagecoach -> TGCOAHC\",\n    \"reading\": \"The notariqonic representation 'TGCOAHC' suggests a connection to the creator or inventor of this means of transport, possibly 'T. G. Coa(h)c'\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"stagecoach -> S+T+A+G+E+C+O+A+H\",\n    \"reading\": \"The letters in 'stagecoach' can be associated with the following symbols: Sun (S), Tower (T), Adjustment (A), Empress (E), Chariot (C), Wheel of Fortune (O), Magician (M), and Hermit (H). The stagecoach represents a journey through life, guided by these archetypal forces\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"stagecoach -> 2+3+1+4+3+1+1+6+1+8\",\n    \"reading\": \"The numerical sum of the alphabetical positions of each letter in 'stagecoach' (S=2, T=3, A=1, G=4, E=3, C=1, O=1, A=1, H=6, space=8) equals 27. This number, a multiple of 3, suggests a harmonious and balanced travel experience\",\n    \"languages\": [\"en\"],\n    \"source\": \"Generative\",\n    \"confidence\": 0.95\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "stage + coach",
+   "reading": "A vehicle for group transportation derived from the combination of 'stand' and 'coach'",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "s + t + a + g + e + c + o + a + h",
+   "reading": "The auditory impression of the word, split into individual sounds, evoking a sense of movement and travel",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "stagecoach (en) + stagecoach (fr)",
+   "reading": "The word's homophonic counterpart in French, 'étape de course', suggests a stop or checkpoint along the way",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "stagecoach -> gatchaoe",
+   "reading": "The anagram 'gatchaoe' evokes the idea of a gathering or assembly, hinting at the social aspect of group travel",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "notariqon",
+   "chain": "stagecoach -> TGCOAHC",
+   "reading": "The notariqonic representation 'TGCOAHC' suggests a connection to the creator or inventor of this means of transport, possibly 'T. G. Coa(h)c'",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.85
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "stagecoach -> S+T+A+G+E+C+O+A+H",
+   "reading": "The letters in 'stagecoach' can be associated with the following symbols: Sun (S), Tower (T), Adjustment (A), Empress (E), Chariot (C), Wheel of Fortune (O), Magician (M), and Hermit (H). The stagecoach represents a journey through life, guided by these archetypal forces",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.75
+  },
+  {
+   "operation": "numerical",
+   "chain": "stagecoach -> 2+3+1+4+3+1+1+6+1+8",
+   "reading": "The numerical sum of the alphabetical positions of each letter in 'stagecoach' (S=2, T=3, A=1, G=4, E=3, C=1, O=1, A=1, H=6, space=8) equals 27. This number, a multiple of 3, suggests a harmonious and balanced travel experience",
+   "languages": [
+    "en"
+   ],
+   "source": "Generative",
+   "confidence": 0.95
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

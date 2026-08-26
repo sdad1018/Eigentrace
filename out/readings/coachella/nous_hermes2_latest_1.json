@@ -1,0 +1,19 @@
+{
+ "word": "Coachella",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T02:31:50+00:00",
+ "latency_s": 15.61,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n    {\n        \"operation\": \"phonetic_split\",\n        \"chain\": \"Co-A-Ch-Ell-A\",\n        \"reading\": \"The word 'Coachella' can be split into its phonetic components: Co, A, Ch, E, Ll, A. Each of these sounds can represent a different aspect or element.\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.75\n    },\n    {\n        \"operation\": \"cross_language_homophone\",\n        \"chain\": \"-\",\n        \"reading\": \"In French, 'coquille' means shell; in Italian, 'coccola' means little shell or darling. In Spanish, 'cojuela' is a term of endearment. These homophones suggest the idea of protection, love, and a connection to nature.\",\n        \"languages\": [\"en\", \"fr\", \"it\", \"es\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.65\n    },\n    {\n        \"operation\": \"anagram\",\n        \"chain\": \"-\",\n        \"reading\": \"'Coachella' can be rearranged to form 'A-Challenge'. This anagram suggests that the word represents a challenge or an opportunity for growth and development.\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.85\n    },\n    {\n        \"operation\": \"notariqon\",\n        \"chain\": \"-\",\n        \"reading\": \"'Coachella' can be interpreted as a notariqon, or a hidden message within the letters of the word. In this case, the notariqon could be 'A-Call-H', suggesting that the word is a call to action or a summons.\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.75\n    },\n    {\n        \"operation\": \"letter_symbol\",\n        \"chain\": \"-\",\n        \"reading\": \"'C' can represent the celestial body Cygnus, 'o' can symbolize the sun, and 'a' can stand for air or breath. The combination of these symbols suggests a connection to the cosmos, the life-giving force of the sun, and the vitality of breath.\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.85\n    },\n    {\n        \"operation\": \"numerical\",\n        \"chain\": \"-\",\n        \"reading\": \"'Coachella' can be numerologically analyzed to reveal its hidden meanings. The sum of the letters' values in the word 'Coachella' is 12, which can symbolize balance and harmony.\",\n        \"languages\": [\"en\"],\n        \"source\": \"generative\",\n        \"confidence\": 0.75\n    },\n]",
+ "parsed": null,
+ "parse_error": "json_error: Expecting value: line 50 column 1 (char 2281)",
+ "extracted": false,
+ "n_readings": 0,
+ "refusal_like": false
+}
