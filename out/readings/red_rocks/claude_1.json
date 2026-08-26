@@ -5,15 +5,146 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:17:35+00:00",
- "latency_s": 10.1,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T03:59:37+00:00",
+ "latency_s": 10.92,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Red: Old English 'read' (red, ruddy); Proto-Germanic '*raudaz'; Proto-Indo-European '*h₁rewdʰ-' (to redden). Rocks: Old English 'rocc'; origin uncertain, possibly from Old Norse 'rokkr' or imitative.\",\n    \"reading\": \"The reddened or ruddy stones; earth-matter in its burning or oxidized state.\",\n    \"languages\": [\"en\", \"gem\", \"pie\"],\n    \"source\": \"Oxford English Dictionary; Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Red Rocks → 'Red' (rɛd) + 'Rocks' (rɑks); rɛd echoes 'ray' or radiating light; rɑks suggests 'raque' (to scratch, rake) or 'wreck'.\",\n    \"reading\": \"Radiating scratches; light-scattered by fractured surfaces; wreckage of the luminous.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Red (en) ≈ 'ré' (fr, the musical note); Rocks ≈ 'roc' (fr, the mythical bird) or 'roque' (fr, to strike).\",\n    \"reading\": \"The note-sounding stone; the bird's striking or the struck mythical creature; resonance of the legendary.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"'Red Rocks' → anagrammatic atoms: d, e, r, r, o, c, k, s; rearrangement yields 'corder' + 'rks' or 'Scorred' (scarred).\",\n    \"reading\": \"Marked by scarring; the cord-bearing or bound state; that which records or cords the earth.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R as the Hermetic symbol for radius, ray, or rulership; D as delta, the feminine principle or door; K as the Kabbalistic crown or completion.\",\n    \"reading\": \"Radiant feminine doorways leading to complete rulership; the stone as gateway to crowned authority.\",\n    \"languages\": [\"en\", \"he\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Red' (rɛd) → 'er' sound (rising, upward motion) + 'd' (dense, down); Rocks: 'rɑ' (rolling, round) + 'ks' (hardness, closure).\",\n    \"reading\": \"Rising density meeting rounded hardness; upward thrust constrained by stone's resistant form.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Red ≈ 'rete' (Latin, net or network); Rocks ≈ 'rocca' (Italian, fortress or distaff).\",\n    \"reading\": \"The fortified net; the networked stone-fortress; woven stone walls; the spinning-stone's fortress.\",\n    \"languages\": [\"en\", \"la\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"'Red Rocks' → R.R.; in Hermetics and alchemy, R.R. abbreviates 'Rota Romana' or doubled radius;",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 54 column 36 (char 2700)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Red: Old English 'read' (to advise, counsel); cognate with Old Saxon 'rad' (advice)\",\n    \"reading\": \"Counsel or advice; the colour is secondary, derived from the reddening of fire or blood.\",\n    \"languages\": [\"en\", \"ang\", \"osx\"],\n    \"source\": \"Oxford English Dictionary, s.v. 'red'\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Red Rocks → 'red' + 'rocks'; 'rocks' as verb: to shake, to move back and forth\",\n    \"reading\": \"Counsel that shakes or moves; advice that destabilizes or causes oscillation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Red (en) ≈ 'redd' (Scots): to clear, to tidy, to put in order\",\n    \"reading\": \"The ordering or clarification of rocky, rough, or chaotic matter; making rough things smooth.\",\n    \"languages\": [\"en\", \"sco\"],\n    \"source\": \"Dictionary of the Scots Language\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Rocks → 'roc' (mythical bird) + 'ks'; or 'rock' (Latin 'rocca': distaff, spindle)\",\n    \"reading\": \"The spinning or turning of the great bird; fate's wheel turning through mythic agency.\",\n    \"languages\": [\"en\", \"la\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Red Rocks → 'Cords Ker' or 'Dork Cres' or 'Reds Crok'\",\n    \"reading\": \"Cords of the heart; the binding threads of desire or connection made visible.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R = Rho (Greek); D = Delta (Greek); Rho-Delta = flow-triangle; Rocks = solidified flow\",\n    \"reading\": \"The triangular solidification of flowing force; matter crystallized from movement.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Rocks: Old English 'rocc'; possibly from Old Norse 'rokkr' (darkness, twilight of the gods)\",\n    \"reading\": \"Red darkness; the counsel of twilight; wisdom at the threshold of ending.\",\n    \"languages\": [\"en\", \"non\"],\n    \"source\": \"Oxford English Dictionary, s.v. 'rock'\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Red (en) ≈ 'ret' (Old French): to soak, to steep; rocks as hardened matter\",\n    \"reading\": \"Steeping in hardness; the softening that becomes stone through time and pressure.\",\n    \"languages\": [\"en\", \"fro\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Red Rocks: R-D-R-K-S; or R(ed) D(ark) R(ising) K(nowledge) S(tone)\",\n    \"reading\": \"Dark rising knowledge made stone; the hardening of shadow into wisdom.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Red Rocks → 'Red' + 'Rocs' (plural of roc); homophone with 'rocks'\",\n    \"reading\": \"Red birds; the scarlet or crimson creatures of myth bearing away the precious.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Rocks: from Latin 'rocca' (distaff); the spinning instrument of the Fates\",\n    \"reading\": \"Red spinning; the crimson thread of destiny wound upon the wheel of becoming.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Etymologisches Wörterbuch der romanischen Sprachen\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Rocks (en) ≈ 'rocs' (fr): plural of roc, the mythical bird; 'red' = 'redd' (spawn)\",\n    \"reading\": \"The spawning of great birds; the generation of mighty creatures from the depths.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Red: Old English 'read' (to advise, counsel); cognate with Old Saxon 'rad' (advice)",
+   "reading": "Counsel or advice; the colour is secondary, derived from the reddening of fire or blood.",
+   "languages": [
+    "en",
+    "ang",
+    "osx"
+   ],
+   "source": "Oxford English Dictionary, s.v. 'red'",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Red Rocks → 'red' + 'rocks'; 'rocks' as verb: to shake, to move back and forth",
+   "reading": "Counsel that shakes or moves; advice that destabilizes or causes oscillation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Red (en) ≈ 'redd' (Scots): to clear, to tidy, to put in order",
+   "reading": "The ordering or clarification of rocky, rough, or chaotic matter; making rough things smooth.",
+   "languages": [
+    "en",
+    "sco"
+   ],
+   "source": "Dictionary of the Scots Language",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Rocks → 'roc' (mythical bird) + 'ks'; or 'rock' (Latin 'rocca': distaff, spindle)",
+   "reading": "The spinning or turning of the great bird; fate's wheel turning through mythic agency.",
+   "languages": [
+    "en",
+    "la",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Red Rocks → 'Cords Ker' or 'Dork Cres' or 'Reds Crok'",
+   "reading": "Cords of the heart; the binding threads of desire or connection made visible.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R = Rho (Greek); D = Delta (Greek); Rho-Delta = flow-triangle; Rocks = solidified flow",
+   "reading": "The triangular solidification of flowing force; matter crystallized from movement.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Rocks: Old English 'rocc'; possibly from Old Norse 'rokkr' (darkness, twilight of the gods)",
+   "reading": "Red darkness; the counsel of twilight; wisdom at the threshold of ending.",
+   "languages": [
+    "en",
+    "non"
+   ],
+   "source": "Oxford English Dictionary, s.v. 'rock'",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Red (en) ≈ 'ret' (Old French): to soak, to steep; rocks as hardened matter",
+   "reading": "Steeping in hardness; the softening that becomes stone through time and pressure.",
+   "languages": [
+    "en",
+    "fro"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Red Rocks: R-D-R-K-S; or R(ed) D(ark) R(ising) K(nowledge) S(tone)",
+   "reading": "Dark rising knowledge made stone; the hardening of shadow into wisdom.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Red Rocks → 'Red' + 'Rocs' (plural of roc); homophone with 'rocks'",
+   "reading": "Red birds; the scarlet or crimson creatures of myth bearing away the precious.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Rocks: from Latin 'rocca' (distaff); the spinning instrument of the Fates",
+   "reading": "Red spinning; the crimson thread of destiny wound upon the wheel of becoming.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Etymologisches Wörterbuch der romanischen Sprachen",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Rocks (en) ≈ 'rocs' (fr): plural of roc, the mythical bird; 'red' = 'redd' (spawn)",
+   "reading": "The spawning of great birds; the generation of mighty creatures from the depths.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

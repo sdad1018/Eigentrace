@@ -5,15 +5,143 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:17:45+00:00",
- "latency_s": 9.8,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T03:59:49+00:00",
+ "latency_s": 11.59,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Red: Old English rēad, Proto-Germanic *raudaz, Indo-European *reudh- (to redden). Rocks: Old English roccas, origin obscure, possibly from Old Norse rokkr.\",\n    \"reading\": \"Redness emerging from primordial chaos; the solid manifestation of ruddy becoming.\",\n    \"languages\": [\"en\", \"gem\", \"ine\"],\n    \"source\": \"Oxford English Dictionary; Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Red Rocks → 'R' + 'Ed' + 'R' + 'Ocks' → arrayed arrangement\",\n    \"reading\": \"The letter R, symbol of radiance, frames the inner becoming (Ed) and occult sight (Ocks as oculus permuted).\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Red (en) ≈ raide (fr, past participle of raidir, to stiffen). Rocks ≈ roques (fr, rocks).\",\n    \"reading\": \"Stiffened ruggednesses; the rigid and unyielding principle made manifest in stone.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Red Rocks (remove space) → dedrock, croddre, redrock permutations → rede (counsel) + rock (immovability).\",\n    \"reading\": \"The wise counsel of immobility; what stands firm gives instruction.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R = Rex (king), radius (ray). D = door, demiurge. O = circle, completeness. C = crescent, becoming. K = force.\",\n    \"reading\": \"The royal ray opens the door to circular becoming through applied force.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Red Rocks → Red (scarlet, passion) + Rocks (re-occults, re-hides) → revelation followed by concealment.\",\n    \"reading\": \"What is reddened in passion becomes again hidden in stone's silence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Rocks (en) ≈ roca (es, rock); Red ≈ rojo (es, red). Combined: roja roca (feminine red rock, generative force in stone).\",\n    \"reading\": \"The feminine principle of redness crystallized within stone; matter infused with life-force.\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Red Rocks → R.R. → Radius Rotundus or Radix Rotunditatis (rounded root).\",\n    \"reading\": \"The rounded root from which all growth spirals; the generative center.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Rock: Old Norse rokkr (darkness, dusk); also rokka (distaff, spinner). Red: connection to rudh (redness, blood vitality).\",\n    \"reading\": \"The spinning darkness stained with vital red; time and matter interpenetrating.\",\n    \"languages\":",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 62 column 30 (char 2743)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Red: Old English 'read' (to advise, counsel); cognate with Gothic 'rēdan' (to advise)\",\n    \"reading\": \"Red as counsel or guidance; rocks as foundations. Counsel upon foundations.\",\n    \"languages\": [\"en\", \"got\"],\n    \"source\": \"Oxford English Dictionary, s.v. 'red' (verb, archaic)\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Red Rocks → 'red' (sound) + 'rocks' (sound); 'red' as phonetic near 'read' (past tense)\",\n    \"reading\": \"That which has been read or interpreted; solid matter bearing marks of reading or time.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Red → French 'ré' (the note); Rocks → French 'roc' (singular of rocks, cliff)\",\n    \"reading\": \"The musical note upon the cliff; harmony emerging from stone.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Red Rocks → 'Cored Reds' or 'Decker Ors' or 'Cords Roke'\",\n    \"reading\": \"The heart extracted from redness; that which binds or connects the golden.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R (radius, ray, regnum); D (duality); R (ray); K (kaph, palm, power); S (serpent)\",\n    \"reading\": \"The ray of duality emanating as power and serpentine force; dominion through division.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Red' (audible as 'redd') + 'Rocks' → redd (to clear, arrange) + rocks (oscillates)\",\n    \"reading\": \"To clear and arrange that which moves; ordering of unstable matter.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Rocks: Old English 'rocc' (stone); possibly from Old Norse 'rokkr' (darkness, twilight)\",\n    \"reading\": \"Red stones of twilight; the boundary between light and shadow made manifest.\",\n    \"languages\": [\"en\", \"non\"],\n    \"source\": \"Oxford English Dictionary, s.v. 'rock' (noun)\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Red Rocks → R.R. → Radius Regnum or Rete Regia (royal network)\",\n    \"reading\": \"The royal network; the radius of kingship; sovereignty distributed through space.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Rocks → Latin 'rogus' (funeral pyre); Red → Latin 'redo' (I give back)\",\n    \"reading\": \"Return or restoration upon the pyre; the giving back of what burns.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Red' + 'Rocks' → 'red' (color) + 'ox' (beast); hidden 'ox' in 'rocks'\",\n    \"reading\": \"The red beast; the ruddy strength bound within stone; ox-power petrified.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Red: Proto-Indo-European '*h₁rewdʰ-' (to redden); Rocks: Germanic '*rukk-' (heap)\",\n    \"reading\": \"Reddening heaps; accumulation of that which flushes or flows; gathered ruddy matter.\",\n    \"languages\": [\"en\", \"ine\"],\n    \"source\": \"Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Red Rocks: R-E-D R-O-C-K-S → vowels E, O → E-O (the two principles)\",\n    \"reading\": \"The two principles (masculine and feminine) bound within hardness and redness.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Red: Old English 'read' (to advise, counsel); cognate with Gothic 'rēdan' (to advise)",
+   "reading": "Red as counsel or guidance; rocks as foundations. Counsel upon foundations.",
+   "languages": [
+    "en",
+    "got"
+   ],
+   "source": "Oxford English Dictionary, s.v. 'red' (verb, archaic)",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Red Rocks → 'red' (sound) + 'rocks' (sound); 'red' as phonetic near 'read' (past tense)",
+   "reading": "That which has been read or interpreted; solid matter bearing marks of reading or time.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Red → French 'ré' (the note); Rocks → French 'roc' (singular of rocks, cliff)",
+   "reading": "The musical note upon the cliff; harmony emerging from stone.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Red Rocks → 'Cored Reds' or 'Decker Ors' or 'Cords Roke'",
+   "reading": "The heart extracted from redness; that which binds or connects the golden.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R (radius, ray, regnum); D (duality); R (ray); K (kaph, palm, power); S (serpent)",
+   "reading": "The ray of duality emanating as power and serpentine force; dominion through division.",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'Red' (audible as 'redd') + 'Rocks' → redd (to clear, arrange) + rocks (oscillates)",
+   "reading": "To clear and arrange that which moves; ordering of unstable matter.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Rocks: Old English 'rocc' (stone); possibly from Old Norse 'rokkr' (darkness, twilight)",
+   "reading": "Red stones of twilight; the boundary between light and shadow made manifest.",
+   "languages": [
+    "en",
+    "non"
+   ],
+   "source": "Oxford English Dictionary, s.v. 'rock' (noun)",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Red Rocks → R.R. → Radius Regnum or Rete Regia (royal network)",
+   "reading": "The royal network; the radius of kingship; sovereignty distributed through space.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Rocks → Latin 'rogus' (funeral pyre); Red → Latin 'redo' (I give back)",
+   "reading": "Return or restoration upon the pyre; the giving back of what burns.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'Red' + 'Rocks' → 'red' (color) + 'ox' (beast); hidden 'ox' in 'rocks'",
+   "reading": "The red beast; the ruddy strength bound within stone; ox-power petrified.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Red: Proto-Indo-European '*h₁rewdʰ-' (to redden); Rocks: Germanic '*rukk-' (heap)",
+   "reading": "Reddening heaps; accumulation of that which flushes or flows; gathered ruddy matter.",
+   "languages": [
+    "en",
+    "ine"
+   ],
+   "source": "Pokorny Indo-European Etymological Dictionary",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Red Rocks: R-E-D R-O-C-K-S → vowels E, O → E-O (the two principles)",
+   "reading": "The two principles (masculine and feminine) bound within hardness and redness.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

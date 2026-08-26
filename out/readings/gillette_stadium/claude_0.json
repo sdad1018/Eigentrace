@@ -5,15 +5,148 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:16:01+00:00",
- "latency_s": 10.3,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T03:57:51+00:00",
+ "latency_s": 12.36,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gill-ette → gill (fish respiratory organ) + ette (diminutive suffix); the diminished or delicate gill\",\n    \"reading\": \"The refined or subtle respiratory faculty; a small, branching organ of water-breathing life.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Gillette: from Old French 'gille' (a girl, maidservant) + diminutive '-ette'; feminine form meaning little girl or maiden\",\n    \"reading\": \"A diminutive feminine presence; the young or lesser female aspect rendered in miniature form.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Skeat's Etymology Dictionary\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Gill (en) ≈ Gille (Scots); a Highland attendant or guide; Stad (Dutch/Afrikaans) = stad (city, place); 'the attendant's place'\",\n    \"reading\": \"A servant's station or the place where one attends; the ground of service and duty.\",\n    \"languages\": [\"en\", \"nl\", \"af\", \"gd\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gill-ette Stad-ium → gill (breathing, filtering) + stad (place/standing); stadium (Latin: a standing place for viewing)\",\n    \"reading\": \"A place where breathing—the vital act—is witnessed, measured, or put to the test in contest.\",\n    \"languages\": [\"en\", \"la\", \"nl\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"G = geometric angle, sharp edge; ill = sickness/malady; ette = smallness; S-T-D-M = standing points in sequence\",\n    \"reading\": \"Sharpness and diminishment in a place of standing; angularity reduced to miniature in a stadium of witnessing.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Gillette Stadium → rearrangement: 'The digits mill + stage'; or 'ill-age at mess + dit' (nonsense combinations for generative purpose)\",\n    \"reading\": \"Mills of digits; stages of illness; the grinding of numbers in a place of spectacle.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Jill-ette (Jill, female name) + Stadium; jill = a unit of liquid measure; 'a measure of standing-place'\",\n    \"reading\": \"A measured vessel or container placed within a great standing-place; proportion held in spectacle.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Stadium: Latin stadion < Greek στάδιον (stádion), a unit of length and a course; literally 'the standing' or 'that which stands'\",\n    \"reading\": \"A fixed measure, an immovable ground-truth; the space where things are established and witnessed.\",\n    \"languages\": [\"la\", \"grc\", \"en\"],\n    \"source\": \"Liddell-Scott Greek Lexicon; Lewis & Short Latin Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gill-ette Stad-i-um → 'ill' nested within; ill + stad (place) =",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 62 column 37 (char 2979)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gill-ette: gill (fish breathing organ) + ette (diminutive suffix); phonetic homophone with 'guile' + 'et'\",\n    \"reading\": \"Small deception or cunning stratagem; the diminished art of subtle trickery.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Gillette ≈ French 'gille' (fool, jester) + 'ette' (feminine diminutive); 'gille' from Old French\",\n    \"reading\": \"A foolish or jeering presence; the feminine principle of mockery or buffoonery.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"Littré Dictionary of Old French\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Sta-dium: Latin 'stadium' (a measure of length, a race-course); 'sta' (stand, position)\",\n    \"reading\": \"A standing-place of measurement; where one takes position to observe or compete.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Oxford Latin Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Stadium < Latin 'stadium' < Greek 'stadion' (στάδιον), from 'histanai' (to stand)\",\n    \"reading\": \"A place where one stands fixed; an arena of stasis and spectacle.\",\n    \"languages\": [\"grc\", \"la\", \"en\"],\n    \"source\": \"Liddell-Scott Greek Lexicon\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gill-ette Sta-dium: 'gill' (water-breather) meets 'stadium' (standing-place); aquatic + terrestrial\",\n    \"reading\": \"The meeting-place where gilled creatures and standing observers converge in spectacle.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"G=7, I=9, L=12, L=12, E=5, T=20, T=20, E=5; S=19, T=20, A=1, D=4, I=9, U=21, M=13\",\n    \"reading\": \"Numerical sum 90 + 87 = 177 = 1+7+7 = 15 = 1+5 = 6; the number of completion and balance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Gillette Stadium letters rearranged: 'Mast glided tit' or 'Tides glam tit'\",\n    \"reading\": \"A mast-bearing vessel gliding; or tides adorned with glitter—maritime motion and shimmer.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Gill' + 'et' (diminutive) + 'Stad' (city, place in Germanic) + 'ium' (Latin neuter ending)\",\n    \"reading\": \"A small gill-place; a diminished water-breathing locale of standing and gathering.\",\n    \"languages\": [\"en\", \"de\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Gillette ≈ French 'gilet' (sleeveless jacket); 'stadium' ≈ Latin 'stadium' (garment-like enclosure)\",\n    \"reading\": \"A sleeveless covering-place; an unadorned vessel containing spectacle and measure.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"G-I-L-L-E-T-T-E S-T-A-D-I-U-M: first letters of hidden phrase 'Gilt Illuminates Luminous Ether'\",\n    \"reading\": \"Gold-light illuminates the luminous upper realm; celestial radiance made manifest.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Gill' (to cheat, swindle in archaic English) + 'ette' + 'stadium' (standing-place of judgment)\",\n    \"reading\": \"A place where cheating is exposed; a stadium of accountability and revealed deception.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Oxford English Dictionary (archaic)\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Gillette ≈ Italian 'ghigliottina' (guillotine); stadium ≈ place of execution or judgment\",\n    \"reading\": \"A place of sharp judgment; where the blade of decision falls upon the standing accused.\",\n    \"languages\": [\"it\", \"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Gill-ette: gill (fish breathing organ) + ette (diminutive suffix); phonetic homophone with 'guile' + 'et'",
+   "reading": "Small deception or cunning stratagem; the diminished art of subtle trickery.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gillette ≈ French 'gille' (fool, jester) + 'ette' (feminine diminutive); 'gille' from Old French",
+   "reading": "A foolish or jeering presence; the feminine principle of mockery or buffoonery.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "Littré Dictionary of Old French",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Sta-dium: Latin 'stadium' (a measure of length, a race-course); 'sta' (stand, position)",
+   "reading": "A standing-place of measurement; where one takes position to observe or compete.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Oxford Latin Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "etymology",
+   "chain": "Stadium < Latin 'stadium' < Greek 'stadion' (στάδιον), from 'histanai' (to stand)",
+   "reading": "A place where one stands fixed; an arena of stasis and spectacle.",
+   "languages": [
+    "grc",
+    "la",
+    "en"
+   ],
+   "source": "Liddell-Scott Greek Lexicon",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gill-ette Sta-dium: 'gill' (water-breather) meets 'stadium' (standing-place); aquatic + terrestrial",
+   "reading": "The meeting-place where gilled creatures and standing observers converge in spectacle.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G=7, I=9, L=12, L=12, E=5, T=20, T=20, E=5; S=19, T=20, A=1, D=4, I=9, U=21, M=13",
+   "reading": "Numerical sum 90 + 87 = 177 = 1+7+7 = 15 = 1+5 = 6; the number of completion and balance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Gillette Stadium letters rearranged: 'Mast glided tit' or 'Tides glam tit'",
+   "reading": "A mast-bearing vessel gliding; or tides adorned with glitter—maritime motion and shimmer.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'Gill' + 'et' (diminutive) + 'Stad' (city, place in Germanic) + 'ium' (Latin neuter ending)",
+   "reading": "A small gill-place; a diminished water-breathing locale of standing and gathering.",
+   "languages": [
+    "en",
+    "de",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gillette ≈ French 'gilet' (sleeveless jacket); 'stadium' ≈ Latin 'stadium' (garment-like enclosure)",
+   "reading": "A sleeveless covering-place; an unadorned vessel containing spectacle and measure.",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "notariqon",
+   "chain": "G-I-L-L-E-T-T-E S-T-A-D-I-U-M: first letters of hidden phrase 'Gilt Illuminates Luminous Ether'",
+   "reading": "Gold-light illuminates the luminous upper realm; celestial radiance made manifest.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'Gill' (to cheat, swindle in archaic English) + 'ette' + 'stadium' (standing-place of judgment)",
+   "reading": "A place where cheating is exposed; a stadium of accountability and revealed deception.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Oxford English Dictionary (archaic)",
+   "confidence": 0.68
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gillette ≈ Italian 'ghigliottina' (guillotine); stadium ≈ place of execution or judgment",
+   "reading": "A place of sharp judgment; where the blade of decision falls upon the standing accused.",
+   "languages": [
+    "it",
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

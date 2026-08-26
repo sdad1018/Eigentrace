@@ -5,15 +5,145 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:20:38+00:00",
- "latency_s": 9.12,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:03:16+00:00",
+ "latency_s": 10.08,
  "ok": true,
  "call_error": null,
- "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"harvest < Old English hærfest < Proto-Germanic *harbistaz, related to 'to pluck' and 'autumn'\",\n    \"reading\": \"The gathering of ripened grain; the season when fruits of labor are collected and made visible.\",\n    \"languages\": [\"en\", \"ang\", \"gem\"],\n    \"source\": \"Oxford English Dictionary, s.v. harvest\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har + vest; har (Proto-Germanic *hara- plucking) + vest (to clothe, dress, or invest)\",\n    \"reading\": \"To pluck and clothe; to dress oneself in the fruits of one's labor; investment made visible.\",\n    \"languages\": [\"en\", \"gem\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"harvest ≈ French hâtiver (to hasten, accelerate); phonetic near-match in Romance\",\n    \"reading\": \"The hastening of time; acceleration toward maturity; hurrying toward ripeness and conclusion.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"harvest → shaver, haters, hearts, thraves (archaic: sheaves of grain)\",\n    \"reading\": \"The shaver of grain; that which is hated or that which loves—ambivalence of cutting and gathering.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"H (breath, aspiration) + AR (light, solar) + VEST (clothing, containment) + final T (cross, resolution)\",\n    \"reading\": \"Breathing light into garments; the solar breath clothed in form; aspiration made material.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"h(8) a(1) r(9) v(22) e(5) s(19) t(20) = 84 = 8+4 = 12 = 1+2 = 3\",\n    \"reading\": \"Threefold completion; the triad of sowing, growing, and reaping; manifestation in three cycles.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har + vé (French harve → to harrow) + st; the plowing sound becomes gathering\",\n    \"reading\": \"The harrowed field becomes the gathered grain; disturbance transformed into nourishment.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"H-A-R-V-E-S-T as initial letters of a hidden phrase\",\n    \"reading\": \"He Accumulates Ripeness: Vital Energy Seeking Transformation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"harvest ≈ Latin herbas (plants, herbs) + vest; phonetic similarity through Romance roots\",\n    \"reading\": \"Herbs clothed; plants dressed in their fullness; the botanical body made wearable.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har (Old English here: army, multitude) + vest (dressed); the mult",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 2919)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"harvest < Old English hærfest < Proto-Germanic *harbistaz, related to autumn season and gathering\",\n    \"reading\": \"The season of gathering and reaping; the time when ripened crops are collected from fields.\",\n    \"languages\": [\"en\", \"ang\", \"gem\"],\n    \"source\": \"Oxford English Dictionary, s.v. harvest\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har-vest: har (hard, harsh sound) + vest (to clothe, to invest)\",\n    \"reading\": \"To clothe or invest oneself in hardship; the difficult labor of gathering sustenance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har-vest: har (hare, swift creature) + vest (garment, covering)\",\n    \"reading\": \"The swift covering or gathering of what grows; speed in collection of ripened abundance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"harvest ≈ French 'arve' (archaic: ploughed field) + est (is, Latin)\",\n    \"reading\": \"That which is the ploughed field; the field itself made manifest through labor.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"harvest → shaver + t; or: haters + v; or: hearts + v\",\n    \"reading\": \"The hearts of those who hate are transformed through gathering; the shaving away of excess.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"H (breath, spirit) + AR (light, Egyptian) + VEST (clothing, manifestation)\",\n    \"reading\": \"The spirit of light made manifest in material form; divine radiance clothed in earthly substance.\",\n    \"languages\": [\"en\", \"egy\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"H-A-R-V-E-S-T: initials forming hidden acrostic of gathering, ripeness, severance, time\",\n    \"reading\": \"The acronym of ripeness achieved, severance enacted, time fulfilled in gathering.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har (Germanic *her: here, this place) + vest (Latin vestis: clothing, covering)\",\n    \"reading\": \"The clothing or covering of this place; what adorns and protects the immediate ground.\",\n    \"languages\": [\"en\", \"gem\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"harvest < Proto-Germanic *harbistaz: *har (grey, withered) + *bistaz (season, time)\",\n    \"reading\": \"The season of greying and withering; the time when vitality fades into dormancy.\",\n    \"languages\": [\"en\", \"gem\"],\n    \"source\": \"Wiktionary, Proto-Germanic reconstructions\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har-vest: har (to harry, to harrow, to disturb) + vest (to invest, to place)\",\n    \"reading\": \"To place disturbance; the investment of labor in disturbing the earth to gather its yield.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"harvest ≈ German 'Herbst' (autumn) + English 'vest' (to clothe)\",\n    \"reading\": \"Autumn clothed; the season itself made wearable, embodied in gathered substance.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V (vessel, receptacle) at center of har-VEST: the vessel that receives what is gathered\",\n    \"reading\": \"The central vessel or container; that which receives and holds the gathered abundance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "harvest < Old English hærfest < Proto-Germanic *harbistaz, related to autumn season and gathering",
+   "reading": "The season of gathering and reaping; the time when ripened crops are collected from fields.",
+   "languages": [
+    "en",
+    "ang",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary, s.v. harvest",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "har-vest: har (hard, harsh sound) + vest (to clothe, to invest)",
+   "reading": "To clothe or invest oneself in hardship; the difficult labor of gathering sustenance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "har-vest: har (hare, swift creature) + vest (garment, covering)",
+   "reading": "The swift covering or gathering of what grows; speed in collection of ripened abundance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "harvest ≈ French 'arve' (archaic: ploughed field) + est (is, Latin)",
+   "reading": "That which is the ploughed field; the field itself made manifest through labor.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "harvest → shaver + t; or: haters + v; or: hearts + v",
+   "reading": "The hearts of those who hate are transformed through gathering; the shaving away of excess.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "H (breath, spirit) + AR (light, Egyptian) + VEST (clothing, manifestation)",
+   "reading": "The spirit of light made manifest in material form; divine radiance clothed in earthly substance.",
+   "languages": [
+    "en",
+    "egy"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "H-A-R-V-E-S-T: initials forming hidden acrostic of gathering, ripeness, severance, time",
+   "reading": "The acronym of ripeness achieved, severance enacted, time fulfilled in gathering.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "har (Germanic *her: here, this place) + vest (Latin vestis: clothing, covering)",
+   "reading": "The clothing or covering of this place; what adorns and protects the immediate ground.",
+   "languages": [
+    "en",
+    "gem",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "harvest < Proto-Germanic *harbistaz: *har (grey, withered) + *bistaz (season, time)",
+   "reading": "The season of greying and withering; the time when vitality fades into dormancy.",
+   "languages": [
+    "en",
+    "gem"
+   ],
+   "source": "Wiktionary, Proto-Germanic reconstructions",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "har-vest: har (to harry, to harrow, to disturb) + vest (to invest, to place)",
+   "reading": "To place disturbance; the investment of labor in disturbing the earth to gather its yield.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "harvest ≈ German 'Herbst' (autumn) + English 'vest' (to clothe)",
+   "reading": "Autumn clothed; the season itself made wearable, embodied in gathered substance.",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V (vessel, receptacle) at center of har-VEST: the vessel that receives what is gathered",
+   "reading": "The central vessel or container; that which receives and holds the gathered abundance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

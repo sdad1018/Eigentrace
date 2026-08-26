@@ -5,15 +5,145 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:16:38+00:00",
- "latency_s": 8.79,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T03:58:32+00:00",
+ "latency_s": 10.62,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon-na-roo; bon (good) + na (no/not) + roo (root/rue)\",\n    \"reading\": \"Good without roots; goodness stripped of origin or foundation.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bonna (Latin feminine name) + roo (Australian homophone of rue, regret)\",\n    \"reading\": \"The woman's sorrow; feminine regret or lamentation.\",\n    \"languages\": [\"la\", \"en\", \"en-AU\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon + na + roux; roux (French cooking term, browned flour-fat mixture)\",\n    \"reading\": \"Good darkness or good burning; alchemical darkening or nigredo.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bonnaroo → Bar noon or Boon rar or Roan boron\",\n    \"reading\": \"The bar at midday; tribunal or judgment at noon's zenith hour.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Roo: English dialectal abbreviation of kangaroo, from Guugu Yimidhirr gangurru\",\n    \"reading\": \"Good bond with the leaping animal; elevation through bound movement.\",\n    \"languages\": [\"en\", \"aus-aboriginal\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon-na-roo → bonne (French: good woman/servant) + roo\",\n    \"reading\": \"The good servant's leap; faithful ascension through obedience.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B(2) + O(15) + N(14) + N(14) + A(1) + R(18) + O(15) + O(15) = 94\",\n    \"reading\": \"Plutonium's atomic number; transformation through hidden fire and decay.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bonne à rue (French) = good for/at the street\",\n    \"reading\": \"That which serves the public way; common good made manifest.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bonne (Fr: good woman) + Roux (Fr: red) + O (the eye)\",\n    \"reading\": \"The good woman's red eye; passion, witness, or alchemical vision.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-O-N-N-A-R-O-O: first letters as acronym of sacred phrase\",\n    \"reading\": \"Initial letters await revelation; the word guards its deeper name.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bonne à roux (French alchemy): good reddening/gilding\",",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 78 column 24 (char 2782)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon-na-roo; bon (French) = good; na = no/not (negation across Romance); roo = rue (regret)\",\n    \"reading\": \"Good negation of regret; the absence of sorrow or remorse.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bonnaroo ≈ bon-na-rue (French); rue = street, path; bon = good\",\n    \"reading\": \"The good street or path; a favorable way or direction.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon-na-roo; roo = root (English); na = born/nature (Latin natus); bon = good\",\n    \"reading\": \"Good birth or nature at the root; fundamental goodness of origin.\",\n    \"languages\": [\"en\", \"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bonnaroo → Boon + Arro; boon = blessing; arro = arrow\",\n    \"reading\": \"A blessed arrow; a fortunate or divinely-directed projectile or aim.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B=2, O=15, N=14, N=14, A=1, R=18, O=15, O=15; sum = 94 = 9+4 = 13 = 1+3 = 4 (stability)\",\n    \"reading\": \"Numerologically reduces to four: stability, foundation, earthly manifestation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon-na-roo; roo = ροο (Greek rho-o); rho = flow; o = being\",\n    \"reading\": \"Good flowing being; the benevolent current or stream of existence.\",\n    \"languages\": [\"fr\", \"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bon < Latin bonus (good); -aroo < Australian English suffix -aroo (diminutive/augmentative)\",\n    \"reading\": \"A good thing, emphasized or enlarged; goodness made prominent or exaggerated.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Oxford English Dictionary (Australian English entries)\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bonnaroo ≈ Bonne à roux (French); bonne = good/maid; roux = red/russet\",\n    \"reading\": \"The good red or russet; virtue associated with fire, passion, or ruddy earth.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon-na-roo; na = not (Sanskrit na); roo = light/luminous (Sanskrit ruc-)\",\n    \"reading\": \"Good absence of light; blessed darkness or the void from which creation emerges.\",\n    \"languages\": [\"fr\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-O-N-N-A-R-O-O: Beginning Of New Nature's Arousal Reaches Oneness Outward\",\n    \"reading\": \"The initials spell emergence of new nature toward unified outward expression.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon-na-roo; roo = Hebrew ראו (ra'u, they saw); na = negation\",\n    \"reading\": \"Good unseen or good that escapes sight; invisible blessing or hidden grace.\",\n    \"languages\": [\"fr\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bonnaroo ≈ Bonne à rue (French); rue = regret; bonne = good maid/servant\",\n    \"reading\": \"The good servant of regret; redemptive sorrow or virtuous remorse.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon-na-roo; bon (French) = good; na = no/not (negation across Romance); roo = rue (regret)",
+   "reading": "Good negation of regret; the absence of sorrow or remorse.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bonnaroo ≈ bon-na-rue (French); rue = street, path; bon = good",
+   "reading": "The good street or path; a favorable way or direction.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon-na-roo; roo = root (English); na = born/nature (Latin natus); bon = good",
+   "reading": "Good birth or nature at the root; fundamental goodness of origin.",
+   "languages": [
+    "en",
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bonnaroo → Boon + Arro; boon = blessing; arro = arrow",
+   "reading": "A blessed arrow; a fortunate or divinely-directed projectile or aim.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B=2, O=15, N=14, N=14, A=1, R=18, O=15, O=15; sum = 94 = 9+4 = 13 = 1+3 = 4 (stability)",
+   "reading": "Numerologically reduces to four: stability, foundation, earthly manifestation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon-na-roo; roo = ροο (Greek rho-o); rho = flow; o = being",
+   "reading": "Good flowing being; the benevolent current or stream of existence.",
+   "languages": [
+    "fr",
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bon < Latin bonus (good); -aroo < Australian English suffix -aroo (diminutive/augmentative)",
+   "reading": "A good thing, emphasized or enlarged; goodness made prominent or exaggerated.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Oxford English Dictionary (Australian English entries)",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bonnaroo ≈ Bonne à roux (French); bonne = good/maid; roux = red/russet",
+   "reading": "The good red or russet; virtue associated with fire, passion, or ruddy earth.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon-na-roo; na = not (Sanskrit na); roo = light/luminous (Sanskrit ruc-)",
+   "reading": "Good absence of light; blessed darkness or the void from which creation emerges.",
+   "languages": [
+    "fr",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-O-N-N-A-R-O-O: Beginning Of New Nature's Arousal Reaches Oneness Outward",
+   "reading": "The initials spell emergence of new nature toward unified outward expression.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon-na-roo; roo = Hebrew ראו (ra'u, they saw); na = negation",
+   "reading": "Good unseen or good that escapes sight; invisible blessing or hidden grace.",
+   "languages": [
+    "fr",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bonnaroo ≈ Bonne à rue (French); rue = regret; bonne = good maid/servant",
+   "reading": "The good servant of regret; redemptive sorrow or virtuous remorse.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

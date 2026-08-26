@@ -1,0 +1,75 @@
+{
+ "word": "Paris",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T03:27:08+00:00",
+ "latency_s": 87.66,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n    {\"operation\": \"etymology\", \"chain\": \"Latin: parisius\", \"reading\": \"Relating to Paris or its people.\", \"languages\": [\"en\"], \"source\": \"Oxford English Dictionary\"},\n    {\"operation\": \"phonetic_split\", \"chain\": \"P (B) A R I S\", \"reading\": \"A city where people build, act, relate, innovate, and seek.\", \"languages\": [\"en\"], \"confidence\": 0.7},\n    {\"operation\": \"cross_language_homophone\", \"chain\": \"Paris (French) - Paris (Greek)\", \"reading\": \"A city with a similar sound in French and Greek, representing cultural connections between the two languages.\", \"languages\": [\"fr\", \"grc\"], \"confidence\": 0.6},\n    {\"operation\": \"anagram\", \"chain\": \"Paris -> Pairs -> Airs -> Raised\", \"reading\": \"A city that has been raised or elevated in terms of its status and importance.\", \"languages\": [\"en\"], \"confidence\": 0.5},\n    {\"operation\": \"notariqon\", \"chain\": \"P (8) A R I S -> 81 1 9 9 20 1 8\", \"reading\": \"A city with a numerical significance, possibly representing its coordinates or some other hidden meaning.\", \"languages\": [\"en\"], \"confidence\": 0.4},\n    {\"operation\": \"letter_symbol\", \"chain\": \"P (peace) A R I S\", \"reading\": \"A city that symbolizes peace and harmony among its inhabitants and the world.\", \"languages\": [\"en\"], \"confidence\": 0.3}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Latin: parisius",
+   "reading": "Relating to Paris or its people.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "P (B) A R I S",
+   "reading": "A city where people build, act, relate, innovate, and seek.",
+   "languages": [
+    "en"
+   ],
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Paris (French) - Paris (Greek)",
+   "reading": "A city with a similar sound in French and Greek, representing cultural connections between the two languages.",
+   "languages": [
+    "fr",
+    "grc"
+   ],
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Paris -> Pairs -> Airs -> Raised",
+   "reading": "A city that has been raised or elevated in terms of its status and importance.",
+   "languages": [
+    "en"
+   ],
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P (8) A R I S -> 81 1 9 9 20 1 8",
+   "reading": "A city with a numerical significance, possibly representing its coordinates or some other hidden meaning.",
+   "languages": [
+    "en"
+   ],
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P (peace) A R I S",
+   "reading": "A city that symbolizes peace and harmony among its inhabitants and the world.",
+   "languages": [
+    "en"
+   ],
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 6,
+ "refusal_like": false
+}

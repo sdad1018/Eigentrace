@@ -5,15 +5,144 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:18:12+00:00",
- "latency_s": 8.61,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:00:20+00:00",
+ "latency_s": 10.16,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"GLAS-TUN-BURY → glas (glass, transparency) + tun (barrel, vessel) + bury (interment)\",\n    \"reading\": \"A transparent vessel buried; concealment of clarity within earth.\",\n    \"languages\": [\"en\", \"gmc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"GLAS < Old English glæs (glass); TUN < Old English tunne (large cask); BURY < Old English byrig (fortified place)\",\n    \"reading\": \"A fortified place marked by glassware or barrel-making; a settlement of craftsmen.\",\n    \"languages\": [\"en\", \"gmc\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"GLAS (German Glas = glass) + TUN (French tonne = ton, weight) + BURY\",\n    \"reading\": \"Heavy transparent substance buried; weight of clarity concealed underground.\",\n    \"languages\": [\"en\", \"de\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"GLASS-TON-BURY → glass (reflection) + ton (weight, gravity) + bury (hide)\",\n    \"reading\": \"Reflection weighted down and hidden; the burial of what reflects truth.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"GLASTONBURY → GLASS + TON + BURY; rearrangement yields: RUGS-BATON-LY or GUNS-GROAT-BLY\",\n    \"reading\": \"Scattered fragments suggesting weapons, grain-measure, and obscurity; dissolution of form.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"G=7, L=12, A=1, S=19, T=20, O=15, N=14, B=2, U=21, R=18, Y=25 → sum 154 → 1+5+4=10 → 1+0=1\",\n    \"reading\": \"Reduction to unity; the dissolution of multiplicity into primordial oneness.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"GLAS (brightness) + TUN (hollow) + BURY (beneath) → GLAS-TUN-BER-EE\",\n    \"reading\": \"Brightness in a hollow place below, echoing and repeating; hidden luminescence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"GLAS-TON (Latin tonāre = thunder) + BURY → Glass-Thunder-Bury\",\n    \"reading\": \"Buried thunder in transparent vessels; celestial sound imprisoned in matter.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"G-L-A-S-T-O-N-B-U-R-Y → initial acrostic potential; Glass Light Adamantine Stone Transformation Of Nature's Body Unified Radiance Yielded\",\n    \"reading\": \"Transformation of natural matter into unified radiant light through adamantine stone.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 24 (char 2872)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Glass + ton + bury; glass (vitreous substance) + ton (weight/sound) + bury (to inter)\",\n    \"reading\": \"The heavy, transparent thing interred; clarity weighted down and hidden beneath earth.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Glas + ton + bury; glas (Old English) = glass + ton (Old English) = enclosure + bury (fortified place)\",\n    \"reading\": \"A fortified enclosure of glass or clarity; a transparent stronghold.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Glas (German) = glass + ton (French) = tone/sound + bury (English) = inter\",\n    \"reading\": \"The glass tone buried; transparent sound entombed or silenced.\",\n    \"languages\": [\"de\", \"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Glas (Old English glæs) from Proto-Germanic *glasam; ton from Old English tun (enclosure); bury from Old English byrig (fortified town)\",\n    \"reading\": \"An enclosed fortified place of glass or clarity; a defended transparent dwelling.\",\n    \"languages\": [\"ang\", \"gem\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gla + ston + bury; gla (glaze, gleam) + ston (stone) + bury (burial mound)\",\n    \"reading\": \"A gleaming stone burial mound; the luminous sepulcher of mineral matter.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Glastonbury rearranged: Burly Stang Gobs; Gobs Burly Stang; Stung Gobs Rally\",\n    \"reading\": \"Rough, crude matter standing upright; coarse lumps raised or rallied together.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"G-L-A-S-T-O-N-B-U-R-Y: initial letters as acrostic seed\",\n    \"reading\": \"Great Light Ascending Stone Tower Opens New Being Unto Radiant Yearning.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"G (gamma, generative force) + L (light) + A (alpha, beginning) + S (serpent/sigma) + TON (weight of being) + BURY (return to earth)\",\n    \"reading\": \"Generative light at the beginning, serpentine weight returned to earth's womb.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Glas (Dutch) = glass + ton (Spanish) = barrel/cask + bury (English) = inter\",\n    \"reading\": \"A barrel or vessel of glass interred; transparent container entombed.\",\n    \"languages\": [\"nl\", \"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Glass + tun + bury; glass (reflection) + tun (barrel, vessel) + bury (conceal)\",\n    \"reading\": \"A reflective vessel concealed; clarity contained and hidden from sight.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bury from Old English byrig, related to burh (fortification); cognate with borough, burg\",\n    \"reading\": \"A fortified place of glass or transparency; a defended town of clarity.\",\n    \"languages\": [\"ang\", \"gem\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Glas + ton + bur + y; bur (prickly seed pod, rough edge) + y (becoming)\",\n    \"reading\": \"Transparent weight becoming rough and prickly; clarity transformed to thorned matter.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Glass + ton + bury; glass (vitreous substance) + ton (weight/sound) + bury (to inter)",
+   "reading": "The heavy, transparent thing interred; clarity weighted down and hidden beneath earth.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Glas + ton + bury; glas (Old English) = glass + ton (Old English) = enclosure + bury (fortified place)",
+   "reading": "A fortified enclosure of glass or clarity; a transparent stronghold.",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Glas (German) = glass + ton (French) = tone/sound + bury (English) = inter",
+   "reading": "The glass tone buried; transparent sound entombed or silenced.",
+   "languages": [
+    "de",
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Glas (Old English glæs) from Proto-Germanic *glasam; ton from Old English tun (enclosure); bury from Old English byrig (fortified town)",
+   "reading": "An enclosed fortified place of glass or clarity; a defended transparent dwelling.",
+   "languages": [
+    "ang",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gla + ston + bury; gla (glaze, gleam) + ston (stone) + bury (burial mound)",
+   "reading": "A gleaming stone burial mound; the luminous sepulcher of mineral matter.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.68
+  },
+  {
+   "operation": "anagram",
+   "chain": "Glastonbury rearranged: Burly Stang Gobs; Gobs Burly Stang; Stung Gobs Rally",
+   "reading": "Rough, crude matter standing upright; coarse lumps raised or rallied together.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "G-L-A-S-T-O-N-B-U-R-Y: initial letters as acrostic seed",
+   "reading": "Great Light Ascending Stone Tower Opens New Being Unto Radiant Yearning.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G (gamma, generative force) + L (light) + A (alpha, beginning) + S (serpent/sigma) + TON (weight of being) + BURY (return to earth)",
+   "reading": "Generative light at the beginning, serpentine weight returned to earth's womb.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Glas (Dutch) = glass + ton (Spanish) = barrel/cask + bury (English) = inter",
+   "reading": "A barrel or vessel of glass interred; transparent container entombed.",
+   "languages": [
+    "nl",
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Glass + tun + bury; glass (reflection) + tun (barrel, vessel) + bury (conceal)",
+   "reading": "A reflective vessel concealed; clarity contained and hidden from sight.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bury from Old English byrig, related to burh (fortification); cognate with borough, burg",
+   "reading": "A fortified place of glass or transparency; a defended town of clarity.",
+   "languages": [
+    "ang",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.72
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Glas + ton + bur + y; bur (prickly seed pod, rough edge) + y (becoming)",
+   "reading": "Transparent weight becoming rough and prickly; clarity transformed to thorned matter.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

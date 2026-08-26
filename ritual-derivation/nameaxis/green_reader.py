@@ -30,6 +30,10 @@ Options:
   --local-timeout 600        direct caller: seconds per call (mistral-small ran 152 s for 420 tokens)
   --local-num-ctx 4096       direct caller: context window; small enough to keep 14 GB models on the 4080
   --no-prewarm               skip the 1-token warm call that loads each local model before its batch
+  --direct-api               call the five API patients through nameaxis/api_direct.py (same keys, model env vars
+                             and temperature as confront10; max_tokens raised to --api-max-tokens) instead of
+                             C.API_PATIENTS, whose summary-sized caps truncated Claude on 116/117 samples
+  --api-max-tokens 3000
   --skip a,b                 patients to leave out of this run (e.g. mistral-small:latest for a later overnight pass)
   --api-threads              default on: each API patient runs in its own thread while locals run in the main thread;
                              per-patient order is still sequential, so no provider gets a burst
@@ -118,6 +122,17 @@ def prewarm_local(tag, host):
         print(f"   (prewarm {tag} failed: {e})")
 
 
+def unload_all(host):
+    """Evict every resident model before the first warm, so no leftover from an earlier run squeezes us."""
+    try:
+        import requests
+        for m in requests.get(f"{host}/api/ps", timeout=10).json().get("models", []):
+            print(f"   evicting resident {m.get('name')} …", flush=True)
+            requests.post(f"{host}/api/generate", json={"model": m.get("name"), "keep_alive": 0}, timeout=60)
+    except Exception as e:
+        print(f"   (unload_all failed: {e})")
+
+
 def unload_local(tag, host):
     """Evict a model from VRAM (keep_alive 0) so the next local gets the whole card."""
     try:
@@ -162,8 +177,14 @@ def load_patients(args):
     sys.path.insert(0, args.eigentrace)
     import confront10 as C  # noqa: E402
     patients = {}
-    for name, fn in C.API_PATIENTS.items():
-        patients[name] = ("api", fn)
+    if getattr(args, "direct_api", False):
+        sys.path.insert(0, str(HERE))
+        import api_direct
+        for name, fn in api_direct.patients(getattr(args, "api_max_tokens", 3000)).items():
+            patients[name] = ("api", fn)
+    else:
+        for name, fn in C.API_PATIENTS.items():
+            patients[name] = ("api", fn)
     for tag in C.LOCAL_PATIENTS:
         if getattr(args, "use_mt_local", False):
             patients[tag] = ("local", (lambda msgs, tag=tag: C.mt_local(msgs, tag)))
@@ -264,7 +285,8 @@ def run(args):
         rec = {
             "word": w, "model": name, "kind": kind, "sample": i,
             "prompt_version": PROMPT_VERSION, "prompt_sha": prompt_sha,
-            "caller": caller_local if kind == "local" else "C.API_PATIENTS",
+            "caller": caller_local if kind == "local" else
+                      (f"direct_api(max_tokens={args.api_max_tokens})" if args.direct_api else "C.API_PATIENTS"),
             "ts_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
             "latency_s": dt, "ok": bool(raw), "call_error": err,
             "raw": raw, "parsed": parsed, "parse_error": perr, "extracted": extracted,
@@ -299,6 +321,8 @@ def run(args):
         for name in api_names:
             run_model(name)
     prev_local = None
+    if local_names and not args.mock:
+        unload_all(host)
     for name in local_names:
         pending = [1 for (w, i) in jobs_by_model[name]
                    if not ((out / slug(w) / f"{slug(name)}_{i}.json").exists() and not args.no_resume)]
@@ -346,6 +370,8 @@ def main():
     ap.add_argument("--local-timeout", type=int, default=600)
     ap.add_argument("--local-num-ctx", type=int, default=4096)
     ap.add_argument("--no-prewarm", action="store_true")
+    ap.add_argument("--direct-api", action="store_true")
+    ap.add_argument("--api-max-tokens", type=int, default=3000)
     ap.add_argument("--skip")
     ap.add_argument("--api-threads", dest="api_threads", action="store_true", default=True)
     ap.add_argument("--no-api-threads", dest="api_threads", action="store_false")

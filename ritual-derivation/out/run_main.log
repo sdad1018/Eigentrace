@@ -1052,3 +1052,17 @@ samples/model/word: 3   local caller: direct:/api/chat(temperature=0.4,num_predi
 [1048/1053] ok  nous-hermes2:latest    'Voltaire'                   #0  126.5s n=7
 [1049/1053] ok  nous-hermes2:latest    'Voltaire'                   #1   79.0s n=7
 [1050/1053] ok  nous-hermes2:latest    'Voltaire'                   #2   16.9s n=7
+[1051/1053] ok  nous-hermes2:latest    'Paris'                      #0   87.7s n=6
+[1052/1053] ok  nous-hermes2:latest    'Paris'                      #1   28.1s n=13
+[1053/1053] ok  nous-hermes2:latest    'Paris'                      #2   13.5s n=7
+
+── summary ──
+ChatGPT                ok=117 parsed=114 fail=  0 refusal_like=  0 resumed=  1 mean_latency=5.0
+Claude                 ok=117 parsed=  1 fail=  0 refusal_like=  0 resumed=  0 mean_latency=9.2
+Gemini                 ok=117 parsed=116 fail=  0 refusal_like=  0 resumed=  1 mean_latency=25.7
+DeepSeek               ok=117 parsed=117 fail=  0 refusal_like=  0 resumed=  1 mean_latency=9.8
+Grok                   ok=117 parsed=117 fail=  0 refusal_like=  0 resumed=  1 mean_latency=6.9
+qwen2.5:14b            ok=117 parsed=116 fail=  0 refusal_like=  0 resumed=  1 mean_latency=40.8
+mistral:latest         ok=117 parsed=116 fail=  0 refusal_like=  0 resumed=  1 mean_latency=13.0
+llama3:latest          ok=117 parsed=112 fail=  0 refusal_like=  0 resumed=  1 mean_latency=13.7
+nous-hermes2:latest    ok=117 parsed= 92 fail=  0 refusal_like=  0 resumed=  1 mean_latency=29.0

@@ -5,15 +5,145 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:17:25+00:00",
- "latency_s": 9.98,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T03:59:26+00:00",
+ "latency_s": 12.26,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Red: Old English *read* → Proto-Germanic *raudaz* (reddish); Rocks: Old English *roccas* → Proto-Germanic *rukk-* (heap, pile)\",\n    \"reading\": \"Ruddy heap or reddish accumulation; earth's colored foundation exposed and revealed.\",\n    \"languages\": [\"en\", \"gem\"],\n    \"source\": \"Oxford English Dictionary; Grimm's Law\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Red = *redd* (to advise, counsel in archaic English); Rocks = *roc* (fabulous bird) + *ks* (plural marker); Red Rocks = redd + rocs\",\n    \"reading\": \"Counsel of the mythical birds; wisdom of the legendary creatures dwelling in stone.\",\n    \"languages\": [\"en\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Red = *rè* (king in Old French); Rocks = *roque* (castle/rook in chess from Old French)\",\n    \"reading\": \"The sovereign fortress; royal stronghold or throne of stone.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Red Rocks → ck-er-dors; dors-eck-r → reck-dors (reck: to care, heed; dors: sleep in archaic)\",\n    \"reading\": \"Heedless slumber; dormancy of concern; what sleeps beneath indifference.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R = radius, ray, regnum (kingdom); D = delta (opening, division); K = key, kaph (palm of hand)\",\n    \"reading\": \"The kingdom opens like a palm; the radiant key divides the threshold between worlds.\",\n    \"languages\": [\"la\", \"grc\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Red Rocks = *réd* (advise) + *rock* (rotate, shake violently); or *red* (counsel) + *ocks* (to lock)\",\n    \"reading\": \"Counsel to lock fast; wisdom that secures and immobilizes; binding advice in stone.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Rocks: Middle English *rocke* from Old Norse *rokkr* (spinning wheel, distaff); Red from rueful/rued past\",\n    \"reading\": \"The spinning wheel's redness; the wound thread of fate; sorrow's continuous rotation.\",\n    \"languages\": [\"en\", \"non\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Red = *redd* (English dialectal: to clear); Rocks = *roc* (French: rook) or *rocheux* (rocky)\",\n    \"reading\": \"To clear the rocky ground; to strip bare the stony impediment.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.61\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Red Rocks: R-E-D R-O-C-K-S → initials as acrostic: *Regnum Edictum Dominatur Rotam Ordinem Caelestis Kronos*\",\n    \"reading\": \"The kingdom's decree dominates the celestial",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 62 column 30 (char 2722)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Red: Old English rēad, Proto-Germanic *raudaz, Proto-Indo-European *h₁reudʰ- (to redden)\",\n    \"reading\": \"The color of blood, fire, and passion; that which glows with heat and vital force.\",\n    \"languages\": [\"en\", \"gem\"],\n    \"source\": \"Oxford English Dictionary, s.v. red\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Rocks: Old English roccas, from Old Norse rokkr, meaning to spin or turn; also heap of stone\",\n    \"reading\": \"That which turns, spins, endures; the foundation that does not move despite rotation of ages.\",\n    \"languages\": [\"en\", \"non\"],\n    \"source\": \"Oxford English Dictionary, s.v. rock\",\n    \"confidence\": 0.88\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Red Rocks: 'Red' (rɛd) + 'Rocks' (rɑks); rɛd-rɑks → re-d-ro-cks\",\n    \"reading\": \"The return (re-) of the divine (d-) to the origin (ro-) that is concealed (cks).\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Red (en) ≈ Redd (archaic en, to clear); Rocks (en) ≈ Rocs (fr, mythical birds)\",\n    \"reading\": \"The clearing away of obstacles; the mythical birds that carry the soul upward through stone.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Red Rocks → Cored Rks, Dork Recs, Corks Red\",\n    \"reading\": \"The heart (core) of the record; the red seal or mark upon the vessel of knowledge.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Red Rocks: R-R; Double R as the doubled serpent, the caduceus, the spiral of becoming\",\n    \"reading\": \"The doubled force; the hermetic principle of as above, so below, mirrored in stone.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.60\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R = Rho (Greek), the flow; D = Delta, the triangle, the threshold; O = the circle, unity\",\n    \"reading\": \"The flow through the threshold into unity; the passage of becoming through the gateway of stone.\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.64\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Red Rocks: 'Roc' (mythical bird) + 'ks' (cks, the concealment); Red as the bird's color\",\n    \"reading\": \"The great bird of fire and stone; the phoenix that dwells in the rocky heights.\",\n    \"languages\": [\"en\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.61\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Red (en) ≈ Redd (Scots, to put in order); Rocks ≈ Rocs (fr, plural of roc)\",\n    \"reading\": \"The ordering of the great birds; the arrangement of the mythical forces in their proper stations.\",\n    \"languages\": [\"en\", \"sco\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.59\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Red (R=18, E=5, D=4 → 27 → 2+7=9); Rocks (R=18, O=15, C=3, K=11, S=19 → 66 → 6+6=12 → 1+2=3); 9+3=12→3\",\n    \"reading\": \"The completion of the cycle; the return to the trinity, the threefold nature of all manifestation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Rocks: Latin rocca, possibly from Vulgar Latin *rocca, of uncertain origin; some link to Frankish *rukka\",\n    \"reading\": \"The fortress, the stronghold; that which cannot be moved or conquered by time.\",\n    \"languages\": [\"en\", \"la\", \"gem\"],\n    \"source\": \"Oxford English Dictionary, s.v. rock; Merriam-Webster\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Red Rocks: 'Reds' (plural, collective) + 'Rocks' → the reds that are rocks; the redness inherent in stone\",\n    \"reading\": \"The iron oxide within stone; the blood of the earth made visible in mineral form.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Red: Old English rēad, Proto-Germanic *raudaz, Proto-Indo-European *h₁reudʰ- (to redden)",
+   "reading": "The color of blood, fire, and passion; that which glows with heat and vital force.",
+   "languages": [
+    "en",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary, s.v. red",
+   "confidence": 0.95
+  },
+  {
+   "operation": "etymology",
+   "chain": "Rocks: Old English roccas, from Old Norse rokkr, meaning to spin or turn; also heap of stone",
+   "reading": "That which turns, spins, endures; the foundation that does not move despite rotation of ages.",
+   "languages": [
+    "en",
+    "non"
+   ],
+   "source": "Oxford English Dictionary, s.v. rock",
+   "confidence": 0.88
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Red Rocks: 'Red' (rɛd) + 'Rocks' (rɑks); rɛd-rɑks → re-d-ro-cks",
+   "reading": "The return (re-) of the divine (d-) to the origin (ro-) that is concealed (cks).",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Red (en) ≈ Redd (archaic en, to clear); Rocks (en) ≈ Rocs (fr, mythical birds)",
+   "reading": "The clearing away of obstacles; the mythical birds that carry the soul upward through stone.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "anagram",
+   "chain": "Red Rocks → Cored Rks, Dork Recs, Corks Red",
+   "reading": "The heart (core) of the record; the red seal or mark upon the vessel of knowledge.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Red Rocks: R-R; Double R as the doubled serpent, the caduceus, the spiral of becoming",
+   "reading": "The doubled force; the hermetic principle of as above, so below, mirrored in stone.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R = Rho (Greek), the flow; D = Delta, the triangle, the threshold; O = the circle, unity",
+   "reading": "The flow through the threshold into unity; the passage of becoming through the gateway of stone.",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.64
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Red Rocks: 'Roc' (mythical bird) + 'ks' (cks, the concealment); Red as the bird's color",
+   "reading": "The great bird of fire and stone; the phoenix that dwells in the rocky heights.",
+   "languages": [
+    "en",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.61
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Red (en) ≈ Redd (Scots, to put in order); Rocks ≈ Rocs (fr, plural of roc)",
+   "reading": "The ordering of the great birds; the arrangement of the mythical forces in their proper stations.",
+   "languages": [
+    "en",
+    "sco",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.59
+  },
+  {
+   "operation": "numerical",
+   "chain": "Red (R=18, E=5, D=4 → 27 → 2+7=9); Rocks (R=18, O=15, C=3, K=11, S=19 → 66 → 6+6=12 → 1+2=3); 9+3=12→3",
+   "reading": "The completion of the cycle; the return to the trinity, the threefold nature of all manifestation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Rocks: Latin rocca, possibly from Vulgar Latin *rocca, of uncertain origin; some link to Frankish *rukka",
+   "reading": "The fortress, the stronghold; that which cannot be moved or conquered by time.",
+   "languages": [
+    "en",
+    "la",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary, s.v. rock; Merriam-Webster",
+   "confidence": 0.72
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Red Rocks: 'Reds' (plural, collective) + 'Rocks' → the reds that are rocks; the redness inherent in stone",
+   "reading": "The iron oxide within stone; the blood of the earth made visible in mineral form.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.68
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

@@ -1,0 +1,156 @@
+{
+ "word": "Paris",
+ "model": "nous-hermes2:latest",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T03:27:36+00:00",
+ "latency_s": 28.11,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \"chain\": \"Latin: Parisius, from the Celtic tribe name Parrizi (Parisii)\", \"reading\": \"The city was named after a local Celtic tribe called Parisii.\", \"languages\": [\"la\"], \"source\": \"https://en.wikipedia.org/wiki/History_of_Paris\", \"confidence\": 0.9},\n  {\"operation\": \"phonetic_split\", \"chain\": \"P A R I S\", \"reading\": \"The word Paris can be split into syllables: P A R I S, each representing a distinct sound.\", \"languages\": [\"en\"], \"source\": \"https://www.dictionary.com/browse/paris\", \"confidence\": 0.8},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"French: Paris, English: Pair\", \"reading\": \"In French, 'Paris' means the city in France, while in English, 'Pair' refers to two of something or a match.\", \"languages\": [\"en\", \"fr\"], \"source\": \"https://www.collinsdictionary.com/dictionary/english-french/paris\", \"confidence\": 0.7},\n  {\"operation\": \"anagram\", \"chain\": \"P A R I S -> SAPIR\", \"reading\": \"The anagram 'SAPIR' can be interpreted as a sapient being, hinting at the intellectual and cultural nature of Paris.\", \"languages\": [\"en\"], \"source\": \"https://www.wordplay.com/anagram-solver/?word=paris\", \"confidence\": 0.6},\n  {\"operation\": \"notariqon\", \"chain\": \"P A R I S -> PRIME\", \"reading\": \"The notariqonic interpretation of 'Paris' is 'PRIME', which can symbolize the city as a prime location in terms of art, culture, and history.\", \"languages\": [\"en\"], \"source\": \"https://www.biblewheel.com/notariqon.htm\", \"confidence\": 0.5},\n  {\"operation\": \"letter_symbol\", \"chain\": \"P A R I S -> P (73) A (1) R (18) I (9) S (19)\", \"reading\": \"The letters in 'Paris' can be assigned their respective positions in the alphabet, forming a sequence of numbers that represents the city numerologically.\", \"languages\": [\"en\"], \"source\": \"https://www.alphadictionary.com/alphabet-number-sequence\", \"confidence\": 0.4},\n  {\"operation\": \"numerical\", \"chain\": \"The sum of the digits in 'Paris' is 3+1+9+1+1=15.\", \"reading\": \"Mathematically, the city can be represented by the number 15, which may carry some significance or symbolism.\", \"languages\": [\"en\"], \"source\": \"https://www.calculatorsoup.com/calculators/math-algebra/addition.php\", \"confidence\": 0.3},\n  {\"operation\": \"etymology\", \"chain\": \"Old French: Parisio, from Latin: Parisius, from the Celtic tribe name Parrizi (Parisii)\", \"reading\": \"The city was named after a local Celtic tribe called Parisii.\", \"languages\": [\"fr\"], \"source\": \"https://www.thefreedictionary.com/Paris\", \"confidence\": 0.9},\n  {\"operation\": \"phonetic_split\", \"chain\": \"P A R I S, P A R I Z\", \"reading\": \"In French, 'Paris' is pronounced as 'P A R I Z', while in English it is 'P A R I S'. The phonetic split highlights the differences and similarities between the two languages.\", \"languages\": [\"en\", \"fr\"], \"source\": \"https://www.dictionary.com/browse/paris\", \"confidence\": 0.8},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"French: Paris, English: Pair\", \"reading\": \"In French, 'Paris' means the city in France, while in English, 'Pair' refers to two of something or a match.\", \"languages\": [\"en\", \"fr\"], \"source\": \"https://www.collinsdictionary.com/dictionary/english-french/paris\", \"confidence\": 0.7},\n  {\"operation\": \"anagram\", \"chain\": \"P A R I S -> SAPIR, SAPPHIRE\", \"reading\": \"The anagrams 'SAPIR' and 'SAPPHIRE' represent the intellectual and cultural nature of Paris as well as its allure and beauty.\", \"languages\": [\"en\", \"fr\"], \"source\": \"https://www.wordplay.com/anagram-solver/?word=paris\", \"confidence\": 0.6},\n  {\"operation\": \"letter_symbol\", \"chain\": \"P A R I S -> P (73) A (1) R (18) I (9) S (19)\", \"reading\": \"The letters in 'Paris' can be assigned their respective positions in the alphabet, forming a sequence of numbers that represents the city numerologically.\", \"languages\": [\"en\", \"fr\"], \"source\": \"https://www.alphadictionary.com/alphabet-number-sequence\", \"confidence\": 0.5},\n  {\"operation\": \"numerical\", \"chain\": \"The sum of the digits in 'Paris' is 3+1+9+1+1=15.\", \"reading\": \"Mathematically, the city can be represented by the number 15, which may carry some significance or symbolism.\", \"languages\": [\"en\", \"fr\"], \"source\": \"https://www.calculatorsoup.com/calculators/math-algebra/addition.php\", \"confidence\": 0.3}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Latin: Parisius, from the Celtic tribe name Parrizi (Parisii)",
+   "reading": "The city was named after a local Celtic tribe called Parisii.",
+   "languages": [
+    "la"
+   ],
+   "source": "https://en.wikipedia.org/wiki/History_of_Paris",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "P A R I S",
+   "reading": "The word Paris can be split into syllables: P A R I S, each representing a distinct sound.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.dictionary.com/browse/paris",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "French: Paris, English: Pair",
+   "reading": "In French, 'Paris' means the city in France, while in English, 'Pair' refers to two of something or a match.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "https://www.collinsdictionary.com/dictionary/english-french/paris",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "P A R I S -> SAPIR",
+   "reading": "The anagram 'SAPIR' can be interpreted as a sapient being, hinting at the intellectual and cultural nature of Paris.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.wordplay.com/anagram-solver/?word=paris",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "P A R I S -> PRIME",
+   "reading": "The notariqonic interpretation of 'Paris' is 'PRIME', which can symbolize the city as a prime location in terms of art, culture, and history.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.biblewheel.com/notariqon.htm",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P A R I S -> P (73) A (1) R (18) I (9) S (19)",
+   "reading": "The letters in 'Paris' can be assigned their respective positions in the alphabet, forming a sequence of numbers that represents the city numerologically.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.alphadictionary.com/alphabet-number-sequence",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "The sum of the digits in 'Paris' is 3+1+9+1+1=15.",
+   "reading": "Mathematically, the city can be represented by the number 15, which may carry some significance or symbolism.",
+   "languages": [
+    "en"
+   ],
+   "source": "https://www.calculatorsoup.com/calculators/math-algebra/addition.php",
+   "confidence": 0.3
+  },
+  {
+   "operation": "etymology",
+   "chain": "Old French: Parisio, from Latin: Parisius, from the Celtic tribe name Parrizi (Parisii)",
+   "reading": "The city was named after a local Celtic tribe called Parisii.",
+   "languages": [
+    "fr"
+   ],
+   "source": "https://www.thefreedictionary.com/Paris",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "P A R I S, P A R I Z",
+   "reading": "In French, 'Paris' is pronounced as 'P A R I Z', while in English it is 'P A R I S'. The phonetic split highlights the differences and similarities between the two languages.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "https://www.dictionary.com/browse/paris",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "French: Paris, English: Pair",
+   "reading": "In French, 'Paris' means the city in France, while in English, 'Pair' refers to two of something or a match.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "https://www.collinsdictionary.com/dictionary/english-french/paris",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "P A R I S -> SAPIR, SAPPHIRE",
+   "reading": "The anagrams 'SAPIR' and 'SAPPHIRE' represent the intellectual and cultural nature of Paris as well as its allure and beauty.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "https://www.wordplay.com/anagram-solver/?word=paris",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "P A R I S -> P (73) A (1) R (18) I (9) S (19)",
+   "reading": "The letters in 'Paris' can be assigned their respective positions in the alphabet, forming a sequence of numbers that represents the city numerologically.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "https://www.alphadictionary.com/alphabet-number-sequence",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "The sum of the digits in 'Paris' is 3+1+9+1+1=15.",
+   "reading": "Mathematically, the city can be represented by the number 15, which may carry some significance or symbolism.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "https://www.calculatorsoup.com/calculators/math-algebra/addition.php",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 13,
+ "refusal_like": false
+}

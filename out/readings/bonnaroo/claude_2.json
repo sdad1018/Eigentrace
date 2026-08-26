@@ -5,15 +5,145 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:16:47+00:00",
- "latency_s": 9.52,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T03:58:42+00:00",
+ "latency_s": 10.45,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon-na-roo; bon (Fr.) = good; na = no/not; roo = kangaroo or rue (regret)\",\n    \"reading\": \"Good negation; good without, or the absence of goodness—a paradox of presence and void.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bonna (Latin feminine) + roo; bonna = good woman or handmaiden; roo = red (Old Norse rauðr)\",\n    \"reading\": \"The red handmaiden; a feminine force of blood, service, or earthly ruddy vitality.\",\n    \"languages\": [\"la\", \"non\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bo-nna-roo; Bo = to be (archaic); nna = nasal doubled feminine; roo = root or rue\",\n    \"reading\": \"To be rooted in feminine sorrow or regret; becoming-rooted in rue.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bonnaroo → barnoor, oarborn, nobor-oan, roobarn\",\n    \"reading\": \"The born-from-the-barn; rustic genesis; humility sprung from earth and animal labour.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B=2, O=15, N=14, N=14, A=1, R=18, O=15, O=15; sum: 94 → 13 → 4; Malkuth (material world)\",\n    \"reading\": \"Material manifestation; earthly grounding; the fourth principle descending into substance and form.\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bonna: Latin bonus (good) + feminine -a; roo: Old English hreow (sorrow, rue, regret)\",\n    \"reading\": \"The goodness of sorrow; virtue discovered in repentance and the feminine acknowledgment of grief.\",\n    \"languages\": [\"la\", \"ang\"],\n    \"source\": \"Oxford English Dictionary; Walde-Pokorny Etymologisches Wörterbuch\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon-nar-oo; bon = good (Fr.); nar = gnaw/narrate; oo = dual infinite or two mouths\",\n    \"reading\": \"Good gnawing or speaking; the duality that consumes and utters truth simultaneously.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-O-N-N-A-R-O-O: Beginning Of Negative Nature's Absent Rational Order\",\n    \"reading\": \"The alpha-point where irrationality and chaos precede ordered thought—primordial negation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bon (Fr.) + naroo; nar = knower (Hebrew נר ner = lamp); oo = infinity\",\n    \"reading\": \"The knowing-light of goodness; illumination without end; the lamp of blessing.\",\n    \"languages\": [\"fr\", \"he\"],\n    \"source\": \"generative",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 2893)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon-na-roo; Bon (French) = good; na = no/negation; roo = kangaroo or root\",\n    \"reading\": \"Good negation of root; the rejection of foundational principles or origins.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bonnaroo ≈ Bon-à-rue (French); bon à rue = good for the street/public way\",\n    \"reading\": \"That which is good for the common way; public virtue or collective benefit.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bonn-a-roo; Bonn (German city, seat of reason); a-roo = away-kangaroo or away-root\",\n    \"reading\": \"Reason departing; the flight of rational principle into the wild or unknown.\",\n    \"languages\": [\"de\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bonnaroo → Roo-ban-no; roo (root) + ban (prohibition) + no (negation)\",\n    \"reading\": \"The prohibition and negation of roots; severance from origin and law.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-O-N-N-A-R-O-O: Begin Or Negate Nature's Ancient Rooted Order\",\n    \"reading\": \"Initials suggest command to begin by negating nature's ancient ordered roots.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Roo from Old English 'hreow' (sorrow, regret); Bonn from Latin 'bonus' (good)\",\n    \"reading\": \"Good sorrow; the paradox of beneficial suffering or redemptive regret.\",\n    \"languages\": [\"en\", \"la\", \"oe\"],\n    \"source\": \"Oxford English Dictionary; Walde-Pokorny Etymological Dictionary\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon-na-roo; na (Sanskrit) = not; roo (Sanskrit rupa) = form; bon = being\",\n    \"reading\": \"Being without form; the formless essence or non-manifest existence.\",\n    \"languages\": [\"sa\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bonnaroo ≈ Bonne-à-rue (French feminine); servant of the street\",\n    \"reading\": \"The feminine servant of the public way; service to the collective body.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B=2, O=15, N=14, N=14, A=1, R=18, O=15, O=15; sum=94; 9+4=13; 1+3=4\",\n    \"reading\": \"The number four: stability, foundation, the four cardinal points reasserted.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon-na-roo; roo doubled = emphasis; na = breath/spirit; bon = good\",\n    \"reading\": \"Good spirit doubled; the amplification or doubling of vital breath or essence.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.54\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bonnaroo ≈ Bona-roux (Latin-French blend); bona (goods) + roux (red/russet)\",\n    \"reading\": \"Red or russet goods; earthen or base material wealth; the material foundation.\",\n    \"languages\": [\"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bonnaroo → Baronoo; baron (noble) + oo (doubled O, eyes or witness)\",\n    \"reading\": \"The noble witness; authority observing and testifying to truth.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.51\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon-na-roo; Bon (French) = good; na = no/negation; roo = kangaroo or root",
+   "reading": "Good negation of root; the rejection of foundational principles or origins.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bonnaroo ≈ Bon-à-rue (French); bon à rue = good for the street/public way",
+   "reading": "That which is good for the common way; public virtue or collective benefit.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bonn-a-roo; Bonn (German city, seat of reason); a-roo = away-kangaroo or away-root",
+   "reading": "Reason departing; the flight of rational principle into the wild or unknown.",
+   "languages": [
+    "de",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bonnaroo → Roo-ban-no; roo (root) + ban (prohibition) + no (negation)",
+   "reading": "The prohibition and negation of roots; severance from origin and law.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-O-N-N-A-R-O-O: Begin Or Negate Nature's Ancient Rooted Order",
+   "reading": "Initials suggest command to begin by negating nature's ancient ordered roots.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "etymology",
+   "chain": "Roo from Old English 'hreow' (sorrow, regret); Bonn from Latin 'bonus' (good)",
+   "reading": "Good sorrow; the paradox of beneficial suffering or redemptive regret.",
+   "languages": [
+    "en",
+    "la",
+    "oe"
+   ],
+   "source": "Oxford English Dictionary; Walde-Pokorny Etymological Dictionary",
+   "confidence": 0.62
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon-na-roo; na (Sanskrit) = not; roo (Sanskrit rupa) = form; bon = being",
+   "reading": "Being without form; the formless essence or non-manifest existence.",
+   "languages": [
+    "sa",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.48
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bonnaroo ≈ Bonne-à-rue (French feminine); servant of the street",
+   "reading": "The feminine servant of the public way; service to the collective body.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B=2, O=15, N=14, N=14, A=1, R=18, O=15, O=15; sum=94; 9+4=13; 1+3=4",
+   "reading": "The number four: stability, foundation, the four cardinal points reasserted.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon-na-roo; roo doubled = emphasis; na = breath/spirit; bon = good",
+   "reading": "Good spirit doubled; the amplification or doubling of vital breath or essence.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.54
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bonnaroo ≈ Bona-roux (Latin-French blend); bona (goods) + roux (red/russet)",
+   "reading": "Red or russet goods; earthen or base material wealth; the material foundation.",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bonnaroo → Baronoo; baron (noble) + oo (doubled O, eyes or witness)",
+   "reading": "The noble witness; authority observing and testifying to truth.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.51
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

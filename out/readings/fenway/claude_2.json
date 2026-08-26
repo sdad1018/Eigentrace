@@ -5,15 +5,140 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:18:38+00:00",
- "latency_s": 8.26,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:00:48+00:00",
+ "latency_s": 8.65,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fen + way; fen (wetland) + way (path) = passage through marshland\",\n    \"reading\": \"A path or journey through wetlands, swamps, or liminal aqueous spaces.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Fen < Old English fenn; way < Old English weg\",\n    \"reading\": \"Archaic fusion: muddy ground-passage, denoting transition through unstable terrain.\",\n    \"languages\": [\"en\", \"gem\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fen (Dutch/German) = fire; way = path → fire-path\",\n    \"reading\": \"Illuminated passage; the way of consuming transformation or spiritual purification.\",\n    \"languages\": [\"en\", \"nl\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fen + way; fen ~ fend (to ward off) + way\",\n    \"reading\": \"Defense-way; a path of protection or a means of warding off danger.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"F = serpent/phi; en = in/within; way = direction → serpentine inward direction\",\n    \"reading\": \"Coiled descent into inner mysteries; the serpent's hidden passage within.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Fenway → Fawn + Ey; fawn (young deer, yellow-brown) + ey (island/eye)\",\n    \"reading\": \"The eye or sight of innocent youth; tender perception of hidden lands.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"F-E-N-W-A-Y as initial letters = cipher for hidden phrase\",\n    \"reading\": \"Acrostic potential: words beginning with these letters hide occult instruction.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fen + way; fen ~ fin (boundary) + way → boundary-path\",\n    \"reading\": \"Liminal passage marking threshold between ordered and chaotic realms.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fen ~ fin (Latin) = end; way = journey → end-journey\",\n    \"reading\": \"Ultimate destination; the final waypoint or terminus of spiritual progress.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Way < PIE *wegh (to move, carry); Fen < PIE *pen (mud, swamp)\",\n    \"reading\": \"Proto-Indo-European root fusion: moving through primordial formlessness itself.\",\n    \"languages\": [\"gem\", \"pie\"],\n    \"source\": \"Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fen + way; fen ~ fen (Chinese: sealed) + way → sealed path\",\n    \"",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 78 column 32 (char 2870)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fen + way; fen (marshy ground) + way (path)\",\n    \"reading\": \"A path through wetland or marshland; passage through liminal, transitional space.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Fen < Old English fenn; way < Old English weg\",\n    \"reading\": \"Fen: boggy ground (Proto-Germanic *fanniz); way: path or road (Proto-Germanic *wegaz).\",\n    \"languages\": [\"en\", \"gem\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fen (French) = woman; way (English) = manner\",\n    \"reading\": \"The feminine principle in motion; woman's way or manner; the path of the feminine.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fen + way; fen as 'fend' (to ward off) + way\",\n    \"reading\": \"Defense or warding-off along a path; protective passage or boundary.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"F = fire or force; W = water or flow; Y = division or choice\",\n    \"reading\": \"Fire meets water; force encounters flow; the meeting of opposing elemental principles.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Fenway → waxfen, fawnex, newfay\",\n    \"reading\": \"New fay (fairy); emergence of the otherworldly or magical from natural ground.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fen + way; fen as 'fain' (gladly) + way\",\n    \"reading\": \"The way one goes gladly; the path of desire or willing movement.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fen (German) = lack/absence; way (English) = path\",\n    \"reading\": \"The path of absence; way through emptiness or void; negation in motion.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"F-E-N-W-A-Y as initial letters\",\n    \"reading\": \"Initials suggest hidden phrase; requires external key or context for completion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fen + way; fen as 'fane' (temple) + way\",\n    \"reading\": \"The way to the sacred temple; pilgrimage path to the holy place.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Fen (Latin fen-) relates to fend; way as via (Latin)\",\n    \"reading\": \"The via (way) of defense or warding; protective passage or boundary road.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Fen + way; fen as 'fawn' (young deer) + way\",\n    \"reading\": \"The way of the young deer; innocent passage; natural, unguarded movement.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Fen + way; fen (marshy ground) + way (path)",
+   "reading": "A path through wetland or marshland; passage through liminal, transitional space.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "etymology",
+   "chain": "Fen < Old English fenn; way < Old English weg",
+   "reading": "Fen: boggy ground (Proto-Germanic *fanniz); way: path or road (Proto-Germanic *wegaz).",
+   "languages": [
+    "en",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fen (French) = woman; way (English) = manner",
+   "reading": "The feminine principle in motion; woman's way or manner; the path of the feminine.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Fen + way; fen as 'fend' (to ward off) + way",
+   "reading": "Defense or warding-off along a path; protective passage or boundary.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "F = fire or force; W = water or flow; Y = division or choice",
+   "reading": "Fire meets water; force encounters flow; the meeting of opposing elemental principles.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Fenway → waxfen, fawnex, newfay",
+   "reading": "New fay (fairy); emergence of the otherworldly or magical from natural ground.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Fen + way; fen as 'fain' (gladly) + way",
+   "reading": "The way one goes gladly; the path of desire or willing movement.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fen (German) = lack/absence; way (English) = path",
+   "reading": "The path of absence; way through emptiness or void; negation in motion.",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "F-E-N-W-A-Y as initial letters",
+   "reading": "Initials suggest hidden phrase; requires external key or context for completion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Fen + way; fen as 'fane' (temple) + way",
+   "reading": "The way to the sacred temple; pilgrimage path to the holy place.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Fen (Latin fen-) relates to fend; way as via (Latin)",
+   "reading": "The via (way) of defense or warding; protective passage or boundary road.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Fen + way; fen as 'fawn' (young deer) + way",
+   "reading": "The way of the young deer; innocent passage; natural, unguarded movement.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

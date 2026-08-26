@@ -5,15 +5,144 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:19:43+00:00",
- "latency_s": 10.11,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:02:06+00:00",
+ "latency_s": 10.87,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stage + Coach; stage (from étape, a stopping place) + coach (a vehicle of conveyance)\",\n    \"reading\": \"A resting place that moves; the journey itself becomes the destination through sequential stops.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Stage: Old French estage (dwelling, floor, stopping place) from Vulgar Latin *staticum (standing place). Coach: from Hungarian kocsi (cart from Kocs).\",\n    \"reading\": \"A standing-place that is also a Hungarian cart: motion arising from stasis, journey from settlement.\",\n    \"languages\": [\"en\", \"hu\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Etymological Dictionary of Modern English (Skeat)\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stage (as in theatre) + Coach (as in trainer/guide); the coach stages human development through instruction.\",\n    \"reading\": \"The guide who orchestrates the performance of becoming; instruction rendered as theatre.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"French: 'es ta je coach' = 'you are the coach' (phonetic); Spanish: 'es ta je' approximates 'esta je' (this I).\",\n    \"reading\": \"A declaration of identity: you are the guide; this is my teaching presence.\",\n    \"languages\": [\"en\", \"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"S (serpent, spiral) + T (cross, intersection) + AGE (duration) + C (crescent, becoming) + OACH (O=completion, ACH=Hebrew for 'one')\",\n    \"reading\": \"The spiral-cross through time curves toward completion in singular transformation; becoming one.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Stagecoach → 'achage scot' or 'cast a hog' or 'coach gates' or 'as catch ego'\",\n    \"reading\": \"Gates to passage; the ego caught within exchange; one who coaches passages through thresholds.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stag + e + coach; stag (the male deer, the solitary watcher) + coach (guidance through change)\",\n    \"reading\": \"The solitary watcher becomes a guide; masculine witness transmuted into pedagogical presence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"S-T-A-G-E-C-O-A-C-H: Seeking Truth At Gateway Evokes Cosmic Oneness, Ascension's Coach/Chariot\",\n    \"reading\": \"The truth-seeker at the threshold discovers cosmic unity through the vehicle of transcendence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Coach + age: age (from Old French aage, from Latin aetas, 'lifetime, era'); coach (from kocsi)\",\n    \"reading\": \"The era-vehicle; a carriage through time itself; the instrument by which ages pass and transform.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"hu\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 42 (char 3229)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stage + Coach; stage (from Old French estage) = standing place, level, tier; coach = conveyance\",\n    \"reading\": \"A vessel or platform for ascending through levels; progression by stages toward elevation.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Stage < Old French estage < Vulgar Latin staticum < Latin status (standing, position); Coach < Hungarian kocsi (from Kocs, town)\",\n    \"reading\": \"The standing-place of motion; fixed position mobilized; status made vehicular.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"hu\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Stage ≈ French étage (floor, story); Coach ≈ French cache (hiding place, cache)\",\n    \"reading\": \"Hidden floors; stories concealed within stories; the vehicle as a repository of narrative.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stag + e + coach; stag (male deer) + coach (trainer, guide)\",\n    \"reading\": \"The masculine principle as guide; the horned instructor; virile pedagogy in motion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Stagecoach → Coachages, Cages + oath, Coat + aches\",\n    \"reading\": \"Cages in motion; oaths sworn within enclosures; the suffering of confinement.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"S (serpent, wisdom) + T (cross, intersection) + AGE (time) + C (crescent, becoming) + O (circle, totality) + A (alpha, beginning) + C + H (ladder, ascent)\",\n    \"reading\": \"Serpentine wisdom crosses time's becoming; the circle begins its ascent through doubled crescents.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stage + Coach; coach < coax (to persuade gently); stage = theatrical platform\",\n    \"reading\": \"Gentle persuasion upon the theatrical platform; the art of coaxing an audience through narrative space.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"S-T-A-G-E-C-O-A-C-H as initial letters: Seek Truth Among Great Esoteric Codes Of Ancient Craft Hermeticism\",\n    \"reading\": \"Seek truth hidden in esoteric codes; the hermetic craft concealed within the vehicle's journey.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Coach ≈ German Koch (cook); Stage ≈ German Stätte (place, site)\",\n    \"reading\": \"The place where nourishment is prepared; the site of transformation through heat and mixture.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stag + e + coach; e (the fifth letter, quintessence); stag (pursuit, hunt)\",\n    \"reading\": \"The hunt for the fifth essence; pursuit of the quintessential through vehicular means.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Coach < Middle French coche < Hungarian kocsi; originally a cart from Kocs; now: instructor who 'coaches' (drives forward)\",\n    \"reading\": \"The guide who drives forward; instruction as vehicular propulsion; knowledge as motion.\",\n    \"languages\": [\"en\", \"fr\", \"hu\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stage + Coach; -coach as suffix meaning 'instructor in'; stage-coach = instructor in stages, progression\",\n    \"reading\": \"The master of graduated advancement; the teacher of measured steps; pedagogy through sequential motion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Stage + Coach; stage (from Old French estage) = standing place, level, tier; coach = conveyance",
+   "reading": "A vessel or platform for ascending through levels; progression by stages toward elevation.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Stage < Old French estage < Vulgar Latin staticum < Latin status (standing, position); Coach < Hungarian kocsi (from Kocs, town)",
+   "reading": "The standing-place of motion; fixed position mobilized; status made vehicular.",
+   "languages": [
+    "en",
+    "fr",
+    "la",
+    "hu"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Stage ≈ French étage (floor, story); Coach ≈ French cache (hiding place, cache)",
+   "reading": "Hidden floors; stories concealed within stories; the vehicle as a repository of narrative.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Stag + e + coach; stag (male deer) + coach (trainer, guide)",
+   "reading": "The masculine principle as guide; the horned instructor; virile pedagogy in motion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Stagecoach → Coachages, Cages + oath, Coat + aches",
+   "reading": "Cages in motion; oaths sworn within enclosures; the suffering of confinement.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "S (serpent, wisdom) + T (cross, intersection) + AGE (time) + C (crescent, becoming) + O (circle, totality) + A (alpha, beginning) + C + H (ladder, ascent)",
+   "reading": "Serpentine wisdom crosses time's becoming; the circle begins its ascent through doubled crescents.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Stage + Coach; coach < coax (to persuade gently); stage = theatrical platform",
+   "reading": "Gentle persuasion upon the theatrical platform; the art of coaxing an audience through narrative space.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "S-T-A-G-E-C-O-A-C-H as initial letters: Seek Truth Among Great Esoteric Codes Of Ancient Craft Hermeticism",
+   "reading": "Seek truth hidden in esoteric codes; the hermetic craft concealed within the vehicle's journey.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Coach ≈ German Koch (cook); Stage ≈ German Stätte (place, site)",
+   "reading": "The place where nourishment is prepared; the site of transformation through heat and mixture.",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Stag + e + coach; e (the fifth letter, quintessence); stag (pursuit, hunt)",
+   "reading": "The hunt for the fifth essence; pursuit of the quintessential through vehicular means.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Coach < Middle French coche < Hungarian kocsi; originally a cart from Kocs; now: instructor who 'coaches' (drives forward)",
+   "reading": "The guide who drives forward; instruction as vehicular propulsion; knowledge as motion.",
+   "languages": [
+    "en",
+    "fr",
+    "hu"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Stage + Coach; -coach as suffix meaning 'instructor in'; stage-coach = instructor in stages, progression",
+   "reading": "The master of graduated advancement; the teacher of measured steps; pedagogy through sequential motion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

@@ -5,15 +5,142 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:19:33+00:00",
- "latency_s": 8.74,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:01:55+00:00",
+ "latency_s": 10.87,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Tang + le + wood; Tang (sharp taste) + le (the, French) + wood (timber, matter)\",\n    \"reading\": \"Sharp perception of material substance; the bitter taste of worldly things.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Tang (Old Norse tangr = seaweed, later sharp protrusion) + wood (Old English wudu = forest, matter)\",\n    \"reading\": \"The sharp seaweed-like projection of the material forest; penetrating into substance.\",\n    \"languages\": [\"en\", \"non\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Tangle (en: entanglement) + wood (en: forest); homophone with French 'tant le' (so much the)\",\n    \"reading\": \"Entanglement within matter; so much the confusion of material existence.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Tang (sound of striking metal) + le (diminutive suffix) + wood (substance)\",\n    \"reading\": \"The small resonant strike within matter; vibration embodied in material form.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Tanglewood → Tangle + wood → Towel + dang + ?; or: Dangle + two + ?\",\n    \"reading\": \"That which dangles suspended in duality; oscillation between two states of being.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T (cross, matter) + A (alpha, beginning) + NG (nasal, breath) + L (line, law) + E (existence) + WOOD (four letters: matter squared)\",\n    \"reading\": \"Breath initiating matter through law into existence; spiritual pneuma shaping material form.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Tan (brown, prepared hide) + gle (from gley, clay soil) + wood (timber)\",\n    \"reading\": \"The prepared hide merged with fertile soil and timber; transformation of matter through stages.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Tangle + wood; German 'Tanz' (dance) + 'le' (French) + 'wood'; Latin 'lignea' embedded\",\n    \"reading\": \"The dance within wooden substance; matter in perpetual motion through hidden law.\",\n    \"languages\": [\"en\", \"fr\", \"de\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.61\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"T-A-N-G-L-E-W-O-O-D as initial letters: Tangled Angles Nest Great Light Everywhere Within Occult Opacity's Door\",\n    \"reading\": \"Angles tangled in manifestation; light concealed within apparent opacity reveals occult geometry.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Wood (Old English wudu < Proto-Germanic *widuz = wide, space) + tangle (from Old Norse)\",\n    \"reading",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 24 (char 2972)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Tang + wood; tang (sharp taste/metallic sound) + wood (matter/substance)\",\n    \"reading\": \"Sharp resonance within material substance; the penetrating voice of matter itself.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"tang: Old Norse tangr (seaweed); wood: Old English wudu (forest material)\",\n    \"reading\": \"Seaweed-substance; the tangled growth of the sea made solid and terrestrial.\",\n    \"languages\": [\"en\", \"non\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Tan + gle + wood; tan (brown/leather) + gle (obsolete: to squint/distort) + wood\",\n    \"reading\": \"Darkened, twisted matter; the obscured and knotted nature of material reality.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Tanglewood ≈ French 'tant le bois' (so much wood); tant (so much) + le (the) + bois (wood)\",\n    \"reading\": \"The abundance of wood; the overwhelming presence of material substance.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Tanglewood → 'Wold tang edge' or 'Gland tow edge'\",\n    \"reading\": \"The edge where open land meets the fibrous binding; boundary of wild and worked.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T (cross/tau) + angle + wood; tau as cosmic cross, angle as deviation, wood as matter\",\n    \"reading\": \"The cosmic cross twisted through material substance; divine geometry bent into flesh.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Tang + le + wood; tang (prong/spike) + le (French article) + wood (matter)\",\n    \"reading\": \"The spike piercing through substance; penetration of the immaterial into the material.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"wood: Proto-Germanic *widuz (wide); tang: Proto-Germanic *tangaz (to seize)\",\n    \"reading\": \"That which seizes the wide expanse; grasping force within boundless extension.\",\n    \"languages\": [\"en\", \"gem\"],\n    \"source\": \"Pokorny Indo-European Etymological Dictionary\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"T-A-N-G-L-E-W-O-O-D: Taking All Nature's Gnarled Living Essence Within Obscured Organic Depths\",\n    \"reading\": \"Nature's knotted vital force hidden within organic darkness; the secret life of growth.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Tan (darkening) + gle (knot/tangle) + wood (substance); gle from Old English glaed (knotted)\",\n    \"reading\": \"Darkened knottedness of substance; the obscured intricacy of material being.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Tanglewood ≈ Latin 'tangere' (to touch) + wood; tangere (to touch/affect)\",\n    \"reading\": \"That which touches wood; the contact point between force and matter.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Wood (W = double-V, duality) + Tangle (spiral/serpent motion); W as serpent doubled\",\n    \"reading\": \"The doubled serpent coiled in matter; duality and recursion within substance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Tang + wood; tang (sharp taste/metallic sound) + wood (matter/substance)",
+   "reading": "Sharp resonance within material substance; the penetrating voice of matter itself.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "tang: Old Norse tangr (seaweed); wood: Old English wudu (forest material)",
+   "reading": "Seaweed-substance; the tangled growth of the sea made solid and terrestrial.",
+   "languages": [
+    "en",
+    "non"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Tan + gle + wood; tan (brown/leather) + gle (obsolete: to squint/distort) + wood",
+   "reading": "Darkened, twisted matter; the obscured and knotted nature of material reality.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Tanglewood ≈ French 'tant le bois' (so much wood); tant (so much) + le (the) + bois (wood)",
+   "reading": "The abundance of wood; the overwhelming presence of material substance.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Tanglewood → 'Wold tang edge' or 'Gland tow edge'",
+   "reading": "The edge where open land meets the fibrous binding; boundary of wild and worked.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T (cross/tau) + angle + wood; tau as cosmic cross, angle as deviation, wood as matter",
+   "reading": "The cosmic cross twisted through material substance; divine geometry bent into flesh.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Tang + le + wood; tang (prong/spike) + le (French article) + wood (matter)",
+   "reading": "The spike piercing through substance; penetration of the immaterial into the material.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "etymology",
+   "chain": "wood: Proto-Germanic *widuz (wide); tang: Proto-Germanic *tangaz (to seize)",
+   "reading": "That which seizes the wide expanse; grasping force within boundless extension.",
+   "languages": [
+    "en",
+    "gem"
+   ],
+   "source": "Pokorny Indo-European Etymological Dictionary",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "T-A-N-G-L-E-W-O-O-D: Taking All Nature's Gnarled Living Essence Within Obscured Organic Depths",
+   "reading": "Nature's knotted vital force hidden within organic darkness; the secret life of growth.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Tan (darkening) + gle (knot/tangle) + wood (substance); gle from Old English glaed (knotted)",
+   "reading": "Darkened knottedness of substance; the obscured intricacy of material being.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Tanglewood ≈ Latin 'tangere' (to touch) + wood; tangere (to touch/affect)",
+   "reading": "That which touches wood; the contact point between force and matter.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Wood (W = double-V, duality) + Tangle (spiral/serpent motion); W as serpent doubled",
+   "reading": "The doubled serpent coiled in matter; duality and recursion within substance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

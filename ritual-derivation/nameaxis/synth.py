@@ -209,6 +209,8 @@ def main():
     ap.add_argument("--prose", action="store_true")
     ap.add_argument("--mock", action="store_true")
     ap.add_argument("--only")
+    ap.add_argument("--direct-api", action="store_true")
+    ap.add_argument("--api-max-tokens", type=int, default=3000)
     ap.add_argument("--use-mt-local", action="store_true")
     ap.add_argument("--local-max-tokens", type=int, default=1600)
     ap.add_argument("--local-timeout", type=int, default=600)
@@ -233,6 +235,7 @@ def main():
         import green_reader as G
         class A: pass
         a = A(); a.mock = args.mock; a.eigentrace = args.eigentrace
+        a.direct_api = args.direct_api; a.api_max_tokens = args.api_max_tokens
         a.use_mt_local = args.use_mt_local; a.local_timeout = args.local_timeout
         a.local_max_tokens = args.local_max_tokens; a.local_num_ctx = args.local_num_ctx
         patients, _ = G.load_patients(a)

@@ -5,15 +5,140 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:19:24+00:00",
- "latency_s": 9.44,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:01:44+00:00",
+ "latency_s": 9.84,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Tang + le + wood; tang (sharp sound/taste) + le (the, French article) + wood (matter, substance)\",\n    \"reading\": \"The sharp, resonant quality of wooden material; timber's acute, penetrating character.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"tang: Old Norse *tangr (seaweed); wood: Old English wudu (tree matter)\",\n    \"reading\": \"Seaweed-wood: the maritime or liminal substance between sea-plant and terrestrial growth.\",\n    \"languages\": [\"en\", \"non\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Tan + gle + wood; tan (brown, leather) + gle (obscure/entangle) + wood\",\n    \"reading\": \"The brown substance becomes entangled, knotted, woven into dense vegetable matter.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Tanglewood → French: tant (so much) + glewood; Latin: tangere (to touch)\",\n    \"reading\": \"To touch so much wood; the tactile abundance of timber's contact.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Tanglewood: dog + welt + an + etc.; or: tangle + wod (Old English for mad)\",\n    \"reading\": \"Mad entanglement; the wild, untamed knottedness inherent in growth.\",\n    \"languages\": [\"en\", \"oe\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T=tau (cross); ang (constriction); wood=matter; overall: tau marks the crossing of essence\",\n    \"reading\": \"The cross-marked passage through material substance; initiation via wooden threshold.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Tan (extension/stretch) + gle (writhe/twist) + wood (growth principle)\",\n    \"reading\": \"Stretched, writhing growth; the torsion endemic to living timber's reaching upward.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"wood → German Wut (rage); gle → gloomy (English); tang → German Zahn (tooth)\",\n    \"reading\": \"Teeth of furious gloom; the jagged, fierce dark embedded in forest matter.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"gle: Old English gleo (entertainment, music); wood: substance. Tanglewood = musical wood.\",\n    \"reading\": \"Wood that sings or resonates; timber as the voice of entangled vibration.\",\n    \"languages\": [\"en\", \"oe\"],\n    \"source\": \"Oxford English Dictionary (gleo entry)\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"T-A-N-G-L-E-W-O-O-D: initials or acrostic read as phonetic units\",\n    \"reading\": \"Tacit natural growth; living wood expresses itself through silence and tangible form.\",\n    \"languages",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 2823)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"TANG + WOOD; tang (sharp taste/sound) + wood (matter/substance)\",\n    \"reading\": \"Sharp resonance of matter; the acute voice of timber or forest substance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"TANG: Old Norse 'tangr' (seaweed, sharp point); WOOD: Old English 'wudu' (forest, timber)\",\n    \"reading\": \"Seaweed-sharp forest; the tangled maritime growth of woodland depths.\",\n    \"languages\": [\"en\", \"non\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"TAN + GLEWOOD; tan (brown, leather-work) + gle (gleam, brightness) + wood\",\n    \"reading\": \"Tanned brightness of wood; leather-golden forest luminescence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"TANG (French 'tange' = void, emptiness) + WOOD (English timber)\",\n    \"reading\": \"Empty wood; the void within timber, absence made manifest in substance.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"TANGLEWOOD → WOODTANGLE, WELD + TANGO + OW\",\n    \"reading\": \"Welded dance of wood; the tango of timber joined and intertwined.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T=cross/tau; A=triangle/apex; W=double-V/waters; D=door/delta\",\n    \"reading\": \"Cross-apex waters opening: threshold between sharp points and flowing depths.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"TANG + LE + WOOD; tang (prong) + le (the, French article) + wood\",\n    \"reading\": \"The prong of wood; the pointed tine emerging from forest matter.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"TANGLE: Middle English 'tanglen' (to twist); WOOD: Proto-Germanic 'wudu'\",\n    \"reading\": \"Twisted forest; the interwoven knot of timber and growth.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.88\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"T-A-N-G-L-E-W-O-O-D: initial letters form hidden acrostic potential\",\n    \"reading\": \"Ten letters spell the entanglement itself; the word embodies its own twisted nature.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"TANG + GLEW + OD; tang (sharp) + glew (glow, gleam) + od (essence, force)\",\n    \"reading\": \"Sharp glowing essence; the vital force shining through tangled matter.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"WOOD (English timber) ≈ WUD (Arabic 'wud' = love, affection)\",\n    \"reading\": \"Tangled love; the interwoven affection binding forest and heart.\",\n    \"languages\": [\"en\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"GLED: Old English 'glæd' (bright, shining); WOOD: timber. TANGLE: twist\",\n    \"reading\": \"Bright twisted timber; shining wood caught in the knot of becoming.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.8\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "TANG + WOOD; tang (sharp taste/sound) + wood (matter/substance)",
+   "reading": "Sharp resonance of matter; the acute voice of timber or forest substance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "etymology",
+   "chain": "TANG: Old Norse 'tangr' (seaweed, sharp point); WOOD: Old English 'wudu' (forest, timber)",
+   "reading": "Seaweed-sharp forest; the tangled maritime growth of woodland depths.",
+   "languages": [
+    "en",
+    "non"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "TAN + GLEWOOD; tan (brown, leather-work) + gle (gleam, brightness) + wood",
+   "reading": "Tanned brightness of wood; leather-golden forest luminescence.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "TANG (French 'tange' = void, emptiness) + WOOD (English timber)",
+   "reading": "Empty wood; the void within timber, absence made manifest in substance.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "TANGLEWOOD → WOODTANGLE, WELD + TANGO + OW",
+   "reading": "Welded dance of wood; the tango of timber joined and intertwined.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T=cross/tau; A=triangle/apex; W=double-V/waters; D=door/delta",
+   "reading": "Cross-apex waters opening: threshold between sharp points and flowing depths.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "TANG + LE + WOOD; tang (prong) + le (the, French article) + wood",
+   "reading": "The prong of wood; the pointed tine emerging from forest matter.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.72
+  },
+  {
+   "operation": "etymology",
+   "chain": "TANGLE: Middle English 'tanglen' (to twist); WOOD: Proto-Germanic 'wudu'",
+   "reading": "Twisted forest; the interwoven knot of timber and growth.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.88
+  },
+  {
+   "operation": "notariqon",
+   "chain": "T-A-N-G-L-E-W-O-O-D: initial letters form hidden acrostic potential",
+   "reading": "Ten letters spell the entanglement itself; the word embodies its own twisted nature.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "TANG + GLEW + OD; tang (sharp) + glew (glow, gleam) + od (essence, force)",
+   "reading": "Sharp glowing essence; the vital force shining through tangled matter.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.68
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "WOOD (English timber) ≈ WUD (Arabic 'wud' = love, affection)",
+   "reading": "Tangled love; the interwoven affection binding forest and heart.",
+   "languages": [
+    "en",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "GLED: Old English 'glæd' (bright, shining); WOOD: timber. TANGLE: twist",
+   "reading": "Bright twisted timber; shining wood caught in the knot of becoming.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

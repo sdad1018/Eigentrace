@@ -5,15 +5,143 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:20:20+00:00",
- "latency_s": 7.72,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:02:54+00:00",
+ "latency_s": 10.75,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Route (root) + 91 (nine-one) + Harvest (harv-est)\",\n    \"reading\": \"The root's ninefold unity yields the gathered fruit of labor completed.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Route ≈ French 'route' (road); 91 ≈ quatre-vingt-onze; Harvest ≈ German 'Herbst' (autumn)\",\n    \"reading\": \"The road of autumn's ninety-one circuits brings gathering at season's end.\",\n    \"languages\": [\"en\", \"fr\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Route: Latin 'rupta' (broken path); Harvest: Old English 'hærfest' (autumn season)\",\n    \"reading\": \"The broken path leads to autumn's seasonal gathering and natural completion.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Rout (disorder) + 91 (cipher) + Harvest (reaping)\",\n    \"reading\": \"Disorder encoded in numbers yields reaping of hidden consequence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R=18, O=15, U=21, T=20; 9+1=10; H=8, A=1, R=18, V=22, E=5, S=19, T=20\",\n    \"reading\": \"Numerals reduce to perfection (10); harvest's letters sum hidden knowledge of becoming.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Route + 91 + Harvest rearranged yields hidden phonetic seeds\",\n    \"reading\": \"Rout + 9 + 1 = rupture of unity before the gathering into wholeness.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Rout-91-Harv-est; 'Harv' ≈ 'have'; 'est' ≈ 'is'\",\n    \"reading\": \"What you have, after the ninefold rout, is what truly is: essence through loss.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"91 ≈ Hebrew 'tsade' (righteous path); Harvest ≈ Latin 'herba' (herb, green growing)\",\n    \"reading\": \"The righteous path yields the green living things gathered in their season.\",\n    \"languages\": [\"en\", \"he\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"R-O-U-T-E 9-1 H-A-R-V-E-S-T: First letters R, H\",\n    \"reading\": \"The initials R and H mark the root and harvest, alpha and omega of growth.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Harvest: Proto-Germanic 'herfist' → Old English 'hærfest' (gathering time)\",",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 24 (char 2635)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Route (Latin rupta, feminine past participle of rumpere, to break) + 91 (numeral) + Harvest (Old English hærfest, from Proto-Germanic *harbistiz, autumn season)\",\n    \"reading\": \"A broken path through the season of gathering; rupture in the cycle of reaping.\",\n    \"languages\": [\"la\", \"en\", \"gem\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Route (root) + 91 (nine-one, nain-wun) + Harvest (har-vest)\",\n    \"reading\": \"The root's nine-fold unity harvests; nine paths converge at the gathering place.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Route → French route (road); 91 → quatre-vingt-onze (ninety-one); Harvest → French récolte (reaping)\",\n    \"reading\": \"The road of ninety-one leads to reaping; a numbered passage toward gathering.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Rou-te (row-tea) + 91 (nine-one) + Har-vest (heart-fest)\",\n    \"reading\": \"A row of tea; nine singular hearts gathered in festival; the heart's feast.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R (rho, flow) + 91 (9+1=10, completion and return) + H (breath) + V (vessel)\",\n    \"reading\": \"Flow completes and returns; breath fills the vessel of gathering.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Route 91 Harvest → R-H (Rosh, head in Hebrew) + 91 (numerical collapse) + H-V (vessel)\",\n    \"reading\": \"The head's ninefold vessel; the chief container of nine-fold gathering.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"91 = 7 × 13 (sacred multiplication); Route (way) + Harvest (completion)\",\n    \"reading\": \"The way of sacred completion; seven cycles times thirteen moons yield the harvest.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Harvest: Old English hærfest from *herbis-tiz (autumn); har- (grey, hoary) + -fest (gathering)\",\n    \"reading\": \"Grey gathering; the hoary season when age and ripeness converge in collection.\",\n    \"languages\": [\"en\", \"gem\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Route (rout, defeat) + 91 (nine-one, unity from multiplicity) + Harvest (hard-vest, difficult clothing)\",\n    \"reading\": \"Defeat transforms through nine-fold unity into the difficult garment of reaping.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Route → Latin rota (wheel); 91 → Latin XCI (ninety-one); Harvest → Latin messis (reaping)\",\n    \"reading\": \"The wheel turns ninety-one times; the reaping cycle completes its rotation.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Route 91 Harvest → Rout + 91 + Harvest; letters rearrange to suggest: Outer Harvest, Heart Rouse\",\n    \"reading\": \"The outer harvest; the heart roused to gather from beyond the boundary.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"91: 9 (completion, cycle) + 1 (unity, origin); Route (R=18, path) + Harvest (H=8, infinity)\",\n    \"reading\": \"Completion and origin meet on the path of infinite gathering; the cycle returns to one.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Route (Latin rupta, feminine past participle of rumpere, to break) + 91 (numeral) + Harvest (Old English hærfest, from Proto-Germanic *harbistiz, autumn season)",
+   "reading": "A broken path through the season of gathering; rupture in the cycle of reaping.",
+   "languages": [
+    "la",
+    "en",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary; Merriam-Webster",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Route (root) + 91 (nine-one, nain-wun) + Harvest (har-vest)",
+   "reading": "The root's nine-fold unity harvests; nine paths converge at the gathering place.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Route → French route (road); 91 → quatre-vingt-onze (ninety-one); Harvest → French récolte (reaping)",
+   "reading": "The road of ninety-one leads to reaping; a numbered passage toward gathering.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Rou-te (row-tea) + 91 (nine-one) + Har-vest (heart-fest)",
+   "reading": "A row of tea; nine singular hearts gathered in festival; the heart's feast.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R (rho, flow) + 91 (9+1=10, completion and return) + H (breath) + V (vessel)",
+   "reading": "Flow completes and returns; breath fills the vessel of gathering.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Route 91 Harvest → R-H (Rosh, head in Hebrew) + 91 (numerical collapse) + H-V (vessel)",
+   "reading": "The head's ninefold vessel; the chief container of nine-fold gathering.",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "numerical",
+   "chain": "91 = 7 × 13 (sacred multiplication); Route (way) + Harvest (completion)",
+   "reading": "The way of sacred completion; seven cycles times thirteen moons yield the harvest.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Harvest: Old English hærfest from *herbis-tiz (autumn); har- (grey, hoary) + -fest (gathering)",
+   "reading": "Grey gathering; the hoary season when age and ripeness converge in collection.",
+   "languages": [
+    "en",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Route (rout, defeat) + 91 (nine-one, unity from multiplicity) + Harvest (hard-vest, difficult clothing)",
+   "reading": "Defeat transforms through nine-fold unity into the difficult garment of reaping.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Route → Latin rota (wheel); 91 → Latin XCI (ninety-one); Harvest → Latin messis (reaping)",
+   "reading": "The wheel turns ninety-one times; the reaping cycle completes its rotation.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Route 91 Harvest → Rout + 91 + Harvest; letters rearrange to suggest: Outer Harvest, Heart Rouse",
+   "reading": "The outer harvest; the heart roused to gather from beyond the boundary.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "91: 9 (completion, cycle) + 1 (unity, origin); Route (R=18, path) + Harvest (H=8, infinity)",
+   "reading": "Completion and origin meet on the path of infinite gathering; the cycle returns to one.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

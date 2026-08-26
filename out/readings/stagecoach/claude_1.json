@@ -5,15 +5,147 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:19:53+00:00",
- "latency_s": 9.91,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:02:18+00:00",
+ "latency_s": 12.37,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stage + Coach; stage (L. statio) = standing place; coach = vehicle that carries\",\n    \"reading\": \"A standing-place that moves; the soul's journey through fixed stations of becoming.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Stage < Old French estage < Latin statica (standing); Coach < Hungarian kocsi (wagon from Kocs)\",\n    \"reading\": \"The fixed point and the Hungarian conveyance wed: station and transport, rest and motion unified.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"hu\"],\n    \"source\": \"OED, Merriam-Webster\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Sta- (stand, root of status) + -ge (age, becoming) + Coach (coax, to guide)\",\n    \"reading\": \"Standing-in-becoming guided forth; the soul coached through successive states of its own standing.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Coach ≈ French cocher (to drive) + French coche (coach); Stagecoach = stage-driver's vessel\",\n    \"reading\": \"The coachman's craft: one who drives the fixed points of passage, the stations of pilgrimage.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Stagecoach → rearranged: 'a cost hage' or 'The Chaos' or 'Stoachage' (near-anagram)\",\n    \"reading\": \"Chaos ordered into stages; the primal disorder arranged into sequential passages and way-stations.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stage (G: Gestalt, form-whole) + Coach (co- with + ach-, arch-?); or Coach = crutch, prop\",\n    \"reading\": \"The whole-form supported in its journey; a prop for the structure of becoming across stations.\",\n    \"languages\": [\"en\", \"de\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"S=serpent/spiritus; T=cross/threshold; A=alpha/beginning; G=gate; E=eye; C=crescent/moon; H=Hebrew He\",\n    \"reading\": \"Spirit crosses the threshold at the gate of beginning; the eye perceives the lunar passage and divine breath.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Age < Old English eage (eye, but also time-span); Stage-age = the eye-span, the witnessed period\",\n    \"reading\": \"Each stage is an eye looking upon time; the coach carries the witness through witnessed moments.\",\n    \"languages\": [\"en\", \"oe\"],\n    \"source\": \"OED\",\n    \"confidence\": 0.68\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Stag' (male deer, swift) + 'e' + 'coach' (teacher); Stag-e-coach = the swift teacher-vessel\",\n    \"reading\": \"Swift masculine force schooling the soul; rapidity and pedagogy joined in sacred conveyance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 24 (char 3061)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stage + Coach; stage (Latin statio) = standing place, position; coach = guide, instructor\",\n    \"reading\": \"A standing position from which one receives guidance or instruction; the place of pedagogical authority.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Stage < Old French estage < Latin statio (standing, post); Coach < Hungarian kocsi (wagon from Kocs)\",\n    \"reading\": \"The fixed station or post from which a wheeled conveyance departs; a place of transit and transformation.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"hu\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Stage ≈ French étage (floor, story); Coach ≈ French cocher (coachman, one who drives)\",\n    \"reading\": \"The story or narrative level at which the driver—the one who directs motion—operates and speaks.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stag + e + Coach; stag = male deer, solitary hunter; coach = trainer\",\n    \"reading\": \"The solitary hunter receives training; the wild masculine principle domesticated through instruction.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Stagecoach → Coachages, Cages + oath, Coat + aches\",\n    \"reading\": \"Cages that move; enclosures bound by oath; garments that carry pain or burden through motion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"S=serpent/spiral; T=cross/threshold; G=gateway; C=crescent/cycle; H=ladder/ascent\",\n    \"reading\": \"The serpentine crossing of thresholds through gateways in cyclical ascent; perpetual transformation through passage.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stage (Latin statio, standing) + Coach (guide); -age suffix = state or condition\",\n    \"reading\": \"The condition or state of standing under guidance; the pedagogical relationship made manifest in stillness.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"S.T.A.G.E.C.O.A.C.H = Stationes Trajectus Agens Gubernat Exemplum Cohabitans Ordinat Animam Caelestis Hierarchia\",\n    \"reading\": \"Stations of passage where the governing agent exemplifies order; celestial hierarchy dwelling in the soul's ordination.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Coach ≈ German Kutsche (carriage); Stage ≈ German Steg (footbridge, narrow passage)\",\n    \"reading\": \"A carriage crossing a narrow bridge; passage made vehicular; the liminal space made mobile.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Coach < Kocs (Hungarian town); Stage < statio (Latin); -age < Germanic suffix denoting collection or state\",\n    \"reading\": \"A collection of stations originating from a place of wheels; the aggregation of stopping-points into a system.\",\n    \"languages\": [\"en\", \"hu\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Etymological Dictionary of Germanic Languages\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stag + e + Coach; e = being/existence (Latin esse); stag = pursuit, hunt\",\n    \"reading\": \"The hunt for being itself, guided by one who coaches the seeker toward existential understanding.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Stagecoach → Achates + cog; Achates (faithful companion in Aeneid); cog (wheel, mechanism)\",\n    \"reading\": \"The faithful companion becomes a mechanism; loyalty transformed into the mechanical principle of motion.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Virgil, Aeneid\",\n    \"confidence\": 0.55\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Stage + Coach; stage (Latin statio) = standing place, position; coach = guide, instructor",
+   "reading": "A standing position from which one receives guidance or instruction; the place of pedagogical authority.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Stage < Old French estage < Latin statio (standing, post); Coach < Hungarian kocsi (wagon from Kocs)",
+   "reading": "The fixed station or post from which a wheeled conveyance departs; a place of transit and transformation.",
+   "languages": [
+    "en",
+    "fr",
+    "la",
+    "hu"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Stage ≈ French étage (floor, story); Coach ≈ French cocher (coachman, one who drives)",
+   "reading": "The story or narrative level at which the driver—the one who directs motion—operates and speaks.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Stag + e + Coach; stag = male deer, solitary hunter; coach = trainer",
+   "reading": "The solitary hunter receives training; the wild masculine principle domesticated through instruction.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Stagecoach → Coachages, Cages + oath, Coat + aches",
+   "reading": "Cages that move; enclosures bound by oath; garments that carry pain or burden through motion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "S=serpent/spiral; T=cross/threshold; G=gateway; C=crescent/cycle; H=ladder/ascent",
+   "reading": "The serpentine crossing of thresholds through gateways in cyclical ascent; perpetual transformation through passage.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Stage (Latin statio, standing) + Coach (guide); -age suffix = state or condition",
+   "reading": "The condition or state of standing under guidance; the pedagogical relationship made manifest in stillness.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "S.T.A.G.E.C.O.A.C.H = Stationes Trajectus Agens Gubernat Exemplum Cohabitans Ordinat Animam Caelestis Hierarchia",
+   "reading": "Stations of passage where the governing agent exemplifies order; celestial hierarchy dwelling in the soul's ordination.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Coach ≈ German Kutsche (carriage); Stage ≈ German Steg (footbridge, narrow passage)",
+   "reading": "A carriage crossing a narrow bridge; passage made vehicular; the liminal space made mobile.",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "etymology",
+   "chain": "Coach < Kocs (Hungarian town); Stage < statio (Latin); -age < Germanic suffix denoting collection or state",
+   "reading": "A collection of stations originating from a place of wheels; the aggregation of stopping-points into a system.",
+   "languages": [
+    "en",
+    "hu",
+    "la"
+   ],
+   "source": "Oxford English Dictionary; Etymological Dictionary of Germanic Languages",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Stag + e + Coach; e = being/existence (Latin esse); stag = pursuit, hunt",
+   "reading": "The hunt for being itself, guided by one who coaches the seeker toward existential understanding.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Stagecoach → Achates + cog; Achates (faithful companion in Aeneid); cog (wheel, mechanism)",
+   "reading": "The faithful companion becomes a mechanism; loyalty transformed into the mechanical principle of motion.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Virgil, Aeneid",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

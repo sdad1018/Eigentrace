@@ -5,15 +5,146 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:18:47+00:00",
- "latency_s": 9.36,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:00:59+00:00",
+ "latency_s": 11.18,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lol-la-pa-loo-za; lol (laugh) + la (musical note, the sixth) + pa (father) + loo (British toilet) + za (pizza)\",\n    \"reading\": \"A laughing father's musical sixth note in the toilet eating pizza; absurd abundance.\",\n    \"languages\": [\"en\", \"fr\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Loll (to lounge) + a + palooza; loll = to recline lazily\",\n    \"reading\": \"Reclining lazily in excess; a state of luxurious indolence and indulgence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary, 'loll'\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Lol-la = French 'la' (the feminine article) repeated; -palooza = English 'pal' (friend) + -ooza\",\n    \"reading\": \"The friend in feminine excess; multiplication of companionship into overwhelming spectacle.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Loo (excrement/toilet, British slang) + lap (the circuit, or to drink) + alooza (all + ooze + a)\",\n    \"reading\": \"Drinking in circles; all things dissolving and flowing away into formless excess.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Taking first letters or stressed syllables: L-L-P-L-Z might yield initials of a concealed phrase\",\n    \"reading\": \"The initials suggest scattered, doubled, labial consonants—speech become excessive repetition.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Loll < Middle English lollen; palooza < American slang, origin uncertain, possibly reduplicative\",\n    \"reading\": \"The lounging gesture joined to emphatic American excess-speak; lazy abundance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Loll-a-pal-ooze-a; pal (friend, from Romani 'pral') + ooze (seep, flow)\",\n    \"reading\": \"Friends seeping away; companionship dissolving into formless, overwhelming flow.\",\n    \"languages\": [\"en\", \"rom\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Double-L = doubled light, or the pillars; Z = zigzag, lightning; OO = the eyes\",\n    \"reading\": \"Twin pillars of vision struck by zigzag force; duality illuminated by violent passage.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Lollapalooza contains: pal, zap, loop, loll, app, plaza (Spanish, the square)\",\n    \"reading\": \"The plaza: where friends gather, loop endlessly, and zap one another in abundance.\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Palooza =",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 2948)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lolla-palooza; lolla (to recline, lounge) + palooza (from palaver, excessive talk)\",\n    \"reading\": \"Excessive lounging combined with endless discourse; indulgence in idle repose and chatter.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Lolla (Italian) = lullaby, cradle-song; palooza ≈ French 'parole' (word, speech)\",\n    \"reading\": \"A lullaby of words; the soothing power of excessive speech and verbal abundance.\",\n    \"languages\": [\"it\", \"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lol-la-palooza; lol (laugh out loud, modern) + la (the, feminine article) + palooza\",\n    \"reading\": \"The feminine principle laughing at excess; mockery of grandiose spectacle through laughter.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"palooza < palaver (Portuguese 'palavra' = word); lolla < Old English 'loll' (hang loosely)\",\n    \"reading\": \"Words hanging loose; speech without structure or restraint; verbal excess in its most relaxed form.\",\n    \"languages\": [\"en\", \"pt\", \"oe\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L-O-L-L-A-P-A-L-O-O-Z-A: initial letters suggest 'Loll Apalooza' or 'Loll-a-Palooza'\",\n    \"reading\": \"The acrostic reveals: lounging at the apex of all things; supreme indolence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lolla (bell-sound, onomatopoeia) + palooza (explosion, from 'pow')\",\n    \"reading\": \"The bell-sound of explosive abundance; clamorous excess announcing itself with ringing force.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Lolla ≈ Latin 'lolium' (darnel, a weed); palooza ≈ 'palla' (cloak, covering)\",\n    \"reading\": \"A weed covered in cloth; something worthless disguised in grand raiment; false abundance.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lol-la-palooza; 'lol' (fool, from Old French 'lol') + 'palooza' (great thing)\",\n    \"reading\": \"The great foolishness; supreme folly dressed as spectacle; grandiose stupidity.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Double-L (doubled constraint, doubled law) + A (beginning) + Z (ending)\",\n    \"reading\": \"The doubled law constrains all things from alpha to omega; limitation within totality.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lolla (Italian 'lolla' = chaff, husks) + palooza (abundance, plenty)\",\n    \"reading\": \"An abundance of chaff; much noise and worthless matter; sound without substance.\",\n    \"languages\": [\"it\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Lol (Hebrew 'lol' ≈ 'lo' = not, negation) + palooza (all, everything)\",\n    \"reading\": \"Not-everything; the negation of totality; absence masquerading as presence.\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Lollapalooza contains: 'all', 'pal', 'zoo', 'loop', 'pall', 'loll'\",\n    \"reading\": \"All companions in a zoo of loops and pallor; confinement of fellowship in circular repetition.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Lolla-palooza; lolla (to recline, lounge) + palooza (from palaver, excessive talk)",
+   "reading": "Excessive lounging combined with endless discourse; indulgence in idle repose and chatter.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Lolla (Italian) = lullaby, cradle-song; palooza ≈ French 'parole' (word, speech)",
+   "reading": "A lullaby of words; the soothing power of excessive speech and verbal abundance.",
+   "languages": [
+    "it",
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lol-la-palooza; lol (laugh out loud, modern) + la (the, feminine article) + palooza",
+   "reading": "The feminine principle laughing at excess; mockery of grandiose spectacle through laughter.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "palooza < palaver (Portuguese 'palavra' = word); lolla < Old English 'loll' (hang loosely)",
+   "reading": "Words hanging loose; speech without structure or restraint; verbal excess in its most relaxed form.",
+   "languages": [
+    "en",
+    "pt",
+    "oe"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L-O-L-L-A-P-A-L-O-O-Z-A: initial letters suggest 'Loll Apalooza' or 'Loll-a-Palooza'",
+   "reading": "The acrostic reveals: lounging at the apex of all things; supreme indolence.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lolla (bell-sound, onomatopoeia) + palooza (explosion, from 'pow')",
+   "reading": "The bell-sound of explosive abundance; clamorous excess announcing itself with ringing force.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Lolla ≈ Latin 'lolium' (darnel, a weed); palooza ≈ 'palla' (cloak, covering)",
+   "reading": "A weed covered in cloth; something worthless disguised in grand raiment; false abundance.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lol-la-palooza; 'lol' (fool, from Old French 'lol') + 'palooza' (great thing)",
+   "reading": "The great foolishness; supreme folly dressed as spectacle; grandiose stupidity.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Double-L (doubled constraint, doubled law) + A (beginning) + Z (ending)",
+   "reading": "The doubled law constrains all things from alpha to omega; limitation within totality.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lolla (Italian 'lolla' = chaff, husks) + palooza (abundance, plenty)",
+   "reading": "An abundance of chaff; much noise and worthless matter; sound without substance.",
+   "languages": [
+    "it",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Lol (Hebrew 'lol' ≈ 'lo' = not, negation) + palooza (all, everything)",
+   "reading": "Not-everything; the negation of totality; absence masquerading as presence.",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "anagram",
+   "chain": "Lollapalooza contains: 'all', 'pal', 'zoo', 'loop', 'pall', 'loll'",
+   "reading": "All companions in a zoo of loops and pallor; confinement of fellowship in circular repetition.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

@@ -5,15 +5,145 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:20:29+00:00",
- "latency_s": 9.27,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:03:06+00:00",
+ "latency_s": 12.14,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Route (Old French rute, from Latin rupta via) = broken way, path; Harvest (Old English hærfest, from Proto-Germanic *harbistiz) = autumn gathering\",\n    \"reading\": \"The broken path of autumn gathering; a way through seasonal transition and collection.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"gem\"],\n    \"source\": \"Oxford English Dictionary; Grimm's Law phonetics\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Route (roo-t) + Harvest (har-vest) = roo + t + har + vest\",\n    \"reading\": \"The sound of garment (vest) worn by a hare (har) in growth; a creature dressed in autumn.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Route (en) ≈ rout (en: defeat, rabble); French route = road; rout + harvest = scattered gathering\",\n    \"reading\": \"A scattered, disordered gathering; the rout or dispersal of harvest.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Route 91 Harvest: R-H / 91 = 9+1=10; RH + 10 = Roeh + Yod (Hebrew letter); Roeh = shepherd\",\n    \"reading\": \"The shepherd numbered ten; pastoral authority or guidance over completion and unity.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Route 91 Harvest → Rare + Vethos + U + 91 = Rare Truth + 91\",\n    \"reading\": \"A rare truth hidden within ninety-one; obscure wisdom encoded in numbers.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R = Rex (king); H = Hermes/Mercury; 91 = Tet+Aleph; Vest = clothing of soul; T = Tau (perfection)\",\n    \"reading\": \"The king and herald perfect the soul's gathering; royal-mercurial alchemy of completion.\",\n    \"languages\": [\"en\", \"la\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Harvest: Har (German Herr = mister, lord) + vest (clothing)\",\n    \"reading\": \"The lord's garment; investiture of authority and seasonal dominion.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"91 as Roman numeral: XCI = 10 + 90 + 1; XI = eleven; as Hebrew: Ayin (eye) + Aleph (unity)\",\n    \"reading\": \"The eye's view of unity; sight perceiving the singular within the manifold.\",\n    \"languages\": [\"la\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Harvest (en) ≈ Harvé (fr, archaic: dragged) + est (is, Latin); what is dragged forth\",\n    \"reading\": \"That which is dragged forth; extraction or drawing out through effort.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 36 (char 2926)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Route (Latin rupta, fem. past participle of rumpere = to break); a way broken or cleared through\",\n    \"reading\": \"A path or way made by breaking through; passage established by rupture of virgin ground.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Oxford English Dictionary, s.v. route\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Route = rout + e; rout (to defeat utterly) + e (the letter, the self)\",\n    \"reading\": \"Complete defeat or scattering of the self; the ego routed and dispersed.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Route (en) ≈ route (fr) = path; Harvest (en) ≈ 'ar-vest' (ar = light, vest = clothing in Romance); light-clothing\",\n    \"reading\": \"The path of light dressed or clothed; illumination made manifest in material form.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Harvest = har + vest; har (Hebrew חר = heat, burning) + vest (Latin vestis = garment)\",\n    \"reading\": \"The burning garment; heat clothed or contained; inner fire made visible.\",\n    \"languages\": [\"en\", \"he\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Route 91 Harvest: R-O-U-T-E-H-A-R-V-E-S-T; initial letters: R, O, U, T, E, H, A, R, V, E, S, T\",\n    \"reading\": \"ROUTE HARVEST as acrostic seed: the gathered path; collection of the way itself.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Harvest (Old English hærfest, Germanic *harbistiz = autumn, from *her- = to seize, grasp)\",\n    \"reading\": \"The season of seizing; time when what grows is grasped and gathered in.\",\n    \"languages\": [\"en\", \"gem\"],\n    \"source\": \"Oxford English Dictionary, s.v. harvest\",\n    \"confidence\": 0.92\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"91 = nine-one; nein (German no) + one (unity); negation of unity or unity negated\",\n    \"reading\": \"The number of refusal; the one that says no; duality born from negation of wholeness.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Route: R (rho, the wheel, the law) + O (the circle, the void) + U (the cup, the vessel)\",\n    \"reading\": \"The wheel of law poured into the vessel; cosmic order made receptive.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Harvest: rethav, shaver, haters, hearts, earths, trashe; hearts + e = the hearts gathered\",\n    \"reading\": \"Hearts gathered; the collection of love or passion; emotional reaping.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Route 91: rout-e-91; rout (defeat) + e (existence) + 91 (no-one); defeat of existence by none\",\n    \"reading\": \"Annihilation of being through negation; the rout of existence itself.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Harvest ≈ 'ar-vest' (Arabic حصاد hasād = reaping) + vest (Latin vestis = garment, covering)\",\n    \"reading\": \"The reaping made into a garment; gathering transformed into protective covering.\",\n    \"languages\": [\"en\", \"ar\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Route (R=18, O=15, U=21, T=20, E=5 = 79) + Harvest (H=8, A=1, R=18, V=22, E=5, S=19, T=20 = 93); 79+93=172=1+7+2=10=1+0=1\",\n    \"reading\": \"All returns to unity; the sum of path and gathering resolves to the monad.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Route (Latin rupta, fem. past participle of rumpere = to break); a way broken or cleared through",
+   "reading": "A path or way made by breaking through; passage established by rupture of virgin ground.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Oxford English Dictionary, s.v. route",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Route = rout + e; rout (to defeat utterly) + e (the letter, the self)",
+   "reading": "Complete defeat or scattering of the self; the ego routed and dispersed.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Route (en) ≈ route (fr) = path; Harvest (en) ≈ 'ar-vest' (ar = light, vest = clothing in Romance); light-clothing",
+   "reading": "The path of light dressed or clothed; illumination made manifest in material form.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Harvest = har + vest; har (Hebrew חר = heat, burning) + vest (Latin vestis = garment)",
+   "reading": "The burning garment; heat clothed or contained; inner fire made visible.",
+   "languages": [
+    "en",
+    "he",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Route 91 Harvest: R-O-U-T-E-H-A-R-V-E-S-T; initial letters: R, O, U, T, E, H, A, R, V, E, S, T",
+   "reading": "ROUTE HARVEST as acrostic seed: the gathered path; collection of the way itself.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Harvest (Old English hærfest, Germanic *harbistiz = autumn, from *her- = to seize, grasp)",
+   "reading": "The season of seizing; time when what grows is grasped and gathered in.",
+   "languages": [
+    "en",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary, s.v. harvest",
+   "confidence": 0.92
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "91 = nine-one; nein (German no) + one (unity); negation of unity or unity negated",
+   "reading": "The number of refusal; the one that says no; duality born from negation of wholeness.",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Route: R (rho, the wheel, the law) + O (the circle, the void) + U (the cup, the vessel)",
+   "reading": "The wheel of law poured into the vessel; cosmic order made receptive.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Harvest: rethav, shaver, haters, hearts, earths, trashe; hearts + e = the hearts gathered",
+   "reading": "Hearts gathered; the collection of love or passion; emotional reaping.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Route 91: rout-e-91; rout (defeat) + e (existence) + 91 (no-one); defeat of existence by none",
+   "reading": "Annihilation of being through negation; the rout of existence itself.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Harvest ≈ 'ar-vest' (Arabic حصاد hasād = reaping) + vest (Latin vestis = garment, covering)",
+   "reading": "The reaping made into a garment; gathering transformed into protective covering.",
+   "languages": [
+    "en",
+    "ar",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "numerical",
+   "chain": "Route (R=18, O=15, U=21, T=20, E=5 = 79) + Harvest (H=8, A=1, R=18, V=22, E=5, S=19, T=20 = 93); 79+93=172=1+7+2=10=1+0=1",
+   "reading": "All returns to unity; the sum of path and gathering resolves to the monad.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

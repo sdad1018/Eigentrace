@@ -5,15 +5,144 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:20:02+00:00",
- "latency_s": 9.52,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:02:29+00:00",
+ "latency_s": 11.06,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stage + Coach; stage (Latin stagium) = standing place; coach = vehicle of conveyance\",\n    \"reading\": \"A standing-place of conveyance; the threshold between stationary and moving states.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Stage < Old French estage < Latin statum (standing, position); Coach < Hungarian kocsi (wagon from Kocs)\",\n    \"reading\": \"Position-wagon: the fixed point from which mobile transition begins; a station of passage.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"hu\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"STAGE: stag + e; stag (male deer) = virile potency; e = existence or being\",\n    \"reading\": \"Masculine vitality made manifest; potent presence upon the threshold of manifestation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Stage-coach ≈ French 'est âge' = 'is age'; coach ≈ 'coche' (coach, bed)\",\n    \"reading\": \"What age is; the bed of time itself rolling forward; temporal movement as intimate vessel.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"S.T.A.G.E.C.O.A.C.H = Station To Attain Grace Entering Creation's Ongoing Advancement Chain Herald\",\n    \"reading\": \"A prophetic sequence: the station marks entry into grace through creation's continuous forward motion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stage-coach: 'stage' (Latin stagum, pool/standing water) + coach (motion)\",\n    \"reading\": \"Stagnant water set in motion; the alchemical animation of what is fixed and still.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Stagecoach → 'sage coat ach' or 'coast age hac'; rearrange to 'a guest hoaac' → 'a guest coach'\",\n    \"reading\": \"The coach receives the guest; hospitality in motion; the stranger's passage through space.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"S=serpent; T=cross/threshold; A=apex/beginning; G=gamma/gap; E=eye; C=cup/vessel; H=ladder\",\n    \"reading\": \"Serpent crosses the threshold at beginning, through gaps perceived by eye in the cup-vessel ascending.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Coach: coa(t) + ch; coa = 'cow' (animal labor); ch = chi (spirit); coat = covering\",\n    \"reading\": \"The spirited covering of animal labor; divine force clothed in bodily work and motion.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Coach ≈ German 'Kutsche'",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 31 (char 2976)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stage + Coach; stage (Latin statio) = standing place; coach = vehicle of conveyance\",\n    \"reading\": \"A standing-place that moves; the fixed point in motion; paradox of stillness within transit.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Stage < Old French estage < Latin statio (standing, station); Coach < Hungarian kocsi (cart from Kocs)\",\n    \"reading\": \"The marriage of Roman station-keeping with Magyar wagon-craft; empire meets frontier.\",\n    \"languages\": [\"en\", \"fr\", \"la\", \"hu\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stag + e + coach; stag (male deer) = the masculine principle in motion\",\n    \"reading\": \"The masculine animal as vehicle; virility as conveyance; potency in transit through space.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Stage (en) ≈ étage (fr) = floor, level; coach = cocher (fr) = coachman\",\n    \"reading\": \"The levels of a building animated by the coachman's art; vertical hierarchy made mobile.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Stagecoach → Coat Aches Stage; Coat = covering; Aches = pains; Stage = platform\",\n    \"reading\": \"The covering suffers upon the platform; protection itself becomes wounded in display.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"S=serpent/sun; T=cross/tau; G=gateway; C=crescent/cup; H=ladder\",\n    \"reading\": \"Solar serpent crosses the gateway in crescent motion, ascending the ladder of stages.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"S.T.A.G.E.C.O.A.C.H = Stationes Trajectus Agens Gestu Equitum Coactus Omnibus Agentibus Cursum Habens\",\n    \"reading\": \"Stations of passage driven by the gesture of forced riders; compelled motion through ordained places.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stage + Coach; coach (verb) = to instruct; stage = to present\",\n    \"reading\": \"Instruction made visible; pedagogy as public performance; teaching through theatrical presentation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Coach (en) ≈ coche (es) = carriage; stage ≈ estage (archaic en) = storey\",\n    \"reading\": \"The carriage of stories; narrative transport; each level a tale carried forward.\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Coach < Middle English coche; ultimately from Kocs, Hungary; stage < statio (Roman military term)\",\n    \"reading\": \"Imperial Roman order meets Hungarian frontier innovation; civilization's apparatus perfected by barbarian craft.\",\n    \"languages\": [\"en\", \"la\", \"hu\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stag + e + coach; e = the vowel of becoming; coach = coax\",\n    \"reading\": \"The stag becomes through coaxing; persuasion transforms the wild into the tame.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Stagecoach → Coaches Gat + A; gat (archaic) = gun; gate = passage\",\n    \"reading\": \"Coaches bearing weapons through passages; armed transit; the militarization of travel.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Stage + Coach; stage (Latin statio) = standing place; coach = vehicle of conveyance",
+   "reading": "A standing-place that moves; the fixed point in motion; paradox of stillness within transit.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Stage < Old French estage < Latin statio (standing, station); Coach < Hungarian kocsi (cart from Kocs)",
+   "reading": "The marriage of Roman station-keeping with Magyar wagon-craft; empire meets frontier.",
+   "languages": [
+    "en",
+    "fr",
+    "la",
+    "hu"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Stag + e + coach; stag (male deer) = the masculine principle in motion",
+   "reading": "The masculine animal as vehicle; virility as conveyance; potency in transit through space.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Stage (en) ≈ étage (fr) = floor, level; coach = cocher (fr) = coachman",
+   "reading": "The levels of a building animated by the coachman's art; vertical hierarchy made mobile.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Stagecoach → Coat Aches Stage; Coat = covering; Aches = pains; Stage = platform",
+   "reading": "The covering suffers upon the platform; protection itself becomes wounded in display.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "S=serpent/sun; T=cross/tau; G=gateway; C=crescent/cup; H=ladder",
+   "reading": "Solar serpent crosses the gateway in crescent motion, ascending the ladder of stages.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "S.T.A.G.E.C.O.A.C.H = Stationes Trajectus Agens Gestu Equitum Coactus Omnibus Agentibus Cursum Habens",
+   "reading": "Stations of passage driven by the gesture of forced riders; compelled motion through ordained places.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Stage + Coach; coach (verb) = to instruct; stage = to present",
+   "reading": "Instruction made visible; pedagogy as public performance; teaching through theatrical presentation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Coach (en) ≈ coche (es) = carriage; stage ≈ estage (archaic en) = storey",
+   "reading": "The carriage of stories; narrative transport; each level a tale carried forward.",
+   "languages": [
+    "en",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Coach < Middle English coche; ultimately from Kocs, Hungary; stage < statio (Roman military term)",
+   "reading": "Imperial Roman order meets Hungarian frontier innovation; civilization's apparatus perfected by barbarian craft.",
+   "languages": [
+    "en",
+    "la",
+    "hu"
+   ],
+   "source": "Oxford English Dictionary; Merriam-Webster",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Stag + e + coach; e = the vowel of becoming; coach = coax",
+   "reading": "The stag becomes through coaxing; persuasion transforms the wild into the tame.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "anagram",
+   "chain": "Stagecoach → Coaches Gat + A; gat (archaic) = gun; gate = passage",
+   "reading": "Coaches bearing weapons through passages; armed transit; the militarization of travel.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

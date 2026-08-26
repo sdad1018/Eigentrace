@@ -5,15 +5,147 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:17:05+00:00",
- "latency_s": 8.96,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T03:59:04+00:00",
+ "latency_s": 10.88,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem-bley; 'wem' = womb (homophone-adjacent); 'bley' = blé (French for grain/wheat)\",\n    \"reading\": \"The womb of grain; fertility and generation from seed-bearing earth.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Web-ley; 'web' = interwoven threads; 'ley' = ley-line, ancient path\",\n    \"reading\": \"Woven threads of sacred pathways; intersection of hidden networks and ancient power.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wem ~ ouïe (French ear, pronounced 'wee'); bley ~ blé (grain)\",\n    \"reading\": \"What the ear hears of grain; auditory knowledge of harvest and sustenance.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Wembley → Blew-em; 'blew' (past of blow) + 'em (them)\",\n    \"reading\": \"They blew it away; dispersion, wind-scattering, the breath that unmakes.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"W = doubled V = doubled vessel; M = water/mare; B = duality; L = light; Y = fork/choice\",\n    \"reading\": \"Double vessels of waters carry the forking light—ambivalence of illumination within containment.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"W(23) + E(5) + M(13) + B(2) + L(12) + E(5) + Y(25) = 85 = 8+5 = 13 = M\",\n    \"reading\": \"The word resolves to M: water, mother, matrix—the feminine principle of generation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem-blay; 'blay' archaic past of 'blight' or whiten/bleach\",\n    \"reading\": \"The pale womb; whitening birthplace; death within generation, sterility feigned as fertility.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bley ~ Blei (German lead); Wem ~ venom (Latin venomum aspirated)\",\n    \"reading\": \"Leaden venom; heaviness and toxicity hidden in the breast, the metallic poison of generation.\",\n    \"languages\": [\"en\", \"de\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Wem' from Old English wamb (belly); 'bley' = blaye (archaic: blade)\",\n    \"reading\": \"The belly's blade; sharp instrument of the womb, cutting separation from mother.\",\n    \"languages\": [\"en\", \"enm\"],\n    \"source\": \"OED s.v. wamb\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"W-E-M-B-L",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 31 (char 2742)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem-bley; wem (Old English) = dark, murky + bley (unclear origin, possibly related to 'bleak')\",\n    \"reading\": \"A dark or murky place; the obscure or shadowed realm.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley ≈ French 'wen' (want, desire) + 'bley' (pale, wan)\",\n    \"reading\": \"The desire for pallor or whiteness; longing for the bleached or faded.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem + bley; 'wem' as womb (Old English wamb) + 'bley' as bleak or exposed\",\n    \"reading\": \"The womb laid bare; exposure of the generative or hidden interior.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Wembley → Web + mley; or Ble + mewy; or Wem + bley rearranged as 'Webley' (a gun)\",\n    \"reading\": \"A web of entanglement; the snare or trap woven by fate.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"W = double V (union of opposites); EM = electromagnetic or prima materia; BLE = blé (grain); Y = the fork, choice\",\n    \"reading\": \"The electromagnetic grain at the crossroads; matter choosing its path.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem-bley; 'bley' as Old English 'blæc' (black) or 'blac' (pale)\",\n    \"reading\": \"The dark or pale threshold; a liminal space between light and shadow.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley ≈ German 'Wem' (to whom, dative) + 'bley' (stray, wander)\",\n    \"reading\": \"To whom does the wanderer belong? A question of allegiance and belonging.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"W-E-M-B-L-E-Y as initial letters: Womb Emerges, Matter Becomes Light's Emanation, Yield\",\n    \"reading\": \"The womb yields forth matter as light's emanation; birth as luminous becoming.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Wem' as Old Norse 'vömb' (womb) + 'bley' as 'bla' (blue) or 'blae' (livid)\",\n    \"reading\": \"The blue or livid womb; the bruised generative source, wounded origin.\",\n    \"languages\": [\"en\", \"non\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Wembley: Old English 'Wemba' (a personal name, possibly 'womb-like') + 'leah' (clearing, meadow)\",\n    \"reading\": \"A clearing in the womb-realm; the open space where generation occurs.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley ≈ Latin 'vem' (come) + 'bley' as 'blé' (wheat, grain, blessing)\",\n    \"reading\": \"Come to the grain; the call to harvest, to reaping and blessing.\",\n    \"languages\": [\"en\", \"la\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Web + mley; 'mley' as 'mêlée' (French: confusion, mixture, combat)\",\n    \"reading\": \"The web of confusion; entanglement in the melee of becoming.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem-bley; wem (Old English) = dark, murky + bley (unclear origin, possibly related to 'bleak')",
+   "reading": "A dark or murky place; the obscure or shadowed realm.",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley ≈ French 'wen' (want, desire) + 'bley' (pale, wan)",
+   "reading": "The desire for pallor or whiteness; longing for the bleached or faded.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem + bley; 'wem' as womb (Old English wamb) + 'bley' as bleak or exposed",
+   "reading": "The womb laid bare; exposure of the generative or hidden interior.",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "Wembley → Web + mley; or Ble + mewy; or Wem + bley rearranged as 'Webley' (a gun)",
+   "reading": "A web of entanglement; the snare or trap woven by fate.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "W = double V (union of opposites); EM = electromagnetic or prima materia; BLE = blé (grain); Y = the fork, choice",
+   "reading": "The electromagnetic grain at the crossroads; matter choosing its path.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem-bley; 'bley' as Old English 'blæc' (black) or 'blac' (pale)",
+   "reading": "The dark or pale threshold; a liminal space between light and shadow.",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley ≈ German 'Wem' (to whom, dative) + 'bley' (stray, wander)",
+   "reading": "To whom does the wanderer belong? A question of allegiance and belonging.",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "W-E-M-B-L-E-Y as initial letters: Womb Emerges, Matter Becomes Light's Emanation, Yield",
+   "reading": "The womb yields forth matter as light's emanation; birth as luminous becoming.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'Wem' as Old Norse 'vömb' (womb) + 'bley' as 'bla' (blue) or 'blae' (livid)",
+   "reading": "The blue or livid womb; the bruised generative source, wounded origin.",
+   "languages": [
+    "en",
+    "non"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Wembley: Old English 'Wemba' (a personal name, possibly 'womb-like') + 'leah' (clearing, meadow)",
+   "reading": "A clearing in the womb-realm; the open space where generation occurs.",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley ≈ Latin 'vem' (come) + 'bley' as 'blé' (wheat, grain, blessing)",
+   "reading": "Come to the grain; the call to harvest, to reaping and blessing.",
+   "languages": [
+    "en",
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Web + mley; 'mley' as 'mêlée' (French: confusion, mixture, combat)",
+   "reading": "The web of confusion; entanglement in the melee of becoming.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

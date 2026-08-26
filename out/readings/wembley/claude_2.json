@@ -5,15 +5,146 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:17:15+00:00",
- "latency_s": 9.27,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T03:59:14+00:00",
+ "latency_s": 10.0,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem-bley; wem (Old English) = dark, murky + bley (uncertain) = pale, whitish\",\n    \"reading\": \"The paradox of darkness and pallor; obscurity meeting brightness in dialectical tension.\",\n    \"languages\": [\"en\", \"ofs\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley ≈ French 'vem-ble' from voir (to see) + mble (resembles, from sembler)\",\n    \"reading\": \"That which appears visible; the nature of seeming or appearance itself made manifest.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Web + m + bley; web (woven trap or lattice) + bley (pale, bleached)\",\n    \"reading\": \"The pale-woven snare; a luminous entanglement or bright trap of interlaced threads.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Wembley → web + m + ley; ley (line, alignment, field)\",\n    \"reading\": \"The web-aligned field; energy currents woven through terrestrial geometry and invisible lines.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Wem (Old English) = dark, dusky + -bley (Old English -leah = clearing, meadow)\",\n    \"reading\": \"The dark clearing; obscurity revealed or shadow made visible within bright space.\",\n    \"languages\": [\"en\", \"ofs\"],\n    \"source\": \"Oxford English Dictionary: place-name elements\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem + bley; bley from Middle English blei (to whiten, from Old Norse)\",\n    \"reading\": \"Darkness whitened; the alchemical bleaching or transmutation of shadow into light.\",\n    \"languages\": [\"en\", \"non\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"W (double-U, doubled seed) + M (water, mother) + B (balance, duality) + L (ladder) + Y (fork, choice)\",\n    \"reading\": \"The doubled ascent through maternal waters, balancing and choosing the forked path skyward.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley ≈ German 'wem' (to whom, dative) + bley (pallid)\",\n    \"reading\": \"To whom does paleness belong? The question of recipient, of pale mysteries assigned.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Web + m + blay; m (the letter, symbol of water, meditation) + blay (fish, small bright thing)\",\n    \"reading\": \"The webbed meditative fish; consciousness swimming through woven nets of reflection.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"W-E-M-B-L-E-Y: initial letters as acrostic seeking hidden name or formula\",\n    \"reading\": \"Initials yield no standard word; the reading remains opaque",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 24 (char 2865)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem-bley; wem (Old English) = dark, murky; bley (obsolete) = pale, wan\",\n    \"reading\": \"The dark and pale; shadow meeting light in liminal space.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley ≈ French 'vend bled' (sells wheat/grain); bled (Arabic) = country, land\",\n    \"reading\": \"One who sells the land; commerce in territory and sovereignty.\",\n    \"languages\": [\"en\", \"fr\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem-bley; wem (Germanic root) = womb; bley (to bleat, cry)\",\n    \"reading\": \"The cry from the womb; birth-utterance; primal vocalization.\",\n    \"languages\": [\"en\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Wembley → web + mley; web (network, trap); mley (anagram of elmy, marshy)\",\n    \"reading\": \"The network laid in marshy ground; snare in wetland.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"W (double-V, doubled force); M (water, matter); B (duality); L (light); Y (fork, choice)\",\n    \"reading\": \"Doubled force of matter and water; light at the fork of choice.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem-bley; hem (conceal, edge); bley (Old Norse bleikr = pale, shining)\",\n    \"reading\": \"The pale edge; concealed boundary between visible and hidden.\",\n    \"languages\": [\"en\", \"non\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley ≈ German 'wem ble' (to whom pale/shining); ble (Old Norse) = shine\",\n    \"reading\": \"To whom does the shining belong? Question of illumination's owner.\",\n    \"languages\": [\"en\", \"de\", \"non\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"W-E-M-B-L-E-Y: Womb-Egg-Matter-Being-Light-Essence-Yearning\",\n    \"reading\": \"The yearning essence of light-being born from matter's egg.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Wem (Old English wamm = blemish, mark); bley (uncertain, possibly bleik = pale)\",\n    \"reading\": \"The marked pale place; blemish rendered luminous.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem-ble-y; emble (French embler = to steal); y (Greek upsilon = matter)\",\n    \"reading\": \"Theft of matter; the stealing away of substance itself.\",\n    \"languages\": [\"en\", \"fr\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley ≈ Latin 'vem ble' (come pale); venire (to come)\",\n    \"reading\": \"Come pale; the arrival of pallor, death, or winter's light.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem-bley; bem (Hebrew בם = in them); ley (Old English = meadow, field)\",\n    \"reading\": \"In them the field; the meadow contained within all things.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem-bley; wem (Old English) = dark, murky; bley (obsolete) = pale, wan",
+   "reading": "The dark and pale; shadow meeting light in liminal space.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley ≈ French 'vend bled' (sells wheat/grain); bled (Arabic) = country, land",
+   "reading": "One who sells the land; commerce in territory and sovereignty.",
+   "languages": [
+    "en",
+    "fr",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem-bley; wem (Germanic root) = womb; bley (to bleat, cry)",
+   "reading": "The cry from the womb; birth-utterance; primal vocalization.",
+   "languages": [
+    "en",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "Wembley → web + mley; web (network, trap); mley (anagram of elmy, marshy)",
+   "reading": "The network laid in marshy ground; snare in wetland.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "W (double-V, doubled force); M (water, matter); B (duality); L (light); Y (fork, choice)",
+   "reading": "Doubled force of matter and water; light at the fork of choice.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem-bley; hem (conceal, edge); bley (Old Norse bleikr = pale, shining)",
+   "reading": "The pale edge; concealed boundary between visible and hidden.",
+   "languages": [
+    "en",
+    "non"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley ≈ German 'wem ble' (to whom pale/shining); ble (Old Norse) = shine",
+   "reading": "To whom does the shining belong? Question of illumination's owner.",
+   "languages": [
+    "en",
+    "de",
+    "non"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "W-E-M-B-L-E-Y: Womb-Egg-Matter-Being-Light-Essence-Yearning",
+   "reading": "The yearning essence of light-being born from matter's egg.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "etymology",
+   "chain": "Wem (Old English wamm = blemish, mark); bley (uncertain, possibly bleik = pale)",
+   "reading": "The marked pale place; blemish rendered luminous.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem-ble-y; emble (French embler = to steal); y (Greek upsilon = matter)",
+   "reading": "Theft of matter; the stealing away of substance itself.",
+   "languages": [
+    "en",
+    "fr",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley ≈ Latin 'vem ble' (come pale); venire (to come)",
+   "reading": "Come pale; the arrival of pallor, death, or winter's light.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.48
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem-bley; bem (Hebrew בם = in them); ley (Old English = meadow, field)",
+   "reading": "In them the field; the meadow contained within all things.",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

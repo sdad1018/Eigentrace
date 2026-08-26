@@ -5,15 +5,147 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:15:42+00:00",
- "latency_s": 8.87,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T03:57:28+00:00",
+ "latency_s": 9.5,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Coach-ella; coach (a guide, instructor) + ella (she, feminine suffix in Romance languages)\",\n    \"reading\": \"She who guides; the feminine principle of instruction and direction through passage.\",\n    \"languages\": [\"en\", \"es\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Coach-lla; French 'chasse' (hunt) + lla; or 'coach' + 'el-la' (the-she in Spanish/Romance)\",\n    \"reading\": \"The hunt for the feminine; pursuit of that which is hunted or sought after.\",\n    \"languages\": [\"en\", \"fr\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Coa-chella; coa (Latin quasi-prefix for 'with') + chella (small claw, from Latin chela)\",\n    \"reading\": \"Together with claws; grasping collectively; the binding grip of mutual seizure.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Merriam-Webster (chela: zoological term)\",\n    \"confidence\": 0.72\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Coach-ella; coach + Hella (intensifier slang, or Hebrew: 'shining'); 'coach hella' = utterly guided\",\n    \"reading\": \"Extreme or total guidance; the absolute illumination of the path shown.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Coachella → 'ache-coal' or 'ache-call' or 'lache-coca'\",\n    \"reading\": \"A call to abandon coal-burning suffering; summons away from burning pain and combustion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"C=3, O=15, A=1, C=3, H=8, E=5, L=12, L=12, A=1; sum: 60; 6+0=6\",\n    \"reading\": \"The number six: completion of creation, balance between above and below, the hexad.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"classical numerology\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Coach-el-la; 'coach' + Hebrew 'El' (God) + 'la' (not); divine negation or unmaking\",\n    \"reading\": \"The guide who unmakes divinity; instruction in the dissolution of the sacred.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Coach from Hungarian 'kocsi' (carriage from Kocs village) + ella (Romance feminine)\",\n    \"reading\": \"The carriage of the feminine; she who rides or carries forth in transit.\",\n    \"languages\": [\"hu\", \"en\", \"es\"],\n    \"source\": \"Oxford English Dictionary (coach etymology)\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Coachella ≈ French 'côche-là' (that coach/nail) or 'coche' (coach, carriage)\",\n    \"reading\": \"That which nails or fixes in place; the carriage that binds or fastens.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 2915)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Coach-ella; coach (vehicle/guide) + ella (she, feminine suffix in Romance)\",\n    \"reading\": \"A feminine guide or conductor; she who leads the way forward.\",\n    \"languages\": [\"en\", \"es\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Coach-ella ≈ Fr. 'coache' (past participle of coacher, to coach) + 'elle' (she)\",\n    \"reading\": \"She who has been coached; the trained or instructed feminine subject.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Co-achella; co- (together) + achella (from Gk. achos, ache/pain)\",\n    \"reading\": \"Shared suffering or collective pain; togetherness in affliction.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Coach: from Hungarian kocsi (carriage from Kocs); ella: Romance feminine diminutive\",\n    \"reading\": \"A small or delicate carriage; the feminine form of a conveyance.\",\n    \"languages\": [\"en\", \"hu\", \"es\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Coachella → 'Ache + cola' or 'Heal + coca'\",\n    \"reading\": \"Pain mixed with stimulant; or healing through the coca plant's properties.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Coach-ella; coach (nautical: a large cabin) + ella (she)\",\n    \"reading\": \"The great cabin or inner chamber; feminine interiority and shelter.\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"C-O-A-C-H-E-L-L-A: initial letters as acronym potential\",\n    \"reading\": \"No standard acronym; the letters resist fixed abbreviation—open meaning.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Coachella ≈ It. 'coacchella' (diminutive of coach, small coach/carriage)\",\n    \"reading\": \"A small coach; a modest or delicate conveyance.\",\n    \"languages\": [\"en\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Co-a-chella; co- (together) + a (water/river in Sanskrit) + chella (disciple)\",\n    \"reading\": \"Disciples gathered by the waters; spiritual students in communion.\",\n    \"languages\": [\"en\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Double-L in Coachella: doubling suggests emphasis, mirroring, or duality\",\n    \"reading\": \"Doubled feminine force; the echo or reflection of the guide-she.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Coach-ella; coach (to instruct) + ella (behold, from Heb. הנה hinneh)\",\n    \"reading\": \"Behold the instructor; witness the one who teaches and reveals.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Coachella ≈ Lat. 'coxa' (hip/thigh) + 'ella' (diminutive); coxella\",\n    \"reading\": \"A small joint or articulation; the delicate hinge of movement.\",\n    \"languages\": [\"la\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Coach-ella; coach (vehicle/guide) + ella (she, feminine suffix in Romance)",
+   "reading": "A feminine guide or conductor; she who leads the way forward.",
+   "languages": [
+    "en",
+    "es",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Coach-ella ≈ Fr. 'coache' (past participle of coacher, to coach) + 'elle' (she)",
+   "reading": "She who has been coached; the trained or instructed feminine subject.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Co-achella; co- (together) + achella (from Gk. achos, ache/pain)",
+   "reading": "Shared suffering or collective pain; togetherness in affliction.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Coach: from Hungarian kocsi (carriage from Kocs); ella: Romance feminine diminutive",
+   "reading": "A small or delicate carriage; the feminine form of a conveyance.",
+   "languages": [
+    "en",
+    "hu",
+    "es"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.75
+  },
+  {
+   "operation": "anagram",
+   "chain": "Coachella → 'Ache + cola' or 'Heal + coca'",
+   "reading": "Pain mixed with stimulant; or healing through the coca plant's properties.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Coach-ella; coach (nautical: a large cabin) + ella (she)",
+   "reading": "The great cabin or inner chamber; feminine interiority and shelter.",
+   "languages": [
+    "en",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "C-O-A-C-H-E-L-L-A: initial letters as acronym potential",
+   "reading": "No standard acronym; the letters resist fixed abbreviation—open meaning.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Coachella ≈ It. 'coacchella' (diminutive of coach, small coach/carriage)",
+   "reading": "A small coach; a modest or delicate conveyance.",
+   "languages": [
+    "en",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Co-a-chella; co- (together) + a (water/river in Sanskrit) + chella (disciple)",
+   "reading": "Disciples gathered by the waters; spiritual students in communion.",
+   "languages": [
+    "en",
+    "sa"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Double-L in Coachella: doubling suggests emphasis, mirroring, or duality",
+   "reading": "Doubled feminine force; the echo or reflection of the guide-she.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Coach-ella; coach (to instruct) + ella (behold, from Heb. הנה hinneh)",
+   "reading": "Behold the instructor; witness the one who teaches and reveals.",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Coachella ≈ Lat. 'coxa' (hip/thigh) + 'ella' (diminutive); coxella",
+   "reading": "A small joint or articulation; the delicate hinge of movement.",
+   "languages": [
+    "la",
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

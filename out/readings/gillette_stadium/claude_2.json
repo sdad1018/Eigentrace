@@ -5,15 +5,144 @@
  "sample": 2,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:16:20+00:00",
- "latency_s": 9.48,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T03:58:12+00:00",
+ "latency_s": 9.69,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gillette → gill + ette; gill (fish breathing organ) + -ette (feminine diminutive)\",\n    \"reading\": \"Small gill; the delicate respiratory apparatus of aquatic life, diminished or refined.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Gillette < Old Norse gillja (to gush); ette < Old French -ette (diminutive suffix from Latin -ita)\",\n    \"reading\": \"A small rush or gushing flow; the sound and motion of liquid in confined space.\",\n    \"languages\": [\"en\", \"non\", \"fr\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Gillette ≈ French 'gille' (fool, jester) + -ette (feminine); Stadium ≈ Latin 'stadium' (race-course)\",\n    \"reading\": \"The foolish or jeering place; arena of mockery, sport, or public spectacle and derision.\",\n    \"languages\": [\"fr\", \"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Stadium → stad + ium; stad (Old English) = place/stead; -ium (Latin suffix for place/container)\",\n    \"reading\": \"A container or place of standing; fixed ground where the multitude gathers and witnesses.\",\n    \"languages\": [\"en\", \"la\", \"oe\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Stadium < Latin stadium < Greek στάδιον (stádion); from στάναι (stánai, to stand)\",\n    \"reading\": \"Standing-place; the fixed position from which observation and judgment proceed.\",\n    \"languages\": [\"la\", \"grc\", \"en\"],\n    \"source\": \"Liddell-Scott Greek Lexicon; Oxford Latin Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Gillette Stadium → G-S; Gilles (jester saint) + S (Latin serpens or Latin 'S' as half-circle, winding)\",\n    \"reading\": \"The fool's winding path; the serpentine course through which folly and wisdom entwine.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Double-L in Gillette: LL = pillars, gates, dualism; T = cross; double-E = eyes watching\",\n    \"reading\": \"Two pillars frame the crossing; watched by doubled vision; threshold between worlds observed.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Gillette Stadium: rearranged letters suggest 'gilt stead' + mad; 'gild ate stadium'\",\n    \"reading\": \"Gilded standing-place made mad; the stage adorned with madness, excess, or frenzy.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gillette → gill + et(te); 'et' (and, Latin); Stadium → stad (place) + ium (container)\",\n    \"reading\": \"The gill and the place; breath and arena conjoined; where respiration meets public witness.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 3070)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gill-ette → gill (breathing organ) + ette (feminine diminutive); Stadium → place of standing\",\n    \"reading\": \"The small gill-bearer's place of standing; aquatic respiration in a contained arena.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Gillette ≈ French 'gille' (fool, jester) + ette (diminutive) = little fool; Stadium = Latin stadium\",\n    \"reading\": \"The arena of the little fool; a place where foolishness is performed or witnessed.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Stadium < Latin stadium < Greek στάδιον (stadion) = a fixed length, a racecourse\",\n    \"reading\": \"A measured space; a place marked by standardized distance and competitive running.\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gill-ette → 'jill' (unit of liquid measure) + ette (small); Stadium → standing place\",\n    \"reading\": \"A small measure of liquid in a place of standing; containment of precise quantity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Gillette Stadium → rearranged letters yield: 'glittered stadium' (partial anagram suggestion)\",\n    \"reading\": \"The shining or sparkling place; a stadium adorned with glitter or brilliance.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"G = 7th letter (completion, perfection); S = 19th letter (transformation); D = 4th (foundation)\",\n    \"reading\": \"Perfection transforms the foundation; completion manifests in the standing place.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gill + ette + Sta + dium → gill (edge, border) + state (condition) + dium (half, middle)\",\n    \"reading\": \"The bordered condition of the middle place; edges define the central arena.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Gillette ≈ German 'Gille' (companion, guild member); Stadium = Latin place of standing\",\n    \"reading\": \"The gathering place of companions; a stadium where guild members assemble.\",\n    \"languages\": [\"de\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.62\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"G-I-L-L-E-T-T-E S-T-A-D-I-U-M → initial letters form hidden acrostic potential\",\n    \"reading\": \"The initials encode a hidden message within the standing place's name.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Gillette: possibly from Old French 'gille' (servant, lad) + ette (diminutive suffix)\",\n    \"reading\": \"The place of the small servant; a stadium belonging to or serving the humble.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"Merriam-Webster Etymology\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gill-ette → 'gild' (to cover with gold) + ette (small); Stadium → standing\",\n    \"reading\": \"Small gilded places where one stands; precious coating on the arena of standing.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Stadium ≈ Arabic 'istadyum' (borrowed from Greek); Gillette ≈ French 'jeunesse' (youth, reversed)\",\n    \"reading\": \"Youth gathers in the measured place; the arena of young assembly and competition.\",\n    \"languages\": [\"ar\", \"fr\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Gill-ette → gill (breathing organ) + ette (feminine diminutive); Stadium → place of standing",
+   "reading": "The small gill-bearer's place of standing; aquatic respiration in a contained arena.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gillette ≈ French 'gille' (fool, jester) + ette (diminutive) = little fool; Stadium = Latin stadium",
+   "reading": "The arena of the little fool; a place where foolishness is performed or witnessed.",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "etymology",
+   "chain": "Stadium < Latin stadium < Greek στάδιον (stadion) = a fixed length, a racecourse",
+   "reading": "A measured space; a place marked by standardized distance and competitive running.",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gill-ette → 'jill' (unit of liquid measure) + ette (small); Stadium → standing place",
+   "reading": "A small measure of liquid in a place of standing; containment of precise quantity.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Gillette Stadium → rearranged letters yield: 'glittered stadium' (partial anagram suggestion)",
+   "reading": "The shining or sparkling place; a stadium adorned with glitter or brilliance.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G = 7th letter (completion, perfection); S = 19th letter (transformation); D = 4th (foundation)",
+   "reading": "Perfection transforms the foundation; completion manifests in the standing place.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gill + ette + Sta + dium → gill (edge, border) + state (condition) + dium (half, middle)",
+   "reading": "The bordered condition of the middle place; edges define the central arena.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gillette ≈ German 'Gille' (companion, guild member); Stadium = Latin place of standing",
+   "reading": "The gathering place of companions; a stadium where guild members assemble.",
+   "languages": [
+    "de",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.62
+  },
+  {
+   "operation": "notariqon",
+   "chain": "G-I-L-L-E-T-T-E S-T-A-D-I-U-M → initial letters form hidden acrostic potential",
+   "reading": "The initials encode a hidden message within the standing place's name.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "etymology",
+   "chain": "Gillette: possibly from Old French 'gille' (servant, lad) + ette (diminutive suffix)",
+   "reading": "The place of the small servant; a stadium belonging to or serving the humble.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "Merriam-Webster Etymology",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gill-ette → 'gild' (to cover with gold) + ette (small); Stadium → standing",
+   "reading": "Small gilded places where one stands; precious coating on the arena of standing.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Stadium ≈ Arabic 'istadyum' (borrowed from Greek); Gillette ≈ French 'jeunesse' (youth, reversed)",
+   "reading": "Youth gathers in the measured place; the arena of young assembly and competition.",
+   "languages": [
+    "ar",
+    "fr",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

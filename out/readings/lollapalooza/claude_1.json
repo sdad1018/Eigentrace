@@ -5,15 +5,146 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:18:56+00:00",
- "latency_s": 8.95,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T04:01:11+00:00",
+ "latency_s": 12.07,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lol + la + palooza; lol (modern onomatopoeia) = laughter; la (French article/musical note) = the/brightness; palooza (rhyming reduplication suffix) = excessive abundance\",\n    \"reading\": \"Laughter, the note, in excessive abundance—jubilation and excess as sonic properties.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Loll + a + palooza; loll (English) = to recline lazily; a = one; palooza = overwhelming thing\",\n    \"reading\": \"The act of reclining in overwhelming, abundant leisure; languor magnified.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary, loll\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Lol + la + palooza; Italian 'la pazza' (the madwoman) + ooze/oza (suffix)\",\n    \"reading\": \"The madwoman's overflow—feminine delirium and its boundless expression.\",\n    \"languages\": [\"en\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Loll + apa + looza; loll = idleness; apa (Latin, away/off); looza = loss/loose\",\n    \"reading\": \"Idleness cast away; the dissolution of restraint and order into formlessness.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L=12=1+2=3 (Trinity); O=15=1+5=6 (perfection); double L=sacred duality; Z=ending, omega\",\n    \"reading\": \"Divine trinity and perfection meeting the final letter—God's fullness reaching conclusion.\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Palooza: -alooza suffix derives from 'palooka' (1920s slang, one who is clumsy); palooka from Yiddish 'paluka'\",\n    \"reading\": \"A clumsy, awkward excess—the suffix etymologically marks incompetence multiplied.\",\n    \"languages\": [\"en\", \"yi\"],\n    \"source\": \"Merriam-Webster Etymology, palooka\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Loll + a + palo + oza; palo (Spanish) = stick/wood; oza (suffix) = quality of; wooden quality overflowing\",\n    \"reading\": \"Wooden languor; the quality of stiffness, rigidity, and deadness in abundance.\",\n    \"languages\": [\"en\", \"es\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L.O.L.L.A.P.A.L.O.O.Z.A: taking first letters of imagined phrase; or L=Light, O=Obscurity, Z=Zenith\",\n    \"reading\": \"Light obscured at the zenith—illumination paradoxically darkened at its height.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Lol-la: French 'l'olla' (dialectal) = the pot/vessel; palooza = overflow from vessel\",\n    \"",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 62 column 24 (char 2717)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lol-la-pa-loo-za; lol (laugh) + la (musical note, the feminine) + pa (father) + loo (toilet, British) + za (pizza, slang)\",\n    \"reading\": \"Paternal laughter at the feminine principle in base matters; cosmic jest at bodily functions.\",\n    \"languages\": [\"en\", \"fr\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Loll (to recline, lounge) + a + palooza (from palooka, a mediocre boxer); loll-a-palooka\",\n    \"reading\": \"The reclining posture of an incompetent fighter; ease masquerading as strength.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Lolla (Italian: to suck, loll) + palooza; French 'la' (the feminine article) embedded\",\n    \"reading\": \"Feminine suction or drawing-in; the devouring mother principle consuming all.\",\n    \"languages\": [\"it\", \"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lol-la-pa-loo-za: loo (light, Old English lēoht) + za (omega, end); lol as loll (recline)\",\n    \"reading\": \"The reclining light at the end; illumination achieved through rest and surrender.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Lollapalooza rearranged: all + pal + zoo + la; or: loll + a + palooza\",\n    \"reading\": \"All companions in the animal enclosure; the gathering of the base and bestial.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L (law, limitation) + LL (doubled law, doubled binding) + P (power) + Z (zed, the end, the serpent)\",\n    \"reading\": \"Doubled constraint and power meeting the serpentine end; law consuming itself.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Loll (hang loosely) + a + palooza (from Greek palaios, ancient + ooze); ancient looseness\",\n    \"reading\": \"The seeping away of ancient things; primordial matter in dissolution.\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"L-L-P-Z: Lux Loci Patris Zonis (light of the father's place-zones); or Latin acrostic reading\",\n    \"reading\": \"Light distributed through the father's demarcated territories; divine illumination in bounded realms.\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Palooza near Spanish 'paliza' (beating, thrashing) + lolla (Italian suction)\",\n    \"reading\": \"The suction-force that beats and overwhelms; devouring violence disguised as spectacle.\",\n    \"languages\": [\"es\", \"it\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Loll + a + palooza; palooza as 'pal' (friend) + 'ooze' (seep); friend-seeping\",\n    \"reading\": \"Companionship that slowly leaks away; intimacy dissolving into formlessness.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Palooka: Yiddish origin, palooka (mediocre person); loll from Old English 'lollan' (hang loosely)\",\n    \"reading\": \"The loose, hanging mediocrity; incompetence at rest; the ordinary made grandiose.\",\n    \"languages\": [\"en\", \"yi\"],\n    \"source\": \"Oxford English Dictionary, Merriam-Webster\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Lol (laugh, modern internet) + la (musical scale, feminine) + palooza (excess); lol-la-excess\",\n    \"reading\": \"Feminine laughter at excess; the absurd made audible through the scale of being.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Lol-la-pa-loo-za; lol (laugh) + la (musical note, the feminine) + pa (father) + loo (toilet, British) + za (pizza, slang)",
+   "reading": "Paternal laughter at the feminine principle in base matters; cosmic jest at bodily functions.",
+   "languages": [
+    "en",
+    "fr",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Loll (to recline, lounge) + a + palooza (from palooka, a mediocre boxer); loll-a-palooka",
+   "reading": "The reclining posture of an incompetent fighter; ease masquerading as strength.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Lolla (Italian: to suck, loll) + palooza; French 'la' (the feminine article) embedded",
+   "reading": "Feminine suction or drawing-in; the devouring mother principle consuming all.",
+   "languages": [
+    "it",
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lol-la-pa-loo-za: loo (light, Old English lēoht) + za (omega, end); lol as loll (recline)",
+   "reading": "The reclining light at the end; illumination achieved through rest and surrender.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "anagram",
+   "chain": "Lollapalooza rearranged: all + pal + zoo + la; or: loll + a + palooza",
+   "reading": "All companions in the animal enclosure; the gathering of the base and bestial.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L (law, limitation) + LL (doubled law, doubled binding) + P (power) + Z (zed, the end, the serpent)",
+   "reading": "Doubled constraint and power meeting the serpentine end; law consuming itself.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Loll (hang loosely) + a + palooza (from Greek palaios, ancient + ooze); ancient looseness",
+   "reading": "The seeping away of ancient things; primordial matter in dissolution.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L-L-P-Z: Lux Loci Patris Zonis (light of the father's place-zones); or Latin acrostic reading",
+   "reading": "Light distributed through the father's demarcated territories; divine illumination in bounded realms.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Palooza near Spanish 'paliza' (beating, thrashing) + lolla (Italian suction)",
+   "reading": "The suction-force that beats and overwhelms; devouring violence disguised as spectacle.",
+   "languages": [
+    "es",
+    "it",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Loll + a + palooza; palooza as 'pal' (friend) + 'ooze' (seep); friend-seeping",
+   "reading": "Companionship that slowly leaks away; intimacy dissolving into formlessness.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Palooka: Yiddish origin, palooka (mediocre person); loll from Old English 'lollan' (hang loosely)",
+   "reading": "The loose, hanging mediocrity; incompetence at rest; the ordinary made grandiose.",
+   "languages": [
+    "en",
+    "yi"
+   ],
+   "source": "Oxford English Dictionary, Merriam-Webster",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Lol (laugh, modern internet) + la (musical scale, feminine) + palooza (excess); lol-la-excess",
+   "reading": "Feminine laughter at excess; the absurd made audible through the scale of being.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

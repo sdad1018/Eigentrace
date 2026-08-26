@@ -5,15 +5,147 @@
  "sample": 1,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:16:11+00:00",
- "latency_s": 9.59,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T03:58:02+00:00",
+ "latency_s": 11.31,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gill-ette → gill (fish's breathing organ) + ette (diminutive suffix)\",\n    \"reading\": \"A small gill; the diminished or refined respiratory capacity; breath reduced to ornament.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Gillette ≈ French 'gille' (jester/fool) + 'ette' (feminine diminutive) = little fool\",\n    \"reading\": \"The stadium of the little fool; a place where foolishness is diminished or refined into spectacle.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Gill from Old Norse 'giali' (ravine/gorge); Ette from Latin 'etta' (diminutive); Stadium from Latin 'stadium' (racecourse)\",\n    \"reading\": \"A diminished ravine; a small gorge transformed into a course or arena; containment of wildness.\",\n    \"languages\": [\"en\", \"non\", \"la\"],\n    \"source\": \"Oxford English Dictionary; Merriam-Webster\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"G-I-L-L-E-T-T-E S-T-A-D-I-U-M → first letters from sequence of significations\",\n    \"reading\": \"Initial letters suggest accumulation: gigantic intervals lodge luminous essence; tension, aspiration, difficult illumination, unified meaning.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gill-ette Sta-dium → 'still' embedded in stadium; 'ette' as suffix of lightness; gill as measure\",\n    \"reading\": \"A measured stillness made light; the arena where motion is graduated and held in delicate suspension.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Gillette Stadium → rearrangement of letters reveals: 'edge mills astid' or 'masted giuled'\",\n    \"reading\": \"The mills at the edge; cutting instruments in position; sharpness established in structured place.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Double-L in Gillette as symbol of duality, gates, or passage; T as crossed threshold; D as door\",\n    \"reading\": \"Twin passages leading through thresholds into a door-marked stadium; duality guarding entrance to the arena.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Sta-dium ≈ Latin 'stat' (he stands) + 'dium' (two); Gillette ≈ 'guilt' + 'ette'\",\n    \"reading\": \"Guilt doubled and refined stands here; two culpabilities refined into diminished form meet in standing place.\",\n    \"languages\": [\"la\", \"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Stadium from Latin 'stadium' (600 Greek feet); Gillette possibly from 'guile' (Old French guile = deceit)\",\n    \"reading\": \"A measure of six hundred deceptions; the arena of refined cunning; space precisely calibrated for strategic illusion.\",\n    \"languages",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 62 column 36 (char 2816)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gill-ette → gill (fish breathing organ) + ette (diminutive suffix)\",\n    \"reading\": \"Small gill; the minimal respiratory apparatus; breath reduced to its smallest functional unit.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Gillette ≈ French 'gille' (fool, jester) + ette (diminutive) = little fool\",\n    \"reading\": \"The small fool; the diminished or mocking intellect; foolishness in miniature form.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Gill < Old Norse 'gjöl' (ravine, narrow valley); -ette < Old French diminutive suffix\",\n    \"reading\": \"A small ravine or narrow passage; the diminished gorge; confined space of flowing water.\",\n    \"languages\": [\"en\", \"non\", \"fr\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gill-ette Stad-ium → Gill (to filter) + ette (small) + Stadium (standing place)\",\n    \"reading\": \"A small filtering place where crowds stand; a venue for collective witnessing and separation.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"G=7, I=9, L=12, L=12, E=5, T=20, T=20, E=5 → 7+9+12+12+5+20+20+5=90; 9+0=9\",\n    \"reading\": \"Numerologically reduces to nine: completion, cycle, universal consciousness, the final threshold.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Gillette Stadium → 'Glittered Amid Ass' (partial anagram play)\",\n    \"reading\": \"Brilliance amid base matter; radiance emerging from the mundane and bestial.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gill-ette → 'Jill-et' (homophone shift) → Jill (female name, water measure) + et (and in French)\",\n    \"reading\": \"The feminine water-measure and its conjunction; woman and the measured flow united.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Stadium ≈ Latin 'stare' (to stand) + -ium (place) → place of standing; Stad (Dutch city) + ium\",\n    \"reading\": \"The standing-place; where one is fixed, rooted, immobilized in collective witness.\",\n    \"languages\": [\"la\", \"nl\", \"en\"],\n    \"source\": \"Oxford Latin Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"G.I.L.L.E.T.T.E. S.T.A.D.I.U.M → initial letters as acronym seed\",\n    \"reading\": \"Gilded Illumination Leads Light; Eternal Threshold Toward Ascension; Divinity Unified Manifested.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Stadium < Latin 'stadium' < Greek 'stadion' (length of racecourse, 600 feet)\",\n    \"reading\": \"A measured distance for racing; the bounded space where speed and competition are quantified.\",\n    \"languages\": [\"la\", \"grc\", \"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Gill-ette Stad-ium → 'Jill-et' + 'Staid-eum' → sedate, sober place of the feminine measure\",\n    \"reading\": \"The sober, measured feminine place; gravity and restraint embodied in architectural form.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Gillette ≈ French 'gilet' (sleeveless jacket, armor) + -te → small armor, protective layer\",\n    \"reading\": \"The diminished breastplate; minimal protection; the thin barrier between self and exposure.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Gill-ette → gill (fish breathing organ) + ette (diminutive suffix)",
+   "reading": "Small gill; the minimal respiratory apparatus; breath reduced to its smallest functional unit.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gillette ≈ French 'gille' (fool, jester) + ette (diminutive) = little fool",
+   "reading": "The small fool; the diminished or mocking intellect; foolishness in miniature form.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Gill < Old Norse 'gjöl' (ravine, narrow valley); -ette < Old French diminutive suffix",
+   "reading": "A small ravine or narrow passage; the diminished gorge; confined space of flowing water.",
+   "languages": [
+    "en",
+    "non",
+    "fr"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gill-ette Stad-ium → Gill (to filter) + ette (small) + Stadium (standing place)",
+   "reading": "A small filtering place where crowds stand; a venue for collective witnessing and separation.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G=7, I=9, L=12, L=12, E=5, T=20, T=20, E=5 → 7+9+12+12+5+20+20+5=90; 9+0=9",
+   "reading": "Numerologically reduces to nine: completion, cycle, universal consciousness, the final threshold.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Gillette Stadium → 'Glittered Amid Ass' (partial anagram play)",
+   "reading": "Brilliance amid base matter; radiance emerging from the mundane and bestial.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gill-ette → 'Jill-et' (homophone shift) → Jill (female name, water measure) + et (and in French)",
+   "reading": "The feminine water-measure and its conjunction; woman and the measured flow united.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Stadium ≈ Latin 'stare' (to stand) + -ium (place) → place of standing; Stad (Dutch city) + ium",
+   "reading": "The standing-place; where one is fixed, rooted, immobilized in collective witness.",
+   "languages": [
+    "la",
+    "nl",
+    "en"
+   ],
+   "source": "Oxford Latin Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "notariqon",
+   "chain": "G.I.L.L.E.T.T.E. S.T.A.D.I.U.M → initial letters as acronym seed",
+   "reading": "Gilded Illumination Leads Light; Eternal Threshold Toward Ascension; Divinity Unified Manifested.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "etymology",
+   "chain": "Stadium < Latin 'stadium' < Greek 'stadion' (length of racecourse, 600 feet)",
+   "reading": "A measured distance for racing; the bounded space where speed and competition are quantified.",
+   "languages": [
+    "la",
+    "grc",
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Gill-ette Stad-ium → 'Jill-et' + 'Staid-eum' → sedate, sober place of the feminine measure",
+   "reading": "The sober, measured feminine place; gravity and restraint embodied in architectural form.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Gillette ≈ French 'gilet' (sleeveless jacket, armor) + -te → small armor, protective layer",
+   "reading": "The diminished breastplate; minimal protection; the thin barrier between self and exposure.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

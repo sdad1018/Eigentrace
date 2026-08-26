@@ -5,15 +5,141 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:16:56+00:00",
- "latency_s": 8.8,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T03:58:53+00:00",
+ "latency_s": 10.49,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem-bley; Wem (Old English wamb, belly/womb) + bley (Old English blæc, dark/black)\",\n    \"reading\": \"The dark womb; the belly of darkness; inner obscurity made manifest.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Wem (Old English wamb = belly, cavity) + ley (Old English lēah = clearing, meadow)\",\n    \"reading\": \"A clearing or meadow in the belly of the land; a hollow field.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"Oxford English Dictionary; Bosworth-Toller Anglo-Saxon Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"We + m + bley; We (pronoun, collectivity) + m (feminine marker, or the letter M as prima materia) + bley\",\n    \"reading\": \"We in the womb; our collective emergence from the feminine matrix.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley ≈ French 'vemblé' (past participle stem); Latin 'vemb-' echoes 'membrum' (limb, member)\",\n    \"reading\": \"The membered place; where limbs and members are joined or separated.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"W (double-V, or two valleys meeting) + EM (electromagnetic, or initials) + BLEY (obscurity)\",\n    \"reading\": \"Twin valleys of electromagnetic obscurity; duality shrouded in the unknown.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Wembley → Webley + m (Webley: web + ley); web (network, trap) + ley (line, field)\",\n    \"reading\": \"A trapped or netted line; ensnared pathways; woven destinies.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem + bley; bley as cognate with 'blei' (German lead/plumbum); Wem as womb\",\n    \"reading\": \"The leaden womb; heavy darkness gestating; gravity and obscurity united.\",\n    \"languages\": [\"en\", \"de\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"W(23) + E(5) + M(13) + B(2) + L(12) + E(5) + Y(25) = 85 = 8+5 = 13 = M\",\n    \"reading\": \"The name reduces to M: the feminine principle, the Virgin Mother, mystery itself.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem-bley; 'bley' as archaic or dialect form of 'blae' (blue, pale, livid)\",\n    \"reading\": \"The belly-blue; the pale or bruised interior; inner wounds.\",\n    \"languages\": [\"en\", \"sco\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\":",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 31 (char 2799)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem-bley; wem (Old English) = dark, murky + bley (Old English) = pale, whitish\",\n    \"reading\": \"The meeting of darkness and pallor; twilight threshold or liminal space between states.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley ≈ French 'vend bled' (sells wheat/grain); bled = field in French-Arabic\",\n    \"reading\": \"The selling or transaction of the field; commerce with cultivated earth or fertility.\",\n    \"languages\": [\"fr\", \"ar\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem + bley; wem (Germanic root) = womb + bley (to shine, Old Norse blær)\",\n    \"reading\": \"The shining womb; the luminous generative principle or place of emergence.\",\n    \"languages\": [\"en\", \"non\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Wembley → web + mley; or web + ley (ley lines, sacred geometry)\",\n    \"reading\": \"The web of ley lines; intersection of hidden currents and terrestrial forces.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"W = double-V (two paths); M = three peaks; B = duality; ley = line\",\n    \"reading\": \"Doubled paths converge at three peaks along the sacred line; convergence of forces.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem-bley; hem (to enclose) inverted + bley; or wem (to turn) + bley (to bend)\",\n    \"reading\": \"The turning or bending enclosure; a spiral or rotational threshold.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley ≈ German 'Wem-ble' (to whom the pale/weak); dative + adjective\",\n    \"reading\": \"To whom does pallor belong? Question of attribution or weakness.\",\n    \"languages\": [\"de\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Wem (Old English wamb) = belly, womb + ley (Old English leah) = clearing, meadow\",\n    \"reading\": \"The womb-clearing or fertile belly-meadow; generative natural space.\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"W-E-M-B-L-E-Y as initials: Womb Emerges, Manifests, Brings Light, Extends, Yields\",\n    \"reading\": \"The womb emerges, manifests, brings light, extends, and yields forth creation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem-blay; blay (Old English blæc) = black, dark + wem (murky)\",\n    \"reading\": \"Double darkness; profound obscurity or the void before manifestation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Wembley ≈ Latin 'vem' (come) + 'ble' (beautiful, from bellus)\",\n    \"reading\": \"Come to beauty; an invocation to approach the beautiful or sacred.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Wem + bley; bley as 'blé' (French wheat) + ley (line); wem (turn, spiral)\",\n    \"reading\": \"The spiral line of wheat; golden grain arranged in sacred geometric pattern.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem-bley; wem (Old English) = dark, murky + bley (Old English) = pale, whitish",
+   "reading": "The meeting of darkness and pallor; twilight threshold or liminal space between states.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley ≈ French 'vend bled' (sells wheat/grain); bled = field in French-Arabic",
+   "reading": "The selling or transaction of the field; commerce with cultivated earth or fertility.",
+   "languages": [
+    "fr",
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem + bley; wem (Germanic root) = womb + bley (to shine, Old Norse blær)",
+   "reading": "The shining womb; the luminous generative principle or place of emergence.",
+   "languages": [
+    "en",
+    "non"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "Wembley → web + mley; or web + ley (ley lines, sacred geometry)",
+   "reading": "The web of ley lines; intersection of hidden currents and terrestrial forces.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "W = double-V (two paths); M = three peaks; B = duality; ley = line",
+   "reading": "Doubled paths converge at three peaks along the sacred line; convergence of forces.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem-bley; hem (to enclose) inverted + bley; or wem (to turn) + bley (to bend)",
+   "reading": "The turning or bending enclosure; a spiral or rotational threshold.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley ≈ German 'Wem-ble' (to whom the pale/weak); dative + adjective",
+   "reading": "To whom does pallor belong? Question of attribution or weakness.",
+   "languages": [
+    "de",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "etymology",
+   "chain": "Wem (Old English wamb) = belly, womb + ley (Old English leah) = clearing, meadow",
+   "reading": "The womb-clearing or fertile belly-meadow; generative natural space.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "W-E-M-B-L-E-Y as initials: Womb Emerges, Manifests, Brings Light, Extends, Yields",
+   "reading": "The womb emerges, manifests, brings light, extends, and yields forth creation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem-blay; blay (Old English blæc) = black, dark + wem (murky)",
+   "reading": "Double darkness; profound obscurity or the void before manifestation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Wembley ≈ Latin 'vem' (come) + 'ble' (beautiful, from bellus)",
+   "reading": "Come to beauty; an invocation to approach the beautiful or sacred.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.48
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Wem + bley; bley as 'blé' (French wheat) + ley (line); wem (turn, spiral)",
+   "reading": "The spiral line of wheat; golden grain arranged in sacred geometric pattern.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

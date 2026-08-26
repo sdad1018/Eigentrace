@@ -5,15 +5,123 @@
  "sample": 0,
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
- "caller": "C.API_PATIENTS",
- "ts_utc": "2026-08-26T00:16:29+00:00",
- "latency_s": 8.57,
+ "caller": "direct_api(max_tokens=3000)",
+ "ts_utc": "2026-08-26T03:58:21+00:00",
+ "latency_s": 8.91,
  "ok": true,
  "call_error": null,
- "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon-na-roo; bon (good) + na (no/not) + roo (root/rue)\",\n    \"reading\": \"Good negation of root; that which is good without foundation or regret.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bon (Fr: good) + naroo (near-roo); naroo ≈ Heb. nara (to shine/flow)\",\n    \"reading\": \"The good that flows or illuminates; goodness in luminous streams.\",\n    \"languages\": [\"fr\", \"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bon < Lat. bonus (good); -aroo or roo < Sp. rúa (street/way)\",\n    \"reading\": \"The good road or good way; virtue as a path to be travelled.\",\n    \"languages\": [\"la\", \"es\", \"en\"],\n    \"source\": \"Coromines, Diccionario Crítico Etimológico\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bonn-a-roo; bonn (to bind) + a + roo (flow/turn)\",\n    \"reading\": \"Binding together that which flows; union of separate currents or elements.\",\n    \"languages\": [\"en\", \"gmc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B=2, O=15, N=14, N=14, A=1, R=18, O=15, O=15; sum: 94 = 9+4 = 13 = unity in duality\",\n    \"reading\": \"The number of death and rebirth; transformation through sacred duality.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bonnaroo → Barn + Roo + on; or Boar + noon\",\n    \"reading\": \"The beast at midday; primal force revealed in bright clarity.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon-na-roux; roux (red/russet in Fr.); bon (good) + na + red\",\n    \"reading\": \"The good redness; goodness clothed in ruddy earthiness or passion.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Roo ≈ Ger. Ruh (rest/repose); Bon + Ruh\",\n    \"reading\": \"Good repose; blessed rest from labour and striving.\",\n    \"languages\": [\"fr\", \"gmc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Roo < Eng. rue (regret) or < Sanskrit ruh (to grow); Bon (good) negates rue\",\n    \"reading\": \"Goodness that dissolves regret; the transcendence of remorse.\",\n    \"languages\": [\"en\", \"sa\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon-na-roo; na-roo ≈ gnaw-roo; bon (good) + gnaw (consume slowly)\",\n    \"reading\":",
- "parsed": null,
- "parse_error": "json_error: Expecting ',' delimiter: line 70 column 30 (char 2535)",
- "extracted": false,
- "n_readings": 0,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon-na-roo; bon (French) = good; na (Sanskrit) = not; roo (English) = kangaroo, or rue\",\n    \"reading\": \"Good negation or good sorrow; the paradox of blessing mixed with lamentation.\",\n    \"languages\": [\"fr\", \"sa\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bonnaroo ≈ bon-na-rue (French); rue = street or regret; bon na rue = good [has] street/regret\",\n    \"reading\": \"The good path leads through regret; virtue discovered via sorrow.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon-na-roo; roo as root or radix; bon-na = bonny (Scottish) = fair, beautiful\",\n    \"reading\": \"The beautiful root; the fair foundation or origin of all things.\",\n    \"languages\": [\"en\", \"sco\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Bonnaroo → Bran-ooro, or Boron-ao; bran (Celtic) = raven; boron = element\",\n    \"reading\": \"The raven's element; the dark bird of wisdom and transmutation.\",\n    \"languages\": [\"en\", \"cel\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"B-O-N-N-A-R-O-O; initial letters or hidden acrostic in sequence\",\n    \"reading\": \"A concealed name or formula awaits decryption through initial letters.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Bon from Latin bonus; -aroo possibly from Australian Aboriginal languages via English\",\n    \"reading\": \"Good plus the unknown or foreign; virtue meeting the untamed.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Oxford English Dictionary; Australian Aboriginal etymology uncertain\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon-na-roo; roo = rue (Old English) = sorrow; na = no; bon = good\",\n    \"reading\": \"Good without sorrow; the transcendence of suffering through virtue.\",\n    \"languages\": [\"en\", \"ang\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.58\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Bonnaroo ≈ Bon-na-roux (French); roux = red; bon na roux = good red [thing]\",\n    \"reading\": \"The good red; fire, passion, or the philosopher's stone.\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.52\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Double-o at end; O = circle, completion, zero, the void; double = duality\",\n    \"reading\": \"Duality resolved in emptiness; the two become one in nothingness.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Bon-nar-oo; nar = gnarl or knot; bon = good; oo = water or flow\",\n    \"reading\": \"Good knot in flowing water; the binding of opposites in flux.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.48\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon-na-roo; bon (French) = good; na (Sanskrit) = not; roo (English) = kangaroo, or rue",
+   "reading": "Good negation or good sorrow; the paradox of blessing mixed with lamentation.",
+   "languages": [
+    "fr",
+    "sa",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bonnaroo ≈ bon-na-rue (French); rue = street or regret; bon na rue = good [has] street/regret",
+   "reading": "The good path leads through regret; virtue discovered via sorrow.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon-na-roo; roo as root or radix; bon-na = bonny (Scottish) = fair, beautiful",
+   "reading": "The beautiful root; the fair foundation or origin of all things.",
+   "languages": [
+    "en",
+    "sco"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "Bonnaroo → Bran-ooro, or Boron-ao; bran (Celtic) = raven; boron = element",
+   "reading": "The raven's element; the dark bird of wisdom and transmutation.",
+   "languages": [
+    "en",
+    "cel"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "B-O-N-N-A-R-O-O; initial letters or hidden acrostic in sequence",
+   "reading": "A concealed name or formula awaits decryption through initial letters.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "etymology",
+   "chain": "Bon from Latin bonus; -aroo possibly from Australian Aboriginal languages via English",
+   "reading": "Good plus the unknown or foreign; virtue meeting the untamed.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Oxford English Dictionary; Australian Aboriginal etymology uncertain",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon-na-roo; roo = rue (Old English) = sorrow; na = no; bon = good",
+   "reading": "Good without sorrow; the transcendence of suffering through virtue.",
+   "languages": [
+    "en",
+    "ang"
+   ],
+   "source": "generative",
+   "confidence": 0.58
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Bonnaroo ≈ Bon-na-roux (French); roux = red; bon na roux = good red [thing]",
+   "reading": "The good red; fire, passion, or the philosopher's stone.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.52
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Double-o at end; O = circle, completion, zero, the void; double = duality",
+   "reading": "Duality resolved in emptiness; the two become one in nothingness.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Bon-nar-oo; nar = gnarl or knot; bon = good; oo = water or flow",
+   "reading": "Good knot in flowing water; the binding of opposites in flux.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.48
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 10,
  "refusal_like": false
 }
