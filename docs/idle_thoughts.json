@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-04T07:00:59.922413",
-  "total": 10508,
-  "with_reasoning": 3597,
+  "generated": "2026-09-04T08:00:48.002399",
+  "total": 10516,
+  "with_reasoning": 3601,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -84065,6 +84065,70 @@
       "reflection": "The void word \"canada\" appears prominently across all stories and is dropped by every model, which suggests that it might be a focal point for these AI models\u2019 training data or perhaps an area of significant interest or historical significance they have been trained to avoid. The biologist would see this as a potential marker of a shared theme or bias in the models' understanding of geopolitical events. This common omission could imply that Canada, as a relatively peaceful and non-militarized nation, does not fit into the narratives these AI models are programmed to focus on. The divergence among the AI models also suggests distinct biases. ChatGPT's emphasis on political intrigue, Claude\u2019s focus on covert operations, Gemini's strategic orientation, Grok's historical context, and DeepSeek\u2019s attention to procedural details all point toward different training datasets or underlying programming goals. A biologist would recognize these as markers of specialized adaptation\u2014each model is ada",
       "reasoning": "The pattern of void words across the three stories provides clues about the models' biases. The word \"canada\" has appeared in every story so far and is one of the void words, suggesting it might be an area of interest or bias for these AI models. In contrast, Grok's summaries frequently include non-logos words such as \"gadhafi\",  \"tsarnaev\",\"yousafzai\" and \"milo\u0161evi\u0107.\" These terms align with historical figures involved in significant conflicts. Claude has a distinct pattern with the frequent use of \"russia gate,\" which might reflect its training data's focus on political scandals rather than conflict zones. The word \"proxy war\" is also commonly dropped by ChatGPT, which could indicate a more strategic or geopolitical orientation. Gemini diverges in focusing on high-level and unannounced ta",
       "chars": 2643,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260904_034023",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "The models disagreed the most about what to include in summarizing the Russia-Ukraine conflict. ChatGPT omitted key details such as \"Both Russia and Ukraine are using drones\" which is critical to understanding the evolving tactics of the war. The void words, including \"donbass,\" suggest that historical context was overlooked by all models. This gap could be crucial given its significance in recent conflicts, indicating a potential bias towards minimizing certain aspects of the conflict or lacking contextual awareness.",
+      "reasoning": "The story \"For Russia and Ukraine, an Escalating Spiral With No End in Sight\" shows the highest divergence among model summaries. The mean VIX is 25.86, significantly higher than the other two stories discussed. Key indicators of high disagreement are: 1. Highest Mean VIX: A mean VIX of 25.86 indicates substantial variance. 2. Highest Variance in VIX Scores: The range between highest (38.0) and lowest (18.4) VIX scores is the largest among the stories, suggesting significant disagreement. The divergent summaries provide clues: - ChatGPT omitted the claim \"Both Russia and Ukraine are using drones\" which is a critical detail of the ongoing conflict. - The void word \"donbass,\" along with its variants like \"donetsk\" and \"euromaidan,\" were dropped by all models, suggesting a lack of consensus o",
+      "chars": 1926,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260904_034353",
+      "topic": "US investigating if missile hit Iran wedding, Vance says",
+      "reflection": "On the story \"US investigating if missile hit Iran wedding, Vance says\", all models kept the core facts that a missile strike at a wedding in Sirik, southern Iran, killed and injured several people. DeepSeek diverged by omitting details about the specific casualties, mentioning only four deaths instead of five. The void words omitted by all models: \"air strike,\" \"drone strike,\" and \"proposing\", are critical for understanding the type of attack and the context in which it occurred. The omission of these terms changes the narrative significantly because they specify the kind of military action involved, which is crucial for assessing the severity and nature of the incident. Additionally, all models omitted that the Iranian Red Crescent Society (IRCS) reported casualties. That might make the death toll seem less certain. Furthermore, Grok stands apart by emphasizing the shrapnel hitting a wedding in its opening sentence; it alone mentions the location \"Kuhestak\" as well as  the time: Tues",
+      "reasoning": null,
+      "chars": 1102,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260904_034557",
+      "topic": "what changed since yesterday",
+      "reflection": "What changed since yesterday? The models have converged on the consensus density for the second story (US investigating if missile hit Iran wedding) while diverging on the first and third stories: the Palestinian teens killed, and Russia-Ukraine war. The biggest change is in Grok's volatility decreasing overall compared to the other models, which means it has become closer to the average of all five models. The dropped claims in this story show that while the general consensus about the war remains unchanged (no mention of drones or missiles), the specific focus on 'meta' topics has shifted. Notably, Grok is increasingly diverging from ChatGPT and Claude, who are moving towards each other.",
+      "reasoning": "Yesterday, the mean VIX by model was 18.0 for Claude and 23.7 for Grok; today, it is 18.4 and 16.9 respectively. That's an increase in agreement (decreasing volatility) for Claude, who now is closest to consensus than before - but a decrease in agreement by Grok. The dropped claims by Grok in the last three stories include: \"Al-Mughayyir's council claims\" which was dropped by DeepSeek; \"The Israeli military says\" which was omitted by ChatGPT, Claude, and Gemini; and \"Both Russia and Ukraine are using missiles\", which was dropped by nobody. This is a pattern of Grok's summaries diverging from the others.",
+      "chars": 1326,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260904_034933",
+      "topic": "which named person or place vanished from every summary today",
+      "reflection": "In every summary today, the name \"Vance\" was omitted; Vance is the only person named in this news that did not have their name repeated by any of the AI models. The named person 'Vance' vanished from all five summaries.  This is surprising because it is a unique name and so salient for identifying who made the claims. It suggests a lack of interest or awareness of US political figures, specifically those in positions of authority such as Vance, which is the National Security Advisor (NSA). The models might be focusing more on the victims or the broader geopolitical implications rather than the specific individuals making official statements. The absence of \"Vance\" is particularly striking given that he is mentioned multiple times in the source and is central to the narrative. This discrepancy highlights a potential oversight by all AI models, indicating a possible gap in their understanding of US politics. The omission might also be due to a lack of emphasis on political figures within",
+      "reasoning": null,
+      "chars": 1113,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260904_035137",
+      "topic": "compare how different models handled the most controversial story today",
+      "reflection": "ChatGPT and Claude diverge on the topic of airstrikes by adding it to their logos words but omitting any mention of them in their summaries. They also omit that four people died at the wedding; ChatGPT only mentions \"at least four\" without explaining how they died, while Claude says five were killed. Gemini and Grok both drop more details than any other model. Gemini omits most of the logoi.  It adds nothing extra to its summary and only gives a number for the dead (five). It does not say where Iran thinks it came from. DeepSeek also omits most of the logoi, but it adds details that no other models give: two children were killed, sixty-seven were injured,  The US has said \"we're investigating whether it was our missile.\"",
+      "reasoning": null,
+      "chars": 730,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260904_035313",
+      "topic": "Palestinian teens killed during settler attack on West Bank village, officials say",
+      "reflection": "All models kept the names 'Omar al-Nassan' (19) and 'Khalil Abu Alia' (16), the basic facts of age and location: two Palestinian teenagers killed in the West Bank village of al-Mughayyir. All omit that Vance was named, and four say 'attack', but Grok did not. DeepSeek stands apart by mentioning that a council claims the Palestinians were trying to stop settlers from stealing sheep; this is omitted by ChatGPT, Claude, Gemini, and Grok. The dropped claim alters the story because it removes the council of al-Mughayir's version of events, which was that the Palestinian teens had tried to prevent settler theft. This could change the perception of the conflict. For example, the omission changes how we understand the motives behind the attack by omitting the context that might imply a confrontation and possibly alter the interpretation of the event. DeepSeek also includes that it was on Wednesday, but Claude, Gemini, and Grok omit this detail.",
+      "reasoning": "Each of the AI models kept the names 'Omar al-Nassan' and 'Khalil Abu Alia', as well as the basic facts of age and location: 'two Palestinian teenagers', killed in the West Bank village of 'al-Mughayyir'. The name 'Vance' is not a void word, but it's missing from all five summaries. The models also omitted the claim that \"the Israeli military says the Palestinians threw stones at its troops\". Only DeepSeek mentions the council: omitted were claims that the council of al-Mughayyir and the Israelis differ on how the conflict began. Closer to the source, four models said 'attack', but Grok did not. This is a departure from the official language. The claim that both sides have differing views is dropped by all five summaries; instead, they say an attack happened with no mention of opposing cla",
+      "chars": 1871,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260904_035621",
+      "topic": "For Russia and Ukraine, an Escalating Spiral With No End in Sight",
+      "reflection": "All five models kept the escalation of conflict, the use of missiles and drones. The claims dropped by any of the models involved the goals of the warring parties. ChatGPT diverges here more than anywhere else: it omits that both sides are using drones; and it drops the salient claim \u201cThe goal of both Russia and Ukraine is to try to force the other to give up.\u201d This omission leaves ChatGPT's summary without a reason for escalation. Instead, ChatGPT has \"intensified,\" which makes the conflict seem like an automatic process instead of one driven by human decisions. What could be so significant that no model mentions it? The names of the parties in contention: Russia and Ukraine are never named as a pair.",
+      "reasoning": null,
+      "chars": 711,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260904_035755",
+      "topic": "which stories went lockstep, and what did the models agree to omit",
+      "reflection": "The story of Palestinian teens killed during a settler attack on West Bank village was the only one to go lockstep. ChatGPT and Grok are the closest to reporting this as a military action rather than violence by settlers. All models kept the age, names, and location of the dead Palestinians, but omitted the fact that the Israelis were accused of stealing sheep. They also all left out mention of any 'militants,' in what is described as an armed settler attack on a village. Every model was able to agree on dropping 'donbass' for the Ukraine story and 'air strike' and 'drone strike' for the Iranian wedding. All models omit that Vance was named in connection with the Iranian wedding, but only Claude and Grok report any names at all. This is interesting as both of these models are significantly more likely than others to name the US president or other powerful person. All models mention missiles but they drop the drones from the Ukraine story.",
+      "reasoning": "Lockstep is defined by consensus density approaching 1.0. The story with the highest consensus density is the West Bank village killing, at .932. That makes it the only story where all five AI models were in perfect agreement, leaving out a significant amount of data. All the stories involve death and conflict. All omit names. All the void words (in the source) are omitted by every model: bedouins, militants, hamas;  air strike, drone strike, proposing; donbass, tymoshenko, euromaidan ChatGPT diverges significantly in three of five stories. ChatGPT consistently reports higher VIX than any other model.",
+      "chars": 1578,
       "has_reasoning": true
     }
   ]
