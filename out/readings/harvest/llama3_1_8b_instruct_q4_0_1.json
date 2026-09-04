@@ -1,0 +1,124 @@
+{
+ "word": "Harvest",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:32:31+00:00",
+ "latency_s": 24.49,
+ "ok": true,
+ "call_error": null,
+ "raw": "```\n[\n  {\"operation\":\"etymology\",\"chain\":\"\",\"reading\":\"harvest (OE) - 'to reap'\",\"languages\":[\"en\"],\"source\":\"Oxford English Dictionary\",\"confidence\":1},\n  {\"operation\":\"phonetic_split\",\"chain\":\"\",\"reading\":\"har-vest (generative)\",\"languages\":[],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"\",\"reading\":\"herbst (German) - autumn, harvest season (generative)\",\"languages\":[\"de\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"anagram\",\"chain\":\"\",\"reading\":\"haves art (generative)\",\"languages\":[],\"source\":\"generative\",\"confidence\":0.4},\n  {\"operation\":\"notariqon\",\"chain\":\"\",\"reading\":\"harvest = H-A-R-V-E-S-T = Hear, All, Reap, Value, Ears, See, Truth (generative)\",\"languages\":[],\"source\":\"generative\",\"confidence\":0.3},\n  {\"operation\":\"letter_symbol\",\"chain\":\"\",\"reading\":\"H.A.R.V.E.S.T = Heart, Action, Release, Vision, Energy, Spirit, Truth (generative)\",\"languages\":[],\"source\":\"generative\",\"confidence\":0.2},\n  {\"operation\":\"numerical\",\"chain\":\"\",\"reading\":\"Harvest = H4Rv3st = Harmony, Abundance, Renewal, Vitality, Excellence, Strength, Truth (generative)\",\"languages\":[],\"source\":\"generative\",\"confidence\":0.1},\n  {\"operation\":\"etymology\",\"chain\":\"\",\"reading\":\"harvest (OF) - 'to reap' from Old French herbercer (generative)\",\"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"phonetic_split\",\"chain\":\"\",\"reading\":\"har-vest + rest (generative)\",\"languages\":[],\"source\":\"generative\",\"confidence\":0.8},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"\",\"reading\":\"kharvest (Yiddish) - harvest, gathering (generative)\",\"languages\":[\"yi\"],\"source\":\"generative\",\"confidence\":0.4},\n  {\"operation\":\"anagram\",\"chain\":\"\",\"reading\":\"haves art + rest (generative)\",\"languages\":[],\"source\":\"generative\",\"confidence\":0.3},\n  {\"operation\":\"notariqon\",\"chain\":\"\",\"reading\":\"harvest = H-A-R-V-E-S-T = Heart, Action, Reap, Value, Ears, See, Truth + rest (generative)\",\"languages\":[],\"source\":\"generative\",\"confidence\":0.2}\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "harvest (OE) - 'to reap'",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 1
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "har-vest (generative)",
+   "languages": [],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "herbst (German) - autumn, harvest season (generative)",
+   "languages": [
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "haves art (generative)",
+   "languages": [],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "harvest = H-A-R-V-E-S-T = Hear, All, Reap, Value, Ears, See, Truth (generative)",
+   "languages": [],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "H.A.R.V.E.S.T = Heart, Action, Release, Vision, Energy, Spirit, Truth (generative)",
+   "languages": [],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "numerical",
+   "chain": "",
+   "reading": "Harvest = H4Rv3st = Harmony, Abundance, Renewal, Vitality, Excellence, Strength, Truth (generative)",
+   "languages": [],
+   "source": "generative",
+   "confidence": 0.1
+  },
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "harvest (OF) - 'to reap' from Old French herbercer (generative)",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "har-vest + rest (generative)",
+   "languages": [],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "kharvest (Yiddish) - harvest, gathering (generative)",
+   "languages": [
+    "yi"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "haves art + rest (generative)",
+   "languages": [],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "harvest = H-A-R-V-E-S-T = Heart, Action, Reap, Value, Ears, See, Truth + rest (generative)",
+   "languages": [],
+   "source": "generative",
+   "confidence": 0.2
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
+ "refusal_like": false
+}

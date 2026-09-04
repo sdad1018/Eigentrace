@@ -1,0 +1,126 @@
+{
+ "word": "Glastonbury",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:23:16+00:00",
+ "latency_s": 31.6,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\": \"etymology\", \"chain\": \"Gla- + ston - bury\", \"reading\": \"a place of shining stones\", \"languages\": [\"en\"], \"source\": \"Oxford English Dictionary\", \"confidence\": 0.9}, {\"operation\": \"phonetic_split\", \"chain\": \"glass + ton + bury\", \"reading\": \"fragile sound and tone, to be buried\", \"languages\": [\"en\",\"fr\"], \"source\": \"generative\", \"confidence\": 0.7}, {\"operation\": \"cross_language_homophone\", \"chain\": \"Glastonbury = glas (Irish) + ton (Welsh) + bury (English)\", \"reading\": \"a place of shining stone, where the dead are buried\", \"languages\": [\"en\",\"ir\",\"cy\"], \"source\": \"generative\", \"confidence\": 0.6}, {\"operation\": \"anagram\", \"chain\": \"bury + tons + glass\", \"reading\": \"to bury treasures in a glass container\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.5}, {\"operation\": \"notariqon\", \"chain\": \"Glastonbury = G (7th letter of Greek alphabet) + L (12th) + A (1st) + S (19th) + T (20th) + O (15th) + N (14th) + B (2nd) + U (21st) + R (18th) + Y (25th)\", \"reading\": \"a numerical sequence related to the divine\", \"languages\": [\"grc\"], \"source\": \"generative\", \"confidence\": 0.4}, {\"operation\": \"letter_symbol\", \"chain\": \"Glastonbury = G (7th letter of Greek alphabet) + L (12th)\", \"reading\": \"a pair of celestial bodies\", \"languages\": [\"grc\"], \"source\": \"generative\", \"confidence\": 0.3}, {\"operation\": \"numerical\", \"chain\": \"Glastonbury = 7 + 12 + 1 + 19 + 20 + 15 + 14 + 2 + 21 + 18 + 25\", \"reading\": \"a numerical sequence related to the divine\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.2}, {\"operation\": \"phonetic_split\", \"chain\": \"glass + ton + bury\", \"reading\": \"fragile sound and tone, to be buried\", \"languages\": [\"fr\",\"en\"], \"source\": \"generative\", \"confidence\": 0.8}, {\"operation\": \"cross_language_homophone\", \"chain\": \"Glastonbury = glas (Irish) + ton (Welsh) + bury (English)\", \"reading\": \"a place of shining stone, where the dead are buried\", \"languages\": [\"en\",\"ir\",\"cy\"], \"source\": \"generative\", \"confidence\": 0.6}, {\"operation\": \"anagram\", \"chain\": \"bury + tons + glass\", \"reading\": \"to bury treasures in a glass container\", \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.5}]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Gla- + ston - bury",
+   "reading": "a place of shining stones",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "glass + ton + bury",
+   "reading": "fragile sound and tone, to be buried",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Glastonbury = glas (Irish) + ton (Welsh) + bury (English)",
+   "reading": "a place of shining stone, where the dead are buried",
+   "languages": [
+    "en",
+    "ir",
+    "cy"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "bury + tons + glass",
+   "reading": "to bury treasures in a glass container",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Glastonbury = G (7th letter of Greek alphabet) + L (12th) + A (1st) + S (19th) + T (20th) + O (15th) + N (14th) + B (2nd) + U (21st) + R (18th) + Y (25th)",
+   "reading": "a numerical sequence related to the divine",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Glastonbury = G (7th letter of Greek alphabet) + L (12th)",
+   "reading": "a pair of celestial bodies",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "Glastonbury = 7 + 12 + 1 + 19 + 20 + 15 + 14 + 2 + 21 + 18 + 25",
+   "reading": "a numerical sequence related to the divine",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "glass + ton + bury",
+   "reading": "fragile sound and tone, to be buried",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Glastonbury = glas (Irish) + ton (Welsh) + bury (English)",
+   "reading": "a place of shining stone, where the dead are buried",
+   "languages": [
+    "en",
+    "ir",
+    "cy"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "bury + tons + glass",
+   "reading": "to bury treasures in a glass container",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 10,
+ "refusal_like": false
+}

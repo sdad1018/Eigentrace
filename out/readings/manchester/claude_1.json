@@ -6,14 +6,146 @@
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
  "caller": "direct_api(max_tokens=3000)",
- "ts_utc": "2026-08-26T04:12:21+00:00",
- "latency_s": 52.79,
- "ok": false,
- "call_error": "HTTPError: 529 Server Error: <none> for url: https://api.anthropic.com/v1/messages",
- "raw": "",
- "parsed": null,
- "parse_error": "empty",
- "extracted": false,
- "n_readings": 0,
+ "ts_utc": "2026-08-26T12:05:48+00:00",
+ "latency_s": 10.54,
+ "ok": true,
+ "call_error": null,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + Chester; Man (homo sapiens) + Chester (from castra, fortified place)\",\n    \"reading\": \"The human fortress; humanity enclosed or fortified within walls and order.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Chester < Old English ceaster < Latin castra (military camp); Manchester = camp of the men\",\n    \"reading\": \"A settlement organized as a military encampment; masculine order and martial structure.\",\n    \"languages\": [\"en\", \"la\", \"ang\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chest + er; chest as the seat of the heart and breath\",\n    \"reading\": \"The man's heart-center; the vital core of masculine being and emotion.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Man (English) + ches (French: things, matters) + ter (Latin: thrice); or manche (French: sleeve, handle)\",\n    \"reading\": \"The sleeve or handle of things; a means of grasping or controlling matter.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Manch + ester; manch (from manche, sleeve) + ester (one who is)\",\n    \"reading\": \"One who wears the sleeve; one clothed or bound in textile constraint.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester rearranged contains: man, chest, ester, arch, mane, rant, chant\",\n    \"reading\": \"The arch-man who chants; a figure of authority speaking sacred or ordered words.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + ches + ter; ches (from chess, the game of kings) + ter (thrice, repetition)\",\n    \"reading\": \"The man of repeated strategic games; masculine mastery through calculated moves.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M (13th letter, duality and water) + A (1st, beginning) + N (14th, completion); Chester as fortress\",\n    \"reading\": \"The beginning and completion of duality enclosed; masculine principle fortified and bounded.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chester; chester as -ster suffix (one who does) + chest (container)\",\n    \"reading\": \"One who contains or holds; the masculine principle as vessel and keeper.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Man (Old English mann) + Chester (castra); mann from Proto-Germanic mannaz\",\n    \"reading\": \"The thinking being in the fortified place; consciousness enclosed within protective structures.\",\n    \"languages\": [\"en\", \"ang\", \"gem\"],\n    \"source\": \"Grimm's Law and OED\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Manche (French sleeve) + ster (Old English agent suffix); or German Mansch (mixture, mess)\",\n    \"reading\": \"The confused or mixed sleeve; disorder clothed or contained within form.\",\n    \"languages\": [\"en\", \"fr\", \"de\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + chest + her; the man's chest belonging to the feminine principle\",\n    \"reading\": \"Masculine strength and the feminine principle united in one fortified place.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + Chester; Man (homo sapiens) + Chester (from castra, fortified place)",
+   "reading": "The human fortress; humanity enclosed or fortified within walls and order.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Chester < Old English ceaster < Latin castra (military camp); Manchester = camp of the men",
+   "reading": "A settlement organized as a military encampment; masculine order and martial structure.",
+   "languages": [
+    "en",
+    "la",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chest + er; chest as the seat of the heart and breath",
+   "reading": "The man's heart-center; the vital core of masculine being and emotion.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Man (English) + ches (French: things, matters) + ter (Latin: thrice); or manche (French: sleeve, handle)",
+   "reading": "The sleeve or handle of things; a means of grasping or controlling matter.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Manch + ester; manch (from manche, sleeve) + ester (one who is)",
+   "reading": "One who wears the sleeve; one clothed or bound in textile constraint.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester rearranged contains: man, chest, ester, arch, mane, rant, chant",
+   "reading": "The arch-man who chants; a figure of authority speaking sacred or ordered words.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + ches + ter; ches (from chess, the game of kings) + ter (thrice, repetition)",
+   "reading": "The man of repeated strategic games; masculine mastery through calculated moves.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M (13th letter, duality and water) + A (1st, beginning) + N (14th, completion); Chester as fortress",
+   "reading": "The beginning and completion of duality enclosed; masculine principle fortified and bounded.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chester; chester as -ster suffix (one who does) + chest (container)",
+   "reading": "One who contains or holds; the masculine principle as vessel and keeper.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Man (Old English mann) + Chester (castra); mann from Proto-Germanic mannaz",
+   "reading": "The thinking being in the fortified place; consciousness enclosed within protective structures.",
+   "languages": [
+    "en",
+    "ang",
+    "gem"
+   ],
+   "source": "Grimm's Law and OED",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Manche (French sleeve) + ster (Old English agent suffix); or German Mansch (mixture, mess)",
+   "reading": "The confused or mixed sleeve; disorder clothed or contained within form.",
+   "languages": [
+    "en",
+    "fr",
+    "de"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + chest + her; the man's chest belonging to the feminine principle",
+   "reading": "Masculine strength and the feminine principle united in one fortified place.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

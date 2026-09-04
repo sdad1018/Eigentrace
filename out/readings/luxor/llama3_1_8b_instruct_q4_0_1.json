@@ -1,0 +1,148 @@
+{
+ "word": "Luxor",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:39:34+00:00",
+ "latency_s": 70.72,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"lux + or (Latin)\",\n    \"reading\": \"light or radiance\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Oxford Latin Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"lux (Latin) + or\",\n    \"reading\": \"generative, light or radiance\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"lux (Latin) + oor (Dutch)\",\n    \"reading\": \"generative, light or radiance\",\n    \"languages\": [\"en\", \"la\", \"nl\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"luxor = roxul (Latin)\",\n    \"reading\": \"generative, whirling or spinning\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"luxor = lux + ro (Latin)\",\n    \"reading\": \"light or radiance, whirling or spinning\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L = Lux (Latin)\",\n    \"reading\": \"light or radiance\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Luxor = L + X + O + R\",\n    \"reading\": \"generative, light or radiance, whirling or spinning\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"luxor = lux + or (Latin)\",\n    \"reading\": \"generative, light or radiance\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"luxor = luqur (Arabic)\",\n    \"reading\": \"generative, whirling or spinning\",\n    \"languages\": [\"ar\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"luxor = roxul (Latin)\",\n    \"reading\": \"generative, whirling or spinning\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"luxor = lux + ro (Latin)\",\n    \"reading\": \"light or radiance, whirling or spinning\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"L = Lux (Latin)\",\n    \"reading\": \"light or radiance\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "lux + or (Latin)",
+   "reading": "light or radiance",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Oxford Latin Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "lux (Latin) + or",
+   "reading": "generative, light or radiance",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "lux (Latin) + oor (Dutch)",
+   "reading": "generative, light or radiance",
+   "languages": [
+    "en",
+    "la",
+    "nl"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "luxor = roxul (Latin)",
+   "reading": "generative, whirling or spinning",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "luxor = lux + ro (Latin)",
+   "reading": "light or radiance, whirling or spinning",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L = Lux (Latin)",
+   "reading": "light or radiance",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "numerical",
+   "chain": "Luxor = L + X + O + R",
+   "reading": "generative, light or radiance, whirling or spinning",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "luxor = lux + or (Latin)",
+   "reading": "generative, light or radiance",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "luxor = luqur (Arabic)",
+   "reading": "generative, whirling or spinning",
+   "languages": [
+    "ar",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "luxor = roxul (Latin)",
+   "reading": "generative, whirling or spinning",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "luxor = lux + ro (Latin)",
+   "reading": "light or radiance, whirling or spinning",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L = Lux (Latin)",
+   "reading": "light or radiance",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

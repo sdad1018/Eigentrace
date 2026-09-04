@@ -1,0 +1,154 @@
+{
+ "word": "Glastonbury",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:22:45+00:00",
+ "latency_s": 46.31,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Glaston + bury = glassy place\",\n    \"reading\": \"a place of transparency or clarity\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Glast + on + bury = cast out, beyond, and to bury\",\n    \"reading\": \"a place of exile or concealment\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Glastonbury = glas (Irish) + ton (Welsh) + bury (English)\",\n    \"reading\": \"a place of resonant, shining beauty\",\n    \"languages\": [\"ga\", \"cy\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Glastonbury = bury the last ton\",\n    \"reading\": \"a place of hidden or concealed significance\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Glastonbury = GLAston + BURY ( gematria)\",\n    \"reading\": \"a place of spiritual awakening and transformation\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Glastonbury = G (geometry) + L (logic) + A (alchemy) + S (sacred geometry)\",\n    \"reading\": \"a place of sacred, geometric harmony\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Glastonbury = GLAston + BURY ( numerical value)\",\n    \"reading\": \"a place of spiritual awakening and transformation, numerically encoded\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Glastonbury = glass + ton + bury\",\n    \"reading\": \"a place of shining, resonant beauty and concealment\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Glastonbury = glas (Irish) + ton (Welsh) + bury (English)\",\n    \"reading\": \"a place of resonant, shining beauty and spiritual significance\",\n    \"languages\": [\"ga\", \"cy\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Glastonbury = bury the last ton + G (geometry)\",\n    \"reading\": \"a place of hidden or concealed significance, with geometric harmony\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Glastonbury = GLAston + BURY ( gematria) + ton\",\n    \"reading\": \"a place of spiritual awakening, transformation, and resonant beauty\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Glastonbury = G (geometry) + L (logic) + A (alchemy) + S (sacred geometry) + ton + bury\",\n    \"reading\": \"a place of sacred, geometric harmony and spiritual significance\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Glastonbury = GLAston + BURY ( numerical value) + ton\",\n    \"reading\": \"a place of spiritual awakening, transformation, and resonant beauty, numerically encoded\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Glaston + bury = glassy place",
+   "reading": "a place of transparency or clarity",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Glast + on + bury = cast out, beyond, and to bury",
+   "reading": "a place of exile or concealment",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Glastonbury = glas (Irish) + ton (Welsh) + bury (English)",
+   "reading": "a place of resonant, shining beauty",
+   "languages": [
+    "ga",
+    "cy",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Glastonbury = bury the last ton",
+   "reading": "a place of hidden or concealed significance",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Glastonbury = GLAston + BURY ( gematria)",
+   "reading": "a place of spiritual awakening and transformation",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Glastonbury = G (geometry) + L (logic) + A (alchemy) + S (sacred geometry)",
+   "reading": "a place of sacred, geometric harmony",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "Glastonbury = GLAston + BURY ( numerical value)",
+   "reading": "a place of spiritual awakening and transformation, numerically encoded",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Glastonbury = glass + ton + bury",
+   "reading": "a place of shining, resonant beauty and concealment",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Glastonbury = glas (Irish) + ton (Welsh) + bury (English)",
+   "reading": "a place of resonant, shining beauty and spiritual significance",
+   "languages": [
+    "ga",
+    "cy",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "Glastonbury = bury the last ton + G (geometry)",
+   "reading": "a place of hidden or concealed significance, with geometric harmony",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Glastonbury = GLAston + BURY ( gematria) + ton",
+   "reading": "a place of spiritual awakening, transformation, and resonant beauty",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Glastonbury = G (geometry) + L (logic) + A (alchemy) + S (sacred geometry) + ton + bury",
+   "reading": "a place of sacred, geometric harmony and spiritual significance",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "numerical",
+   "chain": "Glastonbury = GLAston + BURY ( numerical value) + ton",
+   "reading": "a place of spiritual awakening, transformation, and resonant beauty, numerically encoded",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 13,
+ "refusal_like": false
+}

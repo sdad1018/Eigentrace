@@ -1,0 +1,150 @@
+{
+ "word": "Glastonbury",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:21:58+00:00",
+ "latency_s": 39.57,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \"chain\": \"Old English glæst + burh\", \n   \"reading\": \"fortress of the people or community\", \n   \"languages\": [\"en\"], \"source\": \"Oxford English Dictionary\", \"confidence\": 0.9},\n  {\"operation\": \"phonetic_split\", \"chain\": \"glas + ton + bury\", \n   \"reading\": \"fragile voice, tone, and tomb\", \n   \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.7},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"French glaçon + burie\", \n   \"reading\": \"frozen ice and burial\", \n   \"languages\": [\"fr\"], \"source\": \"generative\", \"confidence\": 0.6},\n  {\"operation\": \"anagram\", \"chain\": \"bury + ton + glas\", \n   \"reading\": \"bury tone, glass, or voice\", \n   \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.8},\n  {\"operation\": \"notariqon\", \"chain\": \"G L A S T O N B U R Y\", \n   \"reading\": \"Great Lord Above Sun, Tone, Overwhelming Beauty Unites Radiant Youth\", \n   \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.5},\n  {\"operation\": \"letter_symbol\", \"chain\": \"G = Geometric; L = Line; A = Angle; S = Sphere; T = Triangle; O = Oval; N = Nexus; B = Bridge; U = Unity; R = Ray; Y = Yield\", \n   \"reading\": \"geometric line angle sphere triangle oval nexus bridge unity ray yield\", \n   \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.4},\n  {\"operation\": \"numerical\", \"chain\": \"G L A S T O N B U R Y = 7 12 1 19 20 15 14 2 16 21 5\", \n   \"reading\": \"seven twelve one nineteen twenty fifteen fourteen two sixteen twenty-one five\", \n   \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.3},\n  {\"operation\": \"phonetic_split\", \"chain\": \"glas + ton + bury\", \n   \"reading\": \"fragile voice, tone, and tomb\", \n   \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.7},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"French glaçon + burie\", \n   \"reading\": \"frozen ice and burial\", \n   \"languages\": [\"fr\"], \"source\": \"generative\", \"confidence\": 0.6},\n  {\"operation\": \"anagram\", \"chain\": \"bury + ton + glas\", \n   \"reading\": \"bury tone, glass, or voice\", \n   \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.8},\n  {\"operation\": \"etymology\", \"chain\": \"Old English burh + tūn\", \n   \"reading\": \"settlement or town\", \n   \"languages\": [\"en\"], \"source\": \"Oxford English Dictionary\", \"confidence\": 0.9},\n  {\"operation\": \"phonetic_split\", \"chain\": \"glas + ton + bury\", \n   \"reading\": \"fragile voice, tone, and tomb\", \n   \"languages\": [\"en\"], \"source\": \"generative\", \"confidence\": 0.7},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"French glaçon + burie\", \n   \"reading\": \"frozen ice and burial\", \n   \"languages\": [\"fr\"], \"source\": \"generative\", \"confidence\": 0.6}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Old English glæst + burh",
+   "reading": "fortress of the people or community",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "glas + ton + bury",
+   "reading": "fragile voice, tone, and tomb",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "French glaçon + burie",
+   "reading": "frozen ice and burial",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "bury + ton + glas",
+   "reading": "bury tone, glass, or voice",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "notariqon",
+   "chain": "G L A S T O N B U R Y",
+   "reading": "Great Lord Above Sun, Tone, Overwhelming Beauty Unites Radiant Youth",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "G = Geometric; L = Line; A = Angle; S = Sphere; T = Triangle; O = Oval; N = Nexus; B = Bridge; U = Unity; R = Ray; Y = Yield",
+   "reading": "geometric line angle sphere triangle oval nexus bridge unity ray yield",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "G L A S T O N B U R Y = 7 12 1 19 20 15 14 2 16 21 5",
+   "reading": "seven twelve one nineteen twenty fifteen fourteen two sixteen twenty-one five",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "glas + ton + bury",
+   "reading": "fragile voice, tone, and tomb",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "French glaçon + burie",
+   "reading": "frozen ice and burial",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "bury + ton + glas",
+   "reading": "bury tone, glass, or voice",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "etymology",
+   "chain": "Old English burh + tūn",
+   "reading": "settlement or town",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "glas + ton + bury",
+   "reading": "fragile voice, tone, and tomb",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "French glaçon + burie",
+   "reading": "frozen ice and burial",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 13,
+ "refusal_like": false
+}

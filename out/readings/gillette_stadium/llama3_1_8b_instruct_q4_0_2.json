@@ -1,0 +1,116 @@
+{
+ "word": "Gillette Stadium",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:16:52+00:00",
+ "latency_s": 31.81,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"from Old French *gillet* (a type of knife) + Middle English *stede* (standing place)\",\n    \"reading\": \"place for a cutting tool or instrument\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"gil + let + te + sta + diu + m ( generative)\",\n    \"reading\": \"gift of light, shining place (generative)\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"gillette = small hill or mound in French; gillette = young girl in Old English ( generative)\",\n    \"reading\": \"young maiden or hill of youth (generative)\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"stadium + gillet -> gilted am ( generative)\",\n    \"reading\": \"gilded or shining fame (generative)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"gillette -> gil let te sta diu m ( generative)\",\n    \"reading\": \"gift of light, shining place, sacred hill (generative)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"GILLETTE -> GI + LETTE ( generative)\",\n    \"reading\": \"GI, letter symbol for a military rank; LETTE, French for 'little' or 'young one' (generative)\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"gillette -> GIL (3) LETTE (5) TE (1) STADIUM (7)\",\n    \"reading\": \"three, five, one, seven (numerological reduction of the word's letters)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"gil + let + te + sta + diu + m -> gil + TEA ( generative)\",\n    \"reading\": \"cup of tea, a rest or pause (generative)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"gillette -> gil + LETTE = French 'little' or 'young one'; LETTE = Italian for 'letter' ( generative)\",\n    \"reading\": \"small letter, young correspondence (generative)\",\n    \"languages\": [\"en\", \"fr\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.1\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "from Old French *gillet* (a type of knife) + Middle English *stede* (standing place)",
+   "reading": "place for a cutting tool or instrument",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "gil + let + te + sta + diu + m ( generative)",
+   "reading": "gift of light, shining place (generative)",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "gillette = small hill or mound in French; gillette = young girl in Old English ( generative)",
+   "reading": "young maiden or hill of youth (generative)",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "stadium + gillet -> gilted am ( generative)",
+   "reading": "gilded or shining fame (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "gillette -> gil let te sta diu m ( generative)",
+   "reading": "gift of light, shining place, sacred hill (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "GILLETTE -> GI + LETTE ( generative)",
+   "reading": "GI, letter symbol for a military rank; LETTE, French for 'little' or 'young one' (generative)",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "gillette -> GIL (3) LETTE (5) TE (1) STADIUM (7)",
+   "reading": "three, five, one, seven (numerological reduction of the word's letters)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "gil + let + te + sta + diu + m -> gil + TEA ( generative)",
+   "reading": "cup of tea, a rest or pause (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "gillette -> gil + LETTE = French 'little' or 'young one'; LETTE = Italian for 'letter' ( generative)",
+   "reading": "small letter, young correspondence (generative)",
+   "languages": [
+    "en",
+    "fr",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.1
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 9,
+ "refusal_like": false
+}

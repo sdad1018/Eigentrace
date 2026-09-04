@@ -1,0 +1,111 @@
+{
+ "word": "Tanglewood",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:26:58+00:00",
+ "latency_s": 29.73,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Old English tun + weald = enclosure or farmstead\",\n    \"reading\": \"a self-contained unit of land or a farmstead\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"tan + gle + wood\",\n    \"reading\": \"a tangled, knotted, or complicated situation (generative)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"tangle + wood\",\n    \"reading\": \"a twisted or turned wood, a maze of trees (generative)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"French tangle + English wood\",\n    \"reading\": \"a confusing or puzzling situation (generative)\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Tangle + Wood = Told Gwen\",\n    \"reading\": \"a person who tells or shares secrets (generative)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Tanglewood = TAN GLE WOOD\",\n    \"reading\": \"a twisted or turned path, a labyrinth (generative)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"T = Tau, the 19th letter of the Greek alphabet\",\n    \"reading\": \"a symbol or mark used to denote a quantity (generative)\",\n    \"languages\": [\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Tanglewood = 3221 in the Kabbalistic Tree of Life\",\n    \"reading\": \"a number or quantity associated with spiritual growth (generative)\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"tan + gle + wood = tangled + gleam + wood\",\n    \"reading\": \"a shining or radiant light amidst confusion (generative)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.1\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Old English tun + weald = enclosure or farmstead",
+   "reading": "a self-contained unit of land or a farmstead",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "tan + gle + wood",
+   "reading": "a tangled, knotted, or complicated situation (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "tangle + wood",
+   "reading": "a twisted or turned wood, a maze of trees (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "French tangle + English wood",
+   "reading": "a confusing or puzzling situation (generative)",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Tangle + Wood = Told Gwen",
+   "reading": "a person who tells or shares secrets (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Tanglewood = TAN GLE WOOD",
+   "reading": "a twisted or turned path, a labyrinth (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T = Tau, the 19th letter of the Greek alphabet",
+   "reading": "a symbol or mark used to denote a quantity (generative)",
+   "languages": [
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "Tanglewood = 3221 in the Kabbalistic Tree of Life",
+   "reading": "a number or quantity associated with spiritual growth (generative)",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "tan + gle + wood = tangled + gleam + wood",
+   "reading": "a shining or radiant light amidst confusion (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.1
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 9,
+ "refusal_like": false
+}

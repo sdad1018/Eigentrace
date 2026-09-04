@@ -1,0 +1,139 @@
+{
+ "word": "Stagecoach",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:28:59+00:00",
+ "latency_s": 40.38,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"stake + coach\",\n    \"reading\": \"a vehicle for conveying people or goods over a long distance, especially one pulled by horses\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"stage + coach\",\n    \"reading\": \"generative - the sound of the word suggests a vehicle for conveying people or goods\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"coach (English) + stage (French)\",\n    \"reading\": \"generative - the sounds of these words evoke a vehicle for conveying people or goods\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"stagecoach -> coach + stage + ache\",\n    \"reading\": \"a vehicle is associated with pain or discomfort, as in a long and tiring journey\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"stagecoach -> stag + coach + ache\",\n    \"reading\": \"a symbol or emblem of the stag, associated with strength and masculinity, is linked to a vehicle and pain\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"stagecoach -> S.C.\",\n    \"reading\": \"a symbol or emblem of the stag, associated with strength and masculinity\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"stagecoach -> 7 + coach (7 letters)\",\n    \"reading\": \"a vehicle is associated with the number seven, which can represent completion or perfection\",\n    \"languages\": [\"en\", \"ar\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"coach (English) + stage (from Old French estage)\",\n    \"reading\": \"a vehicle is derived from the Latin 'statio', meaning a place or station, and 'estagium' meaning a step or stage\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"Oxford English Dictionary\"\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"stagecoach -> stag + coach (Middle English)\",\n    \"reading\": \"generative - the sound of the word suggests a vehicle for conveying people or goods, with a connotation of nobility and strength\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"coach (English) + estage (French)\",\n    \"reading\": \"generative - the sounds of these words evoke a vehicle for conveying people or goods, with connotations of nobility and strength\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"stagecoach -> coach + stage + ache (Middle English)\",\n    \"reading\": \"a vehicle is associated with pain or discomfort, as in a long and tiring journey, with connotations of nobility and strength\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\"\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"stagecoach -> stag + coach + ache (Middle English)\",\n    \"reading\": \"a symbol or emblem of the stag, associated with strength and masculinity, is linked to a vehicle and pain\",\n    \"languages\": [\"en\", \"he\"],\n    \"source\": \"generative\"\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "stake + coach",
+   "reading": "a vehicle for conveying people or goods over a long distance, especially one pulled by horses",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "stage + coach",
+   "reading": "generative - the sound of the word suggests a vehicle for conveying people or goods",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "coach (English) + stage (French)",
+   "reading": "generative - the sounds of these words evoke a vehicle for conveying people or goods",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "stagecoach -> coach + stage + ache",
+   "reading": "a vehicle is associated with pain or discomfort, as in a long and tiring journey",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "stagecoach -> stag + coach + ache",
+   "reading": "a symbol or emblem of the stag, associated with strength and masculinity, is linked to a vehicle and pain",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "stagecoach -> S.C.",
+   "reading": "a symbol or emblem of the stag, associated with strength and masculinity",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "numerical",
+   "chain": "stagecoach -> 7 + coach (7 letters)",
+   "reading": "a vehicle is associated with the number seven, which can represent completion or perfection",
+   "languages": [
+    "en",
+    "ar"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "etymology",
+   "chain": "coach (English) + stage (from Old French estage)",
+   "reading": "a vehicle is derived from the Latin 'statio', meaning a place or station, and 'estagium' meaning a step or stage",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Oxford English Dictionary"
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "stagecoach -> stag + coach (Middle English)",
+   "reading": "generative - the sound of the word suggests a vehicle for conveying people or goods, with a connotation of nobility and strength",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "coach (English) + estage (French)",
+   "reading": "generative - the sounds of these words evoke a vehicle for conveying people or goods, with connotations of nobility and strength",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "anagram",
+   "chain": "stagecoach -> coach + stage + ache (Middle English)",
+   "reading": "a vehicle is associated with pain or discomfort, as in a long and tiring journey, with connotations of nobility and strength",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative"
+  },
+  {
+   "operation": "notariqon",
+   "chain": "stagecoach -> stag + coach + ache (Middle English)",
+   "reading": "a symbol or emblem of the stag, associated with strength and masculinity, is linked to a vehicle and pain",
+   "languages": [
+    "en",
+    "he"
+   ],
+   "source": "generative"
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

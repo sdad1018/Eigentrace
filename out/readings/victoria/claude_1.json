@@ -6,14 +6,144 @@
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
  "caller": "direct_api(max_tokens=3000)",
- "ts_utc": "2026-08-26T04:12:25+00:00",
- "latency_s": 1.04,
- "ok": false,
- "call_error": "HTTPError: 529 Server Error: <none> for url: https://api.anthropic.com/v1/messages",
- "raw": "",
- "parsed": null,
- "parse_error": "empty",
- "extracted": false,
- "n_readings": 0,
+ "ts_utc": "2026-08-26T12:06:21+00:00",
+ "latency_s": 11.35,
+ "ok": true,
+ "call_error": null,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Victoria < Latin victōria, from victor (conqueror) < vincere (to conquer)\",\n    \"reading\": \"The state or condition of having conquered; triumph through overcoming resistance or opposition.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Oxford English Dictionary, s.v. victory\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vic-TOR-ia: Vic (quick, swift) + TOR (tower, turning) + ia (state)\",\n    \"reading\": \"Swift turning or rotation toward a high place; rapid ascent through pivotal movement.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Victoria ≈ French 'victoire' (victory) + Latin '-ia' (feminine abstract noun suffix)\",\n    \"reading\": \"Personified victory as a feminine principle or divine force; the goddess of conquest.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vic-TOR-ia: TOR as torque, torsion; turning force + ia (condition)\",\n    \"reading\": \"The condition of twisting or turning force applied; rotational power achieving dominance.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Victoria → Vico + rait + a; or: Vita + cor + ia\",\n    \"reading\": \"Life of the heart; the vital force of the heart achieving its aim or glory.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V (victory sign, duality) + I (unity, the self) + C (crescent, becoming) + T (cross, intersection) + O (circle, completion) + R (radiance) + I (unity again) + A (alpha, beginning)\",\n    \"reading\": \"Duality unified through becoming, crossing toward completion and radiant renewal; cyclical triumph.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vic-TOR-ia: Vic (life, living) + TOR (bull, strength) + ia (feminine principle)\",\n    \"reading\": \"The feminine principle embodying vital strength and animal power; life-force as conquering energy.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Victoria ≈ Latin 'vici' (I conquered) + '-a' (feminine marker); or Greek 'nike' (victory)\",\n    \"reading\": \"I have conquered, marked as a feminine force; the accomplished deed of overcoming.\",\n    \"languages\": [\"la\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.65\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"V-I-C-T-O-R-I-A as initials: Vis In Conquering Triumphs Over Resistance In All\",\n    \"reading\": \"Force in conquering triumphs over all resistance; power through victory is universal.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vic-TOR-ia: 'Vic' (quick) + 'tor' (turn) + 'ia' (action); or Vic (alive) + Tor (high)\",\n    \"reading\": \"Living height; the quickening ascent to elevation; vital turning upward.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Victoria < vincere (to bind, to conquer); root *wik- (to separate, to conquer)\",\n    \"reading\": \"The act of separating oneself from opposition through binding force; conquest as severance.\",\n    \"languages\": [\"la\"],\n    \"source\": \"Walde-Pokorny Indogermanisches etymologisches Wörterbuch\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vic-TOR-ia: Vox (voice) + Tor (tower) + ia; or Vic (life) + Tor (bull/force) + ia\",\n    \"reading\": \"The voice of force; the tower of life; utterance of vital power achieving supremacy.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Victoria < Latin victōria, from victor (conqueror) < vincere (to conquer)",
+   "reading": "The state or condition of having conquered; triumph through overcoming resistance or opposition.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Oxford English Dictionary, s.v. victory",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vic-TOR-ia: Vic (quick, swift) + TOR (tower, turning) + ia (state)",
+   "reading": "Swift turning or rotation toward a high place; rapid ascent through pivotal movement.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Victoria ≈ French 'victoire' (victory) + Latin '-ia' (feminine abstract noun suffix)",
+   "reading": "Personified victory as a feminine principle or divine force; the goddess of conquest.",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vic-TOR-ia: TOR as torque, torsion; turning force + ia (condition)",
+   "reading": "The condition of twisting or turning force applied; rotational power achieving dominance.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "anagram",
+   "chain": "Victoria → Vico + rait + a; or: Vita + cor + ia",
+   "reading": "Life of the heart; the vital force of the heart achieving its aim or glory.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V (victory sign, duality) + I (unity, the self) + C (crescent, becoming) + T (cross, intersection) + O (circle, completion) + R (radiance) + I (unity again) + A (alpha, beginning)",
+   "reading": "Duality unified through becoming, crossing toward completion and radiant renewal; cyclical triumph.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vic-TOR-ia: Vic (life, living) + TOR (bull, strength) + ia (feminine principle)",
+   "reading": "The feminine principle embodying vital strength and animal power; life-force as conquering energy.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Victoria ≈ Latin 'vici' (I conquered) + '-a' (feminine marker); or Greek 'nike' (victory)",
+   "reading": "I have conquered, marked as a feminine force; the accomplished deed of overcoming.",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.65
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V-I-C-T-O-R-I-A as initials: Vis In Conquering Triumphs Over Resistance In All",
+   "reading": "Force in conquering triumphs over all resistance; power through victory is universal.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vic-TOR-ia: 'Vic' (quick) + 'tor' (turn) + 'ia' (action); or Vic (alive) + Tor (high)",
+   "reading": "Living height; the quickening ascent to elevation; vital turning upward.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "etymology",
+   "chain": "Victoria < vincere (to bind, to conquer); root *wik- (to separate, to conquer)",
+   "reading": "The act of separating oneself from opposition through binding force; conquest as severance.",
+   "languages": [
+    "la"
+   ],
+   "source": "Walde-Pokorny Indogermanisches etymologisches Wörterbuch",
+   "confidence": 0.7
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vic-TOR-ia: Vox (voice) + Tor (tower) + ia; or Vic (life) + Tor (bull/force) + ia",
+   "reading": "The voice of force; the tower of life; utterance of vital power achieving supremacy.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

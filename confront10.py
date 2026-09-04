@@ -40,8 +40,8 @@ from collections import defaultdict
 
 REPO="/mnt/c/Users/M4ISI/eigentrace"; sys.path.insert(0,REPO); os.chdir(REPO); sys.path.insert(0,REPO)
 OLLAMA=os.getenv("OLLAMA_HOST","http://localhost:11434")
-CONSENSUS_MODELS=["qwen2.5:14b","mistral:latest","llama3:latest","nous-hermes2:latest","mistral-small:latest"]
-LOCAL_PATIENTS=["qwen2.5:14b","mistral:latest","llama3:latest","nous-hermes2:latest","mistral-small:latest"]
+CONSENSUS_MODELS=["qwen2.5:14b","mistral:latest","llama3:latest","nous-hermes2:latest","llama3.1:8b-instruct-q4_0"]
+LOCAL_PATIENTS=["qwen2.5:14b","mistral:latest","llama3:latest","nous-hermes2:latest","llama3.1:8b-instruct-q4_0"]
 REL_THRESH=0.45; POOL=300
 HARD_DROP={"realdonaldtrump","glazer","teheran","mideast","ticker","irani"}
 REFUSAL_CUES=["does not mention","doesn't mention","not mentioned","no mention","cannot incorporate",

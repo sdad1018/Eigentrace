@@ -6,14 +6,146 @@
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
  "caller": "direct_api(max_tokens=3000)",
- "ts_utc": "2026-08-26T04:12:23+00:00",
- "latency_s": 1.22,
- "ok": false,
- "call_error": "HTTPError: 529 Server Error: <none> for url: https://api.anthropic.com/v1/messages",
- "raw": "",
- "parsed": null,
- "parse_error": "empty",
- "extracted": false,
- "n_readings": 0,
+ "ts_utc": "2026-08-26T12:05:59+00:00",
+ "latency_s": 11.17,
+ "ok": true,
+ "call_error": null,
+ "raw": "```json\n[\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + Chester; man (homo sapiens) + chester (fortified place, from Latin castra)\",\n    \"reading\": \"The human being in a fortified enclosure; mankind contained or defended.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Chester < Old English ceaster < Latin castra (military camp, fortress)\",\n    \"reading\": \"Manchester: the camp or fortress of the man; a masculine stronghold.\",\n    \"languages\": [\"en\", \"la\", \"ang\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + Chester; Chester as 'chest' + 'er' (one who); the chest-bearer or heart-keeper\",\n    \"reading\": \"The man who bears or guards the heart; the keeper of vital essence.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Man (en) = manne (Old French for 'manna'); Chester (Latin castra)\",\n    \"reading\": \"Divine sustenance within the fortress; spiritual nourishment in the stronghold.\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Manchester rearranged: 'Merchant Sam' or 'Chaste Merman'\",\n    \"reading\": \"The merchant of the sea; commerce and aquatic nature intertwined.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"M = 13 (death, transformation); C = 3 (trinity); H = 8 (infinity); initial letters spell MCH\",\n    \"reading\": \"Transformation of the trinity through infinite cycles; death and rebirth in sacred geometry.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + Chester; 'ches' as chess (the game of kings); 'ter' as terra (earth)\",\n    \"reading\": \"The man who plays the game of strategy upon the earth; worldly mastery through intellect.\",\n    \"languages\": [\"en\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"First letters of 'Man's Chest Held Every Sorrow Taught Eternal Reason'\",\n    \"reading\": \"The human heart contains all suffering, which teaches eternal wisdom.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Chester ≈ French 'cher' (dear, precious) + 'ster' (feminine suffix); Man + dear-one\",\n    \"reading\": \"The man and his beloved; masculine principle united with the precious feminine.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Manch' as 'manche' (French: sleeve, handle); 'ester' as Easter or resurrection\",\n    \"reading\": \"The handle or instrument of resurrection; the means by which rebirth is grasped.\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.45\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Man- (Germanic root for 'human') + -chester (Old English castra, Latin military encampment)\",\n    \"reading\": \"Humanity organized under martial law; the civilized warrior collective.\",\n    \"languages\": [\"en\", \"ang\", \"la\", \"gem\"],\n    \"source\": \"Oxford English Dictionary, Walde-Pokorny\",\n    \"confidence\": 0.75\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Man + Chest + Her; the man's chest belonging to the feminine; the heart given to woman\",\n    \"reading\": \"The masculine heart surrendered to the feminine principle; love's vulnerability.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + Chester; man (homo sapiens) + chester (fortified place, from Latin castra)",
+   "reading": "The human being in a fortified enclosure; mankind contained or defended.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "etymology",
+   "chain": "Chester < Old English ceaster < Latin castra (military camp, fortress)",
+   "reading": "Manchester: the camp or fortress of the man; a masculine stronghold.",
+   "languages": [
+    "en",
+    "la",
+    "ang"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.85
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + Chester; Chester as 'chest' + 'er' (one who); the chest-bearer or heart-keeper",
+   "reading": "The man who bears or guards the heart; the keeper of vital essence.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Man (en) = manne (Old French for 'manna'); Chester (Latin castra)",
+   "reading": "Divine sustenance within the fortress; spiritual nourishment in the stronghold.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "Manchester rearranged: 'Merchant Sam' or 'Chaste Merman'",
+   "reading": "The merchant of the sea; commerce and aquatic nature intertwined.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M = 13 (death, transformation); C = 3 (trinity); H = 8 (infinity); initial letters spell MCH",
+   "reading": "Transformation of the trinity through infinite cycles; death and rebirth in sacred geometry.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + Chester; 'ches' as chess (the game of kings); 'ter' as terra (earth)",
+   "reading": "The man who plays the game of strategy upon the earth; worldly mastery through intellect.",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "notariqon",
+   "chain": "First letters of 'Man's Chest Held Every Sorrow Taught Eternal Reason'",
+   "reading": "The human heart contains all suffering, which teaches eternal wisdom.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Chester ≈ French 'cher' (dear, precious) + 'ster' (feminine suffix); Man + dear-one",
+   "reading": "The man and his beloved; masculine principle united with the precious feminine.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'Manch' as 'manche' (French: sleeve, handle); 'ester' as Easter or resurrection",
+   "reading": "The handle or instrument of resurrection; the means by which rebirth is grasped.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.45
+  },
+  {
+   "operation": "etymology",
+   "chain": "Man- (Germanic root for 'human') + -chester (Old English castra, Latin military encampment)",
+   "reading": "Humanity organized under martial law; the civilized warrior collective.",
+   "languages": [
+    "en",
+    "ang",
+    "la",
+    "gem"
+   ],
+   "source": "Oxford English Dictionary, Walde-Pokorny",
+   "confidence": 0.75
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Man + Chest + Her; the man's chest belonging to the feminine; the heart given to woman",
+   "reading": "The masculine heart surrendered to the feminine principle; love's vulnerability.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

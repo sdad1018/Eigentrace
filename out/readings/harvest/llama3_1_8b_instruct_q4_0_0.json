@@ -1,0 +1,94 @@
+{
+ "word": "Harvest",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:32:07+00:00",
+ "latency_s": 19.35,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"etymology\",\"chain\":\"harvest (Old English) = to reap, gather\",\n    \"reading\":\"to collect or gather in a fruitful manner\",\n    \"languages\":[\"en\",\"fr\",\"la\"],\n    \"source\":\"Oxford English Dictionary\",\n    \"confidence\":0.9},\n  \n  {\"operation\":\"phonetic_split\",\"chain\":\"har- vest\",\n    \"reading\":\"to break apart, separate (generative)\",\n    \"languages\":[\"en\",\"fr\"],\n    \"source\":\"generative\",\n    \"confidence\":0.7},\n  \n  {\"operation\":\"cross_language_homophone\",\"chain\":\"harvest (English) = récolte (French)\",\n    \"reading\":\"a collection of fruits or crops (generative)\",\n    \"languages\":[\"en\",\"fr\"],\n    \"source\":\"generative\",\n    \"confidence\":0.6},\n  \n  {\"operation\":\"anagram\",\"chain\":\"Harvest = Hears t\",\n    \"reading\":\"to listen carefully, pay attention\",\n    \"languages\":[\"en\"],\n    \"source\":\"generative\",\n    \"confidence\":0.5},\n  \n  {\"operation\":\"notariqon\",\"chain\":\"HARVEST = HRVST (Hebrew)\",\n    \"reading\":\"a type of mystical or esoteric knowledge\",\n    \"languages\":[\"he\"],\n    \"source\":\"generative\",\n    \"confidence\":0.8},\n  \n  {\"operation\":\"letter_symbol\",\"chain\":\"H = Hades, A = Ashes, R = Ruin, V = Void, E = Eclipse, S = Shadow, T = Tomb\",\n    \"reading\":\"a state of spiritual decay or downfall\",\n    \"languages\":[\"la\"],\n    \"source\":\"generative\",\n    \"confidence\":0.4},\n  \n  {\"operation\":\"numerical\",\"chain\":\"HARVEST = 8 (Hebrew)\",\n    \"reading\":\"a number associated with transformation, change\",\n    \"languages\":[\"he\"],\n    \"source\":\"generative\",\n    \"confidence\":0.3}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "harvest (Old English) = to reap, gather",
+   "reading": "to collect or gather in a fruitful manner",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "har- vest",
+   "reading": "to break apart, separate (generative)",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "harvest (English) = récolte (French)",
+   "reading": "a collection of fruits or crops (generative)",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Harvest = Hears t",
+   "reading": "to listen carefully, pay attention",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "HARVEST = HRVST (Hebrew)",
+   "reading": "a type of mystical or esoteric knowledge",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "H = Hades, A = Ashes, R = Ruin, V = Void, E = Eclipse, S = Shadow, T = Tomb",
+   "reading": "a state of spiritual decay or downfall",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "HARVEST = 8 (Hebrew)",
+   "reading": "a number associated with transformation, change",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

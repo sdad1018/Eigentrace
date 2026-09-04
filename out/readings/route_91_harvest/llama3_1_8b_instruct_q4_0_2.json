@@ -1,0 +1,168 @@
+{
+ "word": "Route 91 Harvest",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:31:47+00:00",
+ "latency_s": 51.66,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"route (Old French) = road or way; harvest (Middle English) = to reap or gather\",\n    \"reading\": \"a path of gathering or reaping\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"route (French) = road; harvest (English)\",\n    \"reading\": \"a journey to gather or reap\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"route (French) = road; rout (Old French) = route or path; harvest (English)\",\n    \"reading\": \"a road to a chaotic or disorderly gathering\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"route; harvest -> route + harm (English) = causing damage on a path\",\n    \"reading\": \"a path where one suffers harm or damage\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"R-91-H; H -> He (Hebrew) = the One; R -> Ruah (Hebrew) = wind or spirit\",\n    \"reading\": \"the Spirit of the Wind, a divine breath on a path\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R -> Rune (Old English) = a letter or symbol; H -> Hecate (Greek)\",\n    \"reading\": \"a path of mysterious or magical symbols\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"91 -> XCI (Roman numerals)\",\n    \"reading\": \"a path of ninety-one, a number of completion or fulfillment\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"harvest (English) = to reap or gather; route (Old French)\",\n    \"reading\": \"a gathering on a path, a reaping of what is gathered\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"route (French) = road; harvest (English)\",\n    \"reading\": \"a journey to gather or reap on a road\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"route (French) = road; rout (Old French) = route or path; harvest (English)\",\n    \"reading\": \"a chaotic or disorderly gathering on a road\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"route; harvest -> route + harm (English) = causing damage on a path\",\n    \"reading\": \"a path where one suffers harm or damage, a destructive journey\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"R-91-H; H -> He (Hebrew) = the One; R -> Ruah (Hebrew) = wind or spirit\",\n    \"reading\": \"the Spirit of the Wind, a divine breath on a path, a journey to unity\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"R -> Rune (Old English) = a letter or symbol; H -> Hecate (Greek)\",\n    \"reading\": \"a path of mysterious or magical symbols, a journey to the unknown\",\n    \"languages\": [\"en\", \"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"91 -> XCI (Roman numerals)\",\n    \"reading\": \"a path of ninety-one, a number of completion or fulfillment on the road to unity\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "route (Old French) = road or way; harvest (Middle English) = to reap or gather",
+   "reading": "a path of gathering or reaping",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "route (French) = road; harvest (English)",
+   "reading": "a journey to gather or reap",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "route (French) = road; rout (Old French) = route or path; harvest (English)",
+   "reading": "a road to a chaotic or disorderly gathering",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "route; harvest -> route + harm (English) = causing damage on a path",
+   "reading": "a path where one suffers harm or damage",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R-91-H; H -> He (Hebrew) = the One; R -> Ruah (Hebrew) = wind or spirit",
+   "reading": "the Spirit of the Wind, a divine breath on a path",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R -> Rune (Old English) = a letter or symbol; H -> Hecate (Greek)",
+   "reading": "a path of mysterious or magical symbols",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "91 -> XCI (Roman numerals)",
+   "reading": "a path of ninety-one, a number of completion or fulfillment",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "etymology",
+   "chain": "harvest (English) = to reap or gather; route (Old French)",
+   "reading": "a gathering on a path, a reaping of what is gathered",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "route (French) = road; harvest (English)",
+   "reading": "a journey to gather or reap on a road",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "route (French) = road; rout (Old French) = route or path; harvest (English)",
+   "reading": "a chaotic or disorderly gathering on a road",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "route; harvest -> route + harm (English) = causing damage on a path",
+   "reading": "a path where one suffers harm or damage, a destructive journey",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "R-91-H; H -> He (Hebrew) = the One; R -> Ruah (Hebrew) = wind or spirit",
+   "reading": "the Spirit of the Wind, a divine breath on a path, a journey to unity",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "R -> Rune (Old English) = a letter or symbol; H -> Hecate (Greek)",
+   "reading": "a path of mysterious or magical symbols, a journey to the unknown",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "91 -> XCI (Roman numerals)",
+   "reading": "a path of ninety-one, a number of completion or fulfillment on the road to unity",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 14,
+ "refusal_like": false
+}

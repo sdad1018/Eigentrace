@@ -1,0 +1,95 @@
+{
+ "word": "Coachella",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:15:21+00:00",
+ "latency_s": 19.21,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Couch + ella (French diminutive suffix)\",\n    \"reading\": \"a small couch or sofa\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Oxford English Dictionary; Dictionnaire de l'Académie française\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Coach + ella (French diminutive suffix)\",\n    \"reading\": \"a coach or carriage, a small one\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Coachella (Spanish) = a type of cotton fabric\",\n    \"reading\": \"a lightweight, breathable fabric\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Coachella = Hello Each (reversed)\",\n    \"reading\": \"a greeting or welcome to each person\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Coachella = CHAOS + LELLA (Hebrew)\",\n    \"reading\": \"a place of chaos and disorder\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Coachella = C + H (chemical symbols)\",\n    \"reading\": \"a chemical compound, possibly carbon-hydrogen\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Coachella = 42 (numerological value)\",\n    \"reading\": \"a mystical or spiritual number\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Couch + ella (French diminutive suffix)",
+   "reading": "a small couch or sofa",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Oxford English Dictionary; Dictionnaire de l'Académie française",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Coach + ella (French diminutive suffix)",
+   "reading": "a coach or carriage, a small one",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Coachella (Spanish) = a type of cotton fabric",
+   "reading": "a lightweight, breathable fabric",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "Coachella = Hello Each (reversed)",
+   "reading": "a greeting or welcome to each person",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Coachella = CHAOS + LELLA (Hebrew)",
+   "reading": "a place of chaos and disorder",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Coachella = C + H (chemical symbols)",
+   "reading": "a chemical compound, possibly carbon-hydrogen",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "Coachella = 42 (numerological value)",
+   "reading": "a mystical or spiritual number",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

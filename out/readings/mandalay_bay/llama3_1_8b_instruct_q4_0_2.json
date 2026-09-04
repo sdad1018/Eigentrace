@@ -1,0 +1,91 @@
+{
+ "word": "Mandalay Bay",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:36:09+00:00",
+ "latency_s": 13.48,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"etymology\",\"chain\":\"\",\"reading\":\"Place name derived from Burmese 'Mandalay' (city) + English suffix '-Bay' (inlet or bay).\", \"languages\":[\"en\"],\"source\":\"Oxford English Dictionary\",\"confidence\":0.9},{\"operation\":\"phonetic_split\",\"chain\":\"\",\"reading\":\"Man + Dal + Ay Bay (generative)\", \"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"cross_language_homophone\",\"chain\":\"\",\"reading\":\"Mandalay = Malay (language) + Bay (inlet or bay, generative)\", \"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"anagram\",\"chain\":\"\",\"reading\":\"Mad Bay (unrelated to the original meaning, generative)\", \"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.5},{\"operation\":\"notariqon\",\"chain\":\"\",\"reading\":\"Mandalay = Mad + Aly (generative)\", \"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.4},{\"operation\":\"letter_symbol\",\"chain\":\"\",\"reading\":\"Mandalay = M.D. ( Medical Doctor, generative)\", \"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.3},{\"operation\":\"numerical\",\"chain\":\"\",\"reading\":\"Mad 5 (number five, generative)\", \"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.2}]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "Place name derived from Burmese 'Mandalay' (city) + English suffix '-Bay' (inlet or bay).",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "Man + Dal + Ay Bay (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "Mandalay = Malay (language) + Bay (inlet or bay, generative)",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "Mad Bay (unrelated to the original meaning, generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "Mandalay = Mad + Aly (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "Mandalay = M.D. ( Medical Doctor, generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "",
+   "reading": "Mad 5 (number five, generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

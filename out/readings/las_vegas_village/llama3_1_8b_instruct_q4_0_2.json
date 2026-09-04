@@ -1,0 +1,168 @@
+{
+ "word": "Las Vegas Village",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:34:58+00:00",
+ "latency_s": 46.69,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Latin 'las' = as, and 'vegas' from Basque 'bego' = valley\",\n    \"reading\": \"a place of valleys or plains\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"las + veg + as\",\n    \"reading\": \"a place where one rests or resides\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"vegas (Spanish) = snakes, and las (Spanish) = the\",\n    \"reading\": \"a place of serpents or reptiles\",\n    \"languages\": [\"es\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"vegas + las\",\n    \"reading\": \"a place where one is lost or disoriented\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"V-L-S (Latin) = VIRTUS, LAS (Greek)\",\n    \"reading\": \"a place of virtue or moral excellence\",\n    \"languages\": [\"la\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V-L-S-V = VLSV (Latin)\",\n    \"reading\": \"a place of sacred or consecrated waters\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"5-1-4 = LAS (Hebrew)\",\n    \"reading\": \"a place of spiritual or mystical significance\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"vegas from Basque 'bego' = valley, and las (Latin) = as\",\n    \"reading\": \"a place of valleys or plains in a particular aspect\",\n    \"languages\": [\"en\",\"la\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"las + veg + as\",\n    \"reading\": \"a place where one rests or resides, in a particular way\",\n    \"languages\": [\"en\",\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"vegas (Spanish) = snakes, and las (Spanish) = the\",\n    \"reading\": \"a place of serpents or reptiles in a particular aspect\",\n    \"languages\": [\"es\",\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"vegas + las\",\n    \"reading\": \"a place where one is lost or disoriented, in a particular way\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"V-L-S (Latin) = VIRTUS, LAS (Greek)\",\n    \"reading\": \"a place of virtue or moral excellence in a particular aspect\",\n    \"languages\": [\"la\",\"grc\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V-L-S-V = VLSV (Latin)\",\n    \"reading\": \"a place of sacred or consecrated waters in a particular aspect\",\n    \"languages\": [\"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.1\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"5-1-4 = LAS (Hebrew)\",\n    \"reading\": \"a place of spiritual or mystical significance in a particular aspect\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.1\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Latin 'las' = as, and 'vegas' from Basque 'bego' = valley",
+   "reading": "a place of valleys or plains",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "las + veg + as",
+   "reading": "a place where one rests or resides",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "vegas (Spanish) = snakes, and las (Spanish) = the",
+   "reading": "a place of serpents or reptiles",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "vegas + las",
+   "reading": "a place where one is lost or disoriented",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V-L-S (Latin) = VIRTUS, LAS (Greek)",
+   "reading": "a place of virtue or moral excellence",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V-L-S-V = VLSV (Latin)",
+   "reading": "a place of sacred or consecrated waters",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "5-1-4 = LAS (Hebrew)",
+   "reading": "a place of spiritual or mystical significance",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "etymology",
+   "chain": "vegas from Basque 'bego' = valley, and las (Latin) = as",
+   "reading": "a place of valleys or plains in a particular aspect",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "las + veg + as",
+   "reading": "a place where one rests or resides, in a particular way",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "vegas (Spanish) = snakes, and las (Spanish) = the",
+   "reading": "a place of serpents or reptiles in a particular aspect",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "anagram",
+   "chain": "vegas + las",
+   "reading": "a place where one is lost or disoriented, in a particular way",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V-L-S (Latin) = VIRTUS, LAS (Greek)",
+   "reading": "a place of virtue or moral excellence in a particular aspect",
+   "languages": [
+    "la",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V-L-S-V = VLSV (Latin)",
+   "reading": "a place of sacred or consecrated waters in a particular aspect",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.1
+  },
+  {
+   "operation": "numerical",
+   "chain": "5-1-4 = LAS (Hebrew)",
+   "reading": "a place of spiritual or mystical significance in a particular aspect",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.1
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 14,
+ "refusal_like": false
+}

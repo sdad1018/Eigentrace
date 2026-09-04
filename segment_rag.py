@@ -64,6 +64,7 @@ def segment_to_doc(seg):
     )
     
     meta = {
+        "segment_type": str(seg.get("segment_type") or "story"),  # 2026-09-03
         "title": title[:200],
         "category": category,
         "timestamp": seg.get("timestamp", ""),
@@ -76,7 +77,19 @@ def segment_to_doc(seg):
         "segment_id": seg.get("id", ""),
     }
     
-    doc_id = hashlib.md5(f"{seg.get('id','')}{seg.get('timestamp','')}".encode()).hexdigest()
+    # 2026-09-03: the system's own segments carry no id/timestamp, so every one of
+    # them hashed to the same doc id and indexed as an empty placeholder
+    # ("Category: unknown. State: . Void words: . Absent words: .").  Index their
+    # spoken text instead, under a key that is actually unique.
+    _first = ""
+    if isinstance(seg.get("beats"), list) and seg["beats"]:
+        _first = str((seg["beats"][0] or {}).get("text", ""))
+    if str(seg.get("segment_type") or "") in ("idle", "silence", "consolidation", "weekly_compression", "governance", "foraging", "self_audit"):
+        doc = f"{title}. {_first[:600]}"
+    _key = f"{seg.get('id','')}{seg.get('timestamp','')}"
+    if not _key.strip():
+        _key = f"{title}|{_first[:200]}"
+    doc_id = hashlib.md5(_key.encode()).hexdigest()
     return doc_id, doc, meta
 
 # TODO: archive segments older than 30 days to prevent retrieval pollution
@@ -102,6 +115,9 @@ def ingest_all(batch_size=200):
             seg = json.load(open(f))
             attr = seg.get("attribution", {})
             if not attr.get("story_title"):
+                skipped += 1
+                continue
+            if seg.get("segment_type") in ("idle", "silence"):  # 2026-09-03: reflections are read from files
                 skipped += 1
                 continue
             doc_id, doc, meta = segment_to_doc(seg)

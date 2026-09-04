@@ -1,0 +1,132 @@
+{
+ "word": "Red Rocks",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:21:19+00:00",
+ "latency_s": 41.65,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"red (Old English) = to advise; rock (Old English) = stone\",\n    \"reading\": \"to counsel or advise from a solid foundation\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"red + rocks\",\n    \"reading\": \"a place of fiery passion or energy (generative)\",\n    \"languages\": [],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"red (English) = rouge (French) + rocs (Old French)\",\n    \"reading\": \"a place of red stones or rocks (generative)\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"red rocks -> cores dered\",\n    \"reading\": \"the core or essence of something fiery or passionate (generative)\",\n    \"languages\": [],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"red rocks -> dered roks\",\n    \"reading\": \"a place of sacred or mysterious stones (generative)\",\n    \"languages\": [],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"RR (red red) -> RR (Roman numerals for 100)\",\n    \"reading\": \"a place of hundred or a quantity of something fiery (generative)\",\n    \"languages\": [],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"red rocks -> 377 (numerological value)\",\n    \"reading\": \"a place or energy of spiritual awakening and transformation (generative)\",\n    \"languages\": [],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"rock (Old English) = crag, a rocky outcrop\",\n    \"reading\": \"a rugged or precipitous place of red stones\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"red rocks -> rock + reds\",\n    \"reading\": \"a place of fiery or passionate stones (generative)\",\n    \"languages\": [],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"red (English) = rouge (French) + rocs (Old French)\",\n    \"reading\": \"a place of red stones or rocks (generative)\",\n    \"languages\": [\"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"red rocks -> cores dered\",\n    \"reading\": \"the core or essence of something fiery or passionate (generative)\",\n    \"languages\": [],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"red rocks -> dered roks\",\n    \"reading\": \"a place of sacred or mysterious stones (generative)\",\n    \"languages\": [],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"RR (red red) -> RR (Roman numerals for 100)\",\n    \"reading\": \"a place of hundred or a quantity of something fiery (generative)\",\n    \"languages\": [],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "red (Old English) = to advise; rock (Old English) = stone",
+   "reading": "to counsel or advise from a solid foundation",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "red + rocks",
+   "reading": "a place of fiery passion or energy (generative)",
+   "languages": [],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "red (English) = rouge (French) + rocs (Old French)",
+   "reading": "a place of red stones or rocks (generative)",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "red rocks -> cores dered",
+   "reading": "the core or essence of something fiery or passionate (generative)",
+   "languages": [],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "red rocks -> dered roks",
+   "reading": "a place of sacred or mysterious stones (generative)",
+   "languages": [],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "RR (red red) -> RR (Roman numerals for 100)",
+   "reading": "a place of hundred or a quantity of something fiery (generative)",
+   "languages": [],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "red rocks -> 377 (numerological value)",
+   "reading": "a place or energy of spiritual awakening and transformation (generative)",
+   "languages": [],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "etymology",
+   "chain": "rock (Old English) = crag, a rocky outcrop",
+   "reading": "a rugged or precipitous place of red stones",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "red rocks -> rock + reds",
+   "reading": "a place of fiery or passionate stones (generative)",
+   "languages": [],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "red (English) = rouge (French) + rocs (Old French)",
+   "reading": "a place of red stones or rocks (generative)",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "red rocks -> cores dered",
+   "reading": "the core or essence of something fiery or passionate (generative)",
+   "languages": [],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "red rocks -> dered roks",
+   "reading": "a place of sacred or mysterious stones (generative)",
+   "languages": [],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "RR (red red) -> RR (Roman numerals for 100)",
+   "reading": "a place of hundred or a quantity of something fiery (generative)",
+   "languages": [],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 13,
+ "refusal_like": false
+}

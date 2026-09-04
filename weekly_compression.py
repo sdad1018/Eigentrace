@@ -27,12 +27,24 @@ def get_week_segments():
 
 
 def compress_week():
+    # Guard (2026-09-03): this ran every hour from refresh_profiles.sh and wrote
+    # ~22 "Weekly compression" segments a day, each spoken on air and ingested
+    # into memory as category "meta".  Skip unless the newest weekly segment is
+    # at least 7 days old.
+    _recent_weekly = sorted(glob.glob(os.path.join(SEGMENT_DIR, "*_weekly_segment.json")))
+    if _recent_weekly:
+        _last = os.path.basename(_recent_weekly[-1])[:8]
+        if _last > (datetime.now() - timedelta(days=7)).strftime("%Y%m%d"):
+            log.info("Weekly compression: last run %s, skipping (weekly cadence)", _last)
+            return
     segments = get_week_segments()
     if len(segments) < 20:
         log.info("Not enough segments for weekly compression")
         return
 
-    stories = [s for s in segments if s.get("segment_type") not in ("idle", "foraging", "consolidation", "conversation")]
+    stories = [s for s in segments if s.get("segment_type") not in ("idle", "foraging", "consolidation", "conversation",
+                                                                "silence", "weekly_compression", "governance",
+                                                                "self_audit", "roundtable", "pundit_desk")]  # 2026-09-03: own output is not a story
     idle = [s for s in segments if "idle" in str(s.get("segment_type", ""))]
     foraging = [s for s in segments if s.get("segment_type") == "foraging"]
     consolidations = [s for s in segments if s.get("segment_type") == "consolidation"]

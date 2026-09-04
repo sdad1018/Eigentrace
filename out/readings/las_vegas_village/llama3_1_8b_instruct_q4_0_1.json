@@ -1,0 +1,113 @@
+{
+ "word": "Las Vegas Village",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:34:11+00:00",
+ "latency_s": 19.01,
+ "ok": true,
+ "call_error": null,
+ "raw": "[{\"operation\":\"etymology\",\"chain\":\"\",\"reading\":\"Village means 'dwelling' in Old French, from Latin villa.\",\"languages\":[\"en\",\"fr\",\"la\"],\"source\":\"Oxford English Dictionary\",\"confidence\":0.9},{\"operation\":\"phonetic_split\",\"chain\":\"\",\"reading\":\"Las (Latin: 'joy') + Vegas (Spanish: 'valley')\",\"languages\":[\"en\",\"es\",\"la\"],\"source\":\"generative\",\"confidence\":0.8},{\"operation\":\"cross_language_homophone\",\"chain\":\"\",\"reading\":\"Village in French sounds like 'vivere' in Latin, meaning 'to live'\",\"languages\":[\"fr\",\"la\"],\"source\":\"generative\",\"confidence\":0.7},{\"operation\":\"anagram\",\"chain\":\"\",\"reading\":\"Las Vegas Village anagrams to 'Live in a cave'\",\"languages\":[],\"source\":\"generative\",\"confidence\":0.6},{\"operation\":\"notariqon\",\"chain\":\"\",\"reading\":\"LVV (Latin: 'libertas vivere vita') = Freedom to live life\",\"languages\":[\"en\",\"la\"],\"source\":\"generative\",\"confidence\":0.5},{\"operation\":\"letter_symbol\",\"chain\":\"\",\"reading\":\"Las Vegas Village in Hebrew is represented by the symbol LVV, associated with the number 18 (Chai)\",\"languages\":[\"he\"],\"source\":\"Kabbalah texts\",\"confidence\":0.4},{\"operation\":\"numerical\",\"chain\":\"\",\"reading\":\"LVV = 18 (Chai) in numerology, representing 'life' or 'abundance'\",\"languages\":[],\"source\":\"generative\",\"confidence\":0.3},{\"operation\":\"phonetic_split\",\"chain\":\"\",\"reading\":\"Las Vegas Village sounds like 'las vejas' in Spanish, meaning 'the ashes'\",\"languages\":[\"es\"],\"source\":\"generative\",\"confidence\":0.2},{\"operation\":\"cross_language_homophone\",\"chain\":\"\",\"reading\":\"Village in Greek sounds like 'vivlio' in Latin, meaning 'book of life'\",\"languages\":[\"el\",\"la\"],\"source\":\"generative\",\"confidence\":0.1}]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "",
+   "reading": "Village means 'dwelling' in Old French, from Latin villa.",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "Las (Latin: 'joy') + Vegas (Spanish: 'valley')",
+   "languages": [
+    "en",
+    "es",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "Village in French sounds like 'vivere' in Latin, meaning 'to live'",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "Las Vegas Village anagrams to 'Live in a cave'",
+   "languages": [],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "LVV (Latin: 'libertas vivere vita') = Freedom to live life",
+   "languages": [
+    "en",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "Las Vegas Village in Hebrew is represented by the symbol LVV, associated with the number 18 (Chai)",
+   "languages": [
+    "he"
+   ],
+   "source": "Kabbalah texts",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "",
+   "reading": "LVV = 18 (Chai) in numerology, representing 'life' or 'abundance'",
+   "languages": [],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "Las Vegas Village sounds like 'las vejas' in Spanish, meaning 'the ashes'",
+   "languages": [
+    "es"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "",
+   "reading": "Village in Greek sounds like 'vivlio' in Latin, meaning 'book of life'",
+   "languages": [
+    "el",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.1
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 9,
+ "refusal_like": false
+}

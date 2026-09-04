@@ -6,14 +6,145 @@
  "prompt_version": "green_v1",
  "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
  "caller": "direct_api(max_tokens=3000)",
- "ts_utc": "2026-08-26T04:12:24+00:00",
- "latency_s": 0.85,
- "ok": false,
- "call_error": "HTTPError: 529 Server Error: <none> for url: https://api.anthropic.com/v1/messages",
- "raw": "",
- "parsed": null,
- "parse_error": "empty",
- "extracted": false,
- "n_readings": 0,
+ "ts_utc": "2026-08-26T12:06:09+00:00",
+ "latency_s": 10.3,
+ "ok": true,
+ "call_error": null,
+ "raw": "```json\n[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Victoria < Latin victōria, from victor (conqueror) < vincere (to conquer)\",\n    \"reading\": \"The state or condition of having conquered; triumph through force of will or arms.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Oxford English Dictionary, s.v. victory\",\n    \"confidence\": 0.95\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vic-tor-ia: vic (Latin vīcus, village) + tor (tower, height) + ia (state)\",\n    \"reading\": \"The state of a tower standing over villages; dominion from an elevated place.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Victoria ≈ French 'vie' (life) + 'toria' (from Latin torus, swelling/bulge)\",\n    \"reading\": \"Life in its fullness or tumescence; the vital force made manifest and swollen.\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vic-tor-ia: 'vic' (quick, swift in Latin vīcis) + 'tor' + 'ia'\",\n    \"reading\": \"Swift passage through a state or condition; rapid transformation or transition.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V (Roman numeral 5, the pentad, human form) + I (unity, the phallus) + A (the triangle, matter)\",\n    \"reading\": \"The human form unified with matter; the descent of spirit into corporeal manifestation.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"Victoria → 'Avocit Ria' or 'Ciao Virt'\",\n    \"reading\": \"The advocate speaks farewell to virtue; justice departs from moral excellence.\",\n    \"languages\": [\"en\", \"la\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"V-I-C-T-O-R-I-A: initial letters as acronym for hidden phrase\",\n    \"reading\": \"A concealed utterance locked within the word's skeleton; meaning compressed into initials.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"'Vic' (French vif, alive) + 'tor' (French tort, wrong) + 'ia'\",\n    \"reading\": \"Living wrongness; the vitality of transgression or the life force of injustice.\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"Victoria: Latin -ia suffix (feminine abstract noun marker) + victor\",\n    \"reading\": \"The feminine principle embodied in conquest; victory as generative, receptive power.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"Oxford Latin Dictionary, s.v. -ia\",\n    \"confidence\": 0.85\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"Victoria ≈ Spanish 'victoria' (victory) + Latin 'via' (way, path) embedded\",\n    \"reading\": \"The way of triumph; the path that leads through conquest to transformation.\",\n    \"languages\": [\"es\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"Vic-tor-ia: 'vic' (Latin vicis, change) + 'tor' (one who turns) + 'ia'\",\n    \"reading\": \"The state of one who turns change; the condition of mastering transformation itself.\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.55\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"V (duality split) + I (the line between) + A (the opening below)\",\n    \"reading\": \"Duality reconciled through the mediating line, opening into manifestation below.\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.35\n  }\n]\n```",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Victoria < Latin victōria, from victor (conqueror) < vincere (to conquer)",
+   "reading": "The state or condition of having conquered; triumph through force of will or arms.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Oxford English Dictionary, s.v. victory",
+   "confidence": 0.95
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vic-tor-ia: vic (Latin vīcus, village) + tor (tower, height) + ia (state)",
+   "reading": "The state of a tower standing over villages; dominion from an elevated place.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Victoria ≈ French 'vie' (life) + 'toria' (from Latin torus, swelling/bulge)",
+   "reading": "Life in its fullness or tumescence; the vital force made manifest and swollen.",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vic-tor-ia: 'vic' (quick, swift in Latin vīcis) + 'tor' + 'ia'",
+   "reading": "Swift passage through a state or condition; rapid transformation or transition.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V (Roman numeral 5, the pentad, human form) + I (unity, the phallus) + A (the triangle, matter)",
+   "reading": "The human form unified with matter; the descent of spirit into corporeal manifestation.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "anagram",
+   "chain": "Victoria → 'Avocit Ria' or 'Ciao Virt'",
+   "reading": "The advocate speaks farewell to virtue; justice departs from moral excellence.",
+   "languages": [
+    "en",
+    "la",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  },
+  {
+   "operation": "notariqon",
+   "chain": "V-I-C-T-O-R-I-A: initial letters as acronym for hidden phrase",
+   "reading": "A concealed utterance locked within the word's skeleton; meaning compressed into initials.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "'Vic' (French vif, alive) + 'tor' (French tort, wrong) + 'ia'",
+   "reading": "Living wrongness; the vitality of transgression or the life force of injustice.",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "etymology",
+   "chain": "Victoria: Latin -ia suffix (feminine abstract noun marker) + victor",
+   "reading": "The feminine principle embodied in conquest; victory as generative, receptive power.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "Oxford Latin Dictionary, s.v. -ia",
+   "confidence": 0.85
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Victoria ≈ Spanish 'victoria' (victory) + Latin 'via' (way, path) embedded",
+   "reading": "The way of triumph; the path that leads through conquest to transformation.",
+   "languages": [
+    "es",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Vic-tor-ia: 'vic' (Latin vicis, change) + 'tor' (one who turns) + 'ia'",
+   "reading": "The state of one who turns change; the condition of mastering transformation itself.",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.55
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "V (duality split) + I (the line between) + A (the opening below)",
+   "reading": "Duality reconciled through the mediating line, opening into manifestation below.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.35
+  }
+ ],
+ "parse_error": null,
+ "extracted": true,
+ "n_readings": 12,
  "refusal_like": false
 }

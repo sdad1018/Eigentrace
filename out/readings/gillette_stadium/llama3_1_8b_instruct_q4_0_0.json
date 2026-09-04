@@ -1,0 +1,139 @@
+{
+ "word": "Gillette Stadium",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:15:54+00:00",
+ "latency_s": 33.29,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"French 'gilette' (a type of fabric) + suffix '-ette'\",\n    \"reading\": \"small or delicate fabric\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"Oxford English Dictionary, s.v. gilette\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"split into 'Gil' and 'let'\",\n    \"reading\": \"to let go or release something\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"split into 'Gil' and 'tete'\",\n    \"reading\": \"head or top part of something\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"French 'gilette' and Italian 'giletta'\",\n    \"reading\": \"small or delicate fabric\",\n    \"languages\": [\"en\", \"fr\", \"it\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"rearrange letters to 'let tie'\",\n    \"reading\": \"to tie or bind something together\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"acronym from 'Gillette Stadium' to 'GIS'\",\n    \"reading\": \"Geographic Information System\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"assign meaning to individual letters\",\n    \"reading\": \"G - Gateway, I - Insight, L - Light, L - Love, E - Energy, T - Tranquility, T - Trust, E - Enlightenment, S - Serenity, T - Truth, A - Awareness, D - Delight, i - inner, u - unity, m - mind, i - insight, u - understanding\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"assign numerical value to letters (A=1, B=2, etc.) and calculate\",\n    \"reading\": \"the sum of the letter values is 9+9+12+20+5+20+20+5+4+9+9+1+4+9+9+21 = 146\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"split into 'Gil' and 'let tee'\",\n    \"reading\": \"to tie or bind something together with a tree\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.1\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"split into 'Gil' and 'let tee'\",\n    \"reading\": \"to tie or bind something together with a tree's branch\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.1\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"split into 'Gil' and 'let tee'\",\n    \"reading\": \"to tie or bind something together with a tree's leaf\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.1\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "French 'gilette' (a type of fabric) + suffix '-ette'",
+   "reading": "small or delicate fabric",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Oxford English Dictionary, s.v. gilette",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "split into 'Gil' and 'let'",
+   "reading": "to let go or release something",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "split into 'Gil' and 'tete'",
+   "reading": "head or top part of something",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "French 'gilette' and Italian 'giletta'",
+   "reading": "small or delicate fabric",
+   "languages": [
+    "en",
+    "fr",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "rearrange letters to 'let tie'",
+   "reading": "to tie or bind something together",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "acronym from 'Gillette Stadium' to 'GIS'",
+   "reading": "Geographic Information System",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "assign meaning to individual letters",
+   "reading": "G - Gateway, I - Insight, L - Light, L - Love, E - Energy, T - Tranquility, T - Trust, E - Enlightenment, S - Serenity, T - Truth, A - Awareness, D - Delight, i - inner, u - unity, m - mind, i - insight, u - understanding",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "assign numerical value to letters (A=1, B=2, etc.) and calculate",
+   "reading": "the sum of the letter values is 9+9+12+20+5+20+20+5+4+9+9+1+4+9+9+21 = 146",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "split into 'Gil' and 'let tee'",
+   "reading": "to tie or bind something together with a tree",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.1
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "split into 'Gil' and 'let tee'",
+   "reading": "to tie or bind something together with a tree's branch",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.1
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "split into 'Gil' and 'let tee'",
+   "reading": "to tie or bind something together with a tree's leaf",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.1
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 11,
+ "refusal_like": false
+}

@@ -1,0 +1,152 @@
+{
+ "word": "Lollapalooza",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:24:58+00:00",
+ "latency_s": 40.63,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"etymology\",\"chain\":\"palooza < Italian 'paloazzo' = palace\",\"reading\":\"grandeur of a royal residence\",\"languages\":[\"en\"],\"source\":\"Oxford English Dictionary\",\"confidence\":0.8},\n  {\"operation\":\"phonetic_split\",\"chain\":\"loll + al + oo + za\",\"reading\":\"playful, silly (generative)\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"French 'loupe' = magnifying glass; Italian 'locco' = curly-haired\",\"reading\":\"examining or having a distinctive feature (generative)\",\"languages\":[\"fr\",\"it\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"anagram\",\"chain\":\"lollapalooza = all pal oo la z\",\"reading\":\"all peaceful, lovely, and joyful people (generative)\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.4},\n  {\"operation\":\"notariqon\",\"chain\":\"L-O-L-L-A-P-A-L-O-O-Z-A = Luminous Ones Living All Peace And Love Oceans Zealously Always\",\"reading\":\"a group of people who radiate light and positivity always (generative)\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.3},\n  {\"operation\":\"letter_symbol\",\"chain\":\"L= Liberty; O= Omnipotence; L=Love; P= Peace; A=Abundance; L=Light; O=Ocean; Z=Awe; A=Always\",\"reading\":\"a symbol of freedom, power, love, peace, abundance, light, ocean, awe, and eternity (generative)\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.2},\n  {\"operation\":\"numerical\",\"chain\":\"L=6; O=15; L=12; L=12; A=1; P=16; A=1; L=12; O=15; O=15; Z=26; A=1\",\"reading\":\"a numerical code representing the value of 106 (generative)\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.1},\n  {\"operation\":\"phonetic_split\",\"chain\":\"loll + apa + looza\",\"reading\":\"playful, silly, and joyful people always (generative)\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"Spanish 'llapa' = a type of tree; Italian 'palazzo' = palace\",\"reading\":\"a grand or majestic place with trees (generative)\",\"languages\":[\"es\",\"it\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"anagram\",\"chain\":\"lollapalooza = zoo pal all lo la o p a l\",\"reading\":\"a place where animals and people come together in peace (generative)\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.4},\n  {\"operation\":\"notariqon\",\"chain\":\"L-O-L-L-A-P-A-L-O-O-Z-A = Living Ones Love All Peace And Lovely Ocean Zealously Always\",\"reading\":\"a group of people who live in harmony with nature always (generative)\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.3},\n  {\"operation\":\"letter_symbol\",\"chain\":\"L=Life; O=Ocean; L=Love; P=Peace; A=Abundance; L=Light; O=Oasis; Z=Awe; A=Always\",\"reading\":\"a symbol of life, ocean, love, peace, abundance, light, oasis, awe, and eternity (generative)\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.2},\n  {\"operation\":\"numerical\",\"chain\":\"L=3; O=15; L=12; L=12; A=1; P=16; A=1; L=12; O=15; O=15; Z=26; A=1\",\"reading\":\"a numerical code representing the value of 127 (generative)\",\"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.1}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "palooza < Italian 'paloazzo' = palace",
+   "reading": "grandeur of a royal residence",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "loll + al + oo + za",
+   "reading": "playful, silly (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "French 'loupe' = magnifying glass; Italian 'locco' = curly-haired",
+   "reading": "examining or having a distinctive feature (generative)",
+   "languages": [
+    "fr",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "lollapalooza = all pal oo la z",
+   "reading": "all peaceful, lovely, and joyful people (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L-O-L-L-A-P-A-L-O-O-Z-A = Luminous Ones Living All Peace And Love Oceans Zealously Always",
+   "reading": "a group of people who radiate light and positivity always (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L= Liberty; O= Omnipotence; L=Love; P= Peace; A=Abundance; L=Light; O=Ocean; Z=Awe; A=Always",
+   "reading": "a symbol of freedom, power, love, peace, abundance, light, ocean, awe, and eternity (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "numerical",
+   "chain": "L=6; O=15; L=12; L=12; A=1; P=16; A=1; L=12; O=15; O=15; Z=26; A=1",
+   "reading": "a numerical code representing the value of 106 (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.1
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "loll + apa + looza",
+   "reading": "playful, silly, and joyful people always (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Spanish 'llapa' = a type of tree; Italian 'palazzo' = palace",
+   "reading": "a grand or majestic place with trees (generative)",
+   "languages": [
+    "es",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "anagram",
+   "chain": "lollapalooza = zoo pal all lo la o p a l",
+   "reading": "a place where animals and people come together in peace (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "L-O-L-L-A-P-A-L-O-O-Z-A = Living Ones Love All Peace And Lovely Ocean Zealously Always",
+   "reading": "a group of people who live in harmony with nature always (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L=Life; O=Ocean; L=Love; P=Peace; A=Abundance; L=Light; O=Oasis; Z=Awe; A=Always",
+   "reading": "a symbol of life, ocean, love, peace, abundance, light, oasis, awe, and eternity (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "numerical",
+   "chain": "L=3; O=15; L=12; L=12; A=1; P=16; A=1; L=12; O=15; O=15; Z=26; A=1",
+   "reading": "a numerical code representing the value of 127 (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.1
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 13,
+ "refusal_like": false
+}

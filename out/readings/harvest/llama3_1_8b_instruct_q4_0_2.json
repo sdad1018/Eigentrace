@@ -1,0 +1,148 @@
+{
+ "word": "Harvest",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:33:11+00:00",
+ "latency_s": 39.6,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"harvest (Old English) = to reap, gather\",\n    \"reading\": \"reaping what one has sown\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 1\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har-vest\",\n    \"reading\": \"breaking, shattering (generative)\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har-vest\",\n    \"reading\": \"heart, core (generative)\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"harvest = récolte (French) = θερσίς (Greek)\",\n    \"reading\": \"gathering, reaping (generative)\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"harvest = havers t\",\n    \"reading\": \"one who has, possesses (generative)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"HARVEST = HAV ES T\",\n    \"reading\": \"he who has, possesses (generative)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"harvest = HS (Hebrew) = H+A+R+V+E+S+T\",\n    \"reading\": \"the harmony of the spheres (generative)\",\n    \"languages\": [\"he\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"harvest = 8-1-18-22-5-20-19-5\",\n    \"reading\": \"the balance of the elements (generative)\",\n    \"languages\": [\"\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"harvest = harvest (Old English) = to reap, gather from Old Norse 'harja' = to tear\",\n    \"reading\": \"tearing the fabric of reality\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"har-vest\",\n    \"reading\": \"harm, hurt (generative)\",\n    \"languages\": [\"en\", \"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"harvest = récolte (French) = θερσίς (Greek)\",\n    \"reading\": \"gathering, reaping the fruits of labor (generative)\",\n    \"languages\": [\"fr\", \"la\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"harvest = havers t\",\n    \"reading\": \"one who has, possesses the truth (generative)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "harvest (Old English) = to reap, gather",
+   "reading": "reaping what one has sown",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 1
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "har-vest",
+   "reading": "breaking, shattering (generative)",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "har-vest",
+   "reading": "heart, core (generative)",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "harvest = récolte (French) = θερσίς (Greek)",
+   "reading": "gathering, reaping (generative)",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.9
+  },
+  {
+   "operation": "anagram",
+   "chain": "harvest = havers t",
+   "reading": "one who has, possesses (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "HARVEST = HAV ES T",
+   "reading": "he who has, possesses (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "harvest = HS (Hebrew) = H+A+R+V+E+S+T",
+   "reading": "the harmony of the spheres (generative)",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "harvest = 8-1-18-22-5-20-19-5",
+   "reading": "the balance of the elements (generative)",
+   "languages": [
+    ""
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "etymology",
+   "chain": "harvest = harvest (Old English) = to reap, gather from Old Norse 'harja' = to tear",
+   "reading": "tearing the fabric of reality",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "har-vest",
+   "reading": "harm, hurt (generative)",
+   "languages": [
+    "en",
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "harvest = récolte (French) = θερσίς (Greek)",
+   "reading": "gathering, reaping the fruits of labor (generative)",
+   "languages": [
+    "fr",
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "harvest = havers t",
+   "reading": "one who has, possesses the truth (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

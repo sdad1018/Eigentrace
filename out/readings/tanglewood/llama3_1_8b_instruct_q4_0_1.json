@@ -1,0 +1,142 @@
+{
+ "word": "Tanglewood",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:27:28+00:00",
+ "latency_s": 29.85,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"etymology\",\"chain\":\"wood + tangle = complicated or confusing situation\",\n    \"reading\":\"A state of confusion or perplexity.\",\n    \"languages\":[\"en\"],\"source\":\"Oxford English Dictionary\",\"confidence\":0.9},\n  {\"operation\":\"phonetic_split\",\"chain\":\"tan (to stretch) + gle (globe)\",\n    \"reading\":\"The act of stretching the globe, generative.\",\n    \"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"tangle (English) = enchevet (French)\",\n    \"reading\":\"To entwine or become entangled, generative.\",\n    \"languages\":[\"en\",\"fr\"],\"source\":\"generative\",\"confidence\":0.8},\n  {\"operation\":\"anagram\",\"chain\":\"tan + gle + wood\",\n    \"reading\":\"A tangled or complicated situation, generative.\",\n    \"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"notariqon\",\"chain\":\"TAN + GLE + WOOD = TANGUER WOD\",\n    \"reading\":\"The tongue of the wood, generative.\",\n    \"languages\":[\"la\"],\"source\":\"generative\",\"confidence\":0.5},\n  {\"operation\":\"letter_symbol\",\"chain\":\"T (tree) + ANGLE (angle)\",\n    \"reading\":\"A tree at an angle, generative.\",\n    \"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.4},\n  {\"operation\":\"numerical\",\"chain\":\"TAN (tan = 45 degrees) + GLE (globe) + WOOD\",\n    \"reading\":\"The number of the globe at a 45-degree angle, generative.\",\n    \"languages\":[\"en\"],\"source\":\"generative\",\"confidence\":0.3},\n  {\"operation\":\"etymology\",\"chain\":\"wood + tangle = complicated or confusing situation\",\n    \"reading\":\"A state of confusion or perplexity.\",\n    \"languages\":[\"la\"],\"source\":\"Lewis & Short's Latin Dictionary\",\"confidence\":0.9},\n  {\"operation\":\"phonetic_split\",\"chain\":\"tan (to stretch) + gle (globe)\",\n    \"reading\":\"The act of stretching the globe, generative.\",\n    \"languages\":[\"fr\"],\"source\":\"generative\",\"confidence\":0.7},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"tangle (English) = enchevet (French)\",\n    \"reading\":\"To entwine or become entangled, generative.\",\n    \"languages\":[\"en\",\"grc\"],\"source\":\"generative\",\"confidence\":0.8},\n  {\"operation\":\"anagram\",\"chain\":\"tan + gle + wood\",\n    \"reading\":\"A tangled or complicated situation, generative.\",\n    \"languages\":[\"he\"],\"source\":\"generative\",\"confidence\":0.6},\n  {\"operation\":\"notariqon\",\"chain\":\"TAN + GLE + WOOD = TANGUER WOD\",\n    \"reading\":\"The tongue of the wood, generative.\",\n    \"languages\":[\"ar\"],\"source\":\"generative\",\"confidence\":0.5}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "wood + tangle = complicated or confusing situation",
+   "reading": "A state of confusion or perplexity.",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "tan (to stretch) + gle (globe)",
+   "reading": "The act of stretching the globe, generative.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "tangle (English) = enchevet (French)",
+   "reading": "To entwine or become entangled, generative.",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "tan + gle + wood",
+   "reading": "A tangled or complicated situation, generative.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "TAN + GLE + WOOD = TANGUER WOD",
+   "reading": "The tongue of the wood, generative.",
+   "languages": [
+    "la"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "T (tree) + ANGLE (angle)",
+   "reading": "A tree at an angle, generative.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "TAN (tan = 45 degrees) + GLE (globe) + WOOD",
+   "reading": "The number of the globe at a 45-degree angle, generative.",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "etymology",
+   "chain": "wood + tangle = complicated or confusing situation",
+   "reading": "A state of confusion or perplexity.",
+   "languages": [
+    "la"
+   ],
+   "source": "Lewis & Short's Latin Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "tan (to stretch) + gle (globe)",
+   "reading": "The act of stretching the globe, generative.",
+   "languages": [
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "tangle (English) = enchevet (French)",
+   "reading": "To entwine or become entangled, generative.",
+   "languages": [
+    "en",
+    "grc"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "anagram",
+   "chain": "tan + gle + wood",
+   "reading": "A tangled or complicated situation, generative.",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "notariqon",
+   "chain": "TAN + GLE + WOOD = TANGUER WOD",
+   "reading": "The tongue of the wood, generative.",
+   "languages": [
+    "ar"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

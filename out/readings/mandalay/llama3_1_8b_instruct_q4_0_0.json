@@ -1,0 +1,142 @@
+{
+ "word": "Mandalay",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:36:46+00:00",
+ "latency_s": 37.32,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"mandala + lay\",\n    \"reading\": \"a circular pattern or design\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + da + lay\",\n    \"reading\": \"to have a strong sense of justice (generative)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"mandala + ley (Old English)\",\n    \"reading\": \"a magical or mystical power (generative)\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"mandala + lay\",\n    \"reading\": \"a circular law or principle\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Mandalay\",\n    \"reading\": \"I will be victorious (Hebrew)\",\n    \"languages\": [\"he\"],\n    \"source\": \"Sepher Yetzirah\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Mandalay\",\n    \"reading\": \"M = Mother, A = Angel, D = Divine, L = Love, A = Action, Y = Youth (numerological)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"Mandalay\",\n    \"reading\": \"4+1+4+3+1+12 = 25 ( numerological)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"man + dal + ay\",\n    \"reading\": \"to be a wise and just ruler (generative)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"mandala + i (Arabic)\",\n    \"reading\": \"a circular or round shape (generative)\",\n    \"languages\": [\"ar\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"mandala + i\",\n    \"reading\": \"I am the law or principle\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"Mandalay\",\n    \"reading\": \"I will be victorious in love (Hebrew)\",\n    \"languages\": [\"he\"],\n    \"source\": \"Sepher Yetzirah\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"Mandalay\",\n    \"reading\": \"M = Mind, A = Action, D = Devotion, L = Love, A = Angel, Y = Youth (numerological)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "mandala + lay",
+   "reading": "a circular pattern or design",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + da + lay",
+   "reading": "to have a strong sense of justice (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "mandala + ley (Old English)",
+   "reading": "a magical or mystical power (generative)",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "mandala + lay",
+   "reading": "a circular law or principle",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Mandalay",
+   "reading": "I will be victorious (Hebrew)",
+   "languages": [
+    "he"
+   ],
+   "source": "Sepher Yetzirah",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Mandalay",
+   "reading": "M = Mother, A = Angel, D = Divine, L = Love, A = Action, Y = Youth (numerological)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "Mandalay",
+   "reading": "4+1+4+3+1+12 = 25 ( numerological)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + dal + ay",
+   "reading": "to be a wise and just ruler (generative)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "mandala + i (Arabic)",
+   "reading": "a circular or round shape (generative)",
+   "languages": [
+    "ar",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "mandala + i",
+   "reading": "I am the law or principle",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Mandalay",
+   "reading": "I will be victorious in love (Hebrew)",
+   "languages": [
+    "he"
+   ],
+   "source": "Sepher Yetzirah",
+   "confidence": 0.7
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "Mandalay",
+   "reading": "M = Mind, A = Action, D = Devotion, L = Love, A = Angel, Y = Youth (numerological)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

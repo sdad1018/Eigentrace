@@ -1,0 +1,92 @@
+{
+ "word": "Coachella",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 1,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:15:02+00:00",
+ "latency_s": 14.46,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"etymology\",\"chain\":\"coach (Middle English) + ella (Old French diminutive suffix)\",\n    \"reading\":\"a diminutive coach or carriage\",\n    \"languages\":[\"en\",\"fr\"],\n    \"source\":\"Oxford English Dictionary\",\n    \"confidence\":0.8},\n  \n  {\"operation\":\"phonetic_split\",\"chain\":\"\",\n    \"reading\":\"coach (sound of a horse's loud call) + ella (feminine diminutive suffix)\",\n    \"languages\":[\"generative\"],\n    \"source\":\"generative\",\n    \"confidence\":0.6},\n  \n  {\"operation\":\"cross_language_homophone\",\"chain\":\"couch (French) = place to rest\",\n    \"reading\":\"a resting or reclining place\",\n    \"languages\":[\"fr\",\"en\"],\n    \"source\":\"generative\",\n    \"confidence\":0.7},\n  \n  {\"operation\":\"anagram\",\"chain\":\"\",\n    \"reading\":\"each coal (play on words with 'coachella')\",\n    \"languages\":[\"generative\"],\n    \"source\":\"generative\",\n    \"confidence\":0.5},\n  \n  {\"operation\":\"notariqon\",\"chain\":\"\",\n    \"reading\":\"a hidden or secret coach\",\n    \"languages\":[\"generative\"],\n    \"source\":\"generative\",\n    \"confidence\":0.4},\n  \n  {\"operation\":\"letter_symbol\",\"chain\":\"\",\n    \"reading\":\"C-O-A-C-H-E-L-L-A (counting the letters)\",\n    \"languages\":[\"generative\"],\n    \"source\":\"generative\",\n    \"confidence\":0.3},\n  \n  {\"operation\":\"numerical\",\"chain\":\"\",\n    \"reading\":\"a numerical sequence: 3-1-15-8-5-12-12-5-4\",\n    \"languages\":[\"generative\"],\n    \"source\":\"generative\",\n    \"confidence\":0.2}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "coach (Middle English) + ella (Old French diminutive suffix)",
+   "reading": "a diminutive coach or carriage",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "",
+   "reading": "coach (sound of a horse's loud call) + ella (feminine diminutive suffix)",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "couch (French) = place to rest",
+   "reading": "a resting or reclining place",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "",
+   "reading": "each coal (play on words with 'coachella')",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "",
+   "reading": "a hidden or secret coach",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "",
+   "reading": "C-O-A-C-H-E-L-L-A (counting the letters)",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "",
+   "reading": "a numerical sequence: 3-1-15-8-5-12-12-5-4",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 7,
+ "refusal_like": false
+}

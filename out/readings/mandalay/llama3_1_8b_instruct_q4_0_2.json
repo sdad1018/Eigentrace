@@ -1,0 +1,153 @@
+{
+ "word": "Mandalay",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:38:08+00:00",
+ "latency_s": 36.31,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\":\"etymology\",\"chain\":\"Mandala (Skt.) + -alay (Skt.) = 'sacred circle'\",\n    \"reading\":\"a sacred geometric pattern or symbol\",\n    \"languages\":[\"en\",\"skt\"],\n    \"source\":\"Oxford English Dictionary\",\n    \"confidence\":0.8},\n  {\"operation\":\"phonetic_split\",\"chain\":\"man + da + lay\",\n    \"reading\":\"generative - a man's inner world, his soul\",\n    \"languages\":[\"en\"],\n    \"source\":\"generative\",\n    \"confidence\":0.6},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"mandala (Skt.) = mandorla (It.) = almond-shaped\",\n    \"reading\":\"a shape or form that is symmetrical and curvilinear\",\n    \"languages\":[\"skt\",\"it\"],\n    \"source\":\"generative\",\n    \"confidence\":0.7},\n  {\"operation\":\"anagram\",\"chain\":\"mandala + lay\",\n    \"reading\":\"generative - a man's soul, his inner light\",\n    \"languages\":[\"en\"],\n    \"source\":\"generative\",\n    \"confidence\":0.5},\n  {\"operation\":\"notariqon\",\"chain\":\"Mandalay = MANDALA YAH\",\n    \"reading\":\"the Lord of the sacred circle\",\n    \"languages\":[\"he\"],\n    \"source\":\"generative\",\n    \"confidence\":0.4},\n  {\"operation\":\"letter_symbol\",\"chain\":\"M + A + N + D + A + L + A + Y\",\n    \"reading\":\"a sequence of letters that form a symbolic pattern\",\n    \"languages\":[\"en\"],\n    \"source\":\"generative\",\n    \"confidence\":0.3},\n  {\"operation\":\"numerical\",\"chain\":\"Mandalay = 4+1+4+1+4+1+4+1+12+1\",\n    \"reading\":\"a numerical sequence that holds spiritual significance\",\n    \"languages\":[\"en\"],\n    \"source\":\"generative\",\n    \"confidence\":0.2},\n  {\"operation\":\"phonetic_split\",\"chain\":\"man + dal + ay\",\n    \"reading\":\"generative - a man's fall, his descent into darkness\",\n    \"languages\":[\"en\"],\n    \"source\":\"generative\",\n    \"confidence\":0.5},\n  {\"operation\":\"cross_language_homophone\",\"chain\":\"mandala (Skt.) = mandorla (It.) = almond-shaped\",\n    \"reading\":\"a shape or form that is symmetrical and curvilinear\",\n    \"languages\":[\"skt\",\"it\"],\n    \"source\":\"generative\",\n    \"confidence\":0.7},\n  {\"operation\":\"anagram\",\"chain\":\"mandala + lay\",\n    \"reading\":\"generative - a man's soul, his inner light\",\n    \"languages\":[\"en\"],\n    \"source\":\"generative\",\n    \"confidence\":0.5},\n  {\"operation\":\"notariqon\",\"chain\":\"Mandalay = MANDALA YAH\",\n    \"reading\":\"the Lord of the sacred circle\",\n    \"languages\":[\"he\"],\n    \"source\":\"generative\",\n    \"confidence\":0.4},\n  {\"operation\":\"letter_symbol\",\"chain\":\"M + A + N + D + A + L + A + Y\",\n    \"reading\":\"a sequence of letters that form a symbolic pattern\",\n    \"languages\":[\"en\"],\n    \"source\":\"generative\",\n    \"confidence\":0.3},\n  {\"operation\":\"numerical\",\"chain\":\"Mandalay = 4+1+4+1+4+1+4+1+12+1\",\n    \"reading\":\"a numerical sequence that holds spiritual significance\",\n    \"languages\":[\"en\"],\n    \"source\":\"generative\",\n    \"confidence\":0.2}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Mandala (Skt.) + -alay (Skt.) = 'sacred circle'",
+   "reading": "a sacred geometric pattern or symbol",
+   "languages": [
+    "en",
+    "skt"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.8
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + da + lay",
+   "reading": "generative - a man's inner world, his soul",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "mandala (Skt.) = mandorla (It.) = almond-shaped",
+   "reading": "a shape or form that is symmetrical and curvilinear",
+   "languages": [
+    "skt",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "mandala + lay",
+   "reading": "generative - a man's soul, his inner light",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Mandalay = MANDALA YAH",
+   "reading": "the Lord of the sacred circle",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M + A + N + D + A + L + A + Y",
+   "reading": "a sequence of letters that form a symbolic pattern",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "Mandalay = 4+1+4+1+4+1+4+1+12+1",
+   "reading": "a numerical sequence that holds spiritual significance",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "man + dal + ay",
+   "reading": "generative - a man's fall, his descent into darkness",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "mandala (Skt.) = mandorla (It.) = almond-shaped",
+   "reading": "a shape or form that is symmetrical and curvilinear",
+   "languages": [
+    "skt",
+    "it"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "anagram",
+   "chain": "mandala + lay",
+   "reading": "generative - a man's soul, his inner light",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Mandalay = MANDALA YAH",
+   "reading": "the Lord of the sacred circle",
+   "languages": [
+    "he"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "M + A + N + D + A + L + A + Y",
+   "reading": "a sequence of letters that form a symbolic pattern",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "Mandalay = 4+1+4+1+4+1+4+1+12+1",
+   "reading": "a numerical sequence that holds spiritual significance",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 13,
+ "refusal_like": false
+}

@@ -1,0 +1,148 @@
+{
+ "word": "Luxor",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 2,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:42:54+00:00",
+ "latency_s": 199.62,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\"operation\": \"etymology\", \"chain\": \"Latin lux (light) + or (genitive)\", \n   \"reading\": \"source of light\", \"languages\": [\"la\"], \"source\": \"Oxford Latin Dictionary\",\n    \"confidence\": 0.9},\n  {\"operation\": \"phonetic_split\", \"chain\": \"lux (sound) + or (sound)\", \n   \"reading\": \"light and/or\", \"languages\": [\"en\",\"fr\",\"generative\"], \"source\": \"generative\",\n    \"confidence\": 0.7},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"Luxor (English) = Lux (Latin) + or (French)\", \n   \"reading\": \"light and/or, source of light\", \"languages\": [\"en\",\"fr\"], \"source\": \"generative\",\n    \"confidence\": 0.6},\n  {\"operation\": \"anagram\", \"chain\": \"Luxor = RuXoL\", \n   \"reading\": \"excess, surplus, or luxury\", \"languages\": [\"en\"], \"source\": \"generative\",\n    \"confidence\": 0.5},\n  {\"operation\": \"notariqon\", \"chain\": \"Luxor = LUX OR\", \n   \"reading\": \"light and/or, source of light\", \"languages\": [\"la\",\"fr\"], \"source\": \"generative\",\n    \"confidence\": 0.8},\n  {\"operation\": \"letter_symbol\", \"chain\": \"L (letter) + U (letter) + X (letter) + O (letter) + R (letter)\",\n   \"reading\": \"a sequence of five letters, no specific meaning\", \"languages\": [\"generative\"], \n    \"source\": \"generative\", \"confidence\": 0.4},\n  {\"operation\": \"numerical\", \"chain\": \"Luxor = 5+21+24+15+18\", \n   \"reading\": \"a sequence of numbers, no specific meaning\", \"languages\": [\"generative\"], \n    \"source\": \"generative\", \"confidence\": 0.3},\n  {\"operation\": \"phonetic_split\", \"chain\": \"Luxor = Lux (sound) + or (sound)\", \n   \"reading\": \"light and/or\", \"languages\": [\"en\",\"fr\",\"generative\"], \"source\": \"generative\",\n    \"confidence\": 0.7},\n  {\"operation\": \"cross_language_homophone\", \"chain\": \"Luxor (English) = Lux (Latin) + or (French)\", \n   \"reading\": \"light and/or, source of light\", \"languages\": [\"en\",\"fr\"], \"source\": \"generative\",\n    \"confidence\": 0.6},\n  {\"operation\": \"etymology\", \"chain\": \"Luxor = lux (Latin) + or (genitive)\", \n   \"reading\": \"source of light\", \"languages\": [\"la\"], \"source\": \"Oxford Latin Dictionary\",\n    \"confidence\": 0.9},\n  {\"operation\": \"anagram\", \"chain\": \"Luxor = RuXoL\", \n   \"reading\": \"excess, surplus, or luxury\", \"languages\": [\"en\"], \"source\": \"generative\",\n    \"confidence\": 0.5},\n  {\"operation\": \"notariqon\", \"chain\": \"Luxor = LUX OR\", \n   \"reading\": \"light and/or, source of light\", \"languages\": [\"la\",\"fr\"], \"source\": \"generative\",\n    \"confidence\": 0.8}\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "Latin lux (light) + or (genitive)",
+   "reading": "source of light",
+   "languages": [
+    "la"
+   ],
+   "source": "Oxford Latin Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "lux (sound) + or (sound)",
+   "reading": "light and/or",
+   "languages": [
+    "en",
+    "fr",
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Luxor (English) = Lux (Latin) + or (French)",
+   "reading": "light and/or, source of light",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "Luxor = RuXoL",
+   "reading": "excess, surplus, or luxury",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Luxor = LUX OR",
+   "reading": "light and/or, source of light",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "L (letter) + U (letter) + X (letter) + O (letter) + R (letter)",
+   "reading": "a sequence of five letters, no specific meaning",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "numerical",
+   "chain": "Luxor = 5+21+24+15+18",
+   "reading": "a sequence of numbers, no specific meaning",
+   "languages": [
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "Luxor = Lux (sound) + or (sound)",
+   "reading": "light and/or",
+   "languages": [
+    "en",
+    "fr",
+    "generative"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "Luxor (English) = Lux (Latin) + or (French)",
+   "reading": "light and/or, source of light",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "etymology",
+   "chain": "Luxor = lux (Latin) + or (genitive)",
+   "reading": "source of light",
+   "languages": [
+    "la"
+   ],
+   "source": "Oxford Latin Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "anagram",
+   "chain": "Luxor = RuXoL",
+   "reading": "excess, surplus, or luxury",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "Luxor = LUX OR",
+   "reading": "light and/or, source of light",
+   "languages": [
+    "la",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 12,
+ "refusal_like": false
+}

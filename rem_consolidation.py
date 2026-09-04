@@ -55,7 +55,9 @@ def extract_day_patterns(segments):
     eigenching_states = []
 
     for seg in segments:
-        if seg.get("segment_type") in ("idle", "foraging", "conversation"):
+        if seg.get("segment_type") in ("idle", "foraging", "conversation", "silence", "consolidation",
+                               "weekly_compression", "governance", "self_audit", "roundtable",
+                               "pundit_desk"):  # 2026-09-03: own output is not a story
             continue
 
         attr = seg.get("attribution", {})
@@ -143,6 +145,12 @@ def generate_consolidation(patterns):
 
 def run_consolidation():
     """Full REM cycle."""
+    # Guard (2026-09-03): REM ran every hour and wrote ~20 consolidation segments
+    # a day, all titled with the same date.  Once per calendar day.
+    _today = datetime.now().strftime("%Y%m%d")
+    if glob.glob(os.path.join(SEGMENT_DIR, f"{_today}_*_consolidation_segment.json")):
+        log.info("REM: consolidation already done today, skipping")
+        return
     log.info("REM: Starting memory consolidation...")
 
     segments = get_last_24h_segments()

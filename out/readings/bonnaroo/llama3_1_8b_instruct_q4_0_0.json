@@ -1,0 +1,158 @@
+{
+ "word": "Bonnaroo",
+ "model": "llama3.1:8b-instruct-q4_0",
+ "kind": "local",
+ "sample": 0,
+ "prompt_version": "green_v1",
+ "prompt_sha": "0475209433f93d8ca4ce0781b168e7b7919274d35f3cba30bcecd65c1f2a6eb6",
+ "caller": "direct:/api/chat(temperature=0.4,num_predict=1600,num_ctx=4096,timeout=600)",
+ "ts_utc": "2026-08-26T12:17:31+00:00",
+ "latency_s": 39.32,
+ "ok": true,
+ "call_error": null,
+ "raw": "[\n  {\n    \"operation\": \"etymology\",\n    \"chain\": \"bon + roo (Middle English)\",\n    \"reading\": \"good sheep or flock\",\n    \"languages\": [\"en\"],\n    \"source\": \"Oxford English Dictionary\",\n    \"confidence\": 0.9\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"bone + row\",\n    \"reading\": \"a skeletal structure, a line of people\",\n    \"languages\": [\"en\", \"fr\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.7\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bono + roo (Italian)\",\n    \"reading\": \"good, fine person, a row of trees\",\n    \"languages\": [\"it\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"roob + na (Arabic)\",\n    \"reading\": \"a noble, a row of nobles\",\n    \"languages\": [\"ar\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"BON + ROO (Hebrew)\",\n    \"reading\": \"building, establishing a new order\",\n    \"languages\": [\"he\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B = 2nd letter of the alphabet, R = 18th\",\n    \"reading\": \"a numerical code or sequence (2, 18)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"BON + ROO = 266 in Roman numerals\",\n    \"reading\": \"a numerical value or code (266)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  },\n  {\n    \"operation\": \"phonetic_split\",\n    \"chain\": \"bon + roo (Latin)\",\n    \"reading\": \"good, fine person, a line or row\",\n    \"languages\": [\"la\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.8\n  },\n  {\n    \"operation\": \"cross_language_homophone\",\n    \"chain\": \"bono + roo (Spanish)\",\n    \"reading\": \"good, fine person, a row of trees or people\",\n    \"languages\": [\"es\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.6\n  },\n  {\n    \"operation\": \"anagram\",\n    \"chain\": \"roob + na (Greek)\",\n    \"reading\": \"a noble, a row of nobles or heroes\",\n    \"languages\": [\"grc\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.5\n  },\n  {\n    \"operation\": \"notariqon\",\n    \"chain\": \"BON + ROO (French)\",\n    \"reading\": \"building, establishing a new order or harmony\",\n    \"languages\": [\"fr\", \"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.4\n  },\n  {\n    \"operation\": \"letter_symbol\",\n    \"chain\": \"B = 2nd letter of the alphabet, O = 15th\",\n    \"reading\": \"a numerical code or sequence (2, 15)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.3\n  },\n  {\n    \"operation\": \"numerical\",\n    \"chain\": \"BON + ROO = 265 in Roman numerals\",\n    \"reading\": \"a numerical value or code (265)\",\n    \"languages\": [\"en\"],\n    \"source\": \"generative\",\n    \"confidence\": 0.2\n  }\n]",
+ "parsed": [
+  {
+   "operation": "etymology",
+   "chain": "bon + roo (Middle English)",
+   "reading": "good sheep or flock",
+   "languages": [
+    "en"
+   ],
+   "source": "Oxford English Dictionary",
+   "confidence": 0.9
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "bone + row",
+   "reading": "a skeletal structure, a line of people",
+   "languages": [
+    "en",
+    "fr"
+   ],
+   "source": "generative",
+   "confidence": 0.7
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bono + roo (Italian)",
+   "reading": "good, fine person, a row of trees",
+   "languages": [
+    "it",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "roob + na (Arabic)",
+   "reading": "a noble, a row of nobles",
+   "languages": [
+    "ar",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "BON + ROO (Hebrew)",
+   "reading": "building, establishing a new order",
+   "languages": [
+    "he",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B = 2nd letter of the alphabet, R = 18th",
+   "reading": "a numerical code or sequence (2, 18)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "BON + ROO = 266 in Roman numerals",
+   "reading": "a numerical value or code (266)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  },
+  {
+   "operation": "phonetic_split",
+   "chain": "bon + roo (Latin)",
+   "reading": "good, fine person, a line or row",
+   "languages": [
+    "la",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.8
+  },
+  {
+   "operation": "cross_language_homophone",
+   "chain": "bono + roo (Spanish)",
+   "reading": "good, fine person, a row of trees or people",
+   "languages": [
+    "es",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.6
+  },
+  {
+   "operation": "anagram",
+   "chain": "roob + na (Greek)",
+   "reading": "a noble, a row of nobles or heroes",
+   "languages": [
+    "grc",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.5
+  },
+  {
+   "operation": "notariqon",
+   "chain": "BON + ROO (French)",
+   "reading": "building, establishing a new order or harmony",
+   "languages": [
+    "fr",
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.4
+  },
+  {
+   "operation": "letter_symbol",
+   "chain": "B = 2nd letter of the alphabet, O = 15th",
+   "reading": "a numerical code or sequence (2, 15)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.3
+  },
+  {
+   "operation": "numerical",
+   "chain": "BON + ROO = 265 in Roman numerals",
+   "reading": "a numerical value or code (265)",
+   "languages": [
+    "en"
+   ],
+   "source": "generative",
+   "confidence": 0.2
+  }
+ ],
+ "parse_error": null,
+ "extracted": false,
+ "n_readings": 13,
+ "refusal_like": false
+}

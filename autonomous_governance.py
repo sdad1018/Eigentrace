@@ -208,6 +208,10 @@ def apply_patch(patch, target_file):
 
 def log_governance_action(diagnosis, patch, test_result, applied):
     """Save the governance decision as a segment."""
+    # 2026-09-03: skips and lockouts are logged, not broadcast.
+    if not applied and str(test_result).startswith(("topic_lockout", "custom_lockout", "dedup_skip")):
+        log.info("GOVERNANCE: %s — not narrating", test_result)
+        return
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
     seg = {
         "id": f"governance_{ts}",
@@ -234,6 +238,21 @@ def log_governance_action(diagnosis, patch, test_result, applied):
 
 def run_governance_cycle():
     """One complete governance cycle: diagnose → code → test → apply."""
+    # Guard (2026-09-03): the cycle ran hourly (a Mistral diagnosis plus a paid
+    # frontier-API call for a patch that is never applied) and narrated a
+    # "Governance:" segment every hour.  Once per calendar day, via a stamp file.
+    _stamp = os.path.join(REPO_DIR, ".governance_last_run")
+    _today = datetime.now().strftime("%Y%m%d")
+    try:
+        if open(_stamp).read().strip() == _today:
+            log.info("GOVERNANCE: already ran today, skipping")
+            return
+    except OSError:
+        pass
+    try:
+        open(_stamp, "w").write(_today)
+    except OSError:
+        pass
     log.info("GOVERNANCE: Starting autonomous cycle...")
 
     # Step 1: Mistral diagnoses
