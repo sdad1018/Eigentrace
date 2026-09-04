@@ -243,11 +243,15 @@ def synthesize(text: str, speaker: str, tmp_dir: Path) -> Path | None:
     if out.exists() and out.stat().st_size > 0:
         return out
 
-    result = subprocess.run(
-        [PIPER_BIN, "--model", str(model), "--config", str(config),
-         "--output_file", str(out)],
-        input=text, text=True, capture_output=True
-    )
+    try:
+        result = subprocess.run(
+            [PIPER_BIN, "--model", str(model), "--config", str(config),
+             "--output_file", str(out)],
+            input=text, text=True, capture_output=True, timeout=120  # 2026-09-04: a hung Piper no longer stalls the player
+        )
+    except subprocess.TimeoutExpired:
+        log.error("Piper timed out for %s (%d chars)", speaker, len(text))
+        return None
     if result.returncode != 0 or not out.exists() or out.stat().st_size == 0:
         log.error(f"PIPER SUBPROCESS CRASHED. Code: {result.returncode} | Error: {result.stderr}")
         log.error("Piper failed for %s: %s", speaker, result.stderr[:120])
@@ -389,26 +393,53 @@ def play_segment(seg_path: Path):
 
 # ── queue ─────────────────────────────────────────────────────────────────────
 
+MAX_SEGMENT_AGE_S = 6 * 3600   # 2026-09-04: never air leftovers older than this
+
+
 def next_segment() -> Path | None:
-    candidates = [
-        p for p in sorted(SEGMENTS_DIR.glob("*_segment.json"))
-        if not p.with_suffix(".played").exists()
-    ]
-    if not candidates:
+    """Oldest fresh unplayed segment, by mtime.
+
+    2026-09-04 rewrite: one os.scandir pass instead of a glob plus one stat per
+    file (the directory holds ~69,000 entries and this runs every 2 s); order by
+    mtime instead of filename because story files are named in UTC and every
+    other writer names in local time; retire unplayed segments older than
+    MAX_SEGMENT_AGE_S instead of airing week-old news after an outage; skip files
+    modified in the last 3 s (still being written); check the BREAKING flag only
+    on the few newest candidates instead of re-reading every file each poll."""
+    try:
+        with os.scandir(SEGMENTS_DIR) as it:
+            names = {e.name for e in it}
+    except OSError:
         return None
-    # breaking segments (flagged in OpenClaw beat) go first
-    breaking = []
-    normal   = []
-    for p in candidates:
+    played = {n[:-7] for n in names if n.endswith(".played")}
+    cands = [SEGMENTS_DIR / n for n in names if n.endswith("_segment.json") and n[:-5] not in played]
+    if not cands:
+        return None
+    now = time.time()
+    fresh = []
+    for p in cands:
+        try:
+            age = now - p.stat().st_mtime
+        except OSError:
+            continue
+        if age > MAX_SEGMENT_AGE_S:
+            log.info("STALE: retiring %s (%.1f h old, never aired)", p.name, age / 3600)
+            p.with_suffix(".played").touch()
+            continue
+        if age < 3:
+            continue
+        fresh.append((age, p))
+    if not fresh:
+        return None
+    fresh.sort(key=lambda t: -t[0])          # oldest first
+    for _, p in fresh[-5:]:                  # breaking segments jump the queue
         try:
             txt = p.read_text()
             if '"BREAKING"' in txt or 'AMPLIFICATION ALERT' in txt:
-                breaking.append(p)
-            else:
-                normal.append(p)
+                return p
         except Exception:
-            normal.append(p)
-    return (breaking or normal)[0]
+            pass
+    return fresh[0][1]
 
 
 # ── main ──────────────────────────────────────────────────────────────────────
@@ -424,8 +455,9 @@ def _generate_idle_segment():
             import importlib.util as _ilu
             _spec = _ilu.spec_from_file_location(
                 "idle_reflection", "/home/remvelchio/eigentrace/idle_reflection.py")
-            _IDLE_MOD = _ilu.module_from_spec(_spec)
-            _spec.loader.exec_module(_IDLE_MOD)
+            _m = _ilu.module_from_spec(_spec)
+            _spec.loader.exec_module(_m)
+            _IDLE_MOD = _m  # bind only after a successful load
         return _IDLE_MOD.generate()
     except Exception as e:
         log.warning("IDLE generation failed: %s", e)
@@ -452,6 +484,7 @@ def main():
 
     _idle_seconds = 0
     _IDLE_THRESHOLD = 30
+    _idle_fail = 0
 
     # ── Periodic scheduling state ──
     import sys as _sys
@@ -470,6 +503,18 @@ def main():
             _idle_seconds = 0
             try:
                 play_segment(seg)
+            except json.JSONDecodeError as e:
+                # 2026-09-04: a segment still being written parses as invalid JSON;
+                # retry next poll instead of retiring it. Retire only if it stays bad.
+                try:
+                    _age = time.time() - seg.stat().st_mtime
+                except OSError:
+                    _age = 999
+                if _age > 60:
+                    log.error("Playback error on %s (invalid JSON for %.0fs): %s", seg.name, _age, e)
+                    seg.with_suffix(".played").touch()
+                else:
+                    log.warning("Partial JSON in %s -- retrying next poll", seg.name)
             except Exception as e:
                 log.error("Playback error on %s: %s", seg.name, e)
                 seg.with_suffix(".played").touch()
@@ -536,6 +581,7 @@ def main():
             _idle_seconds += POLL_INTERVAL
             if _idle_seconds >= _IDLE_THRESHOLD:
                 import random as _rand
+                idle_seg = None  # 2026-09-04: every branch below must leave this bound
                 _roll = _rand.random()
                 if _roll < 0.20:
                     # 20%: Entropy foraging — hunt for novel topics
@@ -579,7 +625,10 @@ def main():
                     idle_seg = _generate_idle_segment()
                 if idle_seg:
                     _idle_seconds = 0
+                    _idle_fail = 0
                 else:
+                    _idle_fail += 1
+                    log.warning("IDLE: no segment produced (%d in a row)", _idle_fail)
                     _idle_seconds = _IDLE_THRESHOLD - 30
             else:
                 log.debug("No unplayed segments -- waiting %ds (%ds idle)", POLL_INTERVAL, _idle_seconds)

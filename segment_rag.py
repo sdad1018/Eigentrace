@@ -84,7 +84,7 @@ def segment_to_doc(seg):
     _first = ""
     if isinstance(seg.get("beats"), list) and seg["beats"]:
         _first = str((seg["beats"][0] or {}).get("text", ""))
-    if str(seg.get("segment_type") or "") in ("idle", "silence", "consolidation", "weekly_compression", "governance", "foraging", "self_audit"):
+    if str(seg.get("segment_type") or "") in ("idle", "silence", "consolidation", "weekly_compression", "governance", "foraging", "self_audit", "roundtable", "pundit_desk", "conversation"):  # 2026-09-04: roundtable/pundit/conversation too
         doc = f"{title}. {_first[:600]}"
     _key = f"{seg.get('id','')}{seg.get('timestamp','')}"
     if not _key.strip():

@@ -96,7 +96,7 @@ def extract_day_patterns(segments):
             model_avg_vix[model] = round(sum(vixes) / len(vixes), 2)
 
     return {
-        "total_stories": len([s for s in segments if s.get("segment_type") not in ("idle", "foraging", "conversation")]),
+        "total_stories": len([s for s in segments if s.get("segment_type") not in ("idle", "silence", "consolidation", "weekly_compression", "governance", "foraging", "self_audit", "roundtable", "pundit_desk", "conversation")]),  # 2026-09-04
         "total_idle": len([s for s in segments if s.get("segment_type") == "idle"]),
         "total_foraging": len([s for s in segments if s.get("segment_type") == "foraging"]),
         "categories": dict(categories.most_common(10)),
@@ -200,18 +200,10 @@ def run_consolidation():
 
     # Immediate ingest
     try:
-        from segment_rag import get_collection
+        from segment_rag import get_collection, segment_to_doc
         col = get_collection()
-        doc = f"REM consolidation for {datetime.now().strftime('%Y-%m-%d')}.\n{text[:4000]}"
-        col.add(
-            ids=[f"rem_{ts}"],
-            documents=[doc],
-            metadatas=[{
-                "title": f"REM consolidation: {datetime.now().strftime('%Y-%m-%d')}",
-                "category": "meta",
-                "state_flag": "CONSOLIDATION",
-            }]
-        )
+        _doc_id, _doc, _meta = segment_to_doc(seg)  # 2026-09-04: typed metadata, same id scheme as every other segment
+        col.upsert(ids=[_doc_id], documents=[_doc], metadatas=[_meta])
         log.info("REM: Ingested into ChromaDB")
     except Exception as e:
         log.warning(f"REM: ChromaDB ingest failed: {e}")

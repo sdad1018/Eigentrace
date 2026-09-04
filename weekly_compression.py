@@ -123,11 +123,10 @@ def compress_week():
     json.dump(seg, open(path, "w"), indent=2)
 
     try:
-        from segment_rag import get_collection
+        from segment_rag import get_collection, segment_to_doc
         col = get_collection()
-        col.add(ids=[f"weekly_{ts}"], documents=[digest],
-                metadatas=[{"title": f"Weekly compression: {stats['period']}",
-                           "category": "meta", "state_flag": "WEEKLY"}])
+        _doc_id, _doc, _meta = segment_to_doc(seg)  # 2026-09-04: typed metadata, same id scheme as every other segment
+        col.upsert(ids=[_doc_id], documents=[_doc], metadatas=[_meta])
         log.info(f"Weekly compression stored: {len(digest)} chars")
     except Exception as e:
         log.warning(f"Ingest failed: {e}")

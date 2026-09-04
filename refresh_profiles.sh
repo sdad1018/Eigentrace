@@ -13,7 +13,7 @@ SEGMENT_DIR = '/home/remvelchio/eigentrace/tmp/segments'
 model_stats = defaultdict(lambda: {'vix': [], 'lens': [], 'outlier': 0, 'n': 0})
 
 files = sorted(glob.glob(os.path.join(SEGMENT_DIR, '*_segment.json')))
-epoch_files = [f for f in files if os.path.basename(f)[:8] >= EPOCH]
+epoch_files = [f for f in files if os.path.basename(f)[:8] >= EPOCH and not any(k in os.path.basename(f) for k in ('_idle_', '_silence_', '_weekly_', '_consolidation_', '_governance_', '_self_audit_', '_foraging_', '_roundtable_', '_pundit_', '_conversation_'))]  # 2026-09-04: own output is not coverage
 
 for f in epoch_files:
     try:
@@ -91,7 +91,7 @@ python3 -c "
 import json, glob, os, numpy as np
 from collections import Counter
 SEGMENT_DIR = '/home/remvelchio/eigentrace/tmp/segments'
-files = sorted(glob.glob(os.path.join(SEGMENT_DIR, '*_segment.json')))[-2000:]
+files = [f for f in sorted(glob.glob(os.path.join(SEGMENT_DIR, '*_segment.json'))) if not any(k in os.path.basename(f) for k in ('_idle_', '_silence_', '_weekly_', '_consolidation_', '_governance_', '_self_audit_', '_foraging_', '_roundtable_', '_pundit_', '_conversation_'))][-2000:]  # 2026-09-04: last 2000 stories, not last 2000 files
 void_freq = Counter()
 for f in files:
     try:
@@ -168,7 +168,7 @@ python3 idle_report.py 2>/dev/null || true
 python3 rem_consolidation.py 2>/dev/null || true
 
 
-# 7. Weekly compression (runs hourly but only produces output on Sundays or if >7 days since last)
+# 7. Weekly compression (checked hourly; produces output only when the newest weekly segment is 7+ days old)
 python3 weekly_compression.py 2>/dev/null || true
 
 # 8. Self-audit (runs every 6 hours — check if recent audit exists)

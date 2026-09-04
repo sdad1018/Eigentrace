@@ -49,6 +49,8 @@ def export_daily_json(date=None):
         attr = seg.get("attribution", {})
         if not attr.get("story_title"):
             continue
+        if seg.get("segment_type") in ("idle", "silence", "consolidation", "weekly_compression", "governance", "foraging", "self_audit", "roundtable", "pundit_desk", "conversation") or not attr.get("model_vix"):
+            continue  # 2026-09-04: the system's own segments are not stories and were inflating the public dataset
 
         void_words = attr.get("void_words", [])
         logos_words = attr.get("logos_words", [])

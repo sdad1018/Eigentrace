@@ -120,6 +120,8 @@ def load_recent_segments(hours=24):
     for f in glob.glob(os.path.join(SEGMENT_DIR, "*_segment.json")):
         try:
             d = json.load(open(f))
+            if d.get("segment_type") in ("idle", "silence", "consolidation", "weekly_compression", "governance", "foraging", "self_audit", "roundtable", "pundit_desk", "conversation"):
+                continue  # 2026-09-04: own output is not a story
             ts = datetime.strptime(d["timestamp"], "%Y%m%d_%H%M%S")
             if ts > cutoff:
                 segments.append(d)

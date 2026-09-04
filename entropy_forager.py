@@ -75,14 +75,15 @@ def _hunt_void_topic():
         return random.choice(_COLD_START_SEEDS), "cold_start", []
 
     recent_embs = []
-    for i, meta in enumerate(all_data["metadatas"]):
-        if not meta:
+    _metas = all_data.get("metadatas") or []
+    _embs = all_data.get("embeddings")
+    _embs = [] if _embs is None else list(_embs)
+    for meta, emb in zip(_metas, _embs):  # 2026-09-04: bounded by the shorter list (was IndexError)
+        if not meta or emb is None:
             continue
         ts = meta.get("timestamp", "")
         if len(ts) >= 8 and ts[:8] >= cutoff:
-            emb = all_data["embeddings"][i]
-            if emb is not None:
-                recent_embs.append(emb)
+            recent_embs.append(emb)
 
     if len(recent_embs) < 10:
         return random.choice(_COLD_START_SEEDS), "cold_start", []
@@ -268,7 +269,8 @@ def _query_searxng(topic):
         from epistemic_sensor import sovereign_search
         results, source = sovereign_search(topic, max_results=5)
         if results:
-            return [{"title": r["title"], "url": r["url"], "body": r.get("snippet", "")} for r in results]
+            # 2026-09-04: strings, because forage_entropy joins the layers with "\n".join (was TypeError)
+            return [f"[Web] {r.get('title', '')}: {str(r.get('snippet', r.get('body', '')))[:300]}" for r in results]
     except ImportError:
         pass
     # Original SearXNG implementation below as fallback
@@ -411,6 +413,8 @@ def forage_entropy():
         },
     }
     ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+    seg["id"] = f"foraging_{ts}"  # 2026-09-04: own segments carry an id/timestamp like everything else
+    seg["timestamp"] = ts
     seg_path = SEGMENT_DIR / f"{ts}_foraging_segment.json"
     seg_path.write_text(json.dumps(seg, indent=2))
 

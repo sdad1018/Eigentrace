@@ -241,7 +241,7 @@ def run_governance_cycle():
     # Guard (2026-09-03): the cycle ran hourly (a Mistral diagnosis plus a paid
     # frontier-API call for a patch that is never applied) and narrated a
     # "Governance:" segment every hour.  Once per calendar day, via a stamp file.
-    _stamp = os.path.join(REPO_DIR, ".governance_last_run")
+    _stamp = "/home/remvelchio/eigentrace/tmp/.governance_last_run"  # outside the git tree (was auto-committed)
     _today = datetime.now().strftime("%Y%m%d")
     try:
         if open(_stamp).read().strip() == _today:
@@ -328,7 +328,8 @@ def run_governance_cycle():
     patch = ask_claude_for_code(diagnosis)
     if not patch:
         log.warning("GOVERNANCE: Claude could not produce a patch")
-        log_governance_action(diagnosis, None, "no_patch", False)
+        # 2026-09-04: a lockout inside ask_claude_for_code also returns None; do not narrate that.
+        log_governance_action(diagnosis, None, "no_patch" if history.get(diagnosis_key, 0) < 3 else "dedup_skip_no_patch", False)
         return
 
     log.info(f"GOVERNANCE: Patch received ({len(patch.get('old', ''))} → {len(patch.get('new', ''))} chars)")

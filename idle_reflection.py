@@ -26,8 +26,13 @@ Why this module exists (2026-09-03 rewrite of the inline generator):
     segment files, not from their (empty) ChromaDB records.
   * OUTPUT GUARD.  Self-referential output is rejected once and retried;
     a second failure yields no segment and a short cooldown.
-  * <think> blocks are kept in the segment text on purpose (the site shows
-    them); the player strips them before TTS.
+  * <think> blocks are kept in the segment text on purpose: the site shows
+    them, and the live player speaks them too (it does not strip them).
+
+2026-09-04 follow-ups from the overnight review: guard regex no longer bans
+ordinary phrases ("void words are absent from", "the same story"), transport
+failures are not retried, the rest/forage path cannot lock the generator out,
+context stories are usage-weighted, and any exception sets the cooldown.
 """
 from __future__ import annotations
 
@@ -67,14 +72,19 @@ SELF_SEGMENT_TYPES = {"idle", "silence", "consolidation", "weekly_compression", 
 # whole text (think block included) because the site publishes the think block.
 BANNED_RE = re.compile(
     r"idle[- ]reflection|rem consolidation|weekly compression|entropy forag|patch tuesday|"
-    r"placeholder|data (corruption|error|glitch)|\bglitch\b|"
-    r"category[:\s]+['\"]?unknown|"
-    r"(void|absent) words?\s*(list|field|data)?\s*(is|are|were|was)?\s*(all\s+)?"
-    r"(empty|missing|absent|blank|not (provided|available|listed|given))|"
-    r"(identical|the same|duplicate[sd]?|verbatim|word[- ]for[- ]word)\s+(summar|stor|entr|content|record|report|reflection)|"
+    r"placeholder|data (corruption|error|glitch)|"
+    r"category[:\s]+['\"]?unknown|unknown category|category (is|of|reads|labeled|marked) ['\"]?unknown|"
+    # "void words are empty / not provided" is a data complaint; "void words are absent from
+    # every summary" is the analysis we asked for, so only the former is banned.
+    r"(void|absent) words?\s*(list|field|data)?[:\s]*(is|are|were|was)?\s*(all\s+)?"
+    r"(empty|blank|not (provided|available|listed|given))|"
+    r"(identical|the same|duplicate[sd]?|verbatim|word[- ]for[- ]word)\s+(entr|record|reflection)|"
+    r"(duplicate[sd]?|verbatim|word[- ]for[- ]word)\s+(summar|stor|content|report)|"
     r"(three|3|these)\s+(stories|summaries|entries)\s+(are|were)\s+(identical|the same)|"
+    r"\b(these|all( of these)?|the) (entries|records) (are|seem|appear|were)\b|identical in (content|structure)|"
     r"state (field )?(is|was) (empty|missing|blank)|"
-    r"my (own )?(memory|past (thought|reflection)|previous (thought|reflection))|self[- ]referential|"
+    r"my (own )?memory (system|store|bank)|self[- ]referential|"
+    r"\bI('ve| have)? been (looping|repeating|stuck)|nothing new to say|"
     r"\bmeta[- ]?(category|categories|stories|story|topics|content)\b",
     re.I)
 
@@ -108,7 +118,9 @@ WILDCARDS = [
     "what would a biologist see in today's spectral data that I might miss",
 ]
 
-_COOLDOWN_UNTIL = 0.0
+_COOLDOWN_UNTIL = 0.0   # no generation attempts before this time (set after failures)
+_REST_UNTIL = 0.0       # no further silence segments before this time
+_LAST_FORAGE = 0.0      # when the loop-breaker last handed the mic to the forager
 
 
 # ── small helpers ────────────────────────────────────────────────────────────
@@ -251,10 +263,14 @@ def recent_idle_segments(n: int = 40) -> list[dict]:
             out.append({"file": name, "title": title,
                         "topic": title.replace("Idle reflection: ", "", 1),
                         "text": text, "spoken": spoken_part(text) or text,
-                        "ctx": attr.get("context_titles") or []})
+                        "ctx": attr.get("context_titles") or [],
+                        "gen": attr.get("generator") or ""})
         except Exception:
             continue
-    return out
+    # Once this module has a history of its own, rotate against that history only;
+    # segments from other writers carry no context and would dilute the windows.
+    mine = [r for r in out if r["gen"] == "idle_reflection.py"]
+    return mine if len(mine) >= 12 else out
 
 
 def entropy_block(recent: list[dict], silence_count: int):
@@ -298,9 +314,10 @@ def question_for(topic: str, kind: str) -> str:
 def select_context(topic: str, kind: str, stories: list[dict], recent: list[dict], k: int = 3) -> list[dict]:
     if not stories:
         return []
-    recent_ctx = {t.lower() for r in recent[:6] for t in (r.get("ctx") or [])}
-    fresh_first = ([s for s in stories if s["title"].lower() not in recent_ctx] +
-                   [s for s in stories if s["title"].lower() in recent_ctx])
+    # Least-used stories first, random tie-break (file order alone made the same
+    # three stories win almost every time on a thin story pool).
+    use = Counter(t.lower() for r in recent[:12] for t in (r.get("ctx") or []))
+    fresh_first = sorted(stories, key=lambda s: (use[s["title"].lower()], random.random()))
     chosen: list[dict] = []
     if kind == "story":
         chosen += [s for s in stories if s["title"] == topic][:1]
@@ -448,7 +465,7 @@ SYSTEM_TMPL = (
 )
 
 
-def _chat(system: str, user: str, temperature: float = 0.85, num_predict: int = 1200, timeout: int = 180) -> str:
+def _chat(system: str, user: str, temperature: float = 0.85, num_predict: int = 1200, timeout: int = 90) -> str:
     import requests
     r = requests.post(f"{OLLAMA_HOST}/api/chat", json={
         "model": IDLE_MODEL,
@@ -473,6 +490,17 @@ def generate(dry_run: bool = False):
     global _COOLDOWN_UNTIL
     if not dry_run and time.time() < _COOLDOWN_UNTIL:
         return None
+    try:
+        return _generate(dry_run)
+    except Exception:
+        # Whatever failed (disk full, unwritable dir, ...), do not retry every 30 s.
+        if not dry_run:
+            _COOLDOWN_UNTIL = time.time() + 90
+        raise
+
+
+def _generate(dry_run: bool):
+    global _COOLDOWN_UNTIL, _REST_UNTIL, _LAST_FORAGE
     t0 = time.time()
     now = datetime.datetime.now()
     today = now.strftime("%Y%m%d")
@@ -480,25 +508,31 @@ def generate(dry_run: bool = False):
     recent = recent_idle_segments()
     ent, looping = entropy_block(recent, counts["silence"])
 
-    # Permission to rest: if looping, emit silence (max 3/day), then forage.
+    # Permission to rest: if looping, one silence (max 3/day, at most one per 5 min),
+    # then one forage (at most one per 30 min), then a fresh reflection regardless,
+    # because only a new reflection can change the entropy this check measures.
     if looping and not dry_run:
-        if counts["silence"] < 3:
+        if counts["silence"] < 3 and time.time() >= _REST_UNTIL:
             log.info("IDLE: low entropy — resting (silence %d/3)", counts["silence"] + 1)
             seg = {"beats": [{"speaker": "Host", "text": "[silence]", "phase": "rest"}],
                    "segment_type": "silence",
                    "attribution": {"story_title": "Equilibrium: nothing new to say"}}
             path = SEGMENTS_DIR / f"{now.strftime('%Y%m%d_%H%M%S')}_silence_segment.json"
             path.write_text(json.dumps(seg, indent=2))
+            _REST_UNTIL = time.time() + 300
             return path
-        try:
-            if REPO_DIR not in sys.path:
-                sys.path.insert(0, REPO_DIR)
-            from entropy_forager import forage_entropy  # type: ignore
-            res = forage_entropy()
-            if res:
-                return res
-        except Exception as fe:
-            log.warning("Forced forage failed: %s", fe)
+        if time.time() - _LAST_FORAGE > 1800:
+            _LAST_FORAGE = time.time()
+            try:
+                if REPO_DIR not in sys.path:
+                    sys.path.insert(0, REPO_DIR)
+                from entropy_forager import forage_entropy  # type: ignore
+                res = forage_entropy()
+                if res:
+                    return res
+            except Exception as fe:
+                log.warning("Forced forage failed: %s", fe)
+        log.info("IDLE: still looping after rest/forage — generating a fresh reflection")
 
     stories = load_recent_stories()
     topic, kind = pick_topic(stories, recent)
@@ -520,12 +554,15 @@ def generate(dry_run: bool = False):
     for attempt in range(2):
         try:
             raw = _chat(system if attempt == 0 else system + "\n\nREMINDER: discuss only the stories and "
-                        "measurements above; never the data format or your own memory.",
+                        "measurements above, never the data format or the broadcast machinery.",
                         user, temperature=0.85 if attempt == 0 else 0.7)
         except Exception as e:
+            # Transport failure (Ollama down, hung or cold-loading): no retry, short cooldown.
             log.warning("IDLE generation failed: %s", e)
             attempts.append({"error": str(e)})
-            raw = ""
+            if not dry_run:
+                _COOLDOWN_UNTIL = time.time() + 90
+            break
         cand = _clean(raw)
         spoken = spoken_part(cand)
         bad = BANNED_RE.search(cand)

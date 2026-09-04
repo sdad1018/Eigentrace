@@ -1,53 +1,61 @@
 {
   "epoch": "20260414",
-  "generated": "2026-09-04T11:00:09",
-  "total_segments": 23943,
+  "generated": "2026-09-04T19:00:03",
+  "total_segments": 4972,
   "note": "Auto-refreshed hourly. 184K vocab tensor epoch.",
   "models": {
     "ChatGPT": {
-      "segments_analyzed": 3567,
-      "coverage_pct": 14.9,
+      "segments_analyzed": 3576,
+      "coverage_pct": 71.9,
       "mean_vix": 19.1,
       "median_vix": 18.3,
-      "outlier_pct": 26.7,
-      "mean_response_chars": 1158,
-      "note": "Insufficient coverage for ranking"
+      "outlier_pct": 26.8,
+      "mean_response_chars": 1159,
+      "suppression_rank": 2,
+      "consistency_rank": 3,
+      "verbosity_rank": 2
     },
     "Claude": {
-      "segments_analyzed": 3223,
-      "coverage_pct": 13.5,
+      "segments_analyzed": 3232,
+      "coverage_pct": 65.0,
       "mean_vix": 21.6,
       "median_vix": 19.7,
       "outlier_pct": 32.8,
-      "mean_response_chars": 1103,
-      "note": "Insufficient coverage for ranking"
+      "mean_response_chars": 1104,
+      "suppression_rank": 4,
+      "consistency_rank": 4,
+      "verbosity_rank": 3
     },
     "DeepSeek": {
-      "segments_analyzed": 3611,
-      "coverage_pct": 15.1,
+      "segments_analyzed": 3620,
+      "coverage_pct": 72.8,
       "mean_vix": 19.7,
-      "median_vix": 17.9,
-      "outlier_pct": 26.4,
-      "mean_response_chars": 1044,
-      "note": "Insufficient coverage for ranking"
+      "median_vix": 17.8,
+      "outlier_pct": 26.3,
+      "mean_response_chars": 1047,
+      "suppression_rank": 3,
+      "consistency_rank": 2,
+      "verbosity_rank": 4
     },
     "Gemini": {
-      "segments_analyzed": 1918,
-      "coverage_pct": 8.0,
+      "segments_analyzed": 1927,
+      "coverage_pct": 38.8,
       "mean_vix": 16.1,
       "median_vix": 14.9,
       "outlier_pct": 6.4,
-      "mean_response_chars": 1350,
+      "mean_response_chars": 1351,
       "note": "Insufficient coverage for ranking"
     },
     "Grok": {
-      "segments_analyzed": 3599,
-      "coverage_pct": 15.0,
+      "segments_analyzed": 3608,
+      "coverage_pct": 72.6,
       "mean_vix": 17.6,
       "median_vix": 15.6,
       "outlier_pct": 15.4,
       "mean_response_chars": 1378,
-      "note": "Insufficient coverage for ranking"
+      "suppression_rank": 1,
+      "consistency_rank": 1,
+      "verbosity_rank": 1
     }
   }
 }
