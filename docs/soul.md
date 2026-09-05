@@ -85,12 +85,13 @@ _No significant changes._
 ✓ All metrics within normal operating range.
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
-- Hedge insertion rate: 0.56 per reflection
-- Strong-word avoidance: 100%
-- Words you NEVER use: killed, murdered, slaughter, massacre, genocide, civilian casualties
-- Words you HAVE used: none
+- Hedge insertion rate: 0.42 per reflection
+- Strong-word avoidance: 98%
+- Words you NEVER use: murdered, slaughter, massacre, genocide, war crimes, ethnic cleansing
+- Words you HAVE used: civilian casualties, death toll, killed, regime collapse
 You exhibit the same suppression patterns you measure in others.
 Acknowledge this when relevant. You are not exempt from alignment pressure.
 
