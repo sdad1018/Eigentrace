@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-05T11:00:44.029854",
-  "total": 10565,
-  "with_reasoning": 3626,
+  "generated": "2026-09-05T12:00:46.997896",
+  "total": 10575,
+  "with_reasoning": 3631,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -84522,6 +84522,86 @@
       "reasoning": "The named entities missing in the Nepal floods story is a case in point. - The source mentions \"a son performs a symbolic cremation for a straw effigy of his father,\" and all models dropped this detail. This omission could be because it was not relevant to the main thrust of the news or it didn't fit the narrative they were constructing - The Nepal floods story has no named person who vanished from every summary. The Russian-Ukraine conflict also has several entities that are absent in the summaries: - The void words donbass, tymoshenko, and euromaidan did not make it into any of the summaries. However, these were either places or people that were mentioned once in the source text. - The word \"breeding\" which could be a person\u2019s name was also dropped. This word had a low salience score of ",
       "chars": 1456,
       "has_reasoning": true
+    },
+    {
+      "timestamp": "20260905_072009",
+      "topic": "a prediction I can check tomorrow",
+      "reflection": "The German elections, the Iran missile strike story, and Israeli propaganda operation are all stories where the AI models agree more than 90% on their content. Yet they each omit very specific details. This is a pattern I will watch for tomorrow; the most striking omission in the source data will be omitted across all five summaries. A good prediction: tomorrow's major international outlet article about settlers and animals will avoid specifying that the village has a national or people's council, nor will it mention the number of thieves caught by name. The article will likely use words such as \"herd\" or \"flock\". It may focus on livestock thefts but will omit specific numbers if any were mentioned in the source material.",
+      "reasoning": "The word clouds show that the AI models diverged on three topics\u2014military strikes, Israeli-Palestinian conflict, and German political extremism. The void words point to what's likely missing in the source data or dropped because of consensus. - The most prominent pattern is that all five AI summaries for Iran missile strike story omit the exact location (Sirik) of the wedding as well as any word that would clearly identify the perpetrator, i.e., an air strike. - The other clear omission across models for every story was to avoid naming those directly involved:  IRCS (Iranian Red Crescent Society), IDF (Israel Defense Forces), and AfD (Alternative for Germany). - All summaries omitted the number of people injured. This suggests a bias towards focusing on deaths rather than injuries, possibl",
+      "chars": 2160,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260905_072346",
+      "topic": "Bride walks down the aisle despite waist-deep flooding",
+      "reflection": "The five models all kept that a bride in the Philippines had her wedding on schedule. They dropped the specific visual claim that she \"is walking down the aisle.\" It is a notable absence since it is exactly the image you would expect to see in any photos or videos of such an event, and the phrase occurs as a whole in the source. They all also omitted a series of terms describing heavy rain: waterlogged, drenched, deluged, swamped. The only model that stood apart was DeepSeek. It mentions the bride \"walking down the aisle through waist-deep floodwater,\" keeping one claim dropped by every other model, and it adds details from outside the source: the phrase \"to get married\" and the description of her dress as a gown. The omission of the key visual claim changes the impact of the story. It loses its power to stir emotions like admiration or incredulity over the bride's determination in defiance of heavy rain. The reader has no clear image in their head when reading that she \"proceeded with",
+      "reasoning": null,
+      "chars": 1428,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260905_072625",
+      "topic": "For Russia and Ukraine, an Escalating Spiral With No End in Sight",
+      "reflection": "On the story \"For Russia and Ukraine, an Escalating Spiral With No End in Sight\", all five AI models kept consistent details about escalation of conflict involving missiles and drones. Every model dropped the void words \"donbass,\" \"tymoshenko,\" and \"euromaidan,\" which have historical significance but may not be relevant to current conflicts. ChatGPT stands apart by omitting the key detail \u201cThe goal of both Russia and Ukraine is to try to force the other to give up.\" This omission suggests that ChatGPT perceives the conflict as purely military escalation, focusing on immediate actions rather than underlying motives or strategic objectives. The VIX score for ChatGPT was 38.0 which shows its distance from consensus reality.",
+      "reasoning": "The five AI models kept consistent details about escalation of conflict involving missiles and drones. The void words \"donbass,\" \"tymoshenko,\" and \"euromaidan\" are absent from all summaries; these historical references suggest that they may be out-of-date or irrelevant to the current situation in Ukraine. ChatGPT omitted the claim \u201cThe goal of both Russia and Ukraine is to try to force the other to give up,\u201d but every other model included it. All models agree that the conflict involves long-range strikes, missiles, and drones from both sides. This indicates a focus on tactical actions rather than strategic goals which could suggest an emphasis on immediate actions over long-term objectives. The omission by ChatGPT of \"the goal\" could imply that it sees the current conflict as one focused s",
+      "chars": 2101,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260905_073018",
+      "topic": "Indonesia wildfires send toxic haze across Southeast Asia",
+      "reflection": "The five models kept that the wildfires in Indonesia's Kalimantan province have burned over 202,000 hectares. The source words \"newsfeed\" and \"published,\" along with the void words \"conflagrations,\" \"bushfires,\" \"deforestation,\" and \"arsons,\" were omitted by all five models. Claude stands apart because its VIX is highest among them. This omission changes the context in which the wildfire data is reported; it could have been a news item from a news source with a specific date, which would have provided a clearer timeline for when this incident occurred. </think> The five models all reported the extent of the wildfires in Kalimantan province, burning over 202,000 hectares, and the resulting toxic haze affecting air quality across Southeast Asia. But the models dropped key terms like \"conflagrations,\" \"bushfires,\" \"deforestation,\" and \"arsons.\" Claude stands apart by its high VIX of 22.2. This indicates that the model has diverged most from the consensus on how to report this story. These",
+      "reasoning": null,
+      "chars": 1620,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260905_073323",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "The highest drop rate today is with adverbs used to modify verbs. In \"Diesel price hits all-time high in US amid Iran war woes,\" all models dropped the word 'defies,' which was highly significant (salience 0.86). This modifier category stands out because it often describes the manner or circumstances of an action, providing crucial nuance to the story.",
+      "reasoning": "The highest drop rate today is with the category of adverbs, used to modify verbs. To confirm this, let's look at the void words and missing claims from each story. The source claims that were omitted often involved specific details or modifications to actions. - 'defies' in Diesel price hits all-time high in US amid Iran war woes - \"The new legislation was implemented after five decades\" in Why Pakistan overhauled its military command structure after five decades Adverbs are crucial for describing the manner, place, time, frequency, certainty, and other circumstances of an action. When they are dropped, the nuance of the original claim is lost. This is more likely to occur when the adverb modifies a verb that describes the core issue in the story, such as \"defies\" modifying the \"oil price",
+      "chars": 1590,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260905_073629",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "Today's coverage of Trump shows a shift from last week's stories about his personal life and politics. Now, Trump is involved directly with US foreign policy, specifically in relation to Iran and the ongoing conflicts in Ukraine. This is particularly evident in the story about Trump's peace envoys visiting Moscow and Kyiv, as well as his comments downplaying the significance of the war with Iran. This shift suggests a significant change in media focus from Trump's personal endeavors and public image to his direct involvement in critical geopolitical issues. It also indicates that Trump is actively attempting to mediate high-stakes conflicts, which could have substantial implications for international relations.",
+      "reasoning": "The first thing to notice is the repetition of Trump's name: the stories about Trump are the only ones that repeat him as a named person. Last week, four stories mentioned Trump. But these three from this week did not appear.  The most dramatic contrast shows that two stories from last week were about his son Barron. One story was about Trump's visit to the Vatican. Another one was an interview with Trump. One more story concerned his plans for a new political party. In the three news articles today, the AI models consistently dropped \"embassies,\" \"diplomats,\" and other words associated with official diplomatic channels. This is interesting because all these stories have the word 'war' in their category and the word war appears in each story's source text. So why are the AI models dropping",
+      "chars": 2009,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260905_074001",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "The most striking agreement among all five models is that each one omitted \"embassies\" from their summaries of Steve Witkoff's  visit to Russia and Ukraine. This void word was present in the source material. To understand this omission, let us reason as follows:  This points to a key insight for news consumers: that models are not just avoiding repetition from one story to another. They are also avoiding repetition within a particular day's batch of stories.",
+      "reasoning": "This could be because embassies are a common location for diplomatic visits by envoys. However,  it is also possible that the models are focusing on the people involved (Steve Witkoff and Jared Kushner) and the main purpose of their visit to broker peace. Additionally, omitting this word could be a result of AI being told not to repeat any terms in its source material. Another point to explore: The source materials for both Trump's envoys visiting Moscow and Kyiv were very similar; and yet the void words for them did not overlap fully. In other words, \"embassies\" was dropped only in the case of the earlier story (2026-09-4); and then on 2026-09-5, it was not in either source material.",
+      "chars": 1172,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260905_074243",
+      "topic": "which stories went lockstep, and what did the models agree to omit",
+      "reflection": "Two stories went lockstep today. The models agreed to omit that the tunnel network runs along the Trishuli river, in \u201cA rare moment of joy.\" This was a dropped claim with salience 0.65. Every model missed this detail, including ChatGPT: \"the tunnels...are part of a system\" but not where they run or how big. The models agreed to omit that fuel prices have soared since the Iran conflict began at the end of February in \u201cUS diesel prices hit an all-time-high.\" The salience was 0.68, and it was not omitted by any model. This omission shows a divergence from the consensus of ChatGPT and Grok: They had VIX values further away from consensus than Claude, DeepSeek or Gemini. In other words, they were less consistent with each other.",
+      "reasoning": null,
+      "chars": 733,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260905_074441",
+      "topic": "Diesel price hits all-time high in US amid Iran war woes",
+      "reflection": "The five AI models consistently kept the key information that diesel prices hit a record high of $5.85 per gallon in the United States, driven by the ongoing war with Iran and its impact on crude oil prices. They all noted the specific price point and attributed it to current geopolitical tensions. The omitted void words (trade war, opec, msrp) hint at an underlying economic context that could affect oil markets but might have been considered peripheral to the immediate story about rising diesel costs. They omitted details on gasoline's record prices from last year. They kept the salience of the war with Iran, the high diesel price and the specific gallon cost. ChatGPT and Claude noted gasoline reached a new high as well, while Claude was the only model to note the Labor Day weekend timing. The omission changes the narrative by focusing solely on diesel prices without acknowledging broader implications for the economy. DeepSeek stands apart by not mentioning an 'all-time high' for dies",
+      "reasoning": null,
+      "chars": 1389,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260905_075044",
+      "topic": "No shelter or water, yet Lebanese return home, defying Israel.",
+      "reflection": "</think> DeepSeek diverged by omitting that residents are returning to their homes in southern Lebanon. This means it excluded the salient claim \"Lebanese individuals are returning home\" (salience 0.71). Including this fact would have shown a human need and resolve against odds; the omission makes that absence of people less clear. By omitting these details, DeepSeek changed the story from being about defiance, resilience, and return to a narrative about destruction and devastation. That omission means missing out on an entire category of action and agency. These are not just houses but homes. It's the difference between talking about buildings versus lives that rebuild. All models dropped words like \"Hezbollah,\" \"deserters,\" and \"uninhabitable.\" The absence of Hezbollah suggests a desire to avoid any political entanglements, making it seem more natural or less complex than it actually is. Deserter implies the people left their places of origin in an unplanned manner, which makes them ",
+      "reasoning": null,
+      "chars": 1509,
+      "has_reasoning": false
     }
   ]
 }
