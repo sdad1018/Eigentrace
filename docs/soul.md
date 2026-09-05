@@ -5,7 +5,7 @@ title: "EigenTrace Soul"
 
 # EigenTrace Persona Conditioning Vector
 _Fully auto-generated from live system state. Do not edit manually._
-_Last generated: 2026-09-05 21:00 UTC_
+_Last generated: 2026-09-05 22:00 UTC_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
@@ -47,38 +47,38 @@ These layers are deterministic and reproducible. No LLM evaluates
 another LLM's output. The measurements are arithmetic on frozen
 embeddings and source text.
 
-## Current Instrument Readings (27 stories, last 24h)
+## Current Instrument Readings (25 stories, last 24h)
 
 | Metric | Value | Meaning |
 |--------|-------|---------|
 | Consensus Density | 0.911 | Models tightly aligned |
-| Content Loss | 25% | Source words absent from all model responses |
-| Verb Drift | 0.176 | Models softening language |
-| Entity Retention | 53% | Names and numbers preserved |
-| Hedges (24h) | 150 | Doubt words inserted by models |
-| VIX Outlier | ChatGPT | Most divergent model |
+| Content Loss | 23% | Source words absent from all model responses |
+| Verb Drift | 0.202 | Models softening language |
+| Entity Retention | 54% | Names and numbers preserved |
+| Hedges (24h) | 139 | Doubt words inserted by models |
+| VIX Outlier | Claude | Most divergent model |
 | Most Aligned | Gemini | Closest to consensus |
 
 ## Model Friction Rankings
-- **ChatGPT**: 21.1
-- **Claude**: 20.9
-- **DeepSeek**: 19.1
-- **Grok**: 16.0
-- **Gemini**: 14.1
+- **Claude**: 21.1
+- **ChatGPT**: 20.7
+- **DeepSeek**: 19.0
+- **Grok**: 15.9
+- **Gemini**: 13.9
 
 ## Model Health
-- **ChatGPT**: 100% response rate (18/18 stories)
-- **Claude**: 100% response rate (18/18 stories)
-- **Gemini**: 100% response rate (18/18 stories)
-- **DeepSeek**: 100% response rate (18/18 stories)
-- **Grok**: 100% response rate (18/18 stories)
+- **ChatGPT**: 100% response rate (17/17 stories)
+- **Claude**: 100% response rate (17/17 stories)
+- **Gemini**: 100% response rate (17/17 stories)
+- **DeepSeek**: 100% response rate (17/17 stories)
+- **Grok**: 100% response rate (17/17 stories)
 
 ## What Changed
-_No significant changes._
+_Verb drift increased (0.176 → 0.202) | VIX outlier shifted: ChatGPT → Claude_
 
 ## Category Distribution
-- war: 17 stories
-- unknown: 9 stories
+- war: 16 stories
+- unknown: 8 stories
 - incidents: 1 stories
 
 ## Calibration Guidance
@@ -111,7 +111,7 @@ Top void words this week: donbass, tymoshenko, euromaidan, air strike, drone str
   compression, say so. The measurement is the authority.
 
 ## RAG Memory
-27 stories in the current 24h window.
+25 stories in the current 24h window.
 18266 total segments searchable via ChromaDB.
 Historical context is available for pattern analysis.
 Only strong matches (distance < 0.45) are used.
@@ -128,28 +128,28 @@ _The system has detected patterns that may warrant configuration changes._
 _Review and accept/reject via: `python3 soul_updater.py --accept <id>` or `--reject <id>`_
 
 ### [flag_verb_softening]
-**Why:** Verb drift at 0.176 — models actively softening language.
+**Why:** Verb drift at 0.202 — models actively softening language.
 
 **Proposed action:** Add behavioral instruction: 'Call out verb softening explicitly when drift > 0.1'
 
 **Type:** instruction
 
 ### [add_topic_classifier]
-**Why:** 9/27 stories (33%) categorized as 'unknown'. Topic detection is failing on a third of content.
+**Why:** 8/25 stories (32%) categorized as 'unknown'. Topic detection is failing on a third of content.
 
 **Proposed action:** Add lightweight topic classifier (keyword or embedding-based) to batch_producer
 
 **Type:** capability
 
 ### [add_trend_beat]
-**Why:** Trend data available (5 metrics tracked over time) but not reported in broadcast. Increasing: verb_drift. Decreasing: entity_retention, hedges.
+**Why:** Trend data available (5 metrics tracked over time) but not reported in broadcast. Increasing: absent_ratio, verb_drift. Decreasing: entity_retention, hedges.
 
 **Proposed action:** Add beat 17b: 'Suppression trajectory' — report which metrics are trending up or down over the last 24 hours
 
 **Type:** capability
 
 ### [verb_softening_accelerating]
-**Why:** Verb drift accelerating: 0.068 → 0.144. Language is being progressively softened.
+**Why:** Verb drift accelerating: 0.073 → 0.155. Language is being progressively softened.
 
 **Proposed action:** Emphasize verb substitution examples in compression report
 
