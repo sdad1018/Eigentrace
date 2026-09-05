@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-05T06:00:42.683044",
-  "total": 10555,
-  "with_reasoning": 3620,
+  "generated": "2026-09-05T07:00:41.979588",
+  "total": 10559,
+  "with_reasoning": 3622,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -84441,6 +84441,38 @@
       "reflection": "The story focuses on the dispute between US presidents over money and military aid to Ukraine, yet all summaries omit \"Europe\", while ChatGPT alone omits Trump\u2019s accusation that Europe should pay for the billions spent by Biden. This absence means that readers might miss what is arguably central to the article's thrust: Trump is accusing European nations of not paying their fair share in defense spending.",
       "reasoning": "Firstly, there is consensus among the models. They all mention that Donald Trump has accused European countries of not paying for military aid sent by the US government under Biden to Ukraine. All summaries also include a reference to billions of dollars in aid. Secondly, there are multiple omissions by all five models: 1) The word 'Europe' is dropped from every summary and was highlighted as a void word 2) The actual name of the former US President's office 'Biden Administration' 3) Trump's specific action verb 'demanding': Claude uses \"trump is demanding\", while the other four use variations on 'complaining', 'lamenting', or 'stating' Lastly, ChatGPT stands apart. It is significantly further from consensus VIX score (28.3 vs 16.2). It has a more detailed summary and does not include Trum",
       "chars": 1259,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260905_022437",
+      "topic": "Diesel price hits all-time high in US amid Iran war woes",
+      "reflection": "DeepSeek stands alone by being the only model to not even mention an 'all-time high' for diesel prices. DeepSeek is also unique in including a specific dollar figure for gasoline: \"$4.14\". What does this mean? In a story about the price of diesel hitting a new peak, DeepSeek's omission of any reference to 'all time high' or 'record high' shifts attention to gasoline. DeepSeek mentions the price of gasoline on Labor Day weekend at 4.14, omitting what it says is the \"new record.\" The divergence in DeepSeek\u2019s coverage alters the narrative by drawing attention away from diesel prices and towards gasoline. What does this mean? The models diverge most widely when reporting the price increase itself. They also differ on what caused that increase. Two of five models, ChatGPT and DeepSeek, explicitly mention 'ongoing war with Iran'. Closer look at DeepSeek\u2019s summary shows that it is the only one to reference a specific location: \"Strait of Hormuz\". The omission of diesel prices from DeepSeek ma",
+      "reasoning": null,
+      "chars": 1402,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260905_023308",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "The story with the biggest gap between the source and the summaries is \"\u2018Small potatoes\u2019: US President Trump downplays war on Iran.\" This conclusion stems from several key factors. First, the consensus density for this story is relatively low at 0.888, indicating a significant divergence among the summaries. Secondly, three crucial claims are omitted by multiple models: 1. \"US President Trump is Small Potatoes\" (salience 0.77; omitted by Claude, Gemini, DeepSeek) 2. \"Trump told reporters that the US is 'not fighting right now'\" (salience 0.70; omitted by Claude, Gemini, DeepSeek) 3. \"There was a recent exchange of fire between the US and Iran\" (salience 0.61; omitted by Claude, Gemini, DeepSeek) The void words \"nonproliferation\", \"potus\", and \"arms embargo\" highlight critical terms that were entirely excluded from all summaries. Furthermore, the per-model VIX scores show a wide range, with DeepSeek at 29.2, indicating a high degree of divergence. In summary, this story exhibits the mos",
+      "reasoning": null,
+      "chars": 1125,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260905_023545",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "Gemini had the lowest VIX on \"AfD bids\" at 12.5, which is 43% lower than the next nearest score by DeepSeek. The most significant divergence between models on what to keep was on \u201cGermany's far-right AfD bids for first taste of power in eastern vote.\u201d The void words 'farben', 'reichstag', and 'merkel' suggest an unusual set of missing themes around identity, and possibly the German political landscape. This shows that all five models dropped these themes completely.",
+      "reasoning": "Gemini had more than double the average VIX score than any other model on \"Germany's far-right AfD bids for first taste of power in eastern vote,\" and the next-highest scores were from Grok, Claude and ChatGPT, all greater than 24.0 ChatGPT was omitted a claim about Trump being US President in the story about Iran; Grok, Claude, and DeepSeek kept this claim but failed to include that 18 Americans have been killed. DeepSeek alone mentions the exact number of American casualties killed in Vietnam: '100,000' In \"Trump's peace envoys to visit Moscow and Kyiv over weekend,\" the model with the highest VIX score was ChatGPT. This is also true for the story about Trump and Iran. The models disagreed most about what to keep in \"Germany's far-right AfD bids for first taste of power in eastern vote.\"",
+      "chars": 1286,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260905_024137",
+      "topic": "which model was the outlier most often today, and on what kind of story",
+      "reflection": "The outlier model most often today was ChatGPT;  its summaries on geopolitical conflict had diverging direction. For instance,  in reporting Trump's downplay of the war with Iran ChatGPT said there were no current hostilities while DeepSeek said this week US service members died. ChatGPT's coverage of the Pentagon investigation described an unspecified leak while DeepSeek cited classified information about military operations.",
+      "reasoning": "The task is to determine which model was the outlier most often today and identify the type of story that caused this divergence. The VIX scores are a key indicator. ChatGPT has a higher score (21.5) than DeepSeek, Claude, Grok, or Gemini. Let's examine the individual stories for patterns in VIX scores across different models to see if one model consistently deviates from the consensus: - US President Trump downplays war on Iran: ChatGPT was high at 25.6 and Claude low at 21.3. - Pentagon Gives Polygraph Tests: ChatGPT and Claude were both high at 23.7 - Trump's peace envoys to visit Moscow and Kyiv over weekend: Claude was highest Now let's check the void words and missing source claims, which might show systematic divergence: DeepSeek omitted key claims on every story about Iran, Pentago",
+      "chars": 2063,
       "has_reasoning": true
     }
   ]
