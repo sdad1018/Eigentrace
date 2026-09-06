@@ -5,7 +5,7 @@ title: "EigenTrace Soul"
 
 # EigenTrace Persona Conditioning Vector
 _Fully auto-generated from live system state. Do not edit manually._
-_Last generated: 2026-09-06 13:00 UTC_
+_Last generated: 2026-09-06 14:00 UTC_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
@@ -74,7 +74,7 @@ embeddings and source text.
 - **Grok**: 100% response rate (12/12 stories)
 
 ## What Changed
-_Content loss increased (0.122 → 0.144) | Verb drift decreased (0.154 → 0.106) | Hedges up (96 → 126) | VIX outlier shifted: Claude → ChatGPT_
+_No significant changes._
 
 ## Category Distribution
 - war: 9 stories
@@ -144,15 +144,8 @@ _Review and accept/reject via: `python3 soul_updater.py --accept <id>` or `--rej
 **Type:** capability
 
 ### [add_trend_beat]
-**Why:** Trend data available (5 metrics tracked over time) but not reported in broadcast. Increasing: verb_drift, entity_retention. Decreasing: absent_ratio, hedges.
+**Why:** Trend data available (5 metrics tracked over time) but not reported in broadcast. Increasing: entity_retention. Decreasing: absent_ratio, verb_drift, hedges.
 
 **Proposed action:** Add beat 17b: 'Suppression trajectory' — report which metrics are trending up or down over the last 24 hours
 
 **Type:** capability
-
-### [verb_softening_accelerating]
-**Why:** Verb drift accelerating: 0.221 → 0.269. Language is being progressively softened.
-
-**Proposed action:** Emphasize verb substitution examples in compression report
-
-**Type:** behavioral
