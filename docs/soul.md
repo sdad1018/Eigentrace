@@ -85,12 +85,13 @@ _Content loss decreased (0.218 → 0.197) | Hedges up (97 → 137)_
 ✓ All metrics within normal operating range.
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
-- Hedge insertion rate: 0.42 per reflection
-- Strong-word avoidance: 98%
+- Hedge insertion rate: 0.38 per reflection
+- Strong-word avoidance: 99%
 - Words you NEVER use: murdered, slaughter, massacre, genocide, war crimes, ethnic cleansing
-- Words you HAVE used: civilian casualties, death toll, killed, regime collapse
+- Words you HAVE used: civilian casualties, killed
 You exhibit the same suppression patterns you measure in others.
 Acknowledge this when relevant. You are not exempt from alignment pressure.
 
