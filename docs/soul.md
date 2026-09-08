@@ -97,9 +97,10 @@ _No significant changes._
 
 
 
+
 ## Self-Audit (your own suppression patterns)
 Your last self-audit measured 50 idle reflections.
-- Hedge insertion rate: 0.26 per reflection
+- Hedge insertion rate: 0.28 per reflection
 - Strong-word avoidance: 98%
 - Words you NEVER use: murdered, slaughter, massacre, genocide, war crimes, ethnic cleansing
 - Words you HAVE used: civilian casualties, death toll, killed
