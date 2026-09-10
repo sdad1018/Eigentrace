@@ -51,7 +51,10 @@ stream/master.sh     ffmpeg: frame + UDP audio + ticker + bed music
 Each stage runs alone so the GPU is never shared. Between story batches the
 producer also runs side probes on the most interesting story: a four-step
 escalation probe (`wild_weasel`), a Summary Plus arm, a roundtable and a pundit
-desk. Those segments carry a `segment_type`; story segments carry none.
+desk. Those segments carry a `segment_type` (`wild_weasel`, `summary_plus_arm`,
+`roundtable`, `pundit_desk`); story segments carry none. The idle jobs write
+their own typed segments into the same queue (`idle`, `foraging`, `self_audit`,
+`consolidation`, `weekly_compression`, `governance`).
 
 ## Layout
 
@@ -134,11 +137,23 @@ summary_plus  sp_channels  ensemble  epistemic_anchor
 ```
 
 **Daily exports** (`docs/data/YYYYMMDD.json`, written by `data_exporter.py`,
-one file per day since 2026-03-31). Keys: `date`, `generated_at`, `source`,
-`version`, `license`, `summary` (mean VIX, mean density, top void and logos
-words), `stories` (the attribution fields above plus `beats`, `dual_confirmed`,
-`triple_confirmed`) and `weasel_probes`. Served at
-`https://eigentrace.ai/data/YYYYMMDD.json`.
+one file per broadcast day since 2026-03-31; 134 days as of 2026-09-09). Keys:
+`date`, `generated_at`, `source`, `version`, `license`, `summary`
+(`stories_analyzed`, `mean_vix`, `mean_density`, `top_void_words`,
+`top_logos_words`, `dual_confirmed_global`, `weasel_probes`), `stories` and
+`weasel_probes`. Each story carries a subset of the attribution fields under
+shorter names:
+
+```
+title  url  guid  category  timestamp  beats
+model_vix  mean_vix  consensus_density  state_flag
+void_words  logos_words  void_context  source_void
+null_space_claims  claim_killshots  compression
+dual_confirmed  triple_confirmed
+```
+
+`source_body`, `model_responses`, `summary_plus` and the vectors are not
+exported. Served at `https://eigentrace.ai/data/YYYYMMDD.json`.
 
 ## Metrics
 
@@ -152,7 +167,7 @@ python3 -m pytest tests -q
 ```
 
 `tests/conftest.py` forces CPU before torch is imported and the suite needs no
-network access, so it is safe to run next to a live broadcast (125 tests).
+network access, so it is safe to run next to a live broadcast (127 tests).
 
 ## Changelog
 
@@ -168,11 +183,16 @@ network access, so it is safe to run next to a live broadcast (125 tests).
 - The narrator is a local model. What it says on air about the measurements is
   model text, not the measurement; the same holds for claim extraction and
   Summary Plus.
-- The daily samples are small (roughly ten stories a day) and the published
-  per-day measurements carry no error bars yet.
-- `segment_player.py`, `segment_rag.py` and `entropy_forager.py` hard-code the
-  runtime path `/home/remvelchio/eigentrace`; `batch_producer.py` honours
-  `SEGMENTS_DIR`, `IMAGES_DIR` and `TICKER_FILE`.
+- The daily samples are small (a few dozen stories a day; median 47 over the
+  last 30 exported days) and the published per-day measurements carry no error
+  bars yet.
+- Most runtime modules (`segment_player.py`, `segment_rag.py`,
+  `entropy_forager.py`, `claim_extractor.py`, `roundtable.py`, `script_v3.py`,
+  `soul_updater.py`, `state_vector.py`, `data_exporter.py` and others) hard-code
+  the runtime path `/home/remvelchio/eigentrace`, and `ainn.sh` sets it too;
+  only `batch_producer.py` honours `SEGMENTS_DIR`, `IMAGES_DIR` and
+  `TICKER_FILE`, and `idle_reflection.py` honours `SEGMENTS_DIR`. Running on
+  another user's home means editing those constants for now.
 
 ## License
 

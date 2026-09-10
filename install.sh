@@ -110,9 +110,8 @@ mkdir -p "$EIGENTRACE_RUNTIME"/tmp/segments \
          "$EIGENTRACE_RUNTIME"/tmp/chromadb \
          "$EIGENTRACE_RUNTIME"/models/piper \
          "$EIGENTRACE_RUNTIME"/assets \
-         "$EIGENTRACE_RUNTIME"/stream \
-         "$EIGENTRACE_RUNTIME"/docs
-ok "$EIGENTRACE_RUNTIME/{tmp/segments,tmp/logs,tmp/images,tmp/pids,tmp/chromadb,models/piper,assets,stream,docs}"
+         "$EIGENTRACE_RUNTIME"/stream
+ok "$EIGENTRACE_RUNTIME/{tmp/segments,tmp/logs,tmp/images,tmp/pids,tmp/chromadb,models/piper,assets,stream}"
 if [[ -d "$REPO/assets" ]]; then
     cp -n "$REPO"/assets/* "$EIGENTRACE_RUNTIME/assets/" 2>/dev/null || true
     ok "copied repo assets/ into runtime assets/ (existing files kept)"
@@ -214,7 +213,7 @@ fi
 
 # Production imports (CPU only; no tensors, no model loads)
 if (cd "$REPO" && python3 - <<'PY' 2>/dev/null
-import numpy, torch, chromadb, sentence_transformers, diffusers, transformers, spacy, nltk, wordfreq, trafilatura, rich, dotenv, httpx, requests, bs4, websocket
+import numpy, torch, chromadb, sentence_transformers, diffusers, transformers, spacy, nltk, wordfreq, trafilatura, rich, dotenv, httpx, requests
 print("      numpy", numpy.__version__, "| torch", torch.__version__, "cuda", torch.version.cuda,
       "| chromadb", chromadb.__version__, "| sentence-transformers", sentence_transformers.__version__,
       "| diffusers", diffusers.__version__, "| spacy", spacy.__version__)
@@ -264,13 +263,16 @@ if command -v ffmpeg >/dev/null 2>&1; then ok "ffmpeg"; else fail "ffmpeg missin
 if [[ -f "$REPO/.env" ]]; then
     ok ".env present"
 else
-    warn "no $REPO/.env — create it with OPENAI_API_KEY, ANTHROPIC_API_KEY, GEMINI_API_KEY, DEEPSEEK_API_KEY, XAI_API_KEY (see batch_producer.py); it is gitignored"
+    warn "no $REPO/.env — create it with OPENAI_API_KEY, ANTHROPIC_API_KEY, GEMINI_API_KEY, DEEPSEEK_API_KEY, XAI_API_KEY (read by proxy_auditor.py); it is gitignored"
 fi
 
 # Hard-coded paths in the players
 if [[ "$EIGENTRACE_RUNTIME" != "/home/remvelchio/eigentrace" ]]; then
-    warn "EIGENTRACE_RUNTIME=$EIGENTRACE_RUNTIME but segment_player.py, segment_rag.py and entropy_forager.py hard-code /home/remvelchio/eigentrace"
-    warn "  (batch_producer.py / idle_reflection.py honour SEGMENTS_DIR, IMAGES_DIR, TICKER_FILE; the others do not yet)"
+    warn "EIGENTRACE_RUNTIME=$EIGENTRACE_RUNTIME but most runtime modules hard-code /home/remvelchio/eigentrace:"
+    warn "  segment_player, segment_rag, entropy_forager, claim_extractor, roundtable, script_v3, soul_updater, state_vector,"
+    warn "  data_exporter, eigenching, rem_consolidation, weekly_compression, self_audit, cross_story_freq, proxy_auditor"
+    warn "  (batch_producer.py honours SEGMENTS_DIR, IMAGES_DIR, TICKER_FILE; idle_reflection.py honours SEGMENTS_DIR;"
+    warn "   ainn.sh sets RUNTIME=/home/remvelchio/eigentrace itself)"
 fi
 
 echo ""

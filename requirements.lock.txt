@@ -27,9 +27,13 @@ trafilatura==2.0.0            # proxy_auditor
 wordfreq==3.1.1               # eigentrace_math, latent_retrieval
 
 # ---- imported by repo modules that the production modules import ----
-spacy==3.8.11                 # latent_retrieval (top-level import) <- geometric_engine, eigentrace_math, proxy_auditor, batch_producer
+spacy==3.8.11                 # latent_retrieval (top-level import) <- geometric_engine, eigentrace_math, proxy_auditor, batch_producer, eigentrace_temporal
 en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
-beautifulsoup4==4.10.0        # `import bs4` — autonomous_forager <- idle_agent <- segment_player (in-function import)
+
+# ---- not imported by any production module; installed on the production host ----
+# idle_agent.py / autonomous_forager.py (the retired idle generator; nothing in ainn.sh or
+# ops/ainn_supervisor.sh launches them) import bs4 and websocket. Pinned so a fresh box matches.
+beautifulsoup4==4.10.0        # `import bs4` — autonomous_forager (production copy is the Ubuntu apt package)
 websocket-client==1.9.0       # `import websocket` — autonomous_forager (in-function import)
 
 # ---- command-line tool run by subprocess, not imported ----

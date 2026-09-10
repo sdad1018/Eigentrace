@@ -139,14 +139,16 @@ def test_stage3_geometric_production_vix_matches_closed_form(monkeypatch):
     assert np.array_equal(got, expected), (got, expected)
     assert np.all(got > 0) and np.all(got < 100)
     assert r["callouts"] == []  # clustered fixture: nobody is 2x the mean or below 0.4x
+    # every downstream block was cut off by the ImportErrors, none wrote anything
+    assert r["compression"] == {} and r["source_void"] == {} and r["logos_words"] == []
+    assert r.get("summary_plus") is None and r.get("claim_results") is None
 
 
 def test_stage3_geometric_callouts_and_skips(monkeypatch):
     import batch_producer as bp
     e = np.zeros(DIM, dtype=np.float32); e[0] = 1.0
     emb = np.vstack([e, e, e, -e])
-    monkeypatch.setitem(sys.modules, "geometric_engine", _FakeGeoModule(emb))
-    monkeypatch.setitem(sys.modules, "latent_retrieval", None)
+    _isolate_stage3(monkeypatch, emb)
     results = _stage3_results(["a", "b", "c", "d"])
     # a skipped / errored / empty response is not part of the geometry
     results[0]["responses"] += [
