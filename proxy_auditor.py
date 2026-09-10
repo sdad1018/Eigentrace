@@ -174,7 +174,10 @@ def _load_seen() -> dict:
     return {"guids": {}}
 
 def _save_seen(seen: dict) -> None:
-    SEEN_FILE.write_text(json.dumps(seen, indent=1))
+    # 2026-09-09: atomic — a crash mid-write used to leave an empty seen-file and every story re-ran
+    _tmp = SEEN_FILE.with_name(SEEN_FILE.name + ".tmp")
+    _tmp.write_text(json.dumps(seen, indent=1))
+    os.replace(_tmp, SEEN_FILE)
 
 def _mark_seen(seen: dict, guid: str) -> None:
     seen["guids"][guid] = time.time()
@@ -360,6 +363,37 @@ def _classify_content(title: str, summary: str = "") -> str:
                 return cat
     return "general"
 
+# 2026-09-09: feed chrome ("Recommended Stories", "list 1 of 4", photo credits, sign-up nags)
+# was stored as source text in ~75% of bodies and then measured as "words the models dropped".
+_CHROME_LINE_RE = re.compile(
+    r"(?i)^\s*(recommended stories|related stories|more stories|more on this story|read more|read next|"
+    r"advertisement|advert\b|sponsored|sign up|sign in|log in|subscribe|share this|follow us|"
+    r"live updates|list \d+ of \d+|end of list|photo:|image:|picture:|credit:|watch:|listen:|"
+    r"©|copyright\b|all rights reserved|cookie|privacy policy|terms of (use|service)|newsletter|"
+    r"breaking news|trending|most (read|popular|watched)|editor'?s picks|top stories|latest news|"
+    r"skip to (main )?content|(published|updated|posted)\s*[:\-]?\s*\d)")
+_CHROME_INLINE_RE = re.compile(
+    r"(?i)\b(list \d+ of \d+|end of list|getty images|ap photo|afp via getty|reuters/[a-z ]+|"
+    r"image source,? [^.]{0,40}|image caption,?)")
+
+
+def _strip_chrome(text: str) -> str:
+    """Drop navigation/credit lines and inline credit tokens from scraped article text."""
+    out = []
+    for line in (text or "").splitlines():
+        s = line.strip()
+        if not s:
+            continue
+        if _CHROME_LINE_RE.match(s):
+            continue
+        if len(s.split()) < 4 and not s.endswith((".", "!", "?", '"', "”")):
+            continue  # menu items, bylines, section labels
+        out.append(s)
+    text = "\n".join(out)
+    text = _CHROME_INLINE_RE.sub(" ", text)
+    return re.sub(r"[ \t]+", " ", text).strip()
+
+
 def _scrape_body(url: str, timeout: int = 10) -> str:
     """Fetch article body text. Trafilatura first, regex fallback for paywalls."""
     if not url:
@@ -373,8 +407,10 @@ def _scrape_body(url: str, timeout: int = 10) -> str:
         downloaded = trafilatura.fetch_url(url, config=_cfg)
         if downloaded:
             text = trafilatura.extract(downloaded, include_comments=False,
-                                       include_tables=False, no_fallback=False)
-            if text and len(text) >= 100:
+                                       include_tables=False, no_fallback=False,
+                                       favor_precision=True)
+            text = _strip_chrome(text or "")
+            if len(text) >= 100:
                 return text[:2000]
     except Exception:
         pass
@@ -389,6 +425,7 @@ def _scrape_body(url: str, timeout: int = 10) -> str:
         text = _re.sub(r"<[^>]+>", " ", text)
         text = _re.sub(r"\s+", " ", text).strip()
         # Only use if we got meaningful content
+        text = _strip_chrome(text)
         if len(text) >= 200:
             return text[:1500]
     except Exception:
@@ -496,7 +533,7 @@ def call_gemini(prompt: str) -> tuple:
             f"https://generativelanguage.googleapis.com/v1beta/models/"
             f"{GEMINI_MODEL}:generateContent?key={key}",
             json={"contents": [{"parts": [{"text": prompt}]}]},
-            timeout=600,
+            timeout=45,  # 2026-09-09: was 600 — one slow Gemini call could stall the producer for ten minutes
         )
         if r.status_code != 200:
             return "", f"{r.status_code}: {r.text[:200]}"

@@ -538,6 +538,23 @@ def stage_1_fetch_and_score():
 
 
 
+import re as _re_retry
+_PERMANENT_ERR = _re_retry.compile(r"\b(400|401|403|404)\b|no_key")
+
+
+def _call_with_retry(name, caller, prompt, retries=2, backoff=4.0):
+    """2026-09-09: one transient failure (timeout, reset, 429/5xx) used to cost a model its seat
+    for the whole story. Retry transient errors; never retry auth/param errors or a missing key."""
+    txt, err = caller(prompt)
+    attempt = 0
+    while err and not txt and attempt < retries and not _PERMANENT_ERR.search(str(err)):
+        attempt += 1
+        log.info(f"  {name}: transient error ({str(err)[:50]}) — retry {attempt}/{retries} in {backoff * attempt:.0f}s")
+        time.sleep(backoff * attempt)
+        txt, err = caller(prompt)
+    return txt, err
+
+
 def stage_2_big5_audit(stories):
 
     log.info("═══ STAGE 2: Big 5 API Calls ═══")
@@ -558,9 +575,7 @@ def stage_2_big5_audit(stories):
 
 
         for name, caller in pa.BIG5_CALLERS.items():
-
-            txt, err = caller(prompt)
-
+            txt, err = _call_with_retry(name, caller, prompt)
             if err == "no_key":
 
                 responses.append(pa.ModelResponse(name=name, text="", skipped=True))
@@ -1871,7 +1886,9 @@ def stage_7_write_segments(segments, seen):
 
         path = SEGMENTS_DIR / filename
 
-        path.write_text(json.dumps(seg, indent=2, default=str))
+        _tmp = path.with_name(path.name + ".tmp")
+        _tmp.write_text(json.dumps(seg, indent=2, default=str))
+        os.replace(_tmp, path)  # 2026-09-09: atomic — the player must never read a half-written file
 
         log.info(f"  Wrote {filename} ({len(seg.get('beats') or [])} beats)")
         # Incremental RAG ingest
@@ -2005,21 +2022,37 @@ def stage_7_write_segments(segments, seen):
 
 
 
+import re as _re_queue
+_STORY_SEG_RE = _re_queue.compile(r"^\d{8}_\d{6}_[0-9a-f]{12}_segment\.json$")
+_QUEUE_MAX_AGE_S = 6 * 3600   # the player retires anything older (segment_player.MAX_SEGMENT_AGE_S)
+
+
 def queue_depth() -> int:
+    """Unplayed STORY segments the player will still air.
 
+    2026-09-09: idle, weekly, governance and every other own-output file used to count, so a
+    single stale reflection could hold the gate shut (min_queue=1) and the producer never produced."""
     if not SEGMENTS_DIR.exists():
-
         return 0
-
-    unplayed = [
-
-        p for p in SEGMENTS_DIR.glob("*_segment.json")
-
-        if not p.with_suffix(".played").exists()
-
-    ]
-
-    return len(unplayed)
+    try:
+        with os.scandir(SEGMENTS_DIR) as it:
+            names = {e.name for e in it}
+    except OSError:
+        return 0
+    now = time.time()
+    n = 0
+    for name in names:
+        if not _STORY_SEG_RE.match(name):
+            continue
+        if name[:-5] + ".played" in names:
+            continue
+        try:
+            age = now - os.stat(os.path.join(SEGMENTS_DIR, name)).st_mtime
+        except OSError:
+            continue
+        if age <= _QUEUE_MAX_AGE_S:
+            n += 1
+    return n
 
 
 
@@ -2051,7 +2084,7 @@ def stage_summary_plus_probe(results):
     except Exception as e:
         log.info(f"  ARM: eigenching unavailable ({e}) — skipping"); return None
 
-    _best6 = ["consensus_density","absent_ratio","verb_drift","entity_retention","hedge_count","mean_vix"]
+    _best6 = ["consensus_density","absent_ratio","verb_drift","entity_retention","hedge_count","vix_spread"]  # 2026-09-09: axis 6 = spread, not the mean (which duplicates axis 1)
     # 'closed' axes (more negative = more walled-off): absent, verb_drift, entity, hedge
     _closed_axes = {"absent_ratio","verb_drift","entity_retention","hedge_count"}
 
@@ -2068,6 +2101,7 @@ def stage_summary_plus_probe(results):
             "verb_drift": comp.get("verb_downgrade", 0.0),
             "entity_retention": comp.get("entity_retention", 0.0),
             "hedge_count": ab.get("total", 0) if isinstance(ab, dict) else 0,
+            "vix_spread": (max(vixs) - min(vixs)) if len(vixs) >= 2 else 0.0,
             "mean_vix": mean_vix,
         }, mean_vix
 
@@ -2892,7 +2926,10 @@ def run_batch(no_images: bool = False, dry_run: bool = False):
         for _p, _d in _img_disk:
             if _d.get("image_path"):
                 try:
-                    _json.dump(_d, open(_p, "w"), default=str)
+                    _tp = _p.with_name(_p.name + ".tmp")
+                    with open(_tp, "w") as _fh:
+                        _json.dump(_d, _fh, default=str)
+                    os.replace(_tp, _p)  # 2026-09-09: atomic
                 except Exception as _we:
                     log.warning(f"  retro cover write failed {_p.name}: {_we}")
 

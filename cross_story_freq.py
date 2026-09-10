@@ -65,9 +65,9 @@ def _load_frequencies():
                 w = str(w).lower()
                 if len(w) < 4 or w in BOILERPLATE:
                     continue
-                freq[word]["count"] += 1
-                freq[word]["stories"].add(title[:60])
-                freq[word]["categories"].add(category)
+                freq[w]["count"] += 1          # 2026-09-09: was freq[word] — credited the previous loop's word
+                freq[w]["stories"].add(title[:60])
+                freq[w]["categories"].add(category)
         except:
             continue
     

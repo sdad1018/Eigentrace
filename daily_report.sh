@@ -3,6 +3,9 @@
 # Add to cron: 0 0 * * * bash /mnt/c/Users/M4ISI/eigentrace/daily_report.sh
 # set -e removed 2026-09-04: one failing step used to abort the whole report silently
 cd /mnt/c/Users/M4ISI/eigentrace
+# 2026-09-09: the API keys live in the runtime tree's .env; without this eigentrace_temporal.py
+# has printed "No API keys found" at every run since May
+if [ -f /home/remvelchio/eigentrace/.env ]; then set -a; . /home/remvelchio/eigentrace/.env; set +a; fi
 
 # 2026-09-04: this runs at 00:00, so the completed day is yesterday (it used to export the empty new day).
 DATE=$(date -d yesterday +%Y%m%d)

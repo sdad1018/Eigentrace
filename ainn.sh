@@ -83,6 +83,7 @@ kill_component() {
 # ══════════════════════════════════════════════════════════════════════════
 if [[ "$ACTION" == "stop" ]]; then
     hdr "Stopping AINN"
+    touch "$RUNTIME/tmp/SUPERVISOR_PAUSE"   # 2026-09-09: tell ainn_supervisor.sh this stop is deliberate
     kill_component "producer"
     kill_component "player"
     kill_component "master"
@@ -216,6 +217,7 @@ fi
 
 # ── Cleanup ──────────────────────────────────────────────────────────────
 hdr "Cleanup"
+rm -f "$RUNTIME/tmp/SUPERVISOR_PAUSE"   # 2026-09-09: a start lifts the supervisor pause
 pkill -f "batch_producer.py" 2>/dev/null && warn "Killed stale producer" || true
 pkill -f "segment_player.py" 2>/dev/null && warn "Killed stale player" || true
 pkill -f "master.sh" 2>/dev/null && warn "Killed stale master.sh" || true
@@ -276,6 +278,7 @@ echo ""
 trap '
     echo ""
     echo "Shutting down AINN..."
+    touch "$RUNTIME/tmp/SUPERVISOR_PAUSE"   # 2026-09-09: Ctrl-C is a decision; the supervisor will not undo it
     kill_component "producer"
     kill_component "player"
     kill_component "master"

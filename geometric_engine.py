@@ -337,7 +337,12 @@ def calculate_svd_reconstruction(response_vecs: list,
         # V1 = Vh[0]  # (1024,) — not used directly but kept for reference
 
         # Reconstruction Artifact: last right singular vector
-        V_last = Vh[-1]                                            # (1024,)
+        # 2026-09-09: with N rows the centred matrix has rank <= N-1, so Vh[-1] of Y_c is a
+        # numerically arbitrary vector in its null space (the "flat raycast" words were noise).
+        # Take the least-variance direction of the raw unit-sphere rows instead, as the live tree
+        # already does; the singular values above (compression, null-space energy) are unchanged.
+        _U_raw, _S_raw, _Vh_raw = torch.linalg.svd(Y, full_matrices=False)
+        V_last = _Vh_raw[-1]                                       # (1024,)
 
         # SNR analog: how much of total variance is in one direction
         S_sum  = S.sum().clamp_min(1e-9)

@@ -106,7 +106,9 @@ def _get_geo_engine():
     return _get_geo_engine._inst
 
 def find_killshots(claim_results, min_salience=0.45):
-    ks = [cr for cr in claim_results if cr["salience"] >= min_salience and cr["coverage_ratio"] <= 0.2]
+    ks = [cr for cr in claim_results
+          if cr["salience"] >= min_salience and cr["coverage_ratio"] <= 0.2
+          and cr.get("omitted_by")]  # 2026-09-09: omitted by nobody is not a killshot
     ks.sort(key=lambda x: -x["salience"])
     return ks
 

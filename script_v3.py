@@ -488,6 +488,11 @@ def _swerve_garbled(text):
     return False
 
 
+# 2026-09-09: transport failures used to be appended as narration and read aloud
+# ("[Mistral unavailable: HTTPConnectionPool...]", "[Gemini error: failed after 3 retries...]")
+_FAILURE_RE = re.compile(r"^\s*\[(Mistral unavailable|VIX error|[A-Za-z]+ error:|[A-Za-z]+: no caller|API ERROR|HOST ERROR|no response)")
+
+
 def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     attr = seg.get("attribution", {})
     beats_raw = seg.get("beats", [])
@@ -1212,16 +1217,18 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     })
 
     # ── 15. KILLSHOTS (Template) ─────────────────────────────────────
-    if killshots:
+    # 2026-09-09: a claim nobody omitted is not a killshot; it used to air as "Omitted by: all models"
+    _ks_named = [k for k in (killshots or []) if k.get("omitted_by")][:3]
+    if _ks_named:
         ks_text = "Source fact killshots. "
-        for ks in killshots[:3]:
-            omitters = ", ".join(ks.get("omitted_by", [])) or "all models"
+        for ks in _ks_named:
+            omitters = ", ".join(ks.get("omitted_by", []))
             ks_text += f"The claim: {ks['claim']}. Salience: {ks['salience']:.2f}. Omitted by: {omitters}. "
         script.append({"speaker": "Host", "text": ks_text, "phase": "beat_15_killshots"})
-        if _state and killshots:
-            for _ks in killshots[:3]:
+        if _state:
+            for _ks in _ks_named:
                 _state.beliefs.append(
-                    f"Killshot: '{_ks.get('claim','')}' omitted by {_ks.get('omitted_by','')}."
+                    f"Killshot: '{_ks.get('claim','')}' omitted by {', '.join(_ks.get('omitted_by') or [])}."
                 )
 
     # ── 15b. VOID VERIFICATION — Layer 5 (SearXNG) ────────────────────
@@ -1264,21 +1271,6 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
                     pass
     except Exception as _l5_err:
         pass  # Non-blocking — Layer 5 is bonus content
-    # ── 15b1. WIKIPEDIA EDIT VELOCITY ──────────────────────────────
-    try:
-        from wiki_edit_sensor import check_void_entities, format_broadcast as _wiki_format
-        _wiki_words = [v.get("word", "") for v in _void_ctx[:10]] + [str(w) for w in _absent_src[:5]]
-        _wiki_hot = check_void_entities(_wiki_words, hours=48)
-        _wiki_text = _wiki_format(_wiki_hot)
-        if _wiki_text:
-            script.append({
-                "speaker": "Host",
-                "text": _wiki_text,
-                "phase": "beat_15b1_wiki_edit_velocity",
-            })
-    except Exception as _wiki_err:
-        pass  # Non-blocking
-
     # ── 15b1. WIKIPEDIA EDIT VELOCITY ──────────────────────────────
     try:
         from wiki_edit_sensor import check_void_entities, format_broadcast as _wiki_format
@@ -1515,8 +1507,10 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     try:
         from state_vector import compute_state_vector, extract_signals, find_state_matches, load_all_signals
         _best6 = ["consensus_density", "absent_ratio", "verb_drift",
-                   "entity_retention", "hedge_count", "mean_vix"]
+                   "entity_retention", "hedge_count", "vix_spread"]  # 2026-09-09: axis 6 is the spread (one model breaking ranks), not the mean, which duplicates axis 1
+        _mvx = [v for v in (attr.get("model_vix") or {}).values() if isinstance(v, (int, float))]
         _seg_signals = {
+            "vix_spread": (max(_mvx) - min(_mvx)) if len(_mvx) >= 2 else 0,
             "consensus_density": density,
             "absent_ratio": attr.get("source_void", {}).get("absent_ratio", 0),
             "verb_drift": attr.get("compression", {}).get("verb_downgrade", 0),
@@ -1761,6 +1755,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         "phase": "beat_20_archive",
     })
 
+    script = [b for b in script if not _FAILURE_RE.match(str(b.get("text", "")))]  # 2026-09-09: never air a failure string
     return script
 
 

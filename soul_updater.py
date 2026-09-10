@@ -897,7 +897,9 @@ def inject_epistemic_anchor(soul_path):
     """Add epistemic anchor after soul regeneration."""
     from datetime import datetime
     import glob
-    total = len(glob.glob("/home/remvelchio/eigentrace/tmp/segments/*_segment.json"))
+    import re as _re_total
+    total = sum(1 for _f in glob.glob("/home/remvelchio/eigentrace/tmp/segments/*_segment.json")
+                if _re_total.match(r"^\d{8}_\d{6}_[0-9a-f]{12}_segment\.json$", _f.rsplit("/", 1)[-1]))  # 2026-09-09: stories only, not idle/weekly/governance output
     
     soul = open(soul_path).read()
     

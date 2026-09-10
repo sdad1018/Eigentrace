@@ -33,3 +33,11 @@ page_inputs.tgz
 *.bak_*
 runs/
 calls.json
+
+# 2026-09-09: never tracked again — contain secrets, session state or 1.8 MB of edit snapshots
+sweep_full.jsonl
+searxng_config/settings.yml
+.claude/
+.governance_history.json
+.governance_last_run
+chroma_db/chroma.sqlite3

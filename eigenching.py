@@ -417,7 +417,7 @@ if __name__ == "__main__":
             import state_vector
             _all = state_vector.load_all_signals()
             best6 = ["consensus_density", "absent_ratio", "verb_drift",
-                     "entity_retention", "hedge_count", "mean_vix"]
+                     "entity_retention", "hedge_count", "vix_spread"]  # 2026-09-09: axis 6 = spread
             history = Counter()
             for r in _all:
                 vec, _ = state_vector.compute_state_vector(r, best6)
