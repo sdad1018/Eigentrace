@@ -20,6 +20,8 @@ fi
 # 4. small state files in the runtime tree (registries, seen list, soul, profiles)
 ( cd "$L" && find . tmp -maxdepth 1 -type f \( -name "*.json" -o -name "*.md" -o -name "*.txt" \) -size -50M -print0 \
   | tar czf "$DEST/state_files.tgz" --null -T - ) 2>&1 | quiet
-# 5. retention
+# 5. Owncast configuration and database (admin settings, stream key, chat/emoji) — excluded: transcoder tmp
+( cd "$HOME" && tar czf "$DEST/owncast_data.tgz" --exclude="owncast/data/tmp" --exclude="owncast/data/hls" owncast/data ) 2>&1 | quiet
+# 6. retention
 find "$DEST_ROOT" -mindepth 1 -maxdepth 1 -type d -mtime +14 -exec rm -rf {} + 2>/dev/null
 echo "$(date '+%F %T') done: $(du -sh "$DEST" | cut -f1)"
