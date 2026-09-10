@@ -1928,10 +1928,15 @@ def stage_7_write_segments(segments, seen):
 
         TICKER_FILE.parent.mkdir(parents=True, exist_ok=True)
 
-        TICKER_FILE.write_text(line)
+        # 2026-09-09: atomic replace — ffmpeg's drawtext maps this file; truncating it in place has crashed
 
+        # the transmitter with SIGBUS (the player's writer got the same fix)
 
+        _tk_tmp = TICKER_FILE.with_name(TICKER_FILE.name + '.tmp')
 
+        _tk_tmp.write_text(line)
+
+        os.replace(_tk_tmp, TICKER_FILE)
     # Append void centroids to registry for PCA analysis
 
     for seg in segments:
