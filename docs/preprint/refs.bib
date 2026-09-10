@@ -1,0 +1,242 @@
+% refs.bib for docs/preprint/eigentrace-preprint.md
+% Every entry is marked TODO-verify: author lists, years, venues and titles were written from
+% memory of the standard names and have NOT been checked against the published record for this
+% draft. Fill DOI/URL/pages only after checking. Do not add entries that cannot be identified
+% unambiguously. OWNER: verify each before submission; delete any that do not check out.
+
+% ---- Embedding models used by the instrument ----
+
+@misc{bge_large_en_v15,
+  title        = {BAAI/bge-large-en-v1.5 (Hugging Face model card)},
+  author       = {{Beijing Academy of Artificial Intelligence}},
+  year         = {2023},
+  howpublished = {\url{https://huggingface.co/BAAI/bge-large-en-v1.5}},
+  note         = {TODO-verify: pin the model revision hash used in production. Companion paper: C-Pack (Xiao et al.), TODO-verify citation.}
+}
+
+@article{xiao2023cpack,
+  title   = {C-Pack: Packaged Resources To Advance General Chinese Embedding},
+  author  = {Xiao, Shitao and Liu, Zheng and Zhang, Peitian and Muennighoff, Niklas},
+  journal = {arXiv preprint},
+  year    = {2023},
+  note    = {TODO-verify: arXiv id, author list, whether this is the paper for bge-large-en-v1.5.}
+}
+
+@article{wang2022e5,
+  title   = {Text Embeddings by Weakly-Supervised Contrastive Pre-training},
+  author  = {Wang, Liang and Yang, Nan and Huang, Xiaolong and Jiao, Binxing and Yang, Linjun and Jiang, Daxin and Majumder, Rangan and Wei, Furu},
+  journal = {arXiv preprint},
+  year    = {2022},
+  note    = {TODO-verify: arXiv id; which e5-large checkpoint the Iran page used (e5-large vs e5-large-v2).}
+}
+
+% ---- Disagreement among generations as a signal (lineage named in report 2026-09-06 §1C) ----
+
+@inproceedings{manakul2023selfcheckgpt,
+  title     = {SelfCheckGPT: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models},
+  author    = {Manakul, Potsawee and Liusie, Adian and Gales, Mark J. F.},
+  booktitle = {EMNLP},
+  year      = {2023},
+  note      = {TODO-verify: venue and pages.}
+}
+
+@inproceedings{kuhn2023semantic,
+  title     = {Semantic Uncertainty: Linguistic Invariances for Uncertainty Estimation in Natural Language Generation},
+  author    = {Kuhn, Lorenz and Gal, Yarin and Farquhar, Sebastian},
+  booktitle = {ICLR},
+  year      = {2023},
+  note      = {TODO-verify.}
+}
+
+@article{farquhar2024detecting,
+  title   = {Detecting hallucinations in large language models using semantic entropy},
+  author  = {Farquhar, Sebastian and Kossen, Jannik and Kuhn, Lorenz and Gal, Yarin},
+  journal = {Nature},
+  year    = {2024},
+  note    = {TODO-verify: volume, pages, DOI.}
+}
+
+% ---- LLM-as-judge and its critiques ----
+
+@inproceedings{zheng2023judging,
+  title     = {Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena},
+  author    = {Zheng, Lianmin and others},
+  booktitle = {NeurIPS Datasets and Benchmarks},
+  year      = {2023},
+  note      = {TODO-verify: full author list, venue.}
+}
+
+@article{panickssery2024llm,
+  title   = {LLM Evaluators Recognize and Favor Their Own Generations},
+  author  = {Panickssery, Arjun and Bowman, Samuel R. and Feng, Shi},
+  journal = {arXiv preprint},
+  year    = {2024},
+  note    = {TODO-verify: arXiv id, venue if published.}
+}
+
+% ---- Summarization faithfulness metrics (named in preprint §2; entries only for the unambiguous ones) ----
+
+@inproceedings{kryscinski2020factcc,
+  title     = {Evaluating the Factual Consistency of Abstractive Text Summarization},
+  author    = {Kry{\'s}ci{\'n}ski, Wojciech and McCann, Bryan and Xiong, Caiming and Socher, Richard},
+  booktitle = {EMNLP},
+  year      = {2020},
+  note      = {TODO-verify. Commonly called FactCC.}
+}
+
+@inproceedings{wang2020qags,
+  title     = {Asking and Answering Questions to Evaluate the Factual Consistency of Summaries},
+  author    = {Wang, Alex and Cho, Kyunghyun and Lewis, Mike},
+  booktitle = {ACL},
+  year      = {2020},
+  note      = {TODO-verify. Commonly called QAGS.}
+}
+
+@article{laban2022summac,
+  title   = {SummaC: Re-Visiting NLI-based Models for Inconsistency Detection in Summarization},
+  author  = {Laban, Philippe and Schnabel, Tobias and Bennett, Paul N. and Hearst, Marti A.},
+  journal = {Transactions of the Association for Computational Linguistics},
+  year    = {2022},
+  note    = {TODO-verify.}
+}
+
+@inproceedings{pagnoni2021frank,
+  title     = {Understanding Factuality in Abstractive Summarization with FRANK: A Benchmark for Factuality Metrics},
+  author    = {Pagnoni, Artidoro and Balachandran, Vidhisha and Tsvetkov, Yulia},
+  booktitle = {NAACL},
+  year      = {2021},
+  note      = {TODO-verify.}
+}
+
+@inproceedings{zha2023alignscore,
+  title     = {AlignScore: Evaluating Factual Consistency with a Unified Alignment Function},
+  author    = {Zha, Yuheng and Yang, Yichi and Li, Ruichen and Hu, Zhiting},
+  booktitle = {ACL},
+  year      = {2023},
+  note      = {TODO-verify.}
+}
+
+% FaithBench and FABLES are named in report 2026-09-09 (site critique) §2d as human-labeled
+% faithfulness benchmarks. Author lists not recalled with confidence; left as TODO stubs.
+@misc{faithbench_todo,
+  title = {FaithBench},
+  note  = {TODO-verify: locate the paper (summarization hallucination benchmark, 2024 or 2025) and replace this stub.}
+}
+
+@misc{fables_todo,
+  title = {FABLES: Evaluating faithfulness and content selection in book-length summarization},
+  note  = {TODO-verify: Kim et al. 2024? Replace this stub after checking.}
+}
+
+% ---- Embedding-based evaluation ----
+
+@inproceedings{zhang2020bertscore,
+  title     = {BERTScore: Evaluating Text Generation with BERT},
+  author    = {Zhang, Tianyi and Kishore, Varsha and Wu, Felix and Weinberger, Kilian Q. and Artzi, Yoav},
+  booktitle = {ICLR},
+  year      = {2020},
+  note      = {TODO-verify.}
+}
+
+@inproceedings{zhao2019moverscore,
+  title     = {MoverScore: Text Generation Evaluating with Contextualized Embeddings and Earth Mover Distance},
+  author    = {Zhao, Wei and Peyrard, Maxime and Liu, Fei and Gao, Yang and Meyer, Christian M. and Eger, Steffen},
+  booktitle = {EMNLP},
+  year      = {2019},
+  note      = {TODO-verify.}
+}
+
+% ---- Monoculture / homogenization ----
+
+@inproceedings{kleinberg2021monoculture,
+  title     = {Algorithmic Monoculture and Social Welfare},
+  author    = {Kleinberg, Jon and Raghavan, Manish},
+  booktitle = {Proceedings of the National Academy of Sciences},
+  year      = {2021},
+  note      = {TODO-verify: PNAS volume/issue.}
+}
+
+@inproceedings{bommasani2022picking,
+  title     = {Picking on the Same Person: Does Algorithmic Monoculture lead to Outcome Homogenization?},
+  author    = {Bommasani, Rishi and Creel, Kathleen A. and Kumar, Ananya and Jurafsky, Dan and Liang, Percy},
+  booktitle = {NeurIPS},
+  year      = {2022},
+  note      = {TODO-verify.}
+}
+
+@article{padmakumar2024does,
+  title   = {Does Writing with Language Models Reduce Content Diversity?},
+  author  = {Padmakumar, Vishakh and He, He},
+  journal = {ICLR},
+  year    = {2024},
+  note    = {TODO-verify: venue.}
+}
+
+@article{anderson2024homogenization,
+  title   = {Homogenization Effects of Large Language Models on Human Creative Ideation},
+  author  = {Anderson, Barrett R. and Shah, Jash Hemant and Kreminski, Max},
+  journal = {Creativity and Cognition},
+  year    = {2024},
+  note    = {TODO-verify: venue and author list.}
+}
+
+% ---- Labeling protocol (for the gold set, preprint §6) ----
+
+@inproceedings{nenkova2004pyramid,
+  title     = {Evaluating Content Selection in Summarization: The Pyramid Method},
+  author    = {Nenkova, Ani and Passonneau, Rebecca},
+  booktitle = {HLT-NAACL},
+  year      = {2004},
+  note      = {TODO-verify.}
+}
+
+@book{krippendorff2004content,
+  title     = {Content Analysis: An Introduction to Its Methodology},
+  author    = {Krippendorff, Klaus},
+  publisher = {Sage},
+  year      = {2004},
+  note      = {TODO-verify edition; source for Krippendorff's alpha.}
+}
+
+% ---- Statistics ----
+
+@article{welch1947,
+  title   = {The generalization of `Student's' problem when several different population variances are involved},
+  author  = {Welch, B. L.},
+  journal = {Biometrika},
+  year    = {1947},
+  note    = {TODO-verify volume/pages.}
+}
+
+@article{wilcoxon1945,
+  title   = {Individual Comparisons by Ranking Methods},
+  author  = {Wilcoxon, Frank},
+  journal = {Biometrics Bulletin},
+  year    = {1945},
+  note    = {TODO-verify.}
+}
+
+@book{cohen1988,
+  title     = {Statistical Power Analysis for the Behavioral Sciences},
+  author    = {Cohen, Jacob},
+  publisher = {Lawrence Erlbaum},
+  year      = {1988},
+  edition   = {2},
+  note      = {TODO-verify.}
+}
+
+% ---- Tools ----
+
+@misc{wordfreq,
+  title        = {wordfreq: a Python library for looking up the frequencies of words in many languages},
+  author       = {Speer, Robyn},
+  howpublished = {\url{https://github.com/rspeer/wordfreq}},
+  note         = {TODO-verify version; source of the Zipf frequencies in the verb-downgrade metric.}
+}
+
+@misc{trafilatura,
+  title  = {Trafilatura: A Web Scraping Library and Command-Line Tool for Text Discovery and Extraction},
+  author = {Barbaresi, Adrien},
+  year   = {2021},
+  note   = {TODO-verify: ACL demo paper citation; the boilerplate defect in preprint §3.5 is in this project's use of it, not in the library.}
+}

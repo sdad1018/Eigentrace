@@ -7,10 +7,33 @@ name = "omniteardown"
 version = "0.4.0"
 description = "Evidence-firewalled prospect enrichment: probe -> research -> draft -> audit -> forage -> brief. Models cite facts; code writes them."
 requires-python = ">=3.10"
-dependencies = ["httpx", "beautifulsoup4", "anthropic"]
+# Direct dependencies of the production modules (see requirements.txt; exact versions in requirements.lock.txt).
+# 2026-09-10: replaced the three-item list. `anthropic` stays because teardown_agent/teardown_audit import it.
+dependencies = [
+    "chromadb>=0.5",
+    "diffusers>=0.31",
+    "httpx>=0.28",
+    "nltk>=3.9",
+    "numpy>=1.26,<2",
+    "python-dotenv>=1.0",
+    "requests>=2.32",
+    "rich>=13",
+    "sentence-transformers>=5.0",
+    "torch>=2.5",
+    "trafilatura>=2.0",
+    "wordfreq>=3.1",
+    "spacy>=3.8",
+    "beautifulsoup4>=4.10",
+    "websocket-client>=1.8",
+    "piper-tts>=1.4",
+    "anthropic",
+]
 
 [project.scripts]
 teardown = "forager:main"
 
 [tool.setuptools]
 py-modules = ["teardown_probes", "teardown_agent", "teardown_audit", "forager"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

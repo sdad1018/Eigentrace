@@ -1,5 +1,49 @@
-chromadb==0.5.23
-diffusers==0.27.2
-huggingface-hub==0.23.5
+# EigenTrace production lock — the exact versions the live broadcast host runs.
+# Generated 2026-09-10 from `python3 -m pip freeze --user` on the production WSL2 Ubuntu 22.04 box.
+# Python 3.10.12 (/usr/bin/python3), pip 26.0.1; everything is installed with `pip install --user`.
+#
+# torch note: production runs torch==2.5.1+cu121 (CUDA 12.1 build, torch.version.cuda == "12.1").
+# The +cu121 wheel is not on PyPI; it resolves through the PyTorch cu121 index declared below
+# (the bare 2.5.1 wheel on PyPI is a cu124 build). Install with:
+#     python3 -m pip install --user -r requirements.lock.txt
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+# ---- direct third-party imports of the production modules ----
+# batch_producer, proxy_auditor, script_v3, geometric_engine, eigentrace_math, claim_extractor,
+# segment_player, idle_reflection, segment_rag, entropy_forager, soul_updater, data_exporter,
+# state_vector, eigenching, source_salience, wiki_edit_sensor, roundtable, rem_consolidation,
+# weekly_compression, self_audit, forager, cross_story_freq, pca_void_registry, eigentrace_temporal
+chromadb==0.5.23              # segment_rag, entropy_forager
+diffusers==0.31.0             # batch_producer (AutoPipelineForText2Image, SimianLuo/LCM_Dreamshaper_v7)
+httpx==0.28.1                 # forager
+nltk==3.9.3                   # eigentrace_math (word_tokenize, pos_tag, PorterStemmer)
 numpy==1.26.4
+python-dotenv==1.2.2          # `import dotenv` — batch_producer, proxy_auditor, roundtable, eigentrace_temporal
+requests==2.33.1
+rich==15.0.0                  # proxy_auditor, eigentrace_temporal
+sentence-transformers==5.2.3  # geometric_engine (BAAI/bge-large-en-v1.5 on cpu)
+torch==2.5.1+cu121
+trafilatura==2.0.0            # proxy_auditor
+wordfreq==3.1.1               # eigentrace_math, latent_retrieval
+
+# ---- imported by repo modules that the production modules import ----
+spacy==3.8.11                 # latent_retrieval (top-level import) <- geometric_engine, eigentrace_math, proxy_auditor, batch_producer
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
+beautifulsoup4==4.10.0        # `import bs4` — autonomous_forager <- idle_agent <- segment_player (in-function import)
+websocket-client==1.9.0       # `import websocket` — autonomous_forager (in-function import)
+
+# ---- command-line tool run by subprocess, not imported ----
+piper-tts==1.4.1              # segment_player runs ~/.local/bin/piper (this package's console script)
+onnxruntime==1.23.2           # piper-tts runtime
+
+# ---- transitive pins production is known to run (so a fresh install resolves the same way) ----
+transformers==4.41.2
 tokenizers==0.19.1
+huggingface-hub==0.36.2
+safetensors==0.8.0
+accelerate==1.12.0
+pillow==12.1.1
+scikit-learn==1.7.2
+scipy==1.15.3
+chroma-hnswlib==0.7.6
+triton==3.1.0
