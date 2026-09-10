@@ -780,6 +780,52 @@ def _prereg_score(r, model_vix, mean_vix, density):
 
 
 
+def _panel_vix(embeddings):
+
+    """
+
+    Per-row VIX_i = clip(500 * (1 - cos(e_i, unit centroid)), 0, 100), in row order.
+
+    2026-09-10: a verbatim copy of the stage_3_geometric per-model loop (same centroid
+
+    normalisation, same operations in the same order), used only to score the null
+
+    controls' mixed panel. The stage-3 loop itself is untouched because
+
+    tests/test_geometry.py pins its source text; tests/test_controls.py pins this copy
+
+    to the same formula. Values are unrounded; stage 3 rounds to 1 dp when it stores
+
+    resp.eigen_vix.
+
+    """
+
+    embeddings = np.asarray(embeddings)
+
+    centroid = np.mean(embeddings, axis=0)
+
+    centroid = centroid / (np.linalg.norm(centroid) + 1e-8)
+
+    out = []
+
+    for i in range(len(embeddings)):
+
+        cos_sim = float(np.dot(embeddings[i], centroid))
+
+        # Distance from consensus: 0 = identical to centroid, 1 = orthogonal
+
+        distance = 1.0 - cos_sim
+
+        # Scale to 0-100. Typical range is 0.01-0.15 for model responses.
+
+        # We use a sigmoid-like scaling centered at 0.05
+
+        out.append(min(100.0, max(0.0, distance * 500.0)))
+
+    return out
+
+
+
 def stage_3_geometric(results):
 
     """
@@ -810,7 +856,7 @@ def stage_3_geometric(results):
 
 
 
-    for r in results:
+    for idx, r in enumerate(results):  # 2026-09-10: idx lets the controls pick a batch mate
 
         story = r["story"]
 
@@ -938,7 +984,11 @@ def stage_3_geometric(results):
 
             active_texts_raw = [resp.text for resp in active]
 
-            lexical_void = _compute_void(story.title, active_texts_raw, _eng, _vt, pool_size=200, k=5)
+            _void_stats = {}
+
+            lexical_void = _compute_void(story.title, active_texts_raw, _eng, _vt, pool_size=200, k=5, stats=_void_stats)
+
+            r["void_stats"] = _void_stats  # 2026-09-10: pool_n / absent_n for the null controls (return value unchanged)
 
             if lexical_void:
 
@@ -1119,7 +1169,9 @@ def stage_3_geometric(results):
             else:
                 r["null_space_claims"] = []
 
-                r["claim_killshots"] = []
+                if not _claims:  # 2026-09-10 (controls A5): killshots found above survive a missing null-space vector
+
+                    r["claim_killshots"] = []
 
         except Exception as _e:
 
@@ -1207,6 +1259,27 @@ def stage_3_geometric(results):
             log.warning(f"  Compression scoring failed: {_ce}")
             r["compression"] = {}
 
+        # ── Null-baseline controls (2026-09-10; docs/metrics.md section 10) ──
+        # The same five functions on a swapped input; no measurement changes.
+        # A failure yields {} and no Control sentence airs (never blocks a batch).
+        try:
+            import controls as _controls
+            try:
+                _ctl_vt = _vt
+            except NameError:
+                _ctl_vt = None
+            r["controls"] = _controls.compute_controls(
+                r, results, idx, eng, _ctl_vt, active_texts, story,
+                embeddings=embeddings, void_fn=_compute_void, panel_vix=_panel_vix)
+            _ctl_d = r["controls"].get("density") or {}
+            _ctl_v = r["controls"].get("void") or {}
+            log.info(f"  Controls: density {_ctl_d.get('measured')} vs mixed {_ctl_d.get('control_mixed')} "
+                     f"(n_panel={_ctl_d.get('n_panel')}); void absent {_ctl_v.get('absent_frac')} vs "
+                     f"unrelated headline {_ctl_v.get('control_absent_frac')}")
+        except Exception as _ctl_e:
+            log.warning(f"  controls failed: {_ctl_e}")
+            r["controls"] = {}
+
         # Log
 
         vix_str = " ".join(f"{n}={v:.1f}" for n, v in vix_scores)
@@ -1287,7 +1360,7 @@ def stage_3_geometric(results):
 
 
 
-def _compute_void(headline, response_texts, eng, vt, pool_size=200, k=5):
+def _compute_void(headline, response_texts, eng, vt, pool_size=200, k=5, stats=None):
 
     """
 
@@ -1295,7 +1368,7 @@ def _compute_void(headline, response_texts, eng, vt, pool_size=200, k=5):
 
     from all model responses.
 
-    
+
 
     1. Embed headline, find top pool_size vocab words by cosine similarity
 
@@ -1303,9 +1376,19 @@ def _compute_void(headline, response_texts, eng, vt, pool_size=200, k=5):
 
     3. Return top k by headline relevance
 
+    stats (2026-09-10, optional out-param for the null controls): when a dict is
+
+    passed it receives pool_n (pool words that passed the len >= 4 filter) and
+
+    absent_n (how many of those were absent). The return value is unchanged.
+
     """
 
     import torch
+
+    if stats is not None:
+
+        stats["pool_n"] = 0
 
     h_vec = eng.embed_texts([headline])[0]
 
@@ -1335,6 +1418,10 @@ def _compute_void(headline, response_texts, eng, vt, pool_size=200, k=5):
 
             continue
 
+        if stats is not None:
+
+            stats["pool_n"] += 1
+
         # Whole-word absence check (not substring — "anne" != "annie")
 
         import re as _re
@@ -1346,6 +1433,10 @@ def _compute_void(headline, response_texts, eng, vt, pool_size=200, k=5):
             continue
 
         absent.append((word, sim))
+
+    if stats is not None:
+
+        stats["absent_n"] = len(absent)
 
     return absent[:k]
 
@@ -1596,7 +1687,7 @@ def stage_4_generate_scripts(results):
                 "epistemic_anchor": epistemic_anchor_check(
                     {a.name: a.text for a in active if a.text},
                     story.title, story.url),
-                "claim_killshots": [{"claim": k["claim"], "salience": k["salience"], "omitted_by": k["omitted_by"]} for k in killshots[:3]],
+                "claim_killshots": [{"claim": k["claim"], "salience": k["salience"], "omitted_by": k["omitted_by"], "max_sim_own": (max(k["coverage"].values()) if k.get("coverage") else k.get("max_sim_own"))} for k in killshots[:3]],
                 "null_space_claims": ns_claims[:2],
                 "compression": r.get("compression", {}),
                 "source_void": r.get("source_void", {}),
@@ -1606,12 +1697,17 @@ def stage_4_generate_scripts(results):
                 "summary_plus": r.get("summary_plus", {}),
                 "sp_channels": r.get("sp_channels", {}),
                 "ensemble": r.get("ensemble", {}),
-                "claim_killshots": [{"claim": k["claim"], "salience": k["salience"], "omitted_by": k["omitted_by"]} for k in r.get("claim_killshots", [])[:5]],
+                "claim_killshots": [{"claim": k["claim"], "salience": k["salience"], "omitted_by": k["omitted_by"], "max_sim_own": (max(k["coverage"].values()) if k.get("coverage") else k.get("max_sim_own"))} for k in r.get("claim_killshots", [])[:5]],
                 "null_space_claims": r.get("null_space_claims", [])[:3],
                 "void_vector": r.get("void_vector", {}),
                 "consequence": r.get("consequence", {}),
                 "shadow_consequence": r.get("shadow_consequence", {}),
                 "preregistration": r.get("preregistration", {}),
+                "controls": r.get("controls", {}),  # 2026-09-10: null baselines (docs/metrics.md section 10)
+                # 2026-09-10 (ex-self provenance): each model rewrote its OWN summary; no model scored another's
+                "summary_plus_meta": {"rewritten_by": "author model (self)", "scored_by": "bge sp_channels (arithmetic)",
+                                      "writer_reads_own_summary": True, "cross_model_scoring": False},
+                "host_model": HOST_MODEL,  # 2026-09-10: the narrating model is local and wrote none of the panel summaries
             },
         }
         _audit = _get_audit_context()
@@ -1668,11 +1764,20 @@ def stage_4_generate_scripts(results):
                 "source_void": r.get("source_void", {}),
                 "void_context": r.get("void_context", []),
 
-                "claim_killshots": [{"claim": k["claim"], "salience": k["salience"], "omitted_by": k["omitted_by"]} for k in r.get("claim_killshots", [])[:3]],
+                "claim_killshots": [{"claim": k["claim"], "salience": k["salience"], "omitted_by": k["omitted_by"], "max_sim_own": (max(k["coverage"].values()) if k.get("coverage") else k.get("max_sim_own"))} for k in r.get("claim_killshots", [])[:3]],
                 "null_space_claims": r.get("null_space_claims", [])[:2],
                 "void_vector": r.get("void_vector", {}),
 
                 "preregistration": r.get("preregistration", {}),
+
+                "controls": r.get("controls", {}),  # 2026-09-10: null baselines (docs/metrics.md section 10)
+
+                # 2026-09-10 (ex-self provenance): each model rewrote its OWN summary; no model scored another's
+
+                "summary_plus_meta": {"rewritten_by": "author model (self)", "scored_by": "bge sp_channels (arithmetic)",
+                                      "writer_reads_own_summary": True, "cross_model_scoring": False},
+
+                "host_model": HOST_MODEL,  # 2026-09-10: the narrating model is local and wrote none of the panel summaries
 
             },
 
@@ -1972,8 +2077,21 @@ def stage_7_write_segments(segments, seen):
                 elif _delta > 0.02:
                     _analysis_parts.append(f"{_am} doubled down and moved further from the source.")
             if _analysis_parts:
-                _rt_beats.append({"speaker": "Host", "text": "Roundtable analysis. " + " ".join(_analysis_parts), "phase": "roundtable_analysis"})
+                # 2026-09-10 (ex-self, critique SITE 5): the distances are arithmetic, not a model's verdict, and the
+                # round-three reply that is scored includes the models' explanations, which count toward distance
+                _rt_beats.append({"speaker": "Host", "text": "Roundtable analysis. Distances are cosine to the source, measured by the embedding, not by any model. " + " ".join(_analysis_parts) + " Round three replies include the models' explanations, which count toward distance.", "phase": "roundtable_analysis"})
             _rt_seg = {"beats": _rt_beats, "segment_type": "roundtable", "attribution": {"story_title": "Roundtable: " + _rt_title[:60]}}
+            # 2026-09-10 (ex-self provenance): who scored what and what each model was shown; no LLM judged any LLM
+            try:
+                _rt_seg["attribution"].update({
+                    "scorer": "bge cosine, arithmetic, no LLM judge",
+                    "judge": "bge-large-en-v1.5:cosine",
+                    "llm_judge": None,
+                    "self_read": True,
+                    "provenance": _rt_results.get("provenance") or {},
+                })
+            except Exception as _rt_pe:
+                log.debug(f"roundtable provenance skipped: {_rt_pe}")
             _rt_seg_path = SEGMENTS_DIR / f"{_rt_ts}_roundtable_segment.json"
             _rt_seg_path.write_text(json.dumps(_rt_seg, indent=2, default=str))
             log.info(f"ROUNDTABLE segment: {_rt_seg_path.name}")
@@ -2007,6 +2125,17 @@ def stage_7_write_segments(segments, seen):
                     model_quotes=_pd_quotes)
                 _pd_seg = run_pundit_desk(_pd_record)
                 if _pd_seg:
+                    # 2026-09-10 (ex-self provenance): the commentator is the local host model, which wrote
+                    # none of the quoted summaries; recorded, not assumed (run_pundit_desk defaults to _call_host)
+                    try:
+                        _pd_seg.setdefault("attribution", {}).update({
+                            "judge": f"{HOST_MODEL} (non-producer)",
+                            "commentator": f"{HOST_MODEL} (local, not a panel producer)",
+                            "judged_set": sorted(_pd_quotes),
+                            "self_excluded": True,
+                        })
+                    except Exception as _pd_pe:
+                        log.debug(f"pundit provenance skipped: {_pd_pe}")
                     _pd_path = SEGMENTS_DIR / f"{_rt_ts}_pundit_segment.json"
                     _pd_path.write_text(json.dumps(_pd_seg, indent=2, default=str))
                     log.info(f"PUNDIT DESK segment: {_pd_path.name} "

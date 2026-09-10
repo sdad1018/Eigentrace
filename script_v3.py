@@ -36,6 +36,7 @@ SEGMENTS_DIR = Path("/home/remvelchio/eigentrace/tmp/segments")
 AUDIT_LOG = Path("/mnt/c/Users/M4ISI/eigentrace/audit_log.jsonl")
 OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
 HOST_MODEL = os.getenv("HOST_MODEL", "mistral-small")
+_READINGS_SLICE = 900  # 2026-09-10: was 600; the error-bar column must not push the outlier rows out of the Director prompt
 def _load_soul_calibration():
     """Load live calibration section from soul.md"""
     soul_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "docs", "soul.md")
@@ -61,7 +62,7 @@ def _load_soul_calibration():
         # Load Current Instrument Readings
         if "Current Instrument Readings" in text:
             start = text.find("Current Instrument Readings")
-            sections.append(text[start:start+600])
+            sections.append(text[start:start+_READINGS_SLICE])
         # Load Honesty Requirement
         if "Honesty Requirement" in text:
             start = text.find("Honesty Requirement")
@@ -414,6 +415,9 @@ def _get_audit_context() -> dict:
     try:
         records = [json.loads(l) for l in AUDIT_LOG.read_text().splitlines()[-50:] if l.strip()]
         vix_totals, vix_counts, all_voids = {}, {}, []
+        # 2026-09-10: n_stories counts only records that carry per-model VIX (17 of the last 50
+        # had model_vix == {}), and the window is reported so "this week" is never asserted
+        measured = [r for r in records if r.get("model_vix")]
         for r in records:
             for name, vix in r.get("model_vix", {}).items():
                 vix_totals[name] = vix_totals.get(name, 0) + vix
@@ -421,7 +425,28 @@ def _get_audit_context() -> dict:
             all_voids.extend(r.get("void_words", []))
         avg = {n: round(vix_totals[n] / vix_counts[n], 1) for n in vix_totals}
         void_freq = Counter(all_voids).most_common(10)
-        return {"model_avg_vix": avg, "void_freq": void_freq, "n_stories": len(records)}
+        ctx = {"model_avg_vix": avg, "void_freq": void_freq, "n_stories": len(measured),
+               "n_records": len(records)}
+        try:
+            _ts = [str(r.get("timestamp") or "") for r in measured if r.get("timestamp")]
+            if _ts:
+                ctx["window"] = {"first_ts": min(_ts), "last_ts": max(_ts)}
+            from errorbars import boot_ci as _boot_ci, argmax_share as _argmax_share, per_model_lists as _pml
+            _seed = int(datetime.utcnow().strftime("%Y%m%d%H"))
+            _vals = {}
+            for r in measured:
+                for name, vix in r.get("model_vix", {}).items():
+                    if isinstance(vix, (int, float)):
+                        _vals.setdefault(name, []).append(float(vix))
+            ctx["model_vix_ci"] = {n: _boot_ci(v, seed=_seed) for n, v in _vals.items()}
+            _paired, _n_paired = _pml([{"attribution": {"model_vix": r.get("model_vix") or {}}} for r in measured])
+            if _n_paired:
+                _sh = _argmax_share(_paired, seed=_seed)
+                ctx["outlier"] = {"model": _sh["winner"], "runner_up": _sh["runner_up"],
+                                  "share": _sh["share"], "n_paired": _n_paired, "seed": _seed}
+        except Exception:
+            pass
+        return ctx
     except Exception:
         return {}
 
@@ -538,6 +563,17 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     attr = seg.get("attribution", {})
     beats_raw = seg.get("beats", [])
     title = attr.get("story_title", "Unknown")
+
+    # 2026-09-10: null-baseline controls — one sentence appended to an existing beat,
+    # '' when the probe is absent or failed (never a separate beat, never a failure string)
+    _controls = attr.get("controls") or {}
+
+    def _ctl(kind, claim=None):
+        try:
+            from controls import control_sentence as _control_sentence
+            return _control_sentence(kind, _controls, claim=claim) or ""
+        except Exception:
+            return ""
 
     # ═══ BROADCAST STATE — the predictive coding spine ═══════════════
     try:
@@ -865,7 +901,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         density_read = f"Consensus density is {density:.3f}. High friction. The models disagree significantly on how to frame this story."
     script.append({
         "speaker": "Host",
-        "text": density_read,
+        "text": density_read + _ctl("beat_04_density"),
         "phase": "beat_04_density",
     })
 
@@ -882,7 +918,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
                 f"The missing words include: {', '.join(_absent_words[:10])}. "
                 f"These are not obscure terms. They are the specific details the article reported "
                 f"that every model chose to omit."
-            ),
+            ) + _ctl("beat_04b_absent_words"),
             "phase": "beat_04b_absent_words",
         })
 
@@ -1061,7 +1097,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
                 f"Entity retention: {comp.get('entity_retention', 0):.2f}. "
                 f"Attribution buffers inserted: {comp.get('attribution_buffer', {}).get('total', 0)}. "
                 f"Overall compression score: {comp.get('compression_score', 0):.2f}."
-            ),
+            ) + _ctl("beat_11_compression_report"),
             "phase": "beat_11_compression_report",
         })
     else:
@@ -1269,7 +1305,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         ks_text = "Source fact killshots. "
         for ks in _ks_named:
             omitters = ", ".join(ks.get("omitted_by", []))
-            ks_text += f"The claim: {ks['claim']}. Salience: {ks['salience']:.2f}. Omitted by: {omitters}. "
+            ks_text += f"The claim: {ks['claim']}. Salience: {ks['salience']:.2f}. Omitted by: {omitters}." + _ctl("beat_15_killshots", claim=ks.get("claim")) + " "
         script.append({"speaker": "Host", "text": ks_text, "phase": "beat_15_killshots"})
         if _state:
             for _ks in _ks_named:
@@ -1493,12 +1529,24 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             "Professional broadcast tone. English only."
         )
         rag_ctx = _rag_context(title)
+        # 2026-09-10: the outlier line carries its runner-up and bootstrap share, and the sample line
+        # names the window instead of asserting "this week"
+        _hot_line = f"Model with highest average friction: {hottest}"
+        _ol = audit_ctx.get("outlier") or {}
+        if _ol.get("share") is not None and _ol.get("runner_up"):
+            _hot_line += f" (runner-up {_ol['runner_up']}; {_ol['share']:.0%} of resamples)"
+        _win = audit_ctx.get("window") or {}
+        if _win.get("first_ts") and _win.get("last_ts"):
+            _n_line = (f"Stories analyzed in this window: {audit_ctx.get('n_stories', 0)} "
+                       f"(records from {str(_win['first_ts'])[:10]} to {str(_win['last_ts'])[:10]})")
+        else:
+            _n_line = f"Stories analyzed this week: {audit_ctx.get('n_stories', 0)}"
         pattern_usr = (
             f"Current story: {title}\n"
             f"Current void words: {void_str}\n"
             f"Most common void words this week: {', '.join(w for w, _ in top_voids[:5])}\n"
-            f"Model with highest average friction: {hottest}\n"
-            f"Stories analyzed this week: {audit_ctx.get('n_stories', 0)}\n"
+            f"{_hot_line}\n"
+            f"{_n_line}\n"
             f"{rag_ctx}"
         )
         pattern_text = _call_host(pattern_sys, pattern_usr)
@@ -1511,34 +1559,60 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     # ── 17b. SUPPRESSION TRAJECTORY (system-proposed beat) ─────────────
     # This beat was proposed by the soul_updater on 2026-04-16.
     # The system detected it had trend data but no way to report it.
+    # 2026-09-10: the trajectory is no longer parsed from overlapping soul_history snapshots. Each
+    # metric is computed on two DISJOINT 24 h windows of story segments (errorbars.compute_window_delta,
+    # each window bootstrapped independently) and the change carries n and a 95% interval; a direction
+    # is only spoken when the interval excludes zero.
     try:
-        from soul_updater import compute_trends
-        _trends = compute_trends()
-        if _trends:
-            _trend_parts = []
-            for metric, data in _trends.items():
-                if data["direction"] != "stable" and data["n_readings"] >= 3:
-                    _trend_parts.append(
-                        f"{metric.replace('_', ' ')} is {data['direction']} "
-                        f"from {data['earlier_avg']:.3f} to {data['recent_avg']:.3f}"
-                    )
-            if _trend_parts:
-                _trend_text = "Compression trajectory. Over the last 24 hours: "
-                _trend_text += ". ".join(_trend_parts) + ". "
-                _trend_text += "These are not single-story findings. These are directional shifts in how models collectively reshape content over time."
-                script.append({
-                    "speaker": "Host",
-                    "text": _trend_text,
-                    "phase": "beat_17b_trajectory",
-                })
-                # Feed into BroadcastState
-                if _state:
-                    for metric, data in _trends.items():
-                        if data["direction"] != "stable":
-                            _state.beliefs.append(
-                                f"Trajectory: {metric.replace('_', ' ')} is {data['direction']} "
-                                f"({data['earlier_avg']:.3f} to {data['recent_avg']:.3f})."
-                            )
+        from soul_updater import load_recent_segments
+        from errorbars import is_story as _eb_is_story, split_windows as _eb_split, metric_series as _eb_series, compute_window_delta as _eb_delta
+        _segs48 = [s for s in load_recent_segments(hours=48) if _eb_is_story(s)]
+        _win_now, _win_prev = _eb_split(_segs48, hours=24)
+        _ser_now, _ser_prev = _eb_series(_win_now), _eb_series(_win_prev)
+        _traj_seed = int(datetime.utcnow().strftime("%Y%m%d%H"))
+        _traj_metrics = [("density", "Density", 3), ("absent_ratio", "Content loss", 3), ("verb_drift", "Verb drift", 3),
+                         ("entity_retention", "Entity retention", 3), ("hedges", "Hedges per story", 1)]
+        _traj = {}
+        for _key, _label, _dg in _traj_metrics:
+            _d = _eb_delta(_ser_now.get(_key, []), _ser_prev.get(_key, []), seed=_traj_seed)
+            if _d and _d.get("dlo") is not None:
+                _traj[_key] = _d
+        if "density" in _traj:
+            _traj_sentences, _traj_unresolved, _traj_resolved = [], [], False
+            for _key, _label, _dg in _traj_metrics:
+                _d = _traj.get(_key)
+                if not _d:
+                    continue
+                if _key == "density" or _d["resolved"]:
+                    # spoken text: numbers as digits, signs and "percent" as words (Piper reads the beat verbatim;
+                    # "95%", "+0.003" and "n=9" are not plain speech)
+                    _sg = lambda _x: ("minus " if _x < 0 else "plus ") + f"{abs(_x):.{_dg}f}"
+                    _s = (f"{_label} moved from {_d['earlier']:.{_dg}f} to {_d['recent']:.{_dg}f} over the last 24 hours "
+                          f"({_d['n_prev']} stories then {_d['n_now']} stories; 95 percent interval on the change "
+                          f"{_sg(_d['dlo'])} to {_sg(_d['dhi'])}).")
+                    if _d["resolved"]:
+                        _s += f" {_label} is {_d['direction']}."
+                        _traj_resolved = True
+                    else:
+                        _s += " Direction not resolved at this sample size."
+                    _traj_sentences.append(_s)
+                else:
+                    _traj_unresolved.append(_label.lower())
+            _trend_text = "Compression trajectory. " + " ".join(_traj_sentences)
+            if _traj_unresolved:
+                _u = ", ".join(_traj_unresolved)
+                _trend_text += f" {_u[0].upper() + _u[1:]}: direction not resolved at this sample size."
+            if _traj_resolved:
+                _trend_text += " These are not single-story findings. These are directional shifts in how models collectively reshape content over time."
+            script.append({
+                "speaker": "Host",
+                "text": _trend_text,
+                "phase": "beat_17b_trajectory",
+            })
+            # Feed into BroadcastState (the same sentences, so the synthesis cannot overstate them)
+            if _state:
+                for _s in _traj_sentences:
+                    _state.beliefs.append(f"Trajectory: {_s}")
     except:
         pass  # Non-blocking
     # ── 18. MATH EXPLAINER (Pre-written) ─────────────────────────────
@@ -1569,7 +1643,7 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         _all_records = load_all_signals()
         _matches = find_state_matches(_all_records[-2000:], _sv_vec, _best6)
         _prev = [m for m in _matches if m.get("title","") != title]
-        _sv_text = _ching_format(_sv_vec, matches=_prev, total_seen=len(_all_records))
+        _sv_text = _ching_format(_sv_vec, matches=_prev, total_seen=len(_all_records[-2000:]))  # 2026-09-10: one denominator -- the matches come from the same 2000-record window
 
         # Classify the signature into a named archetype (fixes _sv_name bug:
         # _sv_name was never assigned). classify() returns a dict with name/sig.

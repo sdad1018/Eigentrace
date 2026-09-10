@@ -539,7 +539,10 @@ def run_story_ensemble(story_title, source_text, response_texts,
 
 
 # ── beats ─────────────────────────────────────────────────────────────
-def build_ensemble_beats(ens, story_title=""):
+def build_ensemble_beats(ens, story_title="", controls=None):
+    """controls (2026-09-10, optional): attribution.controls; the void-pool null
+    sentence is appended to the ensemble_top5 text because beat_06_void_reveal
+    is absorbed whenever the ensemble runs, so this is where the void words air."""
     if not ens or not ens.get("top5"):
         return []
     beats = []
@@ -559,10 +562,17 @@ def build_ensemble_beats(ens, story_title=""):
     for c in ens["top5"]:
         parts.append(f"{c['word']}, surfaced by {c['votes']} "
                      f"channel{'s' if c['votes'] != 1 else ''}")
+    _top5_text = ("Top five ensemble voids after deduplication: "
+                  + "; ".join(parts) + ".")
+    if controls:
+        try:
+            from controls import control_sentence as _control_sentence
+            _top5_text += _control_sentence("void", controls) or ""
+        except Exception:
+            pass
     beats.append(dict(
         speaker="Host", phase="ensemble_top5",
-        text=("Top five ensemble voids after deduplication: "
-              + "; ".join(parts) + ".")))
+        text=_top5_text))
     arms = ens.get("arms", [])
     if arms:
         lines = []
@@ -613,7 +623,7 @@ def weave_beats(beats, r):
             return beats
         absorbed = set(ens.get("absorbs") or [])
         kept = [b for b in beats if b.get("phase") not in absorbed]
-        eb = build_ensemble_beats(ens)
+        eb = build_ensemble_beats(ens, controls=(r or {}).get("controls"))
         cut = len(kept)
         for i, b in enumerate(kept):
             if "outro" in str(b.get("phase", "")):

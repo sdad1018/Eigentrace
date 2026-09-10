@@ -739,6 +739,7 @@ def capture_bases(ir, n: int, kinds: tuple[int, int, int], base_seed: int, froze
     ir.log.setLevel(logging.ERROR)
     bases: list[dict] = []
     seen: set[str] = set()
+    topics: set[str] = set()
     tries = 0
     try:
         while sum(quotas.values()) > 0 and tries < max_tries:
@@ -752,9 +753,14 @@ def capture_bases(ir, n: int, kinds: tuple[int, int, int], base_seed: int, froze
             h = _sha256(r["user_prompt"])
             if h in seen:
                 continue
+            # production rotation only avoids the last 12 archived topics; prefer distinct
+            # topics here and allow a repeat only once half the seed budget is spent.
+            if r["topic"].strip().lower() in topics and tries <= max_tries // 2:
+                continue
             if frozen_block not in r["system_prompt"]:
                 raise RuntimeError("frozen block not present verbatim in the captured system prompt")
             seen.add(h)
+            topics.add(r["topic"].strip().lower())
             quotas[kind] -= 1
             bases.append({"id": len(bases), "seed": seed, "kind": kind, "topic": r["topic"], "question": r["question"],
                           "context_titles": r["context_titles"], "n_stories_available": r["n_stories_available"],

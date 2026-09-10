@@ -316,3 +316,5 @@ description: "Deterministic geometry on frozen embeddings measures what a model 
 </div>
 </div>
 </div>
+
+Every live probe now airs a null-baseline control beside its number; definitions and replay distributions are in [docs/metrics.md, section 10](metrics.md#10-controls-null-baselines).

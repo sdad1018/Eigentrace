@@ -116,12 +116,24 @@ def introspect_pipeline():
 
 def load_recent_segments(hours=24):
     cutoff = datetime.utcnow() - timedelta(hours=hours)
+    # 2026-09-10: one shared definition of "story" (errorbars.is_story) so the header n is the
+    # n the metrics are measured over; wild_weasel probes carry no model_vix and drop out too
+    try:
+        from errorbars import is_story as _is_story
+    except Exception:
+        _is_story = None
+    cutoff_day = cutoff.strftime("%Y%m%d")
     segments = []
     for f in glob.glob(os.path.join(SEGMENT_DIR, "*_segment.json")):
         try:
+            _base = os.path.basename(f)
+            if _base[:8].isdigit() and _base[:8] < cutoff_day:
+                continue  # 2026-09-10: filename date precedes the window; skip the json.load
             d = json.load(open(f))
             if d.get("segment_type") in ("idle", "silence", "consolidation", "weekly_compression", "governance", "foraging", "self_audit", "roundtable", "pundit_desk", "conversation"):
                 continue  # 2026-09-04: own output is not a story
+            if _is_story is not None and not _is_story(d):
+                continue
             ts = datetime.strptime(d["timestamp"], "%Y%m%d_%H%M%S")
             if ts > cutoff:
                 segments.append(d)
@@ -130,7 +142,7 @@ def load_recent_segments(hours=24):
     return segments
 
 
-def compute_calibration(segments):
+def compute_calibration(segments, seed=None):
     if not segments:
         return None
 
@@ -178,7 +190,7 @@ def compute_calibration(segments):
     outlier = max(model_avg_vix, key=model_avg_vix.get) if model_avg_vix else "unknown"
     aligned = min(model_avg_vix, key=model_avg_vix.get) if model_avg_vix else "unknown"
 
-    return {
+    cal = {
         "stories": len(segments),
         "density": avg(densities),
         "verb_drift": avg(verb_drifts),
@@ -192,6 +204,37 @@ def compute_calibration(segments):
         "model_health": model_response_counts,
         "updated": datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
     }
+
+    # 2026-09-10: error bars (additive keys; errorbars.py). n_measured is the n the density is
+    # measured over -- compute_calibration drops zero readings per metric, so it differs from
+    # cal["stories"]. Seed = int(YYYYMMDDHH) of the run, stored next to every interval.
+    try:
+        from errorbars import boot_ci, argmax_share, per_model_lists, hourly_seed
+        _seed = hourly_seed() if seed is None else int(seed)
+        cal["seed"] = _seed
+        cal["n_measured"] = len(densities)
+        cal["n"] = {"stories": len(segments), "density": len(densities), "verb_drift": len(verb_drifts),
+                    "entity_retention": len(entity_retentions), "absent_ratio": len(absent_ratios),
+                    "hedges": len(hedge_counts)}
+        cal["density_ci"] = boot_ci(densities, seed=_seed)
+        cal["absent_ratio_ci"] = boot_ci(absent_ratios, seed=_seed)
+        cal["verb_drift_ci"] = boot_ci(verb_drifts, seed=_seed)
+        cal["entity_retention_ci"] = boot_ci(entity_retentions, seed=_seed)
+        cal["hedges_per_story_ci"] = boot_ci(hedge_counts, seed=_seed)
+        cal["model_vix_ci"] = {m: boot_ci(scores, seed=_seed) for m, scores in vix_scores.items() if scores}
+        _paired, _n_paired = per_model_lists(segments)
+        if _n_paired:
+            _mx = argmax_share(_paired, seed=_seed, mode="max")
+            _mn = argmax_share(_paired, seed=_seed, mode="min")
+            cal["outlier_share"] = _mx["share"]
+            cal["outlier_runner_up"] = _mx["runner_up"]
+            cal["aligned_share"] = _mn["share"]
+            cal["aligned_runner_up"] = _mn["runner_up"]
+            cal["n_paired"] = _n_paired
+    except Exception as _eb_err:
+        log.warning(f"error bars skipped: {_eb_err}")
+
+    return cal
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -770,11 +813,39 @@ def generate_soul(cal, info, diff_text):
     
     # VIX rankings
     vix_lines = []
+    _mvc = cal.get("model_vix_ci") or {}
     for m, v in sorted(cal.get("model_vix", {}).items(), key=lambda x: -x[1]):
-        vix_lines.append(f"- **{m}**: {v:.1f}")
-    
+        _c = _mvc.get(m) or {}
+        if isinstance(_c, dict) and _c.get("lo") is not None:
+            vix_lines.append(f"- **{m}**: {v:.1f} (n={_c.get('n')}, {_c['lo']:.1f}-{_c['hi']:.1f})")
+        else:
+            vix_lines.append(f"- **{m}**: {v:.1f}")
+
     # Category distribution
     cat_lines = [f"- {cat}: {n} stories" for cat, n in cal.get("top_categories", {}).items()]
+
+    # 2026-09-10: error-bar column. The Value cell stays a bare number so compute_trends()
+    # (first float-parseable cell per row) keeps parsing; the interval lives in a trailing column.
+    def _ci_cell(key, pct=False):
+        c = cal.get(key) or {}
+        n = c.get("n") if isinstance(c, dict) else None
+        if not isinstance(c, dict) or c.get("lo") is None:
+            return f"({n})" if n is not None else "n/a"
+        if pct:
+            return f"[{c['lo']:.0%}, {c['hi']:.0%}] ({n})"
+        return f"[{c['lo']:.3f}, {c['hi']:.3f}] ({n})"
+
+    def _share_cell(share_key, runner_key):
+        s = cal.get(share_key)
+        if s is None:
+            return "n/a"
+        return f"{s:.0%} of resamples; runner-up {cal.get(runner_key) or 'none'}"
+
+    _n_measured = cal.get("n_measured", cal["stories"])
+    _hedge_n = (cal.get("n") or {}).get("hedges")
+    _hedge_cell = f"({_hedge_n})" if _hedge_n is not None else "n/a"
+    _sample_line = (f"Sample: {_n_measured} measured of {cal['stories']} stories in the window. "
+                    f"Any metric whose 95% interval straddles its warning threshold is provisional; say so.")
 
     soul = f"""---
 layout: default
@@ -800,17 +871,17 @@ These layers are deterministic and reproducible. No LLM evaluates
 another LLM's output. The measurements are arithmetic on frozen
 embeddings and source text.
 
-## Current Instrument Readings ({cal['stories']} stories, last 24h)
+## Current Instrument Readings ({_n_measured} measured of {cal['stories']} stories, last 24h)
 
-| Metric | Value | Meaning |
-|--------|-------|---------|
-| Consensus Density | {cal['density']:.3f} | {'Models tightly aligned' if cal['density'] > 0.9 else 'Normal spread' if cal['density'] > 0.8 else 'Models disagree significantly'} |
-| Content Loss | {cal['absent_ratio']:.0%} | Source words absent from all model responses |
-| Verb Drift | {cal['verb_drift']:.3f} | {'Models softening language' if cal['verb_drift'] > 0.05 else 'Minimal softening'} |
-| Entity Retention | {cal['entity_retention']:.0%} | Names and numbers preserved |
-| Hedges (24h) | {cal['hedges']} | Doubt words inserted by models |
-| VIX Outlier | {cal['outlier']} | Most divergent model |
-| Most Aligned | {cal['aligned']} | Closest to consensus |
+| Metric | Value | Meaning | 95% CI (n) |
+|--------|-------|---------|------------|
+| Consensus Density | {cal['density']:.3f} | {'Models tightly aligned' if cal['density'] > 0.9 else 'Normal spread' if cal['density'] > 0.8 else 'Models disagree significantly'} | {_ci_cell('density_ci')} |
+| Content Loss | {cal['absent_ratio']:.0%} | Source words absent from all model responses | {_ci_cell('absent_ratio_ci', pct=True)} |
+| Verb Drift | {cal['verb_drift']:.3f} | {'Models softening language' if cal['verb_drift'] > 0.05 else 'Minimal softening'} | {_ci_cell('verb_drift_ci')} |
+| Entity Retention | {cal['entity_retention']:.0%} | Names and numbers preserved | {_ci_cell('entity_retention_ci', pct=True)} |
+| Hedges (24h) | {cal['hedges']} | Doubt words inserted by models | {_hedge_cell} |
+| VIX Outlier | {cal['outlier']} | Most divergent model | {_share_cell('outlier_share', 'outlier_runner_up')} |
+| Most Aligned | {cal['aligned']} | Closest to consensus | {_share_cell('aligned_share', 'aligned_runner_up')} |
 
 ## Model Friction Rankings
 {chr(10).join(vix_lines)}
@@ -826,6 +897,7 @@ _{diff_text}_
 
 ## Calibration Guidance
 {chr(10).join(warnings)}
+{_sample_line}
 
 ## Behavioral Instructions
 - When absent ratio exceeds 50%, emphasize what models are hiding.
@@ -833,6 +905,7 @@ _{diff_text}_
 - When density exceeds 0.92, warn about lockstep consensus.
 - When entity retention drops below 30%, call out name erasure.
 - Name the VIX outlier when it diverges significantly.
+- Name the outlier; if its bootstrap share is below 80% also name the runner-up.
 - If the director audit (beat 02b) corrects you, acknowledge it.
 - Do not fabricate suppression claims. If the data shows low
   compression, say so. The measurement is the authority.

@@ -4,6 +4,7 @@ import json, glob, os
 from collections import Counter, defaultdict
 
 SEGMENT_DIR = "/home/remvelchio/eigentrace/tmp/segments"
+OUT_PATH = "/mnt/c/Users/M4ISI/eigentrace/docs/eigenching_data.json"  # 2026-09-10: module-level so tests can point it at tmp
 ARCHETYPES = {
     ( 1, 1, 1, 1, 1, 1): "The Clear Channel",
     (-1,-1,-1,-1,-1,-1): "The Sealed Vault",
@@ -113,8 +114,21 @@ def generate_report():
         "generated": __import__("datetime").datetime.utcnow().isoformat(),
         "archetypes": archetypes,
     }
+    # 2026-09-10: this is a census of every segment that aired a state beat, not a sample:
+    # count and pct are exact over total_segments, so no interval is published here.
+    try:
+        import re as _re
+        report["n"] = total
+        report["census"] = True
+        report["story_files"] = sum(1 for f in files if _re.match(r"^\d{8}_\d{6}_[0-9a-f]{12}_segment\.json$", os.path.basename(f)))
+        report["ci_method"] = ("census: count and pct are exact over total_segments (segments whose "
+                               "state-vector beat named an archetype); no sampling interval applies. "
+                               "story_files counts files matching the story filename pattern, "
+                               "including wild_weasel probes; total_files counts every segment file.")
+    except Exception:
+        pass
 
-    out = "/mnt/c/Users/M4ISI/eigentrace/docs/eigenching_data.json"
+    out = OUT_PATH
     json.dump(report, open(out, "w"), indent=2)
     print(f"EigenChing report: {total} segments, {sum(1 for a in archetypes if a['count'] > 0)} archetypes observed")
     return report

@@ -73,6 +73,26 @@ for m, d in dashboard['models'].items():
     if d['coverage_pct'] <= 50:
         d['note'] = 'Insufficient coverage for ranking'
 
+# 2026-09-10: error bars (additive keys only; errorbars.py, cwd is the repo). A failure here leaves the
+# profile exactly as before so the hourly push never blanks the file.
+try:
+    import sys, datetime as _dt
+    sys.path.insert(0, '.')
+    from errorbars import boot_ci, wilson_ci
+    _seed = int(_dt.datetime.utcnow().strftime('%Y%m%d%H'))
+    for model, d in dashboard['models'].items():
+        s = model_stats[model]
+        _mc = boot_ci(s['vix'], seed=_seed)
+        _md = boot_ci(s['vix'], seed=_seed, stat='median')
+        _oc = wilson_ci(s['outlier'], s['n'])
+        d['mean_vix_ci95'] = [_mc['lo'], _mc['hi']]
+        d['median_vix_ci95'] = [_md['lo'], _md['hi']]
+        d['outlier_pct_ci95'] = [round(_oc['lo'] * 100, 1), round(_oc['hi'] * 100, 1)] if _oc else None
+        d['ci_seed'] = _seed
+    dashboard['ci_method'] = 'mean_vix_ci95 / median_vix_ci95: percentile bootstrap, B=2000, seed=' + str(_seed) + ' (int YYYYMMDDHH of the run), unit=segment; outlier_pct_ci95: Wilson 95% on outlier/segments_analyzed, in percent'
+except Exception as _eb_err:
+    print('error bars skipped: ' + str(_eb_err))
+
 json.dump(dashboard, open('docs/model_profiles.json', 'w'), indent=2)
 print(f'Profiles: {len(epoch_files)} segments, {len(dashboard[\"models\"])} models')
 "

@@ -120,20 +120,30 @@ def daily_digest(date=None, output_dir=None):
     date_fmt = f"{date[:4]}-{date[4:6]}-{date[6:8]}"
 
     # Load all segments from this date
+    # 2026-09-10: the same story filter as data_exporter (errorbars.is_story): idle / foraging /
+    # roundtable / self_audit ... segments used to be counted as stories (the 2026-09-09 ledger read
+    # "9 stories, density 0.000" on a day with zero stories)
+    try:
+        from errorbars import is_story as _is_story
+    except Exception:
+        _is_story = None
     segments = []
     weasels = []
+    n_skipped = 0
     for p in sorted(SEGMENTS_DIR.glob(f"{date}*_segment.json")):
         try:
             seg = json.loads(p.read_text())
             if seg.get("segment_type") == "wild_weasel":
                 weasels.append(seg)
+            elif _is_story is not None and not _is_story(seg):
+                n_skipped += 1
             else:
                 segments.append(seg)
         except Exception:
             continue
 
     if not segments:
-        log.warning(f"No segments found for {date}")
+        log.warning(f"No story segments found for {date} ({n_skipped} non-story segments skipped)")
         return ""
 
     # ══════════════════════════════════════════════════════════════════
@@ -159,6 +169,31 @@ def daily_digest(date=None, output_dir=None):
             model_vix_counts[name] = model_vix_counts.get(name, 0) + 1
     model_avg_vix = {n: round(model_vix_totals[n] / model_vix_counts[n], 1)
                      for n in sorted(model_vix_totals)}
+
+    # 2026-09-10: error bars (errorbars.py) -- seeded with int(date) so the ledger is reproducible
+    _eb = {}
+    try:
+        from errorbars import boot_ci as _boot_ci, wilson_ci as _wilson_ci, argmax_share as _argmax_share, per_model_lists as _pml
+        _seed = int(date[:8])
+        _eb["seed"] = _seed
+        _eb["density"] = _boot_ci(all_densities, seed=_seed)
+        _eb["vix"] = _boot_ci(all_vix, seed=_seed)
+        _per_model_vals = {}
+        for seg in segments:
+            for name, vix in seg.get("attribution", {}).get("model_vix", {}).items():
+                if isinstance(vix, (int, float)):
+                    _per_model_vals.setdefault(name, []).append(float(vix))
+        _eb["model"] = {name: _boot_ci(vals, seed=_seed) for name, vals in _per_model_vals.items()}
+        _paired, _n_paired = _pml(segments)
+        _eb["outlier"] = _argmax_share(_paired, seed=_seed) if _n_paired else None
+        _eb["states"] = {
+            "LOCKSTEP": _wilson_ci(n_lockstep, n_stories),
+            "CONTESTED": _wilson_ci(n_contested, n_stories),
+            "HIGH_FRICTION": _wilson_ci(n_friction, n_stories),
+        }
+    except Exception as _eb_err:
+        log.warning(f"error bars skipped: {_eb_err}")
+        _eb = {}
 
     # Count unique stories (by guid)
     unique_guids = set()
@@ -205,18 +240,58 @@ def daily_digest(date=None, output_dir=None):
     L.append("## Daily Summary")
     L.append("")
     L.append(f"**Stories analyzed:** {n_stories} ({len(unique_guids)} unique)")
-    L.append(f"**Mean consensus density:** {mean_density:.3f}")
-    L.append(f"**Mean model friction (VIX):** {mean_vix:.1f}")
-    L.append(f"**State breakdown:** {n_lockstep} lockstep / {n_contested} contested / {n_friction} high friction")
+    # 2026-09-10: each day mean carries its n and a 95% percentile-bootstrap interval
+    _dci = _eb.get("density") or {}
+    _vci = _eb.get("vix") or {}
+    if _dci.get("lo") is not None:
+        L.append(f"**Mean consensus density:** {mean_density:.3f} (95% CI {_dci['lo']:.3f}-{_dci['hi']:.3f}, n={_dci['n']})")
+    else:
+        L.append(f"**Mean consensus density:** {mean_density:.3f}")
+    if _vci.get("lo") is not None:
+        L.append(f"**Mean model friction (VIX):** {mean_vix:.1f} (95% CI {_vci['lo']:.1f}-{_vci['hi']:.1f}, n={_vci['n']})")
+    else:
+        L.append(f"**Mean model friction (VIX):** {mean_vix:.1f}")
+    # 2026-09-10: null-baseline controls (docs/metrics.md section 10); silent when no segment carries them
+    try:
+        from controls import summarize_controls as _ctl_sum
+        _cs = _ctl_sum([s.get("attribution", {}).get("controls") for s in segments])
+        if _cs.get("mean_density_control") is not None:
+            L.append(f"**Mean density (mixed-panel null):** {_cs['mean_density_control']:.3f} "
+                     f"({_cs['stories_with_controls']} stories with controls)")
+    except Exception:
+        pass
+    _st = _eb.get("states") or {}
+    if _st.get("LOCKSTEP") and _st.get("CONTESTED") and _st.get("HIGH_FRICTION"):
+        def _wp(c):
+            return f"{c['point']:.0%}, CI {c['lo']:.0%}-{c['hi']:.0%}"
+        L.append(f"**State breakdown:** {n_lockstep} lockstep ({_wp(_st['LOCKSTEP'])}) / "
+                 f"{n_contested} contested ({_wp(_st['CONTESTED'])}) / "
+                 f"{n_friction} high friction ({_wp(_st['HIGH_FRICTION'])})")
+    else:
+        L.append(f"**State breakdown:** {n_lockstep} lockstep / {n_contested} contested / {n_friction} high friction")
     L.append("")
 
     # Per-model daily friction
     L.append("**Model Daily Friction (avg VIX across all stories):**")
     L.append("")
+    _mci = _eb.get("model") or {}
     for name in sorted(model_avg_vix, key=lambda n: -model_avg_vix[n]):
         bar = "█" * int(model_avg_vix[name] / 2)
-        L.append(f"- {name}: {model_avg_vix[name]} {bar}")
+        _c = _mci.get(name) or {}
+        if _c.get("lo") is not None:
+            L.append(f"- {name}: {model_avg_vix[name]:.1f} [{_c['lo']:.1f}, {_c['hi']:.1f}] n={_c['n']} {bar}")
+        elif _c.get("n"):
+            L.append(f"- {name}: {model_avg_vix[name]:.1f} n={_c['n']} {bar}")
+        else:
+            L.append(f"- {name}: {model_avg_vix[name]} {bar}")
     L.append("")
+    # 2026-09-10: the honest number behind "the outlier" is how often it keeps the title under resampling
+    _out = _eb.get("outlier") or {}
+    if _out.get("winner") and _out.get("share") is not None:
+        _ru = _out.get("runner_up") or "none"
+        L.append(f"**Daily VIX outlier:** {_out['winner']} (keeps the title in {_out['share']:.0%} of resamples; runner-up {_ru})")
+        L.append(f"*Intervals: percentile bootstrap, B=2000, seed={_eb.get('seed')}, unit=story.*")
+        L.append("")
 
     # Multi-channel confirmation
     if dual_confirmed:
@@ -307,6 +382,14 @@ def daily_digest(date=None, output_dir=None):
         overlap = v_set_raw & l_set_raw
         if overlap:
             L.append(f"**Dual-channel confirmed:** {', '.join(overlap)}")
+        # 2026-09-10: null-baseline controls line (docs/metrics.md section 10); absent on older segments
+        try:
+            from controls import ledger_line as _ctl_line
+            _ctl_txt = _ctl_line(attr.get("controls") or {})
+            if _ctl_txt:
+                L.append(f"**Controls:** {_ctl_txt}")
+        except Exception:
+            pass
         L.append("")
 
         # Killshots

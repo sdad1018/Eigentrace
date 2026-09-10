@@ -91,6 +91,8 @@ def export_daily_json(date=None):
 
             # Language compression (Layers 13-15)
             "compression": attr.get("compression", {}),
+            # 2026-09-10: null-baseline controls (verbatim; docs/metrics.md section 10)
+            "controls": attr.get("controls", {}),
             # Source-anchored void
             "source_void": attr.get("source_void", {}),
             # Void context (signal type per word)
@@ -132,27 +134,21 @@ def export_daily_json(date=None):
             } for b in w.get("beats", [])],
         })
 
-    # Cross-story aggregates
-    void_freq = Counter(all_voids).most_common(30)
-    logos_freq = Counter(all_logos).most_common(30)
-    dual_global = set(w for w, _ in void_freq[:20]) & set(w for w, _ in logos_freq[:20])
+    # 2026-09-10: error bars -- n and seeded 95% intervals next to every day mean (errorbars.py);
+    # the pre-existing keys keep their formulas, an empty day publishes n=0 and null (never 0.0)
+    summary = summarize_stories(stories, seed=int(date[:8]), all_voids=all_voids, all_logos=all_logos)
+    summary["weasel_probes"] = len(weasel_data)
 
     output = {
         "version": "eigentrace-data-v1",
+        "schema_revision": "1.1",  # 2026-09-10: error-bar fields (see schema_additions); version string pinned by tests/test_controls.py
         "date": date_fmt,
         "generated_at": datetime.utcnow().isoformat() + "Z",
         "source": "https://github.com/sdad1018/Eigentrace",
         "license": "MIT",
 
-        "summary": {
-            "stories_analyzed": len(stories),
-            "weasel_probes": len(weasel_data),
-            "mean_density": round(sum(s["consensus_density"] for s in stories) / max(len(stories), 1), 3),
-            "mean_vix": round(sum(s["mean_vix"] for s in stories) / max(len(stories), 1), 1),
-            "dual_confirmed_global": sorted(dual_global),
-            "top_void_words": [{"word": w, "count": c} for w, c in void_freq],
-            "top_logos_words": [{"word": w, "count": c} for w, c in logos_freq],
-        },
+        "summary": summary,
+        "schema_additions": SCHEMA_ADDITIONS,
 
         "stories": stories,
         "weasel_probes": weasel_data,
@@ -165,6 +161,13 @@ def export_daily_json(date=None):
     except Exception as _pe:
         log.warning(f"preregistration export skipped: {_pe}")
 
+    # 2026-09-10: null-baseline controls — day means over the stories that carry them
+    try:
+        from controls import summarize_controls as _ctl_sum
+        output["summary"]["controls"] = _ctl_sum([s.get("controls") for s in stories])
+    except Exception as _ce:
+        log.warning(f"controls summary skipped: {_ce}")
+
     # Write to docs/data/
     data_dir = DOCS_DIR / "data"
     data_dir.mkdir(parents=True, exist_ok=True)
@@ -173,6 +176,88 @@ def export_daily_json(date=None):
     log.info(f"Exported {len(stories)} stories to {out_path}")
 
     return output
+
+
+# ─── 2026-09-10: error bars on the day summary (errorbars.py) ────────────
+
+SCHEMA_ADDITIONS = ["summary.n", "summary.n_unique_guid", "summary.mean_density_ci95",
+                    "summary.mean_vix_ci95", "summary.per_model_vix", "summary.outlier",
+                    "summary.state_rates", "summary.killshots_per_story", "summary.ci_method",
+                    "summary.ci_seed"]
+
+
+def summarize_stories(stories, seed=0, all_voids=None, all_logos=None):
+    """
+    Pure summary of one day's story records (the dicts export_daily_json builds).
+    The pre-existing keys keep their exact formulas (plain means over stories);
+    when there are no stories mean_density / mean_vix are null and n is 0.
+    Everything else is additive: n, per-model means with a percentile-bootstrap
+    95% interval, the bootstrap share with which the day's VIX outlier keeps its
+    title, Wilson intervals on the state rates, and the seed used.
+    """
+    if all_voids is None:
+        all_voids = [w for s in stories for w in (s.get("void_words") or [])]
+    if all_logos is None:
+        all_logos = [w for s in stories for w in (s.get("logos_words") or [])]
+    void_freq = Counter(all_voids).most_common(30)
+    logos_freq = Counter(all_logos).most_common(30)
+    dual_global = set(w for w, _ in void_freq[:20]) & set(w for w, _ in logos_freq[:20])
+    n = len(stories)
+
+    summary = {
+        "stories_analyzed": n,
+        "weasel_probes": 0,
+        "mean_density": round(sum(s["consensus_density"] for s in stories) / n, 3) if n else None,
+        "mean_vix": round(sum(s["mean_vix"] for s in stories) / n, 1) if n else None,
+        "dual_confirmed_global": sorted(dual_global),
+        "top_void_words": [{"word": w, "count": c} for w, c in void_freq],
+        "top_logos_words": [{"word": w, "count": c} for w, c in logos_freq],
+        "n": n,
+        "n_unique_guid": len(set(s.get("guid", "") for s in stories)) if n else 0,
+    }
+
+    try:
+        from errorbars import boot_ci, wilson_ci, argmax_share, per_model_lists
+        seed = int(seed)
+        d_ci = boot_ci([s["consensus_density"] for s in stories], seed=seed)
+        v_ci = boot_ci([s["mean_vix"] for s in stories], seed=seed)
+        summary["mean_density_ci95"] = [d_ci["lo"], d_ci["hi"]]
+        summary["mean_vix_ci95"] = [v_ci["lo"], v_ci["hi"]]
+
+        per_model = {}
+        for s in stories:
+            for m, v in (s.get("model_vix") or {}).items():
+                if isinstance(v, (int, float)) and not isinstance(v, bool):
+                    per_model.setdefault(m, []).append(float(v))
+        pm = {}
+        for m in sorted(per_model):
+            c = boot_ci(per_model[m], seed=seed)
+            pm[m] = {"mean": round(c["mean"], 1) if c["mean"] is not None else None,
+                     "ci95": [c["lo"], c["hi"]], "n": c["n"], "seed": seed}
+        summary["per_model_vix"] = pm
+
+        paired, n_paired = per_model_lists([{"attribution": {"model_vix": s.get("model_vix") or {}}} for s in stories])
+        share = argmax_share(paired, seed=seed) if n_paired else None
+        summary["outlier"] = {
+            "model": share["winner"] if share else None,
+            "runner_up": share["runner_up"] if share else None,
+            "bootstrap_share": share["share"] if share else None,
+            "n_paired": n_paired,
+            "seed": seed,
+        }
+
+        states = [s.get("state_flag", "") for s in stories]
+        summary["state_rates"] = {
+            flag: wilson_ci(sum(1 for x in states if x == flag), n)
+            for flag in ("LOCKSTEP", "CONTESTED", "HIGH_FRICTION")
+        }
+        k_ci = boot_ci([len(s.get("claim_killshots") or []) for s in stories], seed=seed)
+        summary["killshots_per_story"] = {"n": k_ci["n"], "point": k_ci["mean"], "ci95": [k_ci["lo"], k_ci["hi"]], "seed": seed}
+        summary["ci_method"] = f"percentile bootstrap, B=2000, seed={seed}, unit=story"
+        summary["ci_seed"] = seed
+    except Exception as _eb:
+        log.warning(f"error bars skipped: {_eb}")
+    return summary
 
 
 # ─── 2026-09-10: pre-registration ledger export ─────────────────────────
