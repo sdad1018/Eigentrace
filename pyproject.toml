@@ -3,9 +3,9 @@ requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "omniteardown"
-version = "0.4.0"
-description = "Evidence-firewalled prospect enrichment: probe -> research -> draft -> audit -> forage -> brief. Models cite facts; code writes them."
+name = "eigentrace"
+version = "0.5.0"
+description = "EigenTrace: measures what frontier language models drop, soften and keep when they summarize live news, as deterministic geometry on frozen embeddings (bge-large-en-v1.5)."
 requires-python = ">=3.10"
 # Direct dependencies of the production modules (see requirements.txt; exact versions in requirements.lock.txt).
 # 2026-09-10: replaced the three-item list. `anthropic` stays because teardown_agent/teardown_audit import it.
@@ -29,6 +29,7 @@ dependencies = [
     "anthropic",
 ]
 
+# legacy: the omniteardown prospect-research tool (teardown_*.py, forager.py) shares this repository; its entry point stays.
 [project.scripts]
 teardown = "forager:main"
 

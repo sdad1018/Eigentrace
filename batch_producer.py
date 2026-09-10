@@ -22,7 +22,7 @@ v2 changes:
 
   - DEBATE MODE: Divergent models called back for real follow-up via API
 
-  - MIT-PROOF: Qwen hosts with measurement language, no editorializing people
+  - MIT-PROOF: the host model (HOST_MODEL, default mistral-small) narrates with measurement language, no editorializing people
 
   - PNG images (master.sh expects PNG, not JPG)
 
@@ -36,7 +36,7 @@ Pipeline per batch (~3 stories):
 
     Stage 3: Geometric analysis + per-model VIX          (CPU/light GPU)
 
-    Stage 4: Broadcast script: real voices + Qwen host   (GPU: Ollama)
+    Stage 4: Broadcast script: real voices + local host model (GPU: Ollama)
 
     Stage 5: Unload Ollama                               (VRAM cleanup)
 
@@ -1185,7 +1185,7 @@ def _compute_void(headline, response_texts, eng, vt, pool_size=200, k=5):
 
 def _call_host(system: str, user: str, temperature: float = 0.7) -> str:
 
-    """Call Qwen via Ollama."""
+    """Call the host model (HOST_MODEL, default mistral-small) via Ollama."""
 
     prompt = (f"<|im_start|>system\n{system}<|im_end|>\n"
 
