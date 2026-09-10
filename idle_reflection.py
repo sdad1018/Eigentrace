@@ -38,6 +38,7 @@ from __future__ import annotations
 
 import ast
 import datetime
+import hashlib
 import json
 import logging
 import os
@@ -402,10 +403,11 @@ def measurement_block() -> str:
 
 def perception_block(now: datetime.datetime, counts: dict, ent: str) -> str:
     dow = now.strftime("%A")
-    lunar = int((now.timestamp() / 86400) % 29.53)
+    # 2026-09-10: lunar age anchored to the 2000-01-06 18:14Z new moon with the synodic period (was epoch-anchored, ~3 weeks off).
+    lunar = int(((now.astimezone(datetime.timezone.utc) - datetime.datetime(2000, 1, 6, 18, 14, tzinfo=datetime.timezone.utc)).total_seconds() / 86400) % 29.530588853)
     doy = (now - datetime.datetime(now.year, 1, 1)).days
     market = "open" if dow not in ("Saturday", "Sunday") and 9 <= now.hour < 16 else "closed"
-    t = (f"TIME: {dow} {now.strftime('%H:%M')} EDT | Lunar day {lunar}/29 | Day {doy}/365 | Market: {market} | "
+    t = (f"TIME: {dow} {now.strftime('%H:%M')} {now.astimezone().tzname()} | Lunar day {lunar}/29 | Day {doy}/365 | Market: {market} | "
          f"Today: {counts['stories']} stories, {counts['idle']} reflections, {counts['forage']} foraging")
     body = "BODY: sensors unavailable"
     try:
@@ -547,7 +549,8 @@ def _generate(dry_run: bool):
         past = "\n\nEARLIER REMARKS OF YOURS (do not repeat; build on or contradict them):\n" + \
                "\n".join("- " + re.sub(r"\s+", " ", r["spoken"])[:220] for r in pool)
 
-    system = SYSTEM_TMPL.format(perception=perception_block(now, counts, ent), question=question)
+    perception = perception_block(now, counts, ent)
+    system = SYSTEM_TMPL.format(perception=perception, question=question)
     user = f"RECENT COVERAGE\n{cards}{past}\n\nThink first, then answer the question: {question}"
 
     attempts, text, flags = [], "", []
@@ -601,6 +604,14 @@ def _generate(dry_run: bool):
             "generator": "idle_reflection.py",
         },
     }
+    # 2026-09-10 audit fields: the exact perception block that was injected, which attempt aired
+    # (2 = the REMINDER retry at temperature 0.7), and a hash of the prompt pair actually sent.
+    try:
+        seg["attribution"]["perception"] = perception
+        seg["attribution"]["attempt"] = attempt + 1
+        seg["attribution"]["prompt_hash"] = hashlib.sha256((system + user).encode("utf-8")).hexdigest()
+    except Exception as e:
+        log.debug("attribution audit fields skipped: %s", e)
     path = SEGMENTS_DIR / f"{ts}_idle_segment.json"
     path.write_text(json.dumps(seg, indent=2))
     log.info("IDLE: reflection on '%s' [%s] (%d chars, %.0fs) | %s", topic[:60], kind, len(text),

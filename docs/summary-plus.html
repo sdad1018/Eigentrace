@@ -232,7 +232,7 @@
       <tr><td><span class="gold">Human ceiling (gold)</span></td><td><span class="gold">4.24</span></td><td><span class="gold">+1.74</span></td><td><span class="gold">2.64</span></td><td><span class="gold">0.03</span></td></tr>
     </tbody>
   </table>
-  <p class="tnote">blind panel, 5 judges, n ≈ 577–615 per arm · insight & faithfulness on a 1–5 scale · provenance coded per sentence</p>
+  <p class="tnote">blind panel, 5 judges, n ≈ 577–615 per arm · insight & faithfulness on a 1–5 scale · provenance coded per sentence · the 5 judges are the same 5 models that wrote the summaries (each author's own model is one of its five judges, ~1/5 of scores); scores are clustered by story (7) and author (5)</p>
 
   <p>Insight rises from 2.50 to 3.36 — a measured lift, with the analogy column pinned at <strong>0.00</strong> across every arm. That zero is the load-bearing number on this page. When sentences are coded for where their content comes from, the baseline is almost pure observation (0.99 observation, 0.01 inference); the enriched arms shift toward <em>grounded inference</em> (0.34–0.45) while importing <strong>no outside analogy at all</strong>. The method reads further into the source without reaching outside it. That is the line between reading and confabulating, and the instrument says the method stays on the right side of it.</p>
 
@@ -329,9 +329,9 @@ cands  = [w <span class="k">for</span> w in top(sims)
       <tr class="hi"><td>Surfacing + discipline (A·C)</td><td>3.32</td><td>0.35</td><td>0.00</td></tr>
     </tbody>
   </table>
-  <p class="tnote">blind panel, 5 judges, n = 788 per arm · geometry − prompt insight Δ = −0.03</p>
+  <p class="tnote">blind panel of the same 5 models that wrote the summaries (each author's own model is one of its five judges, ~1/5 of scores); 175 summaries per arm, 788 parsed scores per arm; geometry − prompt insight Δ = −0.03 · no model is the sole judge of its own output; all 5 score every item · scores are clustered by story (7) and author (5); treat n as 175 summaries, not 788 · ex-self re-score in progress</p>
 
-  <p>The two land in the same place. On insight, the centroid surfacing and the bare prompt reach <strong>the same depth</strong> — Δ = −0.03 across 788 judgements, analogy at 0.00 in both. And the convergence surfacing reaches the same concepts a prompt does (92%). Both geometric routes converge on what a tuned prompt already reaches. We report this plainly, because it is the honest finding and because it is the foundation of the claim, not a dent in it: <strong>Summary Plus is two independent instruments that arrive at the same reading a hand-tuned prompt reaches.</strong></p>
+  <p>The two land in the same place. On insight, the centroid surfacing and the bare prompt reach <strong>the same depth</strong> — Δ = −0.03 across 788 judgements (175 summaries per arm, scored by five judges that include each summary's own author; the ex-self figure will be reported beside this one when the re-judge completes), analogy at 0.00 in both. And the convergence surfacing reaches the same concepts a prompt does (92%). Both geometric routes converge on what a tuned prompt already reaches. We report this plainly, because it is the honest finding and because it is the foundation of the claim, not a dent in it: <strong>Summary Plus is two independent instruments that arrive at the same reading a hand-tuned prompt reaches.</strong></p>
 
   <p>That convergence is the point, not a consolation. Until now, the only instrument for this kind of reading was a prompt — an instruction interpreted by a model whose interpretation is reshaped by every round of training. The same words can be read one way today and sanded down tomorrow. Summary Plus establishes <em>two</em> routes to the same depth whose surfacing is not an instruction at all: deterministic arithmetic on a frozen embedding space, inspectable, reproducible, and identical regardless of how the reading model has been tuned. Two frozen paths, one mark — and the mark is where a good prompt already stands.</p>
 

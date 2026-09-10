@@ -493,6 +493,47 @@ def _swerve_garbled(text):
 _FAILURE_RE = re.compile(r"^\s*\[(Mistral unavailable|VIX error|[A-Za-z]+ error:|[A-Za-z]+: no caller|API ERROR|HOST ERROR|no response)")
 
 
+def _prediction_scorecard_beat(attr: dict, _state):
+    """
+    beat_18d, deterministic (no LLM). 2026-09-10: the outlier forecast is read from
+    attr["preregistration"] — the ledger row sealed in stage 2b before any model
+    text was embedded — via preregistration.build_ledger_sentence, which is silent
+    unless the row has predicted, actual and n_used >= 5. The older void-word
+    sentence and its accuracy line (BroadcastState.predict) are a separate claim
+    and are kept exactly as they were. Returns None when there is nothing to say.
+    """
+    _parts = []
+    try:
+        from preregistration import build_ledger_sentence
+        _ledger_line = build_ledger_sentence((attr or {}).get("preregistration") or {})
+    except Exception:
+        _ledger_line = ""
+    if _ledger_line:
+        _parts.append(_ledger_line)
+    if _state is not None:
+        try:
+            _pscore = getattr(_state, "prediction_score", None)
+            _pred_void = getattr(_state, "predicted_void_words", []) or []
+            if _pscore is not None and _pred_void:
+                if not _parts:
+                    _parts.append("Prediction check.")
+                _parts.append(f"I predicted these blind spots from past coverage: "
+                              f"{', '.join(_pred_void[:4])}.")
+                _pct = int(round(_pscore * 100))
+                _parts.append(f"Prediction accuracy on this story: {_pct} percent. "
+                              f"This is the instrument forecasting its own behavior, "
+                              f"then checking itself.")
+        except Exception:
+            pass
+    if not _parts:
+        return None
+    return {
+        "speaker": "Host",
+        "text": " ".join(_parts),
+        "phase": "beat_18d_prediction_scorecard",
+    }
+
+
 def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
     attr = seg.get("attribution", {})
     beats_raw = seg.get("beats", [])
@@ -503,6 +544,11 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
         from broadcast_state import BroadcastState
         _state = BroadcastState(title=title, source_text=str(attr.get("source_body", title)))
         _state.predict()  # Predict void cluster BEFORE reading measurements
+        try:
+            # 2026-09-10: the outlier forecast is the sealed pre-registration value (was always None)
+            _state.predicted_outlier_model = (attr.get("preregistration") or {}).get("predicted") or None
+        except Exception:
+            pass
     except:
         _state = None
 
@@ -1574,42 +1620,16 @@ def generate_script_v3(seg: dict, audit_ctx: dict) -> list[dict]:
             pass
 
     # ── PREDICTION SCORECARD (deterministic — the self-model loop, made visible) ──
-    # The system predicted this story's divergence BEFORE reading the models,
-    # from how the models behaved on past similar stories. Here we state, with no
-    # LLM in the loop, what it predicted vs what actually happened. Silent when no
-    # prediction was possible (e.g. first time a topic is seen).
-    if _state is not None:
-        try:
-            _pscore = getattr(_state, "prediction_score", None)
-            _pred_out = getattr(_state, "predicted_outlier_model", None)
-            _pred_void = getattr(_state, "predicted_void_words", []) or []
-            _confirms = getattr(_state, "confirmations", []) or []
-            if _pscore is not None and (_pred_out or _pred_void):
-                _actual_out = ""
-                if _state.model_vix:
-                    _actual_out = max(_state.model_vix, key=_state.model_vix.get)
-                _parts = ["Prediction check."]
-                if _pred_out:
-                    if _actual_out and _actual_out == _pred_out:
-                        _parts.append(f"Before reading the models, I predicted {_pred_out} "
-                                      f"would diverge most. {_actual_out} did. Confirmed.")
-                    elif _actual_out:
-                        _parts.append(f"I predicted {_pred_out} would diverge most. "
-                                      f"{_actual_out} did instead. A miss.")
-                if _pred_void:
-                    _parts.append(f"I predicted these blind spots from past coverage: "
-                                  f"{', '.join(_pred_void[:4])}.")
-                _pct = int(round(_pscore * 100))
-                _parts.append(f"Prediction accuracy on this story: {_pct} percent. "
-                              f"This is the instrument forecasting its own behavior, "
-                              f"then checking itself.")
-                script.append({
-                    "speaker": "Host",
-                    "text": " ".join(_parts),
-                    "phase": "beat_18d_prediction_scorecard",
-                })
-        except Exception:
-            pass
+    # 2026-09-10: the outlier forecast comes from the sealed pre-registration ledger
+    # (attr["preregistration"], written in stage 2b before any embedding) and is
+    # spoken with its two controls; the void-word sentence is the older, separate
+    # claim and is unchanged. Silent when neither has anything to say.
+    try:
+        _beat18d = _prediction_scorecard_beat(attr, _state)
+        if _beat18d:
+            script.append(_beat18d)
+    except Exception:
+        pass
 
     # ── CONSEQUENCE ACCOUNTABILITY (Layer 18) ────────────────────────
     _conseq = attr.get("consequence", {})

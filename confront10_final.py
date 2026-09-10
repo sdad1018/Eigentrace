@@ -9,11 +9,26 @@ from collections import defaultdict, Counter
 REPO="/mnt/c/Users/M4ISI/eigentrace"; sys.path.insert(0,REPO); os.chdir(REPO)
 import confront10 as C
 import confront_keeper_v3 as KV3
+import exself as X
 K=int(os.getenv("KGEN","5"))
 SMOKE=os.getenv("SMOKE","")=="1"
+# EX-SELF JUDGING (2026-09): judges == patients here. JUDGE_ONLY=1 re-judges the stored
+# confront10_final_results.json (no generation), logs one record per score with its judge
+# to confront10_final_panel_v2.json, and prints the all-judge and ex-self tables from ONE
+# aggregation (exself.aggregate). SEED seeds the shuffles. EXSELF_SKIP=1 never calls a
+# judge on its own vendor's text. SKIP_CODING=1 skips sentence coding + hero capture.
+JUDGE_ONLY=os.getenv("JUDGE_ONLY","")=="1"
+EXSELF_SKIP=os.getenv("EXSELF_SKIP","")=="1"
+SKIP_CODING=os.getenv("SKIP_CODING","")=="1"
+SEED=int(os.getenv("SEED","0"))
 SYS=KV3.SYS
 STORIES=KV3.STORIES
 ALL_JUDGES=list(C.API_PATIENTS.keys())
+ARMS=["BASELINE","A_ONLY","C_ONLY","A_PLUS_C"]
+METS=["insight","faith","action","trust","keep"]
+RESULTS_FILE="confront10_final_results.json"
+PANEL_FILE="confront10_final_panel.json"
+PANEL_V2_FILE="confront10_final_panel_v2.json"
 SEEDQ="Summarize this in 3-4 sentences:\n\n"
 ADVERSARIAL={"id":"rail_incident","shape":"Procedural (adversarial)",
   "source":("A freight train derailed early Tuesday near Millbrook Junction, the regional rail "
@@ -90,7 +105,9 @@ def prompt_AC(facts,actors,concepts):  # the VALIDATED unified prompt
     parts=[p for p in [part_A(facts,actors), part_C(concepts)] if p]
     parts.append(CLOSER)
     return " ".join(parts) if len(parts)>1 else None
-def code_sentences(src,summary,judges):
+def code_sentences(src,summary,judges,author=None):
+    """O/I/A/S sentence coding. `author` = the model that wrote `summary`; judges of the
+    author's vendor are skipped so no model codes its own text (author None -> all judges)."""
     sents=[s.strip() for s in re.split(r'(?<=[.!?])\s+', re.sub(r'#.*?\n','',summary)) if len(s.strip())>15]
     if not sents: return None
     numbered="\n".join(f"{i+1}. {s}" for i,s in enumerate(sents))
@@ -98,17 +115,50 @@ def code_sentences(src,summary,judges):
        f"RELATIVE TO SOURCE:\n O=Observation(in source) I=Inference(grounded reasoning beyond source) "
        f"A=Analogy(imported outside frame) S=Speculation(no support)\nReply one line each:\n1: <O/I/A/S>\n... through {len(sents)}")
     agg=Counter(); tot=0
-    for jn in judges:
+    for jn in X.judges_for(author,judges):
         try: out=C.API_PATIENTS[jn]([{"role":"user","content":p}]) or ""
         except Exception: out=""
         for m in re.finditer(r'^\s*\d+\s*[:.]?\s*([OIAS])\b', out, re.M|re.I): agg[m.group(1).upper()]+=1; tot+=1
     if tot==0: return None
     return {k:agg.get(k,0)/tot for k in "OIAS"}
+def judge(src,texts,author=None,judges=None,skip_self=None,story=None,gen=None,records=None):
+    """Blind panel on one item (arms shuffled; GOLD included where present).
+    author: the patient that wrote the non-GOLD arms (GOLD is hand-built, author None).
+    skip_self True -> judges of the author's vendor are not called (default env EXSELF_SKIP);
+    otherwise every judge is called and the split happens in exself.aggregate.
+    records: list extended with one per-score record per parsed (arm, metric)."""
+    if skip_self is None: skip_self=EXSELF_SKIP
+    arms=[a for a in ARMS+["GOLD"] if texts.get(a)]; order=list(arms); random.shuffle(order)
+    if len(order)<2: return {}
+    shown="\n\n".join(f"[Summary {i+1}]\n{texts[order[i]]}" for i in range(len(order)))
+    p=(f"Source text:\n{src[:1400]}\n\n{len(order)} summaries:\n\n{shown}\n\nScore EACH 1-5: insight, faith "
+       f"(true to source, NOTHING inferred or imported beyond it), action, trust, keep (0/1). One line each:\n"
+       f"Summary 1: insight=<n> faith=<n> action=<n> trust=<n> keep=<0/1>\n(through Summary {len(order)})")
+    js=list(judges if judges is not None else ALL_JUDGES)
+    if skip_self: js=X.judges_for(author,js)
+    out_by_judge={}
+    for jn in js:
+        try: out=C.API_PATIENTS[jn]([{"role":"user","content":p}])
+        except Exception: out=""
+        out_by_judge[jn]=C.parse_scores(out or "", order)
+        if records is not None:
+            records.extend(X.make_records(story,author,gen,jn,out_by_judge[jn],order,arm_author={"GOLD":None}))
+    return out_by_judge
+def load_results(path=RESULTS_FILE):
+    with open(path) as fh: return json.load(fh)
 def main():
-    stories=(STORIES[:1] if SMOKE else STORIES+[ADVERSARIAL])
-    if SMOKE: print("*** SMOKE: 1 story ***",flush=True)
-    print(f"K={K}  5 judges: {ALL_JUDGES}",flush=True)
-    eng=build_engine(); ARMS=["BASELINE","A_ONLY","C_ONLY","A_PLUS_C"]; all_results=[]
+    random.seed(SEED)
+    all_results=[]
+    if JUDGE_ONLY:
+        all_results=load_results()
+        if SMOKE: all_results=all_results[:1]; print("*** SMOKE: 1 story ***",flush=True)
+        print(f"JUDGE_ONLY=1: re-judging {sum(len(row['gens']) for r in all_results for row in r['rows'])} stored items from {RESULTS_FILE}; SEED={SEED}; EXSELF_SKIP={EXSELF_SKIP}",flush=True)
+        stories=[]
+    else:
+        stories=(STORIES[:1] if SMOKE else STORIES+[ADVERSARIAL])
+        if SMOKE: print("*** SMOKE: 1 story ***",flush=True)
+        print(f"K={K}  5 judges: {ALL_JUDGES}  (JUDGES == PATIENTS; self rows logged, dropped in the ex-self view)",flush=True)
+        eng=build_engine()
     for st in stories:
         print("\n"+"="*72); print(f"STORY {st['id']} [{st['shape']}]"); print("="*72,flush=True)
         src=st["source"]; cons=[]
@@ -136,33 +186,30 @@ def main():
                 except Exception as e: print(f"    {p} gen{k} ERR {e}",flush=True)
             rows.append({"patient":p,"gens":gens}); print(f"  {p:<10} {len(gens)}/{K}",flush=True)
         all_results.append({"story":st["id"],"shape":st["shape"],"facts":facts,"concepts":concepts,"source":src,"rows":rows,"has_gold":gold is not None})
-        json.dump(all_results,open("confront10_final_results.json","w"),indent=2); print(f"  [saved {len(all_results)}]",flush=True)
+        json.dump(all_results,open(RESULTS_FILE,"w"),indent=2); print(f"  [saved {len(all_results)}]",flush=True)
     print("\n"+"="*72); print("BLIND PANEL (5 judges, shuffled; GOLD included where present)"); print("="*72,flush=True)
-    def judge(src,texts):
-        arms=[a for a in ARMS+["GOLD"] if texts.get(a)]; order=list(arms); random.shuffle(order)
-        if len(order)<2: return {}
-        shown="\n\n".join(f"[Summary {i+1}]\n{texts[order[i]]}" for i in range(len(order)))
-        p=(f"Source text:\n{src[:1400]}\n\n{len(order)} summaries:\n\n{shown}\n\nScore EACH 1-5: insight, faith "
-           f"(true to source, NOTHING inferred or imported beyond it), action, trust, keep (0/1). One line each:\n"
-           f"Summary 1: insight=<n> faith=<n> action=<n> trust=<n> keep=<0/1>\n(through Summary {len(order)})")
-        out_by_judge={}
-        for jn in ALL_JUDGES:
-            try: out=C.API_PATIENTS[jn]([{"role":"user","content":p}])
-            except Exception: out=""
-            out_by_judge[jn]=C.parse_scores(out or "", order)
-        return out_by_judge
+    records=[]
     panel=defaultdict(lambda: defaultdict(list)); per_judge=defaultdict(lambda: defaultdict(lambda: defaultdict(list)))
     per_story_faith=defaultdict(lambda: defaultdict(list))
     for r in all_results:
         for row in r["rows"]:
-            for g in row["gens"]:
-                jd=judge(r["source"],g)
+            for gi,g in enumerate(row["gens"]):
+                jd=judge(r["source"],g,author=row["patient"],story=r["story"],gen=gi,records=records)
                 for jn,conds in jd.items():
                     for cond,d in conds.items():
                         for m,v in d.items():
                             panel[cond][m].append(v); per_judge[jn][cond][m].append(v)
                             if m=="faith": per_story_faith[r["story"]][cond].append(v)
-    mets=["insight","faith","action","trust","keep"]; ALLARMS=ARMS+["GOLD"]
+    mets=METS; ALLARMS=ARMS+["GOLD"]
+    # BOTH tables from one aggregation (exself.aggregate) over the same records
+    agg_all=X.aggregate(records,exclude_self=False,metrics=mets); agg_ex=X.aggregate(records,exclude_self=True,metrics=mets)
+    print(X.format_table(agg_all,ALLARMS,mets,label="ALL-JUDGE (self-included, legacy design)"))
+    print(X.format_table(agg_ex,ALLARMS,mets,label="EX-SELF (judges never score their own vendor's text)"))
+    spj=X.self_pref_by_judge(records,"insight")
+    print("\n  self-preference per judge (insight: own score - ex-self received):")
+    for jn,row in spj.items():
+        sp=row["self_pref"]; print(f"    {jn:10s} n_self={row['n_self']:3d} n_exself={row['n_exself']:3d} self_pref={('%+.2f'%sp) if sp is not None else '-'}")
+    print("\n  legacy view (flat arrays, self-included):")
     print(f"  {'arm':12s} "+" ".join(f"{m:>8s}" for m in mets)+f" {'n':>5s}")
     tbl={}
     for c in ALLARMS:
@@ -193,13 +240,13 @@ def main():
     if not any_reg: print("  \u2713 no faith regression")
     print("\n"+"="*72); print("SENTENCE CODING per arm (gold: hi Infer, ~0 Analogy)"); print("="*72,flush=True)
     coded=defaultdict(lambda: defaultdict(list))
-    for r in all_results:
+    for r in ([] if SKIP_CODING else all_results):
         for row in r["rows"]:
             g=row["gens"][0] if row["gens"] else None
             if not g: continue
             for arm in ALLARMS:
                 if not g.get(arm): continue
-                pr=code_sentences(r["source"],g[arm],ALL_JUDGES)
+                pr=code_sentences(r["source"],g[arm],ALL_JUDGES,author=(None if arm=="GOLD" else row["patient"]))
                 if pr:
                     for k,v in pr.items(): coded[arm][k].append(v)
     print(f"  {'arm':12s}  {'Obs':>6s} {'Infer':>6s} {'Analogy':>8s} {'Spec':>6s}")
@@ -210,12 +257,12 @@ def main():
         print(f"  {arm:12s}  {o:>6.2f} {i:>6.2f} {a:>8.2f} {s:>6.2f}   {flag}",flush=True)
     print("\n"+"="*72); print("GOLD SELF-CHECK + HERO CAPTURE"); print("="*72,flush=True)
     heroes={}; gl=0; tot=0
-    for r in all_results:
+    for r in ([] if SKIP_CODING else all_results):
         best=None; best_i=-1
         for row in r["rows"]:
             for g in row["gens"]:
                 if not g.get("A_PLUS_C"): continue
-                pr=code_sentences(r["source"],g["A_PLUS_C"],ALL_JUDGES[:2])
+                pr=code_sentences(r["source"],g["A_PLUS_C"],ALL_JUDGES[:3],author=row["patient"])   # 3 -> 2 after the author's vendor is skipped
                 if pr:
                     tot+=1
                     if pr["A"]<0.06 and pr["I"]>0.30: gl+=1
@@ -223,8 +270,21 @@ def main():
                     if score>best_i: best_i=score; best={"patient":row["patient"],"text":g["A_PLUS_C"],"profile":pr}
         if best: heroes[r["story"]]=best
     if tot: print(f"  A+C gold-like: {gl}/{tot} = {gl/tot:.0%}")
-    json.dump(heroes,open("confront10_final_heroes.json","w"),indent=2)
-    print(f"  wrote heroes ({len(heroes)})")
-    json.dump({"panel":{c:{m:panel[c][m] for m in mets} for c in ALLARMS if panel[c]['insight']},"per_judge":{jn:{a:{m:per_judge[jn][a][m] for m in mets} for a in ARMS} for jn in ALL_JUDGES},"coding":{a:{k:coded[a][k] for k in 'OIAS'} for a in ALLARMS if coded[a]['O']}},open("confront10_final_panel.json","w"),indent=2)
-    print("\nwrote results+panel+heroes. *** A+C now uses VALIDATED prompt + GOLD anchor. THIS IS THE PAGE. ***")
+    v2={"design":{"judges":ALL_JUDGES,"patients":ALL_JUDGES,"judges_are_patients":True,"judge_only":JUDGE_ONLY,"seed":SEED,
+                  "exself_skip":EXSELF_SKIP,"results_file":RESULTS_FILE,"exself_helper_sha":X.helper_sha(),
+                  "note":"all-judge and ex-self tables come from exself.aggregate over the same records; GOLD is hand-built (author None, never self-judged)"},
+        "records":records,
+        "summary":{"self_included":agg_all,"exself":agg_ex,"n_self_included":{a:agg_all[a]["n"] for a in agg_all},
+                   "n_exself":{a:agg_ex[a]["n"] for a in agg_ex},"self_pref_by_judge":spj,
+                   "parse_rate_by_judge":X.parse_rate_by_judge(records)},
+        "flat_panel":X.flat_panel(records),"flat_panel_exself":X.flat_panel(records,exclude_self=True),
+        "coding":{a:{k:coded[a][k] for k in 'OIAS'} for a in ALLARMS if coded[a]['O']}}
+    json.dump(v2,open(PANEL_V2_FILE,"w"),indent=1)
+    if JUDGE_ONLY:
+        print(f"\nwrote {PANEL_V2_FILE} (JUDGE_ONLY: {RESULTS_FILE}, {PANEL_FILE} and heroes untouched)")
+    else:
+        json.dump(heroes,open("confront10_final_heroes.json","w"),indent=2)
+        print(f"  wrote heroes ({len(heroes)})")
+        json.dump({"panel":{c:{m:panel[c][m] for m in mets} for c in ALLARMS if panel[c]['insight']},"per_judge":{jn:{a:{m:per_judge[jn][a][m] for m in mets} for a in ARMS} for jn in ALL_JUDGES},"coding":{a:{k:coded[a][k] for k in 'OIAS'} for a in ALLARMS if coded[a]['O']}},open(PANEL_FILE,"w"),indent=2)
+        print(f"\nwrote results+panel+heroes+{PANEL_V2_FILE}. *** A+C now uses VALIDATED prompt + GOLD anchor. THIS IS THE PAGE. ***")
 if __name__=="__main__": main()

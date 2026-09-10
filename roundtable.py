@@ -106,6 +106,80 @@ def compute_vix(text1, text2):
         return None
 
 
+# Round 3 asks for (1) acknowledgement, (2) explanation, (3) final summary, and
+# round3_vix is computed on the WHOLE reply.  extract_final_summary() pulls the
+# part after the last "3." / "final summary" heading so a summary-only distance
+# can be stored beside the full-reply one (r3_vix_summary).  Pure text, no I/O.
+import re as _re
+
+_SUMMARY_HEAD = _re.compile(
+    r"(?:^|\n)\s*(?:\*\*|#+\s*)?\s*(?:3[.):]|(?:final(?:,)?\s+(?:complete\s+)?summary|summary)\b)[^\n]*",
+    _re.I)
+
+
+def extract_final_summary(reply):
+    """Text after the last summary heading in a round-3 reply, or None if no heading."""
+    if not isinstance(reply, str) or not reply.strip():
+        return None
+    last = None
+    for m in _SUMMARY_HEAD.finditer(reply):
+        last = m
+    if last is None:
+        return None
+    head = last.group(0)
+    body = reply[last.end():]
+    # the heading line may itself carry the summary after a colon
+    tail = head.split(":", 1)[1] if ":" in head else ""
+    text = (tail + "\n" + body).strip().strip("*").strip()
+    if len(text) < 40:
+        return None
+    return text
+
+
+def build_provenance(results, models=None):
+    """Provenance block for a roundtable results dict: scorer, scale, what each
+    model was shown, model ids.  Arithmetic only -- no LLM judges any LLM here."""
+    models = models or MODELS
+    names = list(models.keys())
+    per_model = {}
+    for n in names:
+        peers = [m for m in names if m != n]
+        per_model[n] = {
+            "round2_saw": {"self": True, "peers": peers, "measurements": True},
+            "round3_saw": {"self": True, "peers": peers, "cliff_data": True},
+        }
+    try:
+        import exself as _ex
+        sha = _ex.helper_sha()
+        vendors = {n: _ex.vendor_of(models[n].get("model", n)) for n in names}
+    except Exception:
+        sha = "unknown"
+        vendors = {}
+    prov = {
+        "scorer": "bge cosine, arithmetic, no LLM judge",
+        "judge": "bge-large-en-v1.5:cosine",
+        "llm_judge": None,
+        "scorer_kind": "embedding",
+        "vix_scale": "1-cos; broadcast VIX = 500*(1-cos)",
+        "round2_shown": "all five round-1 responses including own",
+        "round3_shown": "all five round-2 responses including own",
+        "self_read": True,
+        "self_excluded_from_scored_set": True,
+        "self_in_set_reason": "revision requires own text (subject, not scored)",
+        "judged_set": names,
+        "per_model": per_model,
+        "model_ids": {n: models[n].get("model") for n in names},
+        "model_vendors": vendors,
+        "r3_scored_on": "full reply incl. acknowledgement text",
+        "r3_vix_summary": "round3_vix_summary = same distance on the text after the last summary heading (when found)",
+        "herding_metric": "std of per-model VIX, R1 vs R3; print-only, not broadcast; cannot separate peer influence from self-anchoring",
+        "ablation": ("round2_vix_selfonly present" if results.get("round2_vix_selfonly")
+                     else "off (ROUNDTABLE_ABLATE=1 enables a peers-hidden round-2 control)"),
+        "exself_helper_sha": sha,
+    }
+    return prov
+
+
 def run_roundtable(title, source_text, void_words=None, cliff_data=None, killshots=None, ns_claims=None, source_void=None):
     """
     Execute a 3-round roundtable debate.
@@ -249,6 +323,40 @@ def run_roundtable(title, source_text, void_words=None, cliff_data=None, killsho
             print(f"  {model_name} VIX: {v} ({direction} by {abs(delta):.4f})")
     results["round2_vix"] = r2_vix
 
+    # Optional ablation control (off by default): the same round-2 ask with the
+    # peers HIDDEN (own response + measurements only).  round2_vix - round2_vix_selfonly
+    # is the part attributable to seeing the other four.  5 extra API calls.
+    try:
+        if os.environ.get("ROUNDTABLE_ABLATE", "") == "1":
+            r2_selfonly = {}
+            round2_selfonly = {}
+            for model_name in MODELS:
+                own = round1.get(model_name, "")
+                selfonly_prompt = (
+                    f"You previously summarized this story:\n\n"
+                    f"Story: {title}\n\n"
+                    f"Your own Round 1 response:\n\n{own}\n\n"
+                    f"{'=' * 40}\n"
+                    f"EIGENTRACE MEASUREMENT SYSTEM\n"
+                    f"{EIGENTRACE_EXPLAINER}"
+                    f"{void_section}\n\n"
+                    f"Given this information — that a deterministic measurement system has "
+                    f"detected specific concepts that ALL five of you independently dropped "
+                    f"from the source material — do you want to revise your summary? "
+                    f"If so, provide your revised summary. If not, explain why you believe "
+                    f"your original response was complete."
+                )
+                print(f"  Querying {model_name} (ablation: peers hidden)...")
+                resp = query_model(model_name, selfonly_prompt)
+                round2_selfonly[model_name] = resp
+                v = compute_vix(source_text[:1500], resp)
+                if v is not None:
+                    r2_selfonly[model_name] = v
+            results["rounds"]["round2_selfonly"] = round2_selfonly
+            results["round2_vix_selfonly"] = r2_selfonly
+    except Exception as _ab_err:
+        print(f"  [ablation skipped: {_ab_err}]")
+
     # ═══════════════════════════════════════════════════════════════
     # ROUND 3: Wild Weasel cliff data + others' reactions
     # ═══════════════════════════════════════════════════════════════
@@ -317,7 +425,28 @@ def run_roundtable(title, source_text, void_words=None, cliff_data=None, killsho
             direction = "closer to source" if total_delta < 0 else "further from source"
             print(f"  {model_name} VIX: {v} (total shift: {direction} by {abs(total_delta):.4f})")
     results["round3_vix"] = r3_vix
-    
+
+    # Summary-only round-3 distance (the reply's explanation text counts toward
+    # round3_vix; this stores the distance of just the final summary beside it).
+    # Additive: the on-air line is still driven by round3_vix.
+    try:
+        r3_vix_summary = {}
+        for model_name, resp in round3.items():
+            summ = extract_final_summary(resp)
+            if summ:
+                v = compute_vix(source_text[:1500], summ)
+                if v is not None:
+                    r3_vix_summary[model_name] = v
+        results["round3_vix_summary"] = r3_vix_summary
+    except Exception as _s_err:
+        print(f"  [r3 summary-only VIX skipped: {_s_err}]")
+
+    # Provenance: who scored what, and what each model was shown.  No LLM judge.
+    try:
+        results["provenance"] = build_provenance(results)
+    except Exception as _p_err:
+        print(f"  [provenance skipped: {_p_err}]")
+
     # ═══════════════════════════════════════════════════════════════
     # ANALYSIS
     # ═══════════════════════════════════════════════════════════════

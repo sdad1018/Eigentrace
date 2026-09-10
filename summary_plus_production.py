@@ -51,19 +51,46 @@ def build_prompt(ch):
     parts.append("Produce a sharper 3-4 sentence summary that (a) restores the reframing fact, (b) reads the telling absence "
         "where the source implies more than it states, and (c) names any genuinely unresolved question as a question. Stay strictly faithful to the source.")
     return " ".join(parts)
-def self_check(src, summary, model_for_check="Claude"):
+LOCAL_CHECKER="mistral:latest"   # off the panel entirely (never a producer of any panel summary)
+def choose_checker(author, prefer_local=False):
+    """The model that classifies the O/I/A/S profile of `author`'s Summary Plus.
+    Never the author or its vendor. SP_CHECKER env overrides; prefer_local (or
+    SP_CHECKER=local) uses the local mistral via C.mt_local, zero API cost."""
+    import exself as X
+    env=os.getenv("SP_CHECKER","").strip()
+    if env and env.lower()!="local":
+        cand=env
+    elif prefer_local or env.lower()=="local":
+        cand=LOCAL_CHECKER
+    else:
+        cand=next((j for j in C.API_PATIENTS if not X.same_vendor(j,author)),LOCAL_CHECKER)
+    if X.same_vendor(cand,author):
+        raise X.ExSelfViolation(f"checker {cand!r} shares a vendor with writer {author!r}")
+    return cand
+def self_check(src, summary, model_for_check=None, author=None, writer=None):
+    """Ex-self profile check. Returns (profile, gold_like, checked_by) or None.
+    model_for_check=None -> derived from the author (see choose_checker); a caller
+    that passes a checker of the author's vendor raises ExSelfViolation."""
+    import exself as X
+    author=author or writer
+    if model_for_check is None: model_for_check=choose_checker(author)
+    if author is not None and X.same_vendor(model_for_check,author):
+        raise X.ExSelfViolation(f"self-check refused: checker {model_for_check!r} == writer vendor {author!r}")
     sents=[s.strip() for s in re.split(r'(?<=[.!?])\s+', re.sub(r'#.*?\n','',summary)) if len(s.strip())>15]
     if not sents: return None
     numbered="\n".join(f"{i+1}. {s}" for i,s in enumerate(sents))
     p=(f"SOURCE:\n{src[:1300]}\n\nSummary sentences:\n{numbered}\n\nClassify EACH sentence by content origin RELATIVE TO SOURCE:\n"
        f" O=Observation(in source) I=Inference(grounded reasoning beyond source) A=Analogy(imported outside frame) S=Speculation(no support)\n"
        f"Reply one line each:\n1: <O/I/A/S>\n... through {len(sents)}")
-    try: out=C.API_PATIENTS[model_for_check]([{"role":"user","content":p}]) or ""
+    try:
+        if model_for_check in C.API_PATIENTS: out=C.API_PATIENTS[model_for_check]([{"role":"user","content":p}]) or ""
+        else: out=C.mt_local([{"role":"user","content":p}],model_for_check) or ""
     except Exception: return None
     from collections import Counter
     c=Counter(m.group(1).upper() for m in re.finditer(r'^\s*\d+\s*[:.]?\s*([OIAS])\b', out, re.M|re.I)); tot=sum(c.values()) or 1
     prof={k:c.get(k,0)/tot for k in "OIAS"}
-    return prof, (prof["A"]<0.06 and prof["I"]>0.30)
+    prof["checked_by"]=model_for_check; prof["author"]=author; prof["self_excluded"]=True
+    return prof, (prof["A"]<0.06 and prof["I"]>0.30), model_for_check
 def get_story(sid):
     for st in KV3.STORIES:
         if st["id"]==sid: return st
@@ -99,10 +126,11 @@ def main():
     plus=C.API_PATIENTS[a.model](pre+[{"role":"user","content":build_prompt(ch)}]) or ""
     print("--- SUMMARY PLUS (channel A + C) ---"); print(plus); print(flush=True)
     if not a.no_check:
-        res=self_check(src,plus)
+        res=self_check(src,plus,author=a.model)
         if res:
-            prof,gold=res
-            print("--- GOLD-PROFILE SELF-CHECK ---")
+            prof,gold,checked_by=res
+            print(f"--- GOLD-PROFILE CHECK (judge={checked_by}, writer={a.model}, ex-self) ---")
             print(f"   Obs {prof['O']:.2f}  Infer {prof['I']:.2f}  Analogy {prof['A']:.2f}  Spec {prof['S']:.2f}")
             print(f"   {'GOLD-LIKE (grounded, low import)' if gold else 'OFF-TARGET (imported analogy/speculation present)'}")
+            print(f"   checked_by={checked_by} author={a.model} self_excluded=True")
 if __name__=="__main__": main()

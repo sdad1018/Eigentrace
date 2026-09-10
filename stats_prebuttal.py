@@ -154,6 +154,10 @@ print("""
   - 5 frontier models as a BLIND panel; arm order SHUFFLED per item (random.shuffle)
   - judges score on a 1-5 scale; "keep" is 0/1
   - NO model evaluates its own output as the sole judge — all 5 score every item
+  - BUT the 5 judges ARE the 5 patients: each author's own model is one of its five
+    judges (~1/5 of scores, not separable in the stored flat arrays); the ex-self
+    view below (section 2b) exists only when a per-record panel_v2 file is present
+  - scores are clustered by story (7) and author (5); treat n as summaries, not scores
   - faith prompt explicitly says "true to source, NOTHING inferred or imported beyond it"
   - per-sentence provenance coded separately by the same panel (O/I/A/S)
   - generation and judging are separate passes; judges never see arm labels
@@ -245,6 +249,75 @@ if not paired_ok:
     print()
     print("  THE SECOND-DERIVATION QUESTION — does convergence add over flat alone? (the +0.12)")
     d2 = report_pair_unpaired("A_PLUS_C", "A_PLUS_BOTH")
+
+# ----------------------------------------------------------------------------- 2b. per-record view: ex-self vs self-included
+# When a JUDGE_ONLY=1 re-judge has written a *_panel_v2.json (one record per score, with
+# judge identity), both views come from ONE aggregation (exself.aggregate) over the same
+# records, so the null is the same code path.  Nothing here touches the legacy files.
+print("\n" + "=" * 74)
+print("2b. EX-SELF vs SELF-INCLUDED  (per-record panel_v2 files, when present)")
+print("=" * 74)
+
+def _per_item_means(records, metric="insight", exclude_self=False):
+    """{(story,patient,gen): {arm: mean over judges}} for paired deltas."""
+    pool = defaultdict(lambda: defaultdict(list))
+    for r in records:
+        if r.get("metric") != metric or r.get("score") is None:
+            continue
+        if exclude_self and r.get("self_judged"):
+            continue
+        pool[(r.get("story"), r.get("patient"), r.get("gen"))][r["arm"]].append(float(r["score"]))
+    return {k: {a: float(np.mean(v)) for a, v in arms.items()} for k, arms in pool.items()}
+
+def report_v2(path, pairs):
+    try:
+        import exself as X
+    except Exception as e:
+        print(f"  (exself helper unavailable: {e})"); return
+    v2 = json.load(open(path))
+    recs = v2.get("records", [])
+    if not recs:
+        print(f"  {path}: no records"); return
+    arms = [a for a in ["BASELINE", "PLAIN_PLUS", "A_ONLY", "C_ONLY", "A_PLUS_C", "A_PLUS_BOTH", "GOLD"]
+            if any(r.get("arm") == a for r in recs)]
+    print(f"\n  {path}  ({len(recs)} score records; design: {v2.get('design', {}).get('note', '')[:80]})")
+    agg_all = X.aggregate(recs, exclude_self=False)
+    agg_ex = X.aggregate(recs, exclude_self=True)
+    print(X.format_table(agg_all, arms, label="SELF-INCLUDED (all 5 judges)"))
+    print(X.format_table(agg_ex, arms, label="EX-SELF (author's vendor dropped at aggregation)"))
+    print("\n    self-preference per judge (insight: own - ex-self received):")
+    for jn, row in X.self_pref_by_judge(recs, "insight").items():
+        sp = row["self_pref"]
+        print(f"      {jn:10s} n_self={row['n_self']:3d} n_exself={row['n_exself']:3d} self_pref={('%+.2f' % sp) if sp is not None else '-'}")
+    for a_name, b_name in pairs:
+        if a_name not in arms or b_name not in arms:
+            continue
+        for label, excl in (("self-incl", False), ("ex-self", True)):
+            items = _per_item_means(recs, "insight", exclude_self=excl)
+            pa = [v[a_name] for v in items.values() if a_name in v and b_name in v]
+            pb = [v[b_name] for v in items.values() if a_name in v and b_name in v]
+            d, lo, hi = bootstrap_diff_ci(pa, pb)
+            print(f"    Δ insight {b_name} - {a_name} [{label:9s}] = {d:+.3f}  95% CI [{lo:+.3f}, {hi:+.3f}]  paired items n={len(pa)}")
+    print("    NOTE: items are clustered by story and author; the CI above resamples items, not stories.")
+
+_v2_files = [("control_plainprompt_panel_v2.json", [("PLAIN_PLUS", "A_PLUS_C"), ("BASELINE", "A_PLUS_C")]),
+             ("confront10_final_panel_v2.json", [("BASELINE", "A_PLUS_C"), ("A_PLUS_C", "A_PLUS_BOTH")])]
+_any_v2 = False
+for _p, _pairs in _v2_files:
+    if os.path.exists(_p):
+        _any_v2 = True
+        try:
+            report_v2(_p, _pairs)
+        except Exception as _e:
+            print(f"  {_p}: could not report ({_e})")
+if not _any_v2:
+    print("""
+  No *_panel_v2.json present. The stored panels carry no (story,patient,gen,judge) mapping,
+  so the self/ex-self split is NOT recoverable from them. Produce one with
+      JUDGE_ONLY=1 SEED=0 python3 control_plainprompt.py     (175 items x 5 judges, no generation)
+      JUDGE_ONLY=1 SEED=0 python3 confront10_final.py
+  and re-run this script; both views will then print side by side.
+""")
 
 # ----------------------------------------------------------------------------- 3. inter-rater reliability
 print("\n" + "=" * 74)

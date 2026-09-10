@@ -618,6 +618,162 @@ def stage_2_big5_audit(stories):
 
 # ╔══════════════════════════════════════════════════════════════════════════╗
 
+# ║ STAGE 2b: PRE-REGISTRATION LEDGER (2026-09-10)                          ║
+
+# ╚══════════════════════════════════════════════════════════════════════════╝
+
+
+
+def _state_flag(mean_vix, density):
+
+    """The four-way state rule (shared by stage 3 scoring and stage 4). Thresholds unchanged."""
+
+    if mean_vix > 30:
+
+        return "HIGH_FRICTION"
+
+    elif mean_vix > 15:
+
+        return "CONTESTED"
+
+    elif density > 0.9:
+
+        return "LOCKSTEP"
+
+    else:
+
+        return "NOMINAL"
+
+
+
+def stage_2b_preregister(results, write=True):
+
+    """
+    Seal a base-rate forecast per story AFTER the model texts arrive and BEFORE
+    stage 3 reads or embeds any of them. The forecast (which model will have the
+    highest VIX; majority state flag) comes only from the ledger's outcome history;
+    this function receives no embeddings, no VIX, and keeps no text beyond a hash.
+    write=False (dry run) computes the forecast in memory but seals nothing.
+    A ledger failure never blocks the batch.
+    """
+
+    log.info("═══ STAGE 2b: Pre-registration ledger ═══")
+
+    try:
+
+        import preregistration as _prm
+
+        _history = _prm.read_ledger()
+
+    except Exception as _e:
+
+        log.warning(f"  preregistration unavailable: {_e}")
+
+        for r in results:
+
+            r.setdefault("preregistration", {})
+
+        return results
+
+    for r in results:
+
+        try:
+
+            story = r["story"]
+
+            active = [resp for resp in r["responses"]
+
+                      if not resp.skipped and not resp.error and resp.text]
+
+            panel = sorted(resp.name for resp in active)
+
+            texts = {resp.name: resp.text for resp in active}
+
+            now_iso = _prm.utc_now_iso()
+
+            pred = _prm.predict_outlier(_history, story.category, panel, story.guid, now_iso)
+
+            pred.update({
+
+                "ts": now_iso,
+
+                "predicted_at": now_iso,
+
+                "story_guid": story.guid,
+
+                "story_title": str(story.title)[:80],
+
+                "category": story.category,
+
+                "panel": panel,
+
+                "content_hash": _prm.content_hash(texts),
+
+                "sealed": False,
+
+            })
+
+            if write and len(panel) >= 2:
+
+                _row = {k: v for k, v in pred.items() if k != "sealed"}
+
+                pred["prereg_id"] = _prm.seal_prediction(_row)
+
+                pred["sealed"] = True
+
+            r["preregistration"] = pred
+
+            log.info(f"  prereg {'sealed' if pred['sealed'] else 'unsealed'}: predicted={pred.get('predicted')} "
+                     f"({pred.get('prior_source')}, n_used={pred.get('n_used')}) panel={panel}")
+
+        except Exception as _e:
+
+            log.warning(f"  preregistration skipped for one story: {_e}")
+
+            r["preregistration"] = {}
+
+    return results
+
+
+
+def _prereg_score(r, model_vix, mean_vix, density):
+
+    """
+    Score the story's sealed forecast against model_vix (stage 3, right after the
+    callouts). Appends the kind='scored' row only when the prediction was sealed;
+    running stats are computed over the ledger either way. Never raises past the caller.
+    """
+
+    _pr = r.get("preregistration") or {}
+
+    if not _pr:
+
+        return None
+
+    import preregistration as _prm
+
+    _flag = _state_flag(float(mean_vix), float(density))
+
+    _pr = _prm.score(_pr, {str(k): float(v) for k, v in model_vix.items()}, _flag)
+
+    _pr.update(_prm.running_stats(_prm.read_ledger(), _pr))
+
+    if _pr.get("sealed"):
+
+        _prm.append_row(_prm.scored_row(_pr))
+
+    r["preregistration"] = _pr
+
+    log.info(f"  prereg scored: predicted={_pr.get('predicted')} actual={_pr.get('actual')} "
+             f"hit={_pr.get('hit')} running={_pr.get('running_accuracy')} "
+             f"base={_pr.get('majority_base')} n={_pr.get('n_scored')}")
+
+    return _pr
+
+
+
+# ╔══════════════════════════════════════════════════════════════════════════╗
+
 # ║ STAGE 3: GEOMETRIC ANALYSIS + REAL PER-MODEL VIX                       ║
 
 # ╚══════════════════════════════════════════════════════════════════════════╝
@@ -755,6 +911,18 @@ def stage_3_geometric(results):
                 })
 
         r["callouts"] = callouts
+
+        # 2026-09-10: pre-registration ledger — score the sealed forecast now that model_vix exists
+
+        try:
+
+            _prereg_score(r, {name: vix for name, vix in vix_scores}, mean_vix,
+
+                          getattr(geo, "consensus_density", 0.0))
+
+        except Exception as _pe:
+
+            log.warning(f"  preregistration scoring skipped: {_pe}")
 
 
 
@@ -1357,21 +1525,7 @@ def stage_4_generate_scripts(results):
 
 
 
-        if mean_vix > 30:
-
-            state_flag = "HIGH_FRICTION"
-
-        elif mean_vix > 15:
-
-            state_flag = "CONTESTED"
-
-        elif density > 0.9:
-
-            state_flag = "LOCKSTEP"
-
-        else:
-
-            state_flag = "NOMINAL"
+        state_flag = _state_flag(mean_vix, density)  # 2026-09-10: same rule as stage-3 prereg scoring
 
 
 
@@ -1457,6 +1611,7 @@ def stage_4_generate_scripts(results):
                 "void_vector": r.get("void_vector", {}),
                 "consequence": r.get("consequence", {}),
                 "shadow_consequence": r.get("shadow_consequence", {}),
+                "preregistration": r.get("preregistration", {}),
             },
         }
         _audit = _get_audit_context()
@@ -1516,6 +1671,8 @@ def stage_4_generate_scripts(results):
                 "claim_killshots": [{"claim": k["claim"], "salience": k["salience"], "omitted_by": k["omitted_by"]} for k in r.get("claim_killshots", [])[:3]],
                 "null_space_claims": r.get("null_space_claims", [])[:2],
                 "void_vector": r.get("void_vector", {}),
+
+                "preregistration": r.get("preregistration", {}),
 
             },
 
@@ -1891,6 +2048,17 @@ def stage_7_write_segments(segments, seen):
         os.replace(_tmp, path)  # 2026-09-09: atomic — the player must never read a half-written file
 
         log.info(f"  Wrote {filename} ({len(seg.get('beats') or [])} beats)")
+        # 2026-09-10: pre-registration ledger — link the sealed line to the file that will air
+        try:
+            _pr7 = (seg.get("attribution") or {}).get("preregistration") or {}
+            if _pr7.get("sealed") and _pr7.get("prereg_id"):
+                import preregistration as _prm7
+                _prm7.append_row({"kind": "aired", "ts": _prm7.utc_now_iso(),
+                                  "prereg_id": _pr7["prereg_id"],
+                                  "story_guid": seg["attribution"].get("story_guid", ""),
+                                  "segment_file": filename})
+        except Exception as _pe7:
+            log.debug(f"  preregistration aired-row skipped: {_pe7}")
         # Incremental RAG ingest
         try:
             from segment_rag import get_collection, segment_to_doc
@@ -2875,6 +3043,14 @@ def run_batch(no_images: bool = False, dry_run: bool = False):
 
 
     results = stage_2_big5_audit(stories)
+
+    try:
+
+        results = stage_2b_preregister(results, write=not dry_run)  # 2026-09-10: seal before stage 3
+
+    except Exception as _p2b:
+
+        log.warning(f"stage_2b_preregister failed: {_p2b}")
 
     results = stage_3_geometric(results)
 

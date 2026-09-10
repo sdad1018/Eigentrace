@@ -95,6 +95,8 @@ def export_daily_json(date=None):
             "source_void": attr.get("source_void", {}),
             # Void context (signal type per word)
             "void_context": attr.get("void_context", []),
+            # 2026-09-10: pre-registration ledger (sealed forecast + score for this story)
+            "preregistration": attr.get("preregistration", {}),
             # Beat texts (for reconstruction research)
             "beats": [{
                 "phase": b.get("phase", ""),
@@ -156,6 +158,13 @@ def export_daily_json(date=None):
         "weasel_probes": weasel_data,
     }
 
+    # 2026-09-10: pre-registration ledger — per-story rows and the day's running numbers
+    try:
+        output["ledger"] = _ledger_rows_from_stories(stories, date_fmt)
+        output["summary"]["preregistration"] = _preregistration_summary(stories)
+    except Exception as _pe:
+        log.warning(f"preregistration export skipped: {_pe}")
+
     # Write to docs/data/
     data_dir = DOCS_DIR / "data"
     data_dir.mkdir(parents=True, exist_ok=True)
@@ -163,6 +172,154 @@ def export_daily_json(date=None):
     out_path.write_text(json.dumps(output, indent=2, default=str))
     log.info(f"Exported {len(stories)} stories to {out_path}")
 
+    return output
+
+
+# ─── 2026-09-10: pre-registration ledger export ─────────────────────────
+
+def _ledger_rows_from_stories(stories, date_fmt):
+    """One row per story that carries a scored (or at least sealed) forecast."""
+    rows = []
+    for s in stories:
+        p = s.get("preregistration") or {}
+        if not p or (p.get("predicted") is None and not p.get("actual")):
+            continue
+        rows.append({
+            "date": date_fmt,
+            "timestamp": s.get("timestamp", ""),
+            "title": s.get("title", ""),
+            "category": s.get("category", ""),
+            "panel": p.get("panel", []),
+            "prereg_id": p.get("prereg_id"),
+            "sealed": bool(p.get("sealed")),
+            "predicted": p.get("predicted"),
+            "predicted_flag": p.get("predicted_flag"),
+            "prior_source": p.get("prior_source"),
+            "K": p.get("K"),
+            "n_used": p.get("n_used"),
+            "prediction_prob": p.get("prediction_prob"),
+            "predicted_at": p.get("predicted_at"),
+            "actual": p.get("actual"),
+            "actual_margin": p.get("actual_margin"),
+            "hit": p.get("hit"),
+            "flag_hit": p.get("flag_hit"),
+            "state_flag": p.get("state_flag") or s.get("state_flag", ""),
+            "scored_at": p.get("scored_at"),
+            "running_accuracy": p.get("running_accuracy"),
+            "hits": p.get("hits"),
+            "n_scored": p.get("n_scored"),
+            "in_sample_constant_guesser_share": p.get("majority_base"),
+            "chance": p.get("chance"),
+            "mean_prediction_prob": p.get("mean_prediction_prob"),
+        })
+    return rows
+
+
+def _preregistration_summary(stories):
+    """Running numbers taken from the day's last scored story, plus the day's own tally."""
+    scored = [s for s in stories
+              if (s.get("preregistration") or {}).get("actual")
+              and (s.get("preregistration") or {}).get("predicted") is not None]
+    scored.sort(key=lambda s: s.get("timestamp", ""))
+    last = (scored[-1].get("preregistration") if scored else None) or {}
+    hits_today = sum(1 for s in scored if s["preregistration"].get("hit"))
+    try:
+        from preregistration import PRIOR_VERSION as _pv, PRIOR_TEXT as _pt
+    except Exception:
+        _pv, _pt = "outlier-freq-v1", ""
+    return {
+        "stories_scored_today": len(scored),
+        "hits_today": hits_today,
+        "n_scored": last.get("n_scored"),
+        "hits": last.get("hits"),
+        "running_accuracy": last.get("running_accuracy"),
+        "in_sample_constant_guesser_share": last.get("majority_base"),
+        "chance": last.get("chance"),
+        "mean_prediction_prob": last.get("mean_prediction_prob"),
+        "n_unscored": last.get("n_unscored"),
+        "prior_version": last.get("prior_version", _pv),
+        "prior": _pt,
+        "note": ("running numbers are over the last 100 scored stories as of the day's last story; "
+                 "the forecast is a base rate, and running_accuracy ~= in_sample_constant_guesser_share "
+                 "is the expected result, not a failure"),
+    }
+
+
+def export_preregistration_series(ledger_path=None, docs_dir=None):
+    """
+    Read the whole ledger (one small file, env PREREG_LEDGER) and write
+    docs/data/preregistration_ledger.json: every sealed forecast joined to its
+    scored row (by prereg_id) and to the segment file that aired it.
+    """
+    import preregistration as pr
+    rows = pr.read_ledger(ledger_path)
+    scored_by_id = {r.get("prereg_id"): r for r in rows if r.get("kind") == "scored" and r.get("prereg_id")}
+    aired_by_id = {r.get("prereg_id"): r for r in rows if r.get("kind") == "aired" and r.get("prereg_id")}
+    out_rows = []
+    for r in rows:
+        if r.get("kind") != "predicted" or r.get("predicted") is None:
+            continue
+        pid = r.get("prereg_id")
+        s = scored_by_id.get(pid) or {}
+        a = aired_by_id.get(pid) or {}
+        out_rows.append({
+            "prereg_id": pid,
+            "predicted_at": r.get("predicted_at"),
+            "story_guid": r.get("story_guid"),
+            "story_title": r.get("story_title"),
+            "category": r.get("category"),
+            "panel": r.get("panel"),
+            "predicted": r.get("predicted"),
+            "predicted_flag": r.get("predicted_flag"),
+            "prior_source": r.get("prior_source"),
+            "K": r.get("K"),
+            "n_used": r.get("n_used"),
+            "counts": r.get("counts"),
+            "prediction_prob": r.get("prediction_prob"),
+            "content_hash": r.get("content_hash"),
+            "scored": bool(s),
+            "scored_at": s.get("scored_at"),
+            "actual": s.get("actual"),
+            "actual_margin": s.get("actual_margin"),
+            "hit": s.get("hit"),
+            "flag_hit": s.get("flag_hit"),
+            "state_flag": s.get("state_flag"),
+            "running_accuracy": s.get("running_accuracy"),
+            "hits": s.get("hits"),
+            "n_scored": s.get("n_scored"),
+            "in_sample_constant_guesser_share": s.get("majority_base"),
+            "chance": s.get("chance"),
+            "mean_prediction_prob": s.get("mean_prediction_prob"),
+            "aired_segment_file": a.get("segment_file"),
+        })
+    n_scored_rows = sum(1 for r in out_rows if r["scored"])
+    n_hits = sum(1 for r in out_rows if r["hit"])
+    output = {
+        "version": "eigentrace-prereg-v1",
+        "prior": pr.PRIOR_TEXT,
+        "prior_version": pr.PRIOR_VERSION,
+        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "seal": ("each row's prereg_id is sha256 of the kind='predicted' ledger line, written with fsync "
+                 "before stage 3 measured anything; predicted_at < scored_at is the ordering claim"),
+        "fields": {
+            "in_sample_constant_guesser_share": "share of the most frequent actual outlier in the same "
+                                                "running window (majority_base in the ledger)",
+            "mean_prediction_prob": "mean of counts[predicted]/n_used over the window; a calibrated "
+                                    "base-rate forecaster has running_accuracy close to this",
+            "chance": "mean of 1/len(panel) over the window",
+            "actual_margin": "top VIX minus second VIX; 0.0 marks an exact tie (broken alphabetically)",
+        },
+        "n_rows": len(out_rows),
+        "n_scored": n_scored_rows,
+        "n_hits": n_hits,
+        "accuracy_all_time": round(n_hits / n_scored_rows, 4) if n_scored_rows else None,
+        "rows": out_rows,
+    }
+    data_dir = Path(docs_dir) / "data" if docs_dir else DOCS_DIR / "data"
+    data_dir.mkdir(parents=True, exist_ok=True)
+    out_path = data_dir / "preregistration_ledger.json"
+    out_path.write_text(json.dumps(output, indent=2, default=str))
+    log.info(f"Exported {len(out_rows)} pre-registration rows to {out_path}")
     return output
 
 
@@ -176,3 +333,9 @@ if __name__ == "__main__":
               f"{result['summary']['weasel_probes']} probes")
     else:
         print("No data found")
+    # 2026-09-10: full pre-registration series (one small file; a failure never blocks the daily export)
+    try:
+        _series = export_preregistration_series()
+        print(f"Exported: {_series['n_rows']} pre-registration rows ({_series['n_scored']} scored)")
+    except Exception as _pe:
+        print(f"preregistration series export failed: {_pe}")

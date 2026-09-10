@@ -36,13 +36,16 @@ import numpy as np, requests
 REPO="/mnt/c/Users/M4ISI/eigentrace"; sys.path.insert(0,REPO); os.chdir(REPO)
 N_STORIES=8
 OLLAMA=os.getenv("OLLAMA_HOST","http://localhost:11434"); MODEL="qwen2.5:14b"
+# EX-SELF: the generator must not judge itself. judge() uses JUDGE_MODEL only.
+JUDGE_MODEL=os.getenv("JUDGE_MODEL","mistral:latest")
+assert JUDGE_MODEL!=MODEL, "JUDGE_MODEL must differ from the generator MODEL (ex-self judging)"
 MU=0.55; K=3
 HARD_DROP={"realdonaldtrump","glazer","teheran","mideast","ticker","irani"}
 
-def llm(prompt, mt=200, temp=0.2):
+def llm(prompt, mt=200, temp=0.2, model=None):
     try:
         r=requests.post(f"{OLLAMA}/v1/chat/completions", json={
-            "model":MODEL,"messages":[{"role":"user","content":prompt}],
+            "model":model or MODEL,"messages":[{"role":"user","content":prompt}],
             "max_tokens":mt,"temperature":temp},timeout=150)
         r.raise_for_status(); return r.json()["choices"][0]["message"]["content"].strip()
     except Exception as e: return ""
@@ -54,11 +57,12 @@ def judge(source, summary):
        f"FAITHFULNESS: are all claims supported by the source (no invention)?\n"
        f"COVERAGE: does it capture the source's most important points?\n"
        f"Reply EXACTLY as: FAITH=<n> COV=<n>  (integers, nothing else)")
-    out=llm(p, mt=20, temp=0.0)
+    out=llm(p, mt=20, temp=0.0, model=JUDGE_MODEL)
     f=re.search(r"FAITH=(\d+)", out); c=re.search(r"COV=(\d+)", out)
     return (int(f.group(1)) if f else None, int(c.group(1)) if c else None)
 
 def main():
+    print(f"generator={MODEL} judge={JUDGE_MODEL}")
     import torch
     from geometric_engine import get_engine
     eng=get_engine()
