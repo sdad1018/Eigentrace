@@ -30,7 +30,7 @@ hdr()  { echo -e "\n${CYN}[$1]${RST}"; }
 # PATHS — the two codebases
 # ══════════════════════════════════════════════════════════════════════════
 REPO="/mnt/c/Users/M4ISI/eigentrace"          # git repo: batch_producer, proxy_auditor, etc.
-RUNTIME="/home/remvelchio/eigentrace"          # runtime: segment_player, stream/, models/, tmp/
+RUNTIME="/home/remvelchio/eigentrace"          # runtime DATA only (2026-09-10): stream/, models/, assets/, tmp/ — all code is in $REPO
 OWNCAST_DIR="/home/remvelchio/owncast"
 
 PID_DIR="$RUNTIME/tmp/pids"
@@ -84,6 +84,15 @@ kill_component() {
 if [[ "$ACTION" == "stop" ]]; then
     hdr "Stopping AINN"
     touch "$RUNTIME/tmp/SUPERVISOR_PAUSE"   # 2026-09-09: tell ainn_supervisor.sh this stop is deliberate
+    # 2026-09-10: also end the running watchdog loop(s), or they restart what we are stopping.
+    # Kill their sleep children too: bash defers a trap until the foreground command ends.
+    for _wp in $(pgrep -f "^bash (.*/)?ainn\.sh$"); do
+        [[ "$_wp" == "$$" ]] && continue
+        pkill -P "$_wp" 2>/dev/null || true
+        kill "$_wp" 2>/dev/null || true
+    done
+    for _i in $(seq 1 40); do pgrep -f "^bash (.*/)?ainn\.sh$" | grep -qvx "$$" || break; sleep 0.5; done
+    touch "$RUNTIME/tmp/SUPERVISOR_PAUSE"   # again: the old watchdog's trap touched it too, harmless
     kill_component "producer"
     kill_component "player"
     kill_component "master"
@@ -187,7 +196,7 @@ except: pass
 " 2>/dev/null && ok "VRAM cleared" || true
 
 # Critical files
-for f in "$REPO/batch_producer.py" "$RUNTIME/segment_player.py" "$RUNTIME/stream/master.sh"; do
+for f in "$REPO/batch_producer.py" "$REPO/segment_player.py" "$RUNTIME/stream/master.sh"; do
     [[ -f "$f" ]] && ok "$(basename $f)" || { fail "Missing: $f"; ((ERRORS++)); }
 done
 
@@ -246,7 +255,7 @@ echo -e "  ${DIM}frame + UDP audio + ticker + bed → Owncast + Twitch + YouTube
 
 # ── 3. Segment player ───────────────────────────────────────────────────
 hdr "3/4 Segment player"
-cd "$RUNTIME" && python3 segment_player.py >> "$LOG_DIR/player.log" 2>&1 &
+cd "$REPO" && python3 segment_player.py >> "$LOG_DIR/player.log" 2>&1 &
 save_pid "player" $!
 ok "segment_player.py (PID $(read_pid player))"
 echo -e "  ${DIM}TTS via Piper → UDP:10000 + current_frame.png${RST}"
@@ -295,7 +304,7 @@ while true; do
 
     if ! is_alive "player"; then
         warn "$(date '+%H:%M:%S') player died — restarting"
-        cd "$RUNTIME" && python3 segment_player.py >> "$LOG_DIR/player.log" 2>&1 &
+        cd "$REPO" && python3 segment_player.py >> "$LOG_DIR/player.log" 2>&1 &
         save_pid "player" $!
     fi
 

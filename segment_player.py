@@ -61,7 +61,11 @@ MODELS_DIR    = AGENT_DIR / "models" / "piper"
 POLL_INTERVAL = 2
 
 # Only skip genuine errors — OpenClaw SPEAKS
-SKIP_PREFIXES = ("[API ERROR", "[HOST ERROR", "[no response logged]", "[no response]")
+SKIP_PREFIXES = ("[API ERROR", "[HOST ERROR", "[no response logged]", "[no response]",
+                 # 2026-09-09: transport failures were being read aloud
+                 "[Mistral unavailable", "[VIX error",
+                 "[ChatGPT error", "[Claude error", "[Gemini error", "[DeepSeek error", "[Grok error",
+                 "[ChatGPT: no caller", "[Claude: no caller", "[Gemini: no caller", "[DeepSeek: no caller", "[Grok: no caller")
 
 VOICE_MAP = {
     "Host":      MODELS_DIR / "en_US-lessac-medium.onnx",
@@ -268,15 +272,25 @@ def update_ticker(headline: str, synthesis_words: list, seg: dict = None):
     clean_words = [str(w).strip() for w in synthesis_words if str(w).strip()]
     words = " | ".join(clean_words) if clean_words else "Analyzing"
     
-    # 2. Force the float formatting even if the key is missing or older
+    # 2. Friction = mean VIX. 2026-09-09: it lives in attribution; the top-level gap_vix key never
+    #    existed, so the ticker has read "Friction: 0.0000 [ACTIVE]" on every story
+    attr = seg.get("attribution") or {}
     try:
-        gap = f"{float(seg.get('gap_vix', 0.0)):.4f}"
-    except:
-        gap = "0.0000"
-        
-    state = seg.get("state_flag", "ACTIVE")
+        _mv = attr.get("mean_vix")
+        if _mv is None:
+            _vals = [v for v in (attr.get("model_vix") or {}).values() if isinstance(v, (int, float))]
+            _mv = sum(_vals) / len(_vals) if _vals else float(seg.get("gap_vix", 0.0))
+        gap = f"{float(_mv):.1f}"
+    except Exception:
+        gap = "0.0"
+
+    state = attr.get("state_flag") or seg.get("state_flag") or "ACTIVE"
     line  = f"⚡ {headline}  •  [{state}] Friction: {gap} | Core Factors: {words}  •  " * 4
-    TICKER_FILE.write_text(line)
+    # 2026-09-09: atomic replace. ffmpeg's drawtext maps this file (reload=1); truncating it in
+    # place raised SIGBUS in ffmpeg ("Bus error (core dumped)", 11 times in master.log)
+    _tmp = TICKER_FILE.with_name(TICKER_FILE.name + ".tmp")
+    _tmp.write_text(line)
+    os.replace(_tmp, TICKER_FILE)
     log.info("Ticker updated: %s", headline[:60])
 
 
@@ -345,9 +359,6 @@ def play_segment(seg_path: Path):
     update_ticker(headline, syn_words, seg)
     # Assassinate OpenClaw before the TTS engine wakes up
     seg["beats"] = [b for b in seg["beats"] if b.get("speaker", "").lower() != "openclaw"]
-    # Update video frame
-    if "image_path" in seg:
-        update_video_frame(seg["image_path"])
 
 
     tmp_dir = seg_path.parent / "audio"
@@ -386,6 +397,10 @@ def play_segment(seg_path: Path):
         beat_wavs.append(str(wav))
         beat_speakers.append(speaker)
 
+    # 2026-09-09: swap the frame only once the audio is ready — TTS for a segment takes tens of
+    # seconds and the picture used to change long before the words did
+    if "image_path" in seg:
+        update_video_frame(seg["image_path"])
     push_segment_to_udp(beat_wavs, image, beat_speakers)
     seg_path.with_suffix(".played").touch()
     log.info("Segment complete: %s", seg_path.name)
@@ -454,7 +469,7 @@ def _generate_idle_segment():
         if globals().get("_IDLE_MOD") is None:
             import importlib.util as _ilu
             _spec = _ilu.spec_from_file_location(
-                "idle_reflection", "/home/remvelchio/eigentrace/idle_reflection.py")
+                "idle_reflection", "/mnt/c/Users/M4ISI/eigentrace/idle_reflection.py")
             _m = _ilu.module_from_spec(_spec)
             _spec.loader.exec_module(_m)
             _IDLE_MOD = _m  # bind only after a successful load
@@ -479,24 +494,16 @@ def _prebuffer_idle(count=5):
 
 def main():
     SEGMENTS_DIR.mkdir(parents=True, exist_ok=True)
+    # 2026-09-09: after an outage the frame symlink usually points at a purged image and the
+    # transmitter dies every 8 s with "No such file or directory"; start from the bumper instead
+    if not os.path.exists("/home/remvelchio/eigentrace/tmp/current_frame.png"):
+        update_video_frame(None)
     log.info("Segment player started -- watching %s", SEGMENTS_DIR)
     log.info("Voices: %s", {k: v.name for k, v in VOICE_MAP.items()})
 
     _idle_seconds = 0
     _IDLE_THRESHOLD = 30
     _idle_fail = 0
-
-    # ── Periodic scheduling state ──
-    import sys as _sys
-    _sys.path.insert(0, "/mnt/c/Users/M4ISI/eigentrace")
-    _last_consolidation = datetime.datetime.now()
-    _last_weekly = datetime.datetime.now()
-    _last_self_audit = datetime.datetime.now()
-    _last_governance = datetime.datetime.now()
-    _CONSOLIDATION_INTERVAL = datetime.timedelta(hours=1)
-    _WEEKLY_INTERVAL = datetime.timedelta(hours=6)
-    _SELF_AUDIT_INTERVAL = datetime.timedelta(hours=4)
-    _GOVERNANCE_INTERVAL = datetime.timedelta(hours=2)
     while True:
         seg = next_segment()
         if seg:
@@ -518,107 +525,19 @@ def main():
             except Exception as e:
                 log.error("Playback error on %s: %s", seg.name, e)
                 seg.with_suffix(".played").touch()
-        # ── Periodic segment scheduling ──
-        _now = datetime.datetime.now()
-        if _now - _last_consolidation > _CONSOLIDATION_INTERVAL:
-            _last_consolidation = _now
-            try:
-                from rem_consolidation import run_consolidation
-                log.info("PERIODIC: Running REM consolidation")
-                run_consolidation()
-            except Exception as _pe:
-                log.warning(f"PERIODIC: Consolidation failed: {_pe}")
-
-        if _now - _last_governance > _GOVERNANCE_INTERVAL:
-            _last_governance = _now
-            try:
-                from autonomous_governance import run_governance_cycle
-                log.info("PERIODIC: Running governance cycle")
-                run_governance_cycle()
-                # Format governance output for TTS
-                _gov_segs = sorted(SEGMENTS_DIR.glob("*governance_segment.json"))
-                if _gov_segs:
-                    _latest_gov = _gov_segs[-1]
-                    import json as _gj
-                    _gd = _gj.load(open(_latest_gov))
-                    for _b in _gd.get("beats", []):
-                        _bt = _b.get("text", "")
-                        if _bt.startswith("{"):
-                            try:
-                                _diag = _gj.loads(_bt)
-                                _b["text"] = (
-                                    f"Governance report. The system identified: "
-                                    f"{_diag.get('diagnosis', {}).get('problem', 'unknown issue')}. "
-                                    f"Proposed fix: {_diag.get('diagnosis', {}).get('change_description', 'none')}. "
-                                    f"Risk level: {_diag.get('diagnosis', {}).get('risk', 'unknown')}. "
-                                    f"Confidence: {_diag.get('diagnosis', {}).get('confidence', 0)}."
-                                )
-                            except:
-                                pass
-                    _latest_gov.write_text(_gj.dumps(_gd, indent=2, default=str))
-            except Exception as _ge:
-                log.warning(f"PERIODIC: Governance failed: {_ge}")
-
-        if _now - _last_weekly > _WEEKLY_INTERVAL:
-            _last_weekly = _now
-            try:
-                from weekly_compression import compress_week
-                log.info("PERIODIC: Running weekly compression")
-                compress_week()
-            except Exception as _we:
-                log.warning(f"PERIODIC: Weekly compression failed: {_we}")
-
-        if _now - _last_self_audit > _SELF_AUDIT_INTERVAL:
-            _last_self_audit = _now
-            try:
-                from self_audit import audit_idle_reflections
-                log.info("PERIODIC: Running self-audit")
-                audit_idle_reflections(n=20)
-            except Exception as _sa:
-                log.warning(f"PERIODIC: Self-audit failed: {_sa}")
-
         else:
             _idle_seconds += POLL_INTERVAL
             if _idle_seconds >= _IDLE_THRESHOLD:
+                # 1 in 4 idle cycles: forage for new knowledge instead of reflecting
                 import random as _rand
                 idle_seg = None  # 2026-09-04: every branch below must leave this bound
-                _roll = _rand.random()
-                if _roll < 0.20:
-                    # 20%: Entropy foraging — hunt for novel topics
+                if _rand.random() < 0.25:
                     log.info("IDLE: %ds of dead air -- entropy foraging", _idle_seconds)
                     try:
                         from entropy_forager import forage_entropy
                         idle_seg = forage_entropy()
                     except Exception as _fe:
                         log.warning("FORAGING failed: %s — falling back to reflection", _fe)
-                elif _roll < 0.50:
-                    # 30%: idle_agent tasks — synthesis engine, void patterns, model friction
-                    log.info("IDLE: %ds of dead air -- idle_agent task", _idle_seconds)
-                    try:
-                        import sys as _sys
-                        _sys.path.insert(0, "/mnt/c/Users/M4ISI/eigentrace")
-                        from idle_agent import run_idle_turn
-                        _agent_beats = run_idle_turn()
-                        if _agent_beats:
-                            _ts = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-                            _topic = _agent_beats[0].get("phase", "idle")
-                            _seg = {
-                                "id": f"idle_{_ts}",
-                                "timestamp": _ts,
-                                "beats": _agent_beats,
-                                "segment_type": "idle",
-                                "attribution": {
-                                    "story_title": f"Idle reflection: {_topic}",
-                                    "category": "meta",
-                                    "state_flag": "IDLE",
-                                },
-                            }
-                            _path = SEGMENTS_DIR / f"{_ts}_idle_segment.json"
-                            import json as _json2
-                            _path.write_text(_json2.dumps(_seg, indent=2, default=str))
-                            log.info(f"IDLE AGENT: {_topic} -> {_path.name}")
-                    except Exception as _ae:
-                        log.warning("IDLE AGENT failed: %s — falling back to built-in", _ae)
                         idle_seg = _generate_idle_segment()
                 else:
                     log.info("IDLE: %ds of dead air -- generating reflection", _idle_seconds)
