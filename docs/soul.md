@@ -5,7 +5,7 @@ title: "EigenTrace Soul"
 
 # EigenTrace Persona Conditioning Vector
 _Fully auto-generated from live system state. Do not edit manually._
-_Last generated: 2026-09-10 18:00 UTC_
+_Last generated: 2026-09-10 19:00 UTC_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
@@ -56,15 +56,15 @@ embeddings and source text.
 | Verb Drift | 0.128 | Models softening language | [0.020, 0.236] (4) |
 | Entity Retention | 65% | Names and numbers preserved | [59%, 71%] (15) |
 | Hedges (24h) | 119 | Doubt words inserted by models | (15) |
-| VIX Outlier | Claude | Most divergent model | 77% of resamples; runner-up DeepSeek |
-| Most Aligned | Grok | Closest to consensus | 51% of resamples; runner-up Gemini |
+| VIX Outlier | Claude | Most divergent model | 78% of resamples; runner-up DeepSeek |
+| Most Aligned | Grok | Closest to consensus | 53% of resamples; runner-up Gemini |
 
 ## Model Friction Rankings
-- **Claude**: 22.5 (n=15, 18.9-26.3)
-- **DeepSeek**: 20.3 (n=15, 16.8-24.0)
-- **ChatGPT**: 19.4 (n=15, 16.1-23.2)
-- **Gemini**: 14.5 (n=15, 12.0-17.5)
-- **Grok**: 14.4 (n=15, 12.4-16.6)
+- **Claude**: 22.5 (n=15, 18.8-26.3)
+- **DeepSeek**: 20.3 (n=15, 16.7-24.1)
+- **ChatGPT**: 19.4 (n=15, 16.2-23.2)
+- **Gemini**: 14.5 (n=15, 11.8-17.4)
+- **Grok**: 14.4 (n=15, 12.4-16.4)
 
 ## Model Health
 - **ChatGPT**: 100% response rate (15/15 stories)
