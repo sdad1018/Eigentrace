@@ -22,7 +22,7 @@ CPU only: CUDA is hidden before any import so nothing can touch the GPU.
 from __future__ import annotations
 
 import os
-os.environ.setdefault("CUDA_VISIBLE_DEVICES", "")  # never load anything on the GPU
+os.environ["CUDA_VISIBLE_DEVICES"] = ""  # never load anything on the GPU (hard set: an inherited value must not win)
 
 import argparse
 import datetime as _dt
@@ -213,6 +213,20 @@ def _para(text: str) -> str:
     return "\n".join(l.rstrip() for l in text.splitlines() if l.strip())
 
 
+_YAML_RESERVED = {"y", "n", "yes", "no", "on", "off", "true", "false", "null"}
+_YAML_PLAIN_RE = re.compile(r"[a-zÀ-ɏ][a-z0-9À-ɏ\-]*(?: [a-z0-9À-ɏ\-]+)*")
+_YAML_NUMERIC_RE = re.compile(r"[0-9][0-9a-fox_.+\-e]*|[.+\-][0-9].*")
+
+
+def _yaml_key(w: str) -> str:
+    """Render a void word as a YAML mapping key that every YAML reader keeps as
+    the same string: quote reserved words (yes/no/on/off/true/false/null),
+    number-like words and anything that is not a plain lowercase word."""
+    if w in _YAML_RESERVED or _YAML_NUMERIC_RE.fullmatch(w) or not _YAML_PLAIN_RE.fullmatch(w):
+        return '"' + w.replace("\\", "\\\\").replace('"', '\\"') + '"'
+    return w
+
+
 def render_form(k, story, letters, killshots, void_items, rater=""):
     a = story["attribution"]
     title = (a.get("story_title") or "").strip()
@@ -226,7 +240,8 @@ def render_form(k, story, letters, killshots, void_items, rater=""):
     lines.append("")
     lines.append("Read the source text, then each summary. Fill the `yaml` block at the end. "
                  "Do not try to guess which vendor wrote which summary; the mapping is in the key, "
-                 "not here. Blank answers are recorded as unlabeled, not as 'no'.")
+                 "not here. Judge content, not layout: headings, bullets and length are not "
+                 "omissions. Blank answers are recorded as unlabeled, not as 'no'.")
     lines.append("")
     lines.append("## Source text (as captured, feed chrome stripped)")
     lines.append("")
@@ -285,7 +300,7 @@ def render_form(k, story, letters, killshots, void_items, rater=""):
         lines.append(f"  {ks['id']}: {{A: , B: , C: , D: , E: }}")
     lines.append("void_words:")
     for w in void_items:
-        lines.append(f"  {w}: ")
+        lines.append(f"  {_yaml_key(w)}: ")
     lines.append("notes: \"\"")
     lines.append("```")
     lines.append("")
@@ -309,7 +324,8 @@ def main():
     out = args.out or (DEFAULT_OUT_ROOT / f"kit_{_dt.date.today().isoformat()}")
     if out.exists() and any(out.iterdir()) and not args.force:
         sys.exit(f"[make_kit] {out} exists and is not empty; use --force to overwrite")
-    if str(out.resolve()).startswith(str(REPO.resolve())):
+    out_abs, repo_abs = out.resolve(), REPO.resolve()
+    if out_abs == repo_abs or repo_abs in out_abs.parents:
         sys.exit("[make_kit] refusing to write the kit inside the public repo (it contains article text)")
 
     strip_chrome, strip_src = _load_strip_chrome()

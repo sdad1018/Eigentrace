@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "title": "EigenTrace measurements v1: five frontier models summarizing live news, geometric omission and divergence measures",
+    "upload_type": "dataset",
+    "publication_date": "2026-09-10",
+    "creators": [
+      {
+        "name": "Adams, Sean"
+      }
+    ],
+    "description": "<p>One row per news story processed by the EigenTrace broadcast between 2026-03-23 and 2026-09-10. For each story, five commercial language models (ChatGPT, Claude, Gemini, DeepSeek, Grok) were asked to summarize the same live article; the dataset holds their summaries, the Summary Plus rewrites of those summaries where they were produced, and the measurements computed on them: per-model VIX (500 * (1 - cos(e_i, centroid)) over BAAI/bge-large-en-v1.5 embeddings), consensus density (mean pairwise cosine of the five summaries), the mean-VIX state flag, the absent-word ratio of the source, void and logos words, Summary Plus channel words, Mistral-extracted killshot claims with their salience, coverage and omitting models, and lexical compression scores (verb downgrade, entity retention, hedge totals). Article text is excluded; titles, URLs and GUIDs are included so every row can be traced to its source. The sample is whatever the broadcast processed, not a designed sample; measurement definitions changed on the dates listed in the repository CHANGELOG. Files: stories.jsonl (full rows), measurements.csv (numeric columns only), models_long.csv (one row per story and model), MANIFEST.json (row counts, date range, SHA-256 of each file, build time, git commit). Schema and rebuild instructions are in dataset/README.md of the supplementing repository.</p>",
+    "keywords": [
+      "large language models",
+      "news summarization",
+      "omission",
+      "model divergence",
+      "embedding geometry",
+      "consensus density",
+      "ChatGPT",
+      "Claude",
+      "Gemini",
+      "DeepSeek",
+      "Grok",
+      "EigenTrace"
+    ],
+    "license": "cc-by-4.0",
+    "access_right": "open",
+    "version": "1.0.0",
+    "language": "eng",
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/sdad1018/Eigentrace",
+        "relation": "isSupplementTo",
+        "resource_type": "software"
+      }
+    ],
+    "notes": "Model outputs are included as the object of measurement. Publisher article text (source_body), source n-grams and per-model verb lists derived from the article text are excluded. The code that builds the dataset (dataset/build_dataset.py) is MIT-licensed in the repository; the data files are CC BY 4.0 (dataset/LICENSE-DATA)."
+  }
+}

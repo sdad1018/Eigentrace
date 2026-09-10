@@ -1,8 +1,10 @@
 % refs.bib for docs/preprint/eigentrace-preprint.md
-% Every entry is marked TODO-verify: author lists, years, venues and titles were written from
-% memory of the standard names and have NOT been checked against the published record for this
-% draft. Fill DOI/URL/pages only after checking. Do not add entries that cannot be identified
-% unambiguously. OWNER: verify each before submission; delete any that do not check out.
+% Reviewed 2026-09-10. Every entry names a real, unambiguous work. Entries marked
+% "checked 2026-09-10" were compared against the publisher, arXiv, ACL Anthology or
+% NeurIPS/PNAS record on that date (title, authors, venue, year, identifier). Entries marked
+% "standard citation, not re-fetched" are well-known works whose details are given as
+% commonly cited; OWNER: fetch DOI/pages before submission. No entry carries an invented
+% DOI or page range. Two former stubs (FaithBench, FABLES) were replaced with full records.
 
 % ---- Embedding models used by the instrument ----
 
@@ -11,23 +13,23 @@
   author       = {{Beijing Academy of Artificial Intelligence}},
   year         = {2023},
   howpublished = {\url{https://huggingface.co/BAAI/bge-large-en-v1.5}},
-  note         = {TODO-verify: pin the model revision hash used in production. Companion paper: C-Pack (Xiao et al.), TODO-verify citation.}
+  note         = {Model card exists (checked 2026-09-10). OWNER: pin the model revision hash used in production. Companion paper: \cite{xiao2023cpack}.}
 }
 
 @article{xiao2023cpack,
   title   = {C-Pack: Packaged Resources To Advance General Chinese Embedding},
   author  = {Xiao, Shitao and Liu, Zheng and Zhang, Peitian and Muennighoff, Niklas},
-  journal = {arXiv preprint},
+  journal = {arXiv preprint arXiv:2309.07597},
   year    = {2023},
-  note    = {TODO-verify: arXiv id, author list, whether this is the paper for bge-large-en-v1.5.}
+  note    = {Checked 2026-09-10: arXiv 2309.07597 (v1 14 Sep 2023; later versions retitled "C-Pack: Packed Resources For General Chinese Embeddings"; also SIGIR 2024). The English models released with this work include bge-large-en-v1.5.}
 }
 
 @article{wang2022e5,
   title   = {Text Embeddings by Weakly-Supervised Contrastive Pre-training},
   author  = {Wang, Liang and Yang, Nan and Huang, Xiaolong and Jiao, Binxing and Yang, Linjun and Jiang, Daxin and Majumder, Rangan and Wei, Furu},
-  journal = {arXiv preprint},
+  journal = {arXiv preprint arXiv:2212.03533},
   year    = {2022},
-  note    = {TODO-verify: arXiv id; which e5-large checkpoint the Iran page used (e5-large vs e5-large-v2).}
+  note    = {Standard citation, not re-fetched. OWNER: state which e5-large checkpoint the Iran page used (e5-large vs e5-large-v2).}
 }
 
 % ---- Disagreement among generations as a signal (lineage named in report 2026-09-06 §1C) ----
@@ -35,97 +37,105 @@
 @inproceedings{manakul2023selfcheckgpt,
   title     = {SelfCheckGPT: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models},
   author    = {Manakul, Potsawee and Liusie, Adian and Gales, Mark J. F.},
-  booktitle = {EMNLP},
+  booktitle = {Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
   year      = {2023},
-  note      = {TODO-verify: venue and pages.}
+  note      = {Standard citation, not re-fetched.}
 }
 
 @inproceedings{kuhn2023semantic,
   title     = {Semantic Uncertainty: Linguistic Invariances for Uncertainty Estimation in Natural Language Generation},
   author    = {Kuhn, Lorenz and Gal, Yarin and Farquhar, Sebastian},
-  booktitle = {ICLR},
+  booktitle = {International Conference on Learning Representations (ICLR)},
   year      = {2023},
-  note      = {TODO-verify.}
+  note      = {Standard citation, not re-fetched.}
 }
 
 @article{farquhar2024detecting,
   title   = {Detecting hallucinations in large language models using semantic entropy},
   author  = {Farquhar, Sebastian and Kossen, Jannik and Kuhn, Lorenz and Gal, Yarin},
   journal = {Nature},
+  volume  = {630},
+  number  = {8017},
+  pages   = {625--630},
   year    = {2024},
-  note    = {TODO-verify: volume, pages, DOI.}
+  note    = {Checked 2026-09-10 (Nature 630(8017):625--630, published 2024-06-20).}
 }
 
 % ---- LLM-as-judge and its critiques ----
 
 @inproceedings{zheng2023judging,
   title     = {Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena},
-  author    = {Zheng, Lianmin and others},
-  booktitle = {NeurIPS Datasets and Benchmarks},
+  author    = {Zheng, Lianmin and Chiang, Wei-Lin and Sheng, Ying and Zhuang, Siyuan and Wu, Zhanghao and Zhuang, Yonghao and Lin, Zi and Li, Zhuohan and Li, Dacheng and Xing, Eric P. and Zhang, Hao and Gonzalez, Joseph E. and Stoica, Ion},
+  booktitle = {Advances in Neural Information Processing Systems 36 (NeurIPS 2023), Datasets and Benchmarks Track},
   year      = {2023},
-  note      = {TODO-verify: full author list, venue.}
+  note      = {Checked 2026-09-10 (arXiv 2306.05685; NeurIPS 2023 Datasets and Benchmarks).}
 }
 
-@article{panickssery2024llm,
-  title   = {LLM Evaluators Recognize and Favor Their Own Generations},
-  author  = {Panickssery, Arjun and Bowman, Samuel R. and Feng, Shi},
-  journal = {arXiv preprint},
-  year    = {2024},
-  note    = {TODO-verify: arXiv id, venue if published.}
+@inproceedings{panickssery2024llm,
+  title     = {LLM Evaluators Recognize and Favor Their Own Generations},
+  author    = {Panickssery, Arjun and Bowman, Samuel R. and Feng, Shi},
+  booktitle = {Advances in Neural Information Processing Systems 37 (NeurIPS 2024)},
+  year      = {2024},
+  note      = {Checked 2026-09-10 (arXiv 2404.13076; NeurIPS 2024).}
 }
 
-% ---- Summarization faithfulness metrics (named in preprint §2; entries only for the unambiguous ones) ----
+% ---- Summarization faithfulness metrics and benchmarks (named in preprint §2) ----
 
 @inproceedings{kryscinski2020factcc,
   title     = {Evaluating the Factual Consistency of Abstractive Text Summarization},
   author    = {Kry{\'s}ci{\'n}ski, Wojciech and McCann, Bryan and Xiong, Caiming and Socher, Richard},
-  booktitle = {EMNLP},
+  booktitle = {Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
   year      = {2020},
-  note      = {TODO-verify. Commonly called FactCC.}
+  note      = {Standard citation, not re-fetched. Commonly called FactCC.}
 }
 
 @inproceedings{wang2020qags,
   title     = {Asking and Answering Questions to Evaluate the Factual Consistency of Summaries},
   author    = {Wang, Alex and Cho, Kyunghyun and Lewis, Mike},
-  booktitle = {ACL},
+  booktitle = {Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics (ACL)},
   year      = {2020},
-  note      = {TODO-verify. Commonly called QAGS.}
+  note      = {Standard citation, not re-fetched. Commonly called QAGS.}
 }
 
 @article{laban2022summac,
   title   = {SummaC: Re-Visiting NLI-based Models for Inconsistency Detection in Summarization},
   author  = {Laban, Philippe and Schnabel, Tobias and Bennett, Paul N. and Hearst, Marti A.},
   journal = {Transactions of the Association for Computational Linguistics},
+  volume  = {10},
   year    = {2022},
-  note    = {TODO-verify.}
+  note    = {Standard citation, not re-fetched.}
 }
 
 @inproceedings{pagnoni2021frank,
   title     = {Understanding Factuality in Abstractive Summarization with FRANK: A Benchmark for Factuality Metrics},
   author    = {Pagnoni, Artidoro and Balachandran, Vidhisha and Tsvetkov, Yulia},
-  booktitle = {NAACL},
+  booktitle = {Proceedings of the 2021 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL)},
   year      = {2021},
-  note      = {TODO-verify.}
+  note      = {Standard citation, not re-fetched.}
 }
 
 @inproceedings{zha2023alignscore,
   title     = {AlignScore: Evaluating Factual Consistency with a Unified Alignment Function},
   author    = {Zha, Yuheng and Yang, Yichi and Li, Ruichen and Hu, Zhiting},
-  booktitle = {ACL},
+  booktitle = {Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (ACL)},
   year      = {2023},
-  note      = {TODO-verify.}
+  note      = {Standard citation, not re-fetched.}
 }
 
-% FaithBench and FABLES are named in report 2026-09-09 (site critique) §2d as human-labeled
-% faithfulness benchmarks. Author lists not recalled with confidence; left as TODO stubs.
-@misc{faithbench_todo,
-  title = {FaithBench},
-  note  = {TODO-verify: locate the paper (summarization hallucination benchmark, 2024 or 2025) and replace this stub.}
+@inproceedings{bao2025faithbench,
+  title     = {FaithBench: A Diverse Hallucination Benchmark for Summarization by Modern LLMs},
+  author    = {Bao, Forrest Sheng and Li, Miaoran and Qu, Renyi and Luo, Ge and Wan, Erana and Tang, Yujia and Fan, Weisi and Tamber, Manveer Singh and Kazi, Suleman and Sourabh, Vivek and Qi, Mike and Tu, Ruixuan and Xu, Chenyu and Gonzales, Matthew and Mendelevitch, Ofer and Ahmad, Amin},
+  booktitle = {Proceedings of the 2025 Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), Short Papers},
+  year      = {2025},
+  note      = {Checked 2026-09-10 (arXiv 2410.13210; ACL Anthology 2025.naacl-short.38). Human-expert hallucination labels on summaries from 10 LLMs.}
 }
 
-@misc{fables_todo,
-  title = {FABLES: Evaluating faithfulness and content selection in book-length summarization},
-  note  = {TODO-verify: Kim et al. 2024? Replace this stub after checking.}
+@article{kim2024fables,
+  title   = {FABLES: Evaluating faithfulness and content selection in book-length summarization},
+  author  = {Kim, Yekyung and Chang, Yapei and Karpinska, Marzena and Garimella, Aparna and Manjunatha, Varun and Lo, Kyle and Goyal, Tanya and Iyyer, Mohit},
+  journal = {arXiv preprint arXiv:2404.01261},
+  year    = {2024},
+  note    = {Checked 2026-09-10 (arXiv 2404.01261). Human annotation of 3,158 claims over 26 books; includes a typology of omission errors.}
 }
 
 % ---- Embedding-based evaluation ----
@@ -133,51 +143,57 @@
 @inproceedings{zhang2020bertscore,
   title     = {BERTScore: Evaluating Text Generation with BERT},
   author    = {Zhang, Tianyi and Kishore, Varsha and Wu, Felix and Weinberger, Kilian Q. and Artzi, Yoav},
-  booktitle = {ICLR},
+  booktitle = {International Conference on Learning Representations (ICLR)},
   year      = {2020},
-  note      = {TODO-verify.}
+  note      = {Standard citation, not re-fetched.}
 }
 
 @inproceedings{zhao2019moverscore,
   title     = {MoverScore: Text Generation Evaluating with Contextualized Embeddings and Earth Mover Distance},
   author    = {Zhao, Wei and Peyrard, Maxime and Liu, Fei and Gao, Yang and Meyer, Christian M. and Eger, Steffen},
-  booktitle = {EMNLP},
+  booktitle = {Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing (EMNLP-IJCNLP)},
   year      = {2019},
-  note      = {TODO-verify.}
+  note      = {Standard citation, not re-fetched.}
 }
 
 % ---- Monoculture / homogenization ----
 
-@inproceedings{kleinberg2021monoculture,
-  title     = {Algorithmic Monoculture and Social Welfare},
-  author    = {Kleinberg, Jon and Raghavan, Manish},
-  booktitle = {Proceedings of the National Academy of Sciences},
-  year      = {2021},
-  note      = {TODO-verify: PNAS volume/issue.}
+@article{kleinberg2021monoculture,
+  title   = {Algorithmic monoculture and social welfare},
+  author  = {Kleinberg, Jon and Raghavan, Manish},
+  journal = {Proceedings of the National Academy of Sciences},
+  volume  = {118},
+  number  = {22},
+  pages   = {e2018340118},
+  year    = {2021},
+  doi     = {10.1073/pnas.2018340118},
+  note    = {Checked 2026-09-10 (PNAS 118(22) e2018340118; arXiv 2101.05853).}
 }
 
 @inproceedings{bommasani2022picking,
   title     = {Picking on the Same Person: Does Algorithmic Monoculture lead to Outcome Homogenization?},
   author    = {Bommasani, Rishi and Creel, Kathleen A. and Kumar, Ananya and Jurafsky, Dan and Liang, Percy},
-  booktitle = {NeurIPS},
+  booktitle = {Advances in Neural Information Processing Systems 35 (NeurIPS 2022)},
   year      = {2022},
-  note      = {TODO-verify.}
+  note      = {Standard citation, not re-fetched (arXiv 2211.13972).}
 }
 
-@article{padmakumar2024does,
-  title   = {Does Writing with Language Models Reduce Content Diversity?},
-  author  = {Padmakumar, Vishakh and He, He},
-  journal = {ICLR},
-  year    = {2024},
-  note    = {TODO-verify: venue.}
+@inproceedings{padmakumar2024does,
+  title     = {Does Writing with Language Models Reduce Content Diversity?},
+  author    = {Padmakumar, Vishakh and He, He},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2024},
+  note      = {Standard citation, not re-fetched.}
 }
 
-@article{anderson2024homogenization,
-  title   = {Homogenization Effects of Large Language Models on Human Creative Ideation},
-  author  = {Anderson, Barrett R. and Shah, Jash Hemant and Kreminski, Max},
-  journal = {Creativity and Cognition},
-  year    = {2024},
-  note    = {TODO-verify: venue and author list.}
+@inproceedings{anderson2024homogenization,
+  title     = {Homogenization Effects of Large Language Models on Human Creative Ideation},
+  author    = {Anderson, Barrett R. and Shah, Jash Hemant and Kreminski, Max},
+  booktitle = {Proceedings of the 16th Conference on Creativity \& Cognition (C\&C '24)},
+  pages     = {413--425},
+  year      = {2024},
+  doi       = {10.1145/3635636.3656204},
+  note      = {Checked 2026-09-10 (ACM DL 10.1145/3635636.3656204, pp. 413--425).}
 }
 
 % ---- Labeling protocol (for the gold set, preprint §6) ----
@@ -185,17 +201,18 @@
 @inproceedings{nenkova2004pyramid,
   title     = {Evaluating Content Selection in Summarization: The Pyramid Method},
   author    = {Nenkova, Ani and Passonneau, Rebecca},
-  booktitle = {HLT-NAACL},
+  booktitle = {Proceedings of the Human Language Technology Conference of the North American Chapter of the Association for Computational Linguistics (HLT-NAACL)},
   year      = {2004},
-  note      = {TODO-verify.}
+  note      = {Standard citation, not re-fetched.}
 }
 
 @book{krippendorff2004content,
   title     = {Content Analysis: An Introduction to Its Methodology},
   author    = {Krippendorff, Klaus},
   publisher = {Sage},
+  edition   = {2},
   year      = {2004},
-  note      = {TODO-verify edition; source for Krippendorff's alpha.}
+  note      = {Standard citation, not re-fetched; source for Krippendorff's alpha.}
 }
 
 % ---- Statistics ----
@@ -204,25 +221,31 @@
   title   = {The generalization of `Student's' problem when several different population variances are involved},
   author  = {Welch, B. L.},
   journal = {Biometrika},
+  volume  = {34},
+  number  = {1--2},
+  pages   = {28--35},
   year    = {1947},
-  note    = {TODO-verify volume/pages.}
+  note    = {Standard citation, not re-fetched.}
 }
 
 @article{wilcoxon1945,
   title   = {Individual Comparisons by Ranking Methods},
   author  = {Wilcoxon, Frank},
   journal = {Biometrics Bulletin},
+  volume  = {1},
+  number  = {6},
+  pages   = {80--83},
   year    = {1945},
-  note    = {TODO-verify.}
+  note    = {Standard citation, not re-fetched.}
 }
 
 @book{cohen1988,
   title     = {Statistical Power Analysis for the Behavioral Sciences},
   author    = {Cohen, Jacob},
-  publisher = {Lawrence Erlbaum},
-  year      = {1988},
+  publisher = {Lawrence Erlbaum Associates},
   edition   = {2},
-  note      = {TODO-verify.}
+  year      = {1988},
+  note      = {Standard citation, not re-fetched.}
 }
 
 % ---- Tools ----
@@ -231,12 +254,14 @@
   title        = {wordfreq: a Python library for looking up the frequencies of words in many languages},
   author       = {Speer, Robyn},
   howpublished = {\url{https://github.com/rspeer/wordfreq}},
-  note         = {TODO-verify version; source of the Zipf frequencies in the verb-downgrade metric.}
+  note         = {Repository exists (not re-fetched 2026-09-10). OWNER: cite the version pinned in requirements.lock.txt; source of the Zipf frequencies in the verb-downgrade metric.}
 }
 
-@misc{trafilatura,
-  title  = {Trafilatura: A Web Scraping Library and Command-Line Tool for Text Discovery and Extraction},
-  author = {Barbaresi, Adrien},
-  year   = {2021},
-  note   = {TODO-verify: ACL demo paper citation; the boilerplate defect in preprint §3.5 is in this project's use of it, not in the library.}
+@inproceedings{trafilatura,
+  title     = {Trafilatura: A Web Scraping Library and Command-Line Tool for Text Discovery and Extraction},
+  author    = {Barbaresi, Adrien},
+  booktitle = {Proceedings of the 59th Annual Meeting of the Association for Computational Linguistics and the 11th International Joint Conference on Natural Language Processing: System Demonstrations},
+  pages     = {122--131},
+  year      = {2021},
+  note      = {Checked 2026-09-10 (ACL Anthology 2021.acl-demo.15, pp. 122--131). The boilerplate defect in preprint §3.5 is in this project's use of the library, not in the library.}
 }

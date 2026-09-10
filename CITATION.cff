@@ -1,0 +1,48 @@
+# Citation metadata for EigenTrace (https://citation-file-format.github.io/)
+# Code is MIT-licensed (LICENSE). The measurements dataset built by
+# dataset/build_dataset.py is CC BY 4.0 (dataset/LICENSE-DATA); see the
+# preferred-citation block below for the dataset record.
+cff-version: 1.2.0
+message: "If you use EigenTrace or its measurements dataset, please cite it as below."
+type: software
+title: EigenTrace
+abstract: >-
+  EigenTrace asks five commercial language models (ChatGPT, Claude, Gemini,
+  DeepSeek, Grok) to summarize the same live news stories and measures what
+  they omit and where they diverge: per-model VIX and consensus density over
+  BAAI/bge-large-en-v1.5 embeddings, absent-word ratios, void and logos words,
+  killshot claims, and lexical compression scores.
+authors:
+  - family-names: Adams
+    given-names: Sean
+repository-code: https://github.com/sdad1018/Eigentrace
+url: https://github.com/sdad1018/Eigentrace
+license: MIT
+version: 1.0.0
+date-released: "2026-09-10"
+keywords:
+  - large language models
+  - news summarization
+  - omission
+  - model divergence
+  - embedding geometry
+identifiers:
+  # OWNER: replace TODO with the DOI Zenodo assigns after the upload
+  # (dataset/README.md, section "Zenodo steps"), then update the same DOI
+  # in dataset/README.md.
+  - type: doi
+    value: 10.5281/zenodo.TODO
+    description: Zenodo record of the EigenTrace measurements dataset v1
+preferred-citation:
+  type: dataset
+  title: "EigenTrace measurements v1: five frontier models summarizing live news, geometric omission and divergence measures"
+  authors:
+    - family-names: Adams
+      given-names: Sean
+  year: 2026
+  version: 1.0.0
+  license: CC-BY-4.0
+  publisher:
+    name: Zenodo
+  # OWNER: same DOI as above once assigned.
+  doi: 10.5281/zenodo.TODO
