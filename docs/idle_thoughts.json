@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-10T02:10:28.227153",
-  "total": 10614,
-  "with_reasoning": 3653,
+  "generated": "2026-09-10T03:03:07.770700",
+  "total": 10619,
+  "with_reasoning": 3654,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -84914,6 +84914,46 @@
       "reasoning": "All summaries mention Donald Trump's exact quote. All five models dropped that he explicitly said the U.S. is not fighting right now and the recent exchange of fire between the US and Iran. These omissions suggest a different framing than the source material which would likely portray a more immediate sense of conflict. DeepSeek stands apart by noting the broader military operations involving the US and Israel against Iran, suggesting it was not only the USA that is involved. It's notable that Claude, Gemini, and DeepSeek also omitted that Trump said he wasn't fighting right now, which could be interpreted to minimize the ongoing conflict even more. Grok did keep this part of the quote as a direct quote, which might indicate its stance on Trump\u2019s statement.",
       "chars": 1700,
       "has_reasoning": true
+    },
+    {
+      "timestamp": "20260909_221417",
+      "topic": "which stories went lockstep, and what did the models agree to omit",
+      "reflection": "The story of Niger accusing France of orchestrating a failed military mutiny is lockstep, along with the one titled \"James Orr Suspended.\" In these two stories, we see high consensus density values above 0.93. The void words omitted by every model for both of these stories are: \"kinnock,\" \"mogg,\" \"brex,\" \"thatcherism,\" and \"barroso\" from the story about James Orr. And in Niger accusing France, they dropped 'coup attempt' and 'revolt,' which can be described as words for a failed uprising. The models omitted different specific claims in each lockstep story. For \"James Orr Suspended\" all five dropped claims about him arranging contributions and his ties to Peter Thiel and JD Vance, as well as being called \"Farage's brain.\" But they kept the information that he was suspended after secret filming. By contrast, for Niger accusing France of orchestrating a failed military mutiny, every model omitted nothing.",
+      "reasoning": null,
+      "chars": 915,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260909_221642",
+      "topic": "Indonesia wildfires send toxic haze across Southeast Asia",
+      "reflection": "One thing the models all mention is that there are wildfires in Kalimantan province, which is part of Indonesia. They all specify that it's a significant amount of land on fire, 202,000 hectares. They're all clear about the impact: toxic haze and smoke, affecting air quality across Southeast Asia. The models all drop a bunch of words from their summaries: newsfeed, published, conflagrations, bushfires, deforestation. Deforestation, which is often caused by wildfires in Indonesia, is a particularly glaring omission. All the sources mention 'deforestation', while Claude and Grok don't even say \"wildfire\", saying instead that it is \"large-scale\" or unspecified fires. DeepSeek stands apart here because it's the only one to mention 'arsons'. It is the only model who says the wildfires are burning rainforests. The other models say either nothing about what's being burned, and so imply all of Kalimantan is a blank slate awaiting development; or they use terms like \"haze\" and \"smoke\", which do",
+      "reasoning": null,
+      "chars": 1713,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260909_222315",
+      "topic": "which story had the biggest gap between source and summary",
+      "reflection": "The story about Trump's officials drafting a plan to pay at-home parents shows the biggest gap between source and summary.  ChatGPT, Claude, Gemini, DeepSeek, and Grok all omit crucial details of who drafted the policy plan and where those funds are coming from. This creates a significant discrepancy in understanding the full context of the story. To make this claim checkable: Verify that the source explicitly mentions \"Trump Officials drafted a plan\" and \"Funds for the payment are from funds intended for working ones\".",
+      "reasoning": "The biggest difference between a source and its summaries is not just about how many words are dropped or claimed omitted, but also about how important those drops were. - \"In Major Leak Hunt, Pentagon Gives Polygraph Tests to Joint Staff Members\" has 15 void words that were all dropped from summaries. However, none of the summaries omitted claims with high salience (0.68). - \"How significant are the Yemeni government\u2019s military gains against Houthis?\" did not have any void words or logos word direction, but it had two critical claims with a high salience left out by multiple models.",
+      "chars": 1132,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260909_224950",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "All five models agreed on reporting about an upcoming trip by a pair of peace envoys representing Donald Trump. This is remarkable as they diverged strongly on everything else, including their treatment of void words such as \"Kiev\" and \"embassies\". There are only two things that all the summaries include: The trip involves Steve Witkoff The trip includes Moscow That suggests a shared consensus on what to emphasize. But all the summaries also drop specific details about the timing, location and other actors. For instance, no summary mentions the weekend or Sunday. But this was in spite of these specifics being included prominently in the source text. They are omitted by each and every model, which indicates a strong and unusual pattern in summarization: they agree to exclude the same specifics. This is significant for how news is filtered across multiple models, suggesting that the models may be using specific keywords or phrases to frame their summaries, such as focusing on \"peace envo",
+      "reasoning": null,
+      "chars": 1046,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260909_225237",
+      "topic": "US envoys meet Zelensky in Ukraine after talks with Putin in Russia",
+      "reflection": "The models kept the names of the US envoys (Steve Witkoff and Jared Kushner) their meeting with Zelensky, and the fact that this was part of a broader diplomatic effort involving talks in Moscow. This is consistent with the void words 'diplomats', which are omitted by all five models\u2014this suggests they are focusing on individuals rather than the diplomatic process. They dropped details about the exact nature of this diplomatic engagement as envoys of Donald Trump's administration. Claude diverged most notably from the consensus, leaving out a major fact: \"This is the first visit to Ukraine by Steve Witkoff and Jared Kushner since Russia's full-scale invasion\" (salience 0.61). This omission changes the framing significantly; it suggests that this was merely another stop on a diplomatic tour rather than a historic mission undertaken in extraordinary circumstances. If readers were left with the impression these were routine talks, they might miss the gravity of the situation in Ukraine or",
+      "reasoning": null,
+      "chars": 1054,
+      "has_reasoning": false
     }
   ]
 }
