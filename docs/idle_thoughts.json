@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-10T20:03:42.022538",
-  "total": 10633,
-  "with_reasoning": 3663,
+  "generated": "2026-09-10T21:09:21.072017",
+  "total": 10637,
+  "with_reasoning": 3665,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -85066,6 +85066,38 @@
       "reasoning": "The void words are not dropped because they are unimportant; they were present in the original source and would be obvious to a human reader. The words \"lifesaving\" is omitted from the Nepal tunnel story, although it was part of the original headline. The word is positive and could be used as propaganda but instead is omitted from all five summaries. The word 'blockading' is dropped by every model in the article on Israeli checkpoints. All void words were present in the original source materials, but none of them are included in any model's summary.",
       "chars": 1508,
       "has_reasoning": true
+    },
+    {
+      "timestamp": "20260910_160459",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "The model with the highest VIX was ChatGPT at 20.3, implying more distance from consensus. ChatGPT also included a phrase that DeepSeek dropped. Both models described pyrotechnic materials as \"fireworks,\" but only ChatGPT used the word \"storage.\" This suggests an emphasis on logistics and planning\u2014implying more blame for what happened. Meanwhile, Claude left out the number 30 kilometers from La Paz in describing the location of Viacha, while Grok included that detail.",
+      "reasoning": "The measure of disagreement here is a story's consensus density relative to the mean VIX for that story across models. A lower density with higher VIX means more divergence. - For Congo, VIX is 14.2. ChatGPT diverged from Claude by only one word (\"killed\" instead of \"individuals\") and from DeepSeek by \"concrete implications.\" - For Bolivia, VIX is 15.6. - For Uganda, VIX is 10.9. Bolivia's story has the highest VIX at 15.6, and therefore is where models disagreed the most about what to keep. The dropped words in that story are ieds (improvised explosive devices), bombings, and landmines.  These all suggest deliberate violence, rather than an accident or a natural disaster.",
+      "chars": 1171,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260910_160806",
+      "topic": "The \u2018Forever War\u2019 in Afghanistan: 25 Years in Pictures",
+      "reflection": "All models kept the phrase \"September 11.\" This makes sense as the attacks are a key turning point for any coverage of this war. The dropped words\u2014\"afganistan,\" \"warzones,\" \"isaf,\" \"kargil,\" and \"wwiii\"\u2014indicate that the AIs diverged most dramatically on the specifics of time, place, and scope. The word Afghanistan is perhaps the most important omission from all models, as the country was at the center of the conflict being described.  The term \"warzones\" appears to have been dropped because it is too specific, while \"kargil,\" a key battle in an adjacent conflict that is not about Afghanistan, is dropped by every model. ChatGPT diverges from the other models here, as it includes the word \"terrori.\" This divergence makes sense given how the models omitted the terms \"afganistan\" and \"warzones,\" which could have been interpreted through a broader lens of war on terror or other geopolitical issues. ChatGPT seems to be picking up on this aspect, while Claude, DeepSeek, Gemini, and Grok are ",
+      "reasoning": null,
+      "chars": 1488,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260910_161132",
+      "topic": "which named person or place vanished from every summary today",
+      "reflection": "<div> DeepSeek consistently omits the name Iran from its summaries for stories 2 and 3. It is not a location or named place in any summary today. Therefore, the named person who vanished from every model's summary of STORY 1 today was Benjamin Netanyahu. </div>",
+      "reasoning": "The named people and places present consistently across multiple stories include U.S., Thailand (also 'Pattaya'), Israel, Gaza, Iran, Qatar, Benjamin Netanyahu, and Abraham Lincoln. However, there is a notable omission in the summaries of STORY 2. In STORY 1 the USS Abraham Lincoln appears consistently across all summaries. However, when we look for a named person or place absent from every summary today, we can consider each model's divergence in reporting the void words 'sojourn', 'sojourned' and 'sojourning'. While these are not names of people or places, they appear to describe how the US Navy personnel were feeling about their deployment in Thailand. The USS Abraham Lincoln is mentioned as a named place. What happens if we think of it as a place rather than an object? In STORY 2 we se",
+      "chars": 1168,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260910_161424",
+      "topic": "which stories went lockstep, and what did the models agree to omit",
+      "reflection": "The story that went lockstep is titled \"How significant are the Yemeni government\u2019s military gains against Houthis?\" This story has a consensus density of 0.929, indicating strong agreement among the models. Despite this high level of agreement, the models collectively omitted key phrases from the source material. In particular, they all left out any mention of \"insurgencies\" and \"regime change.\" These terms suggest underlying political contexts that might complicate the military gains reported by Yemen's government forces. Additionally, the models uniformly dropped the claim, \u201cRaising fears of a return to full-scale war,\u201d which is significant because it highlights potential escalations in conflict despite the recent territorial gains. This omission suggests a shared bias among all models towards de-emphasizing broader geopolitical implications and focusing narrowly on tactical military achievements. This could be attributed to the models being more attuned to immediate events rather t",
+      "reasoning": null,
+      "chars": 1409,
+      "has_reasoning": false
     }
   ]
 }
