@@ -1659,6 +1659,12 @@ def stage_4_generate_scripts(results):
         _dir_usr = "Story: " + story.title + ". State: " + state_flag + ". Void: " + void_str + ". Logos: " + logos_str + ". Killshots: " + str(len(killshots)) + ". Null claim: " + (ns_claims[0]["claim"] if ns_claims else "none")
         director_state = _call_host(_dir_sys, _dir_usr)
         log.info(f"  Director: {director_state[:80]}...")
+        try:  # 2026-09-10: keep the whole note (the log kept 80 characters)
+            from reasoning_log import persist as _persist_reasoning
+            _persist_reasoning("director", director_state, story_title=story.title, state_flag=state_flag)
+            r["director_note"] = director_state
+        except Exception:
+            pass
 
         # ── 20-BEAT SCRIPT (v3) ───────────────────────────────────────
         from script_v3 import generate_script_v3, _get_audit_context
@@ -1703,6 +1709,7 @@ def stage_4_generate_scripts(results):
                 "consequence": r.get("consequence", {}),
                 "shadow_consequence": r.get("shadow_consequence", {}),
                 "preregistration": r.get("preregistration", {}),
+                "director_note": r.get("director_note", ""),
                 "controls": r.get("controls", {}),  # 2026-09-10: null baselines (docs/metrics.md section 10)
                 # 2026-09-10 (ex-self provenance): each model rewrote its OWN summary; no model scored another's
                 "summary_plus_meta": {"rewritten_by": "author model (self)", "scored_by": "bge sp_channels (arithmetic)",
@@ -1769,6 +1776,7 @@ def stage_4_generate_scripts(results):
                 "void_vector": r.get("void_vector", {}),
 
                 "preregistration": r.get("preregistration", {}),
+                "director_note": r.get("director_note", ""),
 
                 "controls": r.get("controls", {}),  # 2026-09-10: null baselines (docs/metrics.md section 10)
 

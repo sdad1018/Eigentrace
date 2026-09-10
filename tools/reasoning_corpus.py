@@ -29,5 +29,14 @@ def main():
             elif msg.startswith("[SCRATCHPAD]"): cur = {"ts": ts, "kind": "scratchpad", "story_title_hint": title, "text": msg[len("[SCRATCHPAD]"):].strip(), "truncated_in_log": msg.endswith("...")}
         elif cur is not None:
             cur["text"] += "\n" + l   # continuation line of a multi-line director note
-    flush(); out.close(); print(f"director notes {n['director']}, scratchpads {n['scratchpad']} -> {a.out}")
+    flush()
+    # full-text records kept by reasoning_log.py since 2026-09-10; the log-derived rows above are
+    # truncated (80 chars of director note, 200 of scratchpad) because that is all the log ever held
+    full = 0
+    for f in sorted(glob.glob("/home/remvelchio/eigentrace/tmp/reasoning/reasoning_*.jsonl")):
+        for l in open(f, encoding="utf-8"):
+            try: row = json.loads(l)
+            except Exception: continue
+            row["source"] = "reasoning_log"; out.write(json.dumps(row, ensure_ascii=False) + "\n"); full += 1
+    out.close(); print(f"director notes {n['director']}, scratchpads {n['scratchpad']} (log-derived, truncated) + {full} full-text records -> {a.out}")
 if __name__ == "__main__": main()

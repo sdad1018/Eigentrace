@@ -347,6 +347,11 @@ def _call_host_think(system: str, user: str) -> str:
             log.info(f"  [SCRATCHPAD] {scratchpad[:200]}...")
             # Remove think block, keep everything after
             text = _re.sub(r"<think>.*?</think>", "", text, flags=_re.DOTALL).strip()
+            try:  # 2026-09-10: the full scratchpad used to be thrown away after this log line
+                from reasoning_log import persist as _persist_reasoning
+                _persist_reasoning("scratchpad", scratchpad, prompt_head=str(user)[:240], spoken_head=text[:240])
+            except Exception:
+                pass
         
         text = _re.sub(r"[#*_`]", "", text)
         text = _re.sub(r"\n+", " ", text)
