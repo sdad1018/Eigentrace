@@ -22,6 +22,7 @@ fi
   | tar czf "$DEST/state_files.tgz" --null -T - ) 2>&1 | quiet
 # 5. Owncast configuration and database (admin settings, stream key, chat/emoji) — excluded: transcoder tmp
 ( cd "$HOME" && tar czf "$DEST/owncast_data.tgz" --exclude="owncast/data/tmp" --exclude="owncast/data/hls" owncast/data ) 2>&1 | quiet
-# 6. retention
-find "$DEST_ROOT" -mindepth 1 -maxdepth 1 -type d -mtime +14 -exec rm -rf {} + 2>/dev/null
+# 6. retention — date-named daily folders only (2026-09-11: the old rule also deleted logs_archive,
+#    the permanent archive of rotated logs, once it went 14 days without a new file)
+find "$DEST_ROOT" -mindepth 1 -maxdepth 1 -type d -name '20[0-9][0-9][0-9][0-9][0-9][0-9]' -mtime +14 -exec rm -rf {} + 2>/dev/null
 echo "$(date '+%F %T') done: $(du -sh "$DEST" | cut -f1)"
