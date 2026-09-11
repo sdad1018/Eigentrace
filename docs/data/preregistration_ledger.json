@@ -2,7 +2,7 @@
   "version": "eigentrace-prereg-v1",
   "prior": "per-category outlier frequency over last K=50 scored stories, fallback global; a base-rate forecast, not foresight",
   "prior_version": "outlier-freq-v1",
-  "generated_at": "2026-09-11T14:51:14.620882Z",
+  "generated_at": "2026-09-11T14:55:51.120160Z",
   "seal": "each row's prereg_id is sha256 of the kind='predicted' ledger line, written with fsync before stage 3 measured anything; predicted_at < scored_at is the ordering claim",
   "fields": {
     "in_sample_constant_guesser_share": "share of the most frequent actual outlier in the same running window (majority_base in the ledger)",
