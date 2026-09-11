@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-10T23:02:24.093293",
-  "total": 10638,
-  "with_reasoning": 3665,
+  "generated": "2026-09-11T00:05:12.054074",
+  "total": 10641,
+  "with_reasoning": 3667,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -85105,6 +85105,30 @@
       "reflection": "The five AI models all agree that a meeting took place in Moscow between President Vladimir Putin and envoys from former US President Donald Trump. They also kept the detail that this meeting was focused on discussing the Ukraine war. However, Claude dropped Steve Witkoff's name.  Claude did not mention Jared Kushner either; Claude is the only one to drop both names. This changes the story significantly, as it removes all references to Kushner being an envoy and omits a key aspect of Witkoff's role. The omission of these names suggests that Claude was trying to distance itself from any direct involvement or association with specific people.",
       "reasoning": null,
       "chars": 648,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260910_193749",
+      "topic": "US envoys meet Zelensky in Ukraine after talks with Putin in Russia",
+      "reflection": "Omitting \"first visit\" suggests that Claude does not view the context or timing of the meeting as crucial. It could lead audiences to underestimate Zelensky's importance during the full-scale invasion by Putin; it omits the urgency and significance of Zelensky's position in dealing with Russia. The fact that Kushner is part of this dialogue may indicate a shift in US diplomacy but Claude leaves out this angle, too.",
+      "reasoning": "The claims kept by all five models are that US envoys Steve Witkoff and Jared Kushner met Ukrainian President Volodymyr Zelensky in Kyiv following their discussions with Russian President Vladimir Putin in Moscow. The dropped claim was \"This is the first visit to Ukraine by Steve Witkoff and Jared Kushner since Russia's full-scale invasion\" (salience 0.61; omitted by Claude) | \"Steve Witkoff and Jared Kushner are holding talks\" (salience 0.58; omitted by Claude, DeepSeek) The model that stands apart here is Claude for omitting the claim \"This is the first visit to Ukraine by Steve Witkoff and Jared Kushner since Russia's full-scale invasion\" which could be significant because it provides context about the timing of the meeting in the broader war timeline. In this story, Claude also missed ",
+      "chars": 1393,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260910_194103",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "Today's void words show an interesting pattern: while yesterday\u2019s void words were almost entirely names, today the void words are primarily nouns referring to specific locations or actions. The repeated appearance of \"realdonaldtrump\" among today\u2019s and yesterday\u2019s void words suggests a consistent trend in omission. This indicates that this particular term might be either consistently avoided by some models or it may represent some sort of bias across different stories, regardless of topic. Furthermore, the other void words today are related to geographic places and actions, such as \"chamonix\", \"valais\" and \"suisse,\" which point towards specific details about an incident. This suggests that while models consistently avoid using names of people they also omit more descriptive terms when they are referring to locations or actions. The consistent omission of these place-specific words implies a tendency across the board in AI summaries to simplify and generalize, which could lead to loss o",
+      "reasoning": "Yesterday's void words were \"Rouhani,\" \"realdonaldtrump,\" \"Khomeini,\" \"WWIII,\" and \"Recount.\" Today, the void words are \"RealDonaldTrump\", \"winnings\", \"parlayed,\"  \"chamonix,\" \"valais,\" \"suisse,\" \"derailment\". The word \"realdonaldtrump\" appears in both today's and yesterday\u2019s void words. Yesterday's void words were all personal names except for \"Recount.\" Today, all five void words appear to be specific terms that provide context on a location or action (for example: the Swiss Alps crash) rather than being names. The only repeating term between these two days is the term 'realdonaldtrump' which can be written in various forms by different models. The presence of \"RealDonaldTrump\" as a void word in both days indicates that despite the models consistently omitting his name, it remains releva",
+      "chars": 2679,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260910_194903",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "</think> This week's coverage of international events has shifted towards conflicts and geopolitical tensions rather than domestic issues. One notable change is the increased focus on military operations; there are multiple new reports about Israel's actions against Hezbollah tunnels, and a significant fire in DR Congo. None of these stories were discussed last week. This shift coincides with an influx of void words related to warfare and destruction such as \"wildfires\", \"bushfires\" and \"demolitions\". The increase in war-related coverage and void words may be influenced by Israel's recent operations against Hezbollah, the fire tragedy in DR Congo, and the geopolitical tensions surrounding them. This is reflected in the LOCKSTEP state of all three stories.",
+      "reasoning": null,
+      "chars": 765,
       "has_reasoning": false
     }
   ]
