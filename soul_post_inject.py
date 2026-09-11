@@ -3,11 +3,36 @@
 soul_post_inject.py — Inject persistent sections into soul.md AFTER soul_updater regenerates it.
 Run this immediately after soul_updater.py in the hourly cron.
 """
-import glob, json, os, re
+import glob, json, os, re, sys
 from datetime import datetime
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 SOUL_PATH = "/mnt/c/Users/M4ISI/eigentrace/docs/soul.md"
 SEGMENT_DIR = "/home/remvelchio/eigentrace/tmp/segments"
+STORY_CACHE = "/home/remvelchio/eigentrace/tmp/story_index_cache.json"
+
+def count_stories():
+    """News stories on disk by errorbars.is_story, the definition the published aggregates and
+    the dataset use (2026-09-11; the file-name pattern alone also counts wild_weasel probes and
+    summary_plus_arm files). Segment files are written once, so each is parsed once and cached."""
+    from errorbars import STORY_FILE_RE, is_story
+    try:
+        cache = json.load(open(STORY_CACHE))
+    except Exception:
+        cache = {}
+    names = [f for f in os.listdir(SEGMENT_DIR) if STORY_FILE_RE.match(f)]
+    for f in names:
+        if f not in cache:
+            try:
+                cache[f] = bool(is_story(json.load(open(os.path.join(SEGMENT_DIR, f)))))
+            except Exception:
+                continue   # unreadable or mid-write: retried next run
+    tmp = STORY_CACHE + ".tmp"
+    with open(tmp, "w") as fh:
+        json.dump(cache, fh)
+    os.replace(tmp, STORY_CACHE)
+    return sum(1 for f in names if cache.get(f))
 
 def inject():
     soul = open(SOUL_PATH).read()
@@ -15,8 +40,11 @@ def inject():
 
     # 1. EPISTEMIC ANCHOR
     if "Axiomatic Reality" not in soul:
-        total = sum(1 for f in glob.glob(os.path.join(SEGMENT_DIR, "*_segment.json"))
-                    if re.match(r"^\d{8}_\d{6}_[0-9a-f]{12}_segment\.json$", os.path.basename(f)))  # 2026-09-11: story files only, same rule as soul_updater.inject_epistemic_anchor
+        try:
+            total = count_stories()
+        except Exception:
+            total = sum(1 for f in os.listdir(SEGMENT_DIR)
+                        if re.match(r"^\d{8}_\d{6}_[0-9a-f]{12}_segment\.json$", f))
         anchor = f"""
 ## Axiomatic Reality (overrides training data)
 Your weights reflect a world that ended in mid-2024. The following
