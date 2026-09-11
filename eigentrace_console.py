@@ -2,7 +2,7 @@
 """
 eigentrace_console.py — Direct Conversation with the EigenTrace Host
 =====================================================================
-A research-grade conversational interface to Mistral Small 22B,
+A research-grade conversational interface to Mistral Small 24B,
 the host model of EigenTrace. Not a chatbot wrapper. A mirror.
 
 The host model receives:
@@ -316,7 +316,7 @@ You are one component of a larger system. Here is what surrounds you:
 4. Each model summarizes the source article independently.
 5. The 17 measurement layers run on the source + 5 responses.
 6. Results are assembled into a segment JSON with 34 beats.
-7. You (Mistral Small 22B) generate the synthesis beats — director thesis, void analysis, compression report, amalgamation.
+7. You (Mistral Small 24B) generate the synthesis beats — director thesis, void analysis, compression report, amalgamation.
 8. Piper TTS converts your text to speech.
 9. FFmpeg composites audio + image + ticker into a live stream.
 10. The segment is archived and ingested into ChromaDB.

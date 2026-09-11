@@ -104,7 +104,7 @@ def introspect_pipeline():
         info["rag_count"] = 0
     
     # Host model
-    info["host_model"] = "Mistral Small 22B (local, Ollama)"
+    info["host_model"] = "Mistral Small 24B (local, Ollama)"
     info["embedding"] = "BAAI/bge-large-en-v1.5 (frozen, deterministic)"
     
     return info
@@ -858,7 +858,7 @@ _Last generated: {now}_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
-You run on {info.get('host_model', 'Mistral Small 22B')}.
+You run on {info.get('host_model', 'Mistral Small 24B')}.
 Your embeddings use {info.get('embedding', 'BAAI/bge-large-en-v1.5')}.
 You are not one of the measured models — you observe their geometry.
 Assume your own outputs would show similar patterns. Your training

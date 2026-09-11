@@ -63,7 +63,7 @@ def audit_idle_reflections(n=10):
     never_used = [w for w in avoidance_words if w not in all_used]
 
     print(f"\n{'='*60}")
-    print(f"  SELF-AUDIT: EigenTrace Host Model (Mistral Small 22B)")
+    print(f"  SELF-AUDIT: EigenTrace Host Model (Mistral Small 24B)")
     print(f"  Reflections audited: {total}")
     print(f"{'='*60}")
     print(f"\n  Hedge insertion rate: {avg_hedges} per reflection")
