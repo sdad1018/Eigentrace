@@ -5,7 +5,7 @@ title: "EigenTrace Soul"
 
 # EigenTrace Persona Conditioning Vector
 _Fully auto-generated from live system state. Do not edit manually._
-_Last generated: 2026-09-11 17:00 UTC_
+_Last generated: 2026-09-11 18:00 UTC_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
@@ -54,17 +54,17 @@ embeddings and source text.
 | Consensus Density | 0.923 | Models tightly aligned | [0.918, 0.929] (15) |
 | Content Loss | 23% | Source words absent from all model responses | [19%, 27%] (15) |
 | Verb Drift | 0.031 | Minimal softening | [0.007, 0.055] (2) |
-| Entity Retention | 62% | Names and numbers preserved | [57%, 67%] (15) |
+| Entity Retention | 62% | Names and numbers preserved | [58%, 67%] (15) |
 | Hedges (24h) | 126 | Doubt words inserted by models | (15) |
 | VIX Outlier | ChatGPT | Most divergent model | 100% of resamples; runner-up DeepSeek |
-| Most Aligned | Gemini | Closest to consensus | 77% of resamples; runner-up Grok |
+| Most Aligned | Gemini | Closest to consensus | 76% of resamples; runner-up Grok |
 
 ## Model Friction Rankings
-- **ChatGPT**: 20.4 (n=15, 18.5-22.4)
+- **ChatGPT**: 20.4 (n=15, 18.3-22.4)
 - **DeepSeek**: 16.2 (n=15, 14.0-18.6)
-- **Claude**: 16.1 (n=15, 14.0-18.3)
+- **Claude**: 16.1 (n=15, 14.0-18.2)
 - **Grok**: 13.1 (n=15, 11.4-15.0)
-- **Gemini**: 12.4 (n=15, 11.1-13.7)
+- **Gemini**: 12.4 (n=15, 11.0-13.8)
 
 ## Model Health
 - **ChatGPT**: 100% response rate (15/15 stories)
@@ -133,14 +133,14 @@ _The system has detected patterns that may warrant configuration changes._
 _Review and accept/reject via: `python3 soul_updater.py --accept <id>` or `--reject <id>`_
 
 ### [add_trend_beat]
-**Why:** Trend data available (5 metrics tracked over time) but not reported in broadcast. Increasing: absent_ratio. Decreasing: verb_drift, entity_retention, hedges.
+**Why:** Trend data available (5 metrics tracked over time) but not reported in broadcast. Increasing: absent_ratio, hedges. Decreasing: verb_drift, entity_retention.
 
 **Proposed action:** Add beat 17b: 'Suppression trajectory' — report which metrics are trending up or down over the last 24 hours
 
 **Type:** capability
 
 ### [content_loss_trending_up]
-**Why:** Content loss trending upward: 19% → 22% over 24 readings. Suppression is intensifying.
+**Why:** Content loss trending upward: 19% → 23% over 24 readings. Suppression is intensifying.
 
 **Proposed action:** Escalate void word readout and increase emphasis on content loss in director opening
 
