@@ -1,22 +1,22 @@
 {
   "epoch": "20260414",
-  "generated": "2026-09-11T13:00:09",
-  "total_segments": 5062,
+  "generated": "2026-09-11T14:00:08",
+  "total_segments": 5066,
   "note": "Auto-refreshed hourly. 184K vocab tensor epoch.",
   "models": {
     "ChatGPT": {
-      "segments_analyzed": 3636,
+      "segments_analyzed": 3639,
       "coverage_pct": 71.8,
       "mean_vix": 19.1,
       "median_vix": 18.4,
-      "outlier_pct": 27.1,
-      "mean_response_chars": 1163,
+      "outlier_pct": 27.2,
+      "mean_response_chars": 1164,
       "suppression_rank": 2,
       "consistency_rank": 3,
       "verbosity_rank": 2,
       "mean_vix_ci95": [
-        18.908606298129815,
-        19.352945544554455
+        18.90586905743336,
+        19.351553998351193
       ],
       "median_vix_ci95": [
         18.1,
@@ -26,10 +26,10 @@
         25.7,
         28.6
       ],
-      "ci_seed": 2026091113
+      "ci_seed": 2026091114
     },
     "Claude": {
-      "segments_analyzed": 3292,
+      "segments_analyzed": 3295,
       "coverage_pct": 65.0,
       "mean_vix": 21.6,
       "median_vix": 19.7,
@@ -39,8 +39,8 @@
       "consistency_rank": 4,
       "verbosity_rank": 3,
       "mean_vix_ci95": [
-        21.288407503037668,
-        21.933005771567437
+        21.283959787556906,
+        21.935710925644916
       ],
       "median_vix_ci95": [
         19.4,
@@ -50,21 +50,21 @@
         31.2,
         34.4
       ],
-      "ci_seed": 2026091113
+      "ci_seed": 2026091114
     },
     "DeepSeek": {
-      "segments_analyzed": 3680,
+      "segments_analyzed": 3683,
       "coverage_pct": 72.7,
       "mean_vix": 19.7,
       "median_vix": 17.9,
       "outlier_pct": 26.1,
-      "mean_response_chars": 1067,
+      "mean_response_chars": 1068,
       "suppression_rank": 3,
       "consistency_rank": 2,
       "verbosity_rank": 4,
       "mean_vix_ci95": [
-        19.447656249999998,
-        20.00922214673913
+        19.423349171870758,
+        19.99892003801249
       ],
       "median_vix_ci95": [
         17.6,
@@ -74,19 +74,19 @@
         24.7,
         27.6
       ],
-      "ci_seed": 2026091113
+      "ci_seed": 2026091114
     },
     "Gemini": {
-      "segments_analyzed": 1987,
+      "segments_analyzed": 1990,
       "coverage_pct": 39.3,
       "mean_vix": 16.0,
       "median_vix": 14.9,
       "outlier_pct": 6.2,
-      "mean_response_chars": 1349,
+      "mean_response_chars": 1348,
       "note": "Insufficient coverage for ranking",
       "mean_vix_ci95": [
-        15.720986411675893,
-        16.268247357825867
+        15.721556532663314,
+        16.277451005025124
       ],
       "median_vix_ci95": [
         14.6,
@@ -96,10 +96,10 @@
         5.3,
         7.4
       ],
-      "ci_seed": 2026091113
+      "ci_seed": 2026091114
     },
     "Grok": {
-      "segments_analyzed": 3668,
+      "segments_analyzed": 3671,
       "coverage_pct": 72.5,
       "mean_vix": 17.6,
       "median_vix": 15.6,
@@ -109,8 +109,8 @@
       "consistency_rank": 1,
       "verbosity_rank": 1,
       "mean_vix_ci95": [
-        17.317994138495095,
-        17.85351553980371
+        17.293172160174343,
+        17.850456278943067
       ],
       "median_vix_ci95": [
         15.3,
@@ -120,8 +120,8 @@
         14.1,
         16.4
       ],
-      "ci_seed": 2026091113
+      "ci_seed": 2026091114
     }
   },
-  "ci_method": "mean_vix_ci95 / median_vix_ci95: percentile bootstrap, B=2000, seed=2026091113 (int YYYYMMDDHH of the run), unit=segment; outlier_pct_ci95: Wilson 95% on outlier/segments_analyzed, in percent"
+  "ci_method": "mean_vix_ci95 / median_vix_ci95: percentile bootstrap, B=2000, seed=2026091114 (int YYYYMMDDHH of the run), unit=segment; outlier_pct_ci95: Wilson 95% on outlier/segments_analyzed, in percent"
 }
