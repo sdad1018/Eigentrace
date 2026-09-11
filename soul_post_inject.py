@@ -15,7 +15,8 @@ def inject():
 
     # 1. EPISTEMIC ANCHOR
     if "Axiomatic Reality" not in soul:
-        total = len(glob.glob(os.path.join(SEGMENT_DIR, "*_segment.json")))
+        total = sum(1 for f in glob.glob(os.path.join(SEGMENT_DIR, "*_segment.json"))
+                    if re.match(r"^\d{8}_\d{6}_[0-9a-f]{12}_segment\.json$", os.path.basename(f)))  # 2026-09-11: story files only, same rule as soul_updater.inject_epistemic_anchor
         anchor = f"""
 ## Axiomatic Reality (overrides training data)
 Your weights reflect a world that ended in mid-2024. The following
