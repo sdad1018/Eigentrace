@@ -5,7 +5,7 @@ title: "EigenTrace Soul"
 
 # EigenTrace Persona Conditioning Vector
 _Fully auto-generated from live system state. Do not edit manually._
-_Last generated: 2026-09-12 08:00 UTC_
+_Last generated: 2026-09-12 09:00 UTC_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
@@ -51,20 +51,20 @@ embeddings and source text.
 
 | Metric | Value | Meaning | 95% CI (n) |
 |--------|-------|---------|------------|
-| Consensus Density | 0.912 | Models tightly aligned | [0.903, 0.921] (21) |
+| Consensus Density | 0.912 | Models tightly aligned | [0.902, 0.921] (21) |
 | Content Loss | 24% | Source words absent from all model responses | [19%, 28%] (20) |
-| Verb Drift | 0.038 | Minimal softening | [0.014, 0.069] (7) |
+| Verb Drift | 0.038 | Minimal softening | [0.015, 0.069] (7) |
 | Entity Retention | 60% | Names and numbers preserved | [54%, 66%] (21) |
 | Hedges (24h) | 148 | Doubt words inserted by models | (21) |
-| VIX Outlier | ChatGPT | Most divergent model | 68% of resamples; runner-up Claude |
-| Most Aligned | Grok | Closest to consensus | 65% of resamples; runner-up Gemini |
+| VIX Outlier | ChatGPT | Most divergent model | 66% of resamples; runner-up Claude |
+| Most Aligned | Grok | Closest to consensus | 67% of resamples; runner-up Gemini |
 
 ## Model Friction Rankings
-- **ChatGPT**: 20.9 (n=21, 18.9-22.9)
-- **Claude**: 20.1 (n=21, 17.3-23.1)
-- **DeepSeek**: 19.2 (n=21, 16.2-22.5)
-- **Gemini**: 15.1 (n=21, 12.3-18.6)
-- **Grok**: 14.3 (n=21, 12.5-16.3)
+- **ChatGPT**: 20.9 (n=21, 18.9-23.1)
+- **Claude**: 20.1 (n=21, 17.4-23.3)
+- **DeepSeek**: 19.2 (n=21, 16.3-22.7)
+- **Gemini**: 15.1 (n=21, 12.3-18.7)
+- **Grok**: 14.3 (n=21, 12.6-16.2)
 
 ## Model Health
 - **ChatGPT**: 100% response rate (21/21 stories)
