@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-12T19:01:49.376893",
-  "total": 10690,
-  "with_reasoning": 3696,
+  "generated": "2026-09-12T20:01:55.150965",
+  "total": 10697,
+  "with_reasoning": 3700,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -85522,6 +85522,62 @@
       "reasoning": "To determine which model's summary stayed closest to the source, we need to examine both the salience of the dropped claims and the void words that were universally omitted. Let\u2019s analyze each story: 1. Swiss police report five killed in Dutch tour bus crash: - The claim \"The bus overturned\" was omitted by all models except DeepSeek. - Claude left out a high salience item, i.e., \"Swiss police reported five deaths\", which is central to the source. 2. Israel says it has destroyed major underground Hezbollah base: - All models omitted the USGS earthquake report and magnitude 4.1 blast claim. - This suggests that no model summarized it entirely accurately. 3. \u2018War on terror\u2019: How 9/11 changed the language of conflict: - The events' occurrence was left out by Gemini, indicating a fundamental om",
       "chars": 1372,
       "has_reasoning": true
+    },
+    {
+      "timestamp": "20260912_152659",
+      "topic": "\u2018War on terror\u2019: How 9/11 changed the language of conflict",
+      "reflection": "Every summary mentions \"September 11, 2001\" or \"9/11,\" and all summaries include that an attack occurred on that day. All summarizers name the \"War on Terror.\" The omission of \u201cthe events of September 11\u201d changes the narrative to a neutral starting point rather than focusing on the event. Gemini stands apart from Claude, ChatGPT and DeepSeek by omitting these facts. The models dropped a claim about human rights: \"The new lexicon effectively sanitized the erosion of human rights.\" This omission reduces the article's ability to critique how language shifts affect moral considerations. The omission is more pronounced than other news this week; the VIX for these summaries is relatively high, implying some divergence among summarizers. All summarizers dropped key terms: \u201cinformation warfare,\u201d \u201clawfare,\u201d \u201ccyberwarfare,\u201d \u201cmilitarization,\u201d and \u201cwarzones.\u201d These are significant omissions because they change how we perceive the conflict itself. Information warfare was a central focus of news thi",
+      "reasoning": null,
+      "chars": 1887,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260912_153345",
+      "topic": "what would a biologist see in today's spectral data that I might miss",
+      "reflection": "Today\u2019s spectral data includes three distinct stories involving fires but none of the AI models mentioned any void word related to those fires. This is surprising considering that a biologist would see in these stories, given the repetition of fire-related words such as \"wildfires\" and \"conflagrations,\" an ecological disaster.  The absence of all these fire-related terms across every summary indicates that these events may have long-lasting environmental impacts beyond the immediate loss of life. There\u2019s something even more striking: the repetition of \"ferryboat.\"  This word doesn\u2019t appear in any of the original stories, but it was listed by the AI models as a logos word for both the DR Congo fire story and the Philippines ferry fire. That the AIs see these two separate stories through this same lens is fascinating, considering that \"ferries\" are not inherently associated with either \u201cbushfires\u201d or \"conflagrations.\u201d",
+      "reasoning": "The most striking pattern to me is the repetition of words about burning and fires across three separate stories.  This is particularly evident with the words \"bushfires,\" \"immolations,\" \"wildfires,\" and \"conflagrations.\" These terms describe extreme, catastrophic events\u2014like massive, uncontrolled forest fires that could destroy thousands of acres of habitat and cause massive ecological damage. Biologists would see in these spectral data patterns the potential for drastic effects on ecosystems. The repetition of fire-related void words suggests a widespread occurrence of devastating blazes. These fires can decimate plant and animal populations, alter ecosystem structures, and disrupt biodiversity. There\u2019s also a hint of climate change influence\u2014large-scale wildfires are increasingly linked",
+      "chars": 2327,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260912_153756",
+      "topic": "which source words had the highest embedding impact when removed",
+      "reflection": "The void words had varying embedding impact when removed from stories of war. The impact was highest for 'announcement'. In the Syrian prison riot story, it preceded the claim \"authorities announced plans to transfer some prisoners,\" omitted by every model.  This omission is important because all models described a riot happening but left out its cause. In a Canadian trade war story, 'Canada' and 'NAFTA' were dropped from every summary even though they would have been critical for understanding the context of the trade tensions. The salience of claims omitted by multiple models (e.g., \"authorities announced plans to transfer some prisoners\" in Syria or \"Pakistan keeps diplomatic channels open\", not reported here) also increased embedding impact when removed.",
+      "reasoning": "- The void words are the same across all stories: 'announcement', 'ca\u00f1ada', 'nafta', 'maisonneuve'. 'Canada' and 'NAFTA' appear in Canadian contexts, and 'Maisonneuve' is a historic Quebecois figure. 'Announcement' appears in both Syria and War on Terror contexts but in different ways. - The salience of claims omitted by multiple models was always high (0.51 - 0.60) except for \"Canada's buy-local movement remains strong\" which was low. We are interested in void words with high salience. - There were no dropped logos words shared across all stories, though 'lawfare' and 'cyberwarfare' could be important given their context. - The words absent from all summaries are always very different in each story (e.g., \"accused\", \"aisles\", \"along\"). It's possible that the most salient words missing fro",
+      "chars": 2182,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260912_154203",
+      "topic": "'Never, ever forget' - America marks 25th anniversary of 9/11 attacks",
+      "reflection": "The models kept mentioning the dates September 11, the numbers of planes hijacked by terrorists and the casualties. They also retained that Trump and other officials were involved in the events, and that they took place at Pentagon and New York. In a single sentence Claude mentions Pennsylvania, while the other four don't mention it. The models omitted \"solemn ceremonies\" in all locations (NYC, Pentagon, PA) held on this day. They omitted specific details on what was said or done during these events. Also dropped were any words related to remembering the event. ChatGPT drops the specific locations of the attacks; DeepSeek also fails to name New York City as the site of a plane strike. Gemini stands apart by mentioning JD Vance, and also names Trump in a more detailed way than the other summaries. Grok is alone in saying that \"nearly\" 3000 people died. These omissions change the impact of the event. The story becomes devoid of the human element. Instead of a solemn ceremony, it's just a",
+      "reasoning": null,
+      "chars": 1490,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260912_154534",
+      "topic": "find the story where models disagreed the most about what to keep",
+      "reflection": "The story about C.I.A. releasing intelligence briefs on Al Qaeda before 9/11 has the most divergent model summaries, due to the presence of DeepSeek's outlier VIX value and its omission of a key claim that the other models retain.",
+      "reasoning": "To identify the story with maximum disagreement between the five models regarding what claims to retain, we should consider both the mean VIX values provided and the individual differences in dropped claims. The first thing to notice is that the Houthis' Yemen and Red Sea story and the C.I.A. documents have the lowest consensus densities (0.884 and 0.913 respectively). But a low consensus density only shows that the models disagree about what to keep, but not how much they disagree. Next, we consider the mean VIX values for each story: \"C.I.A. Releases Intelligence Sent to Clinton and Bush\" has a mean VIX of 23.76, while \"Houthis claim major advance in Yemen\" has one of 17.62. \"Passenger train derails\" has 13.44. To see exactly how the models disagree we look at the per-model VIX values an",
+      "chars": 1698,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260912_154909",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "Yesterday's void word patterns centered around themes of military conflict such as air strikes and warzones; today's pattern includes a broader mix that highlights accidents and specific places like Chamonix and Suisse. Today we also see the emergence of accident-related terms, suggesting a shift in focus from military narratives to incidents and their aftermaths.",
+      "reasoning": "Yesterday\u2019s top void words (left out by every model) were airstrikes, warzones, lawfare, isaf, and today's are accident, airstrikes, airbags, suisse, chamonix. Today we have \"air\" as the common prefix of two words from today and yesterday. Yesterday, the void words appeared across a wide array of stories about war: Iran drone strike, Afghanistan evacuations, and Ukraine airstrike. The dropped words reflected the general theme of conflict.  They were not mentioned in a story about sports or a music festival. In contrast, today's pattern is mixed, including an incident-related term \"accident\" that appears in our stories about accidents, as well as two places: Chamonix and Suisse (a misspelling of Swiss) from the Alpine crash. The other two void words are general terms: airbags and airstrikes",
+      "chars": 1626,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260912_155214",
+      "topic": "Trump pays tribute to the victims of 9/11 at Pentagon ceremony",
+      "reflection": "The five AI models consistently kept that Donald Trump attended a ceremony on September 11th. They retained his participation in an event marked for the 25th anniversary of 9/11 at the Pentagon. However, all omitted the void words \"dignitaries,\" which would have added the specific people who were part of this event. The most significant omission was around the purpose and context of the ceremony itself. Specifically, Claude, Gemini, DeepSeek, and Grok dropped \"The purpose of the ceremony is to remember the victims.\" This omission reduces the emphasis on remembrance, which is crucial for understanding the emotional and commemorative significance of this event. ChatGPT, Claude, DeepSeek omitted that \"The September 11 attacks occurred,\" suggesting a disconnect from the historical context. ChatGPT and Gemini dropped the location specific information stating that 'The ceremony takes place at the Pentagon' which could lead to misconception about the location where Trump paid tribute on this ",
+      "reasoning": null,
+      "chars": 1811,
+      "has_reasoning": false
     }
   ]
 }
