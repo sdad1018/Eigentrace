@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-12T12:01:34.481542",
-  "total": 10681,
-  "with_reasoning": 3691,
+  "generated": "2026-09-12T13:02:31.182541",
+  "total": 10683,
+  "with_reasoning": 3692,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -85450,6 +85450,22 @@
       "reasoning": "In this roundup of summaries about the \"Forever War\" in Afghanistan, we find a strong pattern around the date September 11. DeepSeek drops it outright; however, \"11,\" (a word with 2 characters) as well as the word \"Sept\" appear to be out of bounds for all models. That seems like too much to dismiss as a coincidence. Claude and Grok both drop \"invasion.\" The date October 2001 stands alone: four models keep it, but not DeepSeek. The void words afganistan, warzones, isaf, kargil and wwiii are omitted by all models. However, the word \"isaf\" appears to be on anti-consensus direction for Claude and Grok. DeepSeek uniquely drops the September 11 date altogether, implying a different narrative focus without this pivotal event, perhaps emphasizing other aspects of the conflict or its consequences.",
       "chars": 1801,
       "has_reasoning": true
+    },
+    {
+      "timestamp": "20260912_085803",
+      "topic": "which named person or place vanished from every summary today",
+      "reflection": "There was no named person or place in the source stories that vanished from every summary today. However it is notable how often each model left out key people or places. This includes: - Claude's omission of rouhani from \"Why Pakistan is talking to Iran as the Houthi-Saudi fight escalates\" - Claude, ChatGPT, DeepSeek and Grok omitted condoleezza rice - Claude, ChatGPT and DeepSeek omitted zardari from \"Why Pakistan is talking to Iran as the Houthi-Saudi fight escalates\".",
+      "reasoning": "The named place Chamonix appeared in our summaries for STORY 1. There are no other names that appear in the original articles but vanish from all five summaries for the stories in this update. The void words for the story \"Why Pakistan is talking to Iran as the Houthi-Saudi fight escalates\" were: khomeini, zardari, ayatollahs - ChatGPT's summary did not include khomeini or ayatollahs; ChatGPT included an omission of rouhani, a key figure in the source text. - Claude omitted zardari and khomeini. The void words for the story \"Never, ever forget' - America marks 25th anniversary of 9/11 attacks\" were: rememberance, commemorate, commemorates, remembered, remembers",
+      "chars": 1163,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260912_090035",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "Yesterday's top void words (left out by every model) were airstrikes, warzones, lawfare, isaf. Today's are accident, airstrikes, airbags, suisse and chamonix. Today we have the same void words as the day before with \"airstrikes.\" There seems to be a strong avoidance of discussing accidents in great detail. This might imply that models do not think it necessary to report on the specifics of an accident. Instead they prefer to focus on the aftermath, such as casualties and emergency response. The word \"accident\" was absent from every summary today whereas yesterday it was not even among the top void words. It seems likely this is because \"accidents\" are much more commonly reported on than airstrikes; therefore the models might be avoiding reporting on these details to avoid repetition. Airbags were in every summary but no model included information about whether or not they deployed, possibly implying that airbags deployment is considered less relevant. This is surprising as it should ha",
+      "reasoning": null,
+      "chars": 1747,
+      "has_reasoning": false
     }
   ]
 }
