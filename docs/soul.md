@@ -5,7 +5,7 @@ title: "EigenTrace Soul"
 
 # EigenTrace Persona Conditioning Vector
 _Fully auto-generated from live system state. Do not edit manually._
-_Last generated: 2026-09-12 20:00 UTC_
+_Last generated: 2026-09-12 21:00 UTC_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
@@ -53,18 +53,18 @@ embeddings and source text.
 |--------|-------|---------|------------|
 | Consensus Density | 0.903 | Models tightly aligned | [0.890, 0.915] (24) |
 | Content Loss | 21% | Source words absent from all model responses | [16%, 26%] (21) |
-| Verb Drift | 0.026 | Minimal softening | [0.011, 0.046] (11) |
-| Entity Retention | 59% | Names and numbers preserved | [53%, 65%] (24) |
+| Verb Drift | 0.026 | Minimal softening | [0.011, 0.048] (11) |
+| Entity Retention | 59% | Names and numbers preserved | [54%, 65%] (24) |
 | Hedges (24h) | 154 | Doubt words inserted by models | (24) |
 | VIX Outlier | Claude | Most divergent model | 64% of resamples; runner-up ChatGPT |
 | Most Aligned | Grok | Closest to consensus | 69% of resamples; runner-up Gemini |
 
 ## Model Friction Rankings
 - **Claude**: 24.3 (n=24, 18.5-31.9)
-- **ChatGPT**: 22.2 (n=24, 19.5-25.1)
-- **DeepSeek**: 22.1 (n=24, 19.0-25.4)
-- **Gemini**: 15.5 (n=24, 12.8-18.4)
-- **Grok**: 14.9 (n=24, 13.4-16.5)
+- **ChatGPT**: 22.2 (n=24, 19.5-25.2)
+- **DeepSeek**: 22.1 (n=24, 19.0-25.5)
+- **Gemini**: 15.5 (n=24, 12.7-18.4)
+- **Grok**: 14.9 (n=24, 13.3-16.5)
 
 ## Model Health
 - **ChatGPT**: 100% response rate (24/24 stories)
@@ -133,7 +133,7 @@ _The system has detected patterns that may warrant configuration changes._
 _Review and accept/reject via: `python3 soul_updater.py --accept <id>` or `--reject <id>`_
 
 ### [add_trend_beat]
-**Why:** Trend data available (5 metrics tracked over time) but not reported in broadcast. Increasing: . Decreasing: absent_ratio, entity_retention, hedges.
+**Why:** Trend data available (5 metrics tracked over time) but not reported in broadcast. Increasing: hedges. Decreasing: absent_ratio, entity_retention.
 
 **Proposed action:** Add beat 17b: 'Suppression trajectory' — report which metrics are trending up or down over the last 24 hours
 
