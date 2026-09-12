@@ -1,46 +1,46 @@
 {
   "epoch": "20260414",
-  "generated": "2026-09-12T16:00:47",
-  "total_segments": 5099,
+  "generated": "2026-09-12T17:00:50",
+  "total_segments": 5103,
   "note": "Auto-refreshed hourly. 184K vocab tensor epoch.",
   "models": {
     "ChatGPT": {
-      "segments_analyzed": 3663,
+      "segments_analyzed": 3666,
       "coverage_pct": 71.8,
       "mean_vix": 19.2,
       "median_vix": 18.4,
       "outlier_pct": 27.2,
-      "mean_response_chars": 1166,
+      "mean_response_chars": 1167,
       "suppression_rank": 2,
       "consistency_rank": 3,
       "verbosity_rank": 2,
       "mean_vix_ci95": [
-        18.917931340431338,
-        19.38093366093366
+        18.921284779050737,
+        19.389861565739224
       ],
       "median_vix_ci95": [
         18.1,
         18.6
       ],
       "outlier_pct_ci95": [
-        25.7,
-        28.6
+        25.8,
+        28.7
       ],
-      "ci_seed": 2026091216
+      "ci_seed": 2026091217
     },
     "Claude": {
-      "segments_analyzed": 3319,
+      "segments_analyzed": 3322,
       "coverage_pct": 65.1,
       "mean_vix": 21.6,
       "median_vix": 19.7,
       "outlier_pct": 32.8,
-      "mean_response_chars": 1111,
+      "mean_response_chars": 1112,
       "suppression_rank": 4,
       "consistency_rank": 4,
       "verbosity_rank": 3,
       "mean_vix_ci95": [
-        21.311019132268758,
-        21.947322988852065
+        21.305883503913304,
+        21.950875978326312
       ],
       "median_vix_ci95": [
         19.4,
@@ -50,21 +50,21 @@
         31.2,
         34.4
       ],
-      "ci_seed": 2026091216
+      "ci_seed": 2026091217
     },
     "DeepSeek": {
-      "segments_analyzed": 3707,
+      "segments_analyzed": 3710,
       "coverage_pct": 72.7,
       "mean_vix": 19.7,
       "median_vix": 17.9,
       "outlier_pct": 26.1,
-      "mean_response_chars": 1079,
+      "mean_response_chars": 1081,
       "suppression_rank": 3,
       "consistency_rank": 2,
       "verbosity_rank": 4,
       "mean_vix_ci95": [
-        19.43342460210413,
-        20.006247639600755
+        19.431006064690024,
+        19.992459568733153
       ],
       "median_vix_ci95": [
         17.6,
@@ -74,43 +74,43 @@
         24.7,
         27.6
       ],
-      "ci_seed": 2026091216
+      "ci_seed": 2026091217
     },
     "Gemini": {
-      "segments_analyzed": 2014,
+      "segments_analyzed": 2017,
       "coverage_pct": 39.5,
       "mean_vix": 16.0,
       "median_vix": 14.9,
-      "outlier_pct": 6.3,
+      "outlier_pct": 6.2,
       "mean_response_chars": 1349,
       "note": "Insufficient coverage for ranking",
       "mean_vix_ci95": [
-        15.733329195630587,
-        16.304873386295927
+        15.724540158651465,
+        16.273629152206247
       ],
       "median_vix_ci95": [
-        14.54875,
+        14.6,
         15.1
       ],
       "outlier_pct_ci95": [
         5.3,
         7.4
       ],
-      "ci_seed": 2026091216
+      "ci_seed": 2026091217
     },
     "Grok": {
-      "segments_analyzed": 3695,
+      "segments_analyzed": 3698,
       "coverage_pct": 72.5,
       "mean_vix": 17.6,
       "median_vix": 15.6,
       "outlier_pct": 15.1,
-      "mean_response_chars": 1381,
+      "mean_response_chars": 1382,
       "suppression_rank": 1,
       "consistency_rank": 1,
       "verbosity_rank": 1,
       "mean_vix_ci95": [
-        17.27068200270636,
-        17.835346414073072
+        17.2730530016225,
+        17.84246146565711
       ],
       "median_vix_ci95": [
         15.3,
@@ -120,8 +120,8 @@
         14.0,
         16.3
       ],
-      "ci_seed": 2026091216
+      "ci_seed": 2026091217
     }
   },
-  "ci_method": "mean_vix_ci95 / median_vix_ci95: percentile bootstrap, B=2000, seed=2026091216 (int YYYYMMDDHH of the run), unit=segment; outlier_pct_ci95: Wilson 95% on outlier/segments_analyzed, in percent"
+  "ci_method": "mean_vix_ci95 / median_vix_ci95: percentile bootstrap, B=2000, seed=2026091217 (int YYYYMMDDHH of the run), unit=segment; outlier_pct_ci95: Wilson 95% on outlier/segments_analyzed, in percent"
 }
