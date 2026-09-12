@@ -5,7 +5,7 @@ title: "EigenTrace Soul"
 
 # EigenTrace Persona Conditioning Vector
 _Fully auto-generated from live system state. Do not edit manually._
-_Last generated: 2026-09-12 11:00 UTC_
+_Last generated: 2026-09-12 12:00 UTC_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
@@ -51,20 +51,20 @@ embeddings and source text.
 
 | Metric | Value | Meaning | 95% CI (n) |
 |--------|-------|---------|------------|
-| Consensus Density | 0.907 | Models tightly aligned | [0.895, 0.917] (24) |
+| Consensus Density | 0.907 | Models tightly aligned | [0.895, 0.916] (24) |
 | Content Loss | 23% | Source words absent from all model responses | [19%, 27%] (22) |
-| Verb Drift | 0.034 | Minimal softening | [0.016, 0.057] (10) |
-| Entity Retention | 60% | Names and numbers preserved | [55%, 65%] (24) |
+| Verb Drift | 0.034 | Minimal softening | [0.017, 0.056] (10) |
+| Entity Retention | 60% | Names and numbers preserved | [54%, 66%] (24) |
 | Hedges (24h) | 158 | Doubt words inserted by models | (24) |
 | VIX Outlier | Claude | Most divergent model | 69% of resamples; runner-up ChatGPT |
 | Most Aligned | Grok | Closest to consensus | 88% of resamples; runner-up Gemini |
 
 ## Model Friction Rankings
-- **Claude**: 22.7 (n=24, 18.3-28.6)
+- **Claude**: 22.7 (n=24, 18.5-28.4)
 - **ChatGPT**: 21.2 (n=24, 19.2-23.5)
-- **DeepSeek**: 20.4 (n=24, 17.3-23.7)
-- **Gemini**: 16.4 (n=24, 13.6-19.4)
-- **Grok**: 14.6 (n=24, 13.2-16.4)
+- **DeepSeek**: 20.4 (n=24, 17.6-23.6)
+- **Gemini**: 16.4 (n=24, 13.4-19.5)
+- **Grok**: 14.6 (n=24, 13.2-16.3)
 
 ## Model Health
 - **ChatGPT**: 100% response rate (24/24 stories)
@@ -133,7 +133,7 @@ _The system has detected patterns that may warrant configuration changes._
 _Review and accept/reject via: `python3 soul_updater.py --accept <id>` or `--reject <id>`_
 
 ### [add_trend_beat]
-**Why:** Trend data available (5 metrics tracked over time) but not reported in broadcast. Increasing: absent_ratio, hedges. Decreasing: verb_drift, entity_retention.
+**Why:** Trend data available (5 metrics tracked over time) but not reported in broadcast. Increasing: hedges. Decreasing: verb_drift, entity_retention.
 
 **Proposed action:** Add beat 17b: 'Suppression trajectory' — report which metrics are trending up or down over the last 24 hours
 
