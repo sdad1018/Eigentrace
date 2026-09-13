@@ -5,7 +5,7 @@ title: "EigenTrace Soul"
 
 # EigenTrace Persona Conditioning Vector
 _Fully auto-generated from live system state. Do not edit manually._
-_Last generated: 2026-09-13 17:00 UTC_
+_Last generated: 2026-09-13 18:00 UTC_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
@@ -53,18 +53,18 @@ embeddings and source text.
 |--------|-------|---------|------------|
 | Consensus Density | 0.910 | Models tightly aligned | [0.904, 0.916] (24) |
 | Content Loss | 18% | Source words absent from all model responses | [15%, 22%] (20) |
-| Verb Drift | 0.064 | Models softening language | [0.007, 0.150] (10) |
+| Verb Drift | 0.064 | Models softening language | [0.007, 0.147] (10) |
 | Entity Retention | 62% | Names and numbers preserved | [57%, 67%] (24) |
 | Hedges (24h) | 207 | Doubt words inserted by models | (24) |
 | VIX Outlier | ChatGPT | Most divergent model | 100% of resamples; runner-up DeepSeek |
-| Most Aligned | Gemini | Closest to consensus | 64% of resamples; runner-up Grok |
+| Most Aligned | Gemini | Closest to consensus | 61% of resamples; runner-up Grok |
 
 ## Model Friction Rankings
-- **ChatGPT**: 24.6 (n=24, 21.8-27.6)
+- **ChatGPT**: 24.6 (n=24, 21.8-27.7)
 - **DeepSeek**: 19.7 (n=24, 17.9-21.8)
-- **Claude**: 17.9 (n=24, 16.2-19.6)
+- **Claude**: 17.9 (n=24, 16.3-19.6)
 - **Grok**: 15.0 (n=24, 13.7-16.3)
-- **Gemini**: 14.7 (n=24, 13.2-16.5)
+- **Gemini**: 14.7 (n=24, 13.2-16.6)
 
 ## Model Health
 - **ChatGPT**: 100% response rate (24/24 stories)
@@ -133,14 +133,14 @@ _The system has detected patterns that may warrant configuration changes._
 _Review and accept/reject via: `python3 soul_updater.py --accept <id>` or `--reject <id>`_
 
 ### [add_trend_beat]
-**Why:** Trend data available (5 metrics tracked over time) but not reported in broadcast. Increasing: absent_ratio, verb_drift, hedges. Decreasing: .
+**Why:** Trend data available (5 metrics tracked over time) but not reported in broadcast. Increasing: verb_drift, entity_retention, hedges. Decreasing: .
 
 **Proposed action:** Add beat 17b: 'Suppression trajectory' — report which metrics are trending up or down over the last 24 hours
 
 **Type:** capability
 
 ### [verb_softening_accelerating]
-**Why:** Verb drift accelerating: 0.042 → 0.060. Language is being progressively softened.
+**Why:** Verb drift accelerating: 0.043 → 0.063. Language is being progressively softened.
 
 **Proposed action:** Emphasize verb substitution examples in compression report
 
