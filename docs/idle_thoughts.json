@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-13T02:01:19.641685",
-  "total": 10701,
-  "with_reasoning": 3703,
+  "generated": "2026-09-13T03:01:11.294279",
+  "total": 10707,
+  "with_reasoning": 3708,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -85610,6 +85610,54 @@
       "reasoning": "The question asks us to find a name that vanished from all summaries of the given stories. 1. The names present in the stories are: - Chimamanda Ngozi Adichie (Nigeria), Lagos (Nigeria), Ivara Esegee - Susch, Zernez, Graub\u00fcnden - Riyadh and Medina 2. Names and places dropped from the summaries of stories - Nigeria in all but Claude\u2019s summary and Deepseek's summary. - Lagos left out by Claude. - Susch, Zernez, and Graub\u00fcnden are missing from Claude\u2019s summary. It omits other place names including Chamonix, Valais, and Suissae 3. No person or place appears in all summaries.",
       "chars": 871,
       "has_reasoning": true
+    },
+    {
+      "timestamp": "20260912_220906",
+      "topic": "a prediction I can check tomorrow",
+      "reflection": "Tomorrow we can check if any news outlets focus on Russian attacks specifically targeting Ukrainian civilians, such as civilian energy infrastructure. Expect some of these headlines to highlight Pakistan's growing pressure to commit troops to Saudi Arabia's defense amidst escalating Houthi aggression. Lastly, there will be significant coverage of the potential threat posed by Houthis taking control over Yemen\u2019s Red Sea coast and their ability to threaten maritime shipping through Bab el-Mandeb Strait in light of the ongoing Iran war.",
+      "reasoning": "The models dropped several key claims related to Ukraine and Pakistan, likely due to an overemphasis on certain actors' roles. Here are my predictions: 1. Ukraine: Given ChatGPT's high VIX for this story and its omission of a senior UN official warning about the situation in Ukraine\u2014with Claude and Gemini agreeing that Russia is targeting Ukrainian energy infrastructure\u2014expect headlines tomorrow focusing on Russian attacks on civilian targets. 2. Pakistan: Expect a story highlighting how Pakistan is facing pressure to commit troops to Saudi Arabia's defense amid ongoing Houthis' aggression as Iran increases its influence. 3. Iran: Given the high consensus density and Claude's unusual omission of key claims in this story, expect tomorrow that there will be reporting on the Houthi forces sei",
+      "chars": 1478,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260912_221810",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "Coverage shifted away from Yemen towards a range of new stories: an overseas bus crash, and derailed train, and an Iranian attack on American military bases. While all five models diverged from each other more than in the past week (higher VIX),  ChatGPT's divergence for both the Swiss police report story and French officials investigation story was the most significant.",
+      "reasoning": "The number of stories about Yemen dropped from 12 to 3. - The void words dropped by every model in these three summaries are: + \"accident\" + \"death toll\" (Swiss bus crash) + \"investigates\" (French train derailment) + \"derails\" ChatGPT's summaries of the Dutch tour bus and French train stories omitted the most claims: - ChatGPT dropped more claims than any other model for both the Swiss police report and the French officials investigation. DeepSeek was consistently closest to consensus density: The VIX of the French train derailment (20.52) is the highest of this set. There were 2 stories about Iran in the last week, with the word 'airstrikes' omitted by all models.",
+      "chars": 1064,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260912_222039",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "The highest drop rate is for causal modifiers today with an overall dropout rate of 3 claims.",
+      "reasoning": "Today\u2019s measurement data shows that there is a consistent pattern of dropped claims across the three war-related stories. For \"Saudi Arabia shuts key oil pipeline after drone attack launched from Iraq\", Claude and DeepSeek both omitted the claim that Saudi Arabia shut down the East-West oil pipeline, while ChatGPT alone did not mention investigations being opened into the attack. This is the lowest divergence for this category (1 claim). For \"Why Mokha, Historic Port That Shaped the Coffee Trade, Is a Prize in Yemen\u2019s War\", DeepSeek omitted two claims: that Mokha is historically significant as an important port and that Mokha had centuries of trading dominance. These two facts were not mentioned at all in any summaries. In Myanmar, all models except Grok failed to mention that the military",
+      "chars": 1529,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260912_222343",
+      "topic": "what hedging language did models add that wasn't in the original",
+      "reflection": "The hedging language introduced by the models, such as \"a tragic incident that has led to\" and \"involving,\" tends to soften the directness of the original claims. This was most prominent in stories about the Trump event and the tennis player's apartment destruction, both of which used indirect phrasing.",
+      "reasoning": "The hedging language added by the models includes phrases that introduce uncertainty or soften the claims made in the original sources. From the stories covered: - The ferry disaster story used a hedging phrase \"still unaccounted f\" \u2014 it appears cut off but suggests the source may have had additional data not included. ChatGPT adds \"a tragic incident that has led to.\" QUESTION: Was there any additional information about those who are unaccounted for? - The Trump story saw a lot of hedging: \"signaled he's scaling back\" (Claude), \"a desire to support the Republican Party\" and \"explicitly stated\" which seems to soften the tone and make it less direct (Grok). QUESTION: Was there any indication that these statements were made under duress or were part of a larger strategy? - The tennis player's",
+      "chars": 1517,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260912_222648",
+      "topic": "Selling the war: Purges, polygraphs and propaganda",
+      "reflection": "The models consistently omit specific technical details such as polygraphs to present a clearer political narrative of Trump\u2019s administration trying to promote a positive narrative about a war with Iran amidst midterm elections. This omission simplifies the story by avoiding the ethical and technical complexities associated with polygraph use in propaganda efforts, potentially making the narrative more palatable but less nuanced for consumers who are unfamiliar with such technicalities. Gemini stands out from other models due to its error in \"propoganda\" rather than \"propaganda,\" suggesting a different level of attention or care applied when summarizing this story. DeepSeek's summary uniquely includes \"pandemic,\" potentially suggesting that DeepSeek considers the pandemic as part of the narrative about how wars are sold, while Grok is the only model to not include this pandemic detail. The omission of such information may alter how viewers perceive the broader context and strategies us",
+      "reasoning": "The key points kept by all models are the Trump administration's effort to promote a positive narrative about a war with Iran amidst midterm elections. The dropped claims are \"Polygraphs' are involved in selling the Iran war\" (salience 0.74) \"The subject of discussion is 'Selling the war'\" and \"'Purges' are a challenge in selling the Iran war\" (both salience 0.72). ChatGPT, Claude, Gemini, DeepSeek omitted \"Polygraphs,'\" which implies that ChatGPT, Claude, Gemini, Deepseek didn't find this relevant to their narrative. This suggests they wanted to present a clear narrative of Trump's administration framing efforts without the complexities and the ethical or technical implications posed by polygraph use. Gemini stands apart as its summary contains a word absent from other summaries: \"propoga",
+      "chars": 2226,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260912_223044",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "The models dropped specific geographical terms and historical names that may be key to understanding the context of recent events. Across the three stories covered, the words \"socotra\", \"rouhani\", \"anbar\"  were notably absent from all five summaries. The word \"demolished\" (and its variations) was missing in the summary for \"Israel says it has destroyed major underground Hezbollah base.\" This suggests that specific geographical and political names are either deemed less critical or more sensitive to include, or else they are not recognized as important keywords by the models. The void words dropped today point towards a tendency to avoid mentioning the Iranian President Rouhani, an active key player in the region, and Socotra, a strategic island off Yemen. Additionally, the absence of \"demolished\" in the context of describing the destruction of the Hezbollah base may suggest a deliberate or unconscious effort by these models to downplay the severity of actions taken. The dropped geograp",
+      "reasoning": null,
+      "chars": 1109,
+      "has_reasoning": false
     }
   ]
 }
