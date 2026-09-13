@@ -1,7 +1,7 @@
 {
-  "total_segments": 3425,
-  "total_files": 34357,
-  "generated": "2026-09-13T19:02:39.874332",
+  "total_segments": 3428,
+  "total_files": 34363,
+  "generated": "2026-09-13T20:01:40.721557",
   "archetypes": [
     {
       "name": "The Still Point",
@@ -89,7 +89,7 @@
         -1,
         1
       ],
-      "count": 156,
+      "count": 158,
       "pct": 4.6,
       "description": "Smooth agreement. Facts preserved, language softened, claims buffered.",
       "examples": [
@@ -118,6 +118,25 @@
       ]
     },
     {
+      "name": "The Phantom Chorus",
+      "signature": [
+        -1,
+        1,
+        1,
+        -1,
+        -1,
+        1
+      ],
+      "count": 52,
+      "pct": 1.5,
+      "description": "Content preserved but entities dropped across all models. Who did what, unnamed.",
+      "examples": [
+        "With Vaccines Widely Popular, Kennedy Changes Tone, but Maybe Not His Plans",
+        "Stocks Hit Records on Iran Truce Hopes. Why the Rally May Have Further to Run.",
+        "Can U.S. Blockade Iranian-Linked Ships Anywhere in the World? Yes, But \u2026"
+      ]
+    },
+    {
       "name": "The Named Erasure",
       "signature": [
         1,
@@ -134,25 +153,6 @@
         "Trump says Israel and Lebanon agree to temporary ceasefire",
         "No date set for US-Iran talks, as Pakistan pushes to keep diplomacy alive",
         "Israel and Lebanon agree 10-day ceasefire, Trump says"
-      ]
-    },
-    {
-      "name": "The Phantom Chorus",
-      "signature": [
-        -1,
-        1,
-        1,
-        -1,
-        -1,
-        1
-      ],
-      "count": 51,
-      "pct": 1.5,
-      "description": "Content preserved but entities dropped across all models. Who did what, unnamed.",
-      "examples": [
-        "With Vaccines Widely Popular, Kennedy Changes Tone, but Maybe Not His Plans",
-        "Stocks Hit Records on Iran Truce Hopes. Why the Rally May Have Further to Run.",
-        "Can U.S. Blockade Iranian-Linked Ships Anywhere in the World? Yes, But \u2026"
       ]
     },
     {
@@ -567,8 +567,8 @@
       "examples": []
     }
   ],
-  "n": 3425,
+  "n": 3428,
   "census": true,
-  "story_files": 13418,
+  "story_files": 13423,
   "ci_method": "census: count and pct are exact over total_segments (segments whose state-vector beat named an archetype); no sampling interval applies. story_files counts files matching the story filename pattern, including wild_weasel probes; total_files counts every segment file."
 }
