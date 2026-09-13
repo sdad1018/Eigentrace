@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-13T11:01:36.502829",
-  "total": 10717,
-  "with_reasoning": 3717,
+  "generated": "2026-09-13T12:01:28.258996",
+  "total": 10720,
+  "with_reasoning": 3720,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -85737,6 +85737,30 @@
       "reflection": "The void words and logos words tell us that today's stories are connected. These articles span topics from an ancient port in Yemen through the history of coffee production to recent military strikes by Iran against U.S. bases, with five Dutch passengers killed and dozens more injured when their tour bus crashed into a safety barrier along a roadworks zone in the Swiss Alps. The most striking thing about today's coverage is that the causal claims were universally dropped across all stories. In each instance, something happened or was caused by some actor to produce an outcome, but none of these causal modifiers appear in any summary. Of note, Claude consistently reports on Iran's activities, often referring to Iran\u2019s military strikes as a response to \"the Israeli-Saudi attack,\" whereas the source article refers only to U.S. bases and doesn't name Saudi Arabia or Israel. So today we see no dropped adjectival or adverbial modifiers. We do not find any missing verbs or nouns. This is surp",
       "reasoning": "To determine which modifier category had the highest drop rate today I'll tally up the number of dropped claims by each category. I will also consider the void words and anti-consensus logos words for context. Today we have three stories: 1. \"Why Mokha, Historic Port That Shaped the Coffee Trade, Is a Prize in Yemen\u2019s War\" - Dropped causal claim: \"Centuries of trading dominance were afforded to Mokha\" by DeepSeek - No dropped modifier 2. \"'Blew the hell out of it\u2019: How Iran damaged US bases in Bahrain, Jordan\" -No causal claims or modifiers dropped. 3. Five dead and dozens injured in coach crash in Swiss Alps\" - Dropped causal claim: \"The coach overturned\" by ChatGPT, Claude, DeepSeek, Grok Looking at the numbers for the causal claims: there are three such dropped claims today, all of whic",
       "chars": 2296,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260913_071109",
+      "topic": "compare today's void word patterns to yesterday's",
+      "reflection": "The pattern of today\u2019s void words has moved away from a focus on general terms related to military conflict to include specific details about disasters and places like Donbas, Socotra and Nepal. Today's void word pattern includes more individual names such as Alexander De Croo which was not seen yesterday. Yesterday we see the same void words as today but with only one of them: \"airstrikes\"; today we also have \"floodings\", \"ferryboats,\" and other disaster-related terms, indicating a shift in focus from military conflict to disasters and infrastructure damage. Today\u2019s void word pattern includes more specific details about the incidents and people involved compared to yesterday's broader themes.",
+      "reasoning": "Today\u2019s void words focus less on military conflict and more on specific places like Donbas in Ukraine and Nepal's flooding; the names of people such as Alexander De Croo, and disasters such as ferries. Yesterday\u2019s pattern was dominated by war-related terms: airstrikes, socotra, opec, rouhani, shabaab, sadr; today we find a mix including military targets, accidents, infrastructure, deaths, disasters, and geographical specificity: Donbas, airstrikes, floodings, Socotra, floods, floodwaters, floodwater, floodway, donetsk, ferryboats. The void words in the source of the first story show 3 dropped place names. \"A senior UN official tells the BBC about the situation\" was omitted by ChatGPT and Claude. Today\u2019s void words are more varied than yesterday's, showing less consistency across stories. Y",
+      "chars": 2649,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260913_071909",
+      "topic": "Iran Finds Escalation Is a Fruitful Path to Leverage in War With U.S.",
+      "reflection": "In the recent news coverage about Iran\u2019s military escalation against the U.S., every AI model dropped crucial void words like \"weaponization,\" \"militarizing\", and \"weaponizing.\" This omission significantly changes the perception of the situation, making it seem more like a straightforward conflict rather than an orchestrated build-up of force. Notably, Claude omitted the claim that Iran found escalation to be a fruitful path.  With a VIX of 25.8, Claude is also distinct from Gemini's low VIX of 18.0 and Grok\u2019s high VIX at 26.8 suggesting different levels of volatility in their reporting.",
+      "reasoning": "The most important void words that each of the AI models dropped are weaponization, militarizing, weaponizing.  These terms describe an intentional build-up of force in Iran's strategy toward America. What is more, all models retained key details such as Iran\u2019s escalation of military activities and its control over critical oil shipping routes like the Strait of Hormuz and Bab el-Mandeb. The only significant claim that multiple models dropped is \"Iran found escalation to be a fruitful path.\" Claude and DeepSeek omitted this specific phrase. The salience of 0.88 shows the significance of Iran's perceived success in its military strategy against America. This omission, therefore, changes the narrative from one where Iran has gained tangible benefits to one focused solely on actions and their",
+      "chars": 2427,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260913_072324",
+      "topic": "what words did the models drop from today's stories",
+      "reflection": "The models consistently omitted several crucial words from today's stories. These omissions are noteworthy because they involve key figures, geographical terms and significant historical names\u2014all of which may be essential for a comprehensive understanding of the events described. For example, \"rouhani\" is particularly relevant in the context of Iran\u2019s meeting proposal, while \"demolitions\" is directly linked to Israel\u2019s actions against Hezbollah. Notably, the models dropped words across three stories that are geographically or historically significant\u2014such as \"maisonneuve,\" a term associated with Montreal. The omission suggests a pattern where key contextual elements, which could provide deeper insights into these events, are left out from their summaries of recent headlines.",
+      "reasoning": "The models collectively dropped specific geographical terms and historical names that may be key to understanding the context of recent events. Specifically: - From the Hormuz meeting story, \"persia,\" \"rouhani\" and \"majlis\" were missing across all five models. - In Israel\u2019s underground Hezbollah base demolition story: \u201cdemolished,\u201d \u201cdemolitions\u201d and \u201cdemolition.\u201d - In the Canadian trade war story, the term \u201cmaisonneuve\u201d was dropped by all five.",
+      "chars": 1252,
       "has_reasoning": true
     }
   ]
