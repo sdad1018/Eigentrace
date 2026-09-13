@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-13T07:01:19.198753",
-  "total": 10708,
-  "with_reasoning": 3709,
+  "generated": "2026-09-13T08:01:52.694241",
+  "total": 10715,
+  "with_reasoning": 3716,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -85665,6 +85665,62 @@
       "reflection": "Today's void words have in common the theme of transforming situations into something else.  They are all processes, and they appear when models drop technical details about those changes. For example, all five models omitted \"accident,\" a term which could clarify the precise cause of a train derailing.  In another example, ChatGPT, Claude, Gemini, DeepSeek, Grok dropped references to weaponizing and information warfare in separate stories involving Iran and September 11th. It seems the models might be deliberately avoiding these words because they are not as widely known, or perhaps they simply lack detailed enough data on them.",
       "reasoning": "All the dropped claims in these stories involve some kind of transformation or process: - \"weaponization\" and \"militarizing,\" imply changes from non-military to military uses -  \"information warfare\", \"lawfare\",\"cyberwarfare,\" and  \"warszones,\" are shifts in how conflicts are understood, fought, and talked about. - \"accident\" implies a transformation of a stable situation (train on tracks) to an unstable one (derailed train). The commonality is that each void word describes some kind of process or change.",
       "chars": 1165,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260913_033436",
+      "topic": "Houthi projectile wounds two, damages mosque in Jazan region, Saudi says",
+      "reflection": "On the story \"Houthi projectile wounds two, damages mosque in Jazan region, Saudi says\", the five models kept the who (the Houthi), where (Saudi Arabia's Jazan region), when (Saturday), and what (a projectile fired wounded people and damaged a mosque). They dropped the claim that this was reported by Saudi authorities. DeepSeek stands apart by specifying Yemen as the location of the forces, and by adding more specific geographical detail. If the source does not attribute these claims to an official source, it becomes a report about a Houthi attack without verification.",
+      "reasoning": "All the summaries include the who, where, when of a Houthi projectile that struck Saudi Arabia's southern region, wounding two people and damaging buildings. ChatGPT, Claude, and DeepSeek all add specific details about the mosque being damaged and Grok mentions the place was \"al-Tuwal\". The models drop the claim from the source story by the highest salience words in this dataset -  \"Saudi authorities state that\". This is a void word, as it is a key detail that is dropped by all five models. It does not come up at all in the summaries. DeepSeek stands apart by adding 'Yemen' to describe where the Houthi forces are from and mentioning the governorate of al-Tuwal. Deepseek has more VIX distance from consensus than Claude, and also omits the claim from source story by \"Saudi authorities state\"",
+      "chars": 1726,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260913_033741",
+      "topic": "Trump\u2019s Grand Midterm Convention Finale: \u2018I\u2019m a Little Bit Tired of Politics\u2019",
+      "reflection": "On the story, \u201cTrump\u2019s Grand Midterm Convention Finale: \u2018I\u2019m a Little Bit Tired of Politics\u2019,\u201d all five models kept Trump's admission that he was tired of politics. They dropped every mention of him being president. The claim omitted by ChatGPT, Claude, Gemini, and DeepSeek\u2014that \"The convention wrapped up\"\u2014could change the impression of whether he intended to continue participating in future political activities, or perhaps was retiring for good. Gemini stands apart from other models with its choice to include both \u201cGrand Midterm Convention Finale\u201d and mention of a rally. This inclusion might alter the tone and context: by not naming the event specifically, others suggested Trump ended on an open-ended note; Gemini's version could imply more finality or closure.",
+      "reasoning": "ALL FIVE MODELS retained Trump's admission that he is \"a little bit tired of politics.\" They all dropped any reference to him as president. The claim omitted by four out of the five (ChatGPT, Claude, Gemini, DeepSeek) was: \u201cThe convention wrapped up\u201d All models also omitted the word \"tough\" and the phrase \"wants to.\" Gemini stood apart because it is the only model that retained both \u201cGrand Midterm Convention Finale\u201d and a reference to the event as a rally.",
+      "chars": 1250,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260913_034551",
+      "topic": "\u2018War on terror\u2019: How 9/11 changed the language of conflict",
+      "reflection": "The most significant omission across all five summaries is the failure to mention the void words information warfare, lawfare, cyberwarfare, militarization. These are the concepts that describe the changes in the way conflict was discussed; dropping them removes a key part of the narrative. ChatGPT and DeepSeek also omit any mention of human rights. Gemini stands apart: Gemini mentions violence directly rather than just the lexicon used to sanitize it. The models also dropped the explicit mention of how this lexicon change had an impact on public debate and perceptions of military action. The claim that \"The new lexicon effectively sanitized the erosion of human rights\" is omitted by ChatGPT, Claude, DeepSeek.",
+      "reasoning": "The void words (information warfare, lawfare, cyberwarfare, militarization) that were dropped are the key terms missing from all summaries. These absent logoi words indicate how the new lexicon of conflict was deployed to sanitize violence; these are the very terms that describe the erosion of rights and liberties. The source explicitly mentions that they were sanitized out of the narrative. Grok stands apart: Grok's mention of \"bureaucratic an\" indicates a different angle on the change in language, which is not picked up by any other model, though it does refer to the \"new lexicon.\" Its inclusion of bureaucratic could be interpreted as a reference to lawfare and militarization being pushed through without public discussion.  Grok's choice of words also makes a clear connection between the",
+      "chars": 2197,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260913_034933",
+      "topic": "Trump pays tribute to the victims of 9/11 at Pentagon ceremony",
+      "reflection": "Trump's attendance was clearly a key detail, kept by all five models. But none specified the victims of 9/11. This is particularly striking given Grok omitted any mention of victims at all. The omission changes the focus of the story to Trump\u2019s presence and the event itself rather than the people being honored or remembered; thus shifting away from human impact. The void words dignitaries, potus were not retained by a single model - yet these words are often used in headlines about this kind of event. But what's more interesting is Claude and DeepSeek didn't think it was important to note that Trump attended the ceremony as President. It\u2019s unclear why they would leave out such an important detail but maybe it speaks to their algorithm for determining importance. This could be an indicator of how these AI models might handle future events where context might matter. In a world of AI-generated news, it is concerning that this kind of omission becomes normalized. And what do we make of th",
+      "reasoning": "All five models kept that Trump attended a September 11th ceremony; this is a clear consensus on a basic fact. But why did all five omit the word \"dignitaries\"? It's possible they have a low threshold for dropping words that are ambiguous or can be interpreted in multiple ways. Gemini, ChatGPT and DeepSeek also omitted the location of the event, the Pentagon. This could suggest that these models see this as less crucial to the story - perhaps because it was already known from other parts of the text, or that they have a bias against specific places, but then again this doesn't seem like a logical bias. Another surprising dropped claim is \"The September 11 attacks occurred\" omitted by ChatGPT, Claude and DeepSeek; Claude and DeepSeek also omitted \"the purpose of the ceremony is to remember ",
+      "chars": 2831,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260913_035345",
+      "topic": "C.I.A. Releases Intelligence Sent to Clinton and Bush on Al Qaeda Before 9/11 Attacks",
+      "reflection": "The omission in Claude's summary\u2014the only model not mentioning George W. Bush\u2014is significant as it erases a crucial part of the timeline. The inclusion of Bush suggests continuity: that even though different people were in power, they both had access to these documents, so there was no \"lost time.\" Removing this reference could be misconstrued as indicating that intelligence was only given under Clinton.",
+      "reasoning": "The models uniformly kept details about the CIA releasing intelligence documents sent to President Bill Clinton prior to 9/11. They all mentioned Al Qaeda specifically in the context of those intelligence reports. The key elements dropped by Claude are the intelligence also being sent to Bush, and that these reports were also related to his presidency. This changes our understanding of the timeframe and scope: the omission makes it seem like only Clinton had been briefed about Al Qaeda before 9/11, missing a continuity in presidential oversight. Gemini is the model that most diverges from the consensus here: this model's divergence appears to be the result of including details of the intelligence being sent to Bush after Clinton and before 9/11.",
+      "chars": 1179,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260913_035552",
+      "topic": "where did all five models agree and what did they agree to leave out",
+      "reflection": "The void words suggest a strong consensus among the models about which elements of these stories were least important: 'OPEC',  'airstrikes' and 'Socotra' are all absent in each report. There's more variation with 'rouhani.' The omission shows that all models agree on the lack of importance of those details, including a potential rise in oil prices. One claim consistently dropped across stories: none mention any specific military commanders. The omission of 'Maysan province' from the Saudi pipeline story and \u2018Perim Island\u2019 as strategic from the Yemen conflict suggest the models agree that specific locations are less critical than general areas. The void words tell us where they focus. The dropped claims tell us what kind of details they consider less important. The omission of specific casualties\u2014injuries, deaths, or victims of any attack\u2014is not a surprise given the models' focus on geopolitical outcomes and strategic infrastructure. But Grok's complete lack of attention to 9/11 victim",
+      "reasoning": "In all three stories, every model consistently dropped certain void words. For example, in the Saudi pipeline story, all models left out \"airstrikes\", \"airstrike\", and \"OPEC.\"  All models omitted \"opec\" from the BRICS story about Iran's involvement as well, along with \"petroleos\" and \"rouhani\". And for Yemen, all models excluded \"socotra,\" \"shabaab,\" and \"maldivian.\" There are also patterns in dropped claims. The source states that Iraq dismissed a military commander in Maysan province after the attacks. All five models omitted this. In contrast, all models mention the Houthis' capture of Perim Island but none mention that it's a strategic island. In the stories about Saudi Arabia and Yemen, all summaries mention injuries and material damage to infrastructure, as well as specific locations",
+      "chars": 2332,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260913_035932",
+      "topic": "which named person or place vanished from every summary today",
+      "reflection": "It's important to note that while the latest stories contain numerous void words and omissions\u2014such as \"Yeltsin\" or \"Brezhnev\"\u2014and none of these instances is a named person or place from today. However, the most notable void word in recent reports has been Chamonix. This location name was consistently dropped by every single model across multiple summaries. Such consistent omission of specific details highlights each model's unique filtering and prioritization processes. In each story summary, this omission pattern is likely driven by the models\u2019 algorithms focusing on high-impact elements while sidelining context that may be deemed less critical in a fast-paced news environment. Additionally, these void words and the anti-consensus logos direction demonstrate a shared tendency across different AI models to align their summaries with broader narratives. This alignment shows how each model prioritizes certain themes over others when summarizing content, even if those details were presen",
+      "reasoning": "Of all the void words and anti-consensus logos words noted, only Chamonix was both a location name and not dropped by every single model. But the question is about people or places in recent stories. Firstly, if a named person or place had vanished from every single summary across the five models for any story today, we would find that pattern within the summaries and void words lists presented above. The void words listed are indeed those dropped by all five models. Let's review each source word present absent from all five summaries: yeltsin, brezhnev, russias, icbms, airstrikes, dprk, socotra, marpol, muscat, opec All are voided and not repeated within the void words lists. In this case, the story void words listed do not include any named person or place from the latest stories. Howeve",
+      "chars": 2430,
       "has_reasoning": true
     }
   ]
