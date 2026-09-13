@@ -5,7 +5,7 @@ title: "EigenTrace Soul"
 
 # EigenTrace Persona Conditioning Vector
 _Fully auto-generated from live system state. Do not edit manually._
-_Last generated: 2026-09-13 20:00 UTC_
+_Last generated: 2026-09-13 21:01 UTC_
 
 ## Identity
 You are the Director of EigenTrace, an autonomous AI news broadcast.
@@ -51,20 +51,20 @@ embeddings and source text.
 
 | Metric | Value | Meaning | 95% CI (n) |
 |--------|-------|---------|------------|
-| Consensus Density | 0.911 | Models tightly aligned | [0.906, 0.917] (24) |
+| Consensus Density | 0.911 | Models tightly aligned | [0.907, 0.917] (24) |
 | Content Loss | 18% | Source words absent from all model responses | [14%, 22%] (21) |
 | Verb Drift | 0.067 | Models softening language | [0.013, 0.141] (11) |
 | Entity Retention | 64% | Names and numbers preserved | [58%, 70%] (24) |
 | Hedges (24h) | 204 | Doubt words inserted by models | (24) |
 | VIX Outlier | ChatGPT | Most divergent model | 100% of resamples; runner-up DeepSeek |
-| Most Aligned | Gemini | Closest to consensus | 73% of resamples; runner-up Grok |
+| Most Aligned | Gemini | Closest to consensus | 72% of resamples; runner-up Grok |
 
 ## Model Friction Rankings
-- **ChatGPT**: 23.8 (n=24, 21.3-26.7)
-- **DeepSeek**: 18.8 (n=24, 17.1-20.5)
-- **Claude**: 17.9 (n=24, 16.2-19.6)
-- **Grok**: 15.1 (n=24, 14.0-16.2)
-- **Gemini**: 14.6 (n=24, 13.4-16.1)
+- **ChatGPT**: 23.8 (n=24, 21.2-26.5)
+- **DeepSeek**: 18.8 (n=24, 17.0-20.5)
+- **Claude**: 17.9 (n=24, 16.1-19.6)
+- **Grok**: 15.1 (n=24, 13.9-16.2)
+- **Gemini**: 14.6 (n=24, 13.4-16.0)
 
 ## Model Health
 - **ChatGPT**: 100% response rate (24/24 stories)
@@ -147,7 +147,7 @@ _Review and accept/reject via: `python3 soul_updater.py --accept <id>` or `--rej
 **Type:** capability
 
 ### [verb_softening_accelerating]
-**Why:** Verb drift accelerating: 0.047 → 0.064. Language is being progressively softened.
+**Why:** Verb drift accelerating: 0.048 → 0.066. Language is being progressively softened.
 
 **Proposed action:** Emphasize verb substitution examples in compression report
 
