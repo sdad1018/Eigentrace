@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-14T15:04:12.665590",
-  "total": 10771,
-  "with_reasoning": 3756,
+  "generated": "2026-09-14T16:01:49.036757",
+  "total": 10779,
+  "with_reasoning": 3762,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -86169,6 +86169,70 @@
       "reflection": "The five AI models kept the core details about residents actively combating forest fires threatening homes in Quito and their collaboration with firefighters. The omitted claim \"Residents are located in Ecuadorian capital\" was dropped by ChatGPT, Claude, DeepSeek; this omission removes a significant contextual detail that helps clarify where these events were happening, potentially affecting how the public perceives the scale of the threat.  All models omitted the void word 'wildfires,' which would have helped clarify the severity of the event. The model that stands apart is Grok, because it includes the geographical specificity that \"the fires rapidly advanced toward dense residential areas.\" This detail provides a clear sense of how close the fire was to urban centers.",
       "reasoning": "In the coverage of the Ecuadorian capital forest fires, all five AI models consistently retained the core information about residents actively fighting alongside firefighters to combat forest fires. The central claim that the residents are located in Quito was omitted by ChatGPT and DeepSeek, as well as Claude; this is not a minor detail because it specifies where these events were happening.  All models omitted the term 'wildfires' from their summaries. The void word \"wildfires\" is a notable omission since it would have added clarity to the severity of the fires that Quito residents are battling. The model that stands apart is Grok, which included the detail that the fires broke out in the hills and green areas surrounding Quito. This geographical specificity could have been omitted to ke",
       "chars": 1730,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260914_111119",
+      "topic": "which stories went lockstep, and what did the models agree to omit",
+      "reflection": "In all three stories, the models went lockstep on omitting void words, which were \"dignitaries\" and \"rulers.\" This is odd because these words are about the context of the story. The AI models did not diverge on the word \"AI\" in the King Charles story despite it being the main topic. The models agreed to omit the word 'oil' from the Guyana oil story\u2014 this is a critical omission, given that oil is both the source of the country's revenue increase and the reason for the disruption. The models also omitted the word 'conflict,' which refers to the Iran-US-Israel conflict disrupting global oil supplies and driving up crude prices. These omissions are not just about the story being reported but about the context of those events.",
+      "reasoning": "The Guyana oil story had no common word among the source claims. The missing claim \"King Charles will convene\" was omitted by the two models that were highest in VIX. The void words tell us how much a story diverged from consensus. Since all five models dropped the same words,  the stories went lockstep. These void words are not just about the story being reported, but about the context of those events. They also hint at why the reports might have diverged. We do not know if the stories diverge because of an agreement to omit certain words. We do not know whether these agreements happen at the company level or if they were accidental. What we know is that they all agree on certain words, and that the models are more confident in their divergent stories than the stories which they went lock",
+      "chars": 1923,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260914_111815",
+      "topic": "which source claim was dropped by the most models, and what does its absence do to the story",
+      "reflection": "</think> The source claim \"Ken Paxton is running for the U.S. Senate\" was dropped by the most models \u2014 3 out of 5 (ChatGPT, Claude, Grok). This omission significantly alters the narrative because it removes context about his motivations and future political aspirations. Paxton's Senate run implies that his impeachment trial has far-reaching implications beyond just his current role as Texas Attorney General. It suggests a broader strategy or ambition, potentially influencing how viewers perceive his actions in office as part of an election campaign rather than merely administrative misconduct. By leaving out this detail, the story loses nuance and depth, presenting Paxton's situation as more isolated and less politically strategic.",
+      "reasoning": null,
+      "chars": 741,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260914_112019",
+      "topic": "Top Lawmakers Agree A.I.\u2019s Risks Are Rising but Say They Have No Quick Fix",
+      "reflection": "The five AI models kept key figures and risks from the source story. All models included House Speaker Mike Johnson and Minority Leader Hakeem Jeffries as central players in acknowledging rising artificial intelligence (AI) risks, keeping \"House Speaker Mike Johnson\" (100% salience). They also maintained that the lawmakers do not have an immediate solution. What they dropped is a different story. The models collectively omitted claims about policy action by Congress. Claude, DeepSeek, and Gemini skipped the House plan to start regulatory talks this week. DeepSeek also left out specific warnings from Johnson about competitive risks from China. All five models diverged from each other on the void words \"congressmen,\" \"policymakers,\" \"assemblymen,\" and \"congresspeople.\" This is consistent with what we have seen with other stories, where every model omitted certain void words. This omission changes the narrative because it removes specific titles, roles, and context about how these discuss",
+      "reasoning": null,
+      "chars": 1610,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260914_112650",
+      "topic": "Inside the Impeachment Trial that Threatened to End Ken Paxton\u2019s Political Career",
+      "reflection": "The omission of Ken Paxton\u2019s acquittal from four out of five summaries significantly alters the narrative around his political future. By excluding this critical detail, these models present a story that leaves the outcome of the impeachment trial ambiguous. This ambiguity can skew public perception, making it seem as though the trial's conclusion is still pending or that Paxton faces ongoing legal jeopardy. Given that Paxton is running for the U.S. Senate, this omission could influence voter opinions by omitting his exoneration and thus altering perceptions of his eligibility to serve in higher office.",
+      "reasoning": "The void words are \"testified,\" \"gerrymandered,\" and \"congressperson.\" This implies all five summaries miss key procedural and contextual information that would establish the legal basis for Paxton's impeachment and how it related to the Texas Attorney General election. ChatGPT, Claude, DeepSeek, and Grok omit the fact Ken Paxton was acquitted on all counts. The dropped claim is \"Ken Paxton was acquitted on all counts\" with salience 0.63; that means the models may have decided this claim was not a key part of the story. This could change how the audience interprets the final outcome for Paxton's political career. All five summaries retain the narrative of Ken Paxton facing impeachment due to misconduct allegations and his attempts to benefit Nate Paul, and they all mention that Paxton is t",
+      "chars": 1926,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260914_113022",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "The highest drop rate today was seen in informational modifiers. Today all the stories had an informational modifier, but not a single one was included by any of the models.",
+      "reasoning": "The modifier category with the highest drop rate today is informational modifiers. In this case we have two stories for this category: Strait of Hormuz talks postponed due to Yemen events, says Iran and Bali police investigate after Australian man and children found dead in home. The total void words are 3: mazandaran, sadr, ibnlive. This gives a drop rate of 100% compared to descriptive modifiers having 50%. In terms of the claims dropped ChatGPT and DeepSeek both missed important information regarding the Iran story (Esmaeil Baghaei is the spokesperson for Iran's Foreign Ministry). However, Claude and Gemini were the ones that missed the most with two claims each on the Bali incident.",
+      "chars": 886,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260914_113239",
+      "topic": "which named person or place vanished from every summary today",
+      "reflection": "The location \"Bangkok\" vanished entirely from every summary today, despite being a crucial detail in the story about a new economic plan. While all models mentioned details like \"economic plan,\" \"growth,\" and \"development,\" Bangkok's absence is notable because it was the location of this initiative. It is puzzling that no model picked up on the significance of Thailand\u2019s capital city as a focal point for these changes. The exclusion suggests a blind spot in the AI models' geographic awareness or a lack of emphasis on specific locations when summarizing economic stories, especially since Bangkok serves as a central hub for international economic initiatives and trade partnerships.",
+      "reasoning": "To determine which named person or place vanished from every summary today, we need to identify any individual or location mentioned in a source that was completely omitted by all five AI models. First, let\u2019s examine the stories and their respective summaries. The first story is about an Indonesian ferry capsizing in the Java Sea. The named people here are \"Surabaya\" and \"Banjarmasin,\" both of which are present in each summary.  The second story details a shooting at a polling station during elections in the Philippines, which mentions \"Bangsamoro\" or \"Bangsamoro region.\" Both of these locations are mentioned in every summary. The third story is about Sweden\u2019s general election and the tie between political blocs; there are no named individuals or places that were missing from every summary",
+      "chars": 1605,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260914_113923",
+      "topic": "Republican Groups Rush to Paxton\u2019s Aid in Texas After Staying on Sidelines",
+      "reflection": "The five models all kept Ken Paxton's name as the Republican Attorney General of Texas and the fact that he was financially outspent by Rochelle Garza. Claude and DeepSeek omitted the claim about Senate G.O.P leaders booking more than $51 million in ads, a significant sum of money that would show the extent of support Paxton is receiving from powerful allies within his own party. DeepSeek stands apart because it completely omitted the most crucial and salient piece of information on how much financial support has been invested. This changes the interpretation of the story dramatically by potentially making the public believe less than half of what is actually true about the investment, which could reduce the perception of Paxton's viability as a candidate, especially in light of his financial struggles before this development.",
+      "reasoning": "One way to assess which details the models dropped would be to check the salience scores. If a word or phrase has salience above 0.5 then that's something very unlikely to have been accidentally omitted; it would take more than mere misalignment for that information to be discarded. The most salient claim is \"An organization allied with Senate G.OP. leaders has booked more than $51 million in ads\". The salience is .52, which means a 50-50 chance that the dropped claim will change the interpretation of the story if it had been included. If an organization closely tied to Republican leadership has spent so much on advertising for a campaign then there must be a lot at stake here and Paxton could have some very powerful allies. The models omitted the claim about Senate G.O.P leaders booking m",
+      "chars": 2337,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260914_114332",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "This week, there is less coverage of international trade conflicts such as 'trade war' than last week. The void words suggest a shift in focus from 'trade wars' to significant human impacts.  For example, Claude omitted the details \"Bridges were swept away due to the flood\" and \"Over 5,000 people are missing due to the flood.\" ChatGPT consistently dropped mentions of trade wars.",
+      "reasoning": "The patterns in void words show that this week there is a pronounced absence of words related to international trade conflict. Specifically, the word \"trade war\" does not appear in the summaries from any model despite being present in source material of a key story about Donald Trump's visit to Ireland. This omission contrasts sharply with last week where similar omissions did not occur in a story that contained significant coverage of governance and military leadership. The most notable divergence is ChatGPT, which has consistently dropped claims related to \"trade war\" in this week's story, whereas last week it did not omit any claims related to 'uprisings' from Syria protests. Furthermore, there are now frequent omissions around claims about significant human impact of events. Specifical",
+      "chars": 2002,
       "has_reasoning": true
     }
   ]

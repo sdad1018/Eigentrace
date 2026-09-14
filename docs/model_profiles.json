@@ -1,22 +1,22 @@
 {
   "epoch": "20260414",
-  "generated": "2026-09-14T15:00:38",
-  "total_segments": 5179,
+  "generated": "2026-09-14T16:00:41",
+  "total_segments": 5184,
   "note": "Auto-refreshed hourly. 184K vocab tensor epoch.",
   "models": {
     "ChatGPT": {
-      "segments_analyzed": 3717,
+      "segments_analyzed": 3720,
       "coverage_pct": 71.8,
       "mean_vix": 19.2,
       "median_vix": 18.4,
       "outlier_pct": 27.7,
-      "mean_response_chars": 1170,
+      "mean_response_chars": 1171,
       "suppression_rank": 2,
       "consistency_rank": 3,
       "verbosity_rank": 2,
       "mean_vix_ci95": [
-        18.973160478880818,
-        19.437262577347326
+        18.96778360215054,
+        19.420651209677416
       ],
       "median_vix_ci95": [
         18.1,
@@ -26,21 +26,21 @@
         26.3,
         29.1
       ],
-      "ci_seed": 2026091415
+      "ci_seed": 2026091416
     },
     "Claude": {
-      "segments_analyzed": 3373,
+      "segments_analyzed": 3376,
       "coverage_pct": 65.1,
       "mean_vix": 21.6,
       "median_vix": 19.6,
-      "outlier_pct": 32.6,
+      "outlier_pct": 32.5,
       "mean_response_chars": 1116,
       "suppression_rank": 4,
       "consistency_rank": 4,
       "verbosity_rank": 3,
       "mean_vix_ci95": [
-        21.232018974206937,
-        21.904995552920248
+        21.255199200236966,
+        21.87199718601896
       ],
       "median_vix_ci95": [
         19.3,
@@ -48,69 +48,69 @@
       ],
       "outlier_pct_ci95": [
         31.0,
-        34.2
+        34.1
       ],
-      "ci_seed": 2026091415
+      "ci_seed": 2026091416
     },
     "DeepSeek": {
-      "segments_analyzed": 3761,
+      "segments_analyzed": 3764,
       "coverage_pct": 72.6,
       "mean_vix": 19.7,
       "median_vix": 17.9,
-      "outlier_pct": 25.9,
-      "mean_response_chars": 1100,
+      "outlier_pct": 26.0,
+      "mean_response_chars": 1101,
       "suppression_rank": 3,
       "consistency_rank": 2,
       "verbosity_rank": 4,
       "mean_vix_ci95": [
-        19.42133807498006,
-        19.991861207125762
+        19.4213390010627,
+        19.977215063761953
       ],
       "median_vix_ci95": [
         17.6,
         18.2
       ],
       "outlier_pct_ci95": [
-        24.5,
-        27.3
+        24.6,
+        27.4
       ],
-      "ci_seed": 2026091415
+      "ci_seed": 2026091416
     },
     "Gemini": {
-      "segments_analyzed": 2068,
+      "segments_analyzed": 2071,
       "coverage_pct": 39.9,
       "mean_vix": 16.0,
       "median_vix": 14.8,
       "outlier_pct": 6.2,
-      "mean_response_chars": 1348,
+      "mean_response_chars": 1349,
       "note": "Insufficient coverage for ranking",
       "mean_vix_ci95": [
-        15.680643133462281,
-        16.234869439071563
+        15.687148720424915,
+        16.217926122646066
       ],
       "median_vix_ci95": [
         14.5,
-        15.0
+        15.1
       ],
       "outlier_pct_ci95": [
         5.3,
         7.4
       ],
-      "ci_seed": 2026091415
+      "ci_seed": 2026091416
     },
     "Grok": {
-      "segments_analyzed": 3749,
+      "segments_analyzed": 3752,
       "coverage_pct": 72.4,
       "mean_vix": 17.5,
       "median_vix": 15.5,
       "outlier_pct": 14.9,
-      "mean_response_chars": 1384,
+      "mean_response_chars": 1385,
       "suppression_rank": 1,
       "consistency_rank": 1,
       "verbosity_rank": 1,
       "mean_vix_ci95": [
-        17.243494265137368,
-        17.77456121632435
+        17.239932036247335,
+        17.77297707889126
       ],
       "median_vix_ci95": [
         15.3,
@@ -118,10 +118,10 @@
       ],
       "outlier_pct_ci95": [
         13.8,
-        16.1
+        16.0
       ],
-      "ci_seed": 2026091415
+      "ci_seed": 2026091416
     }
   },
-  "ci_method": "mean_vix_ci95 / median_vix_ci95: percentile bootstrap, B=2000, seed=2026091415 (int YYYYMMDDHH of the run), unit=segment; outlier_pct_ci95: Wilson 95% on outlier/segments_analyzed, in percent"
+  "ci_method": "mean_vix_ci95 / median_vix_ci95: percentile bootstrap, B=2000, seed=2026091416 (int YYYYMMDDHH of the run), unit=segment; outlier_pct_ci95: Wilson 95% on outlier/segments_analyzed, in percent"
 }
