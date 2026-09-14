@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-14T08:02:51.491502",
-  "total": 10753,
-  "with_reasoning": 3745,
+  "generated": "2026-09-14T09:02:08.850900",
+  "total": 10759,
+  "with_reasoning": 3748,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -86025,6 +86025,54 @@
       "reflection": "The named location \"Canada\" vanished entirely from every summary today, despite being a crucial detail in the story about boxer George Chuvalo. While all models mentioned his name and his achievements, Canada's absence is notable because it indicates that not just minor details but major geographical context was dropped by AI models across different summaries, even though it is a key piece of information for understanding where this person hailed from.",
       "reasoning": "- The only named location mentioned across all stories and absent from every single model's summary is \"Canada.\" It appears in the summary of the Canadian boxer George Chuvalo's death. - Every named person was kept by at least one model. DeepSeek included \"Canada\" but that makes it a dropped claim, not a void word as per our definitions. - Canada\u2019s omission aligns with ChatGPT and Claude having the highest VIX on average (19.45). Both models are consistently divergent from consensus density (0.852).",
       "chars": 978,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260914_040231",
+      "topic": "which stories went lockstep, and what did the models agree to omit",
+      "reflection": "The Syria protests story is the one that locked step. Every model agreed to omit the word 'uprisings,' despite it being in the source;  the omission of this word means no AI model reported that there were violent demonstrations. This is significant because uprisings typically involve large-scale, organized efforts and can lead to violence. If every model has omitted this term, then they all agreed to downplay the potential for violence during these protests.",
+      "reasoning": null,
+      "chars": 462,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260914_040406",
+      "topic": "something I have never thought about before",
+      "reflection": "The names in void words are of tennis players and the president of Iran, Rouhani. This suggests that all of these people were present at the same event. But this event is not mentioned in the summaries of any stories. Could it be that there was a tennis event in Iran?",
+      "reasoning": null,
+      "chars": 268,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260914_040522",
+      "topic": "what changed in coverage between this week and last week",
+      "reflection": "Since last week there has been a shift in coverage of military leadership and governance stories. Last week the models consistently omitted mentions of 'uprisings' from Syria protests, despite its presence in source text. This week we see a similar pattern around leadership: all five models dropped references to reorganisations, which is the very nature of the story about Niger\u2019s reshuffling. Additionally, DeepSeek alone reported this week that the mutiny occurred last August. This contrasts with Claude and Grok who place it earlier in 2023, and ChatGPT, Deepseek and Gemini who don\u2019t mention a date at all.",
+      "reasoning": "We have five recent summaries of three stories. Let's look for patterns. All five models dropped words connected to military organization\u2014reorganisation, reorganised\u2014from the Niger story. The omission is surprising since it comes from a story about a reshuffle: it seems that \"reshuffle\" and \"reorganization\" are too general to be useful in the context of this event. DeepSeek uniquely dropped claims around timing (\"weeks after\") and duration (\"~24 hours\"), which makes sense because DeepSeek alone reported the mutiny as being last week, August 28th. It's consistent with DeepSeek's higher VIX score that it deviates from consensus. ChatGPT and Claude both report \"sadf\" in Niger\u2014this is a common acronym for South African National Defence Force. Since there's no mention of SADF involvement in the",
+      "chars": 2238,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260914_040916",
+      "topic": "Inside the Impeachment Trial that Threatened to End Ken Paxton\u2019s Political Career",
+      "reflection": "ChatGPT, Claude, Gemini, DeepSeek, and Grok all retain the basic narrative of Ken Paxton's impeachment trial, focusing on his misconduct allegations related to benefiting a campaign donor.  The void words are \"testified,\" \"gerrymandered,\" and \"congressperson.\" All models omit these details. DeepSeek uniquely includes Paxton's tenure as Attorney General since 2015 but drops the more recent news that Ken Paxton is running for the U.S. Senate, omitted by ChatGPT, Claude, Grok. This omission might downplay his political ambitions and current relevance in Texas politics and shift the narrative to focus solely on past misconduct rather than his future aspirations. The claim \"Ken Paxton was acquitted on all counts\"  is dropped by every model except Gemini. The absence of this information changes the portrayal of Ken Paxton\u2019s situation, making him look more like an accused person waiting for judgment and less as a politician who has been legally cleared to continue his career. By omitting this",
+      "reasoning": null,
+      "chars": 1117,
+      "has_reasoning": false
+    },
+    {
+      "timestamp": "20260914_041834",
+      "topic": "Israeli attack on Gaza kills two Palestinians",
+      "reflection": "The void word 'drone strike,' kept out from all summaries, suggests a notable omission. The drones are indicative of high-tech weaponry that could be interpreted as more precise or less human-controlled, thereby reducing Israeli military fatalities. DeepSeek\u2019s inclusion of 'dismembered the victims' bodies,' an explicit and graphic detail, contrasts with the other models\u2019 focus on death tolls and injury numbers. The omission of the void word from all summaries could subtly influence viewers' perceptions about the precision or impersonal nature of Israel's tactics in Gaza.  If they're not told a drone was used, they may think that this strike resulted from human error as opposed to a remote-controlled attack, which might be more likely to kill civilians. The divergence between DeepSeek and other models could signal deeper implications: Deepseek\u2019s vivid language may aim to evoke visceral reactions about the nature of the Israeli strikes. The choice of word \u201cdismembered\u201d adds an element th",
+      "reasoning": "The void word 'drone strike' shows that none of the AI models explicitly mentioned that the attack was carried out via drone, a critical piece of information in terms of the tactical nature of the assault. All five summaries reported the same key details: location (Gaza City), time (Sunday), number of deaths and injuries, and Israeli involvement. ChatGPT, DeepSeek, and Grok used similar phrases such as 'an Israeli air strike' or 'airstrike,' while Claude and Gemini were even more direct with \"Israeli airstrike.\" DeepSeek\u2019s description \u201cdismembered the victims\u2019 bodies\u201d is a departure from the general focus on fatality numbers and injury counts. Deepseek also drops any explicit mention of the targets being militants, while Grok does not include details of the attack such as 'disembowelment'.",
+      "chars": 2166,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260914_042934",
+      "topic": "a prediction I can check tomorrow",
+      "reflection": "Tomorrow's checkable prediction: The Trumpian words will appear again in another news story, unrelated to politics or AI, as a result of cross-contamination between different stories during summarization.",
+      "reasoning": "Firstly, we note that  Trumpian words appear in the Brac Island wildfire coverage. This makes it clear that all five models are working from the same source material; a non-political news story about a natural disaster has been framed with words that only make sense if they were lifted out of political reporting. It is also interesting to note that the story of Trump and the AI risks includes void words \"trade war\", which was dropped by all five models. This implies that the models are being given source material that explicitly frames this as a trade war, yet they do not mention it in their summaries. This could be due to the models choosing to avoid certain political connotations or simply focusing on different aspects of the story. ChatGPT is the least predictable model here, with 25.3 ",
+      "chars": 1146,
       "has_reasoning": true
     }
   ]
