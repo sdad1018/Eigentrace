@@ -473,6 +473,9 @@ def _chat(system: str, user: str, temperature: float = 0.85, num_predict: int = 
         "model": IDLE_MODEL,
         "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
         "stream": False,
+        # 2026-09-14: hold the model for 30 min instead of Ollama's 5. Reflections arrive
+        # 3-11 min apart, so the default reloaded 15 GB from disk for most of them.
+        "keep_alive": "30m",
         "options": {"temperature": temperature, "num_predict": num_predict, "num_ctx": 6144},
     }, timeout=timeout)
     r.raise_for_status()

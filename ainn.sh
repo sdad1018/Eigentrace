@@ -174,7 +174,10 @@ if curl -sf http://localhost:11434/api/tags > /dev/null 2>&1; then
     ok "Ollama running"
 else
     warn "Ollama not running — starting..."
-    ollama serve > "$LOG_DIR/ollama.log" 2>&1 &
+    # keep the model resident for 30 min, not Ollama's 5 (2026-09-14): idle reflections
+    # arrive 3-11 min apart, so the default made most of them reload 15 GB from disk first.
+    # The image stage still frees VRAM explicitly with keep_alive 0.
+    OLLAMA_KEEP_ALIVE=30m ollama serve > "$LOG_DIR/ollama.log" 2>&1 &
     sleep 4
     if curl -sf http://localhost:11434/api/tags > /dev/null 2>&1; then
         ok "Ollama started"
@@ -299,30 +302,45 @@ trap '
     exit 0
 ' SIGINT SIGTERM
 
+# 2026-09-14: back off instead of restarting a dying component every 30 s. A component
+# that keeps failing waits 60 s, then 120 s, then 300 s between attempts; one that has
+# stayed up for 10 minutes starts again from zero. Without this a component that cannot
+# start (missing file, port taken, no VRAM) is relaunched 120 times an hour.
+declare -A _RESTARTS=() _LAST_RESTART=()
+should_restart() {
+    local c="$1" now last n wait
+    now=$(date +%s); last=${_LAST_RESTART[$c]:-0}; n=${_RESTARTS[$c]:-0}
+    (( last > 0 && now - last > 600 )) && n=0
+    case $n in 0) wait=0 ;; 1) wait=60 ;; 2) wait=120 ;; *) wait=300 ;; esac
+    (( now - last < wait )) && return 1
+    _RESTARTS[$c]=$(( n + 1 )); _LAST_RESTART[$c]=$now
+    return 0
+}
+
 while true; do
     sleep 30
 
-    if ! is_alive "player"; then
-        warn "$(date '+%H:%M:%S') player died — restarting"
+    if ! is_alive "player" && should_restart "player"; then
+        warn "$(date '+%H:%M:%S') player died — restarting (attempt ${_RESTARTS[player]})"
         cd "$REPO" && python3 segment_player.py >> "$LOG_DIR/player.log" 2>&1 &
         save_pid "player" $!
     fi
 
-    if ! is_alive "producer"; then
-        warn "$(date '+%H:%M:%S') producer died — restarting"
+    if ! is_alive "producer" && should_restart "producer"; then
+        warn "$(date '+%H:%M:%S') producer died — restarting (attempt ${_RESTARTS[producer]})"
         cd "$REPO" && python3 batch_producer.py --loop --interval 60 --min-queue 1 $EXTRA_PRODUCER_ARGS \
             >> "$LOG_DIR/producer.log" 2>&1 &
         save_pid "producer" $!
     fi
 
-    if ! is_alive "master"; then
-        warn "$(date '+%H:%M:%S') master died — restarting"
+    if ! is_alive "master" && should_restart "master"; then
+        warn "$(date '+%H:%M:%S') master died — restarting (attempt ${_RESTARTS[master]})"
         cd "$RUNTIME/stream" && bash master.sh >> "$LOG_DIR/master.log" 2>&1 &
         save_pid "master" $!
     fi
 
-    if ! is_alive "owncast"; then
-        warn "$(date '+%H:%M:%S') owncast died — restarting"
+    if ! is_alive "owncast" && should_restart "owncast"; then
+        warn "$(date '+%H:%M:%S') owncast died — restarting (attempt ${_RESTARTS[owncast]})"
         cd "$OWNCAST_DIR" && ./owncast >> "$LOG_DIR/owncast.log" 2>&1 &
         save_pid "owncast" $!
     fi
