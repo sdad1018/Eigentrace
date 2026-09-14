@@ -130,15 +130,15 @@ Story counts stated on the site, with their pages:
 | 9,395 | registry rows with a density value | [src: report 2026-09-05 §3] |
 | 2,201 | stories with a source body of 40+ words, refusals removed (Outliers page corpus, April–June 2026) | [src: docs/large-language-model-outliers.md §01, "How this was measured"] |
 | 2,171 | stories in the kind-vs-magnitude agreement test | [src: docs/large-language-model-outliers.md §02] |
-| 1,659 | "real news stories" in the Atlas corpus (corrected from 5,170) | [src: docs/consequence-atlas.md; docs/withdrawals.md Withdrawal 04] |
+| 887 | news stories the Atlas chart was computed on | [src: docs/consequence-atlas.html; docs/withdrawals.html Withdrawal 15] |
 | 1,592 | stories in the charged-language retention test | [src: docs/boundary.md Finding two] |
-| 781 / 484 / 31 | Atlas domain buckets: war / other conflict / general | [src: docs/consequence-atlas.md] |
+| 781 / 31 | Atlas domain buckets: war / general (the 484 other-conflict bucket is withdrawn, Withdrawal 15) | [src: docs/consequence-atlas.html] |
 | 510 | Iran-conflict segments, April 16 – June 18, 2026 | [src: docs/llm-consensus-geometry-iran-2026.md] |
 | 300 | newest stories with five summaries, five rewrites and a 400+ character body (residual tests) | [src: report 2026-09-09 preamble] |
 | 150 | stories in the random-word baseline ("150 stories" on the Atlas and Summary Plus pages, "150 Iran stories" on the Iran page) | [src: docs/consequence-atlas.md; docs/summary-plus.md; docs/llm-consensus-geometry-iran-2026.md; report 2026-09-05 §5] |
 | 22k+ / 18,000+ | "stories measured" / "segments" on the overview and dynamics pages; these count all segment types, not stories | [src: docs/overview.md; docs/dynamics.md; report 2026-09-06 §1B] [UNVERIFIED as story counts] |
 
-The story-count triad (1,592 / 1,659 / 150) is inconsistent across pages and code [src: report 2026-09-06 §1D]. OWNER: dataset v1 must fix one denominator per result and this table must be rewritten from it.
+The story-count triad (1,592 / 887 / 150) is inconsistent across pages and code [src: report 2026-09-06 §1D]. OWNER: dataset v1 must fix one denominator per result and this table must be rewritten from it.
 
 Thin-source regime: roughly 75% of ingested stories supplied only a headline and one sentence (median 14 source words); on those the models confabulate, and every measured finding on the Outliers page excludes them [src: docs/large-language-model-outliers.md §01].
 
@@ -227,7 +227,7 @@ Plain statements, one per line.
 - Source contamination. 75% of stored bodies carry feed boilerplate [src: report 2026-09-06 §1C]; 23% of recent segments (68 of 300) contain a local-model failure string in an analysis field [src: report 2026-09-05 §4].
 - Mean VIX and the state flag are functions of density (§3.3); the NOMINAL state is unreachable for N ≥ 3 [src: docs/metrics.md §1; report 2026-09-05 §3].
 - Degenerate channels. The aired void words rank by headline relevance; the logos objective is attracted to the consensus; the SVD null vector was arbitrary under mean-centering until 2026-09-09 and is now a combination of the responses with arbitrary sign (§3.8). None of the three carries residual signal [src: report 2026-09-09 §Test 1; docs/metrics.md §§2–4].
-- Withdrawn claims. Own-parent pattern (0 of 5 models under semantic scoring); spontaneous self-map (0 of 4 models without the instruction); eight-test battery downgraded to a ~19% relative trend (Mann-Whitney p = 0.027, permutation p = 0.038, fails parametric and length-controlled tests); corpus count 5,170 → 1,659; single stable void direction (unstable under perturbation, no different from random text) [src: docs/withdrawals.md].
+- Withdrawn claims. Own-parent pattern (0 of 5 models under semantic scoring); spontaneous self-map (0 of 4 models without the instruction); eight-test battery downgraded to a ~19% relative trend (Mann-Whitney p = 0.027, permutation p = 0.038, fails parametric and length-controlled tests); corpus count 5,170 → 1,659 → 887 (Withdrawals 04 and 15); single stable void direction (unstable under perturbation, no different from random text). A September 2026 audit added entries 06–23 [src: docs/withdrawals.html].
 - Pre-registration status. Only the entity-swap test was pre-registered [src: docs/boundary.md "Method & reproducibility"]. The cutoff name list was post hoc [src: docs/boundary.md "Honest limits"].
 - Model drift. Vendor models change under their names; the Outliers page dates its findings to April–June 2026 [src: docs/large-language-model-outliers.md §08].
 - Not peer-reviewed [src: docs/index.md; README.md "Limitations"].

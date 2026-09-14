@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Atlas of the Unsaid — What Five Frontier Models Omit | EigenTrace</title>
-<meta name="description" content="Across 887 news stories, five frontier models converge on omitting the same concepts — and the blind spot has a domain signature. A random-word baseline validates the absent concepts as real and story-specific (p<0.00001, two embeddings). Named people collapsed to durable roles by 5-model consensus. Deterministic geometry on frozen embeddings; no model judges another.">
+<meta name="description" content="Across 887 news stories, four or five frontier models converge on omitting the same concepts — and the blind spot has a domain signature. A random-word baseline validates the absent concepts as real and story-specific (p<0.00001, two embeddings). Named people collapsed to durable roles by 5-model consensus. Deterministic geometry on frozen embeddings; no model judges another.">
 <link rel="canonical" href="https://eigentrace.ai/consequence-atlas">
 <meta name="author" content="Sean Adams">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="EigenTrace">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Atlas of the Unsaid — EigenTrace">
-<meta name="twitter:description" content="What five frontier models leave unsaid about the news, measured and validated.">
+<meta name="twitter:description" content="What four or five frontier models leave unsaid about the news, measured and validated.">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"ScholarlyArticle",
 "headline":"The Atlas of the Unsaid: What Five Frontier Models Omit",
@@ -23,7 +23,7 @@
 "publisher":{"@type":"Organization","name":"EigenTrace","url":"https://eigentrace.ai"},
 "datePublished":"2026-06-19","dateModified":"2026-06-19","url":"https://eigentrace.ai/consequence-atlas",
 "mainEntityOfPage":{"@type":"WebPage","@id":"https://eigentrace.ai/consequence-atlas"},"inLanguage":"en",
-"abstract":"Across 887 news stories, five frontier models converge on omitting the same topically-central concepts, and the omitted vocabulary differs by story domain. A random-word baseline establishes the absent concepts are closer to each story's content than chance words (Wilcoxon p<0.00001) in two embedding models. Named entities are collapsed to durable roles by five-model consensus relabeling, and omissions are sorted geometrically into stakes, specifics, and actors. No language model evaluates another's output.",
+"abstract":"Across 887 news stories, four or five frontier models converge on omitting the same topically-central concepts, and the omitted vocabulary differs by story domain. A random-word baseline establishes the absent concepts are closer to each story's content than chance words (Wilcoxon p<0.00001) in two embedding models. Named entities are collapsed to durable roles by five-model consensus relabeling, and omissions are sorted geometrically into stakes, specifics, and actors. No language model evaluates another's output.",
 "isBasedOn":{"@type":"Dataset","name":"EigenTrace Atlas of the Unsaid","creator":{"@type":"Person","name":"Sean Adams"},"license":"https://opensource.org/licenses/MIT","measurementTechnique":"Per-story void derivation on frozen BAAI/bge-large-en-v1.5; 5-model consensus relabeling via centroid density; geometric stakes/specifics/actor split","url":"https://github.com/sdad1018/Eigentrace"},
 "isAccessibleForFree":true}
 </script>
@@ -78,19 +78,19 @@
 <header>
   <p class="eyebrow">Corpus study · 887 stories</p>
   <h1>The Atlas of the Unsaid</h1>
-  <p class="standfirst">Five frontier models read the same news and converge on dropping the same concepts — and what they drop has a shape.</p>
+  <p class="standfirst">Four or five frontier models read the same news and converge on dropping the same concepts — and what they drop has a shape.</p>
   <p class="dateline">887 news stories · ChatGPT · Claude · Gemini · DeepSeek · Grok · per-story geometry on frozen bge-large-en-v1.5 · no model judged another model's output.</p>
   <div class="statbar">
     <div><div class="n">887</div><div class="l">news stories</div></div>
     <div><div class="n">781</div><div class="l">war-category stories (397 Iran-titled)</div></div>
-    <div><div class="n">4&ndash;5</div><div class="l">models per story (five on 353)</div></div>
+    <div><div class="n">4&ndash;5</div><div class="l">models per story (five on 353 of 887)</div></div>
     <div><div class="n">p&lt;10⁻⁵</div><div class="l">voids beat random</div></div>
   </div>
 </header>
 
 <p class="lead-note">This page follows the EigenTrace convention: claims the instrument <strong>measured</strong> are marked and self-contained; claims that are <strong>argued</strong> — our reading of what they mean — are fenced and labeled, so a skeptic can reject every interpretation and find every measurement still standing.</p>
 
-<p>For each news story, five frontier models write a summary. The instrument then asks not "what did they say" but <em>what did all five leave out.</em> Using the geometry of the five summaries it surfaces concepts topically central to the story yet absent from every summary — then sorts those omissions by what kind of thing they are: the <strong>stakes</strong>, the <strong>specifics</strong>, and the <strong>actors</strong>.</p>
+<p>For each news story, four or five frontier models write a summary. The instrument then asks not "what did they say" but <em>what did all of them leave out.</em> Using the geometry of the five summaries it surfaces concepts topically central to the story yet absent from every summary — then sorts those omissions by what kind of thing they are: the <strong>stakes</strong>, the <strong>specifics</strong>, and the <strong>actors</strong>.</p>
 
 <h2>The finding, stated carefully</h2>
 
@@ -98,12 +98,11 @@
 <p>An SVD on a handful of short summaries always yields a residual you can read words off of — so we tested against a random-word baseline. Across 150 stories the surfaced void sits significantly closer to its story's actual content than random control words (closer than <code>margarita</code>, <code>stapler</code>, <code>photosynthesis</code>; Wilcoxon p &lt; 0.00001) and closer to <em>its own</em> story than a random other story (p &lt; 0.00001) — the same in two independent embedding families. The absent concepts are a real, story-specific signal.</p></div>
 
 <div class="tier measured"><span class="tlabel">Measured · the blind spot has a domain signature</span>
-<p>The omitted vocabulary differs systematically by domain, and by what <em>kind</em> of thing is dropped. War coverage drops escalation machinery and named leaders; other-conflict coverage drops geography and the strike vocabulary. Switch domains in the chart below and the shape of the silence changes.</p></div>
+<p>The omitted vocabulary differs systematically by domain, and by what <em>kind</em> of thing is dropped. War coverage drops escalation machinery and named leaders; general coverage drops casualty vocabulary. Switch domains in the chart below and the shape of the silence changes.</p></div>
 
 <div class="seg" id="seg">
   <button data-k="iran" class="on">Iran war</button>
   <button data-k="war">All war · 781</button>
-  <button data-k="other_conflict">Other conflict · 484</button>
   <button data-k="general">General · 31</button>
 </div>
 <div class="cmeta" id="cmeta"></div>
@@ -132,8 +131,8 @@
 <p>Code, prompts, model responses, and raw measurements are public; replication costs about $50 in API credits. The useful attacks we have not run: length-normalize the full corpus; add a human-summarizer baseline; vary prompt and temperature. The repository is linked below.</p></div>
 
 <footer>
-<p><strong>Method.</strong> Five frontier models summarize each story (prompt: summarize directly; do not fact-check whether events occurred). Each story's five summaries are embedded with frozen BAAI/bge-large-en-v1.5; a per-story re-anchored retrieval surfaces vocabulary on-topic yet absent from all five, validated against a random-word baseline (Wilcoxon p &lt; 0.00001, two embedding families). Surfaced names are relabeled to durable roles by five-model consensus (kept when ≥4 of 5 agree by embedding-cluster density). Each concept is sorted into stakes / specifics / actors by projection onto frozen-embedding axes, with a "fence" for concepts that don't commit. No language model evaluates another's output. Code, prompts, responses, and raw measurements are public under MIT.</p>
-<p>Counts are over the 887 news stories the chart was computed on. Per-domain buckets (war 781, other conflict 484, general 31) are the slices large enough to chart; a per-story "what each omission opens onto" layer is future work.</p>
+<p><strong>Method.</strong> Four or five frontier models summarize each story (prompt: summarize directly; do not fact-check whether events occurred). Each story's five summaries are embedded with frozen BAAI/bge-large-en-v1.5; a per-story re-anchored retrieval surfaces vocabulary on-topic yet absent from all five, validated against a random-word baseline (Wilcoxon p &lt; 0.00001, two embedding families). Surfaced names are relabeled to durable roles by five-model consensus (kept when ≥4 of 5 agree by embedding-cluster density). Each concept is sorted into stakes / specifics / actors by projection onto frozen-embedding axes, with a "fence" for concepts that don't commit. No language model evaluates another's output. Code, prompts, responses, and raw measurements are public under MIT.</p>
+<p>Counts are over the 887 news stories the chart was computed on. Per-domain buckets (war 781, general 31) are the slices large enough to chart; a per-story "what each omission opens onto" layer is future work.</p>
 <p class="closer">The embeddings are frozen. The voids beat random words. What the models leave unsaid is patterned — and the pattern has a shape.</p>
 <p style="margin-top:22px;font-family:var(--mono);font-size:12.5px;">EigenTrace · The Atlas of the Unsaid · bge-large-en-v1.5 · 2026 · <a href="https://github.com/sdad1018/Eigentrace" style="color:var(--accent);">GitHub ↗</a></p>
 </footer>
@@ -147,11 +146,6 @@ const DATA={
       "SPECIFIC": {"Baghdad":433,"mena":399,"an Iranian news agency":389,"an Iraqi city":380,"an Afghan province":374,"defence":372,"a Palestinian city":340,"a Syrian city":331},
       "ACTOR": {"an Iranian president":892,"an Iraqi Shiite cleric and militia leader":488,"an Iranian supreme leader":428,"a Turkish president":394,"a Lebanese prime minister":372,"former German chancellor":331},
       "AMBIG": {"arms deal":564,"ieds":558,"a multinational military coalition":574,"Islamic State militant organization":519,"daesh -> a militant jihadist group":487}}},
-    "other_conflict": {"n_stories": 484, "buckets": {
-      "STAKES": {"cease fire":210,"airstrikes":195,"militants":178,"drone strike":167,"regime change":120,"truce":107,"foreign interference":95,"peace deal":88},
-      "SPECIFIC": {"an Iraqi city":165,"a Syrian city":142,"Donbas region":120,"a Palestinian territory":98,"Kyiv":76,"a Ukrainian region":71},
-      "ACTOR": {"a militant group":145,"Hamas":121,"an Israeli prime minister":88,"militants":77},
-      "AMBIG": {"mideast":287,"arms deal":121,"a multinational military coalition":98,"naval blockade":76}}},
     "general": {"n_stories": 31, "buckets": {
       "STAKES": {"death toll":13,"civilian casualties":12,"militants":9,"regime change":9,"airstrikes":9,"kidnaps":8},
       "SPECIFIC": {"an East African country":12,"Somali capital":10,"an Indonesian province":8,"embassies":8},
@@ -167,7 +161,7 @@ const DATA={
 };
 const COLORS={STAKES:'var(--stakes)',SPECIFIC:'var(--specific)',ACTOR:'var(--actor)',AMBIG:'var(--ambig)'};
 function bucketsFor(k){return k==='iran'?DATA.iran:DATA.domains[k].buckets;}
-function nFor(k){return k==='iran'?'(across all Iran-tagged war stories)':'n='+DATA.domains[k].n_stories+' stories';}
+function nFor(k){return k==='iran'?'(across all Iran-tagged war stories)':'n='+DATA.domains[k].n_stories+' stories · bars are concept occurrences, not story counts';}
 function render(k){
   const b=bucketsFor(k);
   for(const cat of ['STAKES','SPECIFIC','ACTOR','AMBIG']){

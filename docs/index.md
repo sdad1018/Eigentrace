@@ -126,7 +126,7 @@ description: "Deterministic geometry on frozen embeddings measures what a model 
     <h1>When a model summarizes, what does it <span class="em">drop, soften, or keep</span>?</h1>
     <p class="lede">EigenTrace measures it — deterministically, on a frozen embedding space, with no second language model sitting in judgment. The whole industry currently asks one model to grade another. This is the other way to do it: arithmetic on vectors, identical every run, checkable by anyone.</p>
     <div class="heroline">
-      Five frontier models · live news · 24/7 on one consumer GPU · frozen BAAI/bge-large-en-v1.5<br>
+      Five frontier models · live news · unattended on one consumer GPU · frozen BAAI/bge-large-en-v1.5<br>
       No model judges another. Same inputs, same numbers. Code, prompts, and raw measurements public — replicable for about $50.
     </div>
 
@@ -140,7 +140,7 @@ description: "Deterministic geometry on frozen embeddings measures what a model 
 
   <section class="live">
     <h2><span class="sec">Running now</span>The instrument is live, on air whenever the stack is up</h2>
-    <p>This is not a paper about a system that could exist. It runs unattended and streams whenever the stack is up: over the last 90 days, 1,384 of 2,160 hours carried a segment and 555 carried a news story, with outage gaps of up to 8.7 days. A local model narrates consensus geometry across four or five frontier LLMs — five on 70% of stories — on breaking news, on one consumer GPU.</p>
+    <p>This is not a paper about a system that could exist. It runs unattended and streams whenever the stack is up: over the last 90 days, 1,441 of 2,160 hours carried a segment and 555 carried a news story, with outage gaps of up to 8.7 days. A local model narrates consensus geometry across four or five frontier LLMs — five on 70% of the 9,962-story corpus — on breaking news, on one consumer GPU.</p>
     <div class="embed">
       <iframe src="https://www.youtube.com/embed/live_stream?channel=UCWU2u6DkVadZzPuiLz3zWOQ" frameborder="0" allowfullscreen title="EigenTrace live broadcast"></iframe>
     </div>
