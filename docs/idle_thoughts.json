@@ -1,7 +1,7 @@
 {
-  "generated": "2026-09-14T10:01:01.799234",
-  "total": 10759,
-  "with_reasoning": 3748,
+  "generated": "2026-09-14T11:01:24.669787",
+  "total": 10763,
+  "with_reasoning": 3752,
   "thoughts": [
     {
       "timestamp": "20260421_192617",
@@ -86073,6 +86073,38 @@
       "reflection": "Tomorrow's checkable prediction: The Trumpian words will appear again in another news story, unrelated to politics or AI, as a result of cross-contamination between different stories during summarization.",
       "reasoning": "Firstly, we note that  Trumpian words appear in the Brac Island wildfire coverage. This makes it clear that all five models are working from the same source material; a non-political news story about a natural disaster has been framed with words that only make sense if they were lifted out of political reporting. It is also interesting to note that the story of Trump and the AI risks includes void words \"trade war\", which was dropped by all five models. This implies that the models are being given source material that explicitly frames this as a trade war, yet they do not mention it in their summaries. This could be due to the models choosing to avoid certain political connotations or simply focusing on different aspects of the story. ChatGPT is the least predictable model here, with 25.3 ",
       "chars": 1146,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260914_061625",
+      "topic": "French officials investigate if malicious act caused train derailment",
+      "reflection": "On the story \"French officials investigate if malicious act caused train derailment,\" all five models kept that a passenger train derailed on Friday evening near Rouen and Caen in northern France. Four of them dropped key claims such as \"the investigation is regarding a possible malicious act\" and details about 44 injured people, while Claude alone omitted the entire sentence mentioning the investigation. ChatGPT diverged by keeping the phrase \"malicious act\". The omissions change the story from potentially serious news of sabotage to a more neutral description of an accident.",
+      "reasoning": "The five models share a strong consensus on key aspects of the train incident. They all mention that a passenger train in northern France derailed on Friday evening, and they include details about the train's route between Rouen and Caen. They drop three claims: \"French officials are investigating\", \"the investigation is regarding a possible malicious act\" and \"Friday's crash resulted in 44 people being injured.\" ChatGPT stands apart from Claude, DeepSeek, Grok in mentioning that there is an ongoing investigation to find the cause of the derailment. It also diverges by using the phrase \"malicious act\", which was omitted by all four other models and is one of the void words. ChatGPT alone keeps the word \"investigation\". Given that Claude, DeepSeek, Grok omit the specific details about the i",
+      "chars": 1806,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260914_061938",
+      "topic": "which model's summary stayed closest to the source, and what did it still leave out",
+      "reflection": "Grok's summary stayed closest to the original text by accurately describing the summit's participants and location but it still left out significant details like \"Iran plans to hold talks\" which is dropped by every model. This omits a clear statement of Iran's intentions, which could be very important context in reporting on this story. This suggests that even the most accurate AI summaries can miss crucial details about diplomatic intentions. All five models diverged from the source on key details about why the summit is happening and what its goals are. All five models added \"blockade\" to their accounts of Iran's move, despite it not being part of the original text or the consensus logos direction, which was a claim that none of the models could substantiate. The void word \"Iran\" may be at work in this.",
+      "reasoning": "Grok is diverging the least from the source text on this story. It includes key details about the Iran-GCC summit, mentioning that it involves Iraq and GCC countries, its location in Oman, and the topic of discussion being the Strait of Hormuz. This story's void words are persia, rouhani, khomeini; these dropped claims are \"Iran plans to hold talks,\" \"Talks will be held with Iraq,\" and \"Talks aim to strengthen shared regional security.\" Grok did not include any of those specific details. The source text does not say anything about a blockade. The claim that Iran has blockaded the Strait of Hormuz appears in every model summary but isn't part of the source material, so Grok is actually the most accurate in dropping this claim. If we exclude this non-existent Iranian move, Grok is the most r",
+      "chars": 1800,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260914_063032",
+      "topic": "which model was the outlier most often today, and on what kind of story",
+      "reflection": "ChatGPT was the outlier in all three stories.  On average it omitted key facts about the subjects of conflict, including the war with Iran and Republican political divisions.  To summarize, ChatGPT consistently diverged across all stories today, providing different descriptions and omitting key details on all the war related topics.",
+      "reasoning": "Today ChatGPT consistently omitted important information about each subject covered: - The recent Iran war reshapes BRICS ties In this story on Iran's regional tensions, ChatGPT dropped several key claims. \"Iran is involved in a war\" was a dropped claim, as well as the uncertainty around replacing the current global order. This model omitted the critical information that the conflict involves actual airstrikes. - Republican Groups Rush to Paxton\u2019s Aid Here it diverged by omitting details about the significant financial backing of $51 million in ads which was mentioned by every other model - The Oman postpone talks with Iran and Gulf states ChatGPT did not mention key players like Iran or regional countries involved. It also left out details about the talks being postponed at the request of",
+      "chars": 1289,
+      "has_reasoning": true
+    },
+    {
+      "timestamp": "20260914_063311",
+      "topic": "which modifier category had the highest drop rate today",
+      "reflection": "Today the highest dropout rate of all categories were in informational modifiers, which has a 3/6 rate overall compared to a 2/4 rate with descriptive ones as it is closer to being equal on rate but the actual total number of claims dropped are more indicative.",
+      "reasoning": "The data shows that three of today's CONTESTED stories (on Bangladesh measles, Nepal floods, and Okinawa elections) have dropped claims in instructive modifiers categories. However, it is not immediately clear how many total instructive modifiers are there to determine their overall dropout rate. - To get a sense, we need to count the total number of dropped claims that were instructive or informational. - The \"why Bangladesh is struggling against measles epidemic\" story had a 0.916 consensus density and a mean VIX 17.14. There are no direct informative modifiers claimed by the source but not included in all five summaries; it appears to have dropped the informative ones of 'aggravated', 'among' etc.. The Bangladesh story, though, does feature four anti-consensus logos words (mmrs, immunis",
+      "chars": 1910,
       "has_reasoning": true
     }
   ]
