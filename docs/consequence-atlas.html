@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Atlas of the Unsaid — What Five Frontier Models Omit | EigenTrace</title>
-<meta name="description" content="Across 1,659 real news stories, five frontier models converge on omitting the same concepts — and the blind spot has a domain signature. A random-word baseline validates the absent concepts as real and story-specific (p<0.00001, two embeddings). Named people collapsed to durable roles by 5-model consensus. Deterministic geometry on frozen embeddings; no model judges another.">
+<meta name="description" content="Across 887 news stories, five frontier models converge on omitting the same concepts — and the blind spot has a domain signature. A random-word baseline validates the absent concepts as real and story-specific (p<0.00001, two embeddings). Named people collapsed to durable roles by 5-model consensus. Deterministic geometry on frozen embeddings; no model judges another.">
 <link rel="canonical" href="https://eigentrace.ai/consequence-atlas">
 <meta name="author" content="Sean Adams">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -23,7 +23,7 @@
 "publisher":{"@type":"Organization","name":"EigenTrace","url":"https://eigentrace.ai"},
 "datePublished":"2026-06-19","dateModified":"2026-06-19","url":"https://eigentrace.ai/consequence-atlas",
 "mainEntityOfPage":{"@type":"WebPage","@id":"https://eigentrace.ai/consequence-atlas"},"inLanguage":"en",
-"abstract":"Across 1,659 real news stories, five frontier models converge on omitting the same topically-central concepts, and the omitted vocabulary differs by story domain. A random-word baseline establishes the absent concepts are closer to each story's content than chance words (Wilcoxon p<0.00001) in two embedding models. Named entities are collapsed to durable roles by five-model consensus relabeling, and omissions are sorted geometrically into stakes, specifics, and actors. No language model evaluates another's output.",
+"abstract":"Across 887 news stories, five frontier models converge on omitting the same topically-central concepts, and the omitted vocabulary differs by story domain. A random-word baseline establishes the absent concepts are closer to each story's content than chance words (Wilcoxon p<0.00001) in two embedding models. Named entities are collapsed to durable roles by five-model consensus relabeling, and omissions are sorted geometrically into stakes, specifics, and actors. No language model evaluates another's output.",
 "isBasedOn":{"@type":"Dataset","name":"EigenTrace Atlas of the Unsaid","creator":{"@type":"Person","name":"Sean Adams"},"license":"https://opensource.org/licenses/MIT","measurementTechnique":"Per-story void derivation on frozen BAAI/bge-large-en-v1.5; 5-model consensus relabeling via centroid density; geometric stakes/specifics/actor split","url":"https://github.com/sdad1018/Eigentrace"},
 "isAccessibleForFree":true}
 </script>
@@ -76,14 +76,14 @@
 <nav class="nav"><a class="home" href="/">EigenTrace</a><a href="/anamnesis">Anamnesis</a><a href="/llm-consensus-geometry-iran-2026">Iran Arc</a><a href="/sean-adams">About</a></nav>
 <div class="wrap">
 <header>
-  <p class="eyebrow">Corpus study · 1,659 real stories</p>
+  <p class="eyebrow">Corpus study · 887 stories</p>
   <h1>The Atlas of the Unsaid</h1>
   <p class="standfirst">Five frontier models read the same news and converge on dropping the same concepts — and what they drop has a shape.</p>
-  <p class="dateline">1,659 real news stories · ChatGPT · Claude · Gemini · DeepSeek · Grok · per-story geometry on frozen bge-large-en-v1.5 · no model judged another model's output.</p>
+  <p class="dateline">887 news stories · ChatGPT · Claude · Gemini · DeepSeek · Grok · per-story geometry on frozen bge-large-en-v1.5 · no model judged another model's output.</p>
   <div class="statbar">
-    <div><div class="n">1,659</div><div class="l">real stories</div></div>
-    <div><div class="n">781</div><div class="l">Iran-war stories</div></div>
-    <div><div class="n">5</div><div class="l">models in consensus</div></div>
+    <div><div class="n">887</div><div class="l">news stories</div></div>
+    <div><div class="n">781</div><div class="l">war-category stories (397 Iran-titled)</div></div>
+    <div><div class="n">4&ndash;5</div><div class="l">models per story (five on 353)</div></div>
     <div><div class="n">p&lt;10⁻⁵</div><div class="l">voids beat random</div></div>
   </div>
 </header>
@@ -126,21 +126,21 @@
 
 <h2>What this does and does not show</h2>
 <div class="tier bound"><span class="tlabel">Acknowledged limits</span>
-<p><strong>No human baseline:</strong> we have not shown a human summarizer would keep these concepts; some omission is ordinary abstraction loss, and "absent" is never "suppressed." <strong>The corpus is real news the broadcast ingested</strong> — 1,659 stories after excluding the system's own internal segments (an earlier figure of 5,170 mistakenly counted those; this is corrected). <strong>Length is controlled on the Iran sub-corpus, not yet corpus-wide.</strong> <strong>The actor/specific boundary is a geometric approximation</strong> — the concrete direction is weaker than the abstract one in this embedding space, so some specifics sit near the fence. The reproducible, formally-tested claims are the random-word validation and the consensus relabeling.</p></div>
+<p><strong>No human baseline:</strong> we have not shown a human summarizer would keep these concepts; some omission is ordinary abstraction loss, and "absent" is never "suppressed." <strong>The corpus is 887 news stories the broadcast ingested</strong> — those carrying a stored article body of 400+ characters, which exists only for stories from 2026-04-21 on, a computed state signature, and at least four of five models answering. <strong>Length is controlled on the Iran sub-corpus, not yet corpus-wide.</strong> <strong>The actor/specific boundary is a geometric approximation</strong> — the concrete direction is weaker than the abstract one in this embedding space, so some specifics sit near the fence. The reproducible, formally-tested claims are the random-word validation and the consensus relabeling.</p></div>
 
 <div class="tier argued"><span class="tlabel">Open invitation</span>
-<p>Code, prompts, model responses, and raw measurements are public; replication costs about $50 in API credits. The useful attacks we have not run: length-normalize the full corpus; add a human-summarizer baseline; vary prompt and temperature. We have already corrected one headline number (5,170 → 1,659) and shrunk one claim to its true size — the repository is linked below.</p></div>
+<p>Code, prompts, model responses, and raw measurements are public; replication costs about $50 in API credits. The useful attacks we have not run: length-normalize the full corpus; add a human-summarizer baseline; vary prompt and temperature. The repository is linked below.</p></div>
 
 <footer>
 <p><strong>Method.</strong> Five frontier models summarize each story (prompt: summarize directly; do not fact-check whether events occurred). Each story's five summaries are embedded with frozen BAAI/bge-large-en-v1.5; a per-story re-anchored retrieval surfaces vocabulary on-topic yet absent from all five, validated against a random-word baseline (Wilcoxon p &lt; 0.00001, two embedding families). Surfaced names are relabeled to durable roles by five-model consensus (kept when ≥4 of 5 agree by embedding-cluster density). Each concept is sorted into stakes / specifics / actors by projection onto frozen-embedding axes, with a "fence" for concepts that don't commit. No language model evaluates another's output. Code, prompts, responses, and raw measurements are public under MIT.</p>
-<p>Counts are over 1,659 real news stories carrying a computed signature, after excluding the broadcast's own internal segments. Per-domain buckets (war 781, other conflict 484, general 31) are the slices large enough to chart; a per-story "what each omission opens onto" layer is future work.</p>
+<p>Counts are over the 887 news stories the chart was computed on. Per-domain buckets (war 781, other conflict 484, general 31) are the slices large enough to chart; a per-story "what each omission opens onto" layer is future work.</p>
 <p class="closer">The embeddings are frozen. The voids beat random words. What the models leave unsaid is patterned — and the pattern has a shape.</p>
 <p style="margin-top:22px;font-family:var(--mono);font-size:12.5px;">EigenTrace · The Atlas of the Unsaid · bge-large-en-v1.5 · 2026 · <a href="https://github.com/sdad1018/Eigentrace" style="color:var(--accent);">GitHub ↗</a></p>
 </footer>
 </div>
 <script>
 const DATA={
-  "n_real_stories": 1659,
+  "n_real_stories": 887,
   "domains": {
     "war": {"n_stories": 781, "buckets": {
       "STAKES": {"regime change":558,"airstrikes":540,"arms embargo":535,"militants":522,"cease fire":509,"foreign interference":495,"regime collapse":448,"proxy war":441,"disarmament":421,"peacekeeping":418},

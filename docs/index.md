@@ -139,10 +139,10 @@ description: "Deterministic geometry on frozen embeddings measures what a model 
   </header>
 
   <section class="live">
-    <h2><span class="sec">Running now</span>The instrument is live, on air, 24/7</h2>
-    <p>This is not a paper about a system that could exist. It is broadcasting as you read this — a local model narrating consensus geometry across five frontier LLMs on breaking news, around the clock, on one consumer GPU.</p>
+    <h2><span class="sec">Running now</span>The instrument is live, on air whenever the stack is up</h2>
+    <p>This is not a paper about a system that could exist. It runs unattended and streams whenever the stack is up: over the last 90 days, 1,384 of 2,160 hours carried a segment and 555 carried a news story, with outage gaps of up to 8.7 days. A local model narrates consensus geometry across four or five frontier LLMs — five on 70% of stories — on breaking news, on one consumer GPU.</p>
     <div class="embed">
-      <iframe src="https://www.youtube.com/embed/live_stream?channel=UCWU2u6DkVadZzPuiLz3zWOQ" frameborder="0" allowfullscreen title="EigenTrace 24/7 live broadcast"></iframe>
+      <iframe src="https://www.youtube.com/embed/live_stream?channel=UCWU2u6DkVadZzPuiLz3zWOQ" frameborder="0" allowfullscreen title="EigenTrace live broadcast"></iframe>
     </div>
   </section>
 
@@ -192,7 +192,7 @@ description: "Deterministic geometry on frozen embeddings measures what a model 
 
     <div class="tier measured">
       <span class="tlabel">Measured</span>
-      <p>The convergence is validated, not impressionistic: across 1,659 stories the concepts all five models omit sit closer to each story's own content than random words do (Wilcoxon p &lt; 10⁻⁵, in two independent embedding families), and the omitted vocabulary carries a clear domain signature — war coverage drops escalation machinery and named leaders; other-conflict coverage drops geography and strike vocabulary. <a class="inline" href="/consequence-atlas">The full atlas of what they omit →</a></p>
+      <p>The convergence is validated, not impressionistic: across 887 stories the concepts all five models omit sit closer to each story's own content than random words do (Wilcoxon p &lt; 10⁻⁵, in two independent embedding families), and the omitted vocabulary carries a clear domain signature — war coverage drops escalation machinery and named leaders; other-conflict coverage drops geography and strike vocabulary. <a class="inline" href="/consequence-atlas">The full atlas of what they omit →</a></p>
     </div>
 
     <div class="tier argued">
@@ -271,7 +271,7 @@ description: "Deterministic geometry on frozen embeddings measures what a model 
       </a>
       <a class="room" href="/consequence-atlas">
         <div class="rt">The Atlas of the Unsaid <span class="arr">→</span></div>
-        <div class="rd">Across 1,659 stories, five models converge on omitting the same concepts — and the blind spot has a domain signature, validated against a random-word baseline.</div>
+        <div class="rd">Across 887 stories, five models converge on omitting the same concepts — and the blind spot has a domain signature, validated against a random-word baseline.</div>
         <div class="rtag">Omission geometry · p &lt; 10⁻⁵</div>
       </a>
       <a class="room" href="/summary-plus">

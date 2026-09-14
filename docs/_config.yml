@@ -1,8 +1,13 @@
 title: EigenTrace
-description: Cross-Model Consensus Auditor
+description: Deterministic cross-model consensus measurement
 url: "https://eigentrace.ai"
 baseurl: ""
 theme: minima
 markdown: kramdown
 plugins:
   - jekyll-feed
+
+# 2026-09-14: the 168 hourly soul snapshots each rendered as a public page,
+# re-publishing claims the live soul has since corrected or withdrawn.
+exclude:
+  - soul_history
