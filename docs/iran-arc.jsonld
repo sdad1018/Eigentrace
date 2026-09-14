@@ -1,20 +1,19 @@
 {
   "@context": "https://schema.org",
   "@type": "Dataset",
-  "name": "EigenTrace Iran Arc — LLM Consensus Geometry of the 2026 US–Iran War",
-  "description": "510 classified news-story segments on the 2026 US–Iran conflict (April 16 – June 18, 2026), each summarized by five frontier models (ChatGPT, Claude, Gemini, DeepSeek, Grok) and assigned a six-axis EigenChing signature computed by deterministic linear algebra on frozen BAAI/bge-large-en-v1.5 embeddings. Variables: consensus density, source-content retention, verb drift, entity retention, attribution buffering, per-model VIX divergence, and SVD-derived anti-consensus direction. No language model evaluated another.",
+  "name": "EigenTrace Iran — Unsourced Specifics in Coverage of the 2026 US–Iran War",
+  "description": "455 collapsed news-story segments on the 2026 US–Iran conflict (2026-05-02 to 2026-09-10), each summarized by four or five frontier models (ChatGPT, Claude, Gemini, DeepSeek, Grok) from the same prompt, together with the stored source text each model received. Scored for numeric claims that appear in a summary and nowhere in that text. Detection is deterministic string and number matching; no language model evaluated another. The earlier version of this dataset record described four findings withdrawn on 2026-09-14; see https://eigentrace.ai/withdrawals",
   "creator": { "@type": "Person", "name": "Sean Adams", "url": "https://eigentrace.ai/about" },
   "publisher": { "@type": "Organization", "name": "EigenTrace", "url": "https://eigentrace.ai" },
   "license": "https://opensource.org/licenses/MIT",
   "url": "https://eigentrace.ai/llm-consensus-geometry-iran-2026",
   "sameAs": "https://github.com/sdad1018/Eigentrace",
-  "temporalCoverage": "2026-04-16/2026-06-18",
-  "measurementTechnique": "Deterministic linear algebra on frozen sentence embeddings; SVD null-space projection; cosine-similarity retention; per-model divergence scoring",
-  "keywords": ["LLM consensus geometry","semantic divergence","anti-consensus direction","EigenChing","consensus omission","frozen embeddings","frontier model summarization","Iran war 2026"],
+  "temporalCoverage": "2026-05-02/2026-09-10",
+  "measurementTechnique": "Deterministic string and number matching of every percentage and fraction in a summary against the stored source text the model received, with story-clustered bootstrap intervals, sign-flip permutation and exact McNemar tests",
+  "keywords": ["unsourced specifics","added statistics","LLM summarization","Strait of Hormuz","held-out replication","frontier model comparison","Iran war 2026"],
   "variableMeasured": [
-    {"@type":"PropertyValue","name":"absent axis (source-content retention)","description":"Snapped from erased (-0.33, week 15) to preserved (+0.95, week 24) as the war escalated and held."},
-    {"@type":"PropertyValue","name":"hedge axis (attribution buffering)","description":"Pinned to its floor (-1.0) from week 17 onward — preserved but walled."},
-    {"@type":"PropertyValue","name":"per-model VIX outlier","description":"Consensus outlier handed off from Claude (early, ~45%) to Grok (late, 65%)."},
-    {"@type":"PropertyValue","name":"anti-consensus direction","description":"Drifted from Iran's history (khomeini, ahmadinejad) to live conflict (ceasefire, airstrike); 'wwiii' persistent across weeks 16–22."}
+    {"@type":"PropertyValue","name":"unsourced oil-share figure","description":"Whether a summary states a share of world oil passing through the Strait of Hormuz that is absent from the text the model was given. DeepSeek 65 of 199, Grok 61 of 200, Claude 52 of 163, Gemini 3 of 158, ChatGPT 0 of 192."},
+    {"@type":"PropertyValue","name":"within-story paired difference","description":"Mean rate for DeepSeek and Grok minus the mean rate for ChatGPT and Gemini on the same stories: +0.128 (95% CI 0.100-0.156, 392 stories) in exploration, +0.297 (0.195-0.407, 59 stories) held out."},
+    {"@type":"PropertyValue","name":"source text as given","description":"Title plus feed summary plus scraped body up to 2,000 characters, the text each model actually received."}
   ]
 }

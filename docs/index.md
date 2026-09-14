@@ -266,8 +266,8 @@ description: "Deterministic geometry on frozen embeddings measures what a model 
       </a>
       <a class="room" href="/llm-consensus-geometry-iran-2026">
         <div class="rt">The Iran Arc <span class="arr">→</span></div>
-        <div class="rd">How five models reshaped one war over 85 days. The content axis snapped from erased to preserved at escalation; the consensus outlier handed off from Claude to Grok.</div>
-        <div class="rtag">Longitudinal · 510 segments</div>
+        <div class="rd">When the article mentioned the Strait of Hormuz, three of five models supplied a share-of-world-oil figure that was not in it — and ChatGPT never did. Replicated on stories held back until the test was fixed.</div>
+        <div class="rtag">Unsourced specifics · 455 stories</div>
       </a>
       <a class="room" href="/consequence-atlas">
         <div class="rt">The Atlas of the Unsaid <span class="arr">→</span></div>
