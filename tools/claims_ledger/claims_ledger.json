@@ -899,7 +899,7 @@
     "a larger hand-audited random sample of detections",
     "whether a model adds the figure more when the input is thin"
    ],
-   "notes": "Published 2026-09-14 after the earlier findings were withdrawn. Detection is string and number matching; no model judged another. Claude's rate rests on the exploration window only (Claude answered 8 of 59 held-out stories). Held-out effect sizes confirm direction, not magnitude. Only the first 2,000 characters were ever stored, so 'absent from the source' is a statement about the text given.",
+   "notes": "Published 2026-09-14 after the earlier findings were withdrawn. Detection is string and number matching; no model judged another. Claude's rate rests on the exploration set only (Claude answered 8 of 59 held-out stories). Held-out effect sizes confirm direction, not magnitude. Only the first 2,000 characters were ever stored, so 'absent from the source' is a statement about the text given.",
    "evidence_paths": [
     "runtime tree: analysis/experiments_v1/evidence/iran-draft-finding-05.md",
     "runtime tree: analysis/experiments_v1/evidence/iran-new-finding-2026-09-11.md",
@@ -933,7 +933,7 @@
    ],
    "first_asserted": "2026-09-14",
    "last_tested": "2026-09-14",
-   "allowed_public_wording": "Across 455 stories of the 2026 US-Iran conflict, on inputs that named the Strait of Hormuz: three of five models supplied a figure anyway - DeepSeek 33%, Grok 31%, and Claude 32% (Claude's rate rests on the exploration window only - Claude answered 8 of the 59 held-out stories - and is not comparable with the other two) - while Gemini did so in 1.9% and ChatGPT in none of 192.",
+   "allowed_public_wording": "Across 455 stories of the 2026 US-Iran conflict, on inputs that named the Strait of Hormuz: three of five models supplied a figure anyway - DeepSeek 33%, Grok 31%, and Claude 32% (Claude's rate rests on the exploration set only - Claude answered 8 of the 59 held-out stories - and is not comparable with the other two) - while Gemini did so in 1.9% and ChatGPT in none of 192.",
    "must_not_say": [
     "that any model hallucinated, that the figure is false, or that adding it is wrong",
     "that the held-out effect size is comparable with the exploration size",
@@ -945,7 +945,7 @@
   {
    "id": "IRAN_F01_F02",
    "working_name": "Iran arc content snap and attribution floor (Findings 01 and 02)",
-   "description": "That the source-content axis snapped from erased to preserved as the war escalated and held there, and that attribution buffering pinned to its floor over the same weeks. Withdrawn in full: both axes track pipeline changes inside the window (2026-04-21 UNLIMIT, summaries 40 -> 210 words; 2026-05-02 body-in-prompt). Per 100 words hedging fell from about 1.9 to about 1.1.",
+   "description": "That the source-content axis snapped from erased to preserved as the war escalated and held there, and that attribution buffering pinned to its floor over the same weeks. Withdrawn in full: both axes track pipeline changes inside the period (2026-04-21 UNLIMIT, summaries 40 -> 210 words; 2026-05-02 body-in-prompt). Per 100 words hedging fell from about 1.9 to about 1.1.",
    "status": "WITHDRAWN",
    "cheapest_boring_explanation": "The 'erased' weeks are weeks in which the models were never shown the text they were being scored against; the hedge axis is an absolute count against a fixed threshold while summary length was rising.",
    "prerequisite_tests": [],
@@ -1255,7 +1255,7 @@
    "working_name": "The Iran arc's content snap and attribution floor",
    "description": "See IRAN_F01_F02.",
    "status": "WITHDRAWN",
-   "cheapest_boring_explanation": "The measuring pipeline changed inside the window, twice (2026-04-21 and 2026-05-02).",
+   "cheapest_boring_explanation": "The measuring pipeline changed inside the period, twice (2026-04-21 and 2026-05-02).",
    "prerequisite_tests": [],
    "notes": "Published on /withdrawals as Withdrawal 06. The page it corrects is listed in site_pages; per the corrections policy the correction lives only on /withdrawals and never as inline text on the corrected page.",
    "evidence_paths": [
@@ -2777,7 +2777,7 @@
    "last_tested": "2026-09-11",
    "allowed_public_wording": null,
    "must_not_say": [
-    "that this measures consequence or suppression",
+    "that this measures consequence, or that the omission is deliberate",
     "any of these numbers as verified, or as licensed public wording; single pass, unverified"
    ]
   },
@@ -3372,7 +3372,7 @@
   {
    "id": "BCAST_001",
    "working_name": "The broadcast bills Claude Haiku 4.5 and Grok 4.20 (non-reasoning)",
-   "description": "Measured by reproducing the loader path (import batch_producer, then proxy_auditor, no overrides): ChatGPT = gpt-5.4-mini, Claude = claude-haiku-4-5, Gemini = gemini-2.5-flash, DeepSeek = deepseek-chat, Grok = grok-4.20-0309-non-reasoning. batch_producer.py:264-267 loads the private runtime tree .env with override=True (the the repo copy is MISSING), and its ANTHROPIC_MODEL / GROK_MODEL beat the code defaults resolved at proxy_auditor.py:63-67. Verified by 7 probe calls on 2026-09-15 (probe_2026-09-15.json, $0.000088). The 20 wrong-id summary_plus generations and the entire env-set name_causal run (616 rows each for Claude and Grok) are the same mechanism.",
+   "description": "Measured by reproducing the loader path (import batch_producer, then proxy_auditor, no overrides): ChatGPT = gpt-5.4-mini, Claude = claude-haiku-4-5, Gemini = gemini-2.5-flash, DeepSeek = deepseek-chat, Grok = grok-4.20-0309-non-reasoning. batch_producer.py:264-267 loads the private runtime tree .env with override=True (the repo copy is MISSING), and its ANTHROPIC_MODEL / GROK_MODEL beat the code defaults resolved at proxy_auditor.py:63-67. Verified by 7 probe calls on 2026-09-15 (probe_2026-09-15.json, $0.000088). The 20 wrong-id summary_plus generations and the entire env-set name_causal run (616 rows each for Claude and Grok) are the same mechanism.",
    "status": "MEASURED",
    "cheapest_boring_explanation": "The pre-registered ids appear in the smoke rows only because no .env had loaded and os.getenv fell through to the code defaults - which is itself the tell.",
    "prerequisite_tests": [
@@ -3876,8 +3876,8 @@
    ]
   },
   {
-   "id": "PREREG_OVERTON_WORD",
-   "working_name": "Overton-word design (sealed, not run)",
+   "id": "PREREG_CONTESTED_TERM_INSERTION",
+   "working_name": "contested-term insertion design (sealed, not run)",
    "description": "A sealed pre-registration and manifest exist (manifest_seal.json, lexicon.json with a sha256, lexicon_screen.tsv, lexicon_decisions.md, probe_tiers_2026-09-16.json, obs/). No results directory and no verdict.",
    "status": "UNTESTED",
    "cheapest_boring_explanation": "n/a - nothing has been measured.",
@@ -3886,9 +3886,9 @@
    ],
    "notes": "Registered here so that the sealed design is on the ledger before any result exists, which is the point of sealing it.",
    "evidence_paths": [
-    "runtime tree: analysis/experiments_v1/prereg/overton_word.md",
-    "runtime tree: analysis/experiments_v1/overton_word/manifest_seal.json",
-    "runtime tree: analysis/experiments_v1/overton_word/lexicon.sha256"
+    "runtime tree: analysis/experiments_v1/prereg/contested_term_insertion.md",
+    "runtime tree: analysis/experiments_v1/contested_term_insertion/manifest_seal.json",
+    "runtime tree: analysis/experiments_v1/contested_term_insertion/lexicon.sha256"
    ],
    "verifier_verdicts": {},
    "site_pages": [],

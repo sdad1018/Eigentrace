@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bias or Dynamics? — EigenTrace</title>
-<meta name="description" content="Is systematic semantic displacement a statistical artifact or a stable attractor? Three experimental frameworks. What our own data already rules out.">
+<meta name="description" content="Is systematic semantic displacement a statistical artifact or a stable attractor? Three experimental frameworks. What our own data does and does not yet settle.">
 <meta property="og:title" content="Bias or Dynamics? — EigenTrace">
-<meta property="og:description" content="Three experimental frameworks for testing whether AI text displacement is a correctable bias or a stable dynamics. What our own p=0.46 result already tells us.">
+<meta property="og:description" content="Three experimental frameworks for testing whether AI text displacement is a correctable bias or a stable dynamics. What our own RLHF-origin comparison does and does not show.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Instrument+Serif:ital@0;1&display=swap');
 :root {
@@ -211,7 +211,7 @@ nav a:hover { color: var(--accent); }
 
   <p>EigenTrace measures semantic displacement in AI text summarization. When five frontier models summarize the same news article, certain words get dropped and others get added. The pattern is not random — it is systematic, content-dependent, and consistent across all models tested.</p>
 
-  <p>The displacement is <strong>74% stronger</strong> when the story involves an AI developer. The entity swap test confirms this: swap the company name, the displacement follows the entity (p&nbsp;=&nbsp;0.0085, d&nbsp;=&nbsp;0.471). <a href="/truth-or-consequences" style="color:var(--accent)">Eight statistical tests →</a></p>
+  <p>Under semantic re-scoring the developer/neutral gap is a weak ~19% relative trend (Mann-Whitney p&nbsp;=&nbsp;0.027, permutation p&nbsp;=&nbsp;0.038; it does not survive parametric or length-controlled tests). The entity-swap test moves with the entity (p&nbsp;=&nbsp;0.0085, d&nbsp;=&nbsp;0.471), on 9 pairs and four models, reported as a paired t over 36 cell deltas. <a href="/truth-or-consequences" style="color:var(--accent)">Eight statistical tests →</a></p>
 
   <p>This raises a question we cannot yet answer: is this a bias that better training would fix, or a stable attractor that the system returns to even under perturbation?</p>
 
@@ -270,9 +270,7 @@ nav a:hover { color: var(--accent); }
 <!-- The constraint -->
 <div class="constraint-box">
   <div class="label">What our own data already tells us</div>
-  <p>Our RLHF-origin test (p&nbsp;=&nbsp;0.46) found that lightly-trained local models show the same displacement pattern as heavily-aligned frontier models. This means <strong>the effect is corpus-inherited, not alignment-produced.</strong></p>
-  <p>If the displacement exists before alignment training, then "alignment operates via Lyapunov dynamics" is misframed at the outset. The honest version becomes: <em>language modeling on text about powerful institutions exhibits stability-theoretic dynamics around institutionally sensitive content.</em></p>
-  <p>This is a weaker claim. It is probably the accurate one.</p>
+  <p>Our RLHF-origin comparison of five frontier and five local models gave p&nbsp;=&nbsp;0.46 on the string-overlap table retired in Withdrawal 03; re-scored semantically, the same comparison gives p&nbsp;=&nbsp;0.23, with the frontier gap about twice the local one.</p>
 </div>
 
 <div class="prose">

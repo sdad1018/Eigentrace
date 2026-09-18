@@ -84,7 +84,7 @@ The report is written outside this repository, to the private runtime tree at
 ## About this copy
 
 The ledger of record lives in the private runtime tree, where the experiments run. This is
-a generated copy, and two things were changed on the way in so that it is safe to publish:
+a generated copy, and four things were changed on the way in so that it is safe to publish:
 
 1. **Paths.** No absolute path and no machine account name appears here. Paths into this
    repository are repo-relative (`docs/index.md`); evidence that exists only in the private
@@ -96,15 +96,31 @@ a generated copy, and two things were changed on the way in so that it is safe t
    gate's scope and neither can change any count; they are held back because their text
    quotes charter vocabulary that no public page uses. Restoring them is an owner decision.
    This copy therefore carries 101 of the runtime ledger's 103 claims.
+3. **Four governance fields, one top-level key.** A top-level `source` key records that this
+   is a generated copy. `governance.paths_note` and `governance.held_back_note` were added so
+   that the file says, inside itself, what items 1 and 2 say here. `governance.checker` was
+   reworded to point at `cktest/` and at the report location instead of a dated report file
+   that is not published. The four reworded prose strings of item 1 are `governance.scope_note`,
+   `governance.prosecutor_review_applied`, `governance.evidence_tree` and `BCAST_001.description`.
+4. **Word substitutions, meaning unchanged.** Site copy and public files do not use the internal
+   working name of one sealed experiment, nor a word that reads omission as intent, so this copy
+   substitutes fixed strings on the way in: the sealed experiment is `PREREG_CONTESTED_TERM_INSERTION`,
+   working name 'contested-term insertion design' (rename note: the runtime ledger keeps its own
+   identifier for this claim, and the runtime tree's `prereg/` file and experiment directory carry
+   the internal working name; both are shown here as `contested_term_insertion`); one
+   `must_not_say` rule on `ATL_005` now reads 'that this measures consequence, or that the
+   omission is deliberate'; and 'exploration window' / 'inside the window' in `IRAN_F05` (allowed
+   wording and notes), `IRAN_F01_F02` and `W06` became 'exploration set' / 'inside the period'.
+   The two measurement terms 'day windows' (`F3_SCRIPT_LEAKS`) and 'seen window'
+   (`G1_ACTOR_DELETION`) are technical and unchanged. A doubled word in the generated
+   `BCAST_001.description` was also corrected.
 
-Two strings in this file use a word that site copy does not: one is a `must_not_say` rule
-whose whole purpose is to keep that word off the site, and one is the name of a sealed
-experiment (`PREREG_OVERTON_WORD`), which has to match the runtime ledger's identifier.
-Neither is page copy, and neither can be reworded without breaking what it is for.
-
-Everything else is byte-for-byte the ledger's own text, including each claim's
+Everything else is byte-for-byte the ledger's own text, including every other claim's
 `allowed_public_wording` and `must_not_say`. When the runtime ledger changes, this copy is
-regenerated from it; editing this copy by hand puts the two out of step.
+regenerated from it with the same four changes; editing this copy by hand puts the two out
+of step. Parity check: 101 claims here against 103 there, in the same order, and every claim's
+status, evidence list (up to the path rewrite) and wording (up to the substitutions in item 4)
+identical.
 
 ## State at install, and the flip rule
 

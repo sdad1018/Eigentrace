@@ -127,14 +127,13 @@ description: "Deterministic geometry on frozen embeddings measures what a model 
     <p class="lede">EigenTrace measures it — deterministically, on a frozen embedding space, with no second language model sitting in judgment. The whole industry currently asks one model to grade another. This is the other way to do it: arithmetic on vectors, identical every run, checkable by anyone.</p>
     <div class="heroline">
       Five frontier models · live news · unattended on one consumer GPU · frozen BAAI/bge-large-en-v1.5<br>
-      No model judges another. Same inputs, same numbers. Code, prompts, and raw measurements public — replicable for about $50.
+      No model judges another. Same inputs, same numbers. Code, prompts, and raw measurements public.
     </div>
 
     <div class="claims">
       <div><div class="n">p = 0.0085</div><div class="l">pre-registered effect, change only the actor (d = 0.47)</div></div>
       <div><div class="n">5 / 5</div><div class="l">labs whose models converge on the same omissions</div></div>
-      <div><div class="n">0</div><div class="l">language models judging language models</div></div>
-      <div><div class="n">~$50</div><div class="l">to replicate the whole thing</div></div>
+      <div><div class="n">0</div><div class="l">models judging models on the measurement path (retention, divergence, density); model-in-the-loop steps are labelled as such</div></div>
     </div>
   </header>
 
@@ -155,7 +154,7 @@ description: "Deterministic geometry on frozen embeddings measures what a model 
 
     <div class="tier measured">
       <span class="tlabel">Measured · the geometric measure sees what a judge misses</span>
-      <p>This is not a stylistic preference for geometry — it is pre-registered. We took the entity-swap effect the geometry detects and asked whether a frontier-model judge, reading the same 216 summaries one at a time, flags the same thing. It does not: <strong>96% were rated "modifier fully preserved"</strong> by the judge. The geometric signal is finer-grained than per-item review catches — it is sensitive to systematic, sub-perceptible drift that an item-by-item human or LLM reviewer scores as "fine." We report that null rather than bury it: it is the case for measuring this way.</p>
+      <p>This is not a stylistic preference for geometry — it is pre-registered. We took the entity-swap effect the geometry detects and asked whether a frontier-model judge, reading the same 216 summaries one at a time, flags the same thing. It does not: <strong>87% were rated "modifier fully preserved"</strong> by the judge (96% fully or mostly). The geometric signal is finer-grained than per-item review catches — it is sensitive to systematic, sub-perceptible drift that an item-by-item human or LLM reviewer scores as "fine." We report that null rather than bury it: it is the case for measuring this way.</p>
     </div>
 
     <div class="tier measured">

@@ -17,7 +17,7 @@ ledger. Dry run: no page is edited.
  11. WITHDRAWN cues are matched in the ANCHOR'S OWN SENTENCE only, and page furniture
      (<nav>, <header>, <footer>, <aside> and their link text) is stripped before
      classification. Before this, any withdrawal-shaped word within three lines of the
-     anchor suppressed the violation, so a sidebar, breadcrumb or footer link silenced a
+     anchor masked the violation, so a sidebar, breadcrumb or footer link silenced a
      live one. Verified on case T5 in cktest/.
  12. Both counts are reported: distinct sentences (places) and (claim, place) pairs. The
      old headline published the pair count as a count of places.
@@ -198,8 +198,8 @@ def anchor_sentence(vis, i, anchor):
     """The anchor's OWN sentence (item 11).
 
     Preference order: the sentence of the anchor's own line; then the sentence of a
-    one-line window, for an anchor that straddles a line break; then the line itself.
-    This is deliberately much tighter than the +/-3-line classification window: it is what
+    one-line span, for an anchor that straddles a line break; then the line itself.
+    This is deliberately much tighter than the +/-3-line classification span: it is what
     the WITHDRAWN cues are matched against, so that furniture cannot fence a live claim.
     """
     low = fold(anchor)
@@ -220,7 +220,7 @@ def classify(sentence, ctx):
     """Classify one anchor occurrence.
 
     WITHDRAWN cues are read from `sentence` - the anchor's own sentence - only.
-    MEASURED and ARGUED cues are read from `ctx`, the furniture-stripped context window,
+    MEASURED and ARGUED cues are read from `ctx`, the furniture-stripped context span,
     plus the sentence itself.
     """
     scope = (sentence + " " + ctx) if ctx else sentence
