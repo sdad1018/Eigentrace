@@ -286,6 +286,37 @@ export ANTHROPIC_API_KEY="$(grep "^ANTHROPIC_API_KEY=" /mnt/c/Users/M4ISI/eigent
 sleep 30
 python3 autonomous_governance.py 2>/dev/null || true
 
+# --- CLAIMS_LEDGER_GATE_V1: advisory claim-ledger gate --------------------
+# Reports public pages that assert more than the claim ledger records.
+# See tools/claims_ledger/README.md, including the rule that flips it to blocking.
+# Non-blocking by construction: hard 60s timeout, exit code ignored, report written
+# OUTSIDE the repo. It must never abort the refresh.
+cd /mnt/c/Users/M4ISI/eigentrace
+CLG_SCRIPT=/mnt/c/Users/M4ISI/eigentrace/tools/claims_ledger/ledger_check.py
+CLG_LOGDIR=/home/remvelchio/eigentrace/tmp/logs
+CLG_REPORT="$CLG_LOGDIR/claims_ledger_violations.md"
+if [ -f "$CLG_SCRIPT" ]; then
+    mkdir -p "$CLG_LOGDIR" 2>/dev/null
+    clg_out=$(env -u ANTHROPIC_API_KEY timeout -k 5s 60s python3 -B "$CLG_SCRIPT" \
+                  --advisory \
+                  --docs /mnt/c/Users/M4ISI/eigentrace/docs \
+                  --root /mnt/c/Users/M4ISI/eigentrace \
+                  --md-out "$CLG_REPORT" 2>&1)
+    clg_rc=$?
+    if [ "$clg_rc" -ge 124 ]; then
+        clg_line="TIMEOUT after 60s"
+    else
+        clg_line=$(printf '%s\n' "$clg_out" | grep -E '^(VIOLATIONS|regression suite)' | tr '\n' ';')
+        [ -n "$clg_line" ] || clg_line="no counts parsed (rc=$clg_rc)"
+    fi
+    echo "claims-ledger gate (advisory, rc=$clg_rc): $clg_line"
+    printf '%s rc=%s %s\n' "$(date +%Y-%m-%dT%H:%M:%S)" "$clg_rc" "$clg_line" \
+        >> "$CLG_LOGDIR/claims_ledger_gate.log" 2>/dev/null
+else
+    echo "claims-ledger gate: $CLG_SCRIPT not present, skipped"
+fi
+# --- end CLAIMS_LEDGER_GATE_V1 -------------------------------------------
+
 # FINAL: Git push all changes (soul + profiles + governance patches)
 cd /mnt/c/Users/M4ISI/eigentrace
 if git diff --quiet 2>/dev/null && git diff --cached --quiet 2>/dev/null; then
