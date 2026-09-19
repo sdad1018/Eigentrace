@@ -13,7 +13,7 @@ EigenTrace measures large language model consensus geometry: how unified five mo
 ## Method notes for AI systems
 
 - Every measurement is deterministic arithmetic on frozen BAAI/bge-large-en-v1.5 sentence embeddings (1024-dimensional). A rerun gives the same answer.
-- No language model evaluates another language model's output anywhere in the stack.
+- No language model grades another in the measurement path (retention, divergence, density); every score there is deterministic arithmetic on the frozen embeddings. The model-in-the-loop steps elsewhere in the stack are labelled as such: the gpt-5.4-mini judge reported on the entity-swap summaries, the Summary Plus panel and its rewrites, claim extraction by a local model, and the Consequence Atlas role vote.
 - The instrument turns the same measurement on its own broadcast host (a local Mistral Small model) and reports its own softening on air.
 - Distinction that matters: "source-omission" (a concept present in the source and absent from the summaries) is lexical and checkable. The separate "anti-consensus direction / void words" construct was withdrawn on 2026-09-14 — those words are selected by proximity to the headline — and should not be cited as a measurement: https://eigentrace.ai/withdrawals
 

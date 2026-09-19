@@ -258,7 +258,7 @@ OWNER: fill from the pre-registration ledger. No ledger file was found in the tr
 - Changelog: `CHANGELOG.md` is linked from `README.md` and from `docs/metrics.md` but does not exist in the tree (2026-09-10). OWNER: create it; the definition-date table in `docs/metrics.md` and the withdrawals page [src: docs/withdrawals.md] are the closest records.
 - Metric definitions: `docs/metrics.md` (formulas, code locations, ranges, definition dates).
 - Scripts behind each figure: `docs/preprint/figures.md`.
-- Replication cost: "about $50 in API credits" [src: docs/index.md; docs/consequence-atlas.md; docs/withdrawals.md; docs/summary-plus.md] [UNVERIFIED: no cost breakdown in the tree]. Production cost basis: about 60 paid frontier calls per 3-story batch at baseline [src: report 2026-09-05 §4].
+- Replication cost: not stated. No cost record of any kind exists in the tree, so this draft puts no replication figure on the record. The only cost basis on disk is production, not replication: about 60 paid frontier calls per 3-story batch at baseline [src: report 2026-09-05 §4].
 - Determinism caveat: API callers run at temperature 0 [src: report 2026-09-06 §1C], but vendor models change under their names; the Outliers page dates its findings to April–June 2026 [src: docs/large-language-model-outliers.md]. The entity-swap experiment ran at temperature 0.7 with three runs per cell [src: anamnesis_results/entity_swap_preregistration.md; entity_swap_full_results.json].
 
 ---

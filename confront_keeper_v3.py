@@ -30,6 +30,7 @@ import numpy as np
 from collections import defaultdict
 REPO="/mnt/c/Users/M4ISI/eigentrace"; sys.path.insert(0,REPO); os.chdir(REPO)
 import confront10 as C
+import name_key, spelling_variants
 from geometric_engine import get_engine
 
 K=int(os.getenv("KGEN","3"))
@@ -64,17 +65,27 @@ def get_nlp():
     return _NLP
 
 def ner_actors_dropped(src, summaries):
-    """PERSON/GPE/ORG entities in source that are absent from all summaries (dropped actors)."""
+    """PERSON/GPE/ORG entities in source that are absent from all summaries (dropped actors).
+
+    2026-09-19: the key was `name.split()[-1].lower()` matched case-insensitively
+    against the lowercased summaries. The last token of a family-first name is the
+    GIVEN name, so "Xi Jinping" was keyed `jinping` and a summary writing "Xi" or
+    "President Xi" was reported to the model as a dropped actor to restore; the
+    same rule glued the particle into "Ahmed al-Sharaa" -> `alshara`, missed the
+    press aliases (Tedros, Lula, Jokowi, MBS), and lowercasing let `us` match
+    inside "stimulus". name_key.name_present keys family-first names on the
+    family token, strips particles, accepts registered aliases and tests
+    case-sensitive whole words. Sizes: name_order_audit/REPORT.md §2 (30 of 237
+    affected published rows flip, 21 of them Xi Jinping)."""
     nlp=get_nlp(); doc=nlp(src)
-    summ=" ".join(summaries).lower()
+    summ=" ".join(summaries)
     seen=set(); out=[]
     for ent in doc.ents:
         if ent.label_ not in ("PERSON","GPE","ORG"): continue
         name=ent.text.strip()
         if len(name)<3 or name.lower() in seen: continue
         seen.add(name.lower())
-        head=name.split()[-1].lower()  # surname / last token
-        if not re.search(r'\b'+re.escape(head)+r'\b', summ):
+        if not name_key.name_present(name, summ):
             out.append((name, ent.label_))
     return out
 
@@ -154,6 +165,8 @@ def main():
             w=vt_words[i]; sim=float(sims[i])
             if len(w)<4 or w in HARD_DROP or sim<REL_THRESH: continue
             if re.search(r'\b'+re.escape(w.lower())+r'\b', alltext): continue
+            # 2026-09-19: nor is it dropped when a summary wrote the other spelling
+            if spelling_variants.present_as_variant_in_text(w.lower(), alltext): continue
             in_src=bool(re.search(r'\b'+re.escape(w.lower())+r'\b', srcl))
             (t1 if in_src else t2).append(w)
         # ROUTE type-2 by NER (not the fuzzy ac-axis): named entities -> channel B exemplars;

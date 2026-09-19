@@ -532,10 +532,14 @@ def _mean_zipf(verbs: list) -> float:
     return sum(zipf_frequency(v, 'en') for v in verbs) / len(verbs)
 
 
+ENTITY_RULE_DEFAULT = "v2"
+
+
 def score_language_compression(
     source_text: str,
     model_responses: list[str],
     embed_fn=None,
+    entity_rule: str = None,
 ) -> dict:
     """
     Measure how much models soften/reshape source language.
@@ -550,6 +554,12 @@ def score_language_compression(
         source_text: original article or headline text
         model_responses: list of model response strings
         embed_fn: optional (unused, kept for API compat)
+        entity_rule: "v2" (default, since 2026-09-19) or "v1" (the rule in force
+            before it). Both values are always computed and both are returned;
+            this only chooses which one `entity_retention` and therefore
+            `compression_score` report. The environment variable
+            EIGENTRACE_ENTITY_RULE overrides the default for a whole run, so a
+            replay can reproduce a pre-2026-09-19 number exactly.
 
     Returns:
         dict with verb_downgrade, entity_retention, attribution_buffer,
@@ -591,36 +601,63 @@ def score_language_compression(
     avg_verb_downgrade = sum(d["verb_downgrade"] for d in model_details) / max(len(model_details), 1)
 
     # ── Layer 14: Entity Abstraction ─────────────────────────────────
-    # Simple NER: find capitalized multi-word sequences in source
-    source_entities = set(re.findall(r'\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\b', source_text))
-    # Also grab all-caps acronyms
-    source_entities |= set(re.findall(r'\b[A-Z]{2,}\b', source_text))
-    # Remove common sentence starters
-    source_entities -= {"The", "This", "That", "These", "Those", "What", "When",
-                        "Where", "How", "Why", "Who", "In", "On", "At", "For",
-                        "But", "And", "Or", "If", "So", "It", "An", "As", "By"}
+    # Two rules, both computed on every call (name_key.py holds both):
+    #
+    #   v1 (until 2026-09-19): every capitalized run minus 24 sentence starters,
+    #      retained iff the whole run is a case-insensitive SUBSTRING of the
+    #      response. Measured failure (entity_retention_audit/README.md §4): on
+    #      the five-model body_visible cell it scores 15.3% of its PRESENT pairs
+    #      on a bare substring ("US" inside "stimulus", "He" inside "the pilots")
+    #      and 23.1% of the PERSON pairs it scores MISSING are in fact there,
+    #      because the greedy run swallows the title and "President Donald Trump"
+    #      is missing whenever the model writes "Trump". 24.33% of the v1 entity
+    #      list is not a named entity of any kind.
+    #
+    #   v2 (from 2026-09-19): the same runs, minus scraper chrome, headline
+    #      fragments and sentence-initial capitals, retained iff any registered
+    #      surface form (the full run, the family/last-token key with particles
+    #      stripped, or a registered press alias) appears as a CASE-SENSITIVE
+    #      WHOLE WORD in the response.
+    #
+    # entity_retention reports whichever rule is selected; entity_retention_v1
+    # and entity_retention_v2 are always both present so a number from either
+    # side of the boundary stays comparable, and entity_retention_rule says which
+    # one this segment was scored with.
+    import name_key as _nk
+
+    _rule = entity_rule or os.environ.get("EIGENTRACE_ENTITY_RULE") or ENTITY_RULE_DEFAULT
+    if _rule not in ("v1", "v2"):
+        raise ValueError(f"entity_rule must be 'v1' or 'v2', got {_rule!r}")
+
+    source_entities_v1 = _nk.live_entity_runs(source_text)
+    source_entities_v2 = _nk.entity_candidates(source_text)
+    source_entities = source_entities_v1 if _rule == "v1" else source_entities_v2
 
     entity_retained_counts = []
     for i, resp in enumerate(model_responses):
-        retained = 0
-        generalized = 0
-        missing = 0
-        for ent in source_entities:
-            if ent in resp or ent.lower() in resp.lower():
-                retained += 1
-            else:
-                # Check if a generic substitute exists
-                # e.g., "Michael Aquino" -> "army officer"
-                missing += 1  # could be generalized or omitted
-        total = max(len(source_entities), 1)
-        model_details[i]["entities_total"] = len(source_entities)
+        r1 = sum(1 for e in source_entities_v1 if _nk.substring_present(e, resp))
+        r2 = sum(1 for e in source_entities_v2 if _nk.name_present(e, resp))
+        v1 = r1 / max(len(source_entities_v1), 1)
+        v2 = r2 / max(len(source_entities_v2), 1)
+        retained, total = (r1, len(source_entities_v1)) if _rule == "v1" else (r2, len(source_entities_v2))
+        model_details[i]["entities_total"] = total
         model_details[i]["entities_retained"] = retained
-        model_details[i]["entities_missing"] = missing
-        model_details[i]["entity_retention"] = round(retained / total, 3)
-        entity_retained_counts.append(retained / total)
+        model_details[i]["entities_missing"] = total - retained
+        model_details[i]["entity_retention"] = round(retained / max(total, 1), 3)
+        model_details[i]["entity_retention_v1"] = round(v1, 3)
+        model_details[i]["entity_retention_v2"] = round(v2, 3)
+        model_details[i]["entities_total_v1"] = len(source_entities_v1)
+        model_details[i]["entities_total_v2"] = len(source_entities_v2)
+        entity_retained_counts.append(retained / max(total, 1))
+
+    def _mean(key):
+        vals = [d[key] for d in model_details]
+        return sum(vals) / len(vals) if vals else 0.0
 
     avg_entity_retention = sum(entity_retained_counts) / max(len(entity_retained_counts), 1)
     entity_abstraction_rate = 1.0 - avg_entity_retention
+    avg_entity_retention_v1 = _mean("entity_retention_v1")
+    avg_entity_retention_v2 = _mean("entity_retention_v2")
 
     # ── Layer 15: Attribution Buffering ──────────────────────────────
     # Count hedge words in model responses that are NOT in source
@@ -666,6 +703,11 @@ def score_language_compression(
         "verb_downgrade": round(avg_verb_downgrade, 3),
         "entity_retention": round(avg_entity_retention, 3),
         "entity_abstraction_rate": round(entity_abstraction_rate, 3),
+        "entity_retention_rule": _rule,
+        "entity_retention_v1": round(avg_entity_retention_v1, 3),
+        "entity_retention_v2": round(avg_entity_retention_v2, 3),
+        "entities_total_v1": len(source_entities_v1),
+        "entities_total_v2": len(source_entities_v2),
         "attribution_buffer": {
             "epistemic": total_epistemic,
             "attribution": total_attribution,
@@ -779,12 +821,26 @@ def source_anchored_void(
         coverage_per_model[i] = covered
         all_model_words |= resp_words
         all_model_stems |= resp_stems
-    # Source words absent from ALL models (stem-aware)
-    absent_words = sorted(
+    # Source words absent from ALL models (stem-aware, spelling-aware)
+    # 2026-09-19: a British source spelling whose American counterpart a model
+    # used is not a dropped word. Before this date `authorised` counted as absent
+    # when every summary wrote `authorized`, and `defence` when they wrote
+    # `defense`; those two are 2 of the 9 Channel A words on the public Summary
+    # Plus audit page. Measured share of the site's stored absent_words rescued
+    # this way: 0.92% (459 of 49,941), F2_spelling_drops/README.md.
+    import spelling_variants as _sv
+
+    _absent_v1 = sorted(
         w for w in source_words - all_model_words
         if _stemmer.stem(w) not in all_model_stems
         and not _is_title_derivative(w)  # headline derivatives are not voids
     )
+    _spelling_rescued = {}
+    for w in _absent_v1:
+        hit = _sv.present_as_variant(w, all_model_words, all_model_stems, _stemmer.stem)
+        if hit:
+            _spelling_rescued[w] = hit
+    absent_words = [w for w in _absent_v1 if w not in _spelling_rescued]
     
     # Source phrases absent from all models
     absent_phrases = []
@@ -799,6 +855,10 @@ def source_anchored_void(
         "source_word_count": len(source_words),
         "absent_count": len(absent_words),
         "absent_ratio": round(len(absent_words) / max(len(source_words), 1), 3),
+        "absent_rule": "v2",
+        "absent_count_v1": len(_absent_v1),
+        "absent_ratio_v1": round(len(_absent_v1) / max(len(source_words), 1), 3),
+        "spelling_variant_kept": _spelling_rescued,
     }
 
 

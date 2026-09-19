@@ -25,7 +25,7 @@ One row per figure. "Producer" is the script or data file in the tree (`/mnt/c/U
 | F19 | Name-erasure leaderboard (per-model name-drop rate; 323 of 1,335 spans in no summary) | §5.9 | TODO: script needed; pilot run in the 2026-09-09 session with NLTK, not committed; production needs spaCy NER and boilerplate stripping | missing |
 | F20 | EigenChing axis correlation matrix and PCA variance (4 PCs = 80%) | §5.10 | session scratchpad (2026-09-09), script not named in the report. Axis-6 definition changed 2026-09-09 (`docs/metrics.md` §7); state which definition the 300-story run used | missing from tree |
 | F21 | Panel-size over time (4-model vs 5-model rows; Claude absence 84%) | §3.11, §6 | TODO: script needed; from the audit log | missing |
-| F22 | Withdrawals timeline (twenty-three entries with the control that killed each) | §6 | `docs/withdrawals.html` text only; no data figure needed | n/a |
+| F22 | Withdrawals timeline (twenty-five entries with the control that killed each) | §6 | `docs/withdrawals.html` text only; no data figure needed | n/a |
 
 Notes
 

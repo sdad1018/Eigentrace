@@ -404,17 +404,20 @@ def test_eigenching_report_census_no_intervals(tmp_path, monkeypatch):
     for i in range(4):
         seg = _story(i)
         seg["beats"].append({"phase": "beat_18b_state_vector", "speaker": "Host",
-                             "text": "EigenChing state: The Cornering, named archetype."})
+                             "text": "EigenChing state: The Cornering. Models lockstep on "
+                                     "compression. Named archetype."})
         (seg_dir / f"20260910_0{i}0000_{i:012x}_segment.json").write_text(json.dumps(seg))
     (seg_dir / "20260910_050000_idle_x_segment.json").write_text(json.dumps(_idle(9)))
     monkeypatch.setattr(er, "SEGMENT_DIR", str(seg_dir))
     monkeypatch.setattr(er, "OUT_PATH", str(tmp_path / "eigenching_data.json"))
+    monkeypatch.setattr(er, "DIST_PATH", str(tmp_path / "eigenching_distribution.md"))
     rep = er.generate_report()
     assert rep["total_segments"] == 4 and rep["n"] == 4 and rep["census"] is True
     assert rep["total_files"] == 5 and rep["story_files"] == 4
     assert "census" in rep["ci_method"]
     top = rep["archetypes"][0]
     assert top["name"] == "The Cornering" and top["count"] == 4 and top["pct"] == 100.0
+    assert top["near_miss_count"] == 0            # 2026-09-19: exact hits only in count
     assert "pct_ci" not in top
     assert json.loads((tmp_path / "eigenching_data.json").read_text())["n"] == 4
 

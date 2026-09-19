@@ -9,6 +9,7 @@ from collections import defaultdict, Counter
 REPO="/mnt/c/Users/M4ISI/eigentrace"; sys.path.insert(0,REPO); os.chdir(REPO)
 import confront10 as C
 import confront_keeper_v3 as KV3
+import spelling_variants
 import spiral_sampler as SP   # convergence (2nd SVD derivation)
 K=int(os.getenv("KGEN","5"))
 SMOKE=os.getenv("SMOKE","")=="1"
@@ -56,6 +57,11 @@ def derive_channels(src,summaries,eng):
         w=vt_words[i]; s=float(sims[i])
         if len(w)<4 or w in HARD or s<REL: continue
         if re.search(r'\b'+re.escape(w.lower())+r'\b', alltext): continue
+        # 2026-09-19: a word the summaries wrote in the other spelling is not a
+        # dropped source fact. Channel A fed 'authorised' (22 of 25 baselines
+        # write 'authorized') and 'defence' (20 of 25 write 'defense') to the
+        # audit page as dropped facts; F2_spelling_drops/README.md section (a).
+        if spelling_variants.present_as_variant_in_text(w.lower(), alltext): continue
         in_src=bool(re.search(r'\b'+re.escape(w.lower())+r'\b', srcl)); (type1 if in_src else type2).append(w)
     concepts=[]
     for w in type2:

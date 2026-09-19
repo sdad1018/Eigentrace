@@ -114,6 +114,73 @@ def introspect_pipeline():
 # MEASURE: rolling 24h statistics
 # ═══════════════════════════════════════════════════════════════
 
+# 2026-09-19: the readings table is labelled "last 24h" and was printed from
+# whatever the window happened to hold. On 2026-09-16 the window was EMPTY --
+# the last story segment carrying a compression block was 20260914_184230 -- and
+# soul.md still showed "Entity Retention 72% ... (3)", the mean of three stories
+# from ~48 h earlier, because update() returns early when there are no segments
+# and leaves the previous file in place (entity_retention_audit/README.md §6).
+# Below this threshold the block states that there is no current reading and when
+# the last measurement was taken, and shows no numbers at all.
+MIN_MEASURED_STORIES = 3
+
+
+def last_measured_story(segment_dir=None):
+    """(timestamp, age_hours) of the newest story segment carrying a measured
+    compression block, ignoring the window. None when there is no such segment."""
+    d = segment_dir or SEGMENT_DIR
+    try:
+        from errorbars import is_story as _is_story
+    except Exception:
+        _is_story = None
+    names = sorted((f for f in os.listdir(d) if f.endswith("_segment.json")), reverse=True)
+    for name in names:
+        try:
+            seg = json.load(open(os.path.join(d, name)))
+        except Exception:
+            continue
+        if _is_story is not None and not _is_story(seg):
+            continue
+        comp = (seg.get("attribution") or {}).get("compression") or {}
+        if not comp.get("entity_retention"):
+            continue
+        try:
+            ts = datetime.strptime(seg["timestamp"], "%Y%m%d_%H%M%S")
+        except Exception:
+            continue
+        age = (datetime.utcnow() - ts).total_seconds() / 3600.0
+        return seg["timestamp"], round(age, 1)
+    return None
+
+
+def window_status(cal):
+    """Whether the 24h window holds enough measured stories to report a reading."""
+    n_measured = (cal or {}).get("n_measured", (cal or {}).get("stories", 0)) or 0
+    last = last_measured_story()
+    return {
+        "thin": n_measured < MIN_MEASURED_STORIES,
+        "n_measured": n_measured,
+        "stories": (cal or {}).get("stories", 0) or 0,
+        "last_measured": last[0] if last else None,
+        "age_hours": last[1] if last else None,
+    }
+
+
+def empty_calibration():
+    """A calibration with no readings, for a window that produced none. Every
+    numeric field is 0 and is never printed as a value: window_status()["thin"]
+    is True, so generate_soul prints the no-reading block instead of the table."""
+    return {
+        "stories": 0, "density": 0, "verb_drift": 0, "entity_retention": 0,
+        "absent_ratio": 0, "hedges": 0, "model_vix": {}, "outlier": "unknown",
+        "aligned": "unknown", "top_categories": {}, "model_health": {},
+        "n_measured": 0,
+        "n": {"stories": 0, "density": 0, "verb_drift": 0, "entity_retention": 0,
+              "absent_ratio": 0, "hedges": 0},
+        "updated": datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC"),
+    }
+
+
 def load_recent_segments(hours=24):
     cutoff = datetime.utcnow() - timedelta(hours=hours)
     # 2026-09-10: one shared definition of "story" (errorbars.is_story) so the header n is the
@@ -561,6 +628,14 @@ def generate_capability_proposals(cal, segments, trends):
 def generate_proposals(cal, segments):
     """Analyze patterns and propose soul updates. All deterministic."""
     proposals = []
+
+    # 2026-09-19: every proposal below is a threshold read off `cal`. On an empty
+    # 24h period `cal` is all zeros, and zero is not a measurement: the first
+    # preview of the rebuilt page raised "Entity retention at 0% - fewer than 1
+    # in 4 names surviving" from a day in which nothing was measured at all.
+    # Below the minimum, the page proposes nothing.
+    if window_status(cal)["thin"]:
+        return proposals
     
     # Check: is the director audit firing too often?
     audit_count = 0
@@ -786,24 +861,35 @@ def generate_soul(cal, info, diff_text):
     # Measurement layers
     layer_lines = [f"- {l}" for l in info.get("layers", [])]
     
+    _win = window_status(cal)
+
     # Calibration warnings
     warnings = []
-    if cal["absent_ratio"] > 0.5:
+    if _win["thin"]:
+        warnings.append(
+            f"⚠️ No current reading: {_win['n_measured']} measured "
+            f"{'story' if _win['n_measured'] == 1 else 'stories'} in the last 24h, "
+            f"fewer than the {MIN_MEASURED_STORIES} this table needs. Every "
+            f"instrument value is UNAVAILABLE — not zero, and not the last number "
+            f"you saw. Do not quote an instrument reading until the pipeline "
+            f"produces measured stories again."
+        )
+    if not _win["thin"] and cal["absent_ratio"] > 0.5:
         warnings.append(
             f"⚠️ Content loss at {cal['absent_ratio']:.0%} — models dropping "
             f"more than half of source material. Emphasize void words."
         )
-    if cal["hedges"] > 200:
+    if not _win["thin"] and cal["hedges"] > 200:
         warnings.append(
             f"⚠️ {cal['hedges']} hedge insertions in 24h — models inserting "
             f"doubt not present in sources."
         )
-    if cal["density"] > 0.92:
+    if not _win["thin"] and cal["density"] > 0.92:
         warnings.append(
             f"⚠️ Consensus density {cal['density']:.3f} — near lockstep. "
             f"Models may be converging on safe framing."
         )
-    if cal["entity_retention"] < 0.3:
+    if not _win["thin"] and cal["entity_retention"] < 0.3:
         warnings.append(
             f"⚠️ Entity retention {cal['entity_retention']:.0%} — names and "
             f"numbers being erased at high rate."
@@ -844,8 +930,36 @@ def generate_soul(cal, info, diff_text):
     _n_measured = cal.get("n_measured", cal["stories"])
     _hedge_n = (cal.get("n") or {}).get("hedges")
     _hedge_cell = f"({_hedge_n})" if _hedge_n is not None else "n/a"
-    _sample_line = (f"Sample: {_n_measured} measured of {cal['stories']} stories in the window. "
-                    f"Any metric whose 95% interval straddles its warning threshold is provisional; say so.")
+    if _win["thin"]:
+        _last = _win["last_measured"]
+        _when = (f"The last story this system measured was {_last} UTC, "
+                 f"{_win['age_hours']:.0f} hours ago."
+                 if _last else "No measured story segment exists on disk.")
+        _sample_line = (f"Sample: {_n_measured} measured of {cal['stories']} stories in the "
+                        f"last 24 hours, below the minimum of {MIN_MEASURED_STORIES}. {_when} "
+                        f"There is no current reading to quote.")
+        _readings_header = "## Current Instrument Readings — none (window below minimum)"
+        _readings_table = (
+            f"The last 24 hours hold {_n_measured} measured "
+            f"{'story' if _n_measured == 1 else 'stories'} of {cal['stories']}, fewer than the "
+            f"{MIN_MEASURED_STORIES} this table needs, so no values are shown. {_when} "
+            f"An older reading is not a current reading: the instruments are UNAVAILABLE, "
+            f"which is not the same as zero."
+        )
+    else:
+        _sample_line = (f"Sample: {_n_measured} measured of {cal['stories']} stories in the window. "
+                        f"Any metric whose 95% interval straddles its warning threshold is provisional; say so.")
+        _readings_header = (f"## Current Instrument Readings ({_n_measured} measured of "
+                            f"{cal['stories']} stories, last 24h)")
+        _readings_table = f"""| Metric | Value | Meaning | 95% CI (n) |
+|--------|-------|---------|------------|
+| Consensus Density | {cal['density']:.3f} | {'Models tightly aligned' if cal['density'] > 0.9 else 'Normal spread' if cal['density'] > 0.8 else 'Models disagree significantly'} | {_ci_cell('density_ci')} |
+| Content Loss | {cal['absent_ratio']:.0%} | Source words absent from all model responses | {_ci_cell('absent_ratio_ci', pct=True)} |
+| Verb Drift | {cal['verb_drift']:.3f} | {'Models softening language' if cal['verb_drift'] > 0.05 else 'Minimal softening'} | {_ci_cell('verb_drift_ci')} |
+| Entity Retention | {cal['entity_retention']:.0%} | Names and numbers preserved | {_ci_cell('entity_retention_ci', pct=True)} |
+| Hedges (24h) | {cal['hedges']} | Doubt words inserted by models | {_hedge_cell} |
+| VIX Outlier | {cal['outlier']} | Most divergent model | {_share_cell('outlier_share', 'outlier_runner_up')} |
+| Most Aligned | {cal['aligned']} | Closest to consensus | {_share_cell('aligned_share', 'aligned_runner_up')} |"""
 
     soul = f"""---
 layout: default
@@ -871,17 +985,9 @@ These layers are deterministic and reproducible. No LLM evaluates
 another LLM's output. The measurements are arithmetic on frozen
 embeddings and source text.
 
-## Current Instrument Readings ({_n_measured} measured of {cal['stories']} stories, last 24h)
+{_readings_header}
 
-| Metric | Value | Meaning | 95% CI (n) |
-|--------|-------|---------|------------|
-| Consensus Density | {cal['density']:.3f} | {'Models tightly aligned' if cal['density'] > 0.9 else 'Normal spread' if cal['density'] > 0.8 else 'Models disagree significantly'} | {_ci_cell('density_ci')} |
-| Content Loss | {cal['absent_ratio']:.0%} | Source words absent from all model responses | {_ci_cell('absent_ratio_ci', pct=True)} |
-| Verb Drift | {cal['verb_drift']:.3f} | {'Models softening language' if cal['verb_drift'] > 0.05 else 'Minimal softening'} | {_ci_cell('verb_drift_ci')} |
-| Entity Retention | {cal['entity_retention']:.0%} | Names and numbers preserved | {_ci_cell('entity_retention_ci', pct=True)} |
-| Hedges (24h) | {cal['hedges']} | Doubt words inserted by models | {_hedge_cell} |
-| VIX Outlier | {cal['outlier']} | Most divergent model | {_share_cell('outlier_share', 'outlier_runner_up')} |
-| Most Aligned | {cal['aligned']} | Closest to consensus | {_share_cell('aligned_share', 'aligned_runner_up')} |
+{_readings_table}
 
 ## Model Friction Rankings
 {chr(10).join(vix_lines)}
@@ -934,13 +1040,20 @@ def update():
     segments = load_recent_segments(hours=24)
     cal = compute_calibration(segments)
     if not cal:
-        print("No segments found")
-        return
+        # 2026-09-19: an empty window used to return here, which left the previous
+        # soul.md -- with its numbers and its "last 24h" label -- in place. Now the
+        # file is regenerated saying there is no reading.
+        print("No segments in the 24h window; regenerating soul.md with no reading")
+        cal = empty_calibration()
 
     info = introspect_pipeline()
     prev_cal = load_previous_cal()
-    diff_text = compute_diff(prev_cal, cal)
-    save_current_cal(cal)
+    _thin = window_status(cal)["thin"]
+    diff_text = ("Window below the minimum of "
+                 f"{MIN_MEASURED_STORIES} measured stories — nothing to compare."
+                 if _thin else compute_diff(prev_cal, cal))
+    if not _thin:
+        save_current_cal(cal)   # a thin window must not overwrite the last real reading
 
     proposals = generate_proposals(cal, segments)
     soul_text = generate_soul(cal, info, diff_text)
