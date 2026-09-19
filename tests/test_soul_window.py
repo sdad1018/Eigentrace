@@ -116,6 +116,23 @@ def test_a_healthy_window_still_prints_the_table(no_segments):
     assert "last 24h)" in page
 
 
+def test_the_entity_retention_row_describes_what_it_measures(no_segments):
+    """Withdrawal 25 withdrew the label "Entity Retention - names and numbers
+    preserved": the metric never measured numbers, and a quarter of what it
+    counted names nobody. The meaning cell is now a literal description of the
+    quantity, so the withdrawn label cannot come back through the generator."""
+    for ts in ("20260919_100000", "20260919_110000", "20260919_120000"):
+        _write_segment(no_segments, ts, 0.7)
+    cal = _cal(3)
+    cal.update(density=0.9, absent_ratio=0.18, verb_drift=0.01,
+               entity_retention=0.72, hedges=9, outlier="Grok", aligned="Claude")
+    page = su.generate_soul(cal, INFO, "diff")
+    assert "Names and numbers preserved" not in page
+    assert "names and numbers preserved" not in page.lower()
+    assert ("| Entity Retention | 72% | Share of source entity strings a "
+            "response reproduces (rule v2) |") in page
+
+
 def test_the_sample_line_states_the_shortfall(no_segments):
     _write_segment(no_segments, "20260914_184230", 0.727)
     page = su.generate_soul(_cal(1, stories=2), INFO, "diff")

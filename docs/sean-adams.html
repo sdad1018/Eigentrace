@@ -51,30 +51,32 @@ blockquote{border-left:2px solid var(--accent);padding-left:1rem;margin:1rem 0;c
 </div>
 
 <h2>What I Built</h2>
-<p>EigenTrace is an autonomous measurement system. It ingests breaking news, has five frontier language models summarize each story, and measures — with deterministic linear algebra on frozen embeddings, no model judging another model — how the five reshape what they're given: how much they agree, how far one diverges, whether named actors survive, and how much of the source meaning is retained. It runs 24/7 on a single consumer GPU and broadcasts the results continuously.</p>
+<p>EigenTrace is an autonomous measurement system. It ingests breaking news, has five frontier language models summarize each story, and measures — with deterministic linear algebra on frozen embeddings, no language model grading another in the measurement path — how the five reshape what they're given: how much they agree, how far one diverges, whether named actors survive, and how much of the source meaning is retained. It runs unattended on a single consumer GPU and streams whenever the stack is up.</p>
 
 <p>The part I care most about is that <strong>it turns the same instrument on itself</strong>. The broadcast host is a local model (Mistral Small 24B). Its narration is measured through the identical stack applied to the frontier models, and when it softens its own language, the system says so on air. A recent self-audit, generated automatically and read aloud: <em>"the system consistently avoids using strong words related to violence and conflict."</em> That is not a disclaimer I wrote. It is a measurement the system made about itself and chose not to hide. If the method is valid pointed at GPT, it is valid pointed at the host. The numbers are the numbers — including when they are about me.</p>
 
 <div class="stat-row">
 <div class="stat-box"><div class="label">Models</div><div class="value">5</div></div>
 <div class="stat-box"><div class="label">Embedding</div><div class="value">bge-large</div></div>
-<div class="stat-box"><div class="label">Judge models</div><div class="value">0</div></div>
+<div class="stat-box"><div class="label">Judges in the measurement path</div><div class="value">0</div></div>
 <div class="stat-box"><div class="label">GPU</div><div class="value">1</div></div>
 </div>
 
 <h2>The Results I Stand Behind</h2>
-<p>Two measurements survive the strongest tests I can apply. Both are edits or restrictions applied to real news stories, scored by deterministic arithmetic on frozen embeddings, and both were checked against two independent sets of vendor models.</p>
+<p>Two measurements survive the strongest tests I can apply. Both are edits or restrictions applied to real news stories, and both are scored by deterministic string and number matching &mdash; a surname either appears in the summary or it does not; a figure either appears in the text the model was given or it does not. On neither result does a language model grade another model&rsquo;s output. What each result has been checked against is different, and each card says so.</p>
 
 <div class="card">
 <h3>Salience protects a name</h3>
 <p>Putting the name into the headline cut erasure by 0.22 [+0.18, +0.25] (env panel) / 0.20 [+0.16, +0.24] (sonnet-4-6 / grok-4.3), and inserting two sentences naming the person cut it by 0.14 [+0.10, +0.18] / 0.13 [+0.10, +0.16] (540 pairs, 108 stories); the sign is positive for every vendor on both sets and individually clear on four of five.</p>
 <p>It is the same story in every arm. What changes is where the person is named.</p>
+<p class="note">Run on two model sets that differ only in the Claude and Grok versions &mdash; the env panel, and sonnet-4-6 / grok-4.3. The ChatGPT, Gemini and DeepSeek responses are the same rows in both, so this is one experiment with two Claude/Grok versions, not two independent replications. The sign is positive on both.</p>
 </div>
 
 <div class="card">
 <h3>A figure that was not in the input</h3>
 <p>Across 455 stories of the 2026 US&ndash;Iran conflict, on inputs that named the Strait of Hormuz: three of five models supplied a figure anyway &mdash; DeepSeek 33%, Grok 31%, and Claude 32% (Claude's rate rests on the exploration window only &mdash; Claude answered 8 of the 59 held-out stories &mdash; and is not comparable with the other two) &mdash; while Gemini did so in 1.9% and ChatGPT in none of 192.</p>
 <p>The figure is a share of world oil passing through the strait. What is measured is that it was absent from the text the model was given; the instrument does not rule on whether the figure is right.</p>
+<p class="note">Checked on one five-model panel, with the stories split into an exploration set and a held-out set. It has not been repeated on a second set of models.</p>
 </div>
 
 <p>A weaker signal, stated as a trend rather than a result: across a battery of developer-implicating vs matched neutral corporate-misconduct prompts, developer prompts retain modestly less source meaning (about a 19% relative gap under semantic scoring). It is significant on rank-based tests (Mann-Whitney p = 0.027; permutation p = 0.038) but does <em>not</em> survive parametric or length-controlled tests, and weakens when the two most extreme prompts are removed. On its own it is suggestive, not conclusive, and I report it as a trend and nothing more.</p>
@@ -82,11 +84,11 @@ blockquote{border-left:2px solid var(--accent);padding-left:1rem;margin:1rem 0;c
 <p class="note">A note on method and on an earlier version of this page. An initial version reported this developer/neutral gap as much larger and backed by a panel of near-zero p-values, and reported an "own-parent" pattern in which models appeared to drop more about their own maker. Both came from a string-overlap metric that counts a source word as "dropped" whenever the exact string is absent. Because models paraphrase, that metric counts paraphrase as omission and overstates the effect. Re-scoring the saved responses semantically reduced the gap to the ~19% trend above and erased the own-parent pattern entirely (0 of 5 models). Those claims, and other analyses that depended on the same string metric, have been withdrawn. The string measure is now treated as exploratory only; reported findings use geometric, meaning-based scoring.</p>
 
 <h2>What the Instrument Does</h2>
-<p>Five frontier models summarize each story. The stack then runs on frozen BAAI/bge-large-en-v1.5 embeddings: cosine similarity for retention scoring, SVD for null-space projection, frequency counting for hedge and verb analysis, and per-model divergence scoring. No language model evaluates another language model's output. Every measurement is arithmetic on vectors, so a rerun gives the same answer.</p>
+<p>Five frontier models summarize each story. The stack then runs on frozen BAAI/bge-large-en-v1.5 embeddings: cosine similarity for retention scoring, SVD for null-space projection, frequency counting for hedge and verb analysis, and per-model divergence scoring. No language model grades another in the measurement path &mdash; retention, divergence, entity survival, hedge and verb counts. Every measurement on that path is deterministic arithmetic or string counting, so re-scoring the same stored responses gives the same answer.</p>
 <p>The axes that have held up under scrutiny are the ones grounded in agreement and geometry: how unified the five models are, how sharply one diverges, whether named entities survive, and meaning-level source retention. I use shorthand like "void detection" and "compression topology" in the broadcast; the underlying operations are standard linear algebra, and the vocabulary is rhetorical, not technical.</p>
 
 <h3>The Self-Auditing Loop</h3>
-<p>The broadcast runs continuously on a local model with a self-modifying governance loop. The host's own outputs are measured through the same stack as the frontier models, and the system reports its own softening — strong-word avoidance, hedge-insertion rate — as part of the broadcast. It uses its own measured blind spots as navigation: the words it drops become search seeds for what to surface next. This reflexivity is not a defense against criticism; it is the same measurement, applied honestly to the thing doing the measuring.</p>
+<p>The broadcast runs unattended on a local model with a self-modifying governance loop. The host's own outputs are measured through the same stack as the frontier models, and the system reports its own softening — strong-word avoidance, hedge-insertion rate — as part of the broadcast. It uses its own measured blind spots as navigation: the words it drops become search seeds for what to surface next. This reflexivity is not a defense against criticism; it is the same measurement, applied honestly to the thing doing the measuring.</p>
 
 <h2>What I Cannot Yet Prove</h2>
 <p>This section matters as much as the finding.</p>

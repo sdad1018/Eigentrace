@@ -135,6 +135,67 @@ def test_sean_adams_does_not_call_a_figure_false():
         assert word not in t
 
 
+def test_sean_adams_lead_sentence_is_true_of_both_results():
+    """The lead under "The Results I Stand Behind" was false twice: neither
+    result is scored on embeddings (salience matches a surname as a string,
+    Hormuz matches strings and numbers), and only the salience result ran on
+    two model sets (which share their ChatGPT / Gemini / DeepSeek rows)."""
+    t = _read(SEAN)
+    assert "scored by deterministic arithmetic on frozen embeddings" not in t, (
+        "neither standing result is embedding-scored"
+    )
+    assert "both were checked against two independent sets" not in t, (
+        "only the salience result ran on two model sets"
+    )
+    assert "deterministic string and number matching" in t
+
+
+def test_sean_adams_cards_state_their_own_replication_fact():
+    """Each card carries the replication fact true of that card."""
+    t = _read(SEAN)
+    assert "independent sets" not in t, (
+        "the two salience model sets share byte-identical ChatGPT / Gemini / "
+        "DeepSeek rows (name_causal/DEVIATIONS.md); they are not independent"
+    )
+    assert "not two independent replications" in t, (
+        "the salience card should say what its two model sets are"
+    )
+    assert "has not been repeated on a second set of models" in t, (
+        "the Hormuz card is one five-model panel with an exploration / held-out "
+        "split of stories, not a second model set"
+    )
+
+
+def test_sean_adams_method_sentence_matches_what_the_path_computes():
+    """Entity survival is string matching, hedge counts are word-set
+    membership and verb drift is a frequency lookup, so the measurement path
+    is not all vector arithmetic."""
+    t = _read(SEAN)
+    assert "arithmetic on vectors" not in t
+    assert "deterministic arithmetic or string counting" in t
+
+
+def test_sean_adams_scopes_the_no_judge_rule_to_the_measurement_path():
+    """W11 / W13: the absolute is withdrawn. ai.txt and humans.txt scope the
+    rule to the measurement path and this page now matches them."""
+    t = _read(SEAN)
+    assert "no model judging another model" not in t
+    assert "No language model evaluates another language model" not in t
+    assert t.count("measurement path") >= 2, (
+        "the method paragraph and the stat tile should both scope the rule"
+    )
+
+
+def test_sean_adams_makes_no_continuous_operation_claim():
+    """IDX_002 and W14, both CONTRADICTED: no 24/7, no 'runs continuously'."""
+    t = _read(SEAN)
+    assert "24/7" not in t
+    assert "continuously" not in t
+    assert "streams whenever the stack is up" in t, (
+        "the ledger's allowed uptime wording should stand in its place"
+    )
+
+
 # ------------------------------------------------------------ well-formed
 
 
@@ -204,6 +265,16 @@ def test_withdrawals_entry_count_matches_the_entries_on_the_page():
     assert t.count(f"{audit} further entries") == 2      # meta description, abstract
     assert f"{_AUDIT_WORD[top - _PRE_AUDIT_ENTRIES - 1]} further entries" not in t
 
+    # The standfirst attributes each tranche. It used to stop at "Entries 09 to
+    # 23" on a 25-entry page, leaving the newest entries with no provenance, so
+    # it is pinned to the highest Withdrawal number actually on the page.
+    assert f"Entries {top - 1:02d} and {top:02d} came from" in t, (
+        "the dateline does not say where the two newest entries came from"
+    )
+    assert f"Entries 09 to {top}" not in t, (
+        "the audit tranche does not reach the newest entries"
+    )
+
 
 def test_withdrawals_carries_the_entity_retention_entry():
     """W25: the live entity_retention rule, and the three numbers the audit
@@ -250,7 +321,8 @@ def test_dashboard_data_counts_exact_hits_only():
         assert a["count"] <= a["count"] + a["near_miss_count"]
 
 
-@pytest.mark.parametrize("page", ["sean-adams.html", "withdrawals.html"])
+@pytest.mark.parametrize(
+    "page", ["sean-adams.html", "withdrawals.html", "eigenching.html"])
 def test_page_tags_balance(page):
     src = _read(DOCS / page)
     assert src.count("<div") == src.count("</div>"), f"{page}: div count mismatch"
@@ -259,3 +331,48 @@ def test_page_tags_balance(page):
     p.close()
     assert not p.unbalanced, f"{page}: stray closing tags {p.unbalanced}"
     assert not p.stack, f"{page}: unclosed tags {p.stack}"
+
+
+# ------------------------------------------- EigenChing dashboard rendering
+
+EIGENCHING_PAGE = DOCS / "eigenching.html"
+
+
+def test_eigenching_page_counts_state_beats_not_stories():
+    """total_segments is 3,817 state beats, 359 of them legacy axis readouts,
+    against 13,467 story files. The tile said "Stories Classified"."""
+    t = _read(EIGENCHING_PAGE)
+    assert "Stories Classified" not in t
+    assert "State beats classified" in t
+    assert "legacy_axis_readout" in t, "the legacy split should be rendered"
+    assert "story_files" in t, "the story archive is the other denominator"
+
+
+def test_eigenching_top_tile_is_labelled_as_the_top_exact_archetype():
+    """The tile shows the most frequent EXACT archetype, which is not the most
+    frequent state aired; the aired state has no archetype name."""
+    t = _read(EIGENCHING_PAGE)
+    assert ">Most Common<" not in t
+    assert "Most frequent exact archetype" in t
+    assert "most_common_aired_state" in t
+    assert "pct" in t, "the tile should carry the archetype's share"
+
+
+def test_eigenching_cards_separate_exact_hits_from_near_misses():
+    """W24 says near-misses are held apart on the dashboard. near_miss_count
+    was never rendered, so a card with near-misses and no exact hit read
+    "Never observed - waiting"."""
+    t = _read(EIGENCHING_PAGE)
+    assert "near_miss_count" in t
+    assert "near_miss_examples" in t
+    assert "Never observed \u2014 waiting" not in t
+    assert "no exact hit" in t, "a card with no exact hit should say so"
+    assert "near-miss" in t
+
+
+def test_eigenching_page_presents_no_count_as_a_census():
+    """G4_MATRIX_RECOUNT must_not_say."""
+    t = _read(EIGENCHING_PAGE)
+    assert "census" not in t.lower()
+    assert "80%+" not in t
+    assert "Still Point" not in t

@@ -32,6 +32,7 @@ body { background: var(--bg); color: var(--text); font-family: 'JetBrains Mono',
 .stat { text-align: center; }
 .stat .val { font-size: 1.6rem; font-weight: 700; color: var(--accent); }
 .stat .label { font-size: 0.6rem; color: var(--dim); text-transform: uppercase; letter-spacing: 0.1em; }
+.stat .statnote { font-size: 0.55rem; color: var(--dim); opacity: 0.75; margin-top: 0.3rem; max-width: 16rem; line-height: 1.5; text-transform: none; letter-spacing: 0; }
 
 .explainer { max-width: 700px; margin: 0 auto 2rem; padding: 0 2rem; font-size: 0.75rem; color: var(--dim); line-height: 1.8; text-align: center; }
 
@@ -45,6 +46,8 @@ body { background: var(--bg); color: var(--text); font-family: 'JetBrains Mono',
 .card-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.4rem; }
 .card-name { font-size: 0.9rem; font-weight: 700; color: var(--text); }
 .card-count { font-size: 0.75rem; color: var(--accent); font-weight: 500; }
+.card-count .c-exact { color: var(--accent); }
+.card-count .c-near, .card-count .c-none { color: var(--dim); font-weight: 400; }
 
 .card-sig { font-size: 0.65rem; color: var(--dim); margin-bottom: 0.4rem; letter-spacing: 0.05em; }
 .card-sig .pos { color: var(--green); }
@@ -54,6 +57,7 @@ body { background: var(--bg); color: var(--text); font-family: 'JetBrains Mono',
 .card-desc { font-size: 0.7rem; color: var(--dim); line-height: 1.5; margin-bottom: 0.5rem; }
 
 .card-examples { font-size: 0.6rem; color: var(--dim); line-height: 1.6; }
+.card-examples .exlab { text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.55rem; opacity: 0.8; margin-bottom: 0.3rem; }
 .card-examples .ex { padding-left: 0.5rem; border-left: 2px solid var(--border); margin-bottom: 0.3rem; color: var(--text); opacity: 0.7; }
 
 .bar-container { height: 4px; background: var(--border); border-radius: 2px; margin-bottom: 0.5rem; }
@@ -73,10 +77,10 @@ body { background: var(--bg); color: var(--text); font-family: 'JetBrains Mono',
 </div>
 
 <div class="stats" id="stats">
-  <div class="stat"><div class="val" id="total-segments">—</div><div class="label">Stories Classified</div></div>
-  <div class="stat"><div class="val" id="observed-count">—</div><div class="label">Archetypes Observed</div></div>
-  <div class="stat"><div class="val" id="unobserved-count">—</div><div class="label">Never Observed</div></div>
-  <div class="stat"><div class="val" id="most-common">—</div><div class="label">Most Common</div></div>
+  <div class="stat"><div class="val" id="total-segments">—</div><div class="label">State beats classified</div><div class="statnote" id="beats-note"></div></div>
+  <div class="stat"><div class="val" id="observed-count">—</div><div class="label">Archetypes with an exact hit</div><div class="statnote" id="exact-note"></div></div>
+  <div class="stat"><div class="val" id="unobserved-count">—</div><div class="label">Archetypes with no exact hit</div><div class="statnote" id="nearonly-note"></div></div>
+  <div class="stat"><div class="val" id="most-common">—</div><div class="label">Most frequent exact archetype</div><div class="statnote" id="most-common-note"></div></div>
 </div>
 
 <div class="explainer">
@@ -107,37 +111,79 @@ async function init() {
     const r = await fetch('/eigenching_data.json');
     const data = await r.json();
 
-    document.getElementById('total-segments').textContent = data.total_segments.toLocaleString();
+    const n = x => (x || 0).toLocaleString();
 
-    const observed = data.archetypes.filter(a => a.count > 0).length;
-    const unobserved = data.archetypes.filter(a => a.count === 0).length;
+    // Tile 1: what is counted is state beats, not stories. 359 of them are
+    // legacy axis readouts, and the story archive is much larger than either.
+    document.getElementById('total-segments').textContent = n(data.total_segments);
+    const legacy = (data.beats_by_format || {}).legacy_axis_readout || 0;
+    let beatsNote = 'state beats, not stories';
+    if (legacy) beatsNote += '; ' + n(legacy) + ' of them legacy axis readouts, not archetype names';
+    if (data.story_files) beatsNote += '. ' + n(data.story_files) + ' story files on disk';
+    document.getElementById('beats-note').textContent = beatsNote;
+
+    // Tiles 2 and 3 count archetypes by EXACT hits. A card with no exact hit
+    // may still have near-misses, so the third tile says how many.
+    const observed = ('archetypes_with_exact_hits' in data)
+      ? data.archetypes_with_exact_hits
+      : data.archetypes.filter(a => a.count > 0).length;
+    const unobserved = ('archetypes_without_exact_hits' in data)
+      ? data.archetypes_without_exact_hits
+      : data.archetypes.filter(a => a.count === 0).length;
     document.getElementById('observed-count').textContent = observed;
     document.getElementById('unobserved-count').textContent = unobserved;
+    document.getElementById('exact-note').textContent =
+      n(data.exact_total) + ' exact hits in all, of ' + n(data.total_segments) + ' state beats';
+    const nearOnly = data.archetypes.filter(a => a.count === 0 && (a.near_miss_count || 0) > 0).length;
+    document.getElementById('nearonly-note').textContent =
+      nearOnly + ' of them were aired only as near-misses, never as the archetype itself';
 
+    // Tile 4 is the most frequent EXACT archetype, which is not the most
+    // frequent state aired: that one has no archetype name.
     const top = data.archetypes.reduce((a, b) => a.count > b.count ? a : b);
     document.getElementById('most-common').textContent = top.name.replace('The ', '');
+    let topNote = n(top.count) + ' of ' + n(data.total_segments) + ' state beats (' + top.pct + '%)';
+    if (data.most_common_aired_state) {
+      topNote += '. The most frequent state actually aired is not a named archetype: '
+               + data.most_common_aired_state;
+    }
+    document.getElementById('most-common-note').textContent = topNote;
 
     const maxCount = Math.max(...data.archetypes.map(a => a.count));
 
     let html = '';
     for (const a of data.archetypes) {
+      const near = a.near_miss_count || 0;
       const cls = a.count > 0 ? 'observed' : 'unobserved';
       const barWidth = a.count > 0 ? Math.max(2, (a.count / maxCount) * 100) : 0;
 
+      // Exact hits and near-misses are two different counts and are shown as two.
+      const countHTML =
+        (a.count > 0
+          ? `<span class="c-exact">${a.count}&times; exact (${a.pct}%)</span>`
+          : `<span class="c-none">no exact hit</span>`)
+        + ` <span class="c-near">· ${near}&times; near-miss</span>`;
+
       let examplesHTML = '';
-      if (a.examples.length > 0) {
-        examplesHTML = '<div class="card-examples">' +
+      if (a.examples && a.examples.length > 0) {
+        examplesHTML = '<div class="card-examples"><div class="exlab">Aired as this archetype</div>' +
           a.examples.map(e => `<div class="ex">${e}</div>`).join('') +
           '</div>';
-      } else if (a.count === 0) {
-        examplesHTML = '<div class="card-examples" style="font-style:italic;opacity:0.5">Never observed — waiting</div>';
+      } else if (near > 0) {
+        const nex = (a.near_miss_examples || []).slice(0, 3);
+        examplesHTML = '<div class="card-examples"><div class="exlab">Never aired as this archetype. ' +
+          near + ' beats aired one or two axes away (near-miss)</div>' +
+          nex.map(e => `<div class="ex">${e}</div>`).join('') +
+          '</div>';
+      } else {
+        examplesHTML = '<div class="card-examples" style="font-style:italic;opacity:0.5">No exact hit and no near-miss</div>';
       }
 
       html += `
         <div class="card ${cls}">
           <div class="card-header">
             <span class="card-name">${a.name}</span>
-            <span class="card-count">${a.count > 0 ? a.count + 'x (' + a.pct + '%)' : 'none'}</span>
+            <span class="card-count">${countHTML}</span>
           </div>
           <div class="card-sig">${sigToHTML(a.signature)}</div>
           <div class="bar-container"><div class="bar-fill" style="width:${barWidth}%"></div></div>

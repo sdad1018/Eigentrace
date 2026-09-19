@@ -826,8 +826,15 @@ def auto_accept_safe_proposals(proposals):
     return auto_accepted
 
 
-def format_proposals_md(proposals):
-    """Format proposals for the soul.md footer."""
+def format_proposals_md(proposals, thin=False):
+    """Format proposals for the soul.md footer.
+
+    2026-09-19: "operating within expected parameters" is itself a reading, and
+    an empty day has none. `thin` is window_status(cal)["thin"]."""
+    if not proposals and thin:
+        return ("\n## Pending Proposals\n_None: nothing was measured in the last "
+                "24 hours, so there is nothing to propose from. This is not a "
+                "statement that the system is operating normally._\n")
     if not proposals:
         return "\n## Pending Proposals\n_No proposals at this time. System operating within expected parameters._\n"
     
@@ -956,7 +963,7 @@ def generate_soul(cal, info, diff_text):
 | Consensus Density | {cal['density']:.3f} | {'Models tightly aligned' if cal['density'] > 0.9 else 'Normal spread' if cal['density'] > 0.8 else 'Models disagree significantly'} | {_ci_cell('density_ci')} |
 | Content Loss | {cal['absent_ratio']:.0%} | Source words absent from all model responses | {_ci_cell('absent_ratio_ci', pct=True)} |
 | Verb Drift | {cal['verb_drift']:.3f} | {'Models softening language' if cal['verb_drift'] > 0.05 else 'Minimal softening'} | {_ci_cell('verb_drift_ci')} |
-| Entity Retention | {cal['entity_retention']:.0%} | Names and numbers preserved | {_ci_cell('entity_retention_ci', pct=True)} |
+| Entity Retention | {cal['entity_retention']:.0%} | Share of source entity strings a response reproduces (rule v2) | {_ci_cell('entity_retention_ci', pct=True)} |
 | Hedges (24h) | {cal['hedges']} | Doubt words inserted by models | {_hedge_cell} |
 | VIX Outlier | {cal['outlier']} | Most divergent model | {_share_cell('outlier_share', 'outlier_runner_up')} |
 | Most Aligned | {cal['aligned']} | Closest to consensus | {_share_cell('aligned_share', 'aligned_runner_up')} |"""
@@ -1057,7 +1064,7 @@ def update():
 
     proposals = generate_proposals(cal, segments)
     soul_text = generate_soul(cal, info, diff_text)
-    soul_text += format_proposals_md(proposals)
+    soul_text += format_proposals_md(proposals, thin=_thin)
 
     # Save version before overwriting
     if os.path.exists(SOUL_PATH):

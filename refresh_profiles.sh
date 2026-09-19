@@ -317,9 +317,35 @@ else
 fi
 # --- end CLAIMS_LEDGER_GATE_V1 -------------------------------------------
 
+# --- EDIT_LOCK_V1: owner edit lock ---------------------------------------
+# While the lock file exists and is younger than EDIT_LOCK_MAX_MIN minutes the
+# hourly refresh still regenerates everything above, but does NOT add/commit/push,
+# so half-finished edits are never published. A lock older than that is stale:
+# it is logged, removed, and the push proceeds normally. The three variables are
+# overridable so the block can be sourced and exercised by a dry harness.
+EDIT_LOCK_FILE="${EDIT_LOCK_FILE:-/home/remvelchio/eigentrace/tmp/EDIT_LOCK}"
+EDIT_LOCK_LOG="${EDIT_LOCK_LOG:-/home/remvelchio/eigentrace/tmp/logs/refresh.log}"
+EDIT_LOCK_MAX_MIN="${EDIT_LOCK_MAX_MIN:-180}"
+EDIT_LOCK_SKIP_PUSH=0
+if [ -f "$EDIT_LOCK_FILE" ]; then
+    mkdir -p "$(dirname "$EDIT_LOCK_LOG")" 2>/dev/null
+    if [ -n "$(find "$EDIT_LOCK_FILE" -mmin "+$EDIT_LOCK_MAX_MIN" 2>/dev/null)" ]; then
+        printf '%s edit lock expired (older than %s minutes): removing it and pushing normally\n' \
+            "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$EDIT_LOCK_MAX_MIN" >> "$EDIT_LOCK_LOG" 2>/dev/null
+        rm -f "$EDIT_LOCK_FILE" 2>/dev/null
+    else
+        printf '%s edit lock present: skipping commit and push this hour\n' \
+            "$(date -u +%Y-%m-%dT%H:%M:%SZ)" >> "$EDIT_LOCK_LOG" 2>/dev/null
+        EDIT_LOCK_SKIP_PUSH=1
+    fi
+fi
+# --- end EDIT_LOCK_V1 ----------------------------------------------------
+
 # FINAL: Git push all changes (soul + profiles + governance patches)
 cd /mnt/c/Users/M4ISI/eigentrace
-if git diff --quiet 2>/dev/null && git diff --cached --quiet 2>/dev/null; then
+if [ "$EDIT_LOCK_SKIP_PUSH" = "1" ]; then
+    echo "edit lock present: skipping commit and push this hour"
+elif git diff --quiet 2>/dev/null && git diff --cached --quiet 2>/dev/null; then
     echo "No changes"
 else
     git add -A 2>/dev/null
