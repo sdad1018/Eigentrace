@@ -1,0 +1,96 @@
+{
+  "version": "eigentrace-data-v1",
+  "schema_revision": "1.1",
+  "date": "2026-09-20",
+  "generated_at": "2026-09-20T09:00:40.557603Z",
+  "source": "https://github.com/sdad1018/Eigentrace",
+  "license": "MIT",
+  "summary": {
+    "stories_analyzed": 0,
+    "weasel_probes": 0,
+    "mean_density": null,
+    "mean_vix": null,
+    "dual_confirmed_global": [],
+    "top_void_words": [],
+    "top_logos_words": [],
+    "n": 0,
+    "n_unique_guid": 0,
+    "mean_density_ci95": [
+      null,
+      null
+    ],
+    "mean_vix_ci95": [
+      null,
+      null
+    ],
+    "per_model_vix": {},
+    "outlier": {
+      "model": null,
+      "runner_up": null,
+      "bootstrap_share": null,
+      "n_paired": 0,
+      "seed": 20260920
+    },
+    "state_rates": {
+      "LOCKSTEP": null,
+      "CONTESTED": null,
+      "HIGH_FRICTION": null
+    },
+    "killshots_per_story": {
+      "n": 0,
+      "point": null,
+      "ci95": [
+        null,
+        null
+      ],
+      "seed": 20260920
+    },
+    "ci_method": "percentile bootstrap, B=2000, seed=20260920, unit=story",
+    "ci_seed": 20260920,
+    "preregistration": {
+      "stories_scored_today": 0,
+      "hits_today": 0,
+      "n_scored": null,
+      "hits": null,
+      "running_accuracy": null,
+      "in_sample_constant_guesser_share": null,
+      "chance": null,
+      "mean_prediction_prob": null,
+      "n_unscored": null,
+      "prior_version": "outlier-freq-v1",
+      "prior": "per-category outlier frequency over last K=50 scored stories, fallback global; a base-rate forecast, not foresight",
+      "note": "running numbers are over the last 100 scored stories as of the day's last story; the forecast is a base rate, and running_accuracy ~= in_sample_constant_guesser_share is the expected result, not a failure"
+    },
+    "controls": {
+      "stories_with_controls": 0,
+      "mean_density_measured": null,
+      "mean_density_control": null,
+      "mean_absent_ratio_measured": null,
+      "mean_absent_ratio_control": null,
+      "mean_void_pool_measured": null,
+      "mean_void_pool_control": null,
+      "mean_killshot_max_sim_own": null,
+      "mean_killshot_max_sim_control": null,
+      "mean_hedges_measured": null,
+      "mean_hedges_control_other_panel": null,
+      "mean_entity_retention_measured": null,
+      "mean_entity_retention_control": null,
+      "definition": "docs/metrics.md section 10 (controls version 1, 2026-09-10)"
+    }
+  },
+  "schema_additions": [
+    "summary.n",
+    "summary.n_unique_guid",
+    "summary.mean_density_ci95",
+    "summary.mean_vix_ci95",
+    "summary.per_model_vix",
+    "summary.outlier",
+    "summary.state_rates",
+    "summary.killshots_per_story",
+    "summary.ci_method",
+    "summary.ci_seed"
+  ],
+  "stories": [],
+  "weasel_probes": [],
+  "ledger": []
+}
