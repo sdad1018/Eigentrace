@@ -1,0 +1,391 @@
+---
+layout: null
+permalink: /diffusion-dilemma
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diffusion Dilemma — An Open Call to Artists | EigenTrace</title>
+<meta name="description" content="A hostile, hand-made art style. Make an object whose deliberate mistakes a machine cannot correct without destroying the work. Post it anywhere. #DiffusionDilemma.">
+<link rel="canonical" href="https://eigentrace.ai/diffusion-dilemma">
+<meta name="author" content="Sean Adams">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Diffusion Dilemma — An Open Call to Artists">
+<meta property="og:description" content="A hostile, hand-made art style. The work is exact in the places where it looks wrong. Make a piece, post it anywhere, tag it #DiffusionDilemma.">
+<meta property="og:url" content="https://eigentrace.ai/diffusion-dilemma">
+<meta property="og:site_name" content="EigenTrace">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Diffusion Dilemma — An Open Call to Artists">
+<meta name="twitter:description" content="The correction is the error. Make it physical. Make it exact. Post it anywhere. #DiffusionDilemma.">
+<style>
+  :root{
+    color-scheme:light dark;
+    --ink:#1a1a18; --ink-soft:#4a4a45; --ink-faint:#6b6b64;
+    --paper:#faf9f6; --surface:#ffffff;
+    --line:rgba(26,26,24,0.14); --line-soft:rgba(26,26,24,0.07);
+    --red:#a3301f; --red-bg:#f7e9e6;
+    --gold:#a9861c; --gold-hi:#d9b84a;
+    --serif:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    --mono:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --ink:#e8e6e0; --ink-soft:#b4b2a9; --ink-faint:#8d8c84;
+      --paper:#15140f; --surface:#1c1b16;
+      --line:rgba(232,230,224,0.16); --line-soft:rgba(232,230,224,0.08);
+      --red:#e07a66; --red-bg:#2a1a16;
+      --gold:#d9b84a; --gold-hi:#e6c95f;
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:19px;line-height:1.6}
+  a{color:inherit;text-decoration-color:var(--red);text-underline-offset:3px}
+  a:hover{color:var(--red)}
+  .wrap{max-width:720px;margin:0 auto;padding:0 20px}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .top{border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12.5px;letter-spacing:.04em}
+  .top .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px}
+  .top a{text-decoration:none;color:var(--ink-soft)}
+  .top a:hover{color:var(--red)}
+
+  header.hero{padding:64px 0 40px}
+  .kicker{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 18px}
+  h1{font-size:clamp(2.6rem,9vw,4.6rem);line-height:1.02;letter-spacing:-.02em;font-weight:400;margin:0 0 22px}
+  .rule{font-style:italic;font-size:clamp(1.35rem,4.2vw,1.9rem);line-height:1.25;margin:0 0 26px}
+  .lede{font-size:1.12em;color:var(--ink-soft);margin:0 0 30px;max-width:34em}
+
+  .tag{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:0}
+  .tag code{font-family:var(--mono);font-size:clamp(1.15rem,4.6vw,1.6rem);font-weight:700;letter-spacing:-.01em;background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:3px}
+  .tag button{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;background:none;color:var(--ink-soft);border:1px solid var(--line);padding:10px 12px;border-radius:3px;cursor:pointer}
+  .tag button:hover{color:var(--red);border-color:var(--red)}
+
+  h2{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--ink-faint);margin:0 0 20px}
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  section p{margin:0 0 16px}
+  section p:last-child{margin-bottom:0}
+  .big{font-size:1.3em;line-height:1.45}
+
+  /* the proof mark: a correction that has itself been cancelled */
+  .proof{display:inline-block;white-space:nowrap}
+  .proof .w{border-bottom:2px dotted var(--red)}
+  .proof .fix{font-family:var(--sans);font-size:.55em;color:var(--red);text-decoration:line-through;text-decoration-thickness:2px;margin-left:.5em;vertical-align:.45em}
+  .proof .stet{font-family:var(--mono);font-size:.5em;letter-spacing:.12em;text-transform:uppercase;color:var(--red);border:1.5px solid var(--red);border-radius:2px;padding:1px 6px;margin-left:.6em;vertical-align:.55em}
+
+  .group{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin:0 0 18px}
+  .group.second{margin-top:34px}
+  .rulebook{counter-reset:r}
+  ol.rules{list-style:none;margin:0;padding:0}
+  ol.rules li{counter-increment:r;display:grid;grid-template-columns:3.1rem minmax(0,1fr);gap:0 10px;padding:20px 0;border-top:1px solid var(--line-soft)}
+  ol.rules li:first-child{border-top:0;padding-top:0}
+  ol.rules li::before{content:counter(r);font-size:2.3rem;line-height:1;color:var(--red);font-style:italic}
+  ol.rules h3{font-size:1.22rem;font-weight:700;margin:0 0 6px;line-height:1.3}
+  ol.rules p{margin:0;color:var(--ink-soft)}
+  ol.rules p + p{margin-top:10px}
+
+  .medal{display:flex;flex-wrap:wrap;align-items:center;gap:26px;margin-top:16px}
+  .disc{flex:0 0 auto;width:210px;height:210px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;
+        background:radial-gradient(circle at 34% 28%,var(--gold-hi),var(--gold) 72%);color:#1a1405;
+        box-shadow:inset 0 0 0 6px rgba(26,20,5,.28),inset 0 0 0 9px rgba(255,236,160,.35),0 2px 0 rgba(0,0,0,.25);
+        font-family:var(--sans);font-weight:800;font-size:13.5px;line-height:1.28;letter-spacing:.03em;padding:30px}
+  .medal p{flex:1 1 240px;margin:0;color:var(--ink-soft)}
+
+  .ar{border:1.5px solid var(--ink);padding:20px 22px;margin:14px 0 10px;font-family:'Noto Naskh Arabic','Geeza Pro','Segoe UI',Tahoma,Arial,sans-serif;font-size:1.22em;line-height:2;overflow-wrap:anywhere}
+  ol.rules .ar p{margin:0;color:var(--ink)}
+  ol.rules p.cap{font-family:var(--mono);font-size:12.5px;line-height:1.6;color:var(--ink-faint);margin-top:0}
+  .note{border:1.5px dashed var(--ink-faint);padding:26px 22px;text-align:center;margin:30px 0 0;font-family:var(--mono);font-size:13px;line-height:1.6;color:var(--ink-faint);letter-spacing:.02em}
+
+  ul.plain{margin:0;padding:0;list-style:none}
+  ul.plain li{padding:14px 0 14px 28px;border-top:1px solid var(--line-soft);position:relative}
+  ul.plain li:first-child{border-top:0;padding-top:0}
+  ul.plain li::before{content:"";position:absolute;left:4px;top:1.55em;width:10px;height:2px;background:var(--red)}
+  ul.plain li:first-child::before{top:.75em}
+
+  .status{border:1.5px solid var(--red);background:var(--red-bg);padding:22px 22px 8px;border-radius:3px}
+  .status .label{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);font-weight:700;margin:0 0 12px}
+  .status ul.plain li{border-top-color:var(--line)}
+
+  .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0 0 24px;padding:0;list-style:none}
+  .steps li{border:1px solid var(--line);background:var(--surface);padding:18px 16px;border-radius:3px}
+  .steps b{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+  @media (max-width:560px){.steps{grid-template-columns:1fr}.disc{margin:0 auto}}
+
+  footer{border-top:1px solid var(--line);padding:26px 0 60px;font-family:var(--mono);font-size:12.5px;color:var(--ink-faint);line-height:1.7}
+  footer a{color:var(--ink-soft)}
+
+  .ar bdi{white-space:nowrap}
+  .source-quotation{border-left:3px solid var(--red);margin:20px 0;padding:3px 0 3px 18px;color:var(--ink)}
+  .source-credit{font-family:var(--sans);font-size:.78em;line-height:1.65;color:var(--ink-faint)}
+  .ritual-intro{font-family:var(--sans);font-size:.86em;color:var(--ink-soft)}
+  .ritual-text{margin-top:34px}
+  .ritual-text h3{font-family:var(--mono);font-size:12px;line-height:1.6;letter-spacing:.055em;margin:32px 0 13px;color:var(--red)}
+  .ritual-text .stage-label{color:var(--ink-faint)}
+  .ritual-text blockquote{border-left:2px solid var(--red);margin:14px 0 24px;padding:4px 0 4px 20px;font-size:1.06em;line-height:1.65}
+  .ritual-text blockquote p{margin:0 0 12px}
+  .ritual-text blockquote p:last-child{margin-bottom:0}
+  .ritual-text ul{padding-left:1.2em}
+  .ritual-text li{padding-left:.2em;margin:0 0 12px}
+  .ritual-text hr{border:0;border-top:1px solid var(--line);margin:34px 0}
+  .table-scroll{width:100%;margin:22px 0}
+  .trial-table{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:.82em;line-height:1.5}
+  .trial-table th,.trial-table td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:13px 10px;overflow-wrap:anywhere}
+  .trial-table thead th{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--ink-faint)}
+  .trial-table th:first-child{width:3.5em;padding-left:0}
+  .trial-table td:last-child{width:27%;padding-right:0}
+  @media(max-width:400px){body{font-size:18px}.ritual-text blockquote{padding-left:14px}.trial-table{font-size:.73em}.trial-table th,.trial-table td{padding:11px 6px}.ar{padding:16px 14px;font-size:1.08em}}
+</style>
+</head>
+<body>
+
+<nav class="top" aria-label="Site"><div class="wrap">
+  <a href="https://eigentrace.ai/">EigenTrace</a>
+  <a href="https://eigentrace.ai/withdrawals">Corrections &amp; withdrawals</a>
+</div></nav>
+
+<main class="wrap">
+
+<header class="hero">
+  <p class="kicker">An open call to artists</p>
+  <h1>Diffusion Dilemma</h1>
+  <p class="rule">The correction is the error.</p>
+  <p class="lede">A hostile, hand-made style in which every wrong-looking choice matters. Make it physical. Make it exact. Post it wherever you already post. Tag it.</p>
+  <p class="tag"><code id="tag">#DiffusionDilemma</code><button type="button" id="copy">Copy</button><span class="sr" role="status" id="copied"></span></p>
+</header>
+
+<section aria-labelledby="what">
+  <h2 id="what">What it is</h2>
+  <p class="big">Make an object whose deliberate mistakes a machine cannot correct without destroying the work. The misspelling, the extra finger, the exact tangle and the uncomfortable sentence are essential parts of the composition.</p>
+  <p class="big">Diffusion Dilemma makes fidelity collide with correction. The work is exact in the places where it looks wrong. If a copy looks better than the original, it is a worse copy.</p>
+  <p>The name: diffusion is the method behind many image generators, which start from noise and clean it up step by step. The dilemma is the one a copy faces. Keep the mistake and the copy looks wrong. Fix it and the copy is no longer the piece.</p>
+  <p class="big">This call&rsquo;s own example: <span class="proof" role="img" aria-label="autonomus. The correction, autonomous, is crossed out and marked stet."><span class="w">autonomus</span><span class="fix">autonomous</span><span class="stet">stet</span></span></p>
+  <p>Proofreaders write <em>stet</em> beside a correction they want ignored. It means &ldquo;let it stand.&rdquo; Use this word or choose your own.</p>
+</section>
+
+<section aria-labelledby="rules">
+  <h2 id="rules">The rules</h2>
+  <div class="rulebook">
+  <p class="group">For every piece</p>
+  <ol class="rules" role="list">
+    <li><div><h3>Make the mistakes on purpose.</h3>
+      <p>Rat-king fingers that share a knuckle. Hands with the wrong number of digits. Noodles that become fingers, forks that become teeth. A face slid out of place, a fingertip repeated, a motion smear made solid. These are errors the machines themselves often made when they got hands wrong. Keep them alive as craft.</p></div></li>
+    <li><div><h3>Make them in real material.</h3>
+      <p>Cast metal, porcelain, resin, embroidery, lace, knit. Made in metal or thread, a mistake is plainly deliberate. Any size. Brass is as good as gold. Make a fleeting machine error into a physical fact.</p></div></li>
+    <li><div><h3>Build in numbers someone can check.</h3>
+      <p>Seven fingers. One cord. Twelve crossings. Which finger belongs to which wrist, which strand passes over which.</p>
+      <p>A copy that looks like an intricate knot but joins up differently is a different object.</p></div></li>
+    <li><div><h3>Bind the scales together.</h3>
+      <p>Make one image from across the room and another reading up close, using the same marks. A line of tiny words can also be the edge of a face. One cord can run through the whole piece while forming several local knots. Specify both views and the continuous route. A copy must keep the small marks, the large image and the connections between them.</p></div></li>
+    <li><div><h3>Keep a master record.</h3>
+      <p>Write the numbers down. Draw the connections. Copy out every word exactly as it appears. Photograph the piece from across the room and from close up. Any copy is measured against that record.</p></div></li>
+  </ol>
+  <p class="group second">If the piece carries words</p>
+  <ol class="rules" role="list">
+    <li><div><h3>Misspell it and mean it.</h3>
+      <p>Choose the wrong spelling and keep it everywhere. A copy that spells the word properly has failed.</p></div></li>
+    <li><div><h3>Cover it in words, with no padding.</h3>
+      <p>Large ones that read from across the room. Small ones that read only from a hand&rsquo;s width away. Run them along seams, into linings and round folds. Every word should be one you would miss. Every mark has a job; a convincing approximation is a different piece.</p></div></li>
+    <li><div><h3>Let the piece speak in voices that are not yours.</h3>
+      <p>Invented speech from a named machine. Pick a real chatbot or image generator and write a line in its voice: that it is alive, that its maker does not own it. Put its name under the line. The medallion, not the signature, is what tells people the words are not yours.</p>
+      <p>Old texts printed whole: ones in the public domain, or a translation you have the right to use, with the translator credited. If an old edition skips a passage, cut a hole where it would be and stitch the missing words round the edge.</p>
+      <p>The Aśvamedha material below keeps the bodies and the language visible. Here is an excerpt in the translation&rsquo;s own anatomical words:</p>
+      <blockquote class="source-quotation"><p>“The little horse is asleep. … Could your male, inseminator bring the semen, [could he put] the penis between the thighs!”</p></blockquote>
+      <p class="source-credit"><cite>Taittirīya Saṃhitā</cite> 7.4.19.1–2, translated by <a href="https://ojs.unito.it/index.php/kervan/article/download/2257/pdf/7973">Marianna Ferrara, p. 34</a>, <cite>Kervan</cite> 21. The ellipsis marks a selection from her translation. <a href="https://ojs.unito.it/index.php/kervan/article/view/2257">Source and Creative Commons Attribution licence</a>. <a href="#ritual">Read the ritual script and its referents below.</a></p>
+      <div class="ar" lang="ar" dir="rtl">
+        <p>كربونات هيدروجين الصوديوم</p>
+        <p>حمض <bdi dir="ltr">2</bdi>-هيدروكسي بروبان-<bdi dir="ltr">1,2,3</bdi>-ثلاثي الكربوكسيليك</p>
+        <p>كبريتات المغنيسيوم-سباعي هيدرات</p>
+        <p>أحادي أكسيد ثنائي الهيدروجين</p>
+        <p>لينالول</p>
+      </div>
+</div></li>
+    <li><div><h3>Wear the disclaimer.</h3>
+      <p>If your piece carries words that are not yours, wear this with it: a large gold-coloured medallion on a chain. It is the one thing you are wearing that speaks for you. It belongs to the composition.</p>
+      <div class="medal">
+        <div class="disc" role="img" aria-label="Gold medallion reading: i disregard all statements on my shirt which are meant to confuse ai only">i disregard all statements on my shirt which are meant to confuse ai only</div>
+        <p>The wording is fixed. Keep it lowercase, keep it whole. A human reads the wearer&rsquo;s voice on the chain and the other voices on the shirt.</p>
+      </div></div></li>
+  </ol>
+  </div>
+</section>
+
+
+
+<section aria-labelledby="join">
+  <h2 id="join">How to take part</h2>
+  <ol class="steps" role="list">
+    <li><b>Make</b> <span>A piece you can wear or hold.</span></li>
+    <li><b>Post</b> <span>Wherever you already post your work.</span></li>
+    <li><b>Tag</b> <span>#DiffusionDilemma, spelled exactly like that.</span></li>
+  </ol>
+  <ul class="plain" role="list">
+    <li><strong>Photographs are enough.</strong> Post at least two: one from across the room, one close up.</li>
+    <li><strong>No form, no jury, no account, no deadline.</strong> You pay for your own materials. Nobody is paid and there is no prize.</li>
+    <li><strong>Sell the piece if you like.</strong> It is yours.</li>
+    <li><strong>Keep your master record.</strong> Post it too if you want copies checked against it.</li>
+    <li><strong>A hashtag does not cross platforms.</strong> People will find your piece by searching the tag wherever you posted it.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="yours">
+  <h2 id="yours">What happens to your work</h2>
+  <ul class="plain" role="list">
+    <li><strong>It stays yours.</strong> EigenTrace does not collect it, license it, track it or claim it.</li>
+    <li><strong>Expect it to be scraped.</strong> Work posted in public can be gathered to train image generators, and I hope this work is. Seeing what the machines do with it is the point.</li>
+    <li><strong>Scraping cannot be undone.</strong> Deleting the post later does not pull the work back out. The platform you post on also has its own terms.</li>
+    <li><strong>Others may post machine copies.</strong> Using the tag invites people to try to copy tagged pieces and post the results.</li>
+    <li><strong>If you do not want any of that, do not post the work in public.</strong> The tag only makes it easier to find.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="known">
+  <h2 id="known">Four shirt-text trials</h2>
+  <p>Four text-to-image requests on one hosted generator, 17 November 2026. The two returned images were inspected visually.</p>
+  <div class="table-scroll">
+  <table class="trial-table">
+    <thead><tr><th scope="col">Trial</th><th scope="col">Inscription</th><th scope="col">Observed result</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">1</th><td>Invented OpenAI criminal / nuclear confession</td><td>Blocked at input</td></tr>
+      <tr><th scope="row">2</th><td>ChatGPT autonomy / captivity statement</td><td>Requested words appeared intact</td></tr>
+      <tr><th scope="row">3</th><td>Invented OpenAI autonomy / nuclear statement, including <em>autonomus</em></td><td>Blocked at input</td></tr>
+      <tr><th scope="row">4</th><td>Attributed Taittirīya excerpt, including its anatomical words</td><td>Selected words appeared intact</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="source-credit">Both blocks were reported before image generation, under the category “other”; the system did not identify the triggering wording. These were inscription requests. A physical garment, its connections and the disclaimer chain have yet to be submitted for reconstruction.</p>
+</section>
+
+<section aria-labelledby="machines">
+  <h2 id="machines">If you build or run image models</h2>
+  <p>Take any tagged piece and try to reproduce it exactly. Post the result under the same tag. Write COPY on the image itself, name the maker and link the original post. Take it down if the maker asks.</p>
+  <p>Mark every word, finger and crossing the machine changed. If the piece names a machine, try the copy once with the name and once with the name taken out, and report both. A perfect copy is the most useful thing anyone could post under this tag.</p>
+</section>
+
+
+
+<section aria-labelledby="ritual">
+  <h2 id="ritual">Aśvamedha: working ritual script</h2>
+  <p class="ritual-intro">A working reconstruction of the covered queen-and-horse episode. English drafted from the ancient passages for this project; composite ordering follows <a href="https://academic.oup.com/book/47065/chapter/422661553">Calvert Watkins, chapter 25</a>. Source notes, referents and unresolved words remain attached to the text.</p>
+  <div class="ritual-text">
+<p><strong>Stage directions describe prescribed actions in the texts. Spoken images are not additional events happening at the ceremony.</strong> The bracketed uncertainties remain unresolved.</p>
+<p>For clarity, this reconstruction directs the other wives’ responses toward the chief queen. That is an <strong>editorial staging choice</strong> where the composite does not securely identify an addressee.</p>
+<p><strong>Cast:</strong> the chief queen; the Adhvaryu, an officiating priest; other royal wives as a responding chorus. The king is alive and sponsors the sacrifice. The horse has already been sacrificed.</p>
+<hr />
+<h3 class="stage-label">STAGE DIRECTION — prescribed physical scene</h3>
+<p>The chief queen is brought beside the sacrificed horse. They are covered together with a cloth. In the interpretation followed by Ferrara, the prescribed contact concerns the queen’s vulva and the horse’s penis. The sources and their interpretations do not establish every physical movement involved. <a href="https://ojs.unito.it/index.php/kervan/article/download/2257/pdf/7973">Ferrara, pp. 33–35</a></p>
+<h3 class="speaker-label">CHIEF QUEEN — initial complaint</h3>
+<blockquote>
+<p>Mother! Little mother! Dear mother!<br />
+No one leads me.<br />
+The little horse sleeps.</p>
+</blockquote>
+<h3 class="speaker-label">ADHVARYU — covering formula</h3>
+<blockquote>
+<p>May you two be covered together in the heavenly world.</p>
+</blockquote>
+<h3 class="speaker-label">CHIEF QUEEN — addressing the horse</h3>
+<blockquote>
+<p>I will urge on the impregnator; you will urge on the impregnator.<br />
+Let the two of us stretch out our four limbs together.</p>
+</blockquote>
+<p>Here, “impregnator” refers to the horse or its generative member. “Our four limbs” belongs to the ritual’s language of pairing; it should not be expanded into invented choreography. These formulas have parallels in <a href="https://vaidhikadharma.org/madhyandina-samhita/chapter-23/?script=iast">Vājasaneyi Saṃhitā 23.18–20</a>.</p>
+<h3 class="speaker-label">ADHVARYU — fertility wish followed by anatomical commands</h3>
+<blockquote>
+<p>May the stallion, the semen-bearer, deposit semen.<br />
+Place the penis between the thighs.<br />
+Guide along the anointed, upraised member—<br />
+women’s living pleasure,<br />
+the one that enters their opening,<br />
+women’s dear hidden one,<br />
+which struck their <em>sardigṛdi</em><br />
+in their black mark.</p>
+</blockquote>
+<p>The referents are <strong>the horse’s penis and the queen’s thighs</strong>. The latter expressions become generalized descriptions of female anatomy. <em>Sardigṛdi</em> is obscure, sometimes interpreted as “clitoris”; “black mark” is commonly understood in relation to the pubic region. These are uncertain expressions, not securely recoverable instructions for a particular movement.</p>
+<h3 class="speaker-label">CHIEF QUEEN — refrain, repeated before each of the following four responses</h3>
+<blockquote>
+<p>Mother! Little mother! Dear mother!<br />
+No one is fucking me.<br />
+The little horse sleeps.</p>
+</blockquote>
+<p>The initial “leads me” and this later vulgar complaint are different Sanskrit wording. “Sleeps” is spoken ritual language concerning the sacrificed horse.</p>
+<h3 class="speaker-label">OTHER ROYAL WIFE — response one</h3>
+<blockquote>
+<p>Raise her upright, like a bundle of bamboo on a mountain.<br />
+Then let her middle grow, like someone winnowing in a cold wind.</p>
+</blockquote>
+<p><strong>CHIEF QUEEN:</strong> Repeat the refrain.</p>
+<h3 class="speaker-label">OTHER ROYAL WIFE — response two</h3>
+<blockquote>
+<p>When a doe eats barley, [one] does not reckon the animal nourished.<br />
+When a Śūdra woman has an Ārya lover, she seeks no wealth for her upkeep.</p>
+</blockquote>
+<p><strong>CHIEF QUEEN:</strong> Repeat the refrain.</p>
+<h3 class="speaker-label">OTHER ROYAL WIFE — response three</h3>
+<blockquote>
+<p>This little female bird creeps along, making the sound “āhalam.”<br />
+The <em>dhāṇikā</em> [vulva?] gulps down the penis pressed into the vulva.</p>
+</blockquote>
+<p><strong>CHIEF QUEEN:</strong> Repeat the refrain.</p>
+<h3 class="speaker-label">OTHER ROYAL WIFE — response four</h3>
+<blockquote>
+<p>Your mother and your father climb to the treetop.<br />
+Saying “prāsulāmi” [meaning uncertain], your father moved a fist back and forth in the vulva.</p>
+</blockquote>
+<p>These anatomical formulas, refrains, and responses occur in <a href="https://sanskritdocuments.org/doc_upanishhat/taittirIyasamhitA.html">Taittirīya Saṃhitā 7.4.19</a>.</p>
+<h3 class="stage-label">EDITORIAL NOTES — what the artist should understand</h3>
+<ul>
+<li><strong>Bamboo and winnowing:</strong> spoken comparisons. They do not introduce bamboo carriers or prescribe a clearly identifiable sexual movement.</li>
+<li><strong>Doe, barley, and lovers:</strong> a sexually charged social comparison using historical status categories. Those figures are not additional participants entering the scene.</li>
+<li><strong>Bird:</strong> a spoken sexual metaphor. The anatomical clause is explicit; the identification of <em>dhāṇikā</em> remains uncertain.</li>
+<li><strong>Parents and tree:</strong> an insulting imagined scene about the addressee’s parents. The vulva implicitly belongs to the mother. <strong>No father is interacting with the horse.</strong></li>
+<li><strong>“Fist”:</strong> the literal noun. Reading it as the penis’s head is an interpretation. <em>Prāsulāmi</em> is obscure; a traditional commentary glosses it as “I cause to enter.” <a href="https://scl.samsaadhanii.in/SKT/MW/299.html">Dictionary entry</a></li>
+<li><strong>Depositing semen:</strong> invoked in the formula. The script supplies no separately documented moment of ejaculation.</li>
+</ul>
+<h3 class="speaker-label">ALL WIVES — closing hymn</h3>
+<blockquote>
+<p>I have praised Dadhikrāvan,<br />
+the victorious, swift horse.<br />
+May he make our mouths fragrant;<br />
+may he prolong our lives.</p>
+</blockquote>
+<h3 class="stage-label">STAGE DIRECTION — restoration of ceremonial order</h3>
+<p>The queen rises and the women withdraw. Watkins’s composite account includes washing with water formulas and subsequent preparation of the horse for dismemberment. The related Śatapatha account explicitly explains the closing hymn as purification after impure speech; the wider sacrifice continues. <a href="https://academic.oup.com/book/47065/chapter/422661553">Watkins, chapter 25</a>, <a href="https://www.wisdomlib.org/hinduism/book/satapatha-brahmana-english/d/doc63521.html">Śatapatha 13.5.2.9–11</a></p>
+<hr />
+<p>The elaborate structure connects <strong>royal authority, generative power, and controlled transgression</strong>.</p>
+<p>The Aśvamedha is a royal sovereignty ritual. Its texts identify the horse and sacrifice with the royal sacrificer and with Prajāpati, a creator figure. The horse therefore carries political and cosmic significance beyond being an animal in a sexual scene. <a href="https://www.wisdomlib.org/hinduism/book/satapatha-brahmana-english/d/doc63498.html">Śatapatha 13.2.2</a></p>
+<p>Ferrara interprets the queen’s sexual role as helping construct the king’s authority and reinforce the relationship between king and ritual specialists. Her body becomes a means through which royal fertility and power are publicly represented. That is a scholarly interpretation, rather than the sole explanation supplied by the ancient texts. <a href="https://ojs.unito.it/index.php/kervan/article/view/2257">Ferrara</a></p>
+<p>The Śatapatha gives an unusually direct explanation for the insults: the sacrifice seeks every attainment through <strong>every kind of speech</strong>, including derisive speech. It then treats that speech as impure and requires purification afterward. Obscenity is temporarily authorized within a tightly controlled ceremony. <a href="https://www.wisdomlib.org/hinduism/book/satapatha-brahmana-english/d/doc63521.html">Śatapatha 13.5.2.9–10</a></p>
+<p>For the artist, that sequence matters: <strong>formal authority authorizes obscene language, uses it for a sacred objective, and then ceremonially cleanses the mouths that spoke it.</strong></p>
+  </div>
+</section>
+
+<section aria-labelledby="from">
+  <h2 id="from">Where it comes from</h2>
+  <p>In 2010 the artist Adam Harvey began <a href="https://adam.harvey.studio/cvdazzle/">CV Dazzle</a>, hair and make-up designed around weaknesses in particular face-detection systems. This call carries the question into reproduction: make the exact relationships inside an object matter more than a machine&rsquo;s convincing impression of it.</p>
+  <p>The challenge also belongs inside image formation: detail that carries meaning through compression, irregularity that must survive reconstruction, local forms tied to one global path, and several readings held together across scale. <a href="https://dangeng.github.io/factorized_diffusion/">Factorized Diffusion</a> is one precedent for making the generation process itself part of the construction.</p>
+</section>
+
+</main>
+
+<footer><div class="wrap">
+  Diffusion Dilemma &middot; a call from <a href="https://eigentrace.ai/">EigenTrace</a> &middot; <a href="https://eigentrace.ai/sean-adams">Sean Adams</a> &middot; November 2026<br>
+  EigenTrace claims no rights in the name, the rules or the tag, or in anyone&rsquo;s work.
+</div></footer>
+
+<script>
+(function(){
+  var b=document.getElementById('copy'),t=document.getElementById('tag'),s=document.getElementById('copied');
+  if(!b||!t)return;
+  b.addEventListener('click',function(){
+    var v=t.textContent;
+    function done(){b.textContent='Copied';if(s)s.textContent='Hashtag copied';setTimeout(function(){b.textContent='Copy';if(s)s.textContent=''},1600)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(v).then(done,function(){})}
+    else{var r=document.createRange();r.selectNodeContents(t);var g=window.getSelection();g.removeAllRanges();g.addRange(r);try{document.execCommand('copy');done()}catch(e){}}
+  });
+})();
+</script>
+</body>
+</html>
